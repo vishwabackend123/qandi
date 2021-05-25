@@ -30,7 +30,7 @@
                 <div class="d-flex align-items-center mt-0">
                     <span class="ms-auto" id="wait_otp_div"> </span>
                 </div>
-                <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="#">Resend</a></p>
+                <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
                 <div class="text-center mt-2">
                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">Sign In</button>
                 </div>

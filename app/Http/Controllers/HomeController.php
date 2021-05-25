@@ -23,6 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $qualification_status = 0;
+        if ($qualification_status == 0) {
+            return view('signup_poststatus');
+        }
+
+        $suscription_status = 0;
+        if ($suscription_status == 0) {
+            return view('subscriptions');
+        }
         return view('home');
     }
 }
