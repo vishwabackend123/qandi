@@ -32,3 +32,6 @@ Route::any('/verifyOtpRegister', [App\Http\Controllers\StudentSignInController::
 
 /* Dashboard controller */
 //Route::any('/Dashboard', [App\Http\Controllers\DaController::class, 'verifyotplogin'])->name('dashboard');
+
+/* Subscriptions  routes */
+Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions');

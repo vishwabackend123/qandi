@@ -210,7 +210,6 @@
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {
                             if (response.error) {
-                                alert("hi");
                                 var errormsg = $("#errlog_auth").show();
 
                                 errormsg[0].textContent = response.error;

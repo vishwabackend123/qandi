@@ -25,7 +25,18 @@ a, input, button{outline:none;text-decoration:none}
 .nav-btn{position:relative;width:65px;height:2px;background:#a8bbc1;display:block;margin-left:auto;margin-top:5px;margin-bottom:5px;}
 .nav-btn:after{content:'';width:65px;height:2px;background:#a8bbc1;display:block;position:absolute;top:-15px;}
 .nav-btn:before{content:'';width:65px;height:2px;background:#a8bbc1;display:block;position:absolute;bottom:-15px;}
-.red-btn{    display: inline-block;font-size:32px;color:#fff;text-transform: uppercase;background:#D71921;padding:16px 100px;font-weight:900; text-decoration:none;}
+.red-btn{display: inline-block;font-size:32px;color:#fff;text-transform: uppercase;background:#D71921;padding:16px 100px;font-weight:900; text-decoration:none;}
+.white-box-big{padding:4rem}
+.white-box-small{padding:3rem}
+.click-box{cursor:pointer;transition:all 0.4s;}
+.click-box:hover, .click-box.active{background:#F2F2F2;}
+.main-heading{color:#fff;font-size:45px;font-weight:800;text-transform:uppercase}
+.box-content{font: normal normal normal 16px/20px Poppins; letter-spacing: 0px; color: #231F20;}
+.cource-name{color: #231F20;font: normal normal 900 45px/45px Poppins;}
+.price{font: normal normal 600 16px/20px Poppins;  letter-spacing: 0px; color: #231F20;margin:20px 0;padding:0;}
+.inactive-block{background:#E9E9E9 !important}
+.inactive-block .cource-name{color:#A3A3A3;}
+.btn-gray{background:#A3A3A3;color:#fff;}
 /*START side nav css */
 /* The side navigation menu */
 .sidenav {
@@ -104,8 +115,8 @@ a, input, button{outline:none;text-decoration:none}
     margin-top: -12px;} 
     .login-txt{color: #2C3348;font: normal normal normal 14px/21px Poppins;line-height:40px;}
     .back-btn{position:absolute;top:10px;left:10px;}
-    #email-box{display:none;}
     #otp-box{display:none;}
+    #email-box{display:none;}
     .open-box{display:block !important;}
     .close-box{display:none !important;}
     #otp-verify-box{display:none;}
