@@ -52,7 +52,7 @@
 
                 <span class="ms-auto" id="some_div"> </span>
             </div>
-            <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="#">Resend</a></p>
+            <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
             <div class="text-center mt-2"> <button class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">Verify OTP</button></div>
 
         </div>
@@ -244,14 +244,20 @@
 
             if (timeLeft == -1) {
                 clearTimeout(timerId);
-                sentotplogin();
+                //sentotplogin();
+                $('#goto-otp-btn').click();
+
             } else {
-                elem.innerHTML = 'Resend OPT in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
+                elem.innerHTML = 'Resend OPT in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
                 timeLeft--;
             }
 
         }
 
+    }
+
+    function resentOtp() {
+        $('#goto-otp-btn').click();
     }
 </script>
 @endsection

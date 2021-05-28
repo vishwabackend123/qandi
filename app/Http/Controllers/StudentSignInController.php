@@ -114,7 +114,7 @@ class StudentSignInController extends Controller
 
                 $response['status'] = 200;
                 $response['message'] = "Your Logged in.";
-                $response['redirect_url'] = url('home');
+                $response['redirect_url'] = url('dashboard');
 
                 return json_encode($response);
             } else {
@@ -219,6 +219,11 @@ class StudentSignInController extends Controller
             ];
 
             $create = StudentUsers::create($insert);
+            $user_id = $create->id;
+
+            DB::table('student_preferences')->insert([
+                'student_id' => $user_id,
+            ]);
 
             return json_encode($response);
         } else {
