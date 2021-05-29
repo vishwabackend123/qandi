@@ -50,11 +50,12 @@ class HomeController extends Controller
 
         $subscription_expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? $preferences->subscription_expiry_date : '';
 
-        if (isset($subscription_expiry_date) && $subscription_expiry_date < date('Y-m-d') && $subscription_yn == 'Y') {
-            $suscription_status = 0;
-        } else {
+        if (!empty($subscription_expiry_date) && ($subscription_expiry_date > date('Y-m-d')) && $subscription_yn == 'Y') {
             $suscription_status = 1;
+        } else {
+            $suscription_status = 0;
         }
+
 
         if ($suscription_status == 0) {
             return redirect()->route('subscriptions');

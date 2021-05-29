@@ -41,3 +41,9 @@ Route::any('/verifyOtpRegister', [App\Http\Controllers\StudentSignInController::
 /* Subscriptions  routes */
 Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions');
 Route::any('/trial_subscription/{package_id}', [App\Http\Controllers\SubscriptionController::class, 'trial_subscription'])->name('trial_subscription');
+
+
+
+/* ExamCustom Controller Routs */
+Route::get('/exam_custom', [App\Http\Controllers\ExamCustomController::class, 'index'])->name('exam_custom')->middleware('auth', 'menu');
+Route::get('/subject_exam', [App\Http\Controllers\ExamCustomController::class, 'subject_exam'])->name('subject_exam')->middleware('auth', 'menu');
