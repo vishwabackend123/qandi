@@ -4,7 +4,7 @@
 
 <div class="main-wrapper p-0 bg-gray">
 
-    <div class="content-wrapper py-4 ps-4">
+    <div class="content-wrapper py-4 ps-4" id="exam_content_sec" style="display:none;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-9  ">
@@ -89,7 +89,7 @@
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <button class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                        <a href="{{route('exam_review')}}" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</a>
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p>Question Palette</p>
@@ -185,7 +185,7 @@
                             <h1 class="my-auto">All the Best! Anuj </h1>
                             <div class="text-left   ">
 
-                                <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+                                <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
 
                             </div>
                         </div>
@@ -208,6 +208,10 @@
         $('#test_instruction').modal('show');
 
     });
+    $('#goto-exam-btn').click(function() {
+        $('#exam_content_sec').show();
+    });
+
     $('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',

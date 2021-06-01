@@ -13,28 +13,33 @@
                 <div class="col-lg-12  p-lg-5">
                     <div class="tab-wrapper">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            @isset($subject_list)
+                            @foreach($subject_list as $key=>$subject)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
+                                <a class="nav-link {{($key==0)?'active':''}}" id="{{$subject->subject}}-tab" data-bs-toggle="tab" href="#{{$subject->subject}}" role="tab" aria-controls="{{$subject->subject}}" aria-selected="{{($key==0)?'true':'false'}}">{{$subject->subject}}</a>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Physics</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
-                            </li>
+                            @endforeach
+                            @endisset
+
                         </ul>
 
                         <div class="tab-content cust-tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            @isset($subject_list)
+
+                            @foreach($subject_list as $skey=>$sub)
+
+                            <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject}}" role="tabpanel" aria-labelledby="{{$sub->subject}}-tab">
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
-                                    <span class="  mr-3 name-txt">Mathematics I - II</span>
+                                    <span class="  mr-3 name-txt">{{$sub->subject}}</span>
                                     <p class="mb-0 text-danger ms-auto me-4">You can pick topics / sub-topics or</p>
                                     <a href="{{route('subject_exam')}}" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</a>
                                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                 </div>
                                 <div class="scroll-div">
+                                    @if(@isset($subject_topic_list[$sub->sub_id]) && !empty($subject_topic_list[$sub->sub_id]))
+                                    @foreach($subject_topic_list[$sub->sub_id] as $tKey=>$topics)
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
+                                        <span class="mr-3 name-txt">{{$topics->topic_name}}</span>
 
                                         <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
@@ -85,15 +90,13 @@
 
                                             <div class="score score-rating js-score">
                                                 10 %
-                                                <!-- <span>/</span>
-                                  <span class="total">5</span> -->
                                             </div>
                                         </div>
 
-                                        <span class="slbs-link mx-3"><a aria-controls="test1" data-bs-toggle="collapse" href="#test1" role="button" aria-expanded="false">Expand to Topics</a></span>
+                                        <span class="slbs-link mx-3"><a aria-controls="topic{{$topics->id}}" data-bs-toggle="collapse" href="#topic{{$topics->id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
                                         <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
                                     </div>
-                                    <div class="collapse mb-4" id="test1">
+                                    <div class="collapse mb-4" id="topic{{$topics->id}}">
                                         <div class="d-flex px-4">
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>
@@ -102,7 +105,7 @@
 
                                                 <div class="bg-light shadow p-3 d-flex flex-column">
                                                     <div class="d-flex align-items-center">
-                                                        <span class="mr-3 name-txt-sml">Trigonometry</span>
+                                                        <span class="mr-3 name-txt-sml">Trigonometry jhvhjhj</span>
 
                                                         <div class="status-id d-flex align-items-center justify-content-center ms-auto rating" data-vote="0">
 
@@ -408,205 +411,17 @@
                                             </div>
                                         </section>
                                     </div>
+                                    @endforeach
+                                    @endif
 
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
-
-                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-                                            <div class="star hidden">
-                                                <span class="full" data-value="0"></span>
-                                                <span class="half" data-value="0"></span>
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="1"></span>
-                                                <span class="half" data-value="0.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="2"></span>
-                                                <span class="half" data-value="1.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="3"></span>
-                                                <span class="half" data-value="2.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="4"></span>
-                                                <span class="half" data-value="3.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="5"></span>
-                                                <span class="half" data-value="4.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="score score-rating js-score">
-                                                0 %
-                                                <!-- <span>/</span>
-                                  <span class="total">5</span> -->
-                                            </div>
-                                        </div>
-
-                                        <span class="slbs-link mx-3"><a aria-controls="test4" data-bs-toggle="collapse" href="#test4" role="button" aria-expanded="false">Expand to Topics</a></span>
-                                        <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
-                                    </div>
-                                    <div class="collapse" id="test4">
-                                        test
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
-
-                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-                                            <div class="star hidden">
-                                                <span class="full" data-value="0"></span>
-                                                <span class="half" data-value="0"></span>
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="1"></span>
-                                                <span class="half" data-value="0.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="2"></span>
-                                                <span class="half" data-value="1.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="3"></span>
-                                                <span class="half" data-value="2.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="4"></span>
-                                                <span class="half" data-value="3.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="5"></span>
-                                                <span class="half" data-value="4.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="score score-rating js-score">
-                                                0 %
-                                                <!-- <span>/</span>
-                                  <span class="total">5</span> -->
-                                            </div>
-                                        </div>
-
-                                        <span class="slbs-link mx-3"><a aria-controls="test2" data-bs-toggle="collapse" href="#test2" role="button" aria-expanded="false">Expand to Topics</a></span>
-                                        <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
-                                    </div>
-                                    <div class="collapse" id="test2">
-                                        test
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
-
-                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-                                            <div class="star hidden">
-                                                <span class="full" data-value="0"></span>
-                                                <span class="half" data-value="0"></span>
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="1"></span>
-                                                <span class="half" data-value="0.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="2"></span>
-                                                <span class="half" data-value="1.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="3"></span>
-                                                <span class="half" data-value="2.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="4"></span>
-                                                <span class="half" data-value="3.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="5"></span>
-                                                <span class="half" data-value="4.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="score score-rating js-score">
-                                                0 %
-                                                <!-- <span>/</span>
-                                  <span class="total">5</span> -->
-                                            </div>
-                                        </div>
-
-                                        <span class="slbs-link mx-3"><a aria-controls="test3" data-bs-toggle="collapse" href="#test3" role="button" aria-expanded="false">Expand to Topics</a></span>
-                                        <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
-                                    </div>
-                                    <div class="collapse" id="test3">
-                                        test
-                                    </div>
                                 </div>
                                 <div class="text-right d-flex align-items-center mt-3">
                                     <a href="#" class="btn px-4 ms-auto me-2 btn-secondary rounded-0">Clear Selection</a>
                                     <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
                                 </div>
                             </div>
-
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
+                            @endforeach
+                            @endisset
                         </div>
                     </div>
                 </div>

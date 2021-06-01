@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\UserAnalytics;
 use App\Models\StudentPreference;
+use Carbon\Carbon;
 
 
 use Illuminate\Support\Facades\Validator;
@@ -37,29 +38,42 @@ class HomeController extends Controller
 
         $user_data = Auth::user();
         $user_id = Auth::user()->id;
+        $grade_id = Auth::user()->grade_id;
 
         $preferences = DB::table('student_preferences')->select('student_stage_at_sgnup', 'subjects_rating', 'subscription_yn', 'subscription_expiry_date')->where('student_id', $user_id)->first();
 
         $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : 0;
+
+
 
         if ($student_stage_at_sgnup == 0) {
             return redirect()->route('studentstandfor');
         }
 
         $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
+        $today_date = Carbon::now();
+        $expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? Carbon::createFromFormat('Y-m-d', $preferences->subscription_expiry_date) : '';
 
-        $subscription_expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? $preferences->subscription_expiry_date : '';
+        $data_difference = $today_date->diffInDays($expiry_date, false);
 
-        if (!empty($subscription_expiry_date) && ($subscription_expiry_date > date('Y-m-d')) && $subscription_yn == 'Y') {
-            $suscription_status = 1;
-        } else {
+        if ($data_difference > 0) {
+            //not expired
+            $suscription_status = 2;
+        } elseif ($data_difference < 0) {
+            //expired
             $suscription_status = 0;
+        } else {
+            //expire today
+            $suscription_status = 1;
         }
 
 
-        if ($suscription_status == 0) {
+
+        if ($suscription_status == 0 || $subscription_yn == 'N') {
             return redirect()->route('subscriptions');
         }
+
+
         return view('afterlogin.dashboard');
     }
 
