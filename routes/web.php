@@ -46,8 +46,12 @@ Route::any('/trial_subscription/{package_id}', [App\Http\Controllers\Subscriptio
 
 /* ExamCustom Controller Routs */
 Route::get('/exam_custom', [App\Http\Controllers\ExamCustomController::class, 'index'])->name('exam_custom')->middleware('auth', 'menu');
-Route::get('/subject_exam', [App\Http\Controllers\ExamCustomController::class, 'subject_exam'])->name('subject_exam')->middleware('auth', 'menu');
+Route::any('/subject_exam', [App\Http\Controllers\ExamCustomController::class, 'subject_exam'])->name('subject_exam')->middleware('auth', 'menu');
 
 
 /* Review Controller Routs */
 Route::get('/exam_review', [App\Http\Controllers\ReviewController::class, 'review'])->name('exam_review')->middleware('auth', 'menu');
+
+
+/* Review Controller Routs */
+Route::get('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');

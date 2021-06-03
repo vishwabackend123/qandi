@@ -11,6 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
+
                     <div class="tab-wrapper">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                             @isset($subject_list)
@@ -32,7 +33,13 @@
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
                                     <span class="  mr-3 name-txt">{{$sub->subject}}</span>
                                     <p class="mb-0 text-danger ms-auto me-4">You can pick topics / sub-topics or</p>
-                                    <a href="{{route('subject_exam')}}" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</a>
+                                    <form method="post" action="{{route('subject_exam')}}">
+                                        @csrf
+                                        <input type="hidden" name="subject_id" value="{{$sub->sub_id}}">
+                                        <input type="hidden" name="question_count" value="30">
+
+                                        <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
+                                    </form>
                                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                 </div>
                                 <div class="scroll-div">

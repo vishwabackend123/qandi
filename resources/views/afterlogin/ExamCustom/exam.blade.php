@@ -1,7 +1,15 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
+<style>
+    .question p {
+        display: inline;
+    }
+</style>
+@php
+$question_text = isset($question_data->question)?$question_data->question:'';
 
+@endphp
 <div class="main-wrapper p-0 bg-gray">
 
     <div class="content-wrapper py-4 ps-4" id="exam_content_sec" style="display:none;">
@@ -25,30 +33,29 @@
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="question-block">
-                                    <a href="#" class="arrow prev-arow"><i class="fa fa-angle-left"></i></a>
-                                    <a href="#" class="arrow next-arow"><i class="fa fa-angle-right"></i></a>
-                                    <p class="question pb-5 pt-5"><span class="q-no">Q1.</span>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
+                                    <a href="#" class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
+                                    <a href="#" class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}"><i class="fa fa-angle-right"></i></a>
+                                    <p class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</p>
                                     <div class="ans-block row mt-5">
+                                        @if(isset($question_data->question_options) && !empty($question_data->question_options))
+                                        @php $optiosArr=json_decode($question_data->question_options); @endphp
+                                        @foreach($optiosArr as $key=>$opt_value)
+                                        @php
+                                        $dom = new DOMDocument();
+                                        @$dom->loadHTML($opt_value);
+                                        $anchor = $dom->getElementsByTagName('img')->item(0);
+                                        $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                        $latex = "https://math.now.sh?from=".$text;
+                                        $view_opt='<img src="'.$latex.'" />' ;
+                                        @endphp
                                         <div class="col-md-6 mb-4">
                                             <div class="border p-3 ans">
-                                                <p class="question m-0  "><span class="q-no">A.</span>2.5 radians</p>
+                                                <p class="question m-0  "><span class="q-no mr-1">{{$key}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-6  mb-4">
-                                            <div class="border p-3 ans">
-                                                <p class="question m-0  "><span class="q-no">B.</span>2.5 radians</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6  mb-4">
-                                            <div class="border p-3 ans">
-                                                <p class="question m-0  "><span class="q-no">C.</span>2.5 radians</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6  mb-4">
-                                            <div class="border p-3 ans">
-                                                <p class="question m-0  "><span class="q-no">D.</span>2.5 radians</p>
-                                            </div>
-                                        </div>
+                                        @endforeach
+                                        @endif
+
                                     </div>
                                 </div>
                                 <div class="tab-btn-box  d-flex   mt-3">
@@ -89,7 +96,7 @@
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <a href="{{route('exam_review')}}" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</a>
+                        <a href="{{route('exam_result')}}" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</a>
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p>Question Palette</p>
