@@ -32,38 +32,42 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="question-block">
-                                    <a href="#" class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
-                                    <a href="#" class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}"><i class="fa fa-angle-right"></i></a>
-                                    <p class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</p>
-                                    <div class="ans-block row mt-5">
-                                        @if(isset($question_data->question_options) && !empty($question_data->question_options))
-                                        @php $optiosArr=json_decode($question_data->question_options); @endphp
-                                        @foreach($optiosArr as $key=>$opt_value)
-                                        @php
-                                        $dom = new DOMDocument();
-                                        @$dom->loadHTML($opt_value);
-                                        $anchor = $dom->getElementsByTagName('img')->item(0);
-                                        $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                        $latex = "https://math.now.sh?from=".$text;
-                                        $view_opt='<img src="'.$latex.'" />' ;
-                                        @endphp
-                                        <div class="col-md-6 mb-4">
-                                            <div class="border p-3 ans">
-                                                <p class="question m-0  "><span class="q-no mr-1">{{$key}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</p>
+                                <div id="question_section">
+                                    <div class="question-block">
+                                        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
+                                        <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                        <div class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                        <div class="ans-block row mt-5">
+                                            @if(isset($option_data) && !empty($option_data))
+                                            @php $no=0; @endphp
+                                            @foreach($option_data as $key=>$opt_value)
+                                            @php
+                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                            $dom = new DOMDocument();
+                                            @$dom->loadHTML($opt_value);
+                                            $anchor = $dom->getElementsByTagName('img')->item(0);
+                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                            $latex = "https://math.now.sh?from=".$text;
+                                            $view_opt='<img src="'.$latex.'" />' ;
+                                            @endphp
+                                            <div class="col-md-6 mb-4">
+                                                <div class="border p-3 ans">
+                                                    <div class="question m-0  "><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</div>
+                                                </div>
                                             </div>
+                                            @php $no++; @endphp
+                                            @endforeach
+                                            @endif
+
                                         </div>
-                                        @endforeach
-                                        @endif
+                                    </div>
+                                    <div class="tab-btn-box  d-flex   mt-3">
+                                        <a href="#" class="btn px-5   btn-light-green rounded-0">Save & Next</a>
+                                        <a href="#" class="btn px-4   ms-2 btn-light rounded-0">Save & Mark for review</a>
+                                        <a href="#" class="btn px-4 ms-auto me-2 btn-light rounded-0">Mark for review</a>
+                                        <a href="#" class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</a>
 
                                     </div>
-                                </div>
-                                <div class="tab-btn-box  d-flex   mt-3">
-                                    <a href="#" class="btn px-5   btn-light-green rounded-0">Save & Next</a>
-                                    <a href="#" class="btn px-4   ms-2 btn-light rounded-0">Save & Mark for review</a>
-                                    <a href="#" class="btn px-4 ms-auto me-2 btn-light rounded-0">Mark for review</a>
-                                    <a href="#" class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</a>
-
                                 </div>
                             </div>
 
@@ -73,7 +77,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                     </div>
                 </div>
                 <div class="col-lg-3 ">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4  px-5 py-3">
                         <div class="d-flex align-items-center">
                             <div id="app">
                                 <div class="base-timer">
@@ -101,7 +105,13 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p>Question Palette</p>
                         <div class="number-block">
-                            <button class="btn btn-secondary  mb-4 rounded-0">1</button>
+                            @if(isset($keys) && !empty($keys))
+                            @foreach($keys as $ke=>$val)
+                            <button class="btn btn-light rounded-0 mb-4" onclick="qnext('{{$val}}')">
+                                {{$ke+1}}</button>
+                            @endforeach
+                            @endif
+                            <!-- <button class="btn btn-secondary  mb-4 rounded-0">1</button>
                             <button class="btn btn-secondary  mb-4 rounded-0">2</button>
                             <button class="btn btn-secondary  mb-4 rounded-0">3</button>
                             <button class="btn btn-light-green  mb-4 rounded-0">4</button>
@@ -116,6 +126,11 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                             <button class="btn btn-light mb-4 rounded-0">13</button>
                             <button class="btn btn-light-green  mb-4 rounded-0">14</button>
                             <button class="btn btn-light-green  mb-4 rounded-0">15</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">16</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">17</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">18</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">19</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">20</button> -->
                         </div>
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
@@ -134,7 +149,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                         </div>
                         <div class="d-flex align-items-start legends">
                             <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <p>Answered & <br>Marked for Review</p>
+                            <p>Answered & Marked for Review</p>
                         </div>
 
                     </div>
@@ -211,6 +226,12 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript">
+    $('.number-block').slimscroll({
+        height: '20vh'
+    });
+    $('.answer-block').slimscroll({
+        height: '30vh'
+    });
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
 
@@ -341,6 +362,25 @@ $question_text = isset($question_data->question)?$question_data->question:'';
   ).toFixed(0)} 283`;
         console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
+    }
+
+
+
+
+    /* getting Next Question Data */
+    function qnext(question_id) {
+
+        url = "{{ url('ajax_next_question/') }}/" + question_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                $("#question_section").html(result);
+
+            }
+        });
     }
 </script>
 

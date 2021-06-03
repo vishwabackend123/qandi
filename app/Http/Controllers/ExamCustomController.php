@@ -75,7 +75,7 @@ class ExamCustomController extends Controller
             return $topic_list;
         }
 
-        $api_url = Config::get('constants.API_php_URL') . 'api/get_topics/' . $active_subject_id;
+        $api_url = Config::get('constants.API_8080_URL') . 'api/get_topics/' . $active_subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -136,8 +136,8 @@ class ExamCustomController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        //$api_URL = Config::get('constants.API_8080_URL');
-        $api_URL = Config::get('constants.API_php_URL');
+        $api_URL = Config::get('constants.API_8080_URL');
+        //$api_URL = Config::get('constants.API_php_URL');
 
         /* $curl_url = $api_URL . 'AdvanceQuestionSelection'; */
         $curl_url = $api_URL . 'AdvanceQuestionSelectiontest';
@@ -176,10 +176,11 @@ class ExamCustomController extends Controller
         }
 
         $redis_set = 'True';
-        $allQuestionDetails = $this->allCustomQlist($user_id, $aQuestions_list, $redis_set);
+
 
         $collection = collect($aQuestions_list);
         $allQuestions = $collection->keyBy('question_id');
+        $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
 
         $question_data = current($aQuestions_list);
@@ -188,9 +189,48 @@ class ExamCustomController extends Controller
         $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
         $prev_qid = '';
 
+        if (isset($question_data) && !empty($question_data)) {
+            $publicPath = url('/') . '/public/images/questions/';
+            $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+            $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+            $qs_id = $question_data->question_id;
+            $option_ques = str_replace("'", '"', $question_data->question_options);
+
+            $tempdata = json_decode($option_ques, true);
+            $opArr = [];
+            if (isset($tempdata) && is_array($tempdata)) {
+                foreach ($tempdata as $key => $option) {
+                    $option = str_replace('/public/images/questions/', $publicPath, $option);
+                    $opArr[$key] = $option;
+                }
+            }
+            $optionArray = $this->shuffle_assoc($opArr);
+            $option_data = $optionArray;
+        } else {
+            $option_data[] = '';
+        }
 
 
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid'));
+        // dd($question_data, $option_data);
+
+
+
+        return view('afterlogin.ExamCustom.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid'));
+    }
+
+    function shuffle_assoc($list)
+    {
+        if (!is_array($list)) {
+            return $list;
+        }
+
+        $keys = array_keys($list);
+        shuffle($keys);
+        $random = array();
+        foreach ($keys as $key) {
+            $random[$key] = $list[$key];
+        }
+        return $random;
     }
 
 
@@ -200,7 +240,7 @@ class ExamCustomController extends Controller
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
-                    Redis::del(Redis::keys($cacheKey));
+                    Redis::del($cacheKey);
                 }
             }
             if ($data = Redis::get($cacheKey)) {
@@ -208,10 +248,75 @@ class ExamCustomController extends Controller
             }
             $data = collect($question_data);
             Redis::set($cacheKey, $data);
-
-
             return $data->all();
         }
         return [];
+    }
+
+
+    public function ajax_next_question($quest_id, Request $request)
+    {
+
+        $user_id = Auth::user()->id;
+        $cacheKey = 'CustomQuestion:all:' . $user_id;
+        $redis_result = Redis::get($cacheKey);
+
+        if (isset($redis_result) && !empty($redis_result)) :
+            $response = json_decode($redis_result);
+        endif;
+
+        $allQuestions = isset($response) ? $response : []; // redis response as object
+        $allQuestionsArr = (array)$allQuestions; //object convert to array
+
+        $allkeys = array_keys((array)$allQuestions); //Array of all keys
+
+        $question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
+
+        $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
+
+        $key = array_search($quest_id, array_column($allQuestionsArr, 'question_id'));
+
+        $qNo = $key + 1;
+        $nextKey = $key + 1;
+        $nextKey = $nextKey % count($allQuestionsArr);
+        if ($key > 0) { // Key would become 0
+            $prevKey = $key - 1;
+        } else {
+            $prevKey = $key;
+        }
+        $next_qid = '';
+        $prev_qid = '';
+
+
+        $next_qid = $allkeys[$nextKey];
+
+        $prev_qid = $allkeys[$prevKey];
+        $last_qid = end($allkeys);
+
+
+
+        if (isset($question_data) && !empty($question_data)) {
+            $publicPath = url('/') . '/public/images/questions/';
+            $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+            $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+            $qs_id = $question_data->question_id;
+            $option_ques = str_replace("'", '"', $question_data->question_options);
+
+            $tempdata = json_decode($option_ques, true);
+            $opArr = [];
+            if (isset($tempdata) && is_array($tempdata)) {
+                foreach ($tempdata as $key => $option) {
+                    $option = str_replace('/public/images/questions/', $publicPath, $option);
+                    $opArr[$key] = $option;
+                }
+            }
+            $optionArray = $this->shuffle_assoc($opArr);
+            $option_data = $optionArray;
+        } else {
+            $option_data[] = '';
+        }
+
+
+        return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid'));
     }
 }

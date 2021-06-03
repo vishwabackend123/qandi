@@ -207,8 +207,6 @@ class StudentSignInController extends Controller
         if ($OTP == $reg_otp) {
             //Removing Session variable
             //Session::forget('OTP');
-            $response['status'] = 200;
-            $response['message'] = "Registration successful";
 
             $insert = [
                 'first_name' => $user_name,
@@ -225,7 +223,20 @@ class StudentSignInController extends Controller
                 'student_id' => $user_id,
             ]);
 
-            return json_encode($response);
+            $user = StudentUsers::where('id', $user_id)->first();
+
+            Session::put('user_data', $user);
+            if (Auth::loginUsingId($user->id)) {
+                $response['status'] = 200;
+                $response['message'] = "Registration successful";
+                $response['redirect_url'] = url('dashboard');
+
+                return json_encode($response);
+            } else {
+                $response['status'] = 400;
+                $response['error'] = "Authentication failed please try again.";
+                return json_encode($response);
+            }
         } else {
             $response['status'] = 400;
             $response['error'] = "OTP does not match.";
