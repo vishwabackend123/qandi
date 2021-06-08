@@ -41,7 +41,9 @@ Route::any('/verifyOtpRegister', [App\Http\Controllers\StudentSignInController::
 /* Subscriptions  routes */
 Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions');
 Route::any('/trial_subscription/{package_id}', [App\Http\Controllers\SubscriptionController::class, 'trial_subscription'])->name('trial_subscription');
+Route::any('/checkout', [App\Http\Controllers\SubscriptionController::class, 'checkout'])->name('checkout');
 
+Route::post('razorpay-payment', [App\Http\Controllers\RazorpayController::class, 'store'])->name('razorpay.payment.store');
 
 
 /* ExamCustom Controller Routs */

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/css/style.css')}}">
 </head>
 
-<body class="login-body-bg">
+<body class="login-body-bg  h-100" id="main-body">
 
     @yield('content')
 
