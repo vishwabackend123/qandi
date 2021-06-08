@@ -8,6 +8,7 @@
 </style>
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
+$subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 @endphp
 <div class="main-wrapper p-0 bg-gray">
@@ -51,21 +52,24 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                                             $view_opt='<img src="'.$latex.'" />' ;
                                             @endphp
                                             <div class="col-md-6 mb-4">
-                                                <div class="border p-3 ans">
-                                                    <div class="question m-0  "><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</div>
+                                                <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                <div class="border ps-3 ans">
+                                                    <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                                 </div>
                                             </div>
+
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
 
                                         </div>
+                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
                                     <div class="tab-btn-box  d-flex   mt-3">
-                                        <a href="#" class="btn px-5   btn-light-green rounded-0">Save & Next</a>
-                                        <a href="#" class="btn px-4   ms-2 btn-light rounded-0">Save & Mark for review</a>
-                                        <a href="#" class="btn px-4 ms-auto me-2 btn-light rounded-0">Mark for review</a>
-                                        <a href="#" class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</a>
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                        <button href=" #" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+                                        <button class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                        <button class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</button>
 
                                     </div>
                                 </div>
@@ -96,18 +100,23 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                                 </div>
                             </div>
                             <span class="timing">
-                                30min <br>
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <a href="{{route('exam_result')}}" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</a>
+                        <form action="{{route('exam_result')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="fulltime" value="00:30:00">
+                            <input type="hidden" name="submit_time" value="00:10:00">
+                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                        </form>
+
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p>Question Palette</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
-                            <button class="btn btn-light rounded-0 mb-4" onclick="qnext('{{$val}}')">
+                            <button type="button" class="btn btn-light rounded-0 mb-4" id="btn_{{$val}}" onclick="qnext('{{$val}}')">
                                 {{$ke+1}}</button>
                             @endforeach
                             @endif
@@ -144,7 +153,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                             <p>Answered </p>
                         </div>
                         <div class="d-flex align-items-center  mb-4  legends">
-                            <button class="btn btn-secondary   rounded-0"> </button>
+                            <button class="btn btn-secondary   rounded-0 "> </button>
                             <p>Marked for Review</p>
                         </div>
                         <div class="d-flex align-items-start legends">
@@ -175,19 +184,19 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
                                                 <small>No. Of Questions</small>
-                                                <span class="d-block inst-text"><span class="text-danger">90 MCQ</span> Questions</span>
+                                                <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}} MCQ</span> Questions</span>
                                             </div>
                                         </div>
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
-                                            <div>
+                                            <!-- <div>
                                                 <small>Target</small>
                                                 <span class="d-block inst-text"><span class="text-danger">Wave Theory</span></span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
                                                 <small>Duration</small>
-                                                <span class="d-block inst-text"><span class="text-danger">180</span> Minutes</span>
+                                                <span class="d-block inst-text"><span class="text-danger">{{$questions_count}}</span> Minutes</span>
                                             </div>
                                         </div>
                                     </div>
@@ -204,7 +213,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
                         </div>
                         <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
-                            <h1 class="my-auto">All the Best! Anuj </h1>
+                            <h1 class="my-auto">All the Best! {{Auth::user()->first_name}} </h1>
                             <div class="text-left   ">
 
                                 <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
@@ -239,6 +248,9 @@ $question_text = isset($question_data->question)?$question_data->question:'';
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
     });
+    $('.radioans').click(function() {
+        $('.qoption_error').hide();
+    });
 
     $('.instructions').slimscroll({
         height: '33vh',
@@ -260,7 +272,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
     let timeLabel = document.getElementById("base-timer-label");
 
     //Time related vars
-    const TIME_LIMIT = 1800; //in seconds
+    const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
     let timePassed = -1;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
@@ -291,7 +303,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
     function startTimer() {
         timerInterval = setInterval(() => {
             timePassed = timePassed += 1;
-            timeLeft = TIME_LIMIT - timePassed;
+            timeLeft = TIME_LIMIT - timePassed;;
             timeLabel.innerHTML = formatTime(timeLeft);
             setCircleDasharray();
 
@@ -337,6 +349,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
         timePassed = -1;
         timeLeft = TIME_LIMIT;
         console.log(timePassed, timeLeft);
+
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
 
@@ -348,7 +361,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
             seconds = `0${seconds}`;
         }
 
-        return `${minutes}:${seconds}`;
+        return `${minutes} min ${seconds} sec`;
     }
 
     function calculateTimeFraction() {
@@ -381,6 +394,98 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 
             }
         });
+    }
+
+
+    /* mark or review */
+    function markforreview(quest_id, subject_id) {
+        $.ajax({
+            url: "{{ route('markforreview') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.success == true) {
+                    $("#btn_" + quest_id).removeClass("btn-light");
+                    $("#btn_" + quest_id).addClass("btn-secondary");
+                } else {
+
+                }
+
+            },
+        });
+    }
+
+    /* Saved question response */
+    function saveAnswer(question_id) {
+        var question_id = question_id;
+        var option_id = [];
+        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+            option_id.push($(this).val());
+        });
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            return false;
+        }
+
+        $.ajax({
+            url: "{{ route('saveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.status == 200) {
+                    $("#btn_" + question_id).removeClass("btn-light");
+                    $("#btn_" + question_id).addClass("btn-light-green");
+                    $("#quesnext" + question_id).click();
+                }
+            },
+        });
+    }
+
+
+    function savemarkreview(quest_id, subject_id) {
+
+
+        /* saving response */
+        if (saveAnswer(quest_id) != false) {
+
+            // marking for review
+            $.ajax({
+                url: "{{ route('markforreview') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    question_id: quest_id,
+                    subject_id: subject_id,
+                },
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+
+                    if (response.success == true) {
+                        $("#btn_" + quest_id).removeClass("btn-light");
+                        $("#btn_" + quest_id).removeClass("btn-light-green");
+                        $("#btn_" + quest_id).addClass("btn-secondary");
+                        $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
+                    }
+
+                },
+            });
+        }
+
+
     }
 </script>
 

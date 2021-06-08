@@ -75,7 +75,7 @@ class ExamCustomController extends Controller
             return $topic_list;
         }
 
-        $api_url = Config::get('constants.API_8080_URL') . 'api/get_topics/' . $active_subject_id;
+        $api_url = Config::get('constants.API_php_URL') . 'api/get_topics/' . $active_subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -112,6 +112,9 @@ class ExamCustomController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
+        if (Redis::exists('custom_answer_time')) {
+            Redis::del(Redis::keys('custom_answer_time'));
+        }
 
         $question_count = isset($request->question_count) ? $request->question_count : 30;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
@@ -163,15 +166,20 @@ class ExamCustomController extends Controller
         $response_json = str_replace('NaN', '""', $response_json);
 
 
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
 
         if ($httpcode == 200) {
             $responsedata = json_decode($response_json);
             $aQuestions_list = $responsedata->questions;
+            $exam_fulltime = $responsedata->time_allowed;
+            $questions_count = count($aQuestions_list);
         } else {
             $aQuestions_list = [];
+            $questions_count = 0;
+            $exam_fulltime = 0;
             return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
         }
 
@@ -211,11 +219,24 @@ class ExamCustomController extends Controller
         }
 
 
-        // dd($question_data, $option_data);
+        //dd($question_data, $option_data);
+
+        /* set redis for save exam question response */
+        $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
+        $redis_data = [
+            'given_ans' => $retrive_array,
+            'taken_time' => $retrive_time_array,
+            'answer_swap_cnt' => $answer_swap_cnt,
+            'questions_count' => $questions_count,
+            'all_questions_id' => $keys,
+            'full_time' => $exam_fulltime,
+        ];
+
+        // Push Value in Redis
+        Redis::set('custom_answer_time', json_encode($redis_data));
 
 
-
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid'));
+        return view('afterlogin.ExamCustom.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime'));
     }
 
     function shuffle_assoc($list)
@@ -318,5 +339,54 @@ class ExamCustomController extends Controller
 
 
         return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid'));
+    }
+
+
+    public function saveAnswer(Request $request)
+    {
+        /* # code... */
+        $data = $request->all();
+        $question_id = isset($data['question_id']) ? $data['question_id'] : '';
+        $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+
+        $redis_result = Redis::get('custom_answer_time');
+
+
+        if (!empty($redis_result)) {
+            $redisArray = json_decode($redis_result, true);
+            $retrive_array = $redisArray['given_ans'];
+            $retrive_time_array = $redisArray['taken_time'];
+            $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
+
+            $time_taken = $redisArray['time_taken'] ?? array();
+            if (isset($option_id) && $option_id != '') {
+                $retrive_array[$question_id] = $option_id;
+                $retrive_time_array[$question_id] = '00:00:00';
+            }
+        } else {
+            $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
+            if (isset($option_id) && $option_id != '') {
+                $retrive_array[$question_id] = $option_id;
+                $retrive_time_array[$question_id] = '00:00:00';
+            }
+        }
+        if (isset($answer_swap_cnt[$question_id])) {
+            $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
+        } else {
+            $answer_swap_cnt[$question_id] = 0;
+        }
+
+        $redisArray['given_ans'] = $retrive_array;
+        $redisArray['taken_time'] = $retrive_time_array;
+        $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+
+        // Push Value in Redis
+        Redis::set('custom_answer_time', json_encode($redisArray));
+
+        $response['status'] = 200;
+        $response['message'] = "save response successfully";
+
+
+        return json_encode($response);
     }
 }

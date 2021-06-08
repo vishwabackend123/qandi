@@ -1,6 +1,8 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
+$subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 @endphp
+
 <div class="question-block">
     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
     <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
@@ -19,20 +21,24 @@ $question_text = isset($question_data->question)?$question_data->question:'';
         $view_opt='<img src="'.$latex.'" />' ;
         @endphp
         <div class="col-md-6 mb-4">
-            <div class="border p-3 ans">
-                <div class="question m-0  "><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</div>
+            <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+            <div class="border ps-3 ans">
+                <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}">
+                    <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}
+                </label>
             </div>
         </div>
+
         @php $no++; @endphp
         @endforeach
         @endif
 
     </div>
+    <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
 </div>
 <div class="tab-btn-box  d-flex   mt-3">
-    <a href="#" class="btn px-5   btn-light-green rounded-0">Save & Next</a>
-    <a href="#" class="btn px-4   ms-2 btn-light rounded-0">Save & Mark for review</a>
-    <a href="#" class="btn px-4 ms-auto me-2 btn-light rounded-0">Mark for review</a>
-    <a href="#" class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</a>
-
+    <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+    <button href=" #" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+    <button class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+    <button class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</button>
 </div>
