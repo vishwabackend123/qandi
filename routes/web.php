@@ -41,17 +41,27 @@ Route::any('/verifyOtpRegister', [App\Http\Controllers\StudentSignInController::
 /* Subscriptions  routes */
 Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions');
 Route::any('/trial_subscription/{package_id}', [App\Http\Controllers\SubscriptionController::class, 'trial_subscription'])->name('trial_subscription');
+Route::any('/checkout', [App\Http\Controllers\SubscriptionController::class, 'checkout'])->name('checkout');
 
+Route::post('razorpay-payment', [App\Http\Controllers\RazorpayController::class, 'store'])->name('razorpay.payment.store');
 
 
 /* ExamCustom Controller Routs */
 Route::get('/exam_custom', [App\Http\Controllers\ExamCustomController::class, 'index'])->name('exam_custom')->middleware('auth', 'menu');
 Route::any('/subject_exam', [App\Http\Controllers\ExamCustomController::class, 'subject_exam'])->name('subject_exam')->middleware('auth', 'menu');
+Route::any('/ajax_next_question/{ques_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_next_question'])->name('ajax_next_question')->middleware('auth', 'menu');
+Route::any('/saveAnswer', [App\Http\Controllers\ExamCustomController::class, 'saveAnswer'])->name('saveAnswer')->middleware('auth', 'menu');
 
 
 /* Review Controller Routs */
-Route::get('/exam_review', [App\Http\Controllers\ReviewController::class, 'review'])->name('exam_review')->middleware('auth', 'menu');
+Route::any('/exam_review/{result_id}', [App\Http\Controllers\ReviewController::class, 'getReview'])->name('exam_review')->middleware('auth', 'menu');
+Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewController::class, 'next_review_question'])->name('next_review_question')->middleware('auth', 'menu');
 
 
 /* Review Controller Routs */
-Route::get('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
+Route::post('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
+
+
+
+/* Book Mark routes */
+Route::post('/markforreview', [App\Http\Controllers\BookmarkController::class, 'addbookmark'])->name('markforreview')->middleware('auth', 'menu');

@@ -1,8 +1,11 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
-
+<!-- Side bar menu -->
+@include('afterlogin.layouts.sidebar')
 <div class="main-wrapper bg-gray">
+    <!-- top navbar -->
+    @include('afterlogin.layouts.navbar_header')
 
     <div class="content-wrapper">
         <div class="container-fluid">
@@ -17,7 +20,8 @@
                         <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
                         <div class="text-center">
-                            <img src="{{URL::asset('public/after_login/images/roundedgraph.jpg')}}">
+                            <!--  <img src={{URL::asset('public/after_login/images//roundedgraph.jpg')}}"> -->
+                            <div id="scorecontainer"></div>
                         </div>
                         <div class="row my-4">
                             <div class="col">
@@ -46,10 +50,10 @@
                                     <path class="circle-bg" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+                                    <path class="circle" stroke-dasharray="{{isset($response->result_percentage)?$response->result_percentage:0}}, 100" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <text x="18" y="22.35" class="percentage">30%</text>
+                                    <text x="18" y="22.35" class="percentage">{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}%</text>
                                 </svg>
                             </div>
                             <div class="col-md-8">
@@ -82,9 +86,66 @@
             </div>
             <div class="row mt-5 mb-3">
                 <div class="col-5">
-                    <div class="bg-white shadow p-3 d-flex flex-column position-relative">
+                    <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
                         <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                         <h5 class="dashboard-title mb-3">Subject Score</h5>
+                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                            <span class="subj-name me-4 col-3">Mathematics</span>
+                            <div class="progress ms-auto  col-8" style="overflow: visible;">
+                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                    <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                            <span class="subj-name me-4 col-3">Physics</span>
+                            <div class="progress  ms-auto col-8" style="overflow: visible;">
+                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
+                                </div>
+                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                    <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                            <span class="subj-name me-4 col-3">Chemistry</span>
+                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-red" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="Tooltip on top">1</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row py-4 mt-4 mb-5">
+                            <div class="col d-flex align-items-center">
+                                <span class="abrv-graph bg1"> </span>
+                                <span class="graph-txt d-inline-block ms-2">Correct Attempts</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <span class="abrv-graph bg2"> </span>
+                                <span class="graph-txt d-inline-block ms-2">Wrong Attempts</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <span class="abrv-graph bg3"> </span>
+                                <span class="graph-txt d-inline-block ms-2">Not Answered</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-7 ">
@@ -105,7 +166,107 @@
                             <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-                                    tab 1
+                                    <div class="hScroll">
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
@@ -156,8 +317,8 @@
                     <div class="bg-white shadow p-5 d-flex flex-column position-relative">
                         <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                         <span class="text-center w-100"><img src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
-                        <a href="{{route('exam_review')}}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
-                        <a href="{{route('dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
+                        <a href="{{route('exam_review', $response->result_id) }}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
+                        <a href="{{url('/dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
                     </div>
                 </div>
             </div>
@@ -166,7 +327,95 @@
 </div>
 
 @include('afterlogin.layouts.footer')
+@php
+$correct=isset($response->correct_count)?$response->correct_count:0;
+$incorrect=isset($response->wrong_count)?$response->wrong_count:0;
+$not_attempt=isset($response->total_exam_marks)?$response->total_exam_marks:0;
+$total_question=isset($response->no_of_question)?$response->no_of_question:0;
+
+$total_makrs=isset($response->total_exam_marks)?$response->total_exam_marks:0;
+$correct_score=isset($response->correct_score)?$response->correct_score:0;
+$incorrect_score=isset($response->incorrect_score)?$response->incorrect_score:0;
+$get_score=(isset($response->total_get_marks) && ($response->total_get_marks)>=0)?$response->total_get_marks:0;;
+
+$correct_per=!empty($total_question)?number_format((($correct/$total_question)*100),2):0;
+$incorrect_per=!empty($total_question)?number_format((($incorrect/$total_question)*100),2):0;
+$not_attempt_per=100-($correct_per+$incorrect_per);
 
 
+@endphp
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+    Highcharts.chart('scorecontainer', {
+        chart: {
+            height: 250,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+        title: {
+            text: '<span style="font-size:80px">{{$get_score}}</span> <span style="font-size:24px"> / {{$total_makrs}} </span>',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 70
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: false,
+                    distance: -50,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
+                startAngle: -180,
+                endAngle: 180,
+                center: ['50%', '50%'],
+                size: '100%'
+            }
+        },
+        series: [{
+            type: 'pie',
+
+            innerSize: '90%',
+            data: [{
+                    name: 'Correct Attempts',
+                    y: <?php echo $correct_per; ?>,
+                    color: '#AFF3D0' // Jane's color
+                },
+                {
+                    name: 'Wrong Attempts',
+                    y: <?php echo $incorrect_per; ?>,
+                    color: '#ff9999' // Jane's color
+                },
+                {
+                    name: 'Not Answered',
+                    y: <?php echo $not_attempt_per; ?>,
+                    color: '#e4e4e4' // Jane's color
+                }
+
+
+            ]
+        }]
+    });
+</script>
 @endsection

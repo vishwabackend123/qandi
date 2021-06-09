@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\StudentPreference;
 use App\Models\StudentUsers;
+use Razorpay\Api\Api;
+use Razorpay\Api\Errors\SignatureVerificationError;
+
 
 use Carbon\Carbon;
 
@@ -31,7 +34,15 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        return view('subscriptions');
+        $subscriptions = DB::table('class_exams as ce')
+            ->select('ce.id as exam_id', 'ce.class_exam_cd as exam_name', 'ce.class_exam_desc as exam_description')
+            ->leftJoin('exam_subscription_price as esp', 'esp.exam_id', '=', 'ce.id')
+            ->addSelect('esp.day_unit', 'esp.day_month_count', 'esp.exam_price')
+            ->where('ce.status', '1')
+            ->get();
+
+
+        return view('subscriptions', compact('subscriptions'));
     }
 
 
@@ -69,5 +80,45 @@ class SubscriptionController extends Controller
 
             return redirect()->back()->withErrors(['Something wrong! Plase try after some time.']);
         }
+    }
+
+
+    /**
+     * Show the subscription packages details for checkout.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function checkout(Request $request)
+    {
+
+        $postdata = $request->all();
+        $price = isset($request->exam_price) ? $request->exam_price : 0;
+        $amount = $price * 100;
+
+        $receipt_Id = 'order_rcptid_' . mt_rand(100000, 999999);
+
+        $api = new Api(env('RAZORPAY_KEY'),  env('RAZORPAY_SECRET'));
+
+        $order = $api->order->create(
+            array(
+                'receipt' => $receipt_Id,
+                'amount' => $amount,
+                'currency' => 'INR'
+            )
+        );
+        $razorpayOrderId = $order['id'];
+
+        $subscriptions_data = DB::table('class_exams as ce')
+            ->select('ce.id as exam_id', 'ce.class_exam_cd as exam_name', 'ce.class_exam_desc as exam_description')
+            ->leftJoin('exam_subscription_price as esp', 'esp.exam_id', '=', 'ce.id')
+            ->addSelect('esp.day_unit', 'esp.day_month_count', 'esp.exam_price')
+            ->where('ce.status', '1')
+            ->where('ce.id', $request->exam_id)
+            ->first();
+
+
+
+
+        return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId'));
     }
 }

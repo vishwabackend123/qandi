@@ -221,6 +221,9 @@
                         } else {
                             $('#otp-verify-box').addClass('open-box');
                             $('#otp-box').addClass('close-box');
+                            if (response.redirect_url) {
+                                window.location.href = response.redirect_url
+                            }
                         }
 
                     },
