@@ -65,3 +65,14 @@ Route::post('/exam_result', [App\Http\Controllers\ResultController::class, 'exam
 
 /* Book Mark routes */
 Route::post('/markforreview', [App\Http\Controllers\BookmarkController::class, 'addbookmark'])->name('markforreview')->middleware('auth', 'menu');
+
+
+/* Full exam Controller Routes */
+Route::any('/exam/{full_exam}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
+Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
+Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'exam_review'])->name('examreview')->middleware('auth', 'menu');
+
+
+/* Full exam Controller Routes */
+Route::any('/preparation_center', [App\Http\Controllers\PreparationController::class, 'preparation_center'])->name('preparation_center')->middleware('auth', 'menu');
+Route::any('/download_exampaper', [App\Http\Controllers\PreparationController::class, 'download_exampaper'])->name('download_exampaper')->middleware('auth', 'menu');

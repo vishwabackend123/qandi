@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Exception;
 use App\Models\StudentUsers;
 use App\Models\UserPurchase;
+use App\Models\StudentPreference;
 
 class RazorpayController extends Controller
 {
@@ -73,6 +74,12 @@ class RazorpayController extends Controller
                     'grade_id' => $response->notes->exam_id,
                 ];
                 $upt_user = StudentUsers::where('id', $user_id)->update($update_user);
+
+                $update_preference = [
+                    'subscription_yn' => 'Y',
+                    'subscription_expiry_date' => $expiry_date,
+                ];
+                $upt_pre = StudentPreference::where('student_id', $user_id)->update($update_preference);
             } catch (Exception $e) {
                 return  $e->getMessage();
                 Session::put('error', $e->getMessage());

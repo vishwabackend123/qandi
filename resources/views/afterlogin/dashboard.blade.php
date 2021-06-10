@@ -253,7 +253,7 @@
                                         Take a test and get a complete analysis of your preparation!
                                     </label>
                                 </div>
-                                <a href="{{route('subject_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
+                                <a href="{{route('exam','full_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
                             </div>
                         </div>
                         <div class=" ">
@@ -472,7 +472,7 @@
                 </p>
                 <p class="h1-p text-success">Just one more step!</p>
                 <p>Take a test and get a complete analysis of your preparation!</p>
-                <a href="{{route('subject_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 p-5">
+                <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 p-5">
                     <span> <img src="{{URL::asset('public/after_login/images/books.png')}}"> </span>
                     <span class="text-white ms-4 ">Take full body scan of<br> 90 questions test</span>
 
@@ -534,10 +534,6 @@
 
         var storeddata = JSON.parse(localStorage.getItem("store_data"));
 
-        console.log(storeddata);
-        /* $("#favSubResponse").modal("hide");
-                    $("#feelresponseModal").modal("hide");
-                    $("#fullTest_Dashboard").modal("hide"); */
 
         $.ajax({
             url: "{{ url('/dailyWelcomeUpdates') }}",

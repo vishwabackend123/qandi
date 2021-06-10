@@ -99,6 +99,7 @@ class SubscriptionController extends Controller
 
         $api = new Api(env('RAZORPAY_KEY'),  env('RAZORPAY_SECRET'));
 
+
         $order = $api->order->create(
             array(
                 'receipt' => $receipt_Id,
@@ -107,6 +108,8 @@ class SubscriptionController extends Controller
             )
         );
         $razorpayOrderId = $order['id'];
+
+
 
         $subscriptions_data = DB::table('class_exams as ce')
             ->select('ce.id as exam_id', 'ce.class_exam_cd as exam_name', 'ce.class_exam_desc as exam_description')
