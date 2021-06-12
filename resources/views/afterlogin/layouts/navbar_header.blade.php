@@ -16,7 +16,7 @@
                     </span>
                     <span class="notification me-5 ms-4"><a href=""><img src="{{URL::asset('public/after_login/images/bell.png')}}"></a></span>
                     <span class="notification ms-4"><a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/images/calender.png')}}"></a></span>
-                    <span class="notification ms-4"><a href=""><img src="{{URL::asset('public/after_login/images/Group 1831.png')}}"></a></span>
+                    <span class="notification ms-4"><a href=""><img src="{{URL::asset('public/after_login/images/Group1831.png')}}"></a></span>
                 </div>
             </div>
         </div>

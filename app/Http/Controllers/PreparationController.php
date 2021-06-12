@@ -10,6 +10,7 @@ class PreparationController extends Controller
 
     public function preparation_center(Request $request)
     {
+        return view('afterlogin.Preparation.preparation_center');
     }
 
 

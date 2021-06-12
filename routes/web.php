@@ -76,3 +76,9 @@ Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'exam
 /* Full exam Controller Routes */
 Route::any('/preparation_center', [App\Http\Controllers\PreparationController::class, 'preparation_center'])->name('preparation_center')->middleware('auth', 'menu');
 Route::any('/download_exampaper', [App\Http\Controllers\PreparationController::class, 'download_exampaper'])->name('download_exampaper')->middleware('auth', 'menu');
+
+
+/* about Exam Controller Routes */
+
+Route::any('/about_exam', [App\Http\Controllers\AboutExamController::class, 'about_exam'])->name('about_exam')->middleware('auth', 'menu');
+Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::class, 'eligibility_criteria'])->name('eligibility_criteria')->middleware('auth', 'menu');
