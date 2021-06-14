@@ -36,6 +36,7 @@ button {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 }
+.bg-blue{background:#F3F7FF;}
 .text-danger {
   color: #d71921 !important;
 }
@@ -469,6 +470,44 @@ header {
   /* height: 100%; */
   width: 34px;
   background-color: #f2f2f2;
+  transition: all 250ms ease;
+  bottom: -1px;
+  border-right: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+
+
+.cust-tabs-white .nav-link {
+  position: relative;
+  margin-right: 30px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  color: #515151;
+}
+.cust-tabs-white .nav-link:focus,
+.cust-tabs-white .nav-link:hover {
+  border-color: transparent;
+}
+/* .cust-tabs-white .nav-link:hover{border-color:transparent;} */
+.cust-tabs-white .nav-link.active {
+  color: #231f20;
+  background-color: #fff;
+  border-color: transparent;
+  border-radius: 0;
+}
+.cust-tabs-white .nav-link.active:before {
+  right: -19px;
+  transform: skew(30deg, 0deg);
+  /* box-shadow: rgb(0 0 0 / 10%) 3px 2px 5px, inset rgb(255 255 255 / 9%) -1px 0; */
+  border-radius: 0 5px 0 0;
+  display: block;
+  content: " ";
+  position: absolute;
+  top: -1px;
+  /* height: 100%; */
+  width: 34px;
+  background-color: #fff;
   transition: all 250ms ease;
   bottom: -1px;
   border-right: 1px solid transparent;
@@ -1612,3 +1651,16 @@ border-right: none;
 
       .download-height{height:calc(100% - 100px);}
       .download-head{color:#2C3348;font: normal normal normal 28px/48px Poppins;}
+
+      .text-box{position:relative;}
+.text-box input{    background: #F2F2F2;
+    color: #2C3348;
+    font-size: 18px;
+    line-height: 35px;
+    border: none;
+    display: block;
+    width: 100%;
+    padding-left: 50px;}
+.text-box .text-icon{position:absolute;left: 20px;
+    top: 50%;
+    margin-top: -12px;} 
