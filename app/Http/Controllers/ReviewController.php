@@ -34,8 +34,8 @@ class ReviewController extends Controller
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                //CURLOPT_URL => config('constants.API_php_URL_local')."get_review/$result_id", //local
-                CURLOPT_URL => "http://44.235.5.77/api/get_review/$result_id", //live
+                CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
+                //CURLOPT_URL => "http://44.235.5.77/api/get_review/$result_id", //live
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,

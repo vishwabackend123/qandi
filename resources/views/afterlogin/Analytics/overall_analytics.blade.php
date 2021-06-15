@@ -340,30 +340,57 @@
                                                                     <span>89%</span>
                                                                 </a>
                                                             </div>
-                                                            <div class="collapse arrow-right-btm-content arrow-right-btm" data-bs-dismiss="collapse" id="arrow-right-btm">test message </div>
+                                                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
+                                                                <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
+                                                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
+                                                                <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                                            </div>
                                                         </div>
                                                         <div class="col-6  mb-3">
                                                             <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                                                <a href="#" class="box-block arrow-left-btm">
+                                                                <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
                                                                     <span>A</span>
                                                                     <span>89%</span>
                                                                 </a>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                                                <a href="#" class="box-block arrow-right-top">
-                                                                    <span>A</span>
-                                                                    <span>89%</span>
-                                                                </a>
+                                                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
+                                                                <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
+                                                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
+                                                                <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-6">
                                                             <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                                                <a href="#" class="box-block arrow-left-top">
+                                                                <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
                                                                     <span>A</span>
                                                                     <span>89%</span>
                                                                 </a>
+                                                            </div>
+                                                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
+                                                                <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
+                                                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
+                                                                <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                                                <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
+                                                                    <span>A</span>
+                                                                    <span>89%</span>
+                                                                </a>
+                                                            </div>
+                                                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
+                                                                <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
+                                                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
+                                                                <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>
