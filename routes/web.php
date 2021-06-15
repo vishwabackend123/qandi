@@ -88,3 +88,8 @@ Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::c
 
 Route::any('/live_exam_login', [App\Http\Controllers\LiveExamController::class, 'exam_login'])->name('live_exam_login')->middleware('auth', 'menu');
 Route::any('/live_exam', [App\Http\Controllers\LiveExamController::class, 'live_exam'])->name('live_exam')->middleware('auth', 'menu');
+
+
+/* AnalyticsController Routes */
+
+Route::any('/overall_analytics', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');

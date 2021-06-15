@@ -167,7 +167,6 @@ class ReviewController extends Controller
 
 
 
-            //dd($all_question_list);
 
             return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys'));
         } else {

@@ -16,7 +16,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     <div class="content-wrapper py-4 ps-4" id="exam_content_sec" style="display:none;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-9  ps-lg-5">
+                <div class="col-lg-9  ">
 
                     <div class="tab-wrapper h-100">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
@@ -33,51 +33,45 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="question-block">
-                                    <a href="#" class="arrow prev-arow"><i class="fa fa-angle-left"></i></a>
-                                    <a href="#" class="arrow next-arow"><i class="fa fa-angle-right"></i></a>
-                                    <p class="question pb-5 pt-5"><span class="q-no">Q1.</span>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
-                                    <div class="ans-block row mt-5">
-                                        <div class="col-md-6 mb-4">
-                                            <input class="form-check-input radioans" type="radio" name="q1" value="" id="flexCheckDefault4">
-                                            <div class="border ps-3 ans">
-
-
-                                                <label class="question m-0 py-3   d-block " for="flexCheckDefault4"><span class="q-no">A.</span>2.5 radians</label>
+                                <div id="question_section">
+                                    <div class="question-block">
+                                        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
+                                        <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                        <div class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                        <div class="ans-block row mt-5">
+                                            @if(isset($option_data) && !empty($option_data))
+                                            @php $no=0; @endphp
+                                            @foreach($option_data as $key=>$opt_value)
+                                            @php
+                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                            $dom = new DOMDocument();
+                                            @$dom->loadHTML($opt_value);
+                                            $anchor = $dom->getElementsByTagName('img')->item(0);
+                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                            $latex = "https://math.now.sh?from=".$text;
+                                            $view_opt='<img src="'.$latex.'" />' ;
+                                            @endphp
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                <div class="border ps-3 ans">
+                                                    <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                </div>
                                             </div>
+
+                                            @php $no++; @endphp
+                                            @endforeach
+                                            @endif
+
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <input class="form-check-input radioans" type="radio" name="q1" value="" id="flexCheckDefault3">
-                                            <div class="border ps-3 ans">
-
-
-                                                <label class="question m-0 py-3   d-block " for="flexCheckDefault3"><span class="q-no">B.</span>2.5 radians</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <input class="form-check-input radioans" type="radio" name="q1" value="" id="flexCheckDefault2">
-                                            <div class="border ps-3 ans">
-
-
-                                                <label class="question m-0 py-3   d-block " for="flexCheckDefault2"><span class="q-no">C.</span>2.5 radians</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <input class="form-check-input radioans" type="radio" name="q1" value="" id="flexCheckDefault1">
-                                            <div class="border ps-3 ans">
-
-
-                                                <label class="question m-0 py-3   d-block " for="flexCheckDefault1"><span class="q-no">D.</span>2.5 radians</label>
-                                            </div>
-                                        </div>
+                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
-                                </div>
-                                <div class="tab-btn-box  d-flex   mt-3">
-                                    <a href="#" class="btn px-5   btn-light-green rounded-0">Save & Next</a>
-                                    <a href="#" class="btn px-4   ms-2 btn-light rounded-0">Save & Mark for review</a>
-                                    <a href="#" class="btn px-4 ms-auto me-2 btn-light rounded-0">Mark for review</a>
-                                    <a href="#" class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</a>
+                                    <div class="tab-btn-box  d-flex   mt-3">
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                        <button href=" #" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+                                        <button class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                        <button class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</button>
 
+                                    </div>
                                 </div>
                             </div>
 
@@ -87,7 +81,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                     </div>
                 </div>
                 <div class="col-lg-3 ">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4  px-5 py-3">
                         <div class="d-flex align-items-center">
                             <div id="app">
                                 <div class="base-timer">
@@ -106,30 +100,27 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 </div>
                             </div>
                             <span class="timing">
-                                124min <br>
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <button class="btn btn-light-green w-100 rounded-0 mt-3" data-bs-toggle="modal" data-bs-target="#endExam">Submit</button>
+                        <form action="{{route('exam_result')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="fulltime" value="00:30:00">
+                            <input type="hidden" name="submit_time" value="00:10:00">
+                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                        </form>
+
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p>Question Palette</p>
                         <div class="number-block">
-                            <button class="btn btn-secondary  mb-4 rounded-0">1</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0">2</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0">3</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">4</button>
-                            <button class="btn btn-light rounded-0 mb-4">5</button>
-                            <button class="btn btn-light mb-4 rounded-0">6</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">9</button>
-                            <button class="btn btn-outline-warning text-dark rounded-0 mb-4">10</button>
-                            <button class="btn btn-light mb-4 rounded-0">11</button>
-                            <button class="btn btn-light mb-4 rounded-0">12</button>
-                            <button class="btn btn-light mb-4 rounded-0">13</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">14</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">15</button>
+                            @if(isset($keys) && !empty($keys))
+                            @foreach($keys as $ke=>$val)
+                            <button type="button" class="btn btn-light rounded-0 mb-4" id="btn_{{$val}}" onclick="qnext('{{$val}}')">
+                                {{$ke+1}}</button>
+                            @endforeach
+                            @endif
+
                         </div>
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
@@ -143,12 +134,12 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             <p>Answered </p>
                         </div>
                         <div class="d-flex align-items-center  mb-4  legends">
-                            <button class="btn btn-secondary   rounded-0"> </button>
+                            <button class="btn btn-secondary   rounded-0 "> </button>
                             <p>Marked for Review</p>
                         </div>
                         <div class="d-flex align-items-start legends">
                             <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <p>Answered & <br>Marked for Review</p>
+                            <p>Answered & Marked for Review</p>
                         </div>
 
                     </div>
@@ -174,7 +165,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
                                                 <small>No. Of Questions</small>
-                                                <span class="d-block inst-text"><span class="text-danger">{{$exam_ques_count}} MCQ</span> Questions</span>
+                                                <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
                                             </div>
                                         </div>
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">

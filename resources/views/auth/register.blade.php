@@ -121,12 +121,12 @@
                     data: {
                         "_token": "{{ csrf_token() }}",
                         mobile: mobile_num,
+                        email: email_add,
                     },
                     success: function(response_data) {
-                        console.log
+
                         var response = jQuery.parseJSON(response_data);
 
-                        response.status = 200;
                         if (response.status == 200) {
                             $('#email-box').addClass('close-box');
                             $('#otp-box').addClass('open-box');
@@ -219,7 +219,7 @@
                             }
                             return false
                         } else {
-                            $('#otp-verify-box').addClass('open-box');
+                            //$('#otp-verify-box').addClass('open-box');
                             $('#otp-box').addClass('close-box');
                             if (response.redirect_url) {
                                 window.location.href = response.redirect_url

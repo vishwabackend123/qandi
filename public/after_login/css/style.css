@@ -1121,10 +1121,10 @@ header {
 }
 
 .montain-bg {
-  background: url(../images/TargetMountain.jpg) no-repeat -12px 0px;
+  background: url(../images/TargetMountain.jpg) no-repeat center center;
 
   height: 275px;
-  background-size: contain;
+  background-size: cover;
   z-index: 1;
 }
 .inactive-mountain {
@@ -1664,3 +1664,46 @@ border-right: none;
 .text-box .text-icon{position:absolute;left: 20px;
     top: 50%;
     margin-top: -12px;} 
+    .graph-bottom-block{margin-right:-12px;}
+
+    .box-block{display:flex;height:128px;flex-direction: column;align-items: center;justify-content: center;position:relative;transition: 0.4s all;}
+    .box-block span{color:#736c6e;display:block;}
+    .box-block span:first-child{font-size:30px;}
+    .arrow-right-btm:after{    position: absolute;
+      bottom: -16px;
+      right: 0;
+      content: '\f107';
+      font-family: fontawesome;
+      transform: rotateZ(315deg);
+      font-size: 33px;
+      color: #736c6e;
+  }
+  .arrow-left-btm:after{    position: absolute;
+    bottom: -16px;
+    left: 0;
+    content: '\f107';
+    font-family: fontawesome;
+    transform: rotateZ(45deg);
+    font-size: 33px;
+    color: #736c6e;
+}
+.arrow-right-top:after{    position: absolute;
+  top: -16px;
+  right: 0;
+  content: '\f107';
+  font-family: fontawesome;
+  transform: rotateZ(226deg);
+  font-size: 33px;
+  color: #736c6e;
+}
+.arrow-left-top:after{    position: absolute;
+  top: -16px;
+  left: 0;
+  content: '\f107';
+  font-family: fontawesome;
+  transform: rotateZ(136deg);
+  font-size: 33px;
+  color: #736c6e;
+}
+  .box-block:hover:after, .box-block:hover span{color:#d10020;}
+  .arrow-right-btm-content{position:absolute;left:11px;right:11px;top:0;bottom:0;background:#fff;z-index:1}
