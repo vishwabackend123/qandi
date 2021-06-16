@@ -55,16 +55,19 @@ class ExamCustomController extends Controller
         $active_subject_id = isset($active_subject->sub_id) ? $active_subject->sub_id : '';
  */
         $subject_topic_list = [];
+
         if (!empty($subject_list)) {
             foreach ($subject_list as $row) {
+
                 $subject_id = $row->id;
                 $aSubject_topics = $this->get_subject_topics($subject_id);
+                $topTen = array_slice($aSubject_topics, 0, 10);
 
-                $subject_topic_list[$subject_id] = !empty($aSubject_topics) ? $aSubject_topics : [];
+                $subject_topic_list[$subject_id] = !empty($topTen) ? $topTen : [];
             }
         }
 
-        //dd($subject_topic_list);
+
         return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_topic_list'));
     }
 

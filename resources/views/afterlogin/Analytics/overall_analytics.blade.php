@@ -42,7 +42,8 @@
                                                         <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span>
                                                         <span class="mt-auto bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                                             <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
-                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
+                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous
+                                                                score</span>
                                                             <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                                         </span>
                                                     </div>
@@ -314,10 +315,12 @@
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
                             <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-                                <div class="row">
+                                <div class="row" id="topicclose">
                                     <div class="col-lg-5">
                                         <div class=" ">
                                             <div class="row">
@@ -326,7 +329,8 @@
                                                         <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span>
                                                         <span class="mt-auto me-0 bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                                             <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
-                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
+                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous
+                                                                score</span>
                                                             <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                                         </span>
                                                     </div>
@@ -343,7 +347,8 @@
                                                             <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
                                                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
                                                                 <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
+                                                                    performance in the test.</p>
                                                                 <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
                                                                 <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                             </div>
@@ -358,7 +363,8 @@
                                                             <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                                                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
                                                                 <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
+                                                                    performance in the test.</p>
                                                                 <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
                                                                 <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                             </div>
@@ -373,7 +379,8 @@
                                                             <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
                                                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
                                                                 <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
+                                                                    performance in the test.</p>
                                                                 <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
                                                                 <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                             </div>
@@ -388,7 +395,8 @@
                                                             <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
                                                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">Evaluation</h4>
                                                                 <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your performance in the test.</p>
+                                                                <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
+                                                                    performance in the test.</p>
                                                                 <p class="arrow-box-content">Ideal Application score should be in the range 85%</p>
                                                                 <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                                             </div>
@@ -401,7 +409,11 @@
                                     </div>
                                     <div class="col-lg-7">
                                         <div class="bg-white shadow-lg p-3">
-                                            <h5 class="dashboard-title mb-3">Subject proficiency</h5>
+                                            <div class="d-flex align-items-center">
+                                                <h5 class="dashboard-title ">Topics</h5>
+                                                <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand</button>
+                                            </div>
+
                                             <div class="d-flex align-items-center mt-3 pb-1">
                                                 <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
                                                     <span class="mr-3 dashboard-name-txt">Trigonometry</span>
@@ -652,7 +664,657 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row close-block" id="topicopen">
+                                    <div class="col-12  mb-5">
 
+                                        <div class="d-flex align-items-center">
+                                            <a href="#" class="h5 text-dark"><i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                Mathematics</a>
+                                            <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto" id="topic-btn"><i class="fa fa-compress" aria-hidden="true"></i> COLLAPSE</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box active-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn ">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 mb-4 ">
+                                        <div class="bg-white shadow-lg p-3 sub-topic-box">
+                                            <div class="d-flex align-items-center py-2 listing-details ">
+                                                <span class="mr-3 topics-name">Trigonometry</span>
+
+                                                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+
+                                                    <div class="star hidden">
+                                                        <span class="full" data-value="0"></span>
+                                                        <span class="half" data-value="0"></span>
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="1"></span>
+                                                        <span class="half" data-value="0.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="2"></span>
+                                                        <span class="half" data-value="1.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="3"></span>
+                                                        <span class="half" data-value="2.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="4"></span>
+                                                        <span class="half" data-value="3.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="star">
+
+                                                        <span class="full" data-value="5"></span>
+                                                        <span class="half" data-value="4.5"></span>
+                                                        <span class="selected"></span>
+
+                                                    </div>
+
+                                                    <div class="score score-rating js-score">
+                                                        0 %
+                                                        <!-- <span>/</span>
+                                              <span class="total">5</span> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="progress" style="overflow: visible;">
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
+
+                                                </div>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
+
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap">
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">K</button>
+                                                <button class="btn btn-light-green mb-4 mt-4 me-2 rounded-0">C</button>
+                                                <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A</button>
+                                                <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
+                                                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">Select</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
@@ -672,6 +1334,24 @@
 <script type="text/javascript">
     $('.scroll-div-live-exm').slimscroll({
         height: '60vh'
+    });
+
+
+    $(document).ready(function() {
+        $('#topic-open-btn').click(function() {
+
+            $('#topicclose').addClass('close-block');
+            $('#topicopen').addClass('open-block');
+            $('#topicopen').removeClass('close-block');
+
+        });
+        $('#topic-btn').click(function() {
+
+            $('#topicclose').removeClass('close-block');
+            $('#topicopen').removeClass('open-block');
+            $('#topicopen').addClass('close-block');
+
+        });
     });
 </script>
 

@@ -11,9 +11,13 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 
+use App\Http\Traits\CommonTrait;
+
+
 class FullExamController extends Controller
 {
     //
+    use CommonTrait;
 
     public function exam(Request $request, $exam_name)
     {
@@ -59,13 +63,12 @@ class FullExamController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
-
-
         $response_json = str_replace('NaN', '""', $response_json);
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+
 
 
         if ($httpcode == 200) {
@@ -86,10 +89,18 @@ class FullExamController extends Controller
 
 
         $collection = collect($aQuestions_list);
+        $aQuestionslist = $collection->sortBy('subject_id');
+
         $grouped = $collection->groupBy('subject_id');
-        $plucked = $collection->pluck('subject_id');
-        /* dd("hi", $plucked, $grouped); */
-        $allQuestions = $collection->keyBy('question_id');
+        $subject_ids = $collection->pluck('subject_id');
+        $unique = $subject_ids->unique()->values()->all();
+
+        $redis_subjects = $this->redis_subjects();
+
+
+        $allQuestions = $aQuestionslist->keyBy('question_id');
+        $aQuestions_list = $aQuestionslist->values()->all();
+
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
 
@@ -138,7 +149,7 @@ class FullExamController extends Controller
         Redis::set('custom_answer_time', json_encode($redis_data));
 
 
-        return view('afterlogin.ExamViews.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name'));
+        return view('afterlogin.ExamViews.exam', compact('redis_subjects', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name'));
 
 
 
@@ -154,40 +165,5 @@ class FullExamController extends Controller
     function exam_review()
     {
         return view('afterlogin.ExamViews.review');
-    }
-
-    function shuffle_assoc($list)
-    {
-        if (!is_array($list)) {
-            return $list;
-        }
-
-        $keys = array_keys($list);
-        shuffle($keys);
-        $random = array();
-        foreach ($keys as $key) {
-            $random[$key] = $list[$key];
-        }
-        return $random;
-    }
-
-
-    public function allCustomQlist($user_id, $question_data, $redis_set)
-    {
-        if (!empty($user_id) &&  !empty($question_data)) {
-            $cacheKey = 'CustomQuestion:all:' . $user_id;
-            if (Redis::exists($cacheKey)) {
-                if ($redis_set == 'True') {
-                    Redis::del($cacheKey);
-                }
-            }
-            if ($data = Redis::get($cacheKey)) {
-                return json_decode($data);
-            }
-            $data = collect($question_data);
-            Redis::set($cacheKey, $data);
-            return $data->all();
-        }
-        return [];
     }
 }

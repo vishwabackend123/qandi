@@ -46,9 +46,9 @@
                                     @if(@isset($subject_topic_list[$sub->id]) && !empty($subject_topic_list[$sub->id]))
                                     @foreach($subject_topic_list[$sub->id] as $tKey=>$topics)
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">{{$topics->topic_name}}</span>
+                                        <span class="mr-3 name-txt col-4 text-break">{{$topics->topic_name}}</span>
 
-                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                        <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
 
                                             <div class="star hidden">
                                                 <span class="full" data-value="0"></span>
@@ -100,7 +100,7 @@
                                             </div>
                                         </div>
 
-                                        <span class="slbs-link mx-3"><a aria-controls="topic{{$topics->id}}" data-bs-toggle="collapse" href="#topic{{$topics->id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
+                                        <span class="slbs-link col-2 mx-3"><a aria-controls="topic{{$topics->id}}" data-bs-toggle="collapse" href="#topic{{$topics->id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
                                         <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
                                     </div>
                                     <div class="collapse mb-4" id="topic{{$topics->id}}">
@@ -112,7 +112,7 @@
 
                                                 <div class="bg-light shadow p-3 d-flex flex-column">
                                                     <div class="d-flex align-items-center">
-                                                        <span class="mr-3 name-txt-sml">Trigonometry jhvhjhj</span>
+                                                        <span class="mr-3 name-txt-sml">Trigonometry </span>
 
                                                         <div class="status-id d-flex align-items-center justify-content-center ms-auto rating" data-vote="0">
 

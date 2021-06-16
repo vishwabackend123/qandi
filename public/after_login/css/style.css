@@ -61,6 +61,7 @@ button {
 .text-success {
   color: #44cd7f !important;
 }
+.bg-light-green{background:#44cd7f;}
 .btn-danger {
   background: #d71921 !important;
 }
@@ -84,6 +85,9 @@ button {
 }
 .bg-light-danger {
   background: #ff9999;
+}
+.text-light-danger {
+  color: #ff9999;
 }
 .rotate-icon {
   -ms-transform: rotate(90deg); /* IE 9 */
@@ -1735,4 +1739,36 @@ border-right: none;
       font-size: 40px;
       color: #fa9599;
       transform: rotateZ(315deg); }
+  .close-block{display:none;}
+  .open-block{display:flex;}
+  .topics-name{font-size: 18px;color:#2C3348}
+  .sub-topic-box {border:2px solid transparent}
+  .sub-topic-box.active-box {border:2px solid #C7322D}
+  .selected-btn{display:none;}
+  .active-box .selected-btn{display:inline-block;}
+
+
+  .planner-edit-mode{position: absolute;
+    right: 360px;
+    background: #fff;
+    padding: 50px;
+    /* width: 76.2%; */
+    width:0;overflow: hidden;visibility: hidden;
+    height: 88%;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
+  }
+
+    .cust-repeat-icon{width:24px;height:24px;border-radius:18px;background:#EFC600;color: #fff;
+      text-align: center;
+      line-height: 24px;}
+      .cust-remove-icon{font-size: 27px;
+        background: #fff;
+        border-radius: 74px;
+        line-height: 22px;}
+        .add-removeblock{background:#AFF3D0}
+  .close-sub-planner{display:none;}
+        .open-sub-planner{ width: 76.2%;overflow:visible;visibility:visible;}
  

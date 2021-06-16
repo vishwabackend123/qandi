@@ -20,6 +20,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                     <div class="tab-wrapper h-100">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
                             </li>

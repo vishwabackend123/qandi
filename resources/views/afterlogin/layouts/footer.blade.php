@@ -12,7 +12,6 @@
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-    // calender js
     var mesos = [
         'January',
         'February',
@@ -179,6 +178,7 @@
 
     calendari(document.getElementById('calendari'), new Date());
 
+    // end of calender js
 
 
     $('.submenu-L1').on('shown.bs.collapse', function() {
@@ -208,6 +208,25 @@
             menu_opened === true) {
             $('.submenu-L1, .submenu-L2').collapse('toggle');
         }
+
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#edit-planner-btn').click(function() {
+
+            $('#sub-planner').addClass('open-sub-planner');
+            $(this).addClass('close-sub-planner');
+            $('#close-edit-planner-btn').removeClass('close-sub-planner');
+
+        });
+        $('#close-edit-planner-btn').click(function() {
+
+            $('#sub-planner').removeClass('open-sub-planner');
+            $(this).addClass('close-sub-planner');
+            $('#edit-planner-btn').removeClass('close-sub-planner');
+
+        });
 
     });
 </script>
