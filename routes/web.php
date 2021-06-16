@@ -59,12 +59,12 @@ Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewCo
 
 
 /* Review Controller Routs */
-Route::post('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
+Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
 
 
 
 /* Book Mark routes */
-Route::post('/markforreview', [App\Http\Controllers\BookmarkController::class, 'addbookmark'])->name('markforreview')->middleware('auth', 'menu');
+Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'addbookmark'])->name('markforreview')->middleware('auth', 'menu');
 
 
 /* Full exam Controller Routes */
