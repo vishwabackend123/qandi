@@ -34,8 +34,8 @@ class ReviewController extends Controller
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-                //CURLOPT_URL => config('constants.API_php_URL_local')."get_review/$result_id", //local
-                CURLOPT_URL => "http://44.235.5.77/api/get_review/$result_id", //live
+                CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
+                //CURLOPT_URL => "http://44.235.5.77/api/get_review/$result_id", //live
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -167,7 +167,6 @@ class ReviewController extends Controller
 
 
 
-            //dd($all_question_list);
 
             return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys'));
         } else {

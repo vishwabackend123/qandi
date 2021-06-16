@@ -17,7 +17,7 @@
                             @isset($subject_list)
                             @foreach($subject_list as $key=>$subject)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link {{($key==0)?'active':''}}" id="{{$subject->subject}}-tab" data-bs-toggle="tab" href="#{{$subject->subject}}" role="tab" aria-controls="{{$subject->subject}}" aria-selected="{{($key==0)?'true':'false'}}">{{$subject->subject}}</a>
+                                <a class="nav-link {{($key==0)?'active':''}}" id="{{$subject->subject_name}}-tab" data-bs-toggle="tab" href="#{{$subject->subject_name}}" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="{{($key==0)?'true':'false'}}">{{$subject->subject_name}}</a>
                             </li>
                             @endforeach
                             @endisset
@@ -29,13 +29,13 @@
 
                             @foreach($subject_list as $skey=>$sub)
 
-                            <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject}}" role="tabpanel" aria-labelledby="{{$sub->subject}}-tab">
+                            <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
-                                    <span class="  mr-3 name-txt">{{$sub->subject}}</span>
+                                    <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
                                     <p class="mb-0 text-danger ms-auto me-4">You can pick topics / sub-topics or</p>
                                     <form method="post" action="{{route('subject_exam')}}">
                                         @csrf
-                                        <input type="hidden" name="subject_id" value="{{$sub->sub_id}}">
+                                        <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                         <input type="hidden" name="question_count" value="30">
 
                                         <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
@@ -43,12 +43,12 @@
                                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                 </div>
                                 <div class="scroll-div">
-                                    @if(@isset($subject_topic_list[$sub->sub_id]) && !empty($subject_topic_list[$sub->sub_id]))
-                                    @foreach($subject_topic_list[$sub->sub_id] as $tKey=>$topics)
+                                    @if(@isset($subject_topic_list[$sub->id]) && !empty($subject_topic_list[$sub->id]))
+                                    @foreach($subject_topic_list[$sub->id] as $tKey=>$topics)
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">{{$topics->topic_name}}</span>
+                                        <span class="mr-3 name-txt col-4 text-break">{{$topics->topic_name}}</span>
 
-                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                        <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
 
                                             <div class="star hidden">
                                                 <span class="full" data-value="0"></span>
@@ -100,7 +100,7 @@
                                             </div>
                                         </div>
 
-                                        <span class="slbs-link mx-3"><a aria-controls="topic{{$topics->id}}" data-bs-toggle="collapse" href="#topic{{$topics->id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
+                                        <span class="slbs-link col-2 mx-3"><a aria-controls="topic{{$topics->id}}" data-bs-toggle="collapse" href="#topic{{$topics->id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
                                         <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
                                     </div>
                                     <div class="collapse mb-4" id="topic{{$topics->id}}">
@@ -112,7 +112,7 @@
 
                                                 <div class="bg-light shadow p-3 d-flex flex-column">
                                                     <div class="d-flex align-items-center">
-                                                        <span class="mr-3 name-txt-sml">Trigonometry jhvhjhj</span>
+                                                        <span class="mr-3 name-txt-sml">Trigonometry </span>
 
                                                         <div class="status-id d-flex align-items-center justify-content-center ms-auto rating" data-vote="0">
 

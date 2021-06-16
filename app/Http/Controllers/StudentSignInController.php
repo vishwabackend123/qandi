@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Config;
 
 
 use Illuminate\Support\Facades\Validator;
@@ -45,15 +46,18 @@ class StudentSignInController extends Controller
         $mobile = isset($postData['mobile']) ? $postData['mobile'] : '';
         $exists = StudentUsers::where('mobile', $mobile)->exists();
 
+
         if (isset($mobile) && !empty($mobile) && $exists == true) {
             $request = [
                 'mobile' => $mobile
             ];
 
+            $api_URL = Config::get('constants.API_8080_URL');
+            $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
             $curl = curl_init();
             curl_setopt_array($curl, array(
-                /* CURLOPT_URL => 'http://44.235.5.77/api/authotp', */
-                CURLOPT_URL => "http://44.235.5.77:8080/MobileOtp/" . $mobile,
+
+                CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -140,18 +144,26 @@ class StudentSignInController extends Controller
     public function sendotpsignup(Request $request)
     {
         $postData = $request->all();
+
         $mobile = isset($postData['mobile']) ? $postData['mobile'] : '';
-        $exists = StudentUsers::where('mobile', $mobile)->exists();
+        $emailid = isset($postData['email']) ? $postData['email'] : '';
 
-        $reg_otp = 12345; /* only for testing */
-        Session::put('OTP', $reg_otp);/* only for testing */
+        $exists = StudentUsers::where('mobile', $mobile)->orWhere('email', $emailid)->exists();
 
-        if (isset($mobile) && !empty($mobile) && $exists == false) {
 
+        if (!empty($emailid) && !empty($mobile) && $exists == false) {
+            $request = [
+                'email' => $emailid,
+                'mobile' => $mobile,
+            ];
+            $request_json = json_encode($request);
+
+            $api_URL = Config::get('constants.API_8080_URL');
+            $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
             $curl = curl_init();
             curl_setopt_array($curl, array(
-                /* CURLOPT_URL => 'http://44.235.5.77/api/authotp', */
-                CURLOPT_URL => "http://44.235.5.77:8080/MobileOtp/" . $mobile,
+
+                CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -161,21 +173,25 @@ class StudentSignInController extends Controller
                 CURLOPT_CUSTOMREQUEST => "GET",
             ));
 
+
             $response_json = curl_exec($curl);
+
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
+
 
             if ($httpcode != 200) {
                 $response = [
                     "message" => "Something wrong please try again !!",
                     "error" => $err,
                     "success" => false,
+                    "status" => 400,
                 ];
                 return json_encode($response);
             } else {
                 $aResponse = json_decode($response_json);
-                $reg_otp = $aResponse->mobile_otp;
+                $reg_otp = isset($aResponse->mobile_otp) ? $aResponse->mobile_otp : '';
 
                 Session::put('OTP', $reg_otp);
 
@@ -184,8 +200,9 @@ class StudentSignInController extends Controller
         } else {
 
             $response = [
-                "message" => "Mobile no. already registered with us!",
+                "message" => "Mobile or Email already registered with us.",
                 "success" => false,
+                "status" => 400,
             ];
             return json_encode($response);
         }

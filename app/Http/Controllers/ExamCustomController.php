@@ -23,7 +23,7 @@ class ExamCustomController extends Controller
             $subject_list = json_decode($data);
         }
 
-        $api_url = Config::get('constants.API_8080_URL') . 'api/get_subjects/' . $exam_id;
+        $api_url = Config::get('constants.API_8080_URL') . 'api/getSubject/' . $exam_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -43,7 +43,8 @@ class ExamCustomController extends Controller
         curl_close($curl);
         if ($httpcode == 200) {
             $responsedata = json_decode($response_json);
-            $subject_list = $responsedata->subject;
+
+            $subject_list = $responsedata->response;
         } else {
             $subject_list = [];
         }
@@ -54,16 +55,19 @@ class ExamCustomController extends Controller
         $active_subject_id = isset($active_subject->sub_id) ? $active_subject->sub_id : '';
  */
         $subject_topic_list = [];
+
         if (!empty($subject_list)) {
             foreach ($subject_list as $row) {
+
                 $subject_id = $row->id;
                 $aSubject_topics = $this->get_subject_topics($subject_id);
+                $topTen = array_slice($aSubject_topics, 0, 10);
 
-                $subject_topic_list[$subject_id] = !empty($aSubject_topics) ? $aSubject_topics : [];
+                $subject_topic_list[$subject_id] = !empty($topTen) ? $topTen : [];
             }
         }
 
-        //dd($subject_topic_list);
+
         return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_topic_list'));
     }
 
@@ -75,7 +79,7 @@ class ExamCustomController extends Controller
             return $topic_list;
         }
 
-        $api_url = Config::get('constants.API_php_URL') . 'api/get_topics/' . $active_subject_id;
+        $api_url = Config::get('constants.API_php_URL') . 'api/getTopics/' . $active_subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -143,7 +147,7 @@ class ExamCustomController extends Controller
         //$api_URL = Config::get('constants.API_php_URL');
 
         /* $curl_url = $api_URL . 'AdvanceQuestionSelection'; */
-        $curl_url = $api_URL . 'AdvanceQuestionSelectiontest';
+        $curl_url = $api_URL . 'api/AdvanceQuestionSelectiontest';
 
         curl_setopt_array($curl, array(
             CURLOPT_PORT => "8080",
@@ -172,7 +176,7 @@ class ExamCustomController extends Controller
         curl_close($curl);
 
         if ($httpcode == 200) {
-            $responsedata = json_decode($response_json);
+            $responsedata = json_decode(json_decode($response_json));
             $aQuestions_list = $responsedata->questions;
             $exam_fulltime = $responsedata->time_allowed;
             $questions_count = count($aQuestions_list);
@@ -187,6 +191,8 @@ class ExamCustomController extends Controller
 
 
         $collection = collect($aQuestions_list);
+        $grouped = $collection->groupBy('subject_id');
+        //dd("hi", $grouped);
         $allQuestions = $collection->keyBy('question_id');
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();

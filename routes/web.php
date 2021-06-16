@@ -82,3 +82,14 @@ Route::any('/download_exampaper', [App\Http\Controllers\PreparationController::c
 
 Route::any('/about_exam', [App\Http\Controllers\AboutExamController::class, 'about_exam'])->name('about_exam')->middleware('auth', 'menu');
 Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::class, 'eligibility_criteria'])->name('eligibility_criteria')->middleware('auth', 'menu');
+
+
+/* Live Exam Controller Routes */
+
+Route::any('/live_exam_login', [App\Http\Controllers\LiveExamController::class, 'exam_login'])->name('live_exam_login')->middleware('auth', 'menu');
+Route::any('/live_exam', [App\Http\Controllers\LiveExamController::class, 'live_exam'])->name('live_exam')->middleware('auth', 'menu');
+
+
+/* AnalyticsController Routes */
+
+Route::any('/overall_analytics', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');

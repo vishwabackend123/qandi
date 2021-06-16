@@ -120,26 +120,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 {{$ke+1}}</button>
                             @endforeach
                             @endif
-                            <!-- <button class="btn btn-secondary  mb-4 rounded-0">1</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0">2</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0">3</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">4</button>
-                            <button class="btn btn-light rounded-0 mb-4">5</button>
-                            <button class="btn btn-light mb-4 rounded-0">6</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">9</button>
-                            <button class="btn btn-outline-warning text-dark rounded-0 mb-4">10</button>
-                            <button class="btn btn-light mb-4 rounded-0">11</button>
-                            <button class="btn btn-light mb-4 rounded-0">12</button>
-                            <button class="btn btn-light mb-4 rounded-0">13</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">14</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">15</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">16</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">17</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">18</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">19</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">20</button> -->
+
                         </div>
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
