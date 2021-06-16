@@ -117,7 +117,7 @@ class HomeController extends Controller
                 'user_mood_ind' => (int)$mood,
                 'login_date' => date('Y-m-d'),
                 'time_start' => date('h:i:s'),
-                'time_end' => '',
+                'time_end' =>  date('h:i:s'),
                 'traffic_source' => 'web',
                 'pages_visted' => ''
             ];
