@@ -3,21 +3,52 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <span class="user-pic-block"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></span>
-                    <span class="user-name-block ps-3">Welcome, {{Auth::user()->first_name}}</span>
-                    <span class="notification me-5 "><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <span class="user-pic-block"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
+                    <span class="user-name-block ps-3 me-3">Welcome, {{Auth::user()->first_name}}</span>
+                    
+                    <span class="notification me-5 ms-4">
+                        <a href="#" class="top-link ">
+                            <img src="{{URL::asset('public/after_login/images/bell.png')}}">
+                            <span class="red-dot"></span>
+                            <span class="hoverlink">Notification</span>
+                        </a>
+                    </span>
+                    <span class="notification ms-4">
+                        <a data-bs-toggle="collapse" class="top-link " href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <img src="{{URL::asset('public/after_login/images/calender.png')}}">
+                            <span class="red-dot"></span>
+                            <span class="hoverlink">Planner</span>
+                        </a>
+                        </span>
+                    <span class="notification ms-4">
+                        <a href="#" class="top-link ">
+                            <img src="{{URL::asset('public/after_login/images/Group1831.png')}}">
+                            <span class="red-dot"></span>
+                            <span class="hoverlink">Analitics</span>
+                        </a>
+                    </span>
+                </div>
+                <div class="profile-menu">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                          
+                          <div class="offcanvas-body">
+                           <div class="d-flex flex-column justify-content-center align-items-start profile-links">
+                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
+                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
+                            <span> 
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                    sessionStorage.clear();  document.getElementById('logout-form').submit();">
-                            <i class="fas fa-sign-out-alt"></i>
+                            <img src="{{URL::asset('public/after_login/images/Layer -7.png')}}"> Logout
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </span>
-                    <span class="notification me-5 ms-4"><a href=""><img src="{{URL::asset('public/after_login/images/bell.png')}}"></a></span>
-                    <span class="notification ms-4"><a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/images/calender.png')}}"></a></span>
-                    <span class="notification ms-4"><a href=""><img src="{{URL::asset('public/after_login/images/Group1831.png')}}"></a></span>
-                </div>
+                            </span>
+                           </div>
+                          </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

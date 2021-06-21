@@ -1771,4 +1771,22 @@ border-right: none;
         .add-removeblock{background:#AFF3D0}
   .close-sub-planner{display:none;}
         .open-sub-planner{ width: 76.2%;overflow:visible;visibility:visible;}
- 
+ .profile-menu .modal-backdrop{display: none !important;}
+ .profile-menu .offcanvas-end{width:200px;background:#f2f2f2;border:none; top: 75px;padding:50px 0;}
+ .profile-links a{color:#2C3348; opacity:0.5;font-size:18px;line-height:27px;display:block;margin:10px 0;padding: 10px 20px;}
+ .profile-links a img{margin-right:10px;}
+ .profile-links a:hover{background:#E9E9E9;opacity:1;}
+ .profile-menu .offcanvas-body{padding:0;}
+ .profile-links span{width:100%;text-align:left;}
+ .top-link{position:relative;display:inline-block}
+.top-link:hover .hoverlink{opacity: 1;
+  visibility: visible;transform: translateY(-25px);}
+  .red-dot{
+    width: 10px;
+    height: 10px;
+    background: #D71921;
+    display: inline-block;
+    border-radius: 15px;
+    position: absolute;
+    margin: 0 0 0 -10px;
+  }

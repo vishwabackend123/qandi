@@ -92,18 +92,18 @@
                 <div class="col-lg-5">
                     <div class="bg-white shadow-lg ">
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-8 pe-0">
                                 <div class="d-flex justify-content-center flex-column h-100 ">
                                     <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span>
-                                    <span class="mt-auto bg-light p-3 d-flex  justify-content-center flex-column">
+                                    <span class="mt-auto bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
                                         <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
                                         <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-4  montain-bg inactive-mountain">
-                                <div class="d-flex flex-column h-100">
+                            <div class="col-4  ">
+                                <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                     <span></span>
                                     <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
                                         <span class="plus-sign">+</span>
