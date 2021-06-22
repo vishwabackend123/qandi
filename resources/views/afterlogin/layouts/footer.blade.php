@@ -8,9 +8,13 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
+         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
     var mesos = [
         'January',
@@ -181,35 +185,83 @@
     // end of calender js
 
 
-    $('.submenu-L1').on('shown.bs.collapse', function() {
+    $('#submenu').on('shown.bs.collapse', function() {
         $('body').addClass('move-mainwrapper');
 
     })
 
-    $('.submenu-L1').on('hidden.bs.collapse', function() {
+    $('#submenu').on('hidden.bs.collapse', function() {
         $('body').removeClass('move-mainwrapper');
 
     })
-    $('.submenu-L2').on('shown.bs.collapse', function() {
+
+    $('#submenupreparation').on('shown.bs.collapse', function() {
+        $('body').addClass('move-mainwrapper-lg');
+
+    })
+
+    $('#submenupreparation').on('hidden.bs.collapse', function() {
+        $('body').removeClass('move-mainwrapper-lg');
+
+    })
+
+    $('#submenu2').on('shown.bs.collapse', function() {
         $('body').addClass('move-mainwrapper2');
 
     })
 
-    $('.submenu-L2').on('hidden.bs.collapse', function() {
+    $('#submenu2').on('hidden.bs.collapse', function() {
         $('body').removeClass('move-mainwrapper2');
+
+    })
+
+    $('#submenupreparation2').on('shown.bs.collapse', function() {
+        $('body').addClass('move-mainwrapper-lg2');
+
+    })
+
+    $('#submenupreparation2').on('hidden.bs.collapse', function() {
+        $('body').removeClass('move-mainwrapper-lg2');
 
     })
     $(document).on('click', function(e) {
         /* bootstrap collapse js adds "in" class to your collapsible element*/
-        var menu_opened = $('.submenu-L1, .submenu-L2').hasClass('show');
+        var menu_opened = $('#submenu').hasClass('show');
 
-        if (!$(e.target).closest('.submenu-L1').length &&
-            !$(e.target).is('.submenu-L1, .submenu-L2') &&
+        if (!$(e.target).closest('#submenu').length &&
+            !$(e.target).is('#submenu') &&
             menu_opened === true) {
-            $('.submenu-L1, .submenu-L2').collapse('toggle');
+            $('#submenu').collapse('toggle');
         }
+        var menu_opened = $('#submenu2').hasClass('show');
+
+if (!$(e.target).closest('#submenu').length &&
+    !$(e.target).is('#submenu2') &&
+    menu_opened === true) {
+    $('#submenu2').collapse('toggle');
+}
+
+        var menu_opened = $('#submenupreparation').hasClass('show');
+
+            if (!$(e.target).closest('#submenupreparation').length &&
+                !$(e.target).is('#submenupreparation') &&
+                menu_opened === true) {
+                $('#submenupreparation').collapse('toggle');
+            }
+
+            var menu_opened = $('#submenupreparation2').hasClass('show');
+
+            if (!$(e.target).closest('#submenupreparation').length &&
+                !$(e.target).is('#submenupreparation2') &&
+                menu_opened === true) {
+                $('#submenupreparation2').collapse('toggle');
+            }
 
     });
+
+    
+
+    
 </script>
 <script>
     $(document).ready(function() {

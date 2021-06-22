@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
-                <div class="user-name-block d-flex align-items-center flex-row-reverse">
+                <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
                     <span class="user-name-block ps-3 me-3">Welcome, {{Auth::user()->first_name}}</span>
                     

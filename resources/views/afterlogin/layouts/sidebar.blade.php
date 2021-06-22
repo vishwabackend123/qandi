@@ -96,7 +96,7 @@
             <span class="hoverlink">Dashboard</span>
         </a>
 
-        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" >
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
                 <defs>
                     <style>
@@ -167,7 +167,7 @@
             </svg>
             <span class="hoverlink">Practice</span>
         </a>
-        <a data-bs-toggle="collapse" href="#submenupreparation" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a data-bs-toggle="collapse" href="#submenupreparation" id="submenupreparationlink" role="button" aria-expanded="false" >
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
                 <defs>
                     <style>
@@ -262,20 +262,10 @@
     <div class="submenu-L1 collapse width" id="submenu">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
-            <a class="nav-link" data-bs-toggle="collapse" href="#submenu2" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-pencil" aria-hidden="true"></i> Practice</a>
+            <a class="nav-link" data-bs-toggle="collapse" href="#submenu2" aria-expanded="false" ><i class="fa fa-pencil" aria-hidden="true"></i> Practice</a>
 
             <a href="{{route('exam','mock_test')}}" class="nav-link"><i class="far fa-edit"></i> Exam</a>
             <a href="{{route('live_exam_login')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Live</a>
-        </div>
-
-    </div>
-    <div class="submenu-L1 collapse width" id="submenupreparation">
-        <div class="mt-5 mb-5 pb-5 pt-5"></div>
-        <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
-            <a class="nav-link" data-bs-toggle="collapse" href="#submenupreparation2" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-pencil" aria-hidden="true"></i> About Exam</a>
-
-            <a href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation <br> Center</a>
-            <a href="{{route('download_exampaper')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Previous <br> Year Qn. <br> Papers</a>
         </div>
 
     </div>
@@ -287,8 +277,17 @@
 
         </div>
     </div>
+    <div class="submenu-L1 collapse width" id="submenupreparation">
+        <div class="mt-5 mb-5 pb-5 pt-5"></div>
+        <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
+            <a class="nav-link" data-bs-toggle="collapse" href="#submenupreparation2" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-pencil" aria-hidden="true"></i> About Exam</a>
 
-    <div class="submenu-L2 collapse width" id="submenupreparation2">
+            <a href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation Center</a>
+            <a href="{{route('download_exampaper')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Previous Year Qn. Papers</a>
+        </div>
+
+    </div>
+     <div class="submenu-L2 collapse width" id="submenupreparation2">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
             <a href="{{ url('/about_exam') }}" class="nav-link"><img src="{{URL::asset('public/after_login/images/Group3052.png')}}"> Brief</a>

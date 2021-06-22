@@ -172,8 +172,15 @@ button {
   padding-left: 137px;
 }
 .move-mainwrapper2 .content-wrapper {
+  padding-left: 240px;
+}
+.move-mainwrapper-lg .content-wrapper {
   padding-left: 270px;
 }
+.move-mainwrapper-lg.move-mainwrapper-lg2 .content-wrapper {
+  padding-left: 480px;
+}
+.move-mainwrapper-lg.move-mainwrapper-lg2 .dash-sidebar .submenu-L2{left:320px}
 header {
   padding: 24px 0;
   position: relative;
@@ -186,6 +193,10 @@ header {
 .user-name-block {
   font-size: 16px;
   font-weight: 400;
+  max-width: 240px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .wel-msg {
   font-size: 2.5rem;
@@ -917,7 +928,7 @@ header {
 .dash-sidebar .submenu-L2 {
   position: fixed;
   top: 0;
-  left: 202px;
+  left: 190px;
 
   bottom: 0;
   height: 100%;
@@ -930,7 +941,7 @@ header {
 .sublinks a {
   color: rgba(35, 31, 32, 0.5);
   white-space: nowrap;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 27px;
   margin-bottom: 10px;
 }
