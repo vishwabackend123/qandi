@@ -84,6 +84,10 @@ Route::any('/about_exam', [App\Http\Controllers\AboutExamController::class, 'abo
 Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::class, 'eligibility_criteria'])->name('eligibility_criteria')->middleware('auth', 'menu');
 
 
+/* preLoginController */
+Route::any('/aboutexam', [App\Http\Controllers\PreLoginController::class, 'pre_about_exam'])->name('aboutexam');
+Route::any('/faq', [App\Http\Controllers\PreLoginController::class, 'user_feedback'])->name('faq');
+
 /* Live Exam Controller Routes */
 
 Route::any('/live_exam_login', [App\Http\Controllers\LiveExamController::class, 'exam_login'])->name('live_exam_login')->middleware('auth', 'menu');

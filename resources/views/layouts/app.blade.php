@@ -12,9 +12,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{URL::asset('public/images/favicon.ico')}}" type="{{URL::asset('public/image/x-icon')}}" />
+    <script src="https://kit.fontawesome.com/5880030aeb.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
 
     <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
 </head>
 
 <body class="login-body-bg">
@@ -22,12 +27,11 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="side-nav-links">
             <a href="{{ route('subscriptions') }}" class="side-links">Subscription</a>
-            <a href="#" class="side-links">About Exam</a>
-            <a href="#" class="side-links">FAQ</a>
+            <a href="{{ route('aboutexam') }}" class="side-links">About Exam</a>
+            <a href="{{ route('faq') }}" class="side-links">FAQ</a>
             <a href="{{ route('login') }}" class="side-links">Login</a>
             <a href="{{ route('register') }}" class="red-btn mt-2">Sign up</a>
         </div>
-
     </div>
     <header class="pt-5 pb-4 px-7">
         <div class="container-fluid">

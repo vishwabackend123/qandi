@@ -15,6 +15,9 @@ class AboutExamController extends Controller
 
 
 
+
+
+
     public function eligibility_criteria()
     {
         return view('afterlogin.ExamDetails.exam_criteria');
