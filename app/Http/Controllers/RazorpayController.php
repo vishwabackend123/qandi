@@ -36,8 +36,8 @@ class RazorpayController extends Controller
 
         $user_id = Auth::user()->id;
 
-        //$api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
-        $api = new Api('rzp_test_foHLtdKSJjEDzv', 'RFrAe68CEzVrQpuuHnlKJHcy');
+        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+        //$api = new Api('rzp_test_foHLtdKSJjEDzv', 'RFrAe68CEzVrQpuuHnlKJHcy');
 
         $payment = $api->payment->fetch($input['razorpay_payment_id']);
 
