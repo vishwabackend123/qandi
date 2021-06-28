@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/logout', function () {
+    return view('index');
+});
 
 Auth::routes();
 
@@ -97,3 +100,9 @@ Route::any('/live_exam', [App\Http\Controllers\LiveExamController::class, 'live_
 /* AnalyticsController Routes */
 
 Route::any('/overall_analytics', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');
+
+
+
+/* TestSeries Routes */
+Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'series_list'])->name('series_list')->middleware('auth', 'menu');
+Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 'test_series_exam'])->name('test_series')->middleware('auth', 'menu');

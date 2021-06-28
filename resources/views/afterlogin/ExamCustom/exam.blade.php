@@ -158,14 +158,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 <div class="modal-body pt-3 p-6">
                     <div class="row">
                         <div class="col-md-8">
-                            <h1 class="text-danger text-uppercase">Mock Test - III</h1>
+                            <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Mock Test'}} </h1>
                             <div class="scroll">
                                 <div class="test-info">
                                     <div class="row justify-content-md-center">
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
                                                 <small>No. Of Questions</small>
-                                                <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}} MCQ</span> Questions</span>
+                                                <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
                                             </div>
                                         </div>
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
@@ -177,7 +177,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
                                                 <small>Duration</small>
-                                                <span class="d-block inst-text"><span class="text-danger">{{$questions_count}}</span> Minutes</span>
+                                                <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
                                             </div>
                                         </div>
                                     </div>

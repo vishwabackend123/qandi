@@ -23,6 +23,7 @@ class ExamCustomController extends Controller
             $subject_list = json_decode($data);
         }
 
+
         $api_url = Config::get('constants.API_8080_URL') . 'api/getSubject/' . $exam_id;
 
         $curl = curl_init();
@@ -66,7 +67,6 @@ class ExamCustomController extends Controller
                 $subject_topic_list[$subject_id] = !empty($topTen) ? $topTen : [];
             }
         }
-
 
         return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_topic_list'));
     }
