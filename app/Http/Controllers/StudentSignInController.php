@@ -52,7 +52,7 @@ class StudentSignInController extends Controller
                 'mobile' => $mobile
             ];
 
-            $api_URL = Config::get('constants.API_8080_URL');
+            $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
             $curl = curl_init();
             curl_setopt_array($curl, array(
@@ -158,7 +158,8 @@ class StudentSignInController extends Controller
             ];
             $request_json = json_encode($request);
 
-            $api_URL = Config::get('constants.API_8080_URL');
+            $api_URL = Config::get('constants.API_NEW_URL');
+            //$curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
             $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
             $curl = curl_init();
             curl_setopt_array($curl, array(

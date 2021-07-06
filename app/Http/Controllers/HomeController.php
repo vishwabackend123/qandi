@@ -128,9 +128,11 @@ class HomeController extends Controller
             $update = [
                 'subjects_rating' => $rating,
             ];
+
+
             $upt = StudentPreference::where('student_id', $user_id)->update($update);
         }
 
-        return true;
+        return "success";
     }
 }

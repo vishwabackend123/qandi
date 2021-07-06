@@ -26,9 +26,10 @@ class TestSeriesController extends Controller
         $live_series = [];
         $open_series = [];
 
-        $api_URL = Config::get('constants.API_8080_URL');
-        $curl_url = $api_URL . 'api/testSeries_list/' . $exam_id;
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/testSeries-list/' . $exam_id;
         $curl = curl_init();
+
         curl_setopt_array($curl, array(
 
             CURLOPT_URL => $curl_url,
@@ -47,14 +48,15 @@ class TestSeriesController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        if ($httpcode != 200) {
+        if ($httpcode == 200 || $httpcode == 201) {
+
+            $aResponse = json_decode($response_json);
+
+            $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
+            $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
 
             return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
         } else {
-            $aResponse = json_decode($response_json);
-
-            $open_series = isset($aResponse->response->test_series_open) ? $aResponse->response->test_series_open : [];
-            $live_series = isset($aResponse->response->test_series_live) ? $aResponse->response->test_series_live : [];
 
             return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
         }

@@ -21,7 +21,7 @@ class FullExamController extends Controller
 
     public function exam(Request $request, $exam_name)
     {
-
+        $filtered_subject = [];
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
         if ($exam_name == 'full_exam') {
@@ -43,8 +43,6 @@ class FullExamController extends Controller
         $api_URL = Config::get('constants.API_8080_URL');
 
         $curl_url = $api_URL . 'api/profiling_input';
-
-
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
@@ -69,8 +67,6 @@ class FullExamController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-
-
         if ($httpcode == 200) {
             $responsedata = json_decode($response_json);
             $aQuestions_list = $responsedata->questions;
@@ -86,17 +82,17 @@ class FullExamController extends Controller
         $redis_set = 'True';
         $exam_fulltime = $questions_count  * 60;
 
-
-
         $collection = collect($aQuestions_list);
         $aQuestionslist = $collection->sortBy('subject_id');
 
         $grouped = $collection->groupBy('subject_id');
         $subject_ids = $collection->pluck('subject_id');
-        $unique = $subject_ids->unique()->values()->all();
+        $subject_list = $subject_ids->unique()->values()->all();
 
         $redis_subjects = $this->redis_subjects();
+        $cSubjects = collect($redis_subjects);
 
+        $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
 
         $allQuestions = $aQuestionslist->keyBy('question_id');
         $aQuestions_list = $aQuestionslist->values()->all();
@@ -106,6 +102,7 @@ class FullExamController extends Controller
 
         $question_data = current($aQuestions_list);
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
+        $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
         $nextquestion_data = next($aQuestions_list);
         $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
         $prev_qid = '';
@@ -148,8 +145,7 @@ class FullExamController extends Controller
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redis_data));
 
-
-        return view('afterlogin.ExamViews.exam', compact('redis_subjects', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name'));
+        return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
 
 
 

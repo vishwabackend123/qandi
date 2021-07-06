@@ -94,9 +94,9 @@
                         <div class="row">
                             <div class="col-8 pe-0">
                                 <div class="d-flex justify-content-center flex-column h-100  position-relative">
-                                
-                            <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover"  data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
-                         
+
+                                    <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
+
                                     <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span>
                                     <span class="mt-auto bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
@@ -123,7 +123,7 @@
                     <div class="bg-white shadow-lg p-3">
                         <div class="d-flex ">
                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
-                            <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover"  data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
+                            <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
                         </div>
                         <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-4 dashboard-listing-details w-100 ">
                             <span class="mr-3 dashboard-name-txt">Mathematics</span>
@@ -311,8 +311,8 @@
             </div>
             <div class="row mt-5 mb-3">
                 <div class="col-6">
-                    <a href="{{route('subject_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
-                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover"  data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
+                    <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
+                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
                 </div>
                 <div class="col-6 text-right d-flex">
                     <div class="ms-auto">
@@ -575,7 +575,6 @@
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript">
-
     $(window).on('load', function() {
         /* $('#welcomeModal').modal('show') */
 
@@ -632,10 +631,11 @@
             },
             beforeSend: function() {},
             success: function(response_data) { //debugger;
-
-                $("#favSubResponse").modal("hide");
-                $("#feelresponseModal").modal("hide");
-                $("#fullTest_Dashboard").modal("show");
+                if (response_data == 'success') {
+                    $("#favSubResponse").modal("hide");
+                    $("#feelresponseModal").modal("hide");
+                    $("#fullTest_Dashboard").modal("show");
+                }
 
             },
             error: function(xhr, b, c) {

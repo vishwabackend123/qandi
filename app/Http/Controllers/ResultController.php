@@ -41,10 +41,10 @@ class ResultController extends Controller
 
         if (isset($given_ans) && !empty($given_ans)) {
             foreach ($given_ans as $key => $ans) {
-                $answerList['answer'] = $ans[0];
-                $answerList['timetaken'] = isset($taken_time->$key) ? $taken_time->$key : '';
-                $answerList['attemptCount'] = isset($answer_swap_cnt->$key) ? $answer_swap_cnt->$key : '';
-                $answerList['question_id'] = $key;
+                $answerList['answer'] = (int)$ans[0];
+                $answerList['timetaken'] = isset($taken_time->$key) ? (string)$taken_time->$key : '';
+                $answerList['attemptCount'] = isset($answer_swap_cnt->$key) ? (int)$answer_swap_cnt->$key : '';
+                $answerList['question_id'] = (int)$key;
 
                 $answersArr[] = $answerList;
             }
@@ -52,12 +52,12 @@ class ResultController extends Controller
 
         $inputjson = [];
         $inputjson['answerList'] = $answersArr;
-        $inputjson['test_time'] = $exam_full_time;
+        $inputjson['test_time'] = (string)$exam_full_time;
         $inputjson['total_marks'] = 30;
         $inputjson['user_id'] = 30776;
         $inputjson['no_of_question'] = $questions_count;
-        $inputjson['questions_list'] = json_encode($questions_list);
-        $inputjson['time_taken'] = $submit_time;
+        $inputjson['questions_list'] = $questions_list;
+        $inputjson['time_taken'] = (string)$submit_time;
         $inputjson['class_id'] = $exam_id;
 
 
@@ -66,9 +66,9 @@ class ResultController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_php_URL');
+        $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/saveResult';
+        $curl_url = $api_URL . 'api/save-result';
 
         curl_setopt_array($curl, array(
 
@@ -93,13 +93,11 @@ class ResultController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
+        if ($httpcode == 200 || $httpcode == 201) {
+            $response = json_decode($response_json);
 
+            /* $response = isset($responsedata->response) ? $responsedata->response : []; */
 
-        if ($httpcode == 200) {
-            $responsedata = json_decode($response_json);
-
-            $response = isset($responsedata->response) ? $responsedata->response : [];
-            //dd($response);
             return view('afterlogin.ExamCustom.exam_result', compact('response'));
         } else {
             $aQuestions_list = [];

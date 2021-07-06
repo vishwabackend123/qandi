@@ -21,63 +21,71 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                     <div class="tab-wrapper h-100">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
 
+                            @if(!empty($filtered_subject))
+                            @foreach($filtered_subject as $key=>$sub)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
+                                <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}}</a>
                             </li>
-                            <li class="nav-item" role="presentation">
+                            <!--  <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Physics</a>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
-                            </li>
+                            </li> -->
+                            @endforeach
+                            @endif
                         </ul>
 
-                        <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                        <!-- <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                            
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div id="question_section">
-                                    <div class="question-block">
-                                        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
-                                        <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
-                                        <div class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-                                        <div class="ans-block row mt-5">
-                                            @if(isset($option_data) && !empty($option_data))
-                                            @php $no=0; @endphp
-                                            @foreach($option_data as $key=>$opt_value)
-                                            @php
-                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                            $dom = new DOMDocument();
-                                            @$dom->loadHTML($opt_value);
-                                            $anchor = $dom->getElementsByTagName('img')->item(0);
-                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                            $latex = "https://math.now.sh?from=".$text;
-                                            $view_opt='<img src="'.$latex.'" />' ;
-                                            @endphp
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                                <div class="border ps-3 ans">
-                                                    <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
-                                                </div>
-                                            </div>
-
-                                            @php $no++; @endphp
-                                            @endforeach
-                                            @endif
-
-                                        </div>
-                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
-                                    </div>
-                                    <div class="tab-btn-box  d-flex   mt-3">
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-                                        <button href=" #" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
-                                        <button class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
-                                        <button class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</button>
-
-                                    </div>
-                                </div>
+                               
                             </div>
 
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
+                        </div> -->
+                        <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                            <div id="question_section">
+                                <div class="question-block py-3">
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                    <div class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                    <div class="ans-block row mt-5">
+                                        @if(isset($option_data) && !empty($option_data))
+                                        @php $no=0; @endphp
+                                        @foreach($option_data as $key=>$opt_value)
+                                        @php
+                                        $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                        $dom = new DOMDocument();
+                                        @$dom->loadHTML($opt_value);
+                                        $anchor = $dom->getElementsByTagName('img')->item(0);
+                                        $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                        $latex = "https://math.now.sh?from=".$text;
+                                        $view_opt='<img src="'.$latex.'" />' ;
+                                        @endphp
+                                        <div class="col-md-6 mb-4">
+                                            <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                            <div class="border ps-3 ans">
+                                                <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                            </div>
+                                        </div>
+
+                                        @php $no++; @endphp
+                                        @endforeach
+                                        @endif
+
+                                    </div>
+                                    <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
+                                </div>
+                                <div class="tab-btn-box  d-flex   mt-3">
+                                    <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                    <button href=" #" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+                                    <button class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                    <button class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</button>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -462,8 +470,6 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
     function savemarkreview(quest_id, subject_id) {
-
-
         /* saving response */
         if (saveAnswer(quest_id) != false) {
 
@@ -489,6 +495,21 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 },
             });
         }
+    }
+
+    function get_subject_question(subject_id) {
+
+        url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                $("#question_section").html(result);
+
+            }
+        });
 
 
     }

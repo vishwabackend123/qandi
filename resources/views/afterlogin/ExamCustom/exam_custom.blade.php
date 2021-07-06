@@ -32,7 +32,7 @@
                             <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
                                     <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
-                                    <p class="mb-0 text-danger ms-auto me-4">You can pick topics / sub-topics or</p>
+                                    <p class="mb-0 text-danger ms-auto me-4">You can pick chapters / topics or</p>
                                     <form method="post" action="{{route('subject_exam')}}">
                                         @csrf
                                         <input type="hidden" name="subject_id" value="{{$sub->id}}">
@@ -43,10 +43,10 @@
                                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                 </div>
                                 <div class="scroll-div">
-                                    @if(@isset($subject_topic_list[$sub->id]) && !empty($subject_topic_list[$sub->id]))
-                                    @foreach($subject_topic_list[$sub->id] as $tKey=>$topics)
+                                    @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
+                                    @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt col-4 text-break">{{$topics->topic_name}}</span>
+                                        <span class="mr-3 name-txt col-4 text-break">{{$chapters->chapter_name}}</span>
 
                                         <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
 
@@ -100,10 +100,18 @@
                                             </div>
                                         </div>
 
-                                        <span class="slbs-link col-2 mx-3"><a aria-controls="topic{{$topics->id}}" data-bs-toggle="collapse" href="#topic{{$topics->id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
-                                        <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                                        <span class="slbs-link col-2 mx-3"><a aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false">Expand to Topics</a></span>
+                                        <form method="post" action="{{route('subject_exam')}}">
+                                            @csrf
+                                            <input type="hidden" name="subject_id" value="{{$sub->id}}">
+                                            <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
+                                            <input type="hidden" name="question_count" value="30">
+
+                                            <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                                        </form>
+
                                     </div>
-                                    <div class="collapse mb-4" id="topic{{$topics->id}}">
+                                    <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
                                         <div class="d-flex px-4">
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>

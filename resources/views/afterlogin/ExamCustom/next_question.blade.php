@@ -3,7 +3,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 @endphp
 
-<div class="question-block">
+<div class="question-block py-3">
     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
     <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
     <div class="question pb-5 pt-5" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
@@ -42,3 +42,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     <button class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
     <button class="btn px-4   me-2 btn-secondary rounded-0">Clear Response</button>
 </div>
+<script type="text/javascript">
+    var subject_id = '{{$subject_id}}';
+    $("#myTab .all_div").removeClass("active");
+    $("#myTab .class_" + subject_id).addClass("active");
+</script>
