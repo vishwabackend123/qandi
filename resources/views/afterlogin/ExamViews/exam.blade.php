@@ -1,5 +1,8 @@
 @extends('afterlogin.layouts.app')
-
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 @section('content')
 <style>
     .question p {
@@ -11,6 +14,7 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 @endphp
+
 <div class="main-wrapper p-0 bg-gray">
 
     <div class="content-wrapper py-4 ps-4" id="exam_content_sec" style="display:none;">

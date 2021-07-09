@@ -54,6 +54,8 @@ class StudentSignInController extends Controller
 
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
+
+
             $curl = curl_init();
             curl_setopt_array($curl, array(
 
@@ -106,7 +108,7 @@ class StudentSignInController extends Controller
         $enteredMobile = $request->input('login_mobile');
 
         $OTP = $request->session()->get('OTP');
-        //dd($enteredOtp);
+
         if ($OTP == $enteredOtp) {
             //Removing Session variable
             Session::forget('OTP');
@@ -145,67 +147,58 @@ class StudentSignInController extends Controller
     {
         $postData = $request->all();
 
+
         $mobile = isset($postData['mobile']) ? $postData['mobile'] : '';
         $emailid = isset($postData['email']) ? $postData['email'] : '';
 
-        $exists = StudentUsers::where('mobile', $mobile)->orWhere('email', $emailid)->exists();
+        $request = [
+            'email' => $emailid,
+            'mobile' => (int)$mobile,
+        ];
+        $request_json = json_encode($request);
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/register-otp';
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
 
 
-        if (!empty($emailid) && !empty($mobile) && $exists == false) {
-            $request = [
-                'email' => $emailid,
-                'mobile' => $mobile,
-            ];
-            $request_json = json_encode($request);
+        $response_json = curl_exec($curl);
 
-            $api_URL = Config::get('constants.API_NEW_URL');
-            //$curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
-            $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
 
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            ));
-
-
-            $response_json = curl_exec($curl);
-
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-
-
-            if ($httpcode != 200) {
-                $response = [
-                    "message" => "Something wrong please try again !!",
-                    "error" => $err,
-                    "success" => false,
-                    "status" => 400,
-                ];
-                return json_encode($response);
-            } else {
-                $aResponse = json_decode($response_json);
-                $reg_otp = isset($aResponse->mobile_otp) ? $aResponse->mobile_otp : '';
-
-                Session::put('OTP', $reg_otp);
-
-                return $response_json;
-            }
-        } else {
-
+        if ($httpcode != 200) {
             $response = [
-                "message" => "Mobile or Email already registered with us.",
+                "message" => "Something wrong please try again !!",
+                "error" => $err,
                 "success" => false,
                 "status" => 400,
             ];
             return json_encode($response);
+        } else {
+            $aResponse = json_decode($response_json);
+            $reg_otp = isset($aResponse->mobile_otp) ? $aResponse->mobile_otp : '';
+
+            Session::put('OTP', $reg_otp);
+
+            return $response_json;
         }
     }
 

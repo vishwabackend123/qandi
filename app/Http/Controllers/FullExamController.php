@@ -40,10 +40,22 @@ class FullExamController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_8080_URL');
+        $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/profiling_input';
+        $curl_url = $api_URL . 'api/profiling-input/' . $exam_id . '/' . $exam_ques_count;
 
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+        /* 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -59,7 +71,7 @@ class FullExamController extends Controller
                 "content-type: application/json",
 
             ),
-        ));
+        )); */
         $response_json = curl_exec($curl);
         $response_json = str_replace('NaN', '""', $response_json);
 
@@ -80,6 +92,7 @@ class FullExamController extends Controller
         }
 
         $redis_set = 'True';
+
         $exam_fulltime = $questions_count  * 60;
 
         $collection = collect($aQuestions_list);

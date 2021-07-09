@@ -27,20 +27,21 @@ class BookmarkController extends Controller
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $question_id = isset($request->question_id) ? $request->question_id : 0;
 
-        $inputjson['subject_id'] = $subject_id;
-        $inputjson['student_id'] = $user_id; //30776; //(string);
-        $inputjson['exam_id'] = (string)$exam_id;
-        $inputjson['question_id'] = $question_id;
+        $inputjson['subject_id'] = (int)$subject_id;
+        $inputjson['student_id'] = (int)$user_id; //30776; //(string);
+        $inputjson['exam_id'] = (int)$exam_id;
+        $inputjson['question_id'] = (int)$question_id;
 
         $request = json_encode($inputjson);
 
-        $api_URL = Config::get('constants.API_php_URL');
 
-        $curl_url = $api_URL . 'api/addbookmarkQuestion';
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl_url = $api_URL . 'api/bookmark-questions';
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_PORT => "8080",
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FAILONERROR => true,
@@ -48,7 +49,7 @@ class BookmarkController extends Controller
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $request,
             CURLOPT_HTTPHEADER => array(
                 "cache-control: no-cache",
@@ -61,7 +62,7 @@ class BookmarkController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        if ($httpcode == 200) {
+        if ($httpcode == 200 || $httpcode == 201) {
             return $response_json;
         } else {
             return $err;

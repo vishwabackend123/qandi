@@ -54,7 +54,7 @@ class ResultController extends Controller
         $inputjson['answerList'] = $answersArr;
         $inputjson['test_time'] = (string)$exam_full_time;
         $inputjson['total_marks'] = 30;
-        $inputjson['user_id'] = 30776;
+        $inputjson['user_id'] = $user_id;
         $inputjson['no_of_question'] = $questions_count;
         $inputjson['questions_list'] = $questions_list;
         $inputjson['time_taken'] = (string)$submit_time;
@@ -62,7 +62,6 @@ class ResultController extends Controller
 
 
         $request = json_encode($inputjson);
-
 
         $curl_url = "";
         $curl = curl_init();
@@ -88,6 +87,7 @@ class ResultController extends Controller
         ));
 
         $response_json = curl_exec($curl);
+
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

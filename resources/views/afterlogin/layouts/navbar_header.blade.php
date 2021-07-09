@@ -5,9 +5,9 @@
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
                     <span class="user-name-block ps-3 me-3">Welcome, {{Auth::user()->first_name}}</span>
-                    
+
                     <span class="notification me-5 ms-4">
-                        <a href="#" class="top-link ">
+                        <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/bell.png')}}">
                             <span class="red-dot"></span>
                             <span class="hoverlink">Notification</span>
@@ -19,7 +19,7 @@
                             <span class="red-dot"></span>
                             <span class="hoverlink">Planner</span>
                         </a>
-                        </span>
+                    </span>
                     <span class="notification ms-4">
                         <a href="#" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/Group1831.png')}}">
@@ -29,30 +29,120 @@
                     </span>
                 </div>
                 <div class="profile-menu">
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                          
-                          <div class="offcanvas-body">
-                           <div class="d-flex flex-column justify-content-center align-items-start profile-links">
-                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
-                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
-                            <span> 
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                   sessionStorage.clear();  document.getElementById('logout-form').submit();">
-                            <img src="{{URL::asset('public/after_login/images/Layer -7.png')}}"> Logout
-                        </a>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                            </span>
-                           </div>
-                          </div>
+                        <div class="offcanvas-body">
+                            <div class="d-flex flex-column justify-content-center align-items-start profile-links">
+                                <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
+                                <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
+                                <span>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                   sessionStorage.clear();  document.getElementById('logout-form').submit();">
+                                        <img src="{{URL::asset('public/after_login/images/Layer -7.png')}}"> Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </span>
+                            </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
+<!-- notification START-->
+<div class="collapse planmner-block width" id="notification">
+    <div class="planner-wrapper">
+        <div class="planner-content p-3">
+            <h4 class="noti-heading">Notification</h4>
+            <div class="notification-scroll">
+                <p class="noti-subheading">Recent</p>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <p class="noti-subheading mt-4">Older Notification</p>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- notification End-->
 <div class="collapse planmner-block width" id="collapseExample">
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">

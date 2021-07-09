@@ -124,7 +124,7 @@
                         email: email_add,
                     },
                     success: function(response_data) {
-
+                        console.log(response_data);
                         var response = jQuery.parseJSON(response_data);
 
                         if (response.status == 200) {

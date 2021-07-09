@@ -243,17 +243,20 @@ class ExamCustomController extends Controller
         $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
 
 
-        $allQuestions = $collection->keyBy('question_id');
+        $allQuestions = $collection->keyBy('question_id')->sortBy('question_id');
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
 
+
         $question_data = (object)current($aQuestions_list);
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
         $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
-        $nextquestion_data = next($aQuestions_list);
+        $nextquestion_data = (object)next($aQuestions_list);
+
         $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
         $prev_qid = '';
+
 
 
         if (isset($question_data) && !empty($question_data)) {

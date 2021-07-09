@@ -84,6 +84,7 @@ trait CommonTrait
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
+
                     Redis::del($cacheKey);
                 }
             }
