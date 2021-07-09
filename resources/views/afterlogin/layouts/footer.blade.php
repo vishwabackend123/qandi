@@ -265,6 +265,9 @@ if (!$(e.target).closest('#submenu').length &&
 </script>
 <script>
     $(document).ready(function() {
+        $(".leaderNameBlock").slimscroll({
+        height: "50vh",
+      });
         $('#edit-planner-btn').click(function() {
 
             $('#sub-planner').addClass('open-sub-planner');
@@ -279,6 +282,16 @@ if (!$(e.target).closest('#submenu').length &&
             $('#edit-planner-btn').removeClass('close-sub-planner');
 
         });
+        
 
+        // editprofile js
+         
+        $('#profile-click').click(function() {
+
+            $('#profile-block').toggleClass('d-none');
+            $(this).addClass('activelink');
+            
+
+            });
     });
 </script>
