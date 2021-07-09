@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 
+use App\Http\Traits\CommonTrait;
+
 class ReviewController extends Controller
 {
     //
+    use CommonTrait;
 
     public function review(Request $request)
     {
@@ -32,10 +35,12 @@ class ReviewController extends Controller
 
         if (!empty($result_id)) {
             $curl = curl_init();
+            $api_URL = Config::get('constants.API_NEW_URL');
 
+            $curl_url = $api_URL . 'api/question-reviews/' . $result_id;
             curl_setopt_array($curl, array(
                 //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
-                CURLOPT_URL => "http://44.235.5.77/api/get_review/$result_id", //live
+                CURLOPT_URL =>  $curl_url, //live
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -53,7 +58,6 @@ class ReviewController extends Controller
 
             $response = curl_exec($curl);
 
-
             curl_close($curl);
 
             if (isset($response) && !empty($response)) :
@@ -62,14 +66,24 @@ class ReviewController extends Controller
         }
 
 
-        $result_response = $response->response ?? [];
-
+        $result_response = $response ?? [];
 
         $question_data = [];
         $attempt_opt = [];
 
         if (isset($result_response->all_question) && !empty($result_response->all_question)) {
 
+            $collection = collect($result_response->all_question)->sortBy('subject_id');
+            $grouped = $collection->groupBy('subject_id');
+            $subject_ids = $collection->pluck('subject_id');
+            $subject_list = $subject_ids->unique()->values()->all();
+
+
+            $redis_subjects = $this->redis_subjects();
+            $cSubjects = collect($redis_subjects);
+
+
+            $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
             $all_data = collect($result_response->all_question);
             $all_ids = $result_response->question_ids;
             $all_question_list = $result_response->all_question;
@@ -102,6 +116,7 @@ class ReviewController extends Controller
 
             $question_data = $all_data->where('question_id', $first)->first();
             $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
+            $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
             $nextquestion_data = next($all_question_list);
             $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
             $prev_qid = '';
@@ -166,11 +181,9 @@ class ReviewController extends Controller
             $answerKeys = array_keys((array)$correct_ans);
 
 
-
-
-            return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys'));
+            return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id'));
         } else {
-            return Redirect::back();
+            return redirect()->route('dashboard');
         }
     }
 
@@ -281,7 +294,7 @@ class ReviewController extends Controller
             }
         }
         $answerKeys = array_keys((array)$correct_ans);
-        //dd($attempt_opt);
+
 
         return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
     }

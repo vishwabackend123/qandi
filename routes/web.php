@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+Route::any('/', function () {
     return view('index');
 });
-Route::get('/logout', function () {
+Route::any('/logout', function () {
     return view('index');
 });
 

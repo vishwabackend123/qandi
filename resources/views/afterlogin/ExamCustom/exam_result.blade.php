@@ -62,15 +62,19 @@
                                     <div class="mt-auto btn-block">
                                         <buton class="btn btn-light-green rounded-0 w-100 mt-5">Overall</buton>
                                         <div class="row mt-4">
+                                            @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                                            @foreach($response->subject_wise_result as $subject)
                                             <div class="col">
-                                                <buton class="btn btn-outline-secondary rounded-0 w-100">Mathematics</buton>
+                                                <buton class="btn btn-outline-secondary rounded-0 w-100">{{$subject->subject_name}}</buton>
                                             </div>
-                                            <div class="col">
+                                            <!-- <div class="col">
                                                 <buton class="btn btn-outline-secondary rounded-0 w-100">Physics</buton>
                                             </div>
                                             <div class="col">
                                                 <buton class="btn btn-outline-secondary rounded-0 w-100 ">Chemistry</buton>
-                                            </div>
+                                            </div> -->
+                                            @endforeach
+                                            @endif
                                         </div>
 
 
@@ -89,48 +93,31 @@
                     <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
                         <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                         <h5 class="dashboard-title mb-3">Subject Score</h5>
+                        @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                        @foreach($response->subject_wise_result as $subject)
+                        @php
+                        $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->correct_count/$subject->total_questions)*100:0;
+                        $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->incorrect_count/$subject->total_questions)*100:0;
+                        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->unanswered_count/$subject->total_questions)*100:0;
+                        @endphp
                         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                            <span class="subj-name me-4 col-3">Mathematics</span>
+                            <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>
                             <div class="progress ms-auto  col-8" style="overflow: visible;">
-                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
+                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$correct_per}}%; overflow: visible;">
+                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="{{$correct_per}}%">{{$subject->correct_count}}</span>
                                 </div>
-                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                    <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$incorrect_per}}%;overflow: visible;">
+                                    <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$incorrect_per}}%">{{$subject->incorrect_count}}</span>
                                 </div>
-                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="Tooltip on top">1</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                            <span class="subj-name me-4 col-3">Physics</span>
-                            <div class="progress  ms-auto col-8" style="overflow: visible;">
-                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
-                                </div>
-                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
-                                </div>
-                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                    <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$not_attempt_per}}%;overflow: visible;">
+                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="{{$not_attempt_per}}">{{$subject->unanswered_count}}</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                            <span class="subj-name me-4 col-3">Chemistry</span>
-                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
-                                </div>
-                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-red" data-bs-placement="top" title="Tooltip on top">1</span>
-                                </div>
-                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="Tooltip on top">1</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        @endif
+
+
 
                         <div class="row py-4 mt-4 mb-5">
                             <div class="col d-flex align-items-center">
@@ -152,125 +139,61 @@
                     <div class="bg-white shadow position-relative"> <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                         <div class="tab-wrapper h-100">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                                @php $subx=1; @endphp
+                                @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                                @foreach($response->subject_wise_result as $subject)
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
+                                    <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}-tab" data-bs-toggle="tab" href="#{{$subject->subject_name}}" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Physics</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
-                                </li>
+                                </li> -->
+                                @php $subx++; @endphp
+                                @endforeach
+                                @endif
+
                             </ul>
 
                             <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
+                                @php $topx=1; @endphp
+                                @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                                @foreach($response->subject_wise_result as $subject)
+                                <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}" role="tabpanel" aria-labelledby="{{$subject->subject_name}}-tab">
                                     <div class="hScroll">
+                                        @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
+                                        @foreach($response->topic_wise_result as $topic)
+                                        @php
+                                        $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->correct_count/$topic->total_questions)*100:0;
+                                        $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->incorrect_count/$topic->total_questions)*100:0;
+                                        $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
+                                        @endphp
                                         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
+                                            <span class="subj-name me-4 col-3">Topic Name</span>
                                             <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
                                                 </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$tincorrect_per}}%;overflow: visible;">
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}%">{{$topic->incorrect_count}}</span>
                                                 </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$tnot_attempt_per}}%;overflow: visible;">
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}%">{{$topic->unanswered_count}}</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Chemistry</span>
-                                            <div class="progress col-8 ms-auto " style="overflow: visible;">
-                                                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
+                                        @endif
                                     </div>
-                                </div>
 
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
+                                </div>
+                                @php $topx++; @endphp
+                                @endforeach
+                                @endif
+                                <!--  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div> -->
                             </div>
                         </div>
                     </div>

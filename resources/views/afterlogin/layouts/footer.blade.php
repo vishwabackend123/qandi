@@ -6,15 +6,22 @@
 <script type="text/javascript" src="{{URL::asset('public/js/jquery.slimscroll.min.js')}}"></script>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+<script type="text/javascript">
+    $(".scroll-div").slimscroll({
+        height: "40vh",
+    });
+    $(".notification-scroll").slimscroll({
+        height: "70vh",
+    });
+</script>
 <script>
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
-     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-         return new bootstrap.Tooltip(tooltipTriggerEl)
+        return new bootstrap.Tooltip(tooltipTriggerEl)
     })
     var mesos = [
         'January',
@@ -235,33 +242,29 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         }
         var menu_opened = $('#submenu2').hasClass('show');
 
-if (!$(e.target).closest('#submenu').length &&
-    !$(e.target).is('#submenu2') &&
-    menu_opened === true) {
-    $('#submenu2').collapse('toggle');
-}
+        if (!$(e.target).closest('#submenu').length &&
+            !$(e.target).is('#submenu2') &&
+            menu_opened === true) {
+            $('#submenu2').collapse('toggle');
+        }
 
         var menu_opened = $('#submenupreparation').hasClass('show');
 
-            if (!$(e.target).closest('#submenupreparation').length &&
-                !$(e.target).is('#submenupreparation') &&
-                menu_opened === true) {
-                $('#submenupreparation').collapse('toggle');
-            }
+        if (!$(e.target).closest('#submenupreparation').length &&
+            !$(e.target).is('#submenupreparation') &&
+            menu_opened === true) {
+            $('#submenupreparation').collapse('toggle');
+        }
 
-            var menu_opened = $('#submenupreparation2').hasClass('show');
+        var menu_opened = $('#submenupreparation2').hasClass('show');
 
-            if (!$(e.target).closest('#submenupreparation').length &&
-                !$(e.target).is('#submenupreparation2') &&
-                menu_opened === true) {
-                $('#submenupreparation2').collapse('toggle');
-            }
+        if (!$(e.target).closest('#submenupreparation').length &&
+            !$(e.target).is('#submenupreparation2') &&
+            menu_opened === true) {
+            $('#submenupreparation2').collapse('toggle');
+        }
 
     });
-
-    
-
-    
 </script>
 <script>
     $(document).ready(function() {

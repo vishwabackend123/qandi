@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\UserAnalytics;
 use App\Models\StudentPreference;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
 
 
 use Illuminate\Support\Facades\Validator;
@@ -91,9 +92,47 @@ class HomeController extends Controller
 
         if ($stand_value) {
 
-            $user_stand = DB::table('student_preferences')->where('student_id', $user_id)->update(['student_stage_at_sgnup' => $stand_value]);
 
-            if ($user_stand) {
+            $request = [
+                'student_id' => 30782, // (int)$user_id,
+                'student_stage_at_sgnup' => (int)$stand_value,
+            ];
+            $request_json = json_encode($request);
+
+            $api_URL = Config::get('constants.API_NEW_URL');
+            $curl_url = $api_URL . 'api/stage-at-signUp';
+
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "PUT",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                    "accept: application/json",
+                    "content-type: application/json"
+                ),
+            ));
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($httpcode != 200 && $httpcode != 201) {
+                $status = false;
+            } else {
+                $aResponse = json_decode($response_json);
+                $status = $aResponse[0]->success;
+            }
+
+            if ($status == true) {
                 return redirect()->route('dashboard');
             } else {
                 return redirect()->back();
@@ -112,7 +151,7 @@ class HomeController extends Controller
 
         if (isset($storeddata['today_feeling']) && !empty($storeddata['today_feeling'])) {
             $mood = $storeddata['today_feeling'];
-            $insert = [
+            /* $insert = [
                 'user_id' => $user_id,
                 'user_mood_ind' => (int)$mood,
                 'login_date' => date('Y-m-d'),
@@ -121,7 +160,38 @@ class HomeController extends Controller
                 'traffic_source' => 'web',
                 'pages_visted' => ''
             ];
-            $crt = UserAnalytics::create($insert);
+            $crt = UserAnalytics::create($insert); */
+            $request = [
+                'user_id' => 30782, // (int)$user_id,
+                'user_mood_ind' => (int)$mood,
+            ];
+            $request_json = json_encode($request);
+
+            $api_URL = Config::get('constants.API_NEW_URL');
+            $curl_url = $api_URL . 'api/today-feeling';
+
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "PUT",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                    "accept: application/json",
+                    "content-type: application/json"
+                ),
+            ));
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
         }
         if (isset($storeddata['subjects_rating']) && !empty($storeddata['subjects_rating'])) {
             $rating = json_encode($storeddata['subjects_rating']);

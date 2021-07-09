@@ -115,7 +115,7 @@
                                         <div class="d-flex px-4">
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>
-                                        <section class="slick-slider mb-4">
+                                        {{-- <section class="slick-slider mb-4">
                                             <div class="p-3">
 
                                                 <div class="bg-light shadow p-3 d-flex flex-column">
@@ -424,16 +424,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
+                                        </section> --}}
                                     </div>
                                     @endforeach
                                     @endif
 
                                 </div>
-                                <div class="text-right d-flex align-items-center mt-3">
+                                {{--<div class="text-right d-flex align-items-center mt-3">
                                     <a href="#" class="btn px-4 ms-auto me-2 btn-secondary rounded-0">Clear Selection</a>
                                     <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
-                                </div>
+                                </div> --}}
                             </div>
                             @endforeach
                             @endisset
