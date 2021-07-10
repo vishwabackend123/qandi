@@ -7,11 +7,54 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
     $(".scroll-div").slimscroll({
         height: "40vh",
     });
     $(".notification-scroll").slimscroll({
         height: "70vh",
+    });
+    $('#editprofile').click(function() {
+        $('#profile-details').hide();
+        $('#profile-form').show();
+    });
+    $('#cancelEdit').click(function() {
+        $('#profile-details').show();
+        $('#profile-form').hide();
+    });
+
+    $("#editProfile_form").validate({
+
+        submitHandler: function(form) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                url: "{{ url('/editProfile') }}",
+                type: 'POST',
+                data: $('#editProfile_form').serialize(),
+                beforeSend: function() {},
+                success: function(response_data) { //debugger;
+                    $('#profile-details').show();
+                    $('#profile-form').hide();
+
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
+        }
+
     });
 </script>
 <script>
@@ -269,8 +312,8 @@
 <script>
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
-        height: "50vh",
-      });
+            height: "50vh",
+        });
         $('#edit-planner-btn').click(function() {
 
             $('#sub-planner').addClass('open-sub-planner');
@@ -285,16 +328,16 @@
             $('#edit-planner-btn').removeClass('close-sub-planner');
 
         });
-        
+
 
         // editprofile js
-         
+
         $('#profile-click').click(function() {
 
             $('#profile-block').toggleClass('d-none');
             $(this).addClass('activelink');
-            
 
-            });
+
+        });
     });
 </script>

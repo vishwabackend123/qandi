@@ -205,4 +205,15 @@ class HomeController extends Controller
 
         return "success";
     }
+
+    /**
+     * Undocumented function
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function editProfile(Request $request)
+    {
+        dd($request->all());
+    }
 }
