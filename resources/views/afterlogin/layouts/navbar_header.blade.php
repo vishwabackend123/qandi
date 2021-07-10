@@ -5,7 +5,7 @@
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
                     <span class="user-name-block ps-3 me-3">Welcome, {{Auth::user()->first_name}}</span>
-                    
+
                     <span class="notification me-5 ms-4">
                         <a href="#" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/bell.png')}}">
@@ -19,7 +19,7 @@
                             <span class="red-dot"></span>
                             <span class="hoverlink">Planner</span>
                         </a>
-                        </span>
+                    </span>
                     <span class="notification ms-4">
                         <a href="#" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/Group1831.png')}}">
@@ -29,214 +29,216 @@
                     </span>
                 </div>
                 <div class="profile-menu">
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                          
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
                         <div class="offcanvas-body">
                             <div class="d-flex flex-column justify-content-center align-items-start profile-links">
-                                    <span><a href="#" id="profile-click"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
-                                    <span><a href="#" id="subscribe-click"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
-                                    <span> 
-                                    <a href="#" id="logout-click"><img src="{{URL::asset('public/after_login/images/Layer -7.png')}}">Logout</a>
-                                        <!-- <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <span><a href="#" id="profile-click"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
+                                <span><a href="#" id="subscribe-click"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
+                                <!-- <span>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();">
-                                            <img src="{{URL::asset('public/after_login/images/Layer -7.png')}}"> Logout
-                                        </a>
+                                        <img src="{{URL::asset('public/after_login/images/Layer -7.png')}}"> Logout
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form> -->
-                                    </span>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </span> -->
+                                <span>
+                                    <a href="#" id="logout-click"><img src="{{URL::asset('public/after_login/images/Layer -7.png')}}">Logout</a>
+
+                                </span>
                             </div>
-                          </div>
-                          <div id="profile-block" class="d-none">
-                              <div class="d-flex flex-row-reverse">
-                           <div class="myAccountblock" id="myAccount">
-                                <div class="d-flex text-start">
-                                    <div class="leaderBoardBlock">
-                                        <div class="bg-white p-4 text-left ms-2">
-                                            <p class="text-uppercase py-4">Leader Board</p>
-                                            <ol class="leaderNameBlock">
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                        <div class="leader-txt">
-                                                            <p>Roshani Sonve</p>
-                                                            <small>82.6 Unique score</small>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                        <div class="leader-txt">
-                                                            <p>Roshani Sonve</p>
-                                                            <small>82.6 Unique score</small>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                        <div class="leader-txt">
-                                                            <p>Roshani Sonve</p>
-                                                            <small>82.6 Unique score</small>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                        <div class="leader-txt">
-                                                            <p>Roshani Sonve</p>
-                                                            <small>82.6 Unique score</small>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="d-flex align-items-center">
-                                                        <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                        <div class="leader-txt">
-                                                            <p>Roshani Sonve</p>
-                                                            <small>82.6 Unique score</small>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ol>
-                                            <div class="text-box mt-5">
-                                                <label class="ps-2 pb-2">Search a Friend</label>
-                                                <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Search By Name" />
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="myAccountblock" id="profile">
-                                <div class="d-flex text-start">
-                                <div class="leaderBoardBlockedit">
-                                    <div class="bg-white p-4 text-left ms-4 ">
-                                    <span class="position-relative d-inline-block">
-                                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="uswereditpic"/>
-                                                <a href="#" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
-                                            </span>
-                                            <div id="profile-details" >
-                                                <div class="my-5 profile-read">
-                                                <h5>Ashwani Kumar</h5>
-                                                <small>Class - 12th, Preparing for JEE (M), April 2022</small>
-                                                <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 ms-2">Edit Profile</button>
-                                                </div>
-                                                <div>
-                                                <h5 class="text-uppercase fw-bold">Achievements</h5>
-                                                    <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="#" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                    <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="#" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                    <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="#" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                    
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="profile-form-block" id="profile-form">
-                                            <div class="text-box mt-5">
-                                             
-                                            <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="First Name" />
-
-                                        </div>
-                                        
-                                        <div class="text-box mt-2">
-                                             
-                                            <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Last Name" />
-
-                                        </div>
-                                        <div class="text-box mt-2">
-                                             
-                                            <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Display Name" />
-                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                                        </div>
-                                        <div class="text-box mt-3">
-                                             
-                                            <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="https://www.uniq.co.in/_userID_000987787" />
-                                            <div id="emailHelp" class="form-text">Your ID</div>
-                                        </div>
-                                        <div class="text-box mt-3">
-                                             
-                                            <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Your Email Id" />
-                                            
-                                        </div>
-                                        <div class="text-box mt-2">
-                                             
-                                             <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Your Contact Number" />
-                                             
-                                         </div>
-                                         <div class=" text-box mt-4 text-end">
-                                             <button class="btn-light rounded-0 btn px-5 btn-sm">Cancel</button>
-                                             <button class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Save</button>
-                                         </div>
-                                        </div>
-                                    </div>
-                                </div>
-                               </div>
-                            </div>
-
-                            
-                            </div>
-
-                            </div>
-                                <div class="myAccountblock d-none" id="subscribe">
+                        </div>
+                        <div id="profile-block" class="d-none">
+                            <div class="d-flex flex-row-reverse">
+                                <div class="myAccountblock" id="myAccount">
                                     <div class="d-flex text-start">
-                                        <div class="subscribeBlock">
-                                            <div class="bg-white p-4 text-left ms-4 ">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="position-relative d-inline-block">
-                                                        <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="sml-pic"/>
-                                                        
-                                                    </span>
-                                                    <div class="my-5 subscription-read">
+                                        <div class="leaderBoardBlock">
+                                            <div class="bg-white p-4 text-left ms-2">
+                                                <p class="text-uppercase py-4">Leader Board</p>
+                                                <ol class="leaderNameBlock">
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
+                                                            <div class="leader-txt">
+                                                                <p>Roshani Sonve</p>
+                                                                <small>82.6 Unique score</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
+                                                            <div class="leader-txt">
+                                                                <p>Roshani Sonve</p>
+                                                                <small>82.6 Unique score</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
+                                                            <div class="leader-txt">
+                                                                <p>Roshani Sonve</p>
+                                                                <small>82.6 Unique score</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
+                                                            <div class="leader-txt">
+                                                                <p>Roshani Sonve</p>
+                                                                <small>82.6 Unique score</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
+                                                            <div class="leader-txt">
+                                                                <p>Roshani Sonve</p>
+                                                                <small>82.6 Unique score</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                                <div class="text-box mt-5">
+                                                    <label class="ps-2 pb-2">Search a Friend</label>
+                                                    <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Search By Name" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="myAccountblock" id="profile">
+                                    <div class="d-flex text-start">
+                                        <div class="leaderBoardBlockedit">
+                                            <div class="bg-white p-4 text-left ms-4 read-mode">
+                                                <span class="position-relative d-inline-block">
+                                                    <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="uswereditpic" />
+                                                    <a href="#" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
+                                                </span>
+                                                <div id="profile-details">
+                                                    <div class="my-5 profile-read">
                                                         <h5>Ashwani Kumar</h5>
                                                         <small>Class - 12th, Preparing for JEE (M), April 2022</small>
-                                                        
+                                                        <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 ms-2" id="editprofile">Edit Profile</button>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="text-uppercase fw-bold">Achievements</h5>
+                                                        <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="#" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                        <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="#" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                        <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="#" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+
+
                                                     </div>
                                                 </div>
-                                                <div class="d-flex bg-light align-items-center px-4 py-3">
-                                                    <span ><i class="fas fa-check-circle text-success fa-4x"></i></span>
-                                                    <div class="subscribe-detail">
-                                                        <p class="mb-0">Subscribed for JEE (Mains) 2022</p>
-                                                        <small>Includes 2 Mains Mock Test (Live), 4 Sample Tests</small>
-                                                    </div>
-                                                </div>
-                                                <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p>    
-                                                <div class=" text-box mt-4 text-end">
-                                                    <button class="btn-light rounded-0 btn px-5 btn-sm">See Details</button>
-                                                    <button class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</button>
+                                                <div class="profile-form-block" id="profile-form">
+                                                    <form id="editProfile_form" action="{{route('editProfile')}}" method="POST">
+                                                        @csrf
+                                                        <div class="text-box mt-5">
+
+                                                            <input type="text" name="firstname" id="firstname" class="ps-2" value="" placeholder="First Name" required />
+
+                                                        </div>
+
+                                                        <div class="text-box mt-2">
+
+                                                            <input type="text" name="lastname" id="lastname" class="ps-2" value="" required placeholder="Last Name" />
+
+                                                        </div>
+                                                        <div class="text-box mt-2">
+
+                                                            <input type="text" name="username" id="username" class="ps-2" value="" required placeholder="Display Name" />
+                                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                        </div>
+                                                        <div class="text-box mt-3">
+
+                                                            <!--  <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="https://www.uniq.co.in/_userID_000987787" /> -->
+                                                            <div id="emailHelp" class="form-text">Your ID</div>
+                                                        </div>
+                                                        <div class="text-box mt-3">
+                                                            <input type="email" name="useremail" id="useremail" class="ps-2" value="" required placeholder="Your Email Id" />
+                                                        </div>
+                                                        <div class="text-box mt-2">
+
+                                                            <input type="text" name="user_mobile" id="user_mobile" class="ps-2" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+
+                                                        </div>
+                                                        <div class=" text-box mt-4 text-end">
+                                                            <button type="button" id="cancelEdit" class="btn-light rounded-0 btn px-5 btn-sm">Cancel</button>
+                                                            <button type="submit" id="saveEdit" class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Save</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
-                                <div class="myAccountblock d-none" id="logout-block">
-                                    <div class="d-flex text-start align-items-center justify-content-center h-100">
-                                        <div class="logoutBlock">
-                                            <div class="bg-white p-4 text-left ms-4 text-center">
-                                                 
-                                                <p >Are you sure?</p>
-                                                  
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <div class="myAccountblock d-none" id="subscribe">
+                            <div class="d-flex text-start">
+                                <div class="subscribeBlock">
+                                    <div class="bg-white p-4 text-left ms-4 ">
+                                        <div class="d-flex align-items-center">
+                                            <span class="position-relative d-inline-block">
+                                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="sml-pic" />
+
+                                            </span>
+                                            <div class="my-5 subscription-read">
+                                                <h5>Ashwani Kumar</h5>
+                                                <small>Class - 12th, Preparing for JEE (M), April 2022</small>
+
+                                            </div>
+                                        </div>
+                                        <div class="d-flex bg-light align-items-center px-4 py-3">
+                                            <span><i class="fas fa-check-circle text-success fa-4x"></i></span>
+                                            <div class="subscribe-detail">
+                                                <p class="mb-0">Subscribed for JEE (Mains) 2022</p>
+                                                <small>Includes 2 Mains Mock Test (Live), 4 Sample Tests</small>
+                                            </div>
+                                        </div>
+                                        <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p>
+                                        <div class=" text-box mt-4 text-end">
+                                            <button class="btn-light rounded-0 btn px-5 btn-sm">See Details</button>
+                                            <button class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="myAccountblock d-none" id="logout-block">
+                            <div class="d-flex text-start align-items-center justify-content-center h-100">
+                                <div class="logoutBlock">
+                                    <div class="bg-white p-4 text-left ms-4 text-center">
+
+                                        <p>Are you sure?</p>
+
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();" class="btn btn-danger rounded-0 px-5">
-                                           Logout
+                                            Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
-                                                     
-                                                   
-                                                 
-                                            </div>
-                                        </div>
+
+
+
                                     </div>
-                               </div> <!-- login end -->
-                        </div>
+                                </div>
+                            </div>
+                        </div> <!-- login end -->
                     </div>
+                </div>
             </div>
         </div>
     </div>
