@@ -67,6 +67,7 @@ button {
 .bg-light-green {
     background: #44cd7f;
 }
+
 .btn-danger {
     background: #d71921 !important;
 }
@@ -2015,7 +2016,12 @@ header {
     position: absolute;
     margin: 0 0 0 -10px;
 }
-
+/* .logoutBlock {
+    width: 330px;
+} */
+.subscribeBlock {
+    width: 530px;
+}
 .leaderBoardBlockedit {
     width: 430px;
 }
@@ -2054,6 +2060,23 @@ header {
     height: 150px;
     border-radius: 100px;
 }
+.sml-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+}
+.subscription-read {
+    margin-left: 20px;
+}
+.subscription-read h5 {
+    font-size: 18px;
+    color: #2c3348;
+    margin: 0;
+}
+.subscription-read small {
+    font-size: 12px;
+    color: #2c3348;
+}
 .edit-icon {
     width: 36px;
     height: 36px;
@@ -2074,4 +2097,13 @@ header {
 .read-mode .edit-icon,
 .read-mode .profile-form-block {
     display: none;
+}
+.subscribe-detail {
+    margin-left: 20px;
+}
+.subscribe-detail p {
+    font-size: 18px;
+}
+.subscribe-detail small {
+    font-size: 12px;
 }
