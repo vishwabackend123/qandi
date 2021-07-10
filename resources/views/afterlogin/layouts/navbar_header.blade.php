@@ -34,8 +34,8 @@
                         <div class="offcanvas-body">
                             <div class="d-flex flex-column justify-content-center align-items-start profile-links">
                                 <span><a href="#" id="profile-click"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
-                                <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
-                                <span>
+                                <span><a href="#" id="subscribe-click"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
+                                <!-- <span>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();">
                                         <img src="{{URL::asset('public/after_login/images/Layer -7.png')}}"> Logout
@@ -44,6 +44,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                </span> -->
+                                <span>
+                                    <a href="#" id="logout-click"><img src="{{URL::asset('public/after_login/images/Layer -7.png')}}">Logout</a>
+
                                 </span>
                             </div>
                         </div>
@@ -178,6 +182,61 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="myAccountblock d-none" id="subscribe">
+                            <div class="d-flex text-start">
+                                <div class="subscribeBlock">
+                                    <div class="bg-white p-4 text-left ms-4 ">
+                                        <div class="d-flex align-items-center">
+                                            <span class="position-relative d-inline-block">
+                                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="sml-pic" />
+
+                                            </span>
+                                            <div class="my-5 subscription-read">
+                                                <h5>Ashwani Kumar</h5>
+                                                <small>Class - 12th, Preparing for JEE (M), April 2022</small>
+
+                                            </div>
+                                        </div>
+                                        <div class="d-flex bg-light align-items-center px-4 py-3">
+                                            <span><i class="fas fa-check-circle text-success fa-4x"></i></span>
+                                            <div class="subscribe-detail">
+                                                <p class="mb-0">Subscribed for JEE (Mains) 2022</p>
+                                                <small>Includes 2 Mains Mock Test (Live), 4 Sample Tests</small>
+                                            </div>
+                                        </div>
+                                        <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p>
+                                        <div class=" text-box mt-4 text-end">
+                                            <button class="btn-light rounded-0 btn px-5 btn-sm">See Details</button>
+                                            <button class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="myAccountblock d-none" id="logout-block">
+                            <div class="d-flex text-start align-items-center justify-content-center h-100">
+                                <div class="logoutBlock">
+                                    <div class="bg-white p-4 text-left ms-4 text-center">
+
+                                        <p>Are you sure?</p>
+
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            sessionStorage.clear();  document.getElementById('logout-form').submit();" class="btn btn-danger rounded-0 px-5">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- login end -->
                     </div>
                 </div>
             </div>
