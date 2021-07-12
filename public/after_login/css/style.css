@@ -2107,3 +2107,9 @@ header {
 .subscribe-detail small {
     font-size: 12px;
 }
+.author-pic {
+    width: 240px;
+    height: 240px;
+    border-radius: 150px;
+    border: 2px solid #d71921;
+}
