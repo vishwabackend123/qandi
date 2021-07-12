@@ -99,42 +99,6 @@ class StudentSignInController extends Controller
         }
     }
 
-
-    public function verifyotplogin_old(Request $request)
-    {
-        $data = $request->all();
-
-        $enteredOtp = $request->input('login_otp');
-        $enteredMobile = $request->input('login_mobile');
-
-        $OTP = $request->session()->get('OTP');
-
-        if ($OTP == $enteredOtp) {
-            //Removing Session variable
-            Session::forget('OTP');
-
-            $user = StudentUsers::where('mobile', $enteredMobile)->first();
-
-            Session::put('user_data', $user);
-            if (Auth::loginUsingId($user->id)) {
-
-                $response['status'] = 200;
-                $response['message'] = "Your Logged in.";
-                $response['redirect_url'] = url('dashboard');
-
-                return json_encode($response);
-            } else {
-                $response['status'] = 400;
-                $response['error'] = "Authentication failed please try again.";
-                return json_encode($response);
-            }
-        } else {
-            $response['status'] = 400;
-            $response['error'] = "OTP does not match.";
-            return json_encode($response);
-        }
-    }
-
     /**
      * Undocumented function
      *
@@ -292,31 +256,58 @@ class StudentSignInController extends Controller
         $mobile_num = $request->input('mobile_num');
         $user_name = $request->input('user_name');
 
-        $OTP = $request->session()->get('OTP');
 
-        if ($OTP == $reg_otp) {
-            //Removing Session variable
-            //Session::forget('OTP');
+        $request = [
+            'user_name' => $user_name,
+            'email' => $email_add,
+            'mobile' => (int)$mobile_num,
+        ];
 
-            $insert = [
-                'first_name' => $user_name,
-                'last_name' => '',
-                'email' => $email_add,
-                'mobile' => $mobile_num,
-                'grade_id' => 1,
+
+        $request_json = json_encode($request);
+
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/student-signup';
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+
+        $response_json = curl_exec($curl);
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        if ($httpcode != 200 && $httpcode != 201) {
+            $response = [
+
+                "error" => $err,
+                "success" => false,
+                "status" => 400,
             ];
+            return json_encode($response);
+        } else {
+            $aResponse = json_decode($response_json);
+            $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
+            $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
 
-            $create = StudentUsers::create($insert);
-            $user_id = $create->id;
-
-            DB::table('student_preferences')->insert([
-                'student_id' => $user_id,
-            ]);
-
-            $user = StudentUsers::where('id', $user_id)->first();
-
-            Session::put('user_data', $user);
-            if (Auth::loginUsingId($user->id)) {
+            if (Auth::loginUsingId($student_id)) {
                 $response['status'] = 200;
                 $response['message'] = "Registration successful";
                 $response['redirect_url'] = url('dashboard');
@@ -327,10 +318,6 @@ class StudentSignInController extends Controller
                 $response['error'] = "Authentication failed please try again.";
                 return json_encode($response);
             }
-        } else {
-            $response['status'] = 400;
-            $response['error'] = "OTP does not match.";
-            return json_encode($response);
         }
     }
 }

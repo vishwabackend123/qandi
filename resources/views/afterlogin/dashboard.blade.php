@@ -78,6 +78,7 @@
         display: block;
     }
 </style>
+
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
 <div class="main-wrapper">

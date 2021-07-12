@@ -151,16 +151,7 @@ class HomeController extends Controller
 
         if (isset($storeddata['today_feeling']) && !empty($storeddata['today_feeling'])) {
             $mood = $storeddata['today_feeling'];
-            /* $insert = [
-                'user_id' => $user_id,
-                'user_mood_ind' => (int)$mood,
-                'login_date' => date('Y-m-d'),
-                'time_start' => date('h:i:s'),
-                'time_end' =>  date('h:i:s'),
-                'traffic_source' => 'web',
-                'pages_visted' => ''
-            ];
-            $crt = UserAnalytics::create($insert); */
+
             $request = [
                 'user_id' =>  (int)$user_id,
                 'user_mood_ind' => (int)$mood,
@@ -218,6 +209,7 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
 
         $request = [
+            "id" => $user_id,
             "first_name" => $request->firstname,
             "last_name" => $request->lastname,
             "user_name" => $request->username,
@@ -225,41 +217,39 @@ class HomeController extends Controller
             "mobile" => $request->user_mobile,
         ];
 
-        /* $request_json = json_encode($request);
-       dd($request_json);
+        $request_json = json_encode($request);
 
         $api_URL = Config::get('constants.API_NEW_URL');
-            $curl_url = $api_URL . 'api/today-feeling';
+        $curl_url = $api_URL . 'api/users';
 
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "content-type: application/json"
+            ),
+        ));
+        $response_json = curl_exec($curl);
 
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "PUT",
-                CURLOPT_POSTFIELDS => $request_json,
-                CURLOPT_HTTPHEADER => array(
-                    "accept: application/json",
-                    "content-type: application/json"
-                ),
-            ));
-            $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
 
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl); */
-
-        $update = StudentUsers::where('id', $user_id)->update($request);
-
-        if ($update) {
-            return 'success';
+        if ($httpcode != 200 && $httpcode != 201) {
+            $response['success'] = false;
+            $response['error'] = "";
+            return json_encode($response);
         } else {
-            return 'failed';
+            return $response_json;
         }
     }
 }

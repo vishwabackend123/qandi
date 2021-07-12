@@ -60,8 +60,8 @@ class ResultController extends Controller
         $inputjson['time_taken'] = (string)$submit_time;
         $inputjson['class_id'] = $exam_id;
 
-
         $request = json_encode($inputjson);
+
 
         $curl_url = "";
         $curl = curl_init();

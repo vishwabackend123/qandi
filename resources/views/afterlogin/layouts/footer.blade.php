@@ -40,9 +40,17 @@
                 type: 'POST',
                 data: $('#editProfile_form').serialize(),
                 beforeSend: function() {},
-                success: function(response_data) { //debugger;
-                    $('#profile-details').show();
-                    $('#profile-form').hide();
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+                    if (response.success == true) {
+                        $('#profile-details').show();
+                        $('#profile-form').hide();
+
+                    } else {
+                        return false;
+                    }
+
+
 
                 },
                 error: function(xhr, b, c) {
@@ -331,9 +339,28 @@
         $('#profile-click').click(function() {
 
             $('#profile-block').toggleClass('d-none');
-            $(this).addClass('activelink');
+            $(this).toggleClass('activelink');
+            $('#subscribe').addClass('d-none');
+            $('#subscribe-click').removeClass('activelink');
+            $('#logout-block').addClass('d-none');
+            $('#logout-click').removeClass('activelink');
+        });
+        $('#subscribe-click').click(function() {
+            $('#subscribe').toggleClass('d-none');
+            $(this).toggleClass('activelink');
+            $('#profile-block').addClass('d-none');
+            $('#profile-click').removeClass('activelink');
 
-
+            $('#logout-block').addClass('d-none');
+            $('#logout-click').removeClass('activelink');
+        });
+        $('#logout-click').click(function() {
+            $('#logout-block').toggleClass('d-none');
+            $(this).toggleClass('activelink');
+            $('#profile-block').addClass('d-none');
+            $('#profile-click').removeClass('activelink');
+            $('#subscribe').addClass('d-none');
+            $('#subscribe-click').removeClass('activelink');
         });
     });
 </script>

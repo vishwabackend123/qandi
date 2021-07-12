@@ -21,7 +21,7 @@
                         </a>
                     </span>
                     <span class="notification ms-4">
-                        <a href="javascript:void(0);" class="top-link ">
+                        <a href="{{ route('overall_analytics') }}" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/Group1831.png')}}">
                             <span class="red-dot"></span>
                             <span class="hoverlink">Analitics</span>
@@ -117,7 +117,7 @@
                                                 <div id="profile-details">
                                                     <div class="my-5 profile-read">
                                                         <h5>{{Auth::user()->user_name}}</h5>
-                                                        <small>Class - 12th, Preparing for JEE (M), April 2022</small>
+                                                        <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 ms-2" id="editprofile">Edit Profile</button>
                                                     </div>
                                                     <div>
@@ -184,8 +184,8 @@
 
                                             </span>
                                             <div class="my-5 subscription-read">
-                                                <h5>Ashwani Kumar</h5>
-                                                <small>Class - 12th, Preparing for JEE (M), April 2022</small>
+                                                <h5>{{Auth::user()->user_name}}</h5>
+                                                <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
 
                                             </div>
                                         </div>
