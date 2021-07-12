@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Redirect;
 
 trait CommonTrait
 {
-    public function index()
+    public function user_data($userData)
     {
         // Fetch all the students from the 'student' table.
         $student = StudentUsers::all();

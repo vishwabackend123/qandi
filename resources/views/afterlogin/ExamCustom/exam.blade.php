@@ -191,7 +191,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         </div>
                         <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
-                            <h1 class="my-auto">All the Best! {{Auth::user()->first_name}} </h1>
+                            <h1 class="my-auto">All the Best! {{Auth::user()->user_name}} </h1>
                             <div class="text-left   ">
 
                                 <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>

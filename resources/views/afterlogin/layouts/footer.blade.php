@@ -33,11 +33,7 @@
     $("#editProfile_form").validate({
 
         submitHandler: function(form) {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+
 
             $.ajax({
                 url: "{{ url('/editProfile') }}",
@@ -335,29 +331,9 @@
         $('#profile-click').click(function() {
 
             $('#profile-block').toggleClass('d-none');
-            $(this).toggleClass('activelink');
-            $('#subscribe').addClass('d-none');
-            $('#subscribe-click').removeClass('activelink');
-            $('#logout-block').addClass('d-none');
-            $('#logout-click').removeClass('activelink');
-         });
-         $('#subscribe-click').click(function() {
-                $('#subscribe').toggleClass('d-none');
-                $(this).toggleClass('activelink');
-                $('#profile-block').addClass('d-none');
-            $('#profile-click').removeClass('activelink');
+            $(this).addClass('activelink');
 
-            $('#logout-block').addClass('d-none');
-            $('#logout-click').removeClass('activelink');
-         });
-         $('#logout-click').click(function() {
-                $('#logout-block').toggleClass('d-none');
-                $(this).toggleClass('activelink');
-                $('#profile-block').addClass('d-none');
-            $('#profile-click').removeClass('activelink');
-            $('#subscribe').addClass('d-none');
-            $('#subscribe-click').removeClass('activelink');
-         });
-            
+
+        });
     });
 </script>

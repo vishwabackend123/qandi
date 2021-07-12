@@ -18,7 +18,7 @@ class StudentUsers extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['email', 'mobile', 'password', 'auth_code', 'status', 'user_role', 'first_name', 'last_name', 'middle_name', 'address', 'zipcode', 'institution_id', 'other_institute', 'country', 'state', 'city', 'gender', 'grade_id', 'mobile_otp', 'email_otp'];
+    protected $fillable = ['email', 'mobile', 'password', 'auth_code', 'status', 'user_role', 'first_name', 'last_name', 'user_name', 'address', 'zipcode', 'institution_id', 'other_institute', 'country', 'state', 'city', 'gender', 'grade_id', 'mobile_otp', 'email_otp'];
 
     /**
      * The attributes that should be hidden for arrays.

@@ -100,7 +100,7 @@ class StudentSignInController extends Controller
     }
 
 
-    public function verifyotplogin(Request $request)
+    public function verifyotplogin_old(Request $request)
     {
         $data = $request->all();
 
@@ -132,6 +132,85 @@ class StudentSignInController extends Controller
             $response['status'] = 400;
             $response['error'] = "OTP does not match.";
             return json_encode($response);
+        }
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function verifyotplogin(Request $request)
+    {
+        $data = $request->all();
+
+        $enteredOtp = $request->input('login_otp');
+        $enteredMobile = $request->input('login_mobile');
+
+        $request = [
+            'mobile' => $enteredMobile,
+            'mobile_otp' => $enteredOtp
+        ];
+
+        $request_json = json_encode($request);
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/studentlogin';
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+
+
+
+        if ($httpcode != 200 && $httpcode != 201) {
+            $response = [
+                "message" => "User mobile number or otp not matched !!",
+                "error" => $err,
+                "success" => false,
+                "status" => 400,
+            ];
+            return json_encode($response);
+        } else {
+            $aResponse = json_decode($response_json);
+            $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
+            $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
+
+            Session::put('user_data', $user_data);
+            if (Auth::loginUsingId($user_data->id)) {
+
+                $response['status'] = 200;
+                $response['message'] = $succ_msg;
+                $response['redirect_url'] = url('dashboard');
+
+                return json_encode($response);
+            } else {
+                $response['status'] = 400;
+                $response['error'] = "Authentication failed please try again.";
+                return json_encode($response);
+            }
         }
     }
 

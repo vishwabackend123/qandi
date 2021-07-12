@@ -46,7 +46,6 @@ class HomeController extends Controller
         $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : 0;
 
 
-
         if ($student_stage_at_sgnup == 0) {
             return redirect()->route('studentstandfor');
         }
@@ -94,10 +93,11 @@ class HomeController extends Controller
 
 
             $request = [
-                'student_id' => 30782, // (int)$user_id,
+                'student_id' => (int)$user_id,
                 'student_stage_at_sgnup' => (int)$stand_value,
             ];
             $request_json = json_encode($request);
+
 
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/stage-at-signUp';
@@ -162,7 +162,7 @@ class HomeController extends Controller
             ];
             $crt = UserAnalytics::create($insert); */
             $request = [
-                'user_id' => 30782, // (int)$user_id,
+                'user_id' =>  (int)$user_id,
                 'user_mood_ind' => (int)$mood,
             ];
             $request_json = json_encode($request);
@@ -214,6 +214,52 @@ class HomeController extends Controller
      */
     public function editProfile(Request $request)
     {
-        dd($request->all());
+        $data = $request->all();
+        $user_id = Auth::user()->id;
+
+        $request = [
+            "first_name" => $request->firstname,
+            "last_name" => $request->lastname,
+            "user_name" => $request->username,
+            "email" => $request->useremail,
+            "mobile" => $request->user_mobile,
+        ];
+
+        /* $request_json = json_encode($request);
+       dd($request_json);
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+            $curl_url = $api_URL . 'api/today-feeling';
+
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "PUT",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                    "accept: application/json",
+                    "content-type: application/json"
+                ),
+            ));
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl); */
+
+        $update = StudentUsers::where('id', $user_id)->update($request);
+
+        if ($update) {
+            return 'success';
+        } else {
+            return 'failed';
+        }
     }
 }

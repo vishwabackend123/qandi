@@ -380,7 +380,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="h1-p">Hello {{Auth::user()->first_name}},</p>
+                <p class="h1-p">Hello {{Auth::user()->user_name}},</p>
                 <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
                 <p class="welcome-icons mt-4">
                     <img src="{{URL::asset('public/after_login/images/icon1.png')}}">
@@ -410,7 +410,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="h1-p"> {{Auth::user()->first_name}},</p>
+                <p class="h1-p"> {{Auth::user()->user_name}},</p>
                 <p>Tell us how are you feeling today?</p>
                 <p class="welcome-icons mt-5">
                     <a href="#" onclick="save_feelings(1)" class="emoji-block"><img src="{{URL::asset('public/after_login/images/smily1.png')}}"> <span>SAD</span></a>
