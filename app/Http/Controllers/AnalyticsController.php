@@ -17,4 +17,10 @@ class AnalyticsController extends Controller
 
         return view('afterlogin.Analytics.overall_analytics');
     }
+
+    public function export_analytics(Request $request)
+    {
+
+        return view('afterlogin.Analytics.export_analytics');
+    }
 }

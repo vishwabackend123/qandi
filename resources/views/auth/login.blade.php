@@ -79,7 +79,7 @@
                 mobile: mobile,
             },
             success: function(response_data) {
-                console.log
+
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     $("#mobile-input-btn").hide();

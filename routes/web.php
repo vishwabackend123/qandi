@@ -102,6 +102,7 @@ Route::any('/live_exam', [App\Http\Controllers\LiveExamController::class, 'live_
 /* AnalyticsController Routes */
 
 Route::any('/overall_analytics', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');
+Route::any('/export_analytics', [App\Http\Controllers\AnalyticsController::class, 'export_analytics'])->name('export_analytics')->middleware('auth', 'menu');
 
 
 

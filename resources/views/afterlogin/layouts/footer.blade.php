@@ -1,3 +1,36 @@
+<!-- Modal Export Analytics-->
+<div class="modal fade" id="exportAnalytics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pt-0 px-5 ">
+                <div class="text-center my-5">
+                    <a href="{{route('export_analytics')}}" class="btn btn-danger px-5 rounded-0"><i class="fa fa-download"></i> &nbsp;Download</a>
+                </div>
+                <p class="text-center text-secondary mb-5">OR</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
+                    </div>
+                    <input type="text" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i> </div>
+                    <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
+                        <option class="text-secondary">Share it only this time</option>
+                    </select>
+                </div>
+                <div class="text-center my-5">
+                    <button class="btn btn-danger px-5 rounded-0"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="{{URL::asset('public/js/jquery-2.2.4.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 

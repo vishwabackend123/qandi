@@ -27,7 +27,7 @@
                                 <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
                             </li>
                             <li class="ms-auto">
-                                <a class="btn btn-danger rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#"><i class="me-2 fa fa-download"></i> Export Analytics</a>
+                                <a class="btn btn-danger rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> Export Analytics</a>
                             </li>
                         </ul>
 
@@ -411,9 +411,9 @@
                                         <div class="bg-white shadow-lg p-3">
                                             <div class="d-flex align-items-center">
                                                 <h5 class="dashboard-title ">Topics</h5>
-                                                <button  class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3"   data-bs-toggle="modal"  data-bs-target="#upcoming-webinar" >
+                                                <button class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3" data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
                                                     Upcoming Webinar
-                                                    </button>
+                                                </button>
                                                 <button class="btn btn-warning px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand</button>
                                             </div>
 
@@ -1329,82 +1329,58 @@
         </div>
     </div>
 </div>
-<div
-                            class="modal fade"
-                            id="upcoming-webinar"
-                            tabindex="-1"
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true"
-                          >
-                            <div
-                              class="
+<div class="modal fade" id="upcoming-webinar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="
                                 modal-dialog modal-dialog-centered modal-lg
-                              "
-                            >
-                              <div class="modal-content rounded-0">
-                                <div class="modal-header pb-0 border-0">
-                                  <button
-                                    type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  ></button>
-                                </div>
-                                <div class="modal-body pb-5">
-                                  <p>
-                                    <img
-                                      src="{{URL::asset('public/images/main-logo-red.png')}} "
-                                     class="me-2"/>Presents
-                                  </p>
-                                  <div
-                                    class="
+                              ">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pb-5">
+                <p>
+                    <img src="{{URL::asset('public/images/main-logo-red.png')}} " class="me-2" />Presents
+                </p>
+                <div class="
                                       d-flex
                                       align-items-center
                                       justify-content-between
-                                    "
-                                  >
-                                    <div>
-                                      <h4>Crash Course Webinar</h4>
-                                      <h1>
-                                        Introduction to <br />
-                                        Optics Wave
-                                      </h1>
-                                      <p class="mt-5">
-                                        <i class="fas fa-calendar-check-o"></i>
-                                        Thursday, June 24th
-                                      </p>
-                                      <p>
-                                        <i class="far fa-clock"></i> 11AM EST |
-                                        2:30PM IST
-                                      </p>
-                                    </div>
-                                    <div class="px-5">By</div>
-                                    <div
-                                      class="
+                                    ">
+                    <div>
+                        <h4>Crash Course Webinar</h4>
+                        <h1>
+                            Introduction to <br />
+                            Optics Wave
+                        </h1>
+                        <p class="mt-5">
+                            <i class="fas fa-calendar-check-o"></i>
+                            Thursday, June 24th
+                        </p>
+                        <p>
+                            <i class="far fa-clock"></i> 11AM EST |
+                            2:30PM IST
+                        </p>
+                    </div>
+                    <div class="px-5">By</div>
+                    <div class="
                                         text-center
                                         d-flex
                                         flex-column
                                         h-100
-                                      "
-                                    >
-                                      <img
-                                        src="{{URL::asset('public/after_login/images/userpics.png')}}"
-                                        class="author-pic"
-                                      />
-                                      <h5 class="mt-3">Dr. Mark Jadson</h5>
-                                      <p>Department Head, Ph.D Physics</p>
-                                      <small>Department of Physics | MIT</small>
-                                      <button
-                                        class="btn btn-danger mt-5 rounded-0"
-                                      >
-                                        Let’s get you registered >
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                                      ">
+                        <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="author-pic" />
+                        <h5 class="mt-3">Dr. Mark Jadson</h5>
+                        <p>Department Head, Ph.D Physics</p>
+                        <small>Department of Physics | MIT</small>
+                        <button class="btn btn-danger mt-5 rounded-0">
+                            Let’s get you registered >
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @include('afterlogin.layouts.footer')
