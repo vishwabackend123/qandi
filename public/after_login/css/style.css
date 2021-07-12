@@ -2113,3 +2113,59 @@ header {
     border-radius: 150px;
     border: 2px solid #d71921;
 }
+.report-block1 {
+    background: #f3f7ff;
+}
+.greentxt {
+    font-size: 187px;
+    color: #44cd7f;
+    font-weight: bold;
+    text-align: center;
+}
+.exportUserpic {
+    width: 120px;
+    height: 120px;
+    border-radius: 80px;
+    border: 2px solid #d71921;
+}
+.exportUsertxt {
+    margin-left: 20px;
+}
+.exportUsertxt p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.exportUsertxt small {
+    font-size: 13px;
+}
+.report-analysis-block {
+    border-radius: 20px;
+}
+.reportHeading {
+    font-size: 40px;
+    font-weight: 400;
+    border-left: 2px solid #feda57;
+    padding: 10px 0 10px 20px;
+    position: relative;
+}
+.reportHeading:after {
+    content: "";
+    width: 2px;
+    height: 40px;
+    background: #44cd7f;
+    position: absolute;
+    right: -15%;
+    top: 50%;
+    margin-top: -20px;
+    transform: rotate(17deg);
+}
+.reportHeading span {
+    font-size: 30px;
+    font-weight: 300;
+}
+.report-block2 {
+    background: #fff4cf;
+}
+.w-34 {
+    width: 34%;
+}
