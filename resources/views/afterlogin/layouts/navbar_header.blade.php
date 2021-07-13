@@ -7,7 +7,7 @@
                     <span class="user-name-block ps-3 me-3">Welcome, {{Auth::user()->user_name}}</span>
 
                     <span class="notification me-5 ms-4">
-                        <a href="javascript:void(0);" class="top-link ">
+                        <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/bell.png')}}">
                             <span class="red-dot"></span>
                             <span class="hoverlink">Notification</span>
@@ -234,6 +234,96 @@
         </div>
     </div>
 </header>
+<!-- notification START-->
+<div class="collapse planmner-block width" id="notification">
+    <div class="planner-wrapper">
+        <div class="planner-content p-3">
+            <h4 class="noti-heading">Notification</h4>
+            <div class="notification-scroll">
+                <p class="noti-subheading">Recent</p>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <p class="noti-subheading mt-4">Older Notification</p>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                    <p>You have a test tomorrow on Wave Optics</p>
+                    <span class="mb-2">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-light"></i>
+                        <i class="fa fa-star text-light"></i>
+                    </span>
+                    <small>09:34PM</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- notification End-->
 <div class="collapse planmner-block width" id="collapseExample">
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">

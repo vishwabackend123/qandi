@@ -66,15 +66,85 @@ class HomeController extends Controller
             //expire today
             $suscription_status = 1;
         }
-
-
-
         if ($suscription_status == 0 || $subscription_yn == 'N') {
             return redirect()->route('subscriptions');
         }
 
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/studentDashboard/test-score/' . $user_id;
 
-        return view('afterlogin.dashboard');
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $score_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $scoreResponse = json_decode($score_json);
+            $scoreData = isset($scoreResponse->response) ? ($scoreResponse->response) : '';
+        } else {
+            $scoreData = [];
+        }
+
+        if (isset($scoreData) && !empty($scoreData)) {
+            $corrent_score_per = isset($scoreData[0]->result_percentage) ? $scoreData[0]->result_percentage : 0;
+            $previous_score_per = isset($scoreData[1]->result_percentage) ? $scoreData[1]->result_percentage : 0;
+            $diff_score_per = $corrent_score_per - $previous_score_per;
+        }
+
+        if ($diff_score_per > 0) {
+            $score = $previous_score_per;
+            $progress = $diff_score_per;
+            $inprogress = 0;
+            $others = 100 - ($score + $progress);
+        } else {
+            $score = $corrent_score_per;
+            $inprogress = $diff_score_per;
+            $progress = $diff_score_per;
+            $others = 100 - ($score + $progress);
+        }
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/studentDashboard/student_proficiency/' . $user_id;
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $subject_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        if ($httpcode == 200 || $httpcode == 201) {
+            $subjectResponse = json_decode($subject_json);
+            $subjectData = isset($subjectResponse->success) ? ($subjectResponse->success) : '';
+        } else {
+            $subjectData = [];
+        }
+
+
+        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData'));
     }
 
     public function student_stand(Request $request)
@@ -186,12 +256,37 @@ class HomeController extends Controller
         }
         if (isset($storeddata['subjects_rating']) && !empty($storeddata['subjects_rating'])) {
             $rating = json_encode($storeddata['subjects_rating']);
-            $update = [
+
+            $request = [
+                'student_id' =>  (int)$user_id,
                 'subjects_rating' => $rating,
             ];
+            $request_json = json_encode($request);
 
+            $api_URL = Config::get('constants.API_NEW_URL');
+            $curl_url = $api_URL . 'api/subject-rating';
 
-            $upt = StudentPreference::where('student_id', $user_id)->update($update);
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "PUT",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                    "accept: application/json",
+                    "content-type: application/json"
+                ),
+            ));
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
         }
 
         return "success";

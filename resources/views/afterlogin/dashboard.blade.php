@@ -98,8 +98,9 @@
 
                                     <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
 
-                                    <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span>
-                                    <span class="mt-auto bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
+                                    <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
+                                    <div id="scorecontainer" class="text-right"></div>
+                                    <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
                                         <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
                                         <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
@@ -126,8 +127,10 @@
                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
                             <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
                         </div>
+                        @if(!empty($subjectData))
+                        @foreach($subjectData as $key=>$sub)
                         <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-4 dashboard-listing-details w-100 ">
-                            <span class="mr-3 dashboard-name-txt">Mathematics</span>
+                            <span class="mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
 
                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
@@ -177,13 +180,16 @@
                                 </div>
 
                                 <div class="score score-rating js-score">
-                                    0 %
+                                    {{round($sub->score)}} %
                                     <!-- <span>/</span>
                               <span class="total">5</span> -->
                                 </div>
                             </div>
                             <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
                         </div>
+                        @endforeach
+                        @endif
+                        {{--
                         <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-4 dashboard-listing-details w-100 ">
                             <span class="mr-3 dashboard-name-txt">Physics</span>
 
@@ -240,133 +246,135 @@
                                   <span class="total">5</span> -->
                                 </div>
                             </div>
-                            <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
+                            <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a>
+                    </div>
+                </div>
+                <div class="anlytics_wrapper d-flex align-items-center justify-content-between  pt-2 mb-2 dashboard-listing-details w-100 ">
+                    <span class="mr-3 dashboard-name-txt">Chemistry</span>
+
+                    <div class="status-id  ms-auto d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+
+                        <div class="star hidden">
+                            <span class="full" data-value="0"></span>
+                            <span class="half" data-value="0"></span>
                         </div>
-                        <div class="anlytics_wrapper d-flex align-items-center justify-content-between  pt-2 mb-2 dashboard-listing-details w-100 ">
-                            <span class="mr-3 dashboard-name-txt">Chemistry</span>
 
-                            <div class="status-id  ms-auto d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                        <div class="star">
 
-                                <div class="star hidden">
-                                    <span class="full" data-value="0"></span>
-                                    <span class="half" data-value="0"></span>
-                                </div>
+                            <span class="full" data-value="1"></span>
+                            <span class="half" data-value="0.5"></span>
+                            <span class="selected"></span>
 
-                                <div class="star">
+                        </div>
 
-                                    <span class="full" data-value="1"></span>
-                                    <span class="half" data-value="0.5"></span>
-                                    <span class="selected"></span>
+                        <div class="star">
 
-                                </div>
+                            <span class="full" data-value="2"></span>
+                            <span class="half" data-value="1.5"></span>
+                            <span class="selected"></span>
 
-                                <div class="star">
+                        </div>
 
-                                    <span class="full" data-value="2"></span>
-                                    <span class="half" data-value="1.5"></span>
-                                    <span class="selected"></span>
+                        <div class="star">
 
-                                </div>
+                            <span class="full" data-value="3"></span>
+                            <span class="half" data-value="2.5"></span>
+                            <span class="selected"></span>
 
-                                <div class="star">
+                        </div>
 
-                                    <span class="full" data-value="3"></span>
-                                    <span class="half" data-value="2.5"></span>
-                                    <span class="selected"></span>
+                        <div class="star">
 
-                                </div>
+                            <span class="full" data-value="4"></span>
+                            <span class="half" data-value="3.5"></span>
+                            <span class="selected"></span>
 
-                                <div class="star">
+                        </div>
 
-                                    <span class="full" data-value="4"></span>
-                                    <span class="half" data-value="3.5"></span>
-                                    <span class="selected"></span>
+                        <div class="star">
 
-                                </div>
+                            <span class="full" data-value="5"></span>
+                            <span class="half" data-value="4.5"></span>
+                            <span class="selected"></span>
 
-                                <div class="star">
+                        </div>
 
-                                    <span class="full" data-value="5"></span>
-                                    <span class="half" data-value="4.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="score score-rating js-score">
-                                    0 %
-                                    <!-- <span>/</span>
+                        <div class="score score-rating js-score">
+                            0 %
+                            <!-- <span>/</span>
                                       <span class="total">5</span> -->
-                                </div>
-                            </div>
-
-                            <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
                         </div>
                     </div>
+
+                    <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="bg-white shadow-lg p-3">
-                        <h5 class="dashboard-title">Marks Trend</h5>
-                        <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;">
-                    </div>
-                </div>
+                --}}
             </div>
-            <div class="row mt-5 mb-3">
-                <div class="col-6">
-                    <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
-                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
-                </div>
-                <div class="col-6 text-right d-flex">
-                    <div class="ms-auto">
-                        <a href="#" class="text-secondary"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <section class="slick-slider mb-4">
-                        <div class=" ">
-
-                            <div class="bg-light shadow p-3 d-flex flex-column">
-                                <small class="text-danger fs-5 mb-3">Level up</small>
-                                <h3>One Last Step!</h3>
-                                <p class="text-danger fs-5">Unlock analytics and more</p>
-
-                                <div class="form-check my-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                        Take a test and get a complete analysis of your preparation!
-                                    </label>
-                                </div>
-                                <a href="{{route('exam','full_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
-                            </div>
-                        </div>
-                        <div class=" ">
-
-                            <div class="bg-light shadow p-3 d-flex flex-column inactive-block">
-                                <small class="text-danger fs-5 mb-3">Level up</small>
-                                <h3>One Last Step!</h3>
-                                <p class="text-danger fs-5">Unlock analytics and more</p>
-
-                                <div class="form-check my-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                        Take a test and get a complete analysis of your preparation!
-                                    </label>
-                                </div>
-                                <button class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
-                            </div>
-                        </div>
-
-
-                    </section>
-                </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="bg-white shadow-lg p-3">
+                <h5 class="dashboard-title">Marks Trend</h5>
+                <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;">
             </div>
         </div>
     </div>
+    <div class="row mt-5 mb-3">
+        <div class="col-6">
+            <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
+            <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
+        </div>
+        <div class="col-6 text-right d-flex">
+            <div class="ms-auto">
+                <a href="#" class="text-secondary"><i class="fas fa-check-circle"></i></a>
+                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <section class="slick-slider mb-4">
+                <div class=" ">
+
+                    <div class="bg-light shadow p-3 d-flex flex-column">
+                        <small class="text-danger fs-5 mb-3">Level up</small>
+                        <h3>One Last Step!</h3>
+                        <p class="text-danger fs-5">Unlock analytics and more</p>
+
+                        <div class="form-check my-4">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Take a test and get a complete analysis of your preparation!
+                            </label>
+                        </div>
+                        <a href="{{route('exam','full_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
+                    </div>
+                </div>
+                <div class=" ">
+
+                    <div class="bg-light shadow p-3 d-flex flex-column inactive-block">
+                        <small class="text-danger fs-5 mb-3">Level up</small>
+                        <h3>One Last Step!</h3>
+                        <p class="text-danger fs-5">Unlock analytics and more</p>
+
+                        <div class="form-check my-4">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Take a test and get a complete analysis of your preparation!
+                            </label>
+                        </div>
+                        <button class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+</div>
+</div>
 
 </div>
 <!--End dashboard html section-->
@@ -758,5 +766,89 @@
 
         $('.slick-slider').slick('refresh');
     })
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+    Highcharts.chart('scorecontainer', {
+        chart: {
+            height: 150,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingTop: 0,
+            spacingBottom: 0,
+            spacingRight: 0,
+        },
+        title: {
+            text: '<span style="font-size:40px">{{$corrent_score_per}}</span> <br><span style="font-size:20px"> / 100 </span>',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 30,
+            x: -110
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: false,
+                    distance: -50,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
+                startAngle: -120,
+                endAngle: 120,
+                center: ['20%', '50%'],
+                size: '100%'
+            }
+        },
+        series: [{
+            type: 'pie',
+
+            innerSize: '85%',
+            data: [{
+                    name: 'Score',
+                    y: <?php echo $score; ?>,
+                    color: '#ffdc34' // Jane's color
+                },
+                {
+                    name: 'Inprogress',
+                    y: <?php echo $inprogress; ?>,
+                    color: '#fc2f00c7' // Jane's color
+                },
+                {
+                    name: 'Progress',
+                    y: <?php echo $progress; ?>,
+                    color: '#ffa81d' // Jane's color
+                },
+                {
+                    name: 'Others',
+                    y: <?php echo $others; ?>,
+                    color: '#e4e4e4' // Jane's color
+                }
+
+
+            ]
+
+        }]
+    });
 </script>
 @endsection
