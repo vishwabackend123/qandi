@@ -4,7 +4,7 @@
 <div id="main">
     <div class="login-box" id="name-box">
         <div class="welcome-heading">Welcome to UniQ </div>
-        <div class="welcome-msg">Please login using your registered email/ Mobile number</div>
+        <div class="welcome-msg">Please login using your registered email/ Mobile number <img src="{{URL::asset('public/images/welcome-icon.png')}}"></div>
         <form id="studentlogin" method="post">
             @csrf
             <div id="mobile_input">

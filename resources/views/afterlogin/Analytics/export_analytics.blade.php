@@ -3,15 +3,16 @@
 @section('content')
 
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar')
+ 
 <div class="main-wrapper  h-100">
     <!-- top navbar -->
-    @include('afterlogin.layouts.navbar_header')
-    <div class="content-wrapper">
+    
+    <div class="content-wrapper py-5 my-5">
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-10 ps-lg-5 mx-auto">
                 <a href="#" class="export-btn"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
+                <a href="#" class="close-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
               <div class="bg-white">
                 <div class="report-block1 p-4">
                   <div
