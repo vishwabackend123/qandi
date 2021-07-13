@@ -6,7 +6,7 @@
         @csrf
         <div class="login-box" id="name-box">
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Let’s get to know each other better, how about starting with<br> your name?”</p>
+            <p class="welcome-msg text-center">“Let’s get to know each other better, how about starting with<br> your name?” <img src="{{URL::asset('public/images/smile.png')}}" style="width:24px;"> <img style="width:24px;" src="{{URL::asset('public/images/smile.png')}}"></p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
                 <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" />
@@ -22,7 +22,7 @@
         <div class="login-box" id="email-box">
             <div><a href="#" class="back-btn" id="backname"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div>
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Let us know your mobile or email address, you can also use it sign in ?”</p>
+            <p class="welcome-msg text-center">“Let us know your mobile or email address, you can also use it sign in ?” <img src="{{URL::asset('public/images/welcome-icon.png')}}"></p>
             <div class="text-box mt-4">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
                 <input type="email" placeholder="Email address" name="email_add" id="email_add" />
@@ -41,7 +41,7 @@
         <div class="login-box" id="otp-box">
             <div><a href="#" class="back-btn" id="backmobile"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div>
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Please check for an OTP sent in your inbox/message”</p>
+            <p class="welcome-msg text-center">“Please check for an OTP sent in your inbox/message” <img style="width:24px;" src="{{URL::asset('public/images/mail-otp.png')}}"></p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
                 <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" placeholder="Enter OTP" />

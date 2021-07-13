@@ -171,11 +171,12 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 <div class="modal-body pt-3 p-6">
                     <div class="row">
                         <div class="col-md-8">
-                            <h1 class="text-danger text-uppercase">{{$exam_name}}</h1>
+                            <h1 class="text-danger text-uppercase"><img src="{{URL::asset('public/after_login/images/write.png')}}" style="    vertical-align: bottom;margin-right:10px;">{{$exam_name}}</h1>
                             <div class="scroll">
                                 <div class="test-info">
                                     <div class="row justify-content-md-center">
-                                        <div class="col col-lg-4 d-flex flex-column align-items-center">
+                                        <div class="col col-lg-4 d-flex   align-items-center">
+                                            <div class="me-2"><img src="{{URL::asset('public/after_login/images/edit-pencil.png')}}"></div>
                                             <div>
                                                 <small>No. Of Questions</small>
                                                 <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
@@ -187,7 +188,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                                 <span class="d-block inst-text"><span class="text-danger">Wave Theory</span></span>
                                             </div> -->
                                         </div>
-                                        <div class="col col-lg-4 d-flex flex-column align-items-center">
+                                        <div class="col col-lg-4 d-flex   align-items-center">
+                                        <div class="me-2 ms-auto"><img src="{{URL::asset('public/after_login/images/timmer.png')}}"></div>
                                             <div>
                                                 <small>Duration</small>
                                                 <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime/60}}</span> Minutes</span>
@@ -207,7 +209,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         </div>
                         <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
-                            <h1 class="my-auto">All the Best! {{Auth::user()->user_name}} </h1>
+                            <h1 class="my-auto text-center">
+                            <img src="{{URL::asset('public/after_login/images/smily6.png')}}"> <img src="{{URL::asset('public/after_login/images/smily4.png')}}"> <img src="{{URL::asset('public/after_login/images/blush.png')}}"> 
+                             <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+                             <img src="{{URL::asset('public/after_login/images/thumbsup.png')}}">  <img src="{{URL::asset('public/after_login/images/thumbsup.png')}}">  <img src="{{URL::asset('public/after_login/images/leaf.png')}}"> 
+                            </h1>
                             <div class="text-left   ">
 
                                 <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>

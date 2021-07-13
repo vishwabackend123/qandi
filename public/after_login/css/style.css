@@ -2171,10 +2171,20 @@ header {
 }
 .export-btn {
     position: fixed;
-    right: 50px;
-    top: 120px;
+    right: 75px;
+    top: 15px;
     filter: contrast(0);
 }
 .export-btn:hover {
+    filter: contrast(1);
+}
+
+.close-btn {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    filter: contrast(0);
+}
+.close-btn:hover {
     filter: contrast(1);
 }
