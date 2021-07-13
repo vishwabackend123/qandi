@@ -11,6 +11,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-10 ps-lg-5 mx-auto">
+                <a href="#" class="export-btn"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
               <div class="bg-white">
                 <div class="report-block1 p-4">
                   <div
