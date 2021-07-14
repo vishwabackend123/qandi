@@ -2215,3 +2215,7 @@ header {
     display: block;
     z-index: 0;
 }
+.error {
+    color: #d71921;
+    font-size: 12px;
+}
