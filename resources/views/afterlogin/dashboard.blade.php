@@ -134,50 +134,16 @@
 
                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                                <div class="star hidden">
-                                    <span class="full" data-value="0"></span>
-                                    <span class="half" data-value="0"></span>
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="1"></span>
-                                    <span class="half" data-value="0.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="2"></span>
-                                    <span class="half" data-value="1.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="3"></span>
-                                    <span class="half" data-value="2.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="4"></span>
-                                    <span class="half" data-value="3.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="5"></span>
-                                    <span class="half" data-value="4.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
+                            <div class="star-ratings-css">
+                      <div class="star-ratings-css-top" style="width: 24%">
+                        <span>★</span><span>★</span><span>★</span><span>★</span
+                        ><span>★</span>
+                      </div>
+                      <div class="star-ratings-css-bottom">
+                        <span>★</span><span>★</span><span>★</span><span>★</span
+                        ><span>★</span>
+                      </div>
+                    </div>
 
                                 <div class="score score-rating js-score">
                                     {{round($sub->score)}} %
