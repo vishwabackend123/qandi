@@ -129,23 +129,21 @@
                         </div>
                         @if(!empty($subjectData))
                         @foreach($subjectData as $key=>$sub)
-                        <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-4 dashboard-listing-details w-100 ">
+                        <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-3 dashboard-listing-details w-100 ">
                             <span class="mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
 
                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                            <div class="star-ratings-css">
-                      <div class="star-ratings-css-top" style="width: 24%">
-                        <span>★</span><span>★</span><span>★</span><span>★</span
-                        ><span>★</span>
-                      </div>
-                      <div class="star-ratings-css-bottom">
-                        <span>★</span><span>★</span><span>★</span><span>★</span
-                        ><span>★</span>
-                      </div>
-                    </div>
+                                <div class="star-ratings-css">
+                                    <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
+                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                    </div>
+                                    <div class="star-ratings-css-bottom">
+                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                    </div>
+                                </div>
 
-                                <div class="score score-rating js-score">
+                                <div class="ms-2 score score-rating js-score">
                                     {{round($sub->score)}} %
                                     <!-- <span>/</span>
                               <span class="total">5</span> -->
