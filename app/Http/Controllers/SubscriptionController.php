@@ -10,13 +10,19 @@ use App\Models\StudentPreference;
 use App\Models\StudentUsers;
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redirect;
 
+use Illuminate\Support\Facades\Config;
 
+use App\Http\Traits\CommonTrait;
 use Carbon\Carbon;
 
 class SubscriptionController extends Controller
 {
     //
+    use CommonTrait;
     /**
      * Create a new controller instance.
      *
@@ -34,15 +40,51 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        $subscriptions = DB::table('class_exams as ce')
-            ->select('ce.id as exam_id', 'ce.class_exam_cd as exam_name', 'ce.class_exam_desc as exam_description')
-            ->leftJoin('exam_subscription_price as esp', 'esp.exam_id', '=', 'ce.id')
-            ->addSelect('esp.day_unit', 'esp.day_month_count', 'esp.exam_price')
-            ->where('ce.status', '1')
-            ->get();
+        $user_data = Auth::user();
+        $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
+        $grade_id = Auth::user()->grade_id;
 
+        $cacheKey = 'subscription_packages';
 
-        return view('subscriptions', compact('subscriptions'));
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        if ($httpcode == 200 || $httpcode == 201) {
+            $aResponse = json_decode($response_json);
+            $subscriptions = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
+            $purchased_packages = isset($aResponse->purchased_packages) ? $aResponse->purchased_packages : [];
+            Redis::set($cacheKey, json_encode($subscriptions));
+        } else {
+            $subscriptions = [];
+            $purchased_packages = [];
+        }
+        $purchased_ids = [];
+        if (!empty($purchased_packages)) {
+            foreach ($purchased_packages as $pur) {
+                array_push($purchased_ids, $pur->subscription_id);
+            }
+        }
+
+        //dd($subscriptions, $purchased_ids);
+
+        return view('subscriptions', compact('subscriptions', 'purchased_ids'));
     }
 
 
@@ -111,17 +153,25 @@ class SubscriptionController extends Controller
 
 
 
-        $subscriptions_data = DB::table('class_exams as ce')
+        /*  $subscriptions_data = DB::table('class_exams as ce')
             ->select('ce.id as exam_id', 'ce.class_exam_cd as exam_name', 'ce.class_exam_desc as exam_description')
             ->leftJoin('exam_subscription_price as esp', 'esp.exam_id', '=', 'ce.id')
             ->addSelect('esp.day_unit', 'esp.day_month_count', 'esp.exam_price')
             ->where('ce.status', '1')
             ->where('ce.id', $request->exam_id)
-            ->first();
+            ->first(); */
+        $subscriptions = $this->subscription_packages();
+        if (isset($subscriptions) && !empty($subscriptions)) {
+            $subscriptions_collect = collect($subscriptions);
+            $subscriptions_data = $subscriptions_collect->where('subscript_id', $request->subscript_id)->values()->all();
+            $subscriptions_data = $subscriptions_data[0];
+        } else {
+            $subscriptions_data = [];
+        }
+
+        //dd($subscriptions_data);
 
 
-
-
-        return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId'));
+        return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price'));
     }
 }

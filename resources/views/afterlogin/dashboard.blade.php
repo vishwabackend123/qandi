@@ -153,192 +153,77 @@
                         </div>
                         @endforeach
                         @endif
-                        {{--
-                        <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-4 dashboard-listing-details w-100 ">
-                            <span class="mr-3 dashboard-name-txt">Physics</span>
 
-                            <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-white shadow-lg p-3">
+                        <h5 class="dashboard-title">Marks Trend</h5>
+                        <figure class="highcharts-figure">
+                            <div id="trend_graph"></div>
 
-                                <div class="star hidden">
-                                    <span class="full" data-value="0"></span>
-                                    <span class="half" data-value="0"></span>
+                        </figure>
+                        <!-- <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;"> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 mb-3">
+                <div class="col-6">
+                    <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
+                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
+                </div>
+                <div class="col-6 text-right d-flex">
+                    <div class="ms-auto">
+                        <a href="#" class="text-secondary"><i class="fas fa-check-circle"></i></a>
+                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <section class="slick-slider mb-4">
+                        <div class=" ">
+
+                            <div class="bg-light shadow p-3 d-flex flex-column">
+                                <small class="text-danger fs-5 mb-3">Level up</small>
+                                <h3>One Last Step!</h3>
+                                <p class="text-danger fs-5">Unlock analytics and more</p>
+
+                                <div class="form-check my-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Take a test and get a complete analysis of your preparation!
+                                    </label>
                                 </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="1"></span>
-                                    <span class="half" data-value="0.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="2"></span>
-                                    <span class="half" data-value="1.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="3"></span>
-                                    <span class="half" data-value="2.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="4"></span>
-                                    <span class="half" data-value="3.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="star">
-
-                                    <span class="full" data-value="5"></span>
-                                    <span class="half" data-value="4.5"></span>
-                                    <span class="selected"></span>
-
-                                </div>
-
-                                <div class="score score-rating js-score">
-                                    0 %
-                                    <!-- <span>/</span>
-                                  <span class="total">5</span> -->
-                                </div>
+                                <a href="{{route('exam','full_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
                             </div>
-                            <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a>
-                    </div>
+                        </div>
+                        <div class=" ">
+
+                            <div class="bg-light shadow p-3 d-flex flex-column inactive-block">
+                                <small class="text-danger fs-5 mb-3">Level up</small>
+                                <h3>One Last Step!</h3>
+                                <p class="text-danger fs-5">Unlock analytics and more</p>
+
+                                <div class="form-check my-4">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Take a test and get a complete analysis of your preparation!
+                                    </label>
+                                </div>
+                                <button class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
+                            </div>
+                        </div>
+
+
+                    </section>
                 </div>
-                <div class="anlytics_wrapper d-flex align-items-center justify-content-between  pt-2 mb-2 dashboard-listing-details w-100 ">
-                    <span class="mr-3 dashboard-name-txt">Chemistry</span>
-
-                    <div class="status-id  ms-auto d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-                        <div class="star hidden">
-                            <span class="full" data-value="0"></span>
-                            <span class="half" data-value="0"></span>
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="1"></span>
-                            <span class="half" data-value="0.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="2"></span>
-                            <span class="half" data-value="1.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="3"></span>
-                            <span class="half" data-value="2.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="4"></span>
-                            <span class="half" data-value="3.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="5"></span>
-                            <span class="half" data-value="4.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="score score-rating js-score">
-                            0 %
-                            <!-- <span>/</span>
-                                      <span class="total">5</span> -->
-                        </div>
-                    </div>
-
-                    <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
-                </div>
-                --}}
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="bg-white shadow-lg p-3">
-                <h5 class="dashboard-title">Marks Trend</h5>
-                <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;">
             </div>
         </div>
     </div>
-    <div class="row mt-5 mb-3">
-        <div class="col-6">
-            <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
-            <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
-        </div>
-        <div class="col-6 text-right d-flex">
-            <div class="ms-auto">
-                <a href="#" class="text-secondary"><i class="fas fa-check-circle"></i></a>
-                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <section class="slick-slider mb-4">
-                <div class=" ">
-
-                    <div class="bg-light shadow p-3 d-flex flex-column">
-                        <small class="text-danger fs-5 mb-3">Level up</small>
-                        <h3>One Last Step!</h3>
-                        <p class="text-danger fs-5">Unlock analytics and more</p>
-
-                        <div class="form-check my-4">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Take a test and get a complete analysis of your preparation!
-                            </label>
-                        </div>
-                        <a href="{{route('exam','full_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
-                    </div>
-                </div>
-                <div class=" ">
-
-                    <div class="bg-light shadow p-3 d-flex flex-column inactive-block">
-                        <small class="text-danger fs-5 mb-3">Level up</small>
-                        <h3>One Last Step!</h3>
-                        <p class="text-danger fs-5">Unlock analytics and more</p>
-
-                        <div class="form-check my-4">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Take a test and get a complete analysis of your preparation!
-                            </label>
-                        </div>
-                        <button class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
-                    </div>
-                </div>
-
-
-            </section>
-        </div>
-    </div>
-</div>
-</div>
 
 </div>
 <!--End dashboard html section-->
@@ -525,11 +410,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pt-0 text-center">
-                <p class="welcome-icons text-center mt-5">
+                <!--  <p class="welcome-icons text-center mt-5">
                     <img src="{{URL::asset('public/after_login/images/happy.png')}}">
                     <img src="{{URL::asset('public/after_login/images/party.png')}}">
 
-                </p>
+                </p> -->
                 <p class="h1-p text-success">Just one more step!</p>
                 <p>Take a test and get a complete analysis of your preparation!</p>
                 <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 p-5">
@@ -546,6 +431,27 @@
 
 
 @include('afterlogin.layouts.footer')
+@php
+$trend_stu_scroe=$trend_avg_scroe=$trend_max_scroe=$aWeeks = [];
+$i = 1;
+if (!empty($trendResponse)) {
+foreach ($trendResponse as $key => $trend) {
+$week = "W" . $i;
+array_push($aWeeks, $week);
+array_push($trend_stu_scroe, $trend->student_score);
+array_push($trend_avg_scroe, $trend->average_score);
+array_push($trend_max_scroe, $trend->max_score);
+
+
+}
+}
+
+$weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];
+$stu_scroe_json = isset($trend_stu_scroe) ? json_encode($trend_stu_scroe) : [];
+$avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
+$max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
+
+@endphp
 
 <script type="text/javascript">
     $(window).on('load', function() {
@@ -735,7 +641,7 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
@@ -813,6 +719,79 @@
             ]
 
         }]
+    });
+</script>
+
+
+<script>
+    Highcharts.chart('trend_graph', {
+        chart: {
+            height: 215,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingTop: 10,
+            spacingBottom: 0,
+            spacingRight: 0,
+        },
+        title: {
+            text: ''
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+
+        xAxis: {
+            accessibility: {
+                rangeDescription: 'Range: start to current week'
+            },
+            categories: <?php echo $weeks_json; ?>
+        },
+
+
+        series: [{
+            name: 'Student Score',
+            data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
+            color: '#7edd62' // Jane's color
+        }, {
+            name: 'Class Avg',
+            data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
+            color: '#ffdc34'
+        }, {
+            name: 'Top Marks',
+            data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
+            color: '#7cb5ed'
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled: false,
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
     });
 </script>
 @endsection

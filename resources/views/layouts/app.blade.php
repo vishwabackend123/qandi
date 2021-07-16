@@ -29,8 +29,22 @@
             <a href="{{ route('subscriptions') }}" class="side-links">Subscription</a>
             <a href="{{ route('aboutexam') }}" class="side-links">About Exam</a>
             <a href="{{ route('faq') }}" class="side-links">FAQ</a>
+            @auth
+            <div>
+                <a class="red-btn mt-2" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+            @else
             <a href="{{ route('login') }}" class="side-links">Login</a>
             <a href="{{ route('register') }}" class="red-btn mt-2">Sign up</a>
+            @endauth
+
         </div>
     </div>
     <header class="pt-5 pb-4 px-7">

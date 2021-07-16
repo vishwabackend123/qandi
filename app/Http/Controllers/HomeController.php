@@ -98,21 +98,22 @@ class HomeController extends Controller
             $scoreData = [];
         }
 
+        $previous_score_per = $corrent_score_per = $diff_score_per = 0;
         if (isset($scoreData) && !empty($scoreData)) {
             $corrent_score_per = isset($scoreData[0]->result_percentage) ? $scoreData[0]->result_percentage : 0;
             $previous_score_per = isset($scoreData[1]->result_percentage) ? $scoreData[1]->result_percentage : 0;
             $diff_score_per = $corrent_score_per - $previous_score_per;
         }
 
-        if ($diff_score_per > 0) {
-            $score = $previous_score_per;
-            $progress = $diff_score_per;
+        if ($diff_score_per >= 0) {
+            $score = isset($previous_score_per) ? $previous_score_per : 0;
+            $progress = isset($diff_score_per) ? $diff_score_per : 0;
             $inprogress = 0;
             $others = 100 - ($score + $progress);
         } else {
-            $score = $corrent_score_per;
-            $inprogress = $diff_score_per;
-            $progress = $diff_score_per;
+            $score = isset($corrent_score_per) ? $corrent_score_per : 0;
+            $inprogress = isset($diff_score_per) ? $diff_score_per : 0;
+            $progress = 0;
             $others = 100 - ($score + $progress);
         }
 
@@ -143,8 +144,44 @@ class HomeController extends Controller
             $subjectData = [];
         }
 
+        /* Marks Trend Graph Api */
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/studentDashboard/marks_trend/' . $user_id;
 
-        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData'));
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $trend_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        if ($httpcode == 200 || $httpcode == 201) {
+            $trendResponse = json_decode($trend_json);
+        } else {
+            $trendResponse = [];
+        }
+
+        $weeks = [];
+        $i = 1;
+        if (!empty($trendResponse)) {
+            foreach ($trendResponse as $key => $trend) {
+                $week = "W" . $i;
+                array_push($weeks, $week);
+            }
+        }
+
+
+        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse'));
     }
 
     public function student_stand(Request $request)

@@ -141,4 +141,46 @@ trait CommonTrait
         }
         return [];
     }
+
+    public function subscription_packages()
+    {
+        $user_data = Auth::user();
+        $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
+        $grade_id = Auth::user()->grade_id;
+
+        $cacheKey = 'subscription_packages';
+        if ($data = Redis::get($cacheKey)) {
+            $package_list = json_decode($data);
+            return $package_list;
+        }
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        if ($httpcode == 200 || $httpcode == 201) {
+            $aResponse = json_decode($response_json);
+            $package_list = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
+            Redis::set($cacheKey, json_encode($package_list));
+        } else {
+            $package_list = [];
+        }
+        return $package_list;
+    }
 }

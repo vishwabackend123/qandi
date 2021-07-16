@@ -18,26 +18,39 @@
                     @endif
                     @if(isset($subscriptions) && !empty($subscriptions))
                     @foreach($subscriptions as $sub)
+                    @php
+                    $subspriceData=(isset($sub->subs_price) && !empty($sub->subs_price))?(array)json_decode($sub->subs_price):[];
+
+                    $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
+
+                    @endphp
                     <div class="col-md-4 p-4 ">
-                        <div class="bg-white white-box-small">
-                            <h5 class="cource-name">{{strtoupper($sub->exam_name)}}</h5>
-                            <p class="price">Rs. {{$sub->exam_price}}/ {{$sub->day_month_count}}{{$sub->day_unit}}</p>
-                            <p class="box-content">{{$sub->exam_description}}</p>
-                            <p class="box-content">NATIONAL ELIGIBILITY CUM ENTRANCE TEST is conducted by National Testing Agency (NTA) for admission to MBBS/BDS Courses and other undergraduate medical courses in approved/recognized Medical/Dental & other Colleges/ Institutes in India.</p>
+                        <div class="bg-white white-box-small @if(in_array($sub->subscript_id,$purchased_ids)) inactive-block  @endif">
+                            <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
+                            <p class="price">Rs. {{$subsprice}}</p>
+                            <p class="box-content">{{$sub->subscription_details}}</p>
+                            <p class="box-content">NATIONAL ELIGIBILITY CUM ENTRANCE TEST </p>
+                            @if(in_array($sub->subscript_id,$purchased_ids))
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Already Purchased </i></button>
+                            </div>
+                            @else
                             <div class="text-center mt-5">
                                 <form action="{{route('checkout')}}" if="checkout" method="post">
                                     @csrf
-                                    <input type="hidden" name="exam_id" value="{{$sub->exam_id}}">
-                                    <input type="hidden" name="exam_period" value="{{$sub->day_month_count}}">
-                                    <input type="hidden" name="period_unit" value="{{$sub->day_unit}}">
-                                    <input type="hidden" name="exam_price" value="{{$sub->exam_price}}">
+                                    <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
+                                    <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
+                                    <input type="hidden" name="exam_period" value="12">
+                                    <input type="hidden" name="period_unit" value="month">
+                                    <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                                 </form>
                             </div>
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',1)}}" class="text-danger text-decoration-underline">Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->class_exam_id)}}" class="text-danger text-decoration-underline">Try 14 days trial ></a>
                             </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
