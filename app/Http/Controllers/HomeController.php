@@ -195,13 +195,14 @@ class HomeController extends Controller
             if ($httpcode != 200 && $httpcode != 201) {
                 $status = false;
             } else {
+
                 $aResponse = json_decode($response_json);
                 $status = isset($aResponse->success) ? $aResponse->success : '';
             }
-
             if ($status == true) {
                 return redirect()->route('dashboard');
             } else {
+
                 return redirect()->back();
             }
         } else {
