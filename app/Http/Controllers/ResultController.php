@@ -94,9 +94,13 @@ class ResultController extends Controller
         curl_close($curl);
 
         if ($httpcode == 200 || $httpcode == 201) {
-            $response = json_decode($response_json);
+            $response_data = (json_decode($response_json));
+            if (!empty($response_data) && !is_array($response_data)) {
+                $responsedata = (json_decode($response_data, true));
+            }
 
-            /* $response = isset($responsedata->response) ? $responsedata->response : []; */
+            $response = isset($responsedata[0]) ? (object)$responsedata[0] : (object)$response_data;
+            /*  dd($response); */
 
             return view('afterlogin.ExamCustom.exam_result', compact('response'));
         } else {

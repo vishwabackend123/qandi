@@ -34,6 +34,7 @@ class RazorpayController extends Controller
         $input = $request->all();
         $exam_id = $input['exam_id'];
 
+
         $user_id = Auth::user()->id;
 
         $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));

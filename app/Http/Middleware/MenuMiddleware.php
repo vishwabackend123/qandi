@@ -78,7 +78,7 @@ class MenuMiddleware
         }
         $exam_data = $this->user_exam();
 
-        /*  $curl = curl_init();
+        $curl = curl_init();
         $curl_url = $api_URL . 'api/user-subscription/' . $user_id;
         curl_setopt_array($curl, array(
 
@@ -98,18 +98,19 @@ class MenuMiddleware
         curl_close($curl);
 
         if ($httpcode == 200 || $httpcode == 201) {
-            $subResponse = json_decode(json_decode($sub_response_json));
-            $subscriptionData = isset($aResponse->response) ? json_decode($aResponse->response) : '';
+            $subResponse = json_decode($sub_response_json);
+            $subscriptionData = isset($subResponse->response) ? json_decode($subResponse->response) : '';
         } else {
-            $subResponse = [];
+            $subscriptionData = [];
         }
 
-        dd($subResponse); */
+
 
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
         \Illuminate\Support\Facades\View::share('user_stage', $user_stage);
         \Illuminate\Support\Facades\View::share('preferences_data', $preferences);
         \Illuminate\Support\Facades\View::share('exam_data', $exam_data);
+        \Illuminate\Support\Facades\View::share('subscription_details', $subscriptionData);
 
         return $next($request);
     }

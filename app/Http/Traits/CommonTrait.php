@@ -20,6 +20,7 @@ trait CommonTrait
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
+
         if (!empty($exam_id)) {
 
             $cacheKey = 'user_exam:' . $user_id;
@@ -53,9 +54,8 @@ trait CommonTrait
                 $exam_list = collect($responsedata->response);
                 /* gettin user exam data */
 
-                $exam_data = $exam_list->where('id', $exam_id)->all();
+                $exam_details = $exam_list->where('id', $exam_id)->first();
 
-                $exam_details = $exam_data[0];
                 Redis::set($cacheKey, json_encode($exam_details));
             } else {
                 $exam_details = [];
@@ -76,7 +76,8 @@ trait CommonTrait
             $subject_list = json_decode($data);
             return $subject_list;
         }
-        $api_url = Config::get('constants.API_8080_URL') . 'api/getSubject/' . $exam_id;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/' . $exam_id;
+
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -94,10 +95,13 @@ trait CommonTrait
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        if ($httpcode == 200) {
+
+
+        if ($httpcode == 200 || $httpcode == 201) {
             $responsedata = json_decode($response_json);
 
             $subject_list = $responsedata->response;
+
             Redis::set($cacheKey, json_encode($subject_list));
         } else {
             $subject_list = [];

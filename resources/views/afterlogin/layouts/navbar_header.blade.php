@@ -192,11 +192,16 @@
                                         <div class="d-flex bg-light align-items-center px-4 py-3">
                                             <span><i class="fas fa-check-circle text-success fa-4x"></i></span>
                                             <div class="subscribe-detail">
-                                                <p class="mb-0">Subscribed for JEE (Mains) 2022</p>
-                                                <small>Includes 2 Mains Mock Test (Live), 4 Sample Tests</small>
+                                                @if(isset($subscription_details) && !empty($subscription_details))
+                                                <p class="mb-0">Subscribed for {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}</p>
+                                                <small>{{isset($subscription_details->subscription_details)?$subscription_details->subscription_details:''}}</small>
+                                                @endif
+                                                <!-- <p class="mb-0">Subscribed for JEE (Mains) 2022</p>
+                                                <small>Includes 2 Mains Mock Test (Live), 4 Sample Tests</small> -->
                                             </div>
                                         </div>
-                                        <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p>
+                                        <p class="text-end text-danger mt-1">*Subscription expires on {{isset($subscription_details->subscription_end_date)?date("jS F, Y", strtotime($subscription_details->subscription_end_date)):''}}</p>
+                                        <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
                                             <a href="{{route('subscriptions')}}" class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</a>

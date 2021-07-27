@@ -127,7 +127,7 @@
                         console.log(response_data);
                         var response = jQuery.parseJSON(response_data);
 
-                        if (response.status == 200) {
+                        if (response.success == true) {
                             $('#email-box').addClass('close-box');
                             $('#otp-box').addClass('open-box');
 

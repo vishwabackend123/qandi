@@ -22,49 +22,45 @@
 
 </head>
 
-<body class="login-body-bg">
-    <div id="mySidenav" class="sidenav d-flex align-items-center flex-column justify-content-center">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="side-nav-links">
-            <a href="{{ route('subscriptions') }}" class="side-links">Subscription</a>
-            <a href="{{ route('aboutexam') }}" class="side-links">About Exam</a>
-            <a href="{{ route('faq') }}" class="side-links">FAQ</a>
-            @auth
-            <div>
-                <a class="red-btn mt-2" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
+<body>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
-            @else
-            <a href="{{ route('login') }}" class="side-links">Login</a>
-            <a href="{{ route('register') }}" class="red-btn mt-2">Sign up</a>
-            @endauth
-
-        </div>
-    </div>
-    <header class="pt-5 pb-4 px-7">
+    <header class="py-2 px-7 fixed-top" id="change">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <a href="#" class="logo"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid"></a>
+                    <a href="#" class="logo"><img src="{{URL::asset('public/images/main-logo-red.png')}}" class="img-fluid" /></a>
                 </div>
                 <div class="col text-end">
-                    <span onclick="openNav()" class="nav-btn-box"><span class="nav-btn"></span></span>
+                    <div class="side-nav-links d-flex align-items-center">
+
+                        <a href="{{ route('subscriptions') }}" class="side-links">Subscription</a>
+                        <a href="{{ route('aboutexam') }}" class="side-links">About Exam</a>
+                        <a href="{{ route('faq') }}" class="side-links">FAQ</a>
+                        @auth
+                        <div>
+                            <a class="red-btn mt-2" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                        @else
+                        <a href="{{ route('login') }}" class="red-btn">Login / Sign up</a>
+                        @endauth
+
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="px-7">
 
-        @yield('content')
+    @yield('content')
 
-    </section>
+
 
 
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-2.2.4.min.js')}}"></script>

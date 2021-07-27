@@ -64,6 +64,7 @@
                                         <div class="row mt-4">
                                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                             @foreach($response->subject_wise_result as $subject)
+                                            @php $subject=(object)$subject; @endphp
                                             <div class="col">
                                                 <buton class="btn btn-outline-secondary rounded-0 w-100">{{$subject->subject_name}}</buton>
                                             </div>
@@ -90,11 +91,12 @@
             </div>
             <div class="row mt-5 mb-3">
                 <div class="col-5">
-                    <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
+                    <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100 ">
                         <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                         <h5 class="dashboard-title mb-3">Subject Score</h5>
                         @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                         @foreach($response->subject_wise_result as $subject)
+                        @php $subject=(object)$subject; @endphp
                         @php
                         $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->correct_count/$subject->total_questions)*100:0;
                         $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->incorrect_count/$subject->total_questions)*100:0;
@@ -142,6 +144,7 @@
                                 @php $subx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
+                                @php $subject=(object)$subject; @endphp
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}-tab" data-bs-toggle="tab" href="#{{$subject->subject_name}}" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
                                 </li>
@@ -161,10 +164,12 @@
                                 @php $topx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
+                                @php $subject=(object)$subject; @endphp
                                 <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}" role="tabpanel" aria-labelledby="{{$subject->subject_name}}-tab">
-                                    <div class="hScroll">
+                                    <div class="hScroll topicdiv-scroll">
                                         @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                                         @foreach($response->topic_wise_result as $topic)
+                                        @php $topic=(object)$topic; @endphp
                                         @php
                                         $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->correct_count/$topic->total_questions)*100:0;
                                         $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->incorrect_count/$topic->total_questions)*100:0;
@@ -275,6 +280,9 @@ $not_attempt_per=100-($correct_per+$incorrect_per);
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script>
+    $(".topicdiv-scroll").slimscroll({
+        height: "50vh",
+    });
     Highcharts.chart('scorecontainer', {
         chart: {
             height: 250,

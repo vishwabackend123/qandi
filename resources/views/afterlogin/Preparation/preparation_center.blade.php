@@ -15,30 +15,49 @@
 
                     <div class="tab-wrapper">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            @php $subx=1; @endphp
+                            @if(isset($subject_list) && !empty($subject_list))
+                            @foreach($subject_list as $sub)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
+                                <a class="nav-link @if($subx==1) active @endif" id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true">{{$sub->subject_name}}</a>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Physics</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
-                            </li>
+                            @php $subx++; @endphp
+                            @endforeach
+                            @endif
+
                         </ul>
 
                         <div class="tab-content cust-tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            @php $topx=1;@endphp
+                            @if(isset($subject_list) && !empty($subject_list))
+                            @foreach($subject_list as $oSub)
+                            @php $subjectData=isset($aPreparation[$oSub->id])?$aPreparation[$oSub->id]:[];
+                            $sNotes= $sPrep=$sVideo=$sBmark=0;
+                            @endphp
+
+                            @if(isset($subjectData) && !empty($subjectData))
+                            @foreach( $subjectData as $oKey=>$oVal)
+                            @php
+                            $sNotes= isset($oVal->Notes)?$sNotes+$oVal->Notes:0;
+                            $sPrep=isset($oVal->Presentations)?$sPrep+$oVal->Presentations:0;
+                            $sVideo=isset($oVal->Videos)?$sVideo+$oVal->Videos:0;
+                            $sBmark=isset($oVal->Bookmarks)?$sBmark+$oVal->Bookmarks:0;
+                            @endphp
+                            @endforeach
+                            @endif
+
+                            <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$oSub->subject_name}}" role="tabpanel" aria-labelledby="{{$oSub->subject_name}}-tab">
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
-                                    <span class="  mr-3 name-txt">Mathematics I - II</span>
-                                    <div>
-                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                        <span><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                                    <span class=" col-md-6 mr-3 name-txt">{{$oSub->subject_name}}</span>
+                                    <div class="col-md-3  d-flex align-items-center">
+                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
+                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
+                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
+                                        <span><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
                                     </div>
 
 
-                                    <div class="d-flex align-items-center">
+                                    <div class="col-md-3 d-flex align-items-center">
                                         <p class="m-0 pe-3">Overall Proficiency</p>
                                         <i class="fa fa-star text-success mx-2"></i>
                                         <i class="fa fa-star text-success mx-2"></i>
@@ -48,19 +67,22 @@
                                     </div>
                                 </div>
                                 <div class="scroll-div">
+                                    @if(!empty($aPreparation[$oSub->id]))
+                                    @php $subjectData=$aPreparation[$oSub->id]; @endphp
+                                    @foreach( $subjectData as $Key=>$val)
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
+                                        <span class="col-md-6 mr-3 name-txt">{{$val->chapter_name}}</span>
 
 
-                                        <div>
-                                            <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                                        <div class="col-md-3  d-flex align-items-center">
+                                            <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a></span>
+                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a></span>
+                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}</a></span>
+                                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
                                         </div>
 
 
-                                        <div class="d-flex align-items-center">
+                                        <div class="col-md-3 d-flex align-items-center">
                                             <p class="m-0 pe-3">Proficiency</p>
                                             <i class="fa fa-star text-danger mx-2"></i>
                                             <i class="fa fa-star text-danger mx-2"></i>
@@ -69,78 +91,19 @@
                                             <i class="fa fa-star text-secondary mx-2"></i>
                                         </div>
                                     </div>
+                                    @endforeach
+                                    @endif
 
-
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
-
-                                        <div>
-                                            <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-                                        </div>
-
-
-                                        <div class="d-flex align-items-center">
-                                            <p class="m-0 pe-3">Proficiency</p>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-secondary mx-2"></i>
-                                            <i class="fa fa-star text-secondary mx-2"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
-
-                                        <div>
-                                            <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-                                        </div>
-
-
-                                        <div class="d-flex align-items-center">
-                                            <p class="m-0 pe-3">Proficiency</p>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-secondary mx-2"></i>
-                                            <i class="fa fa-star text-secondary mx-2"></i>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">Trigonometry</span>
-
-                                        <div>
-                                            <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                            <span class="me-2"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-                                        </div>
-
-
-                                        <div class="d-flex align-items-center">
-                                            <p class="m-0 pe-3">Proficiency</p>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-success mx-2"></i>
-                                            <i class="fa fa-star text-secondary mx-2"></i>
-                                            <i class="fa fa-star text-secondary mx-2"></i>
-                                        </div>
-                                    </div>
 
                                 </div>
 
                             </div>
+                            @php $topx++; @endphp
+                            @endforeach
+                            @endif
 
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
+                            <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div> -->
                         </div>
                     </div>
                 </div>

@@ -189,7 +189,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             </div> -->
                                         </div>
                                         <div class="col col-lg-4 d-flex   align-items-center">
-                                        <div class="me-2 ms-auto"><img src="{{URL::asset('public/after_login/images/timmer.png')}}"></div>
+                                            <div class="me-2 ms-auto"><img src="{{URL::asset('public/after_login/images/timmer.png')}}"></div>
                                             <div>
                                                 <small>Duration</small>
                                                 <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime/60}}</span> Minutes</span>
@@ -210,9 +210,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
                             <h1 class="my-auto text-center">
-                            <img src="{{URL::asset('public/after_login/images/smily6.png')}}"> <img src="{{URL::asset('public/after_login/images/smily4.png')}}"> <img src="{{URL::asset('public/after_login/images/blush.png')}}"> 
-                             <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
-                             <img src="{{URL::asset('public/after_login/images/thumbsup.png')}}">  <img src="{{URL::asset('public/after_login/images/thumbsup.png')}}">  <img src="{{URL::asset('public/after_login/images/leaf.png')}}"> 
+
+                                <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+
                             </h1>
                             <div class="text-left   ">
 
@@ -494,7 +494,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-
+                    console.log(response);
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("btn-light");
                         $("#btn_" + quest_id).removeClass("btn-light-green");

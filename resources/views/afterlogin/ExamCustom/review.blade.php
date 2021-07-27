@@ -95,9 +95,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                                 @endforeach
                                             </div>
 
-                                            <div class="col-md-3 text-end">
+                                            <!--  <div class="col-md-3 text-end">
                                                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
-                                            </div>
+                                            </div> -->
                                             <div class="col-md-12 percentage-box collapse" id="perecent-box">
                                                 <div class="d-flex p-4 bg-gray">
                                                     <div class="">

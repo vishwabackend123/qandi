@@ -38,88 +38,56 @@
                                         <div class="bg-white shadow-lg ">
                                             <div class="row">
                                                 <div class="col-8 pe-0">
-                                                    <div class="d-flex justify-content-center flex-column h-100 ">
-                                                        <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span>
-                                                        <span class="mt-auto bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
+                                                    <div class="d-flex justify-content-center flex-column h-100  position-relative">
+
+                                                        <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
+
+                                                        <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
+                                                        <div id="scorecontainer" class="text-right"></div>
+                                                        <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                                             <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
-                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous
-                                                                score</span>
+                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
                                                             <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-4 ">
-                                                    <div class="d-flex flex-column h-100 montain-bg">
+                                                <div class="col-4  ">
+                                                    <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                                         <span></span>
                                                         <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
-                                                            <span class="plus-sign">12</span>
+                                                            <span class="plus-sign">+</span>
                                                             <small>Set target to<br> Reach next</small>
                                                         </span>
 
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="col-lg-7">
                                         <div class="bg-white shadow-lg p-3">
                                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
+                                            @if(!empty($subjectData))
+                                            @foreach($subjectData as $key=>$sub)
                                             <div class="d-flex align-items-center mt-3 pb-1">
+
                                                 <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
-                                                    <span class="mr-3 dashboard-name-txt">Trigonometry</span>
+                                                    <span class="mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
 
-                                                    <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                                                        <div class="star hidden">
-                                                            <span class="full" data-value="0"></span>
-                                                            <span class="half" data-value="0"></span>
+                                                        <div class="star-ratings-css">
+                                                            <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
+                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                            </div>
+                                                            <div class="star-ratings-css-bottom">
+                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                            </div>
                                                         </div>
 
-                                                        <div class="star">
+                                                        <div class="ms-2 score score-rating js-score">
+                                                            {{round($sub->score)}} %
 
-                                                            <span class="full" data-value="1"></span>
-                                                            <span class="half" data-value="0.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="2"></span>
-                                                            <span class="half" data-value="1.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="3"></span>
-                                                            <span class="half" data-value="2.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="4"></span>
-                                                            <span class="half" data-value="3.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="5"></span>
-                                                            <span class="half" data-value="4.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="score score-rating js-score">
-                                                            0 %
-                                                            <!-- <span>/</span>
-                                              <span class="total">5</span> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -135,146 +103,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center mt-3 pb-1">
-                                                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
-                                                    <span class="mr-3 dashboard-name-txt">Trigonometry</span>
+                                            @endforeach
+                                            @endif
 
-                                                    <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-                                                        <div class="star hidden">
-                                                            <span class="full" data-value="0"></span>
-                                                            <span class="half" data-value="0"></span>
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="1"></span>
-                                                            <span class="half" data-value="0.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="2"></span>
-                                                            <span class="half" data-value="1.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="3"></span>
-                                                            <span class="half" data-value="2.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="4"></span>
-                                                            <span class="half" data-value="3.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="5"></span>
-                                                            <span class="half" data-value="4.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="score score-rating js-score">
-                                                            0 %
-                                                            <!-- <span>/</span>
-                                              <span class="total">5</span> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="progress  ms-auto col-6" style="overflow: visible;">
-                                                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                        <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                    </div>
-                                                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                        <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
-                                                    </div>
-                                                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                        <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex align-items-center mt-3 pb-1">
-                                                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
-                                                    <span class="mr-3 dashboard-name-txt">Trigonometry</span>
-
-                                                    <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-                                                        <div class="star hidden">
-                                                            <span class="full" data-value="0"></span>
-                                                            <span class="half" data-value="0"></span>
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="1"></span>
-                                                            <span class="half" data-value="0.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="2"></span>
-                                                            <span class="half" data-value="1.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="3"></span>
-                                                            <span class="half" data-value="2.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="4"></span>
-                                                            <span class="half" data-value="3.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="star">
-
-                                                            <span class="full" data-value="5"></span>
-                                                            <span class="half" data-value="4.5"></span>
-                                                            <span class="selected"></span>
-
-                                                        </div>
-
-                                                        <div class="score score-rating js-score">
-                                                            0 %
-                                                            <!-- <span>/</span>
-                                              <span class="total">5</span> -->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="progress  ms-auto col-6" style="overflow: visible;">
-                                                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-                                                        <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                    </div>
-                                                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-                                                        <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
-                                                    </div>
-                                                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-                                                        <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
 
 
                                         </div>
@@ -1407,5 +1238,87 @@
         });
     });
 </script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script>
+    Highcharts.chart('scorecontainer', {
+        chart: {
+            height: 150,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingTop: 0,
+            spacingBottom: 0,
+            spacingRight: 0,
+        },
+        title: {
+            text: '<span style="font-size:40px">{{$corrent_score_per}}</span> <br><span style="font-size:20px"> / 100 </span>',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 30,
+            x: -110
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: false,
+                    distance: -50,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
+                startAngle: -120,
+                endAngle: 120,
+                center: ['20%', '50%'],
+                size: '100%'
+            }
+        },
+        series: [{
+            type: 'pie',
 
+            innerSize: '85%',
+            data: [{
+                    name: 'Score',
+                    y: <?php echo $score; ?>,
+                    color: '#ffdc34' // Jane's color
+                },
+                {
+                    name: 'Inprogress',
+                    y: <?php echo $inprogress; ?>,
+                    color: '#fc2f00c7' // Jane's color
+                },
+                {
+                    name: 'Progress',
+                    y: <?php echo $progress; ?>,
+                    color: '#ffa81d' // Jane's color
+                },
+                {
+                    name: 'Others',
+                    y: <?php echo $others; ?>,
+                    color: '#e4e4e4' // Jane's color
+                }
+
+
+            ]
+
+        }]
+    });
+</script>
 @endsection

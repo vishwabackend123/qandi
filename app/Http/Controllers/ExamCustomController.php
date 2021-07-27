@@ -216,8 +216,9 @@ class ExamCustomController extends Controller
 
         if ($httpcode == 200 || $httpcode == 201) {
             $responsedata = json_decode($response_json, true);
-            $response_data = str_replace('NaN', '""', $responsedata);
-            $response_data = (object)(json_decode($response_data, true));
+
+
+            $response_data = (object)(json_decode($responsedata['reponse'], true));
 
             $aQuestions_list = $response_data->questions;
             $exam_fulltime = $response_data->time_allowed;

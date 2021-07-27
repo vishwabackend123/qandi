@@ -26,11 +26,13 @@ class BookmarkController extends Controller
         $exam_id = Auth::user()->grade_id;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $question_id = isset($request->question_id) ? $request->question_id : 0;
+        $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
         $inputjson['subject_id'] = (int)$subject_id;
         $inputjson['student_id'] = (int)$user_id; //30776; //(string);
         $inputjson['exam_id'] = (int)$exam_id;
         $inputjson['question_id'] = (int)$question_id;
+        $inputjson['chapter_id'] = (int)$chapter_id;
 
         $request = json_encode($inputjson);
 

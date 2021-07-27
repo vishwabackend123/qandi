@@ -79,9 +79,9 @@
                 mobile: mobile,
             },
             success: function(response_data) {
-
+                console.log(response_data);
                 var response = jQuery.parseJSON(response_data);
-                if (response.status == 200) {
+                if (response.success == true) {
                     $("#mobile-input-btn").hide();
                     $("#input-otp-box").show();
                     //$("#input-otp-box").show();
@@ -155,12 +155,14 @@
                         login_otp: login_otp,
                     },
                     beforeSend: function() {},
+
                     success: function(response_data) { //debugger;
+                        console.log(response_data);
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {
                             if (response.error) {
                                 var errormsg = $("#errlog_auth").show();
-                                errormsg[0].textContent = response.error;
+                                errormsg[0].textContent = response.message;
                                 setTimeout(function() {
                                     $('#errlog_auth').fadeOut('fast');
                                 }, 10000);

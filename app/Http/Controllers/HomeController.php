@@ -72,7 +72,7 @@ class HomeController extends Controller
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/studentDashboard/test-score/' . $user_id;
+        $curl_url = $api_URL . 'api/studentDashboard/analytics/' . $user_id;
 
         curl_setopt_array($curl, array(
 
@@ -93,10 +93,17 @@ class HomeController extends Controller
 
         if ($httpcode == 200 || $httpcode == 201) {
             $scoreResponse = json_decode($score_json);
-            $scoreData = isset($scoreResponse->response) ? ($scoreResponse->response) : '';
+
+            $scoreData = isset($scoreResponse->test_score) ? ($scoreResponse->test_score) : '';
+            $subjectData = isset($scoreResponse->subject_proficiency) ? $scoreResponse->subject_proficiency : '';
+            $trendResponse = isset($scoreResponse->marks_trend) ? ($scoreResponse->marks_trend) : '';
         } else {
             $scoreData = [];
+            $subjectData = [];
+            $trendResponse = [];
         }
+
+
 
         $previous_score_per = $corrent_score_per = $diff_score_per = 0;
         if (isset($scoreData) && !empty($scoreData)) {
@@ -116,70 +123,6 @@ class HomeController extends Controller
             $progress = 0;
             $others = 100 - ($score + $progress);
         }
-
-        $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/studentDashboard/student_proficiency/' . $user_id;
-
-        curl_setopt_array($curl, array(
-
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-        ));
-
-        $subject_json = curl_exec($curl);
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-        if ($httpcode == 200 || $httpcode == 201) {
-            $subjectResponse = json_decode($subject_json);
-            $subjectData = isset($subjectResponse->success) ? ($subjectResponse->success) : '';
-        } else {
-            $subjectData = [];
-        }
-
-        /* Marks Trend Graph Api */
-        $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/studentDashboard/marks_trend/' . $user_id;
-
-        curl_setopt_array($curl, array(
-
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-        ));
-
-        $trend_json = curl_exec($curl);
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-        if ($httpcode == 200 || $httpcode == 201) {
-            $trendResponse = json_decode($trend_json);
-        } else {
-            $trendResponse = [];
-        }
-
-        $weeks = [];
-        $i = 1;
-        if (!empty($trendResponse)) {
-            foreach ($trendResponse as $key => $trend) {
-                $week = "W" . $i;
-                array_push($weeks, $week);
-            }
-        }
-
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse'));
     }

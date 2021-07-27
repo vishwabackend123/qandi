@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Redis;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,21 @@ Route::any('/', function () {
 Route::any('/logout', function () {
     return view('index');
 });
+
+Route::get(
+    '/clear-cache',
+    function () {
+        Artisan::call('cache:clear');
+        return "Cache is cleared";
+    }
+);
+Route::get(
+    '/clear-redis',
+    function () {
+        Redis::flushDB();
+        return "Redis is cleared";
+    }
+);
 
 Auth::routes();
 
@@ -44,7 +61,7 @@ Route::any('/verifyOtpRegister', [App\Http\Controllers\StudentSignInController::
 
 /* Subscriptions  routes */
 Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions');
-Route::any('/trial_subscription/{package_id}', [App\Http\Controllers\SubscriptionController::class, 'trial_subscription'])->name('trial_subscription');
+Route::any('/trial_subscription/{package_id}', [App\Http\Controllers\SubscriptionController::class, 'trial_subscription'])->name('trial_subscription')->middleware('auth');
 Route::any('/checkout', [App\Http\Controllers\SubscriptionController::class, 'checkout'])->name('checkout');
 
 Route::post('razorpay-payment', [App\Http\Controllers\RazorpayController::class, 'store'])->name('razorpay.payment.store');
@@ -104,8 +121,9 @@ Route::any('/live_exam', [App\Http\Controllers\LiveExamController::class, 'live_
 Route::any('/overall_analytics', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');
 Route::any('/export_analytics', [App\Http\Controllers\AnalyticsController::class, 'export_analytics'])->name('export_analytics')->middleware('auth', 'menu');
 
-
-
 /* TestSeries Routes */
 Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'series_list'])->name('series_list')->middleware('auth', 'menu');
 Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 'test_series_exam'])->name('test_series')->middleware('auth', 'menu');
+
+/* Referal Controller Routes */
+Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'store_referral_friend'])->name('store_referral')->middleware('auth', 'menu');

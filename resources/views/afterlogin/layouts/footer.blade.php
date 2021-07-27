@@ -93,6 +93,56 @@
         }
 
     });
+
+    $("#referalStudent_form").validate({
+        rules: {
+            refer_emails: {
+                required: true,
+            },
+        },
+        messages: {
+            "refer_emails": {
+                required: "Please enter at least one referral email Id."
+            }
+        },
+        submitHandler: function(form) {
+
+
+            $.ajax({
+                url: "{{ url('/store_referral') }}",
+                type: 'POST',
+                data: $('#referalStudent_form').serialize(),
+                beforeSend: function() {},
+                success: function(response_data) {
+                    /* console.log(response_data); */
+                    var response = jQuery.parseJSON(response_data);
+
+                    if (response[0].success == true) {
+                        if (response[0].message != '') {
+                            var sucessmsg = $("#successRef_auth").show();
+                            sucessmsg[0].textContent = response[0].message;
+                        }
+
+                        if (response[0].duplicate_referrals.length > 0) {
+                            const duplicate = response[0].duplicate_referrals.toString();
+
+                            var errormsg = $("#errRef_auth").show();
+                            errormsg[0].textContent = "Already referred Email ids : " + duplicate;
+                        }
+
+                        setTimeout(function() {
+                            $('.errRef').fadeOut('fast');
+                        }, 10000);
+                    }
+
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
+        }
+
+    });
 </script>
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
