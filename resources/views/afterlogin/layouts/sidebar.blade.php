@@ -265,7 +265,7 @@
             <a class="nav-link" data-bs-toggle="collapse" href="#submenu2" aria-expanded="false"><i class="fa fa-pencil" aria-hidden="true"></i> Practice</a>
 
             <a href="{{route('exam','mock_test')}}" class="nav-link"><i class="far fa-edit"></i> Exam</a>
-            <a href="{{route('live_exam_login')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Live</a>
+            {{--<a href="{{route('live_exam_login')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Live</a> --}}
         </div>
 
     </div>
