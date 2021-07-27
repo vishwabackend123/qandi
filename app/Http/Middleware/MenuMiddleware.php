@@ -97,12 +97,16 @@ class MenuMiddleware
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
+
         if ($httpcode == 200 || $httpcode == 201) {
             $subResponse = json_decode($sub_response_json);
+
             $subscriptionData = isset($subResponse->response) ? json_decode($subResponse->response) : '';
+            $subscriptionData = isset($subscriptionData[0]) ? $subscriptionData[0] : [];
         } else {
             $subscriptionData = [];
         }
+
 
 
 

@@ -13,12 +13,16 @@ use App\Models\UserAnalytics;
 use App\Models\StudentPreference;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
+use App\Http\Traits\CommonTrait;
 
 
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
+    //
+    use CommonTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -40,6 +44,8 @@ class HomeController extends Controller
         $user_data = Auth::user();
         $user_id = Auth::user()->id;
         $grade_id = Auth::user()->grade_id;
+        $user_subjects = $this->redis_subjects();
+
 
         $preferences = DB::table('student_preferences')->select('student_stage_at_sgnup', 'subjects_rating', 'subscription_yn', 'subscription_expiry_date')->where('student_id', $user_id)->first();
 
@@ -103,6 +109,14 @@ class HomeController extends Controller
             $trendResponse = [];
         }
 
+        if (empty($subjectData)) {
+            foreach ($user_subjects as $key => $sub) {
+                $sub->total_questions = 0;
+                $sub->correct_ans = 0;
+                $sub->score = 0;
+                $subjectData[$key] = $sub;
+            }
+        }
 
 
         $previous_score_per = $corrent_score_per = $diff_score_per = 0;
@@ -110,6 +124,7 @@ class HomeController extends Controller
             $corrent_score_per = isset($scoreData[0]->result_percentage) ? $scoreData[0]->result_percentage : 0;
             $previous_score_per = isset($scoreData[1]->result_percentage) ? $scoreData[1]->result_percentage : 0;
             $diff_score_per = $corrent_score_per - $previous_score_per;
+        } else {
         }
 
         if ($diff_score_per >= 0) {
@@ -123,6 +138,7 @@ class HomeController extends Controller
             $progress = 0;
             $others = 100 - ($score + $progress);
         }
+
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse'));
     }
@@ -175,11 +191,12 @@ class HomeController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
+
             if ($httpcode != 200 && $httpcode != 201) {
                 $status = false;
             } else {
                 $aResponse = json_decode($response_json);
-                $status = $aResponse[0]->success;
+                $status = isset($aResponse->success) ? $aResponse->success : '';
             }
 
             if ($status == true) {

@@ -444,6 +444,11 @@ array_push($trend_max_scroe, $trend->max_score);
 
 
 }
+
+}else{
+array_push($trend_stu_scroe, 0);
+array_push($trend_avg_scroe, 0);
+array_push($trend_max_scroe, 0);
 }
 
 $weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];

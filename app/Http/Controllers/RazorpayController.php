@@ -11,10 +11,19 @@ use Exception;
 use App\Models\StudentUsers;
 use App\Models\UserPurchase;
 use App\Models\StudentPreference;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redirect;
+
+use Illuminate\Support\Facades\Config;
+
+use App\Http\Traits\CommonTrait;
+use Carbon\Carbon;
 
 class RazorpayController extends Controller
 {
     //
+    use CommonTrait;
     /**
      * Create a new controller instance.
      *
@@ -30,6 +39,67 @@ class RazorpayController extends Controller
      * @return response()
      */
     public function store(Request $request)
+    {
+        $input = $request->all();
+        $user_id = Auth::user()->id;
+        $payment_id = isset($request->razorpay_payment_id) ? $request->razorpay_payment_id : '';
+        $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
+        $razorpay_signature = isset($request->razorpay_signature) ? $request->razorpay_signature : '';
+
+        $verify_request =
+            [
+                "payment_id" => $payment_id,
+                "order_id" => $order_id,
+                "signature" => $razorpay_signature,
+                "user_id" => $user_id
+            ];
+        $order_request_json = json_encode($verify_request);
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/payment/verify-payment';
+
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $order_request_json,
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "content-type: application/json"
+            ),
+        ));
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $aResponse = json_decode($response_json);
+            $success_status = isset($aResponse->success) ? $aResponse->success : '';
+        } else {
+            $aResponse = json_decode($response_json);
+            $success_status = isset($aResponse->success) ? $aResponse->success : '';
+        }
+
+        if ($success_status == true) {
+            Session::put('success', 'Payment successful.');
+            return redirect()->route('dashboard');
+        } else {
+            Session::put('error', 'Payment failed.');
+            return redirect()->route('subscriptions');
+        }
+    }
+
+
+
+    public function store_old(Request $request)
     {
         $input = $request->all();
         $exam_id = $input['exam_id'];
