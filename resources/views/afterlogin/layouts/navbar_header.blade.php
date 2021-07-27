@@ -202,10 +202,10 @@
                                         </div>
                                         <p class="text-end text-danger mt-1">*Subscription expires on {{isset($subscription_details->subscription_end_date)?date("jS F, Y", strtotime($subscription_details->subscription_end_date)):''}}</p>
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
-                                        <div class=" text-box mt-4 text-end">
-                                            <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
-                                            <a href="{{route('subscriptions')}}" class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</a>
-                                        </div>
+{{--                                        <div class=" text-box mt-4 text-end">--}}
+{{--                                            <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>--}}
+{{--                                            <a href="{{route('subscriptions')}}" class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</a>--}}
+{{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>

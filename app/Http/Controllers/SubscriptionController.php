@@ -23,6 +23,7 @@ class SubscriptionController extends Controller
 {
     //
     use CommonTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -84,9 +85,6 @@ class SubscriptionController extends Controller
                 array_push($purchased_ids, $pur->subscription_id);
             }
         }
-
-
-
         return view('subscriptions', compact('subscriptions', 'purchased_ids'));
     }
 
@@ -94,14 +92,12 @@ class SubscriptionController extends Controller
     /**
      * Show the subscription packages.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function trial_subscription($sub_id, Request $request)
     {
         $user_id = Auth::user()->id;
         $grade_id = $sub_id;
-        $subscription_date = date('Y-m-d');
-        $subscription_expiry = date('Y-m-d');
 
         $date = Carbon::now();
         $date->addDays(15);
@@ -111,7 +107,13 @@ class SubscriptionController extends Controller
         $update_user = [
             'grade_id' => $grade_id,
         ];
-        $upt_user = StudentUsers::where('id', $user_id)->update($update_user);
+        $getUser = DB::table('student_preferences')->where('student_id', '=', $user_id)->first();
+
+        if ($getUser > 0) {
+            StudentUsers::where('id', $user_id)->update($update_user);
+        } else {
+            return redirect()->back()->withErrors(['User data not available.']);
+        }
 
         $update_preference = [
             'subscription_yn' => 'Y',
@@ -142,7 +144,7 @@ class SubscriptionController extends Controller
 
         $receipt_Id = 'order_rcptid_' . mt_rand(100000, 999999);
 
-        $api = new Api(env('RAZORPAY_KEY'),  env('RAZORPAY_SECRET'));
+        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
 
 
         $order = $api->order->create(
@@ -153,7 +155,6 @@ class SubscriptionController extends Controller
             )
         );
         $razorpayOrderId = $order['id'];
-
 
 
         /*  $subscriptions_data = DB::table('class_exams as ce')
