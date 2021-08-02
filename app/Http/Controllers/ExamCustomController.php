@@ -209,6 +209,7 @@ class ExamCustomController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
+        $response_json = str_replace('NaN', '""', $response_json);
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -217,10 +218,10 @@ class ExamCustomController extends Controller
         if ($httpcode == 200 || $httpcode == 201) {
             $responsedata = json_decode($response_json, true);
 
-
             $response_data = (object)(json_decode($responsedata['reponse'], true));
 
             $aQuestions_list = $response_data->questions;
+
             $exam_fulltime = $response_data->time_allowed;
             $questions_count = count($aQuestions_list);
         } else {

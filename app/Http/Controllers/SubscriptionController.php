@@ -123,10 +123,6 @@ class SubscriptionController extends Controller
             'subscription_id' => $grade_id,
             'exam_year' => '2021',  // new attribute
         ];
-
-
-
-
         UserPurchase::create($user_purchase_data);
 
         $update_user = [
@@ -134,7 +130,7 @@ class SubscriptionController extends Controller
         ];
         $getUser = DB::table('student_preferences')->where('student_id', '=', $user_id)->first();
 
-        if ($getUser > 0) {
+        if ($getUser) {
             StudentUsers::where('id', $user_id)->update($update_user);
         } else {
             return redirect()->back()->withErrors(['User data not available.']);
