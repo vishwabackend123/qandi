@@ -852,21 +852,28 @@ header {
     left: 50%;
     margin-left: -10px;
 }
+.number-block {
+    display: flex;
+    flex-wrap: wrap;
+}
 .number-block .btn {
     min-width: 36px;
     height: 36px;
-    margin-right: 25px;
+    margin-right: 0.5rem;
     padding: 0;
 }
-.number-block .btn:nth-child(5n-5) {
+/* .number-block .btn:nth-child(5n-5) {
     margin-right: 0;
-}
+} */
 .question {
     font: normal normal normal 18px/28px Poppins;
     letter-spacing: 0px;
     color: #2c3348;
     position: relative;
     padding-left: 50px;
+}
+.question p img {
+    max-width: 100%;
 }
 .q-no {
     position: absolute;
@@ -884,6 +891,7 @@ header {
     height: 100%;
     width: 100%;
     position: relative;
+    padding-right: 15px;
 }
 .arrow {
     position: absolute;
@@ -2218,4 +2226,12 @@ header {
 .error {
     color: #d71921;
     font-size: 12px;
+}
+@media (min-width: 1280px) and (max-width: 1440px) {
+    .btn {
+        font-size: 0.8rem;
+    }
+    p {
+        margin-bottom: 0.8rem;
+    }
 }
