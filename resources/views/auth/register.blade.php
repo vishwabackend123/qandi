@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="main">
+<div id="main" class="pageBg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(window).on("load resize scroll", function(e) {
+            var winHeight = $(window).height() - 40;
+            $('.pageBg').height(winHeight);
+        });
+    </script>
     <form id="studentsignup" method="post">
         @csrf
         <div class="login-box" id="name-box">

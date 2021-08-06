@@ -11,6 +11,9 @@ body {
   flex-direction: column;
   font-family: "Poppins", sans-serif;
 }
+
+
+
 a {
   color: #355cec;
   text-decoration: none;
@@ -201,6 +204,7 @@ header {
   max-width: 640px;
   margin-left: 8%;
   position: relative;
+  margin: 120px 0 0 80px;
 }
 
 .welcome-msg {
@@ -215,6 +219,15 @@ header {
   color: #2c3348;
   text-align: center;
 }
+
+
+.pageBg {background: url('../images/login-bg-old.png') no-repeat top center; background-size: cover;}
+
+
+
+
+
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
@@ -348,3 +361,4 @@ header {
 footer {
   background: #f3f7ff;
 }
+
