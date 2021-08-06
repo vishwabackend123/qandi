@@ -85,7 +85,6 @@ Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewCo
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
 
 
-
 /* Book Mark routes */
 Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'addbookmark'])->name('markforreview')->middleware('auth', 'menu');
 
@@ -128,3 +127,17 @@ Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 't
 
 /* Referal Controller Routes */
 Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'store_referral_friend'])->name('store_referral')->middleware('auth', 'menu');
+
+//google login Start
+
+Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
+Route::get('auth/social_account', [App\Http\Controllers\Auth\GoogleController::class, 'userInfo'])->middleware('auth', 'menu');
+
+//google login End
+
+//facebook login start
+Route::get('auth/facebook', [App\Http\Controllers\Auth\FacebookController::class, 'redirectToFacebook']);
+Route::get('auth/facebook/callback', [App\Http\Controllers\Auth\FacebookController::class, 'handleFacebookCallback']);
+Route::get('auth/social_account', [App\Http\Controllers\Auth\FacebookController::class, 'userInfo'])->middleware('auth', 'menu');
+//facebook login end
