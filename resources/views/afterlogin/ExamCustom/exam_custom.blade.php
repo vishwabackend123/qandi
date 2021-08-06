@@ -10,9 +10,9 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12  p-lg-5">
+                <div class="col-lg-12  p-lg-2">
 
-                    <div class="tab-wrapper">
+                    <div class="tab-wrapper mt-0">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                             @isset($subject_list)
                             @foreach($subject_list as $key=>$subject)
@@ -33,7 +33,7 @@
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
                                     <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
                                     <p class="mb-0 text-danger ms-auto me-4">You can pick chapters / topics or</p>
-                                    <form method="post" action="{{route('subject_exam')}}">
+                                    <form method="post" action="{{route('custom_exam')}}">
                                         @csrf
                                         <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                         <input type="hidden" name="question_count" value="30">
@@ -101,7 +101,7 @@
                                         </div>
 
                                         <span class="slbs-link col-2 mx-3"><a aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" onclick="show_topic('{{$chapters->chapter_id}}')">Expand to Topics</a></span>
-                                        <form method="post" action="{{route('subject_exam')}}">
+                                        <form method="post" action="{{route('custom_exam')}}">
                                             @csrf
                                             <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                             <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
@@ -115,17 +115,32 @@
                                         <div class="d-flex px-4">
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>
-                                        <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4">
+                                        <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4 scroll_topic">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="spinner-border" role="status">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                            </div>
                                         </section>
                                     </div>
                                     @endforeach
                                     @endif
 
                                 </div>
-                                {{--<div class="text-right d-flex align-items-center mt-3">
-                                    <a href="#" class="btn px-4 ms-auto me-2 btn-secondary rounded-0">Clear Selection</a>
-                                    <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
-                                </div> --}}
+
+                                <form id="topic_form" method="post" action="{{route('custom_exam')}}" class="text-right">
+                                    @csrf
+                                    <input type="hidden" id="selected_topic" name="topics">
+                                    <input type="hidden" name="question_count" value="30">
+                                    <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
+                                    <div id="" class="text-right d-flex align-items-right mt-3">
+
+                                        <a href="#" class="btn px-4 ms-auto me-2 btn-secondary rounded-0" onclick="clearTopics();">Clear Selection</a>
+                                        <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                                    </div>
+                                </form>
+
+
                             </div>
                             @endforeach
                             @endisset
@@ -142,8 +157,52 @@
 
 <script type="text/javascript">
     $('.scroll-div').slimscroll({
-        height: '40vh'
+        height: '50vh'
     });
+    $(document).ready(function() {
+        $("#topic_form").validate({
+
+            submitHandler: function(form) {
+                var selected_topics = $('#selected_topic').val();
+                if (selected_topics == '' || selected_topics == null) {
+                    $('#errlog_alert').html('Please select atleast on topic for exam.');
+                    $('#errlog_alert').show();
+                    setTimeout(function() {
+                        $('#errlog_alert').fadeOut('fast');
+                    }, 10000);
+                    return false;
+                }
+
+                form.submit();
+            }
+
+        });
+    });
+    var aTopics = [];
+
+    function addOrRemove(value) {
+        var index = aTopics.indexOf(value);
+
+        if (index === -1) {
+            aTopics.push(value);
+            $('#chpt_topic_' + value).removeClass('btn-light');
+            $('#chpt_topic_' + value).addClass('btn-primary');
+        } else {
+            aTopics.splice(index, 1);
+            $('#chpt_topic_' + value).removeClass('btn-primary');
+            $('#chpt_topic_' + value).addClass('btn-light');
+        }
+        $('#selected_topic').val(aTopics);
+        //console.log(aTopics);
+    }
+
+    function clearTopics() {
+        aTopics = [];
+        $('#selected_topic').val('');
+        $('.addremovetopic').removeClass('btn-primary');
+        // console.log(aTopics);
+    }
+
 
     var starClicked = false;
 
@@ -265,9 +324,15 @@
             data: {
                 "_token": "{{ csrf_token() }}",
             },
+            beforeSend: function() {
+                $('#loader').show();
+            },
+            complete: function() {
+                $('#loader').hide();
+            },
             success: function(result) {
                 $("#topic_section_" + chapt_id).html(result);
-
+                $('.slick-slider').slick('refresh');
             }
         });
     }

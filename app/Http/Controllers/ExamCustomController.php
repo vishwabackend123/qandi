@@ -172,10 +172,12 @@ class ExamCustomController extends Controller
             Redis::del(Redis::keys('custom_answer_time'));
         }
 
+
         $question_count = isset($request->question_count) ? $request->question_count : 30;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
-        $select_topic = [];
+
+        $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
 
         $inputjson['student_id'] = $user_id; //30776; //(string);
         $inputjson['exam_id'] = (string)$exam_id;
@@ -185,6 +187,7 @@ class ExamCustomController extends Controller
         $inputjson['topic_list'] = json_encode($select_topic);
 
         $request = json_encode($inputjson);
+
 
 
         $curl_url = "";
@@ -548,8 +551,36 @@ class ExamCustomController extends Controller
     public function  chaptersTopic($chapter_id)
     {
 
-        $topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
+        //$topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
 
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/topics-by-chapter-id/' . $chapter_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $responsedata = json_decode($response_json);
+
+            $topics = $responsedata->response;
+        } else {
+            $topics = [];
+        }
 
         return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
     }

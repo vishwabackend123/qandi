@@ -72,7 +72,7 @@
             <a href="#" class="btn btn-light-green rounded-0 me-2">C</a>
             <a href="#" class="btn btn-light-red rounded-0 me-2">A</a>
             <a href="#" class="btn btn-light rounded-0 me-2">E</a>
-            <a href="#" class="btn btn-light rounded-0 ms-auto px-5">Select </a>
+            <a id="chpt_topic_{{$topic->id}}" href="javascript:void(0);" class="btn btn-light rounded-0 ms-auto px-5 addremovetopic" onclick="addOrRemove('{{$topic->id}}')">Select </a>
         </div>
     </div>
 </div>
