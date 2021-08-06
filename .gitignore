@@ -15,5 +15,14 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-
+.idea
 .gitignore
+ /.gitignore
+.idea/php.xml
+.idea/uniq_new.iml
+bootstrap/cache/packages.php
+bootstrap/cache/services.php
+composer.json
+composer.lock
+public/.htaccess
+

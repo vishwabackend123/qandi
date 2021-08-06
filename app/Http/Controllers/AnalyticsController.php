@@ -85,7 +85,65 @@ class AnalyticsController extends Controller
             $others = 100 - ($score + $progress);
         }
 
-        return view('afterlogin.Analytics.overall_analytics', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'user_subjects'));
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.uniqtoday.com/api/analytics/overall-analytics/30782',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $overallAnalytics = curl_exec($curl);
+//dd($overallAnalytics);
+        curl_close($curl);
+        $overallAnalytics = json_decode($overallAnalytics);
+
+        $dailyReport = json_decode($overallAnalytics->daily_report);
+        $weeklyReport = json_decode($overallAnalytics->weekly_report);
+        $monthlyReport = json_decode($overallAnalytics->monthlyReport);
+
+        $date1 = [];
+        $correctTime1 = [];
+        $incorrectTime1 = [];
+        foreach ($dailyReport as $val) {
+            array_push($date1, date('d-m', strtotime($val->date)));
+            array_push($correctTime1, 23);
+            array_push($incorrectTime1, 10);
+        }
+        $date1 = json_encode($date1);
+        $correctTime1 = json_encode($correctTime1);
+        $incorrectTime1 = json_encode($incorrectTime1);
+
+        $date2 = [];
+        $correctTime2 = [];
+        $incorrectTime2 = [];
+        foreach ($weeklyReport as $val) {
+            array_push($date2, date('d-m', strtotime($val->date)));
+            array_push($correctTime2, 23);
+            array_push($incorrectTime2, 10);
+        }
+        $date2 = json_encode($date2);
+        $correctTime2 = json_encode($correctTime2);
+        $incorrectTime2 = json_encode($incorrectTime2);
+
+        $date3 = [];
+        $correctTime3 = [];
+        $incorrectTime3 = [];
+        foreach ($monthlyReport as $val) {
+            array_push($date3, date('d-m', strtotime($val->date)));
+            array_push($correctTime3, 23);
+            array_push($incorrectTime3, 10);
+        }
+        $date3 = json_encode($date3);
+        $correctTime3 = json_encode($correctTime3);
+        $incorrectTime3 = json_encode($incorrectTime3);
+
+        return view('afterlogin.Analytics.overall_analytics', compact('date1','correctTime1','incorrectTime1','date2','correctTime2','incorrectTime2','date3','correctTime3','incorrectTime3', 'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'user_subjects'));
     }
 
     public function export_analytics(Request $request)

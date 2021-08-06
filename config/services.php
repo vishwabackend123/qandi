@@ -19,15 +19,22 @@ return [
         'secret' => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
-
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
-
     'ses' => [
         'key' => env('AWS_ACCESS_KEY_ID'),
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'google' => [
+        'client_id' => '62956375227-rpg1piaf89g0jt0fpc4b0klth2198tbk.apps.googleusercontent.com',
+        'client_secret' => '5l8g5idjmfRNXCwlNisYiGnq',
+        'redirect' => 'https://www.uniqtoday.com/auth/google/callback',
+    ],
+    'facebook' => [
+        'client_id' => '797510954252802',
+        'client_secret' => '576fd05af0d9ce8d8613683663ed5aca',
+        'redirect' => 'https://www.uniqtoday.com/auth/facebook/callback',
+    ],
 ];
