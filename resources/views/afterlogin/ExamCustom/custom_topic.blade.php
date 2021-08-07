@@ -1,7 +1,7 @@
 @if(isset($topics) && !empty($topics))
 @foreach($topics as $key=>$topic)
 
-<div class="p-3">
+<div class="p-3 slide_box border-0">
     <div class="bg-light shadow p-3 d-flex flex-column">
         <div class="d-flex align-items-center">
             <span class="mr-3 name-txt-sml">{{$topic->topic_name}} </span>

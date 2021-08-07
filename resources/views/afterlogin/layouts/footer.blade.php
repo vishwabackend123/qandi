@@ -446,4 +446,10 @@
             $('#subscribe-click').removeClass('activelink');
         });
     });
+
+    function outputUpdate(value) {
+
+        $('#slide-input').html(value);
+
+    }
 </script>

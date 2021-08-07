@@ -10,9 +10,9 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12  p-lg-5">
+                <div class="col-lg-12  p-lg-2">
 
-                    <div class="tab-wrapper">
+                    <div class="tab-wrapper mt-0">
                         <ul class="nav nav-tabs cust-tabs-white" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-3" aria-hidden="true"></i> LIVE EXAM</a>
@@ -26,7 +26,8 @@
                                 <div class="scroll-div-live-exm">
 
                                     <div class="d-flex align-items-center justify-content-center h-100 flex-column bg-blue">
-                                        <p>Please wait for the Exam to start…</p>
+                                        <!-- <p>Please wait for the Exam to start…</p> -->
+                                        <p>No live exam available right now...</p>
                                     </div>
 
 
@@ -54,7 +55,7 @@
 
 <script type="text/javascript">
     $('.scroll-div-live-exm').slimscroll({
-        height: '60vh'
+        height: '70vh'
     });
 </script>
 @endsection

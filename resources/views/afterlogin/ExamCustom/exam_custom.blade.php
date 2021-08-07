@@ -1,6 +1,21 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
+<style>
+    .slick-slider {
+        padding-left: 40px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+
+    .slide_box {
+        display: inline-block;
+    }
+</style>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
 <div class="main-wrapper">
@@ -115,9 +130,9 @@
                                         <div class="d-flex px-4">
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>
-                                        <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4 scroll_topic">
+                                        <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4 scroll_topic ">
                                             <div class="d-flex justify-content-center">
-                                                <div class="spinner-border" role="status">
+                                                <div id="loader" class="spinner-border" role="status">
                                                     <span class="visually-hidden">Loading...</span>
                                                 </div>
                                             </div>
@@ -156,10 +171,12 @@
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript">
+    $('#loader').hide();
     $('.scroll-div').slimscroll({
         height: '50vh'
     });
     $(document).ready(function() {
+
         $("#topic_form").validate({
 
             submitHandler: function(form) {
@@ -331,8 +348,10 @@
                 $('#loader').hide();
             },
             success: function(result) {
+                $("#topic_section_" + chapt_id).html('');
                 $("#topic_section_" + chapt_id).html(result);
                 $('.slick-slider').slick('refresh');
+                $('#loader').hide();
             }
         });
     }

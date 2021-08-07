@@ -178,6 +178,7 @@ class ExamCustomController extends Controller
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
         $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
+        //dd($select_topic);
 
         $inputjson['student_id'] = $user_id; //30776; //(string);
         $inputjson['exam_id'] = (string)$exam_id;
@@ -188,6 +189,7 @@ class ExamCustomController extends Controller
 
         $request = json_encode($inputjson);
 
+        //  dd($request);
 
 
         $curl_url = "";
@@ -214,6 +216,9 @@ class ExamCustomController extends Controller
         ));
         $response_json = curl_exec($curl);
         $response_json = str_replace('NaN', '""', $response_json);
+        $response_json = stripslashes($response_json);
+        $response_json = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $response_json);
+
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -222,8 +227,6 @@ class ExamCustomController extends Controller
 
         if ($httpcode == 200 || $httpcode == 201) {
             $responsedata = json_decode($response_json);
-
-
             $response_data = isset($responsedata->response) ? json_decode($responsedata->response) : [];
 
             if (!empty($response_data)) {

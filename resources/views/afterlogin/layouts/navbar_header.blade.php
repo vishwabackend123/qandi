@@ -202,10 +202,10 @@
                                         </div>
                                         <p class="text-end text-danger mt-1">*Subscription expires on {{isset($subscription_details->subscription_end_date)?date("jS F, Y", strtotime($subscription_details->subscription_end_date)):''}}</p>
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
-{{--                                        <div class=" text-box mt-4 text-end">--}}
-{{--                                            <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>--}}
-{{--                                            <a href="{{route('subscriptions')}}" class="btn-danger  rounded-0 btn-sm btn px-5 ms-2">Change Course</a>--}}
-{{--                                        </div>--}}
+                                        {{-- <div class=" text-box mt-4 text-end">--}}
+                                        {{-- <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>--}}
+                                        {{-- <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Course</a>--}}
+                                        {{-- </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -335,12 +335,12 @@
             <p class="fw-bold text-uppercase">Exams per week</p>
             <div class="row align-items-center mb-5">
                 <div class="col-md-6">
-                    <div class="progress">
-                        <div class="progress-bar bg-light-green" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                    <input type="range" class="form-range exam_range" min="0" max="7" value="2" step="1" id="customRange3" oninput="outputUpdate(value)">
+
+
                 </div>
                 <div class="col-md-6">
-                    <span class="badge bg-secondary">5</span>
+                    <span id="slide-input" class="badge bg-secondary">2</span>
                 </div>
             </div>
             <p class="fw-bold text-uppercase">Schedule test weeks</p>
