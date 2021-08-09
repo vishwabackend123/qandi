@@ -333,11 +333,9 @@
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <p class="fw-bold text-uppercase">Exams per week</p>
-            <div class="row align-items-center mb-5">
+            <div class="row align-items-center mb-2">
                 <div class="col-md-6">
                     <input type="range" class="form-range exam_range" min="0" max="7" value="2" step="1" id="customRange3" oninput="outputUpdate(value)">
-
-
                 </div>
                 <div class="col-md-6">
                     <span id="slide-input" class="badge bg-secondary">2</span>
@@ -354,17 +352,48 @@
                     <input type="date" class="bg-light border-0 p-2 text-center text-uppercase" />
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="subject_chapter row mt-5">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Mathematics</div>
+                    <div id="planner_sub_1" class="chaptbox pt-2">
+                        <div class="add-removeblock p-3 mb-2  d-flex align-items-center">
+                            <span>Application of Calculus</span>
+                            <a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+                    <div class="chaptbox-add ">
+                        <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center" id="subject_chapter_1" onClick="selectChapter(1);">
+                            <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Physics</div>
+
+                    <div class="chaptbox pt-2">
+
+                    </div>
+                    <div class="chaptbox-add ">
+                        <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center">
+                            <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Chemistry</div>
+
+                    <div class="chaptbox pt-2">
+
+
+                    </div>
+                    <div class="chaptbox-add ">
+                        <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center">
+                            <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
+                <!-- <div class="col-md-6 col-lg-4 mb-4">
                     <div class="add-removeblock p-3 d-flex align-items-center">
                         <span>Application of Calculus</span>
                         <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
@@ -398,28 +427,23 @@
                         <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
                         <span class=""><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></span>
                     </div>
+                </div> -->
+                <!--  <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
+                        <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                    </div>
+
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
-
-
                         <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
-
-
                         <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
-
-
-                        <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="text-center">
                 <button class="btn-danger btn rounded-0 text-uppercase px-5 w-25"><i class="fa fa-check"></i></button>

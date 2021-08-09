@@ -84,11 +84,11 @@ class ExamCustomController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
-        /*  $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
+        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
             return $chapter_list;
-        } */
+        }
 
         $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
@@ -117,7 +117,7 @@ class ExamCustomController extends Controller
             $chapter_list = [];
         }
 
-        //Redis::set($cacheKey, json_encode($chapter_list));
+        Redis::set($cacheKey, json_encode($chapter_list));
         return $chapter_list;
     }
 
@@ -188,8 +188,6 @@ class ExamCustomController extends Controller
         $inputjson['topic_list'] = json_encode($select_topic);
 
         $request = json_encode($inputjson);
-
-        //  dd($request);
 
 
         $curl_url = "";
@@ -586,5 +584,52 @@ class ExamCustomController extends Controller
         }
 
         return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
+    }
+
+
+    public function ajax_chapter_list($active_subject_id)
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
+        if ($data = Redis::get($cacheKey)) {
+            $chapter_list = json_decode($data);
+            return view('afterlogin.chpater_planner', compact('chapter_list'));
+            //return $chapter_list;
+        }
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $responsedata = json_decode($response_json);
+
+            $chapter_list = $responsedata->response;
+        } else {
+            $chapter_list = [];
+        }
+
+        Redis::set($cacheKey, json_encode($chapter_list));
+
+        // dd($chapter_list);
+
+        return view('afterlogin.chpater_planner', compact('chapter_list'));
     }
 }

@@ -258,7 +258,7 @@
                 $('#goto-otp-btn').click();
 
             } else {
-                elem.innerHTML = 'Resend OPT in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
+                elem.innerHTML = 'Resend OTP in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
                 timeLeft--;
             }
 
