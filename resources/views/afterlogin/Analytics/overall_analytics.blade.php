@@ -81,8 +81,8 @@
                                         <div class="col-lg-7">
                                             <div class="bg-white shadow-lg p-3">
                                                 <h5 class="dashboard-title mb-3">Subject proficiency</h5>
-                                                @if(!empty($subjectData))
-                                                    @foreach($subjectData as $key=>$sub)
+                                                @if(!empty($subProf))
+                                                    @foreach($subProf as $key=>$sub)
                                                         <div class="d-flex align-items-center mt-3 pb-1">
 
                                                             <div
@@ -106,53 +106,63 @@
 
                                                                     <div class="ms-2 score score-rating js-score">
                                                                         {{round($sub->score)}} %
-
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="progress  ms-auto col-6"
                                                                  style="overflow: visible;">
-                                                                <div
-                                                                    class="progress-bar bg-light-success position-relative"
+                                                                <div class="progress-bar bg-light-success position-relative"
                                                                     role="progressbar"
-                                                                    style="width:40%;overflow: visible;">
+                                                                    style="width:{{round(($sub->correct_ans * 100)/$sub->total_questions)}}%;overflow: visible;">
                                                                     <span class="prog-box green"
                                                                           data-bs-toggle="tooltip"
                                                                           data-bs-custom-class="tooltip-green"
                                                                           data-bs-placement="top"
-                                                                          title="Tooltip on top">1</span>
+                                                                          title="Correct">{{round($sub->correct_ans)}}</span>
                                                                 </div>
                                                                 <div class="progress-bar bg-light-red position-relative"
                                                                      role="progressbar"
-                                                                     style="width:30%;overflow: visible;">
+                                                                     style="width:{{round(($sub->incorrect_ans * 100)/$sub->total_questions)}}%;overflow: visible;">
                                                                     <span class="prog-box red" data-bs-toggle="tooltip"
                                                                           data-bs-placement="top"
                                                                           data-bs-custom-class="tooltip-red"
-                                                                          title="Tooltip on top">1</span>
+                                                                          title="Incorrect">{{round($sub->incorrect_ans)}}</span>
                                                                 </div>
                                                                 <div
                                                                     class="progress-bar bg-light-secondary position-relative"
                                                                     role="progressbar"
-                                                                    style="width:20%;overflow: visible;">
+                                                                    style="width:{{round(($sub->unanswered * 100)/$sub->total_questions)}}%;overflow: visible;">
                                                                     <span class="prog-box secondary"
                                                                           data-bs-custom-class="tooltip-gray"
                                                                           data-bs-toggle="tooltip"
                                                                           data-bs-placement="top"
-                                                                          title="Tooltip on top">1</span>
+                                                                          title="Unanswered">{{round($sub->unanswered)}}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     @endforeach
                                                 @endif
-
-
                                             </div>
                                         </div>
                                         <div class="col-lg-5 mt-3">
                                             <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
-                                                <p class="text-uppercase fw-bold text-start">Time Management</p>
-                                                <img src="{{URL::asset('public/after_login/images/innergraph1.png')}}"
-                                                     class="img-fluid">
+                                                <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
+                                                <div id="day1" style="display:block" ></div>
+                                                <div id="week1" style="display:none" ></div>
+                                                <div id="month1" style="display:none" ></div>
+                                                <div class="btn-block mt-5 d-flex justify-content-between">
+                                                    <button
+                                                        class="btn btn-light-green text-uppercase rounded-0 px-5" onclick = "replace1('day1','week1','month1')">
+                                                        Day
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick = "replace1('week1','day1','month1')">
+                                                        Week
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick = "replace1('month1','day1','week1')">
+                                                        Month
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-7  mt-3">
@@ -165,20 +175,20 @@
                                         </div>
                                         <div class="col-lg-5 mt-3">
                                             <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
-                                                <p class="text-uppercase fw-bold text-start">Marks Trend</p>
-                                                <div id="day"></div>
-                                                <div id="week"></div>
-                                                <div id="month"></div>
+                                                <p class="text-uppercase fw-bold text-start">Time Management</p>
+                                                <div id="day" style="display:block" ></div>
+                                                <div id="week" style="display:none" ></div>
+                                                <div id="month" style="display:none" ></div>
                                                 <div class="btn-block mt-5 d-flex justify-content-between">
                                                     <button
-                                                        class="btn btn-light-green text-uppercase rounded-0 px-5">
+                                                        class="btn btn-light-green text-uppercase rounded-0 px-5" onclick = "replace('day','week','month')">
                                                         Day
                                                     </button>
-                                                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5">
+                                                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick = "replace('week','day','month')">
                                                         Week
                                                     </button>
                                                     <button
-                                                        class="btn btn-outline-secondary text-uppercase rounded-0 px-5">
+                                                        class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick = "replace('month','day','week')">
                                                         Month
                                                     </button>
                                                 </div>
@@ -1578,7 +1588,8 @@
                 enabled: false
             },
             chart: {
-                type: 'column'
+                type: 'column',
+                height: 270
             },
 
             title: {
@@ -1627,7 +1638,8 @@
                 enabled: false
             },
             chart: {
-                type: 'column'
+                type: 'column',
+                height: 270
             },
 
             title: {
@@ -1676,7 +1688,8 @@
                 enabled: false
             },
             chart: {
-                type: 'column'
+                type: 'column',
+                height: 270
             },
 
             title: {
@@ -1719,5 +1732,168 @@
                 color: 'rgba(222,123,101,0.78)'
             }]
         });
+        function replace( show, hide1, hide2 ) {
+            document.getElementById(hide1).style.display="none";
+            document.getElementById(hide2).style.display="none";
+            document.getElementById(show).style.display="block";
+        }
+    </script>
+
+    <script>
+        Highcharts.chart('day1', {
+            credits: {
+                enabled: false
+            },
+            chart: {
+                type: 'column',
+                height: 270
+            },
+
+            title: {
+                text: ''
+            },
+
+            xAxis: {
+                categories: <?php print_r($date1); ?>
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Time Taken'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'Correct Answer',
+                data: <?php print_r($correctAns1); ?>,
+                color: '#93ee79'
+            }, {
+                name: 'Incorrect Answer',
+                data: <?php print_r($incorrectAns1); ?>,
+                color: 'rgba(222,123,101,0.78)'
+            }]
+        });
+
+        Highcharts.chart('week1', {
+            credits: {
+                enabled: false
+            },
+            chart: {
+                type: 'column',
+                height: 270
+            },
+
+            title: {
+                text: ''
+            },
+
+            xAxis: {
+                categories: <?php print_r($date2); ?>
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Time Taken'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'Correct Answer',
+                data: <?php print_r($correctAns2); ?>,
+                color: '#93ee79'
+            }, {
+                name: 'Incorrect Answer',
+                data: <?php print_r($incorrectAns2); ?>,
+                color: 'rgba(222,123,101,0.78)'
+            }]
+        });
+
+        Highcharts.chart('month1', {
+            credits: {
+                enabled: false
+            },
+            chart: {
+                type: 'column',
+                height: 270
+            },
+
+            title: {
+                text: ''
+            },
+
+            xAxis: {
+                categories: <?php print_r($date3); ?>
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Time Taken'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>' +
+                        'Total: ' + this.point.stackTotal;
+                }
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'Correct Answer',
+                data: <?php print_r($correctAns3); ?>,
+                color: '#93ee79'
+            }, {
+                name: 'Incorrect Answer',
+                data: <?php print_r($incorrectAns3); ?>,
+                color: 'rgba(222,123,101,0.78)'
+            }]
+        });
+
+        function replace1( show, hide1, hide2 ) {
+            document.getElementById(hide1).style.display="none";
+            document.getElementById(hide2).style.display="none";
+            document.getElementById(show).style.display="block";
+        }
     </script>
 @endsection
