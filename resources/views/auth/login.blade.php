@@ -123,7 +123,7 @@
                 clearTimeout(timerId);
                 sentotplogin();
             } else {
-                elem.innerHTML = 'Resend OPT in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
+                elem.innerHTML = 'Resend OTP in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
                 timeLeft--;
             }
 

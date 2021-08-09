@@ -30,6 +30,20 @@
         </div>
     </div>
 </div>
+<!-- Modal planner chapters-->
+<div class="modal fade planner_chapter" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="select-planner-chapter" class="modal-body pt-0 px-5 ">
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="{{URL::asset('public/js/jquery-2.2.4.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
@@ -51,6 +65,10 @@
     $(".scroll-div").slimscroll({
         height: "40vh",
     });
+    $(".subject_chapter").slimscroll({
+        height: "40vh",
+    });
+
     $(".notification-scroll").slimscroll({
         height: "70vh",
     });
@@ -452,4 +470,36 @@
         $('#slide-input').html(value);
 
     }
+
+    function selectChapter(subject_id) {
+        $.ajax({
+            url: "{{ url('/ajax_chapter_list/',) }}/" + subject_id,
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {},
+            success: function(response_data) {
+                $('#select-planner-chapter').html(response_data);
+                $('#plannerChapter').modal('show');
+            },
+
+        });
+
+    }
+
+    function handleChange(checkbox, text) {
+        if (checkbox.checked == true) {
+            var chapter_id = checkbox.value;
+            $('#planner_sub_1 .add-removeblock:last').before('<div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
+                '<a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></div>');
+        } else {
+            $(this).parent().remove();
+        }
+    }
+    $('.chaptbox').on('click', '.cust-remove-icon', function(e) {
+        e.preventDefault();
+
+        $(this).parent().remove();
+    });
 </script>

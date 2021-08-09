@@ -66,7 +66,7 @@
             <div class="container-fluid h-100">
                 <div class="row h-100  ">
                     <div class="col-md-10 mx-auto">
-                        <h1 class="fs-1 mt-5 mb-3 fw-800 text-center text-uppercase">Friquantly Asked Questions</h1>
+                        <h1 class="fs-1 mt-5 mb-3 fw-800 text-center text-uppercase">Frequently Asked Questions</h1>
                         <div class="about-exam">
                             <div class="accordion" id="accordionExample">
 
