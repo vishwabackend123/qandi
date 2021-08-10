@@ -107,6 +107,7 @@ class AnalyticsController extends Controller
         $monthlyReport = json_decode($overallAnalytics[0]->monthlyReport);
         $subProf = json_decode($overallAnalytics[0]->subject_proficiency);
         $accuracy = json_decode($overallAnalytics[0]->accuracy);
+        $timeSpent = json_decode($overallAnalytics[0]->time_taken);
 
         $date1 = [];
         $correctTime1 = [];
@@ -196,7 +197,19 @@ class AnalyticsController extends Controller
         $classAcc = json_encode($classAcc);
         $stuAcc = json_encode($stuAcc);
 
-        return view('afterlogin.Analytics.overall_analytics', compact('day','classAcc','stuAcc', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
+        $days = [];
+        $classAccuracy = [];
+        $stuAccuracy = [];
+        foreach ($timeSpent as $val) {
+            array_push($days, $val->dateDay);
+            array_push($classAccuracy, $val->class_time_taken);
+            array_push($stuAccuracy, $val->student_time_taken);
+        }
+        $days = json_encode($days);
+        $classAccuracy = json_encode($classAccuracy);
+        $stuAccuracy = json_encode($stuAccuracy);
+
+        return view('afterlogin.Analytics.overall_analytics', compact('days', 'classAccuracy', 'stuAccuracy', 'day','classAcc','stuAcc', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
             'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3',
             'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'user_subjects'));
     }
@@ -212,7 +225,7 @@ class AnalyticsController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/subject-wise-analytics/30782/$sub_id",
+            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/subject-wise-analytics/31071/$sub_id",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -230,7 +243,11 @@ class AnalyticsController extends Controller
         $dailyReport = json_decode($subAnalytics[0]->daily_report);
         $weeklyReport = json_decode($subAnalytics[0]->weekly_report);
         $monthlyReport = json_decode($subAnalytics[0]->monthlyReport);
-        $subProf = json_decode($subAnalytics[0]->subject_proficiency);
+        $subProf = $subAnalytics[0]->topic_wise_result;
+        $skillPer = $subAnalytics[0]->skill_percentage;
+        $accuracy = json_decode($subAnalytics[0]->accuracy);
+        $timeSpent = json_decode($subAnalytics[0]->time_taken);
+        $subScore = $subAnalytics[0]->subject_score;
 
         $date1 = [];
         $correctTime1 = [];
@@ -308,7 +325,31 @@ class AnalyticsController extends Controller
         $correctAns3 = json_encode($correctAns3);
         $incorrectAns3 = json_encode($incorrectAns3);
 
-        return view('afterlogin.Analytics.subject_wise_analytics', compact('subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
+        $day = [];
+        $classAcc = [];
+        $stuAcc = [];
+        foreach ($accuracy as $val) {
+            array_push($day, $val->dateDay);
+            array_push($classAcc, $val->class_accuracy);
+            array_push($stuAcc, $val->student_accuracy);
+        }
+        $day = json_encode($day);
+        $classAcc = json_encode($classAcc);
+        $stuAcc = json_encode($stuAcc);
+
+        $days = [];
+        $classAccuracy = [];
+        $stuAccuracy = [];
+        foreach ($timeSpent as $val) {
+            array_push($days, $val->dateDay);
+            array_push($classAccuracy, $val->class_time_taken);
+            array_push($stuAccuracy, $val->student_time_taken);
+        }
+        $days = json_encode($days);
+        $classAccuracy = json_encode($classAccuracy);
+        $stuAccuracy = json_encode($stuAccuracy);
+//dd($subScore);
+        return view('afterlogin.Analytics.subject_wise_analytics', compact('subScore', 'day', 'classAcc', 'stuAcc', 'days', 'classAccuracy', 'stuAccuracy', 'skillPer', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
             'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3'));
     }
 }
