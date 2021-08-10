@@ -130,12 +130,12 @@
                         @if(!empty($subjectData))
                         @foreach($subjectData as $key=>$sub)
                         <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-3 dashboard-listing-details w-100 ">
-                            <span class="mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
+                            <span class="mr-3 dashboard-name-txt">{{$sub['subject_name']}}</span>
 
                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                 <div class="star-ratings-css">
-                                    <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
+                                    <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
                                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                     </div>
                                     <div class="star-ratings-css-bottom">
@@ -144,7 +144,7 @@
                                 </div>
 
                                 <div class="ms-2 score score-rating js-score">
-                                    {{round($sub->score)}} %
+                                    {{round($sub['score'])}} %
                                     <!-- <span>/</span>
                               <span class="total">5</span> -->
                                 </div>
@@ -423,7 +423,7 @@
                     <span class="text-white ms-4 ">Take full body scan of<br> 90 questions test</span>
 
                 </a>
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-5" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard ></a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-5 fw-bolder" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard ></a>
             </div>
 
         </div>
@@ -439,9 +439,9 @@ if (!empty($trendResponse)) {
 foreach ($trendResponse as $key => $trend) {
 $week = "W" . $i;
 array_push($aWeeks, $week);
-array_push($trend_stu_scroe, $trend->student_score);
-array_push($trend_avg_scroe, $trend->average_score);
-array_push($trend_max_scroe, $trend->max_score);
+array_push($trend_stu_scroe, $trend['student_score']);
+array_push($trend_avg_scroe, $trend['average_score']);
+array_push($trend_max_scroe, $trend['max_score']);
 
 $i++;
 }

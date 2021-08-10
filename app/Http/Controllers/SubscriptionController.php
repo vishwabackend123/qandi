@@ -51,7 +51,7 @@ class SubscriptionController extends Controller
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
-        dd($curl_url);
+
         curl_setopt_array($curl, array(
 
             CURLOPT_URL => $curl_url,
@@ -68,7 +68,7 @@ class SubscriptionController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
-        dd($response_json);
+
 
         curl_close($curl);
         if ($httpcode == 200 || $httpcode == 201) {
@@ -88,7 +88,7 @@ class SubscriptionController extends Controller
                 array_push($purchased_ids, $pur->subscription_id);
             }
         }
-        dd($subscriptions);
+
         return view('subscriptions', compact('subscriptions', 'purchased_ids'));
     }
 

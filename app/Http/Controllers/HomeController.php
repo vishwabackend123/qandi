@@ -98,16 +98,20 @@ class HomeController extends Controller
         curl_close($curl);
 
         if ($httpcode == 200 || $httpcode == 201) {
-            $scoreResponse = json_decode($score_json);
+            $scoreResponse = json_decode($score_json, true);
+            $response_json = str_replace('NaN', '""', $scoreResponse);
 
-            $scoreData = isset($scoreResponse->test_score) ? ($scoreResponse->test_score) : '';
-            $subjectData = isset($scoreResponse->subject_proficiency) ? $scoreResponse->subject_proficiency : '';
-            $trendResponse = isset($scoreResponse->marks_trend) ? ($scoreResponse->marks_trend) : '';
+            $scoreResponse = json_decode($response_json, true);
+
+            $scoreData = isset($scoreResponse['test_score']) ? ($scoreResponse['test_score']) : '';
+            $subjectData = isset($scoreResponse['subject_proficiency']) ? $scoreResponse['subject_proficiency'] : '';
+            $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
         } else {
             $scoreData = [];
             $subjectData = [];
             $trendResponse = [];
         }
+
 
         if (empty($subjectData)) {
             foreach ($user_subjects as $key => $sub) {
@@ -121,8 +125,9 @@ class HomeController extends Controller
 
         $previous_score_per = $corrent_score_per = $diff_score_per = 0;
         if (isset($scoreData) && !empty($scoreData)) {
-            $corrent_score_per = isset($scoreData[0]->result_percentage) ? $scoreData[0]->result_percentage : 0;
-            $previous_score_per = isset($scoreData[1]->result_percentage) ? $scoreData[1]->result_percentage : 0;
+
+            $corrent_score_per = isset($scoreData[0]['result_percentage']) ? $scoreData[0]['result_percentage'] : 0;
+            $previous_score_per = isset($scoreData[1]['result_percentage']) ? $scoreData[1]['result_percentage'] : 0;
             $diff_score_per = $corrent_score_per - $previous_score_per;
         } else {
         }
@@ -300,6 +305,8 @@ class HomeController extends Controller
     {
         $data = $request->all();
         $user_id = Auth::user()->id;
+        $user_name = $request->username;
+
 
         $request = [
             "id" => $user_id,
@@ -339,10 +346,15 @@ class HomeController extends Controller
 
         if ($httpcode != 200 && $httpcode != 201) {
             $response['success'] = false;
+
+
             $response['error'] = "";
             return json_encode($response);
         } else {
-            return $response_json;
+            $response = json_decode($response_json);
+            $response->user_name = $user_name;
+
+            return json_encode($response);
         }
     }
 }

@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div id="main">
+<div id="main" class="py-5 h-100">
     <div class="row">
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-8 mx-auto mt-5 py-3">
             <div class="bg-white white-box-big">
                 <div class="welcome-heading">Tell us where do you stand right now.. </div>
                 <p class="welcome-msg text-center">So that we can help you better</p>

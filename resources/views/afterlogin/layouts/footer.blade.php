@@ -94,6 +94,9 @@
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
+                        var user_name = response.user_name;
+                        $('#profileUserName').html(user_name);
+                        $('#activeUserName').html(user_name);
                         $('#profile-details').show();
                         $('#profile-form').hide();
 
@@ -419,6 +422,10 @@
         $(".leaderNameBlock").slimscroll({
             height: "50vh",
         });
+        $(".scroll-achiv").slimscroll({
+            height: "30vh",
+        });
+
         $('#edit-planner-btn').click(function() {
 
             $('#sub-planner').addClass('open-sub-planner');
@@ -494,7 +501,8 @@
             $('#planner_sub_1 .add-removeblock:last').before('<div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
                 '<a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></div>');
         } else {
-            $(this).parent().remove();
+            var chapter_id = checkbox.value;
+            $('#chapter_' + chapter_id).remove();
         }
     }
     $('.chaptbox').on('click', '.cust-remove-icon', function(e) {

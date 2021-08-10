@@ -53,7 +53,7 @@
                                     <path class="circle" stroke-dasharray="{{isset($response->result_percentage)?$response->result_percentage:0}}, 100" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                    <text x="18" y="22.35" class="percentage">{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}%</text>
+                                    <text x="18" y="22.35" class="percentage" style="font-size:9px;">{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}%</text>
                                 </svg>
                             </div>
                             <div class="col-md-8">

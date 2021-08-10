@@ -26,7 +26,7 @@
         <div class="d-flex align-items-center">
             <div class="col-4">
                 <h3>{{$subscriptions_data->subscription_name}}</h3>
-                <span class="d-block">{{$subscriptions_data->subscription_details}}</span>
+
             </div>
             <div class=" col-4">
                 <select class="form-select border-0 border-bottom  rounded-0">

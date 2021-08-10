@@ -4,7 +4,7 @@
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
-                    <span class="user-name-block ps-3 me-3">Welcome, {{Auth::user()->user_name}}</span>
+                    <span class="user-name-block ps-3 me-3">Welcome, <span id="activeUserName">{{Auth::user()->user_name}}</span></span>
 
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link ">
@@ -116,17 +116,18 @@
                                                 </span>
                                                 <div id="profile-details">
                                                     <div class="my-5 profile-read">
-                                                        <h5>{{Auth::user()->user_name}}</h5>
+                                                        <h5 id="profileUserName">{{Auth::user()->user_name}}</h5>
                                                         <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 ms-2" id="editprofile">Edit Profile</button>
                                                     </div>
                                                     <div>
                                                         <h5 class="text-uppercase fw-bold">Achievements</h5>
-                                                        <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                        <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                        <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                        <div class="scroll-achiv ">
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
 
-
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="profile-form-block" id="profile-form">

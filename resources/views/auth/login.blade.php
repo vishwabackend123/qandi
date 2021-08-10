@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="main" class="pageBg">
+<div id="main">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(window).on("load resize scroll", function(e) {
@@ -9,9 +9,9 @@
             $('.pageBg').height(winHeight);
         });
     </script>
-    <div class="login-box" id="name-box">
+    <div class="ms-auto login-box me-auto" id="name-box">
         <div class="welcome-heading">Welcome to UniQ</div>
-        <div class="welcome-msg">Please login using your registered email/ Mobile number <img src="{{URL::asset('public/images/welcome-icon.png')}}"></div>
+        <div class="welcome-msg">Please login using your registered email/ Mobile number </div>
         <form id="studentlogin" method="post">
             @csrf
             <div id="mobile_input">
