@@ -131,7 +131,7 @@
       height: '20vh'
     });
     $('.scroll-achiv').slimscroll({
-      height: '20vh'
+      height: '25vh'
     });
   </script>
 

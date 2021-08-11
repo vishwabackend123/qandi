@@ -414,7 +414,6 @@
             menu_opened === true) {
             $('#submenupreparation2').collapse('toggle');
         }
-
     });
 </script>
 <script>
@@ -423,7 +422,7 @@
             height: "50vh",
         });
         $(".scroll-achiv").slimscroll({
-            height: "30vh",
+            height: "26vh",
         });
 
         $('#edit-planner-btn').click(function() {
@@ -498,16 +497,16 @@
     function handleChange(checkbox, text) {
         if (checkbox.checked == true) {
             var chapter_id = checkbox.value;
-            $('#planner_sub_1 .add-removeblock:last').before('<div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
-                '<a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></div>');
+            $('#planner_sub_1').append('<div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
+                '<span class="ms-auto"><a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle me-3 text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></span></div>');
         } else {
             var chapter_id = checkbox.value;
             $('#chapter_' + chapter_id).remove();
         }
     }
-    $('.chaptbox').on('click', '.cust-remove-icon', function(e) {
+    $('.chaptbox').on('click', '.chapter_remove', function(e) {
         e.preventDefault();
 
-        $(this).parent().remove();
+        $(this).parent().parent().remove();
     });
 </script>

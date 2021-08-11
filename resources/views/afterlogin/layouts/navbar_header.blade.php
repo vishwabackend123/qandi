@@ -353,20 +353,19 @@
                     <input type="date" class="bg-light border-0 p-2 text-center text-uppercase" />
                 </div>
             </div>
-            <div class="subject_chapter row mt-5">
-                <div class="col-md-6 col-lg-4 mb-4">
+            <div class=" row mt-5">
+                <div class="col-md-6 col-lg-4 mb-4 ">
                     <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Mathematics</div>
-                    <div id="planner_sub_1" class="chaptbox pt-2">
-                        <div class="add-removeblock p-3 mb-2  d-flex align-items-center">
-                            <span>Application of Calculus</span>
-                            <a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></a>
-                        </div>
+                    <div class="subject_chapter">
+                        <div id="planner_sub_1" class="chaptbox pt-2">
 
-                    </div>
-                    <div class="chaptbox-add ">
-                        <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center" id="subject_chapter_1" onClick="selectChapter(1);">
-                            <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                        </a>
+
+                        </div>
+                        <div class="chaptbox-add ">
+                            <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center" id="subject_chapter_1" onClick="selectChapter(1);">
+                                <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
