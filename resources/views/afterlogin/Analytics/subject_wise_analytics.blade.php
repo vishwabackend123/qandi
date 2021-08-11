@@ -7,8 +7,7 @@
                         <span class=" p-3">
                             <div id="scorecontainer" class="text-right"></div>
                         </span>
-                        <span
-                            class="mt-auto me-0 bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
+                        <span class="mt-auto me-0 bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                             <span class="abri">
                                 <span class="abrv-mean bg1">
                                 </span>
@@ -20,8 +19,7 @@
                                 Progress from previous score
                             </span>
                             <span class="abri">
-                                <span
-                                    class="abrv-mean bg3">
+                                <span class="abrv-mean bg3">
                                 </span>
                                 Next Mock Test Target
                             </span>
@@ -31,109 +29,82 @@
                 <div class="col-5 ">
                     <div class="row position-relative">
                         @if($skillPer)
-                            <div class="col-6 mb-3">
-                                <div
-                                    class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                    <a class="box-block arrow-right-btm"
-                                       data-bs-toggle="collapse"
-                                       href="#arrow-right-btm">
-                                        <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
-                                        <span>{{round($skillPer[0]->percentage)}}%</span>
-                                    </a>
-                                </div>
-                                <div class="collapse arrow-right-btm-content p-4"
-                                     data-bs-dismiss="collapse" id="arrow-right-btm">
-                                    <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                        Evaluation</h4>
-                                    <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                    <p class="arrow-box-content">Evaluation measures the
-                                        Lorems and Ipsum for your
-                                        performance in the test.</p>
-                                    <p class="arrow-box-content">Ideal Application score
-                                        should be in the range 85%</p>
-                                    <a class="inner-arrow-right-btm"
-                                       data-bs-toggle="collapse"
-                                       href="#arrow-right-btm"><i
-                                            class="fa fa-angle-down"
-                                            aria-hidden="true"></i></a>
-                                </div>
+                        <div class="col-6 mb-3">
+                            <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
+                                    <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
+                                    <span>{{round($skillPer[0]->percentage)}}%</span>
+                                </a>
                             </div>
-                            <div class="col-6  mb-3">
-                                <div
-                                    class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                    <a data-bs-toggle="collapse" href="#arrow-left-btm"
-                                       class="box-block arrow-left-btm">
-                                        <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
-                                        <span>{{round($skillPer[1]->percentage)}}%</span>
-                                    </a>
-                                </div>
-                                <div class="collapse arrow-right-btm-content p-4"
-                                     data-bs-dismiss="collapse" id="arrow-left-btm">
-                                    <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                        Evaluation</h4>
-                                    <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                    <p class="arrow-box-content">Evaluation measures the
-                                        Lorems and Ipsum for your
-                                        performance in the test.</p>
-                                    <p class="arrow-box-content">Ideal Application score
-                                        should be in the range 85%</p>
-                                    <a class="inner-arrow-left-btm"
-                                       data-bs-toggle="collapse" href="#arrow-left-btm"><i
-                                            class="fa fa-angle-down"
-                                            aria-hidden="true"></i></a>
-                                </div>
+                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
+                                    Evaluation</h4>
+                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                <p class="arrow-box-content">Evaluation measures the
+                                    Lorems and Ipsum for your
+                                    performance in the test.</p>
+                                <p class="arrow-box-content">Ideal Application score
+                                    should be in the range 85%</p>
+                                <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
-                            <div class="col-6">
-                                <div
-                                    class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                    <a data-bs-toggle="collapse" href="#arrow-right-top"
-                                       class="box-block arrow-right-top">
-                                        <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
-                                        <span>{{round($skillPer[2]->percentage)}}%</span>
-                                    </a>
-                                </div>
-                                <div class="collapse arrow-right-btm-content p-4"
-                                     data-bs-dismiss="collapse" id="arrow-right-top">
-                                    <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                        Evaluation</h4>
-                                    <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                    <p class="arrow-box-content">Evaluation measures the
-                                        Lorems and Ipsum for your
-                                        performance in the test.</p>
-                                    <p class="arrow-box-content">Ideal Application score
-                                        should be in the range 85%</p>
-                                    <a class="inner-arrow-right-top"
-                                       data-bs-toggle="collapse"
-                                       href="#arrow-right-top"><i
-                                            class="fa fa-angle-down"
-                                            aria-hidden="true"></i></a>
-                                </div>
+                        </div>
+                        <div class="col-6  mb-3">
+                            <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
+                                    <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
+                                    <span>{{round($skillPer[1]->percentage)}}%</span>
+                                </a>
                             </div>
-                            <div class="col-6">
-                                <div
-                                    class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
-                                    <a data-bs-toggle="collapse" href="#arrow-left-top"
-                                       class="box-block arrow-left-top">
-                                        <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
-                                        <span>{{round($skillPer[3]->percentage)}}%</span>
-                                    </a>
-                                </div>
-                                <div class="collapse arrow-right-btm-content p-4"
-                                     data-bs-dismiss="collapse" id="arrow-left-top">
-                                    <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                        Evaluation</h4>
-                                    <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                    <p class="arrow-box-content">Evaluation measures the
-                                        Lorems and Ipsum for your
-                                        performance in the test.</p>
-                                    <p class="arrow-box-content">Ideal Application score
-                                        should be in the range 85%</p>
-                                    <a class="inner-arrow-left-top"
-                                       data-bs-toggle="collapse" href="#arrow-left-top"><i
-                                            class="fa fa-angle-down"
-                                            aria-hidden="true"></i></a>
-                                </div>
+                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
+                                    Evaluation</h4>
+                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                <p class="arrow-box-content">Evaluation measures the
+                                    Lorems and Ipsum for your
+                                    performance in the test.</p>
+                                <p class="arrow-box-content">Ideal Application score
+                                    should be in the range 85%</p>
+                                <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
+                                    <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
+                                    <span>{{round($skillPer[2]->percentage)}}%</span>
+                                </a>
+                            </div>
+                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
+                                    Evaluation</h4>
+                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                <p class="arrow-box-content">Evaluation measures the
+                                    Lorems and Ipsum for your
+                                    performance in the test.</p>
+                                <p class="arrow-box-content">Ideal Application score
+                                    should be in the range 85%</p>
+                                <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
+                                    <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
+                                    <span>{{round($skillPer[3]->percentage)}}%</span>
+                                </a>
+                            </div>
+                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
+                                    Evaluation</h4>
+                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
+                                <p class="arrow-box-content">Evaluation measures the
+                                    Lorems and Ipsum for your
+                                    performance in the test.</p>
+                                <p class="arrow-box-content">Ideal Application score
+                                    should be in the range 85%</p>
+                                <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
                         @endif
                     </div>
                 </div>
@@ -144,74 +115,47 @@
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center">
                 <h5 class="dashboard-title ">Topics</h5>
-                <button
-                    class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3"
-                    data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
+                <button class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3" data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
                     Upcoming Webinar
                 </button>
-                <button class="btn btn-warning px-4 text-uppercase rounded-0"
-                        id="topic-open-btn"><i class="fa fa-expand"
-                                               aria-hidden="true"></i> Expand
+                <button class="btn btn-warning px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
                 </button>
             </div>
             @if($subProf)
-                @foreach($subProf as $val)
-                    <div class="d-flex align-items-center mt-3 pb-1">
-                        <div
-                            class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
-                            <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
-                            <div
-                                class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating"
-                                data-vote="0">
+            @foreach($subProf as $val)
+            <div class="d-flex align-items-center mt-3 pb-1">
+                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
+                    <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
+                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                                <div class="star-ratings-css">
-                                    <div class="star-ratings-css-top"
-                                         style="width: {{round($val->score)}}%">
-                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                    </div>
-                                    <div class="star-ratings-css-bottom">
-                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                    </div>
-                                </div>
-
-                                <div class="ms-2 score score-rating js-score">
-                                    {{round($val->score)}} %
-                                </div>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="star-ratings-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                         </div>
-                        <div class="progress  ms-auto col-6"
-                             style="overflow: visible;">
-                            <div
-                                class="progress-bar bg-light-success position-relative"
-                                role="progressbar"
-                                style="width:{{round(($val->correct_ans * 100)/$val->total_questions)}}%;overflow: visible;">
-                                                                    <span class="prog-box green"
-                                                                          data-bs-toggle="tooltip"
-                                                                          data-bs-custom-class="tooltip-green"
-                                                                          data-bs-placement="top"
-                                                                          title="Correct">{{round($val->correct_ans)}}</span>
-                            </div>
-                            <div class="progress-bar bg-light-red position-relative"
-                                 role="progressbar"
-                                 style="width:{{round(($val->incorrect_ans * 100)/$val->total_questions)}}%;overflow: visible;">
-                                                                    <span class="prog-box red" data-bs-toggle="tooltip"
-                                                                          data-bs-placement="top"
-                                                                          data-bs-custom-class="tooltip-red"
-                                                                          title="Incorrect">{{round($val->incorrect_ans)}}</span>
-                            </div>
-                            <div class="progress-bar bg-light-secondary position-relative"
-                                 role="progressbar"
-                                 style="width:{{round(($val->unanswered * 100)/$val->total_questions)}}%;overflow: visible;">
-                                                                    <span class="prog-box secondary"
-                                                                          data-bs-custom-class="tooltip-gray"
-                                                                          data-bs-toggle="tooltip"
-                                                                          data-bs-placement="top"
-                                                                          title="Unanswered">{{round($val->unanswered)}}
-                                                                    </span>
-                            </div>
+
+                        <div class="ms-2 score score-rating js-score">
+                            {{round($val->score)}} %
                         </div>
                     </div>
-                @endforeach
+                </div>
+                <div class="progress  ms-auto col-6" style="overflow: visible;">
+                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{round(($val->correct_ans * 100)/$val->total_questions)}}%;overflow: visible;">
+                        <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
+                    </div>
+                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{round(($val->incorrect_ans * 100)/$val->total_questions)}}%;overflow: visible;">
+                        <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
+                    </div>
+                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{round(($val->unanswered * 100)/$val->total_questions)}}%;overflow: visible;">
+                        <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            @endforeach
             @endif
         </div>
     </div>
@@ -222,19 +166,13 @@
             <div id="week1" style="display:none"></div>
             <div id="month1" style="display:none"></div>
             <div class="btn-block mt-5 d-flex justify-content-between">
-                <button
-                    class="btn btn-light-green text-uppercase rounded-0 px-5"
-                    onclick="replace1('day1','week1','month1')">
+                <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace1('day1','week1','month1')">
                     Day
                 </button>
-                <button
-                    class="btn btn-outline-secondary text-uppercase rounded-0 px-5"
-                    onclick="replace1('week1','day1','month1')">
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('week1','day1','month1')">
                     Week
                 </button>
-                <button
-                    class="btn btn-outline-secondary text-uppercase rounded-0 px-5"
-                    onclick="replace1('month1','day1','week1')">
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('month1','day1','week1')">
                     Month
                 </button>
             </div>
@@ -254,19 +192,13 @@
             <div id="week" style="display:none"></div>
             <div id="month" style="display:none"></div>
             <div class="btn-block mt-5 d-flex justify-content-between">
-                <button
-                    class="btn btn-light-green text-uppercase rounded-0 px-5"
-                    onclick="replace('day','week','month')">
+                <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace('day','week','month')">
                     Day
                 </button>
-                <button
-                    class="btn btn-outline-secondary text-uppercase rounded-0 px-5"
-                    onclick="replace('week','day','month')">
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace('week','day','month')">
                     Week
                 </button>
-                <button
-                    class="btn btn-outline-secondary text-uppercase rounded-0 px-5"
-                    onclick="replace('month','day','week')">
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace('month','day','week')">
                     Month
                 </button>
             </div>
@@ -293,11 +225,9 @@
     <div class="col-12  mb-5">
 
         <div class="d-flex align-items-center">
-            <a href="#" class="h5 text-dark"><i class="fa fa-angle-left"
-                                                aria-hidden="true"></i>
+            <a href="#" class="h5 text-dark"><i class="fa fa-angle-left" aria-hidden="true"></i>
                 Mathematics</a>
-            <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto"
-                    id="topic-btn"><i class="fa fa-compress" aria-hidden="true"></i>
+            <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto" id="topic-btn"><i class="fa fa-compress" aria-hidden="true"></i>
                 COLLAPSE
             </button>
         </div>
@@ -308,9 +238,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -366,16 +294,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -387,8 +312,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -399,9 +323,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -457,16 +379,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -478,8 +397,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -490,9 +408,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -548,16 +464,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -569,8 +482,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn ">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn ">
                     Select
                 </button>
             </div>
@@ -581,9 +493,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -639,16 +549,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -660,8 +567,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -672,9 +578,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -730,16 +634,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -751,8 +652,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -763,9 +663,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -821,16 +719,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -842,8 +737,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -854,9 +748,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -912,16 +804,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -933,8 +822,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -945,9 +833,7 @@
             <div class="d-flex align-items-center py-2 listing-details ">
                 <span class="mr-3 topics-name">Trigonometry</span>
 
-                <div
-                    class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating"
-                    data-vote="0">
+                <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
 
                     <div class="star hidden">
                         <span class="full" data-value="0"></span>
@@ -1003,16 +889,13 @@
 
             </div>
             <div class="progress" style="overflow: visible;">
-                <div class="progress-bar bg-light-success position-relative"
-                     role="progressbar" style="width:40%;overflow: visible;">
+                <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-red position-relative"
-                     role="progressbar" style="width:30%;overflow: visible;">
+                <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
 
                 </div>
-                <div class="progress-bar bg-light-secondary position-relative"
-                     role="progressbar" style="width:20%;overflow: visible;">
+                <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
 
                 </div>
             </div>
@@ -1024,8 +907,7 @@
                 <button class="btn btn-light-red mb-4 mt-4 me-2 rounded-0">A
                 </button>
                 <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
-                <button
-                    class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
+                <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
                     Select
                 </button>
             </div>
@@ -1061,7 +943,7 @@
         },
 
         tooltip: {
-            formatter: function () {
+            formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
                     this.series.name + ': ' + this.y + '<br/>' +
                     'Total: ' + this.point.stackTotal;
@@ -1111,7 +993,7 @@
         },
 
         tooltip: {
-            formatter: function () {
+            formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
                     this.series.name + ': ' + this.y + '<br/>' +
                     'Total: ' + this.point.stackTotal;
@@ -1161,7 +1043,7 @@
         },
 
         tooltip: {
-            formatter: function () {
+            formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
                     this.series.name + ': ' + this.y + '<br/>' +
                     'Total: ' + this.point.stackTotal;
@@ -1219,7 +1101,7 @@
         },
 
         tooltip: {
-            formatter: function () {
+            formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
                     this.series.name + ': ' + this.y + '<br/>' +
                     'Total: ' + this.point.stackTotal;
@@ -1269,7 +1151,7 @@
         },
 
         tooltip: {
-            formatter: function () {
+            formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
                     this.series.name + ': ' + this.y + '<br/>' +
                     'Total: ' + this.point.stackTotal;
@@ -1319,7 +1201,7 @@
         },
 
         tooltip: {
-            formatter: function () {
+            formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
                     this.series.name + ': ' + this.y + '<br/>' +
                     'Total: ' + this.point.stackTotal;
@@ -1376,18 +1258,16 @@
             categories: <?php print_r($day); ?>
         },
 
-        series: [
-            {
-                name: 'Class Average',
-                data: <?php print_r($stuAcc); ?>,
-                color: '#ff9999',
-                dashStyle: 'ShortDash'
-            }, {
-                name: 'Student Average',
-                data: <?php print_r($classAcc); ?>,
-                color: '#6ec986',
-            }
-        ]
+        series: [{
+            name: 'Class Average',
+            data: <?php print_r($stuAcc); ?>,
+            color: '#ff9999',
+            dashStyle: 'ShortDash'
+        }, {
+            name: 'Student Average',
+            data: <?php print_r($classAcc); ?>,
+            color: '#6ec986',
+        }]
     });
 </script>
 
@@ -1417,18 +1297,16 @@
             categories: <?php print_r($days); ?>
         },
 
-        series: [
-            {
-                name: 'Class Average',
-                data: <?php print_r($stuAccuracy); ?>,
-                color: '#ff9999',
-                dashStyle: 'ShortDash'
-            }, {
-                name: 'Student Average',
-                data: <?php print_r($classAccuracy); ?>,
-                color: '#6ec986',
-            }
-        ]
+        series: [{
+            name: 'Class Average',
+            data: <?php print_r($stuAccuracy); ?>,
+            color: '#ff9999',
+            dashStyle: 'ShortDash'
+        }, {
+            name: 'Student Average',
+            data: <?php print_r($classAccuracy); ?>,
+            color: '#6ec986',
+        }]
     });
 </script>
 
@@ -1495,8 +1373,7 @@
                 name: 'Target',
                 y: <?php echo 0; ?>,
                 color: '#fc2f00c7' // Jane's color
-            },
-            ]
+            }, ]
         }]
     });
 </script>

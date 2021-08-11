@@ -595,7 +595,7 @@ class ExamCustomController extends Controller
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
-            return view('afterlogin.chpater_planner', compact('chapter_list'));
+            return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id'));
             //return $chapter_list;
         }
 
@@ -630,6 +630,6 @@ class ExamCustomController extends Controller
 
         // dd($chapter_list);
 
-        return view('afterlogin.chpater_planner', compact('chapter_list'));
+        return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id'));
     }
 }

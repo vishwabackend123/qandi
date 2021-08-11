@@ -131,11 +131,7 @@
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>
                                         <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4 scroll_topic ">
-                                            <div class="d-flex justify-content-center">
-                                                <div id="loader" class="spinner-border" role="status">
-                                                    <span class="visually-hidden">Loading...</span>
-                                                </div>
-                                            </div>
+
                                         </section>
                                     </div>
                                     @endforeach
@@ -171,7 +167,6 @@
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript">
-    $('#loader').hide();
     $('.scroll-div').slimscroll({
         height: '50vh'
     });
@@ -341,17 +336,12 @@
             data: {
                 "_token": "{{ csrf_token() }}",
             },
-            beforeSend: function() {
-                $('#loader').show();
-            },
-            complete: function() {
-                $('#loader').hide();
-            },
+
             success: function(result) {
                 $("#topic_section_" + chapt_id).html('');
                 $("#topic_section_" + chapt_id).html(result);
                 $('.slick-slider').slick('refresh');
-                $('#loader').hide();
+
             }
         });
     }

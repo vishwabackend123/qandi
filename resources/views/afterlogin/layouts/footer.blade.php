@@ -417,6 +417,13 @@
     });
 </script>
 <script>
+    $(document).ajaxStart(function() {
+        $('#overlay').fadeIn();
+    });
+
+    $(document).ajaxComplete(function() {
+        $('#overlay').fadeOut();
+    });
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
             height: "50vh",
@@ -484,20 +491,22 @@
             data: {
                 "_token": "{{ csrf_token() }}",
             },
-            beforeSend: function() {},
+
             success: function(response_data) {
                 $('#select-planner-chapter').html(response_data);
                 $('#plannerChapter').modal('show');
             },
 
+
         });
 
     }
 
-    function handleChange(checkbox, text) {
+    function handleChange(checkbox, text, subject_id) {
+
         if (checkbox.checked == true) {
             var chapter_id = checkbox.value;
-            $('#planner_sub_1').append('<div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
+            $('#planner_sub_' + subject_id).append('<input type="hidden" name="chapters[]" value="' + chapter_id + '"><div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
                 '<span class="ms-auto"><a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle me-3 text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></span></div>');
         } else {
             var chapter_id = checkbox.value;

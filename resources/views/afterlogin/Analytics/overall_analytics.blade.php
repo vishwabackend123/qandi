@@ -65,9 +65,9 @@
                                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
                                             @if(!empty($subProf))
                                             @foreach($subProf as $key=>$sub)
-                                            <div class="d-flex align-items-center mt-3 pb-1">
+                                            <div class="d-flex align-items-center m-2 mt-3 pb-1">
 
-                                                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
+                                                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
                                                     <span class="mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
 
                                                     <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
@@ -86,7 +86,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="progress  ms-auto col-6" style="overflow: visible;">
+                                                <div class="progress  col-6" style="overflow: visible;">
                                                     <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{round(($sub->correct_ans * 100)/$sub->total_questions)}}%;overflow: visible;">
                                                         <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                                     </div>

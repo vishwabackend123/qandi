@@ -10,7 +10,7 @@
                 @if(isset($chapter_list) && !empty($chapter_list))
                 @foreach($chapter_list as $key=>$val)
                 <tr>
-                    <td><input class="form-check-input me-2" type="checkbox" name="chapter_id" value="{{$val->chapter_id}}" onchange="handleChange(this, '{{$val->chapter_name}}' );">{{$val->chapter_name}}</td>
+                    <td><input class="form-check-input me-2" type="checkbox" name="chapter_id" value="{{$val->chapter_id}}" onchange="handleChange(this, '{{$val->chapter_name}}','{{$active_subject_id}}' );">{{$val->chapter_name}}</td>
                 </tr>
                 @endforeach
                 @else

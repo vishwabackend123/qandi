@@ -331,123 +331,53 @@
 </div>
 <!-- notification End-->
 <div class="collapse planmner-block width" id="collapseExample">
+
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <p class="fw-bold text-uppercase">Exams per week</p>
-            <div class="row align-items-center mb-2">
-                <div class="col-md-6">
-                    <input type="range" class="form-range exam_range" min="0" max="7" value="2" step="1" id="customRange3" oninput="outputUpdate(value)">
+            <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
+                @csrf
+                <div class="row align-items-center mb-2">
+                    <div class="col-md-6">
+                        <input type="range" name="weekrange" class="form-range exam_range" min="0" max="7" value="2" step="1" id="customRange3" oninput="outputUpdate(value)">
+                    </div>
+                    <div class="col-md-6">
+                        <span id="slide-input" class="badge bg-secondary">2</span>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <span id="slide-input" class="badge bg-secondary">2</span>
+                <p class="fw-bold text-uppercase">Schedule test weeks</p>
+                <div class="d-flex align-items-center">
+                    <div class="me-2">
+                        <label class="d-block">Start Date</label>
+                        <input type="date" name="start_date" class="bg-light border-0 p-2 text-center text-uppercase" />
+                    </div>
+                    <div>
+                        <label class="d-block">End Date</label>
+                        <input type="date" name="end_date" class="bg-light border-0 p-2 text-center text-uppercase" />
+                    </div>
                 </div>
-            </div>
-            <p class="fw-bold text-uppercase">Schedule test weeks</p>
-            <div class="d-flex align-items-center">
-                <div class="me-2">
-                    <label class="d-block">Start Date</label>
-                    <input type="date" class="bg-light border-0 p-2 text-center text-uppercase" />
-                </div>
-                <div>
-                    <label class="d-block">End Date</label>
-                    <input type="date" class="bg-light border-0 p-2 text-center text-uppercase" />
-                </div>
-            </div>
-            <div class=" row mt-5">
-                <div class="col-md-6 col-lg-4 mb-4 ">
-                    <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Mathematics</div>
-                    <div class="subject_chapter">
-                        <div id="planner_sub_1" class="chaptbox pt-2">
-
-
+                <div class=" row mt-5">
+                    @if(isset($aSubjects) && !empty($aSubjects))
+                    @foreach($aSubjects as $skey=>$sVal)
+                    <div class="col col-lg-4 mb-4 ">
+                        <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
+                        <div class="subject_chapter">
+                            <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
+                            </div>
+                            <div class="chaptbox-add ">
+                                <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
+                                    <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="chaptbox-add ">
-                            <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center" id="subject_chapter_1" onClick="selectChapter(1);">
-                                <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                            </a>
-                        </div>
                     </div>
+                    @endforeach
+                    @endif
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Physics</div>
-
-                    <div class="chaptbox pt-2">
-
-                    </div>
-                    <div class="chaptbox-add ">
-                        <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center">
-                            <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                        </a>
-                    </div>
+                <div class="text-center">
+                    <button class="btn-danger btn rounded-0 text-uppercase px-5 w-25"><i class="fa fa-check"></i></button>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> Chemistry</div>
-
-                    <div class="chaptbox pt-2">
-
-
-                    </div>
-                    <div class="chaptbox-add ">
-                        <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center">
-                            <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <!-- <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="add-removeblock p-3 d-flex align-items-center">
-                        <span>Application of Calculus</span>
-                        <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
-                        <span class=""><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="add-removeblock p-3 d-flex align-items-center">
-                        <span>Application of Calculus</span>
-                        <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
-                        <span class=""><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="add-removeblock p-3 d-flex align-items-center">
-                        <span>Application of Calculus</span>
-                        <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
-                        <span class=""><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="add-removeblock p-3 d-flex align-items-center">
-                        <span>Application of Calculus</span>
-                        <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
-                        <span class=""><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="add-removeblock p-3 d-flex align-items-center">
-                        <span>Application of Calculus</span>
-                        <span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span>
-                        <span class=""><i class="fa fa-minus-circle text-light-danger  cust-remove-icon" aria-hidden="true"></i></span>
-                    </div>
-                </div> -->
-                <!--  <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
-                        <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                    </div>
-
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
-                        <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="bg-light  p-3 d-flex align-items-center justify-content-center">
-                        <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
-                    </div>
-                </div> -->
-            </div>
-            <div class="text-center">
-                <button class="btn-danger btn rounded-0 text-uppercase px-5 w-25"><i class="fa fa-check"></i></button>
-            </div>
+            </form>
         </div>
         <div class="planner-content p-3">
             <div class="d-flex align-items-center justify-content-between">

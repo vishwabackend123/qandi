@@ -143,3 +143,7 @@ Route::get('auth/facebook/callback', [App\Http\Controllers\Auth\FacebookControll
 Route::get('auth/social_account', [App\Http\Controllers\Auth\FacebookController::class, 'userInfo'])->middleware('auth', 'menu');
 //facebook login end
 Route::any('/next_tab/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'nextTab'])->name('next_tab')->middleware('auth', 'menu');
+
+
+/* Planner Controller Routs */
+Route::any('/addPlanner', [App\Http\Controllers\PlannerController::class, 'addPlanner'])->name('addPlanner')->middleware('auth', 'menu');
