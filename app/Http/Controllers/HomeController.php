@@ -118,7 +118,8 @@ class HomeController extends Controller
                 $sub->total_questions = 0;
                 $sub->correct_ans = 0;
                 $sub->score = 0;
-                $subjectData[$key] = $sub;
+
+                $subjectData[$key] = (array)$sub;
             }
         }
 
@@ -143,7 +144,6 @@ class HomeController extends Controller
             $progress = 0;
             $others = 100 - ($score + $progress);
         }
-
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse'));
     }
