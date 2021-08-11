@@ -294,7 +294,7 @@
             -inici_mes);
 
         /* 6 setmanes per cobrir totes les posiblitats
-         *  Quedaria mes consistent alhora de mostrar molts mesos 
+         *  Quedaria mes consistent alhora de mostrar molts mesos
          *  en una quadricula */
         for (var s = 0; s < 6; s++) {
             var fila = document.createElement('tr');

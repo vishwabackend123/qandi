@@ -88,16 +88,18 @@
         <!-- dashboard html section-->
 
         <div class="container-fluid">
-
+            @if ($message = Session::get('error'))
+            <div class="alert alert-danger alert-block" id="alert">
+                <strong>{{ $message }}</strong>
+            </div>
+            @endif
             <div class="row">
                 <div class="col-lg-5">
                     <div class="bg-white shadow-lg ">
                         <div class="row">
                             <div class="col-8 pe-0">
                                 <div class="d-flex justify-content-center flex-column h-100  position-relative">
-
                                     <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
-
                                     <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
                                     <div id="scorecontainer" class="text-right"></div>
                                     <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
@@ -799,5 +801,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         }
 
     });
+
+    setTimeout(()=>{
+        $('#alert').hide();
+    }, 5000);
 </script>
 @endsection
