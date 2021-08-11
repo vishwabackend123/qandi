@@ -23,11 +23,13 @@ class AnalyticsController extends Controller
      * Undocumented function
      *
      * @param Request $request
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function overall_analytics(Request $request)
     {
+
         $user_id = Auth::user()->id;
+
         $exam_id = Auth::user()->grade_id;
 
         //get user exam subjects
@@ -100,8 +102,9 @@ class AnalyticsController extends Controller
 
         $overallAnalytics = curl_exec($curl);
         curl_close($curl);
-        $overallAnalytics = json_decode($overallAnalytics);
 
+        $overallAnalytics = json_decode($overallAnalytics);
+        if($overallAnalytics[1] !== 400):
         $dailyReport = json_decode($overallAnalytics[0]->daily_report);
         $weeklyReport = json_decode($overallAnalytics[0]->weekly_report);
         $monthlyReport = json_decode($overallAnalytics[0]->monthlyReport);
@@ -212,6 +215,9 @@ class AnalyticsController extends Controller
         return view('afterlogin.Analytics.overall_analytics', compact('days', 'classAccuracy', 'stuAccuracy', 'day','classAcc','stuAcc', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
             'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3',
             'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'user_subjects'));
+        else:
+            return back()->with('error','PLease appear in exam before checking analytics. ');
+        endif;
     }
 
     public function export_analytics(Request $request)
