@@ -88,7 +88,7 @@ class AnalyticsController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.uniqtoday.com/api/analytics/overall-analytics/30782',
+            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/overall-analytics/$user_id",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -222,10 +222,11 @@ class AnalyticsController extends Controller
 
     public function nextTab($sub_id)
     {
+        $user_id = Auth::user()->id;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/subject-wise-analytics/31071/$sub_id",
+            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/subject-wise-analytics/$user_id/$sub_id",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
