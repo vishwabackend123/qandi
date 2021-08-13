@@ -14,43 +14,33 @@
                 </div>
 
                 <div class="star">
-
                     <span class="full" data-value="1"></span>
                     <span class="half" data-value="0.5"></span>
                     <span class="selected"></span>
-
                 </div>
 
                 <div class="star">
-
                     <span class="full" data-value="2"></span>
                     <span class="half" data-value="1.5"></span>
                     <span class="selected"></span>
-
                 </div>
 
                 <div class="star">
-
                     <span class="full" data-value="3"></span>
                     <span class="half" data-value="2.5"></span>
                     <span class="selected"></span>
-
                 </div>
 
                 <div class="star">
-
                     <span class="full" data-value="4"></span>
                     <span class="half" data-value="3.5"></span>
                     <span class="selected"></span>
-
                 </div>
 
                 <div class="star">
-
                     <span class="full" data-value="5"></span>
                     <span class="half" data-value="4.5"></span>
                     <span class="selected"></span>
-
                 </div>
 
                 <div class="score score-rating js-score">

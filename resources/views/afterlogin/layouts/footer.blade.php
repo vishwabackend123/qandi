@@ -127,8 +127,6 @@
             }
         },
         submitHandler: function(form) {
-
-
             $.ajax({
                 url: "{{ url('/store_referral') }}",
                 type: 'POST',
@@ -431,6 +429,25 @@
         $(".scroll-achiv").slimscroll({
             height: "26vh",
         });
+        $("#StartDate").change(function() {
+            var start_date = this.value;
+            var date = new Date(start_date);
+
+            var first = date.getDate() - date.getDay() + 1;
+
+            var last = first + 6; // last day is the first day + 6
+
+            var firstday = new Date(date.setDate(first)).toUTCString();
+            var lastday = new Date(date.setDate(last)).toUTCString();
+
+            var firstDate = formatDate(firstday);
+            var lastDate = formatDate(lastday);
+
+            $('#StartDate').val(firstDate);
+            $('#EndDate').val(lastDate);
+
+        });
+
 
         $('#edit-planner-btn').click(function() {
 
@@ -478,6 +495,20 @@
         });
     });
 
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    }
+
     function outputUpdate(value) {
 
         $('#slide-input').html(value);
@@ -485,11 +516,16 @@
     }
 
     function selectChapter(subject_id) {
+        var selected_chapters = $("input[name='chapters[]']")
+            .map(function() {
+                return $(this).val();
+            }).get();
         $.ajax({
             url: "{{ url('/ajax_chapter_list/',) }}/" + subject_id,
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
+                selected_chapters: selected_chapters
             },
 
             success: function(response_data) {
@@ -504,18 +540,70 @@
 
     function handleChange(checkbox, text, subject_id) {
 
-        if (checkbox.checked == true) {
-            var chapter_id = checkbox.value;
-            $('#planner_sub_' + subject_id).append('<input type="hidden" name="chapters[]" value="' + chapter_id + '"><div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><span>' + text + '</span>' +
-                '<span class="ms-auto"><a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle me-3 text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></span></div>');
+        var limit = $('#customRange').val();
+        var chapters = [];
+        var chapters = $('input[name="chapters[]"]').length;
+        if (chapters < limit) {
+            if (checkbox.checked == true) {
+                var chapter_id = checkbox.value;
+                $('#planner_sub_' + subject_id).append('<div class="add-removeblock  p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" name="chapters[]" value="' + chapter_id + '"><span>' + text + '</span>' +
+                    '<span class="ms-auto"><a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle me-3 text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></span></div>');
+            } else {
+                var chapter_id = checkbox.value;
+                $('#chapter_' + chapter_id).remove();
+            }
         } else {
-            var chapter_id = checkbox.value;
-            $('#chapter_' + chapter_id).remove();
+            alert('You can not select more than ' + limit + ' chapter for selected week');
         }
+
     }
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
         e.preventDefault();
 
         $(this).parent().parent().remove();
+    });
+
+    $("#plannerAddform").validate({
+
+        submitHandler: function(form) {
+            var limit = $('#customRange').val();
+            var chapters = [];
+            var chapters = $('input[name="chapters[]"]').length;
+            if (chapters < limit) {
+                $('#limit_error').html('select minimum ' + limit + ' chapter for planner.');
+                return false;
+            }
+
+            $.ajax({
+                url: "{{ url('/addPlanner') }}",
+                type: 'POST',
+                data: $('#plannerAddform').serialize(),
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+                    if (response.success == true) {
+                        var massage = response.massage;
+                        $('#successPlanner_alert').html(massage);
+                        $('#successPlanner_alert').show();
+                        setTimeout(function() {
+                            $('#successPlanner_alert').fadeOut('fast');
+                        }, 5000);
+                        location.reload();
+
+                    } else {
+                        $('#errPlanner_alert').html('Something wrong! please try later.');
+                        $('#errPlanner_alert').show();
+                        setTimeout(function() {
+                            $('#errPlanner_alert').fadeOut('fast');
+                        }, 5000);
+                        return false;
+                    }
+
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
+        }
+
     });
 </script>

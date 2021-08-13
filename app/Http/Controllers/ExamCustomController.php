@@ -587,15 +587,17 @@ class ExamCustomController extends Controller
     }
 
 
-    public function ajax_chapter_list($active_subject_id)
+    public function ajax_chapter_list($active_subject_id, Request $request)
     {
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
+        $selected_chapter = isset($request->selected_chapters) ? $request->selected_chapters : [];
+
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
-            return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id'));
+            return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
             //return $chapter_list;
         }
 
@@ -630,6 +632,6 @@ class ExamCustomController extends Controller
 
         // dd($chapter_list);
 
-        return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id'));
+        return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
     }
 }
