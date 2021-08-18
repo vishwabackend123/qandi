@@ -23,6 +23,14 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$template_type = isset($question_data->template_type)?$question_data->template_type:'';
+if($template_type==1){
+$type_class='checkboxans';
+$questtype='checkbox';
+}else{
+$type_class='radioans';
+$questtype='radio';
+}
 
 @endphp
 
@@ -39,7 +47,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             @if(!empty($filtered_subject))
                             @foreach($filtered_subject as $key=>$sub)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}}</a>
+                                <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} ({{$sub->count}})</a>
                             </li>
 
                             @endforeach
@@ -69,7 +77,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         $view_opt='<img src="'.$latex.'" />' ;
                                         @endphp
                                         <div class="col-md-6 mb-4">
-                                            <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                            <input class="form-check-input selctbtn {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                             <div class="border ps-3 ans">
                                                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                             </div>
@@ -84,10 +92,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 </div>
                                 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
+                                        <div style="float:left">
                                         <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-                                        <button class="btn px-4 ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
-                                        <button class="btn px-4 ms-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
-                                        <button class="btn px-4 ms-2 btn-secondary rounded-0">Clear Response</button>
+                                        <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+                                        </div>
+                                        <div style="float:right">
+                                        <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                        <button class="btn px-4 ms-2 btn-secon-clear act rounded-0">Clear Response</button>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -123,7 +135,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         <button type="button" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
-                        <p>Question Palette</p>
+                        <p><b>Question Palette</b></p>
                         <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
@@ -182,10 +194,10 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         </div>
                                     </div>
                                     <div class="col col-lg-4 d-flex flex-column align-items-center">
-                                        <!-- <div>
-                                                <small>Target</small>
-                                                <span class="d-block inst-text"><span class="text-danger">Wave Theory</span></span>
-                                            </div> -->
+                                        <div>
+                                            <small>Target</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                        </div>
                                     </div>
                                     <div class="col col-lg-4 d-flex   align-items-center">
                                         <div class="me-2 ms-auto"><img src="{{URL::asset('public/after_login/images/timmer.png')}}"></div>
@@ -197,9 +209,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 </div>
 
                             </div>
-                            <p class="inst mb-5">Please Read Carefully for any query before starting the test. Thank you.</p>
+                            <p class="inst mb-5">(Please Read Carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3">
-                                <h3>Instructions</h3>
+                                <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give multiple opportunities to the candidates to improve their scores in the
                                     examination if they are not able to give their best in one attempt</p>
                                 <p>In first attempt, the students will get a first-hand experience of taking an
@@ -222,7 +234,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         </h1>
                         <div class="text-left   ">
 
-                            <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
 
                         </div>
                     </div>
@@ -321,7 +333,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
     });
-    $('.radioans').click(function() {
+    $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
 

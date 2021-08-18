@@ -88,18 +88,16 @@
         <!-- dashboard html section-->
 
         <div class="container-fluid">
-            @if ($message = Session::get('error'))
-            <div class="alert alert-danger alert-block" id="alert">
-                <strong>{{ $message }}</strong>
-            </div>
-            @endif
+
             <div class="row">
                 <div class="col-lg-5">
                     <div class="bg-white shadow-lg ">
                         <div class="row">
                             <div class="col-8 pe-0">
                                 <div class="d-flex justify-content-center flex-column h-100  position-relative">
+
                                     <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
+
                                     <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
                                     <div id="scorecontainer" class="text-right"></div>
                                     <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
@@ -171,8 +169,7 @@
             </div>
             <div class="row mt-5 mb-3">
                 <div class="col-6">
-                    <span class="text-danger">This week Tests</span>
-                    <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
+                    <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a>
                     <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
                 </div>
                 <div class="col-6 text-right d-flex">
@@ -185,36 +182,9 @@
                     </div>
                 </div>
             </div>
-            <div class='swipe' id="plan_slider">
-                <ul id='slider'>
-                    <li class="gray prfile">
-                        <div class="col swipLi">
-                            <small class="TestLevel text-danger fs-5 mb-3">Level up</small>
-                            <h3>One Last Step!</h3>
-                            <p class="TestTitle text-danger fs-5">Unlock analytics and more</p>
-
-                            <div class="checkBody fs-3">
-                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Take a test and get a complete analysis of your preparation!
-                                </label>
-                            </div>
-                            <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="btn btn-danger rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
-                            </div>
-
-                        </div>
-                    </li>
-
-
-
-                </ul>
-            </div>
-            <br />
-            <div id="pagenavi"></div>
-            <!--             <div class="row">
+            <div class="row">
                 <div class="col-12">
-                    <section id="planner_div" class="slick-slider mb-4">
+                    <section class="slick-slider mb-4">
                         <div class=" ">
 
                             <div class="bg-light shadow p-3 d-flex flex-column">
@@ -234,7 +204,7 @@
                         <div class=" ">
 
                             <div class="bg-light shadow p-3 d-flex flex-column inactive-block">
-                                <small class="text-danger fs-5$.ajax({ url: " database/update.html", context: document.body, success: function(){ alert("done"); }}); mb-3">Level up</small>
+                                <small class="text-danger fs-5 mb-3">Level up</small>
                                 <h3>One Last Step!</h3>
                                 <p class="text-danger fs-5">Unlock analytics and more</p>
 
@@ -251,9 +221,10 @@
 
                     </section>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
+
 </div>
 <!--End dashboard html section-->
 
@@ -269,11 +240,21 @@
 
                 <p class="h1-p">Hello {{Auth::user()->user_name}},</p>
                 <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
-
+                <!-- <p class="welcome-icons mt-4">
+                        <img src="{{URL::asset('public/after_login/images/icon1.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon2.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon3.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon4.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon5.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon6.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon7.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon8.png')}}">
+                        <img src="{{URL::asset('public/after_login/images/icon9.png')}}">
+                    </p> -->
                 @if(isset($subjects_rating) && empty($subjects_rating))
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a>
                 @else
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="store_rating();">Let’s go ></a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" onclick="store_rating();">Let’s go ></a>
                 @endif
                 <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
             </div>
@@ -349,30 +330,63 @@
 
                 <p class="h2-p mt-5 mb-4"> How would you rate these subjects according to your liking?</p>
 
-                @if(isset($aSubjects) && !empty($aSubjects))
-                @foreach($aSubjects as $sub)
                 <div class="row mt-4">
                     <div class="col-md-8">
                         <div class="rating block">
-                            <span class="lbl-text">{{$sub->subject_name}}</span>
+                            <span class="lbl-text">MAthamatics</span>
                             <div class="rating-wrapper">
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="5" id="{{$sub->subject_name}}_5">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-heart"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="4" id="{{$sub->subject_name}}_4">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-heart"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="3" id="{{$sub->subject_name}}_3">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-heart"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="2" id="{{$sub->subject_name}}_2">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-heart"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="1" id="{{$sub->subject_name}}_1">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="1" value="5" id="product_5">
+                                <label class="rating-heart" for="product_5"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="1" value="4" id="product_4">
+                                <label class="rating-heart" for="product_4"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="1" value="3" id="product_3">
+                                <label class="rating-heart" for="product_3"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="1" value="2" id="product_2">
+                                <label class="rating-heart" for="product_2"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="1" value="1" id="product_1">
+                                <label class="rating-heart" for="product_1"><i class="fa fa-heart"></i></label>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
-                @endif
-
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <div class="rating block">
+                            <span class="lbl-text">Physics</span>
+                            <div class="rating-wrapper">
+                                <input class="rating-input" type="radio" name="2" value="5" id="product_6">
+                                <label class="rating-heart" for="product_6"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="2" value="4" id="product_7">
+                                <label class="rating-heart" for="product_7"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="2" value="3" id="product_8">
+                                <label class="rating-heart" for="product_8"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="2" value="2" id="product_9">
+                                <label class="rating-heart" for="product_9"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="2" value="1" id="product_10">
+                                <label class="rating-heart" for="product_10"><i class="fa fa-heart"></i></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <div class="rating block">
+                            <span class="lbl-text">Chemistry</span>
+                            <div class="rating-wrapper">
+                                <input class="rating-input" type="radio" name="3" value="5" id="product_11">
+                                <label class="rating-heart" for="product_11"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="3" value="4" id="product_12">
+                                <label class="rating-heart" for="product_12"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="3" value="3" id="product_13">
+                                <label class="rating-heart" for="product_13"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="3" value="2" id="product_14">
+                                <label class="rating-heart" for="product_14"><i class="fa fa-heart"></i></label>
+                                <input class="rating-input" type="radio" name="3" value="1" id="product_15">
+                                <label class="rating-heart" for="product_15"><i class="fa fa-heart"></i></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="d-flex align-items-center mt-5">
                     <a href="#" class="btn btn-secondary rounded-0 px-4">
                         < Back</a>
@@ -402,13 +416,14 @@
                     <img src="{{URL::asset('public/after_login/images/party.png')}}">
 
                 </p> -->
-                <p class="h1-p text-success text-uppercase">Just one more step!</p>
+                <p class="h1-p text-success">Just one more step!</p>
                 <p>Take a test and get a complete analysis of your preparation!</p>
-                <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
+                <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 p-5">
                     <span> <img src="{{URL::asset('public/after_login/images/books.png')}}"> </span>
-                    <span class="text-white ms-4 ">Take full body scan of<br>XX questions test</span>
+                    <span class="text-white ms-4 ">Take full body scan of<br> 90 questions test</span>
+
                 </a>
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard ></a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-5 fw-bolder" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard ></a>
             </div>
 
         </div>
@@ -443,54 +458,8 @@ $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
 $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
 @endphp
-<script type="text/javascript">
-    console = window.console || {
-        dir: new Function(),
-        log: new Function()
-    };
-    var active = 0,
-        as = document.getElementById('pagenavi').getElementsByTagName('a');
-    for (var i = 0; i < as.length; i++) {
-        (function() {
-            var j = i;
-            as[i].onclick = function() {
-                t4.slide(j);
-                return false;
-            }
-        })();
-    }
-    var t1 = new TouchSlider('slider', {
-        duration: 800,
-        interval: 3000,
-        direction: 0,
-        autoplay: false,
-        align: 'left',
-        mousewheel: false,
-        mouse: true,
-        fullsize: false
-    });
-    t4.on('before', function(m, n) {
-        as[m].className = '';
-        as[n].className = 'active';
-    })
-</script>
 
-<!--end slider -->
 <script type="text/javascript">
-    $(document).ready(function() {
-        $.ajax({
-            url: "{{ url('/weekly_exams') }}",
-            type: 'GET',
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(response_data) { //debugger;
-
-                console.log(response_data);
-                $(' #plan_slider').html(response_data);
-            },
-        });
-    });
     $(window).on('load', function() {
         /* $('#welcomeModal').modal('show') */
 
@@ -547,7 +516,6 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             },
             beforeSend: function() {},
             success: function(response_data) { //debugger;
-
                 if (response_data == 'success') {
                     $("#favSubResponse").modal("hide");
                     $("#feelresponseModal").modal("hide");
@@ -831,9 +799,5 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         }
 
     });
-
-    setTimeout(() => {
-        $('#alert').hide();
-    }, 5000);
 </script>
 @endsection

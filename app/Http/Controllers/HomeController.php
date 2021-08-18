@@ -45,12 +45,11 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $grade_id = Auth::user()->grade_id;
         $user_subjects = $this->redis_subjects();
+        $preferences = $this->redis_Preference();
 
-
-        $preferences = DB::table('student_preferences')->select('student_stage_at_sgnup', 'subjects_rating', 'subscription_yn', 'subscription_expiry_date')->where('student_id', $user_id)->first();
+        // $preferences = DB::table('student_preferences')->select('student_stage_at_sgnup', 'subjects_rating', 'subscription_yn', 'subscription_expiry_date')->where('student_id', $user_id)->first();
 
         $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : 0;
-
 
         if ($student_stage_at_sgnup == 0) {
             return redirect()->route('studentstandfor');
@@ -58,7 +57,8 @@ class HomeController extends Controller
 
         $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
         $today_date = Carbon::now();
-        $expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? Carbon::createFromFormat('Y-m-d', $preferences->subscription_expiry_date) : '';
+
+        $expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? $preferences->subscription_expiry_date : '';
 
         $data_difference = $today_date->diffInDays($expiry_date, false);
 

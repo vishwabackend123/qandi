@@ -82,21 +82,30 @@ class FullExamController extends Controller
 
         $collection = collect($aQuestions_list);
         $aQuestionslist = $collection->sortBy('subject_id');
-
         $grouped = $collection->groupBy('subject_id');
+
         $subject_ids = $collection->pluck('subject_id');
         $subject_list = $subject_ids->unique()->values()->all();
 
+
+
         $redis_subjects = $this->redis_subjects();
         $cSubjects = collect($redis_subjects);
-
+        $aTargets = [];
         $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+        foreach ($filtered_subject as $sub) {
+            $count_arr = $collection->where('subject_id', $sub->id)->all();
+            $sub->count = count($count_arr);
+            $aTargets[] = $sub->subject_name;
+        }
 
+        $allQuestions = $aQuestionslist->countBy('question_id');
         $allQuestions = $aQuestionslist->keyBy('question_id');
         $aQuestions_list = $aQuestionslist->values()->all();
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
+
 
         $question_data = current($aQuestions_list);
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
@@ -142,7 +151,9 @@ class FullExamController extends Controller
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redis_data));
 
-        return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
+        $tagrets = implode(', ', $aTargets);
+
+        return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
 
 
 

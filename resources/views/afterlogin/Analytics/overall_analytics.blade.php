@@ -87,13 +87,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="progress  col-6" style="overflow: visible;">
-                                                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{round(($sub->correct_ans * 100)/$sub->total_questions)}}%;overflow: visible;">
+                                                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                                     </div>
-                                                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{round(($sub->incorrect_ans * 100)/$sub->total_questions)}}%;overflow: visible;">
+                                                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
                                                     </div>
-                                                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{round(($sub->unanswered * 100)/$sub->total_questions)}}%;overflow: visible;">
+                                                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}
                                                         </span>
                                                     </div>
@@ -227,6 +227,9 @@
 
 @include('afterlogin.layouts.footer')
 <script type="text/javascript">
+    $(".scroll-topic-ana").slimscroll({
+        height: "20vh",
+    });
     $('.scroll-div-live-exm').slimscroll({
         height: '60vh'
     });
@@ -607,8 +610,12 @@
                 data: {
                     "_token": "{{ csrf_token() }}",
                 },
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
                 success: function(result) {
                     $("#overall").html(result);
+                    $('#overlay').fadeOut();
                 }
             });
         }

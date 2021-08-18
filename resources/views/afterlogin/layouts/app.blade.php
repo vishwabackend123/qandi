@@ -19,6 +19,9 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="{{URL::asset('public/after_login/css/style.css')}}">
+    <link href='{{URL::asset("public/after_login/css/style-slider.css")}}' rel='stylesheet' />
+
+    <script src="{{URL::asset('public/after_login/js/touchslider.js')}}"></script>
     <style>
         #overlay {
             background: #ffffff;

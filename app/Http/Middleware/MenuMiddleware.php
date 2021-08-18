@@ -28,41 +28,11 @@ class MenuMiddleware
     {
         $user_data = Auth::user();
         $user_id = Auth::user()->id;
-
         $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/preference/' . $user_id;
+        /*Preference  data
+        */
 
-
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-        ));
-
-        $response_json = curl_exec($curl);
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-
-        if ($httpcode == 200 || $httpcode == 201) {
-            $aResponse = json_decode($response_json);
-            $prefData = isset($aResponse->response) ? json_decode($aResponse->response) : '';
-        } else {
-
-            $response = [
-                "error" => $err,
-                "success" => false,
-            ];
-        }
-
-        $preferences = (isset($prefData[0]) && !empty($prefData[0])) ? $prefData[0] : [];
+        $preferences = $this->redis_Preference();
 
         $subjects_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
         $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';

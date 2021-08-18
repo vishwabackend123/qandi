@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Redis;
 Route::any('/', function () {
     return view('index');
 });
+
 Route::any('/logout', function () {
     return view('index');
 });
@@ -80,7 +81,7 @@ Route::any('/ajax_chapter_list/{subject_id}', [App\Http\Controllers\ExamCustomCo
 /* Review Controller Routs */
 Route::any('/exam_review/{result_id}', [App\Http\Controllers\ReviewController::class, 'getReview'])->name('exam_review')->middleware('auth', 'menu');
 Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewController::class, 'next_review_question'])->name('next_review_question')->middleware('auth', 'menu');
-
+Route::any('/ajax_review_next_subject_question/{subject_id}', [App\Http\Controllers\ReviewController::class, 'ajax_review_next_subject_question'])->name('ajax_review_next_subject_question')->middleware('auth', 'menu');
 
 /* Review Controller Routs */
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
@@ -147,3 +148,5 @@ Route::any('/next_tab/{sub_id}', [App\Http\Controllers\AnalyticsController::clas
 
 /* Planner Controller Routs */
 Route::any('/addPlanner', [App\Http\Controllers\PlannerController::class, 'addPlanner'])->name('addPlanner')->middleware('auth', 'menu');
+Route::any('/weekly_exams', [App\Http\Controllers\PlannerController::class, 'weeklyExams'])->name('weekly_exams')->middleware('auth', 'menu');
+Route::any('/planner_exam/{chapter_id}', [App\Http\Controllers\PlannerController::class, 'plannerExam'])->name('planner_exam')->middleware('auth', 'menu');

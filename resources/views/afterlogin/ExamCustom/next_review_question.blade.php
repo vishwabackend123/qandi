@@ -67,9 +67,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 @endforeach
             </div>
 
-            <div class="col-md-3 text-end">
+            <!--  <div class="col-md-3 text-end">
                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
-            </div>
+            </div> -->
             <div class="col-md-12 percentage-box collapse" id="perecent-box">
                 <div class="d-flex p-4 bg-gray">
                     <div class="">
@@ -135,3 +135,12 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     </div>
 
 </div>
+<script>
+    var question_id = '{{$activeq_id}}';
+    $(".next_button").removeClass("activequestion");
+    $("#btn_" + question_id).addClass("activequestion");
+
+    var subject_id = '{{$subject_id}}';
+    $("#myTab .all_div").removeClass("active");
+    $("#myTab .class_" + subject_id).addClass("active");
+</script>

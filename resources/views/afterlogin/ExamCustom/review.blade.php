@@ -180,8 +180,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 <div class="col-lg-3 mt-5 rightPannerl">
 
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4 reviewBox">
-                        <p>Question Palette</p>
+                        <p><b>Answer Palette</b></p>
                         <div class="number-block">
+                            @php $quKey=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
                             @foreach($all_question_list as $ke=>$val)
@@ -195,7 +196,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             $key_class = 'btn-light';
                             }@endphp
                             <button type="button" class="btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">
-                                {{$ke+1}}</button>
+                                {{$quKey}}</button>
+                            @php $quKey++; @endphp
                             @endforeach
                             @endif
 
@@ -204,7 +206,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center py-4 px-4 review-questions">
                         <div class="d-flex mb-3 reviewBox2">
-                            <div class="col heading">
+                            <div class="col-8 heading">
                                 <h5>Review Questions.</h5>
                             </div>
                             <div class="col text-end">
@@ -223,11 +225,13 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                         </div>
                         <div class="review-questions-blk">
+                            @php $quKee=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
                             @foreach($all_question_list as $kee=>$value)
                             @php
-                            $key_id=$val->question_id;
+
+                            $key_id=$value->question_id;
                             if ($value->attempt_status == 'Correct') {
                             $div_class = 'border-left-green5';
                             } elseif ($value->attempt_status == 'Incorrect') {
@@ -236,14 +240,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             $div_class = '';
                             }@endphp
                             <div class="d-flex align-items-center">
-                                <div class="review-questions-box border-left-green5 mx-2 mb-3">
+                                <div class="review-questions-box {{$div_class}} mx-2 mb-3">
                                     <div class="d-flex">
-                                        <div class="me-3">Q{{$kee+1}}. </div>
+                                        <div class="me-3">Q{{$quKee}}. </div>
                                         <p class="mb-0">{!! $value->question !!} </p>
                                     </div>
                                 </div>
                             </div>
-
+                            @php $quKee++; @endphp
                             @endforeach
                             @endif
 
@@ -290,6 +294,22 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
             }
         });
+    }
+
+    function get_subject_question(subject_id) {
+
+        url = "{{ url('ajax_review_next_subject_question/') }}/" + subject_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                $("#review_rques_blk").html(result);
+            }
+        });
+
+
     }
 </script>
 

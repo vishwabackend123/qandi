@@ -46,7 +46,7 @@ class PreparationController extends Controller
         if ($httpcode == 200 || $httpcode == 201) {
             $preparation_data = json_decode($response_json);
 
-            $preparation_list = $preparation_data->Success;
+            $preparation_list = $preparation_data->response;
         } else {
             $preparation_list = [];
         }

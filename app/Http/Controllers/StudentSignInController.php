@@ -44,59 +44,59 @@ class StudentSignInController extends Controller
     {
         $postData = $request->all();
         $mobile = isset($postData['mobile']) ? $postData['mobile'] : '';
-        $exists = StudentUsers::where('mobile', $mobile)->exists();
+        /*  $exists = StudentUsers::where('mobile', $mobile)->exists();
 
 
-        if (isset($mobile) && !empty($mobile) && $exists == true) {
-            $request = [
-                'mobile' => $mobile
+        if (isset($mobile) && !empty($mobile) && $exists == true) { */
+        $request = [
+            'mobile' => $mobile
+        ];
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
+
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode != 200) {
+            $response = [
+                "message" => "Mobile no. is invalid or not registered with us!",
+                "error" => $err,
+                "success" => false,
             ];
-
-            $api_URL = Config::get('constants.API_NEW_URL');
-            $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
-
-
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            ));
-
-            $response_json = curl_exec($curl);
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-
-            if ($httpcode != 200) {
-                $response = [
-                    "message" => "Mobile no. is invalid or not registered with us!",
-                    "error" => $err,
-                    "success" => false,
-                ];
-                return json_encode($response);
-            } else {
-                $aResponse = json_decode($response_json);
-                $login_otp = $aResponse->mobile_otp;
-
-                Session::put('OTP', $login_otp);
-
-                return $response_json;
-            }
+            return json_encode($response);
         } else {
+            $aResponse = json_decode($response_json);
+            $login_otp = $aResponse->mobile_otp;
+
+            Session::put('OTP', $login_otp);
+
+            return $response_json;
+        }
+        /*  } else {
 
             $response = [
                 "message" => "Mobile no. is invalid or not registered with us!",
                 "success" => false,
             ];
             return json_encode($response);
-        }
+        } */
     }
 
     /**
@@ -161,6 +161,7 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
             $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
             $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
+
 
             Session::put('user_data', $user_data);
             if (Auth::loginUsingId($user_data->id)) {

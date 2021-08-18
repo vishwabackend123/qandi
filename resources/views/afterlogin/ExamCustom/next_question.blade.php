@@ -1,6 +1,14 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$template_type = isset($question_data->template_type)?$question_data->template_type:'';
+if($template_type==1){
+$type_class='checkboxans';
+$questtype='checkbox';
+}else{
+$type_class='radioans';
+$questtype='radio';
+}
 @endphp
 
 <div class="question-block N_question-block">
@@ -29,7 +37,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         $view_opt='<img src="'.$latex.'" />' ;
         @endphp
         <div class="col-md-6 mb-4">
-            <input class="form-check-input radioans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+            <input class="form-check-input selctbtn {{$type_class}}" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
             <div class="border ps-3 ans">
                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}">
                     <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}

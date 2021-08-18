@@ -47,13 +47,13 @@
                             <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
                                     <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
-                                    <p class="mb-0 text-danger ms-auto me-4">You can pick chapters / topics or</p>
+                                    <p class="mb-0 text-danger ms-auto me-4 text-uppercase fw-bold">You can pick chapters / topics or</p>
                                     <form method="post" action="{{route('custom_exam')}}">
                                         @csrf
                                         <input type="hidden" name="subject_id" value="{{$sub->id}}">
                                         <input type="hidden" name="question_count" value="30">
 
-                                        <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
+                                        <button class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
                                     </form>
                                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                 </div>
@@ -130,7 +130,7 @@
                                         <div class="d-flex px-4">
                                             <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                         </div>
-                                        <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4 scroll_topic ">
+                                        <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4">
 
                                         </section>
                                     </div>
@@ -146,8 +146,8 @@
                                     <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
                                     <div id="" class="text-right d-flex align-items-right mt-3">
 
-                                        <a href="#" class="btn px-4 ms-auto me-2 btn-secondary rounded-0" onclick="clearTopics();">Clear Selection</a>
-                                        <button class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                                        <a href="#" class="btn px-4 ms-auto me-2 btn-secondary-clear rounded-0" onclick="clearTopics();">Clear Selection</a>
+                                        <button class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
                                     </div>
                                 </form>
 
@@ -336,11 +336,14 @@
             data: {
                 "_token": "{{ csrf_token() }}",
             },
-
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+            },
             success: function(result) {
                 $("#topic_section_" + chapt_id).html('');
                 $("#topic_section_" + chapt_id).html(result);
                 $('.slick-slider').slick('refresh');
+                $('#overlay').fadeOut();
 
             }
         });

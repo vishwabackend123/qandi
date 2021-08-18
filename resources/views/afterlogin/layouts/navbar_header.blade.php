@@ -24,7 +24,7 @@
                         <a href="{{ route('overall_analytics') }}" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/Group1831.png')}}">
                             <span class="red-dot"></span>
-                            <span class="hoverlink">Analitics</span>
+                            <span class="hoverlink">Analytics</span>
                         </a>
                     </span>
                 </div>
@@ -244,7 +244,7 @@
 <div class="collapse planmner-block width" id="notification">
     <div class="planner-wrapper">
         <div class="planner-content p-3">
-            <h4 class="noti-heading">Notification</h4>
+            <h4 class="noti-heading text-center">Notification</h4>
             <div class="notification-scroll">
                 <p class="noti-subheading">Recent</p>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
@@ -334,8 +334,8 @@
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
-            <span class="valid-feedback m-0" role="alert" id="errlog_alert"> </span>
-            <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
+            <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
+            <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
             <p class="fw-bold text-uppercase">Exams per week</p>
             <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                 @csrf
@@ -379,7 +379,7 @@
                     @endif
                 </div>
                 <div class="text-center">
-                    <button class="btn-danger btn rounded-0 text-uppercase px-5 w-25"><i class="fa fa-check"></i></button>
+                    <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25"><i class="fa fa-check"></i></button>
                 </div>
             </form>
         </div>

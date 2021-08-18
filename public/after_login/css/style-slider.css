@@ -1,0 +1,49 @@
+ del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
+    margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+#slider small {display:block; font-size:12px;}
+.swipe a {margin:0 0 0 10px;  color:#ffffff;}
+.swipe {overflow:hidden; position:relative; width:100%;}
+.swipe ul{overflow:hidden;}
+.swipe li {padding:10px; font-weight:normal; color:#333; font-size:20px; ; min-height: 260px; box-shadow: rgba(0,0,0,.3) 0 0 20px;}
+.swipe li  img{max-width:80%;}
+.swipe li{margin:20px;}
+#slider2 li{width:230px;}
+#slider4{line-height:0; }
+#slider4 ul{-webkit-transition:left 800ms ease-in 0; -moz-transition:left 800ms ease-in 0; -o-transition:left 800ms ease-in 0; -ms-transition:left 800ms ease-in 0; transition:left 800ms ease-in 0;}
+#pagenavi a.active{color:#d71921; }
+#copyright{text-align:center; font-size:16px; padding:30px 0;}
+#copyright a{font-weight:bold; font-size:16px;}
+#slider li.prfile{width:700px; float:left; background: #fff; box-shadow: rgba(#3c3c3c) 0 0 20px !important; cursor: move;}
+#slider li{width:500px; float:left; background: #fff; box-shadow: rgba(#3c3c3c) 0 0 20px !important; cursor: move;}
+.swipLi {position: relative;}
+.swipLi img {position: absolute; width: 100px; height: 100px; z-index: 0; right: 10px; top: 10px;}
+
+#slider li .swipLi {padding: .5rem;}
+.TestLevel, .TestTitle {font-size: 14px; font-weight: 400; text-align: left; margin-top: 8px;}
+.TestTitle {font-size: 30px; font-weight: 600; width: 100%;}
+.starRating {float: left; display: flex; cursor: default;}
+.score-rating {font-size: 20px; margin: 5px;}
+.checkBody {width: 100%; float: left; margin: 10px 0 0 0; display: flex;}
+.checkBody .inputCheck {margin: 3px 10px 5px 0;}
+.checkBody label {font-size: 12px; font-weight: 400; display: inline-block;}
+
+.btnBody {display: flex; width: 100%;}
+.btnBody .btn {background: #ccc; flex:auto; justify-self: flex-start;}
+.btnBody .btn:hover {background: #3c3c3c; color: #fff;}
+.btn.scheduleBtn {border: #d71921 solid 1px; background: none; color: #d71921;}
+.btn.scheduleBtn:hover {background: #d71921; color: #fff;}
+
+.CGreen {width: 300px !important;}
+.CGreen .TestLevel, .CGreen .TestTitle {text-align: center; width: 100%;}
+.CGreen img {width: 80px; height: 80px; position: relative; text-align: center;}
+.CGreen .btn {background: #62C354; color: #fff;}
+.planner .btn {background: none; color: #d71921;} 
+
+.gray {background:#f2f2f2 !important;}
+.gray .TestLevel, .gray .TestTitle {color: #d71921;}
+.gray .TestLevel:first-child {color: #333;}
+.gray .TestTitle {font-size: 20px;}
+
+.TestTitle {min-height: 90px;}
+.CGreen .TestTitle {min-height: 73px;}
+.gray .TestTitle {min-height: 103px;}

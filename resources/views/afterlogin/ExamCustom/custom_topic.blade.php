@@ -1,10 +1,10 @@
 @if(isset($topics) && !empty($topics))
 @foreach($topics as $key=>$topic)
 
-<div class="p-3 slide_box border-0">
+<div class="p-3 ">
     <div class="bg-light shadow p-3 d-flex flex-column">
-        <div class="d-flex align-items-center ">
-            <span class="mr-3 name-txt-sml col-6 text-break">{{$topic->topic_name}} </span>
+        <div class="d-flex align-items-center">
+            <div class="mr-3 name-txt-sml w-100 text-wrap">{{$topic->topic_name}} </div>
 
             <div class="status-id d-flex align-items-center justify-content-center ms-auto rating" data-vote="0">
 

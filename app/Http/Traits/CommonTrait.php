@@ -146,6 +146,7 @@ trait CommonTrait
         return [];
     }
 
+
     public function subscription_packages()
     {
         $user_data = Auth::user();
@@ -186,5 +187,53 @@ trait CommonTrait
             $package_list = [];
         }
         return $package_list;
+    }
+
+
+    public function redis_Preference()
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        /*  $cacheKey = 'preferences_data:' . $user_id;
+        if ($data = Redis::get($cacheKey)) {
+            $preferences = json_decode($data);
+            return $preferences;
+        } */
+        $user_data = Auth::user();
+        $user_id = Auth::user()->id;
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/preference/' . $user_id;
+
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $aResponse = json_decode($response_json);
+            $prefData = isset($aResponse->response) ? json_decode($aResponse->response) : '';
+            $preferences = (isset($prefData[0]) && !empty($prefData[0])) ? $prefData[0] : [];
+
+            /*  Redis::set($cacheKey, json_encode($preferences)); */
+        } else {
+            $preferences = [];
+        }
+        return $preferences;
     }
 }

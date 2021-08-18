@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 mb-4">
-                    <button class="btn btn-danger rounded-0 px-5" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i>Export Analytics</button>
+                    <button class="btn btn-danger rounded-0 px-5" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i> Export Analytics</button>
                 </div>
             </div>
             <div class="row">
@@ -26,15 +26,15 @@
                         <div class="row my-4">
                             <div class="col">
                                 <span class="abrv-graph bg1"> </span>
-                                <span class="graph-txt">Correct Attempts</span>
+                                <span class="graph-txt text-uppercase">Correct Attempts</span>
                             </div>
                             <div class="col">
                                 <span class="abrv-graph bg2"> </span>
-                                <span class="graph-txt">Wrong Attempts</span>
+                                <span class="graph-txt text-uppercase">Wrong Attempts</span>
                             </div>
                             <div class="col">
                                 <span class="abrv-graph bg3"> </span>
-                                <span class="graph-txt">Not Answered</span>
+                                <span class="graph-txt text-uppercase">Not Answered</span>
                             </div>
                         </div>
                     </div>
@@ -58,15 +58,21 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="d-flex flex-column">
-                                    <div class=""><img src="{{URL::asset('public/after_login/images/right-graph.jpg')}}"></div>
+                                    <div class="">
+                                        <figure class="highcharts-figure">
+                                            <div id="subjectScroe"></div>
+
+                                        </figure>
+                                        <!-- <img src="{{URL::asset('public/after_login/images/right-graph.jpg')}}"> -->
+                                    </div>
                                     <div class="mt-auto btn-block">
-                                        <buton class="btn btn-light-green rounded-0 w-100 mt-5">Overall</buton>
+                                        <button class="btn btn-light-green rounded-0 w-100 mt-1" onclick='resetData("all")'>Overall</button>
                                         <div class="row mt-4">
                                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                             @foreach($response->subject_wise_result as $subject)
                                             @php $subject=(object)$subject; @endphp
                                             <div class="col">
-                                                <buton class="btn btn-outline-secondary rounded-0 w-100">{{$subject->subject_name}}</buton>
+                                                <button id="{{$subject->subject_name}}" class="btn btn-outline-secondary rounded-0 w-100" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button>
                                             </div>
                                             <!-- <div class="col">
                                                 <buton class="btn btn-outline-secondary rounded-0 w-100">Physics</buton>
@@ -139,7 +145,7 @@
                 </div>
                 <div class="col-7 ">
                     <div class="bg-white shadow position-relative"> <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
-                        <div class="tab-wrapper h-100">
+                        <div class="tab-wrapper h-100 mt-0">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @php $subx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
@@ -215,15 +221,16 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="blue-block d-flex flex-column">
-                                    <span>Your rank has improved (Previous Rank - 5987)</span>
-                                    <span class="text-success fs-1">3456</span>
+                                    <!--   <span>Your rank has improved (Previous Rank - 5987)</span> -->
+                                    <span>Your Current Rank</span>
+                                    <span class="text-success fs-1">{{$response->user_rank}}</span>
                                 </div>
                                 <div class="blue-block d-flex flex-column mt-4">
-                                    <span>Your rank has improved (Previous Rank - 5987)</span>
-                                    <span class="text-dark fs-1">1607312</span>
+                                    <span>Total Participant</span>
+                                    <span class="text-dark fs-1">{{$response->total_participants}}</span>
                                 </div>
                             </div>
-                            <div class="col-12 d-flex mt-5 mb-3">
+                            <!--  <div class="col-12 d-flex mt-5 mb-3">
                                 <button class="btn btn-light-green rounded-0 px-4">Overall</button>
                                 <select class="form-select rounded-0 ms-3  w-25" aria-label="Default select example">
                                     <option selected>Subject</option>
@@ -237,14 +244,14 @@
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="bg-white shadow p-5 d-flex flex-column position-relative">
-                        <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
-                        <span class="text-center w-100"><img src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
+
+                        <span class="text-center w-100" style="height: 163px;"><img src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
                         <a href="{{route('exam_review', $response->result_id) }}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
                         <a href="{{url('/dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
                     </div>
@@ -272,13 +279,28 @@ $correct_per=!empty($total_question)?number_format((($correct/$total_question)*1
 $incorrect_per=!empty($total_question)?number_format((($incorrect/$total_question)*100),2):0;
 $not_attempt_per=100-($correct_per+$incorrect_per);
 
+$subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
+$stuscore_arr=$clsAvg_arr=[];
+$stuscore=$clsAvg=0;
+foreach($subject_graph as $key=>$gh){
+$stuscore=$stuscore+$gh->student_score;
+$clsAvg=$clsAvg+$gh->class_score;
+}
+
+$stuscore_arr[]=$stuscore;
+$stuscore_json=json_encode($stuscore_arr);
+$clsAvg_arr[]=$clsAvg;
+$clsAvg_json=json_encode($clsAvg_arr);
 
 @endphp
+
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://www.highcharts.com/samples/data/three-series-1000-points.js"></script>
 <script>
     $(".topicdiv-scroll").slimscroll({
         height: "50vh",
@@ -350,5 +372,67 @@ $not_attempt_per=100-($correct_per+$incorrect_per);
             ]
         }]
     });
+
+
+    const chart = Highcharts.chart('subjectScroe', {
+        chart: {
+            type: 'column',
+            height: 265,
+
+        },
+        title: {
+            text: ''
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+
+
+        xAxis: {
+            categories: ['Scores']
+        },
+        plotOptions: {
+            column: {
+                borderRadius: 1
+            }
+        },
+
+        series: [{
+            name: "Your Score",
+            data: <?php echo $stuscore_json; ?>,
+            color: '#AFF3D0'
+        }, {
+            name: "Class Average",
+            data: <?php echo $clsAvg_json; ?>,
+            color: '#FFFA6A'
+        }]
+    });
+
+
+    function resetData(subject_id) {
+        if (subject_id == 'all') {
+
+            chart.series[0].setData(<?php echo $stuscore_json; ?>);
+            chart.series[1].setData(<?php echo $clsAvg_json; ?>);
+        } else {
+            var graphArr = <?php echo json_encode($subject_graph); ?>;
+            var studet_score = [];
+            var class_score = [];
+            const iterator = graphArr.values();
+            for (const value of iterator) {
+                if (value.subject_id == subject_id) {
+                    studet_score.push(value.student_score)
+                    class_score.push(value.class_score)
+
+                }
+            }
+
+            chart.series[0].setData(studet_score);
+            chart.series[1].setData(class_score);
+        }
+    }
 </script>
 @endsection

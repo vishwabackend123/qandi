@@ -58,7 +58,7 @@ class AnalyticsController extends Controller
 
         if ($httpcode == 200 || $httpcode == 201) {
             $scoreResponse = json_decode($response_json);
-            // dd($scoreResponse);
+
             $scoreData = isset($scoreResponse->test_score) ? ($scoreResponse->test_score) : '';
             $subjectData = isset($scoreResponse->subject_proficiency) ? ($scoreResponse->subject_proficiency) : '';
             $trendResponse = isset($scoreResponse->marks_trend) ? ($scoreResponse->marks_trend) : '';
@@ -88,9 +88,12 @@ class AnalyticsController extends Controller
         }
 
         $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl_url = $api_URL . 'api/analytics/overall-analytics/' . $user_id;
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/overall-analytics/$user_id",
+            CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -104,119 +107,147 @@ class AnalyticsController extends Controller
         curl_close($curl);
 
         $overallAnalytics = json_decode($overallAnalytics);
-        if($overallAnalytics[1] !== 400):
-        $dailyReport = json_decode($overallAnalytics[0]->daily_report);
-        $weeklyReport = json_decode($overallAnalytics[0]->weekly_report);
-        $monthlyReport = json_decode($overallAnalytics[0]->monthlyReport);
-        $subProf = json_decode($overallAnalytics[0]->subject_proficiency);
-        $accuracy = json_decode($overallAnalytics[0]->accuracy);
-        $timeSpent = json_decode($overallAnalytics[0]->time_taken);
+        if ($overallAnalytics[1] !== 400) :
+            $dailyReport = json_decode($overallAnalytics[0]->daily_report);
+            $weeklyReport = json_decode($overallAnalytics[0]->weekly_report);
+            $monthlyReport = json_decode($overallAnalytics[0]->monthlyReport);
+            $subProf = json_decode($overallAnalytics[0]->subject_proficiency);
+            $accuracy = json_decode($overallAnalytics[0]->accuracy);
+            $timeSpent = json_decode($overallAnalytics[0]->time_taken);
 
-        $date1 = [];
-        $correctTime1 = [];
-        $incorrectTime1 = [];
-        foreach ($dailyReport as $val) {
-            array_push($date1, date('d-m', strtotime($val->date)));
-            $parsed = date_parse($val->time_spent_on_correct_ques);
-            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-            array_push($correctTime1, $correctTimeSeconds);
-            $parsed = date_parse($val->time_spent_on_incorrect_ques);
-            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-            array_push($incorrectTime1, $incorrectTimeSeconds);
-        }
-        $date1 = json_encode($date1);
-        $correctTime1 = json_encode($correctTime1);
-        $incorrectTime1 = json_encode($incorrectTime1);
+            $date1 = [];
+            $correctTime1 = [];
+            $incorrectTime1 = [];
+            foreach ($dailyReport as $val) {
+                array_push($date1, date('d-m', strtotime($val->date)));
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime1, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime1, $incorrectTimeSeconds);
+            }
+            $date1 = json_encode($date1);
+            $correctTime1 = json_encode($correctTime1);
+            $incorrectTime1 = json_encode($incorrectTime1);
 
-        $date2 = [];
-        $correctTime2 = [];
-        $incorrectTime2 = [];
-        foreach ($weeklyReport as $val) {
-            array_push($date2, date('d-m', strtotime($val->date)));
-            $parsed = date_parse($val->time_spent_on_correct_ques);
-            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-            array_push($correctTime2, $correctTimeSeconds);
-            $parsed = date_parse($val->time_spent_on_incorrect_ques);
-            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-            array_push($incorrectTime2, $incorrectTimeSeconds);
-        }
-        $date2 = json_encode($date2);
-        $correctTime2 = json_encode($correctTime2);
-        $incorrectTime2 = json_encode($incorrectTime2);
+            $date2 = [];
+            $correctTime2 = [];
+            $incorrectTime2 = [];
+            foreach ($weeklyReport as $val) {
+                array_push($date2, date('d-m', strtotime($val->date)));
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime2, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime2, $incorrectTimeSeconds);
+            }
+            $date2 = json_encode($date2);
+            $correctTime2 = json_encode($correctTime2);
+            $incorrectTime2 = json_encode($incorrectTime2);
 
-        $date3 = [];
-        $correctTime3 = [];
-        $incorrectTime3 = [];
-        foreach ($monthlyReport as $val) {
-            array_push($date3, date('d-m', strtotime($val->date)));
-            $parsed = date_parse($val->time_spent_on_correct_ques);
-            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-            array_push($correctTime3, $correctTimeSeconds);
-            $parsed = date_parse($val->time_spent_on_incorrect_ques);
-            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-            array_push($incorrectTime3, $incorrectTimeSeconds);
-        }
-        $date3 = json_encode($date3);
-        $correctTime3 = json_encode($correctTime3);
-        $incorrectTime3 = json_encode($incorrectTime3);
+            $date3 = [];
+            $correctTime3 = [];
+            $incorrectTime3 = [];
+            foreach ($monthlyReport as $val) {
+                array_push($date3, date('d-m', strtotime($val->date)));
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime3, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime3, $incorrectTimeSeconds);
+            }
+            $date3 = json_encode($date3);
+            $correctTime3 = json_encode($correctTime3);
+            $incorrectTime3 = json_encode($incorrectTime3);
 
 
-        $correctAns1 = [];
-        $incorrectAns1 = [];
-        foreach ($dailyReport as $val) {
-            array_push($correctAns1, $val->correct_ans);
-            array_push($incorrectAns1, $val->incorrect_ans);
-        }
-        $correctAns1 = json_encode($correctAns1);
-        $incorrectAns1 = json_encode($incorrectAns1);
+            $correctAns1 = [];
+            $incorrectAns1 = [];
+            foreach ($dailyReport as $val) {
+                array_push($correctAns1, $val->correct_ans);
+                array_push($incorrectAns1, $val->incorrect_ans);
+            }
+            $correctAns1 = json_encode($correctAns1);
+            $incorrectAns1 = json_encode($incorrectAns1);
 
-        $correctAns2 = [];
-        $incorrectAns2 = [];
-        foreach ($weeklyReport as $val) {
-            array_push($correctAns2, $val->correct_ans);
-            array_push($incorrectAns2, $val->incorrect_ans);
-        }
-        $correctAns2 = json_encode($correctAns2);
-        $incorrectAns2 = json_encode($incorrectAns2);
+            $correctAns2 = [];
+            $incorrectAns2 = [];
+            foreach ($weeklyReport as $val) {
+                array_push($correctAns2, $val->correct_ans);
+                array_push($incorrectAns2, $val->incorrect_ans);
+            }
+            $correctAns2 = json_encode($correctAns2);
+            $incorrectAns2 = json_encode($incorrectAns2);
 
-        $correctAns3 = [];
-        $incorrectAns3 = [];
-        foreach ($monthlyReport as $val) {
-            array_push($correctAns3, $val->correct_ans);
-            array_push($incorrectAns3, $val->incorrect_ans);
-        }
-        $correctAns3 = json_encode($correctAns3);
-        $incorrectAns3 = json_encode($incorrectAns3);
+            $correctAns3 = [];
+            $incorrectAns3 = [];
+            foreach ($monthlyReport as $val) {
+                array_push($correctAns3, $val->correct_ans);
+                array_push($incorrectAns3, $val->incorrect_ans);
+            }
+            $correctAns3 = json_encode($correctAns3);
+            $incorrectAns3 = json_encode($incorrectAns3);
 
-        $day = [];
-        $classAcc = [];
-        $stuAcc = [];
-        foreach ($accuracy as $val) {
-            array_push($day, $val->dateDay);
-            array_push($classAcc, $val->class_accuracy);
-            array_push($stuAcc, $val->student_accuracy);
-        }
-        $day = json_encode($day);
-        $classAcc = json_encode($classAcc);
-        $stuAcc = json_encode($stuAcc);
+            $day = [];
+            $classAcc = [];
+            $stuAcc = [];
+            foreach ($accuracy as $val) {
+                array_push($day, $val->dateDay);
+                array_push($classAcc, $val->class_accuracy);
+                array_push($stuAcc, $val->student_accuracy);
+            }
+            $day = json_encode($day);
+            $classAcc = json_encode($classAcc);
+            $stuAcc = json_encode($stuAcc);
 
-        $days = [];
-        $classAccuracy = [];
-        $stuAccuracy = [];
-        foreach ($timeSpent as $val) {
-            array_push($days, $val->dateDay);
-            array_push($classAccuracy, $val->class_time_taken);
-            array_push($stuAccuracy, $val->student_time_taken);
-        }
-        $days = json_encode($days);
-        $classAccuracy = json_encode($classAccuracy);
-        $stuAccuracy = json_encode($stuAccuracy);
+            $days = [];
+            $classAccuracy = [];
+            $stuAccuracy = [];
+            foreach ($timeSpent as $val) {
+                array_push($days, $val->dateDay);
+                array_push($classAccuracy, $val->class_time_taken);
+                array_push($stuAccuracy, $val->student_time_taken);
+            }
+            $days = json_encode($days);
+            $classAccuracy = json_encode($classAccuracy);
+            $stuAccuracy = json_encode($stuAccuracy);
 
-        return view('afterlogin.Analytics.overall_analytics', compact('days', 'classAccuracy', 'stuAccuracy', 'day','classAcc','stuAcc', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
-            'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3',
-            'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'user_subjects'));
-        else:
-            return back()->with('error','PLease appear in exam before checking analytics. ');
+            return view('afterlogin.Analytics.overall_analytics', compact(
+                'days',
+                'classAccuracy',
+                'stuAccuracy',
+                'day',
+                'classAcc',
+                'stuAcc',
+                'subProf',
+                'correctAns1',
+                'incorrectAns1',
+                'correctAns2',
+                'incorrectAns2',
+                'correctAns3',
+                'incorrectAns3',
+                'date1',
+                'correctTime1',
+                'incorrectTime1',
+                'date2',
+                'correctTime2',
+                'incorrectTime2',
+                'date3',
+                'correctTime3',
+                'incorrectTime3',
+                'corrent_score_per',
+                'score',
+                'inprogress',
+                'progress',
+                'others',
+                'subjectData',
+                'user_subjects'
+            ));
+        else :
+            return back()->with('error', 'PLease appear in exam before checking analytics. ');
         endif;
     }
 
@@ -230,9 +261,10 @@ class AnalyticsController extends Controller
     {
         $user_id = Auth::user()->id;
         $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.uniqtoday.com/api/analytics/subject-wise-analytics/$user_id/$sub_id",
+            CURLOPT_URL => $api_URL . "api/analytics/subject-wise-analytics/$user_id/$sub_id",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -355,8 +387,32 @@ class AnalyticsController extends Controller
         $days = json_encode($days);
         $classAccuracy = json_encode($classAccuracy);
         $stuAccuracy = json_encode($stuAccuracy);
-//dd($subScore);
-        return view('afterlogin.Analytics.subject_wise_analytics', compact('subScore', 'day', 'classAcc', 'stuAcc', 'days', 'classAccuracy', 'stuAccuracy', 'skillPer', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3',
-            'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3'));
+
+        return view('afterlogin.Analytics.subject_wise_analytics', compact(
+            'subScore',
+            'day',
+            'classAcc',
+            'stuAcc',
+            'days',
+            'classAccuracy',
+            'stuAccuracy',
+            'skillPer',
+            'subProf',
+            'correctAns1',
+            'incorrectAns1',
+            'correctAns2',
+            'incorrectAns2',
+            'correctAns3',
+            'incorrectAns3',
+            'date1',
+            'correctTime1',
+            'incorrectTime1',
+            'date2',
+            'correctTime2',
+            'incorrectTime2',
+            'date3',
+            'correctTime3',
+            'incorrectTime3'
+        ));
     }
 }

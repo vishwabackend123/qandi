@@ -90,14 +90,15 @@ class ResultController extends Controller
         $response_json = curl_exec($curl);
 
 
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
         if ($httpcode == 200 || $httpcode == 201) {
             $response_data = (json_decode($response_json));
-            /*  dd($response_data);
-            if (!empty($response_data) && !is_array($response_data)) {
+            //dd($response_data);
+            /*if (!empty($response_data) && !is_array($response_data)) {
                 $responsedata = (json_decode($response_data, true));
             } */
 

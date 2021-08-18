@@ -214,9 +214,6 @@ class ExamCustomController extends Controller
         ));
         $response_json = curl_exec($curl);
         $response_json = str_replace('NaN', '""', $response_json);
-        $response_json = stripslashes($response_json);
-        $response_json = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $response_json);
-
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -225,13 +222,12 @@ class ExamCustomController extends Controller
 
         if ($httpcode == 200 || $httpcode == 201) {
             $responsedata = json_decode($response_json);
-            $response_data = isset($responsedata->response) ? json_decode($responsedata->response) : [];
 
-            if (!empty($response_data)) {
-                $aQuestions_list = $response_data;
+            if (!empty($responsedata)) {
+                $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
 
                 $exam_fulltime = $responsedata->time_allowed;
-                $questions_count = count($response_data);
+                $questions_count = count($aQuestions_list);
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
@@ -326,24 +322,6 @@ class ExamCustomController extends Controller
     }
 
 
-    public function allCustomQlist($user_id, $question_data, $redis_set)
-    {
-        if (!empty($user_id) &&  !empty($question_data)) {
-            $cacheKey = 'CustomQuestion:all:' . $user_id;
-            if (Redis::exists($cacheKey)) {
-                if ($redis_set == 'True') {
-                    Redis::del($cacheKey);
-                }
-            }
-            if ($data = Redis::get($cacheKey)) {
-                return json_decode($data);
-            }
-            $data = collect($question_data);
-            Redis::set($cacheKey, $data);
-            return $data->all();
-        }
-        return [];
-    }
 
 
     public function ajax_next_question($quest_id, Request $request)

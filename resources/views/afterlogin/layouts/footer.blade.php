@@ -415,16 +415,19 @@
     });
 </script>
 <script>
-    $(document).ajaxStart(function() {
+    /*  $(document).ajaxStart(function() {
         $('#overlay').fadeIn();
     });
 
     $(document).ajaxComplete(function() {
         $('#overlay').fadeOut();
-    });
+    }); */
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
             height: "50vh",
+        });
+        $(".scroll-topic-ana").slimscroll({
+            height: "20vh",
         });
         $(".scroll-achiv").slimscroll({
             height: "26vh",
@@ -570,7 +573,7 @@
             var chapters = [];
             var chapters = $('input[name="chapters[]"]').length;
             if (chapters < limit) {
-                $('#limit_error').html('select minimum ' + limit + ' chapter for planner.');
+                $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 return false;
             }
 
@@ -578,6 +581,9 @@
                 url: "{{ url('/addPlanner') }}",
                 type: 'POST',
                 data: $('#plannerAddform').serialize(),
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
@@ -587,6 +593,7 @@
                         setTimeout(function() {
                             $('#successPlanner_alert').fadeOut('fast');
                         }, 5000);
+                        $('#overlay').fadeOut();
                         location.reload();
 
                     } else {

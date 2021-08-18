@@ -36,15 +36,12 @@
                                     <span>{{round($skillPer[0]->percentage)}}%</span>
                                 </a>
                             </div>
-                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                    Evaluation</h4>
-                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                <p class="arrow-box-content">Evaluation measures the
-                                    Lorems and Ipsum for your
-                                    performance in the test.</p>
-                                <p class="arrow-box-content">Ideal Application score
-                                    should be in the range 85%</p>
+                            <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-right-btm">
+                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                    {{$skillPer[0]->skill_name}}
+                                </h4>
+                                <h4 class="text-danger text-uppercase fw-2">{{$skillPer[0]->percentage}}%</h4>
+                                <p></p>
                                 <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
@@ -55,15 +52,12 @@
                                     <span>{{round($skillPer[1]->percentage)}}%</span>
                                 </a>
                             </div>
-                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                    Evaluation</h4>
-                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                <p class="arrow-box-content">Evaluation measures the
-                                    Lorems and Ipsum for your
-                                    performance in the test.</p>
-                                <p class="arrow-box-content">Ideal Application score
-                                    should be in the range 85%</p>
+                            <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-left-btm">
+                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                    {{$skillPer[1]->skill_name}}
+                                </h4>
+                                <h4 class="text-danger text-uppercase fw-2">{{$skillPer[1]->percentage}}%</h4>
+                                <p></p>
                                 <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
@@ -74,15 +68,12 @@
                                     <span>{{round($skillPer[2]->percentage)}}%</span>
                                 </a>
                             </div>
-                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                    Evaluation</h4>
-                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                <p class="arrow-box-content">Evaluation measures the
-                                    Lorems and Ipsum for your
-                                    performance in the test.</p>
-                                <p class="arrow-box-content">Ideal Application score
-                                    should be in the range 85%</p>
+                            <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-right-top">
+                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                    {{$skillPer[2]->skill_name}}
+                                </h4>
+                                <h4 class="text-danger text-uppercase fw-2">{{$skillPer[2]->percentage}}%</h4>
+                                <p></p>
                                 <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
@@ -93,15 +84,12 @@
                                     <span>{{round($skillPer[3]->percentage)}}%</span>
                                 </a>
                             </div>
-                            <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">
-                                    Evaluation</h4>
-                                <h4 class="text-danger text-uppercase fw-2">54%</h4>
-                                <p class="arrow-box-content">Evaluation measures the
-                                    Lorems and Ipsum for your
-                                    performance in the test.</p>
-                                <p class="arrow-box-content">Ideal Application score
-                                    should be in the range 85%</p>
+                            <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-left-top">
+                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                    {{$skillPer[3]->skill_name}}
+                                </h4>
+                                <h4 class="text-danger text-uppercase fw-2">{{$skillPer[3]->percentage}}%</h4>
+                                <p></p>
                                 <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
@@ -121,42 +109,44 @@
                 <button class="btn btn-warning px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
                 </button>
             </div>
-            @if($subProf)
-            @foreach($subProf as $val)
-            <div class="d-flex align-items-center mt-3 pb-1">
-                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
-                    <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
-                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+            <div class="scroll-topic-ana">
+                @if($subProf)
+                @foreach($subProf as $val)
+                <div class="d-flex align-items-center mt-3 pb-1">
+                    <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
+                        <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
+                        <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                        <div class="star-ratings-css">
-                            <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            <div class="star-ratings-css">
+                                <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <div class="star-ratings-css-bottom">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
                             </div>
-                            <div class="star-ratings-css-bottom">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+
+                            <div class="ms-2 score score-rating js-score">
+                                {{round($val->score)}} %
                             </div>
                         </div>
-
-                        <div class="ms-2 score score-rating js-score">
-                            {{round($val->score)}} %
+                    </div>
+                    <div class="progress  ms-auto col-5" style="overflow: visible;">
+                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
+                            <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
+                        </div>
+                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
+                            <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
+                        </div>
+                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;">
+                            <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
+                            </span>
                         </div>
                     </div>
                 </div>
-                <div class="progress  ms-auto col-6" style="overflow: visible;">
-                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{round(($val->correct_ans * 100)/$val->total_questions)}}%;overflow: visible;">
-                        <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
-                    </div>
-                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{round(($val->incorrect_ans * 100)/$val->total_questions)}}%;overflow: visible;">
-                        <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
-                    </div>
-                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{round(($val->unanswered * 100)/$val->total_questions)}}%;overflow: visible;">
-                        <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
-                        </span>
-                    </div>
-                </div>
+                @endforeach
+                @endif
             </div>
-            @endforeach
-            @endif
         </div>
     </div>
     <div class="col-lg-5 mt-3">
@@ -917,6 +907,9 @@
 
 
 <script>
+    $(".scroll-topic-ana").slimscroll({
+        height: "30vh",
+    });
     Highcharts.chart('day', {
         credits: {
             enabled: false
@@ -1322,7 +1315,7 @@
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font-size:20px">{{$subScore[1]->score}}</span> <br><span style="font-size:20px"> / 100 </span>',
+            text: '<span style="font-size:20px">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font-size:20px"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 10,
@@ -1363,11 +1356,11 @@
             innerSize: '85%',
             data: [{
                 name: 'Last Score',
-                y: <?php echo $subScore[0]->score; ?>,
+                y: <?php echo isset($subScore[0]->score) ? $subScore[0]->score : 0; ?>,
                 color: '#ffdc34' // Jane's color
             }, {
                 name: 'Progress Score',
-                y: <?php echo $subScore[1]->score; ?>,
+                y: <?php echo isset($subScore[1]->score) ? $subScore[1]->score : 0; ?>,
                 color: '#ffa81d' // Jane's color
             }, {
                 name: 'Target',
