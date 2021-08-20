@@ -75,6 +75,9 @@
     $('#editprofile').click(function() {
         $('#profile-details').hide();
         $('#profile-form').show();
+        $('.edit-icon').css({
+            'display': 'flex'
+        });
     });
     $('#cancelEdit').click(function() {
         $('#profile-details').show();
@@ -161,6 +164,47 @@
             });
         }
 
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
+
+        var readURL = function(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('.profile-pic').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+        $("#file-input").on('change', function() {
+            readURL(this);
+            var form_data = new FormData();
+            form_data.append("file-input", document.getElementById('file-input').files[0]);
+            form_data.append("_token", "{{ csrf_token() }}");
+
+            $.ajax({
+                url: "{{ url('/editProfileImage') }}",
+                method: "POST",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data) {
+                    //$('#uploaded_image').html(data);
+                }
+            });
+        });
+
+        $(".image-upload").on('click', function() {
+            $(".file-upload").click();
+        });
     });
 </script>
 <script>
@@ -478,6 +522,7 @@
             $('#subscribe-click').removeClass('activelink');
             $('#logout-block').addClass('d-none');
             $('#logout-click').removeClass('activelink');
+
         });
         $('#subscribe-click').click(function() {
             $('#subscribe').toggleClass('d-none');

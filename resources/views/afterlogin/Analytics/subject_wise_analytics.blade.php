@@ -16,7 +16,7 @@
                             <span class="abri">
                                 <span class="abrv-mean bg2">
                                 </span>
-                                Progress from previous score
+                                Progress From Previous Score
                             </span>
                             <span class="abri">
                                 <span class="abrv-mean bg3">
@@ -106,7 +106,7 @@
                 <button class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3" data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
                     Upcoming Webinar
                 </button>
-                <button class="btn btn-warning px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
+                <button class="btn btn-warning-custom px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
                 </button>
             </div>
             <div class="scroll-topic-ana">
@@ -132,13 +132,13 @@
                         </div>
                     </div>
                     <div class="progress  ms-auto col-5" style="overflow: visible;">
-                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
+                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
                         </div>
-                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
+                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
                             <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
                         </div>
-                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;">
+                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;">
                             <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
                             </span>
                         </div>

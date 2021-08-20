@@ -1,5 +1,13 @@
 @extends('afterlogin.layouts.app')
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- BS JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- Have fun using Bootstrap JS -->
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#endExam').modal('show');
+    });
+</script>
 @section('content')
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
@@ -23,18 +31,18 @@
                             <!--  <img src={{URL::asset('public/after_login/images//roundedgraph.jpg')}}"> -->
                             <div id="scorecontainer"></div>
                         </div>
-                        <div class="row my-4">
-                            <div class="col">
+                        <div class="row my-3">
+                            <div class="col px-1 ps-2">
                                 <span class="abrv-graph bg1"> </span>
-                                <span class="graph-txt text-uppercase">Correct Attempts</span>
+                                <p class="graph-txt text-uppercase">Correct Attempts</p>
                             </div>
-                            <div class="col">
+                            <div class="col px-1">
                                 <span class="abrv-graph bg2"> </span>
-                                <span class="graph-txt text-uppercase">Wrong Attempts</span>
+                                <p class="graph-txt text-uppercase">Wrong Attempts</p>
                             </div>
-                            <div class="col">
+                            <div class="col px-1">
                                 <span class="abrv-graph bg3"> </span>
-                                <span class="graph-txt text-uppercase">Not Answered</span>
+                                <p class="graph-txt text-uppercase">Not Answered</p>
                             </div>
                         </div>
                     </div>
@@ -127,18 +135,18 @@
 
 
 
-                        <div class="row py-4 mt-4 mb-5">
+                        <div class="row py-4 mt-4 mb-2">
                             <div class="col d-flex align-items-center">
                                 <span class="abrv-graph bg1"> </span>
-                                <span class="graph-txt d-inline-block ms-2">Correct Attempts</span>
+                                <p class="graph-txt d-inline-block ms-2 mb-0">Correct Attempts</p>
                             </div>
                             <div class="col d-flex align-items-center">
                                 <span class="abrv-graph bg2"> </span>
-                                <span class="graph-txt d-inline-block ms-2">Wrong Attempts</span>
+                                <p class="graph-txt d-inline-block ms-2 mb-0">Wrong Attempts</p>
                             </div>
                             <div class="col d-flex align-items-center">
                                 <span class="abrv-graph bg3"> </span>
-                                <span class="graph-txt d-inline-block ms-2">Not Answered</span>
+                                <p class="graph-txt d-inline-block ms-2 mb-0">Not Answered</p>
                             </div>
                         </div>
                     </div>
@@ -152,14 +160,9 @@
                                 @foreach($response->subject_wise_result as $subject)
                                 @php $subject=(object)$subject; @endphp
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}-tab" data-bs-toggle="tab" href="#{{$subject->subject_name}}" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
+                                    <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}_tab_subject" data-bs-toggle="tab" href="#{{$subject->subject_name}}_subject" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
                                 </li>
-                                <!-- <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Physics</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
-                                </li> -->
+
                                 @php $subx++; @endphp
                                 @endforeach
                                 @endif
@@ -170,8 +173,10 @@
                                 @php $topx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
-                                @php $subject=(object)$subject; @endphp
-                                <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}" role="tabpanel" aria-labelledby="{{$subject->subject_name}}-tab">
+                                @php $subject=(object)$subject;
+                                $subject_id=$subject->subject_id;
+                                @endphp
+                                <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
                                     <div class="hScroll topicdiv-scroll">
                                         @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                                         @foreach($response->topic_wise_result as $topic)
@@ -180,9 +185,12 @@
                                         $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->correct_count/$topic->total_questions)*100:0;
                                         $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->incorrect_count/$topic->total_questions)*100:0;
                                         $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
+
                                         @endphp
+                                        @if($topic->subject_id==$subject_id)
+
                                         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                            <span class="subj-name me-4 col-3">Topic Name</span>
+                                            <span class="subj-name me-4 col-3">{{!empty($topic->topic_name)?$topic->topic_name:'Topic Name'}}</span>
                                             <div class="progress col-8 ms-auto " style="overflow: visible;">
                                                 <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
                                                     <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
@@ -195,6 +203,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
                                         @endforeach
                                         @endif
                                     </div>
@@ -250,7 +259,6 @@
                 </div>
                 <div class="col-md-3">
                     <div class="bg-white shadow p-5 d-flex flex-column position-relative">
-
                         <span class="text-center w-100" style="height: 163px;"><img src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
                         <a href="{{route('exam_review', $response->result_id) }}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
                         <a href="{{url('/dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
@@ -262,8 +270,25 @@
 
 
 </div>
+<div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 ">
+            <div class="modal-header border-0">
 
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pt-0 text-center">
+
+                <h2 class="mb-3">Awesome!</h2>
+                <p>You Did It! Let's See How You Did.</p>
+                <button type="button" class="btn btn-danger rounded-0 px-5 my-5" data-bs-dismiss="modal" aria-label="Close">SEE ANALYTICS</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 @include('afterlogin.layouts.footer')
+
 @php
 $correct=isset($response->correct_count)?$response->correct_count:0;
 $incorrect=isset($response->wrong_count)?$response->wrong_count:0;

@@ -236,4 +236,49 @@ trait CommonTrait
         }
         return $preferences;
     }
+
+    public function subscribedPackage()
+    {
+
+        $user_id = Auth::user()->id;
+        $curl = curl_init();
+        $cacheKey = 'purchased_exam:' . $user_id;
+
+        if ($data = Redis::get($cacheKey)) {
+            $preferences = json_decode($data);
+            return $preferences;
+        }
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/user-subscription/' . $user_id;
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $sub_response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $subResponse = json_decode($sub_response_json);
+
+            $subscriptionData = isset($subResponse->response) ? json_decode($subResponse->response) : '';
+            $subscriptionData = isset($subscriptionData[0]) ? $subscriptionData[0] : [];
+
+            Redis::set($cacheKey, json_encode($subscriptionData));
+        } else {
+            $subscriptionData = [];
+        }
+
+        return $subscriptionData;
+    }
 }

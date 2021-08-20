@@ -18,9 +18,9 @@
 
 <section class="d-flex flex-column align-items-center justify-content-center h-100">
     <div class="steps-links d-flex">
-        <div class="px-5 border-bg-right pt-3 text-uppercase"><span class="red-dots active-dot"></span>Order</div>
-        <div class="px-5  pt-3 border-bg-left border-bg-right text-uppercase"><span class="red-dots"></span>Shipping</div>
-        <div class="px-5  pt-3 border-bg-left text-uppercase"><span class="red-dots"></span>Payment</div>
+        <div class="px-5 border-bg-right pt-3 text-uppercase fw-bold"><span class="red-dots active-dot"></span>Order</div>
+        <div class="px-5  pt-3 border-bg-left border-bg-right text-uppercase fw-bold"><span class="red-dots"></span>Shipping</div>
+        <div class="px-5  pt-3 border-bg-left text-uppercase fw-bold"><span class="red-dots"></span>Payment</div>
     </div>
     <div class="subs-box p-3 col-6 mt-5">
         <div class="d-flex align-items-center">

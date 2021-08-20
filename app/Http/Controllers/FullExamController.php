@@ -67,8 +67,11 @@ class FullExamController extends Controller
             $responsedata = json_decode($response_json);
 
             $aQuestions_list = $responsedata->questions;
-            $exam_fulltime = $responsedata->time_allowed;
+
+            // $exam_fulltime = $responsedata->time_allowed;
+
             $questions_count = count($aQuestions_list);
+            $exam_fulltime = $questions_count;
         } else {
             $aQuestions_list = [];
             $questions_count = 0;
@@ -81,13 +84,11 @@ class FullExamController extends Controller
         $exam_fulltime = (isset($exam_fulltime) && !empty($exam_fulltime)) ? $exam_fulltime : $questions_count  * 60;
 
         $collection = collect($aQuestions_list);
+        $collection = collect($aQuestions_list);
         $aQuestionslist = $collection->sortBy('subject_id');
-        $grouped = $collection->groupBy('subject_id');
 
         $subject_ids = $collection->pluck('subject_id');
         $subject_list = $subject_ids->unique()->values()->all();
-
-
 
         $redis_subjects = $this->redis_subjects();
         $cSubjects = collect($redis_subjects);

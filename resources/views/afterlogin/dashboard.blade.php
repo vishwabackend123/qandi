@@ -104,7 +104,7 @@
                                     <div id="scorecontainer" class="text-right"></div>
                                     <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
-                                        <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
+                                        <span class="abri"> <span class="abrv-mean bg2"></span>Progress From Previous Score</span>
                                         <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                     </span>
                                 </div>
@@ -200,7 +200,7 @@
                                 </label>
                             </div>
                             <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="btn btn-danger rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
+                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center"><i class="fas fa-link"></i> Attempt Now!</a>
                             </div>
 
                         </div>
@@ -267,7 +267,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="h1-p">Hello {{Auth::user()->user_name}},</p>
+                <p class="wl-user-title">Hello {{Auth::user()->user_name}},</p>
                 <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
 
                 @if(isset($subjects_rating) && empty($subjects_rating))
@@ -492,7 +492,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         });
     });
     $(window).on('load', function() {
-        /* $('#welcomeModal').modal('show') */
+        /* $('#welcomeModal').modal('show'); */
 
         if (sessionStorage.getItem('firstVisit') != '1') {
             $('#welcomeModal').modal('show');

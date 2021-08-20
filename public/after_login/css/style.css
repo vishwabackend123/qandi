@@ -295,8 +295,21 @@ header {
     font-size: 2.5rem;
     font-weight: 700;
 }
-
 .h1-p {
+    color: #231f20;
+    font-size: 32px;
+  }
+  .wl-user-title
+  {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom:30px;
+    letter-spacing: 0px;
+    color: #231F20;
+    opacity: 1;
+  }
+
+.h1-title {
     text-align: center;
 font: normal normal 600 28px/42px Poppins;
 letter-spacing: 0px;
@@ -2442,7 +2455,7 @@ opacity: 1;
     background: #d71921;
     color: #fff;
     position: absolute;
-    bottom: -18px;
+    bottom: -8px;
     left: 50%;
     display: flex;
     border-radius: 35px;
@@ -2723,4 +2736,16 @@ opacity: 1;
 background: #44CD7F 0% 0% no-repeat padding-box;
 color: #FFFFFF;
 opacity: 1;
+}
+
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+   
+    cursor: pointer;
 }

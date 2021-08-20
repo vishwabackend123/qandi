@@ -12,7 +12,7 @@
                 </label>
             </div>
             <div class="btnBody">
-                <a href="{{route('exam','full_exam')}}" class="btn btn-danger rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
+                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center"><i class="fas fa-link"></i> Attempt Now!</a>
             </div>
 
         </div>

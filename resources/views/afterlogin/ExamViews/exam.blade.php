@@ -93,12 +93,12 @@ $questtype='radio';
                                 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
                                         <div style="float:left">
-                                        <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-                                        <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                            <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                         </div>
                                         <div style="float:right">
-                                        <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
-                                        <button class="btn px-4 ms-2 btn-secon-clear act rounded-0">Clear Response</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize">Clear Response</button>
                                         </div>
 
                                     </div>
@@ -131,8 +131,15 @@ $questtype='radio';
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
+                        <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="fulltime" value="00:30:00">
+                            <input type="hidden" name="submit_time" value="00:10:00">
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
+                        </form>
 
-                        <button type="button" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p><b>Question Palette</b></p>
@@ -182,7 +189,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-6">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase"><img src="{{URL::asset('public/after_login/images/write.png')}}" style="    vertical-align: bottom;margin-right:10px;">{{$exam_name}}</h1>
+                        <h1 class="text-danger text-uppercase"><img src="{{URL::asset('public/after_login/images/write.png')}}" style="    vertical-align: bottom;margin-right:10px;">Full Body Scan Test</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -250,62 +257,60 @@ $questtype='radio';
 
 
 <!-- Modal END Exam -->
-<div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
-            <div class="modal-header border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
             <div class="modal-body pt-0 text-center">
                 <div class="text-center py-4">
+                    <h2 class="mb-3">Time Over!</h2>
 
-
+                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        Submit TEST
+                    </button>
                 </div>
-                <h2 class="mb-3">Awesome!</h2>
-                <p>You Did It! Let's See How You Did.</p>
-                <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
-                    @csrf
-                    <input type="hidden" name="fulltime" value="00:30:00">
-                    <input type="hidden" name="submit_time" value="00:10:00">
-                    <button type="submit" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</button>
-                    <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
-                </form>
-
-
             </div>
 
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center py-5">
-                <div class="
-                            d-flex
-                            align-items-center
-                            w-100
-                            justify-content-center
-                            my-3
-                          ">
-                    <span>timmer</span>
-                    <p class="m-0 ms-3"><strong>38 mins </strong>Left</p>
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <div id="app">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                </g>
+                            </svg>
+                            <i class="fa fa-stopwatch-20 watch-icon"></i>
+                        </div>
+                    </div>
+                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3>You still have 38mins left!</h3>
+                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
                     You haven’t attempted all of the questions. Do you
                     want to have a quick review before you Submit?
                 </p>
                 <div>
-                    <button type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
                         Review
                     </button>
-                    <button type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
                     </button>
                 </div>
@@ -332,6 +337,7 @@ $questtype='radio';
     });
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
+        startTimer();
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -361,6 +367,7 @@ $questtype='radio';
     let timePassed = -1;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
+
 
     function reset() {
         clearInterval(timerInterval);
@@ -393,13 +400,14 @@ $questtype='radio';
             setCircleDasharray();
 
             if (timeLeft === 0) {
+
                 timeIsUp();
             }
         }, 1000);
     }
 
     window.addEventListener("load", () => {
-        startTimer();
+        // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
         setDisabled(stopBtn);
     });
@@ -416,16 +424,19 @@ $questtype='radio';
     }
 
     function timeIsUp() {
-        setDisabled(startBtn);
-        removeDisabled(stopBtn);
+
+        /*  setDisabled(startBtn);
+         removeDisabled(stopBtn); */
         clearInterval(timerInterval);
-        let confirmReset = confirm("Time is UP! Wanna restart?");
+        $('#endExam').modal('show');
+
+        /* let confirmReset = confirm("Time is UP! Wanna restart?");
         if (confirmReset) {
             reset();
             startTimer();
         } else {
             reset();
-        }
+        } */
     }
 
     function resetVars() {
@@ -586,9 +597,50 @@ $questtype='radio';
     }
 
 
-    $('#submitExam').click(function() {
+    /* $('#submitExam').click(function() {
 
         $('#endExam').modal('show');
+    }); */
+
+
+    $(document).ready(function() {
+        $("#form_exam_submit").validate({
+
+            submitHandler: function(form) {
+                if (timeLeft >= 1) {
+                    let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+
+                    const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+                    console.log("setCircleDashArray: ", circleDasharray);
+                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
+
+                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                    lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
+                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
+                } else {
+                    form.submit();
+                }
+
+
+
+            }
+
+        });
+
+        $('#bt-modal-confirm').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
+        $('#bt-modal-confirm_over').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
     });
 </script>
 

@@ -102,7 +102,7 @@
                                     <div id="scorecontainer" class="text-right"></div>
                                     <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
-                                        <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous score</span>
+                                        <span class="abri"> <span class="abrv-mean bg2"></span>Progress From Previous Score</span>
                                         <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                     </span>
                                 </div>
@@ -416,7 +416,7 @@
                     <img src="{{URL::asset('public/after_login/images/party.png')}}">
 
                 </p> -->
-                <p class="h1-p text-success">Just one more step!</p>
+                <p class="h1-title text-success">Just one more step!</p>
                 <p>Take a test and get a complete analysis of your preparation!</p>
                 <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 p-5">
                     <span> <img src="{{URL::asset('public/after_login/images/books.png')}}"> </span>

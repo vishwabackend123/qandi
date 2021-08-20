@@ -110,9 +110,15 @@
                                     <div class="d-flex text-start">
                                         <div class="leaderBoardBlockedit">
                                             <div class="bg-white p-4 text-left ms-4 read-mode">
-                                                <span class="position-relative d-inline-block">
-                                                    <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="uswereditpic" />
-                                                    <a href="javascript:void(0);" class="edit-icon"><i class="fas fa-pencil-alt"></i></a>
+                                                <span class="position-relative d-inline-block ">
+                                                    <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="profile-pic uswereditpic" />
+
+                                                    <span class="image-upload">
+                                                        <label for="file-input">
+                                                            <span class="btn edit-icon"><i class="fas fa-pencil-alt"></i></span>
+                                                        </label>
+                                                        <input id="file-input" name="file-input" type="file" accept="image/*" />
+                                                    </span>
                                                 </span>
                                                 <div id="profile-details">
                                                     <div class="my-5 profile-read">
@@ -147,12 +153,12 @@
                                                         <div class="text-box mt-2">
 
                                                             <input type="text" name="username" id="username" class="ps-2" value="{{Auth::user()->user_name}}" required placeholder="Display Name" />
-                                                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                                            <div id="emailHelp" class="form-text">This could be your first, last or nick name.</div>
                                                         </div>
                                                         <div class="text-box mt-3">
 
                                                             <!--  <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="https://www.uniq.co.in/_userID_000987787" /> -->
-                                                            <div id="emailHelp" class="form-text">Your ID</div>
+                                                            <div id="emailHelp" class="form-text">Your User ID</div>
                                                         </div>
                                                         <div class="text-box mt-3">
                                                             <input type="email" name="useremail" id="useremail" class="ps-2" value="{{Auth::user()->email}}" required placeholder="Your Email Id" />
@@ -181,7 +187,7 @@
                                     <div class="bg-white p-4 text-left ms-4 ">
                                         <div class="d-flex align-items-center">
                                             <span class="position-relative d-inline-block">
-                                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="sml-pic" />
+                                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class=" sml-pic" />
 
                                             </span>
                                             <div class="my-5 subscription-read">
@@ -203,10 +209,10 @@
                                         </div>
                                         <p class="text-end text-danger mt-1">*Subscription expires on {{isset($subscription_details->subscription_end_date)?date("jS F, Y", strtotime($subscription_details->subscription_end_date)):''}}</p>
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
-                                        {{-- <div class=" text-box mt-4 text-end">--}}
-                                        {{-- <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>--}}
-                                        {{-- <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Course</a>--}}
-                                        {{-- </div>--}}
+                                        <div class=" text-box mt-4 text-end">
+                                            <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
+                                            <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Course</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,7 @@
         @csrf
         <div class="ms-auto login-box me-auto" id="name-box">
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Let’s get to know each other better, how about starting with<br> your name?”</p>
+            <p class="welcome-msg text-center">“Let’s get to know each other better, how about starting with<br> <b>your name</b>?”</p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
                 <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" />

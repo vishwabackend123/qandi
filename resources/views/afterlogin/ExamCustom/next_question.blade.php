@@ -54,11 +54,14 @@ $questtype='radio';
 </div>
 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
     <div class="N_tab-btn-box_list">
-        <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-        <button class="btn px-4 ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
-        <button class="btn px-4 ms-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
-        <button class="btn px-4 ms-2 btn-secondary rounded-0">Clear Response</button>
-
+        <div style="float:left">
+            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+            <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+        </div>
+        <div style="float:right">
+            <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize">Clear Response</button>
+        </div>
     </div>
 </div>
 <script>

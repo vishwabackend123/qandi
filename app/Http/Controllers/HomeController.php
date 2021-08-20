@@ -357,4 +357,10 @@ class HomeController extends Controller
             return json_encode($response);
         }
     }
+
+    public function editProfileImage(Request $request)
+    {
+        $data = $request->all();
+        $user_id = Auth::user()->id;
+    }
 }

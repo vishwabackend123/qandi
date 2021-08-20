@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-lg-12  p-lg-2">
 
-                    <div class="tab-wrapper mt-0">
+                    <div class="tab-wrapper mt-0 mb-2">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                             @isset($subject_list)
                             @foreach($subject_list as $key=>$subject)

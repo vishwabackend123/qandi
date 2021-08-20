@@ -73,8 +73,9 @@ class StudentSignInController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+        $aResponse = json_decode($response_json);
 
-        if ($httpcode != 200) {
+        if ($aResponse->success != 'true') {
             $response = [
                 "message" => "Mobile no. is invalid or not registered with us!",
                 "error" => $err,
@@ -82,21 +83,13 @@ class StudentSignInController extends Controller
             ];
             return json_encode($response);
         } else {
-            $aResponse = json_decode($response_json);
+
             $login_otp = $aResponse->mobile_otp;
 
             Session::put('OTP', $login_otp);
 
             return $response_json;
         }
-        /*  } else {
-
-            $response = [
-                "message" => "Mobile no. is invalid or not registered with us!",
-                "success" => false,
-            ];
-            return json_encode($response);
-        } */
     }
 
     /**
@@ -159,16 +152,12 @@ class StudentSignInController extends Controller
             return json_encode($response);
         } else {
             $aResponse = json_decode($response_json);
-            $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
+
             $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
-
-
             Session::put('user_data', $user_data);
             if (Auth::loginUsingId($user_data->id)) {
 
                 $response['status'] = 200;
-                $response['message'] = $succ_msg;
-                $response['redirect_url'] = url('dashboard');
 
                 return json_encode($response);
             } else {

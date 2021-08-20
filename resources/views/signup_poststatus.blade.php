@@ -7,7 +7,7 @@
         <div class="col-md-8 mx-auto mt-5 py-3">
             <div class="bg-white white-box-big">
                 <div class="welcome-heading">Tell us where do you stand right now.. </div>
-                <p class="welcome-msg text-center">So that we can help you better</p>
+                <p class="welcome-msg text-center"><b>So that we can help you better</b></p>
 
                 <div class="row text-center">
                     <div class="col p-4 ">

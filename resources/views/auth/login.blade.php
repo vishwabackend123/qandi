@@ -93,6 +93,7 @@
             success: function(response_data) {
                 console.log(response_data);
                 var response = jQuery.parseJSON(response_data);
+
                 if (response.success == true) {
                     $("#mobile-input-btn").hide();
                     $("#input-otp-box").show();
@@ -169,7 +170,7 @@
                     beforeSend: function() {},
 
                     success: function(response_data) { //debugger;
-                        console.log(response_data);
+
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {
                             if (response.error) {
@@ -180,10 +181,7 @@
                                 }, 10000);
                             }
                         } else {
-                            if (response.redirect_url) {
-
-                                window.location.href = response.redirect_url
-                            }
+                            window.location.href = '{{url("dashboard")}}';
                         }
 
                     },
