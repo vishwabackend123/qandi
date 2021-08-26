@@ -57,7 +57,7 @@
                                 </div>
                                 @else
                                 <div class="row text-center">
-                                    No series avialable.
+                                    <h5>No series avialable.</h5>
                                 </div>
                                 @endif
                             </div>
@@ -91,7 +91,7 @@
                                 </div>
                                 @else
                                 <div class="row text-center">
-                                    <h4>No series avialable.</h4>
+                                    <h5>No series avialable.</h5>
                                 </div>
                                 @endif
 

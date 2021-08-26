@@ -21,7 +21,8 @@ Route::any('/', function () {
 });
 
 Route::any('/logout', function () {
-    return view('index');
+    //return view('index');
+    return redirect('https://www.uniqtoday.com/');
 });
 
 Route::get(
@@ -75,6 +76,7 @@ Route::any('/custom_exam', [App\Http\Controllers\ExamCustomController::class, 's
 Route::any('/ajax_next_question/{ques_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_next_question'])->name('ajax_next_question')->middleware('auth', 'menu');
 Route::any('/ajax_next_subject_question/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_next_subject_question'])->name('ajax_next_subject_question')->middleware('auth', 'menu');
 Route::any('/saveAnswer', [App\Http\Controllers\ExamCustomController::class, 'saveAnswer'])->name('saveAnswer')->middleware('auth', 'menu');
+Route::any('/clearResponse', [App\Http\Controllers\ExamCustomController::class, 'clearResponse'])->name('clearResponse')->middleware('auth', 'menu');
 Route::any('/ajax_custom_topic/{chapt_id}', [App\Http\Controllers\ExamCustomController::class, 'chaptersTopic'])->name('ajax_custom_topic')->middleware('auth', 'menu');
 Route::any('/ajax_chapter_list/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_chapter_list'])->name('ajax_chapter_list')->middleware('auth', 'menu');
 
@@ -86,6 +88,7 @@ Route::any('/ajax_review_next_subject_question/{subject_id}', [App\Http\Controll
 
 /* Review Controller Routs */
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis', [App\Http\Controllers\ResultController::class, 'exam_post_analysis'])->name('exam_result_analysis')->middleware('auth', 'menu');
 
 
 /* Book Mark routes */
@@ -94,6 +97,8 @@ Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'a
 
 /* Full exam Controller Routes */
 Route::any('/exam/{full_exam}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
+Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'next_question'])->name('next_question')->middleware('auth', 'menu');
+Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'next_subject_question'])->name('next_subject_question')->middleware('auth', 'menu');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
 Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'exam_review'])->name('examreview')->middleware('auth', 'menu');
 

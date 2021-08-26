@@ -12,13 +12,6 @@
     });
 </script>
 @section('content')
-<style>
-    .activequestion {
-
-        border: 4px solid !important;
-        border-color: #ffc107 !important;
-    }
-</style>
 
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
@@ -77,8 +70,8 @@ $questtype='radio';
                                         $view_opt='<img src="'.$latex.'" />' ;
                                         @endphp
                                         <div class="col-md-6 mb-4">
-                                            <input class="form-check-input selctbtn {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                            <div class="border ps-3 ans">
+                                            <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                            <div class="border ps-5 ans">
                                                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                             </div>
                                         </div>
@@ -92,13 +85,13 @@ $questtype='radio';
                                 </div>
                                 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
-                                        <div style="float:left">
+                                        <div class="ps-3" style="float:left">
                                             <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                         </div>
-                                        <div style="float:right">
+                                        <div class="pe-3" style="float:right">
                                             <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
-                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize">Clear Response</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
                                         </div>
 
                                     </div>
@@ -141,8 +134,8 @@ $questtype='radio';
 
 
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
-                        <p><b>Question Palette</b></p>
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-5">
+                        <p class="palette-hd">Question Palette</p>
                         <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
@@ -189,24 +182,24 @@ $questtype='radio';
             <div class="modal-body pt-3 p-6">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase"><img src="{{URL::asset('public/after_login/images/write.png')}}" style="    vertical-align: bottom;margin-right:10px;">Full Body Scan Test</h1>
+                        <h1 class="text-danger text-uppercase">Full Body Scan Test</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    <div class="col col-lg-4 d-flex   align-items-center">
+                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
                                         <div class="me-2"><img src="{{URL::asset('public/after_login/images/edit-pencil.png')}}"></div>
                                         <div>
                                             <small>No. Of Questions</small>
                                             <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
                                         </div>
                                     </div>
-                                    <div class="col col-lg-4 d-flex flex-column align-items-center">
+                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
                                         <div>
                                             <small>Target</small>
                                             <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col col-lg-4 d-flex   align-items-center">
+                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
                                         <div class="me-2 ms-auto"><img src="{{URL::asset('public/after_login/images/timmer.png')}}"></div>
                                         <div>
                                             <small>Duration</small>
@@ -276,7 +269,7 @@ $questtype='radio';
 </div>
 
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -303,8 +296,7 @@ $questtype='radio';
                 </div>
                 <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
-                    You haven’t attempted all of the questions. Do you
-                    want to have a quick review before you Submit?
+                    Do you want to review all your answers before you submit the test?
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
@@ -479,7 +471,7 @@ $questtype='radio';
     /* getting Next Question Data */
     function qnext(question_id) {
 
-        url = "{{ url('ajax_next_question/') }}/" + question_id;
+        url = "{{ url('next_question/') }}/" + question_id;
         $.ajax({
             url: url,
             data: {
@@ -545,10 +537,10 @@ $questtype='radio';
                 if (response.status == 200) {
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
-                    $("#quesnext" + question_id).click();
                 }
             },
         });
+        $("#quesnext" + question_id).click();
     }
 
 
@@ -567,7 +559,6 @@ $questtype='radio';
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response);
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("btn-light");
                         $("#btn_" + quest_id).removeClass("btn-light-green");
@@ -580,9 +571,39 @@ $questtype='radio';
         }
     }
 
+    function clearResponse(quest_id, subject_id) {
+
+        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+            $(this).prop('checked', false);
+        });
+
+
+        $("#btn_" + quest_id).addClass("btn-light");
+        $("#btn_" + quest_id).removeClass("btn-light-green");
+        $("#btn_" + quest_id).removeClass("btn-secondary");
+
+        $.ajax({
+            url: "{{ route('clearResponse') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
+
+            },
+        });
+
+    }
+
     function get_subject_question(subject_id) {
 
-        url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
+        url = "{{ url('next_subject_question/') }}/" + subject_id;
         $.ajax({
             url: url,
             data: {

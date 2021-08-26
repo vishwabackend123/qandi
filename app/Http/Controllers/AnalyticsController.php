@@ -107,6 +107,7 @@ class AnalyticsController extends Controller
         curl_close($curl);
 
         $overallAnalytics = json_decode($overallAnalytics);
+
         if ($overallAnalytics[1] !== 400) :
             $dailyReport = json_decode($overallAnalytics[0]->daily_report);
             $weeklyReport = json_decode($overallAnalytics[0]->weekly_report);
@@ -247,7 +248,7 @@ class AnalyticsController extends Controller
                 'user_subjects'
             ));
         else :
-            return back()->with('error', 'PLease appear in exam before checking analytics. ');
+            return back()->with('error', 'Please appear in exam before checking analytics. ');
         endif;
     }
 

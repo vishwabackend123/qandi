@@ -217,21 +217,24 @@ class StudentSignInController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        if ($httpcode != 200) {
-            $response = [
-                "message" => "Something wrong please try again !!",
-                "error" => $err,
-                "success" => false,
-                "status" => 400,
-            ];
-            return json_encode($response);
-        } else {
+        if ($httpcode == 200 || $httpcode == 201) {
             $aResponse = json_decode($response_json);
+
             $reg_otp = isset($aResponse->mobile_otp) ? $aResponse->mobile_otp : '';
 
             Session::put('OTP', $reg_otp);
 
             return $response_json;
+        } else {
+            $response = [
+                "message" => "email or mobile already exist!!",
+                "error" => $err,
+                "success" => false,
+                "status" => 400,
+            ];
+            return json_encode($response);
+
+            //return $response_json;
         }
     }
 
@@ -296,6 +299,7 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
             $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
             $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
+
 
             if (Auth::loginUsingId($student_id)) {
                 $response['status'] = 200;

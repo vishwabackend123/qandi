@@ -1,12 +1,12 @@
  del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
     margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
 #slider small {display:block; font-size:12px;}
-.swipe a {margin:0 0 0 10px;  color:#ffffff;}
+.swipe a {margin:0 0 0 0px;  color:#ffffff;}
 .swipe {overflow:hidden; position:relative; width:100%;}
 .swipe ul{overflow:hidden;}
 .swipe li {padding:10px; font-weight:normal; color:#333; font-size:20px; ; min-height: 260px; box-shadow: rgba(0,0,0,.3) 0 0 20px;}
 .swipe li  img{max-width:80%;}
-.swipe li{margin:20px;}
+.swipe li{ margin-right:30px;}
 #slider2 li{width:230px;}
 #slider4{line-height:0; }
 #slider4 ul{-webkit-transition:left 800ms ease-in 0; -moz-transition:left 800ms ease-in 0; -o-transition:left 800ms ease-in 0; -ms-transition:left 800ms ease-in 0; transition:left 800ms ease-in 0;}

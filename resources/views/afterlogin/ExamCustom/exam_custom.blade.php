@@ -39,7 +39,7 @@
 
                         </ul>
 
-                        <div class="tab-content bg-white" id="myTabContent">
+                        <div class="tab-content bg-f2 ps-3" id="myTabContent">
                             @isset($subject_list)
 
                             @foreach($subject_list as $skey=>$sub)
@@ -115,14 +115,14 @@
                                             </div>
                                         </div>
 
-                                        <span class="slbs-link col-2 mx-3"><a aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" onclick="show_topic('{{$chapters->chapter_id}}')">Expand to Topics</a></span>
+                                        <span class="slbs-link  col-2 mx-3"><a class="expand-custom" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" onclick="show_topic('{{$chapters->chapter_id}}')">Expand to Topics</a></span>
                                         <form method="post" action="{{route('custom_exam')}}">
                                             @csrf
-                                            <input type="hidden" name="subject_id" value="{{$sub->id}}">
+                                            <input type="hidden" name="subject_id" value="">
                                             <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                                             <input type="hidden" name="question_count" value="30">
 
-                                            <button class="btn btn-green rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                                            <button class="btn btn-green-custom rounded-0 btn-lg ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
                                         </form>
 
                                     </div>

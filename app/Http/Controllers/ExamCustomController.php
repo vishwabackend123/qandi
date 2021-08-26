@@ -180,15 +180,14 @@ class ExamCustomController extends Controller
         $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
         //dd($select_topic);
 
-        $inputjson['student_id'] = $user_id; //30776; //(string);
+        $inputjson['student_id'] = $user_id;
         $inputjson['exam_id'] = (string)$exam_id;
         $inputjson['question_cnt'] = $question_count;
         $inputjson['subject_id'] = (string)$subject_id;
         $inputjson['chapter_id'] = (string)$chapter_id;
-        $inputjson['topic_list'] = json_encode($select_topic);
+        $inputjson['topic_list'] = !empty($select_topic) ? json_encode($select_topic) : '';
 
         $request = json_encode($inputjson);
-
 
         $curl_url = "";
         $curl = curl_init();
@@ -246,19 +245,24 @@ class ExamCustomController extends Controller
         $subject_ids = $collection->pluck('subject_id');
         $subject_list = $subject_ids->unique()->values()->all();
 
+
         $redis_subjects = $this->redis_subjects();
         $cSubjects = collect($redis_subjects);
-
+        $aTargets = [];
         $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
-
+        foreach ($filtered_subject as $sub) {
+            $count_arr = $collection->where('subject_id', $sub->id)->all();
+            $sub->count = count($count_arr);
+            $aTargets[] = $sub->subject_name;
+        }
 
         $allQuestions = $collection->keyBy('question_id')->sortBy('question_id');
+        $aQuestions_list =  $allQuestions->all();
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
 
-
-        $question_data = (object)current($aQuestions_list);
+        $question_data = (object)current($allQuestions->all());
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
         $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
         $nextquestion_data = (object)next($aQuestions_list);
@@ -303,7 +307,11 @@ class ExamCustomController extends Controller
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redis_data));
 
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+        $tagrets = implode(', ', $aTargets);
+
+
+
+        return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
     }
 
     function shuffle_assoc($list)
@@ -434,6 +442,45 @@ class ExamCustomController extends Controller
         $redisArray['taken_time'] = $retrive_time_array;
         $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
 
+        // Push Value in Redis
+        Redis::set('custom_answer_time', json_encode($redisArray));
+
+        $response['status'] = 200;
+        $response['message'] = "save response successfully";
+
+
+        return json_encode($response);
+    }
+
+    public function clearResponse(Request $request)
+    {
+        /* # code... */
+        $data = $request->all();
+        $question_id = isset($data['question_id']) ? $data['question_id'] : '';
+        $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+
+        $redis_result = Redis::get('custom_answer_time');
+
+
+        if (!empty($redis_result)) {
+            $redisArray = json_decode($redis_result, true);
+            $retrive_array = $redisArray['given_ans'];
+            $retrive_time_array = $redisArray['taken_time'];
+            $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
+
+            $retrive_array[$question_id] = '';
+        }
+        if (isset($answer_swap_cnt[$question_id])) {
+            $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
+        } else {
+            $answer_swap_cnt[$question_id] = 0;
+        }
+
+        $redisArray['given_ans'] = $retrive_array;
+        $redisArray['taken_time'] = $retrive_time_array;
+        $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+
+        dd($redisArray);
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redisArray));
 

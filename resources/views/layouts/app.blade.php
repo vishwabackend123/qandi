@@ -32,13 +32,13 @@
 
       <div class="collapse navbar-right navbar-collapse me-right " style="flex-direction: row-reverse;" id="navbarSupportedContent">
         <ul class="navbar-nav me-right mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item mx-3">
             <a href="{{ route('subscriptions') }}" class="nav-link side-links">Subscription</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mx-3">
             <a href="{{ route('aboutexam') }}" class="nav-link side-links">About Exam</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mx-3">
             <a href="{{ route('faq') }}" class="nav-link side-links">FAQ</a>
           </li>
           <li class="nav-item redLink">
@@ -46,7 +46,7 @@
 
             @auth
             <div>
-              <a class="nav-link " href="{{ route('logout') }}" onclick="event.preventDefault();
+              <a class="nav-link mx-3" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
               </a>
@@ -65,39 +65,7 @@
       </div>
     </div>
   </nav>
-  {{--<header class="py-2 px-7 fixed-top" id="change">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <a href="#" class="logo"><img src="{{URL::asset('public/images/main-logo-red.png')}}" class="img-fluid" /></a>
-  </div>
-  <div class="col text-end">
-    <div class="side-nav-links d-flex align-items-center">
 
-      <a href="{{ route('subscriptions') }}" class="side-links">Subscription</a>
-      <a href="{{ route('aboutexam') }}" class="side-links">About Exam</a>
-      <a href="{{ route('faq') }}" class="side-links">FAQ</a>
-      @auth
-      <div>
-        <a class="red-btn mt-2" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-          {{ __('Logout') }}
-        </a>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-          @csrf
-        </form>
-      </div>
-      @else
-      <a href="{{ route('login') }}" class="red-btn">Login / Sign up</a>
-      @endauth
-
-    </div>
-  </div>
-  </div>
-  </div>
-  </header>
-  --}}
 
   @yield('content')
 

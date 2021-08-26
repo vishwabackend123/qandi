@@ -12,7 +12,7 @@
             <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-md-6 mx-auto">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                        <h4 class="download-head">Get Free Access to JEE Main & Advanced Previous Year Sample Question Papers with Solutions</h4>
+                        <h4 class="download-head">Get Free Access to previous years of JEE Main & Advanced Questions Papers with Solutions</h4>
                         <select class="form-select rounded-0 my-5 w-75" aria-label="Default select example">
                             <option selected>Select paper</option>
                             <option value="1">One</option>

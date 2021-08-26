@@ -42,7 +42,7 @@ class FullExamController extends Controller
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/profiling-input2/' . $exam_id . '/' . $exam_ques_count;
+        $curl_url = $api_URL . 'api/profiling-test-web/' . $exam_id;
 
         curl_setopt_array($curl, array(
 
@@ -66,7 +66,7 @@ class FullExamController extends Controller
         if ($httpcode == 200) {
             $responsedata = json_decode($response_json);
 
-            $aQuestions_list = $responsedata->questions;
+            $aQuestions_list = $responsedata->questions_list;
 
             // $exam_fulltime = $responsedata->time_allowed;
 
@@ -84,7 +84,7 @@ class FullExamController extends Controller
         $exam_fulltime = (isset($exam_fulltime) && !empty($exam_fulltime)) ? $exam_fulltime : $questions_count  * 60;
 
         $collection = collect($aQuestions_list);
-        $collection = collect($aQuestions_list);
+
         $aQuestionslist = $collection->sortBy('subject_id');
 
         $subject_ids = $collection->pluck('subject_id');
@@ -170,5 +170,157 @@ class FullExamController extends Controller
     function exam_review()
     {
         return view('afterlogin.ExamViews.review');
+    }
+
+
+    public function next_question($quest_id, Request $request)
+    {
+
+        $user_id = Auth::user()->id;
+        $cacheKey = 'CustomQuestion:all:' . $user_id;
+        $redis_result = Redis::get($cacheKey);
+
+        if (isset($redis_result) && !empty($redis_result)) :
+            $response = json_decode($redis_result);
+        endif;
+
+        $allQuestions = isset($response) ? $response : []; // redis response as object
+        $allQuestionsArr = (array)$allQuestions; //object convert to array
+
+        $allkeys = array_keys((array)$allQuestions); //Array of all keys
+
+        $question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
+
+        $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
+        $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+        $key = array_search($quest_id, array_column($allQuestionsArr, 'question_id'));
+
+        $qNo = $key + 1;
+        $nextKey = $key + 1;
+        $nextKey = $nextKey % count($allQuestionsArr);
+        if ($key > 0) { // Key would become 0
+            $prevKey = $key - 1;
+        } else {
+            $prevKey = $key;
+        }
+        $next_qid = '';
+        $prev_qid = '';
+
+
+        $next_qid = $allkeys[$nextKey];
+
+        $prev_qid = $allkeys[$prevKey];
+        $last_qid = end($allkeys);
+
+
+
+        if (isset($question_data) && !empty($question_data)) {
+            $publicPath = url('/') . '/public/images/questions/';
+            $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+            $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+            $qs_id = $question_data->question_id;
+            $option_ques = str_replace("'", '"', $question_data->question_options);
+
+            $tempdata = json_decode($option_ques, true);
+            $opArr = [];
+            if (isset($tempdata) && is_array($tempdata)) {
+                foreach ($tempdata as $key => $option) {
+                    $option = str_replace('/public/images/questions/', $publicPath, $option);
+                    $opArr[$key] = $option;
+                }
+            }
+            $optionArray = $this->shuffle_assoc($opArr);
+            $option_data = $optionArray;
+        } else {
+            $option_data[] = '';
+        }
+        $session_result = Redis::get('custom_answer_time');
+        $sessionResult = json_decode($session_result);
+
+        $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
+        $aquestionTakenTime = isset($sessionResult->taken_time->$quest_id) ? $sessionResult->taken_time->$quest_id : '00:00:00';
+
+
+        return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
+    }
+
+    public function next_subject_question($subject_id, Request $request)
+    {
+
+
+        $user_id = Auth::user()->id;
+        $cacheKey = 'CustomQuestion:all:' . $user_id;
+        $redis_result = Redis::get($cacheKey);
+
+        if (isset($redis_result) && !empty($redis_result)) :
+            $response = json_decode($redis_result);
+        endif;
+
+        $allQuestions = isset($response) ? $response : []; // redis response as object
+        $collection = collect($allQuestions);
+        $filtered = $collection->where('subject_id', $subject_id);
+        $filtered_questions = $filtered->values()->all();
+
+        $allQuestionsArr = (array)$allQuestions; //object convert to array
+
+        $allkeys = array_keys((array)$allQuestions); //Array of all keys
+
+        //$question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
+        $question_data = current($filtered_questions);
+        $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
+
+        $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+
+
+        $key = array_search($activeq_id, array_column($allQuestionsArr, 'question_id'));
+
+        $qNo = $key + 1;
+        $nextKey = $key + 1;
+        $nextKey = $nextKey % count($allQuestionsArr);
+        if ($key > 0) { // Key would become 0
+            $prevKey = $key - 1;
+        } else {
+            $prevKey = $key;
+        }
+        $next_qid = '';
+        $prev_qid = '';
+
+
+        $next_qid = $allkeys[$nextKey];
+
+        $prev_qid = $allkeys[$prevKey];
+        $last_qid = end($allkeys);
+
+
+
+        if (isset($question_data) && !empty($question_data)) {
+            $publicPath = url('/') . '/public/images/questions/';
+            $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+            $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+            $qs_id = $question_data->question_id;
+            $option_ques = str_replace("'", '"', $question_data->question_options);
+
+            $tempdata = json_decode($option_ques, true);
+            $opArr = [];
+            if (isset($tempdata) && is_array($tempdata)) {
+                foreach ($tempdata as $key => $option) {
+                    $option = str_replace('/public/images/questions/', $publicPath, $option);
+                    $opArr[$key] = $option;
+                }
+            }
+            $optionArray = $this->shuffle_assoc($opArr);
+            $option_data = $optionArray;
+        } else {
+            $option_data[] = '';
+        }
+
+        $session_result = Redis::get('custom_answer_time');
+        $sessionResult = json_decode($session_result);
+
+        $aGivenAns = isset($sessionResult->given_ans->$activeq_id) ? $sessionResult->given_ans->$activeq_id : [];
+        $aquestionTakenTime = isset($sessionResult->taken_time->$activeq_id) ? $sessionResult->taken_time->$activeq_id : '00:00:00';
+
+
+        return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
     }
 }

@@ -28,7 +28,7 @@
                         <div class="bg-white white-box-small subscriptionBox @if(in_array($sub->subscript_id,$purchased_ids)) inactive-block  @endif">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. {{$subsprice}}</p>
-                            <p class="box-content scroll-content">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
                             @if(in_array($sub->subscript_id,$purchased_ids))
                             <div class="text-center mt-5">
                                 <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Already Purchased </i></button>

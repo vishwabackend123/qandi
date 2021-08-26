@@ -1,5 +1,5 @@
 <header>
-    <div class="container-fluid">
+    <div class="container-fluid py-2">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
@@ -52,6 +52,7 @@
                                                 <ol class="leaderNameBlock">
                                                     <li>
                                                         <div class="d-flex align-items-center">
+                                                            <span class="sno me-3">1.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
                                                                 <p>Roshani Sonve</p>
@@ -61,6 +62,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="d-flex align-items-center">
+                                                            <span class="sno me-3">2.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
                                                                 <p>Roshani Sonve</p>
@@ -70,6 +72,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="d-flex align-items-center">
+                                                            <span class="sno me-3">3.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
                                                                 <p>Roshani Sonve</p>
@@ -79,6 +82,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="d-flex align-items-center">
+                                                            <span class="sno me-3">4.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
                                                                 <p>Roshani Sonve</p>
@@ -88,6 +92,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="d-flex align-items-center">
+                                                            <span class="sno me-3">5.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
                                                                 <p>Roshani Sonve</p>
@@ -124,14 +129,14 @@
                                                     <div class="my-5 profile-read">
                                                         <h5 id="profileUserName">{{Auth::user()->user_name}}</h5>
                                                         <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
-                                                        <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 ms-2" id="editprofile">Edit Profile</button>
+                                                        <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 " id="editprofile">Edit Profile</button>
                                                     </div>
                                                     <div>
                                                         <h5 class="text-uppercase fw-bold">Achievements</h5>
                                                         <div class="scroll-achiv ">
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span>You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
 
                                                         </div>
                                                     </div>
@@ -155,7 +160,7 @@
                                                             <input type="text" name="username" id="username" class="ps-2" value="{{Auth::user()->user_name}}" required placeholder="Display Name" />
                                                             <div id="emailHelp" class="form-text">This could be your first, last or nick name.</div>
                                                         </div>
-                                                        <div class="text-box mt-3">
+                                                        <div class="text-box mt-4">
 
                                                             <!--  <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="https://www.uniq.co.in/_userID_000987787" /> -->
                                                             <div id="emailHelp" class="form-text">Your User ID</div>
@@ -186,9 +191,8 @@
                                 <div class="subscribeBlock">
                                     <div class="bg-white p-4 text-left ms-4 ">
                                         <div class="d-flex align-items-center">
-                                            <span class="position-relative d-inline-block">
+                                            <span class="position-relative d-inline-block">Roshani Sonve
                                                 <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class=" sml-pic" />
-
                                             </span>
                                             <div class="my-5 subscription-read">
                                                 <h5>{{Auth::user()->user_name}}</h5>
@@ -211,7 +215,7 @@
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
-                                            <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Course</a>
+                                            <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
                                         </div>
                                     </div>
                                 </div>
@@ -249,12 +253,12 @@
 <!-- notification START-->
 <div class="collapse planmner-block width" id="notification">
     <div class="planner-wrapper">
-        <div class="planner-content p-3">
+        <div class="notification-content p-3">
             <h4 class="noti-heading text-center">Notification</h4>
-            <div class="notification-scroll">
+            <div class="notification-scroll pe-3">
                 <p class="noti-subheading">Recent</p>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -265,7 +269,7 @@
                     <small>09:34PM</small>
                 </div>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -277,7 +281,7 @@
                 </div>
                 <p class="noti-subheading mt-4">Older Notification</p>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -288,7 +292,7 @@
                     <small>09:34PM</small>
                 </div>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -299,7 +303,7 @@
                     <small>09:34PM</small>
                 </div>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -310,7 +314,7 @@
                     <small>09:34PM</small>
                 </div>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -321,7 +325,7 @@
                     <small>09:34PM</small>
                 </div>
                 <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p>You have a test tomorrow on Wave Optics</p>
+                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
                     <span class="mb-2">
                         <i class="fa fa-star text-warning"></i>
                         <i class="fa fa-star text-warning"></i>
@@ -375,7 +379,7 @@
 
                             </div>
                             <div class="chaptbox-add ">
-                                <a href="#" class="btn btn-light  p-3 d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
+                                <a href="#" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
                                     <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
                                 </a>
                             </div>

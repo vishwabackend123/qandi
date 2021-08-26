@@ -13,7 +13,8 @@
         @csrf
         <div class="ms-auto login-box me-auto" id="name-box">
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Let’s get to know each other better, how about starting with<br> <b>your name</b>?”</p>
+            <p class="welcome-msg text-center">“Let's start with getting to know you better.
+                What's <b>your name</b>?”</p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
                 <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" />
@@ -29,7 +30,7 @@
         <div class="ms-auto login-box me-auto" id="email-box">
             <!-- <div><a href="#" class="back-btn" id="backname"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Let us know your mobile or email address, you can also use it sign in ?” </p>
+            <p class="welcome-msg text-center">“Sign-up using your email address or mobile number.” </p>
             <div class="text-box mt-4">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
                 <input type="email" placeholder="Email address" name="email_add" id="email_add" />
@@ -48,7 +49,7 @@
         <div class="ms-auto login-box me-auto" id="otp-box">
             <!-- <div><a href="#" class="back-btn" id="backmobile"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Please check for an OTP sent in your inbox/message” <img style="width:24px;" src="{{URL::asset('public/images/mail-otp.png')}}"></p>
+            <p class="welcome-msg text-center">“You must have received an OTP from us in your inbox or message” </p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
                 <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" placeholder="Enter OTP" />
@@ -59,7 +60,7 @@
 
                 <span class="ms-auto" id="some_div"> </span>
             </div>
-            <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
+            <p class="text-center mt-4 mb-0 resend_otp">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
             <div class="text-center mt-2"> <button class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">Verify OTP</button></div>
 
         </div>
@@ -131,7 +132,7 @@
                         email: email_add,
                     },
                     success: function(response_data) {
-                        console.log(response_data);
+                        // console.log(response_data);
                         var response = jQuery.parseJSON(response_data);
 
                         if (response.success == true) {

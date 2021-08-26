@@ -42,6 +42,7 @@ class RazorpayController extends Controller
     {
         $input = $request->all();
         $user_id = Auth::user()->id;
+
         $payment_id = isset($request->razorpay_payment_id) ? $request->razorpay_payment_id : '';
         $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
         $razorpay_signature = isset($request->razorpay_signature) ? $request->razorpay_signature : '';
@@ -88,6 +89,7 @@ class RazorpayController extends Controller
             $success_status = isset($aResponse->success) ? $aResponse->success : '';
         }
 
+        dd($success_status);
         if ($success_status == true) {
             Session::put('success', 'Payment successful.');
             return redirect()->route('dashboard');

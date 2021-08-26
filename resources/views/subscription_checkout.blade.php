@@ -54,7 +54,7 @@
             <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="{{ env('RAZORPAY_KEY') }}" data-amount="{{$price * 100}}" data-currency="INR" data-order_id="{{$razorpayOrderId}}" data-buttontext="" data-name="{{$subscriptions_data->subscription_name}}" data-description="{{$subscriptions_data->subscription_details}}" data-prefill.name="{{Auth::user()->user_name}}" data-prefill.email="{{Auth::user()->email}}" data-notes.exam_id="{{$subscriptions_data->class_exam_id}}" data-notes.month="12" data-theme.color="#d71921" data-button.hide="true">
             </script>
             <input type="hidden" value="{{$subscriptions_data->class_exam_id}}" name="exam_id">
-            <button stype="submit" class="btn btn-outline-danger px-5 rounded-0 fs-4"><span class="px-5">Pay</span></button>
+            <button type="submit" class=" pay-btn"><span class="px-5">Pay</span></button>
         </form>
     </div>
 </section>

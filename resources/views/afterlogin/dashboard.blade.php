@@ -84,7 +84,7 @@
 <div class="main-wrapper">
     <!-- top navbar -->
     @include('afterlogin.layouts.navbar_header')
-    <div class="content-wrapper">
+    <div class="content-wrapper mt-3">
         <!-- dashboard html section-->
 
         <div class="container-fluid">
@@ -101,7 +101,7 @@
                                 <div class="d-flex justify-content-center flex-column h-100  position-relative">
                                     <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
                                     <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
-                                    <div id="scorecontainer" class="text-right"></div>
+                                    <div id="scorecontainer"></div>
                                     <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
                                         <span class="abri"> <span class="abrv-mean bg2"></span>Progress From Previous Score</span>
@@ -171,7 +171,7 @@
             </div>
             <div class="row mt-5 mb-3">
                 <div class="col-6">
-                    <span class="text-danger">This week Tests</span>
+                    <span class="text-danger text-uppercase">This week Tests</span>
                     <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
                     <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
                 </div>
@@ -347,7 +347,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="h2-p mt-5 mb-4"> How would you rate these subjects according to your liking?</p>
+                <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
 
                 @if(isset($aSubjects) && !empty($aSubjects))
                 @foreach($aSubjects as $sub)
@@ -374,12 +374,12 @@
                 @endif
 
                 <div class="d-flex align-items-center mt-5">
-                    <a href="#" class="btn btn-secondary rounded-0 px-4">
-                        < Back</a>
-                            <a href="#" class="btn btn-danger disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next ></a>
+                    <a href="#" class="btn rating-back-btn px-4 ">
+                        <i class="fa fa-chevron-left"></i> &nbsp;&nbsp;Back </a>
+                    <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
 
-                            {{--
-                                    <a href="#" class="btn btn-danger disabled  rounded-0 ms-auto px-4" data-bs-toggle="modal" data-bs-target="#fullTest_Dashboard" data-bs-dismiss="modal" id="nxt-btn" onclick="store_rating();">Next ></a>
+                    {{--
+                                    <a href="#" class="btn rating-next-btn ms-auto px-4" data-bs-toggle="modal" data-bs-target="#fullTest_Dashboard" data-bs-dismiss="modal" id="nxt-btn" onclick="store_rating();">Next ></a>
                                 --}}
                 </div>
 
@@ -403,7 +403,7 @@
 
                 </p> -->
                 <p class="h1-p text-success text-uppercase">Just one more step!</p>
-                <p>Take a test and get a complete analysis of your preparation!</p>
+                <p>Take a full body scan test to analyse and plan your preparation journey</p>
                 <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
                     <span> <img src="{{URL::asset('public/after_login/images/books.png')}}"> </span>
                     <span class="text-white ms-4 ">Take full body scan of<br>XX questions test</span>
@@ -695,8 +695,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             text: '<span style="font-size:40px">{{$corrent_score_per}}</span> <br><span style="font-size:20px"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 30,
-            x: -110
+            y: 35
         },
         credits: {
             enabled: false
@@ -716,15 +715,15 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             pie: {
                 dataLabels: {
                     enabled: false,
-                    distance: -50,
+                    distance: 0,
                     style: {
                         fontWeight: 'bold',
                         color: 'white'
                     }
                 },
-                startAngle: -120,
-                endAngle: 120,
-                center: ['20%', '50%'],
+                startAngle: -140,
+                endAngle: 140,
+                center: ['50%', '50%'],
                 size: '100%'
             }
         },

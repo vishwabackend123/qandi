@@ -13,13 +13,7 @@ $questtype='radio';
 
 
 <div class="question-block N_question-block">
-    <div class="w-100 mb-4 h-40">
-        <div id="counter_{{$activeq_id}}" class="counter mb-4" style="float:right">
-            <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green"><span class="seconds" id="seconds_{{$activeq_id}}"></span>
-                <div id="percentBar_{{$activeq_id}}"></div>
-            </div>
-        </div>
-    </div>
+
     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
     @if(isset($last_qid) && ($last_qid==$activeq_id))
     <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}"><i class="fa fa-angle-right"></i></button>
@@ -73,39 +67,7 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        var sec = 60;
-        var interval = 1000;
-        var qest = '{{$activeq_id}}';;
-        var ctxt = " Seconds";
-        var ctimer = setInterval(function() {
-            $('#counter_{{$activeq_id}} span').text(sec-- + ctxt);
 
-            progressBar(sec, $('#progressBar_{{$activeq_id}}'));
-
-            if (sec == -1) {
-
-                clearInterval(ctimer);
-            }
-        }, interval);
-
-        function progressBar(percent, $element) {
-            var progressBarWidth = percent * $element.width() / 60;
-
-            $element.find('div').animate({
-                width: progressBarWidth
-            }, 500).html(percent + "%&nbsp;");
-            if (percent <= 20) {
-                $('#percentBar_{{$activeq_id}}').css('background-color', '#ee1e1ee0');
-            }
-            if (percent <= 0) {
-                $('#progressBar_{{$activeq_id}}').css('background-color', '#ff0606');
-            }
-
-        }
-    });
-</script>
 <script>
     var question_id = '{{$activeq_id}}';
     $(".next_button").removeClass("activequestion");

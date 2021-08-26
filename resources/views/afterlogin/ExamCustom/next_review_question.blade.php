@@ -35,7 +35,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         @endphp
         <div class="col-md-6 mb-4">
             <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-            <div class="border ps-3 ans  {{$resp_class}}">
+            <div class="border ps-5 ans  {{$resp_class}}">
                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
             </div>
         </div>

@@ -208,7 +208,7 @@ header {
 }
 
 .welcome-msg {
-  font: normal normal normal 16px/25px Poppins;
+  font: normal normal normal 18px/25px Poppins;
   letter-spacing: 0px;
   color: #2c3348;
   text-align: Center;
@@ -218,6 +218,14 @@ header {
   letter-spacing: 0px;
   color: #2c3348;
   text-align: center;
+}
+.resend_otp{
+  
+text-align: center;
+font: normal normal normal 14px/21px Poppins;
+letter-spacing: 0px;
+
+opacity: 0.8;
 }
 
 
@@ -373,3 +381,28 @@ footer {
 
 .subscriptionBox .cource-name {min-height: 90px;}
     .box-content {min-height: 120px;}
+
+
+    .pay-btn
+    {
+      width: 252px;
+      height: 48px;
+      border: 2px solid #F29E9C;
+     
+      font: normal normal bold 18px/12px Poppins;
+      letter-spacing: 0px;
+      color: #D71921;
+    }
+
+    .pay-btn:hover{
+      background: var(--unnamed-color-d71921) 0% 0% no-repeat padding-box;
+background: #D71921 0% 0% no-repeat padding-box;
+border: 2px solid #F29E9C;
+color: var(--unnamed-color-ffffff);
+text-align: center;
+font: normal normal bold 18px/12px Poppins;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+
+    }

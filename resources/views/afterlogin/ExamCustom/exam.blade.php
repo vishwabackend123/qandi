@@ -13,9 +13,7 @@
 </script>
 @section('content')
 <style>
-    .question p {
-        display: inline;
-    }
+
 </style>
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
@@ -45,7 +43,46 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                         <div class="tab-content bg-white" id="myTabContent">
                             <div id="question_section" class="">
+
+
                                 <div class="question-block N_question-block">
+                                    <div class="w-100 mb-4 h-40">
+                                        <div id="counter_{{$activeq_id}}" class="counter mb-4" style="float:right">
+                                            <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green"><span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                <div id="percentBar_{{$activeq_id}}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        var fsec = 60;
+                                        var countdown_txt = " Seconds";
+
+                                        function questionstartTimer() {
+                                            var timer_countdown = setInterval(function() {
+                                                $('#counter_{{$activeq_id}} span').text(fsec-- + countdown_txt);
+                                                progressBar(fsec, $('#progressBar_{{$activeq_id}}'));
+                                                if (fsec == -1) {
+                                                    clearInterval(timer_countdown);
+                                                }
+
+                                            }, 1000);
+                                        }
+
+
+
+                                        function progressBar(percent, $element) {
+                                            var progressBarWidth = percent * $element.width() / 60;
+                                            $element.find('div').animate({
+                                                width: progressBarWidth
+                                            }, 500).html(percent + "%&nbsp;");
+                                            if (percent <= 20) {
+                                                $('#percentBar_{{$activeq_id}}').css('background-color', '#ee1e1ee0');
+                                            }
+                                            if (percent <= 0) {
+                                                $('#progressBar_{{$activeq_id}}').css('background-color', '#ff0606');
+                                            }
+                                        }
+                                    </script>
                                     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
                                     <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
@@ -66,7 +103,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         @endphp
                                         <div class="col-md-6 mb-4">
                                             <input class="form-check-input selctbtn radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                            <div class="border ps-3 ans">
+                                            <div class="border ps-5 ans">
                                                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                             </div>
                                         </div>
@@ -80,11 +117,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 </div>
                                 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
-                                        <div style="float:left">
+                                        <div class="ps-3" style="float:left">
                                             <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                         </div>
-                                        <div style="float:right">
+                                        <div class="pe-3" style="float:right">
                                             <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
                                             <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize">Clear Response</button>
                                         </div>
@@ -119,20 +156,21 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <form action="{{route('exam_result')}}" method="post">
+                        <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
                             @csrf
                             <input type="hidden" name="fulltime" value="00:30:00">
                             <input type="hidden" name="submit_time" value="00:10:00">
-                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
-
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
                         <p><b>Question Palette</b></p>
                         <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
-                            <button type="button" class="btn btn-light rounded-0 mb-4" id="btn_{{$val}}" onclick="qnext('{{$val}}')">
+
+                            <button type="button" class=" next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">
                                 {{$ke+1}}</button>
                             @endforeach
                             @endif
@@ -185,10 +223,10 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             </div>
                                         </div>
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
-                                            <!-- <div>
+                                            <div>
                                                 <small>Target</small>
-                                                <span class="d-block inst-text"><span class="text-danger">Wave Theory</span></span>
-                                            </div> -->
+                                                <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                            </div>
                                         </div>
                                         <div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
@@ -217,18 +255,84 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         </div>
                         <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
-                            <h1>All the Best! {{Auth::user()->user_name}} </h1>
+                            <h1 class="my-auto text-center">
+
+                                <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+
+                            </h1>
                             <div class="text-left   ">
 
-                                <button class=" btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+                                <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
 
                             </div>
                         </div>
-
                     </div>
 
                 </div>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal END Exam -->
+<div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 ">
+
+            <div class="modal-body pt-0 text-center">
+                <div class="text-center py-4">
+                    <h2 class="mb-3">Time Over!</h2>
+
+                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        Submit TEST
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center py-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <div id="app">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                </g>
+                            </svg>
+                            <i class="fa fa-stopwatch-20 watch-icon"></i>
+                        </div>
+                    </div>
+                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                </div>
+                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <p>
+                    You haven’t attempted all of the questions. Do you
+                    want to have a quick review before you Submit?
+                </p>
+                <div>
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Review
+                    </button>
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        Submit TEST
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -245,12 +349,15 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     $('.answer-block').slimscroll({
         height: '30vh'
     });
+
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
 
     });
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
+        startTimer();
+        questionstartTimer();
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -281,6 +388,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
 
+
     function reset() {
         clearInterval(timerInterval);
         resetVars();
@@ -307,18 +415,19 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     function startTimer() {
         timerInterval = setInterval(() => {
             timePassed = timePassed += 1;
-            timeLeft = TIME_LIMIT - timePassed;;
+            timeLeft = TIME_LIMIT - timePassed;
             timeLabel.innerHTML = formatTime(timeLeft);
             setCircleDasharray();
 
             if (timeLeft === 0) {
+
                 timeIsUp();
             }
         }, 1000);
     }
 
     window.addEventListener("load", () => {
-        startTimer();
+        // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
         setDisabled(stopBtn);
     });
@@ -335,16 +444,19 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     }
 
     function timeIsUp() {
-        setDisabled(startBtn);
-        removeDisabled(stopBtn);
+
+        /*  setDisabled(startBtn);
+         removeDisabled(stopBtn); */
         clearInterval(timerInterval);
-        let confirmReset = confirm("Time is UP! Wanna restart?");
+        $('#endExam').modal('show');
+
+        /* let confirmReset = confirm("Time is UP! Wanna restart?");
         if (confirmReset) {
             reset();
             startTimer();
         } else {
             reset();
-        }
+        } */
     }
 
     function resetVars() {
@@ -453,16 +565,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 if (response.status == 200) {
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
-                    $("#quesnext" + question_id).click();
                 }
             },
         });
+        $("#quesnext" + question_id).click();
     }
 
 
     function savemarkreview(quest_id, subject_id) {
-
-
         /* saving response */
         if (saveAnswer(quest_id) != false) {
 
@@ -477,7 +587,6 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-
                     if (response.success == true) {
                         $("#btn_" + quest_id).removeClass("btn-light");
                         $("#btn_" + quest_id).removeClass("btn-light-green");
@@ -490,6 +599,36 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         }
     }
 
+    function clearResponse(quest_id, subject_id) {
+
+        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+            $(this).prop('checked', false);
+        });
+
+
+        $("#btn_" + quest_id).addClass("btn-light");
+        $("#btn_" + quest_id).removeClass("btn-light-green");
+        $("#btn_" + quest_id).removeClass("btn-secondary");
+
+        $.ajax({
+            url: "{{ route('clearResponse') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
+
+            },
+        });
+
+    }
+
     function get_subject_question(subject_id) {
 
         url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
@@ -500,10 +639,58 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             },
             success: function(result) {
                 $("#question_section").html(result);
-
             }
         });
+
+
     }
+
+
+    /* $('#submitExam').click(function() {
+
+        $('#endExam').modal('show');
+    }); */
+
+
+    $(document).ready(function() {
+        $("#form_exam_submit").validate({
+
+            submitHandler: function(form) {
+                if (timeLeft >= 1) {
+                    let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+
+                    const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+                    console.log("setCircleDashArray: ", circleDasharray);
+                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
+
+                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                    lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
+                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
+                } else {
+                    form.submit();
+                }
+
+
+
+            }
+
+        });
+
+        $('#bt-modal-confirm').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
+        $('#bt-modal-confirm_over').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
+    });
 </script>
 
 @endsection

@@ -312,11 +312,11 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pt-0 px-5 ">
+            <div class="modal-body  p-4 ">
                 <div class="text-center">
                     <img src="{{URL::asset('public/after_login/images/Group3077.png')}}">
                 </div>
-                <h1 class="text-center my-4">Refer a friend</h1>
+                <h1 class="text-center my-4">Refer to a Friend</h1>
                 <form id="referalStudent_form" action="{{route('store_referral')}}" method="POST">
                     @csrf
                     <div class="mb-3">

@@ -6,14 +6,14 @@
     <div class="row">
         <div class="col-md-8 mx-auto mt-5 py-3">
             <div class="bg-white white-box-big">
-                <div class="welcome-heading">Tell us where do you stand right now.. </div>
-                <p class="welcome-msg text-center"><b>So that we can help you better</b></p>
+                <div class="welcome-heading">How far are you in your preparation journey?</div>
+                <p class="welcome-msg text-center">Tell us so we can personalise UniQ experience especially for you</p>
 
                 <div class="row text-center">
                     <div class="col p-4 ">
                         <div class="d-flex flex-column p-3 h-100 w-100 click-box" id="startjust" onclick="user_stand('1', this.id);">
                             <span><img src="{{URL::asset('public/images/pic1.png')}}"></span>
-                            <p class="pt-4">Just starting out now</p>
+                            <p class="pt-4">Just starting out</p>
                         </div>
                     </div>
                     <div class="col p-4">
