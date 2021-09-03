@@ -330,7 +330,7 @@
                     </div>
                     <div class="text-center">
 
-                        <button type="submit" class="btn btn-danger rounded-0 px-5"><i class="fa fa-user-plus" aria-hidden="true"></i> SEND INVITE</button>
+                        <button type="submit" class="btn btn-danger rounded-0 px-5"><img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" /> SEND INVITE</button>
                     </div>
                 </form>
                 <p class="py-4 text-center">or Share via Link</p>

@@ -2,19 +2,7 @@
 
 @section('content')
 <style>
-    .slick-slider {
-        padding-left: 40px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
 
-
-
-    .slide_box {
-        display: inline-block;
-    }
 </style>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
@@ -27,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-12  p-lg-2">
 
-                    <div class="tab-wrapper mt-0 mb-2">
+                    <div class="tab-wrapper mt-0 pb-0">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                             @isset($subject_list)
                             @foreach($subject_list as $key=>$subject)
@@ -45,7 +33,7 @@
                             @foreach($subject_list as $skey=>$sub)
 
                             <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
-                                <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
+                                <div class="d-flex ps-4 my-5 py-2 align-items-center justify-content-between">
                                     <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
                                     <p class="mb-0 text-danger ms-auto me-4 text-uppercase fw-bold">You can pick chapters / topics or</p>
                                     <form method="post" action="{{route('custom_exam')}}">
@@ -55,7 +43,14 @@
 
                                         <button class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
                                     </form>
-                                    <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                                    <button class="btn filter-icon rotate-icon ms-1 text-danger rounded-0" id="dropdownMenuLink-chpt" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                                    <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-chpt">
+                                        <li><a class="dropdown-item" href="javascript:void(0);"> Low Proficiency</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);"> High Proficiency</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);"> A to Z order</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);"> Z to A order</a></li>
+
+                                    </ul>
                                 </div>
                                 <div class="scroll-div">
                                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
@@ -127,8 +122,15 @@
 
                                     </div>
                                     <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
-                                        <div class="d-flex px-4">
-                                            <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                                        <div class="d-flex ps-4">
+                                            <button class="btn filter-icon rotate-icon ms-auto mb-2 text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                                            <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
+                                                <li><a class="dropdown-item" href="javascript:void(0);"> Low Proficiency</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);"> High Proficiency</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);"> A to Z order</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);"> Z to A order</a></li>
+
+                                            </ul>
                                         </div>
                                         <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4">
 
@@ -144,10 +146,10 @@
                                     <input type="hidden" id="selected_topic" name="topics">
                                     <input type="hidden" name="question_count" value="30">
                                     <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                                    <div id="" class="text-right d-flex align-items-right mt-3">
+                                    <div id="topic_custom_footer" class="text-right d-flex align-items-right my-3 px-4">
 
-                                        <a href="#" class="btn px-4 ms-auto me-2 btn-secondary-clear rounded-0" onclick="clearTopics();">Clear Selection</a>
-                                        <button class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                                        <button type="button" class="btn px-4 ms-auto me-3 btn-secondary-clear rounded-0 align-text-center" onclick="clearTopics();">Clear Selection</button>
+                                        <button type="submit" class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
                                     </div>
                                 </form>
 
@@ -170,6 +172,7 @@
     $('.scroll-div').slimscroll({
         height: '50vh'
     });
+    $('#topic_form').hide();
     $(document).ready(function() {
 
         $("#topic_form").validate({
@@ -198,10 +201,10 @@
         if (index === -1) {
             aTopics.push(value);
             $('#chpt_topic_' + value).removeClass('btn-light');
-            $('#chpt_topic_' + value).addClass('btn-primary');
+            $('#chpt_topic_' + value).addClass('topic_selected');
         } else {
             aTopics.splice(index, 1);
-            $('#chpt_topic_' + value).removeClass('btn-primary');
+            $('#chpt_topic_' + value).removeClass('topic_selected');
             $('#chpt_topic_' + value).addClass('btn-light');
         }
         $('#selected_topic').val(aTopics);
@@ -211,7 +214,7 @@
     function clearTopics() {
         aTopics = [];
         $('#selected_topic').val('');
-        $('.addremovetopic').removeClass('btn-primary');
+        $('.addremovetopic').removeClass('topic_selected');
         // console.log(aTopics);
     }
 
@@ -344,6 +347,7 @@
                 $("#topic_section_" + chapt_id).html(result);
                 $('.slick-slider').slick('refresh');
                 $('#overlay').fadeOut();
+                $('#topic_form').show();
 
             }
         });

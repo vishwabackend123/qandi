@@ -189,11 +189,13 @@ class ExamCustomController extends Controller
 
         $request = json_encode($inputjson);
 
+        // dd($request);
+
         $curl_url = "";
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/advance-question-selection2';
+        $curl_url = $api_URL . 'api/custom-question-selection';
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
@@ -212,15 +214,18 @@ class ExamCustomController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
+
+
         $response_json = str_replace('NaN', '""', $response_json);
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
+        $responsedata = json_decode($response_json);
+        $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
 
-        if ($httpcode == 200 || $httpcode == 201) {
-            $responsedata = json_decode($response_json);
+        if ($httpcode_response == true) {
 
             if (!empty($responsedata)) {
                 $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
@@ -480,7 +485,7 @@ class ExamCustomController extends Controller
         $redisArray['taken_time'] = $retrive_time_array;
         $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
 
-        dd($redisArray);
+
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redisArray));
 

@@ -84,7 +84,7 @@
 <div class="main-wrapper">
     <!-- top navbar -->
     @include('afterlogin.layouts.navbar_header')
-    <div class="content-wrapper mt-3">
+    <div class="content-wrapper mt-4">
         <!-- dashboard html section-->
 
         <div class="container-fluid">
@@ -94,13 +94,11 @@
             </div>
             @endif
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col">
                     <div class="bg-white shadow-lg ">
                         <div class="row">
-                            <div class="col-8 pe-0">
+                            <div class="col-7 pe-0">
                                 <div class="d-flex justify-content-center flex-column h-100  position-relative">
-                                    <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
-                                    <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
                                     <div id="scorecontainer"></div>
                                     <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
@@ -109,7 +107,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-4  ">
+                            <div class="col-5  ">
                                 <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                     <span></span>
                                     <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
@@ -136,7 +134,7 @@
 
                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                                <div class="star-ratings-css">
+                                <div class="star-ratings-css ">
                                     <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
                                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                     </div>
@@ -145,8 +143,8 @@
                                     </div>
                                 </div>
 
-                                <div class="ms-2 score score-rating js-score">
-                                    {{round($sub['score'])}} %
+                                <div class=" dashboard-name-score ">
+                                    {{round($sub['score'])}}%
                                     <!-- <span>/</span>
                               <span class="total">5</span> -->
                                 </div>
@@ -158,7 +156,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col">
                     <div class="bg-white shadow-lg p-3">
                         <h5 class="dashboard-title">Marks Trend</h5>
                         <figure class="highcharts-figure">
@@ -169,7 +167,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 mb-3">
+            <div class="row mt-4 ">
                 <div class="col-6">
                     <span class="text-danger text-uppercase">This week Tests</span>
                     <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
@@ -177,16 +175,15 @@
                 </div>
                 <div class="col-6 text-right d-flex">
                     <div class="ms-auto">
-                        <a href="#" class="text-secondary"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
-                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle"></i></a>
+                        <a href="#" class="text-secondary"><img src="{{URL::asset('public/after_login/images/planner_Act_green_ic.png')}}" /></a>
+                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
+                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
+                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
                     </div>
                 </div>
             </div>
             <div class='swipe' id="plan_slider">
-                <ul id='slider'>
+                <ul id='slider' class="pt-3">
                     <li class="gray prfile">
                         <div class="col swipLi">
                             <small class="TestLevel text-danger fs-5 mb-3">Level up</small>
@@ -405,7 +402,7 @@
                 <p class="h1-p text-success text-uppercase">Just one more step!</p>
                 <p>Take a full body scan test to analyse and plan your preparation journey</p>
                 <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
-                    <span> <img src="{{URL::asset('public/after_login/images/books.png')}}"> </span>
+
                     <span class="text-white ms-4 ">Take full body scan of<br>XX questions test</span>
                 </a>
                 <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard ></a>
@@ -683,7 +680,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 150,
+            height: 180,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -692,10 +689,10 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font-size:40px">{{$corrent_score_per}}</span> <br><span style="font-size:20px"> / 100 </span>',
+            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{$corrent_score_per}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 35
+            y: 60
         },
         credits: {
             enabled: false
@@ -802,15 +799,15 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         series: [{
             name: 'Student Score',
             data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
-            color: '#7edd62' // Jane's color
+            color: '#006400' // Jane's color
         }, {
             name: 'Class Avg',
             data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
-            color: '#ffdc34'
+            color: '#FFA500'
         }, {
             name: 'Top Marks',
             data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
-            color: '#7cb5ed'
+            color: '#1E90FF'
         }],
 
         responsive: {

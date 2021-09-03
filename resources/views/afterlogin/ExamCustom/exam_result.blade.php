@@ -102,15 +102,22 @@
                     <div class="d-flex align-items-center mt-4 mb-2 pb-1">
                         <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>
                         <div class="progress ms-auto  col-8" style="overflow: visible;">
+
+                            @if($correct_per > 0)
                             <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$correct_per}}%; overflow: visible;">
                                 <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="{{$correct_per}}%">{{$subject->correct_count}}</span>
                             </div>
+                            @endif
+                            @if($incorrect_per > 0)
                             <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$incorrect_per}}%;overflow: visible;">
                                 <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$incorrect_per}}%">{{$subject->incorrect_count}}</span>
                             </div>
+                            @endif
+                            @if($not_attempt_per > 0)
                             <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$not_attempt_per}}%;overflow: visible;">
                                 <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-gray" data-bs-placement="top" title="{{$not_attempt_per}}">{{$subject->unanswered_count}}</span>
                             </div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
@@ -170,20 +177,26 @@
                                     $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
 
                                     @endphp
-                                    @if($topic->subject_id==$subject_id)
+                                    @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
 
                                     <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-                                        <span class="subj-name me-4 col-3">{{!empty($topic->topic_name)?$topic->topic_name:'Topic Name'}}</span>
+                                        <span class="subj-name me-4 col-3">{{!empty($topic->topic_name)?$topic->topic_name:''}}</span>
                                         <div class="progress col-8 ms-auto " style="overflow: visible;">
+                                            @if($tcorrect_per > 0)
                                             <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
                                                 <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
                                             </div>
+                                            @endif
+                                            @if($tincorrect_per > 0)
                                             <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$tincorrect_per}}%;overflow: visible;">
                                                 <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}%">{{$topic->incorrect_count}}</span>
                                             </div>
+                                            @endif
+                                            @if($tnot_attempt_per > 0)
                                             <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$tnot_attempt_per}}%;overflow: visible;">
                                                 <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}%">{{$topic->unanswered_count}}</span>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                     @endif
@@ -286,10 +299,11 @@ $clsAvg_json=json_encode($clsAvg_arr);
             plotShadow: false
         },
         title: {
-            text: '<span style="font-size:80px">{{$get_score}}</span> <span style="font-size:24px"> / {{$total_makrs}} </span>',
+            text: '<span style="font: normal normal normal 90px/136px Poppins;color: #2C3348;">{{$get_score}}</span><span style="font: normal normal normal 20px/30px Poppins;color: #2C3348;">/{{$total_makrs}} </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 70
+            y: 90
+
         },
         credits: {
             enabled: false

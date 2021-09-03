@@ -10,21 +10,21 @@
                 <p class="welcome-msg text-center">Tell us so we can personalise UniQ experience especially for you</p>
 
                 <div class="row text-center">
-                    <div class="col p-4 ">
-                        <div class="d-flex flex-column p-3 h-100 w-100 click-box" id="startjust" onclick="user_stand('1', this.id);">
-                            <span><img src="{{URL::asset('public/images/pic1.png')}}"></span>
+                    <div class="col">
+                        <div class="d-flex flex-column  h-100 w-100 click-box" id="startjust" onclick="user_stand('1', this.id);">
+                            <span><img class="img-responsive" src="{{URL::asset('public/images/10.png')}}"></span>
                             <p class="pt-4">Just starting out</p>
                         </div>
                     </div>
-                    <div class="col p-4">
-                        <div class="d-flex flex-column p-3 h-100 w-100 click-box" id="eleventh" onclick="user_stand('2', this.id);">
-                            <span><img src="{{URL::asset('public/images/pic2.png')}}"></span>
+                    <div class="col">
+                        <div class="d-flex flex-column h-100 w-100 click-box" id="eleventh" onclick="user_stand('2', this.id);">
+                            <span><img class="img-responsive" src="{{URL::asset('public/images/10+1.png')}}"></span>
                             <p class="pt-4">Completed (10+1) Syllabus</p>
                         </div>
                     </div>
-                    <div class="col p-4">
-                        <div class="d-flex flex-column p-3 h-100 w-100 click-box" id="twelfth" onclick="user_stand('3', this.id);">
-                            <span><img src="{{URL::asset('public/images/pic3.png')}}"></span>
+                    <div class="col">
+                        <div class="d-flex flex-column  h-100 w-100 click-box" id="twelfth" onclick="user_stand('3', this.id);">
+                            <span><img class="img-responsive" src="{{URL::asset('public/images/10+2.png')}}"></span>
                             <p class="pt-4">Completed (10+2) Syllabus</p>
                         </div>
                     </div>

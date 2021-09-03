@@ -11,6 +11,7 @@
 @section('content')
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
+
 <div class="main-wrapper bg-gray">
     <!-- top navbar -->
     @include('afterlogin.layouts.navbar_header')

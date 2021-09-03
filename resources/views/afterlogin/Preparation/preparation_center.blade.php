@@ -46,6 +46,7 @@
                             @endforeach
                             @endif
 
+
                             <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$oSub->subject_name}}" role="tabpanel" aria-labelledby="{{$oSub->subject_name}}-tab">
                                 <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
                                     <span class=" col-md-6 mr-3 name-txt">{{$oSub->subject_name}}</span>
@@ -70,6 +71,7 @@
                                     @if(!empty($aPreparation[$oSub->id]))
                                     @php $subjectData=$aPreparation[$oSub->id]; @endphp
                                     @foreach( $subjectData as $Key=>$val)
+                                    @if(!empty($val->chapter_name))
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
                                         <span class="col-md-6 mr-3 preparation-txt">{{$val->chapter_name}}</span>
 
@@ -91,6 +93,7 @@
                                             <i class="fa fa-star text-secondary mx-1"></i>
                                         </div>
                                     </div>
+                                    @endif
                                     @endforeach
                                     @endif
 

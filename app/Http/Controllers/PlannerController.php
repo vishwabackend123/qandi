@@ -181,14 +181,20 @@ class PlannerController extends Controller
             $responsedata = json_decode($response_json);
 
             if (!empty($responsedata)) {
-                $aQuestions_list = isset($responsedata->questions_list) ? $responsedata->questions_list : [];
+                $aQuestionslist = isset($responsedata->questions_list[0]) ? $responsedata->questions_list[0] : [];
+
+                $aQuestions_lists = !empty($aQuestionslist) ? $aQuestionslist->Questions : [];
+
+                $subject_id = !empty($aQuestionslist) ? $aQuestionslist->subject_id : '';
+
+                $filtered_subject = $responsedata->Subjects;
                 $exam_fulltime = $responsedata->time_allowed;
-                $questions_count = count($aQuestions_list);
+                $questions_count = count($aQuestions_lists);
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } else {
-            $aQuestions_list = [];
+            $aQuestions_lists = [];
             $questions_count = 0;
             $exam_fulltime = 0;
             return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
@@ -196,21 +202,14 @@ class PlannerController extends Controller
 
         $redis_set = 'True';
 
-        $collection = collect($aQuestions_list)->sortBy('subject_id');
-        $grouped = $collection->groupBy('subject_id');
-        $subject_ids = $collection->pluck('subject_id');
-        $subject_list = $subject_ids->unique()->values()->all();
-
-        $redis_subjects = $this->redis_subjects();
-        $cSubjects = collect($redis_subjects);
-
-        $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
-
+        $collection = collect($aQuestions_lists);
 
         $allQuestions = $collection->keyBy('question_id')->sortBy('question_id');
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
+        $aQuestions_list = $allQuestionDetails;
         $keys = $allQuestions->keys('question_id')->all();
+
 
 
         $question_data = (object)current($aQuestions_list);
@@ -222,12 +221,13 @@ class PlannerController extends Controller
         $prev_qid = '';
 
 
-
         if (isset($question_data) && !empty($question_data)) {
             $publicPath = url('/') . '/public/images/questions/';
+
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
+            $question_data->subject_id = isset($subject_id) ? $subject_id : '';
             $option_ques = str_replace("'", '"', $question_data->question_options);
 
             $tempdata = json_decode($option_ques, true);
@@ -257,7 +257,15 @@ class PlannerController extends Controller
 
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redis_data));
+        $aTargets = [];
 
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+        foreach ($filtered_subject as $sub) {
+
+            $aTargets[] = $sub->subject_name;
+        }
+        $tagrets = implode(', ', $aTargets);
+        $exam_name = "Planner Exam";
+
+        return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
     }
 }

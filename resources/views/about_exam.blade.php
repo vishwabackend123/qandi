@@ -29,7 +29,7 @@
         <div class="side-nav-links">
             <a href="{{ route('subscriptions') }}" class="side-links">Subscription</a>
             <a href="{{ route('aboutexam') }}" class="side-links">About Exam</a>
-            <a href="{{ route('faq') }}" class="side-links">FAQ</a>
+            <a href="{{ route() }}" class="side-links">FAQ</a>
             <a href="{{ route('login') }}" class="side-links">Login</a>
             <a href="{{ route('register') }}" class="red-btn mt-2">Sign up</a>
         </div>

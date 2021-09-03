@@ -98,8 +98,9 @@
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
                         var user_name = response.user_name;
-                        $('#profileUserName').html(user_name);
-                        $('#activeUserName').html(user_name);
+                        $('.activeUserName').html(user_name);
+                        /* $('#profileUserName').html(user_name);
+                        $('#activeUserName').html(user_name); */
                         $('#profile-details').show();
                         $('#profile-form').hide();
 
@@ -558,6 +559,7 @@
     }
 
     function outputUpdate(value) {
+
 
         $('#slide-input').html(value);
 

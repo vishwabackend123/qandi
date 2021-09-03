@@ -14,16 +14,42 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 @endphp
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
+<style>
+    #content-review .container {
+        max-width: 1280px;
 
+    }
+
+    #content-review .tab-content {
+        overflow-y: auto;
+
+    }
+
+    .time_taken_css {
+        border-left: 3px Solid #ff6060;
+        width: 200px;
+        font: 14px;
+        color: #2C3348;
+        font-weight: 500;
+        background-color: #e4e4e4;
+        text-align: center;
+    }
+
+    .time_taken_css span:first-child {
+
+        font-weight: 200;
+
+    }
+</style>
 <div class="main-wrapper bg-gray">
     <!-- top navbar -->
     @include('afterlogin.layouts.navbar_header')
-    <div class="content-wrapper ">
-        <div class="container-fluid">
+    <div class="content-wrapper " id="content-review">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-9  ps-lg-5">
+                <div class="col-lg-9">
                     <a href="{{url('/dashboard')}}" class="btn btn-danger back-to-d-btn">Back to dashboard</a>
-                    <div class="tab-wrapper h-100 m-0">
+                    <div class="tab-wrapper m-0">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                             @if(!empty($filtered_subject))
                             @foreach($filtered_subject as $key=>$sub)
@@ -35,48 +61,53 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             @endif
                         </ul>
 
-                        <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                        <div class="tab-content position-relative p-4 bg-white" id="myTabContent">
                             <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> -->
                             <div id="review_rques_blk">
-                                <div class="question-block">
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
-                                    <div class="question pb-5" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-                                    <div class="ans-block row mt-5">
-                                        @if(isset($option_data) && !empty($option_data))
-                                        @php $no=0;
-                                        $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                        @endphp
+                                <div class="question-block px-2 pt-3 pb-2">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="question pb-3" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                            <div class="ans-block row my-4 N_radioans">
+                                                @if(isset($option_data) && !empty($option_data))
+                                                @php $no=0;
+                                                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                                @endphp
 
-                                        @foreach($option_data as $key=>$opt_value)
-                                        @php
-                                        $dom = new DOMDocument();
-                                        @$dom->loadHTML($opt_value);
-                                        $anchor = $dom->getElementsByTagName('img')->item(0);
-                                        $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                        $latex = "https://math.now.sh?from=".$text;
-                                        $view_opt='<img src="'.$latex.'" />' ;
+                                                @foreach($option_data as $key=>$opt_value)
+                                                @php
+                                                $dom = new DOMDocument();
+                                                @$dom->loadHTML($opt_value);
+                                                $anchor = $dom->getElementsByTagName('img')->item(0);
+                                                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                                $latex = "https://math.now.sh?from=".$text;
+                                                $view_opt='<img src="'.$latex.'" />' ;
 
-                                        if(in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
-                                        $resp_class= 'btn-light-green';
-                                        }else if(in_array($key,$answerKeys) && !in_array($key,$attempt_opt)){
-                                        $resp_class= 'btn-light-green';
-                                        }else if(!in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
-                                        $resp_class= 'btn-light-red';
-                                        }else{
-                                        $resp_class= '';
-                                        }
-                                        @endphp
-                                        <div class="col-md-6 mb-4">
-                                            <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                            <div class="border ps-5 ans {{$resp_class}}">
-                                                <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                if(in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
+                                                $resp_class= 'btn-light-green';
+                                                }else if(in_array($key,$answerKeys) && !in_array($key,$attempt_opt)){
+                                                $resp_class= 'btn-light-green';
+                                                }else if(!in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
+                                                $resp_class= 'btn-light-red';
+                                                }else{
+                                                $resp_class= '';
+                                                }
+                                                @endphp
+                                                <div class="col-md-6 mb-4">
+                                                    <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                    <div class=" ps-5 ans {{$resp_class}}">
+                                                        <label class="question m-0   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                    </div>
+                                                </div>
+
+                                                @php $no++; @endphp
+                                                @endforeach
+                                                @endif
                                             </div>
                                         </div>
-
-                                        @php $no++; @endphp
-                                        @endforeach
-                                        @endif
+                                        <div class="col-md-2 text-right">
+                                            <i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i>
+                                        </div>
                                     </div>
 
                                     <div class="answer-block p-3 ">
@@ -170,18 +201,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                                 </div>
                             </div>
-                            <!-- </div>
-
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div> -->
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mt-5 rightPannerl">
+                <div class="col-lg-3 mt-5 rightPannerl ">
 
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4 reviewBox">
-                        <p><b>Answer Palette</b></p>
-                        <div class="number-block">
+                    <div class="bg-white d-flex flex-column justify-content-center  reviewBox palette_box ">
+                        <span class="palette_title">Answer Palette</span>
+                        <div class="number-block N_number-block">
                             @php $quKey=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
@@ -195,7 +222,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             } else {
                             $key_class = 'btn-light';
                             }@endphp
-                            <button type="button" class="btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">
+                            <button type="button" class="next_button btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">
                                 {{$quKey}}</button>
                             @php $quKey++; @endphp
                             @endforeach
@@ -204,7 +231,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                         </div>
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center py-4 px-4 review-questions">
+                    <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box ">
                         <div class="d-flex mb-3 reviewBox2">
                             <div class="col-8 heading">
                                 <h5>Review Questions.</h5>
@@ -215,16 +242,17 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
                                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="#"> Attempted</a></li>
-                                        <li><a class="dropdown-item" href="#"> Wronged</a></li>
-                                        <li><a class="dropdown-item" href="#"> Unattempted</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')"> All</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Attempted</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
 
                                     </ul>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="review-questions-blk">
+                        <div class="review-questions-blk" id="filter_questions">
                             @php $quKee=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
@@ -255,6 +283,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         </div>
 
                     </div>
+
                 </div>
             </div>
         </div>
@@ -269,14 +298,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         height: '40vh'
     });
     $('.number-block').slimscroll({
-        height: '30vh'
+        height: '25vh'
     });
     $('.answer-block').slimscroll({
-        height: '30vh'
+        height: '20vh'
     });
 
     $('.review-questions-blk').slimscroll({
-        height: '70vh'
+        height: '30vh'
     });
 
 
@@ -310,6 +339,19 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         });
 
 
+    }
+
+    function get_filtered_question(filter) {
+        url = "{{ url('filter_review_question/') }}/" + filter;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                $("#filter_questions").html(result);
+            }
+        });
     }
 </script>
 

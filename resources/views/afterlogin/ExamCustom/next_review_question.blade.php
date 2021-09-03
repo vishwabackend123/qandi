@@ -4,48 +4,52 @@ $option_data = (isset($question_data->question_options) && !empty($question_data
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 @endphp
-<div class="question-block">
-    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
-    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
-    <div class="question pb-5 " id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
-    <div class="ans-block row">
-        @if(isset($option_data) && !empty($option_data))
-        @php $no=0;
-        $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-        @endphp
+<div class="question-block px-2 pt-3 pb-2">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="question pb-3 " id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
+            <div class="ans-block row my-4 N_radioans">
+                @if(isset($option_data) && !empty($option_data))
+                @php $no=0;
+                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                @endphp
 
-        @foreach($option_data as $key=>$opt_value)
-        @php
-        $dom = new DOMDocument();
-        @$dom->loadHTML($opt_value);
-        $anchor = $dom->getElementsByTagName('img')->item(0);
-        $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-        $latex = "https://math.now.sh?from=".$text;
-        $view_opt='<img src="'.$latex.'" />' ;
+                @foreach($option_data as $key=>$opt_value)
+                @php
+                $dom = new DOMDocument();
+                @$dom->loadHTML($opt_value);
+                $anchor = $dom->getElementsByTagName('img')->item(0);
+                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                $latex = "https://math.now.sh?from=".$text;
+                $view_opt='<img src="'.$latex.'" />' ;
 
-        if(in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
-        $resp_class= 'btn-light-green';
-        }else if(in_array($key,$answerKeys) && !in_array($key,$attempt_opt)){
-        $resp_class= 'btn-light-green';
-        }else if(!in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
-        $resp_class= 'btn-light-red';
-        }else{
-        $resp_class= '';
-        }
-        @endphp
-        <div class="col-md-6 mb-4">
-            <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-            <div class="border ps-5 ans  {{$resp_class}}">
-                <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                if(in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
+                $resp_class= 'btn-light-green';
+                }else if(in_array($key,$answerKeys) && !in_array($key,$attempt_opt)){
+                $resp_class= 'btn-light-green';
+                }else if(!in_array($key,$answerKeys) && in_array($key,$attempt_opt)){
+                $resp_class= 'btn-light-red';
+                }else{
+                $resp_class= '';
+                }
+                @endphp
+                <div class="col-md-6 mb-4">
+                    <input class="form-check-input radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                    <div class="border ps-5 ans  {{$resp_class}}">
+                        <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                    </div>
+                </div>
+
+                @php $no++; @endphp
+                @endforeach
+                @endif
             </div>
         </div>
-
-        @php $no++; @endphp
-        @endforeach
-        @endif
+        <div class="col-md-2 text-right">
+            <i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i>
+        </div>
     </div>
-    </>
-    <div class="answer-block p-3 mb-5">
+    <div class="answer-block p-3 ">
         <div class="row">
             <div class="col-md-2">
                 <p class="mb-0 text-green">answer :</p>
@@ -136,6 +140,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 </div>
 <script>
+    $('.answer-block').slimscroll({
+        height: '20vh'
+    });
     var question_id = '{{$activeq_id}}';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");

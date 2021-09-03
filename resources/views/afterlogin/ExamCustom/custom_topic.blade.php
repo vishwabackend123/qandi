@@ -1,8 +1,8 @@
 @if(isset($topics) && !empty($topics))
 @foreach($topics as $key=>$topic)
 
-<div class="p-3 ">
-    <div class="bg-light shadow p-3 d-flex flex-column">
+<div class="">
+    <div class="topic_box d-flex flex-column">
         <div class="d-flex align-items-center">
             <div class="mr-3 name-txt-sml w-100 text-wrap">{{$topic->topic_name}} </div>
 
@@ -58,11 +58,11 @@
             </div>
         </div>
         <div class="d-flex align-items-center">
-            <a href="#" class="btn btn-light-green rounded-0 me-2">K</a>
-            <a href="#" class="btn btn-light-green rounded-0 me-2">C</a>
-            <a href="#" class="btn btn-light-red rounded-0 me-2">A</a>
-            <a href="#" class="btn btn-light rounded-0 me-2">E</a>
-            <a id="chpt_topic_{{$topic->id}}" href="javascript:void(0);" class="btn btn-light rounded-0 ms-auto px-5 addremovetopic" onclick="addOrRemove('{{$topic->id}}')">Select </a>
+            <button href="#" class="btn skill-btn green rounded-0 me-2">K</button>
+            <button href="#" class="btn skill-btn green rounded-0 me-2">C</button>
+            <button href="#" class="btn skill-btn red rounded-0 me-2">A</button>
+            <button href="#" class="btn skill-btn gray rounded-0 me-2">E</button>
+            <button id="chpt_topic_{{$topic->id}}" href="javascript:void(0);" class="btn ms-auto topic-btn-select rounded-0 addremovetopic" onclick="addOrRemove('{{$topic->id}}')">Select </button>
         </div>
     </div>
 </div>

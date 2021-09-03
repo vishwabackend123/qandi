@@ -27,9 +27,9 @@
                     </div>
                 </div>
                 <div class="col-5 ">
-                    <div class="row position-relative">
+                    <div class="row position-relative h-100">
                         @if($skillPer)
-                        <div class="col-6 mb-3">
+                        <div class="col-6 mb-2 pe-1 h-48">
                             <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
                                 <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
                                     <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
@@ -45,7 +45,7 @@
                                 <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <div class="col-6  mb-3">
+                        <div class="col-6  mb-2 ps-1 h-48">
                             <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
                                 <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
                                     <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
@@ -61,7 +61,7 @@
                                 <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 pe-1 h-48">
                             <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
                                 <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
                                     <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
@@ -77,7 +77,7 @@
                                 <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 ps-1 h-48">
                             <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
                                 <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
                                     <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
@@ -109,13 +109,13 @@
                 <button class="btn btn-warning-custom px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
                 </button>
             </div>
-            <div class="scroll-topic-ana">
+            <div class="scroll-topic-ana p-4">
                 @if($subProf)
                 @foreach($subProf as $val)
                 <div class="d-flex align-items-center mt-3 pb-1">
                     <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
                         <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
-                        <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                        <!-- <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                             <div class="star-ratings-css">
                                 <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
@@ -129,7 +129,7 @@
                             <div class="ms-2 score score-rating js-score">
                                 {{round($val->score)}} %
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="progress  ms-auto col-5" style="overflow: visible;">
                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
@@ -149,6 +149,8 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row">
     <div class="col-lg-5 mt-3">
         <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
             <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
@@ -908,7 +910,7 @@
 
 <script>
     $(".scroll-topic-ana").slimscroll({
-        height: "30vh",
+        height: "32.5vh",
     });
     Highcharts.chart('day', {
         credits: {
@@ -1306,7 +1308,7 @@
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 107,
+            height: 180,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -1315,11 +1317,10 @@
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font-size:20px">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font-size:20px"> / 100 </span>',
+            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 10,
-            x: -80
+            y: 60
         },
         credits: {
             enabled: false
@@ -1345,9 +1346,9 @@
                         color: 'white'
                     }
                 },
-                startAngle: -120,
-                endAngle: 120,
-                center: ['20%', '50%'],
+                startAngle: -140,
+                endAngle: 140,
+                center: ['50%', '50%'],
                 size: '100%'
             }
         },

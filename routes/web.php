@@ -85,6 +85,7 @@ Route::any('/ajax_chapter_list/{subject_id}', [App\Http\Controllers\ExamCustomCo
 Route::any('/exam_review/{result_id}', [App\Http\Controllers\ReviewController::class, 'getReview'])->name('exam_review')->middleware('auth', 'menu');
 Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewController::class, 'next_review_question'])->name('next_review_question')->middleware('auth', 'menu');
 Route::any('/ajax_review_next_subject_question/{subject_id}', [App\Http\Controllers\ReviewController::class, 'ajax_review_next_subject_question'])->name('ajax_review_next_subject_question')->middleware('auth', 'menu');
+Route::any('/filter_review_question/{filter}', [App\Http\Controllers\ReviewController::class, 'filter_review_question'])->name('filter_review_question')->middleware('auth', 'menu');
 
 /* Review Controller Routs */
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');

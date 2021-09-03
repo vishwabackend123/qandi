@@ -5,9 +5,9 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $(window).on("load resize scroll", function(e) {
+    $(window).on("load resize ", function(e) {
         var winHeight = $(window).height() - 10;
-        $('.tab-wrapper').height(winHeight - 82);
+        $('.tab-wrapper').height(winHeight - 90);
         $('.tab-content').height(winHeight - 135);
     });
 </script>
@@ -24,15 +24,24 @@ $questtype='checkbox';
 $type_class='radioans';
 $questtype='radio';
 }
-
 @endphp
+<style>
+    #exam_content_sec .container {
+        max-width: 1280px;
+    }
+
+    #exam_content_sec .tab-content {
+        overflow-y: auto;
+        height: 100vh !important;
+    }
+</style>
 
 <div class="main-wrapper p-0 bg-gray">
 
     <div class="content-wrapper " id="exam_content_sec" style="display:none;">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-9  ps-lg-5">
+                <div class="col-lg-9">
 
                     <div class="tab-wrapper">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
@@ -46,13 +55,11 @@ $questtype='radio';
                             @endforeach
                             @endif
                         </ul>
-
-
-                        <div class="tab-content bg-white" id="myTabContent">
+                        <div class="tab-content bg-white " id="myTabContent" style="">
                             <div id="question_section" class="">
                                 <div class="question-block N_question-block">
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <!-- question -->
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
                                     <!-- options -->
@@ -71,7 +78,7 @@ $questtype='radio';
                                         @endphp
                                         <div class="col-md-6 mb-4">
                                             <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                            <div class="border ps-5 ans">
+                                            <div class=" ps-5 ans">
                                                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                             </div>
                                         </div>
@@ -83,7 +90,7 @@ $questtype='radio';
                                     </div>
                                     <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
                                 </div>
-                                <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
+                                <div class="tab-btn-box  d-flex N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
                                         <div class="ps-3" style="float:left">
                                             <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
@@ -102,7 +109,7 @@ $questtype='radio';
                 </div>
 
                 <div class="col-lg-3 ">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4 N_timer">
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_timer">
                         <div class="d-flex align-items-center">
                             <div id="app">
                                 <div class="base-timer">
@@ -117,7 +124,7 @@ $questtype='radio';
                                      "></path>
                                         </g>
                                     </svg>
-                                    <i class="fa fa-stopwatch-20 watch-icon"></i>
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                                 </div>
                             </div>
                             <span class="timing">
@@ -134,7 +141,7 @@ $questtype='radio';
 
 
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-5">
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box">
                         <p class="palette-hd">Question Palette</p>
                         <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
@@ -146,8 +153,9 @@ $questtype='radio';
 
                         </div>
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4 N_legends">
-                        <p>Legends</p>
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_legends">
+                        <p class="palette-hd">Legends</p>
+
                         <div class="d-flex align-items-center legends">
                             <button class="btn btn-light  rounded-0"> </button>
                             <p>Unread</p>
@@ -161,7 +169,7 @@ $questtype='radio';
                             <p>Marked for Review</p>
                         </div>
                         <div class="d-flex align-items-start legends">
-                            <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
+                            <button class="btn btn-secondary rounded-0 align-items-center"><img src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}" /></button>
                             <p>Answered & Marked for Review</p>
                         </div>
 
@@ -289,7 +297,7 @@ $questtype='radio';
                                      "></path>
                                 </g>
                             </svg>
-                            <i class="fa fa-stopwatch-20 watch-icon"></i>
+                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
                     </div>
                     <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>

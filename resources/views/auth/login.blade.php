@@ -7,8 +7,10 @@
         $(window).on("load resize scroll", function(e) {
             var winHeight = $(window).height() - 40;
             $('.pageBg').height(winHeight);
+            $('nav').hide();
         });
     </script>
+    <div class="container-fluid px-7"><a class="navbar-brand" href="#"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
     <div class="ms-auto login-box me-auto" id="name-box">
         <div class="welcome-heading">Welcome to UniQ</div>
         <div class="welcome-msg">Please login using your registered mobile number </div>

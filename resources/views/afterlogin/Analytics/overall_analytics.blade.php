@@ -31,11 +31,8 @@
                                     <div class="col-lg-5">
                                         <div class="bg-white shadow-lg ">
                                             <div class="row">
-                                                <div class="col-8 pe-0">
+                                                <div class="col-7 pe-0">
                                                     <div class="d-flex justify-content-center flex-column h-100  position-relative">
-                                                        <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto mt-2 position-absolute top-0 end-0" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
-
-                                                        <!-- <span class=" p-3"><img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}"></span> -->
                                                         <div id="scorecontainer" class="text-right"></div>
                                                         <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                                             <span class="abri"> <span class="abrv-mean bg1"></span>Last
@@ -47,7 +44,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-4  ">
+                                                <div class="col-5  ">
                                                     <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                                         <span></span>
                                                         <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
@@ -250,7 +247,7 @@
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 150,
+            height: 180,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -259,11 +256,10 @@
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font-size:40px">{{$corrent_score_per}}</span> <br><span style="font-size:20px"> / 100 </span>',
+            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{$corrent_score_per}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 30,
-            x: -110
+            y: 60
         },
         credits: {
             enabled: false
@@ -289,9 +285,9 @@
                         color: 'white'
                     }
                 },
-                startAngle: -120,
-                endAngle: 120,
-                center: ['20%', '50%'],
+                startAngle: -140,
+                endAngle: 140,
+                center: ['50%', '50%'],
                 size: '100%'
             }
         },

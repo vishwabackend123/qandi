@@ -66,8 +66,6 @@ class ResultController extends Controller
 
         $request = json_encode($inputjson);
 
-
-
         $curl_url = "";
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');

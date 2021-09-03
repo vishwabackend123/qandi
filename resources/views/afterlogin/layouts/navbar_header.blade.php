@@ -1,14 +1,14 @@
 <header>
-    <div class="container-fluid py-2">
+    <div class="container-fluid ">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
-                    <span class="user-name-block ps-3 me-3">Welcome, <span id="activeUserName">{{Auth::user()->user_name}}</span></span>
+                    <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{Auth::user()->user_name}}</span></span>
 
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link ">
-                            <img src="{{URL::asset('public/after_login/images/bell.png')}}">
+                            <img src="{{URL::asset('public/after_login/images/Group3205.png')}}">
                             <span class="red-dot"></span>
                             <span class="hoverlink">Notification</span>
                         </a>
@@ -127,16 +127,16 @@
                                                 </span>
                                                 <div id="profile-details">
                                                     <div class="my-5 profile-read">
-                                                        <h5 id="profileUserName">{{Auth::user()->user_name}}</h5>
+                                                        <h5 id="profileUserName" class="activeUserName">{{Auth::user()->user_name}}</h5>
                                                         <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 " id="editprofile">Edit Profile</button>
                                                     </div>
                                                     <div>
                                                         <h5 class="text-uppercase fw-bold">Achievements</h5>
                                                         <div class="scroll-achiv ">
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><i class="fas fa-share-alt"></i></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a></p>
+                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a></p>
 
                                                         </div>
                                                     </div>
@@ -191,11 +191,11 @@
                                 <div class="subscribeBlock">
                                     <div class="bg-white p-4 text-left ms-4 ">
                                         <div class="d-flex align-items-center">
-                                            <span class="position-relative d-inline-block">Roshani Sonve
+                                            <span class="position-relative d-inline-block">
                                                 <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class=" sml-pic" />
                                             </span>
                                             <div class="my-5 subscription-read">
-                                                <h5>{{Auth::user()->user_name}}</h5>
+                                                <h5 class="activeUserName">{{Auth::user()->user_name}}</h5>
                                                 <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
 
                                             </div>
@@ -349,12 +349,12 @@
             <p class="fw-bold text-uppercase">Exams per week</p>
             <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                 @csrf
-                <div class="row align-items-center mb-2">
+                <div class="row align-items-center mb-4">
                     <div class="col-md-6">
-                        <input type="range" name="weekrange" class="form-range exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)">
+                        <input type="range" name="weekrange" class=" exam_range" min="0" max="7" value="0" step="1" id="customRange" oninput="outputUpdate(value)">
                     </div>
                     <div class="col-md-6">
-                        <span id="slide-input" class="badge bg-secondary">5</span>
+                        <span id="slide-input" class="badge bg-secondary">0</span>
                     </div>
                 </div>
                 <p class="fw-bold text-uppercase">Schedule test weeks</p>
@@ -365,7 +365,7 @@
                     </div>
                     <div class="col-3">
                         <label class="d-block">End Date</label>
-                        <input type="date" id="EndDate" name="end_date" readonly class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
+                        <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
                     </div>
                 </div>
                 <div class=" row mt-5">
@@ -380,7 +380,7 @@
                             </div>
                             <div class="chaptbox-add ">
                                 <a href="#" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
-                                    <span class=""><i class="fa fa-plus text-white  " aria-hidden="true"></i></span>
+                                    <span class=""><img src="{{URL::asset('public/after_login/images/plusSign_ic.png')}}" /></span>
                                 </a>
                             </div>
                         </div>
@@ -435,3 +435,11 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
+
+<script>
+    document.getElementById("customRange").oninput = function() {
+        $('#slide-input').html(this.value);
+        var value = (this.value - this.min) / (this.max - this.min) * 100
+        this.style.background = 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + value + '%, #fff ' + value + '%, white 100%)'
+    };
+</script>

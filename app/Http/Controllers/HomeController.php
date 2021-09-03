@@ -49,7 +49,7 @@ class HomeController extends Controller
 
         // $preferences = DB::table('student_preferences')->select('student_stage_at_sgnup', 'subjects_rating', 'subscription_yn', 'subscription_expiry_date')->where('student_id', $user_id)->first();
 
-        $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : 0;
+        $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
         if ($student_stage_at_sgnup == 0) {
             return redirect()->route('studentstandfor');
@@ -72,6 +72,7 @@ class HomeController extends Controller
             //expire today
             $suscription_status = 1;
         }
+
         if ($suscription_status == 0 || $subscription_yn == 'N') {
             return redirect()->route('subscriptions');
         }

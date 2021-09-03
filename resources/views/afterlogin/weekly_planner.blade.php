@@ -1,4 +1,4 @@
-<ul id='slider'>
+<ul id='slider' class="pt-3">
     <li class="gray prfile">
         <div class="col swipLi">
             <small class="TestLevel text-danger fs-5 mb-3">Level up</small>
@@ -45,7 +45,7 @@
                 </label>
             </div>
             <div class="btnBody">
-                <a class="btn rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
+                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
                 <button class="btn rounded-0 mt-3 scheduleBtn"><i class="fas fa-clock"></i> Schedule Later</button>
             </div>
         </div>

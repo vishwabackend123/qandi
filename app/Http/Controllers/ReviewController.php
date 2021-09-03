@@ -411,4 +411,37 @@ class ReviewController extends Controller
 
         return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
     }
+
+
+    public function filter_review_question($filter_by)
+    {
+
+        $user_data = Auth::user();
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+        $cacheKey = 'exam_review:' . $user_id;
+        $redis_result = Redis::get($cacheKey);
+
+        if (isset($redis_result) && !empty($redis_result)) :
+            $response = json_decode($redis_result);
+        endif;
+
+
+        $result_response = $response;
+        $all_question_list = [];
+        if (isset($result_response->all_question) && !empty($result_response->all_question)) {
+
+
+            $aQuestionslist = collect($result_response->all_question);
+
+            if ($filter_by != 'all') {
+                $aQuestionslist = $aQuestionslist->where('attempt_status', $filter_by);
+            }
+            $all_question_list = $aQuestionslist->all();
+        }
+
+
+
+        return view('afterlogin.ExamCustom.review_question_filter', compact('all_question_list'));
+    }
 }

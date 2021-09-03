@@ -7,13 +7,37 @@
 <script type="text/javascript">
     $(window).on("load resize scroll", function(e) {
         var winHeight = $(window).height() - 10;
-        $('.tab-wrapper').height(winHeight - 82);
+        $('.tab-wrapper').height(winHeight - 90);
         $('.tab-content').height(winHeight - 135);
     });
 </script>
 @section('content')
 <style>
+    #exam_content_sec .container {
+        max-width: 1280px;
 
+    }
+
+    #exam_content_sec .tab-content {
+        overflow-y: auto;
+        height: 100vh !important;
+    }
+
+    .time_taken_css {
+        border-left: 3px Solid #ff6060;
+        width: 200px;
+        font: 14px;
+        color: #2C3348;
+        font-weight: 500;
+        background-color: #e4e4e4;
+        text-align: center;
+    }
+
+    .time_taken_css span:first-child {
+
+        font-weight: 200;
+
+    }
 </style>
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
@@ -23,12 +47,12 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 <div class="main-wrapper p-0 bg-gray">
 
     <div class="content-wrapper " id="exam_content_sec" style="display:none;">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-9  ps-lg-5">
+                <div class="col-lg-9">
 
                     <div class="tab-wrapper">
-                        <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs cust-tabs exam-panel align-item-center" id="myTab" role="tablist">
 
                             @if(!empty($filtered_subject))
                             @foreach($filtered_subject as $key=>$sub)
@@ -43,29 +67,47 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                         <div class="tab-content bg-white" id="myTabContent">
                             <div id="question_section" class="">
+                                <div class="d-flex ">
+                                    <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+                                        <span id="avg_text">Average Time taken : </span>
+                                        <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
+                                            <span class="seconds" id="seconds_{{$activeq_id}}"></span>
 
+                                            <div id="percentBar_{{$activeq_id}}"></div>
+
+                                        </div>
+                                        <div class="time_taken_css" id="q_time_taken" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
+                                    </div>
+                                </div>
 
                                 <div class="question-block N_question-block">
-                                    <div class="w-100 mb-4 h-40">
-                                        <div id="counter_{{$activeq_id}}" class="counter mb-4" style="float:right">
-                                            <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green"><span class="seconds" id="seconds_{{$activeq_id}}"></span>
-                                                <div id="percentBar_{{$activeq_id}}"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <script>
                                         var fsec = 60;
+                                        var up_timer = 0;
                                         var countdown_txt = " Seconds";
+                                        var upcounter_txt = " Mins";
 
                                         function questionstartTimer() {
+                                            up_timer++;
+                                            var timer_up = setInterval(function() {
+                                                up_timer++;
+                                            }, 1000);
                                             var timer_countdown = setInterval(function() {
-                                                $('#counter_{{$activeq_id}} span').text(fsec-- + countdown_txt);
+                                                fsec--;
+                                                //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
                                                 progressBar(fsec, $('#progressBar_{{$activeq_id}}'));
                                                 if (fsec == -1) {
                                                     clearInterval(timer_countdown);
+                                                    $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+                                                    $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                                                    $('#q_time_taken').show();
+                                                    $('#avg_text').hide();
+                                                    $('#progressBar_{{$activeq_id}}').hide();
                                                 }
 
                                             }, 1000);
+
                                         }
 
 
@@ -76,15 +118,39 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                                 width: progressBarWidth
                                             }, 500).html(percent + "%&nbsp;");
                                             if (percent <= 20) {
-                                                $('#percentBar_{{$activeq_id}}').css('background-color', '#ee1e1ee0');
+                                                $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
                                             }
                                             if (percent <= 0) {
-                                                $('#progressBar_{{$activeq_id}}').css('background-color', '#ff0606');
+                                                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+                                                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                                            }
+                                        }
+
+                                        var minutesLabel = document.getElementById("up_minutes");
+                                        var secondsLabel = document.getElementById("up_seconds");
+                                        //var totalSec = document.getElementById("tsec");
+                                        var totalSeconds = 0;
+                                        setInterval(setEachQuestionTime, 1000);
+
+                                        function setEachQuestionTime() {
+                                            ++totalSeconds;
+                                            secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+                                            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+                                            //totalSec.innerHTML = pad(totalSeconds);
+                                        }
+
+                                        function pad(val) {
+                                            var valString = val + "";
+                                            if (valString.length < 2) {
+                                                return "0" + valString;
+                                            } else {
+                                                return valString;
                                             }
                                         }
                                     </script>
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -103,7 +169,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         @endphp
                                         <div class="col-md-6 mb-4">
                                             <input class="form-check-input selctbtn radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                            <div class="border ps-5 ans">
+                                            <div class=" ps-5 ans">
                                                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                             </div>
                                         </div>
@@ -134,9 +200,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 </div>
 
                 <div class="col-lg-3 ">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4 N_timer">
-                        <div class="d-flex align-items-center">
-                            <div id="app">
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_timer">
+                        <div class="exam-timer-box d-flex align-items-center">
+                            <div class="" id="app">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <g class="base-timer__circle">
@@ -149,7 +215,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                      "></path>
                                         </g>
                                     </svg>
-                                    <i class="fa fa-stopwatch-20 watch-icon"></i>
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                                 </div>
                             </div>
                             <span class="timing">
@@ -164,8 +230,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
-                        <p><b>Question Palette</b></p>
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box">
+                        <span class="palette_title">Question Palette</span>
                         <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
@@ -177,8 +243,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                         </div>
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4 N_legends">
-                        <p>Legends</p>
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_legends">
+                        <span class="palette_title">Legends</span>
                         <div class="d-flex align-items-center legends">
                             <button class="btn btn-light  rounded-0"> </button>
                             <p>Unread</p>
@@ -192,7 +258,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             <p>Marked for Review</p>
                         </div>
                         <div class="d-flex align-items-start legends">
-                            <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
+                            <button class="btn btn-secondary rounded-0 align-items-center"><img src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}" /></button>
                             <p>Answered & Marked for Review</p>
                         </div>
 
@@ -315,7 +381,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                      "></path>
                                 </g>
                             </svg>
-                            <i class="fa fa-stopwatch-20 watch-icon"></i>
+                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
                     </div>
                     <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
@@ -358,6 +424,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         $('#exam_content_sec').show();
         startTimer();
         questionstartTimer();
+        setEachQuestionTime();
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();

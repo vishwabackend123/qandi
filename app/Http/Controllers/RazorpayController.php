@@ -77,6 +77,7 @@ class RazorpayController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
@@ -89,7 +90,6 @@ class RazorpayController extends Controller
             $success_status = isset($aResponse->success) ? $aResponse->success : '';
         }
 
-        dd($success_status);
         if ($success_status == true) {
             Session::put('success', 'Payment successful.');
             return redirect()->route('dashboard');

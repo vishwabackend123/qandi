@@ -11,18 +11,24 @@ $questtype='radio';
 }
 @endphp
 
+<div class="d-flex ">
 
-<div class="question-block N_question-block">
-    <div class="w-100 mb-4 h-40">
-        <div id="counter_{{$activeq_id}}" class="counter mb-4" style="float:right">
-            <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green"><span class="seconds" id="seconds_{{$activeq_id}}"></span>
-                <div id="percentBar_{{$activeq_id}}"></div>
-            </div>
+    <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+        <span id="avg_text">Average Time taken : </span>
+        <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
+            <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+
+            <div id="percentBar_{{$activeq_id}}"></div>
+
         </div>
+        <div class="time_taken_css" id="q_time_taken" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
     </div>
-    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i></button>
+</div>
+<div class="question-block N_question-block">
+
+    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
     @if(isset($last_qid) && ($last_qid==$activeq_id))
-    <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}"><i class="fa fa-angle-right"></i></button>
+    <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
     @else
     <button class="btn arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
@@ -80,13 +86,18 @@ $questtype='radio';
         var qest = '{{$activeq_id}}';;
         var ctxt = " Seconds";
         var ctimer = setInterval(function() {
-            $('#counter_{{$activeq_id}} span').text(sec-- + ctxt);
+            $('#counter_{{$activeq_id}} span.seconds').text(sec-- + ctxt);
 
             progressBar(sec, $('#progressBar_{{$activeq_id}}'));
 
             if (sec == -1) {
 
                 clearInterval(ctimer);
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken').show();
+                $('#avg_text').hide();
+                $('#progressBar_{{$activeq_id}}').hide();
             }
         }, interval);
 
@@ -97,12 +108,34 @@ $questtype='radio';
                 width: progressBarWidth
             }, 500).html(percent + "%&nbsp;");
             if (percent <= 20) {
-                $('#percentBar_{{$activeq_id}}').css('background-color', '#ee1e1ee0');
+                $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
             }
             if (percent <= 0) {
-                $('#progressBar_{{$activeq_id}}').css('background-color', '#ff0606');
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
             }
 
+        }
+        var minutesLabel = document.getElementById("up_minutes");
+        var secondsLabel = document.getElementById("up_seconds");
+        //var totalSec = document.getElementById("tsec");
+        var totalSeconds = 0;
+        setInterval(setEachQuestionTime, 1000);
+
+        function setEachQuestionTime() {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
+        }
+
+        function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
         }
     });
 </script>
