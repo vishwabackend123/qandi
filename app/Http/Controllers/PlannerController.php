@@ -107,15 +107,16 @@ class PlannerController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        if ($httpcode == 200 || $httpcode == 201) {
-            $response = json_decode($response_json);
-            $planner = isset($response->result) ? $response->result : [];
-        } else {
-            $planner = [];
-        }
+        $response = json_decode($response_json);
+        $response_status = isset($response->success) ? $response->success : false;
 
-        //  dd($planner);
-        return view('afterlogin.weekly_planner', compact('planner'));
+        if ($response_status != false) {
+            $planner = isset($response->result) ? $response->result : [];
+            return view('afterlogin.weekly_planner', compact('planner'));
+        } else {
+
+            return false;
+        }
     }
 
 

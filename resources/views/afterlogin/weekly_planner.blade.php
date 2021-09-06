@@ -1,11 +1,11 @@
 <ul id='slider' class="pt-3">
     <li class="gray prfile">
         <div class="col swipLi">
-            <small class="TestLevel text-danger fs-5 mb-3">Level up</small>
-            <h3>One Last Step!</h3>
-            <p class="TestTitle text-danger fs-5">Unlock analytics and more</p>
+            <div class="TestLevel ">Level Up</div>
+            <div class="TestTitle">One Last Step!</div>
+            <div class="unlock-text">Unlock analytics and more</div>
 
-            <div class="checkBody fs-3">
+            <div class="checkBody mb-2">
                 <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                     Take a test and get a complete analysis of your preparation!
@@ -38,7 +38,7 @@
                 <div class="score score-rating-slt js-score">0%</div>
             </div>
 
-            <div class="checkBody">
+            <div class="checkBody mb-2">
                 <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                     Take a test and get a complete analysis of your preparation!
