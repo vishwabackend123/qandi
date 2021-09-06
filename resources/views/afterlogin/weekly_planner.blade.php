@@ -12,7 +12,7 @@
                 </label>
             </div>
             <div class="btnBody">
-                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center"><i class="fas fa-link"></i> Attempt Now!</a>
+                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-link"></i> Attempt Now!</a>
             </div>
 
         </div>
@@ -35,7 +35,7 @@
                 <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
                 <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
                 <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                <div class="score score-rating js-score">0 %</div>
+                <div class="score score-rating-slt js-score">0%</div>
             </div>
 
             <div class="checkBody">
@@ -45,93 +45,13 @@
                 </label>
             </div>
             <div class="btnBody">
-                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
-                <button class="btn rounded-0 mt-3 scheduleBtn"><i class="fas fa-clock"></i> Schedule Later</button>
+                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-link"></i> Attempt Now!</a>
+                <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48"><i class="fas fa-clock"></i> Schedule Later</button>
             </div>
         </div>
         <div class="clearfix"></div>
     </li>
 
-    <!-- <li style='display:block' class="Level1">
-    <div class="col swipLi">
-        <img src="images/mechanics_ic.png" />
-        <div class="TestLevel">Level Up In</div>
-        <div class="TestTitle">Mechanics</div>
-        <div class="starRating">
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="score score-rating js-score">83%</div>
-        </div>
-
-        <div class="checkBody">
-            <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Take a test and get a complete analysis of your preparation!
-            </label>
-        </div>
-        <div class="btnBody">
-            <button class="btn btn-danger rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
-        </div>
-    </div>
-</li>
-<li>
-    <div class="col swipLi">
-        <img src="images/calculus_ic.png" />
-        <div class="TestLevel">Coming up Next</div>
-        <div class="TestTitle">Calculus</div>
-        <div class="starRating">
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-            <div class="score score-rating js-score">0 %</div>
-        </div>
-
-        <div class="checkBody">
-            <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Take a test and get a complete analysis of your preparation!
-            </label>
-        </div>
-        <div class="btnBody">
-            <button class="btn rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
-        </div>
-    </div>
-</li>
-<li class="CGreen">
-    <div class="col swipLi">
-        <div class="TestLevel">Keep in Coming!</div>
-        <div class="TestTitle">Algebra</div>
-        <img src="images/GreenCircleCheck_ic.png" />
-        <div class="btnBody">
-            <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
-        </div>
-    </div>
-</li>
-<li class="CGreen">
-    <div class="col swipLi">
-        <div class="TestLevel">Keep it up!</div>
-        <div class="TestTitle">Wave Optics</div>
-        <img src="images/GreenCircleCheck_ic.png" />
-        <div class="btnBody">
-            <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
-        </div>
-    </div>
-</li>
-<li class="CGreen planner">
-    <div class="col swipLi">
-        <div class="TestLevel">&nbsp;</div>
-        <div class="TestTitle">&nbsp;</div>
-        <img src="{{URL::asset('public/after_login/images/calander_ic.png')}}" />
-        <div class="btnBody">
-            <button class="btn scheduleBtn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
-        </div>
-    </div>
-</li> -->
     @endforeach
     @endif
 

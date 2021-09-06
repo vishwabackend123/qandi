@@ -45,7 +45,7 @@ class SubscriptionController extends Controller
         $user_data = Auth::user();
         $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
         $grade_id = isset(Auth::user()->grade_id) ? Auth::user()->grade_id : 0;
-
+        $user_id = 0;
         $cacheKey = 'subscription_packages';
 
         $curl = curl_init();
@@ -67,14 +67,12 @@ class SubscriptionController extends Controller
         $response_json = curl_exec($curl);
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-
-
+        $aResponse = json_decode($response_json);
+        $response_status = isset($aResponse->success) ? $aResponse->success : false;
         curl_close($curl);
-        if ($httpcode == 200 || $httpcode == 201) {
-            $aResponse = json_decode($response_json);
 
-            $subscriptions = isset($aResponse->all_packages) ? json_decode($aResponse->all_packages) : [];
+        if ($response_status == true) {
+            $subscriptions = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
             $purchased_packages = isset($aResponse->purchased_packages) ? json_decode($aResponse->purchased_packages) : [];
             Redis::set($cacheKey, json_encode($subscriptions));
         } else {

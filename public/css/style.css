@@ -120,7 +120,7 @@ header {
 }
 
 .white-box-small {
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .click-box {
@@ -135,7 +135,7 @@ header {
 
 .main-heading {
     color: #fff;
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -148,7 +148,7 @@ header {
 
 .cource-name {
     color: #231f20;
-    font: normal normal 900 45px/45px Poppins;
+    font: normal normal 900 36px/40px Poppins;
 }
 
 .price {
@@ -236,25 +236,28 @@ header {
 
 .login-box {
     background: #fff;
-    padding: 60px;
+    padding: 50px 60px;
     max-width: 640px;
     margin-left: 8%;
     position: relative;
-    margin: 60px 0 0 80px;
 }
 
 .welcome-msg {
-    font: normal normal normal 18px/25px Poppins;
+    font: normal normal normal 16px/24px Poppins;
     letter-spacing: 0px;
     color: #2c3348;
     text-align: Center;
 }
 
 .welcome-heading {
-    font: normal normal normal 32px/48px Poppins;
+    font: normal normal normal 28px/42px Poppins;
     letter-spacing: 0px;
     color: #2c3348;
     text-align: center;
+}
+
+.stand-image {
+    height: 100px;
 }
 
 .resend_otp {
@@ -439,6 +442,11 @@ footer {
 
 .navbar-light {
     background: rgba(255, 255, 255, .9) !important;
+    height: 93.38px;
+}
+
+.trans-navbar {
+    height: 93.38px;
 }
 
 .redLink {
@@ -471,7 +479,7 @@ footer {
 
 
 .subscriptionBox .cource-name {
-    min-height: 90px;
+    min-height: 80px;
 }
 
 .box-content {

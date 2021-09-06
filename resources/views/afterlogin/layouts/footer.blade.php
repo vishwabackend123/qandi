@@ -66,7 +66,7 @@
         height: "40vh",
     });
     $(".subject_chapter").slimscroll({
-        height: "40vh",
+        height: "30vh",
     });
 
     $(".notification-scroll").slimscroll({
@@ -469,7 +469,7 @@
     }); */
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
-            height: "50vh",
+            height: "51.2vh",
         });
         $(".scroll-topic-ana").slimscroll({
             height: "20vh",
@@ -596,8 +596,8 @@
         if (chapters < limit) {
             if (checkbox.checked == true) {
                 var chapter_id = checkbox.value;
-                $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-3 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" name="chapters[]" value="' + chapter_id + '"><span class="topic_name">' + text + '</span>' +
-                    '<span class="ms-auto"><i class="fa fa-repeat me-3 cust-repeat-icon" aria-hidden="true"></i></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><i class="fa fa-minus-circle me-3 text-light-danger  cust-remove-icon" aria-hidden="true"></i></a></span></div>');
+                $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" name="chapters[]" value="' + chapter_id + '"><span class="topic_name">' + text + '</span>' +
+                    '<span class="ms-auto"><a href="javasceript:void(0)" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
             } else {
                 var chapter_id = checkbox.value;
                 $('#chapter_' + chapter_id).remove();

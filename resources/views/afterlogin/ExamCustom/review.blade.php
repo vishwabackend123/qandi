@@ -305,7 +305,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     });
 
     $('.review-questions-blk').slimscroll({
-        height: '30vh'
+        height: '31vh'
     });
 
 

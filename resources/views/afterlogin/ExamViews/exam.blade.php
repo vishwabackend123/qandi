@@ -8,7 +8,7 @@
     $(window).on("load resize ", function(e) {
         var winHeight = $(window).height() - 10;
         $('.tab-wrapper').height(winHeight - 90);
-        $('.tab-content').height(winHeight - 135);
+        $('.tab-content').height(winHeight - 130);
     });
 </script>
 @section('content')
@@ -32,7 +32,7 @@ $questtype='radio';
 
     #exam_content_sec .tab-content {
         overflow-y: auto;
-        height: 100vh !important;
+
     }
 </style>
 
@@ -187,7 +187,7 @@ $questtype='radio';
             <div class="modal-header pb-0 border-0">
                 <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}"></a>
             </div>
-            <div class="modal-body pt-3 p-6">
+            <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
                         <h1 class="text-danger text-uppercase">Full Body Scan Test</h1>
@@ -195,7 +195,7 @@ $questtype='radio';
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
                                     <div class="col-md-5 col-lg-5 d-flex   align-items-center">
-                                        <div class="me-2"><img src="{{URL::asset('public/after_login/images/edit-pencil.png')}}"></div>
+                                        <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
                                             <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
@@ -208,7 +208,7 @@ $questtype='radio';
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-lg-3 d-flex   align-items-center">
-                                        <div class="me-2 ms-auto"><img src="{{URL::asset('public/after_login/images/timmer.png')}}"></div>
+                                        <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
                                             <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
@@ -217,7 +217,7 @@ $questtype='radio';
                                 </div>
 
                             </div>
-                            <p class="inst mb-5">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give multiple opportunities to the candidates to improve their scores in the
@@ -282,7 +282,7 @@ $questtype='radio';
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center py-5">
+            <div class="modal-body text-center pt-2 pb-5">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
                     <div id="app">
                         <div class="base-timer">

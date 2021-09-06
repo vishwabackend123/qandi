@@ -11,9 +11,9 @@
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12  p-lg-5">
+                <div class="col-lg-12">
 
-                    <div class="tab-wrapper">
+                    <div class="tab-wrapper mt-0">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                             @php $subx=1; @endphp
                             @if(isset($subject_list) && !empty($subject_list))
@@ -48,8 +48,8 @@
 
 
                             <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$oSub->subject_name}}" role="tabpanel" aria-labelledby="{{$oSub->subject_name}}-tab">
-                                <div class="d-flex px-4 my-5 py-2 align-items-center justify-content-between">
-                                    <span class=" col-md-6 mr-3 name-txt">{{$oSub->subject_name}}</span>
+                                <div class="d-flex px-4 mt-4 mb-4 py-3 align-items-center justify-content-between">
+                                    <span class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
                                     <div class="col-md-3  d-flex align-items-center">
                                         <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
                                         <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
@@ -58,13 +58,15 @@
                                     </div>
 
 
-                                    <div class="col-md-3 d-flex align-items-center">
-                                        <p class="m-0 pe-3">Overall Proficiency</p>
-                                        <i class="fa fa-star text-success mx-1"></i>
-                                        <i class="fa fa-star text-success mx-1"></i>
-                                        <i class="fa fa-star text-success mx-1"></i>
-                                        <i class="fa fa-star text-secondary mx-1"></i>
-                                        <i class="fa fa-star text-secondary mx-1"></i>
+                                    <div class="col-md-3 d-flex ">
+                                        <p class="m-0 pe-3  w140">Overall Proficiency</p>
+                                        <span>
+                                            <i class="fa fa-star text-success mx-1"></i>
+                                            <i class="fa fa-star text-success mx-1"></i>
+                                            <i class="fa fa-star text-success mx-1"></i>
+                                            <i class="fa fa-star text-secondary mx-1"></i>
+                                            <i class="fa fa-star text-secondary mx-1"></i>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="scroll-div">
@@ -72,7 +74,7 @@
                                     @php $subjectData=$aPreparation[$oSub->id]; @endphp
                                     @foreach( $subjectData as $Key=>$val)
                                     @if(!empty($val->chapter_name))
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
+                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 mt-4 mb-4 py-2 listing-details w-100 flex-wrap  ">
                                         <span class="col-md-6 mr-3 preparation-txt">{{$val->chapter_name}}</span>
 
 
@@ -84,13 +86,15 @@
                                         </div>
 
 
-                                        <div class="col-md-3 d-flex align-items-center">
-                                            <p class="m-0 pe-3">Proficiency</p>
-                                            <i class="fa fa-star text-danger mx-1"></i>
-                                            <i class="fa fa-star text-danger mx-1"></i>
-                                            <i class="fa fa-star text-secondary mx-1"></i>
-                                            <i class="fa fa-star text-secondary mx-1"></i>
-                                            <i class="fa fa-star text-secondary mx-1"></i>
+                                        <div class="col-md-3 d-flex ">
+                                            <p class="m-0 pe-3 w140">Proficiency</p>
+                                            <span class="">
+                                                <i class="fa fa-star text-danger mx-1"></i>
+                                                <i class="fa fa-star text-danger mx-1"></i>
+                                                <i class="fa fa-star text-secondary mx-1"></i>
+                                                <i class="fa fa-star text-secondary mx-1"></i>
+                                                <i class="fa fa-star text-secondary mx-1"></i>
+                                            </span>
                                         </div>
                                     </div>
                                     @endif

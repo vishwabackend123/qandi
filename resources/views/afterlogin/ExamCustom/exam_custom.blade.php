@@ -33,9 +33,9 @@
                             @foreach($subject_list as $skey=>$sub)
 
                             <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
-                                <div class="d-flex ps-4 my-5 py-2 align-items-center justify-content-between">
+                                <div class="d-flex ps-4 my-3 py-2 align-items-center justify-content-between">
                                     <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
-                                    <p class="mb-0 text-danger ms-auto me-4 text-uppercase fw-bold">You can pick chapters / topics or</p>
+                                    <p class="mb-0 text-danger ms-auto me-4 text-uppercase fw-500">You can pick chapters / topics or</p>
                                     <form method="post" action="{{route('custom_exam')}}">
                                         @csrf
                                         <input type="hidden" name="subject_id" value="{{$sub->id}}">
@@ -106,7 +106,7 @@
                                             </div>
 
                                             <div class="score score-rating js-score">
-                                                10 %
+                                                10%
                                             </div>
                                         </div>
 

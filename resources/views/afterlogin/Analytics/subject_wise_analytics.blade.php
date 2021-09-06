@@ -1,3 +1,8 @@
+<style>
+    .btn-warning-custom {
+        min-width: 220px !important;
+    }
+</style>
 <div class="row" id="topicclose">
     <div class="col-lg-5">
         <div class=" ">
@@ -37,7 +42,7 @@
                                 </a>
                             </div>
                             <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-right-btm">
-                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                <h4 class="text-danger text-uppercase skill-name">
                                     {{$skillPer[0]->skill_name}}
                                 </h4>
                                 <h4 class="text-danger text-uppercase fw-2">{{$skillPer[0]->percentage}}%</h4>
@@ -53,7 +58,7 @@
                                 </a>
                             </div>
                             <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-left-btm">
-                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                <h4 class="text-danger text-uppercase skill-name">
                                     {{$skillPer[1]->skill_name}}
                                 </h4>
                                 <h4 class="text-danger text-uppercase fw-2">{{$skillPer[1]->percentage}}%</h4>
@@ -69,7 +74,7 @@
                                 </a>
                             </div>
                             <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-right-top">
-                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                <h4 class="text-danger text-uppercase skill-name">
                                     {{$skillPer[2]->skill_name}}
                                 </h4>
                                 <h4 class="text-danger text-uppercase fw-2">{{$skillPer[2]->percentage}}%</h4>
@@ -85,7 +90,7 @@
                                 </a>
                             </div>
                             <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-left-top">
-                                <h4 class="text-danger text-uppercase fw-2 fw-normal">
+                                <h4 class="text-danger text-uppercase skill-name">
                                     {{$skillPer[3]->skill_name}}
                                 </h4>
                                 <h4 class="text-danger text-uppercase fw-2">{{$skillPer[3]->percentage}}%</h4>
@@ -100,10 +105,10 @@
         </div>
     </div>
     <div class="col-lg-7">
-        <div class="bg-white shadow-lg p-3">
+        <div class="bg-white shadow-lg p-3 h-100">
             <div class="d-flex align-items-center">
                 <h5 class="dashboard-title ">Topics</h5>
-                <button class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3" data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
+                <button class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3 bt-hgt-48" data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
                     Upcoming Webinar
                 </button>
                 <button class="btn btn-warning-custom px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
@@ -115,21 +120,7 @@
                 <div class="d-flex align-items-center mt-3 pb-1">
                     <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
                         <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
-                        <!-- <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                            <div class="star-ratings-css">
-                                <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <div class="star-ratings-css-bottom">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                            </div>
-
-                            <div class="ms-2 score score-rating js-score">
-                                {{round($val->score)}} %
-                            </div>
-                        </div> -->
                     </div>
                     <div class="progress  ms-auto col-5" style="overflow: visible;">
                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
@@ -152,7 +143,7 @@
 </div>
 <div class="row">
     <div class="col-lg-5 mt-3">
-        <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
+        <div class="bg-white shadow-lg p-3 h-100 px-3 text-center">
             <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
             <div id="day1" style="display:block"></div>
             <div id="week1" style="display:none"></div>
@@ -171,14 +162,14 @@
         </div>
     </div>
     <div class="col-lg-7  mt-3">
-        <div class="bg-white shadow-lg p-3 h-100 px-5">
+        <div class="bg-white shadow-lg p-3 h-100 px-3">
             <p class="text-uppercase fw-bold text-start">Average Time Spent on each
                 Question</p>
             <div id="accPerSubjectWise1"></div>
         </div>
     </div>
     <div class="col-lg-5 mt-3">
-        <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
+        <div class="bg-white shadow-lg p-3 h-100 px-3 text-center">
             <p class="text-uppercase fw-bold text-start">Time Management</p>
             <div id="day" style="display:block"></div>
             <div id="week" style="display:none"></div>
@@ -197,7 +188,7 @@
         </div>
     </div>
     <div class="col-lg-7  mt-3">
-        <div class="bg-white shadow-lg p-3  px-5">
+        <div class="bg-white shadow-lg p-3  px-3">
             <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
             <div id="accPerSubjectWise"></div>
         </div>
@@ -278,7 +269,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -363,7 +354,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -448,7 +439,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -533,7 +524,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -618,7 +609,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -703,7 +694,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -788,7 +779,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -873,7 +864,7 @@
                     </div>
 
                     <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
               <span class="total">5</span> -->
                     </div>
@@ -910,7 +901,7 @@
 
 <script>
     $(".scroll-topic-ana").slimscroll({
-        height: "32.5vh",
+        height: "42.5vh",
     });
     Highcharts.chart('day', {
         credits: {

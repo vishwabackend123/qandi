@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <div class="tab-wrapper">
+                    <div class="tab-wrapper mt-0">
                         <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL</a>
@@ -29,7 +29,7 @@
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
                                 <div class="row">
                                     <div class="col-lg-5">
-                                        <div class="bg-white shadow-lg ">
+                                        <div class="bg-white shadow-lg h-100">
                                             <div class="row">
                                                 <div class="col-7 pe-0">
                                                     <div class="d-flex justify-content-center flex-column h-100  position-relative">
@@ -57,15 +57,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-7">
-                                        <div class="bg-white shadow-lg p-3">
+                                    <div class="col-lg-7 ">
+                                        <div class="bg-white shadow-lg p-3 h-100">
                                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
                                             @if(!empty($subProf))
                                             @foreach($subProf as $key=>$sub)
                                             <div class="d-flex align-items-center m-2 mt-3 pb-1">
 
-                                                <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
-                                                    <span class="mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
+                                                <div class=" d-flex align-items-center   py-2 dashboard-listing-details w-100  me-4">
+                                                    <span class="mr-3 dashboard-name-txt sub-name-box">{{$sub->subject_name}}</span>
 
                                                     <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
@@ -78,12 +78,12 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="ms-2 score score-rating js-score">
-                                                            {{round($sub->score)}} %
+                                                        <div class="ms-1 score score-rating js-score">
+                                                            {{round($sub->score)}}%
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="progress  col-6" style="overflow: visible;">
+                                                <div class="progress  col-md-6" style="overflow: visible;">
                                                     <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                                     </div>
@@ -101,7 +101,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-5 mt-3">
-                                        <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
                                             <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
@@ -120,14 +120,14 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-7  mt-3">
-                                        <div class="bg-white shadow-lg p-3 h-100 px-5">
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4">
                                             <p class="text-uppercase fw-bold text-start">Average Time Spent on each
                                                 Question</p>
                                             <div id="accPer1"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-5 mt-3">
-                                        <div class="bg-white shadow-lg p-3 h-100 px-5 text-center">
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
                                             <p class="text-uppercase fw-bold text-start">Time Management</p>
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
@@ -146,7 +146,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-7  mt-3">
-                                        <div class="bg-white shadow-lg p-3  px-5">
+                                        <div class="bg-white shadow-lg p-3  px-4">
                                             <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
                                             <div id="accPer"></div>
                                         </div>

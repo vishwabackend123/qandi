@@ -43,12 +43,12 @@
                             </div>
                         </div>
                         <div id="profile-block" class="d-none">
-                            <div class="d-flex flex-row-reverse">
-                                <div class="myAccountblock" id="myAccount">
-                                    <div class="d-flex text-start">
+                            <div class="d-flex flex-row-reverse h-100">
+                                <div class="myAccountblock profileAccount" id="myAccount">
+                                    <div class="d-flex text-start h-100">
                                         <div class="leaderBoardBlock">
-                                            <div class="bg-white p-4 text-left ms-2">
-                                                <p class="text-uppercase py-4">Leader Board</p>
+                                            <div class="bg-white p-3 text-left ms-2 h-100">
+                                                <p class="text-uppercase ps-4 py-2">Leader Board</p>
                                                 <ol class="leaderNameBlock">
                                                     <li>
                                                         <div class="d-flex align-items-center">
@@ -101,7 +101,7 @@
                                                         </div>
                                                     </li>
                                                 </ol>
-                                                <div class="text-box mt-5">
+                                                <div class="text-box mt-3">
                                                     <label class="ps-2 pb-2">Search a Friend</label>
                                                     <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Search By Name" />
 
@@ -111,10 +111,10 @@
                                     </div>
                                 </div>
 
-                                <div class="myAccountblock" id="profile">
-                                    <div class="d-flex text-start">
+                                <div class="myAccountblock profileAccount" id="profile">
+                                    <div class="d-flex text-start h-100">
                                         <div class="leaderBoardBlockedit">
-                                            <div class="bg-white p-4 text-left ms-4 read-mode">
+                                            <div class="bg-white p-3 text-left ms-4 read-mode h-100">
                                                 <span class="position-relative d-inline-block ">
                                                     <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="profile-pic uswereditpic" />
 
@@ -125,8 +125,8 @@
                                                         <input id="file-input" name="file-input" type="file" accept="image/*" />
                                                     </span>
                                                 </span>
-                                                <div id="profile-details">
-                                                    <div class="my-5 profile-read">
+                                                <div id="profile-details" class="" style="padding-top:-20px">
+                                                    <div class="mb-2 mt-3 profile-read">
                                                         <h5 id="profileUserName" class="activeUserName">{{Auth::user()->user_name}}</h5>
                                                         <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 " id="editprofile">Edit Profile</button>
@@ -144,7 +144,7 @@
                                                 <div class="profile-form-block" id="profile-form">
                                                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST">
                                                         @csrf
-                                                        <div class="text-box mt-5">
+                                                        <div class="text-box mt-3">
 
                                                             <input type="text" name="firstname" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" required />
 
@@ -160,7 +160,7 @@
                                                             <input type="text" name="username" id="username" class="ps-2" value="{{Auth::user()->user_name}}" required placeholder="Display Name" />
                                                             <div id="emailHelp" class="form-text">This could be your first, last or nick name.</div>
                                                         </div>
-                                                        <div class="text-box mt-4">
+                                                        <div class="text-box mt-2">
 
                                                             <!--  <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="https://www.uniq.co.in/_userID_000987787" /> -->
                                                             <div id="emailHelp" class="form-text">Your User ID</div>
@@ -354,10 +354,10 @@
                         <input type="range" name="weekrange" class=" exam_range" min="0" max="7" value="0" step="1" id="customRange" oninput="outputUpdate(value)">
                     </div>
                     <div class="col-md-6">
-                        <span id="slide-input" class="badge bg-secondary">0</span>
+                        <span id="slide-input" class="badge bg-badge">0</span>
                     </div>
                 </div>
-                <p class="fw-bold text-uppercase">Schedule test weeks</p>
+                <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                 <div class="d-flex align-items-center row">
                     <div class="col-3 me-2">
                         <label class="d-block">Start Date</label>
@@ -368,7 +368,7 @@
                         <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
                     </div>
                 </div>
-                <div class=" row mt-5">
+                <div class=" row mt-4">
                     <span id="limit_error" class="text-danger"></span>
                     @if(isset($aSubjects) && !empty($aSubjects))
                     @foreach($aSubjects as $skey=>$sVal)

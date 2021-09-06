@@ -1,13 +1,30 @@
+<style>
+    .tab-content {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .cust-tab-content {
+        height: auto !important;
+    }
+
+    .tab-wrapper {
+        position: relative;
+        padding-bottom: 0px;
+        margin-top: 30px;
+    }
+</style>
 <div class="content-wrapper">
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 mb-4">
+            <div class="col-12 mb-2">
                 <button class="btn btn-danger rounded-0 px-5" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i> Export Analytics</button>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <div class="bg-white shadow-lg p-3 position-relative">
+                <div class="bg-white shadow-lg p-3 position-relative h-100">
                     <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
                     <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
                     <div class="text-center">
@@ -23,7 +40,7 @@
                             <span class="abrv-graph bg2"> </span>
                             <p class="graph-txt text-uppercase">Wrong Attempts</p>
                         </div>
-                        <div class="col px-1">
+                        <div class="col px-1 pe-4">
                             <span class="abrv-graph bg3"> </span>
                             <p class="graph-txt text-uppercase">Not Answered</p>
                         </div>
@@ -31,7 +48,7 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="bg-white shadow-lg p-3  position-relative">
+                <div class="bg-white shadow-lg p-4  position-relative h-100">
                     <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
 
                     <div class="row">
@@ -86,10 +103,10 @@
             </div>
 
         </div>
-        <div class="row mt-5 mb-3">
+        <div class="row my-3">
             <div class="col-5">
-                <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100 ">
-                    <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                <div class="bg-white shadow p-4 d-flex flex-column position-relative h-100 ">
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <h5 class="dashboard-title mb-3">Subject Score</h5>
                     @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                     @foreach($response->subject_wise_result as $subject)
@@ -126,17 +143,18 @@
 
 
                     <div class="row py-4 mt-4 mb-2">
-                        <div class="col d-flex align-items-center">
+
+                        <div class="col px-1 ps-4">
                             <span class="abrv-graph bg1"> </span>
-                            <p class="graph-txt d-inline-block ms-2 mb-0">Correct Attempts</p>
+                            <p class="graph-txt text-uppercase">Correct Attempts</p>
                         </div>
-                        <div class="col d-flex align-items-center">
+                        <div class="col px-1">
                             <span class="abrv-graph bg2"> </span>
-                            <p class="graph-txt d-inline-block ms-2 mb-0">Wrong Attempts</p>
+                            <p class="graph-txt text-uppercase">Wrong Attempts</p>
                         </div>
-                        <div class="col d-flex align-items-center">
+                        <div class="col px-1 pe-4">
                             <span class="abrv-graph bg3"> </span>
-                            <p class="graph-txt d-inline-block ms-2 mb-0">Not Answered</p>
+                            <p class="graph-txt text-uppercase">Not Answered</p>
                         </div>
                     </div>
                 </div>
@@ -167,7 +185,7 @@
                             $subject_id=$subject->subject_id;
                             @endphp
                             <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
-                                <div class="hScroll topicdiv-scroll">
+                                <div class="hScroll topicdiv-scroll pe-3">
                                     @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                                     @foreach($response->topic_wise_result as $topic)
                                     @php $topic=(object)$topic; @endphp
@@ -241,7 +259,7 @@
             </div>
             <div class="col-md-3">
                 <div class="bg-white shadow p-5 d-flex flex-column position-relative">
-                    <span class="text-center w-100" style="height: 163px;"><img src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
+                    <span class="text-center w-100 h-100"><img class="img-thubnail" style="width:130px; height:170px;" src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
                     <a href="{{route('exam_review', $response->result_id) }}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
                     <a href="{{url('/dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
                 </div>
@@ -293,16 +311,16 @@ $clsAvg_json=json_encode($clsAvg_arr);
     });
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 250,
+            height: 224,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false
         },
         title: {
-            text: '<span style="font: normal normal normal 90px/136px Poppins;color: #2C3348;">{{$get_score}}</span><span style="font: normal normal normal 20px/30px Poppins;color: #2C3348;">/{{$total_makrs}} </span>',
+            text: '<span style="font: normal normal normal 70px/136px Poppins;color: #2C3348;">{{$get_score}}</span><span style="font: normal normal normal 16px/30px Poppins;color: #2C3348;">/{{$total_makrs}} </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 90
+            y: 75
 
         },
         credits: {

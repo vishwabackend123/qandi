@@ -84,7 +84,7 @@
 <div class="main-wrapper">
     <!-- top navbar -->
     @include('afterlogin.layouts.navbar_header')
-    <div class="content-wrapper mt-4">
+    <div class="content-wrapper my-4">
         <!-- dashboard html section-->
 
         <div class="container-fluid">
@@ -94,20 +94,20 @@
             </div>
             @endif
             <div class="row">
-                <div class="col">
-                    <div class="bg-white shadow-lg ">
+                <div class="col-lg-4">
+                    <div class="bg-white shadow h-100">
                         <div class="row">
-                            <div class="col-7 pe-0">
-                                <div class="d-flex justify-content-center flex-column h-100  position-relative">
-                                    <div id="scorecontainer"></div>
-                                    <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
+                            <div class="col-md-7 pe-0 ">
+                                <div class="d-flex justify-content-center flex-column   position-relative">
+                                    <div class="" id="scorecontainer"></div>
+                                    <span class=" bg-light p-2 d-flex  justify-content-center flex-column graph-bottom-block">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
                                         <span class="abri"> <span class="abrv-mean bg2"></span>Progress From Previous Score</span>
                                         <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-5  ">
+                            <div class="col-md-5  ">
                                 <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                     <span></span>
                                     <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
@@ -121,8 +121,8 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="bg-white shadow-lg p-3">
+                <div class="col-lg-4">
+                    <div class="bg-white shadow p-3 h-100">
                         <div class="d-flex ">
                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
                             <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
@@ -156,8 +156,8 @@
 
                     </div>
                 </div>
-                <div class="col">
-                    <div class="bg-white shadow-lg p-3">
+                <div class="col-lg-4">
+                    <div class="bg-white shadow p-3 h-100">
                         <h5 class="dashboard-title">Marks Trend</h5>
                         <figure class="highcharts-figure">
                             <div id="trend_graph"></div>
@@ -182,8 +182,8 @@
                     </div>
                 </div>
             </div>
-            <div class='swipe' id="plan_slider">
-                <ul id='slider' class="pt-3">
+            <div class='swipe mb-5' id="plan_slider">
+                <ul id='slider' class="pt-3 ">
                     <li class="gray prfile">
                         <div class="col swipLi">
                             <small class="TestLevel text-danger fs-5 mb-3">Level up</small>
@@ -197,7 +197,7 @@
                                 </label>
                             </div>
                             <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center"><i class="fas fa-link"></i> Attempt Now!</a>
+                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-link"></i> Attempt Now!</a>
                             </div>
 
                         </div>
@@ -342,7 +342,7 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-4 pt-0 text-center">
 
                 <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
 
@@ -489,7 +489,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         });
     });
     $(window).on('load', function() {
-        /* $('#welcomeModal').modal('show'); */
+
 
         if (sessionStorage.getItem('firstVisit') != '1') {
             $('#welcomeModal').modal('show');
@@ -680,7 +680,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 180,
+            height: 175,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+<nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
+    <div class="container-fluid"><a class="navbar-brand" href="#"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
+</nav>
 <div id="main">
     <div class="row">
         <div class="col-md-10 mx-auto">
@@ -34,7 +36,7 @@
                                 <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Already Purchased </i></button>
                             </div>
                             @else
-                            <div class="text-center mt-5">
+                            <div class="text-center mt-4">
                                 <form action="{{route('checkout')}}" if="checkout" method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">

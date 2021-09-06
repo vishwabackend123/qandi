@@ -1,31 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div id="main" class="py-5 h-100">
+<nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
+    <div class="container-fluid"><a class="navbar-brand" href="#"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
+</nav>
+<div id="main" class=" h-100">
     <div class="row">
-        <div class="col-md-8 mx-auto mt-5 py-3">
+        <div class="col-md-8 mx-auto  ">
             <div class="bg-white white-box-big">
                 <div class="welcome-heading">How far are you in your preparation journey?</div>
                 <p class="welcome-msg text-center">Tell us so we can personalise UniQ experience especially for you</p>
 
-                <div class="row text-center">
+                <div class="row text-center pt-3">
                     <div class="col">
                         <div class="d-flex flex-column  h-100 w-100 click-box" id="startjust" onclick="user_stand('1', this.id);">
-                            <span><img class="img-responsive" src="{{URL::asset('public/images/10.png')}}"></span>
-                            <p class="pt-4">Just starting out</p>
+                            <span><img class="img-responsive stand-image" src="{{URL::asset('public/images/10.png')}}"></span>
+                            <p class="pt-2">Just starting out</p>
                         </div>
                     </div>
                     <div class="col">
                         <div class="d-flex flex-column h-100 w-100 click-box" id="eleventh" onclick="user_stand('2', this.id);">
-                            <span><img class="img-responsive" src="{{URL::asset('public/images/10+1.png')}}"></span>
-                            <p class="pt-4">Completed (10+1) Syllabus</p>
+                            <span><img class="img-responsive stand-image" src="{{URL::asset('public/images/10+1.png')}}"></span>
+                            <p class="pt-2">Completed (10+1) Syllabus</p>
                         </div>
                     </div>
                     <div class="col">
                         <div class="d-flex flex-column  h-100 w-100 click-box" id="twelfth" onclick="user_stand('3', this.id);">
-                            <span><img class="img-responsive" src="{{URL::asset('public/images/10+2.png')}}"></span>
-                            <p class="pt-4">Completed (10+2) Syllabus</p>
+                            <span><img class="img-responsive stand-image" src="{{URL::asset('public/images/10+2.png')}}"></span>
+                            <p class="pt-2">Completed (10+2) Syllabus</p>
                         </div>
                     </div>
                 </div>

@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="score score-rating js-score">
-                    0 %
+                    0%
 
                 </div>
             </div>

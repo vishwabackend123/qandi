@@ -211,7 +211,7 @@
                       </div>
 
                       <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
                                         <span class="total">5</span> -->
                       </div>
@@ -291,7 +291,7 @@
                       </div>
 
                       <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
                                         <span class="total">5</span> -->
                       </div>
@@ -371,7 +371,7 @@
                       </div>
 
                       <div class="score score-rating js-score">
-                        0 %
+                        0%
                         <!-- <span>/</span>
                                         <span class="total">5</span> -->
                       </div>

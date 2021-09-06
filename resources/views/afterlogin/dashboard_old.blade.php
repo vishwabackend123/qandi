@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
 
-                                <div class="ms-2 score score-rating js-score">
+                                <div class="ms-2 score score-rating-slt js-score">
                                     {{round($sub['score'])}} %
                                     <!-- <span>/</span>
                               <span class="total">5</span> -->

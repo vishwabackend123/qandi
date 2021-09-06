@@ -312,7 +312,7 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body  p-4 ">
+            <div class="modal-body  py-4 px-5 ">
                 <div class="text-center">
                     <img src="{{URL::asset('public/after_login/images/Group3077.png')}}">
                 </div>
@@ -333,7 +333,7 @@
                         <button type="submit" class="btn btn-danger rounded-0 px-5"><img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" /> SEND INVITE</button>
                     </div>
                 </form>
-                <p class="py-4 text-center">or Share via Link</p>
+                <p class="pt-5 pb-4 mb-0 text-center">or Share via Link</p>
                 <div class="input-group mb-5">
                     <input type="text" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" aria-describedby="button-addon2">
                     <button class="btn btn-dark rounded-0 border-0" type="button" id="button-addon2"><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>

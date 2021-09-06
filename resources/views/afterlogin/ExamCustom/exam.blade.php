@@ -7,8 +7,8 @@
 <script type="text/javascript">
     $(window).on("load resize scroll", function(e) {
         var winHeight = $(window).height() - 10;
-        $('.tab-wrapper').height(winHeight - 90);
-        $('.tab-content').height(winHeight - 135);
+        $('.tab-wrapper').height(winHeight - 50);
+        $('.tab-content').height(winHeight - 90);
     });
 </script>
 @section('content')
@@ -20,7 +20,7 @@
 
     #exam_content_sec .tab-content {
         overflow-y: auto;
-        height: 100vh !important;
+
     }
 
     .time_taken_css {
@@ -275,7 +275,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 <div class="modal-header pb-0 border-0">
                     <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}"></a>
                 </div>
-                <div class="modal-body pt-3 p-6">
+                <div class="modal-body pt-3 p-5">
                     <div class="row">
                         <div class="col-md-8">
                             <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Mock Test'}} </h1>
@@ -303,7 +303,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                     </div>
 
                                 </div>
-                                <p class="inst mb-5">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                                <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
                                 <div class="instructions pe-3">
                                     <h3 class="text-uppercase">Instructions</h3>
                                     <p>This will give multiple opportunities to the candidates to improve their scores in the
@@ -366,7 +366,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center py-5">
+            <div class="modal-body text-center pt-2 pb-5">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
                     <div id="app">
                         <div class="base-timer">
