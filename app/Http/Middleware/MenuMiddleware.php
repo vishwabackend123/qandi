@@ -52,6 +52,9 @@ class MenuMiddleware
 
         $user_subjects = $this->redis_subjects();
 
+        $leaderboard_list = $this->leaderBoard();
+
+
 
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
@@ -59,6 +62,7 @@ class MenuMiddleware
         \Illuminate\Support\Facades\View::share('preferences_data', $preferences);
         \Illuminate\Support\Facades\View::share('exam_data', $exam_data);
         \Illuminate\Support\Facades\View::share('subscription_details', $subscriptionData);
+        \Illuminate\Support\Facades\View::share('leaderboard_list', $leaderboard_list);
 
         return $next($request);
     }

@@ -566,6 +566,17 @@
     }
 
     function selectChapter(subject_id) {
+        var limit = $('#customRange').val();
+        var chapters = $('input[name="chapters[]"]').length;
+        if (chapters >= limit) {
+            var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
+            $('#limit_error').html(error_txt);
+            $('#limit_error').show();
+            setTimeout(function() {
+                $('#limit_error').fadeOut('fast');
+            }, 5000);
+            return false;
+        }
         var selected_chapters = $("input[name='chapters[]']")
             .map(function() {
                 return $(this).val();
@@ -588,24 +599,58 @@
 
     }
 
-    function handleChange(checkbox, text, subject_id) {
+    function suffle_Chapter(chapt_id, subject_id) {
+        var selected_chapters = $("input[name='chapters[]']")
+            .map(function() {
+                return $(this).val();
+            }).get();
+        $.ajax({
+            url: "{{ url('/shuffle_chapter/',) }}/" + subject_id,
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                current_chapter: chapt_id,
+                selected_chapters: selected_chapters
+            },
+
+            success: function(response_data) {
+                console.log(response_data);
+                var response = jQuery.parseJSON(response_data);
+                res_chpter_id = response.chapter_id;
+                res_chpter_name = response.chapter_name;
+
+                $('#select_chapt_id' + chapt_id).val(res_chpter_id);
+                $('#select_chapt_name' + chapt_id).html(res_chpter_name);
+
+            },
+
+
+        });
+
+    }
+
+
+
+    function handleChange(subject_id) {
 
         var limit = $('#customRange').val();
         var chapters = [];
         var chapters = $('input[name="chapters[]"]').length;
-        if (chapters < limit) {
-            if (checkbox.checked == true) {
-                var chapter_id = checkbox.value;
-                $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" name="chapters[]" value="' + chapter_id + '"><span class="topic_name">' + text + '</span>' +
-                    '<span class="ms-auto"><a href="javasceript:void(0)" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
-            } else {
-                var chapter_id = checkbox.value;
-                $('#chapter_' + chapter_id).remove();
-            }
-        } else {
-            alert('You can not select more than ' + limit + ' chapter for selected week');
-        }
+        var chapter_id = $('#planner_chapter_add').val();
+        var chapter_name = $('#planner_chapter_add option:selected').text();
 
+        if (chapter_id != '' || chapter_id != 0) {
+            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+            $('#plannerChapter').modal('hide');
+        } else {
+            $('#errChptAdd_alert').html('Please select one option.');
+            $('#errChptAdd_alert').show();
+            setTimeout(function() {
+                $('#errChptAdd_alert').fadeOut('fast');
+            }, 5000);
+            return false;
+        }
     }
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
         e.preventDefault();
@@ -633,22 +678,25 @@
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
+                    console.log(response);
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);
                         $('#successPlanner_alert').show();
                         setTimeout(function() {
                             $('#successPlanner_alert').fadeOut('fast');
-                        }, 5000);
+                        }, 8000);
                         $('#overlay').fadeOut();
                         location.reload();
 
                     } else {
-                        $('#errPlanner_alert').html('Something wrong! please try later.');
+                        var massage = response.massage;
+                        $('#errPlanner_alert').html(message);
                         $('#errPlanner_alert').show();
                         setTimeout(function() {
                             $('#errPlanner_alert').fadeOut('fast');
-                        }, 5000);
+                        }, 8000);
+                        $('#overlay').fadeOut();
                         return false;
                     }
 

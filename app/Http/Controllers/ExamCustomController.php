@@ -654,11 +654,12 @@ class ExamCustomController extends Controller
             $responsedata = json_decode($response_json);
 
             $chapter_list = $responsedata->response;
+            Redis::set($cacheKey, json_encode($chapter_list));
         } else {
             $chapter_list = [];
         }
 
-        Redis::set($cacheKey, json_encode($chapter_list));
+
 
         // dd($chapter_list);
 

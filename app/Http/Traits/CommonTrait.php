@@ -153,11 +153,11 @@ trait CommonTrait
         $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
         $grade_id = Auth::user()->grade_id;
 
-        $cacheKey = 'subscription_packages';
+        /* $cacheKey = 'subscription_packages';
         if ($data = Redis::get($cacheKey)) {
             $package_list = json_decode($data);
             return $package_list;
-        }
+        } */
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
@@ -182,7 +182,7 @@ trait CommonTrait
         if ($httpcode == 200 || $httpcode == 201) {
             $aResponse = json_decode($response_json);
             $package_list = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
-            Redis::set($cacheKey, json_encode($package_list));
+            /*   Redis::set($cacheKey, json_encode($package_list)); */
         } else {
             $package_list = [];
         }
@@ -242,12 +242,12 @@ trait CommonTrait
 
         $user_id = Auth::user()->id;
         $curl = curl_init();
-        $cacheKey = 'purchased_exam:' . $user_id;
+        /*  $cacheKey = 'purchased_exam:' . $user_id; */
 
-        if ($data = Redis::get($cacheKey)) {
+        /* if ($data = Redis::get($cacheKey)) {
             $preferences = json_decode($data);
             return $preferences;
-        }
+        } */
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/user-subscription/' . $user_id;
         curl_setopt_array($curl, array(
@@ -274,11 +274,97 @@ trait CommonTrait
             $subscriptionData = isset($subResponse->response) ? json_decode($subResponse->response) : '';
             $subscriptionData = isset($subscriptionData[0]) ? $subscriptionData[0] : [];
 
-            Redis::set($cacheKey, json_encode($subscriptionData));
+            /* Redis::set($cacheKey, json_encode($subscriptionData)); */
         } else {
             $subscriptionData = [];
         }
 
         return $subscriptionData;
+    }
+
+    public function leaderBoard()
+    {
+        $user_data = Auth::user();
+        $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
+        $grade_id = Auth::user()->grade_id;
+
+
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/get-leadershipBoard/' . $user_id . '/' . $grade_id;
+
+
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $aResponse = json_decode($response_json);
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+        curl_close($curl);
+
+        if ($status != false) {
+
+            $board_list = isset($aResponse->response) ? $aResponse->response : [];
+        } else {
+            $board_list = [];
+        }
+        return $board_list;
+    }
+
+
+    public function redis_chapter_list($subject_id)
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $cacheKey = 'exam_subjects_chapters:' . $subject_id;
+        if ($data = Redis::get($cacheKey)) {
+            $chapter_list = json_decode($data);
+            return $chapter_list;
+        }
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $subject_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $responsedata = json_decode($response_json);
+
+            $chapter_list = $responsedata->response;
+            Redis::set($cacheKey, json_encode($chapter_list));
+        } else {
+            $chapter_list = [];
+        }
+
+
+        return $chapter_list;
     }
 }

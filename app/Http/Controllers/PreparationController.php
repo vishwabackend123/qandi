@@ -59,7 +59,7 @@ class PreparationController extends Controller
             }
         }
 
-        // dd($aPreparation);
+        //dd($aPreparation);
 
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }

@@ -22,6 +22,63 @@
     <link href='{{URL::asset("public/after_login/css/style-slider.css")}}' rel='stylesheet' />
 
     <script src="{{URL::asset('public/after_login/js/touchslider.js')}}"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAXOEjCfj6qEKRi3Lm82j2DLMNIsXnJ0Nk",
+            authDomain: "uniq-notifications.firebaseapp.com",
+            projectId: "uniq-notifications",
+            storageBucket: "uniq-notifications.appspot.com",
+            messagingSenderId: "768896658565",
+            appId: "1:768896658565:web:036b631c04c6d9c6280dec",
+            measurementId: "G-8PJKZ9N25F"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const messaging = firebase.messaging();
+
+        function initFirebaseMessagingRegistration() {
+            messaging.getToken({
+                vapidKey: 'AIzaSyAXOEjCfj6qEKRi3Lm82j2DLMNIsXnJ0Nk'
+            }).then((currentToken) => {
+                if (currentToken) {
+                    $.post("https://api.uniqtoday.com/api/update_student_token", {
+                        token: currentToken,
+                        user_id: "{{Auth::user()->id}}"
+                    });
+                } else {
+                    // Show permission request UI
+                    console.log('No registration token available. Request permission to generate one.');
+                    // ...
+                }
+            }).catch((err) => {
+                console.log('An error occurred while retrieving token. ', err);
+                // ...
+            });
+        }
+
+        initFirebaseMessagingRegistration();
+
+        messaging.onMessage(function({
+            data: {
+                body,
+                title
+            }
+        }) {
+            new Notification(title, {
+                body
+            });
+        });
+    </script>
+
     <style>
         #overlay {
             background: #ffffff;

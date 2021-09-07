@@ -50,56 +50,21 @@
                                             <div class="bg-white p-3 text-left ms-2 h-100">
                                                 <p class="text-uppercase ps-4 py-2">Leader Board</p>
                                                 <ol class="leaderNameBlock">
+                                                    @if(isset($leaderboard_list) && !empty($leaderboard_list))
+                                                    @foreach($leaderboard_list as $lead)
                                                     <li>
                                                         <div class="d-flex align-items-center">
-                                                            <span class="sno me-3">1.</span>
+                                                            <span class="sno me-3">{{$lead->user_rank}}.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
-                                                                <p>Roshani Sonve</p>
-                                                                <small>82.6 Unique score</small>
+                                                                <p>{{$lead->user_name}}</p>
+                                                                <small>{{$lead->score}} Unique score</small>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="sno me-3">2.</span>
-                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                            <div class="leader-txt">
-                                                                <p>Roshani Sonve</p>
-                                                                <small>82.6 Unique score</small>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="sno me-3">3.</span>
-                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                            <div class="leader-txt">
-                                                                <p>Roshani Sonve</p>
-                                                                <small>82.6 Unique score</small>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="sno me-3">4.</span>
-                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                            <div class="leader-txt">
-                                                                <p>Roshani Sonve</p>
-                                                                <small>82.6 Unique score</small>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="sno me-3">5.</span>
-                                                            <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
-                                                            <div class="leader-txt">
-                                                                <p>Roshani Sonve</p>
-                                                                <small>82.6 Unique score</small>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                    @endforeach
+                                                    @endif
+
                                                 </ol>
                                                 <div class="text-box mt-3">
                                                     <label class="ps-2 pb-2">Search a Friend</label>

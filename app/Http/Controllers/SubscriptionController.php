@@ -236,6 +236,8 @@ class SubscriptionController extends Controller
         $package_response_json = curl_exec($curl);
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
 
 
         if ($httpcode != 200 || $httpcode != 201) {

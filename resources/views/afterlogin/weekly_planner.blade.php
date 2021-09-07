@@ -12,7 +12,7 @@
                 </label>
             </div>
             <div class="btnBody">
-                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-link"></i> Attempt Now!</a>
+                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
             </div>
 
         </div>
@@ -45,7 +45,7 @@
                 </label>
             </div>
             <div class="btnBody">
-                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-link"></i> Attempt Now!</a>
+                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
                 <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48"><i class="fas fa-clock"></i> Schedule Later</button>
             </div>
         </div>

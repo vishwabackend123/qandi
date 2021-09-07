@@ -45,16 +45,14 @@
                             @endphp
                             @endforeach
                             @endif
-
-
                             <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$oSub->subject_name}}" role="tabpanel" aria-labelledby="{{$oSub->subject_name}}-tab">
                                 <div class="d-flex px-4 mt-4 mb-4 py-3 align-items-center justify-content-between">
                                     <span class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
                                     <div class="col-md-3  d-flex align-items-center">
-                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
-                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
-                                        <span class="me-2"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
-                                        <span><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
+                                        <span><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
                                     </div>
 
 
@@ -79,10 +77,10 @@
 
 
                                         <div class="col-md-3  d-flex  align-items-center">
-                                            <span class="me-2 flex-column"><a href="#" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a></span>
-                                            <span class="me-2 flex-column"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a></span>
-                                            <span class="me-2 flex-column"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}</a></span>
-                                            <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a></span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a></span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}</a></span>
+                                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
                                         </div>
 
 
@@ -141,10 +139,10 @@
                     </div>
                     <div class="ms-auto">
 
-                        <span class="me-1"><a href="#" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                        <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                        <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                     </div>
                 </div>
@@ -195,10 +193,10 @@
                     </div>
                     <div class="ms-auto">
 
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="#" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                        <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                        <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                     </div>
                 </div>
@@ -250,10 +248,10 @@
                     </div>
                     <div class="ms-auto">
 
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="#" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="#"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                        <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                        <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                     </div>
                 </div>
@@ -305,10 +303,10 @@
                     </div>
                     <div class="ms-auto">
 
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="#"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="#" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                        <span><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                     </div>
                 </div>

@@ -269,4 +269,23 @@ class PlannerController extends Controller
 
         return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
     }
+
+
+    public function shuffle_chapter($active_subject_id, Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $selected_chapter = isset($request->selected_chapters) ? $request->selected_chapters : [];
+
+        $chapter_list = $this->redis_chapter_list($active_subject_id);
+        $chapter_collect = collect($chapter_list);
+
+        $filtered = $chapter_collect->whereNotIn('chapter_id', $selected_chapter);
+        $shuffle = $filtered->random();
+        // $filtered->all();
+        //dd($selected_chapter);
+
+        return json_encode($shuffle);
+    }
 }
