@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\GoogleUser;
+use App\Models\GoogleUser;
 use App\Http\Controllers\Controller;
 use App\Models\StudentUsers;
 use Illuminate\Support\Facades\Session;
@@ -17,6 +17,7 @@ use App\Http\Traits\CommonTrait;
 class GoogleController extends Controller
 {
     use CommonTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -33,102 +34,39 @@ class GoogleController extends Controller
      * @param Request $request
      * @return int
      */
-    public function studentRewards($user_id): int
-    {
-
-        $id = DB::table('user_analytics')->insertGetId(
-            [
-                'user_id' => $user_id,
-                'login_date' => now(),
-                'time_start' => now(),
-                'traffic_source' => 'Web',
-                'pages_visted' => json_encode([$user_id]),
-            ]
-        );
-        return $id;
-    }
 
     public function handleGoogleCallback(Request $request)
     {
-        try {
-
-            $user = Socialite::driver('google')->user();
-            if(User::where('email', $user->email)->exists()){
-               User::where('email', $user->email)->update([
-                   'google_id' => $user->id
-               ]);
-           }
-
-            $finduser = GoogleUser::where('google_id', $user->id)->first();
-
-            $user_role = "Student";
-            if ($finduser) {
-
-                Auth::login($finduser);
-                $new_sessid = \Session::getId(); //get new session_id after user sign in
-                \DB::table('student_users')->where('id', $user->id)->update(['session_id' => $new_sessid]);
 
 
-                $name = ucwords($finduser->first_name) . ' ' . ucwords($finduser->middle_name) . ' ' . ucwords($finduser->last_name);
-                $token = $this->getJWTToken($finduser->id);
-
-                DB::table('student_users')->where('id', $finduser->id)->update(['jwt_token'=>$token]);
-
-                $analyticsid = $this->studentRewards($finduser->id);
-                Session::put('analyticsid', $analyticsid);
-                Session::put('user_data', ['user_id' => $finduser->id, 'user_name' => $name, 'user_email' => $finduser->email, 'role' => $user_role, 'session_id' => $new_sessid, 'analyticsid' => $analyticsid]);
-
-                if (isset($data['code']) && !empty($data['code'])) {
-                    $oRedeem = new RedeemController;
-                    return $oRedeem->access_redeem($request);
-                }
-                $studentpreferenceData = DB::table('student_preferences')->where('student_id', $finduser->id)->first();
-
-                return redirect('auth/social_account');
-
-            } else {
-                $mobile =rand();
-                if (isset($_COOKIE["mobValue"])):
-                   $mobile .=  $_COOKIE["mobValue"];
-                else:
-                    echo "Cookie Not Set";
-                endif;
-
-                    $newUser = User::create([
-                        'first_name' => $user->name,
-                        'email' => $user->email ?? 'demo@gmail.com',
-                        'mobile' => $mobile,
-                        'google_id' => $user->id
-                    ]);
-
-
-
-
-                Auth::login($newUser);
-                $new_sessid = \Session::getId(); //get new session_id after user sign in
-                \DB::table('student_users')->where('id', $user->id)->update(['session_id' => $new_sessid]);
-                $name = ucwords($newUser->first_name) . ' ' . ucwords($newUser->middle_name) . ' ' . ucwords($newUser->last_name);
-                DB::table('student_preferences')->insert([
-                    'student_id' => $newUser->id,
-                ]);
-
-                $analyticsid = $this->studentRewards($newUser->id);
-                Session::put('analyticsid', $analyticsid);
-                Session::put('user_data', ['user_id' => $newUser->id, 'user_name' => $name, 'user_email' => $newUser->email, 'role' => $user_role, 'session_id' => $new_sessid, 'analyticsid' => $analyticsid]);
-
-                $token = $this->getJWTToken($newUser->id);
-
-                 DB::table('student_users')->where('id', $newUser->id)->update(['jwt_token'=>$token]);
-                if (isset($data['code']) && !empty($data['code'])) {
-                    $oRedeem = new RedeemController;
-                    return $oRedeem->access_redeem($request);
-                }
-                $studentpreferenceData = DB::table('student_preferences')->where('student_id', $newUser->id)->first();
-                return redirect('auth/social_account');
+        $user = Socialite::driver('google')->user();
+        if (DB::table('student_users')->where('email', '=', $user->email)->exists()) {
+            $userData = DB::table('student_users')->where('email', '=', $user->email)->first();
+            if (empty($userData->google_id)) {
+                DB::table('student_users')->where('email', '=', $user->email)->update(['google_id' => $user->id]);
             }
-        } catch (Exception $e) {
-            dd($e->getMessage());
+        } else {
+            $fixed = '98';
+            $number = $fixed . mt_rand(10000000, 99999999);
+            $insertData = [
+                'first_name' => $user->user['name'],
+                'last_name' => $user->user['family_name'],
+                'email' => $user->user['email'],
+                'mobile' => $number,
+                'grade_id' => 1,
+                'google_id' => $user->id,
+            ];
+            $lastId = DB::table('student_users')->insertGetId($insertData);
+            DB::table('student_preferences')->insertGetId(['student_id' => $lastId]);
+            $userData = DB::table('student_users')->where('id', '=', $lastId)->first();
         }
+
+        if (Auth::loginUsingId($userData->id)) {
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->back();
+        }
+
     }
 
     public function userInfo(Request $request)
@@ -151,10 +89,10 @@ class GoogleController extends Controller
         $sch_result_data = DB::table('scholarship_result as sr')
             ->select('sr.result_announced_date')
             ->where('sr.student_id', '=', $user_id)
-            ->orderBy('sr.id','desc')
+            ->orderBy('sr.id', 'desc')
             ->first();
 
-        $user_info->result_announced_date=isset($sch_result_data->result_announced_date)?$sch_result_data->result_announced_date:date('Y-m-d');
+        $user_info->result_announced_date = isset($sch_result_data->result_announced_date) ? $sch_result_data->result_announced_date : date('Y-m-d');
 
         $name = ucwords($user_info->first_name) . ' ' . ucwords($user_info->middle_name) . ' ' . ucwords($user_info->last_name);
         $user_info_details = DB::table('student_users as user')->select(
@@ -173,7 +111,7 @@ class GoogleController extends Controller
             ->leftjoin('institution as ins', 'ins.id', '=', 'user.institution_id')
             ->leftjoin('student_parents as sp', 'sp.id', '=', 'user.parent_id')
             ->where('user.id', '=', $user_id)->first();
-        $uState=$user_info_details->ustate;
+        $uState = $user_info_details->ustate;
         Session::put('user_data', ['user_id' => $user_info->id, 'user_name' => $name, 'user_email' => $user_info->email, 'role' => 'Student', 'analyticsid' => $analyticsid]);
 
         $redeem_data = DB::table('user_redemptions')
@@ -198,10 +136,10 @@ class GoogleController extends Controller
         $parentData = DB::table('student_parents')->where('id', $parent_id)->first();
 
 
-        $citylist=DB::table('city')->where('state_id', $uState)->get();
+        $citylist = DB::table('city')->where('state_id', $uState)->get();
 
 
-        return view('userview.social_account', compact('exam', 'Institution', 'country', 'state', 'user_data', 'user_info', 'user_info_details', 'redeem_data', 'r_book_data', 'r_subject_data', 'purchase_book', 'suggested_book', 'all_qbank', 'subscribed_data', 'notification_count', 'parentData','citylist'));
+        return view('userview.social_account', compact('exam', 'Institution', 'country', 'state', 'user_data', 'user_info', 'user_info_details', 'redeem_data', 'r_book_data', 'r_subject_data', 'purchase_book', 'suggested_book', 'all_qbank', 'subscribed_data', 'notification_count', 'parentData', 'citylist'));
 
     }
 }
