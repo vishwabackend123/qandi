@@ -21,8 +21,8 @@ Route::any('/', function () {
 });
 
 Route::any('/logout', function () {
-    //return view('index');
-    return redirect('https://www.uniqtoday.com/');
+    return view('index');
+//    return redirect('https://www.uniqtoday.com/');
 });
 
 Route::get(

@@ -28,13 +28,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'google' => [
-        'client_id' => '62956375227-rpg1piaf89g0jt0fpc4b0klth2198tbk.apps.googleusercontent.com',
-        'client_secret' => '5l8g5idjmfRNXCwlNisYiGnq',
+        'client_id' => '567185491714-8a3vvjjk82otrht6pcfvmdir4t08q0p8.apps.googleusercontent.com',
+        'client_secret' => 'G9LuAI_QBeTnqanbYQl9GRk6',
         'redirect' => 'https://www.uniqtoday.com/auth/google/callback',
     ],
     'facebook' => [
-        'client_id' => '797510954252802',
-        'client_secret' => '576fd05af0d9ce8d8613683663ed5aca',
+        'client_id' => '3045047035767981',
+        'client_secret' => '60bcd62a716a83a323e0893935af53ab',
         'redirect' => 'https://www.uniqtoday.com/auth/facebook/callback',
     ],
 ];

@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "ext-curl": "*",
+        "ext-json": "*",
         "barryvdh/laravel-debugbar": "^3.6",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -16,8 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "predis/predis": "^1.1",
-        "razorpay/razorpay": "^2.7",
-      "ext-json": "*"
+        "razorpay/razorpay": "^2.7"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
