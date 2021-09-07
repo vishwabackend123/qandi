@@ -238,11 +238,11 @@
  }
 
  .gray {
-     background: #f2f2f2 !important;
+     background: #FFFFFF 0% 0% no-repeat padding-box;
+
  }
 
- .gray .TestLevel,
- .gray .TestTitle {
+ .gray .TestLevel {
      color: #d71921;
  }
 
@@ -251,20 +251,37 @@
  }
 
  .gray .TestTitle {
-     font-size: 20px;
+     font-size: 30px;
  }
 
  .TestTitle {
      min-height: 90px;
  }
 
- .CGreen .TestTitle {
-     min-height: 73px;
+ .slide-footer {
+     position: absolute;
+     bottom: 20px !important;
+     left: 20px !important;
+     right: 20px !important;
+
  }
 
- .gray .TestTitle {
-     min-height: 59px;
+ .starRating {
+     height: 40px;
  }
+
+ .unlock-text {
+     color: var(--unnamed-color-d71921);
+     text-align: left;
+     font: normal normal normal 16px/27px Poppins;
+     letter-spacing: 0px;
+     color: #D71921;
+     text-transform: uppercase;
+     opacity: 1;
+     height: 40px;
+ }
+
+
 
  .bt-hgt-48 {
      height: 48px !important;

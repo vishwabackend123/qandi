@@ -186,21 +186,42 @@
                 <ul id='slider' class="pt-3 ">
                     <li class="gray prfile">
                         <div class="col swipLi">
-                            <small class="TestLevel text-danger fs-5 mb-3">Level up</small>
-                            <h3>One Last Step!</h3>
-                            <p class="TestTitle text-danger fs-5">Unlock analytics and more</p>
+                            <div class="TestLevel ">Level Up</div>
+                            <div class="TestTitle">One Last Step!</div>
+                            <div class="unlock-text">Unlock analytics and more</div>
 
-                            <div class="checkBody fs-3">
+                            <div class="checkBody mb-2">
                                 <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Take a test and get a complete analysis of your preparation!
                                 </label>
                             </div>
                             <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-link"></i> Attempt Now!</a>
+                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
                             </div>
 
                         </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="gray prfile inactive-block">
+                        <div class="col swipLi ">
+                            <div class="TestLevel ">Coming up next</div>
+                            <div class="TestTitle">--</div>
+                            <div class="unlock-text">--</div>
+
+                            <div class="checkBody mb-2">
+                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Take complete body scan test to unlock!
+                                </label>
+                            </div>
+                            <div class="btnBody">
+                                <a href="javascript:void(0);" class="btn rounded-0 p-2 bt-hgt-48 disabled"><i class="fas fa-bolt"></i> Take body scan</a>
+                                <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48 disabled" disabled><i class="fas fa-clock"></i> Schedule Later</button>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
                     </li>
 
 
@@ -483,8 +504,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             },
             success: function(response_data) { //debugger;
 
-                console.log(response_data);
-                $(' #plan_slider').html(response_data);
+                if (response_data != false) {
+                    $('#plan_slider').html(response_data);
+                }
             },
         });
     });
