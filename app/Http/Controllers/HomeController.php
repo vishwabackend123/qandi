@@ -364,4 +364,49 @@ class HomeController extends Controller
         $data = $request->all();
         $user_id = Auth::user()->id;
     }
+
+
+    public function saveFcmToken(Request $request)
+    {
+        $data = $request->all();
+        $user_id = Auth::user()->id;
+
+
+
+        $request = [
+            "token" => $user_id,
+            "user_id" => $user_id,
+
+        ];
+
+        $request_json = json_encode($request);
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+        // $curl_url = 'https://api.uniqtoday.com/api/update_student_token';
+        $curl_url = $api_URL . 'api/update_student_token';
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "content-type: application/json"
+            ),
+        ));
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        dd($response_json);
+    }
 }

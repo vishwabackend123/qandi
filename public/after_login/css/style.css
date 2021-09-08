@@ -3309,3 +3309,63 @@ input[type=range]::-webkit-slider-thumb {
     width: 24px;
     font: normal normal 600 14px/18px Poppins;
 }
+
+
+@media(max-width:767px) {
+
+    #slider li.prfile {
+        width: 287px !important;
+        margin-right: 5px !important;
+    }
+
+    .checkBody {
+        margin: 10px 0 10px 0 !important;
+    }
+
+    .montain-bg {
+        background-size: cover !important;
+        height: 290px !important;
+    }
+
+    .main-wrapper {
+        padding-left: 62px !important;
+    }
+
+    .row>* {
+        padding-right: calc(var(--bs-gutter-x)/ 0) !important;
+    }
+
+    button#goto-exam-btn {
+        margin-top: 10px !important;
+    }
+
+    .N_question {
+        white-space: break-spaces;
+        overflow-wrap: break-word;
+    }
+
+    .N_question-block {
+        padding: 50px 35px !important;
+    }
+
+    div#exam_content_sec .tab-wrapper {
+        height: 100% !important;
+    }
+
+    .N_tab-btn-box_list button {
+        width: 45%;
+        margin-bottom: 5px;
+        padding: 5px !important;
+    }
+
+    div#question_section {
+        overflow-y: auto;
+        height: 600px;
+    }
+
+    #exam_content_sec .number-block .btn {
+        min-width: 16.9% !important;
+        height: 27% !important;
+    }
+
+}

@@ -21,8 +21,8 @@ Route::any('/', function () {
 });
 
 Route::any('/logout', function () {
-    return view('index');
-//    return redirect('https://www.uniqtoday.com/');
+    //return view('index');
+    return redirect('https://www.uniqtoday.com/');
 });
 
 Route::get(
@@ -46,6 +46,7 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])-
 Route::any('/dailyWelcomeUpdates', [App\Http\Controllers\HomeController::class, 'dailyWelcomeUpdates'])->name('dailyWelcomeUpdates');
 Route::any('/editProfile', [App\Http\Controllers\HomeController::class, 'editProfile'])->name('editProfile');
 Route::any('/editProfileImage', [App\Http\Controllers\HomeController::class, 'editProfileImage'])->name('editProfileImage');
+Route::any('/saveFcmToken', [App\Http\Controllers\HomeController::class, 'saveFcmToken'])->name('saveFcmToken');
 
 /* Home Controller Routes */
 Route::any('/studentstandfor', [App\Http\Controllers\HomeController::class, 'student_stand'])->name('studentstandfor')->middleware('auth', 'menu');

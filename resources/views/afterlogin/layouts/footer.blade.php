@@ -53,6 +53,79 @@
 <script type="text/javascript" src="{{URL::asset('public/js/jquery.slimscroll.min.js')}}"></script>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyAXOEjCfj6qEKRi3Lm82j2DLMNIsXnJ0Nk",
+        authDomain: "uniq-notifications.firebaseapp.com",
+        databaseURL: 'https://uniq-notifications.firebaseio.com',
+        projectId: "uniq-notifications",
+        storageBucket: "uniq-notifications.appspot.com",
+        messagingSenderId: "768896658565",
+        appId: "1:768896658565:web:036b631c04c6d9c6280dec",
+        measurementId: "G-8PJKZ9N25F"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+
+    messaging.usePublicVapidKey('BA4Jhm824U8n2-c5HXWiLeCLSXWVwTOuixpQekWmqMDb6nmCOvE7uOo9dBRvNhjDrPPvZnH_iMEtZnkB1wFPWQ0');
+
+    // Get Instance ID token. Initially this makes a network call, once retrieved
+    // subsequent calls to getToken will return from cache.
+
+    messaging.requestPermission().then(function() {
+        return messaging.getToken()
+    }).then(function(response) {
+        if (response) {
+            console.log(response);
+            /* const saveUrl = "https://api.uniqtoday.com/api/update_student_token";
+            const saveData = {
+                token: response,
+                user_id: "{{Auth::user()->id}}"
+            }
+            $.post(saveUrl, saveData, function(data, status) {
+                console.log('${data} and status is ${status}')
+            }); */
+            $.ajax({
+                url: "{{ url('/saveFcmToken') }}",
+                type: 'POST',
+
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    fcm_token: response
+                },
+
+                success: function(response_data) {
+                    console.log(response_data);
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
+
+            /* sendTokenToServer(currentToken);
+            updateUIForPushEnabled(currentToken); */
+        } else {
+            // Show permission request.
+            console.log('No Instance ID token available. Request permission to generate one.');
+            // Show permission UI.
+            updateUIForPushPermissionRequired();
+            setTokenSentToServer(false);
+        }
+    }).catch((err) => {
+        console.log('An error occurred while retrieving token. ', err);
+
+    });
+
+    messaging.onMessage((payload) => {
+        console.log('Message received. ', payload);
+        // ...
+    });
+</script>
 <script type="text/javascript">
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;

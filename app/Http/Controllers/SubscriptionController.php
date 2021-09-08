@@ -238,8 +238,6 @@ class SubscriptionController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-
-
         if ($httpcode != 200 || $httpcode != 201) {
             $pResponse = json_decode($package_response_json);
             $package_data = isset($pResponse->package_details) ? $pResponse->package_details : '';
