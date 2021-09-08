@@ -31,7 +31,7 @@ class FacebookController extends Controller
      * Create a new controller instance.
      *
      * @param Request $request
-     * @return int
+     * @return \Illuminate\Http\RedirectResponse
      */
 
     public function handleFacebookCallback(Request $request)

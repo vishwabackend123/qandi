@@ -141,14 +141,11 @@ Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, '
 
 Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
-Route::get('auth/social_account', [App\Http\Controllers\Auth\GoogleController::class, 'userInfo'])->middleware('auth', 'menu');
-
 //google login End
 
 //facebook login start
 Route::get('auth/facebook', [App\Http\Controllers\Auth\FacebookController::class, 'redirectToFacebook']);
 Route::get('auth/facebook/callback', [App\Http\Controllers\Auth\FacebookController::class, 'handleFacebookCallback']);
-Route::get('auth/social_account', [App\Http\Controllers\Auth\FacebookController::class, 'userInfo'])->middleware('auth', 'menu');
 //facebook login end
 Route::any('/next_tab/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'nextTab'])->name('next_tab')->middleware('auth', 'menu');
 
