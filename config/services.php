@@ -30,11 +30,11 @@ return [
     'google' => [
         'client_id' => '567185491714-8a3vvjjk82otrht6pcfvmdir4t08q0p8.apps.googleusercontent.com',
         'client_secret' => 'G9LuAI_QBeTnqanbYQl9GRk6',
-        'redirect' => 'https://www.uniqtoday.com/auth/google/callback',
+        'redirect' => 'https://app.uniqtoday.com/auth/google/callback',
     ],
     'facebook' => [
         'client_id' => '3045047035767981',
         'client_secret' => '60bcd62a716a83a323e0893935af53ab',
-        'redirect' => 'https://www.uniqtoday.com/auth/facebook/callback',
+        'redirect' => 'https://app.uniqtoday.com/auth/facebook/callback',
     ],
 ];
