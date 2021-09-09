@@ -250,6 +250,7 @@ trait CommonTrait
         } */
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/user-subscription/' . $user_id;
+
         curl_setopt_array($curl, array(
 
             CURLOPT_URL => $curl_url,
@@ -270,7 +271,6 @@ trait CommonTrait
 
         if ($httpcode == 200 || $httpcode == 201) {
             $subResponse = json_decode($sub_response_json);
-
             $subscriptionData = isset($subResponse->response) ? json_decode($subResponse->response) : '';
             $subscriptionData = isset($subscriptionData[0]) ? $subscriptionData[0] : [];
 

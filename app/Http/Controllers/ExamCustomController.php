@@ -178,7 +178,7 @@ class ExamCustomController extends Controller
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
         $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
-        //dd($select_topic);
+
 
         $inputjson['student_id'] = $user_id;
         $inputjson['exam_id'] = (string)$exam_id;
@@ -188,8 +188,6 @@ class ExamCustomController extends Controller
         $inputjson['topic_list'] = !empty($select_topic) ? json_encode($select_topic) : '';
 
         $request = json_encode($inputjson);
-
-        // dd($request);
 
         $curl_url = "";
         $curl = curl_init();
@@ -658,10 +656,6 @@ class ExamCustomController extends Controller
         } else {
             $chapter_list = [];
         }
-
-
-
-        // dd($chapter_list);
 
         return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
     }

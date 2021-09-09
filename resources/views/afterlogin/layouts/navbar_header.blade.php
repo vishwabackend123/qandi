@@ -98,7 +98,7 @@
                                                     </div>
                                                     <div>
                                                         <h5 class="text-uppercase fw-bold">Achievements</h5>
-                                                        <div class="scroll-achiv ">
+                                                        <div class="scroll-achiv  pe-3">
                                                             <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a></p>
                                                             <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a></p>
                                                             <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a></p>
@@ -222,83 +222,87 @@
             <h4 class="noti-heading text-center">Notification</h4>
             <div class="notification-scroll pe-3">
                 <p class="noti-subheading">Recent</p>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
-                </div>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
+                <div id="recent_notify">
+                    <!-- <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div>
+                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div> -->
                 </div>
                 <p class="noti-subheading mt-4">Older Notification</p>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
-                </div>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
-                </div>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
-                </div>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
-                </div>
-                <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                    <span class="mb-2">
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-warning"></i>
-                        <i class="fa fa-star text-light"></i>
-                        <i class="fa fa-star text-light"></i>
-                    </span>
-                    <small>09:34PM</small>
+                <div id="old_notify">
+                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div>
+                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div>
+                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div>
+                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div>
+                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
+                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
+                        <span class="mb-2">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-light"></i>
+                            <i class="fa fa-star text-light"></i>
+                        </span>
+                        <small>09:34PM</small>
+                    </div>
                 </div>
             </div>
         </div>

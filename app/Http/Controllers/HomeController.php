@@ -370,13 +370,10 @@ class HomeController extends Controller
     {
         $data = $request->all();
         $user_id = Auth::user()->id;
-
-
-
+        $fcm_token = isset($request->fcm_token) ? $request->fcm_token : '';
         $request = [
-            "token" => $user_id,
+            "token" => $fcm_token,
             "user_id" => $user_id,
-
         ];
 
         $request_json = json_encode($request);
@@ -407,6 +404,6 @@ class HomeController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        dd($response_json);
+        return response()->json('Success');
     }
 }

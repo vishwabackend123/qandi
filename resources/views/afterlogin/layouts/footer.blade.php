@@ -72,6 +72,7 @@
     firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
 
+
     messaging.usePublicVapidKey('BA4Jhm824U8n2-c5HXWiLeCLSXWVwTOuixpQekWmqMDb6nmCOvE7uOo9dBRvNhjDrPPvZnH_iMEtZnkB1wFPWQ0');
 
     // Get Instance ID token. Initially this makes a network call, once retrieved
@@ -82,14 +83,7 @@
     }).then(function(response) {
         if (response) {
             console.log(response);
-            /* const saveUrl = "https://api.uniqtoday.com/api/update_student_token";
-            const saveData = {
-                token: response,
-                user_id: "{{Auth::user()->id}}"
-            }
-            $.post(saveUrl, saveData, function(data, status) {
-                console.log('${data} and status is ${status}')
-            }); */
+
             $.ajax({
                 url: "{{ url('/saveFcmToken') }}",
                 type: 'POST',
@@ -121,7 +115,31 @@
 
     });
 
+
     messaging.onMessage((payload) => {
+
+        const title = payload.data.title;
+
+        const body = payload.data.body;
+        const time = payload.data.time;
+        const options = {
+            body: payload.data.body,
+            time: payload.data.time,
+        };
+        new Notification(title, options);
+
+        $('#recent_notify ').prepend($('<div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">' +
+            '<p class="mb-0">' + title + '</p>' +
+            '<span class="mb-2">' +
+            '<i class="fa fa-star text-warning"></i>' +
+            '<i class="fa fa-star text-warning"></i>' +
+            '<i class="fa fa-star text-warning"></i>' +
+            '<i class="fa fa-star text-light"></i>' +
+            '<i class="fa fa-star text-light"></i>' +
+            '</span>' +
+            '<small>' + time + '</small>' +
+            '</div>'));
+
         console.log('Message received. ', payload);
         // ...
     });
