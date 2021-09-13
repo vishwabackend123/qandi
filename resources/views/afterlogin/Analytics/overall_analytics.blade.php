@@ -170,51 +170,45 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="upcoming-webinar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="upcoming-tutorials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pb-5">
-                <p>
-                    <img src="{{URL::asset('public/images/main-logo-red.png')}} " class="me-2" />Presents
+            <div class="modal-body p-5 pt-2">
+                <p class="fs-5">
+                    <img src="{{URL::asset('public/images/main-logo-red.png')}} " class="me-2 " />Presents
                 </p>
-                <div class="
-                                      d-flex
-                                      align-items-center
-                                      justify-content-between
-                                    ">
-                    <div>
-                        <h4>Crash Course Webinar</h4>
-                        <h1>
-                            Introduction to <br />
-                            Optics Wave
-                        </h1>
-                        <p class="mt-5">
-                            <i class="fas fa-calendar-check-o"></i>
-                            Thursday, June 24th
-                        </p>
-                        <p>
-                            <i class="far fa-clock"></i> 11AM EST |
-                            2:30PM IST
-                        </p>
+                <div id="tutorials_content">
+                    <!-- <div class="d-flex align-items-center justify-content-between ">
+                        <div class="web-intro">
+                            <span class="web-subtitle">Crash Course tutorials</span>
+                            <span class="web-maintitle">
+                                Introduction to Optics Wave
+                            </span>
+                            <p class="mt-4 mb-0">
+                                <i class="fas fa-calendar-check-o"></i>
+                                Thursday, June 24th
+                            </p>
+                            <p class=" mb-0">
+                                <i class="far fa-clock"></i> 11AM EST |
+                                2:30PM IST
+                            </p>
+                        </div>
+                        <div class="px-5">By</div>
+                        <div class="web-author text-center d-flex flex-column h-100">
+                            <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="author-pic" />
+                            <h5 class="mt-3 mb-2">Dr. Mark Jadson</h5>
+                            <p class=" mb-2">Department Head, Ph.D Physics</p>
+                            <small class="mb-0">Department of Physics | MIT</small>
+
+                        </div>
+
                     </div>
-                    <div class="px-5">By</div>
-                    <div class="
-                                        text-center
-                                        d-flex
-                                        flex-column
-                                        h-100
-                                      ">
-                        <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="author-pic" />
-                        <h5 class="mt-3">Dr. Mark Jadson</h5>
-                        <p>Department Head, Ph.D Physics</p>
-                        <small>Department of Physics | MIT</small>
-                        <button class="btn btn-danger mt-5 rounded-0">
-                            Let’s get you registered >
-                        </button>
-                    </div>
+                    <button class="pull-right btn btn-danger mt-4 rounded-0">
+                        Let’s get you registered >
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -242,6 +236,22 @@
             $('#topicopen').addClass('close-block');
         });
     });
+
+    function get_upcomming_tutorials() {
+
+        url = "{{ route('tutorials_session') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+
+            success: function(result) {
+                $("#tutorials_content").html(result);
+                $('#upcoming-tutorials').modal('show');
+            }
+        });
+    }
 </script>
 
 <script>

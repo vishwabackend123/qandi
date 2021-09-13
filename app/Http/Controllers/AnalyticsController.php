@@ -416,4 +416,43 @@ class AnalyticsController extends Controller
             'incorrectTime3'
         ));
     }
+
+
+    public function tutorials_session()
+    {
+        $user_id = Auth::user()->id;
+
+        $exam_id = Auth::user()->grade_id;
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/upcomming-webinar/' . $exam_id;
+
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $aResponse = json_decode($response_json);
+        $res_status = isset($aResponse->success) ? $aResponse->success : true;
+
+        if ($res_status == true) {
+
+            $data = (isset($aResponse[0]) && !empty($aResponse[0])) ? $aResponse[0] : [];
+        } else {
+            $data = [];
+        }
+
+        return view('afterlogin.Analytics.ajax_tutorials', compact('data'));
+    }
 }

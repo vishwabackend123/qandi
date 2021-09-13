@@ -49,10 +49,10 @@
                                 <div class="d-flex px-4 mt-4 mb-4 py-3 align-items-center justify-content-between">
                                     <span class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
                                     <div class="col-md-3  d-flex align-items-center">
-                                        <span class="me-2"><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
-                                        <span class="me-2"><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
-                                        <span class="me-2"><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
-                                        <span><a href="javascript:void(0);" onclick="" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','presentation')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','notes')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','videos')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
+                                        <span><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','bookmark')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
                                     </div>
 
 
@@ -175,7 +175,6 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pt-0 px-5">
@@ -341,3 +340,19 @@
 
 
 @endsection
+<script>
+    function get_preparationSubjectData(subject_id, preType) {
+        url = "{{ url('preparation_center_subject/') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                subject_id: subject_id,
+                preType: preType,
+            },
+            success: function(result) {
+                console.log(result);
+            }
+        });
+    }
+</script>

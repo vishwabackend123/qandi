@@ -108,8 +108,8 @@
         <div class="bg-white shadow-lg p-3 h-100">
             <div class="d-flex align-items-center">
                 <h5 class="dashboard-title ">Topics</h5>
-                <button class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3 bt-hgt-48" data-bs-toggle="modal" data-bs-target="#upcoming-webinar">
-                    Upcoming Webinar
+                <button onclick="get_upcomming_tutorials()" class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3 bt-hgt-48">
+                    Upcoming Tutorial
                 </button>
                 <button class="btn btn-warning-custom px-4 text-uppercase rounded-0" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand
                 </button>

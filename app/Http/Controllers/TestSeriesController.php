@@ -11,8 +11,12 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 
+use App\Http\Traits\CommonTrait;
+
 class TestSeriesController extends Controller
 {
+    //
+    use CommonTrait;
     /**
      * getting Testseries list function
      *
@@ -47,11 +51,11 @@ class TestSeriesController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+        $aResponse = json_decode($response_json);
+        $status = isset($aResponse->success) ? json_decode($aResponse->success) : false;
 
-        if ($httpcode == 200 || $httpcode == 201) {
 
-            $aResponse = json_decode($response_json);
-
+        if ($status == true) {
             $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
             $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
 
@@ -74,36 +78,32 @@ class TestSeriesController extends Controller
         $exam_id = Auth::user()->grade_id;
 
         $exam_name = isset($request->series_name) ? $request->series_name : '';
+        $exam_name = isset($request->series_name) ? $exam_name . '(Test Series)' : '';
         $series_id = isset($request->series_id) ? $request->series_id : '';
         $series_type = isset($request->series_type) ? $request->series_type : '';
         $exam_fulltime = isset($request->time_allowed) ? $request->time_allowed : '';
         $questions_count = isset($request->questions_count) ? $request->questions_count : '';
 
         if (!empty($series_id)) {
-            $inputjson = [];
-            $inputjson['student_id'] = $user_id;
-            $inputjson['exam_id'] = $exam_id;
-            $inputjson['series_id'] = $series_id;
 
-            $request = json_encode($inputjson);
 
             $curl_url = "";
             $curl = curl_init();
-            $api_URL = Config::get('constants.API_php_URL');
+            $api_URL = Config::get('constants.API_NEW_URL');
 
-            $curl_url = $api_URL . 'api/testSeries_Questions';
+            $curl_url = $api_URL . 'api/testSeries-questions/' . $exam_id . '/' . $series_id;
 
             curl_setopt_array($curl, array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
                 CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 120,
-                CURLOPT_TIMEOUT => 120,
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => $request,
+                CURLOPT_CUSTOMREQUEST => "GET",
+
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json"
@@ -111,37 +111,61 @@ class TestSeriesController extends Controller
             ));
 
             $response_json = curl_exec($curl);
-            $response_json = str_replace('NaN', '""', $response_json);
-
+            // $response_json = str_replace('NaN', '""', $response_json);
+            // $response_json = stripslashes(html_entity_decode($response_json));
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
+            $responsedata = (object)json_decode($response_json, true);
 
+            $status = isset($responsedata->success) ? $responsedata->success : false;
 
-            if ($httpcode == 200) {
-                $responsedata = json_decode($response_json);
-                $aQuestions_list = $responsedata->questions;
+            if ($status == true) {
+
+                $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
             } else {
                 $aQuestions_list = [];
 
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
 
+
             if (!empty($aQuestions_list)) {
                 $redis_set = 'True';
-                $collection = collect($aQuestions_list);
-                $grouped = $collection->groupBy('subject_id');
-                //dd("hi", $grouped);
-                $allQuestions = $collection->keyBy('question_id');
+
+
+                $collection = collect($aQuestions_list)->sortBy('subt_id');
+                $grouped = $collection->groupBy('subt_id');
+                $subject_ids = $collection->pluck('subt_id');
+                $subject_list = $subject_ids->unique()->values()->all();
+
+
+                $redis_subjects = $this->redis_subjects();
+                $cSubjects = collect($redis_subjects);
+                $aTargets = [];
+                $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+                foreach ($filtered_subject as $sub) {
+                    $count_arr = $collection->where('subt_id', $sub->id)->all();
+                    $sub->count = count($count_arr);
+                    $aTargets[] = $sub->subject_name;
+                }
+
+                $allQuestions = $collection->keyBy('question_id')->sortBy('question_id');
+                $aQuestions_list =  $allQuestions->all();
+
                 $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
                 $keys = $allQuestions->keys('question_id')->all();
 
-                $question_data = current($aQuestions_list);
+                $question_data = (object)current($allQuestions->all());
                 $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
-                $nextquestion_data = next($aQuestions_list);
+                $activesub_id = isset($question_data->subt_id) ? $question_data->subt_id : '';
+                $nextquestion_data = (object)next($aQuestions_list);
+
                 $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
                 $prev_qid = '';
+
+
 
                 if (isset($question_data) && !empty($question_data)) {
                     $publicPath = url('/') . '/public/images/questions/';
@@ -164,9 +188,6 @@ class TestSeriesController extends Controller
                     $option_data[] = '';
                 }
 
-
-                //dd($question_data, $option_data);
-
                 /* set redis for save exam question response */
                 $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
                 $redis_data = [
@@ -181,8 +202,11 @@ class TestSeriesController extends Controller
                 // Push Value in Redis
                 Redis::set('custom_answer_time', json_encode($redis_data));
 
+                $tagrets = implode(', ', $aTargets);
 
-                return view('afterlogin.ExamCustom.exam', compact('question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_name'));
+
+
+                return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name'));
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }

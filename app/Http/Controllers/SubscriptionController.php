@@ -65,15 +65,15 @@ class SubscriptionController extends Controller
         $response_json = curl_exec($curl);
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        $aResponse = json_decode($response_json);
-        $response_status = isset($aResponse->success) ? $aResponse->success : false;
         curl_close($curl);
 
+        $aResponse = json_decode($response_json);
 
+        $response_status = isset($aResponse->success) ? $aResponse->success : false;
         if ($response_status == true) {
 
             $subscriptions = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
-            $purchased_packages = isset($aResponse->purchased_packages) ? json_decode($aResponse->purchased_packages) : [];
+            $purchased_packages = isset($aResponse->purchased_packages) ? $aResponse->purchased_packages : [];
         } else {
             $subscriptions = [];
             $purchased_packages = [];
@@ -86,6 +86,7 @@ class SubscriptionController extends Controller
                 array_push($purchased_ids, $pur->subscription_id);
             }
         }
+
 
 
         return view('subscriptions', compact('subscriptions', 'purchased_ids'));
@@ -246,6 +247,7 @@ class SubscriptionController extends Controller
         } else {
             $subscriptions_data = [];
         }
+
 
 
         return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price'));

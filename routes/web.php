@@ -108,6 +108,8 @@ Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'exam
 /* Full exam Controller Routes */
 Route::any('/preparation_center', [App\Http\Controllers\PreparationController::class, 'preparation_center'])->name('preparation_center')->middleware('auth', 'menu');
 Route::any('/download_exampaper', [App\Http\Controllers\PreparationController::class, 'download_exampaper'])->name('download_exampaper')->middleware('auth', 'menu');
+Route::any('/preparation_center_subject', [App\Http\Controllers\PreparationController::class, 'preparation_center_subject'])->name('preparation_center_subject')->middleware('auth', 'menu');
+Route::any('/preparation_center_chapter', [App\Http\Controllers\PreparationController::class, 'preparation_center_chapter'])->name('preparation_center_chapter')->middleware('auth', 'menu');
 
 
 /* about Exam Controller Routes */
@@ -123,13 +125,15 @@ Route::any('/faq', [App\Http\Controllers\PreLoginController::class, 'user_feedba
 /* Live Exam Controller Routes */
 
 Route::any('/live_exam_login', [App\Http\Controllers\LiveExamController::class, 'exam_login'])->name('live_exam_login')->middleware('auth', 'menu');
-Route::any('/live_exam', [App\Http\Controllers\LiveExamController::class, 'live_exam'])->name('live_exam')->middleware('auth', 'menu');
+Route::any('/live_exam_list', [App\Http\Controllers\LiveExamController::class, 'live_exam_list'])->name('live_exam_list')->middleware('auth', 'menu');
+Route::any('/live_exam/{id}', [App\Http\Controllers\LiveExamController::class, 'live_exam'])->name('live_exam')->middleware('auth', 'menu');
 
 
 /* AnalyticsController Routes */
 
 Route::any('/overall_analytics', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');
 Route::any('/export_analytics', [App\Http\Controllers\AnalyticsController::class, 'export_analytics'])->name('export_analytics')->middleware('auth', 'menu');
+Route::any('/tutorials_session', [App\Http\Controllers\AnalyticsController::class, 'tutorials_session'])->name('tutorials_session')->middleware('auth', 'menu');
 
 /* TestSeries Routes */
 Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'series_list'])->name('series_list')->middleware('auth', 'menu');

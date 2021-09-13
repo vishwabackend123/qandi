@@ -54,6 +54,7 @@ class RazorpayController extends Controller
                 "signature" => $razorpay_signature,
                 "user_id" => $user_id
             ];
+
         $order_request_json = json_encode($verify_request);
 
         $curl = curl_init();

@@ -23,6 +23,9 @@ class ResultController extends Controller
 
         $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
         $submit_time = isset($request->submit_time) ? $request->submit_time : '';
+        $exam_type = isset($request->exam_type) ? $request->exam_type : '';
+        $test_type = isset($request->test_type) ? $request->test_type : '';
+
 
         $redis_json = Redis::get('custom_answer_time');
 
@@ -59,9 +62,9 @@ class ResultController extends Controller
         $inputjson['questions_list'] = $questions_list;
         $inputjson['time_taken'] = (string)$submit_time;
         $inputjson['class_id'] = $exam_id;
-        $inputjson['test_type'] = "Profiling";
+        $inputjson['test_type'] = $test_type;
         $inputjson['exam_mode'] = "Practice";
-        $inputjson['exam_type'] = "P";
+        $inputjson['exam_type'] = $exam_type;
 
 
         $request = json_encode($inputjson);
@@ -94,6 +97,10 @@ class ResultController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+
+        if ($test_type == 'live') {
+            return view('afterlogin.LiveExam.live_result');
+        }
 
         if ($httpcode == 200 || $httpcode == 201) {
             $response_data = (json_decode($response_json));
