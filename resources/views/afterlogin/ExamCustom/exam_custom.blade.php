@@ -224,7 +224,6 @@
     $(function() {
 
         $('.star').click(function() {
-
             $(this).children('.selected').addClass('is-animated');
             $(this).children('.selected').addClass('pulse');
 

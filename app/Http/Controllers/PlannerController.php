@@ -176,13 +176,14 @@ class PlannerController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+        $responsedata = json_decode($response_json);
+        $res_status = isset($responsedata->success) ? $responsedata->success : false;
 
 
-        if ($httpcode == 200 || $httpcode == 201) {
-            $responsedata = json_decode($response_json);
+        if ($res_status == true) {
+            $aQuestionslist = isset($responsedata->questions_list[0]) ? $responsedata->questions_list[0] : $responsedata->questions_list;
 
-            if (!empty($responsedata)) {
-                $aQuestionslist = isset($responsedata->questions_list[0]) ? $responsedata->questions_list[0] : [];
+            if (!empty($aQuestionslist)) {
 
                 $aQuestions_lists = !empty($aQuestionslist) ? $aQuestionslist->Questions : [];
 
@@ -223,8 +224,8 @@ class PlannerController extends Controller
 
 
         if (isset($question_data) && !empty($question_data)) {
-            $publicPath = url('/') . '/public/images/questions/';
-
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
@@ -267,7 +268,10 @@ class PlannerController extends Controller
         $tagrets = implode(', ', $aTargets);
         $exam_name = "Planner Exam";
 
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+        $test_type = 'Profiling';
+        $exam_type = 'P';
+
+        return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
     }
 
 

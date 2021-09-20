@@ -71,16 +71,17 @@
                                     @if(!empty($aPreparation[$oSub->id]))
                                     @php $subjectData=$aPreparation[$oSub->id]; @endphp
                                     @foreach( $subjectData as $Key=>$val)
+
                                     @if(!empty($val->chapter_name))
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 mt-4 mb-4 py-2 listing-details w-100 flex-wrap  ">
                                         <span class="col-md-6 mr-3 preparation-txt">{{$val->chapter_name}}</span>
 
 
                                         <div class="col-md-3  d-flex  align-items-center">
-                                            <span class="me-2 flex-column"><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a></span>
-                                            <span class="me-2 flex-column"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a></span>
-                                            <span class="me-2 flex-column"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}</a></span>
-                                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="chapter_presentation_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a></span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="chapter_notes_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a></span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="chapter_videos_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}</a></span>
+                                            <span><a href="javascript:void(0);" onclick="chapter_bookmark_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
                                         </div>
 
 
@@ -124,43 +125,45 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pt-0 px-5">
-                <h2>Trigonometry</h2>
-                <div class="d-flex align-items-center">
-                    <div>
-                        <div class="d-flex align-items-center">
-                            <p class="m-0 pe-3">Proficiency</p>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
+            <div id="PreparationCenter_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
                         </div>
                     </div>
-                    <div class="ms-auto">
-
-                        <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                    </div>
-                </div>
-                <div class="h-scroll-slim">
-                    <div class="d-flex bg-white p-3 align-items-center mt-5">
-                        <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
-                        <div>
-                            <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                            <p class="mt-2 mb-0">36 Slides</p>
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3 align-items-center mt-5">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
+                            <div>
+                                <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                                <p class="mt-2 mb-0">36 Slides</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex bg-white p-3 align-items-center mt-2">
-                        <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
-                        <div>
-                            <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                            <p class="mt-2 mb-0">36 Slides</p>
+                        <div class="d-flex bg-white p-3 align-items-center mt-2">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
+                            <div>
+                                <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                                <p class="mt-2 mb-0">36 Slides</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -177,43 +180,45 @@
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pt-0 px-5">
-                <h2>Trigonometry</h2>
-                <div class="d-flex align-items-center">
-                    <div>
-                        <div class="d-flex align-items-center">
-                            <p class="m-0 pe-3">Proficiency</p>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
+            <div id="notes_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
                         </div>
                     </div>
-                    <div class="ms-auto">
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3 align-items-center mt-5">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
+                            <div>
+                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
 
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                    </div>
-                </div>
-                <div class="h-scroll-slim">
-                    <div class="d-flex bg-white p-3 align-items-center mt-5">
-                        <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
-                        <div>
-                            <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-
-                            <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
+                                <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex bg-white p-3 align-items-center mt-2">
-                        <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
-                        <div>
-                            <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
+                        <div class="d-flex bg-white p-3 align-items-center mt-2">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
+                            <div>
+                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
 
-                            <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
+                                <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -232,43 +237,45 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pt-0 px-5">
-                <h2>Trigonometry</h2>
-                <div class="d-flex align-items-center">
-                    <div>
-                        <div class="d-flex align-items-center">
-                            <p class="m-0 pe-3">Proficiency</p>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
+            <div id="videos_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
                         </div>
                     </div>
-                    <div class="ms-auto">
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3 align-items-center mt-5">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
+                            <div>
 
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                    </div>
-                </div>
-                <div class="h-scroll-slim">
-                    <div class="d-flex bg-white p-3 align-items-center mt-5">
-                        <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
-                        <div>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-                            <p class="mt-2 mb-0">30 mins</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
+                                <p class="mt-2 mb-0">30 mins</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex bg-white p-3 align-items-center mt-2">
-                        <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
-                        <div>
-                            <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-                            <p class="mt-2 mb-0">30 mins</p>
+                        <div class="d-flex bg-white p-3 align-items-center mt-2">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
+                            <div>
+                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
+                                <p class="mt-2 mb-0">30 mins</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,43 +294,45 @@
 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body pt-0 px-5">
-                <h2>Trigonometry</h2>
-                <div class="d-flex align-items-center">
-                    <div>
-                        <div class="d-flex align-items-center">
-                            <p class="m-0 pe-3">Proficiency</p>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-secondary mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
-                            <i class="fa fa-star text-light mx-2"></i>
+            <div id="bookmark_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
                         </div>
                     </div>
-                    <div class="ms-auto">
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3  mt-5">
+                            <span class="px-3">Q1</span>
+                            <div>
 
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                        <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                        <span><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                    </div>
-                </div>
-                <div class="h-scroll-slim">
-                    <div class="d-flex bg-white p-3  mt-5">
-                        <span class="px-3">Q1</span>
-                        <div>
-
-                            <p>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
-                            <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
+                                <p>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
+                                <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="d-flex bg-white p-3  mt-2">
-                        <span class="px-3">Q2</span>
-                        <div>
+                        <div class="d-flex bg-white p-3  mt-2">
+                            <span class="px-3">Q2</span>
+                            <div>
 
-                            <p>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
-                            <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
+                                <p>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
+                                <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -352,6 +361,54 @@
             },
             success: function(result) {
                 console.log(result);
+            }
+        });
+    }
+
+    function chapter_presentation_resources(chapter_id, values) {
+        url = "{{ url('presentations_chapter/') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                chapter_id: chapter_id,
+                values: values,
+            },
+            success: function(result) {
+                $('#PreparationCenter_modal_body').html(result);
+                $('#PreparationCenter_modal').modal('show');
+            }
+        });
+    }
+
+    function chapter_videos_resources(chapter_id, values) {
+        url = "{{ url('videos_chapter/') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                chapter_id: chapter_id,
+                values: values,
+            },
+            success: function(result) {
+                $('#videos_modal_body').html(result);
+                $('#PreparationCenter_Video').modal('show');
+            }
+        });
+    }
+
+    function chapter_notes_resources(chapter_id, values) {
+        url = "{{ url('notes_chapter/') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                chapter_id: chapter_id,
+                values: values,
+            },
+            success: function(result) {
+                $('#notes_modal_body').html(result);
+                $('#PreparationCenter_Notes').modal('show');
             }
         });
     }

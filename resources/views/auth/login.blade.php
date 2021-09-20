@@ -16,13 +16,13 @@
 
     <div class="ms-auto login-box me-auto" id="name-box">
         <div class="welcome-heading">Welcome to UniQ</div>
-        <div class="welcome-msg">Please login using your registered mobile number </div>
+        <div class="welcome-msg">Please login using your registered email/ Mobile number </div>
         <form id="studentlogin" method="post">
             @csrf
             <div id="mobile_input">
                 <div class="text-box mt-5">
                     <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
-                    <input type="text" name="login_mobile" id="mobile_num" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Mobile number" />
+                    <input type="text" name="login_mobile" id="mobile_num" value="" placeholder="Mobile number / e-mail ID" />
 
                 </div>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_mob"> </span>
@@ -76,17 +76,17 @@
     function sentotplogin() {
         var mobile = $("#mobile_num").val();
         if (mobile == '') {
-            $("#errlog_mob").html('Please Enter mobile number');
+            $("#errlog_mob").html('Please Enter registered email/ Mobile number ');
             $("#errlog_mob").fadeIn('fast');
             $("#errlog_mob").fadeOut(5000);
             return false;
         }
-        if (mobile.length != 10) {
-            $("#errlog_mob").html('Please Enter valid mobile number');
-            $("#errlog_mob").fadeIn('fast');
-            $("#errlog_mob").fadeOut(5000);
-            return false;
-        }
+        /*  if (mobile.length != 10) {
+             $("#errlog_mob").html('Please Enter valid mobile number');
+             $("#errlog_mob").fadeIn('fast');
+             $("#errlog_mob").fadeOut(5000);
+             return false;
+         } */
 
         $.ajax({
             url: "{{ route('sendotplogin') }}",

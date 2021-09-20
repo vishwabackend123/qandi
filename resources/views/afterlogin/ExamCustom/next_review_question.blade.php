@@ -46,7 +46,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             </div>
         </div>
         <div class="col-md-2 text-right">
-            <i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i>
+            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
         </div>
     </div>
     <div class="answer-block p-3 ">

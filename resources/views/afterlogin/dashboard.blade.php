@@ -183,7 +183,7 @@
                 </div>
             </div>
             <div class='swipe mb-5' id="plan_slider">
-                <ul id='slider' class="pt-3 ">
+                <!--  <ul id='slider' class="pt-3 ">
                     <li class="gray prfile">
                         <div class="col swipLi">
                             <div class="TestLevel ">Level Up</div>
@@ -191,7 +191,7 @@
                             <div class="unlock-text">Unlock analytics and more</div>
 
                             <div class="checkBody mb-2">
-                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <input class="inputCheck" type="checkbox" value="" id79109="flexCheckChecked" checked>
                                 <label class="form-check-label" for="flexCheckChecked">
                                     Take a test and get a complete analysis of your preparation!
                                 </label>
@@ -226,9 +226,65 @@
 
 
 
+                </ul> -->
+                <ul id='slider' class="pt-3">
+                    @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                    <li class="gray prfile">
+                        <div class="col swipLi">
+                            <div class="TestLevel ">Level Up ee</div>
+                            <div class="TestTitle">One Last Step!</div>
+                            <div class="unlock-text">Unlock analytics and more</div>
+
+                            <div class="checkBody mb-2">
+                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Take a test and get a complete analysis of your preparation!
+                                </label>
+                            </div>
+                            <div class="btnBody">
+                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    @endif
+                    @if(isset($planner) && !empty($planner))
+                    @foreach($planner as $key=>$val)
+                    <li>
+                        <div class="col swipLi">
+                            <!-- <img src="images/thermodynamics_ic.png" /> -->
+                            <div class="TestLevel">Level Up In</div>
+                            <div class="TestTitle">{{$val->chapter_name}}</div>
+                            <div class="starRating">
+                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
+                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
+                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
+                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
+                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
+                                <div class="score score-rating-slt js-score">0%</div>
+                            </div>
+
+                            <div class="checkBody mb-2">
+                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Take a test and get a complete analysis of your preparation!
+                                </label>
+                            </div>
+                            <div class="btnBody">
+                                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                                <!-- <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48"><i class="fas fa-clock"></i> Schedule Later</button> -->
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+
+                    @endforeach
+                    @endif
+
                 </ul>
             </div>
-            <br />
+
             <div id="pagenavi"></div>
             <!--             <div class="row">
                 <div class="col-12">
@@ -285,13 +341,13 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="wl-user-title">Hello {{Auth::user()->user_name}},</p>
+                <p class="wl-user-title">Hello {{ucwords(Auth::user()->user_name)}},</p>
                 <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
 
                 @if(isset($subjects_rating) && empty($subjects_rating))
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s get you started ></a>
                 @else
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="store_rating();">Let’s go ></a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
                 @endif
                 <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
             </div>
@@ -310,7 +366,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="h1-p"> {{Auth::user()->user_name}},</p>
+                <p class="h1-p"> {{ucwords(Auth::user()->user_name)}},</p>
                 <p>Tell us how are you feeling today?</p>
                 <p class="welcome-icons mt-5">
                     <a href="#" onclick="save_feelings(1)" class="emoji-block"><img src="{{URL::asset('public/after_login/images/smily1.png')}}"> <span>SAD</span></a>
@@ -356,6 +412,7 @@
 </div>
 
 <!-- Modal -->
+@if(isset($student_rating) && empty($student_rating))
 <div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -406,7 +463,9 @@
         </div>
     </div>
 </div>
+@endif
 <!-- Modal -->
+@if(isset($prof_asst_test) && $prof_asst_test=='N')
 <div class="modal fade" id="fullTest_Dashboard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -432,6 +491,7 @@
         </div>
     </div>
 </div>
+@endif
 
 
 @include('afterlogin.layouts.footer')
@@ -492,6 +552,37 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         as[n].className = 'active';
     })
 </script>
+<script type="text/javascript">
+    console = window.console || {
+        dir: new Function(),
+        log: new Function()
+    };
+    var active = 0,
+        as = document.getElementById('pagenavi').getElementsByTagName('a');
+    for (var i = 0; i < as.length; i++) {
+        (function() {
+            var j = i;
+            as[i].onclick = function() {
+                t4.slide(j);
+                return false;
+            }
+        })();
+    }
+    var t1 = new TouchSlider('slider', {
+        duration: 800,
+        interval: 3000,
+        direction: 0,
+        autoplay: false,
+        align: 'left',
+        mousewheel: false,
+        mouse: true,
+        fullsize: false
+    });
+    t1.on('before', function(m, n) {
+        as[m].className = '';
+        as[n].className = 'active';
+    })
+</script>
 
 <!--end slider -->
 <script type="text/javascript">
@@ -505,13 +596,12 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             success: function(response_data) { //debugger;
 
                 if (response_data != false) {
-                    $('#plan_slider').html(response_data);
+                    // $('#plan_slider').html(response_data);
                 }
             },
         });
     });
     $(window).on('load', function() {
-
 
         if (sessionStorage.getItem('firstVisit') != '1') {
             $('#welcomeModal').modal('show');
@@ -522,6 +612,16 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     $(".rating-input").click(function() {
         $("#nxt-btn").removeClass("disabled");
     });
+
+    function welcome_back() {
+        $('#welcomeModal').modal('hide');
+        if ($("#favSubResponse").length > 0) {
+            $("#favSubResponse").modal("show");
+        }
+        if ($("#fullTest_Dashboard").length > 0) {
+            $("#fullTest_Dashboard").modal("show");
+        }
+    }
 
     function save_feelings(feel) {
 
@@ -568,9 +668,14 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             success: function(response_data) { //debugger;
 
                 if (response_data == 'success') {
-                    $("#favSubResponse").modal("hide");
-                    $("#feelresponseModal").modal("hide");
-                    $("#fullTest_Dashboard").modal("show");
+                    if ($("#favSubResponse").length > 0) {
+                        $("#favSubResponse").modal("hide");
+                    }
+
+                    /*  $("#feelresponseModal").modal("hide"); */
+                    if ($("#fullTest_Dashboard").length > 0) {
+                        $("#fullTest_Dashboard").modal("show");
+                    }
                 }
 
             },

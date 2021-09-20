@@ -115,28 +115,15 @@ class PreparationController extends Controller
     }
 
 
-    public function preparation_center_chapter(Request $request)
+    public function presentations_chapter(Request $request)
     {
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
+        $chapter_id = $request->chapter_id;
+        $values = isset($request->values) ? json_decode($request->values) : [];
 
-        $subject_id = $request->subject_id;
-        $preType = $request->preType;
-
-        if ($preType == 'presentation') {
-            $api_url_pre = 'api/presentation-list/';
-        } elseif ($preType == 'notes') {
-            $api_url_pre = 'api/notes-list/';
-        } elseif ($preType == 'videos') {
-            $api_url_pre = 'api/video-list/';
-        } elseif ($preType == 'bookmark') {
-        }
-
-
-
-        $api_url = Config::get('constants.API_NEW_URL') . $api_url_pre . $exam_id . '/' . $subject_id;
-
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/presentations/' . $chapter_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -150,6 +137,92 @@ class PreparationController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
         ));
 
+        $response_json = curl_exec($curl);
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $aResponse = json_decode($response_json);
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($status == true) {
+            $preparation_data = json_decode($response_json);
+
+            $preparation_list = $preparation_data->Presentations;
+        } else {
+            $preparation_list = [];
+        }
+
+        return view('afterlogin.Preparation.preparation_center_ajax', compact('values', 'preparation_list'));
+    }
+
+    public function videos_chapter(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $chapter_id = $request->chapter_id;
+        $values = isset($request->values) ? json_decode($request->values) : [];
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/videos/' . $chapter_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $aResponse = json_decode($response_json);
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($status == true) {
+            $preparation_data = json_decode($response_json);
+
+            $preparation_list = $preparation_data->Videos;
+        } else {
+            $preparation_list = [];
+        }
+
+
+        return view('afterlogin.Preparation.video_ajax', compact('values', 'preparation_list'));
+    }
+
+
+    public function notes_chapter(Request $request)
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $chapter_id = $request->chapter_id;
+        $values = isset($request->values) ? json_decode($request->values) : [];
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/notes/' . $chapter_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
 
         $response_json = curl_exec($curl);
 
@@ -157,6 +230,16 @@ class PreparationController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         $aResponse = json_decode($response_json);
-        $status = isset($aResponse->success) ? json_decode($aResponse->success) : false;
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($status == true) {
+            $preparation_data = json_decode($response_json);
+
+            $preparation_list = $preparation_data->Notes;
+        } else {
+            $preparation_list = [];
+        }
+
+        return view('afterlogin.Preparation.notes_ajax', compact('values', 'preparation_list'));
     }
 }

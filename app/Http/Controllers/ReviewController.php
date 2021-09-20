@@ -129,7 +129,8 @@ class ReviewController extends Controller
             $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
 
             $question_id_array[] = $q_id;
-            $publicPath = url('/') . '/public/images/questions/';
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -245,7 +246,8 @@ class ReviewController extends Controller
             $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
 
             $question_id_array[] = $q_id;
-            $publicPath = url('/') . '/public/images/questions/';
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -358,7 +360,8 @@ class ReviewController extends Controller
             $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
 
             $question_id_array[] = $q_id;
-            $publicPath = url('/') . '/public/images/questions/';
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {

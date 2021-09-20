@@ -3359,7 +3359,8 @@ input[type=range]::-webkit-slider-thumb {
     }*/
 
     .row>* {
-        padding-right: calc(var(--bs-gutter-x)/ 0) !important; padding-left: calc(var(--bs-gutter-x)/ 0) !important;
+        padding-right: calc(var(--bs-gutter-x)/ 0) !important;
+        padding-left: calc(var(--bs-gutter-x)/ 0) !important;
     }
 
     button#goto-exam-btn {
@@ -3373,9 +3374,9 @@ input[type=range]::-webkit-slider-thumb {
 
     .N_question-block {
         padding: 15px 35px !important;
-		overflow-y: auto;
-		height: 500px;
-		overflow-x: hidden;
+        overflow-y: auto;
+        height: 500px;
+        overflow-x: hidden;
     }
 
     div#exam_content_sec .tab-wrapper {
@@ -3396,207 +3397,313 @@ input[type=range]::-webkit-slider-thumb {
         min-width: 16.9% !important;
         height: 27% !important;
     }
+
+    /* 09/09/21 CSS*/
+
+    .cust-tabs .nav-link {
+        font-size: 14px !important;
+    }
+
+    .notification-content {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        top: 60px !important;
+    }
+
+    #myAccount ol.leaderNameBlock .d-flex {
+        flex-direction: revert !important;
+    }
+
+    #profile .ms-4 {
+        margin-left: 0rem !important;
+    }
+
+    div#offcanvasRight .d-flex {
+        flex-direction: column !important;
+    }
+
+    div#offcanvasRight .d-flex {
+        flex-direction: column-reverse !important;
+        height: auto !important;
+        margin-bottom: 30px;
+    }
+
+    .leaderBoardBlockedit {
+        width: 100% !important;
+    }
+
+    div#profile {
+        padding: 10px !important;
+    }
+
+    .offcanvas {
+        display: block !important;
+    }
+
+    .profile-menu .offcanvas-end {
+        height: 750px;
+        overflow-y: auto;
+    }
+
+    .leaderBoardBlock {
+        width: 100% !important;
+        padding-right: 10px !important;
+    }
+
+    .leaderBoardBlockedit {
+        width: 100% !important;
+        padding-right: 0px;
+    }
+
+    /*Planner-screen*/
+
+    div#collapseExample .planner-content {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        top: 60px;
+    }
+
+    .planner-edit-mode {
+        right: 0px !important;
+        background: #fff;
+        padding: 25px 5px !important;
+        width: 100% !important;
+        z-index: 999;
+        top: 60px;
+    }
+
+    .planmner-block {
+        right: 0px !important;
+        width: 100% !important;
+        padding-top: 20px !important;
+    }
+
+    .planner-wrapper {
+        max-width: 100% !important;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    div#sub-planner form#plannerAddform {
+        width: 95% !important;
+        overflow-y: auto;
+        height: 100%;
+        padding: 10px !important;
+    }
+
+    div#test_instruction .scroll .test-info .col-md-3 .ms-auto {
+        margin-left: unset !important;
+    }
+
+    div#test_instruction .modal-body {
+        padding: 2rem !important;
+    }
+
+    .col-md-4.col-lg-4.d-flex.align-items-center.ms-auto.me-left {
+        padding-left: 20px !important;
+    }
+
+    .N_tab-btn-box_list button.btn.px-4.ms-2.btn-light.rounded-0.btn-secon-clear.savemarkreview.text-capitalize {
+        margin-left: -12px !important;
+    }
+
+    #plannerAddform button.btn.greenBtnH.rounded-0.text-uppercase.px-5.w-25 {
+        padding: 5px 40px !important;
+    }
+
+    div#myTabContent .btn-block.d-flex {
+        flex-direction: column;
+    }
+
+    div#myTabContent .btn-block.d-flex button {
+        margin-bottom: 10px;
+    }
+
+    #overall .col-lg-7 .bg-white.shadow-lg.p-3.mt-3.px-5 {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .main-wrapper.h-100 {
+        padding-left: 72px !important;
+    }
+
+    div#overall .col-7,
+    div#overall .col-5 {
+        width: 100%;
+        margin-left: 12px !important;
+    }
+
+    div#topicclose .col-lg-7 .slimScrollDiv .d-flex {
+        display: flex !important;
+    }
+
+    div#topicclose .col-lg-7 .d-flex.align-items-center {
+        display: block !important;
+    }
+
+    button#topic-open-btn,
+    button.btn.btn-outline-danger.px-4.text-uppercase.rounded-0.ms-auto.me-3.bt-hgt-48 {
+        width: 100% !important;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    div#Chemistry .d-flex,
+    div#Physics .d-flex,
+    div#Mathematics .d-flex {
+        display: block !important;
+    }
+
+    div#Chemistry .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between,
+    div#Physics .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between,
+    div#Mathematics .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
+        padding-left: 0px !important;
+    }
+
+    div#Chemistry .btn-warning-custom,
+    div#Physics .btn-warning-custom,
+    div#Mathematics .btn-warning-custom {
+        min-width: 95% !important;
+        margin-bottom: 10px; margin-top: 10px;
+    }
+
+    div#Chemistry .slimScrollDiv .status-id .star,
+    div#Physics .slimScrollDiv .status-id .star,
+    div#Mathematics .slimScrollDiv .status-id .star {
+        display: table-cell !important;
+    }
+
+    div#Chemistry .btn-green-custom,
+    div#Physics .btn-green-custom,
+    div#Mathematics .btn-green-custom {
+        width: 100% !important;
+    }
+
+    div#Mathematics span.slbs-link.col-2.mx-3 a,
+    div#Physics span.slbs-link.col-2.mx-3 a,
+    div#Chemistry span.slbs-link.col-2.mx-3 a {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        display: table-cell;
+    }
+
+    #question_section .counter #avg_text {
+        position: absolute;
+        top: -35px;
+        left: 25px;
+    }
+
+    .tiny-green {
+        left: 25px !important;
+        width: 225px !important;
+    }
 	
-	/* 09/09/21 CSS*/
-	
-	.cust-tabs .nav-link {
-    font-size: 14px !important;
-	}
-	.notification-content {
-		min-width: 100% !important;
-		max-width: 100% !important;
-		top: 60px !important;
-	}
-	#myAccount ol.leaderNameBlock .d-flex {
-		flex-direction: revert !important;
-	}
-	#profile .ms-4 {
-		margin-left: 0rem!important;
-	}
-	div#offcanvasRight .d-flex {
-		flex-direction: column !important;
-	}
-	div#offcanvasRight .d-flex {
-		flex-direction: column-reverse !important;
-		height: auto !important;
-		margin-bottom: 30px;
-	}
-	.leaderBoardBlockedit {
-		width: 100% !important;
-	}
-	div#profile {
-		padding: 10px !important;
-	}
-	.offcanvas {
-		display: block !important;
-	}
-	.profile-menu .offcanvas-end {
-		height: 750px;
-		overflow-y: auto;
-	}
-	.leaderBoardBlock {
-		width: 100% !important;
-		padding-right: 10px !important;
-	}
-	.leaderBoardBlockedit {
-		width: 100% !important;
-		padding-right: 0px;
-	}
-
-	/*Planner-screen*/
-
-	div#collapseExample .planner-content {
-		min-width: 100% !important;
-		max-width: 100% !important; top: 60px;
-	}
-
-	.planner-edit-mode {
-		right: 0px !important;
-		background: #fff;
-		padding: 25px 5px !important;
-		width: 100% !important;
-		z-index: 999;top: 60px;
-	}
-
-	.planmner-block {
-		right: 0px !important;
-		width: 100% !important;
-		padding-top: 20px !important;
-	}
-	.planner-wrapper {
-		max-width: 100% !important;
-		margin: 0 auto;
-		width: 100%;
-	}
-	div#sub-planner form#plannerAddform {
+	.subscribeBlock {
 		width: 95% !important;
+		height: 620px;
 		overflow-y: auto;
-		height: 100%;
-		padding: 10px !important;
 	}
-	div#test_instruction .scroll .test-info .col-md-3 .ms-auto {
-		margin-left: unset !important;
+	.subscribeBlock a.btn-light.rounded-0.btn.px-5.btn-sm {
+		margin-bottom: 10px !important;
 	}
-	div#test_instruction .modal-body {
-		padding: 2rem !important;
+		
+	/* 14-09/*/
+	.slimScrollDiv .slick-slide {
+		width: 250px !important; margin-bottom: 20px;height: 240px !important;
 	}
-	.col-md-4.col-lg-4.d-flex.align-items-center.ms-auto.me-left {
-    padding-left: 20px !important;
+	.slimScrollDiv .topic_box .skill-btn {
+		width: 30px !important;
+		height: 30px !important;
+		font: normal normal normal 12px/20px Poppins !important;
+		padding: 5px;
+	}
+	.slimScrollDiv .topic_box .topic-btn-select {
+		width: auto !important;
+		height: 30px !important;
+		font: normal normal normal 12px/20px Poppins !important;
+		padding: 5px !important;
+	}
+	.about-exam.pe-5 {
+    padding: 20px;
+    padding-right: 20px !important;
 }
-.N_tab-btn-box_list button.btn.px-4.ms-2.btn-light.rounded-0.btn-secon-clear.savemarkreview.text-capitalize {
-     margin-left: -12px !important;
+.about-exam.pe-5 .col-3 {
+    width: 45%;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
-#plannerAddform button.btn.greenBtnH.rounded-0.text-uppercase.px-5.w-25 {
-    padding: 5px 40px !important;
+.about-exam.pe-5 .row.mt-5 {
+    margin-top: 10px !important;
 }
-div#myTabContent .btn-block.d-flex {
-    flex-direction: column;
+.cust-tab-content {
+    padding: 0px !important;
 }
-div#myTabContent .btn-block.d-flex button {
-    margin-bottom: 10px;
-}
-#overall .col-lg-7 .bg-white.shadow-lg.p-3.mt-3.px-5{
-	padding-right: 1rem!important;
-    padding-left: 1rem!important;
-}
-.main-wrapper.h-100 {
-    padding-left: 72px !important;
-}
-div#overall .col-7, div#overall .col-5 {
-    width: 100%; margin-left: 12px !important;
-}
-div#topicclose .col-lg-7 .slimScrollDiv .d-flex {
-    display: flex !important;
-}
-div#topicclose .col-lg-7 .d-flex.align-items-center {
-    display: block !important;
-}
-button#topic-open-btn, button.btn.btn-outline-danger.px-4.text-uppercase.rounded-0.ms-auto.me-3.bt-hgt-48 { width:100% !important; margin-bottom: 10px;
-    margin-top: 10px;
-}
-div#Chemistry .d-flex, div#Physics .d-flex, div#Mathematics .d-flex {
-    display: block !important;
-}
-div#Chemistry .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between, div#Physics .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between, div#Mathematics .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
-    padding-left: 0px !important;
-}
-div#Chemistry .btn-warning-custom, div#Physics .btn-warning-custom, div#Mathematics .btn-warning-custom {
-    min-width: 95% !important;
-    margin-bottom: 10px;
-}
-div#Chemistry .slimScrollDiv .status-id .star, div#Physics .slimScrollDiv .status-id .star, div#Mathematics .slimScrollDiv .status-id .star {
-    display: table-cell !important;
-}
-div#Chemistry .btn-green-custom, div#Physics .btn-green-custom, div#Mathematics .btn-green-custom {
-    width: 100% !important ;
-}
-div#Mathematics span.slbs-link.col-2.mx-3 a, div#Physics span.slbs-link.col-2.mx-3 a, div#Chemistry span.slbs-link.col-2.mx-3 a {
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-    display: table-cell;
-}
-#question_section .counter #avg_text {
-    position: absolute;
-    top: -35px;
-    left: 25px;
-}
-.tiny-green {
-    left: 25px !important;
-    width: 225px !important;
-}
-
 
 
 
 }
 
 
-@media (max-width:360px){
-.tiny-green {
-    left: 25px !important;
-    width: 185px !important;
-}
-.time_taken_css {
-    width: 185px !important;
-    margin-right: -25px;
-    margin-top: -5px;
-}
-.bg-white.shadow-lg.p-3.mt-3.px-5 button {
-    font-size: 12px !important;
-}
-.cust-tabs .nav-link {
-    margin-right: 5px !important;
-    font-size: 14px !important;
-}
-.notification-content {
-    min-width: 100% !important;
-    max-width: 100% !important;
-}
-.leaderBoardBlock {
-    width: 99% !important;
-    padding-right: 23px !important;
-}
-.leaderBoardBlockedit {
-    width: 100% !important;
-    padding-right: 17px;
-}
+@media (max-width:360px) {
+	#exam_content_sec .number-block .btn {
+		min-width: 16.6% !important;
+		height: 27% !important;
+	}
+
+    .tiny-green {
+        left: 25px !important;
+        width: 185px !important;
+    }
+
+    .time_taken_css {
+        width: 185px !important;
+        margin-right: -25px;
+        margin-top: -5px;
+    }
+
+    .bg-white.shadow-lg.p-3.mt-3.px-5 button {
+        font-size: 12px !important;
+    }
+
+    .cust-tabs .nav-link {
+        margin-right: 5px !important;
+        font-size: 14px !important;
+    }
+
+    .notification-content {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .leaderBoardBlock {
+        width: 99% !important;
+        padding-right: 23px !important;
+    }
+
+    .leaderBoardBlockedit {
+        width: 100% !important;
+        padding-right: 17px;
+    }
 
 
 }
 
 
-@media(max-width:1024px) and (min-width:768px){
-	.btn-warning-custom {
-    min-width: 100%;
-    padding: 3px 35px !important;
-}
-#myTabContent .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-}
-#myTabContent span.mr-3.name-txt {
-    padding-right: 15px;
-}
+@media(max-width:1024px) and (min-width:768px) {
+    .btn-warning-custom {
+        min-width: 100%;
+        padding: 3px 35px !important;
+    }
+
+    #myTabContent .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    #myTabContent span.mr-3.name-txt {
+        padding-right: 15px;
+    }
 
 
 }

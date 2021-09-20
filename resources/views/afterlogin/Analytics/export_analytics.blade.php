@@ -4,15 +4,14 @@
 
 <!-- Side bar menu -->
 
-<div class="main-wrapper  h-100">
+<div class="  h-100" id="dialog-pdf" title="pdf" stye="display:none;">
   <!-- top navbar -->
 
-  <div class="content-wrapper py-5 my-5">
+  <div id="contentHtml" class="content-wrapper py-5">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-10 ps-lg-5 mx-auto">
-          <a href="#" class="export-btn"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
-          <a href="{{ url()->previous() }}" class="close-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
+        <div class="col-lg-9 mx-auto">
+
           <div class="bg-white">
             <div class="report-block1 p-4">
               <div class="
@@ -22,22 +21,22 @@
                       border-bottom
                     ">
                 <span><img src="{{URL::asset('public/images/main-logo-red.png')}}" /></span>
-                <span class="text-light">June 10, 2021</span>
+                <span class="text-light">{{date("F j, Y")}}</span>
                 <span class="text-light-danger">Analytics</span>
               </div>
               <div class="export-block">
-                <h2 class="fw-light text-center mt-5 h1">1607312</h2>
+                <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
 
                 <p class="text-center">
                   No. Of students participated for the exam.
                 </p>
-                <h1 class="greentxt">3456</h1>
-                <p class="text-center fw-bold mt-5">
+                <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
+                <!--  <p class="text-center fw-bold mt-5">
                   Your current rank has improved
                 </p>
                 <p class="text-center text-ligth">
                   From <span class="text-light-danger">5987</span>
-                </p>
+                </p> -->
                 <div class="row">
                   <div class="mx-auto col-md-10">
                     <div class="bg-white shadow-lg p-5 report-analysis-block">
@@ -52,28 +51,31 @@
                             <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
                           </div>
                           <div class="exportUsertxt">
-                            <p>Anuj Bharadwaj</p>
-                            <small><strong>Class - 12th</strong>, Preparingfor
-                              JEE(M), April 2022
+                            <p>{{ucwords(Auth::user()->user_name)}}</p>
+                            <small><strong>Class - {{$user_stage}}</strong>, Preparing for
+                              {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
                             </small>
                           </div>
                         </div>
                       </div>
                       <div class="row py-5">
                         <div class="col-md-4 text-center">
-                          <img src="{{URL::asset('public/after_login/images/left-graph.jpg')}}" />
-                          <div class="
-                                  d-flex
-                                  align-items-center
-                                  justify-content-center
-                                  mt-4
-                                ">
-                            <i class="fa fa-star text-warning me-2" aria-hidden="true"></i>
-                            <i class="fa fa-star text-warning me-2" aria-hidden="true"></i>
-                            <i class="fa fa-star text-warning me-2" aria-hidden="true"></i>
-                            <i class="fa fa-star text-warning me-2" aria-hidden="true"></i>
-                            <i class="fa fa-star-half text-warning me-2" aria-hidden="true"></i>
-                            <span class="me-3">95%</span>
+                          <div id="scorecontainer" class="text-right"></div>
+                          <div class=" status-id
+                            d-flex
+                            align-items-center
+                            justify-content-center
+                            ml-0 ml-md-3
+                            rating star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 20%">
+                              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="star-ratings-css-bottom">
+                              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="ms-1 score score-rating js-score">
+                              20%
+                            </div>
                           </div>
                           <p class="text-center text-light mt-3">
                             Overall Proficiency
@@ -152,269 +154,73 @@
                 <span class="me-auto"><img src="{{URL::asset('public/images/main-logo-red.png')}}" /></span>
                 <span class="text-end text-light">
                   Detailed Report Analysis<br />
-                  Weekly UniQ Performace Report<br />June 10 2021
+                  Weekly UniQ Performace Report<br />{{date("F j, Y")}}
                 </span>
               </div>
               <div class="bg-white shadow-lg p-3 mt-5">
                 <h5 class="dashboard-title mb-3">Subject proficiency</h5>
+                @if(!empty($subProf))
+                @foreach($subProf as $key=>$sub)
                 <div class="d-flex align-items-center mt-3 pb-1">
-                  <div class="
-                          d-flex
-                          align-items-center
-                          py-2
-                          dashboard-listing-details
-                          w-100
-                        ">
-                    <span class="mr-3 dashboard-name-txt">Trigonometry</span>
-
-                    <div class="
-                            status-id
+                  <div class="  col-6">
+                    <div class="row d-flex  align-items-center py-2 dashboard-listing-details  w-100 col-6">
+                      <span class="col-md-6 mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
+                      <div class="col-md-6 status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                        <div class=" status-id
                             d-flex
                             align-items-center
                             justify-content-center
                             ml-0 ml-md-3
-                            rating
-                          " data-vote="0">
-                      <div class="star hidden animate">
-                        <span class="full star-colour" data-value="0"></span>
-                        <span class="half star-colour" data-value="0"></span>
-                      </div>
+                            rating star-ratings-css">
+                          <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                          </div>
+                          <div class="star-ratings-css-bottom">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                          </div>
+                          <div class="ms-1 score score-rating js-score">
+                            {{round($sub->score)}}%
+                          </div>
+                        </div>
 
-                      <div class="star">
-                        <span class="full" data-value="1"></span>
-                        <span class="half star-colour" data-value="0.5"></span>
-                        <span class="selected"></span>
-                      </div>
 
-                      <div class="star">
-                        <span class="full" data-value="2"></span>
-                        <span class="half" data-value="1.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="3"></span>
-                        <span class="half" data-value="2.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="4"></span>
-                        <span class="half" data-value="3.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="5"></span>
-                        <span class="half" data-value="4.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="score score-rating js-score">
-                        0%
-                        <!-- <span>/</span>
-                                        <span class="total">5</span> -->
                       </div>
                     </div>
                   </div>
                   <div class="progress ms-auto col-6" style="overflow: visible">
-                    <div class="
-                            progress-bar
-                            bg-light-success
-                            position-relative
-                          " role="progressbar" style="width: 40%; overflow: visible">
-                      <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
+                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                      <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                     </div>
-                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width: 30%; overflow: visible">
-                      <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
+                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                      <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
                     </div>
-                    <div class="
-                            progress-bar
-                            bg-light-secondary
-                            position-relative
-                          " role="progressbar" style="width: 20%; overflow: visible">
-                      <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
+                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                      <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}
+                      </span>
                     </div>
                   </div>
                 </div>
-                <div class="d-flex align-items-center mt-3 pb-1">
-                  <div class="
-                          d-flex
-                          align-items-center
-                          py-2
-                          dashboard-listing-details
-                          w-100
-                        ">
-                    <span class="mr-3 dashboard-name-txt">Trigonometry</span>
+                @endforeach
+                @endif
 
-                    <div class="
-                            status-id
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                            ml-0 ml-md-3
-                            rating
-                          " data-vote="0">
-                      <div class="star hidden">
-                        <span class="full" data-value="0"></span>
-                        <span class="half" data-value="0"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="1"></span>
-                        <span class="half" data-value="0.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="2"></span>
-                        <span class="half" data-value="1.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="3"></span>
-                        <span class="half" data-value="2.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="4"></span>
-                        <span class="half" data-value="3.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="5"></span>
-                        <span class="half" data-value="4.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="score score-rating js-score">
-                        0%
-                        <!-- <span>/</span>
-                                        <span class="total">5</span> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="progress ms-auto col-6" style="overflow: visible">
-                    <div class="
-                            progress-bar
-                            bg-light-success
-                            position-relative
-                          " role="progressbar" style="width: 40%; overflow: visible">
-                      <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
-                    </div>
-                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width: 30%; overflow: visible">
-                      <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
-                    </div>
-                    <div class="
-                            progress-bar
-                            bg-light-secondary
-                            position-relative
-                          " role="progressbar" style="width: 20%; overflow: visible">
-                      <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center mt-3 pb-1">
-                  <div class="
-                          d-flex
-                          align-items-center
-                          py-2
-                          dashboard-listing-details
-                          w-100
-                        ">
-                    <span class="mr-3 dashboard-name-txt">Trigonometry</span>
-
-                    <div class="
-                            status-id
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                            ml-0 ml-md-3
-                            rating
-                          " data-vote="0">
-                      <div class="star hidden">
-                        <span class="full" data-value="0"></span>
-                        <span class="half" data-value="0"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="1"></span>
-                        <span class="half" data-value="0.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="2"></span>
-                        <span class="half" data-value="1.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="3"></span>
-                        <span class="half" data-value="2.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="4"></span>
-                        <span class="half" data-value="3.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="star">
-                        <span class="full" data-value="5"></span>
-                        <span class="half" data-value="4.5"></span>
-                        <span class="selected"></span>
-                      </div>
-
-                      <div class="score score-rating js-score">
-                        0%
-                        <!-- <span>/</span>
-                                        <span class="total">5</span> -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="progress ms-auto col-6" style="overflow: visible">
-                    <div class="
-                            progress-bar
-                            bg-light-success
-                            position-relative
-                          " role="progressbar" style="width: 40%; overflow: visible">
-                      <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Tooltip on top">1</span>
-                    </div>
-                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width: 30%; overflow: visible">
-                      <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Tooltip on top">1</span>
-                    </div>
-                    <div class="
-                            progress-bar
-                            bg-light-secondary
-                            position-relative
-                          " role="progressbar" style="width: 20%; overflow: visible">
-                      <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">1</span>
-                    </div>
-                  </div>
-                </div>
               </div>
               <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
                 <p class="text-uppercase fw-bold text-start">
                   Time Management
                 </p>
-                <img src="{{URL::asset('public/after_login/images/innergraph1.png')}} " class="img-fluid" />
+                <div id="time_management"></div>
               </div>
               <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
                 <p class="text-uppercase fw-bold text-start">
                   Average Time Spent on each Question
                 </p>
-                <img src="{{URL::asset('public/after_login/images/innergraph2.png')}}" class="img-fluid" />
+                <div id="accPer1"></div>
               </div>
               <div class="bg-white shadow-lg p-3 px-5 mt-3">
                 <p class="text-uppercase fw-bold text-start">
                   Acuracy Percentage
                 </p>
-                <img src="{{URL::asset('public/after_login/images/innergraph2.png')}}" class="img-fluid" />
+                <div id="accPer"></div>
               </div>
               <h4 class="my-5 text-dark text-center fw-light">
                 Detailed Report Analysis
@@ -430,9 +236,9 @@
                     <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
                   </div>
                   <div class="exportUsertxt">
-                    <p>Anuj Bharadwaj</p>
-                    <small><strong>Class - 12th</strong>, Preparingfor JEE(M),
-                      April 2022
+                    <p>{{ucwords(Auth::user()->user_name)}}</p>
+                    <small><strong>Class - {{$user_stage}}</strong>, Preparing for
+                      {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
                     </small>
                   </div>
                 </div>
@@ -468,7 +274,7 @@
                 </div>
               </div>
               <p class="text-center mt-5 pt-5">
-                <a href="https://www.uniq.co.edu/signup" class="link-primary" target="_blank">To Know more: https://www.uniq.co.edu/signup</a>
+                <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know more: {{ route('register') }}</a>
               </p>
             </div>
           </div>
@@ -476,15 +282,229 @@
       </div>
     </div>
   </div>
+  <div id="editor"></div>
+  <a id="cmd" href="javascript:void(0);" onclick="convert_HTML_To_PDF();" class="export-btn"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
+  <a href="{{ url()->previous() }}" class="close-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 
 @include('afterlogin.layouts.footer')
+
 <script type="text/javascript">
   $('.scroll-div-live-exm').slimscroll({
     height: '60vh'
   });
-</script>
 
+  /* jsPdf  */
+
+
+
+  function convert_HTML_To_PDF() {
+    var doc = new jsPDF();
+    var elementHTML = $('#contentHtml').html();
+    var specialElementHandlers = {
+      '#editor': function(element, renderer) {
+        return true;
+      }
+    };
+    doc.fromHTML(elementHTML, 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
+    });
+
+    // Save the PDF
+    doc.save('sample-document.pdf');
+  }
+</script>
+<script>
+  Highcharts.chart('scorecontainer', {
+    chart: {
+      height: 180,
+      plotBackgroundColor: null,
+      plotBorderWidth: 0,
+      plotShadow: false,
+      spacingTop: 0,
+      spacingBottom: 0,
+      spacingRight: 0,
+    },
+    title: {
+      text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{$corrent_score_per}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+      align: 'center',
+      verticalAlign: 'middle',
+      y: 60
+    },
+    credits: {
+      enabled: false
+    },
+    exporting: {
+      enabled: false
+    },
+    tooltip: {
+      pointFormat: '<b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+      point: {
+        valueSuffix: '%'
+      }
+    },
+    plotOptions: {
+      pie: {
+        dataLabels: {
+          enabled: false,
+          distance: -50,
+          style: {
+            fontWeight: 'bold',
+            color: 'white'
+          }
+        },
+        startAngle: -140,
+        endAngle: 140,
+        center: ['50%', '50%'],
+        size: '100%'
+      }
+    },
+    series: [{
+      type: 'pie',
+      innerSize: '85%',
+      data: [{
+          name: 'Score',
+          y: <?php echo $score; ?>,
+          color: '#ffdc34' // Jane's color
+        },
+        {
+          name: 'Inprogress',
+          y: <?php echo $inprogress; ?>,
+          color: '#fc2f00c7' // Jane's color
+        },
+        {
+          name: 'Progress',
+          y: <?php echo $progress; ?>,
+          color: '#ffa81d' // Jane's color
+        },
+        {
+          name: 'Others',
+          y: <?php echo $others; ?>,
+          color: '#e4e4e4' // Jane's color
+        }
+      ]
+    }]
+  });
+
+  /* time management */
+  Highcharts.chart('time_management', {
+    credits: {
+      enabled: false
+    },
+    chart: {
+      type: 'column',
+      height: 270
+    },
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: <?php print_r($date1); ?>
+    },
+    yAxis: {
+      allowDecimals: false,
+      min: 0,
+      title: {
+        text: 'Time Taken'
+      }
+    },
+    tooltip: {
+      formatter: function() {
+        return '<b>' + this.x + '</b><br/>' +
+          this.series.name + ': ' + this.y + '<br/>' +
+          'Total: ' + this.point.stackTotal;
+      }
+    },
+    plotOptions: {
+      column: {
+        stacking: 'normal'
+      }
+    },
+    series: [{
+      name: 'Correct Answer Time',
+      data: <?php print_r($correctTime1); ?>,
+      color: '#6ec986'
+    }, {
+      name: 'Incorrect Answer Time',
+      data: <?php print_r($incorrectTime1); ?>,
+      color: '#ff9999'
+    }]
+  });
+
+  /* avegare time spend */
+
+  Highcharts.chart('accPer1', {
+    chart: {
+      type: 'spline',
+      height: 270
+    },
+    credits: {
+      enabled: false
+    },
+    legend: {
+      symbolWidth: 40
+    },
+    title: {
+      text: ''
+    },
+    yAxis: {
+      title: {
+        text: 'Average Time Spent'
+      }
+    },
+    xAxis: {
+      categories: <?php print_r($days); ?>
+    },
+    series: [{
+      name: 'Class Average',
+      data: <?php print_r($stuAccuracy); ?>,
+      color: '#ff9999',
+      dashStyle: 'ShortDash'
+    }, {
+      name: 'Student Average',
+      data: <?php print_r($classAccuracy); ?>,
+      color: '#6ec986',
+    }]
+  });
+
+  /* ACURACY PERCENTAGE */
+  Highcharts.chart('accPer', {
+    chart: {
+      type: 'spline',
+      height: 270
+    },
+    credits: {
+      enabled: false
+    },
+    legend: {
+      symbolWidth: 40
+    },
+    title: {
+      text: ''
+    },
+    yAxis: {
+      title: {
+        text: 'Accuracy Percentage'
+      }
+    },
+    xAxis: {
+      categories: <?php print_r($day); ?>
+    },
+    series: [{
+      name: 'Class Average',
+      data: <?php print_r($stuAcc); ?>,
+      color: '#ff9999',
+      dashStyle: 'ShortDash'
+    }, {
+      name: 'Student Average',
+      data: <?php print_r($classAcc); ?>,
+      color: '#6ec986',
+    }]
+  });
+</script>
 @endsection

@@ -276,7 +276,8 @@ class ExamCustomController extends Controller
 
 
         if (isset($question_data) && !empty($question_data)) {
-            $publicPath = url('/') . '/public/images/questions/';
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
@@ -312,9 +313,10 @@ class ExamCustomController extends Controller
 
         $tagrets = implode(', ', $aTargets);
 
+        $test_type = 'Mocktest';
+        $exam_type = 'PT';
 
-
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+        return view('afterlogin.ExamCustom.exam', compact('test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
     }
 
     function shuffle_assoc($list)
@@ -377,7 +379,8 @@ class ExamCustomController extends Controller
 
 
         if (isset($question_data) && !empty($question_data)) {
-            $publicPath = url('/') . '/public/images/questions/';
+            // $publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
@@ -546,7 +549,8 @@ class ExamCustomController extends Controller
 
 
         if (isset($question_data) && !empty($question_data)) {
-            $publicPath = url('/') . '/public/images/questions/';
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;

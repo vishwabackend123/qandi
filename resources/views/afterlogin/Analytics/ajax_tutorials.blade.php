@@ -23,9 +23,11 @@
 
     </div>
 </div>
-<button class="pull-right btn btn-danger mt-4 rounded-0 fw-normal">
+
+<button class="pull-right btn btn-danger mt-4 rounded-0 fw-normal" onclick="upcomming_tutorials_signup('{{$data->tutorial_id}}')">
     Let’s get you registered >
 </button>
+
 @else
 <div class="w-100 text-center fs-3 align-items-center my-auto justify-content-center h-100 flex-column" style="min-height:200px;">
     No tutorial session available.

@@ -43,18 +43,17 @@ class StudentSignInController extends Controller
     public function sendotplogin(Request $request)
     {
         $postData = $request->all();
-        $mobile = isset($postData['mobile']) ? $postData['mobile'] : '';
+        $email_or_mobile = isset($postData['mobile']) ? (string)$postData['mobile'] : '';
+
         /*  $exists = StudentUsers::where('mobile', $mobile)->exists();
-
-
         if (isset($mobile) && !empty($mobile) && $exists == true) { */
+
         $request = [
-            'mobile' => $mobile
+            'mobile' => $email_or_mobile
         ];
 
         $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/MobileOtp/' . $mobile;
-
+        $curl_url = $api_URL . 'api/Otp/' . $email_or_mobile;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -77,14 +76,14 @@ class StudentSignInController extends Controller
 
         if ($aResponse->success != 'true') {
             $response = [
-                "message" => "Mobile no. is invalid or not registered with us!",
+                "message" => "Email or Mobile no. not registered with us!",
                 "error" => $err,
                 "success" => false,
             ];
             return json_encode($response);
         } else {
 
-            $login_otp = $aResponse->mobile_otp;
+            $login_otp = $aResponse->otp;
 
             Session::put('OTP', $login_otp);
 
@@ -102,12 +101,12 @@ class StudentSignInController extends Controller
     {
         $data = $request->all();
 
-        $enteredOtp = $request->input('login_otp');
-        $enteredMobile = $request->input('login_mobile');
+        $enteredOtp = (int)$request->input('login_otp');
+        $enteredMobile = (string)$request->input('login_mobile');
 
         $request = [
-            'mobile' => $enteredMobile,
-            'mobile_otp' => $enteredOtp
+            'email_or_mobile' => $enteredMobile,
+            'otp' => $enteredOtp
         ];
 
         $request_json = json_encode($request);
@@ -132,15 +131,11 @@ class StudentSignInController extends Controller
             ),
         ));
 
-
         $response_json = curl_exec($curl);
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-
-
-
 
         if ($httpcode != 200 && $httpcode != 201) {
             $response = [
@@ -168,7 +163,6 @@ class StudentSignInController extends Controller
             }
         }
     }
-
 
 
     /**

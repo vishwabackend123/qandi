@@ -26,12 +26,9 @@ class ResultController extends Controller
         $exam_type = isset($request->exam_type) ? $request->exam_type : '';
         $test_type = isset($request->test_type) ? $request->test_type : '';
 
-
         $redis_json = Redis::get('custom_answer_time');
 
         $redisArray = (isset($redis_json) && !empty($redis_json)) ? json_decode($redis_json) : [];
-
-
 
         $given_ans = $answerList = $answersArr = [];
         $given_ans = isset($redisArray->given_ans) ? $redisArray->given_ans : [];
@@ -97,6 +94,9 @@ class ResultController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+
+        // dd($request, $response_json);
+
 
         if ($test_type == 'live') {
             return view('afterlogin.LiveExam.live_result');

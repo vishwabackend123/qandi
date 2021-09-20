@@ -47,9 +47,11 @@ class HomeController extends Controller
         $user_subjects = $this->redis_subjects();
         $preferences = $this->redis_Preference();
 
-        // $preferences = DB::table('student_preferences')->select('student_stage_at_sgnup', 'subjects_rating', 'subscription_yn', 'subscription_expiry_date')->where('student_id', $user_id)->first();
-
         $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
+
+        $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+
+        $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
 
         if ($student_stage_at_sgnup == 0) {
             return redirect()->route('studentstandfor');
@@ -146,7 +148,42 @@ class HomeController extends Controller
             $others = 100 - ($score + $progress);
         }
 
-        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse'));
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
+
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $response = json_decode($response_json);
+        $response_status = isset($response->success) ? $response->success : false;
+
+        if ($response_status != false) {
+            $planner = isset($response->result) ? $response->result : [];
+        } else {
+            $planner = [];
+        }
+
+
+
+        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
 
     public function student_stand(Request $request)
@@ -223,9 +260,9 @@ class HomeController extends Controller
 
         $storeddata = $request->input('storeddata');
 
+
         if (isset($storeddata['today_feeling']) && !empty($storeddata['today_feeling'])) {
             $mood = $storeddata['today_feeling'];
-
             $request = [
                 'user_id' =>  (int)$user_id,
                 'user_mood_ind' => (int)$mood,
@@ -234,8 +271,6 @@ class HomeController extends Controller
 
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/today-feeling';
-
-
             $curl = curl_init();
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
@@ -259,7 +294,7 @@ class HomeController extends Controller
             curl_close($curl);
         }
         if (isset($storeddata['subjects_rating']) && !empty($storeddata['subjects_rating'])) {
-            $rating = json_encode($storeddata['subjects_rating']);
+            $rating = $storeddata['subjects_rating'];
 
             $request = [
                 'student_id' =>  (int)$user_id,
@@ -287,6 +322,8 @@ class HomeController extends Controller
                 ),
             ));
             $response_json = curl_exec($curl);
+
+
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

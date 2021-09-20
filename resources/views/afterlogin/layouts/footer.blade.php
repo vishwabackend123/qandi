@@ -44,6 +44,9 @@
         </div>
     </div>
 </div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
 
 <script type="text/javascript" src="{{URL::asset('public/js/jquery-2.2.4.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
@@ -54,26 +57,26 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
 
 <script>
     var firebaseConfig = {
-        apiKey: "AIzaSyAXOEjCfj6qEKRi3Lm82j2DLMNIsXnJ0Nk",
-        authDomain: "uniq-notifications.firebaseapp.com",
-        databaseURL: 'https://uniq-notifications.firebaseio.com',
-        projectId: "uniq-notifications",
-        storageBucket: "uniq-notifications.appspot.com",
-        messagingSenderId: "768896658565",
-        appId: "1:768896658565:web:036b631c04c6d9c6280dec",
-        measurementId: "G-8PJKZ9N25F"
+        apiKey: "AIzaSyAWZZkXXuTHAyNqO2EHqi5nudL40exTmmc",
+        authDomain: "uniq-notifications-9891c.firebaseapp.com",
+        databaseURL: 'https://uniq-notifications-9891c.firebaseio.com',
+        projectId: "uniq-notifications-9891c",
+        storageBucket: "uniq-notifications-9891c.appspot.com",
+        messagingSenderId: "426474366022",
+        appId: "1:426474366022:web:0a94e98859fedd92bd9647",
+        measurementId: "G-9QGWSEL82D"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
 
 
-    messaging.usePublicVapidKey('BA4Jhm824U8n2-c5HXWiLeCLSXWVwTOuixpQekWmqMDb6nmCOvE7uOo9dBRvNhjDrPPvZnH_iMEtZnkB1wFPWQ0');
+    messaging.usePublicVapidKey('BF7HuS5x1c-2dYVum2tX1Td43VIvCLBw-IGj2c_uDWYiwilJfzvbazpQ6piLdb4YOVVivLQhfPn9Mlx59tWDz10');
 
     // Get Instance ID token. Initially this makes a network call, once retrieved
     // subsequent calls to getToken will return from cache.

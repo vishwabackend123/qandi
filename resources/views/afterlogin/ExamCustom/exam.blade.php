@@ -226,6 +226,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                             @csrf
                             <input type="hidden" name="fulltime" value="00:30:00">
                             <input type="hidden" name="submit_time" value="00:10:00">
+                            <input type="hidden" name="test_type" value="{{$test_type}}">
+                            <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>

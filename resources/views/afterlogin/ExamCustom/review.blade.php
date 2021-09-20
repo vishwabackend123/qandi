@@ -106,7 +106,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             </div>
                                         </div>
                                         <div class="col-md-2 text-right">
-                                            <i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i>
+                                            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
 
@@ -308,6 +308,29 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         height: '31vh'
     });
 
+    function bookmarkforreview(quest_id, subject_id) {
+        $.ajax({
+            url: "{{ route('markforreview') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.success == true) {
+
+                    $("#bkm_" + quest_id).html('<i class="fa fa-bookmark text-danger pull-right" aria-hidden="true"></i>');
+
+                } else {
+
+                }
+
+            },
+        });
+    }
 
     /* getting Next Question Data */
     function qnext(question_id) {

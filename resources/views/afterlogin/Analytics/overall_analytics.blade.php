@@ -21,7 +21,10 @@
                                 <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab({{$val->id}})">{{$val->subject_name}}</a>
                             </li>
                             @endforeach
-                            <li class="ms-auto">
+                            <li class="ms-auto d-flex">
+                                <button onclick="get_upcomming_tutorials()" class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3 ">
+                                    Upcoming Tutorial
+                                </button>
                                 <a class="btn btn-danger rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> Export Analytics</a>
                             </li>
                         </ul>
@@ -181,36 +184,11 @@
                     <img src="{{URL::asset('public/images/main-logo-red.png')}} " class="me-2 " />Presents
                 </p>
                 <div id="tutorials_content">
-                    <!-- <div class="d-flex align-items-center justify-content-between ">
-                        <div class="web-intro">
-                            <span class="web-subtitle">Crash Course tutorials</span>
-                            <span class="web-maintitle">
-                                Introduction to Optics Wave
-                            </span>
-                            <p class="mt-4 mb-0">
-                                <i class="fas fa-calendar-check-o"></i>
-                                Thursday, June 24th
-                            </p>
-                            <p class=" mb-0">
-                                <i class="far fa-clock"></i> 11AM EST |
-                                2:30PM IST
-                            </p>
-                        </div>
-                        <div class="px-5">By</div>
-                        <div class="web-author text-center d-flex flex-column h-100">
-                            <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="author-pic" />
-                            <h5 class="mt-3 mb-2">Dr. Mark Jadson</h5>
-                            <p class=" mb-2">Department Head, Ph.D Physics</p>
-                            <small class="mb-0">Department of Physics | MIT</small>
 
-                        </div>
-
-                    </div>
-                    <button class="pull-right btn btn-danger mt-4 rounded-0">
-                        Let’s get you registered >
-                    </button> -->
                 </div>
+                <p id="tutorial_response" class="mt-4 w-100"></p>
             </div>
+
         </div>
     </div>
 </div>
@@ -249,6 +227,28 @@
             success: function(result) {
                 $("#tutorials_content").html(result);
                 $('#upcoming-tutorials').modal('show');
+            }
+        });
+    }
+
+    function upcomming_tutorials_signup(tutorial_id) {
+
+        url = "{{ url('tutorials_signup') }}/" + tutorial_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+
+            success: function(result) {
+                var response_data = jQuery.parseJSON(result);
+                if (response_data.success == true) {
+                    $('#tutorial_response').html('<span class="alert alert-success" role="alert">' + response_data.response + '</span>');
+                } else {
+                    $('#tutorial_response').html('<span class="alert alert-danger" role="alert">' + response_data.response + '</span>');
+                }
+                $("#tutorial_response").show();
+                $("#tutorial_response").fadeOut(5000);
             }
         });
     }

@@ -4,7 +4,7 @@
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
-                    <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{Auth::user()->user_name}}</span></span>
+                    <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords(Auth::user()->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link ">
@@ -52,6 +52,7 @@
                                                 <ol class="leaderNameBlock">
                                                     @if(isset($leaderboard_list) && !empty($leaderboard_list))
                                                     @foreach($leaderboard_list as $lead)
+                                                    @if(!empty($lead->user_name))
                                                     <li>
                                                         <div class="d-flex align-items-center">
                                                             <span class="sno me-3">{{$lead->user_rank}}.</span>
@@ -62,6 +63,7 @@
                                                             </div>
                                                         </div>
                                                     </li>
+                                                    @endif
                                                     @endforeach
                                                     @endif
 
@@ -92,7 +94,7 @@
                                                 </span>
                                                 <div id="profile-details" class="" style="padding-top:-20px">
                                                     <div class="mb-2 mt-3 profile-read">
-                                                        <h5 id="profileUserName" class="activeUserName">{{Auth::user()->user_name}}</h5>
+                                                        <h5 id="profileUserName" class="activeUserName">{{ucwords(Auth::user()->user_name)}}</h5>
                                                         <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 " id="editprofile">Edit Profile</button>
                                                     </div>
@@ -122,7 +124,7 @@
                                                         </div>
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="username" id="username" class="ps-2" value="{{Auth::user()->user_name}}" required placeholder="Display Name" />
+                                                            <input type="text" name="username" id="username" class="ps-2" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" />
                                                             <div id="emailHelp" class="form-text">This could be your first, last or nick name.</div>
                                                         </div>
                                                         <div class="text-box mt-2">
@@ -160,7 +162,7 @@
                                                 <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class=" sml-pic" />
                                             </span>
                                             <div class="my-5 subscription-read">
-                                                <h5 class="activeUserName">{{Auth::user()->user_name}}</h5>
+                                                <h5 class="activeUserName">{{ucwords(Auth::user()->user_name)}}</h5>
                                                 <small>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
 
                                             </div>
@@ -401,9 +403,6 @@
     </div>
 </div>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
 
 <script>
     document.getElementById("customRange").oninput = function() {
