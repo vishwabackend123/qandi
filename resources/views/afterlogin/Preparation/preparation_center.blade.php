@@ -38,10 +38,13 @@
                             @if(isset($subjectData) && !empty($subjectData))
                             @foreach( $subjectData as $oKey=>$oVal)
                             @php
+                            if(!empty($oVal->chapter_name)){
                             $sNotes= isset($oVal->Notes)?$sNotes+$oVal->Notes:0;
                             $sPrep=isset($oVal->Presentations)?$sPrep+$oVal->Presentations:0;
                             $sVideo=isset($oVal->Videos)?$sVideo+$oVal->Videos:0;
                             $sBmark=isset($oVal->Bookmarks)?$sBmark+$oVal->Bookmarks:0;
+                            }
+
                             @endphp
                             @endforeach
                             @endif
@@ -49,10 +52,10 @@
                                 <div class="d-flex px-4 mt-4 mb-4 py-3 align-items-center justify-content-between">
                                     <span class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
                                     <div class="col-md-3  d-flex align-items-center">
-                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','presentation')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
-                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','notes')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
-                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','videos')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_Video"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
-                                        <span><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','bookmark')" data-bs-toggle="modal" data-bs-target="#PreparationCenter_bookmark"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
+                                        <span><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
                                     </div>
 
 
@@ -361,6 +364,10 @@
             },
             success: function(result) {
                 console.log(result);
+                $('#PreparationCenter_modal_body').html(result);
+                $('#PreparationCenter_modal').modal('show');
+                $('#PreparationCenter_Video').modal('hide');
+                $('#PreparationCenter_Notes').modal('hide');
             }
         });
     }
@@ -377,6 +384,8 @@
             success: function(result) {
                 $('#PreparationCenter_modal_body').html(result);
                 $('#PreparationCenter_modal').modal('show');
+                $('#PreparationCenter_Video').modal('hide');
+                $('#PreparationCenter_Notes').modal('hide');
             }
         });
     }
@@ -393,6 +402,8 @@
             success: function(result) {
                 $('#videos_modal_body').html(result);
                 $('#PreparationCenter_Video').modal('show');
+                $('#PreparationCenter_modal').modal('hide');
+                $('#PreparationCenter_Notes').modal('hide');
             }
         });
     }
@@ -409,6 +420,9 @@
             success: function(result) {
                 $('#notes_modal_body').html(result);
                 $('#PreparationCenter_Notes').modal('show');
+                $('#PreparationCenter_Video').modal('hide');
+                $('#PreparationCenter_modal').modal('hide');
+
             }
         });
     }

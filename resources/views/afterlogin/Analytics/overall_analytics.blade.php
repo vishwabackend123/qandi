@@ -155,10 +155,10 @@
                                         </div>
                                         <div class="bg-white shadow-lg p-3 mt-3 px-5">
                                             <div class="d-flex">
-                                                <button class="btn btn-outline-secondary rounded-0 w-50 me-4">Back
+                                                <a href="{{url('/dashboard')}}" class="btn btn-outline-secondary rounded-0 w-50 me-4">Back
                                                     to Dashboard
-                                                </button>
-                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto">
+                                                </a>
+                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
                                                     <i class="fa fa-download"></i> &nbsp;Export Analytics
                                                 </button>
                                             </div>

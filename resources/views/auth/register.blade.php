@@ -34,7 +34,7 @@
         <div class="ms-auto login-box me-auto" id="email-box">
             <!-- <div><a href="#" class="back-btn" id="backname"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
             <div class="welcome-heading">Welcome to UniQ </div>
-            <p class="welcome-msg text-center">“Sign-up using your email address or mobile number.” </p>
+            <p class="welcome-msg text-center">“Sign-up using your email address and mobile number.” </p>
             <div class="text-box mt-4">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
                 <input type="email" placeholder="Email address" name="email_add" id="email_add" />

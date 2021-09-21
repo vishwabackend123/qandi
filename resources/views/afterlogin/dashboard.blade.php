@@ -125,7 +125,7 @@
                     <div class="bg-white shadow p-3 h-100">
                         <div class="d-flex ">
                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
-                            <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></a>
+                            <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content=""></a>
                         </div>
                         @if(!empty($subjectData))
                         @foreach($subjectData as $key=>$sub)
@@ -171,7 +171,7 @@
                 <div class="col-6">
                     <span class="text-danger text-uppercase">This week Tests</span>
                     <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
-                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content="And here's some amazing content. It's very engaging. Right?"></i></span>
+                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content=""></i></span>
                 </div>
                 <div class="col-6 text-right d-flex">
                     <div class="ms-auto">

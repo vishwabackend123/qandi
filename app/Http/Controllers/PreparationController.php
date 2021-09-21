@@ -59,7 +59,7 @@ class PreparationController extends Controller
             }
         }
 
-
+        // dd($subject_list, $aPreparation);
 
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
@@ -79,18 +79,9 @@ class PreparationController extends Controller
         $subject_id = $request->subject_id;
         $preType = $request->preType;
 
-        if ($preType == 'presentation') {
-            $api_url_pre = 'api/presentation-list/';
-        } elseif ($preType == 'notes') {
-            $api_url_pre = 'api/notes-list/';
-        } elseif ($preType == 'videos') {
-            $api_url_pre = 'api/video-list/';
-        } elseif ($preType == 'bookmark') {
-        }
+        $api_url_pre = 'api/subjectResources/subject-wise-resources';
 
-
-
-        $api_url = Config::get('constants.API_NEW_URL') . $api_url_pre . $exam_id . '/' . $subject_id;
+        $api_url = Config::get('constants.API_NEW_URL') . $api_url_pre . '/' . $exam_id . '/' . $subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -107,11 +98,34 @@ class PreparationController extends Controller
 
         $response_json = curl_exec($curl);
 
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         $aResponse = json_decode($response_json);
         $status = isset($aResponse->success) ? json_decode($aResponse->success) : false;
+        $values = (object)array();
+
+        $values->subject_id = isset($aResponse->subject_id) ? $aResponse->subject_id : '';
+        $values->subject_name = isset($aResponse->subject_name) ? $aResponse->subject_name : '';
+
+        $values->total_notes = isset($aResponse->total_notes) ? $aResponse->total_notes : '';
+        $values->total_videos = isset($aResponse->total_videos) ? $aResponse->total_videos : '';
+        $values->total_bookmarks = isset($aResponse->total_bookmarks) ? $aResponse->total_bookmarks : '';
+        $values->total_presentations = isset($aResponse->total_presentations) ? $aResponse->total_presentations : '';
+
+        $preparation_list = [];
+
+        if ($preType == 'presentation') {
+            $preparation_list = isset($aResponse->presentation) ? $aResponse->presentation : '';
+        } elseif ($preType == 'videos') {
+            $preparation_list = isset($aResponse->videos) ? $aResponse->videos : '';
+        } elseif ($preType == 'notes') {
+            $preparation_list = isset($aResponse->notes) ? $aResponse->notes : '';
+        }
+
+
+        return view('afterlogin.Preparation.subject_ajax_prepration_data', compact('preType', 'values', 'preparation_list'));
     }
 
 
@@ -138,7 +152,6 @@ class PreparationController extends Controller
         ));
 
         $response_json = curl_exec($curl);
-
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

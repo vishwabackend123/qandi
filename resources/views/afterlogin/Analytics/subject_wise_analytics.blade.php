@@ -110,7 +110,7 @@
                 <div class="d-flex align-items-center">
                     <h5 class="dashboard-title ">Topics</h5>
 
-                    <button class="btn btn-warning-custom px-4 text-uppercase rounded-0" id="topic-open-btn">
+                    <button class="btn btn-warning-custom px-4 ms-auto text-uppercase rounded-0" id="topic-open-btn">
                         <i class="fa fa-expand" aria-hidden="true"></i> Expand
                     </button>
                 </div>
@@ -194,10 +194,10 @@
             </div>
             <div class="bg-white shadow-lg p-3 mt-3 px-5">
                 <div class="d-flex">
-                    <button class="btn btn-outline-secondary rounded-0 w-50 me-4">Back
+                    <a href="{{url('/dashboard')}}" class="btn btn-outline-secondary rounded-0 w-50 me-4">Back
                         to Dashboard
-                    </button>
-                    <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto">
+                    </a>
+                    <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
                         <i class="fa fa-download"></i> &nbsp;Export Analytics
                     </button>
                 </div>

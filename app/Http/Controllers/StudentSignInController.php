@@ -136,8 +136,10 @@ class StudentSignInController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+        $aResponse = json_decode($response_json);
+        $success = isset($aResponse->success) ? $aResponse->success : false;
 
-        if ($httpcode != 200 && $httpcode != 201) {
+        if ($success == false) {
             $response = [
                 "message" => "User mobile number or otp not matched !!",
                 "error" => $err,
@@ -149,6 +151,7 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
 
             $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
+
 
             Session::put('user_data', $user_data);
             if (Auth::loginUsingId($user_data->id)) {
@@ -282,7 +285,11 @@ class StudentSignInController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        if ($httpcode != 200 && $httpcode != 201) {
+
+        $aResponse = json_decode($response_json);
+        $success = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($success == false) {
             $response = [
 
                 "error" => $err,
@@ -291,7 +298,7 @@ class StudentSignInController extends Controller
             ];
             return json_encode($response);
         } else {
-            $aResponse = json_decode($response_json);
+
             $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
             $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
 
