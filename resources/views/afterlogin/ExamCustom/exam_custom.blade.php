@@ -45,14 +45,14 @@
                                     </form>
                                     <button class="btn filter-icon rotate-icon ms-1 text-danger rounded-0" id="dropdownMenuLink-chpt" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-chpt">
-                                        <li><a class="dropdown-item" href="javascript:void(0);"> Low Proficiency</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);"> High Proficiency</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);"> A to Z order</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);"> Z to A order</a></li>
+                                        <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);"> Low Proficiency</a></li>
+                                        <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);"> High Proficiency</a></li>
+                                        <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);"> A to Z order</a></li>
+                                        <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','desc')" href="javascript:void(0);"> Z to A order</a></li>
 
                                     </ul>
                                 </div>
-                                <div class="scroll-div">
+                                <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                                     @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
@@ -106,7 +106,7 @@
                                             </div>
 
                                             <div class="score score-rating js-score">
-                                                10%
+                                                0%
                                             </div>
                                         </div>
 
@@ -125,10 +125,10 @@
                                         <div class="d-flex ps-4">
                                             <button class="btn filter-icon rotate-icon ms-auto mb-2 text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                             <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
-                                                <li><a class="dropdown-item" href="javascript:void(0);"> Low Proficiency</a></li>
-                                                <li><a class="dropdown-item" href="javascript:void(0);"> High Proficiency</a></li>
-                                                <li><a class="dropdown-item" href="javascript:void(0);"> A to Z order</a></li>
-                                                <li><a class="dropdown-item" href="javascript:void(0);"> Z to A order</a></li>
+                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> Low Proficiency</a></li>
+                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> High Proficiency</a></li>
+                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','asc')" href="javascript:void(0);"> A to Z order</a></li>
+                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','desc')" href="javascript:void(0);"> Z to A order</a></li>
 
                                             </ul>
                                         </div>
@@ -355,7 +355,52 @@
         } else {
             $('#topic_form').toggle();
         }
+    }
 
+    function topiclist_filter(chapt_id, filter_type) {
+
+        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "filter_type": filter_type
+            },
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+            },
+            success: function(result) {
+                $("#topic_section_" + chapt_id).html('');
+                $("#topic_section_" + chapt_id).html(result);
+                $('.slick-slider').slick('refresh');
+                $('#overlay').fadeOut();
+                $('#topic_form').show();
+
+            }
+        });
+
+    }
+
+    function chapterlist_filter(sub_id, filter_type) {
+        url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "filter_type": filter_type
+            },
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+            },
+            success: function(result) {
+                $("#chapter_list_" + sub_id).html('');
+                $("#chapter_list_" + sub_id).html(result);
+
+                $('#overlay').fadeOut();
+
+                $('.slick-slider').slick('refresh');
+            }
+        });
 
     }
 </script>

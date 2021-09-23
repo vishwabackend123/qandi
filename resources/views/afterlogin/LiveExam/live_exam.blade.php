@@ -499,6 +499,7 @@ $questtype='radio';
             },
             success: function(result) {
                 $("#question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
             }
         });
@@ -631,6 +632,7 @@ $questtype='radio';
             },
             success: function(result) {
                 $("#question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
 

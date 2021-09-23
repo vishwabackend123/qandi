@@ -284,7 +284,7 @@
   </div>
   <div id="editor"></div>
   <a id="cmd" href="javascript:void(0);" onclick="convert_HTML_To_PDF();" class="export-btn"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
-  <a href="{{ url()->previous() }}" class="close-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
+  <a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
@@ -313,8 +313,9 @@
       'elementHandlers': specialElementHandlers
     });
 
+
     // Save the PDF
-    doc.save('sample-document.pdf');
+    doc.save("overall-analytics.pdf");
   }
 </script>
 <script>

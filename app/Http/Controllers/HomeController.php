@@ -296,10 +296,12 @@ class HomeController extends Controller
         if (isset($storeddata['subjects_rating']) && !empty($storeddata['subjects_rating'])) {
             $rating = $storeddata['subjects_rating'];
 
-            $request = [
+            $request_rating = [
                 'student_id' =>  (int)$user_id,
                 'subjects_rating' => json_encode($rating),
             ];
+
+            $request_json = json_encode($request_rating);
 
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/subject-rating';
@@ -322,8 +324,6 @@ class HomeController extends Controller
             ));
             $response_json = curl_exec($curl);
 
-
-            dd($response_json, $request_json);
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

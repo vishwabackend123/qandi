@@ -64,7 +64,7 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
 <script>
-    $('#resendOtp_link').show();
+    $('#resendOtp_link').hide();
 
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;

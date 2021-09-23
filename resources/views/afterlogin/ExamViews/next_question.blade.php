@@ -11,16 +11,8 @@ $questtype='radio';
 }
 @endphp
 
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
-      "HTML-CSS": {
-        linebreaks: { automatic: true, width: "container" }          
-      }              
-   });
-</script>
-<div class="question-block N_question-block">
+
+<div class="question-block N_question-block ">
 
     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
     @if(isset($last_qid) && ($last_qid==$activeq_id))

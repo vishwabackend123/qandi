@@ -361,6 +361,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             },
             success: function(result) {
                 $("#review_rques_blk").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
             }
         });

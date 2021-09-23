@@ -76,7 +76,7 @@ Route::post('razorpay-payment', [App\Http\Controllers\RazorpayController::class,
 
 
 /* ExamCustom Controller Routs */
-Route::get('/exam_custom', [App\Http\Controllers\ExamCustomController::class, 'index'])->name('exam_custom')->middleware('auth', 'menu');
+Route::get('/exam_custom/{filter?}', [App\Http\Controllers\ExamCustomController::class, 'index'])->name('exam_custom')->middleware('auth', 'menu');
 Route::any('/custom_exam', [App\Http\Controllers\ExamCustomController::class, 'subject_exam'])->name('custom_exam')->middleware('auth', 'menu');
 Route::any('/ajax_next_question/{ques_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_next_question'])->name('ajax_next_question')->middleware('auth', 'menu');
 Route::any('/ajax_next_subject_question/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_next_subject_question'])->name('ajax_next_subject_question')->middleware('auth', 'menu');
@@ -84,6 +84,7 @@ Route::any('/saveAnswer', [App\Http\Controllers\ExamCustomController::class, 'sa
 Route::any('/clearResponse', [App\Http\Controllers\ExamCustomController::class, 'clearResponse'])->name('clearResponse')->middleware('auth', 'menu');
 Route::any('/ajax_custom_topic/{chapt_id}', [App\Http\Controllers\ExamCustomController::class, 'chaptersTopic'])->name('ajax_custom_topic')->middleware('auth', 'menu');
 Route::any('/ajax_chapter_list/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'ajax_chapter_list'])->name('ajax_chapter_list')->middleware('auth', 'menu');
+Route::any('/filter_subject_chapter/{subject_id}', [App\Http\Controllers\ExamCustomController::class, 'filter_subject_chapter'])->name('filter_subject_chapter')->middleware('auth', 'menu');
 
 
 /* Review Controller Routs */

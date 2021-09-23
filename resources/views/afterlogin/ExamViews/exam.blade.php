@@ -1,4 +1,9 @@
 @extends('afterlogin.layouts.app')
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script> -->
+
+@section('content')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -8,20 +13,6 @@
         $('.tab-content').height(winHeight - 130);
     });
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
-      "HTML-CSS": {
-        linebreaks: { automatic: true, width: "container" }          
-      }              
-   });
-</script>
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script> -->
-
-@section('content')
 
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
@@ -48,6 +39,8 @@ $questtype='radio';
     .N_radioans p,
     .N_radioans span {
         font: normal normal normal 18px/28px Poppins !important;
+        flex-wrap: wrap !important;
+        display: flex;
     }
 </style>
 
@@ -340,6 +333,8 @@ $questtype='radio';
 
 @include('afterlogin.layouts.footer')
 
+
+
 <script type="text/javascript">
     $('.number-block').slimscroll({
         height: '20vh'
@@ -504,6 +499,7 @@ $questtype='radio';
             },
             success: function(result) {
                 $("#question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
             }
         });
@@ -635,7 +631,8 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
-                $("#question_section").html(result);
+                $("#myTabContent #question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
 

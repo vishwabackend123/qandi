@@ -88,11 +88,7 @@
         <!-- dashboard html section-->
 
         <div class="container-fluid">
-            @if ($message = Session::get('error'))
-            <div class="alert alert-danger alert-block" id="alert">
-                <strong>{{ $message }}</strong>
-            </div>
-            @endif
+            <!--  -->
             <div class="row">
                 <div class="col-lg-4">
                     <div class="bg-white shadow h-100">
@@ -187,7 +183,7 @@
                     @if(isset($prof_asst_test) && $prof_asst_test=='N')
                     <li class="gray prfile">
                         <div class="col swipLi">
-                            <div class="TestLevel ">Level Up ee</div>
+                            <div class="TestLevel ">Level Up</div>
                             <div class="TestTitle">One Last Step!</div>
                             <div class="unlock-text">Unlock analytics and more</div>
 
@@ -329,7 +325,7 @@
 </div>
 
 <!-- Modal -->
-@if(isset($student_rating) && empty($student_rating))
+@if($student_rating == null || empty($student_rating))
 <div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -503,8 +499,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         $('#welcomeModal').modal('hide');
         if ($("#favSubResponse").length > 0) {
             $("#favSubResponse").modal("show");
-        }
-        if ($("#fullTest_Dashboard").length > 0) {
+        } else if ($("#fullTest_Dashboard").length > 0) {
             $("#fullTest_Dashboard").modal("show");
         }
     }

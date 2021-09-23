@@ -87,38 +87,46 @@ class ExamCustomController extends Controller
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
-            return $chapter_list;
-        }
-
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
-
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $api_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-        ));
-
-        $response_json = curl_exec($curl);
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-
-        if ($httpcode == 200 || $httpcode == 201) {
-            $responsedata = json_decode($response_json);
-
-            $chapter_list = $responsedata->response;
         } else {
-            $chapter_list = [];
-        }
 
-        Redis::set($cacheKey, json_encode($chapter_list));
-        return $chapter_list;
+            $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $api_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($httpcode == 200 || $httpcode == 201) {
+                $responsedata = json_decode($response_json);
+
+                $chapter_list = $responsedata->response;
+            } else {
+                $chapter_list = [];
+            }
+
+            Redis::set($cacheKey, json_encode($chapter_list));
+        }
+        $collection = collect($chapter_list);
+
+        $sorted = $collection->sortBy([
+            ['chapter_name', 'asc']
+        ]);
+        $chapters = $sorted->values()->all();
+
+
+        return $chapters;
     }
 
     public function get_subject_topics($active_subject_id)
@@ -581,9 +589,11 @@ class ExamCustomController extends Controller
     }
 
 
-    public function  chaptersTopic($chapter_id)
+    public function  chaptersTopic(Request $request, $chapter_id)
     {
 
+
+        $filter_by = isset($request->filter_type) ? $request->filter_type : '';
         //$topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
 
         $api_url = Config::get('constants.API_NEW_URL') . 'api/topics-by-chapter-id/' . $chapter_id;
@@ -610,10 +620,30 @@ class ExamCustomController extends Controller
         if ($httpcode == 200 || $httpcode == 201) {
             $responsedata = json_decode($response_json);
 
-            $topics = $responsedata->response;
+
+            $topics_list = $responsedata->response;
         } else {
-            $topics = [];
+            $topics_list = [];
         }
+
+        $collect_topic = collect($topics_list);
+        if ($filter_by == 'asc') {
+            $sorted = $collect_topic->sortBy([
+                ['topic_name', 'asc']
+            ]);
+            $topics = $sorted->values()->all();
+        } elseif ($filter_by == 'desc') {
+            $sorted = $collect_topic->sortBy([
+                ['topic_name', 'desc']
+            ]);
+            $topics = $sorted->values()->all();
+        } else {
+            $sorted = $collect_topic->sortBy([
+                ['topic_name', 'asc']
+            ]);
+            $topics = $sorted->values()->all();
+        }
+
 
         return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
     }
@@ -629,6 +659,7 @@ class ExamCustomController extends Controller
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
+
             return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
             //return $chapter_list;
         }
@@ -662,5 +693,72 @@ class ExamCustomController extends Controller
         }
 
         return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
+    }
+
+
+    public function filter_subject_chapter(Request $request, $active_subject_id)
+
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+        $filter_by = isset($request->filter_type) ? $request->filter_type : '';
+        $subject_id = $active_subject_id;
+
+        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
+        if ($data = Redis::get($cacheKey)) {
+            $chapter_list = json_decode($data);
+        } else {
+
+            $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $api_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($httpcode == 200 || $httpcode == 201) {
+                $responsedata = json_decode($response_json);
+
+                $chapter_list = $responsedata->response;
+            } else {
+                $chapter_list = [];
+            }
+
+            Redis::set($cacheKey, json_encode($chapter_list));
+        }
+
+        $collection = collect($chapter_list);
+        if ($filter_by == 'asc') {
+            $sorted = $collection->sortBy([
+                ['chapter_name', 'asc']
+            ]);
+            $chapters = $sorted->values()->all();
+        } elseif ($filter_by == 'desc') {
+            $sorted = $collection->sortBy([
+                ['chapter_name', 'desc']
+            ]);
+            $chapters = $sorted->values()->all();
+        } else {
+            $sorted = $collection->sortBy([
+                ['chapter_name', 'asc']
+            ]);
+            $chapters = $sorted->values()->all();
+        }
+
+
+
+        return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id'));
     }
 }

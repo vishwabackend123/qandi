@@ -580,7 +580,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             },
             success: function(result) {
                 $("#question_section").html(result);
-
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
     }
@@ -712,6 +712,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             },
             success: function(result) {
                 $("#question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
 

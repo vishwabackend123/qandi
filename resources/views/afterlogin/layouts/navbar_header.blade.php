@@ -178,7 +178,8 @@
                                                 <small>Includes 2 Mains Mock Test (Live), 4 Sample Tests</small> -->
                                             </div>
                                         </div>
-                                        <p class="text-end text-danger mt-1">*Subscription expires on {{isset($subscription_details->subscription_end_date)?date("jS F, Y", strtotime($subscription_details->subscription_end_date)):''}}</p>
+                                        @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
+                                        <p class="text-end text-danger mt-1">*Subscription expires on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
