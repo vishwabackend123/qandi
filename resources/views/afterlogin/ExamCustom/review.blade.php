@@ -40,6 +40,10 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         font-weight: 200;
 
     }
+
+    .answer-block p {
+        margin-bottom: 0px;
+    }
 </style>
 <div class="main-wrapper bg-gray">
     <!-- top navbar -->
@@ -113,7 +117,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                     <div class="answer-block p-3 ">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <p class="mb-0 text-green">answer :</p>
+                                                <p class="mb-0 text-green">Answer :</p>
                                             </div>
 
                                             <div class="col-md-7">
@@ -135,7 +139,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             <!--  <div class="col-md-3 text-end">
                                                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
                                             </div> -->
-                                            <div class="col-md-12 percentage-box collapse" id="perecent-box">
+                                            <!-- <div class="col-md-12 percentage-box collapse" id="perecent-box">
                                                 <div class="d-flex p-4 bg-gray">
                                                     <div class="">
                                                         <h3>21%</h3>
@@ -155,9 +159,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                                                 </div>
 
-                                            </div>
+                                            </div> -->
 
-                                            <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
+                                            <!-- <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
                                                 <div class=" p-4 bg-gray">
                                                     <div class="d-flex">
                                                         <div class="">
@@ -187,16 +191,30 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                                     <p class="mb-0">AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
                                                 </div>
 
-                                            </div>
+                                            </div> -->
 
                                         </div>
+                                        @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
+                                        <div class="row">
+                                            <div class="col-md-2 ">
+                                                <p class="mb-0 text-green">Explanation :</p>
+
+                                            </div>
+                                            <div class="col-md-7">
+                                                {!! $question_data->explanation !!}
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @if(isset($question_data->reference_text ) && !empty($question_data->reference_text ))
                                         <div class="row">
                                             <div class="col-md-2">
+                                                <p class="mb-0 text-green">Reference :</p>
                                             </div>
                                             <div class="col-md-7">
                                                 {!! $question_data->reference_text !!}
                                             </div>
                                         </div>
+                                        @endif
                                     </div>
 
                                 </div>

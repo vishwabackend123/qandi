@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
 
 /*
@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Redis;
 */
 
 Route::any('/', function () {
-    return view('index');
+    if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
+        return Redirect()->route('dashboard');
+    } else {
+        return view('index');
+    }
 });
 
 Route::any('/logout', function () {

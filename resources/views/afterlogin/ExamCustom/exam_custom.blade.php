@@ -331,25 +331,32 @@
 
     /* getting Next Question Data */
     function show_topic(chapt_id) {
+        var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
 
-        url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-                $('#overlay').fadeIn();
-            },
-            success: function(result) {
-                $("#topic_section_" + chapt_id).html('');
-                $("#topic_section_" + chapt_id).html(result);
-                $('.slick-slider').slick('refresh');
-                $('#overlay').fadeOut();
-                $('#topic_form').show();
+        if (topic_length == 0) {
+            url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
+                success: function(result) {
+                    $("#topic_section_" + chapt_id).html('');
+                    $("#topic_section_" + chapt_id).html(result);
+                    $('.slick-slider').slick('refresh');
+                    $('#overlay').fadeOut();
+                    $('#topic_form').show();
 
-            }
-        });
+                }
+            });
+        } else {
+            $('#topic_form').toggle();
+        }
+
+
     }
 </script>
 

@@ -22,6 +22,7 @@ $questtype='radio';
 
         </div>
         <div class="time_taken_css" id="q_time_taken" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
+        <input type="hidden" name="time_spend_{{$activeq_id}}" id="time_spend_{{$activeq_id}}" value="" />
     </div>
 </div>
 <div class="question-block N_question-block">
@@ -31,7 +32,7 @@ $questtype='radio';
     <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
     @else
-    <button class="btn arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+    <button class="btn arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
     @endif
 
@@ -86,9 +87,10 @@ $questtype='radio';
         var qest = '{{$activeq_id}}';;
         var ctxt = " Seconds";
         var ctimer = setInterval(function() {
-            $('#counter_{{$activeq_id}} span.seconds').text(sec-- + ctxt);
+            sec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(sec-- + ctxt);
 
-            progressBar(sec, $('#progressBar_{{$activeq_id}}'));
+            progressBar_next(sec, $('#progressBar_{{$activeq_id}}'));
 
             if (sec == -1) {
 
@@ -101,7 +103,7 @@ $questtype='radio';
             }
         }, interval);
 
-        function progressBar(percent, $element) {
+        function progressBar_next(percent, $element) {
             var progressBarWidth = percent * $element.width() / 60;
 
             $element.find('div').animate({
@@ -119,14 +121,15 @@ $questtype='radio';
         var secondsLabel = document.getElementById("up_seconds");
         //var totalSec = document.getElementById("tsec");
         var totalSeconds = 0;
-        setInterval(setEachQuestionTime, 1000);
 
         function setEachQuestionTime() {
-            ++totalSeconds;
-            secondsLabel.innerHTML = pad(totalSeconds % 60);
+            setInterval(function() {
+                ++totalSeconds;
+                secondsLabel.innerHTML = pad(totalSeconds % 60);
 
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-            //totalSec.innerHTML = pad(totalSeconds);
+                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+                //totalSec.innerHTML = pad(totalSeconds);
+            }, 1000);
         }
 
         function pad(val) {

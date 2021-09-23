@@ -371,7 +371,7 @@
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/images/Layer-4.png')}}" class="bg-white"></a>
                 </span>
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
-                <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span>
+                <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
             <div class="calender-block">
                 <div id="calendari"></div>

@@ -55,17 +55,19 @@ class AssessmentExamController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
-        $response_json = str_replace('NaN', '""', $response_json);
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
+        //$jsondata = rtrim($response_json, "\0");
+
         $responsedata = json_decode($response_json);
+
         $response_status = isset($responsedata->success) ? $responsedata->success : false;
 
         if ($response_status == true) {
-            $aQuestions_list = $responsedata->questions ?? '';
+            $aQuestions_list = $responsedata->questions_list ?? [];
             $exam_fulltime = $responsedata->time_allowed ?? '';
 
             $exam_ques_count = $questions_count = count($aQuestions_list);
@@ -116,7 +118,7 @@ class AssessmentExamController extends Controller
 
         if (isset($question_data) && !empty($question_data)) {
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;

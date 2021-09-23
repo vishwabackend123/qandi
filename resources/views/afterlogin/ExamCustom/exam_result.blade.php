@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="bg-white shadow-lg p-3 position-relative h-100">
-                    <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
                     <div class="text-center">
                         <!--  <img src={{URL::asset('public/after_login/images//roundedgraph.jpg')}}"> -->
@@ -49,7 +49,7 @@
             </div>
             <div class="col-lg-8">
                 <div class="bg-white shadow-lg p-4  position-relative h-100">
-                    <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
 
                     <div class="row">
                         <div class="col-md-4">
@@ -160,7 +160,8 @@
                 </div>
             </div>
             <div class="col-7 ">
-                <div class="bg-white shadow position-relative"> <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                <div class="bg-white shadow position-relative">
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <div class="tab-wrapper h-100 mt-0">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                             @php $subx=1; @endphp
@@ -236,7 +237,7 @@
         <div class="row mb-4">
             <div class="col-md-9">
                 <div class="bg-white shadow p-5 position-relative">
-                    <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                    <!--  <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>

@@ -298,9 +298,8 @@ class HomeController extends Controller
 
             $request = [
                 'student_id' =>  (int)$user_id,
-                'subjects_rating' => $rating,
+                'subjects_rating' => json_encode($rating),
             ];
-            $request_json = json_encode($request);
 
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/subject-rating';
@@ -314,7 +313,7 @@ class HomeController extends Controller
                 CURLOPT_MAXREDIRS => 10,
                 CURLOPT_TIMEOUT => 0,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "PUT",
+                CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => $request_json,
                 CURLOPT_HTTPHEADER => array(
                     "accept: application/json",
@@ -324,6 +323,7 @@ class HomeController extends Controller
             $response_json = curl_exec($curl);
 
 
+            dd($response_json, $request_json);
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

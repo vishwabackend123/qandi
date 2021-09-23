@@ -82,73 +82,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
                                 <div class="question-block N_question-block">
 
-                                    <script>
-                                        var fsec = 60;
-                                        var up_timer = 0;
-                                        var countdown_txt = " Seconds";
-                                        var upcounter_txt = " Mins";
 
-                                        function questionstartTimer() {
-                                            up_timer++;
-                                            var timer_up = setInterval(function() {
-                                                up_timer++;
-                                            }, 1000);
-                                            var timer_countdown = setInterval(function() {
-                                                fsec--;
-                                                //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
-                                                progressBar(fsec, $('#progressBar_{{$activeq_id}}'));
-                                                if (fsec == -1) {
-                                                    clearInterval(timer_countdown);
-                                                    $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
-                                                    $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
-                                                    $('#q_time_taken').show();
-                                                    $('#avg_text').hide();
-                                                    $('#progressBar_{{$activeq_id}}').hide();
-                                                }
-
-                                            }, 1000);
-
-                                        }
-
-
-
-                                        function progressBar(percent, $element) {
-                                            var progressBarWidth = percent * $element.width() / 60;
-                                            $element.find('div').animate({
-                                                width: progressBarWidth
-                                            }, 500).html(percent + "%&nbsp;");
-                                            if (percent <= 20) {
-                                                $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
-                                            }
-                                            if (percent <= 0) {
-                                                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
-                                                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
-                                            }
-                                        }
-
-                                        var minutesLabel = document.getElementById("up_minutes");
-                                        var secondsLabel = document.getElementById("up_seconds");
-                                        //var totalSec = document.getElementById("tsec");
-                                        var totalSeconds = 0;
-                                        setInterval(setEachQuestionTime, 1000);
-
-                                        function setEachQuestionTime() {
-                                            ++totalSeconds;
-                                            secondsLabel.innerHTML = pad(totalSeconds % 60);
-
-                                            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-                                            //totalSec.innerHTML = pad(totalSeconds);
-                                        }
-
-                                        function pad(val) {
-                                            var valString = val + "";
-                                            if (valString.length < 2) {
-                                                return "0" + valString;
-                                            } else {
-                                                return valString;
-                                            }
-                                        }
-                                    </script>
                                     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
                                     <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
@@ -427,6 +361,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -562,6 +497,75 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
+    /* per question timer */
+    var fsec = 60;
+    var up_timer = 0;
+    var countdown_txt = " Seconds";
+    var upcounter_txt = " Mins";
+
+    function questionstartTimer() {
+        up_timer++;
+        var timer_up = setInterval(function() {
+            up_timer++;
+        }, 1000);
+        var timer_countdown = setInterval(function() {
+            fsec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+            progressBar(fsec, $('#progressBar_{{$activeq_id}}'));
+            if (fsec == -1) {
+                clearInterval(timer_countdown);
+                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken').show();
+                $('#avg_text').hide();
+                $('#progressBar_{{$activeq_id}}').hide();
+            }
+
+        }, 1000);
+
+    }
+
+
+
+    function progressBar(percent, $element) {
+        var progressBarWidth = percent * $element.width() / 60;
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
+        }
+        if (percent <= 0) {
+            $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
+            $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+        }
+    }
+
+    var minutesLabel = document.getElementById("up_minutes");
+    var secondsLabel = document.getElementById("up_seconds");
+    //var totalSec = document.getElementById("tsec");
+    var totalSeconds = -1;
+
+
+    function setEachQuestionTime() {
+        setInterval(function() {
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
+        }, 1000);
+    }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+    }
+    /* per question timer end */
 
 
 

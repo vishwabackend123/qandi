@@ -2,7 +2,7 @@
 
 @section('content')
 <nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
-    <div class="container-fluid"><a class="navbar-brand" href="#"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
+    <div class="container-fluid"><a href="{{url('/')}}" class="navbar-brand"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
 </nav>
 <div id="main" class=" h-100">
     <div class="row">

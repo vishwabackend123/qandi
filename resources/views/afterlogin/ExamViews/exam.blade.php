@@ -44,6 +44,11 @@ $questtype='radio';
         overflow-y: auto;
 
     }
+
+    .N_radioans p,
+    .N_radioans span {
+        font: normal normal normal 18px/28px Poppins !important;
+    }
 </style>
 
 <div class="main-wrapper p-0 bg-gray">

@@ -69,6 +69,7 @@ class ReviewController extends Controller
         }
 
 
+
         $result_response = $response ?? [];
 
         $question_data = [];
@@ -130,7 +131,7 @@ class ReviewController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -180,7 +181,7 @@ class ReviewController extends Controller
 
             $answerKeys = array_keys((array)$correct_ans);
 
-
+            //dd($question_data);
 
             return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id'));
         } else {
@@ -247,7 +248,7 @@ class ReviewController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -361,7 +362,7 @@ class ReviewController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {

@@ -23,62 +23,7 @@
 
     <script src="{{URL::asset('public/after_login/js/touchslider.js')}}"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script>
-        // Your web app's Firebase configuration
-        /*  const firebaseConfig = {
-             apiKey: "BA4Jhm824U8n2-c5HXWiLeCLSXWVwTOuixpQekWmqMDb6nmCOvE7uOo9dBRvNhjDrPPvZnH_iMEtZnkB1wFPWQ0",
-             authDomain: "uniq-notifications.firebaseapp.com",
-             projectId: "uniq-notifications",
-             storageBucket: "uniq-notifications.appspot.com",
-             messagingSenderId: "768896658565",
-             appId: "1:768896658565:web:036b631c04c6d9c6280dec",
-             measurementId: "G-8PJKZ9N25F"
-         };
-         // Initialize Firebase
-         firebase.initializeApp(firebaseConfig);
 
-         const messaging = firebase.messaging();
-
-         function initFirebaseMessagingRegistration() {
-             alert("hi");
-
-             messaging.getToken({
-                 vapidKey: 'BA4Jhm824U8n2-c5HXWiLeCLSXWVwTOuixpQekWmqMDb6nmCOvE7uOo9dBRvNhjDrPPvZnH_iMEtZnkB1wFPWQ0'
-             }).then((currentToken) => {
-                 if (currentToken) {
-                     alert(currentToken);
-                     $.post("https://api.uniqtoday.com/api/update_student_token", {
-                         token: currentToken,
-                         user_id: "{{Auth::user()->id}}"
-                     });
-                 } else {
-                     alert('no');
-                     // Show permission request UI
-                     console.log('No registration token available. Request permission to generate one.');
-                     // ...
-                 }
-             }).catch((err) => {
-                 console.log('An error occurred while retrieving token. ', err);
-                 // ...
-             });
-         }
-
-         initFirebaseMessagingRegistration();
-
-         messaging.onMessage(function({
-             data: {
-                 body,
-                 title
-             }
-         }) {
-             new Notification(title, {
-                 body
-             });
-         }); */
-        // Your web app's Firebase configuration
-    </script>
 
 
     <style>

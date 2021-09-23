@@ -2,7 +2,7 @@
 
 @section('content')
 <nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
-    <div class="container-fluid"><a class="navbar-brand" href="#"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
+    <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
 </nav>
 <div id="main">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -43,7 +43,7 @@
                 <div class="d-flex align-items-center mt-0">
                     <span class="ms-auto" id="wait_otp_div"> </span>
                 </div>
-                <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
+                <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
                 <div class="text-center mt-2">
                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">
                         Sign In
@@ -64,6 +64,8 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
 <script>
+    $('#resendOtp_link').show();
+
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -127,7 +129,8 @@
 
             if (timeLeft == -1) {
                 clearTimeout(timerId);
-                sentotplogin();
+                $('#resendOtp_link').show();
+                /*  sentotplogin(); */
             } else {
                 elem.innerHTML = 'Resend OTP in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
                 timeLeft--;

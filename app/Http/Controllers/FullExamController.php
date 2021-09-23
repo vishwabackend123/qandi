@@ -117,7 +117,7 @@ class FullExamController extends Controller
 
         if (isset($question_data) && !empty($question_data)) {
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
@@ -220,7 +220,7 @@ class FullExamController extends Controller
 
         if (isset($question_data) && !empty($question_data)) {
             /*  $publicPath = url('/') . '/public/images/questions/'; */
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
@@ -300,7 +300,7 @@ class FullExamController extends Controller
 
         if (isset($question_data) && !empty($question_data)) {
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://uat-uniq.thomsondigital.com' . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
             $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;

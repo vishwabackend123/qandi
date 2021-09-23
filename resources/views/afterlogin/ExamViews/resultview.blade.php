@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="bg-white shadow-lg p-3 position-relative">
-                        <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                        <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
                         <div class="text-center">
                             <img src="{{URL::asset('public/after_login/images//roundedgraph.jpg')}}">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="bg-white shadow-lg p-3  position-relative">
-                        <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                        <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
 
                         <div class="row">
                             <div class="col-md-4">
@@ -86,7 +86,7 @@
             <div class="row mt-5 mb-3">
                 <div class="col-5">
                     <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
-                        <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                        <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                         <h5 class="dashboard-title mb-3">Subject Score</h5>
                         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
                             <span class="subj-name me-4 col-3">Mathematics</span>
@@ -148,7 +148,8 @@
                     </div>
                 </div>
                 <div class="col-7 ">
-                    <div class="bg-white shadow position-relative"> <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                    <div class="bg-white shadow position-relative">
+                        <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                         <div class="tab-wrapper h-100">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -278,7 +279,7 @@
             <div class="row mb-4">
                 <div class="col-md-9">
                     <div class="bg-white shadow p-5 position-relative">
-                        <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                        <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                         <div class="row">
                             <div class="col-md-4 text-center">
                                 <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>
@@ -314,7 +315,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="bg-white shadow p-5 d-flex flex-column position-relative">
-                        <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a>
+                        <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                         <span class="text-center w-100"><img src="{{URL::asset('public/after_login/images//bottom-right.jpg')}}" /></span>
                         <a href="{{route('examreview')}}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
                         <a href="{{route('dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>

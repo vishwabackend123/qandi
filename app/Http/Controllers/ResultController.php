@@ -95,7 +95,7 @@ class ResultController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        // dd($request, $response_json);
+        //dd($curl_url, $request, $response_json);
 
 
         if ($test_type == 'live') {

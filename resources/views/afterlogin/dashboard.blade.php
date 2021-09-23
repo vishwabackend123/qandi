@@ -125,7 +125,7 @@
                     <div class="bg-white shadow p-3 h-100">
                         <div class="d-flex ">
                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
-                            <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content=""></a>
+                            <!-- <a href="javascript:;" class="fa fa-info-circle fa-1x text-light ms-auto" data-bs-toggle="popover" data-bs-content=""></a> -->
                         </div>
                         @if(!empty($subjectData))
                         @foreach($subjectData as $key=>$sub)
@@ -171,7 +171,7 @@
                 <div class="col-6">
                     <span class="text-danger text-uppercase">This week Tests</span>
                     <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
-                    <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content=""></i></span>
+                    <!-- <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content=""></i></span> -->
                 </div>
                 <div class="col-6 text-right d-flex">
                     <div class="ms-auto">
@@ -183,50 +183,6 @@
                 </div>
             </div>
             <div class='swipe mb-5' id="plan_slider">
-                <!--  <ul id='slider' class="pt-3 ">
-                    <li class="gray prfile">
-                        <div class="col swipLi">
-                            <div class="TestLevel ">Level Up</div>
-                            <div class="TestTitle">One Last Step!</div>
-                            <div class="unlock-text">Unlock analytics and more</div>
-
-                            <div class="checkBody mb-2">
-                                <input class="inputCheck" type="checkbox" value="" id79109="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Take a test and get a complete analysis of your preparation!
-                                </label>
-                            </div>
-                            <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="gray prfile inactive-block">
-                        <div class="col swipLi ">
-                            <div class="TestLevel ">Coming up next</div>
-                            <div class="TestTitle">--</div>
-                            <div class="unlock-text">--</div>
-
-                            <div class="checkBody mb-2">
-                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Take complete body scan test to unlock!
-                                </label>
-                            </div>
-                            <div class="btnBody">
-                                <a href="javascript:void(0);" class="btn rounded-0 p-2 bt-hgt-48 disabled"><i class="fas fa-bolt"></i> Take body scan</a>
-                                <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48 disabled" disabled><i class="fas fa-clock"></i> Schedule Later</button>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-
-
-
-                </ul> -->
                 <ul id='slider' class="pt-3">
                     @if(isset($prof_asst_test) && $prof_asst_test=='N')
                     <li class="gray prfile">
@@ -286,46 +242,7 @@
             </div>
 
             <div id="pagenavi"></div>
-            <!--             <div class="row">
-                <div class="col-12">
-                    <section id="planner_div" class="slick-slider mb-4">
-                        <div class=" ">
 
-                            <div class="bg-light shadow p-3 d-flex flex-column">
-                                <small class="text-danger fs-5 mb-3">Level up</small>
-                                <h3>One Last Step!</h3>
-                                <p class="text-danger fs-5">Unlock analytics and more</p>
-
-                                <div class="form-check my-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                        Take a test and get a complete analysis of your preparation!
-                                    </label>
-                                </div>
-                                <a href="{{route('exam','full_exam')}}" class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</a>
-                            </div>
-                        </div>
-                        <div class=" ">
-
-                            <div class="bg-light shadow p-3 d-flex flex-column inactive-block">
-                                <small class="text-danger fs-5$.ajax({ url: " database/update.html", context: document.body, success: function(){ alert("done"); }}); mb-3">Level up</small>
-                                <h3>One Last Step!</h3>
-                                <p class="text-danger fs-5">Unlock analytics and more</p>
-
-                                <div class="form-check my-4">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                        Take a test and get a complete analysis of your preparation!
-                                    </label>
-                                </div>
-                                <button class="btn btn-danger w-100 rounded-0 mt-3"><i class="fas fa-link"></i> Attempt Now!</button>
-                            </div>
-                        </div>
-
-
-                    </section>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
@@ -453,8 +370,7 @@
                         <i class="fa fa-chevron-left"></i> &nbsp;&nbsp;Back </a>
                     <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
 
-                    {{--
-                                    <a href="#" class="btn rating-next-btn ms-auto px-4" data-bs-toggle="modal" data-bs-target="#fullTest_Dashboard" data-bs-dismiss="modal" id="nxt-btn" onclick="store_rating();">Next ></a>
+                    {{-- <a href="#" class="btn rating-next-btn ms-auto px-4" data-bs-toggle="modal" data-bs-target="#fullTest_Dashboard" data-bs-dismiss="modal" id="nxt-btn" onclick="store_rating();">Next ></a>
                                 --}}
                 </div>
 
@@ -483,7 +399,7 @@
                 <p>Take a full body scan test to analyse and plan your preparation journey</p>
                 <a href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
 
-                    <span class="text-white ms-4 ">Take full body scan of<br>XX questions test</span>
+                    <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
                 </a>
                 <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard ></a>
             </div>
@@ -521,6 +437,7 @@ $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
 $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
 @endphp
+
 <script type="text/javascript">
     console = window.console || {
         dir: new Function(),
@@ -548,37 +465,6 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         fullsize: false
     });
     t4.on('before', function(m, n) {
-        as[m].className = '';
-        as[n].className = 'active';
-    })
-</script>
-<script type="text/javascript">
-    console = window.console || {
-        dir: new Function(),
-        log: new Function()
-    };
-    var active = 0,
-        as = document.getElementById('pagenavi').getElementsByTagName('a');
-    for (var i = 0; i < as.length; i++) {
-        (function() {
-            var j = i;
-            as[i].onclick = function() {
-                t4.slide(j);
-                return false;
-            }
-        })();
-    }
-    var t1 = new TouchSlider('slider', {
-        duration: 800,
-        interval: 3000,
-        direction: 0,
-        autoplay: false,
-        align: 'left',
-        mousewheel: false,
-        mouse: true,
-        fullsize: false
-    });
-    t1.on('before', function(m, n) {
         as[m].className = '';
         as[n].className = 'active';
     })
@@ -800,10 +686,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     })
 </script>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
+
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
