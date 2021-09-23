@@ -379,8 +379,6 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 $("#review_rques_blk").html(result);
             }
         });
-
-
     }
 
     function get_filtered_question(filter) {

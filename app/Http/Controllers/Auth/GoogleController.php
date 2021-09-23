@@ -37,8 +37,6 @@ class GoogleController extends Controller
 
     public function handleGoogleCallback(Request $request)
     {
-
-
         $user = Socialite::driver('google')->user();
         if (DB::table('student_users')->where('email', '=', $user->email)->exists()) {
             $userData = DB::table('student_users')->where('email', '=', $user->email)->first();
