@@ -67,7 +67,38 @@ class PreparationController extends Controller
 
     public function download_exampaper(Request $request)
     {
-        return view('afterlogin.Preparation.exam_papers');
+        $exam_id = Auth::user()->grade_id;
+        $data = $request->all();
+        $responsePdf = '';
+        if (isset($data) && !empty($data)):
+            $api_url = 'http://3.108.176.99:8080/api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id. '/' . $data['subject_id'];
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $api_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+            ));
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+            $responseData = json_decode($response);
+            foreach($responseData->response as $value){
+                $responsePdf = $value->paper_file_name;
+
+            }
+            $imgUrl =  str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/'.$responsePdf);
+            return $imgUrl;
+        endif;
+
+        $subject_list = $this->redis_subjects();
+        return view('afterlogin.Preparation.exam_papers', compact('subject_list'));
     }
 
 
@@ -193,7 +224,6 @@ class PreparationController extends Controller
         ));
 
         $response_json = curl_exec($curl);
-
 
 
         $err = curl_error($curl);
