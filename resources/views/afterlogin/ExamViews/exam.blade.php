@@ -36,12 +36,13 @@ $questtype='radio';
 
     }
 
+    /* 
     .N_radioans p,
     .N_radioans span {
         font: normal normal normal 18px/28px Poppins !important;
         flex-wrap: wrap !important;
         display: flex;
-    }
+    } */
 </style>
 
 <div class="main-wrapper p-0 bg-gray">

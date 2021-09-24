@@ -21,7 +21,9 @@ Route::any('/', function () {
         return Redirect()->route('dashboard');
     } else {
         return view('index');
+
 //        return redirect('https://www.uniqtoday.com/');
+
     }
 });
 
