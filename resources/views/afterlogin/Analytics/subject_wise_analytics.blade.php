@@ -348,7 +348,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -398,7 +398,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -448,7 +448,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -506,7 +506,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -556,7 +556,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -606,7 +606,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
