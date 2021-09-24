@@ -47,8 +47,7 @@ class GoogleController extends Controller
             $fixed = '98';
             $number = $fixed . mt_rand(10000000, 99999999);
             $insertData = [
-                'first_name' => $user->user['name'],
-                'last_name' => $user->user['family_name'],
+                'user_name' => $user->user['name'],
                 'email' => $user->user['email'],
                 'mobile' => $number,
                 'grade_id' => 1,
