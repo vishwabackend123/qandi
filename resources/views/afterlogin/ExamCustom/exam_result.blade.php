@@ -241,7 +241,8 @@
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>
-                            <img src="{{URL::asset('public/after_login/images/bottom-left.jpg')}}" />
+                            <div id="rank"></div>
+{{--                            <img src="{{URL::asset('public/after_login/images/bottom-left.jpg')}}" />--}}
                         </div>
                         <div class="col-md-8">
                             <div class="blue-block d-flex flex-column">
@@ -299,13 +300,6 @@ $clsAvg_json=json_encode($clsAvg_arr);
 
 @endphp
 
-
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script src="https://code.highcharts.com/stock/highstock.js"></script>
-<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-<script src="https://www.highcharts.com/samples/data/three-series-1000-points.js"></script>
 <script>
     $(".topicdiv-scroll").slimscroll({
         height: "50vh",
@@ -439,4 +433,45 @@ $clsAvg_json=json_encode($clsAvg_arr);
             chart.series[1].setData(class_score);
         }
     }
+</script>
+
+<script>
+    Highcharts.setOptions({
+        colors: ['#ff9999', '#fde98d', '#aff3d0']
+    });
+    Highcharts.chart('rank', {
+        chart: {
+            type: 'pyramid',
+            height: 200
+        },
+        credits: {
+          enabled: false
+        },
+        title: {
+            text: '',
+            x: -50
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b> {point.y:,.0f}',
+                    softConnector: true
+                },
+                center: ['40%', '50%'],
+                width: '80%'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Unique users',
+            data: [
+                ['', {{$response->total_participants}}],
+                ['AIR', {{$response->user_rank}}],
+                ['', 1]
+            ]
+        }]
+    });
 </script>
