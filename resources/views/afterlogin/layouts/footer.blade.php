@@ -240,23 +240,28 @@
                 success: function(response_data) {
                     /* console.log(response_data); */
                     var response = jQuery.parseJSON(response_data);
-
-                    if (response[0].success == true) {
-                        if (response[0].message != '') {
+                    console.log(response.message);
+                    if (response.success == true) {
+                        if (response.message != '') {
                             var sucessmsg = $("#successRef_auth").show();
-                            sucessmsg[0].textContent = response[0].message;
+                            sucessmsg[0].textContent = response.message;
+
+                            setTimeout(function() {
+                                $('.errRef').fadeOut('fast');
+                            }, 3000);
                         }
 
-                        if (response[0].duplicate_referrals.length > 0) {
-                            const duplicate = response[0].duplicate_referrals.toString();
+                        if (response.duplicate_referrals.length > 0) {
+                            const duplicate = response.duplicate_referrals.toString();
 
                             var errormsg = $("#errRef_auth").show();
                             errormsg[0].textContent = "Already referred Email ids : " + duplicate;
                         }
-
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
-                        }, 10000);
+                        }, 3000);   
+
+
                     }
 
                 },

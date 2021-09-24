@@ -211,9 +211,9 @@
         <div class="col-12  mb-5">
 
             <div class="d-flex align-items-center">
-                <a href="#" class="h5 text-dark"><i class="fa fa-angle-left" aria-hidden="true"></i>
-                    Mathematics</a>
-                <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto" id="topic-btn-collepse"><i class="fa fa-compress" aria-hidden="true"></i>
+                <a class="topic-btn-collepse h5 text-dark" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>
+                    {{ucwords($subScore[0]->subject_name)}}</a>
+                <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto topic-btn-collepse" id="topic-btn-collepse"><i class="fa fa-compress" aria-hidden="true"></i>
                     COLLAPSE
                 </button>
             </div>
@@ -226,57 +226,19 @@
                 <div class="d-flex align-items-center py-2 listing-details ">
                     <span class="mr-3 topics-name">{{$val->topic_name}}</span>
 
-                    <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 ms-auto rating" data-vote="0">
+                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                        <div class="star hidden">
-                            <span class="full" data-value="0"></span>
-                            <span class="half" data-value="0"></span>
+                        <div class="star-ratings-css">
+                            <div class="star-ratings-css-top" style="width: 0%">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <div class="star-ratings-css-bottom">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
                         </div>
 
-                        <div class="star">
-
-                            <span class="full" data-value="1"></span>
-                            <span class="half" data-value="0.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="2"></span>
-                            <span class="half" data-value="1.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="3"></span>
-                            <span class="half" data-value="2.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="4"></span>
-                            <span class="half" data-value="3.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="star">
-
-                            <span class="full" data-value="5"></span>
-                            <span class="half" data-value="4.5"></span>
-                            <span class="selected"></span>
-
-                        </div>
-
-                        <div class="score score-rating js-score">
+                        <div class="ms-1 score score-rating js-score">
                             0%
-                            <!-- <span>/</span>
-              <span class="total">5</span> -->
                         </div>
                     </div>
 
@@ -322,7 +284,7 @@
         $("#topicopen").show();
 
     });
-    $("#topic-btn-collepse").click(function() {
+    $(".topic-btn-collepse").click(function() {
         $("#topicopen").hide();
         $("#topicclose").show();
     });
@@ -348,7 +310,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -398,7 +360,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -448,7 +410,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -506,7 +468,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -556,7 +518,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 
@@ -606,7 +568,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
         },
 

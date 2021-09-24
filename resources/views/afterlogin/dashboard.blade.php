@@ -325,7 +325,7 @@
 </div>
 
 <!-- Modal -->
-@if($student_rating == null || empty($student_rating))
+@if($subjects_rating == null || empty($subjects_rating))
 <div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -366,8 +366,6 @@
                         <i class="fa fa-chevron-left"></i> &nbsp;&nbsp;Back </a>
                     <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
 
-                    {{-- <a href="#" class="btn rating-next-btn ms-auto px-4" data-bs-toggle="modal" data-bs-target="#fullTest_Dashboard" data-bs-dismiss="modal" id="nxt-btn" onclick="store_rating();">Next ></a>
-                                --}}
                 </div>
 
             </div>
@@ -523,27 +521,28 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         let subjects_rating = {};
         $('input[type=radio]:checked').each(function() {
 
+
             var name = $(this).attr('name');
             var value = $(this).val();
+
             subjects_rating[name] = value;
         });
+        /*  console.log(subjects_rating);
+         var existing = JSON.parse(localStorage.getItem("store_data") || '[]');
+         console.log(existing);
+         existing['subjects_rating'] = subjects_rating;
+         console.log(existing['subjects_rating']);
+         localStorage.setItem('store_data', JSON.stringify(existing));
 
+         var storeddata = JSON.parse(localStorage.getItem("store_data"));
 
-        var existing = JSON.parse(localStorage.getItem("store_data") || '[]');
-
-        existing['subjects_rating'] = subjects_rating;
-
-        localStorage.setItem('store_data', JSON.stringify(existing));
-
-        var storeddata = JSON.parse(localStorage.getItem("store_data"));
-
-
+         console.log(storeddata); */
         $.ajax({
             url: "{{ url('/dailyWelcomeUpdates') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                storeddata: storeddata,
+                storeddata: subjects_rating,
             },
             beforeSend: function() {},
             success: function(response_data) { //debugger;

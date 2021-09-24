@@ -37,6 +37,7 @@ class MenuMiddleware
         $subjects_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
         $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
+
         if ($student_stage_at_sgnup == 1) {
             $user_stage = 'Begginer (10th)';
         } elseif ($student_stage_at_sgnup == 2) {
@@ -53,6 +54,7 @@ class MenuMiddleware
         $user_subjects = $this->redis_subjects();
 
         $leaderboard_list = $this->leaderBoard();
+
 
 
 

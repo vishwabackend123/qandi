@@ -18,7 +18,7 @@
                             </li>
                             @foreach($user_subjects as $val)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab({{$val->id}})">{{$val->subject_name}}</a>
+                                <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
                             </li>
                             @endforeach
                             <li class="ms-auto d-flex">
@@ -348,8 +348,14 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -391,8 +397,14 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -434,8 +446,14 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -486,8 +504,14 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -529,8 +553,14 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -572,8 +602,14 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Time Taken'
+                text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -637,6 +673,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             symbolWidth: 40
         },
@@ -673,6 +712,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             symbolWidth: 40
         },
@@ -681,7 +723,7 @@
         },
         yAxis: {
             title: {
-                text: 'Average Time Spent'
+                text: 'Time Spent'
             }
         },
         xAxis: {

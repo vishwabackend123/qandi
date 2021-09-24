@@ -33,7 +33,7 @@ class ReferralController extends Controller
         $request = json_encode($inputjson);
 
         $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/referr-student';
+        $curl_url = $api_URL . 'api/insert-referr-student';
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -44,7 +44,7 @@ class ReferralController extends Controller
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "PUT",
+            CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $request,
             CURLOPT_HTTPHEADER => array(
                 "cache-control: no-cache",
@@ -56,6 +56,7 @@ class ReferralController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
+
 
         if ($httpcode == 200 || $httpcode == 201) {
             return $response_json;

@@ -261,8 +261,8 @@ class HomeController extends Controller
         $storeddata = $request->input('storeddata');
 
 
-        if (isset($storeddata['subjects_rating']) && !empty($storeddata['subjects_rating'])) {
-            $rating = $storeddata['subjects_rating'];
+        if (isset($storeddata) && !empty($storeddata)) {
+            $rating = $storeddata;
 
             $request_rating = [
                 'student_id' =>  (int)$user_id,
@@ -291,8 +291,6 @@ class HomeController extends Controller
                 ),
             ));
             $response_json = curl_exec($curl);
-
-            dd($response_json, $request_json);
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
