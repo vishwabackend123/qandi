@@ -20,8 +20,8 @@ Route::any('/', function () {
     if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
-        //return view('index');
-        return redirect('https://www.uniqtoday.com/');
+        return view('index');
+        //return redirect('https://www.uniqtoday.com/');
     }
 });
 

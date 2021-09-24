@@ -185,8 +185,8 @@ class ExamCustomController extends Controller
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
-        $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
 
+        $select_topic = isset($request->topics) ? explode(",", (int)$request->topics, true) : [];
 
         $inputjson['student_id'] = $user_id;
         $inputjson['exam_id'] = (string)$exam_id;
@@ -220,7 +220,6 @@ class ExamCustomController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
-
 
         $response_json = str_replace('NaN', '""', $response_json);
 
@@ -591,12 +590,13 @@ class ExamCustomController extends Controller
 
     public function  chaptersTopic(Request $request, $chapter_id)
     {
-
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
 
         $filter_by = isset($request->filter_type) ? $request->filter_type : '';
         //$topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/topics-by-chapter-id/' . $chapter_id;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/topics-by-chapter-id/' . $user_id . '/' . $chapter_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
