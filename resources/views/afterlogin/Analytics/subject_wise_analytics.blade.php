@@ -694,7 +694,7 @@
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{isset($scoreArray["score"])?$scoreArray["score"]:0}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 60
@@ -733,18 +733,26 @@
             type: 'pie',
             innerSize: '85%',
             data: [{
-                name: 'Last Score',
-                y: <?php echo isset($subScore[0]->score) ? $subScore[0]->score : 0; ?>,
-                color: '#ffdc34' // Jane's color
-            }, {
-                name: 'Progress Score',
-                y: <?php echo isset($subScore[1]->score) ? $subScore[1]->score : 0; ?>,
-                color: '#ffa81d' // Jane's color
-            }, {
-                name: 'Target',
-                y: <?php echo 0; ?>,
-                color: '#fc2f00c7' // Jane's color
-            }, ]
+                    name: 'Score',
+                    y: <?php print_r($scoreArray['score']); ?>,
+                    color: '#ffdc34' // Jane's color
+                },
+                {
+                    name: 'Inprogress',
+                    y: <?php print_r($scoreArray['inprogress']); ?>,
+                    color: '#fc2f00c7' // Jane's color
+                },
+                {
+                    name: 'Progress',
+                    y: <?php print_r($scoreArray['progress']); ?>,
+                    color: '#ffa81d' // Jane's color
+                },
+                {
+                    name: 'Others',
+                    y: <?php print_r($scoreArray['others']); ?>,
+                    color: '#e4e4e4' // Jane's color
+                }
+            ]
         }]
     });
 </script>

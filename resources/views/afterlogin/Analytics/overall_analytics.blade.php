@@ -651,6 +651,7 @@
                 url: url,
                 data: {
                     "_token": "{{ csrf_token() }}",
+                    scoreArray: <?php echo json_encode($scoreArray); ?>
                 },
                 beforeSend: function() {
                     $('#overlay').fadeIn();
