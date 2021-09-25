@@ -504,7 +504,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     var upcounter_txt = " Mins";
 
     function questionstartTimer() {
-        up_timer++;
+
         var timer_up = setInterval(function() {
             up_timer++;
         }, 1000);
@@ -571,7 +571,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
     /* getting Next Question Data */
     function qnext(question_id) {
-
+        saveQuestionTime(question_id);
         url = "{{ url('ajax_next_question/') }}/" + question_id;
         $.ajax({
             url: url,
@@ -713,6 +713,24 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             success: function(result) {
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+            }
+        });
+
+
+    }
+
+    function saveQuestionTime(question_id) {
+
+        url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                'q_time': up_timer
+            },
+            success: function(result) {
+
             }
         });
 

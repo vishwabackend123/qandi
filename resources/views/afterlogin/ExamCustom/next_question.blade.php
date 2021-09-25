@@ -86,14 +86,14 @@ $questtype='radio';
         var interval = 1000;
         var qest = '{{$activeq_id}}';;
         var ctxt = " Seconds";
+        $('#percentBar_{{$activeq_id}}').html('')
+        setEachQuestionTime();
         var ctimer = setInterval(function() {
             sec--;
-            //$('#counter_{{$activeq_id}} span.seconds').text(sec-- + ctxt);
 
             progressBar_next(sec, $('#progressBar_{{$activeq_id}}'));
 
             if (sec == -1) {
-
                 clearInterval(ctimer);
                 $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
                 $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');

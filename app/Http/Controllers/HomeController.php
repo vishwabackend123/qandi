@@ -105,7 +105,7 @@ class HomeController extends Controller
             $response_json = str_replace('NaN', '""', $scoreResponse);
 
             $scoreResponse = json_decode($response_json, true);
-            dd($scoreResponse);
+
 
             $scoreData = isset($scoreResponse['test_score']) ? ($scoreResponse['test_score']) : '';
             $subjectData = isset($scoreResponse['subject_proficiency']) ? $scoreResponse['subject_proficiency'] : '';
