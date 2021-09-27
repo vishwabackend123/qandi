@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
-                    <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="user-pic"></a></span>
+                    <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{$imgPath}}" class="user-pic"></a></span>
                     <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords(Auth::user()->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4">
@@ -57,6 +57,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <span class="sno me-3">{{$lead->user_rank}}.</span>
                                                             <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>
+{{--                                                            <span><img src="{https://student-image1.s3.ap-south-1.amazonaws.com/{{Auth::user()->user_profile_img}}" class="leader-pic" /></span>--}}
                                                             <div class="leader-txt">
                                                                 <p>{{$lead->user_name}}</p>
                                                                 <small>{{$lead->score}} Unique score</small>
@@ -83,7 +84,7 @@
                                         <div class="leaderBoardBlockedit">
                                             <div class="bg-white p-3 text-left ms-4 read-mode h-100">
                                                 <span class="position-relative d-inline-block ">
-                                                    <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="profile-pic uswereditpic" />
+                                                    <img src="{{$imgPath}}" class="profile-pic uswereditpic" />
 
                                                     <span class="image-upload">
                                                         <label for="file-input">

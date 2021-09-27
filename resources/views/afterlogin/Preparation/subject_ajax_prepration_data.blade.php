@@ -76,6 +76,21 @@
         </div>
         @endif
         @elseif($preType=='bookmark')
+            @if(!empty($preparation_list))
+                @foreach($preparation_list as $key => $pre)
+                    <div class="d-flex bg-white p-3  mt-5">
+                        <span class="px-3">Q{{ $key + 1 }}</span>
+                        <div>
+                            <p>{!! $pre->question !!}</p>
+                        </div>
+                    </div>
+
+                @endforeach
+            @else
+                <div class="d-flex bg-white p-3 align-items-center mt-5">
+                    No Bookmark available;
+                </div>
+            @endif
         @endif
 
     </div>

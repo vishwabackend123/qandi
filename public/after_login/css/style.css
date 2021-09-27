@@ -418,6 +418,8 @@ header {
 .user-pic {
     border: 2px solid #7bbf62;
     border-radius: 50%;
+    width: 64px;
+    height: 64px;
 }
 
 .user-name-block {
@@ -3598,7 +3600,7 @@ input[type=range]::-webkit-slider-thumb {
         left: 25px !important;
         width: 225px !important;
     }
-	
+
 	.subscribeBlock {
 		width: 95% !important;
 		height: 620px;
@@ -3607,7 +3609,7 @@ input[type=range]::-webkit-slider-thumb {
 	.subscribeBlock a.btn-light.rounded-0.btn.px-5.btn-sm {
 		margin-bottom: 10px !important;
 	}
-		
+
 	/* 14-09/*/
 	.slimScrollDiv .slick-slide {
 		width: 250px !important; margin-bottom: 20px;height: 240px !important;
