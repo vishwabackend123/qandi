@@ -14,8 +14,9 @@ use App\Models\StudentPreference;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
+
+
 use Illuminate\Support\Facades\Validator;
-use AWS;
 
 class HomeController extends Controller
 {
@@ -104,7 +105,7 @@ class HomeController extends Controller
             $response_json = str_replace('NaN', '""', $scoreResponse);
 
             $scoreResponse = json_decode($response_json, true);
-//            dd($scoreResponse);
+
 
             $scoreData = isset($scoreResponse['test_score']) ? ($scoreResponse['test_score']) : '';
             $subjectData = isset($scoreResponse['subject_proficiency']) ? $scoreResponse['subject_proficiency'] : '';
@@ -180,6 +181,8 @@ class HomeController extends Controller
         } else {
             $planner = [];
         }
+
+
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
@@ -263,7 +266,7 @@ class HomeController extends Controller
             $rating = $storeddata;
 
             $request_rating = [
-                'student_id' => (int)$user_id,
+                'student_id' =>  (int)$user_id,
                 'subjects_rating' => json_encode($rating),
             ];
 
@@ -365,44 +368,6 @@ class HomeController extends Controller
     {
         $data = $request->all();
         $user_id = Auth::user()->id;
-
-        $s3 = AWS::createClient('s3');
-        $input = $request->all();
-        $request->validate([
-            'file-input' => 'required|mimes:png,jpg,jpeg|max:2048'
-        ]);
-        $file = $request->file('file-input');
-        $fileName = trim(time() . $file->getClientOriginalName());
-        if ($request->hasfile('file-input')) {
-            try {
-                $file = $request->file('file-input');
-                $file_path = $file->getPathName();
-                $s3->putObject(array(
-                    'Bucket' => env('AWS_BUCKET'),
-                    'Key' => $fileName,
-                    'Body' => $file,
-//                'ContentType' => 'application/pdf',
-                    'ACL' => 'public-read',
-                    'SourceFile' => $file_path
-                ));
-                $insert = [
-                    'user_profile_img' => $fileName,
-                ];
-                DB::table('student_users')->where('id', '=', $user_id)->update($insert);
-//                dd(Auth::user()->user_profile_img);
-//                Session::flash('success', 'Paper uploaded successfully!');
-//                Session::forget('error');
-//                return redirect()->route('paper.index');
-            } catch
-            (\Exception $e) {
-                dd($e->getMessage());
-            }
-        } else {
-//            Session::flash('error', 'Please select  correct file type!');
-//            Session::forget('success');
-//            return redirect()->route('paper.index');
-        }
-
     }
 
 

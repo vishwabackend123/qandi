@@ -468,7 +468,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken'
+                text: 'Average Marks'
             }
         },
 
@@ -518,7 +518,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken'
+                text: 'Average Marks'
             }
         },
 
@@ -568,7 +568,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken'
+                text: 'Average Marks'
             }
         },
 
