@@ -120,6 +120,7 @@ Route::any('/presentations_chapter', [App\Http\Controllers\PreparationController
 Route::any('/videos_chapter', [App\Http\Controllers\PreparationController::class, 'videos_chapter'])->name('videos_chapter')->middleware('auth', 'menu');
 Route::any('/notes_chapter', [App\Http\Controllers\PreparationController::class, 'notes_chapter'])->name('notes_chapter')->middleware('auth', 'menu');
 Route::any('/preparation_center_chapter', [App\Http\Controllers\PreparationController::class, 'preparation_center_chapter'])->name('preparation_center_chapter')->middleware('auth', 'menu');
+Route::any('/bookmarks_chapter', [App\Http\Controllers\PreparationController::class, 'bookmarks_chapter'])->name('bookmarks_chapter')->middleware('auth', 'menu');
 
 
 /* about Exam Controller Routes */

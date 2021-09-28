@@ -84,7 +84,7 @@
                                             <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="chapter_presentation_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a></span>
                                             <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="chapter_notes_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a></span>
                                             <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="chapter_videos_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}</a></span>
-                                            <span><a href="javascript:void(0);" onclick="chapter_bookmark_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
+                                            <span><a href="javascript:void(0);" onclick="chapter_bookmarks_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a></span>
                                         </div>
 
 
@@ -226,7 +226,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -386,6 +385,7 @@
                 $('#PreparationCenter_modal').modal('show');
                 $('#PreparationCenter_Video').modal('hide');
                 $('#PreparationCenter_Notes').modal('hide');
+                $('#PreparationCenter_bookmark').modal('hide');
             }
         });
     }
@@ -404,6 +404,7 @@
                 $('#PreparationCenter_Video').modal('show');
                 $('#PreparationCenter_modal').modal('hide');
                 $('#PreparationCenter_Notes').modal('hide');
+                $('#PreparationCenter_bookmark').modal('hide');
             }
         });
     }
@@ -420,6 +421,46 @@
             success: function(result) {
                 $('#notes_modal_body').html(result);
                 $('#PreparationCenter_Notes').modal('show');
+                $('#PreparationCenter_Video').modal('hide');
+                $('#PreparationCenter_modal').modal('hide');
+                $('#PreparationCenter_bookmark').modal('hide');
+
+            }
+        });
+    }
+
+    function chapter_notes_resources(chapter_id, values) {
+        url = "{{ url('notes_chapter/') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                chapter_id: chapter_id,
+                values: values,
+            },
+            success: function(result) {
+                $('#notes_modal_body').html(result);
+                $('#PreparationCenter_Notes').modal('show');
+                $('#PreparationCenter_Video').modal('hide');
+                $('#PreparationCenter_modal').modal('hide');
+                $('#PreparationCenter_bookmark').modal('hide');
+
+            }
+        });
+    }
+    function chapter_bookmarks_resources(chapter_id, values) {
+        url = "{{ url('bookmarks_chapter') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                chapter_id: chapter_id,
+                values: values,
+            },
+            success: function(result) {
+                $('#bookmark_modal_body').html(result);
+                $('#PreparationCenter_bookmark').modal('show');
+                $('#PreparationCenter_Notes').modal('hide');
                 $('#PreparationCenter_Video').modal('hide');
                 $('#PreparationCenter_modal').modal('hide');
 
