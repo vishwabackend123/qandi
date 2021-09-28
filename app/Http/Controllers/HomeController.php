@@ -17,7 +17,7 @@ use App\Http\Traits\CommonTrait;
 
 
 use Illuminate\Support\Facades\Validator;
-
+use AWS;
 class HomeController extends Controller
 {
     //
@@ -367,6 +367,38 @@ class HomeController extends Controller
     {
         $data = $request->all();
         $user_id = Auth::user()->id;
+        $s3 = AWS::createClient('s3');
+        $input = $request->all();
+        $request->validate([
+            'file-input' => 'required|mimes:png,jpg,jpeg|max:2048'
+        ]);
+        $file = $request->file('file-input');
+        $fileName = trim(time() . $file->getClientOriginalName());
+        if ($request->hasfile('file-input')) {
+            try {
+                $file = $request->file('file-input');
+                $file_path = $file->getPathName();
+                $s3->putObject(array(
+                    'Bucket' => env('AWS_BUCKET'),
+                    'Key' => $fileName,
+                    'Body' => $file,
+//                'ContentType' => 'application/pdf',
+                    'ACL' => 'public-read',
+                    'SourceFile' => $file_path
+                ));
+                $insert = [
+                    'user_profile_img' => $fileName,
+                ];
+                DB::table('student_users')->where('id', '=', $user_id)->update($insert);
+//                dd(Auth::user()->user_profile_img);
+//                Session::flash('success', 'Paper uploaded successfully!');
+//                Session::forget('error');
+//                return redirect()->route('paper.index');
+            } catch
+            (\Exception $e) {
+                dd($e->getMessage());
+            }
+        }
     }
 
 

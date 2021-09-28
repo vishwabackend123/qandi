@@ -20,9 +20,9 @@ Route::any('/', function () {
     if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
-        //return view('index');
+        return view('index');
 
-        return redirect('https://www.uniqtoday.com/');
+//        return redirect('https://www.uniqtoday.com/');
     }
 });
 
@@ -176,6 +176,7 @@ Route::any('/shuffle_chapter/{subject_id}', [App\Http\Controllers\PlannerControl
 /**
  * Assessment Exam Controller Routes
  */
+
 Route::any('/assessment_exam', [App\Http\Controllers\AssessmentExamController::class, 'assessment_exam'])->name('assessment_exam')->middleware('auth', 'menu');
 
 
