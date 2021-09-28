@@ -305,10 +305,11 @@ class ExamCustomController extends Controller
         }
 
         /* set redis for save exam question response */
-        $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
+        $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
         $redis_data = [
             'given_ans' => $retrive_array,
             'taken_time' => $retrive_time_array,
+            'taken_time_sec' => $retrive_time_sec,
             'answer_swap_cnt' => $answer_swap_cnt,
             'questions_count' => $questions_count,
             'all_questions_id' => $keys,
@@ -423,6 +424,7 @@ class ExamCustomController extends Controller
         $data = $request->all();
         $question_id = isset($data['question_id']) ? $data['question_id'] : '';
         $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+        //$q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
 
         $redis_result = Redis::get('custom_answer_time');
 
@@ -430,19 +432,19 @@ class ExamCustomController extends Controller
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
             $retrive_array = $redisArray['given_ans'];
-            $retrive_time_array = $redisArray['taken_time'];
+            //$retrive_time_array = $redisArray['taken_time'];
             $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
 
-            $time_taken = $redisArray['time_taken'] ?? array();
+            //$time_taken = $redisArray['time_taken'] ?? array();
             if (isset($option_id) && $option_id != '') {
                 $retrive_array[$question_id] = $option_id;
-                $retrive_time_array[$question_id] = '00:00:00';
+                // $retrive_time_array[$question_id] = gmdate('H:i:s', $q_submit_time);
             }
         } else {
             $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
             if (isset($option_id) && $option_id != '') {
                 $retrive_array[$question_id] = $option_id;
-                $retrive_time_array[$question_id] = '00:00:00';
+                //$retrive_time_array[$question_id] = gmdate('H:i:s', $q_submit_time);
             }
         }
         if (isset($answer_swap_cnt[$question_id])) {
@@ -452,8 +454,9 @@ class ExamCustomController extends Controller
         }
 
         $redisArray['given_ans'] = $retrive_array;
-        $redisArray['taken_time'] = $retrive_time_array;
+        //$redisArray['taken_time'] = $retrive_time_array;
         $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+
 
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redisArray));
@@ -760,5 +763,44 @@ class ExamCustomController extends Controller
 
 
         return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id'));
+    }
+
+
+
+    public function saveQuestionTimeSession(Request $request, $question_id)
+    {
+
+        $question_time = $request->q_time;
+
+
+        $redis_result = Redis::get('custom_answer_time');
+
+
+        if (!empty($redis_result)) {
+            $redisArray = json_decode($redis_result, true);
+
+            $retrive_time_sec = $redisArray['taken_time_sec'] ?? array();
+            $retrive_time_array = $redisArray['taken_time'] ?? array();
+
+            $retrive_time_sec[$question_id] = $question_time;
+            $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
+        } else {
+            $retrive_time_sec = [];
+            $retrive_time_array = [];
+
+            $retrive_time_sec[$question_id] = $question_time;
+            $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
+        }
+        $redisArray['taken_time_sec'] = $retrive_time_sec;
+        $redisArray['taken_time'] = $retrive_time_array;
+
+        // Push Value in Redis
+        Redis::set('custom_answer_time', json_encode($redisArray));
+
+        $response['status'] = 200;
+        $response['message'] = "save response successfully";
+
+
+        return json_encode($response);
     }
 }

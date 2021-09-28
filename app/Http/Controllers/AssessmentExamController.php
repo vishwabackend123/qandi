@@ -160,22 +160,4 @@ class AssessmentExamController extends Controller
 
         return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type'));
     }
-
-    public function saveQuestionTimeSession(Request $request, $quetion_id)
-    {
-
-        $question_time = $request->q_time;
-        $session_timer = Session::get('time_session');
-
-
-        if (isset($session_timer) && !empty($session_timer)) {
-            $session_time[$quetion_id] = $question_time;
-            Session::push('time_session', $session_time);
-        } else {
-            $time_array = [];
-            $time_array[$quetion_id] = $question_time;
-            Session::push('time_session', $time_array);
-            $session_timer = Session::get('time_session');
-        }
-    }
 }
