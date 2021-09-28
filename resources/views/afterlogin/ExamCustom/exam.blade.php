@@ -66,6 +66,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
                         <div class="tab-content bg-white" id="myTabContent">
+                            <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <div id="question_section" class="">
                                 <div class="d-flex ">
                                     <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
@@ -84,8 +85,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                 <div class="question-block N_question-block">
 
 
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -503,10 +504,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     var up_timer = 0;
     var countdown_txt = " Seconds";
     var upcounter_txt = " Mins";
+    var timer_up;
 
     function questionstartTimer() {
 
-        var timer_up = setInterval(function() {
+        timer_up = setInterval(function() {
             up_timer++;
             $('#timespend_{{$activeq_id}}').val(up_timer);
             $('#final_submit_time').val(up_timer);
@@ -573,10 +575,13 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
     /* getting Next Question Data */
-    function qnext(question_id, act_question) {
+    function qnext(question_id) {
+
+        var act_question = $("#current_question").val();
         var q_submit_time = $("#timespend_" + act_question).val();
 
-        saveQuestionTime(question_id, q_submit_time);
+
+        saveQuestionTime(act_question, q_submit_time);
 
         url = "{{ url('ajax_next_question/') }}/" + question_id;
         $.ajax({
@@ -585,6 +590,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(timer_up);
+                $("#question_section").html('');
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
@@ -737,11 +744,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
                 'q_time': time
             },
-            success: function(result) {
-                /* if (response.status == 200) {
-                    $("#btn_" + question_id).removeClass("btn-light");
-                    $("#btn_" + question_id).addClass("btn-light-green");
-                } */
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
             }
         });
 

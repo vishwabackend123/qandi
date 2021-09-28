@@ -347,7 +347,7 @@ class ExamCustomController extends Controller
 
     public function ajax_next_question($quest_id, Request $request)
     {
-        dd("hi");
+
 
         $user_id = Auth::user()->id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
@@ -409,11 +409,10 @@ class ExamCustomController extends Controller
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
 
-        //dd($sessionResult);
+
 
         $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
-        $aquestionTakenTime = isset($sessionResult->taken_time->$quest_id) ? $sessionResult->taken_time->$quest_id : '00:00:00';
-
+        $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
         return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
     }
@@ -425,28 +424,30 @@ class ExamCustomController extends Controller
         $data = $request->all();
         $question_id = isset($data['question_id']) ? $data['question_id'] : '';
         $option_id = isset($data['option_id']) ? $data['option_id'] : '';
-        //$q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
+        $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
 
         $redis_result = Redis::get('custom_answer_time');
-
 
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
             $retrive_array = $redisArray['given_ans'];
-            //$retrive_time_array = $redisArray['taken_time'];
-            $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
+            $retrive_time_array = $redisArray['taken_time'];
+            $answer_swap_cnt = $redisArray['answer_swap_cnt'];
+            $retrive_time_sec = $redisArray['taken_time_sec'];
 
+            $retrive_time_sec[$question_id] = (int)$q_submit_time;
             //$time_taken = $redisArray['time_taken'] ?? array();
             if (isset($option_id) && $option_id != '') {
                 $retrive_array[$question_id] = $option_id;
-                // $retrive_time_array[$question_id] = gmdate('H:i:s', $q_submit_time);
+                $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
             }
         } else {
-            $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
+            $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = [];
             if (isset($option_id) && $option_id != '') {
                 $retrive_array[$question_id] = $option_id;
-                //$retrive_time_array[$question_id] = gmdate('H:i:s', $q_submit_time);
+                $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
             }
+            $retrive_time_sec[$question_id] = (int)$q_submit_time;
         }
         if (isset($answer_swap_cnt[$question_id])) {
             $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
@@ -455,8 +456,9 @@ class ExamCustomController extends Controller
         }
 
         $redisArray['given_ans'] = $retrive_array;
-        //$redisArray['taken_time'] = $retrive_time_array;
+        $redisArray['taken_time'] = $retrive_time_array;
         $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+        $redisArray['taken_time_sec'] = $retrive_time_sec;
 
 
         // Push Value in Redis
@@ -772,28 +774,28 @@ class ExamCustomController extends Controller
     {
 
         $question_time = $request->q_time;
-
-
         $redis_result = Redis::get('custom_answer_time');
-
 
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
 
-            $retrive_time_sec = $redisArray['taken_time_sec'] ?? array();
-            $retrive_time_array = $redisArray['taken_time'] ?? array();
+            $retrive_time_sec = $redisArray['taken_time_sec'];
+            $retrive_time_array = $redisArray['taken_time'];
 
-            $retrive_time_sec[$question_id] = $question_time;
+
+            $retrive_time_sec[$question_id] = (int)$question_time;
             $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
         } else {
             $retrive_time_sec = [];
             $retrive_time_array = [];
 
-            $retrive_time_sec[$question_id] = $question_time;
+            $retrive_time_sec[$question_id] = (int)$question_time;
             $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
         }
+
         $redisArray['taken_time_sec'] = $retrive_time_sec;
         $redisArray['taken_time'] = $retrive_time_array;
+
 
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redisArray));

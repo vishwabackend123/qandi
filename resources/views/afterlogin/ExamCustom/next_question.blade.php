@@ -2,6 +2,8 @@
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
+
+
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -26,6 +28,8 @@ $questtype='radio';
     </div>
 </div>
 <input type="hidden" name="time_spend_{{$activeq_id}}" id="timespend_{{$activeq_id}}" value="" />
+
+
 <div class="question-block N_question-block">
 
     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
@@ -86,10 +90,17 @@ $questtype='radio';
         var sec = 60;
         var interval = 1000;
         var qest = '{{$activeq_id}}';
-        var aj_up_timer = 0;
+        var aj_up_timer = '{{$aquestionTakenTime}}';
         var ctxt = " Seconds";
+        if (aj_up_timer >= 60) {
+            var sec = 0;
+        } else {
+            var sec = 60 - aj_up_timer;
+        }
+
         $('#percentBar_{{$activeq_id}}').html('')
         setEachQuestionTime();
+
         var aj_timer_up = setInterval(function() {
             aj_up_timer++;
             $('#timespend_{{$activeq_id}}').val(aj_up_timer);
@@ -127,7 +138,7 @@ $questtype='radio';
         var minutesLabel = document.getElementById("up_minutes");
         var secondsLabel = document.getElementById("up_seconds");
         //var totalSec = document.getElementById("tsec");
-        var totalSeconds = 0;
+        var totalSeconds = aj_up_timer;
 
         function setEachQuestionTime() {
             setInterval(function() {
@@ -153,6 +164,7 @@ $questtype='radio';
     var question_id = '{{$activeq_id}}';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
+    $("#current_question").val(question_id);
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");
