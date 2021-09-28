@@ -71,7 +71,7 @@ class PreparationController extends Controller
         $data = $request->all();
         $responsePdf = '';
         if (isset($data) && !empty($data)):
-            $api_url = 'http://3.108.176.99:8080/api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id. '/' . $data['subject_id'];
+            $api_url = 'http://3.108.176.99:8080/api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
@@ -89,11 +89,11 @@ class PreparationController extends Controller
 
             curl_close($curl);
             $responseData = json_decode($response);
-            foreach($responseData->response as $value){
+            foreach ($responseData->response as $value) {
                 $responsePdf = $value->paper_file_name;
 
             }
-            $imgUrl =  str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/'.$responsePdf);
+            $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
             return $imgUrl;
         endif;
 
@@ -156,11 +156,8 @@ class PreparationController extends Controller
         } elseif ($preType == 'bookmark') {
             $preparation_list = isset($aResponse->bookmark_questions) ? $aResponse->bookmark_questions : '';
         }
-
-
         return view('afterlogin.Preparation.subject_ajax_prepration_data', compact('preType', 'values', 'preparation_list'));
     }
-
 
     public function presentations_chapter(Request $request)
     {
@@ -286,5 +283,42 @@ class PreparationController extends Controller
         }
 
         return view('afterlogin.Preparation.notes_ajax', compact('values', 'preparation_list'));
+    }
+
+    public function bookmarks_chapter(Request $request)
+    {
+
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $chapter_id = $request->chapter_id;
+        $values = isset($request->values) ? json_decode($request->values) : [];
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapter-wise-resources/' . $user_id . '/' . $exam_id . '/' . $chapter_id;;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $aResponse = json_decode($response_json);
+
+
+            $preparation_list = $aResponse->bookmark_questions;
+//            dd($preparation_list);
+
+        return view('afterlogin.Preparation.bookmarks_ajax', compact('values', 'preparation_list'));
     }
 }
