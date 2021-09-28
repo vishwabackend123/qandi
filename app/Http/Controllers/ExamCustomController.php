@@ -347,6 +347,7 @@ class ExamCustomController extends Controller
 
     public function ajax_next_question($quest_id, Request $request)
     {
+        dd("hi");
 
         $user_id = Auth::user()->id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
@@ -384,8 +385,6 @@ class ExamCustomController extends Controller
         $prev_qid = $allkeys[$prevKey];
         $last_qid = end($allkeys);
 
-
-
         if (isset($question_data) && !empty($question_data)) {
             // $publicPath = url('/') . '/public/images/questions/';
             $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
@@ -409,6 +408,8 @@ class ExamCustomController extends Controller
         }
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
+
+        //dd($sessionResult);
 
         $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time->$quest_id) ? $sessionResult->taken_time->$quest_id : '00:00:00';
