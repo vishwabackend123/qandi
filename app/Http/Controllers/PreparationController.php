@@ -112,7 +112,7 @@ class PreparationController extends Controller
 
         $api_url_pre = 'api/subjectResources/subject-wise-resources';
 
-        $api_url = Config::get('constants.API_NEW_URL') . $api_url_pre . '/' . $exam_id . '/' . $subject_id;
+        $api_url = Config::get('constants.API_NEW_URL') . $api_url_pre . '/' . $user_id . '/' . $exam_id . '/' . $subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -153,6 +153,8 @@ class PreparationController extends Controller
             $preparation_list = isset($aResponse->videos) ? $aResponse->videos : '';
         } elseif ($preType == 'notes') {
             $preparation_list = isset($aResponse->notes) ? $aResponse->notes : '';
+        } elseif ($preType == 'bookmark') {
+            $preparation_list = isset($aResponse->bookmark_questions) ? $aResponse->bookmark_questions : '';
         }
 
 

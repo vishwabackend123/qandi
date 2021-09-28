@@ -55,7 +55,7 @@ class MenuMiddleware
 
         $leaderboard_list = $this->leaderBoard();
 
-
+        $imgPath = isset(Auth::user()->user_profile_img) && !empty(Auth::user()->user_profile_img) ? 'https://student-image1.s3.ap-south-1.amazonaws.com/'.Auth::user()->user_profile_img : url('/').'/public/after_login/images/profile.png';
 
 
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
@@ -65,6 +65,7 @@ class MenuMiddleware
         \Illuminate\Support\Facades\View::share('exam_data', $exam_data);
         \Illuminate\Support\Facades\View::share('subscription_details', $subscriptionData);
         \Illuminate\Support\Facades\View::share('leaderboard_list', $leaderboard_list);
+        \Illuminate\Support\Facades\View::share('imgPath', $imgPath);
 
         return $next($request);
     }
