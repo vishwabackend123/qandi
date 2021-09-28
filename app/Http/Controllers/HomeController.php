@@ -17,7 +17,7 @@ use App\Http\Traits\CommonTrait;
 
 
 use Illuminate\Support\Facades\Validator;
-
+use AWS;
 class HomeController extends Controller
 {
     //
@@ -183,7 +183,6 @@ class HomeController extends Controller
         }
 
 
-
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
 
@@ -266,7 +265,7 @@ class HomeController extends Controller
             $rating = $storeddata;
 
             $request_rating = [
-                'student_id' =>  (int)$user_id,
+                'student_id' => (int)$user_id,
                 'subjects_rating' => json_encode($rating),
             ];
 
@@ -368,6 +367,38 @@ class HomeController extends Controller
     {
         $data = $request->all();
         $user_id = Auth::user()->id;
+        $s3 = AWS::createClient('s3');
+        $input = $request->all();
+        $request->validate([
+            'file-input' => 'required|mimes:png,jpg,jpeg|max:2048'
+        ]);
+        $file = $request->file('file-input');
+        $fileName = trim(time() . $file->getClientOriginalName());
+        if ($request->hasfile('file-input')) {
+            try {
+                $file = $request->file('file-input');
+                $file_path = $file->getPathName();
+                $s3->putObject(array(
+                    'Bucket' => env('AWS_BUCKET'),
+                    'Key' => $fileName,
+                    'Body' => $file,
+//                'ContentType' => 'application/pdf',
+                    'ACL' => 'public-read',
+                    'SourceFile' => $file_path
+                ));
+                $insert = [
+                    'user_profile_img' => $fileName,
+                ];
+                DB::table('student_users')->where('id', '=', $user_id)->update($insert);
+//                dd(Auth::user()->user_profile_img);
+//                Session::flash('success', 'Paper uploaded successfully!');
+//                Session::forget('error');
+//                return redirect()->route('paper.index');
+            } catch
+            (\Exception $e) {
+                dd($e->getMessage());
+            }
+        }
     }
 
 
@@ -410,5 +441,30 @@ class HomeController extends Controller
         curl_close($curl);
 
         return response()->json('Success');
+    }
+
+    public function searchFriendWithKeyWord(Request $request)
+    {
+        $class_id = Auth::user()->grade_id;
+        $reqData = $request->all();
+        $searchText = $reqData['search_text'];
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/search-friend/' . $class_id . '/' . $searchText;
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return json_decode($response);
     }
 }

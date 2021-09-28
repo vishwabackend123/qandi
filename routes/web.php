@@ -21,8 +21,8 @@ Route::any('/', function () {
         return Redirect()->route('dashboard');
     } else {
         return view('index');
-        // return redirect('/login');
-        //return redirect('https://www.uniqtoday.com/');
+
+        //        return redirect('https://www.uniqtoday.com/');
     }
 });
 
@@ -176,6 +176,11 @@ Route::any('/shuffle_chapter/{subject_id}', [App\Http\Controllers\PlannerControl
 /**
  * Assessment Exam Controller Routes
  */
+
 Route::any('/assessment_exam', [App\Http\Controllers\AssessmentExamController::class, 'assessment_exam'])->name('assessment_exam')->middleware('auth', 'menu');
+
+
+Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\AssessmentExamController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
+Route::any('/searchFreind', [App\Http\Controllers\HomeController::class, 'searchFriendWithKeyWord'])->name('searchFriendWithKeyWord')->middleware('auth', 'menu');
 
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
