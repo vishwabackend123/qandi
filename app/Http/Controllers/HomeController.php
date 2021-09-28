@@ -183,7 +183,6 @@ class HomeController extends Controller
         }
 
 
-
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
 
@@ -266,7 +265,7 @@ class HomeController extends Controller
             $rating = $storeddata;
 
             $request_rating = [
-                'student_id' =>  (int)$user_id,
+                'student_id' => (int)$user_id,
                 'subjects_rating' => json_encode($rating),
             ];
 
@@ -410,5 +409,30 @@ class HomeController extends Controller
         curl_close($curl);
 
         return response()->json('Success');
+    }
+
+    public function searchFriendWithKeyWord(Request $request)
+    {
+        $class_id = Auth::user()->grade_id;
+        $reqData = $request->all();
+        $searchText = $reqData['search_text'];
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/search-friend/' . $class_id . '/' . $searchText;
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return json_decode($response);
     }
 }
