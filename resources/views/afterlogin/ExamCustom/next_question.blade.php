@@ -14,25 +14,26 @@ $questtype='radio';
 <div class="d-flex ">
 
     <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
-        <span id="avg_text">Average Time taken : </span>
+        <span id="avg_text_{{$activeq_id}}">Average Time taken : </span>
         <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
             <span class="seconds" id="seconds_{{$activeq_id}}"></span>
 
             <div id="percentBar_{{$activeq_id}}"></div>
 
         </div>
-        <div class="time_taken_css" id="q_time_taken" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
-        <input type="hidden" name="time_spend_{{$activeq_id}}" id="time_spend_{{$activeq_id}}" value="" />
+        <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
+
     </div>
 </div>
+<input type="hidden" name="time_spend_{{$activeq_id}}" id="timespend_{{$activeq_id}}" value="" />
 <div class="question-block N_question-block">
 
-    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
     @if(isset($last_qid) && ($last_qid==$activeq_id))
     <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" id="quesnext{{ $activeq_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
     @else
-    <button class="btn arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+    <button class="btn arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
     @endif
 
@@ -71,7 +72,7 @@ $questtype='radio';
 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
     <div class="N_tab-btn-box_list">
         <div class="ps-3" style="float:left">
-            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}');">Save & Next</button>
             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
         </div>
         <div class="pe-3" style="float:right">
@@ -84,10 +85,16 @@ $questtype='radio';
     $(document).ready(function() {
         var sec = 60;
         var interval = 1000;
-        var qest = '{{$activeq_id}}';;
+        var qest = '{{$activeq_id}}';
+        var aj_up_timer = 0;
         var ctxt = " Seconds";
         $('#percentBar_{{$activeq_id}}').html('')
         setEachQuestionTime();
+        var aj_timer_up = setInterval(function() {
+            aj_up_timer++;
+            $('#timespend_{{$activeq_id}}').val(aj_up_timer);
+
+        }, 1000);
         var ctimer = setInterval(function() {
             sec--;
 
@@ -97,8 +104,8 @@ $questtype='radio';
                 clearInterval(ctimer);
                 $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
                 $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
-                $('#q_time_taken').show();
-                $('#avg_text').hide();
+                $('#q_time_taken_{{$activeq_id}}').show();
+                $('#avg_text_{{$activeq_id}}').hide();
                 $('#progressBar_{{$activeq_id}}').hide();
             }
         }, interval);

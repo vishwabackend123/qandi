@@ -142,7 +142,7 @@ $questtype='radio';
                         </div>
                         <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
                             @csrf
-                            <input type="hidden" name="fulltime" value="00:30:00">
+                            <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
                             <input type="hidden" name="submit_time" value="00:10:00">
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">

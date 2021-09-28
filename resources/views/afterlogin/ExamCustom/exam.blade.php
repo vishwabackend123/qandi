@@ -76,15 +76,16 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             <div id="percentBar_{{$activeq_id}}"></div>
 
                                         </div>
-                                        <div class="time_taken_css" id="q_time_taken" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
+                                        <div class="time_taken_css" id="q_time_taken_first" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
                                     </div>
+                                    <input type="hidden" name="question_spendtime" id="timespend_{{ $activeq_id }}" value=" " />
                                 </div>
 
                                 <div class="question-block N_question-block">
 
 
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -158,8 +159,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                         </div>
                         <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
                             @csrf
-                            <input type="hidden" name="fulltime" value="00:30:00">
-                            <input type="hidden" name="submit_time" value="00:10:00">
+                            <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
+                            <input type="hidden" name="submit_time" id="final_submit_time" value="">
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
@@ -507,6 +508,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
         var timer_up = setInterval(function() {
             up_timer++;
+            $('#timespend_{{$activeq_id}}').val(up_timer);
+            $('#final_submit_time').val(up_timer);
         }, 1000);
         var timer_countdown = setInterval(function() {
             fsec--;
@@ -516,7 +519,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 clearInterval(timer_countdown);
                 $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
                 $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
-                $('#q_time_taken').show();
+                $('#q_time_taken_first').show();
                 $('#avg_text').hide();
                 $('#progressBar_{{$activeq_id}}').hide();
             }
@@ -570,8 +573,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
     /* getting Next Question Data */
-    function qnext(question_id) {
-        saveQuestionTime(question_id);
+    function qnext(question_id, act_question) {
+        var q_submit_time = $("#timespend_" + act_question).val();
+
+        saveQuestionTime(question_id, q_submit_time);
+
         url = "{{ url('ajax_next_question/') }}/" + question_id;
         $.ajax({
             url: url,
@@ -624,6 +630,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             return false;
         }
 
+        var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -631,6 +638,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
+                q_submit_time: q_submit_time
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -641,6 +649,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 }
             },
         });
+
         $("#quesnext" + question_id).click();
     }
 
@@ -719,18 +728,20 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
     }
 
-    function saveQuestionTime(question_id) {
-
+    function saveQuestionTime(question_id, time) {
         url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
         $.ajax({
             url: url,
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
-                'q_time': up_timer
+                'q_time': time
             },
             success: function(result) {
-
+                /* if (response.status == 200) {
+                    $("#btn_" + question_id).removeClass("btn-light");
+                    $("#btn_" + question_id).addClass("btn-light-green");
+                } */
             }
         });
 

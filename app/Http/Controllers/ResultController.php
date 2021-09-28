@@ -22,9 +22,10 @@ class ResultController extends Controller
         $exam_id = Auth::user()->grade_id;
 
         $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
-        $submit_time = isset($request->submit_time) ? $request->submit_time : '';
+        $submit_time = isset($request->submit_time) ? gmdate('H:i:s', $request->submit_time) : '00:00:00';
         $exam_type = isset($request->exam_type) ? $request->exam_type : '';
         $test_type = isset($request->test_type) ? $request->test_type : '';
+        $exam_mode = isset($request->exam_mode) ? $request->exam_mode : 'Practice';
 
         $redis_json = Redis::get('custom_answer_time');
 
@@ -59,12 +60,13 @@ class ResultController extends Controller
         $inputjson['questions_list'] = $questions_list;
         $inputjson['time_taken'] = (string)$submit_time;
         $inputjson['class_id'] = $exam_id;
-        $inputjson['test_type'] = $test_type;
-        $inputjson['exam_mode'] = "Practice";
+        $inputjson['test_type'] = ucfirst($test_type);
+        $inputjson['exam_mode'] = ucfirst($exam_mode);
         $inputjson['exam_type'] = $exam_type;
 
 
         $request = json_encode($inputjson);
+
 
         $curl_url = "";
         $curl = curl_init();
