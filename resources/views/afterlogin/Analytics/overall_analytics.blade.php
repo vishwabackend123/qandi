@@ -105,32 +105,6 @@
                                     </div>
                                     <div class="col-lg-5 mt-3">
                                         <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
-                                            <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
-                                            <div id="day1" style="display:block"></div>
-                                            <div id="week1" style="display:none"></div>
-                                            <div id="month1" style="display:none"></div>
-                                            <div class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace1('day1','week1','month1')">
-                                                    Day
-                                                </button>
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('week1','day1','month1')">
-                                                    Week
-                                                </button>
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('month1','day1','week1')">
-                                                    Month
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7  mt-3">
-                                        <div class="bg-white shadow-lg p-3 h-100 px-4">
-                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each
-                                                Question</p>
-                                            <div id="accPer1"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 mt-3">
-                                        <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
                                             <p class="text-uppercase fw-bold text-start">Time Management</p>
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
@@ -148,6 +122,33 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-7  mt-3">
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4">
+                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each
+                                                Question</p>
+                                            <div id="accPer1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 mt-3">
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
+                                            <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
+                                            <div id="day1" style="display:block"></div>
+                                            <div id="week1" style="display:none"></div>
+                                            <div id="month1" style="display:none"></div>
+                                            <div class="btn-block mt-5 d-flex justify-content-between">
+                                                <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace1('day1','week1','month1')">
+                                                    Day
+                                                </button>
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('week1','day1','month1')">
+                                                    Week
+                                                </button>
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('month1','day1','week1')">
+                                                    Month
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-lg-7  mt-3">
                                         <div class="bg-white shadow-lg p-3  px-4">
                                             <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
@@ -195,6 +196,7 @@
 
 
 @include('afterlogin.layouts.footer')
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
     $(".scroll-topic-ana").slimscroll({
         height: "20vh",
@@ -325,6 +327,108 @@
                     color: '#e4e4e4' // Jane's color
                 }
             ]
+        }]
+    });
+</script>
+
+<script>
+    function nxtTab(sub_id) {
+        if (sub_id === null) {
+            window.location.reload();
+        } else {
+            url = "{{ url('next_tab/') }}/" + sub_id;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    scoreArray: <?php echo json_encode($scoreArray); ?>
+                },
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
+                success: function(result) {
+                    $("#overall").html(result);
+                    $('#overlay').fadeOut();
+                }
+            });
+        }
+    }
+</script>
+
+<script>
+    Highcharts.chart('accPer', {
+        chart: {
+            type: 'spline',
+            height: 270
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        legend: {
+            symbolWidth: 40
+        },
+        title: {
+            text: ''
+        },
+        yAxis: {
+            title: {
+                text: 'Accuracy Percentage'
+            }
+        },
+        xAxis: {
+            categories: <?php print_r($day); ?>
+        },
+        series: [{
+            name: 'Class Average',
+            data: <?php print_r($stuAcc); ?>,
+            color: '#ff9999',
+            dashStyle: 'ShortDash'
+        }, {
+            name: 'Student Average',
+            data: <?php print_r($classAcc); ?>,
+            color: '#6ec986',
+        }]
+    });
+</script>
+
+<script>
+    Highcharts.chart('accPer1', {
+        chart: {
+            type: 'spline',
+            height: 270
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        legend: {
+            symbolWidth: 40
+        },
+        title: {
+            text: ''
+        },
+        yAxis: {
+            title: {
+                text: 'Time Spent'
+            }
+        },
+        xAxis: {
+            categories: <?php print_r($days); ?>
+        },
+        series: [{
+            name: 'Class Average',
+            data: <?php print_r($stuAccuracy); ?>,
+            color: '#ff9999',
+            dashStyle: 'ShortDash'
+        }, {
+            name: 'Student Average',
+            data: <?php print_r($classAccuracy); ?>,
+            color: '#6ec986',
         }]
     });
 </script>
@@ -477,21 +581,19 @@
             color: '#ff9999'
         }]
     });
-
     function replace(show, hide1, hide2) {
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";
     }
 </script>
-
 <script>
     Highcharts.chart('day1', {
         credits: {
             enabled: false
         },
         chart: {
-            type: 'column',
+            type: 'line',
             height: 270
         },
         title: {
@@ -540,7 +642,7 @@
             enabled: false
         },
         chart: {
-            type: 'column',
+            type: 'line',
             height: 270
         },
         title: {
@@ -589,7 +691,7 @@
             enabled: false
         },
         chart: {
-            type: 'column',
+            type: 'line',
             height: 270
         },
         title: {
@@ -604,9 +706,6 @@
             title: {
                 text: 'Average Marks'
             }
-        },
-        credits: {
-            enabled: false
         },
         exporting: {
             enabled: false
@@ -639,107 +738,5 @@
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";
     }
-</script>
-
-<script>
-    function nxtTab(sub_id) {
-        if (sub_id === null) {
-            window.location.reload();
-        } else {
-            url = "{{ url('next_tab/') }}/" + sub_id;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    scoreArray: <?php echo json_encode($scoreArray); ?>
-                },
-                beforeSend: function() {
-                    $('#overlay').fadeIn();
-                },
-                success: function(result) {
-                    $("#overall").html(result);
-                    $('#overlay').fadeOut();
-                }
-            });
-        }
-    }
-</script>
-
-<script>
-    Highcharts.chart('accPer', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Accuracy Percentage'
-            }
-        },
-        xAxis: {
-            categories: <?php print_r($day); ?>
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($stuAcc); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($classAcc); ?>,
-            color: '#6ec986',
-        }]
-    });
-</script>
-
-<script>
-    Highcharts.chart('accPer1', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Time Spent'
-            }
-        },
-        xAxis: {
-            categories: <?php print_r($days); ?>
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($stuAccuracy); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($classAccuracy); ?>,
-            color: '#6ec986',
-        }]
-    });
 </script>
 @endsection
