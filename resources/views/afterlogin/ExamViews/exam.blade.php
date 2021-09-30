@@ -1,8 +1,15 @@
 @extends('afterlogin.layouts.app')
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script> -->
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- BS JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- Have fun using Bootstrap JS -->
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static"
+        });
+    });
+</script>
 @section('content')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -383,7 +390,7 @@ $questtype='radio';
     let timeLabel = document.getElementById("base-timer-label");
 
     //Time related vars
-    const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
+    const TIME_LIMIT = '{{2*60}}'; //in seconds
     let timePassed = -1;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;

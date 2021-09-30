@@ -98,12 +98,14 @@ class ResultController extends Controller
 
         $response_json = curl_exec($curl);
 
+
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
 
-        if ($test_type == 'live') {
+        if ($test_type == 'Live') {
             return view('afterlogin.LiveExam.live_result');
         }
 
