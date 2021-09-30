@@ -587,7 +587,7 @@ class ExamCustomController extends Controller
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = isset($sessionResult->given_ans->$activeq_id) ? $sessionResult->given_ans->$activeq_id : [];
-        $aquestionTakenTime = isset($sessionResult->taken_time->$activeq_id) ? $sessionResult->taken_time->$activeq_id : '00:00:00';
+        $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
 
 
         return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));

@@ -83,13 +83,10 @@ class RazorpayController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        if ($httpcode == 200 || $httpcode == 201) {
-            $aResponse = json_decode($response_json);
-            $success_status = isset($aResponse->success) ? $aResponse->success : '';
-        } else {
-            $aResponse = json_decode($response_json);
-            $success_status = isset($aResponse->success) ? $aResponse->success : '';
-        }
+
+        $aResponse = json_decode($response_json);
+        $success_status = isset($aResponse->success) ? $aResponse->success : false;
+
 
         if ($success_status == true) {
             Session::put('success', 'Payment successful.');

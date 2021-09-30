@@ -21,7 +21,7 @@
                 What's <b>your name</b>?”</p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
-                <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" />
+                <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_name"> </span>
 
@@ -64,7 +64,7 @@
 
                 <span class="ms-auto" id="some_div"> </span>
             </div>
-            <p class="text-center mt-4 mb-0 resend_otp">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
+            <p id="resendOtp_link" class="text-center mt-4 mb-0 resend_otp">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
             <div class="text-center mt-2"> <button class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">Verify OTP</button></div>
 
         </div>
@@ -80,12 +80,28 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
 <script type="text/javascript">
+    $('#resendOtp_link').hide();
+
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+
+    function lettersOnly(evt) {
+
+        evt = (evt) ? evt : event;
+        var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+            ((evt.which) ? evt.which : 0));
+        if (charCode > 32 && (charCode < 65 || charCode > 90) &&
+            (charCode < 97 || charCode > 122)) {
+
             return false;
         }
         return true;
@@ -115,6 +131,14 @@
                 $("#errlog_email").fadeIn('fast');
                 $("#errlog_email").fadeOut(5000);
                 $check = 1;
+            } else {
+                var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+                if (testEmail.test(email_add)) {} else {
+                    $("#errlog_email").html('Please enter valid email address');
+                    $("#errlog_email").fadeIn('fast');
+                    $("#errlog_email").fadeOut(5000);
+                    $check = 1;
+                };
             }
 
             var mobile_num = $("#mobile_num").val();
@@ -123,6 +147,14 @@
                 $("#errlog_mob").fadeIn('fast');
                 $("#errlog_mob").fadeOut(5000);
                 $check = 1;
+            } else {
+                var testMobile = /^\d{10}$/;
+                if (testMobile.test(mobile_num)) {} else {
+                    $("#errlog_mob").html('Please enter valid mobile number');
+                    $("#errlog_mob").fadeIn('fast');
+                    $("#errlog_mob").fadeOut(5000);
+                    $check = 1;
+                };
             }
             if ($check == 1) {
                 return false;
@@ -259,8 +291,9 @@
 
             if (timeLeft == -1) {
                 clearTimeout(timerId);
+                $('#resendOtp_link').show();
                 //sentotplogin();
-                $('#goto-otp-btn').click();
+                //$('#goto-otp-btn').click();
 
             } else {
                 elem.innerHTML = 'Resend OTP in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';

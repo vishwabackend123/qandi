@@ -140,10 +140,11 @@ class FullExamController extends Controller
 
 
         /* set redis for save exam question response */
-        $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
+        $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
         $redis_data = [
             'given_ans' => $retrive_array,
             'taken_time' => $retrive_time_array,
+            'taken_time_sec' => $retrive_time_sec,
             'answer_swap_cnt' => $answer_swap_cnt,
             'questions_count' => $questions_count,
             'all_questions_id' => $keys,
@@ -243,8 +244,7 @@ class FullExamController extends Controller
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
-        $aquestionTakenTime = isset($sessionResult->taken_time->$quest_id) ? $sessionResult->taken_time->$quest_id : '00:00:00';
-
+        $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
         return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
     }
@@ -324,8 +324,7 @@ class FullExamController extends Controller
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = isset($sessionResult->given_ans->$activeq_id) ? $sessionResult->given_ans->$activeq_id : [];
-        $aquestionTakenTime = isset($sessionResult->taken_time->$activeq_id) ? $sessionResult->taken_time->$activeq_id : '00:00:00';
-
+        $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
 
         return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
     }
