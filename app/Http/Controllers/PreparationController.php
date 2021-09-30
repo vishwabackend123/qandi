@@ -70,7 +70,7 @@ class PreparationController extends Controller
         $exam_id = Auth::user()->grade_id;
         $data = $request->all();
         $responsePdf = '';
-        if (isset($data) && !empty($data)):
+        if (isset($data) && !empty($data)) :
             $api_url = 'http://3.108.176.99:8080/api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
             $curl = curl_init();
 
@@ -91,7 +91,6 @@ class PreparationController extends Controller
             $responseData = json_decode($response);
             foreach ($responseData->response as $value) {
                 $responsePdf = $value->paper_file_name;
-
             }
             $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
             return $imgUrl;
@@ -310,14 +309,16 @@ class PreparationController extends Controller
 
         $response_json = curl_exec($curl);
 
+        dd($api_url, $response_json);
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         $aResponse = json_decode($response_json);
 
 
-            $preparation_list = $aResponse->bookmark_questions;
-//            dd($preparation_list);
+        $preparation_list = $aResponse->bookmark_questions;
+        //            dd($preparation_list);
 
         return view('afterlogin.Preparation.bookmarks_ajax', compact('values', 'preparation_list'));
     }

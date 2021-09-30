@@ -20,9 +20,9 @@ Route::any('/', function () {
     if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
-        return view('index');
+        // return view('index');
 
-//        return redirect('https://www.uniqtoday.com/');
+        return redirect('https://www.uniqtoday.com/');
     }
 });
 
@@ -185,4 +185,3 @@ Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\AssessmentExa
 Route::any('/searchFreind', [App\Http\Controllers\HomeController::class, 'searchFriendWithKeyWord'])->name('searchFriendWithKeyWord')->middleware('auth', 'menu');
 
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
-

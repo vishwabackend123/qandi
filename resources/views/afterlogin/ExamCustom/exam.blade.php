@@ -66,11 +66,12 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
                         <div class="tab-content bg-white" id="myTabContent">
+                            <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <div id="question_section" class="">
                                 <div class="d-flex ">
                                     <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
                                         <span id="avg_text">Average Time taken : </span>
-                                        <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
+                                        <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                             <span class="seconds" id="seconds_{{$activeq_id}}"></span>
 
                                             <div id="percentBar_{{$activeq_id}}"></div>
@@ -78,14 +79,14 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                         </div>
                                         <div class="time_taken_css" id="q_time_taken_first" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
                                     </div>
-                                    <input type="hidden" name="question_spendtime" id="timespend_{{ $activeq_id }}" value=" " />
+                                    <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                 </div>
 
                                 <div class="question-block N_question-block">
 
 
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}','{{ $activeq_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -421,6 +422,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         timerInterval = setInterval(() => {
             timePassed = timePassed += 1;
             timeLeft = TIME_LIMIT - timePassed;
+            $('#final_submit_time').val(timePassed);
             timeLabel.innerHTML = formatTime(timeLeft);
             setCircleDasharray();
 
@@ -503,25 +505,23 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     var up_timer = 0;
     var countdown_txt = " Seconds";
     var upcounter_txt = " Mins";
+    var ctimer;
+    var setEachQuestionTimeNext_countdown;
+    var timer_countdown;
 
     function questionstartTimer() {
 
-        var timer_up = setInterval(function() {
-            up_timer++;
-            $('#timespend_{{$activeq_id}}').val(up_timer);
-            $('#final_submit_time').val(up_timer);
-        }, 1000);
-        var timer_countdown = setInterval(function() {
+        timer_countdown = setInterval(function() {
             fsec--;
             //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
-            progressBar(fsec, $('#progressBar_{{$activeq_id}}'));
+            progressBar(fsec, $('.progressBar_first'));
             if (fsec == -1) {
                 clearInterval(timer_countdown);
-                $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
-                $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+                $('.progressBar_first').css('background-color', '#E4E4E4');
+                $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
                 $('#q_time_taken_first').show();
                 $('#avg_text').hide();
-                $('#progressBar_{{$activeq_id}}').hide();
+                $('.progressBar_first').hide();
             }
 
         }, 1000);
@@ -539,8 +539,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
         }
         if (percent <= 0) {
-            $('#progressBar_{{$activeq_id}}').css('background-color', '#E4E4E4');
-            $('#progressBar_{{$activeq_id}}').css('border-left', 'solid 4px #ff6060');
+            $('.progressBar_first').css('background-color', '#E4E4E4');
+            $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
         }
     }
 
@@ -551,8 +551,9 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
     function setEachQuestionTime() {
-        setInterval(function() {
+        setEachQuestionTimeNext_countdown = setInterval(function() {
             ++totalSeconds;
+            $('.timespend_first').val(totalSeconds);
             secondsLabel.innerHTML = pad(totalSeconds % 60);
 
             minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
@@ -573,10 +574,13 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
     /* getting Next Question Data */
-    function qnext(question_id, act_question) {
+    function qnext(question_id) {
+
+        var act_question = $("#current_question").val();
         var q_submit_time = $("#timespend_" + act_question).val();
 
-        saveQuestionTime(question_id, q_submit_time);
+
+        saveQuestionTime(act_question, q_submit_time);
 
         url = "{{ url('ajax_next_question/') }}/" + question_id;
         $.ajax({
@@ -585,6 +589,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
+
+                $("#question_section div").remove();
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
@@ -737,11 +746,11 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
                 'q_time': time
             },
-            success: function(result) {
-                /* if (response.status == 200) {
-                    $("#btn_" + question_id).removeClass("btn-light");
-                    $("#btn_" + question_id).addClass("btn-light-green");
-                } */
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
             }
         });
 

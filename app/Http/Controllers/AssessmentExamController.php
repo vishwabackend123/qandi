@@ -141,15 +141,17 @@ class AssessmentExamController extends Controller
 
 
         /* set redis for save exam question response */
-        $retrive_array = $retrive_time_array = $answer_swap_cnt = [];
+        $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
         $redis_data = [
             'given_ans' => $retrive_array,
             'taken_time' => $retrive_time_array,
+            'taken_time_sec' => $retrive_time_sec,
             'answer_swap_cnt' => $answer_swap_cnt,
             'questions_count' => $questions_count,
             'all_questions_id' => $keys,
             'full_time' => $exam_fulltime,
         ];
+
 
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redis_data));

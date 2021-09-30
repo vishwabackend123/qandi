@@ -18,6 +18,7 @@ use App\Http\Traits\CommonTrait;
 
 use Illuminate\Support\Facades\Validator;
 use AWS;
+
 class HomeController extends Controller
 {
     //
@@ -382,7 +383,7 @@ class HomeController extends Controller
                     'Bucket' => env('AWS_BUCKET'),
                     'Key' => $fileName,
                     'Body' => $file,
-//                'ContentType' => 'application/pdf',
+                    //                'ContentType' => 'application/pdf',
                     'ACL' => 'public-read',
                     'SourceFile' => $file_path
                 ));
@@ -390,16 +391,16 @@ class HomeController extends Controller
                     'user_profile_img' => $fileName,
                 ];
                 DB::table('student_users')->where('id', '=', $user_id)->update($insert);
-//                dd(Auth::user()->user_profile_img);
-//                Session::flash('success', 'Paper uploaded successfully!');
-//                Session::forget('error');
-//                return redirect()->route('paper.index');
-            } catch
-            (\Exception $e) {
+                //                dd(Auth::user()->user_profile_img);
+                //                Session::flash('success', 'Paper uploaded successfully!');
+                //                Session::forget('error');
+                //                return redirect()->route('paper.index');
+            } catch (\Exception $e) {
                 dd($e->getMessage());
             }
         }
     }
+
 
 
     public function saveFcmToken(Request $request)

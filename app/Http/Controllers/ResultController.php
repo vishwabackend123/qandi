@@ -22,14 +22,18 @@ class ResultController extends Controller
         $exam_id = Auth::user()->grade_id;
 
         $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
-        $submit_time = isset($request->submit_time) ? gmdate('H:i:s', $request->submit_time) : '00:00:00';
+        $submit_time = isset($request->submit_time) ? (string)gmdate('H:i:s', $request->submit_time) : '00:00:00';
+        //$submit_time = isset($request->submit_time) ? $request->submit_time : '00:00:00';
         $exam_type = isset($request->exam_type) ? $request->exam_type : '';
         $test_type = isset($request->test_type) ? $request->test_type : '';
         $exam_mode = isset($request->exam_mode) ? $request->exam_mode : 'Practice';
+        $planner_id = isset($request->planner_id) ? $request->planner_id : 0;
+        $live_exam_id = isset($request->live_exam_id) ? $request->live_exam_id : 0;
 
         $redis_json = Redis::get('custom_answer_time');
 
         $redisArray = (isset($redis_json) && !empty($redis_json)) ? json_decode($redis_json) : [];
+
 
         $given_ans = $answerList = $answersArr = [];
         $given_ans = isset($redisArray->given_ans) ? $redisArray->given_ans : [];
@@ -63,7 +67,8 @@ class ResultController extends Controller
         $inputjson['test_type'] = ucfirst($test_type);
         $inputjson['exam_mode'] = ucfirst($exam_mode);
         $inputjson['exam_type'] = $exam_type;
-
+        $inputjson['planner_id'] = $planner_id;
+        $inputjson['live_exam_id'] = $live_exam_id;
 
         $request = json_encode($inputjson);
 
@@ -102,11 +107,15 @@ class ResultController extends Controller
             return view('afterlogin.LiveExam.live_result');
         }
 
-        if ($httpcode == 200 || $httpcode == 201) {
-            $response_data = (json_decode($response_json));
+        $response_data = (json_decode($response_json));
+        $check_response = isset($response_data->success) ? $response_data->success : false;
+
+        if ($check_response == true) {
 
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
+            // dd($response_json, $request);
+
             $aQuestions_list = [];
             $questions_count = 0;
             $exam_fulltime = 0;
