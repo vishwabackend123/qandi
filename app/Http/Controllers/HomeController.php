@@ -370,9 +370,13 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $s3 = AWS::createClient('s3');
         $input = $request->all();
+
+        dd($input);
         $request->validate([
             'file-input' => 'required|mimes:png,jpg,jpeg|max:2048'
         ]);
+
+
         $file = $request->file('file-input');
         $fileName = trim(time() . $file->getClientOriginalName());
         if ($request->hasfile('file-input')) {

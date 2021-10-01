@@ -85,13 +85,14 @@
                                             <div class="bg-white p-3 text-left ms-4 read-mode h-100">
                                                 <span class="position-relative d-inline-block ">
                                                     <img src="{{$imgPath}}" class="profile-pic uswereditpic" />
-
-                                                    <span class="image-upload">
-                                                        <label for="file-input">
-                                                            <span class="btn edit-icon"><i class="fas fa-pencil-alt"></i></span>
-                                                        </label>
-                                                        <input id="file-input" name="file-input" type="file" accept="image/*" />
-                                                    </span>
+                                                    <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
+                                                        <span class="image-upload">
+                                                            <label for="file-input">
+                                                                <span class="btn edit-icon"><i class="fas fa-pencil-alt"></i></span>
+                                                            </label>
+                                                            <input id="file-input" name="file-input" type="file" accept="image/*" />
+                                                        </span>
+                                                    </form>
                                                 </span>
                                                 <div id="profile-details" class="" style="padding-top:-20px">
                                                     <div class="mb-2 mt-3 profile-read">

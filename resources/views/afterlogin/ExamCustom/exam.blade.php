@@ -56,6 +56,7 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 @endphp
 <div class="main-wrapper p-0 bg-gray">
@@ -138,7 +139,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                         </div>
                                         <div class="pe-3" style="float:right">
-                                            <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
                                             <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize">Clear Response</button>
                                         </div>
 
@@ -616,7 +617,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 
 
     /* mark or review */
-    function markforreview(quest_id, subject_id) {
+    function markforreview(quest_id, subject_id, chapt_id) {
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
@@ -624,6 +625,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                chapter_id: chapt_id
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -677,7 +679,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
     }
 
 
-    function savemarkreview(quest_id, subject_id) {
+    function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
         if (saveAnswer(quest_id) != false) {
 
@@ -689,6 +691,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                     "_token": "{{ csrf_token() }}",
                     question_id: quest_id,
                     subject_id: subject_id,
+                    chapter_id: chapt_id
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
