@@ -1,8 +1,15 @@
 @extends('afterlogin.layouts.app')
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script> -->
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- BS JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- Have fun using Bootstrap JS -->
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static"
+        });
+    });
+</script>
 @section('content')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -17,6 +24,7 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 if($template_type==1){
 $type_class='checkboxans';
@@ -106,10 +114,10 @@ $questtype='radio';
                                         <div class="N_tab-btn-box_list">
                                             <div class="ps-3" style="float:left">
                                                 <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-                                                <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
+                                                <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}','{{$chapter_id}}')">Save & Mark for review</button>
                                             </div>
                                             <div class="pe-3" style="float:right">
-                                                <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
+                                                <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
                                                 <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
                                             </div>
 
@@ -535,7 +543,7 @@ $questtype='radio';
 
 
     /* mark or review */
-    function markforreview(quest_id, subject_id) {
+    function markforreview(quest_id, subject_id, chapt_id) {
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
@@ -543,6 +551,7 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                chapter_id: chapt_id
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -595,7 +604,7 @@ $questtype='radio';
     }
 
 
-    function savemarkreview(quest_id, subject_id) {
+    function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
         if (saveAnswer(quest_id) != false) {
 
@@ -607,6 +616,7 @@ $questtype='radio';
                     "_token": "{{ csrf_token() }}",
                     question_id: quest_id,
                     subject_id: subject_id,
+                    chapter_id: chapt_id
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);

@@ -5,6 +5,9 @@
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static"
+        });
         $('#endExam').modal('show');
     });
 </script>

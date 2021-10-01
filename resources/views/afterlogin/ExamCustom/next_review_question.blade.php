@@ -2,6 +2,7 @@
 $question_text = isset($question_data->question)?$question_data->question:'';
 $option_data = (isset($question_data->question_options) && !empty($question_data->question_options))?json_decode($question_data->question_options):'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 @endphp
 <div class="question-block px-2 pt-3 pb-2">
@@ -46,7 +47,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
             </div>
         </div>
         <div class="col-md-2 text-right">
-            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
         </div>
     </div>
     <div class="answer-block p-3 ">

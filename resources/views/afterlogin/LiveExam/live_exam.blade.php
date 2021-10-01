@@ -1,5 +1,15 @@
 @extends('afterlogin.layouts.app')
 
+<!-- Have fun using Bootstrap JS -->
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static"
+        });
+
+    });
+</script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     $(window).on("load resize ", function(e) {
@@ -26,6 +36,7 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 if($template_type==1){
 $type_class='checkboxans';
@@ -65,52 +76,56 @@ $questtype='radio';
                             @endforeach
                             @endif
                         </ul>
-                        <div class="tab-content bg-white " id="myTabContent" style="">
-                            <div id="question_section" class="">
-                                <div class="question-block N_question-block">
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
-                                    <!-- question -->
-                                    <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-                                    <!-- options -->
-                                    <div class="ans-block row mt-5 N_radioans">
-                                        @if(isset($option_data) && !empty($option_data))
-                                        @php $no=0; @endphp
-                                        @foreach($option_data as $key=>$opt_value)
-                                        @php
-                                        $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                        $dom = new DOMDocument();
-                                        @$dom->loadHTML($opt_value);
-                                        $anchor = $dom->getElementsByTagName('img')->item(0);
-                                        $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                        $latex = "https://math.now.sh?from=".$text;
-                                        $view_opt='<img src="'.$latex.'" />' ;
-                                        @endphp
-                                        <div class="col-md-6 mb-4">
-                                            <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                            <div class=" ps-5 ans">
-                                                <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                        <div class="tab-content bg-white " id="myTabContent">
+                            <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                            <div>
+                                <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
+                                <div id="question_section" class="">
+                                    <div class="question-block N_question-block">
+                                        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                        <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                        <!-- question -->
+                                        <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                        <!-- options -->
+                                        <div class="ans-block row mt-5 N_radioans">
+                                            @if(isset($option_data) && !empty($option_data))
+                                            @php $no=0; @endphp
+                                            @foreach($option_data as $key=>$opt_value)
+                                            @php
+                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                            $dom = new DOMDocument();
+                                            @$dom->loadHTML($opt_value);
+                                            $anchor = $dom->getElementsByTagName('img')->item(0);
+                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                            $latex = "https://math.now.sh?from=".$text;
+                                            $view_opt='<img src="'.$latex.'" />' ;
+                                            @endphp
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                <div class=" ps-5 ans">
+                                                    <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                </div>
                                             </div>
+
+                                            @php $no++; @endphp
+                                            @endforeach
+                                            @endif
+
                                         </div>
-
-                                        @php $no++; @endphp
-                                        @endforeach
-                                        @endif
-
+                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
-                                    <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
-                                </div>
-                                <div class="tab-btn-box  d-flex N_tab-btn-box">
-                                    <div class="N_tab-btn-box_list">
-                                        <div class="ps-3" style="float:left">
-                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-                                            <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
-                                        </div>
-                                        <div class="pe-3" style="float:right">
-                                            <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}')">Mark for review</button>
-                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
-                                        </div>
+                                    <div class="tab-btn-box  d-flex N_tab-btn-box">
+                                        <div class="N_tab-btn-box_list">
+                                            <div class="ps-3" style="float:left">
+                                                <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                                <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for review</button>
+                                            </div>
+                                            <div class="pe-3" style="float:right">
+                                                <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
+                                                <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +159,7 @@ $questtype='radio';
                         <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
                             @csrf
                             <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
-                            <input type="hidden" name="submit_time" value="00:10:00">
+                            <input type="hidden" name="submit_time" id="final_submit_time" value="">
                             <input type="hidden" name="test_type" value="Live">
                             <input type="hidden" name="exam_type" value="L">
                             <input type="hidden" name="exam_mode" value="Live">
@@ -409,6 +424,7 @@ $questtype='radio';
         timerInterval = setInterval(() => {
             timePassed = timePassed += 1;
             timeLeft = TIME_LIMIT - timePassed;
+            $('#final_submit_time').val(timePassed);
             timeLabel.innerHTML = formatTime(timeLeft);
             setCircleDasharray();
 
@@ -486,11 +502,27 @@ $questtype='radio';
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
+    /* per question timer */
+    var setEachQuestionTimeNext_countdown;
+    var totalSeconds = -1;
+
+    function setEachQuestionTime() {
+        setEachQuestionTimeNext_countdown = setInterval(function() {
+            ++totalSeconds;
+            $('.timespend_first').val(totalSeconds);
 
 
+        }, 1000);
+    }
+    /* per question timer end */
 
     /* getting Next Question Data */
     function qnext(question_id) {
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
+
+        saveQuestionTime(act_question, q_submit_time);
+
 
         url = "{{ url('next_question/') }}/" + question_id;
         $.ajax({
@@ -499,6 +531,9 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(setEachQuestionTimeNext_countdown);
+
+                $("#question_section div").remove();
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
@@ -508,7 +543,7 @@ $questtype='radio';
 
 
     /* mark or review */
-    function markforreview(quest_id, subject_id) {
+    function markforreview(quest_id, subject_id, chapt_id) {
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
@@ -516,6 +551,7 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                chapter_id: chapt_id
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -566,7 +602,7 @@ $questtype='radio';
     }
 
 
-    function savemarkreview(quest_id, subject_id) {
+    function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
         if (saveAnswer(quest_id) != false) {
 
@@ -578,6 +614,7 @@ $questtype='radio';
                     "_token": "{{ csrf_token() }}",
                     question_id: quest_id,
                     subject_id: subject_id,
+                    chapter_id: chapt_id
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
@@ -640,7 +677,24 @@ $questtype='radio';
 
     }
 
+    function saveQuestionTime(question_id, time) {
 
+        url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                'q_time': time
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
+            }
+        });
+    }
     /* $('#submitExam').click(function() {
 
         $('#endExam').modal('show');

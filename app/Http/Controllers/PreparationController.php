@@ -309,7 +309,7 @@ class PreparationController extends Controller
 
         $response_json = curl_exec($curl);
 
-        dd($api_url, $response_json);
+
 
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

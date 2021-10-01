@@ -10,6 +10,7 @@
 $question_text = isset($question_data->question)?$question_data->question:'';
 $option_data = (isset($question_data->question_options) && !empty($question_data->question_options))?json_decode($question_data->question_options):'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 @endphp
 <!-- Side bar menu -->
@@ -110,8 +111,8 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                                             </div>
                                         </div>
                                         <div class="col-md-2 text-right">
-                                            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
-                                        </div>
+                                            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
+                                        </div>'
                                     </div>
 
                                     <div class="answer-block p-3 ">
@@ -326,7 +327,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
         height: '31vh'
     });
 
-    function bookmarkforreview(quest_id, subject_id) {
+    function bookmarkforreview(quest_id, subject_id, chapt_id) {
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
@@ -334,6 +335,7 @@ $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
                 "_token": "{{ csrf_token() }}",
                 question_id: quest_id,
                 subject_id: subject_id,
+                chapter_id: chapt_id
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);

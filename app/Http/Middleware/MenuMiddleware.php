@@ -55,7 +55,12 @@ class MenuMiddleware
 
         $leaderboard_list = $this->leaderBoard();
 
-        $imgPath = isset(Auth::user()->user_profile_img) && !empty(Auth::user()->user_profile_img) ? 'https://student-image1.s3.ap-south-1.amazonaws.com/'.Auth::user()->user_profile_img : url('/').'/public/after_login/images/profile.png';
+        if (Auth::user()->user_profile_img) {
+            $imgPath = Auth::user()->user_profile_img;
+        } else {
+            $imgPath =  url('/') . '/public/after_login/images/profile.png';
+        }
+
 
 
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
