@@ -3721,3 +3721,45 @@ input[type=range]::-webkit-slider-thumb {
 
 
 }
+
+@media (min-width: 576px) {
+
+    /* .modal-dialog {
+        max-width: 90%;
+    }
+ */
+    #test_instruction .px-5 {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .N_tab-btn-box_list .px-4 {
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+    }
+
+    .cust-tab-content .d-flex {
+        display: block !important;
+        width: 100%;
+    }
+
+    .leaderBoardBlockedit {
+        width: 100% !important;
+    }
+
+    #collapseExample .open-sub-planner {
+        width: calc(100% - 50%) !important;
+    }
+
+    .slimScrollDiv .px-4 {
+        padding-right: 0.5rem !important;
+        padding-left: 0.5rem !important;
+    }
+
+    #myTabContent .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
+        display: block !important;
+    }
+}

@@ -351,7 +351,7 @@
                     </div>
                     <div class="col-3">
                         <label class="d-block">End Date</label>
-                        <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" disabled required />
+                        <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
                     </div>
                 </div>
                 <div class=" row mt-4">

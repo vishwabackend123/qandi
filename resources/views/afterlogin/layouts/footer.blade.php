@@ -259,7 +259,7 @@
                         }
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
-                        }, 3000);   
+                        }, 3000);
 
 
                     }
@@ -784,7 +784,7 @@
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response);
+                    console.log(response.message);
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);
@@ -796,7 +796,7 @@
                         location.reload();
 
                     } else {
-                        var massage = response.massage;
+                        var message = response.message;
                         $('#errPlanner_alert').html(message);
                         $('#errPlanner_alert').show();
                         setTimeout(function() {
