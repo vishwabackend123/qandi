@@ -293,7 +293,7 @@ class PreparationController extends Controller
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapter-wise-resources/' . $user_id . '/' . $exam_id . '/' . $chapter_id;;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/bookmarks/' . $user_id . '/' . $exam_id . '/' . $chapter_id;;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
