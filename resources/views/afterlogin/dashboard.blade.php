@@ -171,10 +171,18 @@
                 </div>
                 <div class="col-6 text-right d-flex">
                     <div class="ms-auto">
+                        @if(isset($planner) && !empty($planner))
+                        @foreach($planner as $key=>$val)
+                        @if($val->test_completed_yn=="Y")
                         <a href="#" class="text-secondary"><img src="{{URL::asset('public/after_login/images/planner_Act_green_ic.png')}}" /></a>
+                        @else
                         <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
-                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
+
+                        @endif
+                        @endforeach
+                        @endif
                         <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
+
                     </div>
                 </div>
             </div>
@@ -209,12 +217,21 @@
                             <div class="TestLevel">Level Up In</div>
                             <div class="TestTitle">{{$val->chapter_name}}</div>
                             <div class="starRating">
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="score score-rating-slt js-score">0%</div>
+                                <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
+                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                        <div class="star-ratings-css">
+                                            <div class="star-ratings-css-top" style="width: 0%">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </div>
+                                        <div class="ms-1 score score-rating js-score">
+                                            0%
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="checkBody mb-2">
@@ -233,7 +250,16 @@
 
                     @endforeach
                     @endif
+                    <li class="gray prfile" style="width:300px; height:290px;">
+                        <div class="col swipLi">
 
+                            <div class="btnBody">
+                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
                 </ul>
             </div>
 
