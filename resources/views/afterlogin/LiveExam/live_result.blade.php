@@ -6,7 +6,8 @@
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
-            backdrop: "static"
+            backdrop: "static",
+            keyboard: false
         });
         $('#endExam').modal('show');
     });

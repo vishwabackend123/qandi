@@ -28,7 +28,7 @@ class PlannerController extends Controller
         $range = isset($request->weekrange) ? $request->weekrange : '';
         $start_date = isset($request->start_date) ? $request->start_date : '';
         $end_date = isset($request->end_date) ? $request->end_date : '';
-        $chapters = isset($request->chapters) ? json_encode($request->chapters) : '';
+        $chapters = isset($request->chapters) ? json_encode($request->chapters, true) : '';
 
 
         $request = [
@@ -41,6 +41,7 @@ class PlannerController extends Controller
         ];
 
         $request_json = json_encode($request);
+
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
@@ -65,6 +66,8 @@ class PlannerController extends Controller
         ));
         $response_json = curl_exec($curl);
 
+        /*   dd($response_json, $request_json);
+ */
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
