@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StudentUsers;
 
+use CURLFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
@@ -366,45 +367,34 @@ class HomeController extends Controller
 
     public function editProfileImage(Request $request)
     {
-        $data = $request->all();
+
         $user_id = Auth::user()->id;
-        $s3 = AWS::createClient('s3');
-        $input = $request->all();
-
-        dd($input);
-        $request->validate([
-            'file-input' => 'required|mimes:png,jpg,jpeg|max:2048'
-        ]);
-
-
         $file = $request->file('file-input');
-        $fileName = trim(time() . $file->getClientOriginalName());
+        $file_path = $file->getPathName();
+
+        $file_name = $file->getClientOriginalName();
         if ($request->hasfile('file-input')) {
-            try {
-                $file = $request->file('file-input');
-                $file_path = $file->getPathName();
-                $s3->putObject(array(
-                    'Bucket' => env('AWS_BUCKET'),
-                    'Key' => $fileName,
-                    'Body' => $file,
-                    //                'ContentType' => 'application/pdf',
-                    'ACL' => 'public-read',
-                    'SourceFile' => $file_path
-                ));
-                $insert = [
-                    'user_profile_img' => $fileName,
-                ];
-                DB::table('student_users')->where('id', '=', $user_id)->update($insert);
-                //                dd(Auth::user()->user_profile_img);
-                //                Session::flash('success', 'Paper uploaded successfully!');
-                //                Session::forget('error');
-                //                return redirect()->route('paper.index');
-            } catch (\Exception $e) {
-                dd($e->getMessage());
-            }
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => Config::get('constants.API_NEW_URL') . 'api/update-profile-picture',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => array('file'=> new CURLFILE($file),'student_id' => $user_id, 'file_extension' => $file_name),
+            ));
+
+            $response = curl_exec($curl);
+
+            curl_close($curl);
+            echo $response;
         }
     }
-
 
 
     public function saveFcmToken(Request $request)
