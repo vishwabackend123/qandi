@@ -2652,12 +2652,24 @@ header {
 
 .leaderNameBlock li {
     padding-left: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+.leaderNameBlock-search {
+    margin: 0;
+    padding: 0 0 0 30px;
+}
+
+.leaderNameBlock-search li {
+    padding-left: 0px;
+    margin-bottom: 10px;
 }
 
 .leader-pic {
-    width: 64px;
-    height: 64px;
+    width: 58px;
+    height: 58px;
     border-radius: 30px;
 }
 
@@ -2711,7 +2723,7 @@ header {
     background: #d71921;
     color: #fff;
     position: absolute;
-    bottom: -8px;
+    bottom: 10px;
     left: 50%;
     display: flex;
     border-radius: 35px;
@@ -3191,6 +3203,10 @@ header {
 }
 
 ol.leaderNameBlock li {
+    list-style-type: none;
+}
+
+ol.leaderNameBlock-search li {
     list-style-type: none;
 }
 
