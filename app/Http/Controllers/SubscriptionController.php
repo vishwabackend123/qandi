@@ -68,7 +68,6 @@ class SubscriptionController extends Controller
         curl_close($curl);
 
         $aResponse = json_decode($response_json);
-
         $response_status = isset($aResponse->success) ? $aResponse->success : false;
         if ($response_status == true) {
 
@@ -87,9 +86,11 @@ class SubscriptionController extends Controller
             }
         }
 
+        $aPurchased = collect($purchased_packages);
 
+        //dd($aPurchased, $filtered_data);
 
-        return view('subscriptions', compact('subscriptions', 'purchased_ids'));
+        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased'));
     }
 
 
@@ -101,52 +102,47 @@ class SubscriptionController extends Controller
     public function trial_subscription($sub_id, Request $request)
     {
         $user_id = Auth::user()->id;
-        $grade_id = $sub_id;
+        $subscription_id = $sub_id;
 
-        $date = Carbon::now();
-        $date->addDays(15);
-
-        $subscription_expiry = $date->format("Y-m-d H:i:s");
-
-        $payment_date = date("Y-m-d H:i:s");
-
-        $user_purchase_data = [
-            'user_id' => $user_id,
-            'purchase_date' => $payment_date,
-            'amount' => 0,
-            'transaction_id' => 'trail',
-            'order_id' => 'trail',
-            'order_status' => 'true',
-            'transaction_status' => "Pass",
-            'subscription_type' => 'R',
-            'payment_by' => 'free',
-            'created_on' => $payment_date,
-            'subscription_end_date' => $subscription_expiry,
-            'subscription_start_date' => $payment_date,
-            'subscription_id' => $grade_id,
-            'exam_year' => '2021',  // new attribute
+        $trail_purchase_data = [
+            'student_id' => $user_id,
+            'subscription_id' => $subscription_id,
+            'exam_year' => 2022,
         ];
-        UserPurchase::create($user_purchase_data);
-
-        $update_user = [
-            'grade_id' => $grade_id,
-        ];
-        $getUser = DB::table('student_preferences')->where('student_id', '=', $user_id)->first();
-
-        if ($getUser) {
-            StudentUsers::where('id', $user_id)->update($update_user);
-        } else {
-            return redirect()->back()->withErrors(['User data not available.']);
-        }
-
-        $update_preference = [
-            'subscription_yn' => 'Y',
-            'subscription_expiry_date' => $subscription_expiry,
-        ];
-        $upt_pre = StudentPreference::where('student_id', $user_id)->update($update_preference);
+        $order_request_json = json_encode($trail_purchase_data);
 
 
-        if ($upt_pre) {
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/save-trial-subscription';
+
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $order_request_json,
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "content-type: application/json"
+            ),
+        ));
+        $order_response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        curl_close($curl);
+
+        $aResponse = json_decode($order_response_json);
+
+        $response_status = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($response_status == true) {
             return redirect()->route('dashboard');
         } else {
 

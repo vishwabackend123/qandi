@@ -189,7 +189,7 @@
             <div class='swipe mb-5' id="plan_slider">
                 <ul id='slider' class="pt-3">
                     @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                    <li class="gray prfile">
+                    <li class="gray prfile h-100">
                         <div class="col swipLi">
                             <div class="TestLevel ">Level Up</div>
                             <div class="TestTitle">One Last Step!</div>
@@ -211,8 +211,8 @@
                     @endif
                     @if(isset($planner) && !empty($planner))
                     @foreach($planner as $key=>$val)
-                    <li>
-                        <div class="col swipLi">
+                    <li class="h-100">
+                        <div class="col swipLi ">
                             <!-- <img src="images/thermodynamics_ic.png" /> -->
                             <div class="TestLevel">Level Up In</div>
                             <div class="TestTitle">{{$val->chapter_name}}</div>
@@ -249,17 +249,33 @@
                     </li>
 
                     @endforeach
-                    @endif
-                    <li class="gray prfile" style="width:300px; height:290px;">
+                    <!-- 
+                    <li class="CGreen">
                         <div class="col swipLi">
-
+                            <div class="TestLevel">Keep in Coming!</div>
+                            <div class="TestTitle">Algebra</div>
+                            <img src="images/GreenCircleCheck_ic.png" />
                             <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                                <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="h-100" style="width:300px;">
+                        <div class="col p-2">
+                            <div class="w-100 text-center px-5 pb-5 pt-4 ">
+                                <img class="img-responsive" src="{{URL::asset('public/after_login/images/PlannerRedBig_ic@2x.png')}}">
+                            </div>
+                            <div class="btnBody ">
+
+                                <a data-bs-toggle="collapse" class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="fa fa-calendar-o" aria-hidden="true"></i> Go To Planner
+                                </a>
                             </div>
 
                         </div>
                         <div class="clearfix"></div>
                     </li>
+                    @endif
                 </ul>
             </div>
 
