@@ -96,6 +96,9 @@
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                                 </form>
                             </div>
+                            <div class="text-center mt-2">
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline">Try 14 days trial ></a>
+                            </div>
 
                         </div>
                     </div>
