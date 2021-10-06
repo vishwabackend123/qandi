@@ -146,6 +146,46 @@ trait CommonTrait
         return [];
     }
 
+    public function adaptiveCustomQlist($user_id, $question_data, $redis_set)
+    {
+        if (!empty($user_id) &&  !empty($question_data)) {
+            $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
+            if (Redis::exists($cacheKey)) {
+                if ($redis_set == 'True') {
+
+                    Redis::del($cacheKey);
+                }
+            }
+            if ($data = Redis::get($cacheKey)) {
+                return json_decode($data);
+            }
+            $data = collect($question_data);
+            Redis::set($cacheKey, $data);
+            return $data->all();
+        }
+        return [];
+    }
+
+    public function addAdaptiveQuestion($user_id, $question_data, $redis_set)
+    {
+        if (!empty($user_id) &&  !empty($question_data)) {
+            $cacheKey = 'CustomQuestion:all:' . $user_id;
+            if (Redis::exists($cacheKey)) {
+                if ($redis_set == 'True') {
+
+                    Redis::del($cacheKey);
+                }
+            }
+            if ($data = Redis::get($cacheKey)) {
+                return json_decode($data);
+            }
+            $data = collect($question_data);
+            Redis::set($cacheKey, $data);
+            return $data->all();
+        }
+        return [];
+    }
+
 
     public function subscription_packages()
     {
@@ -291,8 +331,6 @@ trait CommonTrait
         $user_data = Auth::user();
         $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
         $grade_id = Auth::user()->grade_id;
-
-
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');

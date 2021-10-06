@@ -100,9 +100,8 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                                 <div class="question-block N_question-block">
 
-
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -136,11 +135,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
                                         <div class="ps-3" style="float:left">
-                                            @if(!empty($next_qid))
+
                                             <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
-                                            @else
-                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
-                                            @endif
+
 
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                         </div>
@@ -179,12 +176,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
+                        <form id="form_exam_submit" action="{{route('adaptive_chapter_exam_result')}}" method="post">
                             @csrf
-                            <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
-                            <input type="hidden" name="submit_time" id="final_submit_time" value="">
-                            <input type="hidden" name="test_type" value="{{$test_type}}">
-                            <input type="hidden" name="exam_type" value="{{$exam_type}}">
+                            <input type="hidden" name="session_id" value="{{$session_id}}">
+                            <input type="hidden" name="chapter_id" value="{{$chapter_id}}">
+
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
@@ -307,7 +303,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
             <div class="modal-body pt-0 text-center">
                 <div class="text-center py-4">
-                    <h2 class="mb-3">Time Over!</h2>
+                    <span class="mb-3">No more questions are available for this topic, Kindly submit your exam!</span>
 
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
@@ -524,6 +520,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     /* per question timer */
     var time_allowed = '{{$question_data->time_allowed}}';
     var fsec = time_allowed * 60;
+
     var up_timer = 0;
     var countdown_txt = " Seconds";
     var upcounter_txt = " Mins";
@@ -596,28 +593,34 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
     /* getting Next Question Data */
-    function qnext(question_id) {
+    function qnext(question_key) {
 
         var act_question = $("#current_question").val();
         var q_submit_time = $("#timespend_" + act_question).val();
 
-
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('ajax_next_question/') }}/" + question_id;
+        url = "{{ url('ajax_adaptive_question_chapter/') }}/" + question_key;
         $.ajax({
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                "session_id": "{{$session_id}}",
+                "chapter_id": "{{$chapter_id}}",
+
             },
             success: function(result) {
-                clearInterval(ctimer);
-                clearInterval(timer_countdown);
-                clearInterval(setEachQuestionTimeNext_countdown);
+                if (result.status == "success") {
+                    clearInterval(ctimer);
+                    clearInterval(timer_countdown);
+                    clearInterval(setEachQuestionTimeNext_countdown);
 
-                $("#question_section div").remove();
-                $("#question_section").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                    $("#question_section div").remove();
+                    $("#question_section").html(result.html);
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                } else {
+                    $('#endExam').modal('show');
+                }
             }
         });
     }
@@ -664,7 +667,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
-            url: "{{ route('saveAnswer') }}",
+            url: "{{ route('saveAdaptiveAnswer') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -676,13 +679,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
+                    $("#quesnext" + question_id).click();
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
             },
         });
 
-        $("#quesnext" + question_id).click();
+
     }
 
 
@@ -726,7 +730,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $("#btn_" + quest_id).removeClass("btn-secondary");
 
         $.ajax({
-            url: "{{ route('clearResponse') }}",
+            url: "{{ route('adaptiveClearResponse') }}",
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -744,7 +748,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
     }
 
-    function get_subject_question(subject_id) {
+    /* function get_subject_question(subject_id) {
 
         url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
         $.ajax({
@@ -759,10 +763,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         });
 
 
-    }
+    } */
 
     function saveQuestionTime(question_id, time) {
-        url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
+        url = "{{ url('saveAdaptiveTimeSession') }}/" + question_id;
         $.ajax({
             url: url,
             type: 'POST',
@@ -792,28 +796,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {
-                if (timeLeft >= 1) {
-                    let timer_left = document.querySelector("#base-timer-path-remaining_alt");
-                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
-                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
-
-                    const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
-                    console.log("setCircleDashArray: ", circleDasharray);
-                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
-
-                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                    lefttime_exam_s.innerHTML = formatTime(timeLeft);
-
-                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
-
-                } else {
-                    form.submit();
-                }
-
-
-
+                form.submit();
             }
 
         });

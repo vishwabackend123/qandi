@@ -458,6 +458,7 @@
                                                                 <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
+                                                                    <small>${val.score} Unique score</small>
                                                                 </div>
                                                             </div>
                                                         </li>`;

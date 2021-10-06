@@ -17,18 +17,20 @@ $questtype='radio';
 <script>
     $(document).ready(function() {
         var time_allowed = '{{$question_data->time_allowed}}';
+
         var sec = time_allowed * 60;
         var interval = 1000;
         var qest = '{{$active_q_id}}';
-        var aj_up_timer = '{{$aquestionTakenTime}}';
+        /* var aj_up_timer = '{{$aquestionTakenTime}}';
 
+        alert(time_allowed_sec + " " + aj_up_timer);
         var ctxt = " Seconds";
         if (aj_up_timer >= 60) {
             var sec = 0;
         } else {
             var sec = 60 - aj_up_timer;
         }
-
+ */
         $('#percentBar_{{$active_q_id}}').html('')
         $('#timespend_{{$active_q_id}}').val("");
 
@@ -56,7 +58,7 @@ $questtype='radio';
                 width: progressBarWidth
             }, 500).html(percent + "%&nbsp;");
             if (percent <= 20) {
-                $('#percentBar1_{{$active_q_id}}').css('background-color', '#FFDC34');
+                $('#percentBar_{{$active_q_id}}').css('background-color', '#FFDC34');
             }
             if (percent <= 0) {
                 $('#progressBar_{{$active_q_id}}').css('background-color', '#E4E4E4');
@@ -66,7 +68,7 @@ $questtype='radio';
         var minutesLabel = document.getElementById("up_minutes_{{$active_q_id}}");
         var secondsLabel = document.getElementById("up_seconds_{{$active_q_id}}");
         //var totalSec = document.getElementById("tsec");
-        var totalSeconds = aj_up_timer;
+        var totalSeconds = -1;
 
         function setEachQuestionTimeNext() {
             setEachQuestionTimeNext_countdown = setInterval(function() {
@@ -98,7 +100,7 @@ $questtype='radio';
             <div id="progressBar_{{$active_q_id}}" class="progressBar tiny-green ms-2">
                 <span class="seconds" id="seconds_{{$active_q_id}}"></span>
 
-                <div id="percentBar1_{{$active_q_id}}"></div>
+                <div id="percentBar_{{$active_q_id}}"></div>
 
             </div>
             <div class="time_taken_css" id="q_time_taken_{{$active_q_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$active_q_id}}"></span>:<span id="up_seconds_{{$active_q_id}}"></span>mins</div>

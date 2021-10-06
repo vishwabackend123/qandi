@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                         <span class="slbs-link  col-2 mx-3"><a class="expand-custom" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" onclick="show_topic('{{$chapters->chapter_id}}')">Expand to Topics</a></span>
-                                        <form method="post" action="{{route('custom_exam')}}">
+                                        <form method="post" action="{{route('custom_exam_chapter')}}">
                                             @csrf
                                             <input type="hidden" name="subject_id" value="">
                                             <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
@@ -109,7 +109,7 @@
 
                                 </div>
 
-                                <form id="topic_form" method="post" action="{{route('custom_exam')}}" class="text-right">
+                                <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="text-right">
                                     @csrf
                                     <input type="hidden" id="selected_topic" name="topics">
                                     <input type="hidden" name="question_count" value="30">

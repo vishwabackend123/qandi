@@ -63,6 +63,7 @@
             <button href="#" class="btn skill-btn red rounded-0 me-2">A</button>
             <button href="#" class="btn skill-btn gray rounded-0 me-2">E</button>
             <button id="chpt_topic_{{$topic->id}}" href="javascript:void(0);" class="btn ms-auto topic-btn-select rounded-0 addremovetopic" onclick="addOrRemove('{{$topic->id}}')">Select </button>
+
         </div>
     </div>
 </div>

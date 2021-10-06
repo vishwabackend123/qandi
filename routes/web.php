@@ -20,7 +20,7 @@ Route::any('/', function () {
     if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
-//         return view('index');
+        //         return view('index');
 
         return redirect('https://www.uniqtoday.com/');
     }
@@ -185,3 +185,17 @@ Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\AssessmentExa
 Route::any('/searchFreind', [App\Http\Controllers\HomeController::class, 'searchFriendWithKeyWord'])->name('searchFriendWithKeyWord')->middleware('auth', 'menu');
 
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
+
+/* routes for adptive chapter_exam */
+Route::any('/custom_exam_chapter', [App\Http\Controllers\ExamCustomController::class, 'chapterAdaptiveExam'])->name('custom_exam_chapter')->middleware('auth', 'menu');
+Route::any('/ajax_adaptive_question_chapter/{nkey}', [App\Http\Controllers\ExamCustomController::class, 'ajax_adaptive_question_chapter'])->name('ajax_adaptive_question_chapter')->middleware('auth', 'menu');
+Route::any('/saveAdaptiveTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveAdaptiveTimeSession'])->name('saveAdaptiveTimeSession')->middleware('auth', 'menu');
+Route::any('/adaptiveClearResponse', [App\Http\Controllers\ExamCustomController::class, 'adaptiveClearResponse'])->name('adaptiveClearResponse')->middleware('auth', 'menu');
+Route::any('/saveAdaptiveAnswer', [App\Http\Controllers\ExamCustomController::class, 'saveAdaptiveAnswer'])->name('saveAdaptiveAnswer')->middleware('auth', 'menu');
+
+
+/* routes for adptive chapter_exam */
+Route::any('/custom_exam_topic', [App\Http\Controllers\AdpativeExamController::class, 'topicAdaptiveExam'])->name('custom_exam_topic')->middleware('auth', 'menu');
+Route::any('/ajax_adaptive_question_topic/{nkey}', [App\Http\Controllers\AdpativeExamController::class, 'ajax_adaptive_question_topic'])->name('ajax_adaptive_question_topic')->middleware('auth', 'menu');
+Route::any('/adaptive_topic_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_topic_exam_result'])->name('adaptive_topic_exam_result')->middleware('auth', 'menu');
+Route::any('/adaptive_chapter_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_chapter_exam_result'])->name('adaptive_chapter_exam_result')->middleware('auth', 'menu');

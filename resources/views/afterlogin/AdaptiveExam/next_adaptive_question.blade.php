@@ -17,6 +17,7 @@ $questtype='radio';
 <script>
     $(document).ready(function() {
         var time_allowed = '{{$question_data->time_allowed}}';
+        var time_allowed_sec = time_allowed * 60;
         var sec = time_allowed * 60;
         var interval = 1000;
         var qest = '{{$active_q_id}}';
@@ -50,7 +51,7 @@ $questtype='radio';
 
 
         function progressBar_next(percent, $element) {
-            var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+            var progressBarWidth = percent * $element.width() / time_allowed_sec;
 
             $element.find('div').animate({
                 width: progressBarWidth

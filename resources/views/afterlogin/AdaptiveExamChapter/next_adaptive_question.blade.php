@@ -17,10 +17,11 @@ $questtype='radio';
 <script>
     $(document).ready(function() {
         var time_allowed = '{{$question_data->time_allowed}}';
+
         var sec = time_allowed * 60;
         var interval = 1000;
         var qest = '{{$active_q_id}}';
-        var aj_up_timer = '{{$aquestionTakenTime}}';
+        /* var aj_up_timer = '{{$aquestionTakenTime}}';
 
         var ctxt = " Seconds";
         if (aj_up_timer >= 60) {
@@ -28,7 +29,7 @@ $questtype='radio';
         } else {
             var sec = 60 - aj_up_timer;
         }
-
+ */
         $('#percentBar_{{$active_q_id}}').html('')
         $('#timespend_{{$active_q_id}}').val("");
 
@@ -66,7 +67,7 @@ $questtype='radio';
         var minutesLabel = document.getElementById("up_minutes_{{$active_q_id}}");
         var secondsLabel = document.getElementById("up_seconds_{{$active_q_id}}");
         //var totalSec = document.getElementById("tsec");
-        var totalSeconds = aj_up_timer;
+        var totalSeconds = -1;
 
         function setEachQuestionTimeNext() {
             setEachQuestionTimeNext_countdown = setInterval(function() {
