@@ -184,8 +184,26 @@ class HomeController extends Controller
             $planner = [];
         }
 
+        $curl = curl_init();
+        $curl_url = $api_URL . 'api/notification-history/31146';
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
 
-        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $notifications = json_decode($response);
+        $notifications = $notifications->response;
+
+        return view('afterlogin.dashboard', compact('notifications', 'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
 
     public function student_stand(Request $request)
@@ -461,5 +479,28 @@ class HomeController extends Controller
 
         curl_close($curl);
         return json_decode($response);
+    }
+
+    public function clearAllNotifications()
+    {
+        $user_id = Auth::user()->id;
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/clear-notifications/' . $user_id;
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
+        ));
+
+        $response = curl_exec($curl);
+//dd($response);
+        curl_close($curl);
+        return Redirect()->route('dashboard');
     }
 }

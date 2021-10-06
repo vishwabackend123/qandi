@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="live" uuid="8a9c23a9-39de-4802-870b-590b282a67c8">
+    <data-source source="LOCAL" name="@thomson-digital-db.cluster-ch6wrof78zwh.ap-south-1.rds.amazonaws.com" uuid="a214225a-0061-441e-9ff4-5e538bf400ac">
+      <driver-ref>mysql_aurora</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://thomson-digital-db.cluster-ch6wrof78zwh.ap-south-1.rds.amazonaws.com:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="uat" uuid="c88f3d07-7ffe-4e1a-afd2-93b6cfc4282b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://database-2.c0jbkrha6hgp.us-west-2.rds.amazonaws.com:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

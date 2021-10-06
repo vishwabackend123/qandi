@@ -179,11 +179,8 @@ Route::any('/shuffle_chapter/{subject_id}', [App\Http\Controllers\PlannerControl
  */
 
 Route::any('/assessment_exam', [App\Http\Controllers\AssessmentExamController::class, 'assessment_exam'])->name('assessment_exam')->middleware('auth', 'menu');
-
-
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\AssessmentExamController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
 Route::any('/searchFreind', [App\Http\Controllers\HomeController::class, 'searchFriendWithKeyWord'])->name('searchFriendWithKeyWord')->middleware('auth', 'menu');
-
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
 
 /* routes for adptive chapter_exam */
@@ -199,3 +196,5 @@ Route::any('/custom_exam_topic', [App\Http\Controllers\AdpativeExamController::c
 Route::any('/ajax_adaptive_question_topic/{nkey}', [App\Http\Controllers\AdpativeExamController::class, 'ajax_adaptive_question_topic'])->name('ajax_adaptive_question_topic')->middleware('auth', 'menu');
 Route::any('/adaptive_topic_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_topic_exam_result'])->name('adaptive_topic_exam_result')->middleware('auth', 'menu');
 Route::any('/adaptive_chapter_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_chapter_exam_result'])->name('adaptive_chapter_exam_result')->middleware('auth', 'menu');
+
+Route::any('/clear-all-notifications', [App\Http\Controllers\HomeController::class, 'clearAllNotifications'])->name('clearAllNotifications')->middleware('auth', 'menu');
