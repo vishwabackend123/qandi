@@ -272,7 +272,8 @@ trait CommonTrait
         if ($httpcode == 200 || $httpcode == 201) {
             $subResponse = json_decode($sub_response_json);
             $subscriptionData = isset($subResponse->response) ? $subResponse->response : '';
-            $subscriptionData = isset($subscriptionData[0]) ? $subscriptionData[0] : [];
+            $subscriptionData1 = isset($subscriptionData[1]) ? $subscriptionData[1] : $subscriptionData[0];
+            $subscriptionData = isset($subscriptionData[2]) ? $subscriptionData[2]: $subscriptionData1;
 
             /* Redis::set($cacheKey, json_encode($subscriptionData)); */
         } else {
