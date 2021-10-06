@@ -74,7 +74,8 @@ class StudentSignInController extends Controller
         curl_close($curl);
         $aResponse = json_decode($response_json);
 
-        if ($aResponse->success != 'true') {
+
+        if ($aResponse->success != true) {
             $response = [
                 "message" => "Email or Mobile no. not registered with us!",
                 "error" => $err,

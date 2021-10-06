@@ -303,7 +303,23 @@
                 contentType: false,
                 cache: false,
                 processData: false,
-                success: function(data) {
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+                    console.log(response.filename);
+                    if (response.success == true) {
+                        $("#profile_image").attr("src", response.filename);
+                        $('#image-upload-response').addClass('text-success');
+                        $("#image-upload-response").text(response.message);
+                        setTimeout(function() {
+                            $('#image-upload-response').fadeOut('fast');
+                        }, 5000);
+                    } else {
+                        $('#image-upload-response').addClass('text-danger');
+                        $("#image-upload-response").text(response.message);
+                        setTimeout(function() {
+                            $('#image-upload-response').fadeOut('fast');
+                        }, 5000);
+                    }
                     //$('#uploaded_image').html(data);
                 }
             });
@@ -575,7 +591,10 @@
     }); */
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
-            height: "51.2vh",
+            height: "47vh",
+        });
+        $(".leaderNameBlock-search").slimscroll({
+            height: "70px",
         });
         $(".scroll-topic-ana").slimscroll({
             height: "20vh",

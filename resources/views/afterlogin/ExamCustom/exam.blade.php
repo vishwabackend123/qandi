@@ -136,7 +136,12 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                 <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
                                     <div class="N_tab-btn-box_list">
                                         <div class="ps-3" style="float:left">
+                                            @if(!empty($next_qid))
                                             <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                            @else
+                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
+                                            @endif
+
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                         </div>
                                         <div class="pe-3" style="float:right">

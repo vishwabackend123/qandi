@@ -3,11 +3,16 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
+<<<<<<< HEAD
                     <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas"
                                                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img
                                 src="{{$imgPath}}" class="user-pic"></a></span>
                     <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName"
                                                                            id="activeUserName">{{ucwords(Auth::user()->user_name)}}</span></span>
+=======
+                    <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{$imgPath}}" id="profile_image" class="user-pic"></a></span>
+                    <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords(Auth::user()->user_name)}}</span></span>
+>>>>>>> 148642207d0620f4b60ae1bf9d39ee817fe2acb3
 
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false"
@@ -60,6 +65,7 @@
                                                 <p class="text-uppercase ps-4 py-2">Leader Board</p>
                                                 <ol class="leaderNameBlock">
                                                     @if(isset($leaderboard_list) && !empty($leaderboard_list))
+<<<<<<< HEAD
                                                         @foreach($leaderboard_list as $lead)
                                                             <li>
                                                                 <div class="d-flex align-items-center">
@@ -75,17 +81,42 @@
                                                                 </div>
                                                             </li>
                                                         @endforeach
+=======
+                                                    @foreach($leaderboard_list as $lead)
+                                                    <li>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="sno me-3">{{$lead->user_rank}}.</span>
+                                                            {{-- <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>--}}
+                                                            @if($lead->user_profile_img)
+                                                            <span><img src="{{$lead->user_profile_img}}" class="leader-pic" /></span>
+                                                            @else
+                                                            <span><img src="{{URL::asset('public/after_login/images/profile.png')}}" class="leader-pic" /></span>
+                                                            @endif
+                                                            <div class="leader-txt">
+                                                                <p>{{($lead->user_name) ? $lead->user_name : 'NA'}}</p>
+                                                                <small>{{$lead->score}} Unique score</small>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    @endforeach
+>>>>>>> 148642207d0620f4b60ae1bf9d39ee817fe2acb3
                                                     @endif
 
                                                 </ol>
                                                 <div class="text-box mt-3">
+<<<<<<< HEAD
                                                     <label class="ps-2 pb-2">Search a Friend</label>
                                                     <input type="text" name="search_field" id="search_field"
                                                            class="ps-2" value="" minlength="10" maxlength="10"
                                                            placeholder="Search By Name"/>
+=======
+                                                    <label class="ps-0 pb-1">Search a Friend</label>
+                                                    <input type="text" name="search_field" id="search_field" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Search By Name" />
+>>>>>>> 148642207d0620f4b60ae1bf9d39ee817fe2acb3
                                                 </div>
-                                                <div id="search_results">
-
+                                                <div id="search_results" class="pb-2">
+                                                    <ol class="leaderNameBlock-search">
+                                                    </ol>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,9 +128,15 @@
                                         <div class="leaderBoardBlockedit">
                                             <div class="bg-white p-3 text-left ms-4 read-mode h-100">
                                                 <span class="position-relative d-inline-block ">
+<<<<<<< HEAD
                                                     <img src="{{$imgPath}}" class="profile-pic uswereditpic"/>
                                                     <form id="profile_pic_form" method="POST" id="contact" name="13"
                                                           class="form-horizontal" enctype="multipart/form-data">
+=======
+                                                    <img src="{{$imgPath}}" class="profile-pic uswereditpic" />
+
+                                                    <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
+>>>>>>> 148642207d0620f4b60ae1bf9d39ee817fe2acb3
                                                         <span class="image-upload">
                                                             <label for="file-input">
                                                                 <span class="btn edit-icon"><i
@@ -110,6 +147,7 @@
                                                         </span>
                                                     </form>
                                                 </span>
+                                                <span id="image-upload-response" class=""></span>
                                                 <div id="profile-details" class="" style="padding-top:-20px">
                                                     <div class="mb-2 mt-3 profile-read">
                                                         <h5 id="profileUserName"
@@ -469,29 +507,34 @@
                 data: {
                     'search_text': event.target.value
                 },
+<<<<<<< HEAD
                 success: function (data) {
+=======
+                success: function(data) {
+
+>>>>>>> 148642207d0620f4b60ae1bf9d39ee817fe2acb3
                     let html = '';
+
                     if (data.success === true) {
                         $.each(data.response, (ele, val) => {
-                            html += `<ol class="leaderNameBlock">
-                                                        <li>
-                                                            <div class="d-flex align-items-center">
-                                                                <span class="sno me-3">${val.user_rank}.</span>
-                                                                <span><img
-                                                                            src="https://student-image1.s3.ap-south-1.amazonaws.com/${val.user_profile_img}"
-                                                                            class="leader-pic"/></span>
+                            if (val.user_profile_img) {
+                                var img_url = val.user_profile_img;
+                            } else {
+                                var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
+                            }
+                            html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
+                                                                <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
-
                                                                 </div>
                                                             </div>
-                                                        </li>
-                                                    </ol>`;
+                                                        </li>`;
                         });
+
                     } else {
                         html += `<p>Data not available!</p>`;
                     }
-                    $('#search_results').html(html);
+                    $('#search_results .leaderNameBlock-search').html(html);
                 }
             });
         });

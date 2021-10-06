@@ -153,7 +153,12 @@ $questtype='radio';
     <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
         <div class="N_tab-btn-box_list">
             <div class="ps-3" style="float:left">
+                @if(isset($last_qid) && ($last_qid==$active_q_id))
+                <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$active_q_id}}');" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
+                @else
                 <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$active_q_id}}');">Save & Next</button>
+                @endif
+
                 <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$active_q_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for review</button>
             </div>
             <div class="pe-3" style="float:right">

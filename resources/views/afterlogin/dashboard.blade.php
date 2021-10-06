@@ -171,17 +171,25 @@
                 </div>
                 <div class="col-6 text-right d-flex">
                     <div class="ms-auto">
+                        @if(isset($planner) && !empty($planner))
+                        @foreach($planner as $key=>$val)
+                        @if($val->test_completed_yn=="Y")
                         <a href="#" class="text-secondary"><img src="{{URL::asset('public/after_login/images/planner_Act_green_ic.png')}}" /></a>
+                        @else
                         <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
-                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
+
+                        @endif
+                        @endforeach
+                        @endif
                         <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
+
                     </div>
                 </div>
             </div>
             <div class='swipe mb-5' id="plan_slider">
                 <ul id='slider' class="pt-3">
                     @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                    <li class="gray prfile">
+                    <li class="gray prfile h-100">
                         <div class="col swipLi">
                             <div class="TestLevel ">Level Up</div>
                             <div class="TestTitle">One Last Step!</div>
@@ -203,18 +211,27 @@
                     @endif
                     @if(isset($planner) && !empty($planner))
                     @foreach($planner as $key=>$val)
-                    <li>
-                        <div class="col swipLi">
+                    <li class="h-100">
+                        <div class="col swipLi ">
                             <!-- <img src="images/thermodynamics_ic.png" /> -->
                             <div class="TestLevel">Level Up In</div>
                             <div class="TestTitle">{{$val->chapter_name}}</div>
                             <div class="starRating">
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="star"><span class="full" data-value="1"></span><span class="half" data-value="0.5"></span><span class="selected"></span></div>
-                                <div class="score score-rating-slt js-score">0%</div>
+                                <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
+                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                        <div class="star-ratings-css">
+                                            <div class="star-ratings-css-top" style="width: 0%">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                        </div>
+                                        <div class="ms-1 score score-rating js-score">
+                                            0%
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="checkBody mb-2">
@@ -232,8 +249,33 @@
                     </li>
 
                     @endforeach
-                    @endif
+                    <!-- 
+                    <li class="CGreen">
+                        <div class="col swipLi">
+                            <div class="TestLevel">Keep in Coming!</div>
+                            <div class="TestTitle">Algebra</div>
+                            <img src="images/GreenCircleCheck_ic.png" />
+                            <div class="btnBody">
+                                <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
+                            </div>
+                        </div>
+                    </li> -->
+                    <li class="h-100" style="width:300px;">
+                        <div class="col p-2">
+                            <div class="w-100 text-center px-5 pb-5 pt-4 ">
+                                <img class="img-responsive" src="{{URL::asset('public/after_login/images/PlannerRedBig_ic@2x.png')}}">
+                            </div>
+                            <div class="btnBody ">
 
+                                <a data-bs-toggle="collapse" class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="fa fa-calendar-o" aria-hidden="true"></i> Go To Planner
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    @endif
                 </ul>
             </div>
 

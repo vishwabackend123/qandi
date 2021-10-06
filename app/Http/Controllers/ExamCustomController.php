@@ -229,12 +229,10 @@ class ExamCustomController extends Controller
 
         $responsedata = json_decode($response_json);
         $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
+        $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
 
         if ($httpcode_response == true) {
-
-            if (!empty($responsedata)) {
-                $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
-
+            if (!empty($aQuestions_list)) {
                 $exam_fulltime = $responsedata->time_allowed;
                 $questions_count = count($aQuestions_list);
             } else {
@@ -279,6 +277,7 @@ class ExamCustomController extends Controller
 
         $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
         $prev_qid = '';
+
 
 
 
