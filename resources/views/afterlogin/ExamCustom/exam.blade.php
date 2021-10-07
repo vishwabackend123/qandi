@@ -139,7 +139,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                             @if(!empty($next_qid))
                                             <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
                                             @else
-                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
+                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit</button>
                                             @endif
 
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
@@ -611,6 +611,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
@@ -651,6 +652,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     /* Saved question response */
     function saveAnswer(question_id) {
         var question_id = question_id;
+        var nextquestId = '{{$next_qid}}';
         var option_id = [];
         $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
             option_id.push($(this).val());
@@ -674,7 +676,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
-
                 if (response.status == 200) {
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
@@ -682,7 +683,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             },
         });
 
-        $("#quesnext" + question_id).click();
+        if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+            $("#submitExam").click();
+        } else {
+            $("#quesnext" + question_id).click();
+
+        }
+
     }
 
 
@@ -782,13 +790,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     }
 
 
-    /* $('#submitExam').click(function() {
-
-        $('#endExam').modal('show');
-    }); */
 
 
     $(document).ready(function() {
+
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {

@@ -114,11 +114,7 @@ class ResultController extends Controller
 
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
-            // dd($response_json, $request);
 
-            $aQuestions_list = [];
-            $questions_count = 0;
-            $exam_fulltime = 0;
             return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
         }
     }
@@ -137,7 +133,6 @@ class ResultController extends Controller
         $curl_url = $api_URL . 'api/post-exam-analytics/' . $user_id . '/' . $exam_id;
 
         curl_setopt_array($curl, array(
-
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FAILONERROR => true,
@@ -166,7 +161,7 @@ class ResultController extends Controller
             return view('afterlogin.ExamCustom.exam_result', compact('response'));
         } else {
 
-            return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+            return redirect()->route('dashboard');
         }
     }
 }

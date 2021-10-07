@@ -408,7 +408,7 @@ class AdpativeExamController extends Controller
 
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
-            // dd("topic", $request, $err, $response_json);
+
             return redirect()->route('dashboard');
         }
     }
@@ -477,7 +477,7 @@ class AdpativeExamController extends Controller
         if ($check_response == true) {
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
-            // dd("chapter", $request, $err, $response_json);
+
             return redirect()->route('dashboard');
         }
     }

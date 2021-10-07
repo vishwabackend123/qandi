@@ -59,8 +59,6 @@ class PreparationController extends Controller
             }
         }
 
-        // dd($subject_list, $aPreparation);
-
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
 
@@ -318,7 +316,7 @@ class PreparationController extends Controller
 
 
         $preparation_list = $aResponse->bookmark_questions;
-        //            dd($preparation_list);
+
 
         return view('afterlogin.Preparation.bookmarks_ajax', compact('values', 'preparation_list'));
     }

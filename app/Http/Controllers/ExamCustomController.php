@@ -884,12 +884,10 @@ class ExamCustomController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } else {
-            $aQuestionslist = [];
-            $questions_count = 0;
-            $exam_fulltime = 0;
+
             return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
         }
-        $exam_fulltime = 60;
+
         $redis_set = 'True';
 
         $collection = collect($aQuestionslist)->sortBy('subject_id');

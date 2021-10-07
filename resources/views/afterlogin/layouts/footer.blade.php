@@ -71,7 +71,6 @@
     var firebaseConfig = {
         apiKey: "AIzaSyAWZZkXXuTHAyNqO2EHqi5nudL40exTmmc",
         authDomain: "uniq-notifications-9891c.firebaseapp.com",
-        databaseURL: 'https://uniq-notifications-9891c.firebaseio.com',
         projectId: "uniq-notifications-9891c",
         storageBucket: "uniq-notifications-9891c.appspot.com",
         messagingSenderId: "426474366022",
