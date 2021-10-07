@@ -185,7 +185,7 @@ class HomeController extends Controller
         }
 
         $curl = curl_init();
-        $curl_url = $api_URL . 'api/notification-history/31146';
+        $curl_url = $api_URL . 'api/notification-history/'.$user_id;
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -201,7 +201,10 @@ class HomeController extends Controller
 
         curl_close($curl);
         $notifications = json_decode($response);
-        $notifications = $notifications->response;
+        if ($notifications->response){
+            $notifications = $notifications->response;
+        }
+
 
         return view('afterlogin.dashboard', compact('notifications', 'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
