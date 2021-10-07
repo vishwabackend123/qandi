@@ -605,7 +605,13 @@ $questtype='radio';
                 }
             },
         });
-        $("#quesnext" + question_id).click();
+        if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+            $("#submitExam").click();
+        } else {
+            $("#quesnext" + question_id).click();
+
+        }
     }
 
 

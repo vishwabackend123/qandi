@@ -69,7 +69,7 @@ class LiveExamController extends Controller
         } else {
             $schedule_list = [];
         }
-        // dd($schedule_list);
+
 
         return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list'));
     }

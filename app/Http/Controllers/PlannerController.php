@@ -66,8 +66,7 @@ class PlannerController extends Controller
         ));
         $response_json = curl_exec($curl);
 
-        /*   dd($response_json, $request_json);
- */
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
@@ -141,7 +140,7 @@ class PlannerController extends Controller
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
         $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
-        //dd($select_topic);
+
 
         $inputjson['student_id'] = $user_id; //30776; //(string);
         $inputjson['exam_id'] = (string)$exam_id;
@@ -291,8 +290,6 @@ class PlannerController extends Controller
 
         $filtered = $chapter_collect->whereNotIn('chapter_id', $selected_chapter);
         $shuffle = $filtered->random();
-        // $filtered->all();
-        //dd($selected_chapter);
 
         return json_encode($shuffle);
     }

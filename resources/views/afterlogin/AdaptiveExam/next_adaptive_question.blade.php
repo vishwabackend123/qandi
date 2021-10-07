@@ -16,19 +16,18 @@ $questtype='radio';
 @endphp
 <script>
     $(document).ready(function() {
-        var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
-        var questionTime = parseInt(time_allowed) * 60;
-
-        var sec = parseInt(time_allowed) * 60;
+        var time_allowed = '{{$question_data->time_allowed}}';
+        var time_allowed_sec = time_allowed * 60;
+        var sec = time_allowed * 60;
         var interval = 1000;
         var qest = '{{$active_q_id}}';
         var aj_up_timer = '{{$aquestionTakenTime}}';
 
         var ctxt = " Seconds";
-        if (aj_up_timer >= questionTime) {
+        if (aj_up_timer >= 60) {
             var sec = 0;
         } else {
-            var sec = questionTime - aj_up_timer;
+            var sec = 60 - aj_up_timer;
         }
 
         $('#percentBar_{{$active_q_id}}').html('')
@@ -52,7 +51,7 @@ $questtype='radio';
 
 
         function progressBar_next(percent, $element) {
-            var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+            var progressBarWidth = percent * $element.width() / time_allowed_sec;
 
             $element.find('div').animate({
                 width: progressBarWidth
@@ -114,7 +113,7 @@ $questtype='radio';
 
         <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $active_q_id }}" onclick="qnext('{{$prev_qid}}','{{ $active_q_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
         @if(isset($last_qid) && ($last_qid==$active_q_id))
-        <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}} id="quesnext{{ $active_q_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+        <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
         @else
         <button class="btn arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
@@ -157,7 +156,7 @@ $questtype='radio';
         <div class="N_tab-btn-box_list">
             <div class="ps-3" style="float:left">
                 @if(isset($last_qid) && ($last_qid==$active_q_id))
-                <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$active_q_id}}');" id="save_submit">Save & Submit</button>
+                <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$active_q_id}}');" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
                 @else
                 <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$active_q_id}}');">Save & Next</button>
                 @endif
