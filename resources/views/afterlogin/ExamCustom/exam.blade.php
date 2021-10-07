@@ -522,7 +522,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     }
 
     /* per question timer */
-    var time_allowed = '{{$question_data->time_allowed}}';
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
     var fsec = time_allowed * 60;
     var up_timer = 0;
     var countdown_txt = " Seconds";

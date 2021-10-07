@@ -36,7 +36,8 @@ class AssessmentExamController extends Controller
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/assessment-question-selection';
+        //$curl_url = $api_URL . 'api/assessment-question-selection';
+        $curl_url = $api_URL . 'api/adaptive-assessment-mock-exam';
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
@@ -44,7 +45,7 @@ class AssessmentExamController extends Controller
             CURLOPT_FAILONERROR => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
+            CURLOPT_TIMEOUT => 360,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $request,
@@ -60,14 +61,13 @@ class AssessmentExamController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        //$jsondata = rtrim($response_json, "\0");
-
         $responsedata = json_decode($response_json);
+
 
         $response_status = isset($responsedata->success) ? $responsedata->success : false;
 
         if ($response_status == true) {
-            $aQuestions_list = $responsedata->questions_list ?? [];
+            $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
             $exam_fulltime = $responsedata->time_allowed ?? '';
 
             $exam_ques_count = $questions_count = count($aQuestions_list);

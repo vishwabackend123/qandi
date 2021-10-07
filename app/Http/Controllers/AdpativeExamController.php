@@ -408,8 +408,8 @@ class AdpativeExamController extends Controller
 
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
-
-            return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+            // dd("topic", $request, $err, $response_json);
+            return redirect()->route('dashboard');
         }
     }
 
@@ -418,7 +418,7 @@ class AdpativeExamController extends Controller
     public function adaptive_chapter_exam_result(Request $request)
     {
         $session_id = isset($request->session_id) ? $request->session_id : 0;
-        $topic_id = isset($request->topic_id) ? $request->topic_id : 0;
+        $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
@@ -431,21 +431,21 @@ class AdpativeExamController extends Controller
         $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
         $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
 
-
         $inputjson['student_id'] = (int)$user_id;
         $inputjson['exam_id'] = (int)$exam_id;
-        $inputjson['topic_id'] = (int)$topic_id;
+        $inputjson['chapter_id'] = (int)$chapter_id;
         $inputjson['session_id'] = (int)$session_id;
         $inputjson['end_test'] = "yes";
         $inputjson['questions_list'] = array_values($questionList);
         $inputjson['answerList'] = array_values($answerList);
+        /* $inputjson['questions_list'] = [];
+        $inputjson['answerList'] = []; */
 
         $request = json_encode($inputjson);
 
         $curl_url = "";
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
-
         $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
 
         curl_setopt_array($curl, array(
@@ -454,7 +454,7 @@ class AdpativeExamController extends Controller
             CURLOPT_FAILONERROR => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
+            CURLOPT_TIMEOUT => 360,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $request,
@@ -466,19 +466,19 @@ class AdpativeExamController extends Controller
         ));
         $response_json = curl_exec($curl);
 
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        $response_data = (json_decode($response_json));
+        $response_data = json_decode($response_json);
         $check_response = isset($response_data->success) ? $response_data->success : false;
 
         if ($check_response == true) {
-
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
-
-            return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+            // dd("chapter", $request, $err, $response_json);
+            return redirect()->route('dashboard');
         }
     }
 }

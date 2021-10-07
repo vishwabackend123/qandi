@@ -304,7 +304,7 @@ $topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
 
             <div class="modal-body pt-0 text-center">
                 <div class="text-center py-4">
-                    <span class="mb-3">No more questions are available for this topic, Kindly submit your exam!</span>
+                    <p class="mb-3">No more questions are available for this topic, Kindly submit your exam!</p>
 
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
@@ -519,7 +519,7 @@ $topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
     }
 
     /* per question timer */
-    var time_allowed = '{{$question_data->time_allowed}}';
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
     var fsec = time_allowed * 60;
 
     var up_timer = 0;

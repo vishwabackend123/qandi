@@ -201,7 +201,7 @@ class ExamCustomController extends Controller
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/adaptive-assessment-mock-exam';
+        $curl_url = $api_URL . 'api/custom-question-selection';
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,

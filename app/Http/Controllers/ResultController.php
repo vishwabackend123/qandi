@@ -154,6 +154,7 @@ class ResultController extends Controller
 
         $response_json = curl_exec($curl);
 
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
@@ -164,9 +165,7 @@ class ResultController extends Controller
 
             return view('afterlogin.ExamCustom.exam_result', compact('response'));
         } else {
-            $aQuestions_list = [];
-            $questions_count = 0;
-            $exam_fulltime = 0;
+
             return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
         }
     }

@@ -16,7 +16,7 @@ $questtype='radio';
 @endphp
 <script>
     $(document).ready(function() {
-        var time_allowed = '{{$question_data->time_allowed}}';
+        var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
 
         var sec = time_allowed * 60;
         var interval = 1000;

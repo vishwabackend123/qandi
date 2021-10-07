@@ -404,7 +404,7 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('file'=> new CURLFILE($file),'student_id' => $user_id, 'file_extension' => $file_name),
+                CURLOPT_POSTFIELDS => array('file' => new CURLFILE($file), 'student_id' => $user_id, 'file_extension' => $file_name),
             ));
 
             $response = curl_exec($curl);
@@ -499,7 +499,7 @@ class HomeController extends Controller
         ));
 
         $response = curl_exec($curl);
-//dd($response);
+
         curl_close($curl);
         return Redirect()->route('dashboard');
     }
