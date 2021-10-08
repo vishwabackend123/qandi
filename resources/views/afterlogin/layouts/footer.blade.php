@@ -137,7 +137,7 @@
         };
         new Notification(title, options);
 
-        $('#recent_notify ').prepend($('<div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">' +
+        $('#recent_notify ').prepend($('<div class="border-bottom d-flex flex-column py-2 px-3 notify-block">' +
             '<p class="mb-0">' + title + '</p>' +
 
             '<small>' + time + '</small>' +

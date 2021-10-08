@@ -58,7 +58,6 @@ class AnalyticsController extends Controller
         $overallAnalytics = json_decode($overallAnalytics);
         $res_status = isset($overallAnalytics->success) ? $overallAnalytics->success : false;
 
-
         if ($res_status == true) :
             $scoreData = isset($overallAnalytics->test_score) ? $overallAnalytics->test_score : [];
 

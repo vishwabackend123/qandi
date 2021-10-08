@@ -210,6 +210,7 @@
                     @endif
                     @if(isset($planner) && !empty($planner))
                     @foreach($planner as $key=>$val)
+                    @if($val->test_completed_yn=="N")
                     <li class="h-100">
                         <div class="col swipLi ">
                             <!-- <img src="images/thermodynamics_ic.png" /> -->
@@ -240,25 +241,28 @@
                                 </label>
                             </div>
                             <div class="btnBody">
-                                <a href="{{route('planner_exam',$val->chapter_id)}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                                <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
                                 <!-- <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48"><i class="fas fa-clock"></i> Schedule Later</button> -->
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </li>
-
-                    @endforeach
-                    <!-- 
+                    @elseif($val->test_completed_yn=="Y")
                     <li class="CGreen">
                         <div class="col swipLi">
                             <div class="TestLevel">Keep in Coming!</div>
-                            <div class="TestTitle">Algebra</div>
-                            <img src="images/GreenCircleCheck_ic.png" />
+                            <div class="TestTitle">{{$val->chapter_name}}</div>
+                            <div class="w-100 text-center  ">
+                                <img src="{{URL::asset('public/after_login/images/GreenCircleCheck_ic.png')}}" />
+                            </div>
                             <div class="btnBody">
                                 <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
                             </div>
                         </div>
-                    </li> -->
+                    </li>
+                    @endif
+                    @endforeach
+
                     <li class="h-100" style="width:300px;">
                         <div class="col p-2">
                             <div class="w-100 text-center px-5 pb-5 pt-4 ">

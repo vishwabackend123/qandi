@@ -27,6 +27,9 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
+$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+
+
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -74,14 +77,31 @@ $questtype='radio';
                             @endif
                         </ul>
                         <div class="tab-content bg-white " id="myTabContent">
+
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+
+
                             <div id="question_section" class="">
                                 <div>
-                                    <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
+                                    <div class="d-flex ">
+                                        <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+                                            <span id="avg_text">Average Time :</span>
+                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                <div id="percentBar_{{$activeq_id}}"></div>
+                                            </div>
+                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
+                                        </div>
+                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
+                                    </div>
+
                                     <div class="question-block N_question-block">
                                         <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
                                         <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
                                         <!-- question -->
+
+                                        <sapn class="question_difficulty_tag small"><span class="small">Difficulty Level: </span>{!! $difficulty_level !!}</sapn>
+
                                         <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
                                         <!-- options -->
                                         <div class="ans-block row mt-5 N_radioans">
@@ -370,6 +390,7 @@ $questtype='radio';
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
         startTimer();
+        questionstartTimer();
         setEachQuestionTime();
     });
     $('.selctbtn').click(function() {
@@ -450,7 +471,7 @@ $questtype='radio';
     //HELPER METHODS
     //---------------------------------------------
     function setDisabled(button) {
-        button.setAttribute("disabled", "disabled");
+        button.setAttribute("disabled", true);
     }
 
     function removeDisabled(button) {
@@ -508,17 +529,88 @@ $questtype='radio';
     }
 
     /* per question timer */
+    /*  var setEachQuestionTimeNext_countdown;
+     var totalSeconds = -1;
+
+     function setEachQuestionTime() {
+         setEachQuestionTimeNext_countdown = setInterval(function() {
+             ++totalSeconds;
+             $('.timespend_first').val(totalSeconds);
+
+
+         }, 1000);
+     } */
+    /* per question timer */
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var fsec = time_allowed * 60;
+    var up_timer = 0;
+    var countdown_txt = " Seconds";
+    var upcounter_txt = " Mins";
+    var ctimer;
     var setEachQuestionTimeNext_countdown;
+    var timer_countdown;
+
+    function questionstartTimer() {
+
+        timer_countdown = setInterval(function() {
+            fsec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+            progressBar(fsec, $('.progressBar_first'));
+            if (fsec == -1) {
+                clearInterval(timer_countdown);
+                $('.progressBar_first').css('background-color', '#E4E4E4');
+                $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_first').show();
+                $('#avg_text').hide();
+                $('.progressBar_first').hide();
+            }
+
+        }, 1000);
+
+    }
+
+
+
+    function progressBar(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
+        }
+        if (percent <= 0) {
+            $('.progressBar_first').css('background-color', '#E4E4E4');
+            $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+        }
+    }
+
+    var minutesLabel = document.getElementById("up_minutes");
+    var secondsLabel = document.getElementById("up_seconds");
+    //var totalSec = document.getElementById("tsec");
     var totalSeconds = -1;
+
 
     function setEachQuestionTime() {
         setEachQuestionTimeNext_countdown = setInterval(function() {
             ++totalSeconds;
             $('.timespend_first').val(totalSeconds);
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
 
-
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
         }, 1000);
     }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+    }
+    /* per question timer end */
     /* per question timer end */
 
 
@@ -536,6 +628,8 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
 
                 $("#question_section div").remove();

@@ -98,10 +98,10 @@ class ResultController extends Controller
 
         $response_json = curl_exec($curl);
 
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-
 
         if ($test_type == 'Live') {
             return view('afterlogin.LiveExam.live_result');
@@ -115,7 +115,8 @@ class ResultController extends Controller
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
 
-            return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+            return redirect()->route('dashboard');
+            /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
         }
     }
 

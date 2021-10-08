@@ -114,6 +114,7 @@ class PlannerController extends Controller
 
         if ($response_status != false) {
             $planner = isset($response->result) ? $response->result : [];
+
             return view('afterlogin.weekly_planner', compact('planner'));
         } else {
 
@@ -123,9 +124,10 @@ class PlannerController extends Controller
 
 
 
-    public function plannerExam($chapter_id = null, Request $request)
+    public function plannerExam($planner_id = null, $chapter_id = null, Request $request)
     {
         $filtered_subject = [];
+
 
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
@@ -173,6 +175,7 @@ class PlannerController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
+
         $response_json = str_replace('NaN', '""', $response_json);
 
         $err = curl_error($curl);
@@ -271,10 +274,10 @@ class PlannerController extends Controller
         $tagrets = implode(', ', $aTargets);
         $exam_name = "Planner Exam";
 
-        $test_type = 'Profiling';
+        $test_type = 'Planner';
         $exam_type = 'P';
 
-        return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
+        return view('afterlogin.ExamCustom.exam', compact('planner_id', 'question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
     }
 
 

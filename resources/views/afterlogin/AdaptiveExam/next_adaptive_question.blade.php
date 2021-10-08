@@ -4,6 +4,7 @@ $active_q_id = isset($activeq_id)?$activeq_id:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
+$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 
 
 if($template_type==1){
@@ -95,7 +96,7 @@ $questtype='radio';
     <div class="d-flex ">
 
         <div id="counter_{{$active_q_id}}" class="ms-auto counter mb-4 d-flex">
-            <span id="avg_text_{{$active_q_id}}">Average Time taken : </span>
+            <span id="avg_text_{{$active_q_id}}">Average Time :</span>
             <div id="progressBar_{{$active_q_id}}" class="progressBar tiny-green ms-2">
                 <span class="seconds" id="seconds_{{$active_q_id}}"></span>
 
@@ -121,6 +122,7 @@ $questtype='radio';
         @endif
 
         <!-- Questions -->
+        <sapn class="question_difficulty_tag small"><span class="small">Difficulty Level: </span>{!! $difficulty_level !!}</sapn>
         <div class="question N_question" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
         <!-- Options -->
         <div class="ans-block row mt-5 N_radioans">

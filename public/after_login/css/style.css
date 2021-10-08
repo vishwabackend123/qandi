@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
 html,
 body {
@@ -751,8 +751,8 @@ header {
     position: relative;
     margin-right: 30px;
     text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
     color: #515151;
 }
 
@@ -3153,6 +3153,17 @@ header {
 
 }
 
+.question_difficulty_tag {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #2c3348;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+}
+
 .question p {
     text-align: left;
     font: normal normal normal 18px/28px Poppins;
@@ -3246,9 +3257,9 @@ ol.leaderNameBlock-search li {
 .tiny-green {
     position: relative;
     padding: 0px;
-    width: 240px;
+    width: 180px;
     background-color: #E4E4E4;
-    height: 20px;
+    height: 18px;
 
 }
 
@@ -3670,6 +3681,20 @@ input[type=range]::-webkit-slider-thumb {
         padding: 0px !important;
     }
 
+    li.ms-auto.d-flex {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    button.btn.btn-outline-danger.px-4.text-uppercase.rounded-0.ms-auto.me-3 {
+        font-size: 12px;
+    }
+
+    a.btn.btn-danger.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
+        padding: 5px 5px !important;
+        font-size: 12px;
+    }
+
 
 
 }
@@ -3724,6 +3749,7 @@ input[type=range]::-webkit-slider-thumb {
     .btn-warning-custom {
         min-width: 100%;
         padding: 3px 35px !important;
+        margin-bottom: 10px;
     }
 
     #myTabContent .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
@@ -3751,7 +3777,7 @@ input[type=range]::-webkit-slider-thumb {
 
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1023px) and (min-width: 768px) {
     .N_tab-btn-box_list .px-4 {
         padding-right: 1rem !important;
         padding-left: 1rem !important;
@@ -3778,4 +3804,27 @@ input[type=range]::-webkit-slider-thumb {
     #myTabContent .d-flex.ps-4.my-3.py-2.align-items-center.justify-content-between {
         display: block !important;
     }
+}
+
+@media (max-width: 1090px) and (min-width: 1024px) {
+    .topic_box {
+        padding: 5px !important;
+    }
+
+    .star {
+        margin: 0px !important;
+    }
+
+    .me-2 {
+        margin-right: 0.2rem !important;
+    }
+
+    .rating {
+        flex-wrap: wrap !important;
+    }
+
+    .open-sub-planner {
+        width: calc(100% - 37%) !important;
+    }
+
 }

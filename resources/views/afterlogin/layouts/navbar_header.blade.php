@@ -277,12 +277,13 @@
 
                     @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                     @foreach($notifications as $val)
-                    <br class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                    <h6 class="mb-0">{{ $val->title }}</h6>
-                    <p class="mb-0">{{ $val->message }}</p>
+                    <div class="border-bottom d-flex flex-column py-2 px-3 notify-block">
 
-                    <small>{{ $val->notification_date }}</small>
+                        <h6 class="mb-0">{{ $val->title }}</h6>
+                        <p class="mb-0">{{ $val->message }}</p>
 
+                        <small>{{ $val->notification_date }}</small>
+                    </div>
                     @endforeach
                     @endif
                 </div>

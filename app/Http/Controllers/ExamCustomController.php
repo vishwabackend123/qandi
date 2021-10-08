@@ -778,9 +778,10 @@ class ExamCustomController extends Controller
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
 
-            $retrive_time_sec = $redisArray['taken_time_sec'];
+            $retrive_array = $redisArray['given_ans'];
             $retrive_time_array = $redisArray['taken_time'];
-
+            $answer_swap_cnt = $redisArray['answer_swap_cnt'];
+            $retrive_time_sec = $redisArray['taken_time_sec'];
 
             $retrive_time_sec[$question_id] = (int)$question_time;
             $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
@@ -792,9 +793,11 @@ class ExamCustomController extends Controller
             $retrive_time_array[$question_id] = gmdate('H:i:s', $question_time);
         }
 
-        $redisArray['taken_time_sec'] = $retrive_time_sec;
-        $redisArray['taken_time'] = $retrive_time_array;
 
+        $redisArray['given_ans'] = $retrive_array;
+        $redisArray['taken_time'] = $retrive_time_array;
+        $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+        $redisArray['taken_time_sec'] = $retrive_time_sec;
 
         // Push Value in Redis
         Redis::set('custom_answer_time', json_encode($redisArray));

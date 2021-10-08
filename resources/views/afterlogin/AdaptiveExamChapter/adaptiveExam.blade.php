@@ -58,6 +58,7 @@
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 
 @endphp
 <div class="main-wrapper p-0 bg-gray">
@@ -86,7 +87,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                             <div id="question_section" class="">
                                 <div class="d-flex ">
                                     <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
-                                        <span id="avg_text">Average Time taken : </span>
+                                        <span id="avg_text">Average Time :</span>
                                         <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                             <span class="seconds" id="seconds_{{$activeq_id}}"></span>
 
@@ -102,6 +103,8 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                                     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
                                     <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+
+                                    <sapn class="question_difficulty_tag small"><span class="small">Difficulty Level: </span>{!! $difficulty_level !!}</sapn>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 

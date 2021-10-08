@@ -179,13 +179,17 @@ class HomeController extends Controller
         $response_status = isset($response->success) ? $response->success : false;
 
         if ($response_status != false) {
-            $planner = isset($response->result) ? $response->result : [];
+            $planner_list = isset($response->result) ? $response->result : [];
+            $cPlanner = collect($planner_list);
+            $sorted_list = $cPlanner->sortBy('test_completed_yn', SORT_NATURAL);
+            $planner = $sorted_list->values()->all();
         } else {
             $planner = [];
         }
 
+
         $curl = curl_init();
-        $curl_url = $api_URL . 'api/notification-history/'.$user_id;
+        $curl_url = $api_URL . 'api/notification-history/' . $user_id;
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -201,7 +205,7 @@ class HomeController extends Controller
 
         curl_close($curl);
         $notifications = json_decode($response);
-        if ($notifications->response){
+        if ($notifications->response) {
             $notifications = $notifications->response;
         }
 
