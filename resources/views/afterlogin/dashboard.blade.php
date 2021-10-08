@@ -86,7 +86,6 @@
     @include('afterlogin.layouts.navbar_header')
     <div class="content-wrapper my-4">
         <!-- dashboard html section-->
-
         <div class="container-fluid">
             <!--  -->
             <div class="row">

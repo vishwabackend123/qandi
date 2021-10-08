@@ -84,14 +84,27 @@ class PreparationController extends Controller
             ));
 
             $response = curl_exec($curl);
-
             curl_close($curl);
             $responseData = json_decode($response);
-            foreach ($responseData->response as $value) {
-                $responsePdf = $value->paper_file_name;
+            $status = isset($responseData->success) ? $responseData->success : false;
+
+            $return_response = [];
+            if ($status == true) {
+                foreach ($responseData->response as $value) {
+                    $responsePdf = $value->paper_file_name;
+                }
+                $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
+
+                $return_response['status'] = 'success';
+                $return_response['message'] = "Result found successfully";
+                $return_response['imgUrl'] = $imgUrl;
+
+                return json_encode($return_response);
+            } else {
+                $return_response['status'] = 'failed';
+                $return_response['message'] = "No file found to download.";
+                return json_encode($return_response);
             }
-            $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
-            return $imgUrl;
         endif;
 
         $subject_list = $this->redis_subjects();

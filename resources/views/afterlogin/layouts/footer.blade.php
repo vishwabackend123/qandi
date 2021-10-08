@@ -139,13 +139,7 @@
 
         $('#recent_notify ').prepend($('<div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">' +
             '<p class="mb-0">' + title + '</p>' +
-            '<span class="mb-2">' +
-            '<i class="fa fa-star text-warning"></i>' +
-            '<i class="fa fa-star text-warning"></i>' +
-            '<i class="fa fa-star text-warning"></i>' +
-            '<i class="fa fa-star text-light"></i>' +
-            '<i class="fa fa-star text-light"></i>' +
-            '</span>' +
+
             '<small>' + time + '</small>' +
             '</div>'));
 
