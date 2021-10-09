@@ -339,7 +339,7 @@
                 $('#overlay').fadeIn();
             },
             success: function(result) {
-                $("#topic_section_" + chapt_id).html('');
+                $("#topic_section_" + chapt_id + " div").remove();
                 $("#topic_section_" + chapt_id).html(result);
                 $('.slick-slider').slick('refresh');
                 $('#overlay').fadeOut();
@@ -364,10 +364,10 @@
             success: function(result) {
                 $("#chapter_list_" + sub_id).html('');
                 $("#chapter_list_" + sub_id).html(result);
-
+                $('.slick-slider').slick('refresh');
                 $('#overlay').fadeOut();
 
-                $('.slick-slider').slick('refresh');
+
             }
         });
 

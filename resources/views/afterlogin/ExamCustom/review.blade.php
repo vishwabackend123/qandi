@@ -262,7 +262,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
                                         <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')"> All</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Attempted</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
                                         <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
                                         <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
 

@@ -2871,7 +2871,7 @@ header {
     color: #c5c5c5;
     font-size: 25px;
     height: 40px;
-    width: 100px;
+    /* width: 100px; */
     margin: 0 auto;
     position: relative;
     padding: 0;

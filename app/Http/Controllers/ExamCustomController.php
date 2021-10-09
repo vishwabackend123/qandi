@@ -642,12 +642,23 @@ class ExamCustomController extends Controller
                 ['topic_name', 'desc']
             ]);
             $topics = $sorted->values()->all();
+        } elseif ($filter_by == 'prof_asc') {
+            $sorted = $collect_topic->sortBy([
+                ['score', 'asc']
+            ]);
+            $topics = $sorted->values()->all();
+        } elseif ($filter_by == 'prof_desc') {
+            $sorted = $collect_topic->sortBy([
+                ['chapscoreter_name', 'desc']
+            ]);
+            $topics = $sorted->values()->all();
         } else {
             $sorted = $collect_topic->sortBy([
                 ['topic_name', 'asc']
             ]);
             $topics = $sorted->values()->all();
         }
+
 
 
         return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
