@@ -8,7 +8,7 @@
         <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
             <div class="star-ratings-css">
-                <div class="star-ratings-css-top" style="width: 20%">
+                <div class="star-ratings-css-top" style="width: {{$chap->score}}%">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <div class="star-ratings-css-bottom">
@@ -17,7 +17,7 @@
             </div>
 
             <div class="ms-1 score score-rating js-score">
-                0%
+                {{$chap->score}}%
             </div>
         </div>
     </div>

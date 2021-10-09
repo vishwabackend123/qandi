@@ -65,7 +65,7 @@
                                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                                 <div class="star-ratings-css">
-                                                    <div class="star-ratings-css-top" style="width: 0%">
+                                                    <div class="star-ratings-css-top" style="width: {{$chapters->score}}%">
                                                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                     </div>
                                                     <div class="star-ratings-css-bottom">
@@ -74,7 +74,7 @@
                                                 </div>
 
                                                 <div class="ms-1 score score-rating js-score">
-                                                    0%
+                                                    {{$chapters->score}}%
                                                 </div>
                                             </div>
                                         </div>
@@ -109,22 +109,23 @@
 
                                 </div>
 
-                                <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="text-right">
-                                    @csrf
-                                    <input type="hidden" id="selected_topic" name="topics">
-                                    <input type="hidden" name="question_count" value="30">
-                                    <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                                    <div id="topic_custom_footer" class="text-right d-flex align-items-right my-3 px-4">
-
-                                        <button type="button" class="btn px-4 ms-auto me-3 btn-secondary-clear rounded-0 align-text-center" onclick="clearTopics();">Clear Selection</button>
-                                        <button type="submit" class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
-                                    </div>
-                                </form>
 
 
                             </div>
                             @endforeach
                             @endisset
+
+                            <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
+                                @csrf
+                                <input type="hidden" id="selected_topic" name="topics">
+                                <input type="hidden" name="question_count" value="30">
+                                <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
+                                <div id="topic_custom_footer" class="text-right d-flex align-items-right my-3 px-4">
+
+                                    <button type="button" class="btn px-4 ms-auto me-3 btn-secondary-clear rounded-0 align-text-center" onclick="clearTopics();">Clear Selection</button>
+                                    <button type="submit" class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

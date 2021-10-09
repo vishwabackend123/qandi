@@ -707,7 +707,10 @@ class ExamCustomController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
         $filter_by = isset($request->filter_type) ? $request->filter_type : '';
+
         $subject_id = $active_subject_id;
+
+
 
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
@@ -744,6 +747,8 @@ class ExamCustomController extends Controller
             Redis::set($cacheKey, json_encode($chapter_list));
         }
 
+
+
         $collection = collect($chapter_list);
         if ($filter_by == 'asc') {
             $sorted = $collection->sortBy([
@@ -753,6 +758,16 @@ class ExamCustomController extends Controller
         } elseif ($filter_by == 'desc') {
             $sorted = $collection->sortBy([
                 ['chapter_name', 'desc']
+            ]);
+            $chapters = $sorted->values()->all();
+        } elseif ($filter_by == 'prof_asc') {
+            $sorted = $collection->sortBy([
+                ['score', 'asc']
+            ]);
+            $chapters = $sorted->values()->all();
+        } elseif ($filter_by == 'prof_desc') {
+            $sorted = $collection->sortBy([
+                ['chapscoreter_name', 'desc']
             ]);
             $chapters = $sorted->values()->all();
         } else {
