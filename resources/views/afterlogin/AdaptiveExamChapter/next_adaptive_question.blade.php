@@ -3,9 +3,11 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $active_q_id = isset($activeq_id)?$activeq_id:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
+$track = isset($question_data->track)?$question_data->track:'';
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
-
+$correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
 
 if($template_type==1){
 $type_class='checkboxans';
@@ -122,7 +124,14 @@ $questtype='radio';
         @endif
 
         <!-- Questions -->
-        <sapn class="question_difficulty_tag small"><span class="small">Difficulty Level: </span>{!! $difficulty_level !!}</sapn>
+        <sapn class="question_difficulty_tag small">
+            <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
+            <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
+            <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
+            <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
+            <span class="small mx-2">Track: {!! $track !!}</span> |
+            <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
+        </sapn>
         <div class="question N_question" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
         <!-- Options -->
         <div class="ans-block row mt-5 N_radioans">
@@ -150,6 +159,28 @@ $questtype='radio';
             @php $no++; @endphp
             @endforeach
             @endif
+
+            <!-- --------- correct answer for demo---------- -->
+            <span>Correct Answers :</span>
+            @if(isset($correct_answers) && !empty($correct_answers))
+
+            @foreach($correct_answers as $anskey=>$ans_value)
+            @php
+
+            $dom2 = new DOMDocument();
+            @$dom2->loadHTML($ans_value);
+            $anchorAns = $dom2->getElementsByTagName('img')->item(0);
+            $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
+            $anslatex = "https://math.now.sh?from=".$anstext;
+            $view_ans='<img src="'.$anslatex.'" />' ;
+            @endphp
+            <label><span style="position:absolute; left:50px;">{{$anskey}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
+
+
+            @php $no++; @endphp
+            @endforeach
+            @endif
+            <!-- --------- correct answer for demo---------- -->
 
         </div>
         <span class="qoption_error" id="qoption_err_{{$active_q_id}}"></span>

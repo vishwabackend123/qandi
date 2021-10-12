@@ -850,11 +850,9 @@ class ExamCustomController extends Controller
             Redis::del(Redis::keys('adaptive_session'));
         }
 
-
         $question_count = isset($request->question_count) ? $request->question_count : 30;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
-
 
         $select_topic = isset($request->topics) ? explode(",", (int)$request->topics, true) : [];
 
@@ -869,6 +867,7 @@ class ExamCustomController extends Controller
         $inputjson['answerList'] = [];
 
         $request = json_encode($inputjson);
+
 
         $curl_url = "";
         $curl = curl_init();
@@ -904,6 +903,7 @@ class ExamCustomController extends Controller
         $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
         $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
         $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
+        $test_name = isset($responsedata->test_name) ? $responsedata->test_name : 'Chapter Level Exam';
 
         if ($httpcode_response == true) {
             if (!empty($aQuestionslist)) {
@@ -916,7 +916,7 @@ class ExamCustomController extends Controller
 
             return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
         }
-
+        $exam_fulltime = 60; //60min set for cahpter adaptive exam
         $redis_set = 'True';
 
         $collection = collect($aQuestionslist)->sortBy('subject_id');
@@ -993,7 +993,7 @@ class ExamCustomController extends Controller
         $exam_type = 'PT';
 
 
-        return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
+        return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
     }
 
 

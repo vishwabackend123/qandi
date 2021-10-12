@@ -61,7 +61,7 @@ class MenuMiddleware
             $imgPath =  url('/') . '/public/after_login/images/profile.png';
         }
 
-
+        $current_week_plan = $this->current_week_plan();
 
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
@@ -71,6 +71,7 @@ class MenuMiddleware
         \Illuminate\Support\Facades\View::share('subscription_details', $subscriptionData);
         \Illuminate\Support\Facades\View::share('leaderboard_list', $leaderboard_list);
         \Illuminate\Support\Facades\View::share('imgPath', $imgPath);
+        \Illuminate\Support\Facades\View::share('current_week_plan', $current_week_plan);
 
         return $next($request);
     }

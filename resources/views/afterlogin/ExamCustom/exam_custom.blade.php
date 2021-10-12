@@ -65,7 +65,7 @@
                                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                                 <div class="star-ratings-css">
-                                                    <div class="star-ratings-css-top" style="width: {{$chapters->score}}%">
+                                                    <div class="star-ratings-css-top" style="width: {{isset($chapters->score)?$chapters->score:0}}%">
                                                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                     </div>
                                                     <div class="star-ratings-css-bottom">
@@ -74,7 +74,7 @@
                                                 </div>
 
                                                 <div class="ms-1 score score-rating js-score">
-                                                    {{$chapters->score}}%
+                                                    {{isset($chapters->score)?$chapters->score:0}}%
                                                 </div>
                                             </div>
                                         </div>

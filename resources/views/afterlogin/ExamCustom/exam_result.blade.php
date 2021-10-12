@@ -242,7 +242,7 @@
                         <div class="col-md-4 text-center">
                             <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>
                             <div id="rank"></div>
-{{--                            <img src="{{URL::asset('public/after_login/images/bottom-left.jpg')}}" />--}}
+                            {{-- <img src="{{URL::asset('public/after_login/images/bottom-left.jpg')}}" />--}}
                         </div>
                         <div class="col-md-8">
                             <div class="blue-block d-flex flex-column">
@@ -274,7 +274,8 @@
 $correct=isset($response->correct_count)?$response->correct_count:0;
 $incorrect=isset($response->wrong_count)?$response->wrong_count:0;
 $not_attempt=isset($response->total_exam_marks)?$response->total_exam_marks:0;
-$total_question=isset($response->no_of_question)?$response->no_of_question:0;
+
+$total_question = $correct+$incorrect+$not_attempt;
 
 $total_makrs=isset($response->total_exam_marks)?$response->total_exam_marks:0;
 $correct_score=isset($response->correct_score)?$response->correct_score:0;
@@ -283,6 +284,7 @@ $get_score=(isset($response->total_get_marks) && ($response->total_get_marks)>=0
 
 $correct_per=!empty($total_question)?number_format((($correct/$total_question)*100),2):0;
 $incorrect_per=!empty($total_question)?number_format((($incorrect/$total_question)*100),2):0;
+
 $not_attempt_per=100-($correct_per+$incorrect_per);
 
 $subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
@@ -445,7 +447,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             height: 200
         },
         credits: {
-          enabled: false
+            enabled: false
         },
         title: {
             text: '',
@@ -468,8 +470,8 @@ $clsAvg_json=json_encode($clsAvg_arr);
         series: [{
             name: 'Unique users',
             data: [
-                ['', {{$response->total_participants}}],
-                ['AIR', {{$response->user_rank}}],
+                ['', <?php echo $response->total_participants; ?>],
+                ['AIR', <?php echo $response->user_rank; ?>],
                 ['', 1]
             ]
         }]

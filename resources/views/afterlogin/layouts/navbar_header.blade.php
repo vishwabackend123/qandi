@@ -304,7 +304,7 @@
                 @csrf
                 <div class="row align-items-center mb-4">
                     <div class="col-md-6">
-                        <input type="range" name="weekrange" class=" exam_range" min="0" max="7" value="0" step="1" id="customRange" oninput="outputUpdate(value)">
+                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="0" step="1" id="customRange" oninput="outputUpdate(value)">
                     </div>
                     <div class="col-md-6">
                         <span id="slide-input" class="badge bg-badge">0</span>

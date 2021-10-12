@@ -87,16 +87,22 @@
                                                     </div>
                                                 </div>
                                                 <div class="progress  col-md-6" style="overflow: visible;">
+                                                    @if($sub->correct_ans > 0)
                                                     <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                                     </div>
+                                                    @endif
+                                                    @if($sub->incorrect_ans > 0)
                                                     <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
                                                     </div>
+                                                    @endif
+                                                    @if($sub->unanswered > 0)
                                                     <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}
                                                         </span>
                                                     </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                             @endforeach
@@ -581,6 +587,7 @@
             color: '#ff9999'
         }]
     });
+
     function replace(show, hide1, hide2) {
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";

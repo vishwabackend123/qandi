@@ -313,7 +313,7 @@ trait CommonTrait
             $subResponse = json_decode($sub_response_json);
             $subscriptionData = isset($subResponse->response) ? $subResponse->response : '';
             $subscriptionData1 = isset($subscriptionData[1]) ? $subscriptionData[1] : $subscriptionData[0];
-            $subscriptionData = isset($subscriptionData[2]) ? $subscriptionData[2]: $subscriptionData1;
+            $subscriptionData = isset($subscriptionData[2]) ? $subscriptionData[2] : $subscriptionData1;
 
             /* Redis::set($cacheKey, json_encode($subscriptionData)); */
         } else {
@@ -405,5 +405,48 @@ trait CommonTrait
 
 
         return $chapter_list;
+    }
+
+
+    public function current_week_plan()
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
+
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $response = json_decode($response_json);
+        $response_status = isset($response->success) ? $response->success : false;
+
+        if ($response_status != false) {
+            $planner_list = isset($response->result) ? $response->result : [];
+            $cPlanner = collect($planner_list);
+            $sorted_list = $cPlanner->sortBy('test_completed_yn', SORT_NATURAL);
+            $planner = $sorted_list->values()->all();
+        } else {
+            $planner = [];
+        }
+        return $planner;
     }
 }

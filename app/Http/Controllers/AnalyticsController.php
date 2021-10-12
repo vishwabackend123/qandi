@@ -273,6 +273,7 @@ class AnalyticsController extends Controller
         $res_status = isset($overallAnalytics->success) ? $overallAnalytics->success : false;
 
 
+
         if ($res_status == true) :
             $scoreData = isset($overallAnalytics->test_score) ? $overallAnalytics->test_score : [];
 
@@ -280,6 +281,8 @@ class AnalyticsController extends Controller
             $weeklyReport = json_decode($overallAnalytics->weekly_report);
             $monthlyReport = json_decode($overallAnalytics->monthlyReport);
             $subProf = json_decode($overallAnalytics->subject_proficiency);
+            $subProf_collection = collect($subProf);
+            $overall_prof_perc = $subProf_collection->sum('score');
             $accuracy = json_decode($overallAnalytics->accuracy);
             $timeSpent = json_decode($overallAnalytics->time_taken);
 
@@ -413,6 +416,7 @@ class AnalyticsController extends Controller
                 'classAcc',
                 'stuAcc',
                 'subProf',
+                'overall_prof_perc',
                 'correctAns1',
                 'incorrectAns1',
                 'correctAns2',

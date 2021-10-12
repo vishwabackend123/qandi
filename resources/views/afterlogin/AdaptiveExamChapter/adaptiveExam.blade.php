@@ -58,9 +58,20 @@
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
+$track = isset($question_data->track)?$question_data->track:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
-
+$template_type = isset($question_data->template_type)?$question_data->template_type:'';
+$correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
+if($template_type==1){
+$type_class='checkboxans';
+$questtype='checkbox';
+}else{
+$type_class='radioans';
+$questtype='radio';
+}
 @endphp
+
 <div class="main-wrapper p-0 bg-gray">
 
     <div class="content-wrapper " id="exam_content_sec" style="display:none;">
@@ -104,7 +115,14 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                                     <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
                                     <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
-                                    <sapn class="question_difficulty_tag small"><span class="small">Difficulty Level: </span>{!! $difficulty_level !!}</sapn>
+                                    <sapn class="question_difficulty_tag small">
+                                        <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
+                                        <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
+                                        <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
+                                        <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
+                                        <span class="small mx-2">Track: {!! $track !!}</span> |
+                                        <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
+                                    </sapn>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -122,7 +140,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                                         $view_opt='<img src="'.$latex.'" />' ;
                                         @endphp
                                         <div class="col-md-6 mb-4">
-                                            <input class="form-check-input selctbtn radioans" type="radio" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                            <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                             <div class=" ps-5 ans">
                                                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                             </div>
@@ -131,6 +149,27 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                                         @php $no++; @endphp
                                         @endforeach
                                         @endif
+                                        <!-- --------- correct answer for demo---------- -->
+                                        <span>Correct Answers :</span>
+                                        @if(isset($correct_answers) && !empty($correct_answers))
+
+                                        @foreach($correct_answers as $anskey=>$ans_value)
+                                        @php
+
+                                        $dom2 = new DOMDocument();
+                                        @$dom2->loadHTML($ans_value);
+                                        $anchorAns = $dom2->getElementsByTagName('img')->item(0);
+                                        $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
+                                        $anslatex = "https://math.now.sh?from=".$anstext;
+                                        $view_ans='<img src="'.$anslatex.'" />' ;
+                                        @endphp
+                                        <label><span style="position:absolute; left:50px;">{{$anskey}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
+
+
+                                        @php $no++; @endphp
+                                        @endforeach
+                                        @endif
+                                        <!-- --------- correct answer for demo---------- -->
 
                                     </div>
                                     <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
@@ -236,67 +275,66 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 <div class="modal-body pt-3 p-5">
                     <div class="row">
                         <div class="col-md-8">
-                            <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Mock Test'}} </h1>
+                            <h1 class="text-danger text-uppercase">{{$test_name}} </h1>
                             <div class="scroll">
                                 <div class="test-info">
                                     <div class="row justify-content-md-center">
-                                        <div class="col col-lg-4 d-flex flex-column align-items-center">
+                                        {{--<div class="col col-lg-4 d-flex flex-column align-items-center">
                                             <div>
                                                 <small>No. Of Questions</small>
                                                 <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-4 d-flex flex-column align-items-center">
-                                            <div>
-                                                <small>Target</small>
-                                                <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
-                                            </div>
-                                        </div>
-                                        <div class="col col-lg-4 d-flex flex-column align-items-center">
-                                            <div>
-                                                <small>Duration</small>
-                                                <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
-                                            </div>
+                                    </div </div>>--}}
+                                    <div class="col col-lg-6 d-flex flex-column align-items-center">
+                                        <div>
+                                            <small>Subject</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
+                                    <div class="col col-lg-6 d-flex flex-column align-items-center">
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                </div>
-                                <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
-                                <div class="instructions pe-3">
-                                    <h3 class="text-uppercase">Instructions</h3>
-                                    <p>This will give multiple opportunities to the candidates to improve their scores in the
-                                        examination if they are not able to give their best in one attempt</p>
-                                    <p>In first attempt, the students will get a first-hand experience of taking an
-                                        examination and will know their mistakes which they can improve while attempting
-                                        for the next time.</p>
-                                    <p>This will reduce the chances of dropping a year and droppers would not have to
-                                        waste a full year.</p>
-                                    <p>If anyone missed the examination due to reasons beyond control (such as Board
-                                        examination), then he/she will not have to wait for one full year.</p>
-                                    <p> A candidate need not appear in all the four Sessions</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-
-                            <h1 class="my-auto text-center">
-
-                                <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
-
-                            </h1>
-                            <div class="text-left   ">
-
-                                <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
-
+                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <div class="instructions pe-3">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give multiple opportunities to the candidates to improve their scores in the
+                                    examination if they are not able to give their best in one attempt</p>
+                                <p>In first attempt, the students will get a first-hand experience of taking an
+                                    examination and will know their mistakes which they can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce the chances of dropping a year and droppers would not have to
+                                    waste a full year.</p>
+                                <p>If anyone missed the examination due to reasons beyond control (such as Board
+                                    examination), then he/she will not have to wait for one full year.</p>
+                                <p> A candidate need not appear in all the four Sessions</p>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
+                        <h1 class="my-auto text-center">
+
+                            <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+
+                        </h1>
+                        <div class="text-left   ">
+
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+
+                        </div>
+                    </div>
                 </div>
 
             </div>
+
         </div>
     </div>
+</div>
 </div>
 
 <!-- Modal END Exam -->

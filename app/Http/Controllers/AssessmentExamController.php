@@ -71,7 +71,7 @@ class AssessmentExamController extends Controller
             $exam_fulltime = $responsedata->time_allowed ?? '';
 
             $exam_ques_count = $questions_count = count($aQuestions_list);
-            $exam_fulltime = $questions_count;
+            //$exam_fulltime = $questions_count;
         } else {
             $aQuestions_list = [];
             $questions_count = 0;
@@ -82,7 +82,7 @@ class AssessmentExamController extends Controller
 
         $redis_set = 'True';
 
-        $exam_fulltime = (isset($exam_fulltime) && !empty($exam_fulltime)) ? $exam_fulltime : $questions_count  * 60;
+        // $exam_fulltime = (isset($exam_fulltime) && !empty($exam_fulltime)) ? $exam_fulltime : $questions_count  * 60;
 
         $collection = collect($aQuestions_list);
 
@@ -159,6 +159,7 @@ class AssessmentExamController extends Controller
         $tagrets = implode(', ', $aTargets);
         $test_type = 'Assessment';
         $exam_type = 'PE';
+
 
         return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type'));
     }
