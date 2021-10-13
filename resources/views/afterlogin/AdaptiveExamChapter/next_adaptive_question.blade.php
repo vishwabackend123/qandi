@@ -114,76 +114,76 @@ $questtype='radio';
 
     <div class="question-block N_question-block">
 
-        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $active_q_id }}" onclick="qnext('{{$prev_qid}}','{{ $active_q_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+        <button style="display:none;" class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $active_q_id }}" onclick="qnext('{{$prev_qid}}','{{ $active_q_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
         @if(isset($last_qid) && ($last_qid==$active_q_id))
-        <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+        <button style="display:none;" class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></buttonstyle=>
 
-        @else
-        <button class="btn arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+            @else
+            <button style="display:none;" class="btn arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
-        @endif
+            @endif
 
-        <!-- Questions -->
-        <sapn class="question_difficulty_tag small">
-            <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
-            <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
-            <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
-            <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
-            <span class="small mx-2">Track: {!! $track !!}</span> |
-            <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
-        </sapn>
-        <div class="question N_question" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
-        <!-- Options -->
-        <div class="ans-block row mt-5 N_radioans">
-            @if(isset($option_data) && !empty($option_data))
-            @php $no=0; @endphp
-            @foreach($option_data as $key=>$opt_value)
-            @php
-            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-            $dom = new DOMDocument();
-            @$dom->loadHTML($opt_value);
-            $anchor = $dom->getElementsByTagName('img')->item(0);
-            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-            $latex = "https://math.now.sh?from=".$text;
-            $view_opt='<img src="'.$latex.'" />' ;
-            @endphp
-            <div class="col-md-6 mb-4">
-                <input class="form-check-input selctbtn quest_option_{{$active_q_id}} {{$type_class}}" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$active_q_id}}_{{$key}}" name="quest_option_{{$active_q_id}}" value="{{$key}}">
-                <div class="border ps-5 ans">
-                    <label class="question m-0 py-3   d-block " for="option_{{$active_q_id}}_{{$key}}">
-                        <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}
-                    </label>
+            <!-- Questions -->
+            <sapn class="question_difficulty_tag small">
+                <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
+                <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
+                <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
+                <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
+                <span class="small mx-2">Track: {!! $track !!}</span> |
+                <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
+            </sapn>
+            <div class="question N_question" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
+            <!-- Options -->
+            <div class="ans-block row mt-5 N_radioans">
+                @if(isset($option_data) && !empty($option_data))
+                @php $no=0; @endphp
+                @foreach($option_data as $key=>$opt_value)
+                @php
+                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                $dom = new DOMDocument();
+                @$dom->loadHTML($opt_value);
+                $anchor = $dom->getElementsByTagName('img')->item(0);
+                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                $latex = "https://math.now.sh?from=".$text;
+                $view_opt='<img src="'.$latex.'" />' ;
+                @endphp
+                <div class="col-md-6 mb-4">
+                    <input class="form-check-input selctbtn quest_option_{{$active_q_id}} {{$type_class}}" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$active_q_id}}_{{$key}}" name="quest_option_{{$active_q_id}}" value="{{$key}}">
+                    <div class="border ps-5 ans">
+                        <label class="question m-0 py-3   d-block " for="option_{{$active_q_id}}_{{$key}}">
+                            <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}
+                        </label>
+                    </div>
                 </div>
+
+                @php $no++; @endphp
+                @endforeach
+                @endif
+
+                <!-- --------- correct answer for demo---------- -->
+                <span>Correct Answers :</span>
+                @if(isset($correct_answers) && !empty($correct_answers))
+
+                @foreach($correct_answers as $anskey=>$ans_value)
+                @php
+
+                $dom2 = new DOMDocument();
+                @$dom2->loadHTML($ans_value);
+                $anchorAns = $dom2->getElementsByTagName('img')->item(0);
+                $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
+                $anslatex = "https://math.now.sh?from=".$anstext;
+                $view_ans='<img src="'.$anslatex.'" />' ;
+                @endphp
+                <label><span style="position:absolute; left:50px;">{{$anskey}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
+
+
+                @php $no++; @endphp
+                @endforeach
+                @endif
+                <!-- --------- correct answer for demo---------- -->
+
             </div>
-
-            @php $no++; @endphp
-            @endforeach
-            @endif
-
-            <!-- --------- correct answer for demo---------- -->
-            <span>Correct Answers :</span>
-            @if(isset($correct_answers) && !empty($correct_answers))
-
-            @foreach($correct_answers as $anskey=>$ans_value)
-            @php
-
-            $dom2 = new DOMDocument();
-            @$dom2->loadHTML($ans_value);
-            $anchorAns = $dom2->getElementsByTagName('img')->item(0);
-            $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
-            $anslatex = "https://math.now.sh?from=".$anstext;
-            $view_ans='<img src="'.$anslatex.'" />' ;
-            @endphp
-            <label><span style="position:absolute; left:50px;">{{$anskey}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
-
-
-            @php $no++; @endphp
-            @endforeach
-            @endif
-            <!-- --------- correct answer for demo---------- -->
-
-        </div>
-        <span class="qoption_error" id="qoption_err_{{$active_q_id}}"></span>
+            <span class="qoption_error" id="qoption_err_{{$active_q_id}}"></span>
     </div>
     <div class="tab-btn-box  d-flex mt-3 N_tab-btn-box">
         <div class="N_tab-btn-box_list">

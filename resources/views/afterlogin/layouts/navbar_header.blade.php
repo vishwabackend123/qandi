@@ -304,10 +304,10 @@
                 @csrf
                 <div class="row align-items-center mb-4">
                     <div class="col-md-6">
-                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="0" step="1" id="customRange" oninput="outputUpdate(value)">
+                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)">
                     </div>
                     <div class="col-md-6">
-                        <span id="slide-input" class="badge bg-badge">0</span>
+                        <span id="slide-input" class="badge bg-badge">5</span>
                     </div>
                 </div>
                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
@@ -395,6 +395,39 @@
     };
 
     $(document).ready(function() {
+        var range_val = $('#customRange').val();
+        if (range_val > 0) {
+            /* set range for */
+            var rvalue = (range_val - 0) / (7 - 0) * 100;
+            $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
+
+
+            var curr = new Date;
+            var date = new Date(curr);
+            var first = date.getDate() - date.getDay() + 1;
+
+            var last = first + 6; // last day is the first day + 6
+
+            var firstday = new Date(date.setDate(first)).toUTCString();
+            var lastday = new Date(date.setDate(last)).toUTCString();
+            var firstDate = formatDate(firstday);
+            var lastDate = formatDate(lastday);
+            $('#StartDate').val(firstDate);
+            $('#EndDate').val(lastDate);
+
+            var planned = <?php echo json_encode($current_week_plan); ?>;
+            planned.forEach(function(item) {
+                console.log(item);
+                var subject_id = item.subject_id;
+                var chapter_id = item.chapter_id;
+                var chapter_name = item.chapter_name;
+                var status = item.test_completed_yn;
+                $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                    '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+            });
+
+        }
+
         $('#search_field').keyup(function(event) {
             $.ajax({
                 url: "{{ 'searchFreind' }}",

@@ -60,18 +60,21 @@ class LiveExamController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        $aResponse = json_decode($response_json);
-        $status = isset($aResponse->success) ? json_decode($aResponse->success) : false;
 
+        $aResponse = (array)json_decode($response_json);
+        $status = isset($aResponse['sucess']) ? $aResponse['sucess'] : false;
 
         if ($status == true) {
-            $schedule_list = isset($aResponse->response) ? $aResponse->response : [];
+            $schedule_list = isset($aResponse['upcomming-live-exam']) ? $aResponse['upcomming-live-exam'] : [];
+            $completed_list = isset($aResponse['completed-live-exam']) ? $aResponse['completed-live-exam'] : [];
         } else {
             $schedule_list = [];
+            $completed_list = [];
         }
 
 
-        return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list'));
+
+        return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list'));
     }
 
 
@@ -215,5 +218,52 @@ class LiveExamController extends Controller
 
 
         //return view('afterlogin.ExamViews.exam', compact('exam_name', 'exam_fulltime', 'exam_ques_count'));
+    }
+
+
+
+    /* live exam result */
+    public function live_exam_result($result_id)
+    {
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $curl_url = "";
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl_url = $api_URL . 'api/result-analytics/' . $user_id . '/' . $exam_id . '/' . $result_id;
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 120,
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+        $response_json = curl_exec($curl);
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $response_data = (json_decode($response_json));
+            $response = isset($response_data->response) ? $response_data->response : [];
+
+            return view('afterlogin.ExamCustom.exam_result', compact('response'));
+        } else {
+
+            return redirect()->back();
+        }
     }
 }

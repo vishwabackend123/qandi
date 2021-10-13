@@ -677,8 +677,6 @@
     }
 
     function outputUpdate(value) {
-
-
         $('#slide-input').html(value);
 
     }

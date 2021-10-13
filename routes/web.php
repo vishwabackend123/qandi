@@ -138,6 +138,7 @@ Route::any('/faq', [App\Http\Controllers\PreLoginController::class, 'user_feedba
 Route::any('/live_exam_login', [App\Http\Controllers\LiveExamController::class, 'exam_login'])->name('live_exam_login')->middleware('auth', 'menu');
 Route::any('/live_exam_list', [App\Http\Controllers\LiveExamController::class, 'live_exam_list'])->name('live_exam_list')->middleware('auth', 'menu');
 Route::any('/live_exam/{id}', [App\Http\Controllers\LiveExamController::class, 'live_exam'])->name('live_exam')->middleware('auth', 'menu');
+Route::any('/live_exam_result/{result_id}', [App\Http\Controllers\LiveExamController::class, 'live_exam_result'])->name('live_exam_result')->middleware('auth', 'menu');
 
 
 /* AnalyticsController Routes */

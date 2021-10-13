@@ -111,8 +111,8 @@ $questtype='radio';
 
                                 <div class="question-block N_question-block">
 
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                    <button style="display:none;" class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button style="display:none;" class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
                                     <sapn class="question_difficulty_tag small">
                                         <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
@@ -226,7 +226,8 @@ $questtype='radio';
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center palette_box">
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box d-none">
+
                         <span class="palette_title">Question Palette</span>
                         <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
@@ -239,7 +240,7 @@ $questtype='radio';
 
                         </div>
                     </div>
-                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_legends">
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_legends d-none">
                         <span class="palette_title">Legends</span>
                         <div class="d-flex align-items-center legends">
                             <button class="btn btn-light  rounded-0"> </button>
@@ -274,7 +275,7 @@ $questtype='radio';
                 <div class="modal-body pt-3 p-5">
                     <div class="row">
                         <div class="col-md-8">
-                            <h1 class="text-danger text-uppercase">{{$test_name}} </h1>
+                            <h3 class="text-danger text-uppercase">{{$test_name}} </h3>
                             <div class="scroll">
                                 <div class="test-info">
                                     <div class="row justify-content-md-center">

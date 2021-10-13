@@ -81,10 +81,10 @@
                                 <div class="scroll-div-live-exm">
 
                                     <div class=" h-100  bg-blue p-3">
-                                        @if(!empty($schedule_list))
+                                        @if(!empty($completed_list))
                                         <div class="row">
 
-                                            @foreach($schedule_list as $sche)
+                                            @foreach($completed_list as $sche)
                                             @php
                                             $today = date("d-m-y", time());
                                             $start_date = $sche->start_date;
@@ -94,7 +94,6 @@
                                                 <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
                                                     <div class="d-flex align-items-center pb-2 listing-details ">
                                                         <span class="mr-3 topics-name fw-bold">{{$sche->subject_name}}({{$sche->exam_name}})</span>
-
                                                     </div>
 
                                                     <div class=" d-flex py-2 listing-details w-100 ">
@@ -103,9 +102,9 @@
                                                     </div>
                                                     <div class="d-flex align-items-center pt-2 flex-wrap">
                                                         <small>{{$sche->questions_count}} Questions </small>
-                                                        @if($start_date<=$today && $end_date>=$today)
-                                                            <a href="{{route('live_exam',$sche->schedule_id)}}" class="btn btn-danger px-5 rounded-0 ms-auto"> Start</a>
-                                                            @endif
+
+                                                        <a href="{{route('live_exam_result',$sche->result_id)}}" class="btn btn-danger px-5 rounded-0 ms-auto"> Result</a>
+
                                                     </div>
 
                                                 </div>
@@ -115,45 +114,30 @@
                                         </div>
                                         @else
 
-                                        <div class="row">
-                                            <div class="col-md-6 col-lg-4 mb-4 ">
-                                                <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
-                                                    <div class="d-flex align-items-center pb-2 listing-details ">
-                                                        <span class="mr-3 topics-name fw-bold">Live Exam</span>
-                                                    </div>
-                                                    <div class=" d-flex py-2 listing-details w-100 ">
-                                                        <p class="date-start-left mb-0 me-3">Exam Date</br>10 Sept 2021</span>
-                                                        <p class="date-end-right ms-auto mb-0 text-right">Result Date</br>15 Sept 2021</span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center pt-2 flex-wrap">
-                                                        <a href="#" class="btn btn-danger px-5 rounded-0 ms-auto"> Show Result</a>
-                                                    </div>
 
-                                                </div>
-                                            </div>
-                                            <!-- <div class="d-flex align-items-center justify-content-center h-100 flex-column bg-blue ">
-                                                <p class="align-middle">No live exam results available right now...</p>
-                                            </div> -->
+                                        <div class="d-flex align-items-center justify-content-center h-100 flex-column bg-blue ">
+                                            <p class="align-middle">No live exam results available right now...</p>
                                         </div>
-
-
-                                        @endif
                                     </div>
 
 
-
-
+                                    @endif
                                 </div>
 
 
-                            </div>
-                        </div>
 
+
+                            </div>
+
+
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 

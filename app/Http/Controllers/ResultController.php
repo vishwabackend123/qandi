@@ -162,7 +162,7 @@ class ResultController extends Controller
             return view('afterlogin.ExamCustom.exam_result', compact('response'));
         } else {
 
-            return redirect()->route('dashboard');
+            return false;
         }
     }
 }
