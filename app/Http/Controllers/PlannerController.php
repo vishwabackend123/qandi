@@ -122,6 +122,59 @@ class PlannerController extends Controller
         }
     }
 
+    public function getWeeklyPlanSchedule(Request $request)
+    {
+        # code...
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+
+        $range = 0;
+
+        $start_date = $request->start_date;
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl_url = $api_URL . 'api/student-planner/' . $user_id;
+
+
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $response = json_decode($response_json);
+        $response_status = isset($response->success) ? $response->success : false;
+
+
+        if ($response_status != false) {
+            $planner_result = isset($response->result) ? $response->result : [];
+            $plan_collection = collect($planner_result);
+
+            $filtered = $plan_collection->where('date_from', $start_date);
+            $planner = $filtered->all();
+
+            $range = count($planner);
+
+            return json_encode(array('range' => $range, 'planner' => $planner, 'status' => 'success'));
+        } else {
+
+            return json_encode(array('range' => $range, 'status' => 'failed'));
+        }
+    }
+
 
 
     public function plannerExam($planner_id = null, $chapter_id = null, Request $request)

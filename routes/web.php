@@ -173,6 +173,7 @@ Route::any('/addPlanner', [App\Http\Controllers\PlannerController::class, 'addPl
 Route::any('/weekly_exams', [App\Http\Controllers\PlannerController::class, 'weeklyExams'])->name('weekly_exams')->middleware('auth', 'menu');
 Route::any('/planner_exam/{planner_id}/{chapter_id}', [App\Http\Controllers\PlannerController::class, 'plannerExam'])->name('planner_exam')->middleware('auth', 'menu');
 Route::any('/shuffle_chapter/{subject_id}', [App\Http\Controllers\PlannerController::class, 'shuffle_chapter'])->name('shuffle_chapter')->middleware('auth', 'menu');
+Route::any('/getWeeklyPlanSchedule', [App\Http\Controllers\PlannerController::class, 'getWeeklyPlanSchedule'])->name('getWeeklyPlanSchedule')->middleware('auth', 'menu');
 
 
 /**

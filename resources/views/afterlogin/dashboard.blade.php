@@ -511,7 +511,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
 <!--end slider -->
 <script type="text/javascript">
-    $(document).ready(function() {
+    /* $(document).ready(function() {
         $.ajax({
             url: "{{ url('/weekly_exams') }}",
             type: 'GET',
@@ -525,7 +525,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
                 }
             },
         });
-    });
+    }); */
     $(window).on('load', function() {
 
         if (sessionStorage.getItem('firstVisit') != '1') {

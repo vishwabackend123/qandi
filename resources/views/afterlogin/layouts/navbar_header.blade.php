@@ -318,7 +318,7 @@
                     </div>
                     <div class="col-3">
                         <label class="d-block">End Date</label>
-                        <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
+                        <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly required />
                     </div>
                 </div>
                 <div class=" row mt-4">
@@ -416,8 +416,9 @@
             $('#EndDate').val(lastDate);
 
             var planned = <?php echo json_encode($current_week_plan); ?>;
+            console.log(planned);
             planned.forEach(function(item) {
-                console.log(item);
+
                 var subject_id = item.subject_id;
                 var chapter_id = item.chapter_id;
                 var chapter_name = item.chapter_name;
@@ -427,6 +428,54 @@
             });
 
         }
+
+
+        $('#StartDate').change(function(event) {
+            var start_date = this.value;
+
+            $.ajax({
+                url: "{{ 'getWeeklyPlanSchedule' }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    'start_date': start_date
+                },
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+                    if (response.range > 0) {
+                        $("div").remove(".add-removeblock");
+                        $('#customRange').val(response.range);
+                        $('#slide-input').html(response.range);
+
+                        var ran_value = (response.range - 0) / (7 - 0) * 100;
+                        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+
+
+                        var planned_edit = response.planner;
+                        var result = Object.values(planned_edit);
+
+
+                        result.forEach(function(item) {
+                            console.log(item);
+                            var subject_id = item.subject_id;
+                            var chapter_id = item.chapter_id;
+                            var chapter_name = item.chapter_name;
+                            var status = item.test_completed_yn;
+                            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                                '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+                        });
+
+                    } else {
+                        $("div").remove(".add-removeblock");
+                        $('#customRange').val(response.range);
+                        $('#slide-input').html(response.range);
+                        var ran_value = (response.range - 0) / (7 - 0) * 100;
+                        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+
+                    }
+                }
+            });
+        });
 
         $('#search_field').keyup(function(event) {
             $.ajax({
