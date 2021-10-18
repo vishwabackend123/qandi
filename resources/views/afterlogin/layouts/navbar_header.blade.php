@@ -55,8 +55,16 @@
                                                     <li>
                                                         <div class="d-flex align-items-center">
                                                             <span class="sno me-3">{{$lead->user_rank}}.</span>
-                                                            {{-- <span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span>--}}
-                                                            <span><img src="{{'https://student-image1.s3.ap-south-1.amazonaws.com/'.$lead->user_profile_img}}" class="leader-pic" /></span>
+                                                            @php
+                                                            if (isset($lead->user_profile_img) && !empty($lead->user_profile_img)) {
+                                                            $imgPath_deft = $lead->user_profile_img;
+                                                            } else {
+                                                            $imgPath_deft = url('/') . '/public/after_login/images/profile.png';
+                                                            }
+
+                                                            @endphp
+                                                            {{--<span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span> --}}
+                                                            <span><img src="{{$imgPath_deft}}" class="leader-pic" /></span>
                                                             <div class="leader-txt">
                                                                 <p>{{($lead->user_name) ? $lead->user_name : 'NA'}}</p>
                                                                 <small>{{$lead->score}} Unique score</small>
@@ -68,10 +76,10 @@
 
                                                 </ol>
                                                 <div class="text-box mt-3">
-                                                    <label class="ps-2 pb-2">Search a Friend</label>
+                                                    <label class="ps-0 pb-1">Search a Friend</label>
                                                     <input type="text" name="search_field" id="search_field" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Search By Name" />
                                                 </div>
-                                                <div id="search_results" class="pb-2">
+                                                <div id="search_results" class="py-1">
                                                     <ol class="leaderNameBlock-search">
                                                     </ol>
                                                 </div>
@@ -500,6 +508,7 @@
                                                                 <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
+                                                                    <small>${val.score} Unique score</small>
                                                                 </div>
                                                             </div>
                                                         </li>`;
