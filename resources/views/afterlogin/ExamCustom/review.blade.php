@@ -112,7 +112,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                         </div>
                                         <div class="col-md-2 text-right">
                                             <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')"> <i class="fa fa-bookmark-o text-dark pull-right" aria-hidden="true"></i></a>
-                                        </div>'
+                                        </div>
                                     </div>
 
                                     <div class="answer-block p-3 ">
@@ -137,11 +137,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 @endforeach
                                             </div>
 
-                                            <!--  <div class="col-md-3 text-end">
+                                            <div class="col-md-3 text-end">
                                                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
-                                            </div> -->
-                                            <!-- <div class="col-md-12 percentage-box collapse" id="perecent-box">
-                                                <div class="d-flex p-4 bg-gray">
+                                            </div>
+                                            <div class="col-md-12 percentage-box collapse" id="perecent-box">
+                                                <div class="d-flex p-3 py-2 bg-gray">
                                                     <div class="">
                                                         <h3>21%</h3>
                                                     </div>
@@ -149,20 +149,20 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                         <h5>Of the people have got this right</h5>
                                                     </div>
                                                 </div>
-                                                <div class="bg-white p-3">
+                                                <div class="bg-white p-3 py-2">
                                                     <p>to answer this, you should have</p>
 
                                                     <p class="mb-0">knowledge of</p>
-                                                    <button type="button" class="btn btn-danger mb-3" data-bs-toggle="collapse" data-bs-target="#perecent-box1">ARC & RADIUS</button>
+                                                    <button type="button" class="btn btn-danger mb-3" data-bs-toggle="collapse" data-bs-target="#perecent-box1">{{$question_data->chapter_name}}</button>
 
-                                                    <p class="mb-0">knowledge and application of</p>
-                                                    <button type="button" class="btn btn-danger">Pythagoras Theorem</button>
+                                                    <!--    <p class="mb-0">knowledge and application of</p>
+                                                    <button type="button" class="btn btn-danger">Pythagoras Theorem</button> -->
 
                                                 </div>
 
-                                            </div> -->
+                                            </div>
 
-                                            <!-- <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
+                                            <!--   <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
                                                 <div class=" p-4 bg-gray">
                                                     <div class="d-flex">
                                                         <div class="">
@@ -186,7 +186,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                         </nav>
                                                     </div>
                                                 </div>
-                                                <div class="bg-white p-4">
+                                                <div class="bg-white p-3">
                                                     <p>AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
 
                                                     <p class="mb-0">AB is an arc of length 42 cm on the circumference of a circle with center O and radius 12 cm. What is the size of angle AOB in radians?</p>
@@ -252,7 +252,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box ">
                         <div class="d-flex mb-3 reviewBox2">
-                            <div class="col-8 heading">
+                            <div class="col-10 heading">
                                 <h5>Review Questions.</h5>
                             </div>
                             <div class="col text-end">
@@ -320,11 +320,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         height: '25vh'
     });
     $('.answer-block').slimscroll({
-        height: '20vh'
+        height: '45vh'
     });
 
     $('.review-questions-blk').slimscroll({
-        height: '31vh'
+        height: '58vh'
     });
 
     function bookmarkforreview(quest_id, subject_id, chapt_id) {

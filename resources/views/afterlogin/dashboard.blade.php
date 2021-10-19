@@ -187,7 +187,7 @@
             </div>
             <div class='swipe mb-5' id="plan_slider">
                 <ul id='slider' class="pt-3">
-                    @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                    @if(isset($prof_asst_test) && $prof_asst_test=='Y')
                     <li class="gray prfile h-100">
                         <div class="col swipLi">
                             <div class="TestLevel ">Level Up</div>

@@ -63,8 +63,6 @@ class MenuMiddleware
 
         $current_week_plan = $this->current_week_plan();
 
-        // dd($current_week_plan);
-
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
         \Illuminate\Support\Facades\View::share('user_stage', $user_stage);

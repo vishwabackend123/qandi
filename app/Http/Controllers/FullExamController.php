@@ -30,8 +30,8 @@ class FullExamController extends Controller
             $exam_name = 'Mock Test';
         }
 
-        /* $exam_fulltime = 5400;
-        $exam_ques_count = 90; */
+        // $exam_fulltime = 5400;
+        $exam_ques_count = 90;
 
         $inputjson['exam_id'] = $exam_id;
         $inputjson['count'] = 90;
@@ -68,8 +68,8 @@ class FullExamController extends Controller
 
             $aQuestions_list = $responsedata->questions_list;
 
-            $exam_fulltime = $responsedata->time_allowed;
-
+            //$exam_fulltime = $responsedata->time_allowed;
+            $exam_fulltime = 180;
             $questions_count = count($aQuestions_list);
             //$exam_fulltime = $questions_count;
         } else {

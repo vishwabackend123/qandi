@@ -72,10 +72,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 @endforeach
             </div>
 
-            <!--  <div class="col-md-3 text-end">
+            <div class="col-md-3 text-end">
                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
-            </div> -->
-            <!-- <div class="col-md-12 percentage-box collapse" id="perecent-box">
+            </div>
+            <div class="col-md-12 percentage-box collapse" id="perecent-box">
                 <div class="d-flex p-4 bg-gray">
                     <div class="">
                         <h3>21%</h3>
@@ -88,14 +88,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     <p>to answer this, you should have</p>
 
                     <p class="mb-0">knowledge of</p>
-                    <button type="button" class="btn btn-danger mb-3" data-bs-toggle="collapse" data-bs-target="#perecent-box1">ARC & RADIUS</button>
+                    <button type="button" class="btn btn-danger mb-3" data-bs-toggle="collapse" data-bs-target="#perecent-box1">{{$question_data->chapter_name}}</button>
 
-                    <p class="mb-0">knowledge and application of</p>
-                    <button type="button" class="btn btn-danger">Pythagoras Theorem</button>
+                    <!--  <p class="mb-0">knowledge and application of</p>
+                    <button type="button" class="btn btn-danger">Pythagoras Theorem</button> -->
 
                 </div>
 
-            </div> -->
+            </div>
 
             <!-- <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
                 <div class=" p-4 bg-gray">
@@ -156,7 +156,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 </div>
 <script>
     $('.answer-block').slimscroll({
-        height: '20vh'
+        height: '45vh'
     });
     var question_id = '{{$activeq_id}}';
     $(".next_button").removeClass("activequestion");

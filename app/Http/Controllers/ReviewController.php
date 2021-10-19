@@ -117,6 +117,15 @@ class ReviewController extends Controller
             $question_data = $all_data->where('question_id', $first)->first();
             $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
             $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+            $activeChapt_id = isset($question_data->chapter_id) ? $question_data->chapter_id : '';
+            $chapter_list = $this->redis_chapter_list($activesub_id);
+            $collection_chpater = collect($chapter_list);
+            $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
+            $chapter_name = isset($filter->chapter_name) ? $filter->chapter_name : '';
+
+            $question_data->chapter_name = $chapter_name;
+
+
             $nextquestion_data = next($all_question_list);
             $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
             $prev_qid = '';
@@ -244,6 +253,15 @@ class ReviewController extends Controller
             $reference_text = $question_data->reference_text;
             $explanation = $question_data->explanation;
             $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+
+            $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+            $activeChapt_id = isset($question_data->chapter_id) ? $question_data->chapter_id : '';
+            $chapter_list = $this->redis_chapter_list($activesub_id);
+            $collection_chpater = collect($chapter_list);
+            $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
+            $chapter_name = isset($filter->chapter_name) ? $filter->chapter_name : '';
+
+            $question_data->chapter_name = $chapter_name;
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
