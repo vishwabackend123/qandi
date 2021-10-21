@@ -84,6 +84,8 @@ class LiveExamController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
+        $live_exam_id = $schedule_id;
+
         $exam_name = 'Live Exam';
 
 
@@ -213,7 +215,7 @@ class LiveExamController extends Controller
 
         $tagrets = implode(', ', $aTargets);
 
-        return view('afterlogin.LiveExam.live_exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
+        return view('afterlogin.LiveExam.live_exam', compact('live_exam_id', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
 
 
 
