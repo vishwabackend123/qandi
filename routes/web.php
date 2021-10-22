@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Config;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +17,22 @@ use Illuminate\Support\Facades\Redis;
 |
 */
 
+
+
 Route::any('/', function () {
     if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
         //         return view('index');
-
-        return redirect('https://www.uniqtoday.com/');
+        $landing_URL = Config::get('constants.landing_URL');
+        return redirect($landing_URL);
     }
 });
 
 Route::any('/logout', function () {
     //return view('index');
-    return redirect('https://www.uniqtoday.com/');
+    $landing_URL = Config::get('constants.landing_URL');
+    return redirect($landing_URL);
 });
 
 Route::get(

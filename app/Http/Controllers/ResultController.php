@@ -46,7 +46,9 @@ class ResultController extends Controller
 
         if (isset($given_ans) && !empty($given_ans)) {
             foreach ($given_ans as $key => $ans) {
-                $answerList['answer'] = (int)$ans[0];
+
+                // $answerList['answer'] = (int)$ans[0];
+                $answerList['answer'] = $ans;
                 $answerList['timetaken'] = isset($taken_time->$key) ? (string)$taken_time->$key : '';
                 $answerList['attemptCount'] = isset($answer_swap_cnt->$key) ? (int)$answer_swap_cnt->$key : '';
                 $answerList['question_id'] = (int)$key;
@@ -104,6 +106,7 @@ class ResultController extends Controller
         curl_close($curl);
 
         if ($test_type == 'Live') {
+
             return view('afterlogin.LiveExam.live_result');
         }
 

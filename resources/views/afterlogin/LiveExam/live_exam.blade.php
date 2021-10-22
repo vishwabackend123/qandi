@@ -164,6 +164,8 @@ $questtype='radio';
                             <input type="hidden" name="test_type" value="Live">
                             <input type="hidden" name="exam_type" value="L">
                             <input type="hidden" name="exam_mode" value="Live">
+                            <input type="hidden" name="planner_id" value="0">
+                            <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
@@ -524,7 +526,6 @@ $questtype='radio';
 
         saveQuestionTime(act_question, q_submit_time);
 
-
         url = "{{ url('next_question/') }}/" + question_id;
         $.ajax({
             url: url,
@@ -599,7 +600,14 @@ $questtype='radio';
                 }
             },
         });
-        $("#quesnext" + question_id).click();
+        // $("#quesnext" + question_id).click();
+        if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+            $("#submitExam").click();
+        } else {
+            $("#quesnext" + question_id).click();
+
+        }
     }
 
 
