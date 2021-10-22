@@ -91,7 +91,7 @@
         return messaging.getToken()
     }).then(function(response) {
         if (response) {
-            console.log(response);
+
 
             $.ajax({
                 url: "{{ url('/saveFcmToken') }}",
@@ -103,7 +103,7 @@
                 },
 
                 success: function(response_data) {
-                    console.log(response_data);
+                    //console.log(response_data);
                 },
                 error: function(xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
@@ -612,6 +612,7 @@
             $('#StartDate').val(firstDate);
             $('#EndDate').val(lastDate);
 
+
         });
 
 
@@ -774,14 +775,73 @@
         $(this).parent().parent().remove();
     });
 
-    $("#plannerAddform").validate({
 
+
+
+    $.validator.addMethod('dateBefore', function(value, element, params) {
+        // if end date is valid, validate it as well
+        var end = $(params);
+        if (!end.data('validation.running')) {
+            $(element).data('validation.running', true);
+            setTimeout($.proxy(
+
+                function() {
+                    this.element(end);
+                }, this), 0);
+            // Ensure clearing the 'flag' happens after the validation of 'end' to prevent endless looping
+            setTimeout(function() {
+                $(element).data('validation.running', false);
+            }, 0);
+        }
+        return this.optional(element) || this.optional(end[0]) || new Date(value) < new Date(end.val());
+
+    }, 'Must be before corresponding end date');
+
+    $.validator.addMethod('dateAfter', function(value, element, params) {
+        // if start date is valid, validate it as well
+        var start = $(params);
+        if (!start.data('validation.running')) {
+            $(element).data('validation.running', true);
+            setTimeout($.proxy(
+
+                function() {
+                    this.element(start);
+                }, this), 0);
+            setTimeout(function() {
+                $(element).data('validation.running', false);
+            }, 0);
+        }
+        return this.optional(element) || this.optional(start[0]) || new Date(value) > new Date($(params).val());
+
+    }, 'Must be after corresponding start date');
+    $("#plannerAddform").validate({
+        rules: {
+            start_date: {
+                dateBefore: '#EndDate',
+                required: true
+            },
+            end_date: {
+                dateAfter: '#StartDate',
+                required: true
+            }
+        },
         submitHandler: function(form) {
+
             var limit = $('#customRange').val();
+            if (limit <= 0) {
+                $('#limit_error_1').html('Please set at least one exam for the selected week.');
+                setTimeout(function() {
+                    $('#limit_error_1').fadeOut('fast');
+                }, 5000);
+                return false;
+            }
             var chapters = [];
             var chapters = $('input[name="chapters[]"]').length;
             if (chapters < limit) {
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
+                setTimeout(function() {
+                    $('#limit_error').fadeOut('fast');
+                }, 5000);
                 return false;
             }
 

@@ -317,6 +317,7 @@
                     <div class="col-md-6">
                         <span id="slide-input" class="badge bg-badge">5</span>
                     </div>
+                    <span id="limit_error_1" class="text-danger"></span>
                 </div>
                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                 <div class="d-flex align-items-center row">
@@ -350,7 +351,7 @@
                     @endif
                 </div>
                 <div class="text-center">
-                    <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25"><i class="fa fa-check"></i>
+                    <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25"><img src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}" />
                     </button>
                 </div>
             </form>
@@ -403,12 +404,21 @@
     };
 
     $(document).ready(function() {
+
+        var today = new Date().toISOString().split('T')[0];
+
+        var dateW = new Date(today);
+        var firstW = dateW.getDate() - dateW.getDay() + 1;
+        var firstdayW = new Date(dateW.setDate(firstW)).toUTCString();
+        var firstDateW = formatDate(firstdayW);
+
+        document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
+
         var range_val = $('#customRange').val();
         if (range_val > 0) {
             /* set range for */
             var rvalue = (range_val - 0) / (7 - 0) * 100;
             $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
-
 
             var curr = new Date;
             var date = new Date(curr);
@@ -421,6 +431,7 @@
             var firstDate = formatDate(firstday);
             var lastDate = formatDate(lastday);
             $('#StartDate').val(firstDate);
+
             $('#EndDate').val(lastDate);
 
             var planned = <?php echo json_encode($current_week_plan); ?>;
