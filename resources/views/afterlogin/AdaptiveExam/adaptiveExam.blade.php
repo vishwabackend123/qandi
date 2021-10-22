@@ -20,6 +20,12 @@
         $('.tab-wrapper').height(winHeight - 90);
         $('.tab-content').height(winHeight - 130);
     });
+
+    $(window).bind("cut copy paste",function(e) {
+     e.preventDefault();
+ });
+
+    
 </script>
 
 @php

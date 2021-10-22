@@ -66,6 +66,7 @@
 <script>
     $('#resendOtp_link').hide();
 
+
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -104,6 +105,7 @@
                 if (response.success == true) {
                     $("#mobile-input-btn").hide();
                     $("#input-otp-box").show();
+                    $('#resendOtp_link').hide();
                     //$("#input-otp-box").show();
 
                     resentOtpTime();
@@ -132,7 +134,8 @@
                 $('#resendOtp_link').show();
                 /*  sentotplogin(); */
             } else {
-                elem.innerHTML = 'Resend OTP in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
+                //elem.innerHTML = 'Resend OTP in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
+                elem.innerHTML = 'Resend OTP in ' + timeLeft + ' sec ';
                 timeLeft--;
             }
 

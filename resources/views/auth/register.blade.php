@@ -296,7 +296,8 @@
                 //$('#goto-otp-btn').click();
 
             } else {
-                elem.innerHTML = 'Resend OTP in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
+                // elem.innerHTML = 'Resend OTP in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
+                elem.innerHTML = 'Resend OTP in ' + timeLeft + ' sec ';
                 timeLeft--;
             }
 
@@ -307,5 +308,9 @@
     function resentOtp() {
         $('#goto-otp-btn').click();
     }
+
+    $('#user_name').bind("cut copy paste",function(e) {
+     e.preventDefault();
+ });
 </script>
 @endsection
