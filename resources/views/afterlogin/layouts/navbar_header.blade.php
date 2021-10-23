@@ -77,7 +77,7 @@
                                                 </ol>
                                                 <div class="text-box mt-3">
                                                     <label class="ps-0 pb-1">Search a Friend</label>
-                                                    <input type="text" name="search_field" id="search_field" class="ps-2" value="" minlength="10" maxlength="10" placeholder="Search By Name" />
+                                                    <input type="text" name="search_field" id="search_field" class="ps-2" value="" placeholder="Search By Name" />
                                                 </div>
                                                 <div id="search_results" class="py-1">
                                                     <ol class="leaderNameBlock-search">
