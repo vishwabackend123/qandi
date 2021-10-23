@@ -26,7 +26,7 @@ class AdpativeExamController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
-        $exam_name = 'Mock Test';
+        $exam_name = 'MOck Test';
 
         $inputjson['student_id'] = $user_id;
         $inputjson['exam_id'] = $exam_id;
@@ -578,6 +578,7 @@ class AdpativeExamController extends Controller
         $inputjson['answerList'] = array_values($answerList);
 
         $request = json_encode($inputjson);
+
 
         $curl_url = "";
         $curl = curl_init();

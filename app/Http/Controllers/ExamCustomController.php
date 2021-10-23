@@ -1176,7 +1176,7 @@ class ExamCustomController extends Controller
             //$time_taken = $redisArray['time_taken'] ?? array();
             if (isset($option_id) && $option_id != '') {
 
-                $retrive_array[$question_id]['answer'] = (int)$option_id[0];
+                $retrive_array[$question_id]['answer'] = $option_id;
                 $retrive_array[$question_id]['timetaken'] = gmdate('H:i:s', (int)$q_submit_time);
                 $retrive_array[$question_id]['question_id'] = (int)$question_id;
 
@@ -1238,6 +1238,7 @@ class ExamCustomController extends Controller
         $inputjson['answerList'] = array_values($answerList);
 
         $request = json_encode($inputjson);
+
 
         $curl_url = "";
         $curl = curl_init();

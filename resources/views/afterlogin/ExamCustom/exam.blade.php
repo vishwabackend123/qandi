@@ -374,6 +374,14 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript">
+    $(document).ready(function() {
+        $(window).keyup(function(e) {
+            if (e.keyCode == 44) {
+                $("body").hide();
+            }
+
+        });
+    });
     $('.number-block').slimscroll({
         height: '20vh'
     });

@@ -341,7 +341,7 @@
             success: function(result) {
                 $("#topic_section_" + chapt_id + " div").remove();
                 $("#topic_section_" + chapt_id).html(result);
-                $('.slick-slider').slick('refresh');
+                /* $('.slick-slider').slick('refresh'); */
                 $('#overlay').fadeOut();
                 $('#topic_form').show();
 
@@ -364,7 +364,7 @@
             success: function(result) {
                 $("#chapter_list_" + sub_id).html('');
                 $("#chapter_list_" + sub_id).html(result);
-                $('.slick-slider').slick('refresh');
+                /*  $('.slick-slider').slick('refresh'); */
                 $('#overlay').fadeOut();
 
 
