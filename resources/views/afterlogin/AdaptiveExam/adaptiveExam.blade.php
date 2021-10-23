@@ -1,14 +1,25 @@
 @extends('afterlogin.layouts.app')
+<style>
+        html {
+            user-select: none;
+        }
+    </style>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
+    
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
             keyboard: false
         });
+
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+        history.go(1);
+    };
     });
 </script>
 @section('content')
@@ -21,9 +32,10 @@
         $('.tab-content').height(winHeight - 130);
     });
 
-    $(window).bind("cut copy paste",function(e) {
+    $(window).bind("cut copy paste contextmenu",function(e) {
      e.preventDefault();
  });
+
 
     
 </script>
