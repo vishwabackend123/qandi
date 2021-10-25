@@ -56,7 +56,9 @@ class ExamCustomController extends Controller
             $subject_list = [];
         }
 
-        Redis::set($cacheKey, json_encode($subject_list));
+        if (!empty($subject_list)) {
+            Redis::set($cacheKey, json_encode($subject_list));
+        }
 
         /* $active_subject = !empty($subject_list) ? head($subject_list) : [];
         $active_subject_id = isset($active_subject->sub_id) ? $active_subject->sub_id : '';
@@ -115,8 +117,9 @@ class ExamCustomController extends Controller
             } else {
                 $chapter_list = [];
             }
-
-            Redis::set($cacheKey, json_encode($chapter_list));
+            if (!empty($chapter_list)) {
+                Redis::set($cacheKey, json_encode($chapter_list));
+            }
         }
         $collection = collect($chapter_list);
 
@@ -163,8 +166,10 @@ class ExamCustomController extends Controller
         } else {
             $topic_list = [];
         }
+        if (!empty($topic_list)) {
+            Redis::set($cacheKey, json_encode($topic_list));
+        }
 
-        Redis::set($cacheKey, json_encode($topic_list));
         return $topic_list;
     }
 
@@ -703,7 +708,9 @@ class ExamCustomController extends Controller
             $responsedata = json_decode($response_json);
 
             $chapter_list = $responsedata->response;
-            Redis::set($cacheKey, json_encode($chapter_list));
+            if (!empty($chapter_list)) {
+                Redis::set($cacheKey, json_encode($chapter_list));
+            }
         } else {
             $chapter_list = [];
         }
@@ -754,8 +761,9 @@ class ExamCustomController extends Controller
             } else {
                 $chapter_list = [];
             }
-
-            Redis::set($cacheKey, json_encode($chapter_list));
+            if (!empty($chapter_list)) {
+                Redis::set($cacheKey, json_encode($chapter_list));
+            }
         }
 
 
