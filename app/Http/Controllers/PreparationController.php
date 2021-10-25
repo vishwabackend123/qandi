@@ -50,14 +50,22 @@ class PreparationController extends Controller
         } else {
             $preparation_list = [];
         }
+        /*   $collection = collect($preparation_list);
+        $grouped = $collection->groupBy('subject_id');
 
 
+        $aPreparationList = $grouped->all();
+        dd($aPreparationList); */
         $aPreparation = [];
         if (!empty($preparation_list)) {
             foreach ($preparation_list as $list) {
-                $aPreparation[$list->subject_id] = $list->values;
+
+                $values = $list->values;
+
+                $aPreparation[$list->subject_id][] = $values[0];
             }
         }
+
 
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }

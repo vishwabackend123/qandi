@@ -192,7 +192,9 @@
                                 }, 10000);
                             }
                         } else {
-                            window.location.href = '{{url("dashboard")}}';
+                            //alert('{{ url()->previous() }}');
+                            //window.location.href = '{{url("dashboard")}}';
+                            window.location.href = '{{ url()->previous() }}';
                         }
 
                     },

@@ -33,11 +33,14 @@
                             @foreach($subject_list as $oSub)
                             @php $subjectData=isset($aPreparation[$oSub->id])?$aPreparation[$oSub->id]:[];
                             $sNotes= $sPrep=$sVideo=$sBmark=0;
+
+
                             @endphp
 
                             @if(isset($subjectData) && !empty($subjectData))
                             @foreach( $subjectData as $oKey=>$oVal)
                             @php
+
                             if(!empty($oVal->chapter_name)){
                             $sNotes= isset($oVal->Notes)?$sNotes+$oVal->Notes:0;
                             $sPrep=isset($oVal->Presentations)?$sPrep+$oVal->Presentations:0;
@@ -448,6 +451,7 @@
             }
         });
     }
+
     function chapter_bookmarks_resources(chapter_id, values) {
         url = "{{ url('bookmarks_chapter') }}";
         $.ajax({
