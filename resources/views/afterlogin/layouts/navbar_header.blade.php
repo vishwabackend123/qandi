@@ -7,14 +7,14 @@
                     <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords(Auth::user()->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4">
-                        <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link ">
+                        <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link " id="notification-tog">
                             <img src="{{URL::asset('public/after_login/images/Group3205.png')}}">
                             <span class="red-dot"></span>
                             <span class="hoverlink">Notification</span>
                         </a>
                     </span>
                     <span class="notification ms-4">
-                        <a data-bs-toggle="collapse" class="top-link " href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <a data-bs-toggle="collapse" class="top-link " href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="collapseExample-tog">
                             <img src="{{URL::asset('public/after_login/images/calender.png')}}">
                             <span class="red-dot"></span>
                             <span class="hoverlink">Planner</span>
@@ -131,18 +131,21 @@
                                                         @csrf
                                                         <div class="text-box mt-3">
 
-                                                            <input type="text" name="firstname" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" required />
+                                                            <input type="text" name="firstname" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
+event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required />
 
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="lastname" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" />
+                                                            <input type="text" name="lastname" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
+event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
                                                         </div>
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="username" id="username" class="ps-2" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" />
+                                                            <input type="text" name="username" id="username" class="ps-2" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
+event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">This could be your
                                                                 first, last or nick name.
                                                             </div>
@@ -397,6 +400,18 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
+    $(document).ready(function() {
+        jQuery("#notification-tog").click(function(){
+        jQuery("#collapseExample").hide();
+        jQuery("#notification").show();
+        });
+
+        jQuery("#collapseExample-tog").click(function(){
+        jQuery("#collapseExample").show();
+        jQuery("#notification").hide();
+        });
+    });
+
     document.getElementById("customRange").oninput = function() {
         $('#slide-input').html(this.value);
         var value = (this.value - this.min) / (this.max - this.min) * 100
