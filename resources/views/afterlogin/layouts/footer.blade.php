@@ -91,7 +91,7 @@
         return messaging.getToken()
     }).then(function(response) {
         if (response) {
-
+            console.log(response);
 
             $.ajax({
                 url: "{{ url('/saveFcmToken') }}",
@@ -103,7 +103,7 @@
                 },
 
                 success: function(response_data) {
-                    //console.log(response_data);
+                    // console.log(response_data);
                 },
                 error: function(xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
@@ -233,7 +233,7 @@
                 success: function(response_data) {
                     /* console.log(response_data); */
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response.message);
+                    //console.log(response.message);
                     if (response.success == true) {
                         if (response.message != '') {
                             var sucessmsg = $("#successRef_auth").show();
@@ -298,7 +298,7 @@
                 processData: false,
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response.filename);
+                    // console.log(response.filename);
                     if (response.success == true) {
                         $("#profile_image").attr("src", response.filename);
                         $('#image-upload-response').addClass('text-success');
@@ -731,7 +731,7 @@
             },
 
             success: function(response_data) {
-                console.log(response_data);
+                // console.log(response_data);
                 var response = jQuery.parseJSON(response_data);
                 res_chpter_id = response.chapter_id;
                 res_chpter_name = response.chapter_name;
@@ -830,6 +830,7 @@
             var limit = $('#customRange').val();
             if (limit <= 0) {
                 $('#limit_error_1').html('Please set at least one exam for the selected week.');
+                $('#limit_error_1').show();
                 setTimeout(function() {
                     $('#limit_error_1').fadeOut('fast');
                 }, 5000);
@@ -854,7 +855,7 @@
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response.message);
+
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);

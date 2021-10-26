@@ -149,7 +149,7 @@
             submitHandler: function(form) {
                 var selected_topics = $('#selected_topic').val();
                 if (selected_topics == '' || selected_topics == null) {
-                    $('#errlog_alert').html('Please select atleast on topic for exam.');
+                    $('#errlog_alert').html('Please select at least one topic for exam.');
                     $('#errlog_alert').show();
                     setTimeout(function() {
                         $('#errlog_alert').fadeOut('fast');
@@ -341,7 +341,7 @@
             success: function(result) {
                 $("#topic_section_" + chapt_id + " div").remove();
                 $("#topic_section_" + chapt_id).html(result);
-                /* $('.slick-slider').slick('refresh'); */
+                $('.slick-slider').slick('refresh');
                 $('#overlay').fadeOut();
                 $('#topic_form').show();
 

@@ -186,7 +186,7 @@ $questtype='radio';
                                         </div>
                                         <div class="pe-3" style="float:right">
                                             <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
-                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize">Clear Response</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
                                         </div>
 
                                     </div>

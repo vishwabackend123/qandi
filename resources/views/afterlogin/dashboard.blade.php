@@ -180,7 +180,7 @@
                         @endif
                         @endforeach
                         @endif
-                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
+                        <a class="text-secondary ms-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
 
                     </div>
                 </div>
@@ -270,7 +270,7 @@
                             </div>
                             <div class="btnBody ">
 
-                                <a data-bs-toggle="collapse" class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <a class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                     <i class="fa fa-calendar-o" aria-hidden="true"></i> Go To Planner
                                 </a>
                             </div>
