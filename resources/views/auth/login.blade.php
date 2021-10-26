@@ -193,8 +193,13 @@
                             }
                         } else {
                             //alert('{{ url()->previous() }}');
-                            //window.location.href = '{{url("dashboard")}}';
-                            window.location.href = '{{ url()->previous() }}';
+                            //
+                            if ('{{ url()->previous() }}' == '{{url("subscriptions")}}') {
+                                window.location.href = '{{ url()->previous() }}';
+                            } else {
+                                window.location.href = '{{url("dashboard")}}';
+                            }
+
                         }
 
                     },

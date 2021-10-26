@@ -101,8 +101,9 @@ trait CommonTrait
             $responsedata = json_decode($response_json);
 
             $subject_list = $responsedata->response;
-
-            Redis::set($cacheKey, json_encode($subject_list));
+            if (!empty($subject_list)) {
+                Redis::set($cacheKey, json_encode($subject_list));
+            }
         } else {
             $subject_list = [];
         }
@@ -398,7 +399,9 @@ trait CommonTrait
             $responsedata = json_decode($response_json);
 
             $chapter_list = $responsedata->response;
-            Redis::set($cacheKey, json_encode($chapter_list));
+            if (!empty($chapter_list)) {
+                Redis::set($cacheKey, json_encode($chapter_list));
+            }
         } else {
             $chapter_list = [];
         }
