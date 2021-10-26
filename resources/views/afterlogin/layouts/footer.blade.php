@@ -199,6 +199,9 @@
                         $('#profile-form').hide();
 
                     } else {
+                        $("#errlog_edit").html(response.message);
+                        $("#errlog_edit").fadeIn('slow');
+                        $("#errlog_edit").fadeOut(10000);                 
                         return false;
                     }
 

@@ -158,11 +158,14 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                         <div class="text-box mt-3">
                                                             <input type="email" name="useremail" id="useremail" class="ps-2" value="{{Auth::user()->email}}" required placeholder="Your Email Id" />
                                                         </div>
+                                                        
                                                         <div class="text-box mt-2">
 
                                                             <input type="text" name="user_mobile" id="user_mobile" class="ps-2" value="{{Auth::user()->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
 
                                                         </div>
+                                                        <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
+                                                        
                                                         <div class=" text-box mt-4 text-end">
                                                             <button type="button" id="cancelEdit" class="btn-light rounded-0 btn px-5 btn-sm">Cancel
                                                             </button>

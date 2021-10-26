@@ -339,6 +339,10 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $user_name = $request->username;
 
+        $useremailexists = StudentUsers::where('email', $request->useremail)->where('id','!=',$user_id)->exists();
+        $mobileexists = StudentUsers::where('mobile', $request->user_mobile)->where('id','!=',$user_id)->exists();
+        //echo "<pre>"; print_r($mobileexists); die;
+        //$exists = StudentUsers::where('email', $request->useremail)->exists();
 
         $request = [
             "id" => $user_id,
@@ -375,7 +379,17 @@ class HomeController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-
+        if($useremailexists == 1) {
+            $response['success'] = false;
+            $response['error'] = "";
+            $response['message'] = "email id or mobile number already exist";
+            return json_encode($response);
+        }else if ($mobileexists == 1) {
+            $response['success'] = false;
+            $response['error'] = "";
+            $response['message'] = "email id or mobile number already exist";
+            return json_encode($response);
+        }
         if ($httpcode != 200 && $httpcode != 201) {
             $response['success'] = false;
 
