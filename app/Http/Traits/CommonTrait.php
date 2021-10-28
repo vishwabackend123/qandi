@@ -21,13 +21,11 @@ trait CommonTrait
         $exam_id = Auth::user()->grade_id;
 
 
+
+
         if (!empty($exam_id)) {
 
-            $cacheKey = 'user_exam:' . $user_id;
-            if ($data = Redis::get($cacheKey)) {
-                $exam_data = json_decode($data);
-                return $exam_data;
-            }
+
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/get-all-exams/';
 
@@ -55,8 +53,6 @@ trait CommonTrait
                 /* gettin user exam data */
 
                 $exam_details = $exam_list->where('id', $exam_id)->first();
-
-                Redis::set($cacheKey, json_encode($exam_details));
             } else {
                 $exam_details = [];
             }
@@ -283,12 +279,7 @@ trait CommonTrait
 
         $user_id = Auth::user()->id;
         $curl = curl_init();
-        /*  $cacheKey = 'purchased_exam:' . $user_id; */
 
-        /* if ($data = Redis::get($cacheKey)) {
-            $preferences = json_decode($data);
-            return $preferences;
-        } */
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/user-subscription/' . $user_id;
 
@@ -315,8 +306,6 @@ trait CommonTrait
             $subscriptionData = isset($subResponse->response) ? $subResponse->response : '';
             $subscriptionData1 = isset($subscriptionData[1]) ? $subscriptionData[1] : $subscriptionData[0];
             $subscriptionData = isset($subscriptionData[2]) ? $subscriptionData[2] : $subscriptionData1;
-
-            /* Redis::set($cacheKey, json_encode($subscriptionData)); */
         } else {
             $subscriptionData = [];
         }

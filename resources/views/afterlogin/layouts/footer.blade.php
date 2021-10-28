@@ -228,16 +228,35 @@
             }
         },
         submitHandler: function(form) {
+            $check = 0;
+            var emails = $('#referEmails').val();
+            var arrayEmails = emails.split(',');
+            console.log(arrayEmails);
+            arrayEmails.forEach(element => {
+                var emval = element.trim();
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (re.test(String(emval).toLowerCase()) == false) {
+                    $check = 1;
+                }
+            });
+            if ($check == 1) {
+                $("#errRef_auth").html("Please enter valid emails or use correct separator between two emails")
+                $("#errRef_auth").show();
+                setTimeout(function() {
+                    $('.errRef').fadeOut('fast');
+                }, 5000);
+            }
             $.ajax({
                 url: "{{ url('/store_referral') }}",
                 type: 'POST',
                 data: $('#referalStudent_form').serialize(),
                 beforeSend: function() {},
                 success: function(response_data) {
-                    /* console.log(response_data); */
+
                     var response = jQuery.parseJSON(response_data);
-                    //console.log(response.message);
+
                     if (response.success == true) {
+                        $('#referEmails').val("");
                         if (response.message != '') {
                             var sucessmsg = $("#successRef_auth").show();
                             sucessmsg[0].textContent = response.message;
@@ -245,6 +264,7 @@
                             setTimeout(function() {
                                 $('.errRef').fadeOut('fast');
                             }, 3000);
+
                         }
 
                         if (response.duplicate_referrals.length > 0) {
@@ -255,9 +275,16 @@
                         }
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
-                        }, 3000);
+                        }, 5000);
+                        $('#referEmails').val("");
 
-
+                    } else {
+                        var errormsg = $("#errRef_auth").show();
+                        errormsg[0].textContent = "Email already referred";
+                        setTimeout(function() {
+                            $('.errRef').fadeOut('fast');
+                        }, 5000);
+                        $('#referEmails').val("");
                     }
 
                 },
@@ -896,7 +923,7 @@
 
 <!-- exam screen -->
 <script type="text/javascript">
-document.addEventListener('contextmenu', event => event.preventDefault());
+    /* document.addEventListener('contextmenu', event => event.preventDefault());
  
     document.onkeydown = function (e) {
  
@@ -919,5 +946,5 @@ document.addEventListener('contextmenu', event => event.preventDefault());
         if(e.ctrlKey && e.keyCode == 85) {
             return false;
         }
-    }
+    } */
 </script>

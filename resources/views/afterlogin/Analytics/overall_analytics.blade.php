@@ -389,13 +389,14 @@
         },
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAcc); ?>,
+            data: <?php print_r($classAcc); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAcc); ?>,
+            data: <?php print_r($stuAcc);  ?>,
             color: '#6ec986',
+
         }]
     });
 </script>
@@ -428,13 +429,15 @@
         },
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAccuracy); ?>,
+            data: <?php print_r($classAccuracy); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAccuracy); ?>,
+            data: <?php print_r($stuAccuracy); ?>,
             color: '#6ec986',
+
+
         }]
     });
 </script>

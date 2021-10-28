@@ -57,11 +57,10 @@ class ReferralController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-
         if ($httpcode == 200 || $httpcode == 201) {
             return $response_json;
         } else {
-            return $err;
+            return json_encode(array('success' => false, 'message' => 'Email already referred'));
         }
     }
 }

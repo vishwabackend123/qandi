@@ -698,18 +698,17 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
         });
 
         if ($("#quesnext" + question_id).is(":disabled") == true) {
-
             $("#submitExam").click();
         } else {
             $("#quesnext" + question_id).click();
-
         }
-
+        return true;
     }
 
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
+
         if (saveAnswer(quest_id) != false) {
 
             // marking for review
@@ -725,8 +724,11 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
-                        $("#btn_" + quest_id).removeClass("btn-light");
                         $("#btn_" + quest_id).removeClass("btn-light-green");
+                        $("#btn_" + quest_id).removeClass("btn-light");
+                        //$("#btn_" + quest_id).removeClass("btn-light-green");
+                        $("#btn_" + quest_id).toggleClass('btn-light-green btn-secondary');
+
                         $("#btn_" + quest_id).addClass("btn-secondary");
                         $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
                     }
@@ -742,9 +744,8 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
             $(this).prop('checked', false);
         });
 
-
-        $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-light-green");
+        $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-secondary");
 
         $.ajax({
@@ -758,9 +759,8 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
-
+                    $("#btn_" + quest_id).find('i').remove();
                 }
-
             },
         });
 
@@ -795,7 +795,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
-
+                    $("#btn_" + quest_id).find('i').remove();
                 }
             }
         });
