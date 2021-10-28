@@ -39,7 +39,7 @@ class MenuMiddleware
 
 
         if ($student_stage_at_sgnup == 1) {
-            $user_stage = 'Begginer (10th)';
+            $user_stage = 'Beginner (10th)';
         } elseif ($student_stage_at_sgnup == 2) {
             $user_stage = '11th';
         } elseif ($student_stage_at_sgnup == 3) {

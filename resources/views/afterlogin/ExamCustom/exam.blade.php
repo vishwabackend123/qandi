@@ -74,7 +74,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                             @if(!empty($filtered_subject))
                             @foreach($filtered_subject as $key=>$sub)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}}</a>
+                                <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}</a>
                             </li>
 
                             @endforeach
