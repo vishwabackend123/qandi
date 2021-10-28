@@ -21,6 +21,7 @@
         history.go(1);
     };
     });
+
 </script>
 @section('content')
 
