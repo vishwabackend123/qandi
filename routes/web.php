@@ -125,6 +125,9 @@ Route::any('/videos_chapter', [App\Http\Controllers\PreparationController::class
 Route::any('/notes_chapter', [App\Http\Controllers\PreparationController::class, 'notes_chapter'])->name('notes_chapter')->middleware('auth', 'menu');
 Route::any('/preparation_center_chapter', [App\Http\Controllers\PreparationController::class, 'preparation_center_chapter'])->name('preparation_center_chapter')->middleware('auth', 'menu');
 Route::any('/bookmarks_chapter', [App\Http\Controllers\PreparationController::class, 'bookmarks_chapter'])->name('bookmarks_chapter')->middleware('auth', 'menu');
+Route::any('/review_bookmarks', [App\Http\Controllers\PreparationController::class, 'getReviewBookmarks'])->name('review_bookmarks')->middleware('auth', 'menu');
+Route::any('/next_review_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'next_review_questionbookmark'])->name('next_review_questionbookmark')->middleware('auth', 'menu');
+Route::any('/ajax_review_next_subject_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'ajax_review_next_subject_questionbookmark'])->name('ajax_review_next_subject_questionbookmark')->middleware('auth', 'menu');
 
 
 
