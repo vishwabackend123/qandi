@@ -42,7 +42,7 @@ class LiveExamController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/live-exam/live-exam-schedule/' . $exam_id;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/live-exam/live-exam-schedule/' . $exam_id . '/' . $user_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(

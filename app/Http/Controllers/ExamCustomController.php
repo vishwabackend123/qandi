@@ -238,8 +238,9 @@ class ExamCustomController extends Controller
 
         if ($httpcode_response == true) {
             if (!empty($aQuestions_list)) {
-                $exam_fulltime = $responsedata->time_allowed;
+                //$exam_fulltime = $responsedata->time_allowed;
                 $questions_count = count($aQuestions_list);
+                $exam_fulltime = 60;
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }

@@ -78,9 +78,16 @@ class ReviewController extends Controller
         if (isset($result_response->all_question) && !empty($result_response->all_question)) {
 
             $collection = collect($result_response->all_question);
-            $aQuestionslist = $collection->sortBy('subject_id');
+
+
             $grouped = $collection->groupBy('subject_id');
             $subject_ids = $collection->pluck('subject_id');
+
+            if (count($grouped) > 1) {
+                $aQuestionslist = $collection->sortBy('subject_id');
+            } else {
+                $aQuestionslist = $collection->sortBy('question_id');
+            }
             $subject_list = $subject_ids->unique()->values()->all();
 
             $redis_subjects = $this->redis_subjects();
@@ -456,9 +463,29 @@ class ReviewController extends Controller
             $aQuestionslist = collect($result_response->all_question);
 
             if ($filter_by != 'all') {
-                $aQuestionslist = $aQuestionslist->where('attempt_status', $filter_by);
+                // $aQuestionslist = $aQuestionslist->where('attempt_status', $filter_by);
+                /*  $aQuestionslist = $aQuestionslist->sortBy([
+                    ['attempt_status', $filter_by]
+                ]); */
+                /*  $filtered =   $aQuestionslist->filter(function ($value, $filter_by) {
+                    return $value;
+                });
+                $all_question_list = $filtered->all(); */
+                if ($filter_by == "Correct") {
+                    $statusPriorities = ["Correct", "Incorrect", "Unanswered", ""];
+                } elseif ($filter_by == "Incorrect") {
+                    $statusPriorities = ["Incorrect", "Correct", "Unanswered", ""];
+                } elseif ($filter_by == "Unanswered") {
+                    $statusPriorities = ["Unanswered", "Incorrect", "Correct",  ""];
+                }
+
+                $all_question_list =  $aQuestionslist->sortBy(function ($order) use ($statusPriorities) {
+
+                    return array_search($order->attempt_status, $statusPriorities);
+                })->values()->all();
+            } else {
+                $all_question_list = $aQuestionslist->all();
             }
-            $all_question_list = $aQuestionslist->all();
         }
 
 
