@@ -89,6 +89,14 @@
         <div class="container-fluid">
             <!--  -->
             <div class="row">
+                @if (session('error'))
+                <div class="col-lg-12">
+                    <p class="alert text-danger" id="texterror" role="alert">
+                        {{ session('error') }}
+                    </p>
+                </div>
+                @endif
+
                 <div class="col-lg-4">
                     <div class="bg-white shadow h-100">
                         <div class="row">
@@ -478,6 +486,12 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 @endphp
 
 <script type="text/javascript">
+    if ($("#texterror")[0]) {
+        setTimeout(function() {
+            $('#texterror').fadeOut('fast');
+        }, 8000);
+
+    }
     console = window.console || {
         dir: new Function(),
         log: new Function()

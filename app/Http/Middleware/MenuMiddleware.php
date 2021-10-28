@@ -49,6 +49,7 @@ class MenuMiddleware
         }
         $exam_data = $this->user_exam();
 
+
         $subscriptionData = $this->subscribedPackage();
 
         $user_subjects = $this->redis_subjects();

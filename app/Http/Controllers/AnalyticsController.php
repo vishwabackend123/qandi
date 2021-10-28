@@ -235,7 +235,8 @@ class AnalyticsController extends Controller
                 'user_subjects'
             ));
         else :
-            return back()->with('error', 'Please appear in exam before checking analytics. ');
+            return redirect()->route('dashboard')->with('error', 'Please appear in exam before checking analytics.');
+        //return redirect-route('')->with('error', 'Please appear in exam before checking analytics. ');
         endif;
     }
 

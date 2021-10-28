@@ -32,7 +32,8 @@
                     $subscription_type='';
                     $filtered = $aPurchased->where('subscription_id', $sub->subscript_id);
                     $filtered_data = $filtered->first();
-                    $subscription_type = $filtered_data->subscription_type;
+                    $subscription_type = $filtered_data->subscription_t;
+                    $subscribed_id = $filtered_data->subscription_id;
                     @endphp
 
 

@@ -14,7 +14,7 @@
                 <div class="input-group mb-3">
                     <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
                     </div>
-                    <input type="text" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
+                    <input type="email" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
                 </div>
                 <div class="input-group mb-4">
                     <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i> </div>
@@ -201,7 +201,7 @@
                     } else {
                         $("#errlog_edit").html(response.message);
                         $("#errlog_edit").fadeIn('slow');
-                        $("#errlog_edit").fadeOut(10000);                 
+                        $("#errlog_edit").fadeOut(10000);
                         return false;
                     }
 
@@ -777,6 +777,10 @@
 
         $(this).parent().parent().remove();
     });
+    $('#exportAnalytics').on('shown.bs.modal', function() {
+        $('#specificSizeInputGroupUsername').val("");
+        $('#specificSizeInputGroupUsername').focus();
+    })
 
 
 
