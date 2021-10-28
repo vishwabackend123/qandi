@@ -1,4 +1,7 @@
 <div class="main-center">
+    <?php $user_id = Auth::user()->id;
+          $exam_id = Auth::user()->grade_id;
+     ?>
     <h2>{{$values->subject_name}}</h2>
     <div class="d-flex align-items-center">
         <div>
@@ -95,8 +98,12 @@
                             <p>{!! $pre->question !!}</p>
                         </div>
                     </div>
-
                 @endforeach
+                <div class="d-flex p-3  mt-3">
+                        <div style="float: right;">
+                            <p><a href="{{ route('review_bookmarks') }}">view all</a></p>
+                        </div>
+                    </div>
             @else
                 <div class="d-flex bg-white p-3 align-items-center mt-5">
                     No Bookmark available;
