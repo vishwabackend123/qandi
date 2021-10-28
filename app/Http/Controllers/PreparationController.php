@@ -176,7 +176,7 @@ class PreparationController extends Controller
         }
         return view('afterlogin.Preparation.subject_ajax_prepration_data', compact('preType', 'values', 'preparation_list'));
     }
-
+    
     public function presentations_chapter(Request $request)
     {
         $user_id = Auth::user()->id;

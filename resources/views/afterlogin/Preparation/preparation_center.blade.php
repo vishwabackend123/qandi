@@ -347,9 +347,6 @@
     </div>
 </div>
 
-
-
-
 @include('afterlogin.layouts.footer')
 
 

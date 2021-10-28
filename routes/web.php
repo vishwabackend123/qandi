@@ -127,6 +127,7 @@ Route::any('/preparation_center_chapter', [App\Http\Controllers\PreparationContr
 Route::any('/bookmarks_chapter', [App\Http\Controllers\PreparationController::class, 'bookmarks_chapter'])->name('bookmarks_chapter')->middleware('auth', 'menu');
 
 
+
 /* about Exam Controller Routes */
 
 Route::any('/about_exam', [App\Http\Controllers\AboutExamController::class, 'about_exam'])->name('about_exam')->middleware('auth', 'menu');
