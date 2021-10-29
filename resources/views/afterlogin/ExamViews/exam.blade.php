@@ -759,7 +759,7 @@ $questtype='radio';
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
-
+                    $("#btn_" + quest_id).find('i').remove();
                 }
 
             },

@@ -52,6 +52,7 @@ class MenuMiddleware
 
         $subscriptionData = $this->subscribedPackage();
 
+
         $user_subjects = $this->redis_subjects();
 
         $leaderboard_list = $this->leaderBoard();

@@ -678,12 +678,12 @@
 
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAccuracy); ?>,
+            data: <?php print_r($classAccuracy); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAccuracy); ?>,
+            data: <?php print_r($stuAccuracy); ?>,
             color: '#6ec986',
         }]
     });

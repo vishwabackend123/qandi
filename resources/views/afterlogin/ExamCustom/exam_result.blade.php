@@ -280,7 +280,10 @@ $total_question = $correct+$incorrect+$not_attempt;
 $total_makrs=isset($response->total_exam_marks)?$response->total_exam_marks:0;
 $correct_score=isset($response->correct_score)?$response->correct_score:0;
 $incorrect_score=isset($response->incorrect_score)?$response->incorrect_score:0;
-$get_score=(isset($response->total_get_marks) && ($response->total_get_marks)>=0)?$response->total_get_marks:0;;
+$get_score=(isset($response->total_get_marks) && ($response->total_get_marks)>=0)?$response->total_get_marks:0;
+$get_score_json=json_encode($get_score);
+$class_average=(isset($response->class_average) && ($response->class_average)>=0)?$response->class_average:0;
+$class_average_json=json_encode($class_average);
 
 $correct_per=!empty($total_question)?number_format((($correct/$total_question)*100),2):0;
 $incorrect_per=!empty($total_question)?number_format((($incorrect/$total_question)*100),2):0;

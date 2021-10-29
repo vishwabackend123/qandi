@@ -149,6 +149,12 @@ button {
     font-weight: 500 !important;
 }
 
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d !important;
+    border-color: #6c757d;
+}
+
 .btn-secondary-clear {
     background: #D6D6D6 !important;
     color: #2C3348 !important;
@@ -4020,6 +4026,12 @@ input[type=range]::-webkit-slider-thumb {
     }
 }
 
-@media(max-width:1280px){
-	div#submenu .mt-5.mb-5.pb-5.pt-5, div#submenu2 .mt-5.mb-5.pb-5.pt-5, div#submenupreparation .mt-5.mb-5.pb-5.pt-5, div#submenupreparation2 .mt-5.mb-5.pb-5.pt-5{ display:none;}
+@media(max-width:1280px) {
+
+    div#submenu .mt-5.mb-5.pb-5.pt-5,
+    div#submenu2 .mt-5.mb-5.pb-5.pt-5,
+    div#submenupreparation .mt-5.mb-5.pb-5.pt-5,
+    div#submenupreparation2 .mt-5.mb-5.pb-5.pt-5 {
+        display: none;
+    }
 }

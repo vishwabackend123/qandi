@@ -115,14 +115,14 @@ $questtype='radio';
                                     <button style="display:none;" class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
                                     <button style="display:none;" class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
-                                    {{--<sapn class="question_difficulty_tag small">
+                                    <sapn class="question_difficulty_tag small">
                                         <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
                                         <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
                                         <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
                                         <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
                                         <span class="small mx-2">Track: {!! $track !!}</span> |
                                         <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
-                                    </sapn>--}}
+                                    </sapn>
                                     <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
 
@@ -150,7 +150,7 @@ $questtype='radio';
                                         @endforeach
                                         @endif
                                         <!-- --------- correct answer for demo---------- -->
-                                        {{--<span>Correct Answers :</span>
+                                        <span>Correct Answers :</span>
                                         @if(isset($correct_answers) && !empty($correct_answers))
 
                                         @foreach($correct_answers as $anskey=>$ans_value)
@@ -169,7 +169,7 @@ $questtype='radio';
                                         @php $no++; @endphp
                                         @endforeach
                                         @endif
-                                        --}}
+
                                         <!-- --------- correct answer for demo---------- -->
 
                                     </div>
@@ -783,7 +783,7 @@ $questtype='radio';
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
-
+                    $("#btn_" + quest_id).find('i').remove();
                 }
 
             },
