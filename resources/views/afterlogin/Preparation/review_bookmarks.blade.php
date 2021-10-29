@@ -53,7 +53,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <a href="{{url('/dashboard')}}" class="btn btn-danger back-to-d-btn">Back to dashboard</a>
+                    <a href="{{url('/preparation_center')}}" class="btn btn-danger back-to-d-btn">Back</a>
                     <div class="tab-wrapper m-0">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                             @if(!empty($filtered_subject))
@@ -141,22 +141,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box ">
                         <div class="d-flex mb-3 reviewBox2">
                             <div class="col-10 heading">
-                                <h5>Review Questions.</h5>
+                                <h5>Bookmarks Questions </h5>
                             </div>
-                            <div class="col text-end">
-                                <div class="dropdown">
-                                    <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></a>
-
-
-                                    <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')"> All</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
+                            
 
                         </div>
                         <div class="review-questions-blk" id="filter_questions">
@@ -177,7 +164,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                 <button type="button" class="next_button1 btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">                              
                                     <div class="d-flex">
                                         <div class="me-3">Q{{$quKee}}. </div>
-                                        <p class="mb-0" style="text-align: left;">{!! $value->question !!} </p>
+                                        <p class="mb-0"><span style="text-align: left;">{!! $value->question !!} </span></p>
                                     </div>
                                 </button>
                                 </div>
