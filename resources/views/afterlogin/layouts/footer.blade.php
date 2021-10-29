@@ -923,28 +923,28 @@
 
 <!-- exam screen -->
 <script type="text/javascript">
-    /* document.addEventListener('contextmenu', event => event.preventDefault());
- 
-    document.onkeydown = function (e) {
- 
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    document.onkeydown = function(e) {
+
         // disable F12 key
-        if(e.keyCode == 123) {
+        if (e.keyCode == 123) {
             return false;
         }
- 
-        // disable I key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+
+        // disable ctrl+shift+I key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
             return false;
         }
- 
-        // disable J key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+
+        // disable ctrl+shift+J key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
             return false;
         }
- 
-        // disable U key
-        if(e.ctrlKey && e.keyCode == 85) {
+
+        // disable ctrl+U key
+        if (e.ctrlKey && e.keyCode == 85) {
             return false;
         }
-    } */
+    }
 </script>

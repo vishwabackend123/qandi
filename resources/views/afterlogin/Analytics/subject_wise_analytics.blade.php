@@ -155,13 +155,13 @@
                 <div id="week" style="display:none"></div>
                 <div id="month" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace('day','week','month')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass" id="s_day_time" onclick="replace('day','week','month')">
                         Day
                     </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace('week','day','month')">
+                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
                         Week
                     </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace('month','day','week')">
+                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_month_time" onclick="replace('month','day','week')">
                         Month
                     </button>
                 </div>
@@ -181,13 +181,13 @@
                 <div id="week1" style="display:none"></div>
                 <div id="month1" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace1('day1','week1','month1')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                         Day
                     </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('week1','day1','month1')">
+                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
                         Week
                     </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('month1','day1','week1')">
+                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_month_mark" onclick="s_replace1('month1','day1','week1')">
                         Month
                     </button>
                 </div>
@@ -219,7 +219,7 @@
 
             <div class="d-flex align-items-center">
                 <a class="topic-btn-collepse h5 text-dark" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>
-                    {{ucwords($subScore[0]->subject_name)}}</a>
+                    {{isset($subScore[0])?ucwords($subScore[0]->subject_name):''}}</a>
                 <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto topic-btn-collepse" id="topic-btn-collepse"><i class="fa fa-compress" aria-hidden="true"></i>
                     COLLAPSE
                 </button>
@@ -447,6 +447,16 @@
     });
 
     function replace(show, hide1, hide2) {
+        if (show == 'day') {
+            $(".s_timeClass").removeClass("btn-light-green");
+            $("#s_day_time").addClass("btn-light-green");
+        } else if (show == 'week') {
+            $(".s_timeClass").removeClass("btn-light-green");
+            $("#s_week_time").addClass("btn-light-green");
+        } else {
+            $(".s_timeClass").removeClass("btn-light-green");
+            $("#s_month_time").addClass("btn-light-green");
+        }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";
@@ -604,7 +614,17 @@
         }]
     });
 
-    function replace1(show, hide1, hide2) {
+    function s_replace1(show, hide1, hide2) {
+        if (show == 'day1') {
+            $(".s_classMark").removeClass("btn-light-green");
+            $("#s_day_mark").addClass("btn-light-green");
+        } else if (show == 'week1') {
+            $(".s_classMark").removeClass("btn-light-green");
+            $("#s_week_mark").addClass("btn-light-green");
+        } else {
+            $(".s_classMark").removeClass("btn-light-green");
+            $("#s_month_mark").addClass("btn-light-green");
+        }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";

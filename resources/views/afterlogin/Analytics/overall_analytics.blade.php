@@ -87,17 +87,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="progress  col-md-6" style="overflow: visible;">
-                                                    @if($sub->correct_ans > 0)
+                                                    @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
                                                     <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                                     </div>
                                                     @endif
-                                                    @if($sub->incorrect_ans > 0)
+                                                    @if(isset($sub->incorrect_ans) && $sub->incorrect_ans > 0)
                                                     <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
                                                     </div>
                                                     @endif
-                                                    @if($sub->unanswered > 0)
+                                                    @if(isset($sub->unanswered) && $sub->unanswered > 0)
                                                     <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                         <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}
                                                         </span>
@@ -110,19 +110,19 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-5 mt-3">
-                                        <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
+                                        <div id="timeManagementBox" class="bg-white shadow-lg p-3 h-100 px-4 text-center">
                                             <p class="text-uppercase fw-bold text-start">Time Management</p>
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
-                                            <div class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace('day','week','month')">
+                                            <div id="timeManagementButtons" class="btn-block mt-5 d-flex justify-content-between">
+                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 timeClass" id="day_time" onclick="replace('day','week','month')">
                                                     Day
                                                 </button>
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace('week','day','month')">
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass" id="week_time" onclick="replace('week','day','month')">
                                                     Week
                                                 </button>
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace('month','day','week')">
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass" id="month_time" onclick="replace('month','day','week')">
                                                     Month
                                                 </button>
                                             </div>
@@ -142,13 +142,13 @@
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
                                             <div class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-light-green text-uppercase rounded-0 px-5" onclick="replace1('day1','week1','month1')">
+                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark" id="day_mark" onclick="replace1('day1','week1','month1')">
                                                     Day
                                                 </button>
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('week1','day1','month1')">
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 classMark" id="week_mark" onclick="replace1('week1','day1','month1')">
                                                     Week
                                                 </button>
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5" onclick="replace1('month1','day1','week1')">
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 classMark" id="month_mark" onclick="replace1('month1','day1','week1')">
                                                     Month
                                                 </button>
                                             </div>
@@ -592,6 +592,16 @@
     });
 
     function replace(show, hide1, hide2) {
+        if (show == 'day') {
+            $(".timeClass").removeClass("btn-light-green");
+            $("#day_time").addClass("btn-light-green");
+        } else if (show == 'week') {
+            $(".timeClass").removeClass("btn-light-green");
+            $("#week_time").addClass("btn-light-green");
+        } else {
+            $(".timeClass").removeClass("btn-light-green");
+            $("#month_time").addClass("btn-light-green");
+        }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";
@@ -744,6 +754,16 @@
     });
 
     function replace1(show, hide1, hide2) {
+        if (show == 'day1') {
+            $(".classMark").removeClass("btn-light-green");
+            $("#day_mark").addClass("btn-light-green");
+        } else if (show == 'week1') {
+            $(".classMark").removeClass("btn-light-green");
+            $("#week_mark").addClass("btn-light-green");
+        } else {
+            $(".classMark").removeClass("btn-light-green");
+            $("#month_mark").addClass("btn-light-green");
+        }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";

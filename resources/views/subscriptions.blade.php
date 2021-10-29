@@ -46,7 +46,7 @@
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-5">
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Already Purchased </i></button>
+                                <button type="button" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Already Purchased </i></button>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
 
 
                             <div class="text-center mt-4">
-                                <form action="{{route('checkout')}}" if="checkout" method="post">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
@@ -86,7 +86,7 @@
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
-                                <form action="{{route('checkout')}}" if="checkout" method="post">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
@@ -98,7 +98,7 @@
                                 </form>
                             </div>
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline">Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" onclick="return confirm('Previous subscription will not be valid after new subscription.');">Try 14 days trial ></a>
                             </div>
 
                         </div>
@@ -113,4 +113,29 @@
     </div>
 </div>
 
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-2.2.4.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+<script src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
+
+<script>
+    /*  function submitSubscription(subs_id) {
+        if (!confirm("Do you really want to do this?")) {
+            return false;
+        }
+
+
+        document.getElementById('checkout_' + subs_id).submit();
+    } */
+    /* $(document).ready(function() {
+        $("#checkout").validate({
+
+            submitHandler: function(form) {
+               
+                //this.form.submit();
+            }
+
+        });
+    }); */
+</script>
 @endsection

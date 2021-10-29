@@ -89,10 +89,10 @@ class RazorpayController extends Controller
 
 
         if ($success_status == true) {
-            Session::put('success', 'Payment successful.');
+
             return redirect()->route('dashboard');
         } else {
-            Session::put('error', 'Payment failed.');
+
             return redirect()->route('subscriptions');
         }
     }
