@@ -1,10 +1,11 @@
 @php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $option_data = (isset($question_data->question_options) && !empty($question_data->question_options))?json_decode($question_data->question_options):'';
-$subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$subject_id = isset($question_data->subt_id)?$question_data->subt_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 @endphp
+
 <div class="question-block px-2 pt-3 pb-2">
     <div class="row">
         <div class="col-md-10">
