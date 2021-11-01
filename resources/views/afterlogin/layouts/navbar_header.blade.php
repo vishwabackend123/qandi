@@ -210,8 +210,23 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
+
+                                        <?php 
+                                        $date1 = $expirydate;
+                                        $date2 = date('d-m-Y');
+                                        $diff1 = strtotime($date2);
+                                        $diff2 = strtotime($date1);
+                                        $abc = $diff2-$diff1; ?>
+ 
+                                         
+
+                                       <?php if(!empty($abc)&&($abc>0)) { ?>
+
                                         <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
+                                        <?php } else { ?>
+                                        <p class="text-end text-danger mt-1">*Subscription already expired</p>
+                                        <?php } ?>
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
@@ -367,7 +382,9 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                 <span>
                     <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/images/edit.png')}}"></a>
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/images/Layer-4.png')}}" class="bg-white"></a>
+                    <a href="javascript:void(0);" class="close" data-dismiss="modal" id="close-planner-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}" width="35%"></a>
                 </span>
+
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
@@ -550,5 +567,16 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                 }
             });
         });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.close').click(function() {
+            $('#collapseExample').hide();
+           //$('#calendari').get(0).reset();
+            //$("#actiu").empty();
+            calendari(document.getElementById('calendari'), new Date());
+          });
     });
 </script>
