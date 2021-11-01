@@ -192,10 +192,12 @@
                                 }, 10000);
                             }
                         } else {
-                            //alert('{{ url()->previous() }}');
+
+                            var previousUrl = '{{ url()->previous() }}';
                             //
-                            if ('{{ url()->previous() }}' == '{{url("subscriptions")}}') {
-                                window.location.href = '{{ url()->previous() }}';
+                            if ((previousUrl.includes('subscriptions') == true) || (previousUrl.includes('trial_subscription') == true)) {
+
+                                window.location.href = '{{url("subscriptions")}}';
                             } else {
                                 window.location.href = '{{url("dashboard")}}';
                             }

@@ -2087,7 +2087,10 @@ header {
     font-weight: normal;
 }
 
-.calender-block th:first-child {
+/* .calender-block th:first-child {
+    color: #000;
+}  commented by dinesh*/
+.calender-block th:last-child {
     color: #000;
 }
 

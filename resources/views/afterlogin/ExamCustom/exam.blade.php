@@ -658,6 +658,13 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 } else {
 
                 }
+                if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                    $("#submitExam").click();
+                } else {
+                    $("#quesnext" + quest_id).click();
+
+                }
 
             },
         });

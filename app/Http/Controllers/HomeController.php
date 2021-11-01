@@ -187,30 +187,7 @@ class HomeController extends Controller
             $planner = [];
         }
 
-
-        $curl = curl_init();
-        $curl_url = $api_URL . 'api/notification-history/' . $user_id;
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-        $notifications = json_decode($response);
-        if ($notifications->response) {
-            $notifications = $notifications->response;
-        }
-
-
-        return view('afterlogin.dashboard', compact('notifications', 'corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
+        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
 
     public function student_stand(Request $request)
@@ -339,8 +316,8 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $user_name = $request->username;
 
-        $useremailexists = StudentUsers::where('email', $request->useremail)->where('id','!=',$user_id)->exists();
-        $mobileexists = StudentUsers::where('mobile', $request->user_mobile)->where('id','!=',$user_id)->exists();
+        $useremailexists = StudentUsers::where('email', $request->useremail)->where('id', '!=', $user_id)->exists();
+        $mobileexists = StudentUsers::where('mobile', $request->user_mobile)->where('id', '!=', $user_id)->exists();
         //echo "<pre>"; print_r($mobileexists); die;
         //$exists = StudentUsers::where('email', $request->useremail)->exists();
 
@@ -379,12 +356,12 @@ class HomeController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        if($useremailexists == 1) {
+        if ($useremailexists == 1) {
             $response['success'] = false;
             $response['error'] = "";
             $response['message'] = "email id or mobile number already exist";
             return json_encode($response);
-        }else if ($mobileexists == 1) {
+        } else if ($mobileexists == 1) {
             $response['success'] = false;
             $response['error'] = "";
             $response['message'] = "email id or mobile number already exist";

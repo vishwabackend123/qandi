@@ -65,6 +65,27 @@ class MenuMiddleware
 
         $current_week_plan = $this->current_week_plan();
 
+        $curl = curl_init();
+        $curl_url = $api_URL . 'api/notification-history/' . $user_id;
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $notifications = json_decode($response);
+        if ($notifications->response) {
+            $notifications = $notifications->response;
+        }
+
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
         \Illuminate\Support\Facades\View::share('user_stage', $user_stage);
@@ -74,6 +95,7 @@ class MenuMiddleware
         \Illuminate\Support\Facades\View::share('leaderboard_list', $leaderboard_list);
         \Illuminate\Support\Facades\View::share('imgPath', $imgPath);
         \Illuminate\Support\Facades\View::share('current_week_plan', $current_week_plan);
+        \Illuminate\Support\Facades\View::share('notifications', $notifications);
 
         return $next($request);
     }

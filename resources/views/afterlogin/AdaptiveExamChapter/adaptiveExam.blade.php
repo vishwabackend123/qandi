@@ -690,6 +690,14 @@ $questtype='radio';
 
                 }
 
+                if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                    $("#submitExam").click();
+                } else {
+                    $("#quesnext" + quest_id).click();
+
+                }
+
             },
         });
     }

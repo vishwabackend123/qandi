@@ -26,7 +26,7 @@ class AdpativeExamController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
 
-        $exam_name = 'MOck Test';
+        $exam_name = 'Mock Test';
 
         $inputjson['student_id'] = $user_id;
         $inputjson['exam_id'] = $exam_id;
@@ -158,7 +158,7 @@ class AdpativeExamController extends Controller
         Redis::set('custom_answer_time', json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
-        $test_type = 'Assessment';
+        $test_type = 'Mocktest';
         $exam_type = 'PE';
 
 

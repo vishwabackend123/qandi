@@ -86,7 +86,7 @@
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
-                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" method="post">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if(isset(Auth::user()->user_id) && !empty(Auth::user()->user_id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
@@ -98,7 +98,7 @@
                                 </form>
                             </div>
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" onclick="return confirm('Previous subscription will not be valid after new subscription.');">Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" @if(isset(Auth::user()->user_id) && !empty(Auth::user()->user_id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
 
                         </div>

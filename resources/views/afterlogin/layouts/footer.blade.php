@@ -137,7 +137,7 @@
         };
         new Notification(title, options);
 
-        $('#recent_notify ').prepend($('<div class="border-bottom d-flex flex-column py-2 px-3 notify-block">' +
+        $('#recent_notify ').prepend($('<div class="recent-notificattion border-bottom d-flex flex-column py-2 px-3 notify-block">' +
             '<p class="mb-0">' + title + '</p>' +
 
             '<small>' + time + '</small>' +
@@ -146,6 +146,11 @@
         console.log('Message received. ', payload);
         // ...
     });
+    if ($(".recent-notificattion")[0]) {
+        $('#red-dot-notifiction').show();
+    } else {
+        $('#red-dot-notifiction').hide();
+    }
 </script>
 <script type="text/javascript">
     function isNumber(evt) {
@@ -389,12 +394,12 @@
 
     var dies_abr = [
         'S',
-        'S',
         'M',
         'T',
         'W',
         'T',
-        'F'
+        'F',
+        'S',
     ];
 
     Number.prototype.pad = function(num) {
@@ -453,11 +458,13 @@
 
         boto_prev.onclick = function() {
             data.setMonth(data.getMonth() - 1);
+            alert(data);
             calendari(widget, data);
         };
 
         boto_next.onclick = function() {
             data.setMonth(data.getMonth() + 1);
+            alert(data);
             calendari(widget, data);
         };
 
@@ -923,37 +930,28 @@
 
 <!-- exam screen -->
 <script type="text/javascript">
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    /*  document.addEventListener('contextmenu', event => event.preventDefault());
 
     document.onkeydown = function(e) {
 
-            // disable F12 key
-            if (e.keyCode == 123) {
-                return false;
-            }
+        // disable F12 key
+        if (e.keyCode == 123) {
+            return false;
+        }
 
-            // disable ctrl+shift+I key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                return false;
-            }
+        // disable ctrl+shift+I key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            return false;
+        }
 
-            // disable ctrl+shift+J key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-                return false;
-            }
+        // disable ctrl+shift+J key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            return false;
+        }
 
-            // disable ctrl+U key
-            if (e.ctrlKey && e.keyCode == 85) {
-                return false;
-            } <<
-            <<
-            <<
-            < HEAD
-        } ===
-        ===
-        =
-    } >>>
-    >>>
-    >
-    330 bfa49cec7bfea7bacaac4eff70167e6e26d41
+        // disable ctrl+U key
+        if (e.ctrlKey && e.keyCode == 85) {
+            return false;
+        }
+    } */
 </script>

@@ -89,7 +89,6 @@ class SubscriptionController extends Controller
         $aPurchased = collect($purchased_packages);
 
 
-        // dd($curl_url, $subscriptions, $purchased_ids, $aPurchased);
 
         return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased'));
     }

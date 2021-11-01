@@ -9,21 +9,21 @@
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link " id="notification-tog">
                             <img src="{{URL::asset('public/after_login/images/Group3205.png')}}">
-                            <span class="red-dot"></span>
+                            <span class="red-dot red-dot-notifi" style="display:none"></span>
                             <span class="hoverlink">Notification</span>
                         </a>
                     </span>
                     <span class="notification ms-4">
                         <a data-bs-toggle="collapse" class="top-link " href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="collapseExample-tog">
                             <img src="{{URL::asset('public/after_login/images/calender.png')}}">
-                            <span class="red-dot"></span>
+                            <!--  <span class="red-dot"></span> -->
                             <span class="hoverlink">Planner</span>
                         </a>
                     </span>
                     <span class="notification ms-4">
                         <a href="{{ route('overall_analytics') }}" class="top-link ">
                             <img src="{{URL::asset('public/after_login/images/Group1831.png')}}">
-                            <span class="red-dot"></span>
+                            <!-- <span class="red-dot"></span> -->
                             <span class="hoverlink">Analytics</span>
                         </a>
                     </span>
@@ -158,14 +158,14 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                         <div class="text-box mt-3">
                                                             <input type="email" name="useremail" id="useremail" class="ps-2" value="{{Auth::user()->email}}" required placeholder="Your Email Id" />
                                                         </div>
-                                                        
+
                                                         <div class="text-box mt-2">
 
                                                             <input type="text" name="user_mobile" id="user_mobile" class="ps-2" value="{{Auth::user()->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
 
                                                         </div>
                                                         <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
-                                                        
+
                                                         <div class=" text-box mt-4 text-end">
                                                             <button type="button" id="cancelEdit" class="btn-light rounded-0 btn px-5 btn-sm">Cancel
                                                             </button>
@@ -380,8 +380,8 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                     <div class="d-flex flex-column ms-3">
                         <span class="cal-txt1">No Test Scheduled</span>
                         <span><a href="javascript:void(0);" class="cal-txt2">Upcoming Test tomorrow ></a></span>
-                        <span class="cal-txt3"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> <i class="fa fa-star"></i></span>
+                        <!--  <span class="cal-txt3"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i> <i class="fa fa-star"></i></span> -->
                     </div>
                 </div>
                 <div class="d-flex remind-box">
@@ -404,14 +404,14 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
-        jQuery("#notification-tog").click(function(){
-        jQuery("#collapseExample").hide();
-        jQuery("#notification").show();
+        jQuery("#notification-tog").click(function() {
+            jQuery("#collapseExample").hide();
+            jQuery("#notification").show();
         });
 
-        jQuery("#collapseExample-tog").click(function(){
-        jQuery("#collapseExample").show();
-        jQuery("#notification").hide();
+        jQuery("#collapseExample-tog").click(function() {
+            jQuery("#collapseExample").show();
+            jQuery("#notification").hide();
         });
     });
 
