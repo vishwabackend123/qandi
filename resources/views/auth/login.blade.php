@@ -22,7 +22,7 @@
             <div id="mobile_input">
                 <div class="text-box mt-5">
                     <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
-                    <input type="text" name="login_mobile" id="mobile_num" value="" placeholder="Mobile number / e-mail ID" />
+                    <input type="text" name="login_mobile" id="mobile_num" value="" autocomplete="off" placeholder="Mobile number / e-mail ID" />
 
                 </div>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_mob"> </span>
@@ -36,7 +36,7 @@
             <div id="input-otp-box" style="display:none">
                 <div class="text-box py-3">
                     <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" onkeypress="return isNumber(event)" />
+                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" onkeypress="return isNumber(event)" autocomplete="off" />
                 </div>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>

@@ -21,7 +21,7 @@
                 What's <b>your name</b>?”</p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
-                <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" />
+                <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" autocomplete="off" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_name"> </span>
 
@@ -42,7 +42,7 @@
             <span class="invalid-feedback m-0" role="alert" id="errlog_email"> </span>
             <div class="text-box mt-4">
                 <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
-                <input type="text" name="mobile_num" id="mobile_num" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Mobile number" />
+                <input type="text" name="mobile_num" id="mobile_num" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Mobile number" autocomplete="off" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_mob"> </span>
             <div class="text-center mt-5">
@@ -56,7 +56,7 @@
             <p class="welcome-msg text-center">“You must have received an OTP from us in your inbox or message” </p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" placeholder="Enter OTP" />
+                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" placeholder="Enter OTP" autocomplete="off" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
             <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>
@@ -309,8 +309,8 @@
         $('#goto-otp-btn').click();
     }
 
-    $('#user_name').bind("cut copy paste",function(e) {
-     e.preventDefault();
- });
+    $('#user_name').bind("cut copy paste", function(e) {
+        e.preventDefault();
+    });
 </script>
 @endsection
