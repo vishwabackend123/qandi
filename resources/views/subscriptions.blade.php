@@ -97,9 +97,15 @@
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                                 </form>
                             </div>
+                            @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
                                 <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" @if(isset(Auth::user()->user_id) && !empty(Auth::user()->user_id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
+                            @else
+                            <div class="text-center mt-2">
+                                <span class="text-danger text-decoration-underline">Expired 14 days trial ></span>
+                            </div>
+                            @endif
 
                         </div>
                     </div>

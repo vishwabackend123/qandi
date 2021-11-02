@@ -458,13 +458,13 @@
 
         boto_prev.onclick = function() {
             data.setMonth(data.getMonth() - 1);
-            alert(data);
+           // alert(data);
             calendari(widget, data);
         };
 
         boto_next.onclick = function() {
             data.setMonth(data.getMonth() + 1);
-            alert(data);
+           // alert(data);
             calendari(widget, data);
         };
 
@@ -930,7 +930,7 @@
 
 <!-- exam screen -->
 <script type="text/javascript">
-    /*  document.addEventListener('contextmenu', event => event.preventDefault());
+      document.addEventListener('contextmenu', event => event.preventDefault());
 
     document.onkeydown = function(e) {
 
@@ -953,5 +953,5 @@
         if (e.ctrlKey && e.keyCode == 85) {
             return false;
         }
-    } */
+    } 
 </script>
