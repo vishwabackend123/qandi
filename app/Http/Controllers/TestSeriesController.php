@@ -209,7 +209,7 @@ class TestSeriesController extends Controller
                 $test_type = 'Test-Series';
                 $exam_type = 'TS';
 
-                return view('afterlogin.ExamCustom.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type'));
+                return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type'));
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }

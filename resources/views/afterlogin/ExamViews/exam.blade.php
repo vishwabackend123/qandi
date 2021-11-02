@@ -83,7 +83,7 @@ $questtype='radio';
 
                             <div id="question_section" class="">
                                 <div>
-                                    <div class="d-flex ">
+                                    <div class="d-flex d-none-imp">
                                         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
                                             <span id="avg_text">Average Time :</span>
                                             <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">

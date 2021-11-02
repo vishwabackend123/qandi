@@ -163,9 +163,14 @@
                     <div class="bg-white shadow p-3 h-100">
                         <h5 class="dashboard-title">Marks Trend</h5>
                         <figure class="highcharts-figure">
-                            <div id="trend_graph"></div>
+                            <div id="trend_line_graph"></div>
+                            <div id="trend_bar_graph" style="display:none;"></div>
 
                         </figure>
+                        <div calss="d-flex">
+                            <button class="btn btn-sm btn-outline-secondary btn-light-green text-uppercase" id="line_Chart_trend">Line</button>
+                            <button class="btn btn-sm btn-outline-secondary  text-uppercase" id="bar_Chart_trend">Bar</button>
+                        </div>
                         <!-- <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;"> -->
                     </div>
                 </div>
@@ -821,9 +826,10 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
 
 <script>
-    Highcharts.chart('trend_graph', {
+    /* marks trend line chart graph */
+    Highcharts.chart('trend_line_graph', {
         chart: {
-            height: 215,
+            height: 200,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -891,8 +897,85 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
     });
 
+    /* marks trend bar graph */
+    Highcharts.chart('trend_bar_graph', {
+        chart: {
+            type: 'column',
+            height: 200,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingTop: 10,
+            spacingBottom: 0,
+            spacingRight: 0,
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            accessibility: {
+                rangeDescription: 'Range: start to current week'
+            },
+            categories: <?php echo $weeks_json; ?>,
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+
+
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Student Score',
+            data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
+            color: '#006400' // Jane's color
+        }, {
+            name: 'Class Avg',
+            data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
+            color: '#FFA500'
+        }, {
+            name: 'Top Marks',
+            data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
+            color: '#1E90FF'
+        }]
+    });
+
     setTimeout(() => {
         $('#alert').hide();
     }, 5000);
+
+    $('#line_Chart_trend').click(function() {
+        $("#trend_bar_graph").hide();
+        $("#trend_line_graph").show();
+        $("#bar_Chart_trend").removeClass("btn-light-green");
+        $("#line_Chart_trend").addClass("btn-light-green");
+    });
+    $('#bar_Chart_trend').click(function() {
+        $("#trend_line_graph").hide();
+        $("#trend_bar_graph").show();
+
+        $("#line_Chart_trend").removeClass("btn-light-green");
+        $("#bar_Chart_trend").addClass("btn-light-green");
+
+    });
 </script>
 @endsection

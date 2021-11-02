@@ -94,7 +94,7 @@ $questtype='radio';
     });
 </script>
 <div>
-    <div class="d-flex ">
+    <div class="d-flex d-none-imp">
 
         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
             <span id="avg_text_{{$activeq_id}}">Average Time :</span>

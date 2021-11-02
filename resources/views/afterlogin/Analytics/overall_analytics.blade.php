@@ -256,7 +256,7 @@
                     $('#tutorial_response').html('<span class="alert alert-danger" role="alert">' + response_data.response + '</span>');
                 }
                 $("#tutorial_response").show();
-                $("#tutorial_response").fadeOut(5000);
+                $("#tutorial_response").fadeOut(8000);
             }
         });
     }

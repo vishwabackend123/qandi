@@ -2474,6 +2474,10 @@ header {
     transform: rotateZ(315deg);
 }
 
+.d-none-imp {
+    display: none !important;
+}
+
 .close-block {
     display: none;
 }
