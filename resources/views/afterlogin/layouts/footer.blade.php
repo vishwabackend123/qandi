@@ -458,13 +458,11 @@
 
         boto_prev.onclick = function() {
             data.setMonth(data.getMonth() - 1);
-            alert(data);
             calendari(widget, data);
         };
 
         boto_next.onclick = function() {
             data.setMonth(data.getMonth() + 1);
-            alert(data);
             calendari(widget, data);
         };
 
