@@ -333,7 +333,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                 @csrf
                 <div class="row align-items-center mb-4">
                     <div class="col-md-6">
-                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)">
+                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="" step="1" id="customRange" oninput="outputUpdate(value)">
                     </div>
                     <div class="col-md-6">
                         <span id="slide-input" class="badge bg-badge">5</span>
@@ -450,7 +450,8 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
         document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
 
         var range_val = $('#customRange').val();
-        if (range_val > 0) {
+        //alert(range_val); 
+         if (range_val > 0) {
             /* set range for */
             var rvalue = (range_val - 0) / (7 - 0) * 100;
             $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
@@ -574,9 +575,18 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
     $(document).ready(function() {
         $('.close').click(function() {
             $('#collapseExample').hide();
-           //$('#calendari').get(0).reset();
-            //$("#actiu").empty();
+           
             calendari(document.getElementById('calendari'), new Date());
           });
+
+        /*edit planner*/
+        var chapters = $('input[name="chapters[]"]').length;
+        var limit = $('#customRange').val();
+        $('#slide-input').html(chapters);
+        $('input[name="weekrange').val(chapters);
+
+        var rvalue1 = (chapters - 0) / (7 - 0) * 100;
+            $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
+        /*edit planner*/
     });
 </script>

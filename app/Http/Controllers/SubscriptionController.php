@@ -47,6 +47,7 @@ class SubscriptionController extends Controller
         $grade_id = isset(Auth::user()->grade_id) ? Auth::user()->grade_id : 0;
 
         $curl = curl_init();
+        $curl1 = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
 
@@ -87,10 +88,51 @@ class SubscriptionController extends Controller
         }
 
         $aPurchased = collect($purchased_packages);
+        
+        /*trial link*/
+        $curl_url1 = $api_URL . 'api/subscriptions/' . $user_id;
+
+        curl_setopt_array($curl1, array(
+
+            CURLOPT_URL => $curl_url1,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json1 = curl_exec($curl1);
+        $err1 = curl_error($curl1);
+        $httpcode1 = curl_getinfo($curl1, CURLINFO_HTTP_CODE);
+        curl_close($curl1);
+
+        $aResponse1 = json_decode($response_json1);
+        
+        $response_status1 = isset($aResponse1->success) ? $aResponse1->success : false;
+        if ($response_status1 == true) {
+
+            $purchased_packages1 = isset($aResponse1->order_details) ? $aResponse1->order_details : [];
+        } else {
+            $purchased_packages1 = [];
+        }
+
+        $purchasedid = [];
+
+        if (is_array($purchased_packages1) && !empty($purchased_packages1)) {
+            foreach ($purchased_packages1 as $purch) {
+                array_push($purchasedid, $purch->subscription_id);
+            }
+        }
+
+        $aPurchasedpack = collect($purchased_packages1);
+        /*trial link*/
+        
 
 
-
-        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased'));
+        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased','aPurchasedpack','purchasedid'));
     }
 
 
