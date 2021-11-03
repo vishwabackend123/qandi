@@ -15,7 +15,7 @@ $div_class = '';
 <div class="d-flex align-items-center">
     <div class="review-questions-box {{$div_class}} mx-2 mb-3">
         <div class="d-flex">
-            <div class="me-3">Q{{$quKee}}. </div>
+            <div class="me-3">Q{{$value->seq}}. </div>
             <p class="mb-0">{!! $value->question !!} </p>
         </div>
     </div>
