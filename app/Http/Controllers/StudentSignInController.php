@@ -142,7 +142,7 @@ class StudentSignInController extends Controller
 
         if ($success == false) {
             $response = [
-                "message" => "User mobile number or otp not matched !!",
+                "message" => "You have entered a wrong OTP. Please try again",
                 "error" => $err,
                 "success" => false,
                 "status" => 400,
