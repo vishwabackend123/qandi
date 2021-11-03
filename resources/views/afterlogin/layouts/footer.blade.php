@@ -250,6 +250,7 @@
                 setTimeout(function() {
                     $('.errRef').fadeOut('fast');
                 }, 5000);
+                return false;
             }
             $.ajax({
                 url: "{{ url('/store_referral') }}",
@@ -463,7 +464,7 @@
 
         boto_next.onclick = function() {
             data.setMonth(data.getMonth() + 1);
-           calendari(widget, data);
+            calendari(widget, data);
         };
 
         fila.appendChild(titol);
@@ -928,7 +929,7 @@
 
 <!-- exam screen -->
 <script type="text/javascript">
-      document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
     document.onkeydown = function(e) {
 
@@ -951,5 +952,5 @@
         if (e.ctrlKey && e.keyCode == 85) {
             return false;
         }
-    } 
+    }
 </script>

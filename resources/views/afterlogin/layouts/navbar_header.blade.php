@@ -9,7 +9,7 @@
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link " id="notification-tog">
                             <img src="{{URL::asset('public/after_login/images/Group3205.png')}}">
-                            <span class="red-dot red-dot-notifi" style="display:none"></span>
+                            <span class="red-dot" id="red-dot-notifiction" style="display:none"></span>
                             <span class="hoverlink">Notification</span>
                         </a>
                     </span>
@@ -210,23 +210,8 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
-
-                                        <?php 
-                                        $date1 = $expirydate;
-                                        $date2 = date('d-m-Y');
-                                        $diff1 = strtotime($date2);
-                                        $diff2 = strtotime($date1);
-                                        $abc = $diff2-$diff1; ?>
- 
-                                         
-
-                                       <?php if(!empty($abc)&&($abc>0)) { ?>
-
                                         <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
-                                        <?php } else { ?>
-                                        <p class="text-end text-danger mt-1">*Subscription already expired</p>
-                                        <?php } ?>
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
@@ -333,7 +318,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                 @csrf
                 <div class="row align-items-center mb-4">
                     <div class="col-md-6">
-                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="" step="1" id="customRange" oninput="outputUpdate(value)">
+                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)">
                     </div>
                     <div class="col-md-6">
                         <span id="slide-input" class="badge bg-badge">5</span>
@@ -382,9 +367,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                 <span>
                     <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/images/edit.png')}}"></a>
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/images/Layer-4.png')}}" class="bg-white"></a>
-                    <a href="javascript:void(0);" class="close" data-dismiss="modal" id="close-planner-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}" width="35%"></a>
                 </span>
-
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
@@ -450,8 +433,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
         document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
 
         var range_val = $('#customRange').val();
-        //alert(range_val); 
-         if (range_val > 0) {
+        if (range_val > 0) {
             /* set range for */
             var rvalue = (range_val - 0) / (7 - 0) * 100;
             $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
@@ -568,25 +550,5 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                 }
             });
         });
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.close').click(function() {
-            $('#collapseExample').hide();
-           
-            calendari(document.getElementById('calendari'), new Date());
-          });
-
-        /*edit planner*/
-        var chapters = $('input[name="chapters[]"]').length;
-        var limit = $('#customRange').val();
-        $('#slide-input').html(chapters);
-        $('input[name="weekrange').val(chapters);
-
-        var rvalue1 = (chapters - 0) / (7 - 0) * 100;
-            $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
-        /*edit planner*/
     });
 </script>

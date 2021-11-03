@@ -321,7 +321,7 @@
                 <form id="referalStudent_form" action="{{route('store_referral')}}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <input type="test" class="form-control border-0 rounded-0" placeholder="Enter emails" id="referEmails" name="refer_emails" required>
+                        <input type="test" class="form-control border-0 rounded-0" placeholder="Enter emails" id="referEmails" name="refer_emails" autocomplete="off" required>
                         <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
 
                         <span class="invalid-feedback m-0 alert-success errRef p-1 mb-1" role="alert" id="successRef_auth"> </span>
