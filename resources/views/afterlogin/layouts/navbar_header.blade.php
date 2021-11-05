@@ -570,7 +570,15 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
         $('input[name="weekrange').val(chapters);
         var rvalue1 = (chapters - 0) / (7 - 0) * 100;
             $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
-        
+
         /*edit planner*/
+
+        /*Refer Firend*/
+        $('.btn-close').click(function() {
+        $('#referEmails').val('');
+        });
+        /*Refer Firend*/
     });
+
+
 </script>

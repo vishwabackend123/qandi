@@ -181,6 +181,9 @@
     $('#cancelEdit').click(function() {
         $('#profile-details').show();
         $('#profile-form').hide();
+        $('.edit-icon').css({
+            'display': 'none'
+        });
     });
 
     $("#editProfile_form").validate({
@@ -940,7 +943,7 @@
     /* document.addEventListener('contextmenu', event => event.preventDefault()); */
 
     document.onkeydown = function(e) {
-
+        
         // disable F12 key
         if (e.keyCode == 123) {
             return false;
