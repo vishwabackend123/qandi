@@ -878,10 +878,18 @@
             }
             var chapters = [];
             var chapters = $('input[name="chapters[]"]').length;
+
             if (chapters < limit) {
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 setTimeout(function() {
-                    $('#limit_error').fadeOut('fast');
+                    $('#limit_error').fadeOut('slow');
+                }, 5000);
+                return false;
+            }
+            if (chapters > limit) {
+                $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
+                setTimeout(function() {
+                    $('#limit_error').fadeOut('slow');
                 }, 5000);
                 return false;
             }
