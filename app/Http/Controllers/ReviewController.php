@@ -35,6 +35,9 @@ class ReviewController extends Controller
         if (Redis::exists($cacheKey)) {
             Redis::del(Redis::keys($cacheKey));
         }
+        if (Redis::exists('review_question')) {
+            Redis::del(Redis::keys('review_question'));
+        }
 
         if (!empty($result_id)) {
             $curl = curl_init();
@@ -98,6 +101,10 @@ class ReviewController extends Controller
             $all_ids = $result_response->question_ids;
             $all_question_list = $aQuestionslist->all();
 
+            /* dd($all_question_list);
+
+            Redis::set('review_question', json_encode($all_question_list));
+ */
             $collection = collect($all_question_list);
 
             $allQuestions = $aQuestionslist->keyBy('question_id');
@@ -335,6 +342,10 @@ class ReviewController extends Controller
         $cacheKey = 'exam_review:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
+        if ($data = Redis::get($cacheKey)) {
+            $subject_list = json_decode($data);
+        }
+
         if (isset($redis_result) && !empty($redis_result)) :
             $response = json_decode($redis_result);
         endif;
@@ -448,6 +459,8 @@ class ReviewController extends Controller
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
         $cacheKey = 'exam_review:' . $user_id;
+
+        //$cacheKey = 'review_question:';
         $redis_result = Redis::get($cacheKey);
 
         if (isset($redis_result) && !empty($redis_result)) :
@@ -460,18 +473,35 @@ class ReviewController extends Controller
         if (isset($result_response->all_question) && !empty($result_response->all_question)) {
 
 
-            $aQuestionslist = collect($result_response->all_question);
+            $collection = collect($result_response->all_question);
+            $grouped = $collection->groupBy('subject_id');
+
+            if (count($grouped) > 1) {
+                $aQuestionslist = $collection->sortBy('subject_id');
+            } else {
+                $aQuestionslist = $collection->sortBy('question_id');
+            }
+
+            $afterSort = $aQuestionslist;
+
+            $i = 1;
+            foreach ($afterSort as $key => $list) {
+                $list->seq = $i;
+                $i++;
+            }
+
+
 
             if ($filter_by != 'all') {
-                // $aQuestionslist = $aQuestionslist->where('attempt_status', $filter_by);
-                /*  $aQuestionslist = $aQuestionslist->sortBy([
+                $aQuestionslist = $afterSort->where('attempt_status', $filter_by);
+                $aQuestionslist = $aQuestionslist->sortBy([
                     ['attempt_status', $filter_by]
-                ]); */
-                /*  $filtered =   $aQuestionslist->filter(function ($value, $filter_by) {
+                ]);
+                $filtered =   $aQuestionslist->filter(function ($value, $filter_by) {
                     return $value;
                 });
-                $all_question_list = $filtered->all(); */
-                if ($filter_by == "Correct") {
+                $all_question_list = $filtered->all();
+                /* if ($filter_by == "Correct") {
                     $statusPriorities = ["Correct", "Incorrect", "Unanswered", ""];
                 } elseif ($filter_by == "Incorrect") {
                     $statusPriorities = ["Incorrect", "Correct", "Unanswered", ""];
@@ -482,7 +512,7 @@ class ReviewController extends Controller
                 $all_question_list =  $aQuestionslist->sortBy(function ($order) use ($statusPriorities) {
 
                     return array_search($order->attempt_status, $statusPriorities);
-                })->values()->all();
+                })->values()->all(); */
             } else {
                 $all_question_list = $aQuestionslist->all();
             }
