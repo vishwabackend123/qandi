@@ -88,6 +88,7 @@
         <!-- dashboard html section-->
         <div class="container-fluid">
             <!--  -->
+
             <div class="row">
                 @if (session('error'))
                 <div class="col-lg-12">
@@ -786,6 +787,14 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
                         color: 'white'
                     }
                 },
+                point: {
+                    events: {
+                        legendItemClick: function() {
+                            this.slice(null);
+                            return false;
+                        }
+                    }
+                },
                 startAngle: -140,
                 endAngle: 140,
                 center: ['50%', '50%'],
@@ -942,6 +951,13 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             column: {
                 pointPadding: 0.2,
                 borderWidth: 0
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{

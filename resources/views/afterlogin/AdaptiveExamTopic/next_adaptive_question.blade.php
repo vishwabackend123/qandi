@@ -125,6 +125,7 @@ $questtype='radio';
         @endif
 
         <!-- Questions -->
+        {{--
         <sapn class="question_difficulty_tag small">
             <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
             <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
@@ -132,7 +133,7 @@ $questtype='radio';
             <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
 
             <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
-        </sapn>
+        </sapn>--}}
         <div class="question N_question" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
         <!-- Options -->
         <div class="ans-block row mt-5 N_radioans">
@@ -162,6 +163,7 @@ $questtype='radio';
             @endif
 
             <!-- --------- correct answer for demo---------- -->
+            {{--
             <span>Correct Answers :</span>
             @if(isset($correct_answers) && !empty($correct_answers))
 
@@ -181,7 +183,7 @@ $questtype='radio';
             @php $no++; @endphp
             @endforeach
             @endif
-
+            --}}
             <!-- --------- correct answer for demo---------- -->
         </div>
 

@@ -303,6 +303,14 @@
                         color: 'white'
                     }
                 },
+                point: {
+                    events: {
+                        legendItemClick: function() {
+                            this.slice(null);
+                            return false;
+                        }
+                    }
+                }
                 startAngle: -140,
                 endAngle: 140,
                 center: ['50%', '50%'],
@@ -529,6 +537,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{
@@ -578,6 +593,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{
@@ -645,6 +667,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{
@@ -694,6 +723,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{
@@ -740,6 +776,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{
