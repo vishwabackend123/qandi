@@ -106,7 +106,6 @@ class ResultController extends Controller
         curl_close($curl);
 
         if ($test_type == 'Live') {
-
             return view('afterlogin.LiveExam.live_result');
         }
 
