@@ -15,6 +15,7 @@
     </script>
 
     <div class="ms-auto login-box me-auto" id="name-box">
+        Hi I am Dinesh!Hi I am Dinesh!
         <div class="welcome-heading">Welcome to UniQ</div>
         <div class="welcome-msg">Please login using your registered email/ Mobile number </div>
         <form id="studentlogin" method="post">

@@ -420,6 +420,14 @@ $not_attempt_per=100-($correct_per+$incorrect_per);
                         color: 'white'
                     }
                 },
+                point: {
+                    events: {
+                        legendItemClick: function() {
+                            this.slice(null);
+                            return false;
+                        }
+                    }
+                },
                 startAngle: -180,
                 endAngle: 180,
                 center: ['50%', '50%'],

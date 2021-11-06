@@ -347,6 +347,14 @@ $clsAvg_json=json_encode($clsAvg_arr);
                         color: 'white'
                     }
                 },
+                point: {
+                    events: {
+                        legendItemClick: function() {
+                            this.slice(null);
+                            return false;
+                        }
+                    }
+                },
                 startAngle: -180,
                 endAngle: 180,
                 center: ['50%', '50%'],
@@ -401,6 +409,13 @@ $clsAvg_json=json_encode($clsAvg_arr);
         plotOptions: {
             column: {
                 borderRadius: 1
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
 
