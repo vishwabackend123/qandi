@@ -963,5 +963,10 @@
         if (e.ctrlKey && e.keyCode == 85) {
             return false;
         }
+
+        // disable ctrl+P key
+        if (e.ctrlKey && e.keyCode == 80) {
+            return false;
+        }
     }
 </script>
