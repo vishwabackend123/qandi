@@ -239,6 +239,8 @@
             $check = 0;
             var emails = $('#referEmails').val();
             var arrayEmails = emails.split(',');
+            var countEmails = arrayEmails.length;
+            
             console.log(arrayEmails);
             arrayEmails.forEach(element => {
                 var emval = element.trim();
@@ -247,7 +249,18 @@
                     $check = 1;
                 }
             });
-            if ($check == 1) {
+
+
+            
+            if (countEmails == 1 && $check == 1) {
+                $("#errRef_auth").html("Please enter a valid email")
+                $("#errRef_auth").show();
+                setTimeout(function() {
+                    $('.errRef').fadeOut('fast');
+                }, 5000);
+                return false;
+            }
+            if (countEmails != 1 && $check == 1) {
                 $("#errRef_auth").html("Please enter valid emails or use correct separator between two emails")
                 $("#errRef_auth").show();
                 setTimeout(function() {
@@ -969,4 +982,11 @@
             return false;
         }
     }
+
+    $(document).ready(function() {
+        jQuery(".dash-nav-link").click(function() {
+            jQuery("#collapseExample").hide();
+            jQuery("#notification").hide();
+        });
+    });
 </script>
