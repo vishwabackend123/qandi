@@ -9,9 +9,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>UNIQ</title>
+    <meta name="csrf-token" value="{{ csrf_token() }}" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" value="{{ csrf_token() }}" />
+
     <link rel="icon" href="{{URL::asset('public/images/favicon.ico')}}" type="{{URL::asset('public/image/x-icon')}}" />
     <script src="https://kit.fontawesome.com/5880030aeb.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>

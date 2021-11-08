@@ -42,7 +42,7 @@
                     <div class="col-md-4 p-4 ">
                         <div class="bg-white white-box-small subscriptionBox inactive-block  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
-                            <p class="price">Rs. {{$subsprice}}</p>
+                            <p class="price">Rs. XXXX {{--$subsprice--}}</p>
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-5">
@@ -54,7 +54,7 @@
                     <div class="col-md-4 p-4 ">
                         <div class="bg-white white-box-small subscriptionBox   ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
-                            <p class="price">Rs. {{$subsprice}}</p>
+                            <p class="price">Rs. XXXX {{--$subsprice--}}</p>
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
 
@@ -82,7 +82,7 @@
                     <div class="col-md-4 p-4 ">
                         <div class="bg-white white-box-small subscriptionBox  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
-                            <p class="price">Rs. {{$subsprice}}</p>
+                            <p class="price">Rs. XXXX {{--$subsprice--}}</p>
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">

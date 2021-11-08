@@ -19,7 +19,7 @@
         <div class="welcome-heading">Welcome to UniQ</div>
         <div class="welcome-msg">Please login using your registered email/ Mobile number </div>
         <form id="studentlogin" method="post">
-            @csrf
+            {{-- @csrf --}}
             <div id="mobile_input">
                 <div class="text-box mt-5">
                     <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
@@ -91,7 +91,11 @@
              $("#errlog_mob").fadeOut(5000);
              return false;
          } */
-
+        /*  $.ajaxSetup({
+             headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             }
+         }); */
         $.ajax({
             url: "{{ route('sendotplogin') }}",
             type: 'POST',
