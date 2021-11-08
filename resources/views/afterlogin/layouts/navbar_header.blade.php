@@ -199,6 +199,9 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                         </div>
                                         <div class="d-flex bg-light align-items-center px-4 py-3">
                                             <span><i class="fas fa-check-circle text-success fa-4x"></i></span>
+                                            <?php 
+                                            $fromdate = isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):'';
+                                            $todaydate = date("d-m-Y"); ?>
                                             <div class="subscribe-detail">
                                                 @if(isset($subscription_details) && !empty($subscription_details))
                                                 <p class="mb-0">Subscribed
@@ -210,8 +213,14 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
+                                        @if($fromdate > $todaydate)
                                         <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
+                                        @else
+                                        <p class="text-end text-danger mt-1">*Subscription already expired</p>
+                                        @endif
+
+
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
