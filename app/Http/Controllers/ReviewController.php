@@ -101,10 +101,9 @@ class ReviewController extends Controller
             $all_ids = $result_response->question_ids;
             $all_question_list = $aQuestionslist->all();
 
-            /* dd($all_question_list);
 
-            Redis::set('review_question', json_encode($all_question_list));
- */
+
+
             $collection = collect($all_question_list);
 
             $allQuestions = $aQuestionslist->keyBy('question_id');
@@ -124,6 +123,8 @@ class ReviewController extends Controller
 
             $word1 = "/public/images/questions/";
             $word2 = "public/images/questions/";
+
+
 
 
             Redis::set($cacheKey, json_encode($result_response));
@@ -234,33 +235,33 @@ class ReviewController extends Controller
         if (isset($result_response->all_question) && !empty($result_response->all_question)) {
 
 
-            $all_data = collect($result_response->all_question)->sortBy('subject_id');
+            $collection = collect($result_response->all_question);
 
-            $allQuestions = $all_data->keyBy('question_id');
-            $allQuestionsArr = $all_data->all();
+            $aDefault_seq = collect($result_response->all_question);
+
+            $allQuestions = $collection->keyBy('question_id');
+
             $allkeys = $allQuestions->keys('question_id')->all();
 
+            $grouped = $collection->groupBy('subject_id');
+            $subject_ids = $collection->pluck('subject_id');
 
-
-            $first = $result_response->first;
-
-            $key = array_search($question_id, array_column($allQuestionsArr, 'question_id'));
-
-            $qNo = $key + 1;
-            $nextKey = $key + 1;
-            $nextKey = $nextKey % count($result_response->all_question);
-            if ($key > 0) { // Key would become 0
-                $prevKey = $key - 1;
+            if (count($grouped) > 1) {
+                $all_data = $collection->sortBy('subject_id');
             } else {
-                $prevKey = $key;
+                $all_data = $collection;
             }
 
-            $next_qid = $allkeys[$nextKey];
-
-            $prev_qid = $allkeys[$prevKey];
-            $last_qid = end($allkeys);
+            $sq = 1;
+            // dd($result_response);
+            foreach ($all_data as $key => $list) {
+                $list->seq = $sq;
+                $sq++;
+            }
 
             $question_data = $all_data->where('question_id', $question_id)->first();
+
+            $qNo = $question_data->seq;
             $q_id = $question_data->question_id;
             $activeq_id = $question_data->question_id;
             $question = $question_data->question;
@@ -274,6 +275,128 @@ class ReviewController extends Controller
             $collection_chpater = collect($chapter_list);
             $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
             $chapter_name = isset($filter->chapter_name) ? $filter->chapter_name : '';
+
+
+            $question_data->chapter_name = $chapter_name;
+
+
+
+            $question_id_array[] = $q_id;
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            if ((strpos($question, $word1) !== false)) {
+                $question_data->question = str_replace($word1, $publicPath, $question_data->question);
+            } elseif ((strpos($question, $word2) !== false)) {
+                $question_data->question = str_replace($word2, $publicPath, $question_data->question);
+            }
+            if ((strpos($reference_text, $word1) !== false)) {
+                $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
+            } elseif ((strpos($reference_text, $word2) !== false)) {
+                $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
+            }
+            if ((strpos($explanation, $word1) !== false)) {
+                $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
+            } elseif ((strpos($explanation, $word2) !== false)) {
+                $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
+            }
+            $tempdata = (array)json_decode($question_data->question_options);
+            $opArr = [];
+            if (isset($tempdata) && is_array($tempdata)) {
+                foreach ($tempdata as $key => $option) {
+
+                    if ((strpos($option, $word1) !== false)) {
+                        $option = str_replace($word1, $publicPath, $option);
+                    } else if ((strpos($option, $word2) !== false)) {
+                        $option = str_replace($word2, $publicPath, $option);
+                    }
+                    $opArr[$key] = $option;
+                }
+            }
+        }
+        $question_data->question_options = json_encode($opArr);
+
+
+        $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
+
+        if (isset($correct_ans)) {
+            foreach ($correct_ans as $ankey => $anoption) {
+
+
+                if ((strpos($anoption, $word1) !== false)) {
+                    $anoption = str_replace($word1, $publicPath, $anoption);
+                } elseif ((strpos($anoption, $word2) !== false)) {
+                    $anoption = str_replace($word2, $publicPath, $anoption);
+                }
+
+                $correct_ans->$ankey = $anoption;
+            }
+        }
+        $answerKeys = array_keys((array)$correct_ans);
+
+
+        return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
+    }
+
+    public function ajax_review_next_subject_question($subject_id, Request $request)
+    {
+
+        $user_data = Auth::user();
+        $user_id = Auth::user()->id;
+        $exam_id = Auth::user()->grade_id;
+        $cacheKey = 'exam_review:' . $user_id;
+        $redis_result = Redis::get($cacheKey);
+
+        if ($data = Redis::get($cacheKey)) {
+            $subject_list = json_decode($data);
+        }
+
+        if (isset($redis_result) && !empty($redis_result)) :
+            $response = json_decode($redis_result);
+        endif;
+
+        $result_response = $response;
+        $question_data = [];
+        $attempt_opt = [];
+        $word1 = "/public/images/questions/";
+        $word2 = "public/images/questions/";
+
+        if (isset($result_response->all_question) && !empty($result_response->all_question)) {
+
+            $aDefault_seq = collect($result_response->all_question);
+            $all_data = collect($result_response->all_question);
+            $all_data = $all_data->sortBy('subject_id');
+
+            $allQuestions = $all_data->keyBy('question_id');
+            $filtered = $all_data->where('subject_id', $subject_id);
+            $first = $filtered->first();
+            $question_id = $first->question_id;
+            $allQuestionsArr = $all_data->all();
+            $allkeys = $allQuestions->keys('question_id')->all();
+
+            $sq = 1;
+            // dd($result_response);
+            foreach ($all_data as $key => $list) {
+                $list->seq = $sq;
+                $sq++;
+            }
+
+
+            $question_data = $all_data->where('question_id', $question_id)->first();
+            $qNo = $question_data->seq;
+            $q_id = $question_data->question_id;
+            $activeq_id = $question_data->question_id;
+            $question = $question_data->question;
+            $reference_text = $question_data->reference_text;
+            $explanation = $question_data->explanation;
+            $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+
+            $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+            $activeChapt_id = isset($question_data->chapter_id) ? $question_data->chapter_id : '';
+            $chapter_list = $this->redis_chapter_list($activesub_id);
+            $collection_chpater = collect($chapter_list);
+            $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
+            $chapter_name = isset($filter->chapter_name) ? $filter->chapter_name : '';
+
 
             $question_data->chapter_name = $chapter_name;
 
@@ -330,125 +453,7 @@ class ReviewController extends Controller
         $answerKeys = array_keys((array)$correct_ans);
 
 
-        return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
-    }
-
-    public function ajax_review_next_subject_question($subject_id, Request $request)
-    {
-
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
-        $cacheKey = 'exam_review:' . $user_id;
-        $redis_result = Redis::get($cacheKey);
-
-        if ($data = Redis::get($cacheKey)) {
-            $subject_list = json_decode($data);
-        }
-
-        if (isset($redis_result) && !empty($redis_result)) :
-            $response = json_decode($redis_result);
-        endif;
-
-        $result_response = $response;
-        $question_data = [];
-        $attempt_opt = [];
-        $word1 = "/public/images/questions/";
-        $word2 = "public/images/questions/";
-
-        if (isset($result_response->all_question) && !empty($result_response->all_question)) {
-
-
-            $all_data = collect($result_response->all_question);
-            $all_data = $all_data->sortBy('subject_id');
-
-            $allQuestions = $all_data->keyBy('question_id');
-            $filtered = $all_data->where('subject_id', $subject_id);
-            $first = $filtered->first();
-            $question_id = $first->question_id;
-            $allQuestionsArr = $all_data->all();
-            $allkeys = $allQuestions->keys('question_id')->all();
-
-            $first = $result_response->first;
-
-            $key = array_search($question_id, array_column($allQuestionsArr, 'question_id'));
-
-            $qNo = $key + 1;
-            $nextKey = $key + 1;
-            $nextKey = $nextKey % count($result_response->all_question);
-            if ($key > 0) { // Key would become 0
-                $prevKey = $key - 1;
-            } else {
-                $prevKey = $key;
-            }
-
-            $next_qid = $allkeys[$nextKey];
-
-            $prev_qid = $allkeys[$prevKey];
-            $last_qid = end($allkeys);
-
-            $question_data = $all_data->where('question_id', $question_id)->first();
-            $q_id = $question_data->question_id;
-            $activeq_id = $question_data->question_id;
-            $question = $question_data->question;
-            $reference_text = $question_data->reference_text;
-            $explanation = $question_data->explanation;
-            $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
-
-            $question_id_array[] = $q_id;
-            //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-            if ((strpos($question, $word1) !== false)) {
-                $question_data->question = str_replace($word1, $publicPath, $question_data->question);
-            } elseif ((strpos($question, $word2) !== false)) {
-                $question_data->question = str_replace($word2, $publicPath, $question_data->question);
-            }
-            if ((strpos($reference_text, $word1) !== false)) {
-                $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
-            } elseif ((strpos($reference_text, $word2) !== false)) {
-                $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
-            }
-            if ((strpos($explanation, $word1) !== false)) {
-                $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
-            } elseif ((strpos($explanation, $word2) !== false)) {
-                $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-            }
-            $tempdata = (array)json_decode($question_data->question_options);
-            $opArr = [];
-            if (isset($tempdata) && is_array($tempdata)) {
-                foreach ($tempdata as $key => $option) {
-
-                    if ((strpos($option, $word1) !== false)) {
-                        $option = str_replace($word1, $publicPath, $option);
-                    } else if ((strpos($option, $word2) !== false)) {
-                        $option = str_replace($word2, $publicPath, $option);
-                    }
-                    $opArr[$key] = $option;
-                }
-            }
-        }
-        $question_data->question_options = json_encode($opArr);
-
-
-        $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
-
-        if (isset($correct_ans)) {
-            foreach ($correct_ans as $ankey => $anoption) {
-
-
-                if ((strpos($anoption, $word1) !== false)) {
-                    $anoption = str_replace($word1, $publicPath, $anoption);
-                } elseif ((strpos($anoption, $word2) !== false)) {
-                    $anoption = str_replace($word2, $publicPath, $anoption);
-                }
-
-                $correct_ans->$ankey = $anoption;
-            }
-        }
-        $answerKeys = array_keys((array)$correct_ans);
-
-
-        return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
+        return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
     }
 
 

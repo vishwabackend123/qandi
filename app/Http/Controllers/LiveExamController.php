@@ -262,7 +262,7 @@ class LiveExamController extends Controller
             $response_data = (json_decode($response_json));
             $response = isset($response_data->response) ? $response_data->response : [];
 
-            return view('afterlogin.ExamCustom.exam_result', compact('response'));
+            return view('afterlogin.LiveExam.live_result_analysis', compact('response'));
         } else {
 
             return redirect()->back();
