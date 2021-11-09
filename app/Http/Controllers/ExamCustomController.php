@@ -638,24 +638,24 @@ class ExamCustomController extends Controller
         }
 
         $collect_topic = collect($topics_list);
-        if ($filter_by == 'asc') {
+        if ($filter_by == 'priority') {
             $sorted = $collect_topic->sortBy([
-                ['topic_name', 'asc']
+                ['topic_priority', 'asc']
             ]);
             $topics = $sorted->values()->all();
-        } elseif ($filter_by == 'desc') {
+        } elseif ($filter_by == 'sequence') {
             $sorted = $collect_topic->sortBy([
-                ['topic_name', 'desc']
+                ['topic_sequence', 'asc']
             ]);
             $topics = $sorted->values()->all();
         } elseif ($filter_by == 'prof_asc') {
             $sorted = $collect_topic->sortBy([
-                ['score', 'asc']
+                ['topic_score', 'asc']
             ]);
             $topics = $sorted->values()->all();
         } elseif ($filter_by == 'prof_desc') {
             $sorted = $collect_topic->sortBy([
-                ['chapscoreter_name', 'desc']
+                ['topic_score', 'desc']
             ]);
             $topics = $sorted->values()->all();
         } else {

@@ -95,8 +95,8 @@
                                             <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                                                 <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> Low Proficiency</a></li>
                                                 <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> High Proficiency</a></li>
-                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','asc')" href="javascript:void(0);"> A to Z order</a></li>
-                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','desc')" href="javascript:void(0);"> Z to A order</a></li>
+                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','priority')" href="javascript:void(0);"> Order by Priority</a></li>
+                                                <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','sequence')" href="javascript:void(0);"> Order by Sequence</a></li>
 
                                             </ul>
                                         </div>
