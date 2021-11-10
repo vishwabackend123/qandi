@@ -4,7 +4,7 @@
     </div>
 
     <div class="dash-nav-link">
-        <a href="{{ url('/dashboard') }}" class="active-navlink"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="71" viewBox="0 0 72 71">
+        <a href="{{ url('/dashboard') }}" class="active-navlink" id="dashboard"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="71" viewBox="0 0 72 71">
                 <defs>
                     <style>
                         .a {
@@ -96,7 +96,7 @@
             <span class="hoverlink">Dashboard</span>
         </a>
 
-        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false">
+        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" id="Practice">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
                 <defs>
                     <style>
@@ -232,7 +232,7 @@
             </svg>
             <span class="hoverlink">Prepare</span>
         </a>
-        <a href="#" class="mt-auto" data-bs-toggle="modal" data-bs-target="#sharefrnd">
+        <a href="#" class="mt-auto" data-bs-toggle="modal" data-bs-target="#sharefrnd" id="share">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
                 <defs>
                     <style>

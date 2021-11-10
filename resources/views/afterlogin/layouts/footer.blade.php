@@ -186,6 +186,12 @@
         });
     });
 
+    $('#saveEdit').click(function() {
+        $('.edit-icon').css({
+            'display': 'none'
+        });
+    });
+
     $("#editProfile_form").validate({
 
         submitHandler: function(form) {
@@ -894,7 +900,8 @@
             }
             var chapters = [];
             var chapters = $('input[name="chapters[]"]').length;
-
+            alert(chapters);
+            alert(limit);
             if (chapters < limit) {
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 setTimeout(function() {
@@ -987,6 +994,34 @@
         jQuery(".dash-nav-link").click(function() {
             jQuery("#collapseExample").hide();
             jQuery("#notification").hide();
+        });
+
+        jQuery("#Practice").click(function() {
+            jQuery('#Practice').addClass('active-navlink');
+            $('#dashboard').removeClass('active-navlink');
+            $('#submenupreparationlink').removeClass('active-navlink');
+            $('#share').removeClass('active-navlink');
+        });
+
+        jQuery("#submenupreparationlink").click(function() {
+            jQuery('#submenupreparationlink').addClass('active-navlink');
+            $('#dashboard').removeClass('active-navlink');
+            $('#Practice').removeClass('active-navlink');
+            $('#share').removeClass('active-navlink');
+        });
+
+        jQuery("#dashboard").click(function() {
+            jQuery('#dashboard').addClass('active-navlink');
+            $('#submenupreparationlink').removeClass('active-navlink');
+            $('#Practice').removeClass('active-navlink');
+            $('#share').removeClass('active-navlink');
+        });
+
+        jQuery("#share").click(function() {
+            jQuery('#share').addClass('active-navlink');
+            $('#submenupreparationlink').removeClass('active-navlink');
+            $('#Practice').removeClass('active-navlink');
+            $('#dashboard').removeClass('active-navlink');
         });
     });
 </script>
