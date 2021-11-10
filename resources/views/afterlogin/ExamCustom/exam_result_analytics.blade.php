@@ -4,13 +4,13 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
-    /*$(window).load(function() {
+    $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
             keyboard: false
         });
         $('#endExam').modal('show');
-    });*/
+    });
 </script>
 @section('content')
 <!-- Side bar menu -->

@@ -137,8 +137,10 @@
             if (timeLeft == -1) {
                 clearTimeout(timerId);
                 $('#resendOtp_link').show();
+                $('#wait_otp_div').hide();
                 /*  sentotplogin(); */
             } else {
+                $('#wait_otp_div').show();
                 //elem.innerHTML = 'Resend OTP in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
                 elem.innerHTML = 'Resend OTP in ' + timeLeft + ' sec ';
                 timeLeft--;

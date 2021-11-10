@@ -161,6 +161,7 @@ class ResultController extends Controller
             $response_data = (json_decode($response_json));
             $response = isset($response_data->response) ? $response_data->response : [];
 
+
             return view('afterlogin.ExamCustom.exam_result', compact('response'));
         } else {
 

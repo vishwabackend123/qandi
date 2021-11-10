@@ -133,9 +133,9 @@
                         @foreach($response->subject_wise_result as $subject)
                         @php $subject=(object)$subject; @endphp
                         @php
-                        $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->correct_count/$subject->total_questions)*100:0;
-                        $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->incorrect_count/$subject->total_questions)*100:0;
-                        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?($subject->unanswered_count/$subject->total_questions)*100:0;
+                        $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->correct_count/$subject->total_questions)*100),2):0;
+                        $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
+                        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),round):0;
                         @endphp
                         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
                             <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>
@@ -212,8 +212,8 @@
                                         @foreach($response->topic_wise_result as $topic)
                                         @php $topic=(object)$topic; @endphp
                                         @php
-                                        $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->correct_count/$topic->total_questions)*100:0;
-                                        $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?($topic->incorrect_count/$topic->total_questions)*100:0;
+                                        $tcorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->correct_count/$topic->total_questions)*100),2):0;
+                                        $tincorrect_per=(isset($topic->total_questions) && $topic->total_questions>0)?round((($topic->incorrect_count/$topic->total_questions)*100),2):0;
                                         $tnot_attempt_per=(100-($tcorrect_per+$tincorrect_per));
 
                                         @endphp
@@ -294,11 +294,11 @@
 @include('afterlogin.layouts.footer')
 
 @php
-$correct=isset($response->correct_count)?$response->correct_count:0;
-$incorrect=isset($response->wrong_count)?$response->wrong_count:0;
+$correct_cnt=isset($response->correct_count)?$response->correct_count:0;
+$incorrect_cnt=isset($response->wrong_count)?$response->wrong_count:0;
 $not_attempt=isset($response->total_exam_marks)?$response->total_exam_marks:0;
 
-$total_question = $correct+$incorrect+$not_attempt;
+$total_question = $response->no_of_question;
 
 $total_makrs=isset($response->total_exam_marks)?$response->total_exam_marks:0;
 $correct_score=isset($response->correct_score)?$response->correct_score:0;
@@ -308,10 +308,10 @@ $get_score_json=json_encode($get_score);
 $class_average=(isset($response->class_average) && ($response->class_average)>=0)?$response->class_average:0;
 $class_average_json=json_encode($class_average);
 
-$correct_per=!empty($total_question)?number_format((($correct/$total_question)*100),2):0;
-$incorrect_per=!empty($total_question)?number_format((($incorrect/$total_question)*100),2):0;
+$correct_per_pie=!empty($total_question)?round((($correct_cnt/$total_question)*100),2):0;
+$incorrect_per_pie=!empty($total_question)?round((($incorrect_cnt/$total_question)*100),2):0;
 
-$not_attempt_per=100-($correct_per+$incorrect_per);
+$not_attempt_per_pie=100-($correct_per_pie+$incorrect_per_pie);
 
 $subject_graph=isset($response->subject_graph)?$response->subject_graph:0;
 $stuscore_arr=$clsAvg_arr=[];
@@ -390,17 +390,17 @@ $clsAvg_json=json_encode($clsAvg_arr);
             innerSize: '90%',
             data: [{
                     name: 'Correct Attempts',
-                    y: <?php echo $correct_per; ?>,
+                    y: <?php echo $correct_per_pie; ?>,
                     color: '#AFF3D0' // Jane's color
                 },
                 {
                     name: 'Wrong Attempts',
-                    y: <?php echo $incorrect_per; ?>,
+                    y: <?php echo $incorrect_per_pie; ?>,
                     color: '#ff9999' // Jane's color
                 },
                 {
                     name: 'Not Answered',
-                    y: <?php echo $not_attempt_per; ?>,
+                    y: <?php echo $not_attempt_per_pie; ?>,
                     color: '#e4e4e4' // Jane's color
                 }
 
