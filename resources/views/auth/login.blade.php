@@ -91,11 +91,11 @@
              $("#errlog_mob").fadeOut(5000);
              return false;
          } */
-        /*  $.ajaxSetup({
-             headers: {
-                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-             }
-         }); */
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         $.ajax({
             url: "{{ route('sendotplogin') }}",
             type: 'POST',
