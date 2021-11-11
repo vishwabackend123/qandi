@@ -127,7 +127,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="profile-form-block" id="profile-form">
-                                                    <form id="editProfile_form" action="{{route('editProfile')}}" method="POST">
+                                                    <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                                                         @csrf
                                                         <div class="text-box mt-3">
 

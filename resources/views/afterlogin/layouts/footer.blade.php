@@ -900,8 +900,8 @@
             }
             var chapters = [];
             var chapters = $('input[name="chapters[]"]').length;
-            alert(chapters);
-            alert(limit);
+            /*alert(chapters);
+            alert(limit);*/
             if (chapters < limit) {
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 setTimeout(function() {
