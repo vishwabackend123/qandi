@@ -126,7 +126,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="profile-form-block" id="profile-form">
+                                                <div class="profile-form-block profilescrollblock pe-3 pb-2" id="profile-form">
                                                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                                                         @csrf
                                                         <div class="text-box mt-3">
@@ -199,8 +199,8 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                         </div>
                                         <div class="d-flex bg-light align-items-center px-4 py-3">
                                             <span><i class="fas fa-check-circle text-success fa-4x"></i></span>
-                                            <?php 
-                                            $fromdate = isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):'';
+                                            <?php
+                                            $fromdate = isset($subscription_details->subscription_end_date) ? date("d-m-Y", strtotime($subscription_details->subscription_end_date)) : '';
                                             $todaydate = date("d-m-Y"); ?>
                                             <div class="subscribe-detail">
                                                 @if(isset($subscription_details) && !empty($subscription_details))
@@ -377,7 +377,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                     <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/images/edit.png')}}"></a>
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/images/Layer-4.png')}}" class="bg-white"></a>
                     <a href="javascript:void(0);" class="close" data-dismiss="modal" id="close-planner-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}" width="35%"></a>
-                
+
                 </span>
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
@@ -569,25 +569,23 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
     $(document).ready(function() {
         $('.close').click(function() {
             $('#collapseExample').hide();
-           
+
             calendari(document.getElementById('calendari'), new Date());
-          });
+        });
         /*edit planner*/
         var chapters = $('input[name="chapters[]"]').length;
         var limit = $('#customRange').val();
         $('#slide-input').html(chapters);
         $('input[name="weekrange').val(chapters);
         var rvalue1 = (chapters - 0) / (7 - 0) * 100;
-            $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
+        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
 
         /*edit planner*/
 
         /*Refer Firend*/
         $('.btn-close').click(function() {
-        $('#referEmails').val('');
+            $('#referEmails').val('');
         });
         /*Refer Firend*/
     });
-
-
 </script>

@@ -33,7 +33,7 @@
                                 <span id="dwn_rep_error" class="text-danger small" style="display:none"></span>
                             </div>
                             <div class="w-100 text-center">
-                                <button class="rounded-0 btn btn-danger px-5 mt-4" href="" id="clicker"><i class="fa fa-download"></i> Download
+                                <button class="rounded-0 btn btn-danger px-5 mt-4 hidden" href="" id="clicker"><i class="fa fa-download"></i> Download
                                 </button>
                             </div>
                         </form>

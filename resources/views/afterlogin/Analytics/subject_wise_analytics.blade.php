@@ -7,13 +7,13 @@
     <div class="row">
         <div class="col-lg-5">
             <div class=" ">
-                <div class="row">
+                <div class="row m-0 p-0">
                     <div class="col-7 pe-0">
                         <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
                             <span class=" p-3">
-                                <div id="scorecontainer" class="text-right"></div>
+                                <div id="subjectscorecontainer" class="text-right"></div>
                             </span>
-                            <span class="mt-auto me-0 bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
+                            <span class="mt-auto me-0 bg-light p-3 d-flex  justify-content-center flex-column ">
                                 <span class="abri">
                                     <span class="abrv-mean bg1">
                                     </span>
@@ -752,9 +752,9 @@
 </script>
 
 <script>
-    Highcharts.chart('scorecontainer', {
+    Highcharts.chart('subjectscorecontainer', {
         chart: {
-            height: 180,
+            height: 185,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -799,7 +799,7 @@
                             return false;
                         }
                     }
-                }
+                },
                 startAngle: -140,
                 endAngle: 140,
                 center: ['50%', '50%'],

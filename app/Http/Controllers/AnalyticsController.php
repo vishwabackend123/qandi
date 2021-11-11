@@ -46,7 +46,7 @@ class AnalyticsController extends Controller
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
+            CURLOPT_TIMEOUT => 100,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
@@ -65,6 +65,7 @@ class AnalyticsController extends Controller
             $weeklyReport = json_decode($overallAnalytics->weekly_report);
             $monthlyReport = json_decode($overallAnalytics->monthlyReport);
             $subProf = json_decode($overallAnalytics->subject_proficiency);
+            $unitProf = $overallAnalytics->unit_proficiency;
             $accuracy = json_decode($overallAnalytics->accuracy);
             $timeSpent = json_decode($overallAnalytics->time_taken);
 
@@ -203,6 +204,7 @@ class AnalyticsController extends Controller
             $stuAccuracy = json_encode($stuAccuracy);
 
 
+
             return view('afterlogin.Analytics.overall_analytics', compact(
                 'days',
                 'classAccuracy',
@@ -261,7 +263,7 @@ class AnalyticsController extends Controller
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
+            CURLOPT_TIMEOUT => 100,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
@@ -275,6 +277,7 @@ class AnalyticsController extends Controller
 
 
 
+
         if ($res_status == true) :
             $scoreData = isset($overallAnalytics->test_score) ? $overallAnalytics->test_score : [];
 
@@ -282,6 +285,7 @@ class AnalyticsController extends Controller
             $weeklyReport = json_decode($overallAnalytics->weekly_report);
             $monthlyReport = json_decode($overallAnalytics->monthlyReport);
             $subProf = json_decode($overallAnalytics->subject_proficiency);
+            $unitProf = $overallAnalytics->unit_proficiency;
             $subProf_collection = collect($subProf);
             $overall_prof_perc = $subProf_collection->sum('score');
             $accuracy = json_decode($overallAnalytics->accuracy);
@@ -408,6 +412,10 @@ class AnalyticsController extends Controller
             $classAccuracy = json_encode($classAccuracy);
             $stuAccuracy = json_encode($stuAccuracy);
 
+
+            //dd($unitProf, $subProf);
+
+
             return view('afterlogin.Analytics.export_analytics', compact(
                 'overallAnalytics',
                 'days',
@@ -417,6 +425,7 @@ class AnalyticsController extends Controller
                 'classAcc',
                 'stuAcc',
                 'subProf',
+                'unitProf',
                 'overall_prof_perc',
                 'correctAns1',
                 'incorrectAns1',
@@ -457,7 +466,7 @@ class AnalyticsController extends Controller
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
+            CURLOPT_TIMEOUT => 100,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
@@ -621,7 +630,7 @@ class AnalyticsController extends Controller
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
+            CURLOPT_TIMEOUT => 100,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",

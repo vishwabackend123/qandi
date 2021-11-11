@@ -135,7 +135,7 @@
                         @php
                         $correct_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->correct_count/$subject->total_questions)*100),2):0;
                         $incorrect_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->incorrect_count/$subject->total_questions)*100),2):0;
-                        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),round):0;
+                        $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
                         @endphp
                         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
                             <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>

@@ -88,7 +88,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 $latex = "https://math.now.sh?from=".$text;
                                                 $view_opt='<img src="'.$latex.'" />' ;
 
-                                                
+
                                                 $resp_class= '';
                                                 @endphp
                                                 <div class="col-md-6 mb-4">
@@ -108,7 +108,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                         </div>
                                     </div>
 
-                                    
+
 
                                 </div>
                             </div>
@@ -138,35 +138,36 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                         </div>
                     </div> -->
-                    <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box ">
+                    <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box pt-2 ">
                         <div class="d-flex mb-3 reviewBox2">
                             <div class="col-10 heading">
                                 <h5>Bookmarks Questions </h5>
                             </div>
-                            
+
 
                         </div>
-                        <div class="review-questions-blk" id="filter_questions">
+                        <div class="review-questions-blk h-100" id="filter_questions">
                             @php $quKee=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
 
                             @foreach($all_question_list as $kee=>$value)
-                            <?php //echo "<pre>"; print_r($value); die; ?>
-                            
+                            <?php //echo "<pre>"; print_r($value); die; 
+                            ?>
+
                             @php
 
                             $key_id=$value->question_id;
-                            
+
                             $div_class = '';
                             @endphp
                             <div class="d-flex align-items-center1">
-                                <div class="review-questions-box {{$div_class}}">
-                                <button type="button" class="next_button1 btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">                              
-                                    <div class="d-flex">
-                                        <div class="me-3">Q{{$quKee}}. </div>
-                                        <p class="mb-0"><span style="text-align: left;">{!! $value->question !!} </span></p>
-                                    </div>
-                                </button>
+                                <div class="review-questions-box {{$div_class}} pb-2">
+                                    <button type="button" class="next_button1 btn {{$key_class}} rounded-0" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">
+                                        <div class="d-flex">
+                                            <div class="me-3">Q{{$quKee}}. </div>
+                                            <p class="mb-0"><span style="text-align: left;">{!! $value->question !!} </span></p>
+                                        </div>
+                                    </button>
                                 </div>
                             </div>
                             @php $quKee++; @endphp
@@ -199,7 +200,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 
     $('.review-questions-blk').slimscroll({
-        height: '58vh'
+        height: '68vh'
     });
 
     function bookmarkforreview(quest_id, subject_id, chapt_id) {

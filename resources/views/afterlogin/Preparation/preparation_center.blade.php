@@ -352,6 +352,10 @@
 
 @endsection
 <script>
+    $(".h-scroll-slim").slimscroll({
+        height: "80vh",
+    });
+
     function get_preparationSubjectData(subject_id, preType) {
         url = "{{ url('preparation_center_subject/') }}";
         $.ajax({

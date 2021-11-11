@@ -88,7 +88,7 @@ class SubscriptionController extends Controller
         }
 
         $aPurchased = collect($purchased_packages);
-        
+
         /*trial link*/
         $curl_url1 = $api_URL . 'api/subscriptions/' . $user_id;
 
@@ -110,7 +110,7 @@ class SubscriptionController extends Controller
         curl_close($curl1);
 
         $aResponse1 = json_decode($response_json1);
-        
+
         $response_status1 = isset($aResponse1->success) ? $aResponse1->success : false;
         if ($response_status1 == true) {
 
@@ -129,10 +129,10 @@ class SubscriptionController extends Controller
 
         $aPurchasedpack = collect($purchased_packages1);
         /*trial link*/
-        
 
 
-        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased','aPurchasedpack','purchasedid'));
+
+        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid'));
     }
 
 

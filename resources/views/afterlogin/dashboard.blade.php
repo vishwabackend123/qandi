@@ -98,20 +98,20 @@
                 </div>
                 @endif
 
-                <div class="col-lg-4">
-                    <div class="bg-white shadow h-100">
-                        <div class="row">
-                            <div class="col-md-7 pe-0 ">
+                <div class="col-lg-3">
+                    <div class="bg-white shadow w-100 h-100">
+                        <div class="row m-0 p-0">
+                            <div class="col-md-12 position-relative pe-0 ps-0">
                                 <div class="d-flex justify-content-center flex-column   position-relative">
                                     <div class="" id="scorecontainer"></div>
-                                    <span class=" bg-light p-2 d-flex  justify-content-center flex-column graph-bottom-block">
+                                    <span class=" bg-light p-2 d-flex  justify-content-center flex-column ">
                                         <span class="abri"> <span class="abrv-mean bg1"></span>Last Mock Test Score</span>
                                         <span class="abri"> <span class="abrv-mean bg2"></span>Progress From Previous Score</span>
                                         <span class="abri"> <span class="abrv-mean bg3"></span>Next Mock Test Target</span>
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-md-5  ">
+                            <!-- <div class="col-md-5  ">
                                 <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                     <span></span>
                                     <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
@@ -120,12 +120,12 @@
                                     </span>
 
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <div class="bg-white shadow p-3 h-100">
                         <div class="d-flex ">
                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
@@ -421,8 +421,8 @@
                 @endif
 
                 <div class="d-flex align-items-center mt-5">
-                    <a href="#" class="btn rating-back-btn px-4 ">
-                        <i class="fa fa-chevron-left"></i> &nbsp;&nbsp;Back </a>
+                    <!-- <a href="#" class="btn rating-back-btn px-4 ">
+                        <i class="fa fa-chevron-left"></i> &nbsp;&nbsp;Back </a> -->
                     <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
 
                 </div>
@@ -749,7 +749,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 175,
+            height: 185,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
