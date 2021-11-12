@@ -155,6 +155,7 @@ class StudentSignInController extends Controller
 
 
             Session::put('user_data', $user_data);
+
             if (Auth::loginUsingId($user_data->id)) {
 
                 $response['status'] = 200;
