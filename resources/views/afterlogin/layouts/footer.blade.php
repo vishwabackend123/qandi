@@ -164,6 +164,9 @@
     $(".scroll-div").slimscroll({
         height: "40vh",
     });
+    $(".profilescrollblock").slimscroll({
+        height: "55vh",
+    });
     $(".subject_chapter").slimscroll({
         height: "30vh",
     });
@@ -246,7 +249,7 @@
             var emails = $('#referEmails').val();
             var arrayEmails = emails.split(',');
             var countEmails = arrayEmails.length;
-            
+
             console.log(arrayEmails);
             arrayEmails.forEach(element => {
                 var emval = element.trim();
@@ -257,7 +260,7 @@
             });
 
 
-            
+
             if (countEmails == 1 && $check == 1) {
                 $("#errRef_auth").html("Please enter a valid email")
                 $("#errRef_auth").show();
@@ -900,7 +903,7 @@
             }
             var chapters = [];
             var chapters = $('input[name="chapters[]"]').length;
-            
+
             if (chapters < limit) {
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 /*setTimeout(function() {
@@ -962,7 +965,7 @@
     /* document.addEventListener('contextmenu', event => event.preventDefault()); */
 
     document.onkeydown = function(e) {
-        
+
         // disable F12 key
         if (e.keyCode == 123) {
             return false;

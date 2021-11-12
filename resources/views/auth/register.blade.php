@@ -292,10 +292,12 @@
             if (timeLeft == -1) {
                 clearTimeout(timerId);
                 $('#resendOtp_link').show();
+                $('#some_div').hide();
                 //sentotplogin();
                 //$('#goto-otp-btn').click();
 
             } else {
+                $('#some_div').show();
                 // elem.innerHTML = 'Resend OTP in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
                 elem.innerHTML = 'Resend OTP in ' + timeLeft + ' sec ';
                 timeLeft--;

@@ -213,118 +213,121 @@
                                 <div class="row">
                                     @if(!empty($subProf))
                                     @foreach($subProf as $key=>$sub)
+                                    @php $subId=$sub->subject_id; @endphp
 
-                                    <div class="col-md-4">
-                                        <span class="dashboard-name-txt">{{$sub->subject_name}}</span>
+                                    <div class="col-md-12 border-bottom pt-2">
+                                        <span class="dashboard-name-txt fw-bold">{{$sub->subject_name}}</span>
+                                        <div class="px-4">
+                                            @foreach($unitProf->$subId as $unit)
+                                            <div class="d-flex align-items-center  ">
 
-                                        @for($x=1; $x<=3; $x++) <div class="d-flex align-items-center  pb-1">
-
-                                            <div class="row d-flex  align-items-center py-1 dashboard-listing-details  w-100 col-6">
-                                                <span class="col-md-6 mr-3 dashboard-name-txt">Unit {{$x}}</span>
-                                                <div class="col-md-6 status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                                                        <div class="star-ratings-css">
-                                                            <div class="star-ratings-css-top" style="width: 0%">
-                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                <div class="row d-flex  align-items-center py-1 dashboard-listing-details  w-100 col-6">
+                                                    <span class="col-md-6 mr-3 dashboard-name-txt">{{$unit->uni_name}}</span>
+                                                    <div class="col-md-6 status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                                        <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                                            <div class="star-ratings-css">
+                                                                <div class="star-ratings-css-top" style="width:{{round($unit->score)}}%">
+                                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                </div>
+                                                                <div class="star-ratings-css-bottom">
+                                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                </div>
                                                             </div>
-                                                            <div class="star-ratings-css-bottom">
-                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                            <div class="ms-1 score score-rating js-score">
+                                                                {{round($unit->score)}}%
                                                             </div>
-                                                        </div>
-                                                        <div class="ms-1 score score-rating js-score">
-                                                            0%
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endforeach
+                                        </div>
                                     </div>
-                                    @endfor
+
+
+                                    @endforeach
+                                    @endif
                                 </div>
-
-
-                                @endforeach
-                                @endif
                             </div>
                         </div>
-                    </div>
-                    <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
-                        <p class="text-uppercase fw-bold text-start">
-                            Time Management
-                        </p>
-                        <div id="time_management"></div>
-                    </div>
-                    <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
-                        <p class="text-uppercase fw-bold text-start">
-                            Average Time Spent on each Question
-                        </p>
-                        <div id="accPer1"></div>
-                    </div>
-                    <div class="bg-white shadow-lg p-3 px-5 mt-3">
-                        <p class="text-uppercase fw-bold text-start">
-                            Acuracy Percentage
-                        </p>
-                        <div id="accPer"></div>
-                    </div>
-                    <h4 class="my-5 text-dark text-center fw-light">
-                        Detailed Report Analysis
-                    </h4>
-                </div>
-                <div class="report-block1 p-5">
-                    <div class="d-flex align-items-center p-5">
-                        <div class="w-34">
-                            <h1 class="reportHeading w-100">Inferences</h1>
+                        <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
+                            <p class="text-uppercase fw-bold text-start">
+                                Time Management
+                            </p>
+                            <div id="time_management"></div>
                         </div>
-                        <div class="ms-auto d-flex align-items-center">
-                            <div>
-                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
+                        <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
+                            <p class="text-uppercase fw-bold text-start">
+                                Average Time Spent on each Question
+                            </p>
+                            <div id="accPer1"></div>
+                        </div>
+                        <div class="bg-white shadow-lg p-3 px-5 mt-3">
+                            <p class="text-uppercase fw-bold text-start">
+                                Acuracy Percentage
+                            </p>
+                            <div id="accPer"></div>
+                        </div>
+                        <h4 class="my-5 text-dark text-center fw-light">
+                            Detailed Report Analysis
+                        </h4>
+                    </div>
+                    <div class="report-block1 p-5">
+                        <div class="d-flex align-items-center p-5">
+                            <div class="w-34">
+                                <h1 class="reportHeading w-100">Inferences</h1>
                             </div>
-                            <div class="exportUsertxt">
-                                <p>{{ucwords(Auth::user()->user_name)}}</p>
-                                <small><strong>Class - {{$user_stage}}</strong>, Preparing for
-                                    {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
-                                </small>
+                            <div class="ms-auto d-flex align-items-center">
+                                <div>
+                                    <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
+                                </div>
+                                <div class="exportUsertxt">
+                                    <p>{{ucwords(Auth::user()->user_name)}}</p>
+                                    <small><strong>Class - {{$user_stage}}</strong>, Preparing for
+                                        {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
+                                    </small>
+                                </div>
                             </div>
                         </div>
+                        <div class="p-5">
+                            <div class="d-flex mt-3">
+                                <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Lorem Ipsum has been the industry's standard dummy text
+                                    ever since the 1500s,
+                                </label>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Lorem Ipsum has been the industry's standard dummy text
+                                    ever since the 1500s,
+                                </label>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Lorem Ipsum has been the industry's standard dummy text
+                                    ever since the 1500s,
+                                </label>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Lorem Ipsum has been the industry's standard dummy text
+                                    ever since the 1500s,
+                                </label>
+                            </div>
+                        </div>
+                        <p class="text-center mt-5 pt-5">
+                            <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
+                                more: {{ route('register') }}</a>
+                        </p>
                     </div>
-                    <div class="p-5">
-                        <div class="d-flex mt-3">
-                            <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s,
-                            </label>
-                        </div>
-                        <div class="d-flex mt-4">
-                            <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s,
-                            </label>
-                        </div>
-                        <div class="d-flex mt-4">
-                            <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s,
-                            </label>
-                        </div>
-                        <div class="d-flex mt-4">
-                            <i class="fa fa-check-square me-3 mt-1 text-warning" aria-hidden="true"></i>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Lorem Ipsum has been the industry's standard dummy text
-                                ever since the 1500s,
-                            </label>
-                        </div>
-                    </div>
-                    <p class="text-center mt-5 pt-5">
-                        <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
-                            more: {{ route('register') }}</a>
-                    </p>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <div id="editor"></div>
 <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
