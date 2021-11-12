@@ -2,7 +2,9 @@
 
 @section('content')
 <style>
-
+.mjx-chtml{
+    line-height: 0.5 !important;
+}
 </style>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
