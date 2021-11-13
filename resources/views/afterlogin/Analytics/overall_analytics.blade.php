@@ -392,6 +392,15 @@
                 text: 'Accuracy Percentage'
             }
         },
+        plotOptions: {
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
         xAxis: {
             categories: <?php print_r($day); ?>
         },
@@ -434,6 +443,15 @@
         },
         xAxis: {
             categories: <?php print_r($days); ?>
+        },
+        plotOptions: {
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
         },
         series: [{
             name: 'Class Average',
@@ -488,6 +506,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{

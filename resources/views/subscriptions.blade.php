@@ -46,7 +46,7 @@
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-5">
-                            <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
@@ -54,8 +54,8 @@
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Already Purchased </i></button>
-                            </form>
+                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Already Purchased </i></button>
+                                </form>
                             </div>
                         </div>
                     </div>

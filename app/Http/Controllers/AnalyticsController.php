@@ -462,11 +462,11 @@ class AnalyticsController extends Controller
         $api_URL = Config::get('constants.API_NEW_URL');
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $api_URL . "api/analytics/subject-wise-analytics/$user_id/$sub_id",
+            CURLOPT_URL => $api_URL . "api/analytics/subject-wise-analyticsove/$user_id/$sub_id",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 100,
+            CURLOPT_TIMEOUT => 200,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
