@@ -65,6 +65,10 @@
                 transform: rotate(360deg);
             }
         }
+
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-chtml, .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax, .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-char, .ans-block.row.mt-5.N_radioans .mb-4 .ans .math, .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax, .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax_CHTML {
+    top: 4px;
+}
     </style>
 </head>
 

@@ -100,7 +100,7 @@
                                                             <label for="file-input">
                                                                 <span class="btn edit-icon"><i class="fas fa-pencil-alt"></i></span>
                                                             </label>
-                                                            <input id="file-input" name="file-input" type="file" accept="image/*" />
+                                                            <input id="file-input" name="file-input" type="file" accept="image/png, image/jpg, image/jpeg" />
                                                         </span>
                                                     </form>
                                                 </span>
