@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
-
 use App\Http\Traits\CommonTrait;
 
 class PreparationController extends Controller
@@ -59,14 +58,10 @@ class PreparationController extends Controller
         $aPreparation = [];
         if (!empty($preparation_list)) {
             foreach ($preparation_list as $list) {
-
                 $values = $list->values;
-
                 $aPreparation[$list->subject_id][] = $values[0];
             }
         }
-
-
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
 
@@ -79,7 +74,6 @@ class PreparationController extends Controller
         if (isset($data) && !empty($data)) :
             $api_url = 'http://3.108.176.99:8080/api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
             $curl = curl_init();
-
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -90,7 +84,6 @@ class PreparationController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
             ));
-
             $response = curl_exec($curl);
             curl_close($curl);
             $responseData = json_decode($response);
@@ -800,4 +793,5 @@ class PreparationController extends Controller
         // echo "<pre>"; print_r($question_data); die;
         return view('afterlogin.ExamCustom.next_review_questionbookmark', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
     }
+
 }

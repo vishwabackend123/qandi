@@ -8,16 +8,20 @@
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <a href="{{route('export_analytics')}}" class="btn btn-danger px-5 rounded-0"><i class="fa fa-download"></i> &nbsp;Download</a>
+                    <a href="{{route('export_analytics')}}" class="btn btn-danger px-5 rounded-0"><i
+                            class="fa fa-download"></i> &nbsp;Download</a>
                 </div>
                 <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
-                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
+                    <div class="input-group-text bg-white rounded-0 border-0"><i
+                            class="fa fa-envelope-o text-secondary"></i>
                     </div>
-                    <input type="email" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
+                    <input type="email" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername"
+                           placeholder="Enter e-mail ID">
                 </div>
                 <div class="input-group mb-4">
-                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i> </div>
+                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i>
+                    </div>
                     <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
                         <option class="text-secondary">Share it only this time</option>
                     </select>
@@ -31,7 +35,8 @@
     </div>
 </div>
 <!-- Modal planner chapters-->
-<div class="modal fade planner_chapter" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade planner_chapter" id="plannerChapter" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
@@ -62,10 +67,12 @@
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
 </script>
 <script>
     var firebaseConfig = {
@@ -87,9 +94,9 @@
     // Get Instance ID token. Initially this makes a network call, once retrieved
     // subsequent calls to getToken will return from cache.
 
-    messaging.requestPermission().then(function() {
+    messaging.requestPermission().then(function () {
         return messaging.getToken()
-    }).then(function(response) {
+    }).then(function (response) {
         if (response) {
             console.log(response);
 
@@ -102,10 +109,10 @@
                     fcm_token: response
                 },
 
-                success: function(response_data) {
+                success: function (response_data) {
                     // console.log(response_data);
                 },
-                error: function(xhr, b, c) {
+                error: function (xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                 }
             });
@@ -161,6 +168,7 @@
         }
         return true;
     }
+
     $(".scroll-div").slimscroll({
         height: "40vh",
     });
@@ -174,14 +182,14 @@
     $(".notification-scroll").slimscroll({
         height: "70vh",
     });
-    $('#editprofile').click(function() {
+    $('#editprofile').click(function () {
         $('#profile-details').hide();
         $('#profile-form').show();
         $('.edit-icon').css({
             'display': 'flex'
         });
     });
-    $('#cancelEdit').click(function() {
+    $('#cancelEdit').click(function () {
         $('#profile-details').show();
         $('#profile-form').hide();
         $('.edit-icon').css({
@@ -189,7 +197,7 @@
         });
     });
 
-    $('#saveEdit').click(function() {
+    $('#saveEdit').click(function () {
         $('.edit-icon').css({
             'display': 'none'
         });
@@ -197,15 +205,16 @@
 
     $("#editProfile_form").validate({
 
-        submitHandler: function(form) {
+        submitHandler: function (form) {
 
 
             $.ajax({
                 url: "{{ url('/editProfile') }}",
                 type: 'POST',
                 data: $('#editProfile_form').serialize(),
-                beforeSend: function() {},
-                success: function(response_data) {
+                beforeSend: function () {
+                },
+                success: function (response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
                         var user_name = response.user_name;
@@ -223,9 +232,8 @@
                     }
 
 
-
                 },
-                error: function(xhr, b, c) {
+                error: function (xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                 }
             });
@@ -244,7 +252,7 @@
                 required: "Please enter at least one referral email Id."
             }
         },
-        submitHandler: function(form) {
+        submitHandler: function (form) {
             $check = 0;
             var emails = $('#referEmails').val();
             var arrayEmails = emails.split(',');
@@ -260,11 +268,10 @@
             });
 
 
-
             if (countEmails == 1 && $check == 1) {
                 $("#errRef_auth").html("Please enter a valid email")
                 $("#errRef_auth").show();
-                setTimeout(function() {
+                setTimeout(function () {
                     $('.errRef').fadeOut('fast');
                 }, 5000);
                 return false;
@@ -272,7 +279,7 @@
             if (countEmails != 1 && $check == 1) {
                 $("#errRef_auth").html("Please enter valid emails or use correct separator between two emails")
                 $("#errRef_auth").show();
-                setTimeout(function() {
+                setTimeout(function () {
                     $('.errRef').fadeOut('fast');
                 }, 5000);
                 return false;
@@ -281,8 +288,9 @@
                 url: "{{ url('/store_referral') }}",
                 type: 'POST',
                 data: $('#referalStudent_form').serialize(),
-                beforeSend: function() {},
-                success: function(response_data) {
+                beforeSend: function () {
+                },
+                success: function (response_data) {
 
                     var response = jQuery.parseJSON(response_data);
 
@@ -292,7 +300,7 @@
                             var sucessmsg = $("#successRef_auth").show();
                             sucessmsg[0].textContent = response.message;
 
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $('.errRef').fadeOut('fast');
                             }, 3000);
 
@@ -304,7 +312,7 @@
                             var errormsg = $("#errRef_auth").show();
                             errormsg[0].textContent = "Already referred Email ids : " + duplicate;
                         }
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('.errRef').fadeOut('fast');
                         }, 5000);
                         $('#referEmails').val("");
@@ -312,14 +320,14 @@
                     } else {
                         var errormsg = $("#errRef_auth").show();
                         errormsg[0].textContent = "Email already referred";
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('.errRef').fadeOut('fast');
                         }, 5000);
                         $('#referEmails').val("");
                     }
 
                 },
-                error: function(xhr, b, c) {
+                error: function (xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                 }
             });
@@ -328,14 +336,14 @@
     });
 </script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
 
-        var readURL = function(input) {
+        var readURL = function (input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     $('.profile-pic').attr('src', e.target.result);
                 }
 
@@ -344,7 +352,7 @@
         }
 
 
-        $("#file-input").on('change', function() {
+        $("#file-input").on('change', function () {
             readURL(this);
             var form_data = new FormData();
             form_data.append("file-input", document.getElementById('file-input').files[0]);
@@ -357,40 +365,47 @@
                 contentType: false,
                 cache: false,
                 processData: false,
-                success: function(response_data) {
+                success: function (response_data) {
+                    if (response_data.success === false) {
+                        $('#image-upload-response').addClass('text-danger');
+                        $("#image-upload-response").text(response_data.error.image[0]);
+                        setTimeout(function () {
+                            $('#image-upload-response').fadeOut('fast');
+                        }, 5000);
+                    }
                     var response = jQuery.parseJSON(response_data);
-                    // console.log(response.filename);
                     if (response.success == true) {
                         $("#profile_image").attr("src", response.filename);
                         $('#image-upload-response').addClass('text-success');
                         $("#image-upload-response").text(response.message);
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#image-upload-response').fadeOut('fast');
                         }, 5000);
                     } else {
                         $('#image-upload-response').addClass('text-danger');
                         $("#image-upload-response").text(response.message);
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#image-upload-response').fadeOut('fast');
                         }, 5000);
                     }
+
                     //$('#uploaded_image').html(data);
                 }
             });
         });
 
-        $(".image-upload").on('click', function() {
+        $(".image-upload").on('click', function () {
             $(".file-upload").click();
         });
     });
 </script>
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
     var mesos = [
@@ -428,7 +443,7 @@
         'S',
     ];
 
-    Number.prototype.pad = function(num) {
+    Number.prototype.pad = function (num) {
         var str = '';
         for (var i = 0; i < (num - this.toString().length); i++)
             str += '0';
@@ -482,12 +497,12 @@
 
         titol.appendChild(boto_next);
 
-        boto_prev.onclick = function() {
+        boto_prev.onclick = function () {
             data.setMonth(data.getMonth() - 1);
             calendari(widget, data);
         };
 
-        boto_next.onclick = function() {
+        boto_next.onclick = function () {
             data.setMonth(data.getMonth() + 1);
             calendari(widget, data);
         };
@@ -541,7 +556,7 @@
             e.appendChild(fila);
         }
 
-        setTimeout(function() {
+        setTimeout(function () {
             e.className = 'actiu';
             original.className +=
                 diff === 0 ? ' amagat-dreta' : ' amagat-esquerra';
@@ -549,7 +564,7 @@
 
         original.className = 'inactiu';
 
-        setTimeout(function() {
+        setTimeout(function () {
             var inactius = document.getElementsByClassName('inactiu');
             for (var i = 0; i < inactius.length; i++)
                 widget.removeChild(inactius[i]);
@@ -562,46 +577,46 @@
     // end of calender js
 
 
-    $('#submenu').on('shown.bs.collapse', function() {
+    $('#submenu').on('shown.bs.collapse', function () {
         $('body').addClass('move-mainwrapper');
 
     })
 
-    $('#submenu').on('hidden.bs.collapse', function() {
+    $('#submenu').on('hidden.bs.collapse', function () {
         $('body').removeClass('move-mainwrapper');
 
     })
 
-    $('#submenupreparation').on('shown.bs.collapse', function() {
+    $('#submenupreparation').on('shown.bs.collapse', function () {
         $('body').addClass('move-mainwrapper-lg');
 
     })
 
-    $('#submenupreparation').on('hidden.bs.collapse', function() {
+    $('#submenupreparation').on('hidden.bs.collapse', function () {
         $('body').removeClass('move-mainwrapper-lg');
 
     })
 
-    $('#submenu2').on('shown.bs.collapse', function() {
+    $('#submenu2').on('shown.bs.collapse', function () {
         $('body').addClass('move-mainwrapper2');
 
     })
 
-    $('#submenu2').on('hidden.bs.collapse', function() {
+    $('#submenu2').on('hidden.bs.collapse', function () {
         $('body').removeClass('move-mainwrapper2');
 
     })
 
-    $('#submenupreparation2').on('shown.bs.collapse', function() {
+    $('#submenupreparation2').on('shown.bs.collapse', function () {
         $('body').addClass('move-mainwrapper-lg2');
 
     })
 
-    $('#submenupreparation2').on('hidden.bs.collapse', function() {
+    $('#submenupreparation2').on('hidden.bs.collapse', function () {
         $('body').removeClass('move-mainwrapper-lg2');
 
     })
-    $(document).on('click', function(e) {
+    $(document).on('click', function (e) {
         /* bootstrap collapse js adds "in" class to your collapsible element*/
         var menu_opened = $('#submenu').hasClass('show');
 
@@ -643,7 +658,7 @@
     $(document).ajaxComplete(function() {
         $('#overlay').fadeOut();
     }); */
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(".leaderNameBlock").slimscroll({
             height: "47vh",
         });
@@ -656,7 +671,7 @@
         $(".scroll-achiv").slimscroll({
             height: "26vh",
         });
-        $("#StartDate").change(function() {
+        $("#StartDate").change(function () {
             var start_date = this.value;
             var date = new Date(start_date);
 
@@ -677,14 +692,14 @@
         });
 
 
-        $('#edit-planner-btn').click(function() {
+        $('#edit-planner-btn').click(function () {
 
             $('#sub-planner').addClass('open-sub-planner');
             $(this).addClass('close-sub-planner');
             $('#close-edit-planner-btn').removeClass('close-sub-planner');
 
         });
-        $('#close-edit-planner-btn').click(function() {
+        $('#close-edit-planner-btn').click(function () {
 
             $('#sub-planner').removeClass('open-sub-planner');
             $(this).addClass('close-sub-planner');
@@ -695,7 +710,7 @@
 
         // editprofile js
 
-        $('#profile-click').click(function() {
+        $('#profile-click').click(function () {
 
             $('#profile-block').toggleClass('d-none');
             $(this).toggleClass('activelink');
@@ -705,7 +720,7 @@
             $('#logout-click').removeClass('activelink');
 
         });
-        $('#subscribe-click').click(function() {
+        $('#subscribe-click').click(function () {
             $('#subscribe').toggleClass('d-none');
             $(this).toggleClass('activelink');
             $('#profile-block').addClass('d-none');
@@ -714,7 +729,7 @@
             $('#logout-block').addClass('d-none');
             $('#logout-click').removeClass('activelink');
         });
-        $('#logout-click').click(function() {
+        $('#logout-click').click(function () {
             $('#logout-block').toggleClass('d-none');
             $(this).toggleClass('activelink');
             $('#profile-block').addClass('d-none');
@@ -750,13 +765,13 @@
             var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
             $('#limit_error').html(error_txt);
             $('#limit_error').show();
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#limit_error').fadeOut('fast');
             }, 5000);
             return false;
         }
         var selected_chapters = $("input[name='chapters[]']")
-            .map(function() {
+            .map(function () {
                 return $(this).val();
             }).get();
         $.ajax({
@@ -767,7 +782,7 @@
                 selected_chapters: selected_chapters
             },
 
-            success: function(response_data) {
+            success: function (response_data) {
                 $('#select-planner-chapter').html(response_data);
                 $('#plannerChapter').modal('show');
             },
@@ -779,7 +794,7 @@
 
     function suffle_Chapter(chapt_id, subject_id) {
         var selected_chapters = $("input[name='chapters[]']")
-            .map(function() {
+            .map(function () {
                 return $(this).val();
             }).get();
         $.ajax({
@@ -791,7 +806,7 @@
                 selected_chapters: selected_chapters
             },
 
-            success: function(response_data) {
+            success: function (response_data) {
                 // console.log(response_data);
                 var response = jQuery.parseJSON(response_data);
                 res_chpter_id = response.chapter_id;
@@ -806,7 +821,6 @@
         });
 
     }
-
 
 
     function handleChange(subject_id) {
@@ -824,37 +838,35 @@
         } else {
             $('#errChptAdd_alert').html('Please select one option.');
             $('#errChptAdd_alert').show();
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#errChptAdd_alert').fadeOut('fast');
             }, 5000);
             return false;
         }
     }
-    $('.chaptbox').on('click', '.chapter_remove', function(e) {
+
+    $('.chaptbox').on('click', '.chapter_remove', function (e) {
         e.preventDefault();
 
         $(this).parent().parent().remove();
     });
-    $('#exportAnalytics').on('shown.bs.modal', function() {
+    $('#exportAnalytics').on('shown.bs.modal', function () {
         $('#specificSizeInputGroupUsername').val("");
         $('#specificSizeInputGroupUsername').focus();
     })
 
 
-
-
-    $.validator.addMethod('dateBefore', function(value, element, params) {
+    $.validator.addMethod('dateBefore', function (value, element, params) {
         // if end date is valid, validate it as well
         var end = $(params);
         if (!end.data('validation.running')) {
             $(element).data('validation.running', true);
             setTimeout($.proxy(
-
-                function() {
+                function () {
                     this.element(end);
                 }, this), 0);
             // Ensure clearing the 'flag' happens after the validation of 'end' to prevent endless looping
-            setTimeout(function() {
+            setTimeout(function () {
                 $(element).data('validation.running', false);
             }, 0);
         }
@@ -862,17 +874,16 @@
 
     }, 'Must be before corresponding end date');
 
-    $.validator.addMethod('dateAfter', function(value, element, params) {
+    $.validator.addMethod('dateAfter', function (value, element, params) {
         // if start date is valid, validate it as well
         var start = $(params);
         if (!start.data('validation.running')) {
             $(element).data('validation.running', true);
             setTimeout($.proxy(
-
-                function() {
+                function () {
                     this.element(start);
                 }, this), 0);
-            setTimeout(function() {
+            setTimeout(function () {
                 $(element).data('validation.running', false);
             }, 0);
         }
@@ -890,13 +901,13 @@
                 required: true
             }
         },
-        submitHandler: function(form) {
+        submitHandler: function (form) {
 
             var limit = $('#customRange').val();
             if (limit <= 0) {
                 $('#limit_error_1').html('Please set at least one exam for the selected week.');
                 $('#limit_error_1').show();
-                setTimeout(function() {
+                setTimeout(function () {
                     $('#limit_error_1').fadeOut('fast');
                 }, 5000);
                 return false;
@@ -923,17 +934,17 @@
                 url: "{{ url('/addPlanner') }}",
                 type: 'POST',
                 data: $('#plannerAddform').serialize(),
-                beforeSend: function() {
+                beforeSend: function () {
                     $('#overlay').fadeIn();
                 },
-                success: function(response_data) {
+                success: function (response_data) {
                     var response = jQuery.parseJSON(response_data);
 
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);
                         $('#successPlanner_alert').show();
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#successPlanner_alert').fadeOut('fast');
                         }, 8000);
                         $('#overlay').fadeOut();
@@ -943,7 +954,7 @@
                         var message = response.message;
                         $('#errPlanner_alert').html(message);
                         $('#errPlanner_alert').show();
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#errPlanner_alert').fadeOut('fast');
                         }, 8000);
                         $('#overlay').fadeOut();
@@ -951,7 +962,7 @@
                     }
 
                 },
-                error: function(xhr, b, c) {
+                error: function (xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
                 }
             });
@@ -964,7 +975,7 @@
 <script type="text/javascript">
     /* document.addEventListener('contextmenu', event => event.preventDefault()); */
 
-    document.onkeydown = function(e) {
+    document.onkeydown = function (e) {
 
         // disable F12 key
         if (e.keyCode == 123) {
@@ -992,34 +1003,34 @@
         }
     }
 
-    $(document).ready(function() {
-        jQuery(".dash-nav-link").click(function() {
+    $(document).ready(function () {
+        jQuery(".dash-nav-link").click(function () {
             jQuery("#collapseExample").hide();
             jQuery("#notification").hide();
         });
 
-        jQuery("#Practice").click(function() {
+        jQuery("#Practice").click(function () {
             jQuery('#Practice').addClass('active-navlink');
             $('#dashboard').removeClass('active-navlink');
             $('#submenupreparationlink').removeClass('active-navlink');
             $('#share').removeClass('active-navlink');
         });
 
-        jQuery("#submenupreparationlink").click(function() {
+        jQuery("#submenupreparationlink").click(function () {
             jQuery('#submenupreparationlink').addClass('active-navlink');
             $('#dashboard').removeClass('active-navlink');
             $('#Practice').removeClass('active-navlink');
             $('#share').removeClass('active-navlink');
         });
 
-        jQuery("#dashboard").click(function() {
+        jQuery("#dashboard").click(function () {
             jQuery('#dashboard').addClass('active-navlink');
             $('#submenupreparationlink').removeClass('active-navlink');
             $('#Practice').removeClass('active-navlink');
             $('#share').removeClass('active-navlink');
         });
 
-        jQuery("#share").click(function() {
+        jQuery("#share").click(function () {
             jQuery('#share').addClass('active-navlink');
             $('#submenupreparationlink').removeClass('active-navlink');
             $('#Practice').removeClass('active-navlink');

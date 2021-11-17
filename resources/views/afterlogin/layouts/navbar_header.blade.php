@@ -100,11 +100,11 @@
                                                             <label for="file-input">
                                                                 <span class="btn edit-icon"><i class="fas fa-pencil-alt"></i></span>
                                                             </label>
-                                                            <input id="file-input" name="file-input" type="file" accept="image/png, image/jpg, image/jpeg" />
+                                                            <input id="file-input" name="file-input" type="file" accept="image/png, image/jpg, image/jpeg, image/gif" />
                                                         </span>
                                                     </form>
                                                 </span>
-                                                <span id="image-upload-response" class=""></span>
+                                                <span id="image-upload-response"></span>
                                                 <div id="profile-details" class="" style="padding-top:-20px">
                                                     <div class="mb-2 mt-3 profile-read">
                                                         <h5 id="profileUserName" class="activeUserName">{{ucwords(Auth::user()->user_name)}}</h5>
@@ -131,20 +131,20 @@
                                                         @csrf
                                                         <div class="text-box mt-3">
 
-                                                            <input type="text" name="firstname" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="firstname" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 &&
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required />
 
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="lastname" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="lastname" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 &&
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
                                                         </div>
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="username" id="username" class="ps-2" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="username" id="username" class="ps-2" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 &&
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">This could be your
                                                                 first, last or nick name.
