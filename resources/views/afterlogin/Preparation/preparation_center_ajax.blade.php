@@ -28,7 +28,7 @@
             <div>
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                 <p>{!! $pre->resource_desc !!}</p>
-                <!-- <p class="mt-2 mb-0">36 Slides</p> -->
+                <a href="{{asset("public/sample_pdf/sample.pdf")}}" target="_blank" > click me to Presentation </a>
             </div>
         </div>
 

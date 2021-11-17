@@ -383,32 +383,51 @@ class HomeController extends Controller
 
     public function editProfileImage(Request $request)
     {
+        $postData = $request->only('file-input');
+        $file = $postData['file-input'];
 
-        $user_id = Auth::user()->id;
-        $file = $request->file('file-input');
-        $file_path = $file->getPathName();
+        // Build the input for validation
+        $fileArray = array('image' => $file);
 
-        $file_name = $file->getClientOriginalName();
-        if ($request->hasfile('file-input')) {
+        // Tell the validator that this file should be an image
+        $rules = array(
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:5120' // max 5120kb
+        );
 
-            $curl = curl_init();
+        // Now pass the input and rules into the validator
+        $validator = Validator::make($fileArray, $rules);
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => Config::get('constants.API_NEW_URL') . 'api/update-profile-picture',
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_POSTFIELDS => array('file' => new CURLFILE($file), 'student_id' => $user_id, 'file_extension' => $file_name),
-            ));
+        // Check to see if validation fails or passes
+        if ($validator->fails())
+        {
+            // Redirect or return json to frontend with a helpful message to inform the user
+            // that the provided file was not an adequate type
+            return response(['error' => $validator->errors()->getMessages(), 'success' => false]);
+        } else
+        {
+            // Store the File Now
+            $user_id = Auth::user()->id;
+            $file = $request->file('file-input');
+            $file_name = $file->getClientOriginalName();
+            if ($request->hasfile('file-input')) {
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => Config::get('constants.API_NEW_URL') . 'api/update-profile-picture',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => array('file' => new CURLFILE($file), 'student_id' => $user_id, 'file_extension' => $file_name),
+                ));
 
-            $response = curl_exec($curl);
+                $response = curl_exec($curl);
 
-            curl_close($curl);
-            echo $response;
+                curl_close($curl);
+                echo $response;
+            }
         }
     }
 
