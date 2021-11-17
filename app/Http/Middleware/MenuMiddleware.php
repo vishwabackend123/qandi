@@ -86,6 +86,8 @@ class MenuMiddleware
             $notifications = $notifications->response;
         }
 
+
+
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
         \Illuminate\Support\Facades\View::share('user_stage', $user_stage);
