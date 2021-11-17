@@ -932,7 +932,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             crosshair: true
         },
         yAxis: {
-            min: 0,
+
             title: {
                 text: ''
             }

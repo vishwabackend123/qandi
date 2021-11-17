@@ -131,20 +131,20 @@
                                                         @csrf
                                                         <div class="text-box mt-3">
 
-                                                            <input type="text" name="firstname" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="firstname" autocomplete="off" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required />
 
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="lastname" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="lastname" autocomplete="off" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
                                                         </div>
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="username" id="username" class="ps-2" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="username" id="username" class="ps-2" autocomplete="off" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">This could be your
                                                                 first, last or nick name.
@@ -156,12 +156,12 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">Your User ID</div>
                                                         </div>
                                                         <div class="text-box mt-3">
-                                                            <input type="email" name="useremail" id="useremail" class="ps-2" value="{{Auth::user()->email}}" required placeholder="Your Email Id" />
+                                                            <input type="email" name="useremail" autocomplete="off" id="useremail" class="ps-2" value="{{Auth::user()->email}}" required placeholder="Your Email Id" />
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="user_mobile" id="user_mobile" class="ps-2" value="{{Auth::user()->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                                                            <input type="text" name="user_mobile" id="user_mobile" class="ps-2" autocomplete="off" value="{{Auth::user()->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
 
                                                         </div>
                                                         <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
@@ -213,49 +213,48 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
-                                        @if($fromdate > $todaydate)
-                                        <p class="text-end text-danger mt-1">*Subscription expires
+                                        @if($fromdate < $todaydate) <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
-                                        @else
-                                        <p class="text-end text-danger mt-1">*Subscription already expired</p>
-                                        @endif
+                                            @else
+                                            <p class="text-end text-danger mt-1">*Subscription already expired on {{$fromdate}}</p>
+                                            @endif
 
 
-                                        <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
-                                        {{--<div class=" text-box mt-4 text-end">
-                                            <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
-                                        <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
-                                    </div>--}}
+                                            <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
+                                            <div class=" text-box mt-4 text-end">
+                                                <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
+                                                <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
+                                            </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="myAccountblock d-none" id="logout-block">
-                        <div class="d-flex text-start align-items-center justify-content-center h-100">
-                            <div class="logoutBlock">
-                                <div class="bg-white p-4 text-left ms-4 text-center">
+                        <div class="myAccountblock d-none" id="logout-block">
+                            <div class="d-flex text-start align-items-center justify-content-center h-100">
+                                <div class="logoutBlock">
+                                    <div class="bg-white p-4 text-left ms-4 text-center">
 
-                                    <p>Are you sure?</p>
+                                        <p>Are you sure?</p>
 
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();" class="btn btn-danger rounded-0 px-5">
-                                        Logout
-                                    </a>
+                                            Logout
+                                        </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
 
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> <!-- login end -->
+                        </div> <!-- login end -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </header>
 <!-- notification START-->

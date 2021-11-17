@@ -253,7 +253,7 @@ class ReviewController extends Controller
             }
 
             $sq = 1;
-            // dd($result_response);
+
             foreach ($all_data as $key => $list) {
                 $list->seq = $sq;
                 $sq++;
@@ -374,7 +374,7 @@ class ReviewController extends Controller
             $allkeys = $allQuestions->keys('question_id')->all();
 
             $sq = 1;
-            // dd($result_response);
+
             foreach ($all_data as $key => $list) {
                 $list->seq = $sq;
                 $sq++;

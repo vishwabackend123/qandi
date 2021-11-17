@@ -89,6 +89,7 @@ class SubscriptionController extends Controller
 
         $aPurchased = collect($purchased_packages);
 
+
         /*trial link*/
         $curl_url1 = $api_URL . 'api/subscriptions/' . $user_id;
 
