@@ -31,13 +31,13 @@
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
                                 <div class="row">
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-5">
                                         <div class="bg-white shadow-lg h-100">
-                                            <div class="row m-0 p-0">
-                                                <div class="col-md-12 position-relative pe-0 ps-0">
+                                            <div class="row">
+                                                <div class="col-7 pe-0">
                                                     <div class="d-flex justify-content-center flex-column h-100  position-relative">
                                                         <div id="scorecontainer" class="text-right"></div>
-                                                        <span class=" bg-light p-3 d-flex  justify-content-center flex-column ">
+                                                        <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
                                                             <span class="abri"> <span class="abrv-mean bg1"></span>Last
                                                                 Mock Test Score</span>
                                                             <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous
@@ -47,7 +47,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-5  ">
+                                                <div class="col-5  ">
                                                     <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
                                                         <span></span>
                                                         <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
@@ -56,11 +56,11 @@
                                                         </span>
 
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-8 ">
+                                    <div class="col-lg-7 ">
                                         <div class="bg-white shadow-lg p-3 h-100">
                                             <h5 class="dashboard-title mb-3">Subject proficiency</h5>
                                             @if(!empty($subProf))
@@ -265,7 +265,7 @@
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 185,
+            height: 180,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -310,7 +310,7 @@
                             return false;
                         }
                     }
-                },
+                }
                 startAngle: -140,
                 endAngle: 140,
                 center: ['50%', '50%'],
@@ -392,15 +392,6 @@
                 text: 'Accuracy Percentage'
             }
         },
-        plotOptions: {
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
         xAxis: {
             categories: <?php print_r($day); ?>
         },
@@ -443,15 +434,6 @@
         },
         xAxis: {
             categories: <?php print_r($days); ?>
-        },
-        plotOptions: {
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
         },
         series: [{
             name: 'Class Average',
@@ -506,13 +488,6 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
             }
         },
         series: [{

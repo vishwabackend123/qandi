@@ -698,18 +698,6 @@
         xAxis: {
             categories: <?php print_r($day); ?>
         },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
 
         series: [{
             name: 'Class Average',
@@ -748,18 +736,6 @@
 
         xAxis: {
             categories: <?php print_r($days); ?>
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
         },
 
         series: [{

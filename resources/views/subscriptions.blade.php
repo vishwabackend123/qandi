@@ -54,7 +54,7 @@
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Already Purchased </i></button>
+                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn"> Purchased </i></button>
                                 </form>
                             </div>
                         </div>
@@ -87,6 +87,37 @@
                         </div>
                     </div>
                     @endif
+                    @elseif((count($purchasedid)>0) && !empty(Auth::user()->id))
+                    <div class="col-md-4 p-4 ">
+                        <div class="bg-white white-box-small subscriptionBox  ">
+                            <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
+                            <p class="price">Rs. XXXX {{--$subsprice--}}</p>
+                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+
+                            <div class="text-center mt-4">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty(Auth::user()->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
+                                    @csrf
+                                    <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
+                                    <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
+                                    <input type="hidden" name="exam_period" value="12">
+                                    <input type="hidden" name="period_unit" value="month">
+                                    <input type="hidden" name="exam_price" value="{{$subsprice}}">
+
+                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                            @if(!in_array($sub->subscript_id,$purchasedid) )
+                            <div class="text-center mt-2">
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline disabled"  @if((count($purchasedid)>0) && !empty(Auth::user()->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                            </div>
+                            @else
+                            <div class="text-center mt-2">
+                                <span class="text-danger text-decoration-underline">Expired 14 days trial ></span>
+                            </div>
+                            @endif
+
+                        </div>
+                    </div>
                     @else
                     <div class="col-md-4 p-4 ">
                         <div class="bg-white white-box-small subscriptionBox  ">

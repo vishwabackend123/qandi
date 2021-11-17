@@ -53,12 +53,12 @@
             </div>
         </form>
 
-        <p class="text-center login-txt">OR <br>Login using</p>
+        {{-- <p class="text-center login-txt">OR <br>Login using</p>
         <div class="text-center"><a href="{{ url('auth/google') }}" class="mx-4"><img src="{{URL::asset('public/images/google.png')}}"></a>
-            <a href="{{ url('auth/facebook') }}" class="mx-4"><img src="{{URL::asset('public/images/facebook.png')}}"></a>
-        </div>
-        <p class="text-center mt-4 mb-0">Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
-    </div>
+        <a href="{{ url('auth/facebook') }}" class="mx-4"><img src="{{URL::asset('public/images/facebook.png')}}"></a>
+    </div>--}}
+    <p class="text-center mt-4 mb-0">Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
+</div>
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

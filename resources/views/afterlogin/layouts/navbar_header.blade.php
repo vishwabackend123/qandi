@@ -222,40 +222,40 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
 
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
-                                        <div class=" text-box mt-4 text-end">
+                                        {{--<div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
-                                            <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
-                                        </div>
-                                    </div>
+                                        <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
+                                    </div>--}}
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="myAccountblock d-none" id="logout-block">
-                            <div class="d-flex text-start align-items-center justify-content-center h-100">
-                                <div class="logoutBlock">
-                                    <div class="bg-white p-4 text-left ms-4 text-center">
+                    <div class="myAccountblock d-none" id="logout-block">
+                        <div class="d-flex text-start align-items-center justify-content-center h-100">
+                            <div class="logoutBlock">
+                                <div class="bg-white p-4 text-left ms-4 text-center">
 
-                                        <p>Are you sure?</p>
+                                    <p>Are you sure?</p>
 
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();" class="btn btn-danger rounded-0 px-5">
-                                            Logout
-                                        </a>
+                                        Logout
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 
 
-                                    </div>
                                 </div>
                             </div>
-                        </div> <!-- login end -->
-                    </div>
+                        </div>
+                    </div> <!-- login end -->
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </header>
 <!-- notification START-->
