@@ -91,6 +91,7 @@ class SubscriptionController extends Controller
 
 
         /*trial link*/
+
         $curl_url1 = $api_URL . 'api/subscriptions/' . $user_id;
 
         curl_setopt_array($curl1, array(

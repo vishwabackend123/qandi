@@ -213,18 +213,18 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
-                                        @if($fromdate < $todaydate) <p class="text-end text-danger mt-1">*Subscription expires
+                                        @if($fromdate > $todaydate) <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
-                                            @else
-                                            <p class="text-end text-danger mt-1">*Subscription already expired on {{$fromdate}}</p>
-                                            @endif
+                                        @else
+                                        <p class="text-end text-danger mt-1">*Subscription already expired on {{$fromdate}}</p>
+                                        @endif
 
 
-                                            <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
-                                            <div class=" text-box mt-4 text-end">
-                                                <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
-                                                <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
-                                            </div>
+                                        <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
+                                        <div class=" text-box mt-4 text-end">
+                                            <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
+                                            <a href="{{route('subscriptions')}}" class="btn-danger rounded-0 btn-sm btn px-5 ms-2">Change Subscription</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
