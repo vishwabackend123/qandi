@@ -30,23 +30,22 @@
 
                             <div class="tab-content cust-tab-content" id="myTabContent">
                                 @php $topx=1;@endphp
-                                @if(isset($subject_list) && !empty($subject_list))
-                                    @foreach($subject_list as $oSub)
-                                        @php $subjectData=isset($aPreparation[$oSub->id])?$aPreparation[$oSub->id]:[];
-                                                $sNotes= $sPrep=$sVideo=$sBmark=0;
-                                        @endphp
-                                        @if(isset($subjectData) && !empty($subjectData))
-                                            @foreach( $subjectData as $oKey=>$oVal)
-                                                @php
-                                                    if(!empty($oVal->chapter_name)){
-                                                    $sNotes= isset($oVal->Notes)?$sNotes+$oVal->Notes:0;
-                                                    $sPrep=isset($oVal->Presentations)?$sPrep+$oVal->Presentations:0;
-                                                    $sVideo=isset($oVal->Videos)?$sVideo+$oVal->Videos:0;
-                                                    $sBmark=isset($oVal->Bookmarks)?$sBmark+$oVal->Bookmarks:0;
-                                                    }
-                                                @endphp
-                                            @endforeach
-                                        @endif
+                                @if(isset($aPreparation) && !empty($aPreparation))
+                                    <?php
+                                    $pres = 0;
+                                    $notes = 0;
+                                    $video = 0;
+                                    $bmark = 0;
+                                    ?>
+                                    @foreach($aPreparation as $oSub)
+                                        @foreach($oSub->values as $val)
+                                            <?php
+                                            $pres += $val->Presentations;
+                                            $notes += $val->Notes;
+                                            $video += $val->Videos;
+                                            $bmark += $val->Bookmarks;
+                                            ?>
+                                        @endforeach
                                         <div class="tab-pane fade show @if($topx==1) active @endif"
                                              id="{{$oSub->subject_name}}" role="tabpanel"
                                              aria-labelledby="{{$oSub->subject_name}}-tab">
@@ -56,35 +55,31 @@
                                                     class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
                                                 <div class="col-md-3  d-flex align-items-center">
                                                     <span class="me-2"><a href="javascript:void(0);"
-                                                                          onclick="get_preparationSubjectData('{{$oSub->id}}','presentation')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$sPrep}}</a></span>
+                                                                          onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img
+                                                                src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$pres}}</a></span>
                                                     <span class="me-2"><a href="javascript:void(0);"
-                                                                          onclick="get_preparationSubjectData('{{$oSub->id}}','notes')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$sNotes}}</a></span>
+                                                                          onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img
+                                                                src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$notes}}</a></span>
                                                     <span class="me-2"><a href="javascript:void(0);"
-                                                                          onclick="get_preparationSubjectData('{{$oSub->id}}','videos')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$sVideo}}</a></span>
+                                                                          onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img
+                                                                src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$video}}</a></span>
                                                     <span><a href="javascript:void(0);"
-                                                             onclick="get_preparationSubjectData('{{$oSub->id}}','bookmark')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$sBmark}}</a></span>
+                                                             onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img
+                                                                src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$bmark}}</a></span>
                                                 </div>
                                                 <div class="col-md-3 d-flex ">
                                                     <p class="m-0 pe-3  w140">Overall Proficiency</p>
                                                     <span>
-                                            <i class="fa fa-star text-success mx-1"></i>
-                                            <i class="fa fa-star text-success mx-1"></i>
-                                            <i class="fa fa-star text-success mx-1"></i>
-                                            <i class="fa fa-star text-secondary mx-1"></i>
-                                            <i class="fa fa-star text-secondary mx-1"></i>
-                                        </span>
+                                                        <i class="fa fa-star text-success mx-1"></i>
+                                                        <i class="fa fa-star text-success mx-1"></i>
+                                                        <i class="fa fa-star text-success mx-1"></i>
+                                                        <i class="fa fa-star text-secondary mx-1"></i>
+                                                        <i class="fa fa-star text-secondary mx-1"></i>
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="scroll-div">
-                                                @if(!empty($aPreparation[$oSub->id]))
-                                                    @php $subjectData=$aPreparation[$oSub->id]; @endphp
-                                                    @foreach( $subjectData as $Key=>$val)
-                                                        @if(!empty($val->chapter_name))
-{{--                                                            {{dd($val->chapter_name)}}--}}
+                                                    @foreach( $oSub->values as $val)
                                                             <div
                                                                 class="d-flex align-items-center justify-content-between bg-white px-4 mt-4 mb-4 py-2 listing-details w-100 flex-wrap  ">
                                                                 <span
@@ -103,8 +98,9 @@
                                                                     </span>
                                                                     <span class="me-2 flex-column">
                                                                         <a href="javascript:void(0);"
-                                                                            onclick="chapter_videos_resources('{{$val->chapter_id}}','{{json_encode($val)}}')">
-                                                                            <img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}
+                                                                           onclick="chapter_videos_resources('{{$val->chapter_id}}','{{json_encode($val)}}')">
+                                                                            <img
+                                                                                src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}
                                                                         </a>
                                                                     </span>
                                                                     <span><a href="javascript:void(0);"
@@ -123,12 +119,15 @@
                                                                     </span>
                                                                 </div>
                                                             </div>
-                                                        @endif
                                                     @endforeach
-                                                @endif
                                             </div>
                                         </div>
-                                    @php $topx++; @endphp
+                                    @php $topx++;
+                                            $pres = 0;
+                                            $notes = 0;
+                                            $video = 0;
+                                            $bmark = 0;
+                                    @endphp
                                 @endforeach
                             @endif
                             <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>

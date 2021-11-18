@@ -33,10 +33,9 @@
                     <div>
                         <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                         <p>{!! $pre->resource_desc !!}</p>
-                        <a href="{{asset("public/sample_pdf/sample.pdf")}}" target="_blank" > click me to Notes </a>
+                        <a href="{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}" target="_blank" > click me to Notes </a>
                     </div>
                 </div>
-
             @endforeach
         @else
             <div class="d-flex bg-white p-3 align-items-center mt-5">
