@@ -38,6 +38,7 @@ class PreparationController extends Controller
         ));
 
         $response_json = curl_exec($curl);
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
@@ -49,19 +50,14 @@ class PreparationController extends Controller
         } else {
             $preparation_list = [];
         }
-        /*   $collection = collect($preparation_list);
-        $grouped = $collection->groupBy('subject_id');
-
-
-        $aPreparationList = $grouped->all();
-       */
-        $aPreparation = [];
-        if (!empty($preparation_list)) {
-            foreach ($preparation_list as $list) {
-                $values = $list->values;
-                $aPreparation[$list->subject_id][] = $values[0];
-            }
-        }
+//      dd($preparation_list);
+        $aPreparation = $preparation_list;
+//        if (!empty($preparation_list)) {
+//            foreach ($preparation_list as $list) {
+//                $values = $list->values;
+//                $aPreparation[$list->subject_id][] = $values[0];
+//            }
+//        }
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
 
