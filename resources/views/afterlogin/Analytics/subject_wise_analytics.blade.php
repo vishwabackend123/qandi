@@ -698,7 +698,16 @@
         xAxis: {
             categories: <?php print_r($day); ?>
         },
+        plotOptions: {
 
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
         series: [{
             name: 'Class Average',
             data: <?php print_r($stuAcc); ?>,
@@ -737,7 +746,16 @@
         xAxis: {
             categories: <?php print_r($days); ?>
         },
+        plotOptions: {
 
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
         series: [{
             name: 'Class Average',
             data: <?php print_r($classAccuracy); ?>,

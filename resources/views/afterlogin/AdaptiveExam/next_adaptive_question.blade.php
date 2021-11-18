@@ -185,6 +185,13 @@ $questtype='radio';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
 
+    $('.next_button').prop('autofocus', false);
+    $("#btn_" + question_id).prop('autofocus', true);
+
+    $(".number-block").animate({
+        scrollTop: $("#btn_" + question_id).offset().top - 20
+    }, 800);
+
     $("#current_question").val(question_id);
 
     var subject_id = '{{$subject_id}}';

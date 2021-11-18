@@ -33,11 +33,11 @@
                                 <div class="row">
                                     <div class="col-lg-5">
                                         <div class="bg-white shadow-lg h-100">
-                                            <div class="row">
-                                                <div class="col-7 pe-0">
+                                            <div class="row p-0 m-0">
+                                                <div class="col-12 ps-0 pe-0">
                                                     <div class="d-flex justify-content-center flex-column h-100  position-relative">
                                                         <div id="scorecontainer" class="text-right"></div>
-                                                        <span class=" bg-light p-3 d-flex  justify-content-center flex-column graph-bottom-block">
+                                                        <span class=" bg-light p-3 d-flex  justify-content-center flex-column ">
                                                             <span class="abri"> <span class="abrv-mean bg1"></span>Last
                                                                 Mock Test Score</span>
                                                             <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous
@@ -47,16 +47,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-5  ">
-                                                    <div class="d-flex flex-column h-100 montain-bg inactive-mountain">
-                                                        <span></span>
-                                                        <span class="mt-auto mb-4  d-flex justify-content-center align-items-center  montain-txt">
-                                                            <span class="plus-sign">+</span>
-                                                            <small>Set target to<br> Reach next</small>
-                                                        </span>
 
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -265,7 +256,7 @@
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 180,
+            height: 185,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -310,7 +301,7 @@
                             return false;
                         }
                     }
-                }
+                },
                 startAngle: -140,
                 endAngle: 140,
                 center: ['50%', '50%'],
@@ -395,6 +386,16 @@
         xAxis: {
             categories: <?php print_r($day); ?>
         },
+        plotOptions: {
+
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
         series: [{
             name: 'Class Average',
             data: <?php print_r($classAcc); ?>,
@@ -434,6 +435,18 @@
         },
         xAxis: {
             categories: <?php print_r($days); ?>
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
         },
         series: [{
             name: 'Class Average',
@@ -488,6 +501,13 @@
         plotOptions: {
             column: {
                 stacking: 'normal'
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
             }
         },
         series: [{
