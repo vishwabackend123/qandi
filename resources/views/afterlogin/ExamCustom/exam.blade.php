@@ -28,6 +28,20 @@
 
 @section('content')
 <style>
+    .mjx-chtml {
+        line-height: 0.5 !important;
+    }
+
+    .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-chtml,
+    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
+    .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-char,
+    .ans-block.row.mt-5.N_radioans .mb-4 .ans .math,
+    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
+    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax_CHTML {
+        top: 4px !important;
+    }
+</style>
+<style>
     #exam_content_sec .container {
         max-width: 1280px;
 
@@ -625,14 +639,15 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
-
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                $("#btn_" + question_id).position().top;
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
 
                 $("#question_section div").remove();
                 $("#question_section").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+
             }
         });
     }
@@ -655,6 +670,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 if (response.success == true) {
                     $("#btn_" + quest_id).removeClass("btn-light");
                     $("#btn_" + quest_id).addClass("btn-secondary");
+                    $("#btn_" + quest_id).position().top;
                 } else {
 
                 }
@@ -698,8 +714,10 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
+                    $("#btn_" + question_id).position().top;
                 }
             },
         });
@@ -731,6 +749,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
+
                         $("#btn_" + quest_id).removeClass("btn-light-green");
                         $("#btn_" + quest_id).removeClass("btn-light");
                         //$("#btn_" + quest_id).removeClass("btn-light-green");
@@ -738,6 +757,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 
                         $("#btn_" + quest_id).addClass("btn-secondary");
                         $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
+
                     }
 
                 },
@@ -802,7 +822,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
-                    $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + question_id).find('i').remove();
                 }
             }
         });

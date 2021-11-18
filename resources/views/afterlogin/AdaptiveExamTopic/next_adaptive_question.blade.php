@@ -212,6 +212,13 @@ $questtype='radio';
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);
 
+    $('.next_button').prop('autofocus', false);
+    $("#btn_" + question_id).prop('autofocus', true);
+
+    $(".number-block").animate({
+        scrollTop: $("#btn_" + question_id).offset().top - 20
+    }, 800);
+
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");

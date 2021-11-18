@@ -3189,6 +3189,15 @@ header {
     margin-bottom: 0px !important;
 }
 
+.question p span.MathJax {
+    text-align: left;
+    font: inherit;
+    letter-spacing: 0px;
+    color: #2C3348;
+    opacity: 1;
+    margin-bottom: 0px !important;
+}
+
 .btn-green-custom {
     background: #AFF3D0 0% 0% no-repeat padding-box;
 

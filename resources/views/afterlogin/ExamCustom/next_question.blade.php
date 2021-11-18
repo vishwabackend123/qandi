@@ -15,6 +15,7 @@ $type_class='radioans';
 $questtype='radio';
 }
 @endphp
+
 <script>
     $(document).ready(function() {
         var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
@@ -177,6 +178,13 @@ $questtype='radio';
 <script>
     var question_id = '{{$active_q_id}}';
     $(".next_button").removeClass("activequestion");
+    $('.next_button').prop('autofocus', false);
+    $("#btn_" + question_id).prop('autofocus', true);
+
+    $(".number-block").animate({
+        scrollTop: $("#btn_" + question_id).offset().top - 20
+    }, 800);
+
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);
 
