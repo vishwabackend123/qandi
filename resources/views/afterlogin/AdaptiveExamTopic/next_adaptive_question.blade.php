@@ -215,9 +215,7 @@ $questtype='radio';
     $('.next_button').prop('autofocus', false);
     $("#btn_" + question_id).prop('autofocus', true);
 
-    $(".number-block").animate({
-        scrollTop: $("#btn_" + question_id).offset().top - 20
-    }, 800);
+    $(".number-block #btn_" + question_id)[0].scrollIntoView();
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");

@@ -31,9 +31,9 @@
         $('.tab-content').height(winHeight - 130);
     });
 
-    $(window).bind("cut copy paste contextmenu", function(e) {
-        e.preventDefault();
-    });
+    /*  $(window).bind("cut copy paste contextmenu", function(e) {
+         e.preventDefault();
+     }); */
 </script>
 
 @php
@@ -213,7 +213,7 @@ $questtype='radio';
                     </div>
                     <div class="bg-white d-flex flex-column justify-content-center palette_box">
                         <p class="palette-hd">Question Palette</p>
-                        <div class="number-block N_number-block">
+                        <div id="number_block_id" class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
                             <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">
