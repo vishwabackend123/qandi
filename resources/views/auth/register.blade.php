@@ -37,7 +37,7 @@
             <p class="welcome-msg text-center">“Sign-up using your email address and mobile number.” </p>
             <div class="text-box mt-4">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                <input type="email" placeholder="Email address" name="email_add" id="email_add" />
+                <input type="email" placeholder="Email address" name="email_add" minlength="8" maxlength="35" id="email_add" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_email"> </span>
             <div class="text-box mt-4">
@@ -126,6 +126,8 @@
         $('#goto-otp-btn').click(function() {
             $check = 0;
             var email_add = $("#email_add").val();
+
+
             if (email_add == '') {
                 $("#errlog_email").html('Please enter your email address');
                 $("#errlog_email").fadeIn('fast');
@@ -148,7 +150,8 @@
                 $("#errlog_mob").fadeOut(5000);
                 $check = 1;
             } else {
-                var testMobile = /^\d{10}$/;
+                //var testMobile = /^\d{10}$/;
+                var testMobile = /^[7-9][0-9]{9}$/;
                 if (testMobile.test(mobile_num)) {} else {
                     $("#errlog_mob").html('Please enter valid mobile number');
                     $("#errlog_mob").fadeIn('fast');

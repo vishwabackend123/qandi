@@ -10,7 +10,7 @@
                 <div class="text-center my-5">
                     <a href="{{route('export_analytics')}}" class="btn btn-danger px-5 rounded-0"><i class="fa fa-download"></i> &nbsp;Download</a>
                 </div>
-                <p class="text-center text-secondary mb-5">OR</p>
+                {{--<p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
                     <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
                     </div>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="text-center my-5">
                     <button class="btn btn-danger px-5 rounded-0"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
-                </div>
+                </div>--}}
             </div>
 
         </div>

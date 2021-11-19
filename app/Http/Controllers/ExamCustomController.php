@@ -1069,7 +1069,7 @@ class ExamCustomController extends Controller
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = isset($sessionResult->given_ans->$quest_id->answer) ? $sessionResult->given_ans->$quest_id->answer : [];
-            $aGivenAns = [];
+
 
 
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;

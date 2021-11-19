@@ -1,5 +1,11 @@
 @extends('layouts.app')
-
+<style>
+    .close-btn-subs {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+</style>
 @section('content')
 <nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
     <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
@@ -7,9 +13,12 @@
 <div id="main">
     <div class="row">
         <div class="col-md-10 mx-auto">
-            <h1 class="main-heading">WHAT's your game ?</h1>
+            <h1 class="main-heading position-relative">WHAT's your game ?
+                <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
+            </h1>
             <div id="scrollDiv">
                 <div class="row">
+
                     @if($errors->any())
                     <div class="col-md-12 ">
                         <div class="alert alert-danger alert-dismissible">
