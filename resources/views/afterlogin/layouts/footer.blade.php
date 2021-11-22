@@ -177,6 +177,9 @@
     $(".notification-scroll").slimscroll({
         height: "70vh",
     });
+    $('.planner-scroll').slimscroll({
+        height: '70vh',
+    });
     $('#editprofile').click(function() {
         $('#profile-details').hide();
         $('#profile-form').show();

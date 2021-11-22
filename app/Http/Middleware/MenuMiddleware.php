@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
+use Carbon\Carbon;
 
 use App\Http\Traits\CommonTrait;
 
@@ -86,6 +87,24 @@ class MenuMiddleware
             $notifications = $notifications->response;
         }
 
+        $today_date = Carbon::now();
+
+        $expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? $preferences->subscription_expiry_date : '';
+
+        $data_difference = $today_date->diffInDays($expiry_date, false);
+
+        if ($data_difference > 0) {
+            //not expired
+            $suscription_status = 2;
+        } elseif ($data_difference < 0) {
+            //expired
+            $suscription_status = 0;
+        } else {
+            //expire today
+            $suscription_status = 1;
+        }
+
+
 
 
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
@@ -94,6 +113,7 @@ class MenuMiddleware
         \Illuminate\Support\Facades\View::share('preferences_data', $preferences);
         \Illuminate\Support\Facades\View::share('exam_data', $exam_data);
         \Illuminate\Support\Facades\View::share('subscription_details', $subscriptionData);
+        \Illuminate\Support\Facades\View::share('suscription_status', $suscription_status);
         \Illuminate\Support\Facades\View::share('leaderboard_list', $leaderboard_list);
         \Illuminate\Support\Facades\View::share('imgPath', $imgPath);
         \Illuminate\Support\Facades\View::share('current_week_plan', $current_week_plan);

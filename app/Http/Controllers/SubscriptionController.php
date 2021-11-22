@@ -133,8 +133,33 @@ class SubscriptionController extends Controller
         /*trial link*/
 
 
+        /* Subscription Status Check */
+        $preferences = $this->redis_Preference();
 
-        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid'));
+        $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
+        $today_date = Carbon::now();
+
+        $expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? $preferences->subscription_expiry_date : '';
+
+        $data_difference = $today_date->diffInDays($expiry_date, false);
+
+
+        $suscription_status = 3;
+
+        if ($data_difference > 0) {
+            //not expired
+            $suscription_status = 2;
+        } elseif ($data_difference < 0) {
+            //expired
+            $suscription_status = 0;
+        } else {
+            //expire today
+            $suscription_status = 1;
+        }
+
+
+
+        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status'));
     }
 
 
