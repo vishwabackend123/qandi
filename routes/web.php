@@ -213,3 +213,6 @@ Route::any('/clear-all-notifications', [App\Http\Controllers\HomeController::cla
 Route::any('/adaptive_exam', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_mock_exam'])->name('adaptive_mock_exam')->middleware('auth', 'menu');
 Route::any('/adaptive_next_question/{ques_id}', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_next_question'])->name('adaptive_next_question')->middleware('auth', 'menu');
 Route::any('/adaptive_next_subject_question/{subject_id}', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_next_subject_question'])->name('adaptive_next_subject_question')->middleware('auth', 'menu');
+
+Route::any('/refund_form', [App\Http\Controllers\SubscriptionController::class, 'refundForm'])->name('refund_form')->middleware('auth', 'menu');
+Route::any('/refund_form_submit', [App\Http\Controllers\SubscriptionController::class, 'refundFormSubmit'])->name('refund_form_submit')->middleware('auth', 'menu');

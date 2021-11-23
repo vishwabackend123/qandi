@@ -317,4 +317,13 @@ class SubscriptionController extends Controller
 
         return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price'));
     }
+
+    public function refundForm()
+    {
+        return view('afterlogin.refund_form');
+    }
+    public function refundFormSubmit(Request $request)
+    {
+//        dd($request);
+    }
 }
