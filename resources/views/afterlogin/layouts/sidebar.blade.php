@@ -284,6 +284,7 @@
             {{--<a class="nav-link" data-bs-toggle="collapse" href="#submenupreparation2" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-pencil" aria-hidden="true"></i> About Exam</a>--}}
 
             <a href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation Center</a>
+            <a href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
             {{--<a href="{{route('download_exampaper')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Previous Year Qn. Papers</a>--}}
         </div>
 

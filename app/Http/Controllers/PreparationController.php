@@ -140,7 +140,6 @@ class PreparationController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
         ));
 
-
         $response_json = curl_exec($curl);
 
 
