@@ -200,7 +200,6 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                         <div class="d-flex bg-light align-items-center px-4 py-3">
                                             <span><i class="fas fa-check-circle text-success fa-4x"></i></span>
                                             <?php
-                                            $fromdate = isset($subscription_details->subscription_end_date) ? date("d-m-Y", strtotime($subscription_details->subscription_end_date)) : '';
                                             $todaydate = date("d-m-Y"); ?>
                                             <div class="subscribe-detail">
                                                 @if(isset($subscription_details) && !empty($subscription_details))
@@ -213,12 +212,11 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
-                                        @if($fromdate > $todaydate) <p class="text-end text-danger mt-1">*Subscription expires
+                                        @if($suscription_status != 0) <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @else
-                                        <p class="text-end text-danger mt-1">*Subscription already expired on {{$fromdate}}</p>
+                                        <p class="text-end text-danger mt-1">*Subscription already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @endif
-
 
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
@@ -319,56 +317,58 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
-            <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
-            <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
-            <p class="fw-bold text-uppercase">Exams per week</p>
-            <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
-                @csrf
-                <div class="row align-items-center mb-4">
-                    <div class="col-md-6">
-                        <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)">
+            <div class="planner-scroll">
+                <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
+                <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
+                <p class="fw-bold text-uppercase">Exams per week</p>
+                <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
+                    @csrf
+                    <div class="row align-items-center mb-4">
+                        <div class="col-md-6">
+                            <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)">
+                        </div>
+                        <div class="col-md-6">
+                            <span id="slide-input" class="badge bg-badge">5</span>
+                        </div>
+                        <span id="limit_error_1" class="text-danger"></span>
                     </div>
-                    <div class="col-md-6">
-                        <span id="slide-input" class="badge bg-badge">5</span>
-                    </div>
-                    <span id="limit_error_1" class="text-danger"></span>
-                </div>
-                <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
-                <div class="d-flex align-items-center row">
-                    <div class="col-3 me-2">
-                        <label class="d-block">Start Date</label>
-                        <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
-                    </div>
-                    <div class="col-3">
-                        <label class="d-block">End Date</label>
-                        <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly required />
-                    </div>
-                </div>
-                <div class=" row mt-4">
-                    <span id="limit_error" class="text-danger"></span>
-                    @if(isset($aSubjects) && !empty($aSubjects))
-                    @foreach($aSubjects as $skey=>$sVal)
-                    <div class="col col-lg-4 mb-4 ">
-                        <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
-                        <div class="subject_chapter">
-                            <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
-
-                            </div>
-                            <div class="chaptbox-add ">
-                                <a href="#" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
-                                    <span class=""><img src="{{URL::asset('public/after_login/images/plusSign_ic.png')}}" /></span>
-                                </a>
-                            </div>
+                    <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
+                    <div class="d-flex align-items-center row">
+                        <div class="col-3 me-2">
+                            <label class="d-block">Start Date</label>
+                            <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required />
+                        </div>
+                        <div class="col-3">
+                            <label class="d-block">End Date</label>
+                            <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly required />
                         </div>
                     </div>
-                    @endforeach
-                    @endif
-                </div>
-                <div class="text-center">
-                    <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25"><img src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}" />
-                    </button>
-                </div>
-            </form>
+                    <div class=" row mt-4">
+                        <span id="limit_error" class="text-danger"></span>
+                        @if(isset($aSubjects) && !empty($aSubjects))
+                        @foreach($aSubjects as $skey=>$sVal)
+                        <div class="col col-md-4 mb-4 ">
+                            <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
+                            <div class="subject_chapter">
+                                <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
+
+                                </div>
+                                <div class="chaptbox-add ">
+                                    <a href="#" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
+                                        <span class=""><img src="{{URL::asset('public/after_login/images/plusSign_ic.png')}}" /></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        @endif
+                    </div>
+                    <div class="text-center">
+                        <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25"><img src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}" />
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="planner-content p-3">
             <div class="d-flex align-items-center justify-content-between">

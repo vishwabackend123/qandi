@@ -125,7 +125,7 @@ $questtype='radio';
         @endif
 
         <!-- Questions -->
-        {{--
+
         <sapn class="question_difficulty_tag small">
             <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
             <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
@@ -133,7 +133,7 @@ $questtype='radio';
             <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
 
             <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
-        </sapn>--}}
+        </sapn>
         <div class="question N_question" id="question_blk"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
         <!-- Options -->
         <div class="ans-block row mt-5 N_radioans">
@@ -215,9 +215,7 @@ $questtype='radio';
     $('.next_button').prop('autofocus', false);
     $("#btn_" + question_id).prop('autofocus', true);
 
-    $(".number-block").animate({
-        scrollTop: $("#btn_" + question_id).offset().top - 20
-    }, 800);
+    $(".number-block #btn_" + question_id)[0].scrollIntoView();
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");

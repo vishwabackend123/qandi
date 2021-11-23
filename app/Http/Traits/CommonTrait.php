@@ -66,14 +66,13 @@ trait CommonTrait
     {
         $user_id = Auth::user()->id;
         $exam_id = Auth::user()->grade_id;
-
+        /* 
         $cacheKey = 'exam_subjects:' . $exam_id;
         if ($data = Redis::get($cacheKey)) {
             $subject_list = json_decode($data);
             return $subject_list;
-        }
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/' . $exam_id;
-
+        } */
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/2'; //. $exam_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -97,9 +96,9 @@ trait CommonTrait
             $responsedata = json_decode($response_json);
 
             $subject_list = $responsedata->response;
-            if (!empty($subject_list)) {
+            /* if (!empty($subject_list)) {
                 Redis::set($cacheKey, json_encode($subject_list));
-            }
+            } */
         } else {
             $subject_list = [];
         }

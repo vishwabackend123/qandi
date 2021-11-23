@@ -398,13 +398,11 @@ class HomeController extends Controller
         $validator = Validator::make($fileArray, $rules);
 
         // Check to see if validation fails or passes
-        if ($validator->fails())
-        {
+        if ($validator->fails()) {
             // Redirect or return json to frontend with a helpful message to inform the user
             // that the provided file was not an adequate type
             return response(['error' => $validator->errors()->getMessages(), 'success' => false]);
-        } else
-        {
+        } else {
             // Store the File Now
             $user_id = Auth::user()->id;
             $file = $request->file('file-input');
