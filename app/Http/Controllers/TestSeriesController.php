@@ -25,8 +25,10 @@ class TestSeriesController extends Controller
      */
     public function series_list(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $live_series = [];
         $open_series = [];
 
@@ -74,8 +76,14 @@ class TestSeriesController extends Controller
      */
     public function test_series_exam(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+
+        if (Redis::exists('custom_answer_time')) {
+            Redis::del(Redis::keys('custom_answer_time'));
+        }
 
         $exam_name = isset($request->series_name) ? $request->series_name : '';
         $exam_name = isset($request->series_name) ? $exam_name . '(Test Series)' : '';

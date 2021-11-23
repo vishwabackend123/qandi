@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
+
 <style>
     .mjx-chtml {
         line-height: 0.5 !important;
@@ -50,6 +51,7 @@
                                     <form method="post" action="{{route('custom_exam')}}">
                                         @csrf
                                         <input type="hidden" name="subject_id" value="{{$sub->id}}">
+                                        <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                                         <input type="hidden" name="question_count" value="30">
 
                                         <button class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
@@ -93,6 +95,7 @@
                                         <form method="post" action="{{route('custom_exam_chapter')}}">
                                             @csrf
                                             <input type="hidden" name="subject_id" value="">
+                                            <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                                             <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                                             <input type="hidden" name="question_count" value="30">
 
@@ -129,6 +132,7 @@
                             <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
                                 @csrf
                                 <input type="hidden" id="selected_topic" name="topics">
+                                <input type="hidden" id="selected_tab" name="selected_tab">
                                 <input type="hidden" name="question_count" value="30">
                                 <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
                                 <div id="topic_custom_footer" class="text-right d-flex align-items-right my-3 px-4">
@@ -147,7 +151,11 @@
 </div>
 
 @include('afterlogin.layouts.footer')
+@if (session('active_subject'))
+<script type="text/javascript">
 
+</script>
+@endif
 <script type="text/javascript">
     $('.scroll-div').slimscroll({
         height: '50vh'
@@ -159,6 +167,9 @@
 
             submitHandler: function(form) {
                 var selected_topics = $('#selected_topic').val();
+                var active_tab = $("a.active").attr("id");
+                $('#selected_tab').val(active_tab);
+
                 if (selected_topics == '' || selected_topics == null) {
                     $('#errlog_alert').html('Please select at least one topic for exam.');
                     $('#errlog_alert').show();

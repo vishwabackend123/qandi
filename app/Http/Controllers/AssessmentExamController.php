@@ -22,8 +22,10 @@ class AssessmentExamController extends Controller
     public function assessment_exam(Request $request)
     {
         $filtered_subject = [];
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $exam_name = 'Mock Test';
 

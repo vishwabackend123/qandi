@@ -23,8 +23,10 @@ class AdpativeExamController extends Controller
     public function adaptive_mock_exam(Request $request)
     {
         $filtered_subject = [];
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $exam_name = 'Mock Test';
 
@@ -168,7 +170,10 @@ class AdpativeExamController extends Controller
     public function adaptive_next_question($quest_id, Request $request)
     {
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -230,7 +235,7 @@ class AdpativeExamController extends Controller
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
 
-        $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
+        $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
         return view('afterlogin.AdaptiveExam.next_adaptive_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
@@ -240,7 +245,10 @@ class AdpativeExamController extends Controller
     {
 
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -310,7 +318,7 @@ class AdpativeExamController extends Controller
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
 
-        $aGivenAns = isset($sessionResult->given_ans->$activeq_id) ? $sessionResult->given_ans->$activeq_id : [];
+        $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
 
         return view('afterlogin.AdaptiveExam.next_adaptive_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
@@ -323,8 +331,10 @@ class AdpativeExamController extends Controller
     {
         $filtered_subject = [];
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         if (Redis::exists('adaptive_session')) {
             Redis::del(Redis::keys('adaptive_session'));
@@ -335,11 +345,17 @@ class AdpativeExamController extends Controller
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
         $topic_id = isset($request->topics) ? $request->topics : 0;
-        $select_topic = isset($request->topics) ? explode(",", $request->topics, true) : [];
+        $select_topic = isset($request->topics) ? array_map('intval', explode(",", $request->topics)) : [];
+
 
         $inputjson['student_id'] = $user_id;
         $inputjson['exam_id'] = (string)$exam_id;
-        $inputjson['topic_id'] = $select_topic[0];
+        if (count($select_topic) > 1) {
+            $inputjson['topic_id'] = $select_topic;
+        } else {
+            $inputjson['topic_id'] = !empty($select_topic) ? $select_topic[0] : [];
+        }
+
         $inputjson['session_id'] = 0;
         $inputjson['end_test'] = "";
         $inputjson['exam_over'] = "";
@@ -352,7 +368,11 @@ class AdpativeExamController extends Controller
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+        if (count($select_topic) > 1) {
+            $curl_url = $api_URL . 'api/adaptive-assessment-multi-topics-practice';
+        } else {
+            $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+        }
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
@@ -486,7 +506,10 @@ class AdpativeExamController extends Controller
         $session_id = isset($request->session_id) ? $request->session_id : [];
         $topic_id = isset($request->topic_id) ? $request->topic_id : [];
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -539,8 +562,8 @@ class AdpativeExamController extends Controller
             $session_result = Redis::get('adaptive_session');
             $sessionResult = json_decode($session_result);
 
-            $aGivenAns = isset($sessionResult->given_ans->$quest_id->answer) ? $sessionResult->given_ans->$quest_id->answer : [];
-            $aGivenAns = [];
+            $aGivenAns = (isset($sessionResult->given_ans->$quest_id->answer) && !empty($sessionResult->given_ans->$quest_id->answer)) ? $sessionResult->given_ans->$quest_id->answer : [];
+
 
 
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
@@ -557,8 +580,10 @@ class AdpativeExamController extends Controller
 
     public function getNextAdpativeQues($session_id, $nextkey, $topic_id)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);
@@ -652,8 +677,10 @@ class AdpativeExamController extends Controller
         $session_id = isset($request->session_id) ? $request->session_id : 0;
         $topic_id = isset($request->topic_id) ? $request->topic_id : 0;
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);
@@ -720,9 +747,10 @@ class AdpativeExamController extends Controller
     {
         $session_id = isset($request->session_id) ? $request->session_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
+        $userData = Session::get('user_data');
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);

@@ -1,7 +1,9 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
-
+@php
+$userData = Session::get('user_data');
+@endphp
 <!-- Side bar menu -->
 
 <div class="  h-100" id="dialog-pdf" title="pdf" stye="display:none;">
@@ -51,7 +53,7 @@
                                                         <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
                                                     </div>
                                                     <div class="exportUsertxt">
-                                                        <p>{{ucwords(Auth::user()->user_name)}}</p>
+                                                        <p>{{ucwords($userData->user_name)}}</p>
                                                         <small><strong>Class - {{$user_stage}}</strong>, Preparing
                                                             for
                                                             {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
@@ -282,7 +284,7 @@
                                     <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
                                 </div>
                                 <div class="exportUsertxt">
-                                    <p>{{ucwords(Auth::user()->user_name)}}</p>
+                                    <p>{{ucwords($userData->user_name)}}</p>
                                     <small><strong>Class - {{$user_stage}}</strong>, Preparing for
                                         {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
                                     </small>

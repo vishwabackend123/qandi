@@ -39,8 +39,10 @@ class LiveExamController extends Controller
      */
     public function live_exam_list(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $api_url = Config::get('constants.API_NEW_URL') . 'api/live-exam/live-exam-schedule/' . $exam_id . '/' . $user_id;
 
@@ -81,9 +83,10 @@ class LiveExamController extends Controller
     public function live_exam(Request $request, $schedule_id)
     {
         $filtered_subject = [];
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
 
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $live_exam_id = $schedule_id;
 
         $exam_name = 'Live Exam';
@@ -227,9 +230,10 @@ class LiveExamController extends Controller
     /* live exam result */
     public function live_exam_result($result_id)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
 
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $curl_url = "";
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');

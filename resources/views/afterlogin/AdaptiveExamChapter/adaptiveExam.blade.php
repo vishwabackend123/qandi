@@ -188,7 +188,7 @@ $questtype='radio';
                                         </div>
                                         <div class="pe-3" style="float:right">
                                             <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
-                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</button>
                                         </div>
 
                                     </div>
@@ -771,7 +771,7 @@ $questtype='radio';
         }
     }
 
-    function clearResponse(quest_id, subject_id) {
+    function clearResponse(quest_id, subject_id, qNo) {
 
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
             $(this).prop('checked', false);
@@ -794,6 +794,7 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + quest_id).html(qNo);
                 }
 
             },

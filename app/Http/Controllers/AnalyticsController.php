@@ -28,9 +28,10 @@ class AnalyticsController extends Controller
     public function overall_analytics(Request $request)
     {
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
 
-        $exam_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
@@ -242,9 +243,10 @@ class AnalyticsController extends Controller
 
     public function export_analytics(Request $request)
     {
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
 
-        $exam_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
@@ -452,7 +454,10 @@ class AnalyticsController extends Controller
     public function nextTab(Request $request, $sub_id)
     {
         $scoreArray = isset($request->scoreArray) ? $request->scoreArray : [];
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
@@ -613,9 +618,10 @@ class AnalyticsController extends Controller
 
     public function tutorials_session()
     {
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
 
-        $exam_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $api_url = Config::get('constants.API_NEW_URL') . 'api/upcoming-tutorial/' . $exam_id . '/' . $user_id;
 
@@ -655,10 +661,10 @@ class AnalyticsController extends Controller
 
     public function tutorials_signup($tutorial_id)
     {
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
 
-        $exam_id = Auth::user()->grade_id;
-
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $inputjson = [];
         $inputjson['student_id'] = (int)$user_id;

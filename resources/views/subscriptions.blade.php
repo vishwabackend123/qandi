@@ -7,6 +7,10 @@
     }
 </style>
 @section('content')
+@php
+$userData = Session::get('user_data');
+
+@endphp
 <nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
     <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
 </nav>
@@ -126,7 +130,7 @@
                     </div>
                     @endif
                     @endif
-                    @elseif((count($purchasedid)>0) && !empty(Auth::user()->id))
+                    @elseif((count($purchasedid)>0) && !empty($userData->id))
                     <div class="col-md-4 p-4 ">
                         <div class="bg-white white-box-small subscriptionBox  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -134,7 +138,7 @@
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
-                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty(Auth::user()->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty($userData->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
@@ -147,7 +151,7 @@
                             </div>
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline disabled" @if((count($purchasedid)>0) && !empty(Auth::user()->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
                             @else
                             <div class="text-center mt-2">
@@ -165,7 +169,7 @@
                             <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
-                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty(Auth::user()->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
+                                <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty($userData->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                     <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
@@ -178,7 +182,7 @@
                             </div>
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty(Auth::user()->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
                             @else
                             <div class="text-center mt-2">

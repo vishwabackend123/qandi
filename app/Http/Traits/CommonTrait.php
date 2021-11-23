@@ -12,23 +12,19 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 
-
 trait CommonTrait
 {
     public function user_exam()
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
 
-
-
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $exam_id = $userData->grade_id;
 
         if (!empty($exam_id)) {
 
-
             $api_URL = Config::get('constants.API_NEW_URL');
             $curl_url = $api_URL . 'api/get-all-exams/';
-
 
             $curl = curl_init();
             curl_setopt_array($curl, array(
@@ -64,15 +60,17 @@ trait CommonTrait
 
     public function redis_subjects()
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         /* 
         $cacheKey = 'exam_subjects:' . $exam_id;
         if ($data = Redis::get($cacheKey)) {
             $subject_list = json_decode($data);
             return $subject_list;
         } */
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/2'; //. $exam_id;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/' . $exam_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -185,9 +183,10 @@ trait CommonTrait
 
     public function subscription_packages()
     {
-        $user_data = Auth::user();
-        $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
-        $grade_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $grade_id = $userData->grade_id;
 
         /* $cacheKey = 'subscription_packages';
         if ($data = Redis::get($cacheKey)) {
@@ -228,16 +227,18 @@ trait CommonTrait
 
     public function redis_Preference()
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $exam_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
 
         /*  $cacheKey = 'preferences_data:' . $user_id;
         if ($data = Redis::get($cacheKey)) {
             $preferences = json_decode($data);
             return $preferences;
         } */
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
+
+
 
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/preference/' . $user_id;
@@ -276,7 +277,10 @@ trait CommonTrait
     public function subscribedPackage()
     {
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = isset($userData->id) ? $userData->id : 0;
+
         $curl = curl_init();
 
         $api_URL = Config::get('constants.API_NEW_URL');
@@ -314,9 +318,10 @@ trait CommonTrait
 
     public function leaderBoard()
     {
-        $user_data = Auth::user();
-        $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
-        $grade_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
@@ -355,8 +360,10 @@ trait CommonTrait
 
     public function redis_chapter_list($subject_id)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
+
 
         $cacheKey = 'exam_subjects_chapters:' . $subject_id;
         if ($data = Redis::get($cacheKey)) {

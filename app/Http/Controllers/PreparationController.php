@@ -19,8 +19,11 @@ class PreparationController extends Controller
 
     public function preparation_center(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+
         $subject_list = $this->redis_subjects();
 
         $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapterWiseSummary/' . $exam_id . '/' . $user_id;
@@ -50,21 +53,24 @@ class PreparationController extends Controller
         } else {
             $preparation_list = [];
         }
-//      dd($preparation_list);
+        //      dd($preparation_list);
         $aPreparation = $preparation_list;
-//        if (!empty($preparation_list)) {
-//            foreach ($preparation_list as $list) {
-//                $values = $list->values;
-//                $aPreparation[$list->subject_id][] = $values[0];
-//            }
-//        }
+        //        if (!empty($preparation_list)) {
+        //            foreach ($preparation_list as $list) {
+        //                $values = $list->values;
+        //                $aPreparation[$list->subject_id][] = $values[0];
+        //            }
+        //        }
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
 
 
     public function download_exampaper(Request $request)
     {
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $data = $request->all();
         $responsePdf = '';
         if (isset($data) && !empty($data)) :
@@ -111,9 +117,10 @@ class PreparationController extends Controller
 
     public function preparation_center_subject(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
 
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $subject_id = $request->subject_id;
         $preType = $request->preType;
 
@@ -168,8 +175,10 @@ class PreparationController extends Controller
 
     public function presentations_chapter(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
@@ -209,8 +218,10 @@ class PreparationController extends Controller
 
     public function videos_chapter(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
@@ -253,8 +264,10 @@ class PreparationController extends Controller
 
     public function notes_chapter(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
@@ -294,9 +307,10 @@ class PreparationController extends Controller
 
     public function bookmarks_chapter(Request $request)
     {
+        $userData = Session::get('user_data');
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
@@ -336,9 +350,10 @@ class PreparationController extends Controller
     public function getReviewBookmarks()
     {
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         //$cacheKey = 'exam_review:' . $user_id;
         /*if (Redis::exists($cacheKey)) {
             Redis::del(Redis::keys($cacheKey));
@@ -509,9 +524,10 @@ class PreparationController extends Controller
     public function next_review_questionbookmark($question_id)
     {
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
@@ -655,9 +671,10 @@ class PreparationController extends Controller
     public function ajax_review_next_subject_questionbookmark($subject_id, Request $request)
     {
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
@@ -789,5 +806,4 @@ class PreparationController extends Controller
         // echo "<pre>"; print_r($question_data); die;
         return view('afterlogin.ExamCustom.next_review_questionbookmark', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
     }
-
 }

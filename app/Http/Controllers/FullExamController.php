@@ -22,8 +22,10 @@ class FullExamController extends Controller
     public function exam(Request $request, $exam_name)
     {
         $filtered_subject = [];
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         if ($exam_name == 'full_exam') {
             $exam_name = 'Full Exam';
         } else {
@@ -181,7 +183,10 @@ class FullExamController extends Controller
     public function next_question($quest_id, Request $request)
     {
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -243,7 +248,7 @@ class FullExamController extends Controller
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
 
-        $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
+        $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
         return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
@@ -251,9 +256,10 @@ class FullExamController extends Controller
 
     public function next_subject_question($subject_id, Request $request)
     {
+        $userData = Session::get('user_data');
 
-
-        $user_id = Auth::user()->id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -323,7 +329,7 @@ class FullExamController extends Controller
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
 
-        $aGivenAns = isset($sessionResult->given_ans->$activeq_id) ? $sessionResult->given_ans->$activeq_id : [];
+        $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
 
         return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));

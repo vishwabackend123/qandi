@@ -3003,8 +3003,13 @@ header {
     cursor: pointer;
 }
 
+.ans label {
+    overflow-x: auto;
+    max-width: 50vh
+}
+
 .question p {
-    display: inline;
+    display: block;
 }
 
 .N_timer {

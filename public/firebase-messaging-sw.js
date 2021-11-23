@@ -1,18 +1,17 @@
 // Add Firebase products that you want to use
-importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.3.2/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js');
 
 // Firebase SDK
 firebase.initializeApp({
    
-    apiKey: "AIzaSyAXOEjCfj6qEKRi3Lm82j2DLMNIsXnJ0Nk",
-    authDomain: "uniq-notifications.firebaseapp.com",
-    databaseURL: 'https://uniq-notifications.firebaseio.com',
-    projectId: "uniq-notifications",
-    storageBucket: "uniq-notifications.appspot.com",
-    messagingSenderId: "768896658565",
-    appId: "1:768896658565:web:036b631c04c6d9c6280dec",
-    measurementId: "G-8PJKZ9N25F"
+    apiKey: "AIzaSyAWZZkXXuTHAyNqO2EHqi5nudL40exTmmc",
+    authDomain: "uniq-notifications-9891c.firebaseapp.com",
+    projectId: "uniq-notifications-9891c",
+    storageBucket: "uniq-notifications-9891c.appspot.com",
+    messagingSenderId: "426474366022",
+    appId: "1:426474366022:web:0a94e98859fedd92bd9647",
+    measurementId: "G-9QGWSEL82D"
 });
 
 const messaging = firebase.messaging();

@@ -22,8 +22,10 @@ class PlannerController extends Controller
     public function addPlanner(Request $request)
     {
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $range = isset($request->weekrange) ? $request->weekrange : '';
         $start_date = isset($request->start_date) ? $request->start_date : '';
@@ -83,8 +85,10 @@ class PlannerController extends Controller
     public function weeklyExams(Request $request)
     {
         # code...
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
@@ -125,8 +129,10 @@ class PlannerController extends Controller
     public function getWeeklyPlanSchedule(Request $request)
     {
         # code...
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $range = 0;
 
@@ -182,8 +188,10 @@ class PlannerController extends Controller
         $filtered_subject = [];
 
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         if (Redis::exists('custom_answer_time')) {
             Redis::del(Redis::keys('custom_answer_time'));
@@ -336,8 +344,10 @@ class PlannerController extends Controller
 
     public function shuffle_chapter($active_subject_id, Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $selected_chapter = isset($request->selected_chapters) ? $request->selected_chapters : [];
 

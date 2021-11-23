@@ -42,10 +42,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $userData = Session::get('user_data');
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $grade_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $user_subjects = $this->redis_subjects();
         $preferences = $this->redis_Preference();
 
@@ -198,7 +198,10 @@ class HomeController extends Controller
     public function store_stand_value(Request $request)
     {
         $data = $request->all();
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $stand_value = $request->input('user_stand_value');
 
@@ -260,7 +263,10 @@ class HomeController extends Controller
     public function dailyWelcomeUpdates(Request $request)
     {
         $data = $request->all();
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $storeddata = $request->input('storeddata');
 
@@ -313,7 +319,10 @@ class HomeController extends Controller
     public function editProfile(Request $request)
     {
         $data = $request->all();
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $user_name = $request->username;
 
         $useremailexists = StudentUsers::where('email', $request->useremail)->where('id', '!=', $user_id)->exists();
@@ -404,7 +413,10 @@ class HomeController extends Controller
             return response(['error' => $validator->errors()->getMessages(), 'success' => false]);
         } else {
             // Store the File Now
-            $user_id = Auth::user()->id;
+            $userData = Session::get('user_data');
+
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
             $file = $request->file('file-input');
             $file_name = $file->getClientOriginalName();
             if ($request->hasfile('file-input')) {
@@ -433,7 +445,10 @@ class HomeController extends Controller
     public function saveFcmToken(Request $request)
     {
         $data = $request->all();
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $fcm_token = isset($request->fcm_token) ? $request->fcm_token : '';
         $request = [
             "token" => $fcm_token,
@@ -473,7 +488,10 @@ class HomeController extends Controller
 
     public function searchFriendWithKeyWord(Request $request)
     {
-        $class_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $class_id = $userData->grade_id;
         $reqData = $request->all();
         $searchText = $reqData['search_text'];
         $curl = curl_init();
@@ -498,7 +516,10 @@ class HomeController extends Controller
 
     public function clearAllNotifications()
     {
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/clear-notifications/' . $user_id;
         $curl = curl_init();

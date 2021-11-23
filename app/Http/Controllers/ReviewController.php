@@ -28,9 +28,10 @@ class ReviewController extends Controller
     public function getReview($result_id)
     {
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'exam_review:' . $user_id;
         if (Redis::exists($cacheKey)) {
             Redis::del(Redis::keys($cacheKey));
@@ -216,9 +217,10 @@ class ReviewController extends Controller
     public function next_review_question($question_id)
     {
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'exam_review:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -340,9 +342,10 @@ class ReviewController extends Controller
     public function ajax_review_next_subject_question($subject_id, Request $request)
     {
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'exam_review:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -459,10 +462,10 @@ class ReviewController extends Controller
 
     public function filter_review_question($filter_by)
     {
+        $userData = Session::get('user_data');
 
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'exam_review:' . $user_id;
 
         //$cacheKey = 'review_question:';
