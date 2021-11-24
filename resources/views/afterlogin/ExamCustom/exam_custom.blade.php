@@ -1,7 +1,21 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        //var tabProducts = '{{session("active_subject")}}';
+        $('a[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
+            localStorage.setItem('activeTab', $(e.target).attr('href'));
+        });
+        var activeTab = localStorage.getItem('activeTab');
+        console.log(activeTab);
+        if (activeTab) {
+            $('#myTab a[href="' + activeTab + '"]').tab('show');
+        }
+    });
+</script>
 <style>
     .mjx-chtml {
         line-height: 0.5 !important;
@@ -151,11 +165,9 @@
 </div>
 
 @include('afterlogin.layouts.footer')
-@if (session('active_subject'))
-<script type="text/javascript">
 
-</script>
-@endif
+
+
 <script type="text/javascript">
     $('.scroll-div').slimscroll({
         height: '50vh'

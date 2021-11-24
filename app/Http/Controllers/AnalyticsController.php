@@ -25,7 +25,7 @@ class AnalyticsController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function overall_analytics(Request $request)
+    public function overall_analytics($active_id = '', Request $request)
     {
 
         $userData = Session::get('user_data');
@@ -205,6 +205,7 @@ class AnalyticsController extends Controller
 
 
             return view('afterlogin.Analytics.overall_analytics', compact(
+                'active_id',
                 'days',
                 'classAccuracy',
                 'stuAccuracy',

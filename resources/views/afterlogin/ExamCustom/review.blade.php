@@ -137,7 +137,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 @endforeach
                                             </div>
 
-                                            <div class="col-md-3 text-end">
+                                            {{--<div class="col-md-3 text-end">
                                                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
                                             </div>
                                             <div class="col-md-12 percentage-box collapse" id="perecent-box">
@@ -155,14 +155,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                     <p class="mb-0">knowledge of</p>
                                                     <button type="button" class="btn btn-danger mb-3" data-bs-toggle="collapse" data-bs-target="#perecent-box1">{{$question_data->chapter_name}}</button>
 
-                                                    <!--    <p class="mb-0">knowledge and application of</p>
+                                            <!--    <p class="mb-0">knowledge and application of</p>
                                                     <button type="button" class="btn btn-danger">Pythagoras Theorem</button> -->
 
-                                                </div>
+                                        </div>
 
-                                            </div>
+                                    </div>--}}
 
-                                            <!--   <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
+                                    <!--   <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
                                                 <div class=" p-4 bg-gray">
                                                     <div class="d-flex">
                                                         <div class="">
@@ -194,119 +194,119 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                                             </div> -->
 
-                                        </div>
-                                        @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
-                                        <div class="row">
-                                            <div class="col-md-2 ">
-                                                <p class="mb-0 text-green">Explanation :</p>
+                                </div>
+                                @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
+                                <div class="row">
+                                    <div class="col-md-2 ">
+                                        <p class="mb-0 text-green">Explanation :</p>
 
-                                            </div>
-                                            <div class="col-md-7">
-                                                {!! $question_data->explanation !!}
-                                            </div>
-                                        </div>
-                                        @endif
-                                        @if(isset($question_data->reference_text ) && !empty($question_data->reference_text ))
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <p class="mb-0 text-green">Reference :</p>
-                                            </div>
-                                            <div class="col-md-7">
-                                                {!! $question_data->reference_text !!}
-                                            </div>
-                                        </div>
-                                        @endif
                                     </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mt-5 rightPannerl ">
-
-                    <div class="bg-white d-flex flex-column justify-content-center  reviewBox palette_box ">
-                        <span class="palette_title">Answer Palette</span>
-                        <div class="number-block N_number-block">
-                            @php $quKey=1; @endphp
-                            @if(isset($all_question_list) && !empty($all_question_list))
-
-                            @foreach($all_question_list as $ke=>$val)
-                            @php
-                            $key_id=$val->question_id;
-                            if ($val->attempt_status == 'Correct') {
-                            $key_class = 'btn-light-green';
-                            } elseif ($val->attempt_status == 'Incorrect') {
-                            $key_class = 'btn-light-red';
-                            } else {
-                            $key_class = 'btn-light';
-                            }@endphp
-                            <button type="button" class="next_button btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">
-                                {{$quKey}}</button>
-                            @php $quKey++; @endphp
-                            @endforeach
-                            @endif
-
-
-                        </div>
-                    </div>
-                    <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box ">
-                        <div class="d-flex mb-3 reviewBox2">
-                            <div class="col-10 heading">
-                                <h5>Review Questions.</h5>
-                            </div>
-                            <div class="col text-end">
-                                <div class="dropdown">
-                                    <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></a>
-
-
-                                    <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')"> All</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="review-questions-blk" id="filter_questions">
-                            @php $quKee=1; @endphp
-                            @if(isset($all_question_list) && !empty($all_question_list))
-
-                            @foreach($all_question_list as $kee=>$value)
-                            @php
-
-                            $key_id=$value->question_id;
-                            if ($value->attempt_status == 'Correct') {
-                            $div_class = 'border-left-green5';
-                            } elseif ($value->attempt_status == 'Incorrect') {
-                            $div_class = 'border-left-red5';
-                            } else {
-                            $div_class = '';
-                            }@endphp
-                            <div class="d-flex align-items-center">
-                                <div class="review-questions-box {{$div_class}} mx-2 mb-3">
-                                    <div class="d-flex">
-                                        <div class="me-3">Q{{$quKee}}. </div>
-                                        <p class="mb-0">{!! $value->question !!} </p>
+                                    <div class="col-md-7">
+                                        {!! $question_data->explanation !!}
                                     </div>
                                 </div>
+                                @endif
+                                @if(isset($question_data->reference_text ) && !empty($question_data->reference_text ))
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <p class="mb-0 text-green">Reference :</p>
+                                    </div>
+                                    <div class="col-md-7">
+                                        {!! $question_data->reference_text !!}
+                                    </div>
+                                </div>
+                                @endif
                             </div>
-                            @php $quKee++; @endphp
-                            @endforeach
-                            @endif
-
 
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
+        <div class="col-lg-3 mt-5 rightPannerl ">
+
+            <div class="bg-white d-flex flex-column justify-content-center  reviewBox palette_box ">
+                <span class="palette_title">Answer Palette</span>
+                <div class="number-block N_number-block">
+                    @php $quKey=1; @endphp
+                    @if(isset($all_question_list) && !empty($all_question_list))
+
+                    @foreach($all_question_list as $ke=>$val)
+                    @php
+                    $key_id=$val->question_id;
+                    if ($val->attempt_status == 'Correct') {
+                    $key_class = 'btn-light-green';
+                    } elseif ($val->attempt_status == 'Incorrect') {
+                    $key_class = 'btn-light-red';
+                    } else {
+                    $key_class = 'btn-light';
+                    }@endphp
+                    <button type="button" class="next_button btn {{$key_class}} rounded-0 mb-4" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">
+                        {{$quKey}}</button>
+                    @php $quKey++; @endphp
+                    @endforeach
+                    @endif
+
+
+                </div>
+            </div>
+            <div class="bg-white d-flex flex-column justify-content-center  review-questions palette_box ">
+                <div class="d-flex mb-3 reviewBox2">
+                    <div class="col-10 heading">
+                        <h5>Review Questions.</h5>
+                    </div>
+                    <div class="col text-end">
+                        <div class="dropdown">
+                            <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+
+
+                            <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')"> All</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="review-questions-blk" id="filter_questions">
+                    @php $quKee=1; @endphp
+                    @if(isset($all_question_list) && !empty($all_question_list))
+
+                    @foreach($all_question_list as $kee=>$value)
+                    @php
+
+                    $key_id=$value->question_id;
+                    if ($value->attempt_status == 'Correct') {
+                    $div_class = 'border-left-green5';
+                    } elseif ($value->attempt_status == 'Incorrect') {
+                    $div_class = 'border-left-red5';
+                    } else {
+                    $div_class = '';
+                    }@endphp
+                    <div class="d-flex align-items-center">
+                        <div class="review-questions-box {{$div_class}} mx-2 mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">Q{{$quKee}}. </div>
+                                <p class="mb-0">{!! $value->question !!} </p>
+                            </div>
+                        </div>
+                    </div>
+                    @php $quKee++; @endphp
+                    @endforeach
+                    @endif
+
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
+</div>
+</div>
 
 </div>
 

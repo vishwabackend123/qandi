@@ -27,6 +27,9 @@
 </script>
 
 @section('content')
+@php
+$userData = Session::get('user_data');
+@endphp
 <style>
     #exam_content_sec .container {
         max-width: 1280px;
@@ -274,7 +277,7 @@ $questtype='radio';
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content rounded-0">
                 <div class="modal-header pb-0 border-0">
-                    <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}"></a>
+                    <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
                 </div>
                 <div class="modal-body pt-3 p-5">
                     <div class="row">
@@ -323,7 +326,7 @@ $questtype='radio';
 
                         <h1 class="my-auto text-center">
 
-                            <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
 
                         </h1>
                         <div class="text-left   ">

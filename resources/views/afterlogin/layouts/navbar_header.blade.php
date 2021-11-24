@@ -218,7 +218,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                         @if($suscription_status != 0) <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @else
-                                        <p class="text-end text-danger mt-1">*Subscription already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
+                                        <p class="text-end text-danger mt-1">*Subscription has already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @endif
 
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->

@@ -138,6 +138,7 @@ $userData = Session::get('user_data');
                         </div>
                         @if(!empty($subjectData))
                         @foreach($subjectData as $key=>$sub)
+
                         <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-3 dashboard-listing-details w-100 ">
                             <span class="mr-3 dashboard-name-txt">{{$sub['subject_name']}}</span>
 
@@ -158,7 +159,7 @@ $userData = Session::get('user_data');
                               <span class="total">5</span> -->
                                 </div>
                             </div>
-                            <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
+                            <div class="tooltip"><a href="{{route('overall_analytics',$sub['subject_id'])}}">See Analytics </a></div>
                         </div>
                         @endforeach
                         @endif

@@ -3005,7 +3005,8 @@ header {
 
 .ans label {
     overflow-x: auto;
-    max-width: 50vh
+    max-width: 50vh;
+    height: 100%;
 }
 
 .question p {

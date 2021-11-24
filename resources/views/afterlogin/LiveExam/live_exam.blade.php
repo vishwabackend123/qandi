@@ -218,7 +218,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">

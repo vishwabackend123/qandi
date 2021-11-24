@@ -243,21 +243,19 @@ class ExamCustomController extends Controller
         $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
 
         if ($httpcode_response == true) {
-            $aQuestions_list = [];
+
             if (!empty($aQuestions_list)) {
                 //$exam_fulltime = $responsedata->time_allowed;
                 $questions_count = count($aQuestions_list);
                 $exam_fulltime = 60;
             } else {
-                // return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
-                return redirect()->back()->with('active_subject', $subject_name);
+                return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } else {
             $aQuestions_list = [];
             $questions_count = 0;
             $exam_fulltime = 0;
-            //return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
-            return redirect()->back()->with('active_subject', $subject_name);
+            return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
         }
 
         $redis_set = 'True';
