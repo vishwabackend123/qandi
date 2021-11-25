@@ -216,6 +216,11 @@ class SubscriptionController extends Controller
         $response_status = isset($aResponse->success) ? $aResponse->success : false;
 
         if ($response_status == true) {
+            Session::forget('user_data');
+            $user_Data = Auth::user();
+            Session::put('user_data', $user_Data);
+            $userData = Session::get('user_data');
+
             return redirect()->route('dashboard');
         } else {
 

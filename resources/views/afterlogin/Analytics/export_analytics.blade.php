@@ -269,7 +269,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="bg-white shadow-lg p-3 px-5 mt-3">
                             <p class="text-uppercase fw-bold text-start">
-                                Acuracy Percentage
+                                Accuracy Percentage
                             </p>
                             <div id="accPer"></div>
                         </div>
@@ -537,17 +537,17 @@ $userData = Session::get('user_data');
         },
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAccuracy); ?>,
+            data: <?php print_r($classAccuracy); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAccuracy); ?>,
+            data: <?php print_r($stuAccuracy); ?>,
             color: '#6ec986',
         }]
     });
 
-    /* ACURACY PERCENTAGE */
+    /* ACCURACY PERCENTAGE */
     Highcharts.chart('accPer', {
         chart: {
             type: 'spline',
@@ -572,12 +572,12 @@ $userData = Session::get('user_data');
         },
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAcc); ?>,
+            data: <?php print_r($classAcc); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAcc); ?>,
+            data: <?php print_r($stuAcc); ?>,
             color: '#6ec986',
         }]
     });

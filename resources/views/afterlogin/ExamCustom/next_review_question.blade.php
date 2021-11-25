@@ -72,7 +72,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 @endforeach
             </div>
 
-            <div class="col-md-3 text-end">
+            <!-- <div class="col-md-3 text-end">
                 <button type="button" class="btn btn-success btn-green answer-percentage-btn" data-bs-toggle="collapse" data-bs-target="#perecent-box">21%</button>
             </div>
             <div class="col-md-12 percentage-box collapse" id="perecent-box">
@@ -90,12 +90,12 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     <p class="mb-0">knowledge of</p>
                     <button type="button" class="btn btn-danger mb-3" data-bs-toggle="collapse" data-bs-target="#perecent-box1">{{$question_data->chapter_name}}</button>
 
-                    <!--  <p class="mb-0">knowledge and application of</p>
-                    <button type="button" class="btn btn-danger">Pythagoras Theorem</button> -->
+                      <p class="mb-0">knowledge and application of</p>
+                    <button type="button" class="btn btn-danger">Pythagoras Theorem</button> 
 
                 </div>
 
-            </div>
+            </div> -->
 
             <!-- <div class="col-md-12 percentage-box arc-radius-box collapse" id="perecent-box1">
                 <div class=" p-4 bg-gray">

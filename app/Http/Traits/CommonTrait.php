@@ -63,7 +63,9 @@ trait CommonTrait
         $userData = Session::get('user_data');
 
         $user_id = $userData->id;
+
         $exam_id = $userData->grade_id;
+
         /* 
         $cacheKey = 'exam_subjects:' . $exam_id;
         if ($data = Redis::get($cacheKey)) {

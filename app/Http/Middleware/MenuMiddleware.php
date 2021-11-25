@@ -28,13 +28,12 @@ class MenuMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Session::has('user_data')) {
-            $userData = Session::get('user_data');
-        } else {
-            $userData = Auth::user();
-            Session::put('user_data', $userData);
-            $userData = Session::get('user_data');
-        }
+
+
+        $user_Data = Auth::user();
+        Session::put('user_data', $user_Data);
+        $userData = Session::get('user_data');
+
 
 
 
@@ -116,7 +115,6 @@ class MenuMiddleware
             //expire today
             $suscription_status = 1;
         }
-
 
 
 

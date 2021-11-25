@@ -94,6 +94,9 @@ $userData = Session::get('user_data');
                         var response = jQuery.parseJSON(response_data);
 
                         if (response.success == true) {
+                            $('#refund_form').each(function() {
+                                this.reset();
+                            });
                             var message = response.message;
                             $("#refund_response").html(message);
                             $("#refund_response").addClass("text-success");
