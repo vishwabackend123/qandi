@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 
 use App\Http\Traits\CommonTrait;
@@ -27,8 +28,9 @@ class MenuMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $user_data = Auth::user();
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
         $api_URL = Config::get('constants.API_NEW_URL');
         /*Preference  data
         */
@@ -58,8 +60,8 @@ class MenuMiddleware
 
         $leaderboard_list = $this->leaderBoard();
 
-        if (Auth::user()->user_profile_img) {
-            $imgPath = Auth::user()->user_profile_img;
+        if ($userData->user_profile_img) {
+            $imgPath = $userData->user_profile_img;
         } else {
             $imgPath =  url('/') . '/public/after_login/images/profile.png';
         }

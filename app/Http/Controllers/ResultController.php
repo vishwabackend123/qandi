@@ -18,9 +18,10 @@ class ResultController extends Controller
     public function exam_result(Request $request)
     {
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
 
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
         $submit_time = isset($request->submit_time) ? (string)gmdate('H:i:s', $request->submit_time) : '00:00:00';
         //$submit_time = isset($request->submit_time) ? $request->submit_time : '00:00:00';
@@ -126,8 +127,10 @@ class ResultController extends Controller
     public function exam_post_analysis(Request $request)
     {
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $curl_url = "";
         $curl = curl_init();

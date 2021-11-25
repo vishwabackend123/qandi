@@ -69,6 +69,9 @@
     }
 </style>
 @php
+$userData = Session::get('user_data');
+@endphp
+@php
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
@@ -164,7 +167,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                                         </div>
                                         <div class="pe-3" style="float:right">
                                             <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
-                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
+                                            <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</button>
                                         </div>
 
                                     </div>
@@ -252,7 +255,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content rounded-0">
                 <div class="modal-header pb-0 border-0">
-                    <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}"></a>
+                    <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
                 </div>
                 <div class="modal-body pt-3 p-5">
                     <div class="row">
@@ -302,7 +305,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 
                             <h1 class="my-auto text-center">
 
-                                <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+                                <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
 
                             </h1>
                             <div class="text-left   ">
@@ -765,7 +768,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
         }
     }
 
-    function clearResponse(quest_id, subject_id) {
+    function clearResponse(quest_id, subject_id, qNo) {
 
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
             $(this).prop('checked', false);
@@ -787,6 +790,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + quest_id).html(qNo);
                 }
             },
         });

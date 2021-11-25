@@ -22,6 +22,10 @@
     });
 </script>
 @section('content')
+@php
+$userData = Session::get('user_data');
+
+@endphp
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -159,11 +163,11 @@ $questtype='radio';
                                                 @else
                                                 <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
                                                 @endif
-                                                <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}','{{$chapter_id}}')">Save & Mark for review</button>
+                                                <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
                                             </div>
                                             <div class="pe-3" style="float:right">
                                                 <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
-                                                <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}')">Clear Response</button>
+                                                <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</button>
                                             </div>
 
                                         </div>
@@ -255,7 +259,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
@@ -307,7 +311,7 @@ $questtype='radio';
 
                         <h1 class="my-auto text-center">
 
-                            <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
 
                         </h1>
                         <div class="text-left   ">
@@ -393,12 +397,14 @@ $questtype='radio';
 
 @include('afterlogin.layouts.footer')
 
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 
 
 <script type="text/javascript">
     $('.number-block').slimscroll({
         height: '20vh'
     });
+
     $('.answer-block').slimscroll({
         height: '30vh'
     });
@@ -764,7 +770,7 @@ $questtype='radio';
         }
     }
 
-    function clearResponse(quest_id, subject_id) {
+    function clearResponse(quest_id, subject_id, qNo) {
 
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
             $(this).prop('checked', false);
@@ -787,6 +793,7 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + quest_id).html(qNo);
                 }
 
             },

@@ -41,7 +41,10 @@ class RazorpayController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $payment_id = isset($request->razorpay_payment_id) ? $request->razorpay_payment_id : '';
         $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
@@ -104,8 +107,10 @@ class RazorpayController extends Controller
         $input = $request->all();
         $exam_id = $input['exam_id'];
 
+        $userData = Session::get('user_data');
 
-        $user_id = Auth::user()->id;
+        $user_id = $userData->id;
+
 
         $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
         //$api = new Api('rzp_test_foHLtdKSJjEDzv', 'RFrAe68CEzVrQpuuHnlKJHcy');

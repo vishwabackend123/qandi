@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar')
 <div class="main-wrapper  h-100">
@@ -18,7 +19,7 @@
                             </li>
                             @foreach($user_subjects as $val)
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link " id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
+                                <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
                             </li>
                             @endforeach
                             <li class="ms-auto d-flex">
@@ -194,6 +195,14 @@
 
 @include('afterlogin.layouts.footer')
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+@if(isset($active_id) && !empty($active_id))
+<script type="text/javascript">
+    $(document).ready(function() {
+        var tab_id = '{{$active_id}}';
+        $("#home-tab-" + tab_id).click();
+    });
+</script>
+@endif
 <script type="text/javascript">
     $(".scroll-topic-ana").slimscroll({
         height: "20vh",

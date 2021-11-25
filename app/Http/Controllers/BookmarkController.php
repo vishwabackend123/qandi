@@ -22,8 +22,10 @@ class BookmarkController extends Controller
     public function addbookmark(Request $request)
     {
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $question_id = isset($request->question_id) ? $request->question_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;

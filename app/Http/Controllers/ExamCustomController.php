@@ -20,8 +20,10 @@ class ExamCustomController extends Controller
 
     public function index(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $cacheKey = 'exam_subjects:' . $exam_id;
         if ($data = Redis::get($cacheKey)) {
@@ -83,9 +85,10 @@ class ExamCustomController extends Controller
 
     public function get_subject_chapter($active_subject_id)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
 
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
@@ -178,8 +181,10 @@ class ExamCustomController extends Controller
     {
         $filtered_subject = [];
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         if (Redis::exists('custom_answer_time')) {
             Redis::del(Redis::keys('custom_answer_time'));
@@ -188,6 +193,7 @@ class ExamCustomController extends Controller
 
         $question_count = isset($request->question_count) ? $request->question_count : 30;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
+        $subject_name = isset($request->subject_name) ? $request->subject_name : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
 
@@ -237,6 +243,7 @@ class ExamCustomController extends Controller
         $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
 
         if ($httpcode_response == true) {
+
             if (!empty($aQuestions_list)) {
                 //$exam_fulltime = $responsedata->time_allowed;
                 $questions_count = count($aQuestions_list);
@@ -353,8 +360,9 @@ class ExamCustomController extends Controller
     public function ajax_next_question($quest_id, Request $request)
     {
 
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
 
-        $user_id = Auth::user()->id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -416,7 +424,7 @@ class ExamCustomController extends Controller
 
 
 
-        $aGivenAns = isset($sessionResult->given_ans->$quest_id) ? $sessionResult->given_ans->$quest_id : [];
+        $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
         return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
@@ -519,9 +527,10 @@ class ExamCustomController extends Controller
 
     public function ajax_next_subject_question($subject_id, Request $request)
     {
+        $userData = Session::get('user_data');
 
+        $user_id = $userData->id;
 
-        $user_id = Auth::user()->id;
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -591,7 +600,7 @@ class ExamCustomController extends Controller
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
 
-        $aGivenAns = isset($sessionResult->given_ans->$activeq_id) ? $sessionResult->given_ans->$activeq_id : [];
+        $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
 
 
@@ -601,8 +610,10 @@ class ExamCustomController extends Controller
 
     public function  chaptersTopic(Request $request, $chapter_id)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $filter_by = isset($request->filter_type) ? $request->filter_type : '';
         //$topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
@@ -673,8 +684,10 @@ class ExamCustomController extends Controller
 
     public function ajax_chapter_list($active_subject_id, Request $request)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         $selected_chapter = isset($request->selected_chapters) ? $request->selected_chapters : [];
 
@@ -723,8 +736,10 @@ class ExamCustomController extends Controller
     public function filter_subject_chapter(Request $request, $active_subject_id)
 
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $filter_by = isset($request->filter_type) ? $request->filter_type : '';
 
         $subject_id = $active_subject_id;
@@ -852,8 +867,10 @@ class ExamCustomController extends Controller
     {
         $filtered_subject = [];
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
 
         if (Redis::exists('adaptive_session')) {
             Redis::del(Redis::keys('adaptive_session'));
@@ -1015,7 +1032,10 @@ class ExamCustomController extends Controller
         $session_id = isset($request->session_id) ? $request->session_id : [];
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : [];
 
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+
         $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -1068,7 +1088,7 @@ class ExamCustomController extends Controller
             $session_result = Redis::get('adaptive_session');
             $sessionResult = json_decode($session_result);
 
-            $aGivenAns = isset($sessionResult->given_ans->$quest_id->answer) ? $sessionResult->given_ans->$quest_id->answer : [];
+            $aGivenAns = (isset($sessionResult->given_ans->$quest_id->answer) && !empty($sessionResult->given_ans->$quest_id->answer)) ? $sessionResult->given_ans->$quest_id->answer : [];
 
 
 
@@ -1226,8 +1246,10 @@ class ExamCustomController extends Controller
 
     public function getNextAdpativeQues($session_id, $nextkey, $chapter_id)
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);

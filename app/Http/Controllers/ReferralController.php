@@ -21,8 +21,10 @@ class ReferralController extends Controller
     public function store_referral_friend(Request $request)
     {
 
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $referrals = (isset($request->refer_emails) && !empty($request->refer_emails)) ? $request->refer_emails : '';
 
         $inputjson = [

@@ -1,10 +1,13 @@
+@php
+$userData = Session::get('user_data');
+@endphp
 <header>
     <div class="container-fluid ">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{$imgPath}}" class="user-pic"></a></span>
-                    <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords(Auth::user()->user_name)}}</span></span>
+                    <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link " id="notification-tog">
@@ -107,7 +110,7 @@
                                                 <span id="image-upload-response" class=""></span>
                                                 <div id="profile-details" class="" style="padding-top:-20px">
                                                     <div class="mb-2 mt-3 profile-read">
-                                                        <h5 id="profileUserName" class="activeUserName">{{ucwords(Auth::user()->user_name)}}</h5>
+                                                        <h5 id="profileUserName" class="activeUserName">{{ucwords($userData->user_name)}}</h5>
                                                         <small>Class - {{$user_stage}}, Preparing
                                                             for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 " id="editprofile">Edit Profile
@@ -131,20 +134,20 @@
                                                         @csrf
                                                         <div class="text-box mt-3">
 
-                                                            <input type="text" name="firstname" autocomplete="off" id="firstname" class="ps-2" value="{{Auth::user()->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="firstname" autocomplete="off" id="firstname" class="ps-2" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required />
 
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="lastname" autocomplete="off" id="lastname" class="ps-2" value="{{Auth::user()->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="lastname" autocomplete="off" id="lastname" class="ps-2" value="{{$userData->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
                                                         </div>
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="username" id="username" class="ps-2" autocomplete="off" value="{{ucwords(Auth::user()->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="username" id="username" class="ps-2" autocomplete="off" value="{{ucwords($userData->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">This could be your
                                                                 first, last or nick name.
@@ -156,12 +159,12 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">Your User ID</div>
                                                         </div>
                                                         <div class="text-box mt-3">
-                                                            <input type="email" name="useremail" autocomplete="off" id="useremail" class="ps-2" value="{{Auth::user()->email}}" required placeholder="Your Email Id" />
+                                                            <input type="email" name="useremail" autocomplete="off" id="useremail" class="ps-2" value="{{$userData->email}}" required placeholder="Your Email Id" />
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="user_mobile" id="user_mobile" class="ps-2" autocomplete="off" value="{{Auth::user()->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                                                            <input type="text" name="user_mobile" id="user_mobile" class="ps-2" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
 
                                                         </div>
                                                         <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
@@ -191,7 +194,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                 <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class=" sml-pic" />
                                             </span>
                                             <div class="my-5 subscription-read">
-                                                <h5 class="activeUserName">{{ucwords(Auth::user()->user_name)}}</h5>
+                                                <h5 class="activeUserName">{{ucwords($userData->user_name)}}</h5>
                                                 <small>Class - {{$user_stage}}, Preparing
                                                     for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
 
@@ -215,7 +218,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                         @if($suscription_status != 0) <p class="text-end text-danger mt-1">*Subscription expires
                                             on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @else
-                                        <p class="text-end text-danger mt-1">*Subscription already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
+                                        <p class="text-end text-danger mt-1">*Subscription has already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @endif
 
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->

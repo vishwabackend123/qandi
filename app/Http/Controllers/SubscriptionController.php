@@ -42,9 +42,10 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        $user_data = Auth::user();
-        $user_id = isset(Auth::user()->id) ? Auth::user()->id : 0;
-        $grade_id = isset(Auth::user()->grade_id) ? Auth::user()->grade_id : 0;
+        $userData = Session::get('user_data');
+
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $grade_id = isset($userDatagrade_id) ? $userData->grade_id : 0;
 
         $curl = curl_init();
         $curl1 = curl_init();
@@ -170,7 +171,10 @@ class SubscriptionController extends Controller
      */
     public function trial_subscription($sub_id, Request $request)
     {
-        $user_id = Auth::user()->id;
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
         $subscription_id = $sub_id;
 
         $trail_purchase_data = [
@@ -308,7 +312,7 @@ class SubscriptionController extends Controller
         if ($httpcode != 200 || $httpcode != 201) {
             $pResponse = json_decode($package_response_json);
             $package_data = isset($pResponse->package_details) ? $pResponse->package_details : '';
-            $subscriptions_data = $package_data[0];
+            $subscriptions_data = !empty($package_data) ? $package_data[0] : [];
         } else {
             $subscriptions_data = [];
         }

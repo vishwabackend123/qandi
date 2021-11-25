@@ -1,6 +1,10 @@
 @extends('afterlogin.layouts.app')
 
 @section('content')
+@php
+$userData = Session::get('user_data');
+
+@endphp
 <style>
     .anlytics_wrapper {
 
@@ -90,6 +94,7 @@
             <!--  -->
 
             <div class="row">
+
                 @if (session('error'))
                 <div class="col-lg-12">
                     <p class="alert text-danger" id="texterror" role="alert">
@@ -133,6 +138,7 @@
                         </div>
                         @if(!empty($subjectData))
                         @foreach($subjectData as $key=>$sub)
+
                         <div class="anlytics_wrapper d-flex align-items-center justify-content-between  py-2 mb-3 dashboard-listing-details w-100 ">
                             <span class="mr-3 dashboard-name-txt">{{$sub['subject_name']}}</span>
 
@@ -153,7 +159,7 @@
                               <span class="total">5</span> -->
                                 </div>
                             </div>
-                            <div class="tooltip"><a href="{{route('overall_analytics')}}">See Analytics </a></div>
+                            <div class="tooltip"><a href="{{route('overall_analytics',$sub['subject_id'])}}">See Analytics </a></div>
                         </div>
                         @endforeach
                         @endif
@@ -313,7 +319,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="wl-user-title">Hello {{!empty(Auth::user()->user_name)?ucwords(Auth::user()->user_name):'Guest'}},</p>
+                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}},</p>
                 <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
 
                 @if(isset($subjects_rating) && empty($subjects_rating))
@@ -338,7 +344,7 @@
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="h1-p"> {{ucwords(Auth::user()->user_name)}},</p>
+                <p class="h1-p"> {{ucwords($userData->user_name)}},</p>
                 <p>Tell us how are you feeling today?</p>
                 <p class="welcome-icons mt-5">
                     <a href="#" onclick="save_feelings(1)" class="emoji-block"><img src="{{URL::asset('public/after_login/images/smily1.png')}}"> <span>SAD</span></a>

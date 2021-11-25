@@ -27,6 +27,9 @@
 </script>
 
 @section('content')
+@php
+$userData = Session::get('user_data');
+@endphp
 <style>
     #exam_content_sec .container {
         max-width: 1280px;
@@ -323,7 +326,7 @@ $questtype='radio';
 
                     <h1 class="my-auto text-center">
 
-                        <span class="d-block mt-3 fw-bold">All the Best! {{Auth::user()->user_name}}</span>
+                        <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
 
                     </h1>
                     <div class="text-left   ">
@@ -771,7 +774,7 @@ $questtype='radio';
         }
     }
 
-    function clearResponse(quest_id, subject_id) {
+    function clearResponse(quest_id, subject_id, qNo) {
 
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
             $(this).prop('checked', false);
@@ -794,6 +797,7 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + quest_id).html(qNo);
                 }
 
             },

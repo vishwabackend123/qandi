@@ -35,7 +35,9 @@
                                             $today = date("d-m-y", time());
                                             $start_date = $sche->start_date;
                                             $end_date =$sche->end_date;
+                                            $test_completed_yn =$sche->test_completed_yn;
                                             @endphp
+                                            @if($test_completed_yn == "N")
                                             <div class="col-md-6 col-lg-4 mb-4 ">
                                                 <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
                                                     <div class="d-flex align-items-center pb-2 listing-details ">
@@ -56,6 +58,29 @@
 
                                                 </div>
                                             </div>
+                                            @else
+                                            <div class="col-md-6 col-lg-4 mb-4 ">
+                                                <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
+                                                    <div class="d-flex align-items-center pb-2 listing-details ">
+                                                        <span class="mr-3 topics-name fw-bold">{{$sche->subject_name}}({{$sche->exam_name}})</span>
+
+                                                    </div>
+
+                                                    <div class=" d-flex py-2 listing-details w-100 ">
+                                                        <p class="date-start-left mb-0 me-3">Start Date</br>{{$start_date}}</span>
+                                                        <p class="date-end-right ms-auto mb-0 text-right">End Date</br>{{$end_date}}</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center pt-2 flex-wrap">
+                                                        <small>{{$sche->questions_count}} Questions </small>
+
+                                                        <a href="{{route('live_exam',$sche->schedule_id)}}" class="btn btn-danger px-5 rounded-0 ms-auto disabled"> Start</a>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            @endif
+
                                             @endforeach
 
                                         </div>

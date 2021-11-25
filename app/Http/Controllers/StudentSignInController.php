@@ -153,11 +153,9 @@ class StudentSignInController extends Controller
 
             $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
 
-
-            Session::put('user_data', $user_data);
-
             if (Auth::loginUsingId($user_data->id)) {
-
+                $userData = Auth::user();
+                Session::put('user_data', $userData);
                 $response['status'] = 200;
 
                 return json_encode($response);
@@ -306,6 +304,11 @@ class StudentSignInController extends Controller
 
 
             if (Auth::loginUsingId($student_id)) {
+                $userData = Auth::user();
+                Session::put('user_data', $userData);
+
+
+
                 $response['status'] = 200;
                 $response['message'] = "Registration successful";
                 $response['redirect_url'] = url('dashboard');
