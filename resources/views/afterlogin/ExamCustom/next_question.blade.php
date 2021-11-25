@@ -178,10 +178,9 @@ $questtype='radio';
 <script>
     var question_id = '{{$active_q_id}}';
     $(".next_button").removeClass("activequestion");
-    $('.next_button').prop('autofocus', false);
-    $("#btn_" + question_id).prop('autofocus', true);
 
-    $(".number-block #btn_" + question_id)[0].scrollIntoView();
+    /* $(".number-block #btn_" + question_id)[0].scrollIntoView(); */
+    $("#exam_content_sec  #btn_" + question_id).focus();
 
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);

@@ -328,6 +328,57 @@ class SubscriptionController extends Controller
     }
     public function refundFormSubmit(Request $request)
     {
-//        dd($request);
+
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+
+        $rquestData = $request->all();
+
+        $request = [
+            "student_id" => $user_id,
+            "user_name" => $request->firstname,
+            "bank_name" => $request->bank_name,
+            "account_no" => $request->acc_no,
+            "code_ifsc" => $request->ifsc_code,
+            "subject" => $request->subject,
+        ];
+
+        $request_json = json_encode($request);
+
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/student-refund';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "content-type: application/json"
+            ),
+        ));
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $aResponse = json_decode($response_json);
+
+
+        if (isset($aResponse->success) && $aResponse->success == true) {
+            echo $response_json;
+        } else {
+
+            echo $err;
+        }
     }
 }

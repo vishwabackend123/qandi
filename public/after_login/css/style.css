@@ -2684,8 +2684,8 @@ header {
 }
 
 .leader-pic {
-    width: 58px;
-    height: 58px;
+    width: 48px;
+    height: 48px;
     border-radius: 30px;
 }
 
@@ -2804,8 +2804,8 @@ header {
 }
 
 .exportUserpic {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 80px;
     border: 2px solid #d71921;
 }
@@ -2835,7 +2835,7 @@ header {
     position: relative;
 }
 
-.reportHeading:after {
+/* .reportHeading:after {
     content: "";
     width: 2px;
     height: 40px;
@@ -2845,7 +2845,7 @@ header {
     top: 50%;
     margin-top: -20px;
     transform: rotate(17deg);
-}
+} */
 
 .reportHeading span {
     font-size: 30px;

@@ -28,7 +28,16 @@ class MenuMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $userData = Session::get('user_data');
+        if (Session::has('user_data')) {
+            $userData = Session::get('user_data');
+        } else {
+            $userData = Auth::user();
+            Session::put('user_data', $userData);
+            $userData = Session::get('user_data');
+        }
+
+
+
 
         $user_id = $userData->id;
         $api_URL = Config::get('constants.API_NEW_URL');
@@ -84,9 +93,11 @@ class MenuMiddleware
         $response = curl_exec($curl);
 
         curl_close($curl);
-        $notifications = json_decode($response);
-        if ($notifications->response) {
-            $notifications = $notifications->response;
+        $aResponse = json_decode($response);
+        if (isset($aResponse->success) && $aResponse->success == true) {
+            $notifications = $aResponse->response;
+        } else {
+            $notifications = [];
         }
 
         $today_date = Carbon::now();

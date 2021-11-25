@@ -69,13 +69,14 @@ class StudentSignInController extends Controller
         ));
 
         $response_json = curl_exec($curl);
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         $aResponse = json_decode($response_json);
 
-        $msg = $aResponse->message;
         if ($aResponse->success != true) {
+            $msg = $aResponse->message;
             $response = [
                 "message" => $msg,
                 "error" => $err,
@@ -83,7 +84,7 @@ class StudentSignInController extends Controller
             ];
             return json_encode($response);
         } else {
-
+            $msg = $aResponse->message;
             $login_otp = $aResponse->otp;
 
             Session::put('OTP', $login_otp);
@@ -154,8 +155,7 @@ class StudentSignInController extends Controller
             $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
 
             if (Auth::loginUsingId($user_data->id)) {
-                $userData = Auth::user();
-                Session::put('user_data', $userData);
+
                 $response['status'] = 200;
 
                 return json_encode($response);
@@ -304,9 +304,6 @@ class StudentSignInController extends Controller
 
 
             if (Auth::loginUsingId($student_id)) {
-                $userData = Auth::user();
-                Session::put('user_data', $userData);
-
 
 
                 $response['status'] = 200;

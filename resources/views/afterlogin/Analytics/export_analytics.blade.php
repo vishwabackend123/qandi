@@ -50,7 +50,7 @@ $userData = Session::get('user_data');
                                                 </div>
                                                 <div class="ms-auto d-flex align-items-center">
                                                     <div>
-                                                        <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
+                                                        <img src="{{$imgPath}}" class="exportUserpic" />
                                                     </div>
                                                     <div class="exportUsertxt">
                                                         <p>{{ucwords($userData->user_name)}}</p>
@@ -62,11 +62,11 @@ $userData = Session::get('user_data');
                                                 </div>
                                             </div>
                                             <div class="row py-5">
-                                                <div class="col-md-4 text-center">
+                                                <div class="col-md-12 text-center">
                                                     <div id="scorecontainer" class="text-right"></div>
                                                     <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
-                                                        <div class="star-ratings-css">
+                                                        <div class="star-ratings-css m-0 me-3">
                                                             <div class="star-ratings-css-top" style="width: {{round($overall_prof_perc)}}%">
                                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                             </div>
@@ -83,7 +83,7 @@ $userData = Session::get('user_data');
                                                         Overall Proficiency
                                                     </p>
                                                 </div>
-                                                <div class="col-md-8">
+                                                <!-- <div class="col-md-8">
                                                     <div class="d-flex mt-2">
                                                         <i class="
                                     fa fa-check-square
@@ -144,7 +144,7 @@ $userData = Session::get('user_data');
                                                             dummy text ever since the 1500s,
                                                         </label>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -215,12 +215,14 @@ $userData = Session::get('user_data');
                                 <div class="row">
                                     @if(!empty($subProf))
                                     @foreach($subProf as $key=>$sub)
-                                    @php $subId=$sub->subject_id; @endphp
+                                    @php $subId=$sub->subject_id;
+                                    @endphp
 
                                     <div class="col-md-12 border-bottom pt-2">
                                         <span class="dashboard-name-txt fw-bold">{{$sub->subject_name}}</span>
                                         <div class="px-4">
-                                            @foreach($unitProf->$subId as $unit)
+                                            @if(isset($unitProf[$key]->unit_score))
+                                            @foreach($unitProf[$key]->unit_score as $unit)
                                             <div class="d-flex align-items-center  ">
 
                                                 <div class="row d-flex  align-items-center py-1 dashboard-listing-details  w-100 col-6">
@@ -243,6 +245,7 @@ $userData = Session::get('user_data');
                                                 </div>
                                             </div>
                                             @endforeach
+                                            @endif
                                         </div>
                                     </div>
 
@@ -270,18 +273,22 @@ $userData = Session::get('user_data');
                             </p>
                             <div id="accPer"></div>
                         </div>
-                        <h4 class="my-5 text-dark text-center fw-light">
+                        <p class="text-center mt-5 pt-5">
+                            <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
+                                more: {{ route('register') }}</a>
+                        </p>
+                        <!-- <h4 class="my-5 text-dark text-center fw-light">
                             Detailed Report Analysis
-                        </h4>
+                        </h4> -->
                     </div>
-                    <div class="report-block1 p-5">
-                        <div class="d-flex align-items-center p-5">
+                    <!-- <div class="report-block1 p-5">
+                       <div class="d-flex align-items-center p-5">
                             <div class="w-34">
                                 <h1 class="reportHeading w-100">Inferences</h1>
                             </div>
                             <div class="ms-auto d-flex align-items-center">
                                 <div>
-                                    <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class="exportUserpic" />
+                                    <img src="{{$imgPath}}" class="exportUserpic" />
                                 </div>
                                 <div class="exportUsertxt">
                                     <p>{{ucwords($userData->user_name)}}</p>
@@ -320,12 +327,9 @@ $userData = Session::get('user_data');
                                     ever since the 1500s,
                                 </label>
                             </div>
-                        </div>
-                        <p class="text-center mt-5 pt-5">
-                            <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
-                                more: {{ route('register') }}</a>
-                        </p>
-                    </div>
+                        </div> 
+
+                    </div>-->
                 </div>
             </div>
         </div>

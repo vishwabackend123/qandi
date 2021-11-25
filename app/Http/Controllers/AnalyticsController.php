@@ -288,11 +288,12 @@ class AnalyticsController extends Controller
             $monthlyReport = json_decode($overallAnalytics->monthlyReport);
             $subProf = json_decode($overallAnalytics->subject_proficiency);
             $unitProf = $overallAnalytics->unit_proficiency;
+            $unitProf = collect(array_values($unitProf));
+
             $subProf_collection = collect($subProf);
             $overall_prof_perc = $subProf_collection->sum('score');
             $accuracy = json_decode($overallAnalytics->accuracy);
             $timeSpent = json_decode($overallAnalytics->time_taken);
-
 
 
             $previous_score_per = $corrent_score_per = $diff_score_per = 0;
@@ -562,6 +563,8 @@ class AnalyticsController extends Controller
         }
         $correctAns3 = json_encode($correctAns3);
         $incorrectAns3 = json_encode($incorrectAns3);
+
+
 
         $day = [];
         $classAcc = [];

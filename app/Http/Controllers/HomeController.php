@@ -42,7 +42,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
+
         $userData = Session::get('user_data');
+
+
 
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
@@ -378,13 +383,21 @@ class HomeController extends Controller
         }
         if ($httpcode != 200 && $httpcode != 201) {
             $response['success'] = false;
-
-
             $response['error'] = "";
             return json_encode($response);
         } else {
             $response = json_decode($response_json);
-            $response->user_name = $user_name;
+
+            $sessionData = Session::get('user_data');
+            $sessionData->first_name = $response->user_info->first_name;
+            $sessionData->user_name = $response->user_info->user_name;
+            $sessionData->last_name = $response->user_info->last_name;
+            $sessionData->email = $response->user_info->email;
+            $sessionData->mobile = $response->user_info->mobile;
+
+
+            Session::put('user_data', $sessionData);
+
 
             return json_encode($response);
         }
@@ -434,9 +447,24 @@ class HomeController extends Controller
                 ));
 
                 $response = curl_exec($curl);
-
+                $err = curl_error($curl);
                 curl_close($curl);
-                echo $response;
+                $aResponse = json_decode($response);
+
+
+                if (isset($aResponse->success) && $aResponse->success == true) {
+
+                    $sessionData = Session::get('user_data');
+                    $sessionData->user_profile_img = $aResponse->filename;
+                    Session::put('user_data', $sessionData);
+
+
+
+                    echo $response;
+                } else {
+
+                    echo $err;
+                }
             }
         }
     }

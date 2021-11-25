@@ -184,9 +184,9 @@ class FullExamController extends Controller
     {
 
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
+
         $cacheKey = 'CustomQuestion:all:' . $user_id;
         $redis_result = Redis::get($cacheKey);
 
@@ -207,7 +207,9 @@ class FullExamController extends Controller
 
         $qNo = $key + 1;
         $nextKey = $key + 1;
-        $nextKey = $nextKey % count($allQuestionsArr);
+
+        $nextKey = (count($allQuestionsArr) > 0) ? $nextKey % count($allQuestionsArr) : $nextKey;
+
         if ($key > 0) { // Key would become 0
             $prevKey = $key - 1;
         } else {
@@ -287,7 +289,7 @@ class FullExamController extends Controller
 
         $qNo = $key + 1;
         $nextKey = $key + 1;
-        $nextKey = $nextKey % count($allQuestionsArr);
+        $nextKey = (count($allQuestionsArr) > 0) ? $nextKey % count($allQuestionsArr) : $nextKey;
         if ($key > 0) { // Key would become 0
             $prevKey = $key - 1;
         } else {

@@ -214,7 +214,9 @@
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
-                        var user_name = response.user_name;
+
+                        var user_name = response.user_info.user_name;
+
                         $('.activeUserName').html(user_name);
                         /* $('#profileUserName').html(user_name);
                         $('#activeUserName').html(user_name); */
@@ -655,7 +657,7 @@
     }); */
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
-            height: "47vh",
+            height: "44vh",
         });
         $(".leaderNameBlock-search").slimscroll({
             height: "70px",

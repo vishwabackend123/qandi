@@ -51,7 +51,7 @@ $userData = Session::get('user_data');
                                     <div class="d-flex text-start h-100">
                                         <div class="leaderBoardBlock">
                                             <div class="bg-white p-3 text-left ms-2 h-100">
-                                                <p class="text-uppercase ps-4 py-2">Leader Board</p>
+                                                <h6 class="text-uppercase ps-4 py-2 mb-0">Leader Board</h6>
                                                 <ol class="leaderNameBlock">
                                                     @if(isset($leaderboard_list) && !empty($leaderboard_list))
                                                     @foreach($leaderboard_list as $lead)
@@ -191,7 +191,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                     <div class="bg-white p-4 text-left ms-4 ">
                                         <div class="d-flex align-items-center">
                                             <span class="position-relative d-inline-block">
-                                                <img src="{{URL::asset('public/after_login/images/userpics.png')}}" class=" sml-pic" />
+                                                <img src="{{$imgPath}}" class=" sml-pic" />
                                             </span>
                                             <div class="my-5 subscription-read">
                                                 <h5 class="activeUserName">{{ucwords($userData->user_name)}}</h5>

@@ -194,7 +194,7 @@ class AdpativeExamController extends Controller
 
         $qNo = $key + 1;
         $nextKey = $key + 1;
-        $nextKey = $nextKey % count($allQuestionsArr);
+        $nextKey = (count($allQuestionsArr) > 0) ? $nextKey % count($allQuestionsArr) : $nextKey;
         if ($key > 0) { // Key would become 0
             $prevKey = $key - 1;
         } else {
@@ -276,7 +276,7 @@ class AdpativeExamController extends Controller
 
         $qNo = $key + 1;
         $nextKey = $key + 1;
-        $nextKey = $nextKey % count($allQuestionsArr);
+        $nextKey = (count($allQuestionsArr) > 0) ? $nextKey % count($allQuestionsArr) : $nextKey;
         if ($key > 0) { // Key would become 0
             $prevKey = $key - 1;
         } else {

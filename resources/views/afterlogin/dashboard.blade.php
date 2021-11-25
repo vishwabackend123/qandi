@@ -159,153 +159,154 @@ $userData = Session::get('user_data');
                               <span class="total">5</span> -->
                                 </div>
                             </div>
-                            <div class="tooltip"><a href="{{route('overall_analytics',$sub['subject_id'])}}">See Analytics </a></div>
-                        </div>
-                        @endforeach
-                        @endif
-
+                            {{--<div class="tooltip"><a href="{{route('overall_analytics',$sub['subject_id'])}}">See Analytics </a>
+                        </div> --}}
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="bg-white shadow p-3 h-100">
-                        <h5 class="dashboard-title">Marks Trend</h5>
-                        <figure class="highcharts-figure">
-                            <div id="trend_line_graph"></div>
-                            <div id="trend_bar_graph" style="display:none;"></div>
-
-                        </figure>
-                        <div calss="d-flex">
-                            <button class="btn btn-sm btn-outline-secondary btn-light-green text-uppercase" id="line_Chart_trend">Line</button>
-                            <button class="btn btn-sm btn-outline-secondary  text-uppercase" id="bar_Chart_trend">Bar</button>
-                        </div>
-                        <!-- <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;"> -->
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4 ">
-                <div class="col-6">
-                    <span class="text-danger text-uppercase">This week Tests</span>
-                    <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
-                    <!-- <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content=""></i></span> -->
-                </div>
-                <div class="col-6 text-right d-flex">
-                    <div class="ms-auto">
-                        @if(isset($planner) && !empty($planner))
-                        @foreach($planner as $key=>$val)
-                        @if($val->test_completed_yn=="Y")
-                        <a href="#" class="text-secondary"><img src="{{URL::asset('public/after_login/images/planner_Act_green_ic.png')}}" /></a>
-                        @else
-                        <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
-
-                        @endif
-                        @endforeach
-                        @endif
-                        <a class="text-secondary ms-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class='swipe mb-5' id="plan_slider">
-                <ul id='slider' class="pt-3">
-                    @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                    <li class="gray prfile h-100">
-                        <div class="col swipLi">
-                            <div class="TestLevel ">Level Up</div>
-                            <div class="TestTitle">One Last Step!</div>
-                            <div class="unlock-text">Unlock analytics and more</div>
-
-                            <div class="checkBody mb-2">
-                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Take a test and get a complete analysis of your preparation!
-                                </label>
-                            </div>
-                            <div class="btnBody">
-                                <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
-                            </div>
-
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
+                    @endforeach
                     @endif
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-white shadow p-3 h-100">
+                    <h5 class="dashboard-title">Marks Trend</h5>
+                    <figure class="highcharts-figure">
+                        <div id="trend_line_graph"></div>
+                        <div id="trend_bar_graph" style="display:none;"></div>
+
+                    </figure>
+                    <div calss="d-flex">
+                        <button class="btn btn-sm btn-outline-secondary btn-light-green text-uppercase" id="line_Chart_trend">Line</button>
+                        <button class="btn btn-sm btn-outline-secondary  text-uppercase" id="bar_Chart_trend">Bar</button>
+                    </div>
+                    <!-- <img src="{{URL::asset('public/after_login/images/graph.jpg')}}" class="img-fluid w-100" style="height: 219px;"> -->
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 ">
+            <div class="col-6">
+                <span class="text-danger text-uppercase">This week Tests</span>
+                <!-- <a href="{{route('exam','full_exam')}}"><span class="text-danger">Take full body scan of 90 questions test </span></a> -->
+                <!-- <span><i class="fa fa-info-circle fa-1x text-light" data-bs-toggle="popover" data-bs-content=""></i></span> -->
+            </div>
+            <div class="col-6 text-right d-flex">
+                <div class="ms-auto">
                     @if(isset($planner) && !empty($planner))
                     @foreach($planner as $key=>$val)
-                    @if($val->test_completed_yn=="N")
-                    <li class="h-100">
-                        <div class="col swipLi ">
-                            <!-- <img src="images/thermodynamics_ic.png" /> -->
-                            <div class="TestLevel">Level Up In</div>
-                            <div class="TestTitle">{{$val->chapter_name}}</div>
-                            <div class="starRating">
-                                <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
-                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                                        <div class="star-ratings-css">
-                                            <div class="star-ratings-css-top" style="width: 0%">
-                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                            </div>
-                                            <div class="star-ratings-css-bottom">
-                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                            </div>
+                    @if($val->test_completed_yn=="Y")
+                    <a href="#" class="text-secondary"><img src="{{URL::asset('public/after_login/images/planner_Act_green_ic.png')}}" /></a>
+                    @else
+                    <a href="#" class="text-secondary ms-2"><img src="{{URL::asset('public/after_login/images/planner_Act_gray_ic.png')}}" /></a>
+
+                    @endif
+                    @endforeach
+                    @endif
+                    <a class="text-secondary ms-2" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/images/planner_Act_red_ic.png')}}" /></a>
+
+                </div>
+            </div>
+        </div>
+        <div class='swipe mb-5' id="plan_slider">
+            <ul id='slider' class="pt-3">
+                @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                <li class="gray prfile h-100">
+                    <div class="col swipLi">
+                        <div class="TestLevel ">Level Up</div>
+                        <div class="TestTitle">One Last Step!</div>
+                        <div class="unlock-text">Unlock analytics and more</div>
+
+                        <div class="checkBody mb-2">
+                            <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Take a test and get a complete analysis of your preparation!
+                            </label>
+                        </div>
+                        <div class="btnBody">
+                            <a href="{{route('exam','full_exam')}}" class="text-uppercase goto-exam-btn p-2 w-100 text-center bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                @endif
+                @if(isset($planner) && !empty($planner))
+                @foreach($planner as $key=>$val)
+                @if($val->test_completed_yn=="N")
+                <li class="h-100">
+                    <div class="col swipLi ">
+                        <!-- <img src="images/thermodynamics_ic.png" /> -->
+                        <div class="TestLevel">Level Up In</div>
+                        <div class="TestTitle">{{$val->chapter_name}}</div>
+                        <div class="starRating">
+                            <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
+                                <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                    <div class="star-ratings-css">
+                                        <div class="star-ratings-css-top" style="width: 0%">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                         </div>
-                                        <div class="ms-1 score score-rating js-score">
-                                            0%
+                                        <div class="star-ratings-css-bottom">
+                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                         </div>
+                                    </div>
+                                    <div class="ms-1 score score-rating js-score">
+                                        0%
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="checkBody mb-2">
-                                <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Take a test and get a complete analysis of your preparation!
-                                </label>
-                            </div>
-                            <div class="btnBody">
-                                <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
-                                <!-- <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48"><i class="fas fa-clock"></i> Schedule Later</button> -->
-                            </div>
                         </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    @elseif($val->test_completed_yn=="Y")
-                    <li class="CGreen">
-                        <div class="col swipLi">
-                            <div class="TestLevel">Keep in Coming!</div>
-                            <div class="TestTitle">{{$val->chapter_name}}</div>
-                            <div class="w-100 text-center  ">
-                                <img src="{{URL::asset('public/after_login/images/GreenCircleCheck_ic.png')}}" />
-                            </div>
-                            <div class="btnBody">
-                                <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
-                            </div>
+
+                        <div class="checkBody mb-2">
+                            <input class="inputCheck" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Take a test and get a complete analysis of your preparation!
+                            </label>
                         </div>
-                    </li>
-                    @endif
-                    @endforeach
-
-                    <li class="h-100" style="width:300px;">
-                        <div class="col p-2">
-                            <div class="w-100 text-center px-5 pb-5 pt-4 ">
-                                <img class="img-responsive" src="{{URL::asset('public/after_login/images/PlannerRedBig_ic@2x.png')}}">
-                            </div>
-                            <div class="btnBody ">
-
-                                <a class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                    <i class="fa fa-calendar-o" aria-hidden="true"></i> Go To Planner
-                                </a>
-                            </div>
-
+                        <div class="btnBody">
+                            <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}" class="btn rounded-0 p-2 bt-hgt-48"><i class="fas fa-bolt"></i> Attempt Now!</a>
+                            <!-- <button class="btn rounded-0  ms-2 scheduleBtn bt-hgt-48"><i class="fas fa-clock"></i> Schedule Later</button> -->
                         </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    @endif
-                </ul>
-            </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                @elseif($val->test_completed_yn=="Y")
+                <li class="CGreen">
+                    <div class="col swipLi">
+                        <div class="TestLevel">Keep in Coming!</div>
+                        <div class="TestTitle">{{$val->chapter_name}}</div>
+                        <div class="w-100 text-center  ">
+                            <img src="{{URL::asset('public/after_login/images/GreenCircleCheck_ic.png')}}" />
+                        </div>
+                        <div class="btnBody">
+                            <button class="btn rounded-0 mt-3"><i class="fas fa-check"></i> Complete</button>
+                        </div>
+                    </div>
+                </li>
+                @endif
+                @endforeach
 
-            <div id="pagenavi"></div>
+                <li class="h-100" style="width:300px;">
+                    <div class="col p-2">
+                        <div class="w-100 text-center px-5 pb-5 pt-4 ">
+                            <img class="img-responsive" src="{{URL::asset('public/after_login/images/PlannerRedBig_ic@2x.png')}}">
+                        </div>
+                        <div class="btnBody ">
 
+                            <a class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i> Go To Planner
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                @endif
+            </ul>
         </div>
+
+        <div id="pagenavi"></div>
+
     </div>
+</div>
 </div>
 <!--End dashboard html section-->
 
@@ -878,8 +879,15 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             },
             categories: <?php echo $weeks_json; ?>
         },
-
-
+        plotOptions: {
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
         series: [{
             name: 'Student Score',
             data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
@@ -901,7 +909,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
                 },
                 chartOptions: {
                     legend: {
-                        enabled: false,
+                        enabled: true,
                         layout: 'horizontal',
                         align: 'center',
                         verticalAlign: 'bottom'

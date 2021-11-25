@@ -185,15 +185,8 @@ $questtype='radio';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
 
-    /*  $('.next_button').prop('autofocus', false);
-     $("#btn_" + question_id).prop('autofocus', true); */
+    $("#exam_content_sec  #btn_" + question_id).focus();
 
-    $(".number-block #btn_" + question_id)[0].scrollIntoView();
-    /* $("#number_block_id").animate({
-        scrollTop: $("#btn_" + question_id).position().top
-    }, 500); */
-
-    // $(window).scrollTop($('"#btn_" + question_id').position().top);
     $("#current_question").val(question_id);
 
     var subject_id = '{{$subject_id}}';

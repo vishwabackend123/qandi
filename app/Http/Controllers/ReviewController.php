@@ -99,7 +99,7 @@ class ReviewController extends Controller
 
             $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
             $all_data = collect($result_response->all_question);
-            $all_ids = $result_response->question_ids;
+
             $all_question_list = $aQuestionslist->all();
 
 
@@ -110,7 +110,9 @@ class ReviewController extends Controller
             $allQuestions = $aQuestionslist->keyBy('question_id');
             $keys = $allQuestions->keys('question_id')->all();
 
-            $first = $result_response->first;
+            //$first = $result_response->first;
+            $first = isset($keys[0]) ? $keys[0] : $result_response->first;
+
 
             $key = array_search($first, array_column($result_response->all_question, 'question_id'));
             $qNo = $key + 1;
@@ -508,7 +510,8 @@ class ReviewController extends Controller
                 $filtered =   $aQuestionslist->filter(function ($value, $filter_by) {
                     return $value;
                 });
-                $all_question_list = $filtered->all();
+
+                $all_question_list = $filtered->sortBy('seq')->all();
                 /* if ($filter_by == "Correct") {
                     $statusPriorities = ["Correct", "Incorrect", "Unanswered", ""];
                 } elseif ($filter_by == "Incorrect") {
@@ -522,7 +525,8 @@ class ReviewController extends Controller
                     return array_search($order->attempt_status, $statusPriorities);
                 })->values()->all(); */
             } else {
-                $all_question_list = $aQuestionslist->all();
+
+                $all_question_list = $aQuestionslist->sortBy('seq')->all();
             }
         }
 
