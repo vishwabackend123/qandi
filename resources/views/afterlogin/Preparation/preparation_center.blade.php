@@ -14,8 +14,8 @@
                         <div class="tab-wrapper mt-0">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 @php $subx=1; @endphp
-                                @if(isset($subject_list) && !empty($subject_list))
-                                    @foreach($subject_list as $sub)
+                                @if(isset($aPreparation) && !empty($aPreparation))
+                                    @foreach($aPreparation as $sub)
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link @if($subx==1) active @endif"
                                                id="{{$sub->subject_name}}-tab" data-bs-toggle="tab"
