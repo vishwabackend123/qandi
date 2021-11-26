@@ -290,6 +290,8 @@ class AnalyticsController extends Controller
             $unitProf = $overallAnalytics->unit_proficiency;
             $unitProf = collect(array_values($unitProf));
 
+
+
             $subProf_collection = collect($subProf);
             $overall_prof_perc = $subProf_collection->sum('score');
             $accuracy = json_decode($overallAnalytics->accuracy);

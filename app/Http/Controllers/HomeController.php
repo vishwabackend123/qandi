@@ -395,9 +395,7 @@ class HomeController extends Controller
             $sessionData->email = $response->user_info->email;
             $sessionData->mobile = $response->user_info->mobile;
 
-
             Session::put('user_data', $sessionData);
-
 
             return json_encode($response);
         }

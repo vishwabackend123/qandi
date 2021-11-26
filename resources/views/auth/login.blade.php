@@ -37,7 +37,7 @@
             <div id="input-otp-box" style="display:none">
                 <div class="text-box py-3">
                     <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" onkeypress="return isNumber(event)" autocomplete="off" />
+                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" minlength="5" maxlength="5" onkeypress="return isNumber(event)" autocomplete="off" />
                 </div>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>

@@ -56,7 +56,7 @@
             <p class="welcome-msg text-center">“You must have received an OTP from us in your inbox or message” </p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" placeholder="Enter OTP" autocomplete="off" />
+                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" minlength="5" maxlength="5" placeholder="Enter OTP" autocomplete="off" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
             <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>
