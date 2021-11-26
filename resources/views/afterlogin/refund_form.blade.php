@@ -34,16 +34,16 @@ $userData = Session::get('user_data');
                         <form id="refund_form" action="{{route('refund_form_submit')}}">
                             @csrf
                             <div class="text-box mt-0">
-                                <label for="fname">User Name</label>
-                                <input type="text" id="fname" class="form-control" name="firstname" placeholder="Your name.." required>
+                                <label for="fname">Account Holder Name</label>
+                                <input type="text" id="fname" class="form-control" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" required>
                             </div>
                             <div class="text-box mt-2">
                                 <label for="lname">Bank Name</label>
-                                <input type="text" id="bank_name" class="form-control" name="bank_name" placeholder="Bank Name.." required>
+                                <input type="text" id="bank_name" class="form-control" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" required>
                             </div>
                             <div class="text-box mt-2">
                                 <label for="lname">Account No.</label>
-                                <input type="text" id="acc_no" class="form-control" name="acc_no" placeholder="Account No.." required>
+                                <input type="text" id="acc_no" onkeypress="return isNumber(event)" class="form-control" name="acc_no" placeholder="Account No.." maxlength="16" required>
                             </div>
                             <div class="text-box mt-2">
                                 <label for="lname">IFSC Code</label>
@@ -81,8 +81,29 @@ $userData = Session::get('user_data');
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $.validator.addMethod("regx", function(value, element, regexpr) {
+            return regexpr.test(value);
+        }, 'Enter valid IFSC code');
         $("#refund_form").validate({
+            rules: {
+                acc_no: {
+                    digits: true,
+                    minlength: 10,
+                    maxlength: 16
+                },
+                ifsc_code: {
 
+                    //change regexp to suit your needs
+                    regx: /^[A-Za-z]{4}\d{7}$/,
+                    minlength: 11,
+                    maxlength: 11
+                }
+            },
+            messages: {
+                ifsc_code: {
+                    regx: "Enter Valid IFSC Code.",
+                }
+            },
             submitHandler: function(form) {
 
                 $.ajax({
@@ -120,6 +141,22 @@ $userData = Session::get('user_data');
             }
 
         });
+
+
+
     });
+
+    function lettersOnly(evt) {
+
+        evt = (evt) ? evt : event;
+        var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+            ((evt.which) ? evt.which : 0));
+        if (charCode > 32 && (charCode < 65 || charCode > 90) &&
+            (charCode < 97 || charCode > 122)) {
+
+            return false;
+        }
+        return true;
+    }
 </script>
 @endsection

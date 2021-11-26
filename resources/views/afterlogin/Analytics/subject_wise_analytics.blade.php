@@ -110,9 +110,9 @@
                 <div class="d-flex align-items-center">
                     <h5 class="dashboard-title ">Topics</h5>
 
-                    <button class="btn btn-warning-custom px-4 ms-auto text-uppercase rounded-0" id="topic-open-btn">
+                    <!--  <button class="btn btn-warning-custom px-4 ms-auto text-uppercase rounded-0" id="topic-open-btn">
                         <i class="fa fa-expand" aria-hidden="true"></i> Expand
-                    </button>
+                    </button> -->
                 </div>
                 <div class="scroll-topic-ana p-4">
                     @if($subProf)

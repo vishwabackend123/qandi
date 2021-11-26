@@ -119,6 +119,7 @@ class TestSeriesController extends Controller
             ));
 
             $response_json = curl_exec($curl);
+
             // $response_json = str_replace('NaN', '""', $response_json);
             // $response_json = stripslashes(html_entity_decode($response_json));
 
