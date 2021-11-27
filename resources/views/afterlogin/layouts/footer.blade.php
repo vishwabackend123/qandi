@@ -658,10 +658,10 @@
     }); */
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
-            height: "44vh",
+            height: "54vh",
         });
         $(".leaderNameBlock-search").slimscroll({
-            height: "70px",
+            height: "54vh",
         });
         $(".scroll-topic-ana").slimscroll({
             height: "20vh",

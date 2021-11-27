@@ -338,7 +338,7 @@ class PlannerController extends Controller
         $test_type = 'Planner';
         $exam_type = 'P';
 
-        return view('afterlogin.ExamCustom.exam', compact('planner_id', 'question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
+        return view('afterlogin.planner.exam', compact('planner_id', 'question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
     }
 
 

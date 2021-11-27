@@ -51,41 +51,46 @@ $userData = Session::get('user_data');
                                     <div class="d-flex text-start h-100">
                                         <div class="leaderBoardBlock">
                                             <div class="bg-white p-3 text-left ms-2 h-100">
-                                                <h6 class="text-uppercase ps-4 py-2 mb-0">Leader Board</h6>
-                                                <ol class="leaderNameBlock">
-                                                    @if(isset($leaderboard_list) && !empty($leaderboard_list))
-                                                    @foreach($leaderboard_list as $lead)
-                                                    <li>
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="sno me-3">{{$lead->user_rank}}.</span>
-                                                            @php
-                                                            if (isset($lead->user_profile_img) && !empty($lead->user_profile_img)) {
-                                                            $imgPath_deft = $lead->user_profile_img;
-                                                            } else {
-                                                            $imgPath_deft = url('/') . '/public/after_login/images/profile.png';
-                                                            }
+                                                <div id="leaderboard_box_div">
+                                                    <h6 class="text-uppercase ps-4 py-2 mb-0">Leader Board</h6>
+                                                    <ol class="leaderNameBlock">
+                                                        @if(isset($leaderboard_list) && !empty($leaderboard_list))
+                                                        @foreach($leaderboard_list as $lead)
+                                                        <li>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="sno me-3">{{$lead->user_rank}}.</span>
+                                                                @php
+                                                                if (isset($lead->user_profile_img) && !empty($lead->user_profile_img)) {
+                                                                $imgPath_deft = $lead->user_profile_img;
+                                                                } else {
+                                                                $imgPath_deft = url('/') . '/public/after_login/images/profile.png';
+                                                                }
 
-                                                            @endphp
-                                                            {{--<span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span> --}}
-                                                            <span><img src="{{$imgPath_deft}}" class="leader-pic" /></span>
-                                                            <div class="leader-txt">
-                                                                <p>{{($lead->user_name) ? $lead->user_name : 'NA'}}</p>
-                                                                <small>{{$lead->score}} Unique score</small>
+                                                                @endphp
+                                                                {{--<span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span> --}}
+                                                                <span><img src="{{$imgPath_deft}}" class="leader-pic" /></span>
+                                                                <div class="leader-txt">
+                                                                    <p>{{($lead->user_name) ? $lead->user_name : 'NA'}}</p>
+                                                                    <small>{{$lead->score}} Unique score</small>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </li>
-                                                    @endforeach
-                                                    @endif
+                                                        </li>
+                                                        @endforeach
+                                                        @endif
 
-                                                </ol>
+                                                    </ol>
+                                                </div>
+                                                <div id="search_results" class="py-1">
+                                                    <h6 class="text-uppercase ps-4 py-2 mb-0">Leader Board</h6>
+                                                    <span class=" ps-4 py-2 mb-0 text-muted">Search Result</span>
+                                                    <ol class="leaderNameBlock-search">
+                                                    </ol>
+                                                </div>
                                                 <div class="text-box mt-3">
                                                     <label class="ps-0 pb-1">Search a Friend</label>
                                                     <input type="text" name="search_field" id="search_field" class="ps-2" value="" placeholder="Search By Name" />
                                                 </div>
-                                                <div id="search_results" class="py-1">
-                                                    <ol class="leaderNameBlock-search">
-                                                    </ol>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -527,26 +532,34 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
             });
         });
 
+        $('#search_results').hide();
         $('#search_field').keyup(function(event) {
-            $.ajax({
-                url: "{{ 'searchFreind' }}",
-                type: "GET",
-                cache: false,
-                data: {
-                    'search_text': event.target.value
-                },
-                success: function(data) {
+            var val = event.target.value;
 
-                    let html = '';
+            if (val != '') {
+                $('#leaderboard_box_div').hide();
+                $('#search_results').show();
 
-                    if (data.success === true) {
-                        $.each(data.response, (ele, val) => {
-                            if (val.user_profile_img) {
-                                var img_url = val.user_profile_img;
-                            } else {
-                                var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
-                            }
-                            html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
+                $.ajax({
+                    url: "{{ 'searchFreind' }}",
+                    type: "GET",
+                    cache: false,
+                    data: {
+                        'search_text': event.target.value
+                    },
+                    success: function(data) {
+
+                        let html = '';
+
+                        if (data.success === true) {
+
+                            $.each(data.response, (ele, val) => {
+                                if (val.user_profile_img) {
+                                    var img_url = val.user_profile_img;
+                                } else {
+                                    var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
+                                }
+                                html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
                                                                 <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
@@ -554,14 +567,18 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                                 </div>
                                                             </div>
                                                         </li>`;
-                        });
+                            });
 
-                    } else {
-                        html += `<p>Data not available!</p>`;
+                        } else {
+                            html += `<p>Data not available!</p>`;
+                        }
+                        $('#search_results .leaderNameBlock-search').html(html);
                     }
-                    $('#search_results .leaderNameBlock-search').html(html);
-                }
-            });
+                });
+            } else {
+                $('#search_results').hide();
+                $('#leaderboard_box_div').show();
+            }
         });
     });
 </script>

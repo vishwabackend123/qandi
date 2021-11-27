@@ -499,6 +499,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 @endphp
 
 <script type="text/javascript">
+    localStorage.clear();
     if ($("#texterror")[0]) {
         setTimeout(function() {
             $('#texterror').fadeOut('fast');
