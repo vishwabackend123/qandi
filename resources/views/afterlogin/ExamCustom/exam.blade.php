@@ -769,10 +769,17 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 
     function clearResponse(quest_id, subject_id, qNo) {
 
+        var response = [];
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            $(this).prop('checked', false);
+            response = $(this).prop('checked', false);
         });
 
+        if (response.length == 0) {
+            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+            $('#qoption_err_' + quest_id).addClass('text-danger');
+            $('#qoption_err_' + quest_id).fadeIn('fast');
+            return false;
+        }
         $("#btn_" + quest_id).removeClass("btn-light-green");
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-secondary");

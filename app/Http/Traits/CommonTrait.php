@@ -352,10 +352,13 @@ trait CommonTrait
 
         if ($status != false) {
 
-            $board_list = isset($aResponse->response) ? $aResponse->response : [];
+            $resp_list = isset($aResponse->response) ? $aResponse->response : [];
         } else {
-            $board_list = [];
+            $resp_list = [];
         }
+        $collection = collect($resp_list);
+        $board_list = $collection->sortBy('user_rank')->all();
+
         return $board_list;
     }
 
