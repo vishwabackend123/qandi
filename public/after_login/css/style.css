@@ -4065,3 +4065,12 @@ a.disabled {
     /* And disable the pointer events */
     pointer-events: none;
 }
+
+
+@media(max-width:767px) {
+    .login-box {
+        background: #fff;
+        padding: 20px 20px;
+
+    }
+}
