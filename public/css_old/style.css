@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+html,
+body {
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+a {
+    color: #355cec;
+    text-decoration: none;
+}
+
+a,
+input,
+button {
+    outline: none;
+    text-decoration: none;
+}
+
+.px-7 {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.btn-danger {
+    background: #d71921;
+}
+
+.text-danger {
+    color: #d71921 !important;
+}
+
+.text-success {
+    color: #62c354 !important;
+}
+
+.login-body-bg {
+    background: url(../images/login-bg.png) no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+.nav-btn-box {
+    float: right;
+
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-btn {
+    position: relative;
+    width: 65px;
+    height: 2px;
+    background: #a8bbc1;
+    display: block;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nav-btn:after {
+    content: "";
+    width: 65px;
+    height: 2px;
+    background: #a8bbc1;
+    display: block;
+    position: absolute;
+    top: -15px;
+}
+
+.nav-btn:before {
+    content: "";
+    width: 65px;
+    height: 2px;
+    background: #a8bbc1;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+}
+
+.red-btn {
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    background: #d71921;
+    padding: 10px 35px;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.red-btn:hover {
+    color: #fff;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(40px);
+}
+
+.white-box-big {
+    padding: 4rem;
+}
+
+.white-box-small {
+    padding: 2rem;
+}
+
+.click-box {
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.click-box:hover,
+.click-box.active {
+    background: #f2f2f2;
+}
+
+.main-heading {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.box-content {
+    font: normal normal normal 16px/20px Poppins;
+    letter-spacing: 0px;
+    color: #231f20;
+}
+
+.cource-name {
+    color: #231f20;
+    font: normal normal 900 36px/40px Poppins;
+}
+
+.price {
+    font: normal normal 600 16px/20px Poppins;
+    letter-spacing: 0px;
+    color: #231f20;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.inactive-block {
+    background: #e9e9e9 !important;
+}
+
+.inactive-block .cource-name {
+    color: #a3a3a3;
+}
+
+.btn-gray {
+    background: #a3a3a3;
+    color: #fff;
+}
+
+/*START side nav css */
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1031;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    right: 0;
+    background-color: #231f20;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.side-nav-links .side-links {
+    padding: 0;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000 !important;
+    /* text-transform: uppercase; */
+    font-weight: 300;
+    /* display: block; */
+    transition: 0.3s;
+
+    margin-left: 40px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #d71921;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 46px;
+    right: 130px;
+    font-size: 106px;
+
+    text-decoration: none;
+    font-weight: 100;
+    display: inline-block;
+    line-height: 56px;
+    color: #fff;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-right 0.5s;
+    padding: 20px;
+}
+
+.login-box {
+    background: #fff;
+    padding: 50px 60px;
+    max-width: 640px;
+    margin-left: 8%;
+    position: relative;
+}
+
+.welcome-msg {
+    font: normal normal normal 16px/24px Poppins;
+    letter-spacing: 0px;
+    color: #2c3348;
+    text-align: Center;
+}
+
+.welcome-heading {
+    font: normal normal normal 28px/42px Poppins;
+    letter-spacing: 0px;
+    color: #2c3348;
+    text-align: center;
+}
+
+.stand-image {
+    height: 100px;
+}
+
+.resend_otp {
+
+    text-align: center;
+    font: normal normal normal 14px/21px Poppins;
+    letter-spacing: 0px;
+
+    opacity: 0.8;
+}
+
+
+.pageBg {
+    background: transparent url('../images/colorBg.png') 0% 0% no-repeat padding-box;
+    background-size: cover;
+    opacity: 1;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+
+
+
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* END of side navigation */
+.text-box {
+    position: relative;
+}
+
+.text-box input {
+    background: #f2f2f2;
+    color: #2c3348;
+    font-size: 18px;
+    line-height: 35px;
+    border: none;
+    display: block;
+    width: 100%;
+    padding-left: 50px;
+}
+
+.text-box .text-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    margin-top: -12px;
+}
+
+.login-txt {
+    color: #2c3348;
+    font: normal normal normal 14px/21px Poppins;
+    line-height: 40px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#otp-box {
+    display: none;
+}
+
+#email-box {
+    display: none;
+}
+
+.open-box {
+    display: block !important;
+}
+
+.close-box {
+    display: none !important;
+}
+
+#otp-verify-box {
+    display: none;
+}
+
+#set-password-box {
+    display: none;
+}
+
+.banner-block {
+    background: url(../images/main-bg.jpg) no-repeat center;
+    height: 100vh;
+    background-size: cover;
+}
+
+.banner-bottom-blue {
+    background: #f3f7ff;
+    padding: 200px 0 140px 0;
+}
+
+.bg-system {
+    background: url(../images/right-sidecomp.png) no-repeat center right;
+    padding: 90px 0 0 0;
+    background-size: 65%;
+
+    margin: 90px 0 0 0;
+}
+
+.left-txt {
+    max-width: 600px;
+    text-align: left;
+}
+
+.left-txt h4 {
+    font: normal normal 900 46px/52px Poppins;
+    letter-spacing: 0px;
+    color: #231f20;
+    text-transform: uppercase;
+}
+
+.left-txt h3 {
+    font-weight: 900;
+    font-size: 90px;
+    line-height: 102px;
+    letter-spacing: 0px;
+    color: #231f20;
+    text-transform: uppercase;
+}
+
+.left-txt p {
+    font: normal normal normal 20px/30px Poppins;
+    letter-spacing: 0px;
+    color: #231f20;
+    opacity: 1;
+}
+
+.yellow-bg-block {
+    background: #fff4cf;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 900;
+    padding: 50px 0;
+}
+
+.big-txt {
+    font: normal normal 900 53px/60px Poppins;
+    letter-spacing: 0px;
+    color: #231f20;
+}
+
+.sml-txt {
+    font: normal normal normal 28px/28px Poppins;
+    letter-spacing: 0px;
+    color: #231f20;
+}
+
+.pic-block {
+    background: url(../images/img-block.png) no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.right-game-txt {
+    font: normal normal 900 60px/90px Poppins;
+    letter-spacing: 0px;
+    color: #2c3348;
+    margin-top: 90px;
+}
+
+.right-game-txtsml {
+    font: normal normal 200 24px/35px Poppins;
+    letter-spacing: 0px;
+    color: #2c3348;
+}
+
+footer {
+    background: #f3f7ff;
+}
+
+.navbar-light {
+    background: rgba(255, 255, 255, .9) !important;
+    height: 93.38px;
+}
+
+.trans-navbar {
+    height: 93.38px;
+}
+
+.redLink {
+    background: #D71921;
+    color: #F2F2F2;
+    margin: 0 20px;
+    padding: 0 15px;
+}
+
+.redLink .nav-link {
+    color: #fff !important;
+}
+
+.nav-link {
+    padding: .5rem 2erm;
+    margin-left: 1erm;
+}
+
+.nav-link:hover {
+    color: #D71921 !important;
+}
+
+.redLink .nav-link:hover {
+    color: #000 !important;
+}
+
+.side-links {
+    color: #000 !important;
+}
+
+
+.subscriptionBox .cource-name {
+    min-height: 80px;
+}
+
+.box-content {
+    min-height: 120px;
+}
+
+
+.pay-btn {
+    width: 252px;
+    height: 48px;
+    border: 2px solid #F29E9C;
+
+    font: normal normal bold 18px/12px Poppins;
+    letter-spacing: 0px;
+    color: #D71921;
+}
+
+.pay-btn:hover {
+    background: var(--unnamed-color-d71921) 0% 0% no-repeat padding-box;
+    background: #D71921 0% 0% no-repeat padding-box;
+    border: 2px solid #F29E9C;
+    color: var(--unnamed-color-ffffff);
+    text-align: center;
+    font: normal normal bold 18px/12px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+
+}
+
+a.disabled {
+    /* Make the disabled links grayish*/
+    color: gray;
+    /* And disable the pointer events */
+    pointer-events: none;
+}
+
+
+@media(max-width:767px) {
+    .login-box {
+        background: #fff;
+        padding: 20px 20px;
+
+    }
+}

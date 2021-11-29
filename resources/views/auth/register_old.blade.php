@@ -1,78 +1,87 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="login-bg-img">
+<nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
+    <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
+</nav>
+<div id="main">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(window).on("load resize scroll", function(e) {
+            var winHeight = $(window).height() - 40;
+            $('.pageBg').height(winHeight);
 
-    <span class="outer-logo"><a href="#"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
-    <div class="login_screen">
+        });
+    </script>
+    <form id="studentsignup" method="post">
+        @csrf
+        <div class="ms-auto login-box me-auto" id="name-box">
+            <div class="welcome-heading">Welcome to UniQ </div>
+            <p class="welcome-msg text-center">“Let's start with getting to know you better.
+                What's <b>your name</b>?”</p>
+            <div class="text-box mt-5 py-3">
+                <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
+                <input type="text" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" autocomplete="off" />
+            </div>
+            <span class="invalid-feedback m-0" role="alert" id="errlog_name"> </span>
 
-        <form id="studentsignup" method="post">
-            {{-- @csrf --}}
-            <div id="name-box">
-                <p class="mb-0">Welcome to UniQ</p>
-                <p>“Let's start with getting to know you better. What's your name?”</p>
-                <div class="pt-3">
-                    <div class="form-group flds">
-                        <input type="text" class="form-control m-email" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" autocomplete="off" s>
-                        <span class="error-sms mobil-not-valid" id="errlog_name">Please entered your name</span>
-                        <span class="error-sms email-not-valid">Please sign up first or check the email or mobile you have provided</span>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="sign-btn"><button type="button" id="goto-mobile-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">go next</button></div>
-                </div>
+            <div class="text-center mt-5">
+                <button type="button" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-mobile-btn">Go Next</button>
             </div>
 
-            <div id="email-box">
-                <p class="mb-0">Welcome to UniQ</p>
-                <p>“Sign-up using your email address and mobile number.”</p>
-                <div class="pt-3">
-                    <div class="form-group flds">
-                        <input type="text" class="form-control email-addrs disable-value" placeholder="Enter address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off">
-                        <span class="error-sms enter-otp" id="errlog_email">Please enter your email address</span>
-                    </div>
+        </div>
 
-                    <div class="form-group flds">
-                        <input type="text" class="form-control m-email" name="mobile_num" id="mobile_num" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Mobile number" autocomplete="off">
-                        <span class="error-sms mobil-not-valid" id="errlog_mob">Please enter your mobile number</span>
-
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="sign-btn"><button type="button" id="goto-otp-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Sign in</button></div>
-                </div>
-
+        <div class="ms-auto login-box me-auto" id="email-box">
+            <!-- <div><a href="#" class="back-btn" id="backname"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
+            <div class="welcome-heading">Welcome to UniQ </div>
+            <p class="welcome-msg text-center">“Sign-up using your email address and mobile number.” </p>
+            <div class="text-box mt-4">
+                <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
+                <input type="email" placeholder="Email address" name="email_add" minlength="8" maxlength="35" id="email_add" />
             </div>
-
-            <div id="otp-box">
-                <p class="mb-0">Welcome to UniQ</p>
-                <p>"You must have received an OTP from us in your inbox or message"</p>
-                <div class="pt-3">
-                    <div class="form-group flds">
-                        <input type="text" class="form-control pass disable-value" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" minlength="5" maxlength="5" placeholder="Enter OTP" autocomplete="off">
-                        <span class="error-sms enter-otp" id="errlog_otp"></span>
-                        <span class="error-sms wrong-otp" id="errlog_auth"></span>
-                    </div>
-                    <p id="resendOtp_link" class="text-right">Resend OTP in 180 sec</p>
-                    <div class="clearfix"></div>
-                    <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
-                    <div class="sign-btn"><button type="submit" class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign in</button></div>
-                </div>
+            <span class="invalid-feedback m-0" role="alert" id="errlog_email"> </span>
+            <div class="text-box mt-4">
+                <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
+                <input type="text" name="mobile_num" id="mobile_num" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Mobile number" autocomplete="off" />
             </div>
-        </form>
+            <span class="invalid-feedback m-0" role="alert" id="errlog_mob"> </span>
+            <div class="text-center mt-5">
+                <button type="button" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Send OTP</button>
+            </div>
+        </div>
+
+        <div class="ms-auto login-box me-auto" id="otp-box">
+            <!-- <div><a href="#" class="back-btn" id="backmobile"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
+            <div class="welcome-heading">Welcome to UniQ </div>
+            <p class="welcome-msg text-center">“You must have received an OTP from us in your inbox or message” </p>
+            <div class="text-box mt-5 py-3">
+                <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
+                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" minlength="5" maxlength="5" placeholder="Enter OTP" autocomplete="off" />
+            </div>
+            <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
+            <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>
+            <div class="d-flex align-items-center mt-0">
+
+                <span class="ms-auto" id="some_div"> </span>
+            </div>
+            <p id="resendOtp_link" class="text-center mt-4 mb-0 resend_otp">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
+            <div class="text-center mt-2"> <button class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">Verify OTP</button></div>
+
+        </div>
+    </form>
+
+    <div class="ms-auto login-box me-auto" id="otp-verify-box">
+
+        <p class="welcome-msg text-center text-success">User registered successfully. </p>
+        <p class="py-5 text-center"><img src="{{URL::asset('public/images/check.png')}}"></p>
+        <div class="text-center mt-2"> <a href="{{ route('login') }}" class="btn btn-danger text-uppercase rounded-0 px-5  ">Back to login</a></div>
 
     </div>
-    <!--login_screen-->
-</section>
-
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.2.1.slim.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 
 <script type="text/javascript">
     $('#resendOtp_link').hide();
@@ -310,5 +319,4 @@
         e.preventDefault();
     });
 </script>
-
 @endsection

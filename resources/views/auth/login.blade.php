@@ -1,71 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-<nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
-    <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
-</nav>
-<div id="main">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        $(window).on("load resize scroll", function(e) {
-            var winHeight = $(window).height() - 40;
-            $('.pageBg').height(winHeight);
+<section class="login-bg-img">
 
-        });
-    </script>
+    <span class="outer-logo"><a href="#"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
+    <div class="login_screen">
+        <p class="mb-0">Welcome to UniQ</p>
+        <p>Please login using your registered email/ Mobile number</p>
+        <div class="pt-3 login-screen">
+            <form id="studentlogin" method="post">
+                {{-- @csrf --}}
+                <div id="mobile_input">
+                    <div class="form-group flds">
+                        <input type="text" class="form-control m-email" name="login_mobile" id="mobile_num" placeholder="Mobile number/email ID">
+                        <span class="error-sms mobil-not-valid" id="errlog_mob">Please entered registered email/mobile number</span>
+                        <span class="error-sms email-not-valid">Please sign up first or check the email or mobile you have provided</span>
 
-    <div class="ms-auto login-box me-auto" id="name-box">
-
-        <div class="welcome-heading">Welcome to UniQ</div>
-        <div class="welcome-msg">Please login using your registered email/ Mobile number </div>
-        <form id="studentlogin" method="post">
-            {{-- @csrf --}}
-            <div id="mobile_input">
-                <div class="text-box mt-5">
-                    <span class="text-icon"><img src="{{URL::asset('public/images/user-icon.png')}}"></span>
-                    <input type="text" name="login_mobile" id="mobile_num" value="" autocomplete="off" placeholder="Mobile number / e-mail ID" />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="sign-btn"><button type="button" onclick="sentotplogin()" id="mobile-input-btn" class="next-btn btn btn-primary disbaled-btn active-btn text-uppercase">NEXT</button></div>
 
                 </div>
-                <span class="invalid-feedback m-0" role="alert" id="errlog_mob"> </span>
 
-                <div class="text-center mt-5" id="mobile-input-btn">
-                    <button type="button" class="btn btn-danger text-uppercase rounded-0 px-5  " onclick="sentotplogin()">Next
-                    </button>
+                <div id="input-otp-box" style="display:none">
+                    <div class="form-group flds">
+                        <input type="text" class="form-control pass disable-value" name="login_otp" id="otp_num" placeholder="Enter OTP" minlength="5" maxlength="5" onkeypress="return isNumber(event)" autocomplete="off">
+                        <span class="error-sms enter-otp" id="errlog_otp">Please, enter OTP</span>
+                        <span class="error-sms wrong-otp" id="errlog_auth">You have entered a wrong OTP. Please try again
+                        </span>
+                    </div>
+                    <p class="text-right" id="wait_otp_div">Resend OTP in 180 sec</p>
+                    <div class="clearfix"></div>
+                    <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
+                    <div class="sign-btn"><button type="submit" id="otp-verify-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Sign in</button></div>
                 </div>
-            </div>
+                <p>Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+    <!--login_screen-->
+</section>
 
-            <div id="input-otp-box" style="display:none">
-                <div class="text-box py-3">
-                    <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" minlength="5" maxlength="5" onkeypress="return isNumber(event)" autocomplete="off" />
-                </div>
-                <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
-                <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>
-                <div class="d-flex align-items-center mt-0">
-                    <span class="ms-auto" id="wait_otp_div"> </span>
-                </div>
-                <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
-                <div class="text-center mt-2">
-                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="otp-verify-btn">
-                        Sign In
-                    </button>
-                </div>
-            </div>
-        </form>
 
-        {{-- <p class="text-center login-txt">OR <br>Login using</p>
-        <div class="text-center"><a href="{{ url('auth/google') }}" class="mx-4"><img src="{{URL::asset('public/images/google.png')}}"></a>
-        <a href="{{ url('auth/facebook') }}" class="mx-4"><img src="{{URL::asset('public/images/facebook.png')}}"></a>
-    </div>--}}
-    <p class="text-center mt-4 mb-0">Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
-</div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.2.1.slim.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
 <script>
     $('#resendOtp_link').hide();
@@ -83,7 +68,7 @@
     function sentotplogin() {
         var mobile = $("#mobile_num").val();
         if (mobile == '') {
-            $("#errlog_mob").html('Please Enter registered email/ Mobile number ');
+            $("#errlog_mob").html('Please entered registered email/mobile number');
             $("#errlog_mob").fadeIn('fast');
             $("#errlog_mob").fadeOut(5000);
             return false;
@@ -166,10 +151,10 @@
             },
             messages: {
                 "login_otp": {
-                    required: "Please, enter OTP"
+                    required: "Please, enter OTP!"
                 },
                 "login_mobile": {
-                    required: "Please, enter OTP"
+                    required: "Please entered registered email/mobile number."
                 }
             },
             errorElement: 'div',

@@ -12,6 +12,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" value="{{ csrf_token() }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="icon" href="{{URL::asset('public/images/favicon.ico')}}" type="{{URL::asset('public/image/x-icon')}}" />
   <script src="https://kit.fontawesome.com/5880030aeb.js" crossorigin="anonymous"></script>
   <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
@@ -23,7 +25,7 @@
 
 </head>
 
-<body class="pageBg ">
+<body>
 
 
 
