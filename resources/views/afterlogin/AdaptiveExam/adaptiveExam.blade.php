@@ -131,7 +131,8 @@
                                                     src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}"/>
                                             </button>
                                             <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}"
-                                                    id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img
+                                                    {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}"
+                                                    onclick="qnext('{{$next_qid}}')"><img
                                                     src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}"/>
                                             </button>
                                             <!-- question -->
@@ -141,8 +142,7 @@
                                                 <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
                                                 <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
                                                 <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
-                                                <span
-                                                    class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
+                                                <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
                                             </sapn>
                                             <div class="question N_question" id="question_blk"><span
                                                     class="q-no">Q1.</span>{!! $question_text !!}</div>
@@ -161,11 +161,10 @@
                                                             $view_opt='<img src="'.$latex.'" />' ;
                                                         @endphp
                                                         <div class="col-md-6 mb-4">
-                                                            <input
-                                                                class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}"
-                                                                type="{{$questtype}}"
-                                                                id="option_{{$activeq_id}}_{{$key}}"
-                                                                name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                            <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}"
+                                                                   type="{{$questtype}}"
+                                                                   id="option_{{$activeq_id}}_{{$key}}"
+                                                                   name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                             <div class=" ps-5 ans">
                                                                 <label class="question m-0 py-3   d-block "
                                                                        for="option_{{$activeq_id}}_{{$key}}"><span
@@ -185,32 +184,29 @@
                                             <div class="N_tab-btn-box_list">
                                                 <div class="ps-3" style="float:left">
                                                     @if(!empty($next_qid))
-                                                        <button
-                                                            class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize"
-                                                            onclick="saveAnswer('{{$activeq_id}}')">Save & Next
+                                                        <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize"
+                                                                onclick="saveAnswer('{{$activeq_id}}')">Save & Next
                                                         </button>
                                                     @else
-                                                        <button
-                                                            class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize"
-                                                            onclick="saveAnswer('{{$activeq_id}}')" data-toggle="modal"
-                                                            data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit
+                                                        <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize"
+                                                                onclick="saveAnswer('{{$activeq_id}}')"
+                                                                data-toggle="modal"
+                                                                data-target="#FullTest_Exam_Panel_Interface_A">Save &
+                                                            Submit
                                                         </button>
                                                     @endif
-                                                    <button
-                                                        class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize"
-                                                        onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">
+                                                    <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize"
+                                                            onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">
                                                         Save & Mark for review
                                                     </button>
                                                 </div>
                                                 <div class="pe-3" style="float:right">
-                                                    <button
-                                                        class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize"
-                                                        onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">
+                                                    <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize"
+                                                            onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">
                                                         Mark for review
                                                     </button>
-                                                    <button
-                                                        class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize"
-                                                        onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">
+                                                    <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize"
+                                                            onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">
                                                         Clear Response
                                                     </button>
                                                 </div>
@@ -259,15 +255,21 @@
                                 <input type="hidden" name="planner_id" value="0">
                                 <input type="hidden" name="live_exam_id" value="0">
                                 <div class="pull-right">
-                                    <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i></button>
-                                    <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-outline-danger stop"
+                                            onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success start"
+                                            onclick="start();" style="display: none"><i class="fa fa-play"
+                                                                                        aria-hidden="true"></i>
+                                    </button>
                                 </div>
                                 <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">
                                     Submit
                                 </button>
-
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                             </form>
+
+
                         </div>
                         <div class="bg-white d-flex flex-column justify-content-center palette_box">
                             <p class="palette-hd">Question Palette</p>
@@ -300,7 +302,8 @@
                             </div>
                             <div class="d-flex align-items-start legends">
                                 <button class="btn btn-secondary rounded-0 align-items-center"><img
-                                        src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}"/></button>
+                                        src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}"/>
+                                </button>
                                 <p>Answered & Marked for Review</p>
                             </div>
 
@@ -554,7 +557,9 @@
                 $('#final_submit_time').val(timePassed);
                 timeLabel.innerHTML = formatTime(timeLeft);
                 setCircleDasharray();
+
                 if (timeLeft === 0) {
+
                     timeIsUp();
                 }
             }, 1000);
@@ -845,10 +850,17 @@
 
         function clearResponse(quest_id, subject_id, qNo) {
 
+            var response = [];
             $.each($("input[name='quest_option_" + quest_id + "']:checked"), function () {
-                $(this).prop('checked', false);
+                response = $(this).prop('checked', false);
             });
 
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+                return false;
+            }
 
             $("#btn_" + quest_id).addClass("btn-light");
             $("#btn_" + quest_id).removeClass("btn-light-green");
@@ -951,7 +963,6 @@
                 $('#form_exam_submit')[0].submit();
             });
         });
-
     </script>
 
 @endsection

@@ -37,7 +37,7 @@
             <div id="input-otp-box" style="display:none">
                 <div class="text-box py-3">
                     <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" onkeypress="return isNumber(event)" autocomplete="off" />
+                    <input type="text" name="login_otp" id="otp_num" placeholder="Enter OTP" minlength="5" maxlength="5" onkeypress="return isNumber(event)" autocomplete="off" />
                 </div>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
                 <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>
@@ -61,8 +61,11 @@
 </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
+
 
 <script>
     $('#resendOtp_link').hide();

@@ -213,16 +213,15 @@ $userData = Session::get('user_data');
                             <div class="bg-white shadow-lg p-3 mt-5">
                                 <h5 class="dashboard-title mb-3">Unit proficiency</h5>
                                 <div class="row">
-                                    @if(!empty($subProf))
-                                    @foreach($subProf as $key=>$sub)
-                                    @php $subId=$sub->subject_id;
-                                    @endphp
+                                    @if(!empty($unitProf))
+                                    @foreach($unitProf as $key=>$unit)
+
 
                                     <div class="col-md-12 border-bottom pt-2">
-                                        <span class="dashboard-name-txt fw-bold">{{$sub->subject_name}}</span>
+                                        <span class="dashboard-name-txt fw-bold">{{$unit->subject_name}}</span>
                                         <div class="px-4">
-                                            @if(isset($unitProf[$key]->unit_score))
-                                            @foreach($unitProf[$key]->unit_score as $unit)
+                                            @if(isset($unit->unit_score))
+                                            @foreach($unit->unit_score as $unit)
                                             <div class="d-flex align-items-center  ">
 
                                                 <div class="row d-flex  align-items-center py-1 dashboard-listing-details  w-100 col-6">
@@ -269,7 +268,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="bg-white shadow-lg p-3 px-5 mt-3">
                             <p class="text-uppercase fw-bold text-start">
-                                Acuracy Percentage
+                                Accuracy Percentage
                             </p>
                             <div id="accPer"></div>
                         </div>
@@ -537,17 +536,17 @@ $userData = Session::get('user_data');
         },
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAccuracy); ?>,
+            data: <?php print_r($classAccuracy); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAccuracy); ?>,
+            data: <?php print_r($stuAccuracy); ?>,
             color: '#6ec986',
         }]
     });
 
-    /* ACURACY PERCENTAGE */
+    /* ACCURACY PERCENTAGE */
     Highcharts.chart('accPer', {
         chart: {
             type: 'spline',
@@ -572,12 +571,12 @@ $userData = Session::get('user_data');
         },
         series: [{
             name: 'Class Average',
-            data: <?php print_r($stuAcc); ?>,
+            data: <?php print_r($classAcc); ?>,
             color: '#ff9999',
             dashStyle: 'ShortDash'
         }, {
             name: 'Student Average',
-            data: <?php print_r($classAcc); ?>,
+            data: <?php print_r($stuAcc); ?>,
             color: '#6ec986',
         }]
     });

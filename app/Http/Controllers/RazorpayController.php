@@ -164,7 +164,10 @@ class RazorpayController extends Controller
             }
         }
 
-
+        Session::forget('user_data');
+        $user_Data = Auth::user();
+        Session::put('user_data', $user_Data);
+        $userData = Session::get('user_data');
 
         Session::put('success', 'Payment successful');
         return redirect()->route('dashboard');

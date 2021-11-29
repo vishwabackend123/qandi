@@ -47,7 +47,8 @@
 </div>
 
 
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-2.2.4.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0
+.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 
 <script src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
@@ -657,10 +658,10 @@
     }); */
     $(document).ready(function() {
         $(".leaderNameBlock").slimscroll({
-            height: "44vh",
+            height: "54vh",
         });
         $(".leaderNameBlock-search").slimscroll({
-            height: "70px",
+            height: "54vh",
         });
         $(".scroll-topic-ana").slimscroll({
             height: "20vh",

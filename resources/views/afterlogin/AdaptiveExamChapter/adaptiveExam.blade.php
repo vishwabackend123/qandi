@@ -116,7 +116,7 @@ $questtype='radio';
                                 <div class="question-block N_question-block">
 
                                     <button style="display:none;" class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
-                                    <button style="display:none;" class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                    <button style="display:none;" class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
                                     <sapn class="question_difficulty_tag small">
                                         <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
@@ -775,11 +775,17 @@ $questtype='radio';
     }
 
     function clearResponse(quest_id, subject_id, qNo) {
-
+        var response = [];
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            $(this).prop('checked', false);
+            response = $(this).prop('checked', false);
         });
 
+        if (response.length == 0) {
+            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+            $('#qoption_err_' + quest_id).addClass('text-danger');
+            $('#qoption_err_' + quest_id).fadeIn('fast');
+            return false;
+        }
 
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-light-green");

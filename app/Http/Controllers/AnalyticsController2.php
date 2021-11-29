@@ -36,6 +36,7 @@ class AnalyticsController extends Controller
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
 
+
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
@@ -110,13 +111,9 @@ class AnalyticsController extends Controller
                 $parsed = date_parse($val->time_spent_on_correct_ques);
                 $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
                 array_push($correctTime1, $correctTimeSeconds);
-
-                /* $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime1, (float)$parsed); */
-                /* $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime1, (float)$inparsed);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime1, $incorrectTimeSeconds);
             }
             $date1 = json_encode($date1);
             $correctTime1 = json_encode($correctTime1);
@@ -127,14 +124,12 @@ class AnalyticsController extends Controller
             $incorrectTime2 = [];
             foreach ($weeklyReport as $val) {
                 array_push($date2, date('d-m', strtotime($val->date)));
-                /*  $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime2, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime2, (float)$inparsed);
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime2, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime2, $incorrectTimeSeconds);
             }
             $date2 = json_encode($date2);
             $correctTime2 = json_encode($correctTime2);
@@ -145,14 +140,12 @@ class AnalyticsController extends Controller
             $incorrectTime3 = [];
             foreach ($monthlyReport as $val) {
                 array_push($date3, date('d-m', strtotime($val->date)));
-                /* $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime3, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime3, (float)$inparsed);
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime3, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime3, $incorrectTimeSeconds);
             }
             $date3 = json_encode($date3);
             $correctTime3 = json_encode($correctTime3);
@@ -332,11 +325,9 @@ class AnalyticsController extends Controller
                 $parsed = date_parse($val->time_spent_on_correct_ques);
                 $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
                 array_push($correctTime1, $correctTimeSeconds);
-
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime1, (float)$inparsed);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime1, $incorrectTimeSeconds);
             }
             $date1 = json_encode($date1);
             $correctTime1 = json_encode($correctTime1);
@@ -347,15 +338,12 @@ class AnalyticsController extends Controller
             $incorrectTime2 = [];
             foreach ($weeklyReport as $val) {
                 array_push($date2, date('d-m', strtotime($val->date)));
-
-                /* $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                /* $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime2, (float)$parsed); */
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime2, (float)$inparsed);
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime2, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime2, $incorrectTimeSeconds);
             }
             $date2 = json_encode($date2);
             $correctTime2 = json_encode($correctTime2);
@@ -366,14 +354,12 @@ class AnalyticsController extends Controller
             $incorrectTime3 = [];
             foreach ($monthlyReport as $val) {
                 array_push($date3, date('d-m', strtotime($val->date)));
-                /* $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime3, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime3, (float)$inparsed);
+                $parsed = date_parse($val->time_spent_on_correct_ques);
+                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($correctTime3, $correctTimeSeconds);
+                $parsed = date_parse($val->time_spent_on_incorrect_ques);
+                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+                array_push($incorrectTime3, $incorrectTimeSeconds);
             }
             $date3 = json_encode($date3);
             $correctTime3 = json_encode($correctTime3);
@@ -527,14 +513,12 @@ class AnalyticsController extends Controller
         $incorrectTime2 = [];
         foreach ($weeklyReport as $val) {
             array_push($date2, date('d-m', strtotime($val->date)));
-            /* $parsed = date_parse($val->time_spent_on_correct_ques);
-            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-            $parsed = number_format($val->time_spent_on_correct_ques, 3);
-            array_push($correctTime2, (float)$parsed);
-            /* $parsed = date_parse($val->time_spent_on_incorrect_ques);
-            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-            $incparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-            array_push($incorrectTime2, (float)$incparsed);
+            $parsed = date_parse($val->time_spent_on_correct_ques);
+            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+            array_push($correctTime2, $correctTimeSeconds);
+            $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+            array_push($incorrectTime2, $incorrectTimeSeconds);
         }
         $date2 = json_encode($date2);
         $correctTime2 = json_encode($correctTime2);
@@ -545,14 +529,12 @@ class AnalyticsController extends Controller
         $incorrectTime3 = [];
         foreach ($monthlyReport as $val) {
             array_push($date3, date('d-m', strtotime($val->date)));
-            /*  $parsed = date_parse($val->time_spent_on_correct_ques);
-            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-            $parsed = number_format($val->time_spent_on_correct_ques, 3);
-            array_push($correctTime3, (float)$parsed);
-            /* $parsed = date_parse($val->time_spent_on_incorrect_ques);
-            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-            $incparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-            array_push($incorrectTime3, (float)$incparsed);
+            $parsed = date_parse($val->time_spent_on_correct_ques);
+            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+            array_push($correctTime3, $correctTimeSeconds);
+            $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
+            array_push($incorrectTime3, $incorrectTimeSeconds);
         }
         $date3 = json_encode($date3);
         $correctTime3 = json_encode($correctTime3);

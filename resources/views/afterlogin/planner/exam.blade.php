@@ -102,7 +102,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                         <div class="tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <div id="question_section" class="">
-                                <div class="d-flex ">
+                                <div class="d-flex d-none-imp">
                                     <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
                                         <span id="avg_text">Average Time :</span>
                                         <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
@@ -119,7 +119,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                                 <div class="question-block N_question-block">
 
 
-                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                    <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
                                     <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
 
@@ -254,7 +254,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content rounded-0">
                 <div class="modal-header pb-0 border-0">
-                    <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
+                    <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}"></a>
                 </div>
                 <div class="modal-body pt-3 p-5">
                     <div class="row">
@@ -678,6 +678,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                 }
                 if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
+
                     $("#submitExam").click();
                 } else {
                     $("#quesnext" + quest_id).click();
@@ -768,7 +769,6 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
     }
 
     function clearResponse(quest_id, subject_id, qNo) {
-
         var response = [];
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
             response = $(this).prop('checked', false);
@@ -780,6 +780,8 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
             $('#qoption_err_' + quest_id).fadeIn('fast');
             return false;
         }
+
+
         $("#btn_" + quest_id).removeClass("btn-light-green");
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-secondary");

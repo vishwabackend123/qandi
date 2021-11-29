@@ -56,7 +56,7 @@
             <p class="welcome-msg text-center">“You must have received an OTP from us in your inbox or message” </p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
-                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" placeholder="Enter OTP" autocomplete="off" />
+                <input type="text" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" minlength="5" maxlength="5" placeholder="Enter OTP" autocomplete="off" />
             </div>
             <span class="invalid-feedback m-0" role="alert" id="errlog_otp"> </span>
             <span class="invalid-feedback m-0" role="alert" id="errlog_auth"> </span>
@@ -79,7 +79,8 @@
     </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 
 <script type="text/javascript">
