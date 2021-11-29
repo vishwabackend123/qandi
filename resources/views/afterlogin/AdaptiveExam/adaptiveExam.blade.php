@@ -210,7 +210,6 @@
                                                         Clear Response
                                                     </button>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>

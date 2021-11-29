@@ -206,7 +206,15 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-outline-danger stop"
+                                        onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-success start"
+                                        onclick="start();" style="display: none"><i class="fa fa-play"
+                                                                                    aria-hidden="true"></i>
+                                </button>
+                            </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
@@ -456,6 +464,8 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
     function start(withReset = false) {
         setDisabled(startBtn);
         removeDisabled(stopBtn);
+        $(".stop").show();
+        $(".start").hide();
         if (withReset) {
             resetVars();
         }
@@ -465,7 +475,9 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
     function stop() {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
-        startBtn.innerHTML = "Continue";
+        $(".stop").hide();
+        $(".start").show();
+        // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
     }
 
@@ -487,14 +499,14 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
     window.addEventListener("load", () => {
         // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
-        setDisabled(stopBtn);
+        // setDisabled(stopBtn);
     });
 
     //---------------------------------------------
     //HELPER METHODS
     //---------------------------------------------
     function setDisabled(button) {
-        button.setAttribute("disabled", "disabled");
+        button.setAttribute("disabled", true);
     }
 
     function removeDisabled(button) {
@@ -518,8 +530,8 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
     }
 
     function resetVars() {
-        removeDisabled(startBtn);
-        setDisabled(stopBtn);
+        // removeDisabled(startBtn);
+        // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
         console.log(timePassed, timeLeft);

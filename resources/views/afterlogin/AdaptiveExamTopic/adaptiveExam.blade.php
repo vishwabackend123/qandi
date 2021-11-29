@@ -227,7 +227,15 @@ $questtype='radio';
                             @csrf
                             <input type="hidden" name="session_id" value="{{$session_id}}">
                             <input type="hidden" name="topic_id" value="{{$topic_id}}">
-
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-outline-danger stop"
+                                        onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-success start"
+                                        onclick="start();" style="display: none"><i class="fa fa-play"
+                                                                                    aria-hidden="true"></i>
+                                </button>
+                            </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
@@ -470,6 +478,8 @@ $questtype='radio';
     function start(withReset = false) {
         setDisabled(startBtn);
         removeDisabled(stopBtn);
+        $(".stop").show();
+        $(".start").hide();
         if (withReset) {
             resetVars();
         }
@@ -479,7 +489,9 @@ $questtype='radio';
     function stop() {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
-        startBtn.innerHTML = "Continue";
+        $(".stop").hide();
+        $(".start").show();
+        // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
     }
 
@@ -501,14 +513,14 @@ $questtype='radio';
     window.addEventListener("load", () => {
         // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
-        setDisabled(stopBtn);
+        // setDisabled(stopBtn);
     });
 
     //---------------------------------------------
     //HELPER METHODS
     //---------------------------------------------
     function setDisabled(button) {
-        button.setAttribute("disabled", "disabled");
+        button.setAttribute("disabled", true);
     }
 
     function removeDisabled(button) {
@@ -532,8 +544,8 @@ $questtype='radio';
     }
 
     function resetVars() {
-        removeDisabled(startBtn);
-        setDisabled(stopBtn);
+        // removeDisabled(startBtn);
+        // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
         console.log(timePassed, timeLeft);
