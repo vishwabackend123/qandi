@@ -317,7 +317,7 @@
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken'
+                text: 'Average Time Taken (sec)'
             }
         },
 
