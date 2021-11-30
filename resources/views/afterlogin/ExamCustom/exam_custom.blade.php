@@ -68,7 +68,7 @@
                                         <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                                         <input type="hidden" name="question_count" value="30">
 
-                                        <button class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
+                                        <button type="button" onclick="submitToPopup(form)" class="btn btn-warning-custom rounded-0 px-5 ml-0 ml-md-3 "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take FULL Test</button>
                                     </form>
                                     <button class="btn filter-icon rotate-icon ms-1 text-danger rounded-0" id="dropdownMenuLink-chpt" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-chpt">
@@ -79,11 +79,11 @@
 
                                     </ul>
                                 </div>
-{{--                                {{dd($subject_chapter_list[$sub->id])}}--}}
+                                {{-- {{dd($subject_chapter_list[$sub->id])}}--}}
                                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                                     @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
-{{--                                        {{dd($chapters)}}--}}
+                                    {{-- {{dd($chapters)}}--}}
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
                                         <span class="mr-3 name-txt col-4 text-break">{{$chapters->chapter_name}}</span>
 
@@ -165,6 +165,17 @@
 
 
 <script type="text/javascript">
+    function submitToPopup(f) {
+
+
+        var w = window.open('', 'form-target', 'toolbar=no,scrollbars=yes,resizable=yes,location=no,menubar=no,width=auto,height=auto');
+        f.target = 'form-target';
+        f.submit();
+    };
+
+    function go_full_screen() {
+        window.open(url("/custom_exam"), "_blank", "toolbar=no,scrollbars=yes,resizable=yes,location=no,menubar=no,width=auto,height=auto");
+    }
     $('.scroll-div').slimscroll({
         height: '50vh'
     });
