@@ -371,7 +371,7 @@
                                 </h1>
                                 <div class="text-left   ">
 
-                                    <button onclick="go_full_screen()" class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn"
+                                    <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn"
                                             data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i
                                             class="fas fa-arrow-right"></i></button>
 
@@ -456,7 +456,7 @@
     </div>
 
     <div class="modal fade" id="resume-test" tabindex="-1" role="dialog"
-         aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+         aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered modal-lg ">
             <div class="modal-content rounded-0">
                 <div class="modal-body text-center pt-2 pb-5">
@@ -471,13 +471,9 @@
         </div>
     </div>
 
+
     @include('afterlogin.layouts.footer')
     <script type="text/javascript">
-
-        function go_full_screen(){
-            window.open(url("/custom_exam"), "_blank", "toolbar=no,scrollbars=yes,resizable=yes,location=no,menubar=no,width=auto,height=auto");
-        }
-
 
         $(document).ready(function () {
             $(window).keyup(function (e) {
