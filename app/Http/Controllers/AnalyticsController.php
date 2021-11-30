@@ -162,7 +162,9 @@ class AnalyticsController extends Controller
                 array_push($correctAns1, $val->correct_ans);
                 array_push($incorrectAns1, $val->incorrect_ans);
             }
+
             $correctAns1 = json_encode($correctAns1);
+
             $incorrectAns1 = json_encode($incorrectAns1);
 
             $correctAns2 = [];
@@ -679,7 +681,7 @@ class AnalyticsController extends Controller
 
     /***
      * tutorial signup
-     * 
+     *
      *  */
 
     public function tutorials_signup($tutorial_id)
