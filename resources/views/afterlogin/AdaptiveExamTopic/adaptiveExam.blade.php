@@ -507,6 +507,7 @@ $questtype='radio';
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        $("#resume-test").modal("show");
     }
 
     function startTimer() {

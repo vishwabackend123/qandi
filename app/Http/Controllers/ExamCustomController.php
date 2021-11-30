@@ -78,7 +78,15 @@ class ExamCustomController extends Controller
                 //$subject_chapter_list[$subject_id] = !empty($topTen) ? $topTen : [];
             }
         }
-
+//        +"chapter_id": 324
+//    +"chapter_name": "3D Geometry"
+//    +"chapter_score": 10.24
+//    +"E": 3.8
+//    +"C": 5.09
+//    +"A": 4.4
+//    +"K": 2.28
+//    }
+//dd($subject_chapter_list);
 
         return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list'));
     }
@@ -675,8 +683,6 @@ class ExamCustomController extends Controller
             ]);
             $topics = $sorted->values()->all();
         }
-
-
 
         return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
     }

@@ -393,7 +393,21 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
     </div>
 </div>
 
-
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog"
+     aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content rounded-0">
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3"
+                            data-bs-dismiss="modal">
+                        Resume Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @include('afterlogin.layouts.footer')
 
@@ -479,6 +493,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        $("#resume-test").modal("show");
     }
 
     function startTimer() {

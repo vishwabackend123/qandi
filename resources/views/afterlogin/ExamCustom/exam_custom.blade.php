@@ -79,20 +79,19 @@
 
                                     </ul>
                                 </div>
+{{--                                {{dd($subject_chapter_list[$sub->id])}}--}}
                                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                                     @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
+{{--                                        {{dd($chapters)}}--}}
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
                                         <span class="mr-3 name-txt col-4 text-break">{{$chapters->chapter_name}}</span>
 
                                         <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
-
-
-
                                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                                 <div class="star-ratings-css">
-                                                    <div class="star-ratings-css-top" style="width: {{isset($chapters->score)?$chapters->score:0}}%">
+                                                    <div class="star-ratings-css-top" style="width: {{isset($chapters->chapter_score)?$chapters->chapter_score:0}}%">
                                                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                     </div>
                                                     <div class="star-ratings-css-bottom">
@@ -101,7 +100,7 @@
                                                 </div>
 
                                                 <div class="ms-1 score score-rating js-score">
-                                                    {{isset($chapters->score)?$chapters->score:0}}%
+                                                    {{isset($chapters->chapter_score)?$chapters->chapter_score:0}}%
                                                 </div>
                                             </div>
                                         </div>
@@ -136,9 +135,6 @@
                                     @endif
 
                                 </div>
-
-
-
                             </div>
                             @endforeach
                             @endisset

@@ -371,7 +371,7 @@
                                 </h1>
                                 <div class="text-left   ">
 
-                                    <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn"
+                                    <button onclick="go_full_screen()" class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn"
                                             data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i
                                             class="fas fa-arrow-right"></i></button>
 
@@ -471,9 +471,14 @@
         </div>
     </div>
 
-
     @include('afterlogin.layouts.footer')
     <script type="text/javascript">
+
+        function go_full_screen(){
+            window.open(url("/custom_exam"), "_blank", "toolbar=no,scrollbars=yes,resizable=yes,location=no,menubar=no,width=auto,height=auto");
+        }
+
+
         $(document).ready(function () {
             $(window).keyup(function (e) {
                 if (e.keyCode == 44) {
@@ -544,6 +549,7 @@
             if (withReset) {
                 resetVars();
             }
+            questionstartTimer();
             startTimer();
         }
 
