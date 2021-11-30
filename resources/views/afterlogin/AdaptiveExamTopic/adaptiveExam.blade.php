@@ -416,7 +416,7 @@ $questtype='radio';
 </div>
 
 <div class="modal fade" id="resume-test" tabindex="-1" role="dialog"
-     aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+     aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-body text-center pt-2 pb-5">
