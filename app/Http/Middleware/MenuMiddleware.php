@@ -31,6 +31,7 @@ class MenuMiddleware
 
 
         $user_Data = Auth::user();
+
         Session::put('user_data', $user_Data);
         $userData = Session::get('user_data');
 
