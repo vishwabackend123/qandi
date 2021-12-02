@@ -20,9 +20,12 @@ class PreparationController extends Controller
     public function preparation_center(Request $request)
     {
         $userData = Session::get('user_data');
+
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
+
         $subject_list = $this->redis_subjects();
+
         $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapterWiseSummary/' . $exam_id . '/' . $user_id;
 
         $curl = curl_init();
@@ -58,7 +61,6 @@ class PreparationController extends Controller
         //                $aPreparation[$list->subject_id][] = $values[0];
         //            }
         //        }
-
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
 
@@ -329,7 +331,6 @@ class PreparationController extends Controller
         $response_json = curl_exec($curl);
 
 
-
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
@@ -341,7 +342,6 @@ class PreparationController extends Controller
 
         return view('afterlogin.Preparation.bookmarks_ajax', compact('values', 'preparation_list'));
     }
-
 
 
     public function getReviewBookmarks()
@@ -363,7 +363,7 @@ class PreparationController extends Controller
         $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
         curl_setopt_array($curl, array(
             //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
-            CURLOPT_URL =>  $curl_url, //live
+            CURLOPT_URL => $curl_url, //live
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -431,7 +431,6 @@ class PreparationController extends Controller
 
             $word1 = "/public/images/questions/";
             $word2 = "public/images/questions/";
-
 
 
             $question_data = $all_data->where('question_id', $first)->first();
@@ -531,7 +530,7 @@ class PreparationController extends Controller
         $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
         curl_setopt_array($curl, array(
             //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
-            CURLOPT_URL =>  $curl_url, //live
+            CURLOPT_URL => $curl_url, //live
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -569,7 +568,6 @@ class PreparationController extends Controller
             $allQuestions = $all_data->keyBy('question_id');
             $allQuestionsArr = $all_data->all();
             $allkeys = $allQuestions->keys('question_id')->all();
-
 
 
             $first = $result_response->response[0]->question_id;
@@ -664,7 +662,6 @@ class PreparationController extends Controller
     }
 
 
-
     public function ajax_review_next_subject_questionbookmark($subject_id, Request $request)
     {
 
@@ -678,7 +675,7 @@ class PreparationController extends Controller
         $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
         curl_setopt_array($curl, array(
             //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
-            CURLOPT_URL =>  $curl_url, //live
+            CURLOPT_URL => $curl_url, //live
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -802,5 +799,51 @@ class PreparationController extends Controller
 
         // echo "<pre>"; print_r($question_data); die;
         return view('afterlogin.ExamCustom.next_review_questionbookmark', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
+    }
+
+    public function getChapterWiseData(Request $request)
+    {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+        $chapter_id = $request->chapter_id;
+        $type = $request->type;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapter-wise-resources/' . $exam_id . '/' . $user_id . '/' . $chapter_id;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL =>$api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        if (isset($response) && !empty($response)) {
+            $preparation_list = json_decode($response);
+        } else {
+            $preparation_list = [];
+        }
+//        dd($preparation_list);
+        switch ($type) {
+            case 'presentations':
+                return view('afterlogin.Preparation.preparation_center_ajax', compact('type', 'preparation_list'));
+                break;
+            case 'notes':
+                return view('afterlogin.Preparation.notes_ajax', compact('type', 'preparation_list'));
+                break;
+            case 'videos':
+                return view('afterlogin.Preparation.video_ajax', compact('type', 'preparation_list'));
+                break;
+            default:
+                return view('afterlogin.Preparation.bookmarks_ajax', compact('type', 'preparation_list'));
+        }
     }
 }

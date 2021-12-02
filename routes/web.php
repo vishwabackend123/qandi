@@ -134,7 +134,7 @@ Route::any('/bookmarks_chapter', [App\Http\Controllers\PreparationController::cl
 Route::any('/review_bookmarks', [App\Http\Controllers\PreparationController::class, 'getReviewBookmarks'])->name('review_bookmarks')->middleware('auth', 'menu');
 Route::any('/next_review_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'next_review_questionbookmark'])->name('next_review_questionbookmark')->middleware('auth', 'menu');
 Route::any('/ajax_review_next_subject_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'ajax_review_next_subject_questionbookmark'])->name('ajax_review_next_subject_questionbookmark')->middleware('auth', 'menu');
-
+Route::any('/get_chapter_wise_data', [App\Http\Controllers\PreparationController::class, 'getChapterWiseData'])->name('get_chapter_wise_data')->middleware('auth', 'menu');
 
 
 /* about Exam Controller Routes */
