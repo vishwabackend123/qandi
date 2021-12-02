@@ -18,12 +18,10 @@
             </div>
         </div>
         <div class="ms-auto">
-
             <span class="me-1"><a href="javascript:void(0);" @if($preType=='presentation' )class="bg-light-red link-dark py-3 px-2 d-inline-block" @endif onclick="get_preparationSubjectData('{{$values->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$values->total_presentations}}</a></span>
             <span class="me-1"><a href="javascript:void(0);" @if($preType=='notes' )class="bg-light-red link-dark py-3 px-2 d-inline-block" @endif onclick="get_preparationSubjectData('{{$values->subject_id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$values->total_notes}}</a></span>
             <span class="me-1"><a href="javascript:void(0);" @if($preType=='videos' )class="bg-light-red link-dark py-3 px-2 d-inline-block" @endif onclick="get_preparationSubjectData('{{$values->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$values->total_videos}}</a></span>
             <span class="me-1"><a href="javascript:void(0);" @if($preType=='bookmark' )class="bg-light-red link-dark py-3 px-2 d-inline-block" @endif onclick="get_preparationSubjectData('{{$values->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$values->total_bookmarks}}</a></span>
-
         </div>
     </div>
     <div class="h-scroll-slim">

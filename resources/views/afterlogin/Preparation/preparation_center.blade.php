@@ -88,23 +88,23 @@
                                                                 <div class="col-md-3  d-flex  align-items-center">
                                                                     <span class="me-2 flex-column"><a
                                                                             href="javascript:void(0);"
-                                                                            onclick="chapter_presentation_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img
+                                                                            onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img
                                                                                 src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a>
                                                                     </span>
                                                                     <span class="me-2 flex-column"><a
                                                                             href="javascript:void(0);"
-                                                                            onclick="chapter_notes_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img
+                                                                            onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img
                                                                                 src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a>
                                                                     </span>
                                                                     <span class="me-2 flex-column">
                                                                         <a href="javascript:void(0);"
-                                                                           onclick="chapter_videos_resources('{{$val->chapter_id}}','{{json_encode($val)}}')">
+                                                                           onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')">
                                                                             <img
                                                                                 src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}
                                                                         </a>
                                                                     </span>
                                                                     <span><a href="javascript:void(0);"
-                                                                             onclick="chapter_bookmarks_resources('{{$val->chapter_id}}','{{json_encode($val)}}')"><img
+                                                                             onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img
                                                                                 src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a>
                                                                     </span>
                                                                 </div>
@@ -518,6 +518,25 @@
                 $('#PreparationCenter_Video').modal('hide');
                 $('#PreparationCenter_modal').modal('hide');
 
+            }
+        });
+    }
+
+    function get_chapter_wise_data(chapter_id, type) {
+        url = "{{ url('get_chapter_wise_data/') }}";
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                chapter_id: chapter_id,
+                type: type
+            },
+            success: function (result) {
+                $('#PreparationCenter_modal_body').html(result);
+                $('#PreparationCenter_modal').modal('show');
+                $('#PreparationCenter_Video').modal('hide');
+                $('#PreparationCenter_Notes').modal('hide');
+                $('#PreparationCenter_bookmark').modal('hide');
             }
         });
     }
