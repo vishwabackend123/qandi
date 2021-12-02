@@ -20,12 +20,9 @@ class PreparationController extends Controller
     public function preparation_center(Request $request)
     {
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
-
         $subject_list = $this->redis_subjects();
-
         $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapterWiseSummary/' . $exam_id . '/' . $user_id;
 
         $curl = curl_init();
@@ -61,6 +58,7 @@ class PreparationController extends Controller
         //                $aPreparation[$list->subject_id][] = $values[0];
         //            }
         //        }
+
         return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
     }
 

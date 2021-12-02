@@ -121,38 +121,38 @@ $userData = Session::get('user_data');
                                                         <button class="btn-danger mt-4 rounded-0 btn-sm btn px-5 " id="editprofile">Edit Profile
                                                         </button>
                                                     </div>
-                                                    <div>
-                                                        <h5 class="text-uppercase fw-bold">Achievements</h5>
-                                                        <div class="scroll-achiv  pe-3">
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>
-                                                            </p>
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>
-                                                            </p>
-                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>
-                                                            </p>
+{{--                                                    <div>--}}
+{{--                                                        <h5 class="text-uppercase fw-bold">Achievements</h5>--}}
+{{--                                                        <div class="scroll-achiv  pe-3">--}}
+{{--                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+{{--                                                            </p>--}}
+{{--                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+{{--                                                            </p>--}}
+{{--                                                            <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+{{--                                                            </p>--}}
 
-                                                        </div>
-                                                    </div>
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                                 <div class="profile-form-block profilescrollblock pe-3 pb-2" id="profile-form">
                                                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                                                         @csrf
                                                         <div class="text-box mt-3">
 
-                                                            <input type="text" name="firstname" autocomplete="off" id="firstname" class="ps-2" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="firstname" autocomplete="off" id="firstname" class="ps-2" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 &&
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required />
 
                                                         </div>
 
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="lastname" autocomplete="off" id="lastname" class="ps-2" value="{{$userData->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="lastname" autocomplete="off" id="lastname" class="ps-2" value="{{$userData->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 &&
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
                                                         </div>
                                                         <div class="text-box mt-2">
 
-                                                            <input type="text" name="username" id="username" class="ps-2" autocomplete="off" value="{{ucwords($userData->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && 
+                                                            <input type="text" name="username" id="username" class="ps-2" autocomplete="off" value="{{ucwords($userData->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 &&
 event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">This could be your
                                                                 first, last or nick name.
@@ -421,6 +421,7 @@ event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
+
     $(document).ready(function() {
         jQuery("#notification-tog").click(function() {
             jQuery("#collapseExample").hide();

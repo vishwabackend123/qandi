@@ -141,7 +141,6 @@
 
         $('#recent_notify ').prepend($('<div class="recent-notificattion border-bottom d-flex flex-column py-2 px-3 notify-block">' +
             '<p class="mb-0">' + title + '</p>' +
-
             '<small>' + time + '</small>' +
             '</div>'));
 
@@ -193,6 +192,7 @@
         $('.edit-icon').css({
             'display': 'none'
         });
+        $('#editProfile_form').trigger("reset");
     });
 
     $('#saveEdit').click(function() {

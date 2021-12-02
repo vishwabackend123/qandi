@@ -326,7 +326,7 @@ $userData = Session::get('user_data');
                                     ever since the 1500s,
                                 </label>
                             </div>
-                        </div> 
+                        </div>
 
                     </div>-->
                 </div>
@@ -360,10 +360,10 @@ $userData = Session::get('user_data');
         html2canvas($("#contentHtml")[0]).then(function(canvas) {
             var imgData = canvas.toDataURL("image/jpeg", 1.0);
             var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+            pdf.addImage(imgData, 'JPEG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
             for (var i = 1; i <= totalPDFPages; i++) {
                 pdf.addPage(PDF_Width, PDF_Height);
-                pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+                pdf.addImage(imgData, 'JPEG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
             }
             pdf.save("Analytics.pdf");
         });

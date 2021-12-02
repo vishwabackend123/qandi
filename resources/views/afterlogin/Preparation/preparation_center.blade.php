@@ -67,16 +67,16 @@
                                                              onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img
                                                                 src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$bmark}}</a></span>
                                                 </div>
-                                                <div class="col-md-3 d-flex ">
-                                                    <p class="m-0 pe-3  w140">Overall Proficiency</p>
-                                                    <span>
-                                                        <i class="fa fa-star text-success mx-1"></i>
-                                                        <i class="fa fa-star text-success mx-1"></i>
-                                                        <i class="fa fa-star text-success mx-1"></i>
-                                                        <i class="fa fa-star text-secondary mx-1"></i>
-                                                        <i class="fa fa-star text-secondary mx-1"></i>
-                                                    </span>
-                                                </div>
+{{--                                                <div class="col-md-3 d-flex ">--}}
+{{--                                                    <p class="m-0 pe-3  w140">Overall Proficiency</p>--}}
+{{--                                                    <span>--}}
+{{--                                                        <i class="fa fa-star text-success mx-1"></i>--}}
+{{--                                                        <i class="fa fa-star text-success mx-1"></i>--}}
+{{--                                                        <i class="fa fa-star text-success mx-1"></i>--}}
+{{--                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
+{{--                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
+{{--                                                    </span>--}}
+{{--                                                </div>--}}
                                             </div>
                                             <div class="scroll-div">
                                                     @foreach( $oSub->values as $val)
@@ -108,16 +108,16 @@
                                                                                 src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a>
                                                                     </span>
                                                                 </div>
-                                                                <div class="col-md-3 d-flex ">
-                                                                    <p class="m-0 pe-3 w140">Proficiency</p>
-                                                                    <span class="">
-                                                                        <i class="fa fa-star text-danger mx-1"></i>
-                                                                        <i class="fa fa-star text-danger mx-1"></i>
-                                                                        <i class="fa fa-star text-secondary mx-1"></i>
-                                                                        <i class="fa fa-star text-secondary mx-1"></i>
-                                                                        <i class="fa fa-star text-secondary mx-1"></i>
-                                                                    </span>
-                                                                </div>
+{{--                                                                <div class="col-md-3 d-flex ">--}}
+{{--                                                                    <p class="m-0 pe-3 w140">Proficiency</p>--}}
+{{--                                                                    <span class="">--}}
+{{--                                                                        <i class="fa fa-star text-danger mx-1"></i>--}}
+{{--                                                                        <i class="fa fa-star text-danger mx-1"></i>--}}
+{{--                                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
+{{--                                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
+{{--                                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
+{{--                                                                    </span>--}}
+{{--                                                                </div>--}}
                                                             </div>
                                                     @endforeach
                                             </div>

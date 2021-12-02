@@ -18,7 +18,7 @@ const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function (payload) {
     console.log("Message has received : ", payload);
     const title = payload.data.title;
-    
+
     const options = {
         body: payload.data.body,
         time: payload.data.time,
