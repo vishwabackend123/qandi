@@ -1,10 +1,14 @@
 <?php
 
+/* use AWS\CRT\HTTP\Request; */
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +33,10 @@ Route::any('/', function () {
     }
 });
 
-Route::any('/logout', function () {
+Route::any('/logout', function (Request $request) {
     //return view('index');
+    $request->session()->flush();
+
     $landing_URL = Config::get('constants.landing_URL');
     return redirect($landing_URL);
 });

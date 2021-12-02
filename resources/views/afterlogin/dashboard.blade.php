@@ -267,26 +267,21 @@ $userData = Session::get('user_data');
                                 </li>
                                 @endforeach
                                 @endif
-                                <!-- <li>
-                                    <strong>Chemistry</strong> <span class="star-img"><img src="{{URL::asset('public/after_login/new_ui/images/star2.jpg')}}"></span> <span>50%</span>
-                                </li>
-                                <li>
-                                    <strong>Mathematics</strong> <span class="star-img"><img src="{{URL::asset('public/after_login/new_ui/images/star3.jpg')}}"></span>
-                                    <span>20%</span>
-                                </li> -->
+
                             </ul>
 
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
-                        <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt">
+                        <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt" style="overflow:hidden;">
                             <div class="prgress-i-txt px-3">
                                 <span class="progress_text">Weekly Marks Trends</span>
                                 <!-- <span class="i-sms">!</span> -->
                             </div>
-
+                            <!-- <div id="trend_line_graph"></div> -->
+                            <div id="marks_trend_graph"></div>
                             <!-- <h5 class="dashboard-title pb-4 px-3">Weekly Marks Trends</h5> -->
-                            <img src="{{URL::asset('public/after_login/new_ui/images/right-graph.jpg')}}" class="img-fluid w-100 img-responsive">
+                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/right-graph.jpg')}}" class="img-fluid w-100 img-responsive"> -->
                         </div>
                     </div>
                 </div>
@@ -540,6 +535,32 @@ $userData = Session::get('user_data');
         </div>
     </div>
     @endif
+    @php
+    $trend_stu_scroe=$trend_avg_scroe=$trend_max_scroe=$aWeeks = [];
+    $i = 1;
+    if (!empty($trendResponse)) {
+    foreach ($trendResponse as $key => $trend) {
+    $week = "W" . $i;
+    array_push($aWeeks, $week);
+    array_push($trend_stu_scroe, $trend['student_score']);
+    array_push($trend_avg_scroe, $trend['average_score']);
+    array_push($trend_max_scroe, $trend['max_score']);
+
+    $i++;
+    }
+
+    }else{
+    array_push($trend_stu_scroe, 0);
+    array_push($trend_avg_scroe, 0);
+    array_push($trend_max_scroe, 0);
+    }
+
+    $weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];
+    $stu_scroe_json = isset($trend_stu_scroe) ? json_encode($trend_stu_scroe) : [];
+    $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
+    $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
+
+    @endphp
 
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -551,9 +572,9 @@ $userData = Session::get('user_data');
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
-    <script src="https://code.highcharts.com/modules/funnel.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
@@ -916,6 +937,7 @@ $userData = Session::get('user_data');
     </script>
 
     <script>
+        /* Score Pie Chart */
         Highcharts.chart('scorecontainer', {
             chart: {
                 height: 120,
@@ -1000,6 +1022,90 @@ $userData = Session::get('user_data');
 
             }]
         });
+
+        /* Mrks trend Graph */
+        Highcharts.chart('marks_trend_graph', {
+            chart: {
+                type: 'areaspline',
+                height: 150,
+                plotBackgroundColor: null,
+                zoomType: 'x',
+                marginLeft: 0,
+                marginRight: 0,
+                spacingLeft: 0,
+                spacingRight: 0
+            },
+            title: {
+                text: ''
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 150,
+                y: 100,
+                floating: true,
+                borderWidth: 0.5,
+                backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#000000'
+            },
+            xAxis: {
+                label: true,
+                accessibility: {
+                    rangeDescription: 'Range: start to current week'
+                },
+                categories: <?php echo $weeks_json; ?>,
+
+            },
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    enabled: true
+                },
+
+                min: 0
+            },
+            tooltip: {
+                shared: true,
+                valueSuffix: ' units'
+            },
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            plotOptions: {
+                areaspline: {
+                    fillOpacity: 0.4
+                },
+                series: {
+                    marker: {
+                        enabled: false
+                    },
+
+                }
+
+            },
+            series: [{
+                name: 'Student Score',
+                data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
+                color: '#007aff' // Jane's color
+            }, {
+                name: 'Class Avg',
+                data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
+                color: '#dfe835'
+            }, {
+                name: 'Top Marks',
+                data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
+                color: '#eb4034'
+            }],
+
+
+        });
+        /* Mrks trend Graph */
     </script>
 </body>
 
