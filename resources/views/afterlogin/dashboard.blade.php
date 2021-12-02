@@ -194,7 +194,7 @@ $userData = Session::get('user_data');
                     <div class="col-md-6 ms-auto text-end">
                         <div class="user-name-block d-flex align-items-center flex-row-reverse">
                             <a href='#'><span class="user-pic-block"><img src="{{URL::asset('public/after_login/new_ui/images/DSC_0004.png')}}" class="user-pic"></span></a>
-                            <span class="user-name-block ps-3 pe-3">Welcome, Sakshi J</span>
+                            <span class="user-name-block ps-3 pe-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
                             <span class="notification me-5 ms-4"><a href=""><img src="{{URL::asset('public/after_login/new_ui/images/bell.png')}}"></a></span>
                             <span class="notification ms-4"><a data-bs-toggle="collapse" href='#' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/calender.png')}}"></a></span>
                             <span class="notification ms-4"><a href="{{route('overall_analytics')}}"><img src="{{URL::asset('public/after_login/new_ui/images/Group1831.png')}}"></a></span>
@@ -1027,11 +1027,11 @@ $userData = Session::get('user_data');
         Highcharts.chart('marks_trend_graph', {
             chart: {
                 type: 'areaspline',
-                height: 150,
+                height: 180,
                 plotBackgroundColor: null,
                 zoomType: 'x',
-                marginLeft: 0,
-                marginRight: 0,
+                marginLeft: -10,
+                marginRight: -10,
                 spacingLeft: 0,
                 spacingRight: 0
             },
@@ -1040,14 +1040,13 @@ $userData = Session::get('user_data');
             },
 
             legend: {
-                layout: 'vertical',
-                align: 'left',
-                verticalAlign: 'top',
-                x: 150,
-                y: 100,
-                floating: true,
-                borderWidth: 0.5,
-                backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#000000'
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom',
+                bottom: '-20px',
+                floating: false,
+                borderWidth: 0,
+
             },
             xAxis: {
                 label: true,
@@ -1085,6 +1084,11 @@ $userData = Session::get('user_data');
                     marker: {
                         enabled: false
                     },
+                    events: {
+                        legendItemClick: function() {
+                            return false;
+                        }
+                    }
 
                 }
 

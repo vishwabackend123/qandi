@@ -37,7 +37,7 @@
 
                     </div>
                     <div class="clearfix"></div>
-                    <div class="sign-btn"><button type="button" id="goto-otp-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Sign in</button></div>
+                    <div class="sign-btn"><button type="button" id="goto-otp-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Next</button></div>
                 </div>
 
             </div>
@@ -54,7 +54,7 @@
                     <p id="resendOtp_link" class="text-right">Resend OTP in 180 sec</p>
                     <div class="clearfix"></div>
                     <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
-                    <div class="sign-btn"><button type="submit" class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign in</button></div>
+                    <div class="sign-btn"><button type="submit" class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign Up</button></div>
                 </div>
             </div>
         </form>

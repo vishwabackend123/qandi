@@ -18,7 +18,7 @@
 
                     </div>
                     <div class="clearfix"></div>
-                    <div class="sign-btn"><button type="button" onclick="sentotplogin()" id="mobile-input-btn" class="next-btn btn btn-primary disbaled-btn active-btn text-uppercase">NEXT</button></div>
+                    <div class="sign-btn"><button type="button" onclick="sentotplogin()" id="mobile-input-btn" disabled class="next-btn btn btn-primary disbaled-btn active-btn text-uppercase">NEXT</button></div>
 
                 </div>
 
@@ -64,6 +64,17 @@
         }
         return true;
     }
+    $('#mobile_num').keyup(function() {
+        var value = this.value;
+        var length = value.length;
+        if (value != '' && length == 10) {
+            $('#mobile-input-btn').removeAttr("disabled");
+            $('#mobile-input-btn').removeClass("disbaled-btn");
+        } else {
+            $('#mobile-input-btn').attr("disabled");
+            $('#mobile-input-btn').addClass("disbaled-btn");
+        }
+    });
 
     function sentotplogin() {
         var mobile = $("#mobile_num").val();

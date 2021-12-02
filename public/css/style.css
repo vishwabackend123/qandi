@@ -75,6 +75,12 @@ input.form-control.m-email {
     border-radius: 20px;
 }
 
+button.disbaled-btn:disabled {
+    opacity: 0.3;
+    background: #21ccff;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+
 button.disbaled-btn {
     opacity: 0.3;
     background: #21ccff;

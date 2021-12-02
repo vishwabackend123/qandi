@@ -523,6 +523,7 @@
                 stacking: 'normal'
             },
             series: {
+                label: false,
                 events: {
                     legendItemClick: function() {
                         return false;
@@ -580,6 +581,7 @@
                 stacking: 'normal'
             },
             series: {
+                label: false,
                 events: {
                     legendItemClick: function() {
                         return false;
@@ -637,6 +639,7 @@
                 stacking: 'normal'
             },
             series: {
+                label: false,
                 events: {
                     legendItemClick: function() {
                         return false;
