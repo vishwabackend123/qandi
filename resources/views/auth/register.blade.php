@@ -99,6 +99,19 @@
         return true;
     }
 
+    $('#user_name').keyup(function() {
+        var value = this.value;
+        var length = value.length;
+        if (value != '' && length == 10) {
+            $('#goto-mobile-btn').removeAttr("disabled");
+            $('#goto-mobile-btn').removeClass("disbaled-btn");
+        } else {
+            $('#goto-mobile-btn').attr("disabled");
+            $('#goto-mobile-btn').addClass("disbaled-btn");
+        }
+    });
+
+
     $(function() {
 
         $('#goto-mobile-btn').click(function() {
