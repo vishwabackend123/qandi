@@ -33,7 +33,7 @@ class TestSeriesController extends Controller
         $open_series = [];
 
         $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/testSeries-list/' . $exam_id;
+        $curl_url = $api_URL . 'api/testSeries-list/' . $exam_id.'/'.$user_id;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -60,7 +60,7 @@ class TestSeriesController extends Controller
         if ($status == true) {
             $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
             $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
-
+//dd($live_series);
             return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
         } else {
 
@@ -91,6 +91,7 @@ class TestSeriesController extends Controller
         $series_type = isset($request->series_type) ? $request->series_type : '';
         $exam_fulltime = isset($request->time_allowed) ? $request->time_allowed : '';
         $questions_count = isset($request->questions_count) ? $request->questions_count : '';
+        $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
 
         if (!empty($series_id)) {
 
@@ -207,18 +208,15 @@ class TestSeriesController extends Controller
                     'answer_swap_cnt' => $answer_swap_cnt,
                     'questions_count' => $questions_count,
                     'all_questions_id' => $keys,
-                    'full_time' => $exam_fulltime,
+                    'full_time' => $exam_fulltime
                 ];
-
                 // Push Value in Redis
                 Redis::set('custom_answer_time', json_encode($redis_data));
-
                 $tagrets = implode(', ', $aTargets);
-
                 $test_type = 'Test-Series';
                 $exam_type = 'TS';
 
-                return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type'));
+                return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }

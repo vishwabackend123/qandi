@@ -154,7 +154,6 @@ $userData = Session::get('user_data');
       <a data-bs-toggle="collapse" href="#submenupreparation" id="submenupreparationlink">
         <img src="{{URL::asset('public/after_login/new_ui/images/left-icon-3.svg')}}">
       </a>
-
     </div>
     <div class="submenu-L1 collapse width" id="submenu">
       <div class="mt-5 mb-5 pb-5 pt-5"></div>
