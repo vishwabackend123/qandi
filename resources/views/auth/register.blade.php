@@ -18,7 +18,7 @@
                         <span class="error-sms email-not-valid">Please sign up first or check the email or mobile you have provided</span>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="sign-btn"><button type="button" id="goto-mobile-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">go next</button></div>
+                    <div class="sign-btn"><button type="button" id="goto-mobile-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">go next</button></div>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@
     $('#user_name').keyup(function() {
         var value = this.value;
         var length = value.length;
-        if (value != '' && length == 10) {
+        if (value != '') {
             $('#goto-mobile-btn').removeAttr("disabled");
             $('#goto-mobile-btn').removeClass("disbaled-btn");
         } else {

@@ -196,11 +196,7 @@
         $('#editProfile_form').trigger("reset");
     });
 
-    $('#saveEdit').click(function() {
-        $('.edit-icon').css({
-            'display': 'none'
-        });
-    });
+
 
     $("#editProfile_form").validate({
 
