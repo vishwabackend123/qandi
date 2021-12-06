@@ -290,7 +290,6 @@ $userData = Session::get('user_data');
                             <img class="img-responsive" src="{{URL::asset('public/after_login/images/PlannerRedBig_ic@2x.png')}}">
                         </div>
                         <div class="btnBody ">
-
                             <a class="btn rounded-0   scheduleBtn bt-hgt-48 p-0" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fa fa-calendar-o" aria-hidden="true"></i> Go To Planner
                             </a>

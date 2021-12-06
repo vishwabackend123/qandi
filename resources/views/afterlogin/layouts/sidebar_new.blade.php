@@ -1,6 +1,6 @@
 <div class="dash-sidebar">
     <div class="sidbar-block">
-        <a href="#"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}" </a>
+        <a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}" </a>
     </div>
     <div class="dash-nav-link   d-flex flex-column">
         <a href="{{ url('/dashboard') }}">

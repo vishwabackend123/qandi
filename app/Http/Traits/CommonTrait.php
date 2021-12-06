@@ -351,13 +351,14 @@ trait CommonTrait
         curl_close($curl);
 
         if ($status != false) {
-
             $resp_list = isset($aResponse->response) ? $aResponse->response : [];
+            $collection = collect($resp_list);
+            $board_list = $collection->sortBy('user_rank')->all();
         } else {
             $resp_list = [];
+            $board_list = [];
         }
-        $collection = collect($resp_list);
-        $board_list = $collection->sortBy('user_rank')->all();
+
 
         return $board_list;
     }

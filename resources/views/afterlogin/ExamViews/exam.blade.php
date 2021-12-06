@@ -184,8 +184,9 @@ $questtype='radio';
                             <input type="hidden" name="submit_time" id="final_submit_time" value="">
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
+                            <input type="hidden" name="exam_mode" value="{{$exam_mode}}">
                             <input type="hidden" name="planner_id" value="0">
-                            <input type="hidden" name="live_exam_id" value="0">
+                            <input type="hidden" name="live_exam_id" value="{{$series_id}}">
                             <div class="pull-right">
                                 <button type="button" class="btn btn-outline-danger stop"
                                         onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>

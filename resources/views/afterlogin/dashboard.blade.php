@@ -54,7 +54,7 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Proficiency</span>
                             <!--                                 <span class="i-sms">!</span> -->
                         </div>
-                        <ul class="course-star">
+                        <ul class="course-star subject_scroll">
                             @if(!empty($subjectData))
                             @foreach($subjectData as $key=>$sub)
                             <li>
@@ -124,14 +124,19 @@ $userData = Session::get('user_data');
                             <div class="test-attend text-center pt-2 pb-2">
                                 <p>Tests Attempted</p>
                                 <div class="ms-auto">
-                                    <a href="#" class="text-secondary"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
+                                    @if(isset($planner) && !empty($planner))
+                                    @foreach($planner as $key=>$val)
+                                    @if($val->test_completed_yn=="Y")
+                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></a>
+                                    @else
                                     <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
+
+                                    @endif
+                                    @endforeach
+                                    @endif
                                 </div>
 
-                                <button class="custom-btn-gray mt-4"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
+                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
                                     Planner</button>
                                 <!--<label class="custom-checkbox"><input type="checkbox"><span class="checkmark"></span></label>-->
                             </div>
@@ -143,7 +148,7 @@ $userData = Session::get('user_data');
                             <div class="row">
                                 <div class="col-lg-12 px-0">
                                     <p>Level up in</p>
-                                    <h3>{{$val->chapter_name}}</h3>
+                                    <h3 class="chapter_name">{{$val->chapter_name}}</h3>
                                     <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
                                         </span></div>
                                 </div>
@@ -156,25 +161,17 @@ $userData = Session::get('user_data');
                         </div>
                         @elseif($val->test_completed_yn=="Y")
                         <div class="swiper-slide bg-white">
-                            <div class="row">
-                                <div class="col-lg-12 px-0">
-                                    <p>Level up in</p>
-                                    <h3>{{$val->chapter_name}}</h3>
-                                    <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
-                                        </span></div>
+                            <div class="test-attend text-center pt-2 pb-2">
+                                <p>Tests Attempted</p>
+                                <div class="ms-auto">
+                                    <h3><span class="text-secondary me-2 chapter_name"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></span>{{$val->chapter_name}}</h3>
                                 </div>
                             </div>
-
                         </div>
                         @endif
                         @endforeach
                         @endif
-
-
-
-
                     </div>
-
                 </div>
                 <!--swiper mySwiper-->
 
@@ -214,7 +211,7 @@ $userData = Session::get('user_data');
 
 
 @if($subjects_rating == null || empty($subjects_rating))
-<div class="modal fade show" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" data-bs-keyboard="false" aria-modal="true" role="dialog" style="display: block; padding-left: 0px;">
+<div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
@@ -334,6 +331,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
     $(".rating-input").click(function() {
         $("#nxt-btn").removeClass("disabled");
+    });
+    $('.subject_scroll').slimscroll({
+        height: '25vh'
     });
 
     function welcome_back() {

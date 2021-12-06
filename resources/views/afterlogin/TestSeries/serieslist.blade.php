@@ -37,7 +37,6 @@
                                             <div class="d-flex align-items-center py-2 listing-details ">
                                                 <span class="mr-3 topics-name">{{$open->test_series_name}}</span>
                                             </div>
-
                                             <div class="d-flex align-items-center flex-wrap">
                                                 <small>{{$open->questions_count}} Questions | {{$open->time_allowed}} min</small>
                                                 <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
@@ -47,6 +46,7 @@
                                                     <input type="hidden" name="series_type" value="{{$open->series_type}}" />
                                                     <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
                                                     <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
+                                                    <input type="hidden" name="exam_mode" value="Live" />
                                                     <button class="btn btn-danger mb-4 mt-4  rounded-0 px-5">Start</button>
                                                 </form>
                                             </div>
@@ -76,13 +76,17 @@
                                                 <small>{{$live->questions_count}} Questions | {{$live->time_allowed}} min</small>
                                                 <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
                                                     @csrf
-
                                                     <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
                                                     <input type="hidden" name="series_id" value="{{$live->test_series_id}}" />
                                                     <input type="hidden" name="series_type" value="{{$live->series_type}}" />
                                                     <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
                                                     <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
-                                                    <button class="btn btn-danger mb-4 mt-4  rounded-0 px-5">Start</button>
+                                                    <input type="hidden" name="exam_mode" value="Live" />
+                                                    @if($live->test_completed_yn === 'N')
+                                                        <button class="btn btn-danger mb-4 mt-4  rounded-0 px-5">Start</button>
+                                                    @else
+                                                        <button class="btn btn-danger mb-4 mt-4  rounded-0 px-5" disabled>Start</button>
+                                                    @endif
                                                 </form>
                                             </div>
                                         </div>

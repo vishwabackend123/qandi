@@ -28,23 +28,12 @@ $userData = Session::get('user_data');
                 </li>
                 @endforeach
                 @endisset
-                <!-- <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Physics</a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Chemistry</a>
-                  </li> -->
               </ul>
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
               @isset($subject_list)
-
               @foreach($subject_list as $skey=>$sub)
-
               <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
 
                 <div class="d-flex px-4 py-2 align-items-center justify-content-between">
@@ -59,14 +48,9 @@ $userData = Session::get('user_data');
 
                   </form>
 
-
                   <div class="dropdown">
                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
-
-
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-
-
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down"></i> A to Z order</a></li>
@@ -124,30 +108,26 @@ $userData = Session::get('user_data');
                   </div>
                   @endforeach
                   @endif
-
-
-
                 </div>
 
-                <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
-                  @csrf
-                  <input type="hidden" id="selected_topic" name="topics">
-                  <input type="hidden" id="selected_tab" name="selected_tab">
-                  <input type="hidden" name="question_count" value="30">
-                  <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                  <div id="topic_custom_footer" class="text-right d-flex align-items-center mt-3">
 
-                    <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
-                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
-                  </div>
-                </form>
 
 
               </div>
               @endforeach
               @endisset
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
+              <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
+                @csrf
+                <input type="hidden" id="selected_topic" name="topics">
+                <input type="hidden" id="selected_tab" name="selected_tab">
+                <input type="hidden" name="question_count" value="30">
+                <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
+                <div id="topic_custom_footer" class="text-right d-flex align-items-center mt-3">
+
+                  <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
+                  <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -158,20 +138,10 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.footer_new')
 
 <script type="text/javascript">
-  function submitToPopup(f) {
-
-
-    var w = window.open('', 'form-target', 'toolbar=no,scrollbars=yes,resizable=yes,location=no,menubar=no,width=auto,height=auto');
-    f.target = 'form-target';
-    f.submit();
-  };
-
-  function go_full_screen() {
-    window.open(url("/custom_exam"), "_blank", "toolbar=no,scrollbars=yes,resizable=yes,location=no,menubar=no,width=auto,height=auto");
-  }
   $('.scroll-div').slimscroll({
-    height: '50vh'
+    height: '55vh'
   });
+
   $('#topic_form').hide();
   $(document).ready(function() {
 

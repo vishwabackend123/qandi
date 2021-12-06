@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <a href='#'><span class="user-pic-block"><img src="{{URL::asset('public/after_login/new_ui/images/DSC_0004.png')}}" class="user-pic"></span></a>
+                    <a href="javascript:void(0);"><span class="user-pic-block"><img src="{{$imgPath}}" class=" user-pic"></span></a>
                     <span class="user-name-block ps-3 pe-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
                     <span class="notification me-5 ms-4" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification"><img src="{{URL::asset('public/after_login/new_ui/images/bell.png')}}"></span>
                     <span class="notification ms-4">
@@ -68,7 +68,7 @@
 
                                         </div>
                                         <div class="chaptbox-add ">
-                                            <a href="#" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
+                                            <a href="javascript:void(0);" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
                                                 <span class=""><img src="{{URL::asset('public/after_login/new_ui/images/plusSign_ic.png')}}"></span>
                                             </a>
                                         </div>
@@ -230,7 +230,7 @@
 <div class="notification-block width collapse" id="collapseNotification">
     <div class=" notification-wrapper ">
         <div class=" notification-right ">
-            <a href="#" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
+            <a href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
             <div class=" notification-scroll ">
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
@@ -256,10 +256,10 @@
     <div class="account-wrapper">
         <div class="profile-section">
             <ul>
-                <li class="active"><a href="#" class="account-profile accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/profile.png')}}"></span> Account</a>
+                <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/profile.png')}}"></span> Account</a>
                 </li>
-                <li><a href="#" class="subscription-profile accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/subs.png')}}"></span> Subscription</a></li>
-                <li><a href="#" class="log-out-btn accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/log-out.png')}}"></span> Log out</a></li>
+                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/subs.png')}}"></span> Subscription</a></li>
+                <li><a href="javascript:void(0);" class="log-out-btn accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/log-out.png')}}"></span> Log out</a></li>
             </ul>
         </div>
         <!--profile-section-->

@@ -4074,3 +4074,76 @@ a.disabled {
 
     }
 }
+
+
+
+/*signup-pay-subscription.html*/
+
+.PayBttn {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+}
+
+.TotalAmount {
+    background: #00baff !important;
+    border-radius: 25px;
+}
+
+.Fullsub-amt-subN {
+    background: #fff;
+    border-radius: 20px;
+    border: solid 1px #bce0fd;
+}
+
+.red-dots1 {
+    position: absolute;
+    top: -20px;
+    width: 6px;
+    height: 6px;
+    background: #00baff;
+    border-radius: 10px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 99;
+}
+
+.outer-logo img {
+    width: 110px;
+}
+
+.PayBttn:active:focus {
+    box-shadow: none;
+}
+
+@media(max-width:767px) {
+    [class*="col-"] {
+        width: 85%;
+    }
+
+    .Fullsub-amt-subN .d-flex {
+        display: block !important;
+    }
+}
+
+/*end signup-pay-subscription.html*/
+/* Signup Payment Gateway */
+.PaymentGway {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+}
+
+.Pay-MentSect {
+    margin-bottom: 35px;
+}
+
+.PaymentGway:active:focus {
+    box-shadow: none;
+}
+
+/*end Signup Payment Gateway */

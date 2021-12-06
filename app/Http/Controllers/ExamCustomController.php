@@ -78,15 +78,6 @@ class ExamCustomController extends Controller
                 //$subject_chapter_list[$subject_id] = !empty($topTen) ? $topTen : [];
             }
         }
-//        +"chapter_id": 324
-//    +"chapter_name": "3D Geometry"
-//    +"chapter_score": 10.24
-//    +"E": 3.8
-//    +"C": 5.09
-//    +"A": 4.4
-//    +"K": 2.28
-//    }
-//dd($subject_chapter_list);
 
         return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list'));
     }
@@ -98,39 +89,32 @@ class ExamCustomController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
-        if ($data = Redis::get($cacheKey)) {
-            $chapter_list = json_decode($data);
+
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $responsedata = json_decode($response_json);
+
+            $chapter_list = $responsedata->response;
         } else {
-
-            $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
-
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $api_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            ));
-
-            $response_json = curl_exec($curl);
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-
-            if ($httpcode == 200 || $httpcode == 201) {
-                $responsedata = json_decode($response_json);
-
-                $chapter_list = $responsedata->response;
-            } else {
-                $chapter_list = [];
-            }
-            if (!empty($chapter_list)) {
-                Redis::set($cacheKey, json_encode($chapter_list));
-            }
+            $chapter_list = [];
         }
         $collection = collect($chapter_list);
 
@@ -139,17 +123,12 @@ class ExamCustomController extends Controller
         ]);
         $chapters = $sorted->values()->all();
 
-
         return $chapters;
     }
 
     public function get_subject_topics($active_subject_id)
     {
         $cacheKey = 'exam_subjects_topics:' . $active_subject_id;
-        if ($data = Redis::get($cacheKey)) {
-            $topic_list = json_decode($data);
-            return $topic_list;
-        }
 
         $api_url = Config::get('constants.API_php_URL') . 'api/getTopics/' . $active_subject_id;
 
@@ -176,9 +155,6 @@ class ExamCustomController extends Controller
             $topic_list = $responsedata->response;
         } else {
             $topic_list = [];
-        }
-        if (!empty($topic_list)) {
-            Redis::set($cacheKey, json_encode($topic_list));
         }
 
         return $topic_list;
@@ -286,7 +262,7 @@ class ExamCustomController extends Controller
         }
 
         $allQuestions = $collection->keyBy('question_id')->sortBy('question_id');
-        $aQuestions_list =  $allQuestions->all();
+        $aQuestions_list = $allQuestions->all();
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
@@ -298,8 +274,6 @@ class ExamCustomController extends Controller
 
         $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
         $prev_qid = '';
-
-
 
 
         if (isset($question_data) && !empty($question_data)) {
@@ -361,8 +335,6 @@ class ExamCustomController extends Controller
         }
         return $random;
     }
-
-
 
 
     public function ajax_next_question($quest_id, Request $request)
@@ -429,7 +401,6 @@ class ExamCustomController extends Controller
         }
         $session_result = Redis::get('custom_answer_time');
         $sessionResult = json_decode($session_result);
-
 
 
         $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
@@ -532,7 +503,6 @@ class ExamCustomController extends Controller
     }
 
 
-
     public function ajax_next_subject_question($subject_id, Request $request)
     {
         $userData = Session::get('user_data');
@@ -582,7 +552,6 @@ class ExamCustomController extends Controller
         $last_qid = end($allkeys);
 
 
-
         if (isset($question_data) && !empty($question_data)) {
             //$publicPath = url('/') . '/public/images/questions/';
             $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
@@ -616,7 +585,7 @@ class ExamCustomController extends Controller
     }
 
 
-    public function  chaptersTopic(Request $request, $chapter_id)
+    public function chaptersTopic(Request $request, $chapter_id)
     {
         $userData = Session::get('user_data');
 
@@ -644,7 +613,6 @@ class ExamCustomController extends Controller
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-
 
 
         if ($httpcode == 200 || $httpcode == 201) {
@@ -751,11 +719,10 @@ class ExamCustomController extends Controller
         $subject_id = $active_subject_id;
 
 
-
-        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
-        if ($data = Redis::get($cacheKey)) {
-            $chapter_list = json_decode($data);
-        } else {
+//        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
+//        if ($data = Redis::get($cacheKey)) {
+//            $chapter_list = json_decode($data);
+//        } else {
 
             $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
@@ -783,11 +750,10 @@ class ExamCustomController extends Controller
             } else {
                 $chapter_list = [];
             }
-            if (!empty($chapter_list)) {
-                Redis::set($cacheKey, json_encode($chapter_list));
-            }
-        }
-
+//            if (!empty($chapter_list)) {
+//                Redis::set($cacheKey, json_encode($chapter_list));
+//            }
+//        }
 
 
         $collection = collect($chapter_list);
@@ -803,12 +769,12 @@ class ExamCustomController extends Controller
             $chapters = $sorted->values()->all();
         } elseif ($filter_by == 'prof_asc') {
             $sorted = $collection->sortBy([
-                ['score', 'asc']
+                ['chapter_score', 'asc']
             ]);
             $chapters = $sorted->values()->all();
         } elseif ($filter_by == 'prof_desc') {
             $sorted = $collection->sortBy([
-                ['chapscoreter_name', 'desc']
+                ['chapter_score', 'desc']
             ]);
             $chapters = $sorted->values()->all();
         } else {
@@ -818,11 +784,8 @@ class ExamCustomController extends Controller
             $chapters = $sorted->values()->all();
         }
 
-
-
         return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id'));
     }
-
 
 
     public function saveQuestionTimeSession(Request $request, $question_id)
@@ -864,8 +827,6 @@ class ExamCustomController extends Controller
 
         return json_encode($response);
     }
-
-
 
 
     /* Chapter wise Adaptive api */
@@ -1095,7 +1056,6 @@ class ExamCustomController extends Controller
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id->answer) && !empty($sessionResult->given_ans->$quest_id->answer)) ? $sessionResult->given_ans->$quest_id->answer : [];
-
 
 
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
