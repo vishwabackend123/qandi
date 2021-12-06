@@ -117,7 +117,6 @@ class ResultController extends Controller
 
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
-
             return redirect()->route('dashboard');
             /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
         }
