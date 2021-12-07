@@ -27,14 +27,13 @@
                 <p>“Sign-up using your email address and mobile number.”</p>
                 <div class="pt-3">
                     <div class="form-group flds">
-                        <input type="text" class="form-control email-addrs disable-value" placeholder="Enter address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off">
+                        <input type="text" class="form-control email-addrs disable-value" placeholder="Enter address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off" value="{{$referral_email ?? ''}}">
                         <span class="error-sms enter-otp" id="errlog_email">Please enter your email address</span>
                     </div>
 
                     <div class="form-group flds">
                         <input type="text" class="form-control m-email" name="mobile_num" id="mobile_num" value="" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Mobile number" autocomplete="off">
                         <span class="error-sms mobil-not-valid" id="errlog_mob">Please enter your mobile number</span>
-
                     </div>
                     <div class="clearfix"></div>
                     <div class="sign-btn"><button type="button" id="goto-otp-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Next</button></div>

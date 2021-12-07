@@ -50,7 +50,7 @@ $userData = Session::get('user_data');
                                                 </div>
                                                 <div class="ms-auto d-flex align-items-center">
                                                     <div>
-                                                        <img src="{{$imgPath}}" class="exportUserpic" />
+                                                        <img src="{{$imgPath}}" class="exportUserpic"  alt="image"/>
                                                     </div>
                                                     <div class="exportUsertxt">
                                                         <p>{{ucwords($userData->user_name)}}</p>
@@ -345,8 +345,10 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript">
+
     //Create PDf from HTML...
     function CreatePDFfromHTML() {
+        // set attributes and src
         var HTML_Width = $("#contentHtml").width();
         var HTML_Height = $("#contentHtml").height();
         var top_left_margin = 15;
@@ -360,10 +362,10 @@ $userData = Session::get('user_data');
         html2canvas($("#contentHtml")[0]).then(function(canvas) {
             var imgData = canvas.toDataURL("image/jpeg", 1.0);
             var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-            pdf.addImage(imgData, 'JPEG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
             for (var i = 1; i <= totalPDFPages; i++) {
                 pdf.addPage(PDF_Width, PDF_Height);
-                pdf.addImage(imgData, 'JPEG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+                pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
             }
             pdf.save("Analytics.pdf");
         });

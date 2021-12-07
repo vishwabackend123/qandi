@@ -65,4 +65,29 @@ class ReferralController extends Controller
             return json_encode(array('success' => false, 'message' => 'Email already referred'));
         }
     }
+
+    public function referral_signup($referral_code)
+    {
+        $api_URL = Config::get('constants.API_NEW_URL');
+        $curl_url = $api_URL . 'api/get-referr-student/' . $referral_code;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $refDecode =  json_decode($response);
+        $referral_email = $refDecode[0]->referral_email;
+        return view('auth.register', compact('referral_email'));
+    }
 }
