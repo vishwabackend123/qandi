@@ -3,7 +3,7 @@
         <a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}" </a>
     </div>
     <div class="dash-nav-link   d-flex flex-column">
-        <a href="{{ url('/dashboard') }}">
+        <a href="{{ url('/dashboard') }}" class="active">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="71" viewBox="0 0 120 71">
                 <defs>
                     <style>

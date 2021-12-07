@@ -517,26 +517,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         $('.slick-slider').slick('refresh');
     })
 </script>
-<script>
-    $(document).ready(function() {
 
-        $('#edit-planner-btn').click(function() {
-
-            $('#sub-planner').addClass('open-sub-planner');
-            $(this).addClass('close-sub-planner');
-            $('#close-edit-planner-btn').removeClass('close-sub-planner');
-
-        });
-        $('#close-edit-planner-btn').click(function() {
-
-            $('#sub-planner').removeClass('open-sub-planner');
-            $(this).addClass('close-sub-planner');
-            $('#edit-planner-btn').removeClass('close-sub-planner');
-
-        });
-
-    });
-</script>
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".mySwiper", {

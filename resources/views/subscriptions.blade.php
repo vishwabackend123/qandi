@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
 <nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
     <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
 </nav>
-<div id="main">
+<div id="main" class="subScrip">
     <div class="row">
         <div class="col-md-10 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
@@ -151,7 +151,7 @@ $userData = Session::get('user_data');
                             </div>
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
                             @else
                             <div class="text-center mt-2">
@@ -182,7 +182,7 @@ $userData = Session::get('user_data');
                             </div>
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
                             @else
                             <div class="text-center mt-2">

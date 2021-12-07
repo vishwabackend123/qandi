@@ -32,7 +32,7 @@
                     <p class="text-right" id="wait_otp_div">Resend OTP in 180 sec</p>
                     <div class="clearfix"></div>
                     <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
-                    <div class="sign-btn"><button type="submit" id="otp-verify-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Sign in</button></div>
+                    <div class="sign-btn"><button type="submit" id="otp-verify-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Sign in</button></div>
                 </div>
                 <p>Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
             </form>
@@ -67,12 +67,24 @@
     $('#mobile_num').keyup(function() {
         var value = this.value;
         var length = value.length;
-        if (value != '' && length == 10) {
+        if (value != '') {
             $('#mobile-input-btn').removeAttr("disabled");
             $('#mobile-input-btn').removeClass("disbaled-btn");
         } else {
-            $('#mobile-input-btn').attr("disabled");
+            $('#mobile-input-btn').attr('disabled', 'disabled');
             $('#mobile-input-btn').addClass("disbaled-btn");
+        }
+    });
+
+    $('#otp_num').keyup(function() {
+        var value = this.value;
+        var length = value.length;
+        if (value != '' && length == 5) {
+            $('#otp-verify-btn').removeAttr("disabled");
+            $('#otp-verify-btn').removeClass("disbaled-btn");
+        } else {
+            $('#otp-verify-btn').attr('disabled', 'disabled');
+            $('#otp-verify-btn').addClass("disbaled-btn");
         }
     });
 

@@ -303,8 +303,27 @@
             jQuery("#collapseExample").show();
             jQuery("#notification").hide();
         });
+    });
+	
+	$(document).ready(function() {
+        jQuery("#nodificbell").click(function() {
+            jQuery("#collapsePlanner").hide();
+            jQuery("#collapseNotification").show();
+            jQuery("#profileAcc").hide();
+        });
+		
 
-
+        jQuery("#plannCal").click(function() {
+            jQuery("#collapsePlanner").show();
+            jQuery("#collapseNotification").hide();
+			jQuery("#profileAcc").hide();
+        });
+		jQuery(".UserPro").click(function() {
+            jQuery("#collapsePlanner").hide();
+            jQuery("#collapseNotification").hide();
+			//jQuery("#profileAcc").show();
+        });
+		
     });
 
     document.getElementById("customRange").oninput = function() {
@@ -520,6 +539,7 @@
         });
         $(".close-bnt").click(function() {
             $(".notification-right").hide();
+			$("#collapseNotification").collapse('toggle');
         });
     });
 
@@ -959,3 +979,44 @@
 
     });
 </script>
+
+<script>
+/* bhim custom js */
+/*Account menu item */
+jQuery(document).ready(function() {
+    jQuery('.profile-section li').click(function() {
+        jQuery('li.active').removeClass("active");
+        jQuery(this).addClass("active");
+    });
+});
+/*dashboard left navigation */
+jQuery(document).ready(function() {
+    jQuery('.dash-nav-link a').click(function() {
+		jQuery('a').removeClass("active");
+        jQuery(this).addClass("active");
+	    //jQuery(this).removeClass("active");
+    });
+});
+</script>
+<!-- planner section move from dashboard -->
+<script>
+    $(document).ready(function() {
+
+        $('#edit-planner-btn').click(function() {
+
+            $('#sub-planner').addClass('open-sub-planner');
+            $(this).addClass('close-sub-planner');
+            $('#close-edit-planner-btn').removeClass('close-sub-planner');
+
+        });
+        $('#close-edit-planner-btn').click(function() {
+
+            $('#sub-planner').removeClass('open-sub-planner');
+            $(this).addClass('close-sub-planner');
+            $('#edit-planner-btn').removeClass('close-sub-planner');
+
+        });
+
+    });
+</script>
+<!-- end planner section move from dashboard -->
