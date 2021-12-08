@@ -245,10 +245,10 @@ button#goto-exam-btn {
     right: 5px;
     border-radius: 36px;
     width: 435px;
-    
-    padding: 50px 15px 15px 15px;
+
+    padding: 25px 15px 15px 15px;
     z-index: 99;
-	/*background: #fff;
+    /*background: #fff;
     box-shadow: 0 1px 30px 0 rgb(0 0 0 / 5%);*/
 }
 
@@ -281,6 +281,7 @@ button#goto-exam-btn {
     height: 30px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
 }
+
 div#collapseNotification {
     position: fixed;
     right: 0px;
@@ -788,9 +789,11 @@ p.tab-title {
     border-right: 1px solid transparent;
     border-top: 1px solid transparent;
 }
+
 .listing-details .name-txt {
     width: 34% !important;
 }
+
 .sub-details {
     color: #231f20;
     font-size: 20px;
@@ -1135,9 +1138,11 @@ p.success-img {
     left: 0;
     z-index: 999;
 }
+
 .slimScrollBar {
     z-index: 9 !important;
 }
+
 .dash-nav-link {
     height: calc(100% - 85px);
     display: flex;
@@ -2573,6 +2578,7 @@ header {
 .radioans:checked+.ans {
     background: #fff4cf;
 }
+
 #profileAcc {
     position: fixed;
     right: 0px;
@@ -4372,6 +4378,7 @@ span#slide-input {
 .subscription .profile-picture-txt .p-text {
     width: 77%;
 }
+
 .log-out-screen .p-picture {
     width: 80px;
     border: 1px solid #5ebbfe;
@@ -4381,6 +4388,7 @@ span#slide-input {
     overflow: hidden;
     margin: 0 auto;
 }
+
 .subscription h4 {
     text-align: left;
     font-size: 18px;
@@ -4435,6 +4443,7 @@ span#slide-input {
     display: none;
 
 }
+
 .profile-section ul li a span i {
     font-size: 25px;
     line-height: 30px;
@@ -4492,9 +4501,11 @@ span#slide-input {
     /* right: 0; */
 
 }
+
 .col-xl-3 .slimScrollDiv .slimScrollBar {
     height: 55% !important;
 }
+
 .profile-show {
     position: absolute;
     top: 0px;
@@ -4750,35 +4761,42 @@ label.error {
 #favSubResponse .modal-content.rounded-0 {
     border-radius: 56px !important;
 }
-#favSubResponse a#nxt-btn{
+
+#favSubResponse a#nxt-btn {
     border-radius: 20px !important;
     box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
-	color: #fff;
+    color: #fff;
 }
 
 #favSubResponse button.btn-close {
     right: 30px;
     position: absolute;
-    top: 20px;z-index:9;
+    top: 20px;
+    z-index: 9;
 }
+
 #favSubResponse .rating.block {
     justify-content: center !important;
 }
+
 #favSubResponse .rating .lbl-text {
     width: 20%;
 }
+
 /* end how much like popup */
 /* end how much popup resonsive */
 
-@media(max-width:991px){
-#favSubResponse .rating .lbl-text {
-    width: 35% !important;
+@media(max-width:991px) {
+    #favSubResponse .rating .lbl-text {
+        width: 35% !important;
+    }
 }
-}@media(max-width:767px){
-#favSubResponse .rating .lbl-text {
-    width: 35% !important;
-}
+
+@media(max-width:767px) {
+    #favSubResponse .rating .lbl-text {
+        width: 35% !important;
+    }
 }
 
 /* end how much like */
@@ -4788,42 +4806,51 @@ label.error {
 #fullTest_Dashboard .modal-content.rounded-0 {
     border-radius: 56px !important;
 }
-#full-txtBlock{
+
+#full-txtBlock {
     border-radius: 42px;
     box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
 }
+
 #h1--P {
     color: #2c3348 !important;
     font-size: 25px;
     line-height: 30px;
     margin-bottom: 15px;
 }
+
 #fullTest_Dashboard button.btn-close {
     right: 30px;
     position: absolute;
-    top: 20px;z-index:9;
+    top: 20px;
+    z-index: 9;
 }
+
 #fullTest_Dashboard .modal-body.pt-0.text-center {
     padding-top: 35px !important;
 }
+
 #fullTest_Dashboard .skip-dashboard {
     background: transparent !important;
     border: none;
-	color: #00baff !important;
+    color: #00baff !important;
 }
+
 /* end full scan test popup */
 
 /* responsive full scan test popup */
-@media(max-width:767px){
-#fullTest_Dashboard .full-txtblock span {
-    font-size: 14px;
-    text-align: center;
-    margin-left: 0px !important;
+@media(max-width:767px) {
+    #fullTest_Dashboard .full-txtblock span {
+        font-size: 14px;
+        text-align: center;
+        margin-left: 0px !important;
+    }
+
+    #full-txtBlock {
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
 }
-#full-txtBlock {
-    margin-left: 12px !important;
-    margin-right: 12px !important;
-}
-}
+
 /* end full scan test popup resonsive */

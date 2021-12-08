@@ -36,11 +36,11 @@
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
-                                    <div class="col-5 me-2">
+                                    <div class="col-6">
                                         <label class="d-block">Start Date</label>
                                         <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required="" min="2021-11-29">
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <label class="d-block">End Date</label>
                                         <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly="" required="">
                                     </div>
@@ -262,7 +262,7 @@
             <ul>
                 <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar"><span><i class="fa fa-user"></i></span> Account</a>
                 </li>
-                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar"><span> <i class="fa fa-credit-card"></i>  </span> Subscription</a></li>
+                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar"><span> <i class="fa fa-credit-card"></i> </span> Subscription</a></li>
                 <li><a href="javascript:void(0);" class="log-out-btn accountsidebar"><span> <i class="fa fa-sign-out"></i></span> Log out</a></li>
             </ul>
         </div>

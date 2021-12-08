@@ -188,12 +188,9 @@ $questtype='radio';
                             <input type="hidden" name="planner_id" value="0">
                             <input type="hidden" name="live_exam_id" value="{{$series_id}}">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-outline-danger stop"
-                                        onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-success start"
-                                        onclick="start();" style="display: none"><i class="fa fa-play"
-                                                                                    aria-hidden="true"></i>
+                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
                                 </button>
                             </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
@@ -369,7 +366,7 @@ $questtype='radio';
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
-                        Review
+                        Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
@@ -380,14 +377,12 @@ $questtype='radio';
     </div>
 </div>
 
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog"
-     aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-body text-center pt-2 pb-5">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3"
-                            data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
                         Resume Test
                     </button>
                 </div>

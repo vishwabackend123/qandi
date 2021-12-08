@@ -3,6 +3,14 @@
 @php
 $userData = Session::get('user_data');
 @endphp
+<style>
+  .selected_topic {
+    background-color: #5bc3ff;
+
+    color: #ffffff;
+  }
+</style>
+
 @section('content')
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')

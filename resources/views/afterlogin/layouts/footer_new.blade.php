@@ -304,26 +304,26 @@
             jQuery("#notification").hide();
         });
     });
-	
-	$(document).ready(function() {
+
+    $(document).ready(function() {
         jQuery("#nodificbell").click(function() {
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").show();
             jQuery("#profileAcc").hide();
         });
-		
+
 
         jQuery("#plannCal").click(function() {
             jQuery("#collapsePlanner").show();
             jQuery("#collapseNotification").hide();
-			jQuery("#profileAcc").hide();
+            jQuery("#profileAcc").hide();
         });
-		jQuery(".UserPro").click(function() {
+        jQuery(".UserPro").click(function() {
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").hide();
-			//jQuery("#profileAcc").show();
+            //jQuery("#profileAcc").show();
         });
-		
+
     });
 
     document.getElementById("customRange").oninput = function() {
@@ -495,17 +495,16 @@
                     data: {
                         'search_text': event.target.value
                     },
-                    success: function(data) {
-
+                    success: function(response_data) {
                         let html = '';
+                        var data = jQuery.parseJSON(response_data);
 
                         if (data.success === true) {
-
                             $.each(data.response, (ele, val) => {
                                 if (val.user_profile_img) {
                                     var img_url = val.user_profile_img;
                                 } else {
-                                    var img_url = "https://app.uniqtoday.com/public/after_login/images/profile.png";
+                                    var img_url = "{{url('/') . '/public/after_login/images/profile.png'}}";
                                 }
 
                                 html += `<li>
@@ -539,7 +538,7 @@
         });
         $(".close-bnt").click(function() {
             $(".notification-right").hide();
-			$("#collapseNotification").collapse('toggle');
+            $("#collapseNotification").collapse('toggle');
         });
     });
 
@@ -981,22 +980,22 @@
 </script>
 
 <script>
-/* bhim custom js */
-/*Account menu item */
-jQuery(document).ready(function() {
-    jQuery('.profile-section li').click(function() {
-        jQuery('li.active').removeClass("active");
-        jQuery(this).addClass("active");
+    /* bhim custom js */
+    /*Account menu item */
+    jQuery(document).ready(function() {
+        jQuery('.profile-section li').click(function() {
+            jQuery('li.active').removeClass("active");
+            jQuery(this).addClass("active");
+        });
     });
-});
-/*dashboard left navigation */
-jQuery(document).ready(function() {
-    jQuery('.dash-nav-link a').click(function() {
-		jQuery('a').removeClass("active");
-        jQuery(this).addClass("active");
-	    //jQuery(this).removeClass("active");
+    /*dashboard left navigation */
+    jQuery(document).ready(function() {
+        jQuery('.dash-nav-link a').click(function() {
+            jQuery('a').removeClass("active");
+            jQuery(this).addClass("active");
+            //jQuery(this).removeClass("active");
+        });
     });
-});
 </script>
 <!-- planner section move from dashboard -->
 <script>

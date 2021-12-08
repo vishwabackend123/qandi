@@ -5,16 +5,24 @@
         top: 0;
         right: 0;
     }
+
+    .subScrip .row {
+        width: 100%;
+        margin: 0 auto;
+    }
 </style>
 @section('content')
 @php
 $userData = Session::get('user_data');
 
 @endphp
-<nav class="py-0 px-7 navbar navbar-expand-lg trans-navbar">
-    <div class="container-fluid"><a class="navbar-brand" href="{{url('/')}}"><img src="{{URL::asset('public/images/main-logo.png')}}" class="img-fluid" /></a></div>
-</nav>
+
 <div id="main" class="subScrip">
+    <div class="row" style="height:90px;">
+        <span class="outer-logo"><a href="{{url('/')}}"><img src="{{URL::asset('public/images_new/uniq.png')}}" class="img-fluid" /></a></span>
+    </div>
+    <div class="clearfix"></div>
+
     <div class="row">
         <div class="col-md-10 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
@@ -63,7 +71,7 @@ $userData = Session::get('user_data');
                         <div class="bg-white white-box-small subscriptionBox inactive-block  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. XXXX {{--$subsprice--}}</p>
-                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3 pr-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-5">
                                 <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -74,7 +82,7 @@ $userData = Session::get('user_data');
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn"> Purchased </i></button>
+                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" disabled id="goto-otp-btn"> Purchased </i></button>
                                 </form>
                             </div>
                         </div>
@@ -85,7 +93,7 @@ $userData = Session::get('user_data');
                         <div class="bg-white white-box-small subscriptionBox   ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. XXXX {{--$subsprice--}}</p>
-                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3 pr-3">{{$sub->subscription_details}}</p>
 
 
 
@@ -112,7 +120,7 @@ $userData = Session::get('user_data');
                         <div class="bg-white white-box-small subscriptionBox   ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. XXXX {{--$subsprice--}}</p>
-                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3 pr-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
                                 <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -135,7 +143,7 @@ $userData = Session::get('user_data');
                         <div class="bg-white white-box-small subscriptionBox  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. XXXX {{--$subsprice--}}</p>
-                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
                                 <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty($userData->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
@@ -146,12 +154,12 @@ $userData = Session::get('user_data');
                                     <input type="hidden" name="period_unit" value="month">
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
+                                    <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" disabled id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
                                 </form>
                             </div>
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                                <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline btn disabled" disabled="disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
                             </div>
                             @else
                             <div class="text-center mt-2">
@@ -166,7 +174,7 @@ $userData = Session::get('user_data');
                         <div class="bg-white white-box-small subscriptionBox  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. XXXX {{--$subsprice--}}</p>
-                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
                                 <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty($userData->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
@@ -213,7 +221,7 @@ $userData = Session::get('user_data');
                         <div class="bg-white white-box-small subscriptionBox  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. XXXX {{--$subsprice--}}</p>
-                            <p class="box-content scroll-content me-3">{{$sub->subscription_details}}</p>
+                            <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
 
                             <div class="text-center mt-4">
                                 <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -243,30 +251,14 @@ $userData = Session::get('user_data');
     </div>
 </div>
 
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0
-.min.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
 
-<script>
-    /*  function submitSubscription(subs_id) {
-        if (!confirm("Do you really want to do this?")) {
-            return false;
-        }
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.2.1.slim.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
 
-        document.getElementById('checkout_' + subs_id).submit();
-    } */
-    /* $(document).ready(function() {
-        $("#checkout").validate({
-
-            submitHandler: function(form) {
-               
-                //this.form.submit();
-            }
-
-        });
-    }); */
-</script>
 @endsection
