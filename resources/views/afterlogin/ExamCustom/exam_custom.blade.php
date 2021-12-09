@@ -4,10 +4,9 @@
 $userData = Session::get('user_data');
 @endphp
 <style>
-  .selected_topic {
-    background-color: #5bc3ff;
-
-    color: #ffffff;
+  .topic_selected {
+    background-color: #5bc3ff !important;
+    color: #ffffff !important;
   }
 </style>
 

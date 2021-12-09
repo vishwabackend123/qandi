@@ -190,7 +190,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body pt-0 text-center">
 
@@ -216,7 +216,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body p-4 pt-0 text-center">
 
@@ -270,7 +270,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body pt-0 text-center">
                 <p id="h1--P" class="h1-p text-success text-uppercase">Just one more step!</p>
