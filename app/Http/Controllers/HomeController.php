@@ -421,7 +421,7 @@ class HomeController extends Controller
         if ($validator->fails()) {
             // Redirect or return json to frontend with a helpful message to inform the user
             // that the provided file was not an adequate type
-            return response(['error' => $validator->errors()->getMessages(), 'success' => false]);
+            return response(json_encode(['error' => $validator->errors()->getMessages(), 'success' => false]));
         } else {
             // Store the File Now
             $userData = Session::get('user_data');
@@ -449,19 +449,15 @@ class HomeController extends Controller
                 curl_close($curl);
                 $aResponse = json_decode($response);
 
-
                 if (isset($aResponse->success) && $aResponse->success == true) {
 
                     $sessionData = Session::get('user_data');
                     $sessionData->user_profile_img = $aResponse->filename;
                     Session::put('user_data', $sessionData);
-
-
-
                     echo $response;
                 } else {
 
-                    echo $err;
+                    echo $response;
                 }
             }
         }

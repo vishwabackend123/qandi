@@ -434,8 +434,23 @@ $questtype='radio';
 @include('afterlogin.layouts.footer')
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-
-
+<!-- browser back disable -->
+<script>
+    window.location.hash = "no-back-button";
+    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
+    window.onhashchange = function() {
+        window.location.hash = "no-back-button";
+    }
+</script>
+<script type="text/javascript">
+    history.pushState(null, null, location.href);
+    history.back();
+    history.forward();
+    window.onpopstate = function() {
+        history.go(1);
+    };
+</script>
+<!-- browser back disable -->
 <script type="text/javascript">
     $('.number-block').slimscroll({
         height: '20vh'
@@ -512,6 +527,8 @@ $questtype='radio';
         clearInterval(timerInterval);
         $("#resume-test").modal("show");
     }
+
+
 
     function startTimer() {
         timerInterval = setInterval(() => {

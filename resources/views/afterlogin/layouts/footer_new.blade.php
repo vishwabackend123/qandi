@@ -116,6 +116,9 @@
     $(".notification-scroll").slimscroll({
         height: "70vh",
     });
+    $(".btm-form-flds").slimscroll({
+        height: "68vh",
+    });
 </script>
 <script type="text/javascript">
     // $(window).on('load', function() {
@@ -369,22 +372,37 @@
 
             var planned = <?php echo json_encode($current_week_plan); ?>;
             console.log(planned);
+            var count_range_attempted = 0;
             planned.forEach(function(item) {
+
 
                 var subject_id = item.subject_id;
                 var chapter_id = item.chapter_id;
                 var chapter_name = item.chapter_name;
                 var status = item.test_completed_yn;
-                $('#planner_sub_' + subject_id).append(
-                    '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
-                    '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
-                    chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' +
-                    chapter_name + '</span>' +
-                    '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' +
-                    subject_id +
-                    ')"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
-                );
+                if (status == "Y") {
+                    count_range_attempted = count_range_attempted + 1;
+                    $('#planner_sub_' + subject_id).append(
+                        '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
+                        '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
+                        chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' +
+                        chapter_name + '</span>' +
+                        '</div>'
+                    );
+                } else {
+                    $('#planner_sub_' + subject_id).append(
+                        '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
+                        '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
+                        chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' +
+                        chapter_name + '</span>' +
+                        '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' +
+                        subject_id +
+                        ')"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
+                    );
+                }
             });
+
+
 
         }
         $("#StartDate").change(function() {
@@ -909,28 +927,36 @@
             cache: false,
             processData: false,
             success: function(response_data) {
-                if (response_data.success === false) {
-                    $('#image-upload-response').addClass('text-danger');
-                    $("#image-upload-response").text(response_data.error.image[0]);
-                    setTimeout(function() {
-                        $('#image-upload-response').fadeOut('fast');
-                    }, 5000);
-                }
+
                 var response = jQuery.parseJSON(response_data);
                 if (response.success == true) {
                     $("#profile_image").attr("src", response.filename);
+                    $('#image-upload-response').removeClass('text-danger');
                     $('#image-upload-response').addClass('text-success');
                     $("#image-upload-response").text(response.message);
+                    $("#image-upload-response").show();
                     setTimeout(function() {
                         $('#image-upload-response').fadeOut('fast');
                     }, 5000);
                 } else {
+                    $('#image-upload-response').removeClass('text-success');
                     $('#image-upload-response').addClass('text-danger');
                     $("#image-upload-response").text(response.message);
+                    $("#image-upload-response").show();
                     setTimeout(function() {
                         $('#image-upload-response').fadeOut('fast');
                     }, 5000);
                 }
+
+                if (response.success === false) {
+                    $('#image-upload-response').removeClass('text-success');
+                    $('#image-upload-response').addClass('text-danger');
+                    $("#image-upload-response").text(response.error.image[0]);
+                    setTimeout(function() {
+                        $('#image-upload-response').fadeOut('fast');
+                    }, 5000);
+                }
+
 
                 //$('#uploaded_image').html(data);
             }

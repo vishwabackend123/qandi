@@ -57,12 +57,9 @@ $userData = Session::get('user_data');
                                         <li>{{$sche->questions_count}} Questions</a>
                                         </li>
                                         <li>
-                                            @if($start_date<=$today && $end_date>=$today)
-                                                <a href="{{route('live_exam',$sche->schedule_id)}}"> <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempt
+                                            @if($start_date<=$today && $end_date>=$today) <a href="{{route('live_exam',$sche->schedule_id)}}"> <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempt
                                                         Exam</button></a>
                                                 @endif
-
-
                                         </li>
                                     </ul>
                                     @else

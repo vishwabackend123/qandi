@@ -48,13 +48,13 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
-                    <div class="bg-white shadow-lg py-5 px-3">
+                    <div class="bg-white shadow-lg py-5 ps-3 pe-1">
                         <!-- <h5 class="dashboard-title mb-5">Subject Performance</h5> -->
                         <div class="prgress-i-txt px-0">
                             <span class="progress_text">Subject Proficiency</span>
                             <!--                                 <span class="i-sms">!</span> -->
                         </div>
-                        <ul class="course-star subject_scroll">
+                        <ul class="course-star subject_scroll pe-2">
                             @if(!empty($subjectData))
                             @foreach($subjectData as $key=>$sub)
                             <li>
@@ -677,7 +677,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             },
             series: {
                 marker: {
-                    enabled: false
+                    enabled: true
                 },
                 events: {
                     legendItemClick: function() {

@@ -1,5 +1,5 @@
 <div class="main-center">
-    <h2>{{$preparation_list->chapter_name ?? $preparation_list->chapter_name}}</h2>
+    <h2>{{isset($preparation_list->chapter_name) ? $preparation_list->chapter_name:''}}</h2>
     <div class="d-flex align-items-center">
         <div>
             <div class="d-flex align-items-center">
@@ -27,7 +27,7 @@
             <div>
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name ?? $pre->resource_name }}</p>
                 <p>{!! $pre->resource_desc ?? $pre->resource_desc !!}</p>
-                <a href="{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}" target="_blank" > click me to Presentation </a>
+                <a href="{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}" target="_blank"> click me to Presentation </a>
             </div>
         </div>
         @endforeach

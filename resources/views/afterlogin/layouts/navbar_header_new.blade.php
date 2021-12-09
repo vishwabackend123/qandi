@@ -25,7 +25,7 @@
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
-                <div class="planner-scroll" style="overflow: auto; width: auto; height: 70vh;">
+                <div class="planner-scroll" style="overflow-y: scroll; overflow-x: hidden; height: 70vh;">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
                     <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
 
@@ -308,7 +308,7 @@
                 </div>
             </div>
             <!--profile-detail-->
-            <div class="profile-show">
+            <div class="profile-show" style="min-height:650px;">
                 <div class="profile-picture-txt">
                     <div class="p-picture">
                         <img src="{{$imgPath}}" class="profile-pic uswereditpic">
@@ -320,7 +320,7 @@
                         <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
                         <button class="edit-btn-show"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
                     </div>
-                    <div class="achievement">
+                    <!-- <div class="achievement">
                         <h4>Achievements</h4>
                         <ul>
                             <li>You attempted 5 consecutive exams on time!</li>
@@ -328,7 +328,7 @@
                             <li>You attempted 5 consecutive exams on time!</li>
                             <li>You attempted 5 consecutive exams on time!</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
                 <!--profile-picture-->
             </div>
@@ -356,7 +356,7 @@
                 </div>
                 <span id="image-upload-response" class=""></span>
 
-                <div class="btm-form-flds">
+                <div class="btm-form-flds  pe-3 pb-5">
                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                         <div class="form-flds">
                             <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
