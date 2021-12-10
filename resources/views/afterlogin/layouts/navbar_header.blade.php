@@ -544,10 +544,10 @@ $userData = Session::get('user_data');
                     data: {
                         'search_text': event.target.value
                     },
-                    success: function(data) {
+                    success: function(response_data) {
 
                         let html = '';
-
+                        var data = jQuery.parseJSON(response_data);
                         if (data.success === true) {
 
                             $.each(data.response, (ele, val) => {
