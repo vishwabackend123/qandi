@@ -1,1 +1,4 @@
-<?php phpinfo();?>
+<?php 
+// just checking
+phpinfo();?>
+
