@@ -1,407 +1,449 @@
-@extends('afterlogin.layouts.app')
+@extends('afterlogin.layouts.app_new')
+
+@php
+$userData = Session::get('user_data');
+@endphp
+
 
 @section('content')
-    <!-- Side bar menu -->
+<!-- Side bar menu -->
+@include('afterlogin.layouts.sidebar_new')
+<!-- sidebar menu end -->
+<div class="main-wrapper">
 
-    @include('afterlogin.layouts.sidebar')
-    <div class="main-wrapper">
-        <!-- top navbar -->
-        @include('afterlogin.layouts.navbar_header')
-        <div class="content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tab-wrapper mt-0">
+    <!-- End start-navbar Section -->
+    @include('afterlogin.layouts.navbar_header_new')
+    <!-- End top-navbar Section -->
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+
+            <div class="row preparation">
+                <div class="col-lg-12  p-lg-5 pt-none">
+
+                    <div class="tab-wrapper">
+                        <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 @php $subx=1; @endphp
                                 @if(isset($aPreparation) && !empty($aPreparation))
-                                    @foreach($aPreparation as $sub)
-                                        <li class="nav-item" role="presentation">
-                                            <a class="nav-link @if($subx==1) active @endif"
-                                               id="{{$sub->subject_name}}-tab" data-bs-toggle="tab"
-                                               href="#{{$sub->subject_name}}" role="tab"
-                                               aria-controls="{{$sub->subject_name}}"
-                                               aria-selected="true">{{$sub->subject_name}}</a>
-                                        </li>
-                                        @php $subx++; @endphp
-                                    @endforeach
-                                @endif
-                            </ul>
+                                @foreach($aPreparation as $sub)
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link @if($subx==1) active @endif" id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true">{{$sub->subject_name}}</a>
+                                </li>
 
-                            <div class="tab-content cust-tab-content" id="myTabContent">
-                                @php $topx=1;@endphp
-                                @if(isset($aPreparation) && !empty($aPreparation))
-                                    <?php
-                                    $pres = 0;
-                                    $notes = 0;
-                                    $video = 0;
-                                    $bmark = 0;
-                                    ?>
-                                    @foreach($aPreparation as $oSub)
-                                        @foreach($oSub->values as $val)
-                                            <?php
-                                            $pres += $val->Presentations;
-                                            $notes += $val->Notes;
-                                            $video += $val->Videos;
-                                            $bmark += $val->Bookmarks;
-                                            ?>
-                                        @endforeach
-                                        <div class="tab-pane fade show @if($topx==1) active @endif"
-                                             id="{{$oSub->subject_name}}" role="tabpanel"
-                                             aria-labelledby="{{$oSub->subject_name}}-tab">
-                                            <div
-                                                class="d-flex px-4 mt-4 mb-4 py-3 align-items-center justify-content-between">
-                                                <span
-                                                    class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
-                                                <div class="col-md-3  d-flex align-items-center">
-                                                    <span class="me-2"><a href="javascript:void(0);"
-                                                                          onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$pres}}</a></span>
-                                                    <span class="me-2"><a href="javascript:void(0);"
-                                                                          onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$notes}}</a></span>
-                                                    <span class="me-2"><a href="javascript:void(0);"
-                                                                          onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$video}}</a></span>
-                                                    <span><a href="javascript:void(0);"
-                                                             onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img
-                                                                src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$bmark}}</a></span>
-                                                </div>
-{{--                                                <div class="col-md-3 d-flex ">--}}
-{{--                                                    <p class="m-0 pe-3  w140">Overall Proficiency</p>--}}
-{{--                                                    <span>--}}
-{{--                                                        <i class="fa fa-star text-success mx-1"></i>--}}
-{{--                                                        <i class="fa fa-star text-success mx-1"></i>--}}
-{{--                                                        <i class="fa fa-star text-success mx-1"></i>--}}
-{{--                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
-{{--                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
-{{--                                                    </span>--}}
-{{--                                                </div>--}}
-                                            </div>
-                                            <div class="scroll-div">
-                                                    @foreach( $oSub->values as $val)
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between bg-white px-4 mt-4 mb-4 py-2 listing-details w-100 flex-wrap  ">
-                                                                <span
-                                                                    class="col-md-6 mr-3 preparation-txt">{{$val->chapter_name}}
-                                                                </span>
-                                                                <div class="col-md-3  d-flex  align-items-center">
-                                                                    <span class="me-2 flex-column"><a
-                                                                            href="javascript:void(0);"
-                                                                            onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img
-                                                                                src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a>
-                                                                    </span>
-                                                                    <span class="me-2 flex-column"><a
-                                                                            href="javascript:void(0);"
-                                                                            onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img
-                                                                                src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a>
-                                                                    </span>
-                                                                    <span class="me-2 flex-column">
-                                                                        <a href="javascript:void(0);"
-                                                                           onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')">
-                                                                            <img
-                                                                                src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}
-                                                                        </a>
-                                                                    </span>
-                                                                    <span><a href="javascript:void(0);"
-                                                                             onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img
-                                                                                src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a>
-                                                                    </span>
-                                                                </div>
-{{--                                                                <div class="col-md-3 d-flex ">--}}
-{{--                                                                    <p class="m-0 pe-3 w140">Proficiency</p>--}}
-{{--                                                                    <span class="">--}}
-{{--                                                                        <i class="fa fa-star text-danger mx-1"></i>--}}
-{{--                                                                        <i class="fa fa-star text-danger mx-1"></i>--}}
-{{--                                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
-{{--                                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
-{{--                                                                        <i class="fa fa-star text-secondary mx-1"></i>--}}
-{{--                                                                    </span>--}}
-{{--                                                                </div>--}}
-                                                            </div>
-                                                    @endforeach
-                                            </div>
-                                        </div>
-                                    @php $topx++;
-                                            $pres = 0;
-                                            $notes = 0;
-                                            $video = 0;
-                                            $bmark = 0;
-                                    @endphp
+                                @php $subx++; @endphp
                                 @endforeach
+                                @endif
+
+                            </ul>
+                        </div>
+                        <!--scroll-mobile-->
+                        <div class="tab-content cust-tab-content pt-4" id="myTabContent">
+                            @php $topx=1;@endphp
+                            @if(isset($aPreparation) && !empty($aPreparation))
+                            <?php
+                            $pres = 0;
+                            $notes = 0;
+                            $video = 0;
+                            $bmark = 0;
+                            ?>
+                            @foreach($aPreparation as $oSub)
+                            @foreach($oSub->values as $val)
+                            <?php
+                            $pres += $val->Presentations;
+                            $notes += $val->Notes;
+                            $video += $val->Videos;
+                            $bmark += $val->Bookmarks;
+                            ?>
+                            @endforeach
+                            <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$oSub->subject_name}}" role="tabpanel" aria-labelledby="{{$oSub->subject_name}}-tab">
+
+
+                                <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
+                                    <span class="mr-3 name-txt">{{$oSub->subject_name}}</span>
+
+                                    <span class="p-icons">
+                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$pres}}</span></a>
+                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$notes}}</span></a>
+                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$video}}</span></a>
+                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$bmark}}</span></a>
+                                    </span>
+                                    <!-- <span class="slbs-link mx-3">
+                                        <a href="#" role="button" aria-expanded="false">OVERALL Proficiency</a></span>
+                                    <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+
+
+
+                                        <div class="star animate">
+
+                                            <span class="full star-colour" data-value="1"></span>
+                                            <span class="half star-colour" data-value="0.5"></span>
+                                            <span class="selected star-colour"></span>
+
+                                        </div>
+
+                                        <div class="star animate">
+
+                                            <span class="full star-colour" data-value="2"></span>
+                                            <span class="half star-colour" data-value="1.5"></span>
+                                            <span class="selected star-colour"></span>
+
+                                        </div>
+
+                                        <div class="star animate">
+
+                                            <span class="full star-colour" data-value="3"></span>
+                                            <span class="half star-colour" data-value="2.5"></span>
+                                            <span class="selected star-colour"></span>
+
+                                        </div>
+
+                                        <div class="star">
+
+                                            <span class="full" data-value="4"></span>
+                                            <span class="half star-colour" data-value="3.5"></span>
+                                            <span class="selected"></span>
+
+                                        </div>
+
+                                        <div class="star">
+
+                                            <span class="full" data-value="5"></span>
+                                            <span class="half" data-value="4.5"></span>
+                                            <span class="selected"></span>
+
+                                        </div>
+
+                                        <div class="score score-rating js-score">
+                                            0 %
+
+                                        </div>
+                                    </div> -->
+
+
+
+                                </div>
+                                <div class="scroll-div">
+                                    @foreach( $oSub->values as $val)
+                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
+                                        <span class="mr-3 name-txt">{{$val->chapter_name}}</span>
+
+                                        <span class="p-icons"><a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$val->Presentations}}</span></a>
+                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$val->Notes}}</span></a>
+                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$val->Videos}}</span></a>
+                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$val->Bookmarks}}</span></a>
+                                        </span>
+                                        <!-- <span class="slbs-link mx-3">
+                                            <a href="#" role="button" aria-expanded="false">OVERALL Proficiency</a></span>
+                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+
+
+
+                                            <div class="star animate">
+
+                                                <span class="full star-colour" data-value="1"></span>
+                                                <span class="half star-colour" data-value="0.5"></span>
+                                                <span class="selected star-colour"></span>
+
+                                            </div>
+
+                                            <div class="star animate">
+
+                                                <span class="full star-colour" data-value="2"></span>
+                                                <span class="half star-colour" data-value="1.5"></span>
+                                                <span class="selected star-colour"></span>
+
+                                            </div>
+
+                                            <div class="star animate">
+
+                                                <span class="full star-colour" data-value="3"></span>
+                                                <span class="half star-colour" data-value="2.5"></span>
+                                                <span class="selected star-colour"></span>
+
+                                            </div>
+
+                                            <div class="star">
+
+                                                <span class="full" data-value="4"></span>
+                                                <span class="half star-colour" data-value="3.5"></span>
+                                                <span class="selected"></span>
+
+                                            </div>
+
+                                            <div class="star">
+
+                                                <span class="full" data-value="5"></span>
+                                                <span class="half" data-value="4.5"></span>
+                                                <span class="selected"></span>
+
+                                            </div>
+
+                                            <div class="score score-rating js-score">
+                                                0 %
+
+                                            </div>
+                                        </div> -->
+
+
+
+                                    </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+                            @php $topx++;
+                            $pres = 0;
+                            $notes = 0;
+                            $video = 0;
+                            $bmark = 0;
+                            @endphp
+                            @endforeach
                             @endif
-                            <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div> -->
-                            </div>
+
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
+        <!--row-->
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="PreparationCenter_modal" tabindex="-1" aria-labelledby="PreparationCenter_modal"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-0 bg-light">
-                <div class="modal-header pb-0 border-0">
+</div>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="PreparationCenter_modal_body" class="modal-body pt-0 px-5">
-                    <div class="main-center">
-                        <h2>Trigonometry</h2>
-                        <div class="d-flex align-items-center">
+
+<div class="modal fade" id="PreparationCenter_modal" tabindex="-1" aria-labelledby="PreparationCenter_modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="PreparationCenter_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
+                        </div>
+                    </div>
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3 align-items-center mt-5">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
                             <div>
-                                <div class="d-flex align-items-center">
-                                    <p class="m-0 pe-3">Proficiency</p>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                </div>
-                            </div>
-                            <div class="ms-auto">
-
-                                <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal"
-                                                      class="bg-light-red link-dark py-3 px-2 d-inline-block"
-                                                      data-bs-target="#PreparationCenter_modal"><img
-                                            src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                <span><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
+                                <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                                <p class="mt-2 mb-0">36 Slides</p>
                             </div>
                         </div>
-                        <div class="h-scroll-slim">
-                            <div class="d-flex bg-white p-3 align-items-center mt-5">
-                                <span class="px-3"><img
-                                        src="{{URL::asset('public/after_login/images/icon5.svg')}}"/></span>
-                                <div>
-                                    <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                                    <p class="mt-2 mb-0">36 Slides</p>
-                                </div>
-                            </div>
-                            <div class="d-flex bg-white p-3 align-items-center mt-2">
-                                <span class="px-3"><img
-                                        src="{{URL::asset('public/after_login/images/icon5.svg')}}"/></span>
-                                <div>
-                                    <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                                    <p class="mt-2 mb-0">36 Slides</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="PreparationCenter_Notes" tabindex="-1" aria-labelledby="PreparationCenter_modal"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-0 bg-light">
-                <div class="modal-header pb-0 border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="notes_modal_body" class="modal-body pt-0 px-5">
-                    <div class="main-center">
-                        <h2>Trigonometry</h2>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex bg-white p-3 align-items-center mt-2">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
                             <div>
-                                <div class="d-flex align-items-center">
-                                    <p class="m-0 pe-3">Proficiency</p>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                </div>
-                            </div>
-                            <div class="ms-auto">
-
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"
-                                                      class="bg-light-red link-dark py-3 px-2 d-inline-block"><img
-                                            src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                <span><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                            </div>
-                        </div>
-                        <div class="h-scroll-slim">
-                            <div class="d-flex bg-white p-3 align-items-center mt-5">
-                                <span class="px-3"><img
-                                        src="{{URL::asset('public/after_login/images/icon6.svg')}}"/></span>
-                                <div>
-                                    <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-
-                                    <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
-                                </div>
-                            </div>
-                            <div class="d-flex bg-white p-3 align-items-center mt-2">
-                                <span class="px-3"><img
-                                        src="{{URL::asset('public/after_login/images/icon6.svg')}}"/></span>
-                                <div>
-                                    <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-
-                                    <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
-                                </div>
+                                <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                                <p class="mt-2 mb-0">36 Slides</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="PreparationCenter_Notes" tabindex="-1" aria-labelledby="PreparationCenter_modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="notes_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
 
-    <!-- Modal -->
-    <div class="modal fade" id="PreparationCenter_Video" tabindex="-1" aria-labelledby="PreparationCenter_modal"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-0 bg-light">
-                <div class="modal-header pb-0 border-0">
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="videos_modal_body" class="modal-body pt-0 px-5">
-                    <div class="main-center">
-                        <h2>Trigonometry</h2>
-                        <div class="d-flex align-items-center">
+                        </div>
+                    </div>
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3 align-items-center mt-5">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
                             <div>
-                                <div class="d-flex align-items-center">
-                                    <p class="m-0 pe-3">Proficiency</p>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                </div>
-                            </div>
-                            <div class="ms-auto">
+                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
 
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"
-                                                      class="bg-light-red link-dark py-3 px-2 d-inline-block"><img
-                                            src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                <span><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
+                                <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
                             </div>
                         </div>
-                        <div class="h-scroll-slim">
-                            <div class="d-flex bg-white p-3 align-items-center mt-5">
-                                <span class="px-3"><img
-                                        src="{{URL::asset('public/after_login/images/icon8.svg')}}"/></span>
-                                <div>
-
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-                                    <p class="mt-2 mb-0">30 mins</p>
-                                </div>
-                            </div>
-                            <div class="d-flex bg-white p-3 align-items-center mt-2">
-                                <span class="px-3"><img
-                                        src="{{URL::asset('public/after_login/images/icon8.svg')}}"/></span>
-                                <div>
-                                    <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-                                    <p class="mt-2 mb-0">30 mins</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="PreparationCenter_bookmark" tabindex="-1" aria-labelledby="PreparationCenter_modal"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-0 bg-light">
-                <div class="modal-header pb-0 border-0">
-
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="bookmark_modal_body" class="modal-body pt-0 px-5">
-                    <div class="main-center">
-                        <h2>Trigonometry</h2>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex bg-white p-3 align-items-center mt-2">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
                             <div>
-                                <div class="d-flex align-items-center">
-                                    <p class="m-0 pe-3">Proficiency</p>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-secondary mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                    <i class="fa fa-star text-light mx-2"></i>
-                                </div>
-                            </div>
-                            <div class="ms-auto">
+                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
 
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                                <span class="me-1"><a href="javascript:void(0);"><img
-                                            src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                                <span><a href="javascript:void(0);"
-                                         class="bg-light-red link-dark py-3 px-2 d-inline-block"><img
-                                            src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                            </div>
-                        </div>
-                        <div class="h-scroll-slim">
-                            <div class="d-flex bg-white p-3  mt-5">
-                                <span class="px-3">Q1</span>
-                                <div>
-
-                                    <p>AB is an arc of length 42 cm on the circumference of a circle with center O and
-                                        radius 12 cm. What is the size of angle AOB in radians?</p>
-                                    <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
-                                </div>
-                            </div>
-                            <div class="d-flex bg-white p-3  mt-2">
-                                <span class="px-3">Q2</span>
-                                <div>
-
-                                    <p>AB is an arc of length 42 cm on the circumference of a circle with center O and
-                                        radius 12 cm. What is the size of angle AOB in radians?</p>
-                                    <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
-                                </div>
+                                <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+</div>
 
-    @include('afterlogin.layouts.footer')
+
+<!-- Modal -->
+<div class="modal fade" id="PreparationCenter_Video" tabindex="-1" aria-labelledby="PreparationCenter_modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="videos_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
+                        </div>
+                    </div>
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3 align-items-center mt-5">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
+                            <div>
+
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
+                                <p class="mt-2 mb-0">30 mins</p>
+                            </div>
+                        </div>
+                        <div class="d-flex bg-white p-3 align-items-center mt-2">
+                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
+                            <div>
+                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
+                                <p class="mt-2 mb-0">30 mins</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
-@endsection
+<!-- Modal -->
+<div class="modal fade" id="PreparationCenter_bookmark" tabindex="-1" aria-labelledby="PreparationCenter_modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="bookmark_modal_body" class="modal-body pt-0 px-5">
+                <div class="main-center">
+                    <h2>Trigonometry</h2>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <p class="m-0 pe-3">Proficiency</p>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-secondary mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                                <i class="fa fa-star text-light mx-2"></i>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+
+                        </div>
+                    </div>
+                    <div class="h-scroll-slim">
+                        <div class="d-flex bg-white p-3  mt-5">
+                            <span class="px-3">Q1</span>
+                            <div>
+
+                                <p>AB is an arc of length 42 cm on the circumference of a circle with center O and
+                                    radius 12 cm. What is the size of angle AOB in radians?</p>
+                                <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
+                            </div>
+                        </div>
+                        <div class="d-flex bg-white p-3  mt-2">
+                            <span class="px-3">Q2</span>
+                            <div>
+
+                                <p>AB is an arc of length 42 cm on the circumference of a circle with center O and
+                                    radius 12 cm. What is the size of angle AOB in radians?</p>
+                                <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@include('afterlogin.layouts.footer_new')
+
 <script>
-    $(".h-scroll-slim").slimscroll({
+    $('.scroll-div').slimscroll({
+        height: "50vh",
+    });
+    $(".modal .h-scroll-slim").slimscroll({
         height: "80vh",
     });
 
@@ -414,7 +456,7 @@
                 subject_id: subject_id,
                 preType: preType,
             },
-            success: function (result) {
+            success: function(result) {
                 console.log(result);
                 $('#PreparationCenter_modal_body').html(result);
                 $('#PreparationCenter_modal').modal('show');
@@ -433,7 +475,7 @@
                 chapter_id: chapter_id,
                 values: values,
             },
-            success: function (result) {
+            success: function(result) {
                 $('#PreparationCenter_modal_body').html(result);
                 $('#PreparationCenter_modal').modal('show');
                 $('#PreparationCenter_Video').modal('hide');
@@ -452,7 +494,7 @@
                 chapter_id: chapter_id,
                 values: values,
             },
-            success: function (result) {
+            success: function(result) {
                 $('#videos_modal_body').html(result);
                 $('#PreparationCenter_Video').modal('show');
                 $('#PreparationCenter_modal').modal('hide');
@@ -471,7 +513,7 @@
                 chapter_id: chapter_id,
                 values: values,
             },
-            success: function (result) {
+            success: function(result) {
                 $('#notes_modal_body').html(result);
                 $('#PreparationCenter_Notes').modal('show');
                 $('#PreparationCenter_Video').modal('hide');
@@ -491,7 +533,7 @@
                 chapter_id: chapter_id,
                 values: values,
             },
-            success: function (result) {
+            success: function(result) {
                 $('#notes_modal_body').html(result);
                 $('#PreparationCenter_Notes').modal('show');
                 $('#PreparationCenter_Video').modal('hide');
@@ -511,7 +553,7 @@
                 chapter_id: chapter_id,
                 values: values,
             },
-            success: function (result) {
+            success: function(result) {
                 $('#bookmark_modal_body').html(result);
                 $('#PreparationCenter_bookmark').modal('show');
                 $('#PreparationCenter_Notes').modal('hide');
@@ -531,7 +573,7 @@
                 chapter_id: chapter_id,
                 type: type
             },
-            success: function (result) {
+            success: function(result) {
                 $('#PreparationCenter_modal_body').html(result);
                 $('#PreparationCenter_modal').modal('show');
                 $('#PreparationCenter_Video').modal('hide');
@@ -541,3 +583,4 @@
         });
     }
 </script>
+@endsection

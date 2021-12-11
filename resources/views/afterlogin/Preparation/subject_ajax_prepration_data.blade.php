@@ -102,3 +102,8 @@
 
     </div>
 </div>
+<script>
+    $(".h-scroll-slim").slimscroll({
+        height: "50vh",
+    });
+</script>

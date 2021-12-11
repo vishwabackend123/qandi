@@ -3656,6 +3656,49 @@ span#slide-input {
 
 }
 
+@media(min-width:991px) and (max-width:1024px) {
+
+    /** profile page css **/
+    .profile-section {
+        width: 220px;
+        top: 8%;
+    }
+
+    .leader-board {
+        width: 310px;
+        right: 20%;
+        height: 100%;
+        top: 8%;
+    }
+
+    .profile-show {
+        height: 100%;
+        padding: 10px 0px;
+    }
+
+    .subscription .form-btns button {
+        margin-bottom: 20px;
+    }
+
+    .log-out-screen {
+        width: 50%;
+        right: 20%;
+        top: 8%;
+    }
+
+    button.cancel-btn {
+        margin-bottom: 15px;
+    }
+
+    .subscription {
+        right: 20%;
+        top: 8%;
+    }
+
+    /** end here **/
+}
+
+
 
 @media(min-width:992px) and (max-width:1280px) {
 
@@ -3787,6 +3830,54 @@ span#slide-input {
     /* planner screen end */
 }
 
+@media(min-width:768px) and (max-width:990px) {
+
+    /** profile page css **/
+    .profile-section {
+        width: 190px;
+    }
+
+    .leader-board {
+        width: 270px;
+        right: 20%;
+        height: 100%;
+        padding-left: 0px;
+    }
+
+    .profile-show {
+        height: 100%;
+        padding: 10px 0px;
+    }
+
+    .subscription .form-btns button {
+        margin-bottom: 20px;
+    }
+
+    .log-out-screen {
+        width: 50%;
+        right: 20%;
+    }
+
+    .subscription {
+        right: 20%;
+    }
+
+    .profile-picture-txt .p-text {
+        padding-right: 0px;
+    }
+
+    .profile-picture-txt {
+        padding: 15px;
+        display: inline-block;
+    }
+
+    .subscription .profile-picture-txt .p-picture {
+        height: 60px;
+    }
+
+    /** end here **/
+}
+
 @media(min-width:768px) and (max-width:991px) {
 
     /*Test screen */
@@ -3910,9 +4001,129 @@ span#slide-input {
     div#collapseExample [class*="col-"] {
         width: 100%;
     }
+
+    .col-lg-12.p-lg-5.pt-none {
+        width: 100% !important;
+    }
+
+    button#dropdownMenuLink {
+        width: 40px;
+        height: 40px;
+    }
+
+    .d-flex.px-4.py-2.align-items-center.justify-content-between form {
+        width: 75%;
+        float: left;
+    }
+
+    .listing-details .name-txt {
+        width: 100% !important;
+    }
+
+    .slick-slide {
+        width: 38% !important;
+    }
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** profile page css **/
+    .profile-picture-txt .p-picture {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .profile-section {
+        width: 85%;
+        top: 10%;
+        height: auto;
+        z-index: 999;
+    }
+
+    .leader-board {
+        width: 270px;
+        right: 20%;
+        height: 100%;
+        padding-left: 0px;
+    }
+
+    .subscription .form-btns button {
+        margin-bottom: 20px;
+    }
+
+    .log-out-screen {
+        right: 1% !important;
+        width: 87% !important;
+        top: 24% !important;
+    }
+
+    .subscription {
+        right: 1% !important;
+        width: 87% !important;
+        padding: 15px 20px 15px 25px !important;
+        top: 24% !important;
+    }
+
+    .profile-picture-txt .p-text {
+        padding-right: 0px;
+    }
+
+    .profile-picture-txt {
+        padding: 15px;
+        display: inline-block;
+        overflow: scroll;
+        height: 250px;
+    }
+
+    .subscription .profile-picture-txt .p-picture {
+        height: 55px !important;
+        width: 55px;
+    }
+
+    .profile-section ul {
+        display: flex;
+        margin-bottom: 0px;
+    }
+
+    .profile-section ul li {
+        padding: 15px 10px;
+        margin: 0px;
+        text-align: center;
+        width: 120px;
+    }
+
+    .profile-section ul li span {
+        display: block;
+    }
+
+    .leader-board {
+        width: 87%;
+        right: 1%;
+        top: 58%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0px;
+    }
+
+    .profile-show {
+        top: -34% !important;
+        left: 0% !important;
+        width: 100% !important;
+        padding: 30px 15px 40px !important;
+        z-index: 999;
+    }
+
+    .edit-form {
+        top: -34%;
+        right: 0%;
+    }
+
+    /** end here **/
+
+
 }
 
 @media(max-width:767px) {
+
 
     /*test screen*/
     .examSect .tab-btn-box.d-flex.mt-3 a {
@@ -4099,6 +4310,7 @@ span#slide-input {
     .cust-tab-content .custom-btn-gray {
         width: auto !important;
         float: right;
+        font-size: 14px;
     }
 
     .cust-tabs .nav-link {
@@ -4182,6 +4394,7 @@ span#slide-input {
 
     .active-btn {
         width: 70%;
+        font-size: 12px;
         padding: 0px !important;
     }
 
@@ -4260,8 +4473,9 @@ span#slide-input {
     }
 
     .bg-white.shadow-lg {
-        height: 400px;
+        height: 330px;
     }
+
 
     span.user-name-block.ps-3.pe-3 {
         display: none;
@@ -4326,7 +4540,7 @@ span#slide-input {
 
 @media(max-width:767px) {
     [class*="col-"] {
-        width: 85%;
+        width: 100%;
     }
 
     .Fullsub-amt-subN .d-flex {
@@ -4854,3 +5068,58 @@ label.error {
 }
 
 /* end full scan test popup resonsive */
+
+
+
+/** preparation page css on 9-12-2021***/
+
+.preparation .slimScrollBar {
+    background: rgb(98, 194, 254) !important;
+}
+
+.preparation .cust-tab-content {
+    height: 400px !important;
+}
+
+.preparation .name-txt {
+    width: 35%;
+}
+
+/** end here on 9-12-2021 **/
+
+/** preparation page css on 9-12-2021***/
+
+.preparation .slimScrollBar {
+    background: rgb(98, 194, 254) !important;
+}
+
+.preparation .cust-tab-content {
+    height: 500px !important;
+}
+
+.preparation .name-txt {
+    width: 35%;
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** preparation page css on 9-12-2021**/
+    .preparation .name-txt {
+        width: 100%;
+        display: block;
+        font-size: 14px;
+    }
+
+    .preparation .slbs-link a {
+        font-size: 12px;
+    }
+
+    .preparation .cust-tab-content {
+        height: auto !important;
+    }
+
+    /*** end here 9-12-2021**/
+
+}
+
+/** end here on 9-12-2021 **/
