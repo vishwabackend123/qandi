@@ -48,13 +48,13 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
-                    <div class="bg-white shadow-lg py-5 px-3">
+                    <div class="bg-white shadow-lg py-5 ps-3 pe-1">
                         <!-- <h5 class="dashboard-title mb-5">Subject Performance</h5> -->
                         <div class="prgress-i-txt px-0">
                             <span class="progress_text">Subject Proficiency</span>
                             <!--                                 <span class="i-sms">!</span> -->
                         </div>
-                        <ul class="course-star subject_scroll">
+                        <ul class="course-star subject_scroll pe-2">
                             @if(!empty($subjectData))
                             @foreach($subjectData as $key=>$sub)
                             <li>
@@ -105,7 +105,7 @@ $userData = Session::get('user_data');
                                 <div class="col-lg-12 px-0">
                                     <p>Complete full body scan to</p>
                                     <h3>Unlock Daily Test</h3>
-                                    <p>& complete plateform features</p>
+                                    <p>& complete platform features</p>
                                     <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
                                         </span></div>
                                 </div>
@@ -190,7 +190,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body pt-0 text-center">
 
@@ -216,7 +216,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body p-4 pt-0 text-center">
 
@@ -270,7 +270,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body pt-0 text-center">
                 <p id="h1--P" class="h1-p text-success text-uppercase">Just one more step!</p>
@@ -517,26 +517,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         $('.slick-slider').slick('refresh');
     })
 </script>
-<script>
-    $(document).ready(function() {
 
-        $('#edit-planner-btn').click(function() {
-
-            $('#sub-planner').addClass('open-sub-planner');
-            $(this).addClass('close-sub-planner');
-            $('#close-edit-planner-btn').removeClass('close-sub-planner');
-
-        });
-        $('#close-edit-planner-btn').click(function() {
-
-            $('#sub-planner').removeClass('open-sub-planner');
-            $(this).addClass('close-sub-planner');
-            $('#edit-planner-btn').removeClass('close-sub-planner');
-
-        });
-
-    });
-</script>
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".mySwiper", {
@@ -696,7 +677,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             },
             series: {
                 marker: {
-                    enabled: false
+                    enabled: true
                 },
                 events: {
                     legendItemClick: function() {

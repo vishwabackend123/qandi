@@ -25,7 +25,7 @@
             <div id="email-box">
                 <p class="mb-0">Welcome to UniQ</p>
                 <p>“Sign-up using your email address and mobile number.”</p>
-                <div class="pt-3">
+                <div class="pt-3 emailNumdiv">
                     <div class="form-group flds">
                         <input type="text" class="form-control email-addrs disable-value" placeholder="Enter address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off" value="{{$referral_email ?? ''}}">
                         <span class="error-sms enter-otp" id="errlog_email">Please enter your email address</span>
@@ -36,7 +36,7 @@
                         <span class="error-sms mobil-not-valid" id="errlog_mob">Please enter your mobile number</span>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="sign-btn"><button type="button" id="goto-otp-btn" class="btn btn-primary disbaled-btn active-btn text-uppercase">Next</button></div>
+                    <div class="sign-btn"><button type="button" id="goto-otp-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Next</button></div>
                 </div>
 
             </div>
@@ -44,16 +44,18 @@
             <div id="otp-box">
                 <p class="mb-0">Welcome to UniQ</p>
                 <p>"You must have received an OTP from us in your inbox or message"</p>
-                <div class="pt-3">
+                <div class="pt-3 verifyBox">
                     <div class="form-group flds">
                         <input type="text" class="form-control pass disable-value" onkeypress="return isNumber(event)" name="reg_otp" id="reg_otp" minlength="5" maxlength="5" placeholder="Enter OTP" autocomplete="off">
                         <span class="error-sms enter-otp" id="errlog_otp"></span>
                         <span class="error-sms wrong-otp" id="errlog_auth"></span>
+                        <p class="text-right" id="wait_otp_div">Resend OTP in 180 sec</p>
                     </div>
+
                     <p id="resendOtp_link" class="text-right">Resend OTP in 180 sec</p>
                     <div class="clearfix"></div>
                     <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
-                    <div class="sign-btn"><button type="submit" class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign Up</button></div>
+                    <div class="sign-btn"><button type="submit" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign Up</button></div>
                 </div>
             </div>
         </form>
@@ -75,6 +77,53 @@
 
 <script type="text/javascript">
     $('#resendOtp_link').hide();
+
+    $('#user_name').keyup(function() {
+        var value = this.value;
+        var length = value.length;
+        if (value != '') {
+            $('#goto-mobile-btn').removeAttr("disabled");
+            $('#goto-mobile-btn').removeClass("disbaled-btn");
+        } else {
+            $('#goto-mobile-btn').attr('disabled', 'disabled');
+            $('#goto-mobile-btn').addClass("disbaled-btn");
+        }
+    });
+    $(function() {
+        $('.emailNumdiv input').keyup(function() {
+            var empty = false;
+            $('.emailNumdiv input').each(function() {
+                if ($(this).val() == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#goto-otp-btn').attr('disabled', 'disabled');
+                $('#goto-otp-btn').addClass("disbaled-btn");
+            } else {
+                $('#goto-otp-btn').removeAttr('disabled');
+                $('#goto-otp-btn').removeClass("disbaled-btn");
+            }
+        });
+
+        $('.verifyBox input').keyup(function() {
+            var empty = false;
+            $('.verifyBox input').each(function() {
+                if ($(this).val() == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#otp-verify-btn').attr('disabled', 'disabled');
+                $('#otp-verify-btn').addClass("disbaled-btn");
+            } else {
+                $('#otp-verify-btn').removeAttr('disabled');
+                $('#otp-verify-btn').removeClass("disbaled-btn");
+            }
+        });
+    });
 
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
@@ -98,19 +147,6 @@
         return true;
     }
 
-    $('#user_name').keyup(function() {
-        var value = this.value;
-        var length = value.length;
-        if (value != '') {
-            $('#goto-mobile-btn').removeAttr("disabled");
-            $('#goto-mobile-btn').removeClass("disbaled-btn");
-        } else {
-            $('#goto-mobile-btn').attr("disabled");
-            $('#goto-mobile-btn').addClass("disbaled-btn");
-        }
-    });
-
-
     $(function() {
 
         $('#goto-mobile-btn').click(function() {
@@ -126,6 +162,7 @@
             }
 
         });
+
 
         $('#goto-otp-btn').click(function() {
             $check = 0;
@@ -291,7 +328,7 @@
 
     function resentOtpTime() {
         var timeLeft = 180;
-        var elem = document.getElementById('some_div');
+        var elem = document.getElementById('wait_otp_div');
         var timerId = setInterval(countdown, 1000);
 
         function countdown() {
@@ -299,12 +336,12 @@
             if (timeLeft == -1) {
                 clearTimeout(timerId);
                 $('#resendOtp_link').show();
-                $('#some_div').hide();
+                $('#wait_otp_div').hide();
                 //sentotplogin();
                 //$('#goto-otp-btn').click();
 
             } else {
-                $('#some_div').show();
+                $('#wait_otp_div').show();
                 // elem.innerHTML = 'Resend OTP in <a href="javascript:void(0);"  class="forgot ">' + timeLeft + ' sec </a>';
                 elem.innerHTML = 'Resend OTP in ' + timeLeft + ' sec ';
                 timeLeft--;

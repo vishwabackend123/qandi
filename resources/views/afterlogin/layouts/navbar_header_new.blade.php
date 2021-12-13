@@ -3,15 +3,15 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <a href="javascript:void(0);"><span class="user-pic-block"><img src="{{$imgPath}}" class=" user-pic"></span></a>
+                    <a href="javascript:void(0);" class="UserPro"><span class="user-pic-block"><img src="{{$imgPath}}" class=" user-pic"></span></a>
                     <span class="user-name-block ps-3 pe-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
-                    <span class="notification me-5 ms-4" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification"><img src="{{URL::asset('public/after_login/new_ui/images/bell.png')}}"></span>
-                    <span class="notification ms-4">
+                    <span id="nodificbell" class="notification me-5 ms-4" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification"> <img src="{{URL::asset('public/after_login/new_ui/images/bell.png')}}"></span>
+                    <span id="plannCal" class="notification ms-4">
                         <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample">
                             <img src="{{URL::asset('public/after_login/new_ui/images/calender.png')}}">
                         </a>
                     </span>
-                    <span class="notification ms-4"><a href="{{route('overall_analytics')}}"><img src="{{URL::asset('public/after_login/new_ui/images/Group1831.png')}}"></a></span>
+                    <span id="overAna" class="notification ms-4"><a href="{{route('overall_analytics')}}"><img src="{{URL::asset('public/after_login/new_ui/images/Group1831.png')}}"></a></span>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
-                <div class="planner-scroll" style="overflow: auto; width: auto; height: 70vh;">
+                <div class="planner-scroll" style="overflow-y: scroll; overflow-x: hidden; height: 70vh;">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
                     <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
 
@@ -36,11 +36,11 @@
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
-                                    <div class="col-5 me-2">
+                                    <div class="col-6">
                                         <label class="d-block">Start Date</label>
                                         <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required="" min="2021-11-29">
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <label class="d-block">End Date</label>
                                         <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly="" required="">
                                     </div>
@@ -228,7 +228,7 @@
 
 <!--notification-right End-->
 <div class="notification-block width collapse" id="collapseNotification">
-    <div class=" notification-wrapper ">
+    <div class="planner-wrapper ">
         <div class=" notification-right ">
             <a href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
             <div class=" notification-scroll ">
@@ -249,17 +249,21 @@
     </div>
 </div>
 <!--notification-right End-->
-
+<!-- 
+<img src="{{ URL::asset('public/after_login/new_ui/images/subs.png')}}">
+<img src="{{URL::asset('public/after_login/new_ui/images/profile.png')}}">
+<img src="{{URL::asset('public/after_login/new_ui/images/log-out.png')}}">
+-->
 <!--profile-section-->
-<div class="main-profile-section">
+<div class="main-profile-section width collapse" id="profileAcc">
 
-    <div class="account-wrapper">
+    <div class="account-wrapper new">
         <div class="profile-section">
             <ul>
-                <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/profile.png')}}"></span> Account</a>
+                <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar"><span><i class="fa fa-user"></i></span> Account</a>
                 </li>
-                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/subs.png')}}"></span> Subscription</a></li>
-                <li><a href="javascript:void(0);" class="log-out-btn accountsidebar"><span><img src="{{URL::asset('public/after_login/new_ui/images/log-out.png')}}"></span> Log out</a></li>
+                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar"><span> <i class="fa fa-credit-card"></i> </span> Subscription</a></li>
+                <li><a href="javascript:void(0);" class="log-out-btn accountsidebar"><span> <i class="fa fa-sign-out"></i></span> Log out</a></li>
             </ul>
         </div>
         <!--profile-section-->
@@ -304,7 +308,7 @@
                 </div>
             </div>
             <!--profile-detail-->
-            <div class="profile-show">
+            <div class="profile-show" style="min-height:650px;">
                 <div class="profile-picture-txt">
                     <div class="p-picture">
                         <img src="{{$imgPath}}" class="profile-pic uswereditpic">
@@ -316,7 +320,7 @@
                         <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
                         <button class="edit-btn-show"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
                     </div>
-                    <div class="achievement">
+                    <!-- <div class="achievement">
                         <h4>Achievements</h4>
                         <ul>
                             <li>You attempted 5 consecutive exams on time!</li>
@@ -324,7 +328,7 @@
                             <li>You attempted 5 consecutive exams on time!</li>
                             <li>You attempted 5 consecutive exams on time!</li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
                 <!--profile-picture-->
             </div>
@@ -352,7 +356,7 @@
                 </div>
                 <span id="image-upload-response" class=""></span>
 
-                <div class="btm-form-flds">
+                <div class="btm-form-flds  pe-3 pb-5">
                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                         <div class="form-flds">
                             <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>

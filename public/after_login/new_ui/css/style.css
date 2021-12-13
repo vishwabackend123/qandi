@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
-
-body {
-    font-family: 'Manrope', sans-serif;
+- body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
     background: #f6f9fd;
-    margin: 0px;
-    padding: 0px;
-
 }
 
 a {
@@ -19,32 +16,6 @@ button {
     outline: none;
     text-decoration: none;
 }
-
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-strong {
-    font-family: 'Manrope', sans-serif !important;
-}
-
-button {
-    font-family: 'Manrope', sans-serif !important;
-}
-
-input {
-    font-family: 'Manrope', sans-serif !important;
-}
-
-.main-wrapper {
-    font-family: 'Manrope', sans-serif !important;
-}
-
 
 
 /** popup open bydefault on index page dashboard bhim**/
@@ -79,7 +50,6 @@ input {
 /** end here**/
 
 /* Test screen css 30-Nov bhim */
-
 
 .question-block i.fa {
     box-shadow: 0px 2px 5px 0px #a1def6;
@@ -269,44 +239,17 @@ button#goto-exam-btn {
 
 /** end test screen css**/
 /** notification page **/
-.notification-block {
-    position: fixed;
-    right: 0px;
-    width: 95.5%;
-    z-index: 9;
-    background-color: rgba(255, 255, 255, 0.81);
-    background-blend-mode: hue;
-    backdrop-filter: blur(4px);
-    top: 0;
-    padding-top: 120px;
-    animation-name: reducetime;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
-.notification-wrapper {
-    height: 100vh;
-
-    max-width: 100%;
-    position: relative;
-    /* right: 0; */
-    top: 100;
-}
-
 .notification-right {
     position: absolute;
-    padding-right: 20px;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    min-width: 440px;
+    top: 0%;
+    right: 5px;
+    border-radius: 36px;
+    width: 435px;
 
-    width: 0px;
-    top: 0;
-    max-width: 440px;
-    animation-name: reducetime;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+    padding: 25px 15px 15px 15px;
+    z-index: 99;
+    /*background: #fff;
+    box-shadow: 0 1px 30px 0 rgb(0 0 0 / 5%);*/
 }
 
 .notification-txt {
@@ -328,19 +271,36 @@ button#goto-exam-btn {
 }
 
 .notification-right a {
-    z-index: 999;
+    z-index: 99;
     position: absolute;
-    top: -50px;
+    top: -20px;
     right: 30px;
     background: #fff;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
 }
 
+div#collapseNotification {
+    position: fixed;
+    right: 0px;
+    width: 95.5%;
+    z-index: 99;
+    background-color: rgb(233 233 233 / 81%);
+    background-blend-mode: hue;
+    backdrop-filter: blur(4px);
+    top: 0;
+    padding-top: 92px;
+    animation-name: reducetime;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    padding-top: 15px !important;
+    margin-top: 70px;
+}
+
 .notification-right a img {
-    width: 40px;
+    width: 30px;
 }
 
 .notification-right {
@@ -385,7 +345,7 @@ span.bell-noti {
 .profile-section {
     border-radius: 20px;
     position: absolute;
-    /* top: 20%; */
+    top: 0%;
     right: 0px;
     width: 300px;
     height: 100%;
@@ -419,17 +379,16 @@ span.bell-noti {
 
 .leader-board {
     width: 400px;
+    height: 100%;
     background: #fff;
     border-radius: 56px;
-    padding: 15px 20px 15px 60px;
+    padding: 15px;
     position: absolute;
-    right: 24%;
-    /*     top: 20%; */
+    right: 23%;
+    top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
-    border-top-left-radius: 0;
 }
-
 
 .leader-board h4 {
     text-align: right;
@@ -502,7 +461,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 470px;
+    height: 450px;
     overflow: overlay;
 }
 
@@ -831,6 +790,10 @@ p.tab-title {
     border-top: 1px solid transparent;
 }
 
+.listing-details .name-txt {
+    width: 34% !important;
+}
+
 .sub-details {
     color: #231f20;
     font-size: 20px;
@@ -845,7 +808,7 @@ p.tab-title {
 .prgress-i-txt {
     display: inline-block;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .prgress-i-txt .progress_text {
@@ -916,7 +879,7 @@ p.tab-title {
     float: left;
     list-style: none;
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .course-star li strong {
@@ -1174,6 +1137,10 @@ p.success-img {
     bottom: 0;
     left: 0;
     z-index: 999;
+}
+
+.slimScrollBar {
+    z-index: 9 !important;
 }
 
 .dash-nav-link {
@@ -1624,15 +1591,16 @@ header {
 
 .name-txt {
     text-align: left;
-    font: normal normal 600 22px/33px Poppins;
+    font: normal normal 600 20px/24px Manrope;
     letter-spacing: 0px;
     color: #231f20;
     text-transform: uppercase;
+    width: 34%;
 }
 
 .name-txt-sml {
     text-align: left;
-    font: normal normal normal 18px/27px Poppins;
+    font: normal normal normal 18px/27px Manrope;
     letter-spacing: 0px;
     color: #2c3348;
     text-transform: uppercase;
@@ -1962,7 +1930,7 @@ header {
 }
 
 .question {
-    font: normal normal normal 18px/28px Poppins;
+    font: normal normal normal 18px/28px Manrope;
     letter-spacing: 0px;
     color: #2c3348;
     position: relative;
@@ -1983,7 +1951,7 @@ header {
 
 .ans {
     color: #2c3348;
-    font: normal normal normal 18px/27px Poppins;
+    font: normal normal normal 18px/27px Manrope;
     height: 100%;
     width: 100%;
     position: relative;
@@ -2320,12 +2288,12 @@ header {
 }
 
 .montain-txt {
-    font: normal normal normal 16px/20px Poppins;
+    font: normal normal normal 16px/20px Manrope;
     color: #746c6e;
 }
 
 .plus-sign {
-    font: normal normal 600 48px/32px Poppins;
+    font: normal normal 600 48px/32px Manrope;
     color: #746c6e;
     margin-right: 10px;
 }
@@ -2480,7 +2448,7 @@ header {
 }
 
 .subj-name {
-    font: normal normal normal 18px/27px Poppins;
+    font: normal normal normal 18px/27px Manrope;
     color: #2c3348;
 }
 
@@ -2489,7 +2457,7 @@ header {
     right: 0;
     min-width: 31px;
     text-align: center;
-    font: normal normal normal 16px/20px Poppins;
+    font: normal normal normal 16px/20px Manrope;
     height: 24px;
 }
 
@@ -2611,11 +2579,28 @@ header {
     background: #fff4cf;
 }
 
+#profileAcc {
+    position: fixed;
+    right: 0px;
+    width: 95.5%;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.81);
+    background-blend-mode: hue;
+    backdrop-filter: blur(4px);
+    top: 0;
+    padding-top: 92px;
+    animation-name: reducetime;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    padding-top: 5px;
+    margin-top: 70px;
+}
+
 .planmner-block {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 9;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -2894,7 +2879,7 @@ header {
 }
 
 .remind-box {
-    font: normal normal normal 14px/21px Poppins;
+    font: normal normal normal 14px/21px Manrope;
     letter-spacing: 0px;
     color: #2C3348;
     opacity: 0.3;
@@ -2996,7 +2981,7 @@ header {
 
 .download-head {
     color: #2C3348;
-    font: normal normal normal 28px/48px Poppins;
+    font: normal normal normal 28px/48px Manrope;
 }
 
 .text-box {
@@ -3514,7 +3499,7 @@ span#slide-input {
 }
 
 .examSect .rightSectH {
-    font-family: Poppins;
+    font-family: Manrope;
     font-size: 18px;
     font-weight: 600;
 }
@@ -3611,6 +3596,7 @@ span#slide-input {
 }
 
 /* end Test screen */
+
 
 
 @media(min-width:1281px) and (max-width:1320px) {
@@ -4297,6 +4283,77 @@ span#slide-input {
 }
 
 
+/*signup-pay-subscription.html*/
+
+.PayBttn {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+}
+
+.TotalAmount {
+    background: #00baff !important;
+    border-radius: 25px;
+}
+
+.Fullsub-amt-subN {
+    background: #fff;
+    border-radius: 20px;
+    border: solid 1px #bce0fd;
+}
+
+.red-dots1 {
+    position: absolute;
+    top: -20px;
+    width: 6px;
+    height: 6px;
+    background: #00baff;
+    border-radius: 10px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 99;
+}
+
+.outer-logo img {
+    width: 110px;
+}
+
+.PayBttn:active:focus {
+    box-shadow: none;
+}
+
+@media(max-width:767px) {
+    [class*="col-"] {
+        width: 85%;
+    }
+
+    .Fullsub-amt-subN .d-flex {
+        display: block !important;
+    }
+}
+
+/*end signup-pay-subscription.html*/
+/* Signup Payment Gateway */
+.PaymentGway {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+}
+
+.Pay-MentSect {
+    margin-bottom: 35px;
+}
+
+.PaymentGway:active:focus {
+    box-shadow: none;
+}
+
+/*end Signup Payment Gateway */
+
 /** subscription screen **/
 .subscription {
     width: 49%;
@@ -4304,11 +4361,10 @@ span#slide-input {
     border-radius: 56px;
     padding: 15px 20px 15px 25px;
     position: absolute;
-    right: 24%;
-    /*     top: 20%; */
+    right: 23%;
+    top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
-
 }
 
 .subscription .profile-picture-txt .p-picture {
@@ -4321,6 +4377,16 @@ span#slide-input {
 
 .subscription .profile-picture-txt .p-text {
     width: 77%;
+}
+
+.log-out-screen .p-picture {
+    width: 80px;
+    border: 1px solid #5ebbfe;
+    border-radius: 50%;
+    height: 80px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .subscription h4 {
@@ -4364,7 +4430,6 @@ span#slide-input {
 }
 
 /** end here**/
-
 /** Log out screen **/
 .log-out-screen {
     width: 26.7%;
@@ -4372,11 +4437,19 @@ span#slide-input {
     border-radius: 56px;
     padding: 40px 20px 40px 25px;
     position: absolute;
-    right: 24%;
-    /* top: 20%; */
+    right: 23%;
+    top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
 
+}
+
+.profile-section ul li a span i {
+    font-size: 25px;
+    line-height: 30px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 .log-out-screen h4 {
@@ -4400,19 +4473,9 @@ span#slide-input {
     width: 84%;
 }
 
-.log-out-screen .p-picture img {
-    width: 60px;
-    border: 1px solid #5ebbfe;
-    border-radius: 50%;
-    height: 60px;
-    text-align: center;
-    overflow: hidden;
-
-}
-
 /** end here **/
 /*** profile-show **/
-
+/*
 .blure-bg {
     content: "";
     position: fixed;
@@ -4428,6 +4491,7 @@ span#slide-input {
     animation-duration: 1s;
     animation-fill-mode: both;
 }
+*/
 
 .account-wrapper {
     height: 100vh;
@@ -4438,10 +4502,14 @@ span#slide-input {
 
 }
 
+.col-xl-3 .slimScrollDiv .slimScrollBar {
+    height: 55% !important;
+}
+
 .profile-show {
     position: absolute;
     top: 0px;
-    left: -88%;
+    left: -100%;
     width: 100%;
     background: #fff;
     padding: 10px 15px;
@@ -4542,7 +4610,6 @@ span#slide-input {
 }
 
 /** end here**/
-
 /** Edit form css **/
 .edit-form {
     width: 100%;
@@ -4641,6 +4708,55 @@ button.save-btn {
 
 /** end here **/
 
+/* dinesh added css */
+label.error {
+    color: red;
+    font-size: 14px;
+}
+
+.leader-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.slimScrollBar {
+    z-index: 89;
+}
+
+.topic_name {
+    min-width: 113px;
+    text-align: left;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hi;
+    text-overflow: ellipsis;
+}
+
+.chapter_name {
+    min-width: 113px;
+    text-align: left;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+.p-picture img {
+    width: 100%;
+    height: 100%;
+}
+
+/* dinesh added css end */
+
 /* how much like popup */
 #favSubResponse .modal-content.rounded-0 {
     border-radius: 56px !important;
@@ -4669,8 +4785,7 @@ button.save-btn {
 }
 
 /* end how much like popup */
-
-/* end full scan test popup resonsive */
+/* end how much popup resonsive */
 
 @media(max-width:991px) {
     #favSubResponse .rating .lbl-text {
@@ -4685,6 +4800,8 @@ button.save-btn {
 }
 
 /* end how much like */
+
+
 /* full scan test popup */
 #fullTest_Dashboard .modal-content.rounded-0 {
     border-radius: 56px !important;
@@ -4717,6 +4834,7 @@ button.save-btn {
 #fullTest_Dashboard .skip-dashboard {
     background: transparent !important;
     border: none;
+    color: #00baff !important;
 }
 
 /* end full scan test popup */
@@ -4736,50 +4854,3 @@ button.save-btn {
 }
 
 /* end full scan test popup resonsive */
-
-/* dinesh added css */
-label.error {
-    color: red;
-    font-size: 14px;
-}
-
-.leader-pic {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-}
-
-.slimScrollBar {
-    z-index: 89;
-}
-
-.topic_name {
-    min-width: 113px;
-    text-align: left;
-    letter-spacing: 0px;
-    text-transform: capitalize;
-    opacity: 1;
-    max-width: 170px;
-    white-space: nowrap;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
-}
-
-.chapter_name {
-    min-width: 113px;
-    text-align: left;
-    letter-spacing: 0px;
-    text-transform: capitalize;
-    opacity: 1;
-    max-width: 300px;
-    white-space: nowrap;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
-}
-
-.p-picture img {
-    width: 100%;
-    height: 100%;
-}
-
-/* dinesh added css end */

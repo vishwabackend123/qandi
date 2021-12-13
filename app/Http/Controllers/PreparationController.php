@@ -212,6 +212,8 @@ class PreparationController extends Controller
             $preparation_list = [];
         }
 
+
+
         return view('afterlogin.Preparation.preparation_center_ajax', compact('values', 'preparation_list'));
     }
 
@@ -808,11 +810,11 @@ class PreparationController extends Controller
         $exam_id = $userData->grade_id;
         $chapter_id = $request->chapter_id;
         $type = $request->type;
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapter-wise-resources/' . $exam_id . '/' . $user_id . '/' . $chapter_id;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapter-wise-resources/' . $user_id . '/' . $exam_id .  '/' . $chapter_id;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL =>$api_url,
+            CURLOPT_URL => $api_url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -831,7 +833,7 @@ class PreparationController extends Controller
         } else {
             $preparation_list = [];
         }
-//        dd($preparation_list);
+
         switch ($type) {
             case 'presentations':
                 return view('afterlogin.Preparation.preparation_center_ajax', compact('type', 'preparation_list'));

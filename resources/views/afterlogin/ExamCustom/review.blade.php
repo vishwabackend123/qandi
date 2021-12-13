@@ -287,7 +287,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     $div_class = '';
                     }@endphp
                     <div class="d-flex align-items-center">
-                        <div class="review-questions-box {{$div_class}} mx-2 mb-3">
+                        <div class="review-questions-box {{$div_class}} mx-2 mb-3" style="overflow-x:scroll;">
                             <div class="d-flex">
                                 <div class="me-3">Q{{$quKee}}. </div>
                                 <p class="mb-0">{!! $value->question !!} </p>

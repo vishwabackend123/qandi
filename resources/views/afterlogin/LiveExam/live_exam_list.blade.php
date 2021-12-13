@@ -1,18 +1,24 @@
-@extends('afterlogin.layouts.app')
+@extends('afterlogin.layouts.app_new')
 
+@php
+$userData = Session::get('user_data');
+@endphp
 @section('content')
-
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar')
-<div class="main-wrapper bg-gray h-100">
-    <!-- top navbar -->
-    @include('afterlogin.layouts.navbar_header')
+@include('afterlogin.layouts.sidebar_new')
+<!-- sidebar menu end -->
+<div class="main-wrapper">
+
+    <!-- End start-navbar Section -->
+    @include('afterlogin.layouts.navbar_header_new')
+    <!-- End top-navbar Section -->
+
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12  p-lg-2">
+                <div class="col-lg-12  p-lg-5">
 
-                    <div class="tab-wrapper mt-0">
+                    <div class="tab-wrapper live-exam">
                         <ul class="nav nav-tabs cust-tabs-white" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-3" aria-hidden="true"></i> LIVE EXAM</a>
@@ -21,159 +27,170 @@
                                 <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true"><i class="fa fa-circle text-danger me-3" aria-hidden="true"></i> LIVE EXAM RESULTS</a>
                             </li>
 
+
                         </ul>
 
                         <div class="tab-content cust-tab-content  bg-white" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
+
+                                <h4 class="py-3">Upcoming Live Exams</h4>
                                 <div class="scroll-div-live-exm">
                                     @if(!empty($schedule_list))
-                                    <div class=" h-100  bg-blue p-3">
-                                        <div class="row">
-                                            @foreach($schedule_list as $sche)
-                                            @php
-                                            $today = date("d-m-y", time());
-                                            $start_date = $sche->start_date;
-                                            $end_date =$sche->end_date;
-                                            $test_completed_yn =$sche->test_completed_yn;
-                                            @endphp
-                                            @if($test_completed_yn == "N")
-                                            <div class="col-md-6 col-lg-4 mb-4 ">
-                                                <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
-                                                    <div class="d-flex align-items-center pb-2 listing-details ">
-                                                        <span class="mr-3 topics-name fw-bold">{{$sche->subject_name}}({{$sche->exam_name}})</span>
 
-                                                    </div>
+                                    @foreach($schedule_list as $sche)
+                                    @php
+                                    $today = date("d-m-y", time());
+                                    $start_date = $sche->start_date;
+                                    $end_date =$sche->end_date;
+                                    $test_completed_yn =$sche->test_completed_yn;
+                                    @endphp
+                                    @if($test_completed_yn == "N")
+                                    <ul class="speci-text">
+                                        <li> <span class="sub-details">{{$sche->subject_name}}({{$sche->exam_name}})</span>
+                                        </li>
+                                        <li><strong>Start Date: {{$start_date}}</strong>
+                                        </li>
+                                        <li><strong>End Date: {{$end_date}}</strong>
+                                        </li>
 
-                                                    <div class=" d-flex py-2 listing-details w-100 ">
-                                                        <p class="date-start-left mb-0 me-3">Start Date</br>{{$start_date}}</span>
-                                                        <p class="date-end-right ms-auto mb-0 text-right">End Date</br>{{$end_date}}</span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center pt-2 flex-wrap">
-                                                        <small>{{$sche->questions_count}} Questions </small>
-                                                        @if($start_date<=$today && $end_date>=$today)
-                                                            <a href="{{route('live_exam',$sche->schedule_id)}}" class="btn btn-danger px-5 rounded-0 ms-auto"> Start</a>
-                                                            @endif
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            @else
-                                            <div class="col-md-6 col-lg-4 mb-4 ">
-                                                <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
-                                                    <div class="d-flex align-items-center pb-2 listing-details ">
-                                                        <span class="mr-3 topics-name fw-bold">{{$sche->subject_name}}({{$sche->exam_name}})</span>
-
-                                                    </div>
-
-                                                    <div class=" d-flex py-2 listing-details w-100 ">
-                                                        <p class="date-start-left mb-0 me-3">Start Date</br>{{$start_date}}</span>
-                                                        <p class="date-end-right ms-auto mb-0 text-right">End Date</br>{{$end_date}}</span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center pt-2 flex-wrap">
-                                                        <small>{{$sche->questions_count}} Questions </small>
-
-                                                        <a href="{{route('live_exam',$sche->schedule_id)}}" class="btn btn-danger px-5 rounded-0 ms-auto disabled"> Start</a>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            @endif
-
-                                            @endforeach
-
-                                        </div>
-
-                                    </div>
+                                        <li>{{$sche->questions_count}} Questions</a>
+                                        </li>
+                                        <li>
+                                            @if($start_date<=$today && $end_date>=$today) <a href="{{route('live_exam',$sche->schedule_id)}}"> <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempt
+                                                        Exam</button></a>
+                                                @endif
+                                        </li>
+                                    </ul>
                                     @else
-                                    <div class=" h-100  bg-blue p-3">
-                                        <div class="row">
-                                            <div class="d-flex align-items-center justify-content-center h-100 flex-column bg-blue">
-                                                <!-- <p>Please wait for the Exam to start…</p> -->
-                                                <p>No live exam available right now...</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <ul class="speci-text">
+                                        <li> <span class="sub-details">{{$sche->subject_name}}({{$sche->exam_name}})</span>
+                                        </li>
+                                        <li><strong>Start Date: {{$start_date}}</strong>
+                                        </li>
+                                        <li><strong>End Date: {{$end_date}}</strong>
+                                        </li>
 
+                                        <li>{{$sche->questions_count}} Questions</a>
+                                        </li>
+                                        <li><button disabled class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempted
+                                            </button>
+
+                                        </li>
+                                    </ul>
                                     @endif
 
+                                    @endforeach
+
+                                    @else
+                                    <div class="text-center">
+                                        <span class="sub-details">No live exam available right now.</span>
+
+
+                                    </div>
+                                    @endif
                                 </div>
+                                <!-- <div class="active-bg-gray">
+                                    <ul class="speci-text">
+                                        <li> <span class="sub-details">UniQ Advance Level Exam - Series 4</span>
+                                        </li>
+                                        <li><strong>20-21 NOV 2021</strong>
+                                        </li>
+                                        <li>
+                                            <p>Opens in next 5 days</p>
+                                        </li>
+                                        <li><a href="#" class="">
+                                                <span class="show-detail">Show Details</span>
+                                                <span class="hide-detail">Hide Detailwws</span>
+                                            </a>
+                                        </li>
+                                        <li><button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                Register</button>
 
+                                        </li>
+                                    </ul>
+                                    <div class="details-exam">
+                                        <ul>
+                                            <li>
+                                                <span>Details about the exam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                <p>Time Slots: 9 am - 12 pm ; 12:30 pm - 3:30 pm </p>
+                                            </li>
+                                            <li>
+                                                <p>No Of Questions</p>
+                                                <p><strong>90 MCQ</strong> Questions</p>
+                                            </li>
+                                            <li>
+                                                <p>Duration</p>
+                                                <p><strong>180 </strong> minutes</p>
+                                            </li>
+                                            <li>
+                                                <p>Marks</p>
+                                                <p><strong>300</strong> Marks</p>
+                                            </li>
+                                            <li>
+                                                <p>Subjects</p>
+                                                <p><strong>Physics,Chemistry,&amp; Mathematics</strong></p>
+                                            </li>
 
+                                        </ul>
+                                    </div>
+                                </div> -->
                             </div>
+
                             <div class="tab-pane fade show" id="completed" role="tabpanel" aria-labelledby="over-tab">
+                                <h4 class="py-3">Live Exams Results</h4>
                                 <div class="scroll-div-live-exm">
+                                    @if(!empty($completed_list))
 
-                                    <div class=" h-100  bg-blue p-3">
-                                        @if(!empty($completed_list))
-                                        <div class="row">
+                                    @foreach($completed_list as $sche)
+                                    @php
+                                    $today = date("d-m-y", time());
+                                    $start_date = $sche->start_date;
+                                    $end_date =$sche->end_date;
+                                    @endphp
+                                    <ul class="speci-text">
+                                        <li> <span class="sub-details">{{$sche->subject_name}}({{$sche->exam_name}})</span>
+                                        </li>
+                                        <li><strong>Start Date: {{$start_date}}</strong>
+                                        </li>
+                                        <li><strong>End Date: {{$end_date}}</strong>
+                                        </li>
 
-                                            @foreach($completed_list as $sche)
-                                            @php
-                                            $today = date("d-m-y", time());
-                                            $start_date = $sche->start_date;
-                                            $end_date =$sche->end_date;
-                                            @endphp
-                                            <div class="col-md-6 col-lg-4 mb-4 ">
-                                                <div class="bg-white shadow-lg p-3 sub-topic-box h-100">
-                                                    <div class="d-flex align-items-center pb-2 listing-details ">
-                                                        <span class="mr-3 topics-name fw-bold">{{$sche->subject_name}}({{$sche->exam_name}})</span>
-                                                    </div>
+                                        <li>{{$sche->questions_count}} Questions</a>
+                                        </li>
+                                        <li><a href="{{route('live_exam_result',$sche->result_id)}}">
+                                                <button class="custom-btn-gray"></i>Exam Result
+                                                </button>
+                                            </a>
 
-                                                    <div class=" d-flex py-2 listing-details w-100 ">
-                                                        <p class="date-start-left mb-0 me-3">Start Date</br>{{$start_date}}</span>
-                                                        <p class="date-end-right ms-auto mb-0 text-right">End Date</br>{{$end_date}}</span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center pt-2 flex-wrap">
-                                                        <small>{{$sche->questions_count}} Questions </small>
+                                        </li>
+                                    </ul>
 
-                                                        <a href="{{route('live_exam_result',$sche->result_id)}}" class="btn btn-danger px-5 rounded-0 ms-auto"> Result</a>
+                                    @endforeach
 
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            @endforeach
-
-                                        </div>
-                                        @else
+                                    @else
+                                    <div class="text-center">
+                                        <span class="sub-details">No live exam Result is available.</span>
 
 
-                                        <div class="d-flex align-items-center justify-content-center h-100 flex-column bg-blue ">
-                                            <p class="align-middle">No live exam results available right now...</p>
-                                        </div>
                                     </div>
-
 
                                     @endif
                                 </div>
-
-
-
-
                             </div>
-
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
-
-
-
-
-@include('afterlogin.layouts.footer')
+@include('afterlogin.layouts.footer_new')
 
 <script type="text/javascript">
     $('.scroll-div-live-exm').slimscroll({
-        height: '70vh'
+        height: '60vh'
     });
 </script>
 @endsection

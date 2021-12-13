@@ -3,6 +3,13 @@
 @php
 $userData = Session::get('user_data');
 @endphp
+<style>
+  .topic_selected {
+    background-color: #5bc3ff !important;
+    color: #ffffff !important;
+  }
+</style>
+
 @section('content')
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
@@ -37,14 +44,14 @@ $userData = Session::get('user_data');
               <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
 
                 <div class="d-flex px-4 py-2 align-items-center justify-content-between">
-                  <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
+                  <span class="  mr-3 name-txt ">{{$sub->subject_name}}</span>
                   <p class="mb-0 ms-auto me-4 tab-title">You can pick topics / sub-topics or</p>
                   <form method="post" action="{{route('custom_exam')}}">
                     @csrf
                     <input type="hidden" name="subject_id" value="{{$sub->id}}">
                     <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                     <input type="hidden" name="question_count" value="30">
-                    <button type="button" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 active-btn" onclick=" submitToPopup(form)""><i class=" fa fa-pencil-square-o" aria-hidden="true"></i> take FULL test</button>
+                    <button type="submit" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 active-btn"><i class=" fa fa-pencil-square-o" aria-hidden="true"></i> take FULL test</button>
 
                   </form>
 
@@ -99,7 +106,14 @@ $userData = Session::get('user_data');
                   </div>
                   <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
                     <div class="d-flex px-4">
-                      <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                      <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                      <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','priority')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down"></i>Order by Priority</a></li>
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','sequence')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down-alt"></i> Order by Sequence</a></li>
+
+                      </ul>
                     </div>
                     <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4">
 
@@ -319,7 +333,7 @@ $userData = Session::get('user_data');
         success: function(result) {
           $("#topic_section_" + chapt_id).html('');
           $("#topic_section_" + chapt_id).html(result);
-          $('.slick-slider').slick('refresh');
+          $('#myTabContent .slick-slider').slick('refresh');
           $('#overlay').fadeOut();
           $('#topic_form').show();
 

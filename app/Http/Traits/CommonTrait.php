@@ -414,8 +414,11 @@ trait CommonTrait
 
     public function current_week_plan()
     {
-        $user_id = Auth::user()->id;
-        $exam_id = Auth::user()->grade_id;
+        $userData = Session::get('user_data');
+        $user_id = isset($userData->id) ? $userData->id : 0;
+        $exam_id = isset($userData->grade_id) ? $userData->grade_id : 0;
+
+
 
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');

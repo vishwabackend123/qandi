@@ -421,7 +421,7 @@ class HomeController extends Controller
         if ($validator->fails()) {
             // Redirect or return json to frontend with a helpful message to inform the user
             // that the provided file was not an adequate type
-            return response(['error' => $validator->errors()->getMessages(), 'success' => false]);
+            return response(json_encode(['error' => $validator->errors()->getMessages(), 'success' => false]));
         } else {
             // Store the File Now
             $userData = Session::get('user_data');
@@ -449,19 +449,15 @@ class HomeController extends Controller
                 curl_close($curl);
                 $aResponse = json_decode($response);
 
-
                 if (isset($aResponse->success) && $aResponse->success == true) {
 
                     $sessionData = Session::get('user_data');
                     $sessionData->user_profile_img = $aResponse->filename;
                     Session::put('user_data', $sessionData);
-
-
-
                     echo $response;
                 } else {
 
-                    echo $err;
+                    echo $response;
                 }
             }
         }
@@ -515,11 +511,11 @@ class HomeController extends Controller
     public function searchFriendWithKeyWord(Request $request)
     {
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $class_id = $userData->grade_id;
         $reqData = $request->all();
         $searchText = $reqData['search_text'];
+
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
         $curl_url = $api_URL . 'api/search-friend/' . $class_id . '/' . $searchText;
@@ -537,6 +533,7 @@ class HomeController extends Controller
         $response = curl_exec($curl);
         curl_close($curl);
         $aResponse = json_decode($response);
+
         $status = isset($aResponse->success) ? $aResponse->success : false;
 
         if ($status != false) {
@@ -544,12 +541,15 @@ class HomeController extends Controller
             $resp_list = isset($aResponse->response) ? $aResponse->response : [];
             $collection = collect($resp_list);
             $search_list = $collection->sortBy('user_rank')->all();
+
+            $response_rtn = [];
+            $response_rtn['success'] = $status;
+            $response_rtn['response'] = $search_list;
         } else {
             $resp_list = [];
-            $search_list = [];
+            $response_rtn = [];
         }
-
-        return $search_list;
+        return json_encode($response_rtn);
     }
 
     public function clearAllNotifications()
