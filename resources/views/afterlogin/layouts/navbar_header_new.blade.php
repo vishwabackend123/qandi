@@ -249,7 +249,7 @@
     </div>
 </div>
 <!--notification-right End-->
-<!-- 
+<!--
 <img src="{{ URL::asset('public/after_login/new_ui/images/subs.png')}}">
 <img src="{{URL::asset('public/after_login/new_ui/images/profile.png')}}">
 <img src="{{URL::asset('public/after_login/new_ui/images/log-out.png')}}">
@@ -359,13 +359,13 @@
                 <div class="btm-form-flds  pe-3 pb-5">
                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                         <div class="form-flds">
-                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required>
+                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
                         </div>
                         <div class="form-flds">
-                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
                         </div>
                         <div class="form-flds">
-                            <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                            <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
                             <p class="">This could be your first, last or nick name</p>
                         </div>
 
@@ -455,3 +455,17 @@
     </div>
 </div>
 <!--main-profile-section-->
+<script>
+    function lettersOnly(evt) {
+
+        evt = (evt) ? evt : event;
+        var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
+            ((evt.which) ? evt.which : 0));
+        if (charCode > 32 && (charCode < 65 || charCode > 90) &&
+            (charCode < 97 || charCode > 122)) {
+
+            return false;
+        }
+        return true;
+    }
+</script>
