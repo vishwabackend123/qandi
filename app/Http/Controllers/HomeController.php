@@ -535,9 +535,21 @@ class HomeController extends Controller
         ));
 
         $response = curl_exec($curl);
-
         curl_close($curl);
-        return json_decode($response);
+        $aResponse = json_decode($response);
+        $status = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($status != false) {
+
+            $resp_list = isset($aResponse->response) ? $aResponse->response : [];
+            $collection = collect($resp_list);
+            $search_list = $collection->sortBy('user_rank')->all();
+        } else {
+            $resp_list = [];
+            $search_list = [];
+        }
+
+        return $search_list;
     }
 
     public function clearAllNotifications()

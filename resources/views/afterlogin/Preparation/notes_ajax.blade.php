@@ -2,14 +2,14 @@
     <h2>{{$preparation_list->chapter_name ?? $preparation_list->chapter_name}}</h2>
     <div class="d-flex align-items-center">
         <div>
-            <div class="d-flex align-items-center">
-                <p class="m-0 pe-3">Proficiency</p>
-                <i class="fa fa-star text-secondary mx-2"></i>
-                <i class="fa fa-star text-secondary mx-2"></i>
-                <i class="fa fa-star text-secondary mx-2"></i>
-                <i class="fa fa-star text-light mx-2"></i>
-                <i class="fa fa-star text-light mx-2"></i>
-            </div>
+{{--            <div class="d-flex align-items-center">--}}
+{{--                <p class="m-0 pe-3">Proficiency</p>--}}
+{{--                <i class="fa fa-star text-secondary mx-2"></i>--}}
+{{--                <i class="fa fa-star text-secondary mx-2"></i>--}}
+{{--                <i class="fa fa-star text-secondary mx-2"></i>--}}
+{{--                <i class="fa fa-star text-light mx-2"></i>--}}
+{{--                <i class="fa fa-star text-light mx-2"></i>--}}
+{{--            </div>--}}
         </div>
         <div class="ms-auto">
 
