@@ -42,9 +42,7 @@ $userData = Session::get('user_data');
                                 <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.jpg')}}" alt="image not find"></span>
                                 <div class="button-sec  mt-3"><a href="{{route('overall_analytics')}}">See Analytics</a></div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">

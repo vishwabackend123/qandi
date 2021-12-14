@@ -168,6 +168,7 @@ Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 't
 
 /* Referal Controller Routes */
 Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'store_referral_friend'])->name('store_referral')->middleware('auth', 'menu');
+Route::any('referral/{referral_code}', [App\Http\Controllers\ReferralController::class, 'referral_signup'])->name('referral_signup');
 
 //google login Start
 
