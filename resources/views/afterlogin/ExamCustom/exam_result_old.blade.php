@@ -1,38 +1,38 @@
 <div class="content-wrapper">
-    <div class="container-fluid exam-analytics">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 mb-4">
-                <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i>Export Analytics</button>
+            <div class="col-12 mb-2">
+                <button class="btn btn-danger rounded-0 px-5" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i> Export Analytics</button>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <div class="bg-white shadow-lg p-3 position-relative">
-
+                <div class="bg-white shadow-lg p-3 position-relative h-100">
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
                     <div class="text-center">
-                        <!-- <img src="images/roundedgraph.jpg"> -->
+                        <!--  <img src={{URL::asset('public/after_login/images//roundedgraph.jpg')}}"> -->
                         <div id="scorecontainer"></div>
                     </div>
-                    <div class="row my-4">
-                        <div class="col">
+                    <div class="row my-3">
+                        <div class="col px-1 ps-4">
                             <span class="abrv-graph bg1"> </span>
-                            <span class="graph-txt">Correct Attempts</span>
+                            <p class="graph-txt text-uppercase">Correct Attempts</p>
                         </div>
-                        <div class="col">
+                        <div class="col px-1">
                             <span class="abrv-graph bg2"> </span>
-                            <span class="graph-txt">Wrong Attempts</span>
+                            <p class="graph-txt text-uppercase">Wrong Attempts</p>
                         </div>
-                        <div class="col">
+                        <div class="col px-1 pe-4">
                             <span class="abrv-graph bg3"> </span>
-                            <span class="graph-txt">Not Answered</span>
+                            <p class="graph-txt text-uppercase">Not Answered</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="bg-white shadow-lg p-3  position-relative">
-
+                <div class="bg-white shadow-lg p-4  position-relative h-100">
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
 
                     <div class="row">
                         <div class="col-md-4">
@@ -41,46 +41,51 @@
                                 <path class="circle-bg" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+                                <path class="circle" stroke-dasharray="{{isset($response->result_percentage)?$response->result_percentage:0}}, 100" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <text x="18" y="22.35" class="percentage">30%</text>
+                                <text x="18" y="21" class="percentage" style="font-size:9px;">{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}%</text>
                             </svg>
                         </div>
                         <div class="col-md-8">
                             <div class="d-flex flex-column">
-                                <div class="map-right-graph">
-                                    <div id="subjectScroe"></div>
-                                    <!-- <img src="images/right-graph.jpg"> -->
+                                <div class="me-4">
+                                    <figure class="highcharts-figure">
+                                        <div id="subjectScroe"></div>
+
+                                    </figure>
+                                    <!-- <img src="{{URL::asset('public/after_login/images/right-graph.jpg')}}"> -->
                                 </div>
                                 <div class="mt-auto btn-block">
-                                    <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button>
-                                    <div class="row mt-2">
+                                    <button class="btn btn-light-green rounded-0 w-100 mt-1" onclick='resetData("all")'>Overall</button>
+                                    <div class="row mt-4">
                                         @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                         @foreach($response->subject_wise_result as $subject)
                                         @php $subject=(object)$subject; @endphp
-                                        <div class="col"><button id="{{$subject->subject_name}}" class="btn btn-outline-secondary w-100 top-btn-pop text-white" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button></div>
+                                        <div class="col">
+                                            <button id="{{$subject->subject_name}}" class="btn btn-outline-secondary rounded-0 w-100" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button>
+                                        </div>
+                                        <!-- <div class="col">
+                                                <buton class="btn btn-outline-secondary rounded-0 w-100">Physics</buton>
+                                            </div>
+                                            <div class="col">
+                                                <buton class="btn btn-outline-secondary rounded-0 w-100 ">Chemistry</buton>
+                                            </div> -->
                                         @endforeach
                                         @endif
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-        <div class="row mt-5 mb-3">
+        <div class="row my-3">
             <div class="col-5">
-                <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
-
+                <div class="bg-white shadow p-4 d-flex flex-column position-relative h-100 ">
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <h5 class="dashboard-title mb-3">Subject Score</h5>
-
                     @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                     @foreach($response->subject_wise_result as $subject)
                     @php $subject=(object)$subject; @endphp
@@ -92,6 +97,7 @@
                     <div class="d-flex align-items-center mt-4 mb-2 pb-1">
                         <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>
                         <div class="progress ms-auto  col-8" style="overflow: visible;">
+
                             @if($correct_per > 0)
                             <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$correct_per}}%; overflow: visible;">
                                 <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="{{$correct_per}}%">{{$subject->correct_count}}</span>
@@ -99,7 +105,7 @@
                             @endif
                             @if($incorrect_per > 0)
                             <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$incorrect_per}}%;overflow: visible;">
-                                <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$incorrect_per}}">{{$subject->incorrect_count}}</span>
+                                <span class="prog-box red" data-bs-custom-class="tooltip-red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$incorrect_per}}%">{{$subject->incorrect_count}}</span>
                             </div>
                             @endif
                             @if($not_attempt_per > 0)
@@ -113,25 +119,28 @@
                     @endif
 
 
-                    <div class="row py-4 mt-4 mb-5">
-                        <div class="col d-flex align-items-center">
+
+                    <div class="row py-4 mt-4 mb-2">
+
+                        <div class="col px-1 ps-4">
                             <span class="abrv-graph bg1"> </span>
-                            <span class="graph-txt d-inline-block ms-2">Correct Attempts</span>
+                            <p class="graph-txt text-uppercase">Correct Attempts</p>
                         </div>
-                        <div class="col d-flex align-items-center">
+                        <div class="col px-1">
                             <span class="abrv-graph bg2"> </span>
-                            <span class="graph-txt d-inline-block ms-2">Wrong Attempts</span>
+                            <p class="graph-txt text-uppercase">Wrong Attempts</p>
                         </div>
-                        <div class="col d-flex align-items-center">
+                        <div class="col px-1 pe-4">
                             <span class="abrv-graph bg3"> </span>
-                            <span class="graph-txt d-inline-block ms-2">Not Answered</span>
+                            <p class="graph-txt text-uppercase">Not Answered</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col-7 ">
                 <div class="bg-white shadow position-relative">
-                    <div class="tab-wrapper h-100">
+                    <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
+                    <div class="tab-wrapper h-100 mt-0">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                             @php $subx=1; @endphp
                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
@@ -144,7 +153,6 @@
                             @endforeach
                             @endif
 
-
                         </ul>
 
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
@@ -155,8 +163,7 @@
                             $subject_id=$subject->subject_id;
                             @endphp
                             <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
-
-                                <div class="hScroll topicdiv-scroll">
+                                <div class="hScroll topicdiv-scroll pe-3">
                                     @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                                     @foreach($response->topic_wise_result as $topic)
                                     @php $topic=(object)$topic; @endphp
@@ -168,35 +175,37 @@
                                     @endphp
                                     @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
 
-                                    <div class="d-flex align-items-center mt-4 mb-2 pb-1 pe-3">
-                                        <span class="subj-name  col-4">{{!empty($topic->topic_name)?$topic->topic_name:''}}</span>
+                                    <div class="d-flex align-items-center mt-4 mb-2 pb-1">
+                                        <span class="subj-name me-4 col-3">{{!empty($topic->topic_name)?$topic->topic_name:''}}</span>
                                         <div class="progress col-8 ms-auto " style="overflow: visible;">
                                             @if($tcorrect_per > 0)
                                             <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
-                                                <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">{{$topic->correct_count}}</span>
+                                                <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
                                             </div>
                                             @endif
                                             @if($tincorrect_per > 0)
                                             <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$tincorrect_per}}%;overflow: visible;">
-                                                <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}">{{$topic->incorrect_count}}</span>
+                                                <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}%">{{$topic->incorrect_count}}</span>
                                             </div>
                                             @endif
                                             @if($tnot_attempt_per > 0)
                                             <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$tnot_attempt_per}}%;overflow: visible;">
-                                                <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}">{{$topic->unanswered_count}}</span>
+                                                <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}%">{{$topic->unanswered_count}}</span>
                                             </div>
                                             @endif
-
                                         </div>
                                     </div>
                                     @endif
                                     @endforeach
                                     @endif
                                 </div>
+
                             </div>
                             @php $topx++; @endphp
                             @endforeach
                             @endif
+                            <!--  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div> -->
                         </div>
                     </div>
                 </div>
@@ -205,16 +214,16 @@
         <div class="row mb-4">
             <div class="col-md-9">
                 <div class="bg-white shadow p-5 position-relative">
-
+                    <!--  <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>
                             <div id="rank"></div>
-
-                            <!-- <img src="images/bottom-left.jpg" /> -->
+                            {{-- <img src="{{URL::asset('public/after_login/images/bottom-left.jpg')}}" />--}}
                         </div>
                         <div class="col-md-8">
                             <div class="blue-block d-flex flex-column">
+                                <!--   <span>Your rank has improved (Previous Rank - 5987)</span> -->
                                 <span>Your Current Rank</span>
                                 <span class="text-success fs-1">{{$response->user_rank}}</span>
                             </div>
@@ -223,66 +232,21 @@
                                 <span class="text-dark fs-1">{{$response->total_participants}}</span>
                             </div>
                         </div>
-                        <!-- <div class="col-12 d-flex mt-5 mb-3">
-                            <button class="btn px-4 top-btn-pop text-white">Overall</button>
-                            <select class="form-select rounded-0 ms-3  w-25" aria-label="Default select example">
-                                <option selected>Subject</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <select class="form-select rounded-0 ms-3 w-25" aria-label="Default select example">
-                                <option selected>Topic</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div> -->
+
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="bg-white shadow p-5 d-flex flex-column position-relative">
-
-                    <span class="text-center w-100"><img src="{{URL::asset('public/after_login/new_ui/images/bottom-right.jpg')}}" /></span>
-                    <button class="btn w-100 mt-3 top-btn-pop text-white">Review Questions</button>
-                    <button class="btn-outline-secondary btn rounded-0 w-100 mt-3 px-1">Back to Dashboard</button>
+                    <span class="text-center w-100 h-100"><img class="img-thubnail" style="width:130px; height:170px;" src="{{URL::asset('public/after_login/images/bottom-right.jpg')}}" /></span>
+                    <a href="{{route('exam_review', $response->result_id) }}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
+                    <a href="{{url('/dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Modal Export Analytics-->
-<div class="modal fade" id="exportAnalytics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0 bg-light">
-            <div class="modal-header pb-0 border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body pt-0 px-5 ">
-                <div class="text-center my-5">
-                    <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download</button>
-                </div>
-                <!--  <p class="text-center text-secondary mb-5">OR</p>
-                <div class="input-group mb-3">
-                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i></div>
-                    <input type="text" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i> </div>
-                    <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
-                        <option class="text-secondary">Share it only this time</option>
-                    </select>
-                </div> -->
-                <div class="text-center my-5">
-                    <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
 @php
 $correct_cnt=isset($response->correct_count)?$response->correct_count:0;
 $incorrect_cnt=isset($response->wrong_count)?$response->wrong_count:0;

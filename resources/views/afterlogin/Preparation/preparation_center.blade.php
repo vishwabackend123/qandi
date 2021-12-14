@@ -68,60 +68,6 @@ $userData = Session::get('user_data');
                                         <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$video}}</span></a>
                                         <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$bmark}}</span></a>
                                     </span>
-                                    <!-- <span class="slbs-link mx-3">
-                                        <a href="#" role="button" aria-expanded="false">OVERALL Proficiency</a></span>
-                                    <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-
-
-                                        <div class="star animate">
-
-                                            <span class="full star-colour" data-value="1"></span>
-                                            <span class="half star-colour" data-value="0.5"></span>
-                                            <span class="selected star-colour"></span>
-
-                                        </div>
-
-                                        <div class="star animate">
-
-                                            <span class="full star-colour" data-value="2"></span>
-                                            <span class="half star-colour" data-value="1.5"></span>
-                                            <span class="selected star-colour"></span>
-
-                                        </div>
-
-                                        <div class="star animate">
-
-                                            <span class="full star-colour" data-value="3"></span>
-                                            <span class="half star-colour" data-value="2.5"></span>
-                                            <span class="selected star-colour"></span>
-
-                                        </div>
-
-                                        <div class="star">
-
-                                            <span class="full" data-value="4"></span>
-                                            <span class="half star-colour" data-value="3.5"></span>
-                                            <span class="selected"></span>
-
-                                        </div>
-
-                                        <div class="star">
-
-                                            <span class="full" data-value="5"></span>
-                                            <span class="half" data-value="4.5"></span>
-                                            <span class="selected"></span>
-
-                                        </div>
-
-                                        <div class="score score-rating js-score">
-                                            0 %
-
-                                        </div>
-                                    </div> -->
-
-
-
                                 </div>
                                 <div class="scroll-div">
                                     @foreach( $oSub->values as $val)
@@ -133,57 +79,6 @@ $userData = Session::get('user_data');
                                             <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$val->Videos}}</span></a>
                                             <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$val->Bookmarks}}</span></a>
                                         </span>
-                                        <!-- <span class="slbs-link mx-3">
-                                            <a href="#" role="button" aria-expanded="false">OVERALL Proficiency</a></span>
-                                        <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
-
-
-                                            <div class="star animate">
-
-                                                <span class="full star-colour" data-value="1"></span>
-                                                <span class="half star-colour" data-value="0.5"></span>
-                                                <span class="selected star-colour"></span>
-
-                                            </div>
-
-                                            <div class="star animate">
-
-                                                <span class="full star-colour" data-value="2"></span>
-                                                <span class="half star-colour" data-value="1.5"></span>
-                                                <span class="selected star-colour"></span>
-
-                                            </div>
-
-                                            <div class="star animate">
-
-                                                <span class="full star-colour" data-value="3"></span>
-                                                <span class="half star-colour" data-value="2.5"></span>
-                                                <span class="selected star-colour"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="4"></span>
-                                                <span class="half star-colour" data-value="3.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="star">
-
-                                                <span class="full" data-value="5"></span>
-                                                <span class="half" data-value="4.5"></span>
-                                                <span class="selected"></span>
-
-                                            </div>
-
-                                            <div class="score score-rating js-score">
-                                                0 %
-
-                                            </div>
-                                        </div> -->
 
 
 
@@ -224,7 +119,7 @@ $userData = Session::get('user_data');
                 <div class="main-center">
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
-                        <div>
+                        <!-- <div>
                             <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
@@ -233,13 +128,13 @@ $userData = Session::get('user_data');
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="ms-auto">
 
                             <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
                             <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
                             <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                         </div>
                     </div>
@@ -280,14 +175,14 @@ $userData = Session::get('user_data');
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
                         <div>
-                            <div class="d-flex align-items-center">
+                            <!-- <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="ms-auto">
 
@@ -336,14 +231,14 @@ $userData = Session::get('user_data');
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
                         <div>
-                            <div class="d-flex align-items-center">
+                            <!--  <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="ms-auto">
 
@@ -393,14 +288,14 @@ $userData = Session::get('user_data');
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
                         <div>
-                            <div class="d-flex align-items-center">
+                            <!-- <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="ms-auto">
 

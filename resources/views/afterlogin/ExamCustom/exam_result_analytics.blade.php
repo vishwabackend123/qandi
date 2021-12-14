@@ -1,7 +1,7 @@
-@extends('afterlogin.layouts.app')
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+@extends('afterlogin.layouts.app_new')
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+</script>
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
@@ -12,20 +12,25 @@
         $('#endExam').modal('show');
     });
 </script>
+@php
+$userData = Session::get('user_data');
+@endphp
 @section('content')
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar')
+@include('afterlogin.layouts.sidebar_new')
+<!-- sidebar menu end -->
+<div class="main-wrapper">
 
-<div class="main-wrapper bg-gray">
-    <!-- top navbar -->
-    @include('afterlogin.layouts.navbar_header')
+    <!-- End start-navbar Section -->
+    @include('afterlogin.layouts.navbar_header_new')
+    <!-- End top-navbar Section -->
     <div id="exam_result_analysis">
 
     </div>
 
 
 </div>
-<!-- <div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0  ">
             <div class="modal-header border-0">
@@ -42,8 +47,8 @@
 
         </div>
     </div>
-</div> -->
-@include('afterlogin.layouts.footer')
+</div>
+@include('afterlogin.layouts.footer_new')
 <script>
     $(document).ready(function() {
         url = "{{ url('exam_result_analysis/') }}";

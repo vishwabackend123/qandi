@@ -5123,3 +5123,225 @@ label.error {
 }
 
 /** end here on 9-12-2021 **/
+/** Bhim model popup css for preparation page 13-12-2021 desktop view only**/
+
+.modal-dialog {
+    border-radius: 56px !important;
+}
+
+.modal-dialog .modal-content.bg-light {
+    background-color: #ffffff !important;
+    border-radius: 56px !important;
+    padding: 20px;
+}
+
+.h-scroll-slim .d-flex.bg-white {
+    border: 1px solid #eee;
+    border-radius: 20px;
+}
+
+.ms-auto span.me-1 .bg-light-red {
+    background: #00baff !important;
+}
+
+/** End here 13-12-2021**/
+
+/* 11-12 test screen */
+
+#test_instruction .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+#test_instruction .test-info {
+    padding: 20px 0;
+    margin: 25px 0;
+}
+
+#test_instruction .slimScrollBar {
+    background: #21ccff !important;
+}
+
+#test_instruction button#goto-exam-btn {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(241deg, #21ccff, #00baff);
+    border: none;
+    padding: 15px 65px;
+    color: #fff;
+}
+
+/* end welcome instructions exam popup */
+/** End exam popup */
+#resume-test .modal-content.rounded-0,
+#FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
+#endExam .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+#endExam #See-Ana {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(241deg, #21ccff, #00baff);
+    border: none;
+    padding: 15px 65px;
+    color: #fff;
+}
+
+/* end end exam popup */
+
+/*** Rahul Exam analytics page css 13-12-2021 **/
+.exam-analytics {}
+
+.exam-analytics span.text-center.w-100 img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow-lg {
+    min-height: 430px;
+}
+
+.exam-analytics .map-right-graph img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow.p-3 {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
+    border-radius: 56px !important;
+    padding-bottom: 20px !important;
+}
+
+.exam-analytics .abrv-graph.bg1 {
+    background: #5cc129;
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2,
+.exam-analytics .abrv-graph.bg3 {
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2 {
+    background: #e62e2d;
+}
+
+.exam-analytics .row.my-4 .col {
+    text-align: center;
+}
+
+.exam-analytics button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+.exam-analytics .blue-block {
+    background: #eee;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .i-icon {
+    color: #62c2fe;
+}
+
+.exam-analytics .i-icon:hover {
+    color: #62c2fe;
+}
+
+.exam-analytics .bg-light-success {
+    background: #37c027;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.exam-analytics .bg-light-red {
+    background: red;
+}
+
+.exam-analytics .cust-tab-content {
+    padding: 0px 36px;
+    border-bottom-left-radius: 56px;
+    border-bottom-right-radius: 56px;
+}
+
+button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+/*** Exam analytics page css End 13-12-2021 **/
+
+/* dinesh per question timer 13-11-2021*/
+.tiny-green {
+    position: relative;
+    padding: 0px;
+    width: 180px;
+    background-color: #E4E4E4;
+    height: 18px;
+
+}
+
+.tiny-green div {
+
+    font-family: arial;
+    font-size: 3px;
+    height: inherit;
+    color: white;
+    text-align: right;
+    text-shadow: 0px 0px 2px #000;
+    text-indent: 9999px;
+    overflow: hidden;
+
+    background-color: #44CD7F;
+    /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
+
+}
+
+.counter {
+    position: absolute;
+    right: 25px;
+    top: 25px
+}
+
+.counter .progressBar .seconds {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
+    top: -2px;
+
+}
+
+.question-block p {
+    margin-bottom: 0px;
+}
+
+.activequestion {
+    border: 2px solid #5ddaff !important;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+/* dinesh per question timer */
