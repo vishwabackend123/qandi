@@ -3656,6 +3656,49 @@ span#slide-input {
 
 }
 
+@media(min-width:991px) and (max-width:1024px) {
+
+    /** profile page css **/
+    .profile-section {
+        width: 220px;
+        top: 8%;
+    }
+
+    .leader-board {
+        width: 310px;
+        right: 20%;
+        height: 100%;
+        top: 8%;
+    }
+
+    .profile-show {
+        height: 100%;
+        padding: 10px 0px;
+    }
+
+    .subscription .form-btns button {
+        margin-bottom: 20px;
+    }
+
+    .log-out-screen {
+        width: 50%;
+        right: 20%;
+        top: 8%;
+    }
+
+    button.cancel-btn {
+        margin-bottom: 15px;
+    }
+
+    .subscription {
+        right: 20%;
+        top: 8%;
+    }
+
+    /** end here **/
+}
+
+
 
 @media(min-width:992px) and (max-width:1280px) {
 
@@ -3787,6 +3830,54 @@ span#slide-input {
     /* planner screen end */
 }
 
+@media(min-width:768px) and (max-width:990px) {
+
+    /** profile page css **/
+    .profile-section {
+        width: 190px;
+    }
+
+    .leader-board {
+        width: 270px;
+        right: 20%;
+        height: 100%;
+        padding-left: 0px;
+    }
+
+    .profile-show {
+        height: 100%;
+        padding: 10px 0px;
+    }
+
+    .subscription .form-btns button {
+        margin-bottom: 20px;
+    }
+
+    .log-out-screen {
+        width: 50%;
+        right: 20%;
+    }
+
+    .subscription {
+        right: 20%;
+    }
+
+    .profile-picture-txt .p-text {
+        padding-right: 0px;
+    }
+
+    .profile-picture-txt {
+        padding: 15px;
+        display: inline-block;
+    }
+
+    .subscription .profile-picture-txt .p-picture {
+        height: 60px;
+    }
+
+    /** end here **/
+}
+
 @media(min-width:768px) and (max-width:991px) {
 
     /*Test screen */
@@ -3910,9 +4001,129 @@ span#slide-input {
     div#collapseExample [class*="col-"] {
         width: 100%;
     }
+
+    .col-lg-12.p-lg-5.pt-none {
+        width: 100% !important;
+    }
+
+    button#dropdownMenuLink {
+        width: 40px;
+        height: 40px;
+    }
+
+    .d-flex.px-4.py-2.align-items-center.justify-content-between form {
+        width: 75%;
+        float: left;
+    }
+
+    .listing-details .name-txt {
+        width: 100% !important;
+    }
+
+    .slick-slide {
+        width: 38% !important;
+    }
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** profile page css **/
+    .profile-picture-txt .p-picture {
+        width: 55px !important;
+        height: 55px !important;
+    }
+
+    .profile-section {
+        width: 85%;
+        top: 10%;
+        height: auto;
+        z-index: 999;
+    }
+
+    .leader-board {
+        width: 270px;
+        right: 20%;
+        height: 100%;
+        padding-left: 0px;
+    }
+
+    .subscription .form-btns button {
+        margin-bottom: 20px;
+    }
+
+    .log-out-screen {
+        right: 1% !important;
+        width: 87% !important;
+        top: 24% !important;
+    }
+
+    .subscription {
+        right: 1% !important;
+        width: 87% !important;
+        padding: 15px 20px 15px 25px !important;
+        top: 24% !important;
+    }
+
+    .profile-picture-txt .p-text {
+        padding-right: 0px;
+    }
+
+    .profile-picture-txt {
+        padding: 15px;
+        display: inline-block;
+        overflow: scroll;
+        height: 250px;
+    }
+
+    .subscription .profile-picture-txt .p-picture {
+        height: 55px !important;
+        width: 55px;
+    }
+
+    .profile-section ul {
+        display: flex;
+        margin-bottom: 0px;
+    }
+
+    .profile-section ul li {
+        padding: 15px 10px;
+        margin: 0px;
+        text-align: center;
+        width: 120px;
+    }
+
+    .profile-section ul li span {
+        display: block;
+    }
+
+    .leader-board {
+        width: 87%;
+        right: 1%;
+        top: 58%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0px;
+    }
+
+    .profile-show {
+        top: -34% !important;
+        left: 0% !important;
+        width: 100% !important;
+        padding: 30px 15px 40px !important;
+        z-index: 999;
+    }
+
+    .edit-form {
+        top: -34%;
+        right: 0%;
+    }
+
+    /** end here **/
+
+
 }
 
 @media(max-width:767px) {
+
 
     /*test screen*/
     .examSect .tab-btn-box.d-flex.mt-3 a {
@@ -4099,6 +4310,7 @@ span#slide-input {
     .cust-tab-content .custom-btn-gray {
         width: auto !important;
         float: right;
+        font-size: 14px;
     }
 
     .cust-tabs .nav-link {
@@ -4182,6 +4394,7 @@ span#slide-input {
 
     .active-btn {
         width: 70%;
+        font-size: 12px;
         padding: 0px !important;
     }
 
@@ -4260,8 +4473,9 @@ span#slide-input {
     }
 
     .bg-white.shadow-lg {
-        height: 400px;
+        height: 330px;
     }
+
 
     span.user-name-block.ps-3.pe-3 {
         display: none;
@@ -4326,7 +4540,7 @@ span#slide-input {
 
 @media(max-width:767px) {
     [class*="col-"] {
-        width: 85%;
+        width: 100%;
     }
 
     .Fullsub-amt-subN .d-flex {
@@ -4854,3 +5068,280 @@ label.error {
 }
 
 /* end full scan test popup resonsive */
+
+
+
+/** preparation page css on 9-12-2021***/
+
+.preparation .slimScrollBar {
+    background: rgb(98, 194, 254) !important;
+}
+
+.preparation .cust-tab-content {
+    height: 400px !important;
+}
+
+.preparation .name-txt {
+    width: 35%;
+}
+
+/** end here on 9-12-2021 **/
+
+/** preparation page css on 9-12-2021***/
+
+.preparation .slimScrollBar {
+    background: rgb(98, 194, 254) !important;
+}
+
+.preparation .cust-tab-content {
+    height: 500px !important;
+}
+
+.preparation .name-txt {
+    width: 35%;
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** preparation page css on 9-12-2021**/
+    .preparation .name-txt {
+        width: 100%;
+        display: block;
+        font-size: 14px;
+    }
+
+    .preparation .slbs-link a {
+        font-size: 12px;
+    }
+
+    .preparation .cust-tab-content {
+        height: auto !important;
+    }
+
+    /*** end here 9-12-2021**/
+
+}
+
+/** end here on 9-12-2021 **/
+/** Bhim model popup css for preparation page 13-12-2021 desktop view only**/
+
+.modal-dialog {
+    border-radius: 56px !important;
+}
+
+.modal-dialog .modal-content.bg-light {
+    background-color: #ffffff !important;
+    border-radius: 56px !important;
+    padding: 20px;
+}
+
+.h-scroll-slim .d-flex.bg-white {
+    border: 1px solid #eee;
+    border-radius: 20px;
+}
+
+.ms-auto span.me-1 .bg-light-red {
+    background: #00baff !important;
+}
+
+/** End here 13-12-2021**/
+
+/* 11-12 test screen */
+
+#test_instruction .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+#test_instruction .test-info {
+    padding: 20px 0;
+    margin: 25px 0;
+}
+
+#test_instruction .slimScrollBar {
+    background: #21ccff !important;
+}
+
+#test_instruction button#goto-exam-btn {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(241deg, #21ccff, #00baff);
+    border: none;
+    padding: 15px 65px;
+    color: #fff;
+}
+
+/* end welcome instructions exam popup */
+/** End exam popup */
+#resume-test .modal-content.rounded-0,
+#FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
+#endExam .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+#endExam #See-Ana {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(241deg, #21ccff, #00baff);
+    border: none;
+    padding: 15px 65px;
+    color: #fff;
+}
+
+/* end end exam popup */
+
+/*** Rahul Exam analytics page css 13-12-2021 **/
+.exam-analytics {}
+
+.exam-analytics span.text-center.w-100 img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow-lg {
+    min-height: 430px;
+}
+
+.exam-analytics .map-right-graph img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow.p-3 {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
+    border-radius: 56px !important;
+    padding-bottom: 20px !important;
+}
+
+.exam-analytics .abrv-graph.bg1 {
+    background: #5cc129;
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2,
+.exam-analytics .abrv-graph.bg3 {
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2 {
+    background: #e62e2d;
+}
+
+.exam-analytics .row.my-4 .col {
+    text-align: center;
+}
+
+.exam-analytics button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+.exam-analytics .blue-block {
+    background: #eee;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .i-icon {
+    color: #62c2fe;
+}
+
+.exam-analytics .i-icon:hover {
+    color: #62c2fe;
+}
+
+.exam-analytics .bg-light-success {
+    background: #37c027;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.exam-analytics .bg-light-red {
+    background: red;
+}
+
+.exam-analytics .cust-tab-content {
+    padding: 0px 36px;
+    border-bottom-left-radius: 56px;
+    border-bottom-right-radius: 56px;
+}
+
+button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+/*** Exam analytics page css End 13-12-2021 **/
+
+/* dinesh per question timer 13-11-2021*/
+.tiny-green {
+    position: relative;
+    padding: 0px;
+    width: 180px;
+    background-color: #E4E4E4;
+    height: 18px;
+
+}
+
+.tiny-green div {
+
+    font-family: arial;
+    font-size: 3px;
+    height: inherit;
+    color: white;
+    text-align: right;
+    text-shadow: 0px 0px 2px #000;
+    text-indent: 9999px;
+    overflow: hidden;
+
+    background-color: #44CD7F;
+    /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
+
+}
+
+.counter {
+    position: absolute;
+    right: 25px;
+    top: 25px
+}
+
+.counter .progressBar .seconds {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
+    top: -2px;
+
+}
+
+.question-block p {
+    margin-bottom: 0px;
+}
+
+.activequestion {
+    border: 2px solid #5ddaff !important;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+/* dinesh per question timer */

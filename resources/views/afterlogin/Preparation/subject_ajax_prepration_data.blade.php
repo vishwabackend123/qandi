@@ -8,14 +8,14 @@
     <h2>{{$values->subject_name}}</h2>
     <div class="d-flex align-items-center">
         <div>
-{{--            <div class="d-flex align-items-center">--}}
-{{--                <p class="m-0 pe-3">Proficiency</p>--}}
-{{--                <i class="fa fa-star text-secondary mx-2"></i>--}}
-{{--                <i class="fa fa-star text-secondary mx-2"></i>--}}
-{{--                <i class="fa fa-star text-secondary mx-2"></i>--}}
-{{--                <i class="fa fa-star text-light mx-2"></i>--}}
-{{--                <i class="fa fa-star text-light mx-2"></i>--}}
-{{--            </div>--}}
+            <!-- <div class="d-flex align-items-center">
+                <p class="m-0 pe-3">Proficiency</p>
+                <i class="fa fa-star text-secondary mx-2"></i>
+                <i class="fa fa-star text-secondary mx-2"></i>
+                <i class="fa fa-star text-secondary mx-2"></i>
+                <i class="fa fa-star text-light mx-2"></i>
+                <i class="fa fa-star text-light mx-2"></i>
+            </div> -->
         </div>
         <div class="ms-auto">
             <span class="me-1"><a href="javascript:void(0);" @if($preType=='presentation' )class="bg-light-red link-dark py-3 px-2 d-inline-block" @endif onclick="get_preparationSubjectData('{{$values->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$values->total_presentations}}</a></span>
@@ -102,3 +102,8 @@
 
     </div>
 </div>
+<script>
+    $(".h-scroll-slim").slimscroll({
+        height: "50vh",
+    });
+</script>

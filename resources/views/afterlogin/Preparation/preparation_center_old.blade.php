@@ -1,44 +1,30 @@
-@extends('afterlogin.layouts.app_new')
-
-@php
-$userData = Session::get('user_data');
-@endphp
-
+@extends('afterlogin.layouts.app')
 
 @section('content')
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar_new')
-<!-- sidebar menu end -->
+
+@include('afterlogin.layouts.sidebar')
 <div class="main-wrapper">
-
-    <!-- End start-navbar Section -->
-    @include('afterlogin.layouts.navbar_header_new')
-    <!-- End top-navbar Section -->
-
+    <!-- top navbar -->
+    @include('afterlogin.layouts.navbar_header')
     <div class="content-wrapper">
         <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tab-wrapper mt-0">
+                        <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            @php $subx=1; @endphp
+                            @if(isset($aPreparation) && !empty($aPreparation))
+                            @foreach($aPreparation as $sub)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link @if($subx==1) active @endif" id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true">{{$sub->subject_name}}</a>
+                            </li>
+                            @php $subx++; @endphp
+                            @endforeach
+                            @endif
+                        </ul>
 
-            <div class="row preparation">
-                <div class="col-lg-12  p-lg-5 pt-none">
-
-                    <div class="tab-wrapper">
-                        <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
-                                @php $subx=1; @endphp
-                                @if(isset($aPreparation) && !empty($aPreparation))
-                                @foreach($aPreparation as $sub)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link @if($subx==1) active @endif" id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true">{{$sub->subject_name}}</a>
-                                </li>
-
-                                @php $subx++; @endphp
-                                @endforeach
-                                @endif
-
-                            </ul>
-                        </div>
-                        <!--scroll-mobile-->
-                        <div class="tab-content cust-tab-content pt-4" id="myTabContent">
+                        <div class="tab-content cust-tab-content" id="myTabContent">
                             @php $topx=1;@endphp
                             @if(isset($aPreparation) && !empty($aPreparation))
                             <?php
@@ -57,35 +43,56 @@ $userData = Session::get('user_data');
                             ?>
                             @endforeach
                             <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$oSub->subject_name}}" role="tabpanel" aria-labelledby="{{$oSub->subject_name}}-tab">
-
-
-                                <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                    <span class="mr-3 name-txt">{{$oSub->subject_name}}</span>
-
-                                    <span class="p-icons">
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$pres}}</span></a>
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$notes}}</span></a>
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$video}}</span></a>
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$bmark}}</span></a>
-                                    </span>
+                                <div class="d-flex px-4 mt-4 mb-4 py-3 align-items-center justify-content-between">
+                                    <span class=" col-md-6 mr-3 prep-name-txt">{{$oSub->subject_name}}</span>
+                                    <div class="col-md-3  d-flex align-items-center">
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$pres}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$notes}}</a></span>
+                                        <span class="me-2"><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$video}}</a></span>
+                                        <span><a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$bmark}}</a></span>
+                                    </div>
+                                    {{-- <div class="col-md-3 d-flex ">--}}
+                                    {{-- <p class="m-0 pe-3  w140">Overall Proficiency</p>--}}
+                                    {{-- <span>--}}
+                                    {{-- <i class="fa fa-star text-success mx-1"></i>--}}
+                                    {{-- <i class="fa fa-star text-success mx-1"></i>--}}
+                                    {{-- <i class="fa fa-star text-success mx-1"></i>--}}
+                                    {{-- <i class="fa fa-star text-secondary mx-1"></i>--}}
+                                    {{-- <i class="fa fa-star text-secondary mx-1"></i>--}}
+                                    {{-- </span>--}}
+                                    {{-- </div>--}}
                                 </div>
                                 <div class="scroll-div">
                                     @foreach( $oSub->values as $val)
-                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt">{{$val->chapter_name}}</span>
-
-                                        <span class="p-icons"><a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$val->Presentations}}</span></a>
-                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$val->Notes}}</span></a>
-                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$val->Videos}}</span></a>
-                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$val->Bookmarks}}</span></a>
+                                    <div class="d-flex align-items-center justify-content-between bg-white px-4 mt-4 mb-4 py-2 listing-details w-100 flex-wrap  ">
+                                        <span class="col-md-6 mr-3 preparation-txt">{{$val->chapter_name}}
                                         </span>
-
-
-
+                                        <div class="col-md-3  d-flex  align-items-center">
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> {{$val->Presentations}}</a>
+                                            </span>
+                                            <span class="me-2 flex-column"><a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> {{$val->Notes}}</a>
+                                            </span>
+                                            <span class="me-2 flex-column">
+                                                <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')">
+                                                    <img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> {{$val->Videos}}
+                                                </a>
+                                            </span>
+                                            <span><a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> {{$val->Bookmarks}}</a>
+                                            </span>
+                                        </div>
+                                        {{-- <div class="col-md-3 d-flex ">--}}
+                                        {{-- <p class="m-0 pe-3 w140">Proficiency</p>--}}
+                                        {{-- <span class="">--}}
+                                        {{-- <i class="fa fa-star text-danger mx-1"></i>--}}
+                                        {{-- <i class="fa fa-star text-danger mx-1"></i>--}}
+                                        {{-- <i class="fa fa-star text-secondary mx-1"></i>--}}
+                                        {{-- <i class="fa fa-star text-secondary mx-1"></i>--}}
+                                        {{-- <i class="fa fa-star text-secondary mx-1"></i>--}}
+                                        {{-- </span>--}}
+                                        {{-- </div>--}}
                                     </div>
                                     @endforeach
                                 </div>
-
                             </div>
                             @php $topx++;
                             $pres = 0;
@@ -95,19 +102,16 @@ $userData = Session::get('user_data');
                             @endphp
                             @endforeach
                             @endif
-
+                            <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div> -->
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
-        <!--row-->
     </div>
 </div>
-
-
+<!-- Modal -->
 <div class="modal fade" id="PreparationCenter_modal" tabindex="-1" aria-labelledby="PreparationCenter_modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0 bg-light">
@@ -119,7 +123,7 @@ $userData = Session::get('user_data');
                 <div class="main-center">
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
-                        <!-- <div>
+                        <div>
                             <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
@@ -128,7 +132,7 @@ $userData = Session::get('user_data');
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="ms-auto">
 
                             <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
@@ -175,14 +179,14 @@ $userData = Session::get('user_data');
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
                         <div>
-                            <!-- <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="ms-auto">
 
@@ -231,14 +235,14 @@ $userData = Session::get('user_data');
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
                         <div>
-                            <!--  <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="ms-auto">
 
@@ -288,14 +292,14 @@ $userData = Session::get('user_data');
                     <h2>Trigonometry</h2>
                     <div class="d-flex align-items-center">
                         <div>
-                            <!-- <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
                                 <p class="m-0 pe-3">Proficiency</p>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-secondary mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
                                 <i class="fa fa-star text-light mx-2"></i>
-                            </div> -->
+                            </div>
                         </div>
                         <div class="ms-auto">
 
@@ -332,13 +336,13 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-@include('afterlogin.layouts.footer_new')
 
+@include('afterlogin.layouts.footer')
+
+
+@endsection
 <script>
-    $('.scroll-div').slimscroll({
-        height: "50vh",
-    });
-    $(".modal .h-scroll-slim").slimscroll({
+    $(".h-scroll-slim").slimscroll({
         height: "80vh",
     });
 
@@ -478,4 +482,3 @@ $userData = Session::get('user_data');
         });
     }
 </script>
-@endsection
