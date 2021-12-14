@@ -209,6 +209,7 @@ a.clearRes:hover {
 #test_instruction .modal-body.pt-3.p-5 {
     border-radius: 56px;
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    background: #ffffff;
 }
 
 #test_instruction .modal-content.rounded-0 {
@@ -1595,7 +1596,6 @@ header {
     letter-spacing: 0px;
     color: #231f20;
     text-transform: uppercase;
-    width: 34%;
 }
 
 .name-txt-sml {
@@ -5287,6 +5287,766 @@ button.top-btn-pop {
 
 /*** Exam analytics page css End 13-12-2021 **/
 
+/** test review page css 7-11-2021 ***/
+.people-qus {
+    display: flex;
+    color: #231f20;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2c3348;
+    padding-bottom: 5px;
+}
+
+.pythagoras a {
+    color: #21ccff;
+}
+
+.pytha-arc {
+    display: flex;
+    margin-top: 15px;
+}
+
+.people-qus strong {
+    font-size: 48px;
+    color: #37c027;
+    padding-right: 22px;
+    line-height: 55px;
+}
+
+.percentage-21 {
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    width: 380px;
+    background: #fff;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 26px;
+    display: none;
+}
+
+.arc-radius {
+    padding-left: 20px;
+}
+
+.perntage1 {
+    display: none;
+}
+
+.perntage2 {
+    display: none;
+}
+
+.percentage-21.perntage2 {
+    right: 46%;
+    width: 50%;
+}
+
+.percentage-21.perntage2 .people-qus strong {
+    font-size: 16px;
+    color: #21ccff;
+    line-height: 20px;
+}
+
+.percentage-21.perntage2 .people-qus {
+    display: inline-block;
+    width: 100%;
+}
+
+p.mb-0.line-height-18px {
+    line-height: 18px;
+}
+
+.pytha-arc h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #21ccff;
+}
+
+.percentage-21.pythagoras-p2 {
+    display: none !important;
+}
+
+.percentage-21 button.close-btn-pr {
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.tab-wrapper .nav-tabs {
+    /*  z-index: 99999; commented by dinesh*/
+    z-index: 99;
+    position: relative;
+}
+
+span.p-icons span {
+    color: red;
+}
+
+.answer-section {
+    width: 100%;
+    padding: 30px;
+    background: #eee;
+    border-radius: 56px;
+}
+
+button.percentage-digit {
+    float: right;
+    padding: 18px 86px;
+    border: none;
+    background: #00baff;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.answer-btn-txt {
+    display: inline-block;
+    width: 100%;
+}
+
+.answer-btn-txt span {
+    color: #44cd7f;
+    font-family: Manrope;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.ans-txt {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.back-to-dashbord {
+    position: absolute;
+    top: 12px;
+    right: 50px;
+    z-index: 99999;
+}
+
+.test-review .tab-content {
+    border-radius: 56px;
+    padding-bottom: 10px;
+}
+
+.test-review-right span.timing {
+    margin-left: 0px;
+}
+
+.review-qus {
+    margin: 20px 0px;
+    overflow: auto;
+    height: 200px;
+    overflow-x: hidden;
+}
+
+.review-qus span a {
+    float: right;
+}
+
+.rview-quses {
+    padding-left: 0px;
+}
+
+.rview-quses li.correctans {
+    border-color: #37c027;
+}
+
+.rview-quses li.incorrectans {
+    border-color: #ee6a5f;
+}
+
+.rview-quses li.notans {
+    border-color: #e4e4e4;
+}
+
+.rview-quses li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0px;
+    display: flex;
+    width: 100%;
+    border-left: 5px solid #eee;
+}
+
+.rview-quses li span {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/** custom scrollbar**/
+/* width */
+.question-block {
+    height: 250px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.question-block::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.question-block::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.question-block::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.question-block::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+.answer-section {
+    height: 200px;
+    overflow: auto;
+    margin: 20px 0px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.answer-section::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.answer-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.answer-section::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.answer-section::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+.review-qus {}
+
+.review-qus::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.review-qus::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.review-qus::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.review-qus::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+.rightSect .number-block {}
+
+.rightSect .number-block::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.rightSect .number-block::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.rightSect .number-block::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.rightSect .number-block::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+/** scrollbar css end here**/
+.back-to-dashbord a {
+    color: #00baff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*** End here ***/
+
+
+@media(min-width:991px) and (max-width:1024px) {
+
+    /** test review page on 8-12-2021**/
+    .test-review-right span.timing {
+        margin-left: 0px;
+    }
+
+    .timing {
+        font-size: 16px;
+    }
+
+    .rightSect .number-block .btn {
+        margin-right: 0px;
+    }
+
+    .percentage-21.perntage2 .people-qus strong {
+        font-size: 15px;
+    }
+
+    /** end here 8-12-2021**/
+}
+
+@media(min-width:768px) and (max-width:990px) {
+
+    /** test review page on 8-12-2021**/
+    .test-review .cust-tabs .nav-link {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .test-review .prev-arow {
+        left: -18px;
+        top: 52px;
+    }
+
+    .test-review div#myTabContent .tab-pane .question-block {
+        padding: 15px 0rem;
+    }
+
+    .test-review .next-arow {
+        top: 52px;
+    }
+
+    .rightSect.test-review-right .bg-white {
+        padding: 10px !important;
+    }
+
+    .test-review .percentage-21 {
+        width: 310px;
+    }
+
+    .percentage-21.perntage2 {
+        right: 16%;
+    }
+
+    .people-qus strong {
+        font-size: 30px;
+    }
+
+    /** end here 8-12-2021 **/
+
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+
+    /** test review page on 8-12-2021**/
+
+    .answer-section {
+        height: auto;
+        overflow: unset;
+        overflow-x: unset;
+    }
+
+    .percentage-21 {
+        width: 100%;
+        right: 3px;
+    }
+
+    .percentage-21.perntage2 {
+        right: 2%;
+        width: 100%;
+    }
+
+    button.percentage-digit {
+        margin-top: 10px;
+        margin-right: 20px;
+        padding: 18px 70px;
+    }
+
+    .people-qus strong {
+        font-size: 30px;
+        padding-right: 14px;
+    }
+
+    .percentage-21 button.close-btn-pr {
+        right: 0px;
+    }
+
+    div#myTabContent .tab-pane .question-block {
+        padding: 15px 0rem;
+    }
+
+    .q-no {
+        left: 20px;
+    }
+
+    .cust-tab-content {
+        padding: 10px 10px !important;
+    }
+
+    /** end here 8-12-2021**/
+
+}
+
+
+/* share friends */
+#sharefrnd .modal-content.rounded-0.bg-light {
+    border-radius: 56px !important;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    background-color: #fff !important;
+}
+
+#referFrnd {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+    background-image: linear-gradient(237deg, #21ccff, #00baff -1%) !important;
+    border: none;
+}
+
+#enterEPnmb {
+    background-color: #f2f2f2 !important;
+    border-radius: 8px !important
+}
+
+#enterEurl {
+    background-color: #f2f2f2 !important;
+    border-radius: 8px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+button#button-addon2 {
+    background: #21ccff;
+    border-radius: 8px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+#sharefrnd button.btn-close {
+    position: absolute;
+    right: 32px;
+    top: 20px;
+    z-index: 9;
+}
+
+/* end referFrnd */
+Analytics Subject */ .SubjName {
+    width: 35%;
+}
+
+#back2Dsh {
+    height: unset;
+}
+
+div#marKs-trends {
+    background: #fff !important;
+    border-radius: 56px !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    margin: 22px 0px;
+}
+
+div#time-Avg-quest {
+    background: #fff !important;
+    border-radius: 56px !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    margin: 22px 0px;
+}
+
+#marKs-trends .bg-white,
+#time-Avg-quest .bg-white {
+    background: transparent !important;
+}
+
+#f-Numbr-sectin {
+    background: #fff;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 56px;
+}
+
+#f-Numbr-sectin .noshadow {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#f-Numbr-sectin .arrow-right-btm-content {
+    left: 0px;
+    right: 0px;
+    border-radius: 56px;
+    padding: 15px 20px !important;
+}
+
+#f-Numbr-sectin .inner-arrow-right-btm {
+    right: 12px;
+    bottom: 0px;
+}
+
+#overall button.btn,
+#home button.btn,
+.Ex-anal {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+    margin-right: 15px;
+}
+
+#arrow-left-btm .inner-arrow-left-btm {
+    left: 14px !important;
+    bottom: 0px !important;
+}
+
+#arrow-right-top .inner-arrow-right-top {
+    right: 12px !important;
+    top: 0px !important;
+}
+
+#arrow-left-top .inner-arrow-left-top {
+    right: 12px !important;
+    bottom: 0px !important;
+    top: auto;
+    left: auto;
+}
+
+div#topicclose,
+.padingTT {
+    padding-top: 30px;
+}
+
+#myTabContent .bg-light-success {
+    background: #37c027;
+    border-radius: 15px;
+}
+
+#myTabContent .prog-box.green,
+#myTabContent .prog-box.red,
+#myTabContent .prog-box.secondary {
+    border: none;
+    background: #f2f2f2;
+    color: #231f20;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+
+#myTabContent .bg-light-red {
+    background: #ee6a5f;
+}
+
+#myTabContent .progress {
+    border-radius: 15rem !important;
+}
+
+/* webinar */
+#upcoming-tutorials img.me-2 {
+    width: 15%;
+}
+
+#upcoming-tutorials .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+p.fs-5.profileN {
+    text-align: center;
+    font-size: 12px !important;
+}
+
+p.fs-5.profileN span.Colr {
+    color: #1aa4d7;
+}
+
+p.fs-5.profileN img {
+    width: 100px !important;
+    height: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* end webinar */
+/* Download anylatics */
+
+
+div#exportAnalytics .modal-dialog .modal-content {
+    border-radius: 45px !important;
+}
+
+div#contentHtml .text-light-danger {
+    color: #19a4d7;
+}
+
+div#contentHtml .bg-white.shadow-lg {
+    height: 100%;
+}
+
+div#contentHtml .report-block2 {
+    background: #d0f3ff;
+}
+
+div#contentHtml .report-block2 .bg-white {
+    border-radius: 56px;
+    box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
+    background-color: #fff;
+    padding: 30px !important;
+}
+
+
+div#contentHtml .report-block1 {
+    background: #fff;
+    border-radius: 56px;
+}
+
+.greentxt {
+    font-size: 187px;
+    color: #44cd7f;
+    font-weight: bold;
+    text-align: center;
+}
+
+.exportUserpic {
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    border: 2px solid #d71921;
+}
+
+.exportUsertxt {
+    margin-left: 20px;
+}
+
+.exportUsertxt p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.exportUsertxt small {
+    font-size: 13px;
+}
+
+.report-analysis-block {
+    border-radius: 20px;
+}
+
+.reportHeading {
+    font-size: 40px;
+    font-weight: 400;
+    border-left: 4px solid #00baff;
+    padding: 10px 0 10px 20px;
+    position: relative;
+}
+
+.report-block1 .reportHeading {
+    border-left: solid 4px #aff3d0;
+}
+
+/* .reportHeading:after {
+    content: "";
+    width: 2px;
+    height: 40px;
+    background: #44cd7f;
+    position: absolute;
+    right: -15%;
+    top: 50%;
+    margin-top: -20px;
+    transform: rotate(17deg);
+} */
+
+.reportHeading span {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.report-block2 {
+    background: #fff4cf;
+}
+
+.w-34 {
+    width: 34%;
+}
+
+.export-btn {
+    position: fixed;
+    right: 75px;
+    top: 15px;
+    filter: contrast(0);
+}
+
+.export-btn:hover {
+    filter: contrast(1);
+}
+
+.close-btn {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    filter: contrast(0);
+}
+
+.close-btn:hover {
+    filter: contrast(1);
+}
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 40px;
+    /* width: 100px; */
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    /* text-shadow: 0px 1px 0 #a2a2a2; */
+}
+
+.star-ratings-css-top {
+    color: #ffdc34;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+}
+
+.error {
+    color: #d71921;
+    font-size: 12px;
+}
+
+.Dwonload {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+    margin-right: 15px;
+}
+
+/* end Download anylatics */
+
+
+
+
+
 /* dinesh per question timer 13-11-2021*/
 .tiny-green {
     position: relative;
@@ -5342,6 +6102,30 @@ button.top-btn-pop {
     border: 2px solid #5ddaff !important;
     pointer-events: none;
     cursor: pointer;
+}
+
+button a {
+    color: inherit !important;
+}
+
+button a:hover {
+    color: inherit !important;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+
+.SubjName {
+    width: 180px;
 }
 
 /* dinesh per question timer */

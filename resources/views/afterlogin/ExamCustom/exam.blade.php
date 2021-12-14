@@ -14,13 +14,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    $(window).on("load resize scroll", function(e) {
-        var winHeight = $(window).height() - 10;
-        $('.tab-wrapper').height(winHeight - 50);
-        $('.tab-content').height(winHeight - 90);
-    });
-</script>
+
 
 @section('content')
 <style>
@@ -113,7 +107,7 @@ $questtype='radio';
                                     <div class="question-block">
                                         <!-- Next and previous button -->
                                         <a href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
-                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($prev_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></a>
+                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></a>
                                         <!-- Next and previous button -->
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>

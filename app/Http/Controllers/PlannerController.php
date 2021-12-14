@@ -186,10 +186,7 @@ class PlannerController extends Controller
     public function plannerExam($planner_id = null, $chapter_id = null, Request $request)
     {
         $filtered_subject = [];
-
-
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
@@ -197,21 +194,16 @@ class PlannerController extends Controller
             Redis::del(Redis::keys('custom_answer_time'));
         }
 
-
         $question_count = isset($request->question_count) ? $request->question_count : 30;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
-
         $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
 
 
         $inputjson['student_id'] = $user_id; //30776; //(string);
         $inputjson['exam_id'] = (string)$exam_id;
         $inputjson['chapter_id'] = (string)$chapter_id;
-
-
         $request = json_encode($inputjson);
-
 
         $curl_url = "";
         $curl = curl_init();

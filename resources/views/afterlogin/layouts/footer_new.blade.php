@@ -1,3 +1,35 @@
+<div class="modal fade" id="exportAnalytics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pt-0 px-5 ">
+                <div class="text-center my-5">
+                    <a href="{{route('export_analytics')}}"><button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download</button></a>
+                </div>
+                <p class="text-center text-secondary mb-5">OR</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
+                    </div>
+                    <input type="text" class="form-control border-0 rounded-0 ps-0" id="specificSizeInputGroupUsername" placeholder="Enter e-mail ID">
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-text bg-white rounded-0 border-0"><i class="fas fa-lock text-secondary"></i> </div>
+                    <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
+                        <option class="text-secondary">Share it only this time</option>
+                    </select>
+                </div>
+                <div class="text-center my-5">
+                    <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
@@ -1041,6 +1073,99 @@
             $('#edit-planner-btn').removeClass('close-sub-planner');
 
         });
+
+    });
+
+    /* refer a friends */
+    $("#referalStudent_form").validate({
+        rules: {
+            refer_emails: {
+                required: true,
+            },
+        },
+        messages: {
+            "refer_emails": {
+                required: "Please enter at least one referral email Id."
+            }
+        },
+        submitHandler: function(form) {
+            $check = 0;
+            var emails = $('#referEmails').val();
+            var arrayEmails = emails.split(',');
+            var countEmails = arrayEmails.length;
+
+            arrayEmails.forEach(element => {
+                var emval = element.trim();
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (re.test(String(emval).toLowerCase()) == false) {
+                    $check = 1;
+                }
+            });
+
+
+            if (countEmails == 1 && $check == 1) {
+                $("#errRef_auth").html("Please enter a valid email")
+                $("#errRef_auth").show();
+                setTimeout(function() {
+                    $('.errRef').fadeOut('fast');
+                }, 5000);
+                return false;
+            }
+            if (countEmails != 1 && $check == 1) {
+                $("#errRef_auth").html("Please enter valid emails or use correct separator between two emails")
+                $("#errRef_auth").show();
+                setTimeout(function() {
+                    $('.errRef').fadeOut('fast');
+                }, 5000);
+                return false;
+            }
+            $.ajax({
+                url: "{{ url('/store_referral') }}",
+                type: 'POST',
+                data: $('#referalStudent_form').serialize(),
+                beforeSend: function() {},
+                success: function(response_data) {
+
+                    var response = jQuery.parseJSON(response_data);
+
+                    if (response.success == true) {
+                        $('#referEmails').val("");
+                        if (response.message != '') {
+                            var sucessmsg = $("#successRef_auth").show();
+                            sucessmsg[0].textContent = response.message;
+
+                            setTimeout(function() {
+                                $('.errRef').fadeOut('fast');
+                            }, 3000);
+
+                        }
+
+                        if (response.duplicate_referrals.length > 0) {
+                            const duplicate = response.duplicate_referrals.toString();
+
+                            var errormsg = $("#errRef_auth").show();
+                            errormsg[0].textContent = "Already referred Email ids : " + duplicate;
+                        }
+                        setTimeout(function() {
+                            $('.errRef').fadeOut('fast');
+                        }, 5000);
+                        $('#referEmails').val("");
+
+                    } else {
+                        var errormsg = $("#errRef_auth").show();
+                        errormsg[0].textContent = "Email already referred";
+                        setTimeout(function() {
+                            $('.errRef').fadeOut('fast');
+                        }, 5000);
+                        $('#referEmails').val("");
+                    }
+
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
+        }
 
     });
 </script>
