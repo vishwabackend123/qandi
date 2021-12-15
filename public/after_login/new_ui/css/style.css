@@ -1,8 +1,7 @@
-- body {
-    display: flex;
-    flex-direction: column;
-    font-family: "Poppins", sans-serif;
-    background: #f6f9fd;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
 }
 
 a {
@@ -6044,6 +6043,92 @@ div#contentHtml .report-block1 {
 /* end Download anylatics */
 
 
+@media(min-width:768px) and (max-width:990px) {
+
+    /** exam analytics page css 14-12-2021**/
+
+    .exam-analytics .row.mb-4 .col-md-9 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .exam-analytics .row.mb-4 .col-md-3 {
+        width: 100%;
+    }
+
+    .exam-analytics .cust-tabs .nav-link {
+        margin-right: 0px;
+        font-size: 14px;
+    }
+
+    /** exam analytics page css End 14-12-2021**/
+
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** exam analytics page css 14-12-2021**/
+    .exam-analytics .row.mt-5.mb-3 .col-5 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .exam-analytics .row.mt-5.mb-3 .col-7 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .exam-analytics .bg-white.shadow-lg {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .exam-analytics button.top-btn-pop {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+        margin-bottom: 20px;
+    }
+
+    .exam-analytics .cust-tabs .nav-link {
+        margin-right: 0px;
+        font-size: 9px;
+    }
+
+    .exam-analytics .nav.nav-tabs.cust-tabs {
+        width: auto;
+    }
+
+    .exam-analytics .col-12.d-flex.mt-5.mb-3 {
+        display: inline-block !important;
+    }
+
+    .exam-analytics select.form-select.rounded-0.ms-3.w-25 {
+        margin-left: 0px !important;
+        margin-bottom: 20px;
+    }
+
+    .exam-analytics .row .col-md-4.text-center img {
+        width: 100%;
+    }
+
+    .exam-analytics .col-md-9 .p-5 {
+        padding: 1rem !important;
+    }
+
+    .exam-analytics .row.mt-5.mb-3 {
+        margin-top: 0px !important;
+    }
+
+    .exam-analytics .subj-name {
+        font-size: 12px;
+    }
+
+    /** exam analytics page css End 14-12-2021**/
+
+}
 
 
 

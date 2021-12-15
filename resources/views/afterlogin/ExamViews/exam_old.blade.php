@@ -1,5 +1,7 @@
-@extends('afterlogin.layouts.app_new')
-
+@extends('afterlogin.layouts.app')
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- BS JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
@@ -7,26 +9,18 @@
             backdrop: "static",
             keyboard: false
         });
-
     });
 </script>
+@section('content')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
-      "HTML-CSS": {
-        linebreaks: { automatic: true, width: "container" }          
-      }              
-   });
+<script type="text/javascript">
+    $(window).on("load resize ", function(e) {
+        var winHeight = $(window).height() - 10;
+        $('.tab-wrapper').height(winHeight - 90);
+        $('.tab-content').height(winHeight - 130);
+    });
 </script>
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script> -->
-
-@section('content')
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -35,6 +29,9 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
+$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+
+
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -52,44 +49,63 @@ $questtype='radio';
         overflow-y: auto;
 
     }
+
+    /*
+    .N_radioans p,
+    .N_radioans span {
+        font: normal normal normal 18px/28px Poppins !important;
+        flex-wrap: wrap !important;
+        display: flex;
+    } */
 </style>
 
-<div class="main-wrapper" style="padding-left:0px;">
+<div class="main-wrapper p-0 bg-gray">
 
-    <div class="content-wrapper examSect" id="exam_content_sec">
-        <div class="container-fluid">
+    <div class="content-wrapper " id="exam_content_sec" style="display:none;">
+        <div class="container">
             <div class="row">
-                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+                <div class="col-lg-9">
 
-                    <div class="tab-wrapper h-100">
-                        <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                    <div class="tab-wrapper">
+                        <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+
+                            @if(!empty($filtered_subject))
+                            @foreach($filtered_subject as $key=>$sub)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} ({{$sub->count}})</a>
+                            </li>
+
+                            @endforeach
+                            @endif
+                        </ul>
+                        <div class="tab-content bg-white " id="myTabContent">
+
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
-                            <!-- Exam subject Tabs  -->
-                            <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
-                                @if(!empty($filtered_subject))
-                                @foreach($filtered_subject as $key=>$sub)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} ({{$sub->count}})</a>
-                                </li>
-                                @endforeach
-                                @endif
-                            </ul>
-                            <!-- End Exam subject Tabs -->
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-                                <input type="hidden" id="current_question" value="{{$activeq_id}}" />
-                                <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
-                                <div id="question_section" class="">
-                                    <div class="question-block">
-                                        <!-- Next and previous button -->
-                                        <a href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
 
-                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></a>
-                                        <!-- Next and previous button -->
+                            <div id="question_section" class="">
+                                <div>
+                                    <div class="d-flex d-none-imp">
+                                        <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+                                            <span id="avg_text">Average Time :</span>
+                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                <div id="percentBar_{{$activeq_id}}"></div>
+                                            </div>
+                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;"><span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins</div>
+                                        </div>
+                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
+                                    </div>
 
-                                        <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                    <div class="question-block N_question-block">
+                                        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+                                        <button class="btn arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
+                                        <!-- question -->
 
-                                        <div class="ans-block row my-3">
+
+                                        <div class="question N_question" id="question_blk"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                        <!-- options -->
+                                        <div class="ans-block row mt-5 N_radioans">
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -103,43 +119,46 @@ $questtype='radio';
                                             $view_opt='<img src="'.$latex.'" />' ;
                                             @endphp
                                             <div class="col-md-6 mb-4">
-                                                <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                                <div class="border ps-3 ans">
-                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                <input class="form-check-input selctbtn quest_option_{{$activeq_id}} {{$type_class}}" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                <div class=" ps-5 ans">
+                                                    <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                                 </div>
                                             </div>
+
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
 
                                         </div>
+                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
-                                    <div class="tab-btn-box  d-flex mt-3">
-                                        @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</a>
-                                        @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit
-                                        </button>
-                                        @endif
+                                    <div class="tab-btn-box  d-flex N_tab-btn-box">
+                                        <div class="N_tab-btn-box_list">
+                                            <div class="ps-3" style="float:left">
+                                                @if(!empty($next_qid))
+                                                <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                                @else
+                                                <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')" data-toggle="modal" data-target="#FullTest_Exam_Panel_Interface_A">Save & Submit</button>
+                                                @endif
+                                                <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}','{{$chapter_id}}')">Save & Mark for review</button>
+                                            </div>
+                                            <div class="pe-3" style="float:right">
+                                                <button class="btn px-4 ms-2 btn-secon-clear btn-light rounded-0 text-capitalize" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</button>
+                                                <button class="btn px-4 ms-2 btn-secon-clear act rounded-0 text-capitalize" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</button>
+                                            </div>
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for review</a>
-
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
-
-                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
-
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Right Side Area -->
 
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                <div class="col-lg-3 ">
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_timer">
                         <div class="d-flex align-items-center">
-                            <div class="" id="app">
+                            <div id="app">
                                 <div class="base-timer">
                                     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                         <g class="base-timer__circle">
@@ -163,49 +182,54 @@ $questtype='radio';
                             @csrf
                             <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
                             <input type="hidden" name="submit_time" id="final_submit_time" value="">
-                            <input type="hidden" name="test_type" value="Live">
-                            <input type="hidden" name="exam_type" value="L">
-                            <input type="hidden" name="exam_mode" value="Live">
+                            <input type="hidden" name="test_type" value="{{$test_type}}">
+                            <input type="hidden" name="exam_type" value="{{$exam_type}}">
+                            <input type="hidden" name="exam_mode" value="{{$exam_mode}}">
                             <input type="hidden" name="planner_id" value="0">
-                            <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
+                            <input type="hidden" name="live_exam_id" value="{{$series_id}}">
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
-                        <p class="rightSectH">Question Palette</p>
-                        <div class="number-block">
+
+                    </div>
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box">
+                        <p class="palette-hd">Question Palette</p>
+                        <div class="number-block N_number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
-
-                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
+                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">
+                                {{$ke+1}}</button>
                             @endforeach
                             @endif
 
-
                         </div>
+                    </div>
+                    <div class="bg-white d-flex flex-column justify-content-center palette_box N_legends">
+                        <p class="palette-hd">Legends</p>
 
-                        <p class="rightSectH">Legends</p>
-                        <div class="row">
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-light  rounded-0"> </button>
-                                <p>Unread</p>
-                            </div>
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-light-green rounded-0"> </button>
-                                <p>Answered </p>
-                            </div>
+                        <div class="d-flex align-items-center legends">
+                            <button class="btn btn-light  rounded-0"> </button>
+                            <p>Unread</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-secondary   rounded-0"> </button>
-                                <p>Marked for Review</p>
-                            </div>
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
-                                <p>Answered & <br>Marked for Review</p>
-                            </div>
+                        <div class="d-flex align-items-center  legends">
+                            <button class="btn btn-light-green rounded-0"> </button>
+                            <p>Answered </p>
                         </div>
-
+                        <div class="d-flex align-items-center  legends">
+                            <button class="btn btn-secondary   rounded-0"> </button>
+                            <p>Marked for Review</p>
+                        </div>
+                        <div class="d-flex align-items-start legends">
+                            <button class="btn btn-secondary rounded-0 align-items-center"><img src="{{URL::asset('public/after_login/images/rightWhite_ic.png')}}" /></button>
+                            <p>Answered & Marked for Review</p>
+                        </div>
 
                     </div>
                 </div>
@@ -224,7 +248,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">Live Exam</h1>
+                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -288,7 +312,7 @@ $questtype='radio';
         </div>
     </div>
 </div>
-
+</div>
 
 
 <!-- Modal END Exam -->
@@ -353,9 +377,21 @@ $questtype='radio';
     </div>
 </div>
 
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content rounded-0">
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Resume Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-@include('afterlogin.layouts.footer_new')
+@include('afterlogin.layouts.footer')
 <!-- browser back disable -->
 <script>
     window.location.hash = "no-back-button";
@@ -373,6 +409,7 @@ $questtype='radio';
     };
 </script>
 <!-- browser back disable -->
+
 <script type="text/javascript">
     $('.number-block').slimscroll({
         height: '20vh'
@@ -388,6 +425,8 @@ $questtype='radio';
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
         startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -429,6 +468,8 @@ $questtype='radio';
     function start(withReset = false) {
         setDisabled(startBtn);
         removeDisabled(stopBtn);
+        $(".stop").show();
+        $(".start").hide();
         if (withReset) {
             resetVars();
         }
@@ -438,8 +479,11 @@ $questtype='radio';
     function stop() {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
-        startBtn.innerHTML = "Continue";
+        $(".stop").hide();
+        $(".start").show();
+        // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        $("#resume-test").modal("show");
     }
 
     function startTimer() {
@@ -460,14 +504,14 @@ $questtype='radio';
     window.addEventListener("load", () => {
         // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
-        setDisabled(stopBtn);
+        // setDisabled(stopBtn);
     });
 
     //---------------------------------------------
     //HELPER METHODS
     //---------------------------------------------
     function setDisabled(button) {
-        button.setAttribute("disabled", "disabled");
+        button.setAttribute("disabled", true);
     }
 
     function removeDisabled(button) {
@@ -491,8 +535,8 @@ $questtype='radio';
     }
 
     function resetVars() {
-        removeDisabled(startBtn);
-        setDisabled(stopBtn);
+        // removeDisabled(startBtn);
+        // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
         console.log(timePassed, timeLeft);
@@ -525,18 +569,90 @@ $questtype='radio';
     }
 
     /* per question timer */
+    /*  var setEachQuestionTimeNext_countdown;
+     var totalSeconds = -1;
+
+     function setEachQuestionTime() {
+         setEachQuestionTimeNext_countdown = setInterval(function() {
+             ++totalSeconds;
+             $('.timespend_first').val(totalSeconds);
+
+
+         }, 1000);
+     } */
+    /* per question timer */
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var fsec = time_allowed * 60;
+    var up_timer = 0;
+    var countdown_txt = " Seconds";
+    var upcounter_txt = " Mins";
+    var ctimer;
     var setEachQuestionTimeNext_countdown;
+    var timer_countdown;
+
+    function questionstartTimer() {
+
+        timer_countdown = setInterval(function() {
+            fsec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+            progressBar(fsec, $('.progressBar_first'));
+            if (fsec == -1) {
+                clearInterval(timer_countdown);
+                $('.progressBar_first').css('background-color', '#E4E4E4');
+                $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_first').show();
+                $('#avg_text').hide();
+                $('.progressBar_first').hide();
+            }
+
+        }, 1000);
+
+    }
+
+
+
+    function progressBar(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
+        }
+        if (percent <= 0) {
+            $('.progressBar_first').css('background-color', '#E4E4E4');
+            $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+        }
+    }
+
+    var minutesLabel = document.getElementById("up_minutes");
+    var secondsLabel = document.getElementById("up_seconds");
+    //var totalSec = document.getElementById("tsec");
     var totalSeconds = -1;
+
 
     function setEachQuestionTime() {
         setEachQuestionTimeNext_countdown = setInterval(function() {
             ++totalSeconds;
             $('.timespend_first').val(totalSeconds);
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
 
-
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
         }, 1000);
     }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+    }
     /* per question timer end */
+    /* per question timer end */
+
 
     /* getting Next Question Data */
     function qnext(question_id) {
@@ -552,6 +668,8 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
 
                 $("#question_section div").remove();
@@ -583,6 +701,8 @@ $questtype='radio';
                 } else {
 
                 }
+
+
                 if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
                     $("#submitExam").click();
@@ -608,6 +728,7 @@ $questtype='radio';
             return false;
         }
 
+        var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -615,6 +736,7 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
+                q_submit_time: q_submit_time
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -625,7 +747,6 @@ $questtype='radio';
                 }
             },
         });
-        // $("#quesnext" + question_id).click();
         if ($("#quesnext" + question_id).is(":disabled") == true) {
 
             $("#submitExam").click();
@@ -664,7 +785,7 @@ $questtype='radio';
         }
     }
 
-    function clearResponse(quest_id, subject_id, qNo) {
+    function clearResponse(quest_id, subject_id) {
 
         var response = [];
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
@@ -677,6 +798,7 @@ $questtype='radio';
             $('#qoption_err_' + quest_id).fadeIn('fast');
             return false;
         }
+
 
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-light-green");
@@ -711,7 +833,7 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
-                $("#question_section").html(result);
+                $("#myTabContent #question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
@@ -736,11 +858,9 @@ $questtype='radio';
                 }
             }
         });
-    }
-    /* $('#submitExam').click(function() {
 
-        $('#endExam').modal('show');
-    }); */
+
+    }
 
 
     $(document).ready(function() {

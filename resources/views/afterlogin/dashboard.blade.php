@@ -229,15 +229,15 @@ $userData = Session::get('user_data');
                             <span class="lbl-text">{{$sub->subject_name}}</span>
                             <div class="rating-wrapper">
                                 <input class="rating-input" type="radio" name="{{$sub->id}}" value="5" id="{{$sub->subject_name}}_5">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-heart"></i></label>
+                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-star"></i></label>
                                 <input class="rating-input" type="radio" name="{{$sub->id}}" value="4" id="{{$sub->subject_name}}_4">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-heart"></i></label>
+                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-star"></i></label>
                                 <input class="rating-input" type="radio" name="{{$sub->id}}" value="3" id="{{$sub->subject_name}}_3">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-heart"></i></label>
+                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-star"></i></label>
                                 <input class="rating-input" type="radio" name="{{$sub->id}}" value="2" id="{{$sub->subject_name}}_2">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-heart"></i></label>
+                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-star"></i></label>
                                 <input class="rating-input" type="radio" name="{{$sub->id}}" value="1" id="{{$sub->subject_name}}_1">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-heart"></i></label>
+                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-star"></i></label>
                             </div>
                         </div>
 
