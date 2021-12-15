@@ -70,7 +70,7 @@ $questtype='checkbox';
 $type_class='radioans';
 $questtype='radio';
 }
-@endphp
+
 
 @endphp
 <div class="main-wrapper" style="padding-left:0px;">
