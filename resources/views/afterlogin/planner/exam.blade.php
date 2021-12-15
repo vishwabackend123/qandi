@@ -61,6 +61,16 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+$template_type = isset($question_data->template_type)?$question_data->template_type:'';
+
+if($template_type==1){
+$type_class='checkboxans';
+$questtype='checkbox';
+}else{
+$type_class='radioans';
+$questtype='radio';
+}
+
 
 @endphp
 <div class="main-wrapper" style="padding-left:0px;">
