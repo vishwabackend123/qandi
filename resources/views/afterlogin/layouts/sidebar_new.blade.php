@@ -101,6 +101,32 @@
             <img src="{{URL::asset('public/after_login/new_ui/images/left-icon-3.svg')}}">
         </a>
 
+        <a href="#" class="mt-auto" data-bs-toggle="modal" data-bs-target="#sharefrnd">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
+                <defs>
+                    <style>
+                        .aaaa {
+                            fill: #e9e9e9;
+                        }
+
+                        .bbbb {
+                            stroke: #7b797a
+                        }
+                    </style>
+                </defs>
+                <g id="Group_3044" data-name="Group 3044" transform="translate(9 6)">
+                    <rect id="Rectangle_3408" class="aaaa" data-name="Rectangle 3408" width="48" height="48" opacity="1" />
+                    <path id="Path_2326" data-name="Path 2326" d="M0,0H30V30H0Z" fill="none" transform="translate(10 10)" />
+                    <g id="Group_3043" data-name="Group 3043" transform="translate(10 10)">
+                        <circle id="Ellipse_716" class="bbbb" data-name="Ellipse 716" cx="10.167" cy="7.167" r="5.167" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                        <path id="Path_2327" data-name="Path 2327" d="M3,22.75V20.167A5.167,5.167,0,0,1,8.167,15h5.167A5.167,5.167,0,0,1,18.5,20.167V22.75" fill="none" class="bbbb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                        <path id="Path_2328" data-name="Path 2328" d="M16,11.875h7.75M19.875,8v7.75" fill="none" class="bbbb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                    </g>
+                </g>
+            </svg>
+            <span class="hoverlink">Share</span>
+        </a>
+
     </div>
     <div class="submenu-L1 collapse width" id="submenu">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
@@ -129,5 +155,44 @@
 
         </div>
 
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pt-0 px-5 ">
+                <form id="referalStudent_form" action="{{route('store_referral')}}" method="POST">
+                    @csrf
+                    <div class="text-center">
+                        <img src="{{URL::asset('public/after_login/images/Group3077.png')}}">
+                    </div>
+                    <h1 class="text-center my-4">Refer a friend</h1>
+                    <div class="mb-3">
+                        <input type="text" class="form-control border-0 rounded-0" placeholder="Enter emails / phone numbers" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
+                        <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
+
+
+                        <span class="invalid-feedback m-0 alert-success errRef p-1 mb-1" role="alert" id="successRef_auth"> </span>
+                        <span class="invalid-feedback m-0 alert-danger errRef p-1" role="alert" id="errRef_auth"> </span>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-danger rounded-0 px-5"><i class="fa fa-user-plus" aria-hidden="true"></i> SEND
+                            INVITE</button>
+                    </div>
+                    <!--  <p class="py-4 text-center">or Share via Link</p>
+                    <div class="input-group mb-5">
+                        <input type="text" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" aria-describedby="button-addon2">
+                        <button class="btn btn-dark rounded-0 border-0" type="button" id="button-addon2"><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>
+                    </div> -->
+                </form>
+            </div>
+
+        </div>
     </div>
 </div>

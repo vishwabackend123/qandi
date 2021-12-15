@@ -245,8 +245,8 @@
                 <div class="bg-white shadow p-5 d-flex flex-column position-relative">
 
                     <span class="text-center w-100"><img src="{{URL::asset('public/after_login/new_ui/images/bottom-right.jpg')}}" /></span>
-                    <button class="btn w-100 mt-3 top-btn-pop text-white">Review Questions</button>
-                    <button class="btn-outline-secondary btn rounded-0 w-100 mt-3 px-1">Back to Dashboard</button>
+                    <button class="btn w-100 mt-3 top-btn-pop text-white"><a href="{{route('exam_review', $response->result_id) }}">Review Questions</a></button>
+                    <button class="btn-outline-secondary btn rounded-0 w-100 mt-3 px-1"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
                 </div>
             </div>
         </div>

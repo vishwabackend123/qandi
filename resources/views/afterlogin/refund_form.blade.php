@@ -1,10 +1,9 @@
-@extends('afterlogin.layouts.app')
+@extends('afterlogin.layouts.app_new')
 
-@section('content')
 @php
 $userData = Session::get('user_data');
-
 @endphp
+@section('content')
 <style>
     #refund_block_form .text-box input,
     #refund_block_form .text-box textarea {
@@ -20,10 +19,11 @@ $userData = Session::get('user_data');
 </style>
 
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar')
+@include('afterlogin.layouts.sidebar_new')
+<!-- sidebar menu end -->
 <div class="main-wrapper">
-    <!-- top navbar -->
-    @include('afterlogin.layouts.navbar_header')
+    <!-- End start-navbar Section -->
+    @include('afterlogin.layouts.navbar_header_new')
     <div class="content-wrapper my-4">
         <!-- dashboard html section-->
         <div class="container-fluid">
@@ -70,13 +70,13 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-</div>
+
 <!--End dashboard html section-->
 
 
 
 
-@include('afterlogin.layouts.footer')
+@include('afterlogin.layouts.footer_new')
 
 
 <script type="text/javascript">

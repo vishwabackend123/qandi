@@ -339,7 +339,6 @@ class ExamCustomController extends Controller
 
     public function ajax_next_question($quest_id, Request $request)
     {
-
         $userData = Session::get('user_data');
         $user_id = $userData->id;
 
@@ -408,7 +407,6 @@ class ExamCustomController extends Controller
 
         return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
     }
-
 
     public function saveAnswer(Request $request)
     {
@@ -719,41 +717,41 @@ class ExamCustomController extends Controller
         $subject_id = $active_subject_id;
 
 
-//        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
-//        if ($data = Redis::get($cacheKey)) {
-//            $chapter_list = json_decode($data);
-//        } else {
+        //        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
+        //        if ($data = Redis::get($cacheKey)) {
+        //            $chapter_list = json_decode($data);
+        //        } else {
 
-            $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $api_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
 
-            $response_json = curl_exec($curl);
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
 
-            if ($httpcode == 200 || $httpcode == 201) {
-                $responsedata = json_decode($response_json);
+        if ($httpcode == 200 || $httpcode == 201) {
+            $responsedata = json_decode($response_json);
 
-                $chapter_list = $responsedata->response;
-            } else {
-                $chapter_list = [];
-            }
-//            if (!empty($chapter_list)) {
-//                Redis::set($cacheKey, json_encode($chapter_list));
-//            }
-//        }
+            $chapter_list = $responsedata->response;
+        } else {
+            $chapter_list = [];
+        }
+        //            if (!empty($chapter_list)) {
+        //                Redis::set($cacheKey, json_encode($chapter_list));
+        //            }
+        //        }
 
 
         $collection = collect($chapter_list);
