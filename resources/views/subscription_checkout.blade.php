@@ -12,7 +12,7 @@ $userData = Session::get('user_data');
     }
 </style>
 <header>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-6 outer-logo">
                 <img src="{{URL::asset('public/images_new/uniq.png')}}" />
