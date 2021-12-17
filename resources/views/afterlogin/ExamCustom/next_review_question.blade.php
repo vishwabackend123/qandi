@@ -34,9 +34,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         }else{
         $resp_class= '';
         }
+        if(in_array($key,$attempt_opt['Answer:'])){
+        $checked= "checked";
+        }else{
+        $checked='';
+        }
         @endphp
         <div class="col-md-6 mb-4">
-            <input class="form-check-input checkboxans" type="checkbox" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+            <input class="form-check-input checkboxans" {{$checked}} disabled type="checkbox" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
             <div class="border ps-3 ans">
                 <label class="question m-0 py-3   d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
             </div>

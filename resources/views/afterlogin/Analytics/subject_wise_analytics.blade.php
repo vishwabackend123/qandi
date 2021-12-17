@@ -103,21 +103,36 @@
 
 
     </div>
-    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center px-3">
                 <h5 class="dashboard-title ">Topics</h5>
-                <!--  <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand</button>
-        -->
             </div>
             <div class="scroll-topic-ana">
                 @if($subProf)
                 @foreach($subProf as $val)
+
                 <div class="d-flex align-items-center mt-3 px-3">
                     <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
                         <span class="mr-3 dashboard-name-txt SubjName">{{$val->topic_name}}</span>
+
+                        <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+
+                            <div class="star-ratings-css">
+                                <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <div class="star-ratings-css-bottom">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                            </div>
+
+                            <div class="ms-1 score score-rating js-score">
+                                {{round($val->score)}}%
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress  ms-auto col-6" style="overflow: visible;">
+                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
                         @if($val->correct_ans > 0)
                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
@@ -149,7 +164,7 @@
                 <div id="week" style="display:none"></div>
                 <div id="month" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass" id="s_day_time" onclick="replace('day','week','month')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
                         Day
                     </button>
                     <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
@@ -176,7 +191,7 @@
                 <div id="week1" style="display:none"></div>
                 <div id="month1" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                         Day
                     </button>
                     <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
@@ -554,14 +569,14 @@
 
     function replace(show, hide1, hide2) {
         if (show == 'day') {
-            $(".s_timeClass").removeClass("btn-light-green");
-            $("#s_day_time").addClass("btn-light-green");
+            $(".s_timeClass").removeClass("active");
+            $("#s_day_time").addClass("active");
         } else if (show == 'week') {
-            $(".s_timeClass").removeClass("btn-light-green");
-            $("#s_week_time").addClass("btn-light-green");
+            $(".s_timeClass").removeClass("active");
+            $("#s_week_time").addClass("active");
         } else {
-            $(".s_timeClass").removeClass("btn-light-green");
-            $("#s_month_time").addClass("btn-light-green");
+            $(".s_timeClass").removeClass("active");
+            $("#s_month_time").addClass("active");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -746,14 +761,14 @@
 
     function s_replace1(show, hide1, hide2) {
         if (show == 'day1') {
-            $(".s_classMark").removeClass("btn-light-green");
-            $("#s_day_mark").addClass("btn-light-green");
+            $(".s_classMark").removeClass("active");
+            $("#s_day_mark").addClass("active");
         } else if (show == 'week1') {
-            $(".s_classMark").removeClass("btn-light-green");
-            $("#s_week_mark").addClass("btn-light-green");
+            $(".s_classMark").removeClass("active");
+            $("#s_week_mark").addClass("active");
         } else {
-            $(".s_classMark").removeClass("btn-light-green");
-            $("#s_month_mark").addClass("btn-light-green");
+            $(".s_classMark").removeClass("active");
+            $("#s_month_mark").addClass("active");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";

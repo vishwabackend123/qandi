@@ -3,29 +3,223 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <a href="javascript:void(0);" class="UserPro"><span class="user-pic-block"><img src="{{$imgPath}}" class=" user-pic"></span></a>
-                    <span class="user-name-block ps-3 pe-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
-                    <span id="nodificbell" class="notification me-5 ms-4" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification"> <img src="{{URL::asset('public/after_login/new_ui/images/bell.png')}}"></span>
-                    <span id="plannCal" class="notification ms-4">
-                        <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample">
-                            <img src="{{URL::asset('public/after_login/new_ui/images/calender.png')}}">
-                        </a>
-                    </span>
-                    <span id="overAna" class="notification ms-4"><a href="{{route('overall_analytics')}}"><img src="{{URL::asset('public/after_login/new_ui/images/Group1831.png')}}"></a></span>
+                    <span class="user-pic-block"><img src="{{$imgPath}}" class="user-pic"></span>
+                    <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
+
+                    <span class="notification me-5 ms-4"><a data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #f6f9fd;
+                                        }
+
+                                        .cls-1,
+                                        .cls-2 {
+                                            opacity: 0;
+                                        }
+
+                                        .cls-2 {
+                                            fill: #f3f7ff;
+                                        }
+
+                                        .cls-3,
+                                        .cls-4 {
+                                            fill: none;
+                                        }
+
+                                        .cls-4 {
+                                            stroke: #000;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-width: 1.5px;
+                                        }
+
+                                        .cls-5 {
+                                            fill: #d71921;
+                                        }
+
+                                        .cls-6 {
+                                            filter: url(#Rectangle_4404);
+                                        }
+                                    </style>
+                                    <filter id="Rectangle_4404" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse">
+                                        <feOffset input="SourceAlpha" />
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feFlood flood-color="#7b7b7b" flood-opacity="0.212" />
+                                        <feComposite operator="in" in2="blur" />
+                                        <feComposite in="SourceGraphic" />
+                                    </filter>
+                                </defs>
+                                <g id="IconButton_Notification_Alert" data-name="IconButton / Notification / Alert" transform="translate(15 15)">
+                                    <g class="cls-6" transform="matrix(1, 0, 0, 1, -15, -15)">
+                                        <rect id="Rectangle_4404-2" data-name="Rectangle 4404" class="cls-1" width="48" height="48" rx="16" transform="translate(15 15)" />
+                                    </g>
+                                    <g id="Group_4539" data-name="Group 4539" transform="translate(9 8)">
+                                        <rect id="Rectangle_2416" data-name="Rectangle 2416" class="cls-2" width="31" height="32" rx="8" />
+                                        <g id="Group_1824" data-name="Group 1824" transform="translate(0.487 0.974)">
+                                            <g id="Group_130" data-name="Group 130">
+                                                <path id="Path_195" data-name="Path 195" class="cls-3" d="M0,0H30V30H0Z" />
+                                                <path id="Path_196" data-name="Path 196" class="cls-4" d="M11.445,5.537a2.482,2.482,0,1,1,4.963,0,8.885,8.885,0,0,1,4.963,7.61v3.8a5.079,5.079,0,0,0,2.482,3.8H4a5.079,5.079,0,0,0,2.482-3.8v-3.8a8.885,8.885,0,0,1,4.963-7.61" transform="translate(1.073 0.805)" />
+                                                <path id="Path_197" data-name="Path 197" class="cls-4" d="M9,17v1.158a3.651,3.651,0,0,0,3.8,3.475,3.651,3.651,0,0,0,3.8-3.475V17" transform="translate(2.195 4.561)" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </a></span>
+                    <span class="notification ms-4"><a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #f6f9fd;
+                                        }
+
+                                        .cls-1,
+                                        .cls-2,
+                                        .cls-5 {
+                                            opacity: 0;
+                                        }
+
+                                        .cls-2 {
+                                            fill: #f3f7ff;
+                                        }
+
+                                        .cls-3,
+                                        .cls-4 {
+                                            fill: none;
+                                        }
+
+                                        .cls-4 {
+                                            stroke: #000;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-width: 1.5px;
+                                        }
+
+                                        .cls-5 {
+                                            fill: #d71921;
+                                        }
+
+                                        .cls-6 {
+                                            filter: url(#Rectangle_4403);
+                                        }
+                                    </style>
+                                    <filter id="Rectangle_4403" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse">
+                                        <feOffset input="SourceAlpha" />
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feFlood flood-color="#7b7b7b" flood-opacity="0.2" />
+                                        <feComposite operator="in" in2="blur" />
+                                        <feComposite in="SourceGraphic" />
+                                    </filter>
+                                </defs>
+                                <g id="IconButton_Planner_Default" data-name="IconButton / Planner / Default" transform="translate(15 15)">
+                                    <g class="cls-6" transform="matrix(1, 0, 0, 1, -15, -15)">
+                                        <rect id="Rectangle_4403-2" data-name="Rectangle 4403" class="cls-1" width="48" height="48" rx="16" transform="translate(15 15)" />
+                                    </g>
+                                    <g id="Group_4534" data-name="Group 4534" transform="translate(-14 9)">
+                                        <rect id="Rectangle_2417" data-name="Rectangle 2417" class="cls-2" height="16" transform="translate(47 13.709)" />
+                                        <g id="Group_1826" data-name="Group 1826" transform="translate(22.893)">
+                                            <g id="Group_1825" data-name="Group 1825">
+                                                <path id="Path_2319" data-name="Path 2319" class="cls-3" d="M0,0H30V30H0Z" />
+                                                <rect id="Rectangle_2409" data-name="Rectangle 2409" class="cls-4" width="19.927" height="20.791" rx="2" transform="translate(5.036 5.836)" />
+                                                <line id="Line_358" data-name="Line 358" class="cls-4" y2="4.99" transform="translate(19.985 3.373)" />
+                                                <line id="Line_359" data-name="Line 359" class="cls-4" y2="4.99" transform="translate(10.015 3.373)" />
+                                                <line id="Line_360" data-name="Line 360" class="cls-4" x2="19.927" transform="translate(5.036 13.338)" />
+                                                <line id="Line_361" data-name="Line 361" class="cls-4" x2="1.663" transform="translate(13.338 19.154)" />
+                                                <line id="Line_362" data-name="Line 362" class="cls-4" y2="3.327" transform="translate(15 19.151)" />
+                                            </g>
+
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </a></span>
+                    <span class="notification ms-4"><a href="{{route('overall_analytics')}}" title="Analytics">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #f6f9fd;
+                                            box-shadow: 0 0 10px 0 rgba(0, 186, 255, 0.2);
+                                        }
+
+                                        .cls-1,
+                                        .cls-2,
+                                        .cls-5 {
+                                            opacity: 0;
+                                        }
+
+                                        .cls-2 {
+                                            fill: #f3f7ff;
+                                        }
+
+                                        .cls-3,
+                                        .cls-4 {
+                                            fill: none;
+                                        }
+
+                                        .cls-4 {
+                                            stroke: #000;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                            stroke-width: 1.5px;
+                                        }
+
+                                        .cls-5 {
+                                            fill: #d71921;
+                                        }
+
+                                        .cls-6 {
+                                            filter: url(#Path_9915);
+                                        }
+                                    </style>
+                                    <filter id="Path_9915" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse">
+                                        <feOffset input="SourceAlpha" />
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feFlood flood-color="#7b7b7b" flood-opacity="0.2" />
+                                        <feComposite operator="in" in2="blur" />
+                                        <feComposite in="SourceGraphic" />
+                                    </filter>
+                                </defs>
+                                <g id="IconButton_Analytics_Default" data-name="IconButton / Analytics / Default" transform="translate(15 15)">
+                                    <g class="cls-6" transform="matrix(1, 0, 0, 1, -15, -15)">
+                                        <path id="Path_9915-2" data-name="Path 9915" class="cls-1" d="M16,0H32A16,16,0,0,1,48,16V32A16,16,0,0,1,32,48H16A16,16,0,0,1,0,32V16A16,16,0,0,1,16,0Z" transform="translate(15 15)" />
+                                    </g>
+                                    <g id="Group_4529" data-name="Group 4529" transform="translate(9 9)">
+                                        <rect id="Rectangle_2418" data-name="Rectangle 2418" class="cls-2" width="30" height="30" rx="8" />
+                                        <g id="Group_1831" data-name="Group 1831">
+                                            <g id="Group_1830" data-name="Group 1830">
+                                                <path id="Path_2320" data-name="Path 2320" class="cls-3" d="M0,0H30V30H0Z" />
+                                                <path id="Path_2321" data-name="Path 2321" class="cls-4" d="M9.058,5H6.529A2.529,2.529,0,0,0,4,7.529V22.7a2.529,2.529,0,0,0,2.529,2.529h7.2" transform="translate(0.973 0.974)" />
+                                                <path id="Path_2322" data-name="Path 2322" class="cls-4" d="M18,14v5.058h5.058" transform="translate(4.413 3.459)" />
+                                                <path id="Path_2323" data-name="Path 2323" class="cls-4" d="M19.058,12.587V7.529A2.529,2.529,0,0,0,16.529,5H14" transform="translate(3.459 1.226)" />
+                                                <rect id="Rectangle_2414" data-name="Rectangle 2414" class="cls-4" width="7.554" height="5.036" rx="2" transform="translate(9.983 3.424)" />
+                                                <circle id="Ellipse_714" data-name="Ellipse 714" class="cls-4" cx="5.036" cy="5.036" r="5.036" transform="translate(17.344 17.344)" />
+                                                <path id="Path_2324" data-name="Path 2324" class="cls-4" d="M8,11h5.058" transform="translate(1.977 2.75)" />
+                                                <path id="Path_2325" data-name="Path 2325" class="cls-4" d="M8,15h3.794" transform="translate(1.983 3.75)" />
+                                            </g>
+
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a></span>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
 <!-- Planner Section -->
-
 <div class="planmner-block width collapse" id="collapsePlanner">
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
-                <div class="planner-scroll" style="overflow-y: scroll; overflow-x: hidden; height: 70vh;">
+                <div class="planner-scroll" style="overflow-y: auto; overflow-x: hidden; height: 70vh;">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
                     <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
 
@@ -36,11 +230,11 @@
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
-                                    <div class="col-6">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">Start Date</label>
                                         <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required="" min="2021-11-29">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">End Date</label>
                                         <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly="" required="">
                                     </div>
@@ -60,7 +254,7 @@
                             @if(isset($aSubjects) && !empty($aSubjects))
                             @foreach($aSubjects as $skey=>$sVal)
 
-                            <div class="col col-md-4 mb-4 ">
+                            <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
                                 <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
                                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 30vh;">
                                     <div class="subject_chapter" style="overflow: hidden; width: auto; height: 30vh;">
@@ -102,11 +296,14 @@
                 <span>
                     <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
-                    <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%"></a>
+                    <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><i class="fa fa-close"></i></a>
 
                 </span>
 
-                <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
+                <!--
+<img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%">
+
+<span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
             <div class="calender-block">
                 <div id="calendari">
