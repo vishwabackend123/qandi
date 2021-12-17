@@ -52,30 +52,32 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Proficiency</span>
                             <!--                                 <span class="i-sms">!</span> -->
                         </div>
-                        <ul class="course-star subject_scroll pe-2">
-                            @if(!empty($subjectData))
-                            @foreach($subjectData as $key=>$sub)
-                            <li>
-                                <strong>{{$sub['subject_name']}}</strong>
-                                <span class="star-img">
-                                    <div class="star-ratings-css ">
-                                        <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
-                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        <div class="subject-scroll">
+                            <ul class="course-star pe-2">
+                                @if(!empty($subjectData))
+                                @foreach($subjectData as $key=>$sub)
+                                <li>
+                                    <strong>{{$sub['subject_name']}}</strong>
+                                    <span class="star-img">
+                                        <div class="star-ratings-css ">
+                                            <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
+                                            <div class="star-ratings-css-bottom">
+                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                            </div>
                                         </div>
-                                        <div class="star-ratings-css-bottom">
-                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                        </div>
-                                    </div>
 
-                                </span>
-                                <span>{{round($sub['score'])}}%</span>
+                                    </span>
+                                    <span>{{round($sub['score'])}}%</span>
 
 
-                            </li>
-                            @endforeach
-                            @endif
+                                </li>
+                                @endforeach
+                                @endif
 
-                        </ul>
+                            </ul>
+                        </div>
 
                     </div>
                 </div>
@@ -274,7 +276,7 @@ $userData = Session::get('user_data');
                 <p id="h1--P" class="h1-p text-success text-uppercase">Just one more step!</p>
                 <p>Take a full body scan test to analyse and plan your preparation journey</p>
                 <a id="full-txtBlock" href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
-
+                    <i class="fa-li fa fa-check" aria-hidden="true"></i>
                     <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
                 </a>
                 <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard &gt;</a>
@@ -330,9 +332,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     $(".rating-input").click(function() {
         $("#nxt-btn").removeClass("disabled");
     });
-    $('.subject_scroll').slimscroll({
+    /* $('.subject_scroll').slimscroll({
         height: '25vh'
-    });
+    }); */
 
     function welcome_back() {
         $('#welcomeModal').modal('hide');

@@ -153,9 +153,9 @@ $questtype='radio';
     </div>
     <div class="tab-btn-box  d-flex mt-3">
         @if(isset($last_qid) && ($last_qid==$active_q_id))
-        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$active_q_id}}');" id="save_submit">Save & Submit</a>
+        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$active_q_id}}','{{$qNo}}');" id="save_submit">Save & Submit</a>
         @else
-        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$active_q_id}}');">Save & Next
+        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$active_q_id}}','{{$qNo}}');">Save & Next
         </a>
         @endif
 

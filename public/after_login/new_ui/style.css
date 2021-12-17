@@ -16,152 +16,6 @@ button {
     text-decoration: none;
 }
 
-/** rahul css 17-12-2021**/
-
-
-/** header top icon css on 17-12-2021 first half**/
-span.notification.ms-4 {
-    margin-left: 0px !important;
-    width: 50px;
-}
-
-/** end here on 17-12-2021 **/
-/** exam analytics page css 17-12-2021 **/
-.exam-analytics .cust-tab-content {
-    padding: 0px 15px !important;
-}
-
-.cust-tabs #Mathematics_tab_subject.active:nth-child(1):after {
-    left: -80px;
-    width: 80px;
-    background: none;
-    background-color: #fff;
-    border-top-left-radius: 56px;
-}
-}
-
-/** End here on 17-2-2021 first half**/
-
-/**  custome page tabing solved z-index value 17-12-2021 fisrt half**/
-.custom-page .tab-wrapper .nav-tabs {
-    z-index: 9;
-    position: relative;
-}
-
-/** end here 17-12-2021 fisrt half**/
-
-
-/** rahul updated css o 17-12-2021 ** timing on 1:30pm**/
-
-/* how much like popup */
-#favSubResponse .modal-content.rounded-0 {
-    border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-    border: none;
-}
-
-#favSubResponse a#nxt-btn {
-    border-radius: 20px !important;
-    background: #13c5ff;
-    color: #fff;
-    border: none;
-    opacity: 0.3;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    width: 204px;
-    padding: 12px 91px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#favSubResponse p {
-    font-family: Manrope;
-    font-size: 28px;
-    line-height: 30px;
-}
-
-
-#favSubResponse button.btn-close {
-    right: 30px;
-    position: absolute;
-    top: 20px;
-    z-index: 9;
-}
-
-#favSubResponse .rating.block {
-    justify-content: center !important;
-
-}
-
-#favSubResponse .rating .lbl-text {
-    width: 20%;
-    text-transform: capitalize;
-}
-
-/* end how much like popup */
-
-/* Signup Payment Gateway */
-.PaymentGway {
-    border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    border: none;
-    color: #fff;
-}
-
-.Pay-MentSect {
-    margin-bottom: 35px;
-}
-
-.PaymentGway:active:focus {
-    box-shadow: none;
-}
-
-/*end Signup Payment Gateway */
-
-
-/*signup-pay-subscription.html*/
-
-.PayBttn {
-    border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    border: none;
-    color: #fff;
-}
-
-.TotalAmount.bg-danger {
-    background: #00baff !important;
-    border-radius: 25px;
-}
-
-.Fullsub-amt-subN {
-    background: #fff;
-    border-radius: 20px;
-    border: solid 1px #bce0fd;
-}
-
-.red-dots1 {
-    position: absolute;
-    top: -20px;
-    width: 6px;
-    height: 6px;
-    background: #00baff;
-    border-radius: 10px;
-    left: 50%;
-    margin-left: -3px;
-    z-index: 99;
-}
-
-.outer-logo img {
-    width: 110px;
-}
-
-.PayBttn:active:focus {
-    box-shadow: none;
-}
-
-/** end payment **/
-
 
 
 /** preparation page css on 17-12-2021 modified by Rahul at night **/
@@ -244,7 +98,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(https://app.uniqtoday.com/public/after_login/new_ui/images/before-img.png);
+    background: url(https://app.uniqtoday.com/public/after_login/images/before-img.png);
     transition: all 250ms ease;
     height: 81px;
     bottom: -1px;
@@ -273,7 +127,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(https://app.uniqtoday.com/public/after_login/new_ui/images/after-img.png);
+    background: url(https://app.uniqtoday.com/public/after_login/images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
@@ -581,7 +435,7 @@ div#contentHtml .report-block1 {
 }
 
 .report-block1 .reportHeading {
-    border-left: solid 4px #00baff;
+    border-left: solid 4px #aff3d0;
 }
 
 /* .reportHeading:after {
@@ -613,11 +467,7 @@ div#contentHtml .report-block1 {
     position: fixed;
     right: 75px;
     top: 15px;
-    /* filter: contrast(0); */
-    /* color: transparent; */
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
-    border-radius: 20px !important;
-    padding: 5px;
+    filter: contrast(0);
 }
 
 .export-btn:hover {
@@ -628,10 +478,7 @@ div#contentHtml .report-block1 {
     position: fixed;
     right: 15px;
     top: 15px;
-    /* filter: contrast(0); */
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
-    border-radius: 20px !important;
-    padding: 5px;
+    filter: contrast(0);
 }
 
 .close-btn:hover {
@@ -834,7 +681,7 @@ p.mb-0.line-height-18px {
 }
 
 .tab-wrapper .nav-tabs {
-    z-index: 9;
+    z-index: 99999;
     position: relative;
 }
 
@@ -919,10 +766,6 @@ button.percentage-digit {
     padding-left: 0px;
 }
 
-.rview-quses li.active {
-    border-color: #ee6a5f;
-}
-
 .rview-quses li.correctans {
     border-color: #37c027;
 }
@@ -933,6 +776,11 @@ button.percentage-digit {
 
 .rview-quses li.notans {
     border-color: #e4e4e4;
+}
+
+
+.rview-quses li.active {
+    border-color: #ee6a5f;
 }
 
 .rview-quses li {
@@ -1210,8 +1058,7 @@ p#h1--P {
 /** Exam test screen bhim 16-12/2021 **/
 
 .main-wrapper {
-    /* height: 100%;*/
-    width: 100%;
+    height: 100%;
 }
 
 #myTabContent .arrow:hover {
@@ -2357,39 +2204,39 @@ span.profile-img-user {
 }
 
 .cust-tabs .nav-link.active:before {
-    /* right: -19px; */
-    /* transform: skew(30deg, 0deg); */
+    right: -19px;
+    transform: skew(30deg, 0deg);
     /* box-shadow: rgb(0 0 0 / 10%) 3px 2px 5px, inset rgb(255 255 255 / 9%) -1px 0; */
-    /* border-radius: 0 5px 0 0; */
-    /* display: block; */
+    border-radius: 0 5px 0 0;
+    display: block;
     content: " ";
     position: absolute;
     top: -1px;
     /* height: 100%; */
-    /* width: 34px; */
-    /* background-color: #fff; */
-    /* transition: all 250ms ease; */
+    width: 34px;
+    background-color: #fff;
+    transition: all 250ms ease;
     bottom: -1px;
-    /* border-right: 1px solid transparent; */
-    /* border-top: 1px solid transparent; */
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
 }
 
 .cust-tabs .nav-link.active:after {
-    /* left: -19px; */
-    /* transform: skew(332deg, 0deg); */
+    left: -19px;
+    transform: skew(332deg, 0deg);
     /* box-shadow: rgb(0 0 0 / 10%) 3px 2px 5px, inset rgb(255 255 255 / 9%) -1px 0; */
-    /* border-radius: 0 5px 0 0; */
-    /* display: block; */
+    border-radius: 0 5px 0 0;
+    display: block;
     content: " ";
     position: absolute;
     top: -1px;
     /* height: 100%; */
-    /* width: 34px; */
-    /* background-color: #fff; */
-    /* transition: all 250ms ease; */
+    width: 34px;
+    background-color: #fff;
+    transition: all 250ms ease;
     bottom: -1px;
-    /* border-right: 1px solid transparent; */
-    /* border-top: 1px solid transparent; */
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
 }
 
 .tab-wrapper .nav-tabs {
@@ -3517,7 +3364,7 @@ header {
 
 .exam-panel.cust-tabs .nav-link.active,
 .exam-panel.cust-tabs .nav-link.active:before {
-    background-color: none;
+    background-color: #fff;
 }
 
 .cust-tabs .nav-link {
@@ -6613,7 +6460,6 @@ span#slide-input {
     .examSect .ans-block.row.mt-5 .mb-4 {
         margin-bottom: 10px !important;
     }
-	
 }
 
 /* end test screen*/
@@ -6754,6 +6600,47 @@ span#slide-input {
     }
 
 
+    /*signup-pay-subscription.html*/
+
+    .PayBttn {
+        border-radius: 20px !important;
+        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        background-image: linear-gradient(to bottom, #21ccff, #00baff);
+        border: none;
+        color: #fff;
+    }
+
+    .TotalAmount {
+        background: #00baff !important;
+        border-radius: 25px;
+    }
+
+    .Fullsub-amt-subN {
+        background: #fff;
+        border-radius: 20px;
+        border: solid 1px #bce0fd;
+    }
+
+    .red-dots1 {
+        position: absolute;
+        top: -20px;
+        width: 6px;
+        height: 6px;
+        background: #00baff;
+        border-radius: 10px;
+        left: 50%;
+        margin-left: -3px;
+        z-index: 99;
+    }
+
+    .outer-logo img {
+        width: 110px;
+    }
+
+    .PayBttn:active:focus {
+        box-shadow: none;
+    }
+
 
     @media(max-width:767px) {
         [class*="col-"] {
@@ -6766,6 +6653,24 @@ span#slide-input {
     }
 
     /*end signup-pay-subscription.html*/
+    /* Signup Payment Gateway */
+    .PaymentGway {
+        border-radius: 20px !important;
+        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        background-image: linear-gradient(to bottom, #21ccff, #00baff);
+        border: none;
+        color: #fff;
+    }
+
+    .Pay-MentSect {
+        margin-bottom: 35px;
+    }
+
+    .PaymentGway:active:focus {
+        box-shadow: none;
+    }
+
+    /*end Signup Payment Gateway */
 
     /** subscription screen **/
     .subscription {
@@ -7170,8 +7075,52 @@ span#slide-input {
 
     /* dinesh added css end */
 
+    /* how much like popup */
+    #favSubResponse .modal-content.rounded-0 {
+        border-radius: 56px !important;
+        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        border: none;
+    }
 
-    /* how much popup resonsive */
+    #favSubResponse a#nxt-btn {
+        border-radius: 20px !important;
+        background: #13c5ff;
+        color: #fff;
+        border: none;
+        opacity: 0.3;
+        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        width: 204px;
+        padding: 12px 91px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    #favSubResponse p {
+        font-family: Manrope;
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+
+    #favSubResponse button.btn-close {
+        right: 30px;
+        position: absolute;
+        top: 20px;
+        z-index: 9;
+    }
+
+    #favSubResponse .rating.block {
+        justify-content: center !important;
+
+    }
+
+    #favSubResponse .rating .lbl-text {
+        width: 20%;
+        text-transform: capitalize;
+    }
+
+    /* end how much like popup */
+    /* end how much popup resonsive */
 
     @media(max-width:991px) {
         #favSubResponse .rating .lbl-text {
@@ -7340,7 +7289,6 @@ span#slide-input {
         border: none;
         padding: 15px 65px;
         color: #fff;
-        margin-top: 12px;
     }
 
     /* end welcome instructions exam popup */
@@ -7642,17 +7590,6 @@ span#slide-input {
         padding-left: 0px;
     }
 
-    .rview-quses li.correctans {
-        border-color: #37c027;
-    }
-
-    .rview-quses li.incorrectans {
-        border-color: #ee6a5f;
-    }
-
-    .rview-quses li.notans {
-        border-color: #e4e4e4;
-    }
 
     .rview-quses li {
         position: relative;
@@ -8201,8 +8138,7 @@ span#slide-input {
     }
 
     /* end referFrnd */
-    /*Analytics Subject */
-    .SubjName {
+    Analytics Subject */ .SubjName {
         width: 35%;
     }
 

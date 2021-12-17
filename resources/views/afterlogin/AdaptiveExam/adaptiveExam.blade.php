@@ -72,6 +72,50 @@ $questtype='radio';
         font-weight: 200;
 
     }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 180px;
+        background-color: #E4E4E4;
+        height: 18px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #44CD7F;
+        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
+
+    }
 </style>
 
 <div class="main-wrapper" style="padding-left:0px;">
@@ -80,25 +124,26 @@ $questtype='radio';
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
-
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <!-- Exam subject Tabs  -->
-                            <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
-                                @if(!empty($filtered_subject))
-                                @foreach($filtered_subject as $key=>$sub)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}</a>
-                                </li>
-                                @endforeach
-                                @endif
-                            </ul>
+                            <div id="scroll-mobile">
+                                <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                                    @if(!empty($filtered_subject))
+                                    @foreach($filtered_subject as $key=>$sub)
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}</a>
+                                    </li>
+                                    @endforeach
+                                    @endif
+                                </ul>
+                            </div>
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
                                     <div class="d-flex" id="pause-start">
-                                        <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+                                        <div id="counter_{{$activeq_id}}" class="counter  d-flex">
                                             <span id="avg_text">Average Time :</span>
                                             <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
@@ -143,21 +188,20 @@ $questtype='radio';
                                             @endif
 
                                         </div>
+                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</a>
+                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
                                         @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
                                         </button>
                                         @endif
-
                                         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
-
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +211,7 @@ $questtype='radio';
                 <!-- Right Side Area -->
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5 h-100">
                         <div class="d-flex align-items-center">
                             <div class="" id="app">
                                 <div class="base-timer">
@@ -202,7 +246,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -234,17 +278,17 @@ $questtype='radio';
                         <p class="rightSectH">Legends</p>
                         <div class="row">
                             <div class="col-md-6 legends">
-                                <button class="btn btn-light  rounded-0"> </button>
+                                <button class="btn btn-light p-0 rounded-0"> </button>
                                 <p>Unread</p>
                             </div>
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-light-green rounded-0"> </button>
+                            <div class="col-md-6 legends ">
+                                <button class="btn btn-light-green p-0 rounded-0"> </button>
                                 <p>Answered </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 legends">
-                                <button class="btn btn-secondary   rounded-0"> </button>
+                                <button class="btn btn-secondary p-0  rounded-0"> </button>
                                 <p>Marked for Review</p>
                             </div>
                             <div class="col-md-6 legends">
@@ -465,6 +509,8 @@ $questtype='radio';
         railVisible: true,
         alwaysVisible: true
     });
+
+    alert("hi");
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -743,7 +789,7 @@ $questtype='radio';
     }
 
     /* Saved question response */
-    function saveAnswer(question_id) {
+    function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
         $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
@@ -770,6 +816,8 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
@@ -787,7 +835,7 @@ $questtype='radio';
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswer(quest_id) != false) {
+        if (saveAnswer(quest_id, '') != false) {
 
             // marking for review
             $.ajax({

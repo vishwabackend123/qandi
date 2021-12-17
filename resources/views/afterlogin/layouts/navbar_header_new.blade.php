@@ -19,13 +19,12 @@
 </header>
 
 <!-- Planner Section -->
-
 <div class="planmner-block width collapse" id="collapsePlanner">
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
-                <div class="planner-scroll" style="overflow-y: scroll; overflow-x: hidden; height: 70vh;">
+                <div class="planner-scroll" style="overflow-y: auto; overflow-x: hidden; height: 70vh;">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
                     <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
 
@@ -36,11 +35,11 @@
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
-                                    <div class="col-6">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">Start Date</label>
                                         <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required="" min="2021-11-29">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">End Date</label>
                                         <input type="date" id="EndDate" name="end_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" readonly="" required="">
                                     </div>
@@ -60,7 +59,7 @@
                             @if(isset($aSubjects) && !empty($aSubjects))
                             @foreach($aSubjects as $skey=>$sVal)
 
-                            <div class="col col-md-4 mb-4 ">
+                            <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
                                 <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
                                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 30vh;">
                                     <div class="subject_chapter" style="overflow: hidden; width: auto; height: 30vh;">
@@ -102,11 +101,14 @@
                 <span>
                     <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
-                    <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%"></a>
+                    <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><i class="fa fa-close"></i></a>
 
                 </span>
 
-                <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
+                <!--
+<img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%">
+
+<span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
             <div class="calender-block">
                 <div id="calendari">

@@ -12,7 +12,7 @@
                 {{-- @csrf --}}
                 <div id="mobile_input">
                     <div class="form-group flds">
-                        <input type="text" class="form-control m-email" name="login_mobile" id="mobile_num" placeholder="Mobile number/email ID">
+                        <input type="text" class="form-control m-email" name="login_mobile" id="mobile_num" placeholder="Mobile number/email ID" autocomplete="off">
                         <span class="error-sms mobil-not-valid" id="errlog_mob">Please entered registered email/mobile number</span>
                         <span class="error-sms email-not-valid">Please sign up first or check the email or mobile you have provided</span>
 

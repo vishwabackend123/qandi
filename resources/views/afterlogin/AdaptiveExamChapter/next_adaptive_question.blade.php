@@ -112,6 +112,15 @@ $questtype='radio';
     <div class="question-block">
 
         <!-- Next and previous button -->
+        <a href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
+        @if(isset($last_qid) && ($last_qid==$active_q_id))
+        <a href="javascript:void(0);" class="arrow next-arow{{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><i class="fa fa-angle-right"></i></a>
+
+        @else
+        <a href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><i class="fa fa-angle-right"></i></a>
+
+        @endif
+        <!-- Next and previous button -->
 
         <sapn class="question_difficulty_tag small">
             <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
@@ -151,9 +160,9 @@ $questtype='radio';
     </div>
     <div class="tab-btn-box  d-flex mt-3">
         @if(!empty($next_qKey))
-        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</a>
+        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}','{{$qNo}}')">Save & Next</a>
         @else
-        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit
+        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}','{{$qNo}}')">Save & Submit
         </a>
         @endif
 
@@ -161,7 +170,7 @@ $questtype='radio';
 
         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
 
-        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}','{{$qNo}}')">Clear Response</a>
     </div>
 </div>
 <script>
