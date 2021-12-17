@@ -505,6 +505,7 @@ class AnalyticsController extends Controller
         $timeSpent = $subAnalytics->time_taken;
         $subScore = $subAnalytics->subject_score;
 
+
         $date1 = [];
         $correctTime1 = [];
         $incorrectTime1 = [];

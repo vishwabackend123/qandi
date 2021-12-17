@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Manrope', sans-serif !important;
-}
+body{margin:0;padding:0;font-family: 'Manrope', sans-serif !important;}
 
 a {
     color: #355cec;
@@ -20,53 +16,39 @@ button {
 
 /** preparation page css on 17-12-2021 modified by Rahul at night **/
 .modal-dialog .modal-content.bg-light {
-    background-color: #ffffff !important;
-    border-radius: 56px !important;
+    background-color: #ffffff!important;
+    border-radius: 56px!important;
     padding: 20px;
 }
-
 .ms-auto span.me-1 .bg-light-red {
-    background: #00baff !important;
+    background: #00baff!important;
 }
-
 .preparation .tab-wrapper .nav-tabs {
     z-index: 99;
     position: relative;
 }
-
 /**.h-scroll-slim .d-flex.bg-white {
     border: 1px solid #eee;
     border-radius: 20px;
 } end here on 17-12-2021**/
 
 /** tabing border curve  16-12-2021**/
-#review_rques_blk {
-    padding: 0px 10px;
-}
-
-.cust-tab-content {
-    padding: 0px !important;
-}
-
+#review_rques_blk{padding:0px 10px;}
+.cust-tab-content{padding:0px !important;}
 .tab-wrapper .nav-tabs {
     background: #f6f9fd;
     border-top-left-radius: 56px;
     box-shadow: none !important;
     border-top-right-radius: 56px;
     border: none;
-    padding-left: 80px !important;
-
+	padding-left:80px !important;
+   
 }
-
-.cust-tabs .nav-link {
-    padding-top: 20px;
-}
-
+.cust-tabs .nav-link{padding-top:20px;}
 .tab-wrapper {
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
     border-radius: 56px;
 }
-
 .tab-wrapper .nav-tabs {
     background: #f6f9fd;
     border-top-left-radius: 56px;
@@ -76,7 +58,6 @@ button {
     padding-left: 75px;
     height: 80px;
 }
-
 .cust-tabs .nav-link.active {
     color: #231f20;
     background-color: #fff;
@@ -84,9 +65,8 @@ button {
     border-radius: 0;
     height: 85px;
 }
-
 .cust-tabs .nav-link.active:before {
-    right: -70px;
+right: -70px;
     /* transform: skew(
 30deg, 
 0deg); */
@@ -143,42 +123,36 @@ button {
     border-radius: 56px !important;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff !important;
+	border: none;
+}
+#referFrnd{
+border-radius: 20px !important;
+  box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+  background-image: linear-gradient(
+237deg, #21ccff, #00baff -1%) !important;
     border: none;
 }
-
-#referFrnd {
-    border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    background-image: linear-gradient(237deg, #21ccff, #00baff -1%) !important;
-    border: none;
-}
-
-#enterEPnmb {
-    background-color: #f2f2f2 !important;
-    border-radius: 8px !important
-}
-
-#enterEurl {
+#enterEPnmb{
+	background-color: #f2f2f2 !important;
+	border-radius:8px !important
+}#enterEurl {
     background-color: #f2f2f2 !important;
     border-radius: 8px !important;
     border-bottom-right-radius: 0px !important;
     border-top-right-radius: 0px !important;
 }
-
 button#button-addon2 {
     background: #21ccff;
     border-radius: 8px !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
 }
-
 #sharefrnd button.btn-close {
     position: absolute;
     right: 32px;
     top: 20px;
     z-index: 9;
 }
-
 /* end referFrnd */
 
 
@@ -188,11 +162,9 @@ button#button-addon2 {
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
     border: none;
 }
-
-#FullTest_Exam_Panel_Interface_A h3 {
+#FullTest_Exam_Panel_Interface_A  h3 {
     font-weight: 600;
 }
-
 #FullTest_Exam_Panel_Interface_A button#bt-modal-cancel {
     border-radius: 15px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
@@ -201,7 +173,6 @@ button#button-addon2 {
     padding: 12px 25px;
     margin-right: 20px;
 }
-
 #FullTest_Exam_Panel_Interface_A button#bt-modal-confirm {
     border-radius: 15px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
@@ -215,78 +186,62 @@ button#button-addon2 {
     padding-left: 0px;
     font-size: 0px;
 }
-
 .SubjName {
     width: 35%;
     max-width: 30%;
 }
-
-#back2Dsh {
-    height: unset;
+#back2Dsh{
+	height: unset;
 }
-
 div#marKs-trends {
     background: #fff !important;
     border-radius: 56px !important;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     margin: 22px 0px;
 }
-
 div#time-Avg-quest {
     background: #fff !important;
     border-radius: 56px !important;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     margin: 22px 0px;
 }
-
-#marKs-trends .bg-white,
-#time-Avg-quest .bg-white {
+#marKs-trends .bg-white, #time-Avg-quest .bg-white {
     background: transparent !important;
-    padding: 20px 0px !important;
+	padding: 20px 0px !important;
 }
-
-#f-Numbr-sectin {
-    background: #fff;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+#f-Numbr-sectin{
+	background: #fff;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     border-radius: 56px;
 }
-
-#f-Numbr-sectin .noshadow {
-    background: transparent !important;
+#f-Numbr-sectin .noshadow{
+	background: transparent !important;
     box-shadow: none !important;
 }
-
 #f-Numbr-sectin .arrow-right-btm-content {
     left: 0px;
     right: 0px;
     border-radius: 56px;
-    padding: 15px 20px !important;
+	padding: 15px 20px !important;
 }
-
 #f-Numbr-sectin .inner-arrow-right-btm {
     right: 12px;
     bottom: 0px;
 }
 
-#overall button.btn,
-#home button.btn,
-.Ex-anal {
+#overall button.btn, #home button.btn, .Ex-anal {
     border-radius: 20px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background: #e9e9e9;
+    background:#e9e9e9;
     border: none;
     color: #000;
     margin-right: 15px;
     font-size: 12px;
 }
-
-#overall button.btn.active,
-#home button.btn.active,
-.Ex-anal {
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    color: #fff;
+#overall button.btn.active, #home button.btn.active, .Ex-anal{
+	background-image: linear-gradient(to bottom, #21ccff, #00baff) ;
+	color:#fff;
 }
-
 div#f-Numbr-sectin h4 {
     font-size: 16px;
 }
@@ -295,17 +250,14 @@ div#f-Numbr-sectin h4.fw-bold {
     font-size: 16px;
     padding-top: 20px;
 }
-
 #arrow-left-btm .inner-arrow-left-btm {
     left: 14px !important;
     bottom: 0px !important;
 }
-
 #arrow-right-top .inner-arrow-right-top {
-    right: 12px !important;
-    top: 0px !important;
+    right: 12px!important;
+    top: 0px!important;
 }
-
 #arrow-left-top .inner-arrow-left-top {
     right: 12px !important;
     bottom: 0px !important;
@@ -313,19 +265,14 @@ div#f-Numbr-sectin h4.fw-bold {
     left: auto;
 }
 
-div#topicclose,
-.padingTT {
+div#topicclose, .padingTT {
     padding-top: 30px;
 }
-
 #myTabContent .bg-light-success {
     background: #37c027;
     border-radius: 15px;
 }
-
-#myTabContent .prog-box.green,
-#myTabContent .prog-box.red,
-#myTabContent .prog-box.secondary {
+#myTabContent .prog-box.green, #myTabContent .prog-box.red, #myTabContent .prog-box.secondary {
     border: none;
     background: #f2f2f2;
     color: #231f20;
@@ -336,32 +283,26 @@ div#topicclose,
 #myTabContent .progress {
     border-radius: 15rem !important;
 }
-
 /* webinar */
 #upcoming-tutorials img.me-2 {
     width: 15%;
 }
-
 #upcoming-tutorials .modal-content.rounded-0 {
     border-radius: 56px !important;
 }
-
 p.fs-5.profileN {
     text-align: center;
     font-size: 12px !important;
 }
-
 p.fs-5.profileN span.Colr {
     color: #1aa4d7;
 }
-
 p.fs-5.profileN img {
     width: 100px !important;
     height: 100%;
     border-radius: 50%;
     margin-bottom: 20px;
 }
-
 /* end webinar */
 /* Download anylatics */
 
@@ -369,19 +310,15 @@ p.fs-5.profileN img {
 div#exportAnalytics .modal-dialog .modal-content {
     border-radius: 45px !important;
 }
-
 div#contentHtml .text-light-danger {
     color: #19a4d7;
 }
-
 div#contentHtml .bg-white.shadow-lg {
     height: 100%;
 }
-
 div#contentHtml .report-block2 {
     background: #d0f3ff;
 }
-
 div#contentHtml .report-block2 .bg-white {
     border-radius: 56px;
     box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
@@ -392,7 +329,7 @@ div#contentHtml .report-block2 .bg-white {
 
 div#contentHtml .report-block1 {
     background: #fff;
-    border-radius: 56px;
+	border-radius: 56px;
 }
 
 .greentxt {
@@ -437,7 +374,6 @@ div#contentHtml .report-block1 {
 .report-block1 .reportHeading {
     border-left: solid 4px #aff3d0;
 }
-
 /* .reportHeading:after {
     content: "";
     width: 2px;
@@ -518,30 +454,25 @@ div#contentHtml .report-block1 {
     color: #d71921;
     font-size: 12px;
 }
-
-.Dwonload {
-    border-radius: 20px !important;
+.Dwonload{
+	border-radius: 20px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     border: none;
     color: #fff;
     margin-right: 15px;
 }
-
 /* 14-12-2021 19:47*/
 #topicopen .bg-white.shadow-lg {
     height: 100% !important;
 }
-
 #myTabContent .bg-light-red {
     background: #ee6a5f;
-    border-radius: 15px;
+	border-radius: 15px;
 }
-
 .bg-light-secondary {
     border-radius: 15px;
 }
-
 button#topic-btn {
     margin-top: 10px;
 }
@@ -550,483 +481,250 @@ button#topic-btn {
 
 
 /** post exam analytics page 16-12-2021**/
-
-#exportAnalytics .modal-dialog .modal-content.bg-light {
-    background-color: #ffffff !important;
-    border-radius: 56px !important;
+ 
+ #exportAnalytics .modal-dialog .modal-content.bg-light {
+    background-color: #ffffff!important;
+    border-radius: 56px!important;
     padding: 20px;
 }
-
 #exam_content_sec .tab-wrapper .nav-tabs {
     z-index: 9;
     position: relative;
 }
+#exam_result_analysis .row.mt-5.mb-3{margin-bottom: 55px !important;}
 
-#exam_result_analysis .row.mt-5.mb-3 {
-    margin-bottom: 55px !important;
-}
-
-#exam_result_analysis .top-btn-pop.text-white a {
-    color: #fff;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 {
-    border: 1px solid #6ad3fe;
-    border-radius: 10px !important;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
-    color: #000;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a:hover {
-    color: #fff;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1:hover {
-    background: #6ad3fe;
-    color: #fff;
-}
-
+#exam_result_analysis .top-btn-pop.text-white a{color:#fff;}
+#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1{border: 1px solid #6ad3fe;border-radius: 10px !important;}
+	#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a{color:#000;}
+	#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a:hover{color:#fff;}
+	#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1:hover{background:#6ad3fe; color:#fff;}
+	
 /** end here on 16-12-2021 */
 /** test review page css 16-11-2021 ***/
-.people-qus {
-    display: flex;
+.people-qus{
+	display: flex;
     color: #231f20;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 10px;
     border-bottom: 2px solid #2c3348;
-    padding-bottom: 5px;
-}
-
-.pythagoras a {
-    color: #21ccff;
-}
-
-.pytha-arc {
-    display: flex;
-    margin-top: 15px;
-}
-
-.people-qus strong {
-    font-size: 48px;
+    padding-bottom:5px;
+	}
+	.pythagoras a{    color: #21ccff;}
+	.pytha-arc{display:flex;margin-top: 15px;}
+	.people-qus strong{    font-size: 48px;
     color: #37c027;
     padding-right: 22px;
-    line-height: 55px;
-}
-
-.percentage-21 {
-    border-radius: 20px;
+    line-height: 55px;}
+	
+.percentage-21{    border-radius: 20px;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
     width: 380px;
     background: #fff;
-    padding: 10px;
+    padding:10px;
     position: absolute;
     top: 10px;
     right: 26px;
-    display: none;
-}
-
-.arc-radius {
-    padding-left: 20px;
-}
-
-.perntage1 {
-    display: none;
-}
-
-.perntage2 {
-    display: none;
-}
-
-.percentage-21.perntage2 {
-    right: 46%;
-    width: 50%;
-}
-
-.percentage-21.perntage2 .people-qus strong {
-    font-size: 16px;
-    color: #21ccff;
-    line-height: 20px;
-}
-
-.percentage-21.perntage2 .people-qus {
-    display: inline-block;
-    width: 100%;
-}
-
-p.mb-0.line-height-18px {
-    line-height: 18px;
-}
-
-.pytha-arc h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #21ccff;
-}
-
-.percentage-21.pythagoras-p2 {
-    display: none !important;
-}
-
-.percentage-21 button.close-btn-pr {
-    border: none;
+	display:none;
+	}
+	.arc-radius{padding-left:20px;}
+	.perntage1{display:none;}
+	.perntage2{display:none;}
+	.percentage-21.perntage2{right:46%;width:50%;}
+	.percentage-21.perntage2 .people-qus strong{font-size: 16px;color: #21ccff;
+    line-height: 20px;}
+	.percentage-21.perntage2 .people-qus{display:inline-block;width: 100%;}
+	p.mb-0.line-height-18px{line-height:18px;}
+	.pytha-arc h3{font-size:16px;font-weight:600;color: #21ccff;}
+	.percentage-21.pythagoras-p2{display:none!important;}
+	.percentage-21 button.close-btn-pr{border: none;
     position: absolute;
     right: 5px;
     top: 5px;
     background: none;
     color: #000;
-    font-weight: bold;
-}
-
-.tab-wrapper .nav-tabs {
-    z-index: 99999;
-    position: relative;
-}
-
-span.p-icons span {
-    color: red;
-}
-
-.answer-section {
+    font-weight: bold;}
+.tab-wrapper .nav-tabs{z-index: 99999;
+    position: relative;}
+	span.p-icons span{color:red;}
+.answer-section{width:100%;padding: 30px;background:#eee; border-radius:56px;}
+button.percentage-digit{float: right;
+    padding:18px 86px;
+    border:none;
+    background:#00baff;
+    border-radius:20px;
+    color:#fff;}
+	.answer-btn-txt{display: inline-block;
+    width: 100%;}
+	.answer-btn-txt span{display:inline-block;color:#44cd7f;font-family: Manrope;margin-right: 20px;text-transform:uppercase;
+  font-size: 16px;
+  font-weight: normal;}
+	.ans-txt{    display: inline-block;
     width: 100%;
-    padding: 30px;
-    background: #eee;
-    border-radius: 56px;
-}
-
-button.percentage-digit {
-    float: right;
-    padding: 18px 86px;
-    border: none;
-    background: #00baff;
-    border-radius: 20px;
-    color: #fff;
-}
-
-.answer-btn-txt {
-    display: inline-block;
-    width: 100%;
-}
-
-.answer-btn-txt span {
-    display: inline-block;
-    color: #44cd7f;
-    font-family: Manrope;
-    margin-right: 20px;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.ans-txt {
-    display: inline-block;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.tab-wrapper .test-review .nav-tabs {
-    z-index: 9;
-    position: relative;
-}
-
-.test-review .back-to-dashbord {
-    z-index: 9;
-}
-
-.back-to-dashbord {
-    position: absolute;
-    top: 12px;
-    right: 50px;
-    z-index: 99999;
-}
-
-.test-review .tab-content {
-    border-radius: 56px;
-    padding-bottom: 10px;
-}
-
-.test-review-right span.timing {
-    margin-left: 0px;
-}
-
-.review-qus {
-    margin: 20px 0px;
-    overflow: auto;
-    height: 210px;
-    overflow-x: hidden;
-}
-
-.review-qus span a {
-    float: right;
-}
-
-.rview-quses {
-    padding-left: 0px;
-}
-
-.rview-quses li.correctans {
-    border-color: #37c027;
-}
-
-.rview-quses li.incorrectans {
-    border-color: #ee6a5f;
-}
-
-.rview-quses li.notans {
-    border-color: #e4e4e4;
-}
-
-
-.rview-quses li.active {
-    border-color: #ee6a5f;
-}
-
-.rview-quses li {
-    position: relative;
-    list-style: none;
-    margin: 10px 0px;
-    display: flex;
-    width: 100%;
-    border-left: 5px solid #eee;
-}
-
-.rview-quses li span {
-    padding-right: 5px;
-    padding-left: 5px;
-}
+    margin-top: 30px;}
+	.tab-wrapper .test-review  .nav-tabs{z-index: 9;
+    position: relative;}
+	.test-review .back-to-dashbord{z-index: 9;}
+.back-to-dashbord{position:absolute;top:12px;right:50px; z-index:99999;}
+.test-review .tab-content{border-radius:56px;padding-bottom:10px;}
+.test-review-right span.timing{margin-left:0px;}
+.review-qus{margin:20px 0px;
+    overflow:auto;
+    height:210px;
+       overflow-x: hidden;}
+.review-qus span a{float:right;}
+.rview-quses{padding-left:0px;}
+.rview-quses li.active{border-color:#ee6a5f;}
+.rview-quses li{position:relative;list-style:none; margin:10px 0px;display:flex;width:100%;border-left: 5px solid #eee;}
+.rview-quses li span{padding-right: 5px;
+    padding-left: 5px;}
 
 /** custom scrollbar**/
 /* width */
-.question-block {
-    height: 310px;
-    overflow: auto;
-    overflow-x: hidden;
-}
-
+.question-block{height:310px;overflow: auto;
+    overflow-x: hidden;}
 .question-block::-webkit-scrollbar {
-    width: 5px;
+  width:5px;
 }
 
 /* Track */
 .question-block::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1; 
 }
-
+ 
 /* Handle */
 .question-block::-webkit-scrollbar-thumb {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
 
 /* Handle on hover */
 .question-block::-webkit-scrollbar-thumb:hover {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
-
-.answer-section {
-    height: 165px;
-    overflow: auto;
-    margin: 20px 0px;
-    position: relative;
-    overflow-x: hidden;
-}
-
-.answer-section::-webkit-scrollbar {
-    width: 5px;
+.answer-section{height:165px;overflow: auto;margin:20px 0px;    position: relative;
+    overflow-x: hidden;}
+	.answer-section::-webkit-scrollbar {
+  width:5px;
 }
 
 /* Track */
 .answer-section::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1; 
 }
-
+ 
 /* Handle */
 .answer-section::-webkit-scrollbar-thumb {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
 
 /* Handle on hover */
 .answer-section::-webkit-scrollbar-thumb:hover {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
-
-.review-qus {}
+.review-qus{}
 
 .review-qus::-webkit-scrollbar {
-    width: 5px;
+  width:5px;
 }
 
 /* Track */
 .review-qus::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1; 
 }
-
+ 
 /* Handle */
 .review-qus::-webkit-scrollbar-thumb {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
 
 /* Handle on hover */
 .review-qus::-webkit-scrollbar-thumb:hover {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
 
-.rightSect .number-block {}
+.rightSect .number-block{}
 
 .rightSect .number-block::-webkit-scrollbar {
-    width: 5px;
+  width:5px;
 }
 
 /* Track */
 .rightSect .number-block::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1; 
 }
-
+ 
 /* Handle */
 .rightSect .number-block::-webkit-scrollbar-thumb {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
 
 /* Handle on hover */
 .rightSect .number-block::-webkit-scrollbar-thumb:hover {
-    background: #d0f3ff;
+  background: #d0f3ff; 
 }
-
 /** scrollbar css end here**/
-.back-to-dashbord a {
-    color: #00baff;
+.back-to-dashbord a{color: #00baff;
     font-size: 20px;
-    font-weight: 600;
-}
-
+    font-weight: 600;}
 /*** End here ***/
 /*** Exam analytics page css 16-12-2021 **/
-.exam-analytics {}
+.exam-analytics{}
 
-.exam-analytics span.text-center.w-100 img {
-    width: 100%;
-}
+.exam-analytics span.text-center.w-100 img{width:100%;}
+.exam-analytics .bg-white.shadow-lg {min-height:430px;}
+.exam-analytics .map-right-graph img{width:100%;}
+.exam-analytics .bg-white.shadow.p-3{border-radius:56px;}
 
-.exam-analytics .bg-white.shadow-lg {
-    min-height: 430px;
-}
+.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative{border-radius:56px!important; padding-bottom:20px !important;}
+.exam-analytics .abrv-graph.bg1 {background: #5cc129;border-radius: 50%;}
+.exam-analytics .abrv-graph.bg2, .exam-analytics .abrv-graph.bg3{border-radius: 50%;}
+.exam-analytics .abrv-graph.bg2 {background:#e62e2d;}
+.exam-analytics .row.my-4 .col{text-align:center;}
+.exam-analytics button.top-btn-pop{box-shadow:inset 0 3px 10px 0 rgb(255 255 255 / 80%);background-image:linear-gradient(to bottom, #21ccff, #00baff);border:none;border-radius:20px;padding:15px 10px;}
+.exam-analytics .blue-block {background: #eee;padding: 20px 40px;border-radius: 20px;}
 
-.exam-analytics .map-right-graph img {
-    width: 100%;
-}
-
-.exam-analytics .bg-white.shadow.p-3 {
-    border-radius: 56px;
-}
-
-.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
-    border-radius: 56px !important;
-    padding-bottom: 20px !important;
-}
-
-.exam-analytics .abrv-graph.bg1 {
-    background: #5cc129;
-    border-radius: 50%;
-}
-
-.exam-analytics .abrv-graph.bg2,
-.exam-analytics .abrv-graph.bg3 {
-    border-radius: 50%;
-}
-
-.exam-analytics .abrv-graph.bg2 {
-    background: #e62e2d;
-}
-
-.exam-analytics .row.my-4 .col {
-    text-align: center;
-}
-
-.exam-analytics button.top-btn-pop {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    border: none;
-    border-radius: 20px;
-    padding: 15px 10px;
-}
-
-.exam-analytics .blue-block {
-    background: #eee;
-    padding: 20px 40px;
-    border-radius: 20px;
-}
-
-.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-    border-radius: 56px;
-}
-
-.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
-    border-radius: 56px;
-}
-
-.exam-analytics .i-icon {
-    color: #62c2fe;
-}
-
-.exam-analytics .i-icon:hover {
-    color: #62c2fe;
-}
-
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow{border-radius: 56px;}
+.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow{border-radius: 56px;}
+.exam-analytics .i-icon{color: #62c2fe;}
+.exam-analytics .i-icon:hover{color: #62c2fe;}
 .exam-analytics .bg-light-success {
     background: #37c027;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-
-.exam-analytics .bg-light-red {
-    background: red;
-}
-
+.exam-analytics .bg-light-red{background: red;}
 .exam-analytics .cust-tab-content {
-    padding: 0px 36px;
+    padding:0px 36px;
     border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
 }
-
-button.top-btn-pop {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    border: none;
-    border-radius: 20px;
-    padding: 15px 10px;
-}
-
+button.top-btn-pop{box-shadow:inset 0 3px 10px 0 rgb(255 255 255 / 80%);background-image:linear-gradient(to bottom, #21ccff, #00baff);border:none;border-radius:20px;padding:15px 10px;}
 /*** Exam analytics page css End 13-12-2021 **/
 
 #chooseSub #goto-next-btn:hover {
     background: #0cc1ff !important;
 }
-
 /** full body popup **/
 
 #fullTest_Dashboard .full-txtblock span {
-    font-size: 14px;
-    text-align: left;
-    margin-left: 0px !important;
-}
+        font-size: 14px;
+        text-align: left;
+        margin-left: 0px !important;
+    }
 
-#full-txtBlock {
-    margin-left: 12px !important;
-    margin-right: 12px !important;
-}
-
-#fullTest_Dashboard .modal-content.rounded-0 {
+    #full-txtBlock {
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+	#fullTest_Dashboard .modal-content.rounded-0 {
     border-radius: 56px !important;
-    border: none;
-    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+	border: none;
+	box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
 }
-
 p#h1--P {
     margin-bottom: 10px !important;
     margin-top: 15px;
 }
-
 #fullTest_Dashboard p {
     padding: 5px 0px;
     margin-bottom: 40px;
@@ -1040,20 +738,17 @@ p#h1--P {
     width: 68%;
     margin: 0 auto !important;
 }
-
 #fullTest_Dashboard .skip-dashboard {
     background: transparent !important;
     border: none;
     color: #00baff !important;
 }
-
 #h1--P {
     color: #2c3348 !important;
     font-size: 25px;
     line-height: 30px;
     margin-bottom: 15px;
 }
-
 /** end full body popup 16-12-2021**/
 /** Exam test screen bhim 16-12/2021 **/
 
@@ -1069,14 +764,12 @@ p#h1--P {
     border-radius: 15px !important;
     border: none !important;
 }
-
 .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light {
     border-radius: 20px !important;
     background-color: #f0f0f0 !important;
     color: #000;
     text-transform: none;
 }
-
 /*
 #myTabContent #question_section a.btn {
     background: #e9e9e9 !important;
@@ -1086,13 +779,11 @@ p#h1--P {
     font-size: 14px;
     line-height: 20px;
 }
-
 #exam_content_sec .cust-tab-content {
     background: #fff;
     height: calc(100% - 0px) !important;
     padding: 0px 15px;
 }
-
 #exam_content_sec .tab-btn-box {
     bottom: 10px;
 }
@@ -1107,7 +798,6 @@ p#h1--P {
 div#collapsePlanner {
     padding-right: 15px;
 }
-
 #collapsePlanner #close-planner-btn i.fa.fa-close {
     color: #e6544d;
     font-weight: 300;
@@ -1115,61 +805,49 @@ div#collapsePlanner {
     border-radius: 50%;
     padding: 5px 7px;
 }
-
 #collapsePlanner .d-flex.align-items-center.text-uppercase {
     text-align: center !important;
     margin: 0 auto;
     display: block !important;
 }
-
-a#subject_chapter_1,
-a#subject_chapter_2,
-a#subject_chapter_3,
-a#subject_chapter_4,
-a#subject_chapter_5 {
+a#subject_chapter_1, a#subject_chapter_2, a#subject_chapter_3, a#subject_chapter_4, a#subject_chapter_5{
     opacity: 0.05;
     border-radius: 15px;
     background-color: #000 !important;
 }
-
 div#select-planner-chapter button#add_chapter {
     border-radius: 20px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     border: none;
-    background-image: linear-gradient(247deg, #21ccff, #00baff);
+    background-image: linear-gradient(
+247deg, #21ccff, #00baff);
     padding: 10px 50px;
 }
-
 #collapsePlanner .add-removeblock {
     background: #21ccff;
     border-radius: 15px;
 }
-
 #collapsePlanner button.btn.greenBtnH {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(0deg, #21ccff, #00baff 22%);
+    background-image: linear-gradient(
+0deg, #21ccff, #00baff 22%);
     border-radius: 15px !important;
-    border: none;
+	border:none;
 }
 
-input#EndDate,
-input#StartDate {
+input#EndDate, input#StartDate {
     border-radius: 20px;
     font-size: 12px;
 }
-
 #collapsePlanner .add-removeblock img {
     width: 18px;
 }
-
 #collapsePlanner a.chapter_remove img {
     width: 16px;
 }
-
 #collapsePlanner .topic_name {
     font-size: 14px;
 }
-
 #plannerChapter .modal-dialog .modal-content.bg-light {
     background-color: #ffffff !important;
     border-radius: 56px !important;
@@ -1177,18 +855,16 @@ input#StartDate {
     border: none;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
 }
-
 #plannerChapter button.btn.greenBtnH {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(0deg, #21ccff, #00baff 22%);
+    background-image: linear-gradient(
+0deg, #21ccff, #00baff 22%);
     border-radius: 15px !important;
     border: none;
 }
-
 div#sub-planner {
     background: #fff !important;
 }
-
 #collapsePlanner button.btn.greenBtnH {
     border: none;
 }
@@ -1198,10 +874,7 @@ div#sub-planner {
 
 
 
-.leader-board ul li span img {
-    width: 100%;
-}
-
+.leader-board ul li span img{width:100%;}
 /*** profile-show **/
 /*
 .blure-bg {
@@ -1554,18 +1227,9 @@ button.save-btn {
     width: 84%;
 }
 
-.subscription .profile-picture-txt .p-picture img {
-    width: 100%;
-}
-
-.log-out-screen .p-picture img {
-    width: 100%;
-}
-
-.profile-picture-txt .p-picture img {
-    width: 100%;
-}
-
+.subscription .profile-picture-txt .p-picture img{width:100%;}
+.log-out-screen .p-picture img{width:100%;}
+.profile-picture-txt .p-picture img{width:100%;}
 /** end here **/
 
 /** end here**/
@@ -1573,132 +1237,72 @@ button.save-btn {
 
 /*** rahul css on 16-12-2021 */
 /** Listing series page css on 16-12-2021 **/
-.list-series .live-exam .speci-text li {
-    width: 24%;
-    margin-right: 0px;
-}
-
-.list-series .scroll-div-live-exm {
-    height: 350px;
-    overflow: overlay;
-}
+.list-series .live-exam .speci-text li{    width: 24%; margin-right:0px;}
+.list-series .scroll-div-live-exm{height:350px; overflow: overlay;}
 
 /** scrollbar css **/
 /* width */
-.list-series .scroll-div-live-exm::-webkit-scrollbar {
-    width: 5px;
-}
-
+.list-series .scroll-div-live-exm::-webkit-scrollbar {width: 5px;}
 /* Track */
-.list-series .scroll-div-live-exm::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
+.list-series .scroll-div-live-exm::-webkit-scrollbar-track {background: #f1f1f1;}
 /* Handle */
-.list-series .scroll-div-live-exm::-webkit-scrollbar-thumb {
-    background: #00bdff;
-}
-
+.list-series .scroll-div-live-exm::-webkit-scrollbar-thumb {background: #00bdff;}
 /* Handle on hover */
-.list-series .scroll-div-live-exm::-webkit-scrollbar-thumb:hover {
-    background: #00bdff;
-}
+.list-series .scroll-div-live-exm::-webkit-scrollbar-thumb:hover {background: #00bdff;}
 
 /** Listing series page css END on 16-12-2021 **/
 
 /** custom page css on 16-12-2021 **/
-.custom-page #dropdownMenuLink {
-    width: 40px;
-    height: 40px
-}
-
+.custom-page #dropdownMenuLink{width:40px;height:40px}
 /** end here **/
 
 /** rahul dashboad index page css on 16-12-2021**/
-.live-test {
-    text-align: center;
-    display: inline-block;
-}
-
-.live-test li {
-    font-size: 12px;
+.live-test{text-align: center;
+    display: inline-block;}
+	.live-test li{font-size: 12px;color:#2c3348;    float: none !important;
+    display: inline-block;}
+	.button-sec.mt-3 a{    font-size: 12px;
     color: #2c3348;
-    float: none !important;
-    display: inline-block;
-}
-
-.button-sec.mt-3 a {
-    font-size: 12px;
-    color: #2c3348;
-    display: inline-block;
-}
-
+    display: inline-block;}
 /** popup for just more one step **/
-#full-txtBlock {
-    position: relative;
-}
-
-#full-txtBlock i.fa-li.fa.fa-check {
-    left: 20%;
+#full-txtBlock{position:relative;}
+#full-txtBlock i.fa-li.fa.fa-check{left: 20%;
     top: 27%;
     width: 50px;
     height: 50px;
     border: 2px solid #fff;
     border-radius: 50%;
     background: none !important;
-    padding: 15px 10px;
-}
-
+    padding: 15px 10px;}
 #full-txtBlock i.fa-li.fa.fa-check:before {
     content: "\f00c";
     color: #fff;
     font-size: 20px;
-    font-weight: 400;
+    font-weight:400;
 }
-
 /** end here*/
-.subject-scroll {
-    height: 155px;
-    overflow: overlay;
-}
-
-.subject-scroll ul.course-star {
-    overflow-x: auto;
-    margin-top: 20px;
-}
+.subject-scroll{height:155px;overflow:overlay;}
+.subject-scroll ul.course-star{overflow-x:auto;margin-top: 20px;}
 
 /** scrollbar css **/
 /* width */
-.subject-scroll::-webkit-scrollbar {
-    width: 5px;
-}
-
+.subject-scroll::-webkit-scrollbar {width: 5px;}
 /* Track */
-.subject-scroll::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
+.subject-scroll::-webkit-scrollbar-track {background: #f1f1f1;}
 /* Handle */
-.subject-scroll::-webkit-scrollbar-thumb {
-    background: #00bdff;
-}
-
+.subject-scroll::-webkit-scrollbar-thumb {background: #00bdff;}
 /* Handle on hover */
-.subject-scroll::-webkit-scrollbar-thumb:hover {
-    background: #00bdff;
-}
-
+.subject-scroll::-webkit-scrollbar-thumb:hover {background: #00bdff;}
 /** End here on 16-12-2021 **/
 
 /** Rahul css end here on 16-12-2021 */
 
 /* custom page css**/
 .custom-page .cust-tab-content {
-    background: #fff;
+    background:#fff;
     height: auto;
-    padding: 0px 15px 30px;
+    padding:0px 15px 30px;
 }
-
 /** end here **/
 
 
@@ -1710,13 +1314,11 @@ button.save-btn {
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     border: none;
 }
-
 .wel-msg {
     font-size: 2.5rem;
     font-weight: 700;
     padding: 20px 30px;
 }
-
 #welcomeModal p.wl-user-title {
     margin-bottom: 25px;
     padding-top: 15px;
@@ -1737,13 +1339,11 @@ button.save-btn {
     border: none;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
-    padding: 15px 5px;
+	padding: 15px 5px;
 }
-
 #welcomeModal .modal-dialog.modal-dialog-centered.modal-lg {
     max-width: 650px;
 }
-
 #welcomeModal button.btn-close {
     width: auto;
     margin-right: 23px !important;
@@ -2698,11 +2298,12 @@ p.tab-title {
 }
 
 .cust-gallery {
-    margin: 0px 0px;
+   margin: 0px 0px;
     padding: 20px 0px;
 }
-
-.main-wrapper .content-wrapper {}
+.main-wrapper .content-wrapper{
+	
+}
 
 .cust-gallery .swiper-slide {
     border-radius: 56px;
@@ -2833,7 +2434,6 @@ p.success-img {
 .btn {
     text-transform: uppercase;
 }
-
 /* 
 .dash-sidebar {
     background: #fff;
@@ -2940,127 +2540,86 @@ p.success-img {
 }
 
 .dash-sidebar {
-    background: #fff;
-    width: 72px;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
+  background: #fff;
+  width: 72px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;z-index:999;
 }
-
-.dash-nav-link {
-    height: calc(100% - 85px);
-    display: flex;
-    flex-direction: column;
-}
-
-.dash-nav-link a {
-    display: block;
-    position: relative;
-}
-
-.hoverlink {
-    transition: .5s;
-    opacity: 0;
-    visibility: hidden;
-    background: #F2F2F2;
-    color: #231F20;
-    font-size: 14px;
-    padding: 3px 8px;
-    box-shadow: 0px 3px 6px #00000029;
-    position: absolute;
-    top: 0px;
-    z-index: 3;
-    left: 10px;
-}
-
-.dash-nav-link a:hover .hoverlink {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-4px);
-}
-
+.dash-nav-link{height:calc(100% - 85px);display:flex;flex-direction: column;}
+.dash-nav-link a{display:block;position:relative;}
+.hoverlink{transition: .5s;
+  opacity: 0;
+  visibility: hidden;background: #F2F2F2;color:#231F20;font-size:14px;padding:3px 8px; box-shadow: 0px 3px 6px #00000029;position:absolute;    top: 0px;
+  z-index: 3;
+  left: 10px;}
+.dash-nav-link a:hover .hoverlink{opacity: 1;
+  visibility: visible;transform: translateY(-4px);}
 .dash-sidebar a:hover .b,
 .dash-sidebar a:hover .c,
 .dash-sidebar a.active-navlink .b,
 .dash-sidebar a.active-navlink .c {
-    stroke: #fff !important;
-    stroke-width: 1.5px;
-    opacity: 1;
+  stroke: #fff !important;
+  stroke-width: 1.5px;
+  opacity: 1;
 }
-
-.dash-sidebar a:hover .aa {
-    fill: #00bdff;
-}
-
+.dash-sidebar a:hover .aa{ fill: #00bdff;}
 .dash-sidebar a:hover .a,
 .dash-sidebar a.active-navlink .a {
-    fill: #00bdff;
+  fill: #00bdff;
 }
 
 .dash-sidebar a:hover .dd,
 .dash-sidebar a.active-navlink .dd {
-    stroke: #fff !important;
+  stroke: #fff !important;
 }
-
 .dash-sidebar a:hover .aa,
 .dash-sidebar a.active-navlink .aa {
-    fill: #00bdff;
+  fill: #00bdff;
 }
-
 .dash-sidebar a:hover .bb,
 .dash-sidebar a.active-navlink .bb {
-    opacity: 1;
+  opacity: 1;
 }
 
 .dash-sidebar a:hover .ccc,
 .dash-sidebar a.active-navlink .ccc {
-    stroke: #fff !important;
-    opacity: 1;
+  stroke: #fff !important;
+  opacity: 1;
 }
-
 .dash-sidebar a:hover .aaa,
 .dash-sidebar a.active-navlink .aaa {
-    fill: #00bdff;
+  fill: #00bdff;
 }
 
 .dash-sidebar a:hover .aaaa,
 .dash-sidebar a.active-navlink .aaaa {
-    fill: #00bdff;
+  fill: #00bdff;
 }
-
 .dash-sidebar a:hover .bbbb,
 .dash-sidebar a.active-navlink .bbbb {
-    stroke: #fff !important;
-    opacity: 1;
+  stroke: #fff !important;
+  opacity: 1;
 }
 
 .sidbar-block {
-    padding: 30px 18px;
+  padding: 30px 18px;
 }
-
-.dash-sidebar .collapse.show {
-    background: #fff;
-    box-shadow: 0px 0px 3px 0px #e7faff;
-}
+.dash-sidebar .collapse.show{background:#fff;box-shadow:0px 0px 3px 0px #e7faff;}
 
 .sublinks a:hover,
 .sublinks a[aria-expanded="true"] {
-    background: #e7faff !important;
+background: #e7faff !important;
     color: #2c3348 !important;
 }
-
-.aaa,
-.eee {
+.aaa, .eee {
     fill: #ffffff;
 }
-
-.aaa:hover {
+.aaa:hover{
     fill: #000;
-
+	
 }
-
 /*
 .aa{fill:#ffffff;}
 .ff{fill:#000;}*/
@@ -5237,7 +4796,6 @@ span#slide-input {
     padding-left: 0px;
     padding-right: 0px;
 }
-
 /*
 .examSect #myTab a {
     border-top-left-radius: 56px;
@@ -5669,89 +5227,39 @@ span#slide-input {
 
 @media(min-width:768px) and (max-width:990px) {
 
-    .back-to-dashbord {
-        top: 39px;
-        right: 24px;
-    }
+.back-to-dashbord{top: 39px;right: 24px;}
+.back-to-dashbord a{font-size:14px;background: #fff;
+    padding: 2px 5px;}
 
-    .back-to-dashbord a {
-        font-size: 14px;
-        background: #fff;
-        padding: 2px 5px;
-    }
+/** test review page on 16-12-2021**/
+.test-review .cust-tabs .nav-link{margin-right:10px;font-size:14px;}
+.test-review .prev-arow {left:-18px;top:52px;}
+.test-review div#myTabContent .tab-pane .question-block {padding: 15px 0rem;}
+.test-review .next-arow {top:52px;}
+.rightSect.test-review-right .bg-white{padding:10px!important;}
+.test-review .percentage-21{width:310px;}
+.percentage-21.perntage2{right:16%;}
+.people-qus strong {font-size: 30px;}
+/** end here 16-12-2021 **/
+/** exam analytics page css 16-12-2021**/
 
-    /** test review page on 16-12-2021**/
-    .test-review .cust-tabs .nav-link {
-        margin-right: 10px;
-        font-size: 14px;
-    }
+.exam-analytics .row.mb-4 .col-md-9{width:100%; margin-bottom:20px;}
+.exam-analytics .row.mb-4 .col-md-3{width:100%;}
+.exam-analytics .cust-tabs .nav-link{margin-right:0px;font-size:14px;}
 
-    .test-review .prev-arow {
-        left: -18px;
-        top: 52px;
-    }
+/** exam analytics page css End 14-12-2021**/	
+.custom-page .slick-list {
+    height: 182px;
+}
+.custom-page .p-3.slick-slide {
+    width: auto!important;
+}
+	
+.container-fluid .row .col-md-6.ms-auto.text-end{width:100%;}
 
-    .test-review div#myTabContent .tab-pane .question-block {
-        padding: 15px 0rem;
-    }
-
-    .test-review .next-arow {
-        top: 52px;
-    }
-
-    .rightSect.test-review-right .bg-white {
-        padding: 10px !important;
-    }
-
-    .test-review .percentage-21 {
-        width: 310px;
-    }
-
-    .percentage-21.perntage2 {
-        right: 16%;
-    }
-
-    .people-qus strong {
-        font-size: 30px;
-    }
-
-    /** end here 16-12-2021 **/
-    /** exam analytics page css 16-12-2021**/
-
-    .exam-analytics .row.mb-4 .col-md-9 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-3 {
-        width: 100%;
-    }
-
-    .exam-analytics .cust-tabs .nav-link {
-        margin-right: 0px;
-        font-size: 14px;
-    }
-
-    /** exam analytics page css End 14-12-2021**/
-    .custom-page .slick-list {
-        height: 182px;
-    }
-
-    .custom-page .p-3.slick-slide {
-        width: auto !important;
-    }
-
-    .container-fluid .row .col-md-6.ms-auto.text-end {
-        width: 100%;
-    }
-
-    /** Listing series page css on 16-12-2021 **/
-    .cust-tab-content .custom-btn-gray {
-        font-size: 14px;
-        width: auto;
-    }
-
-    /** Listing series page css END on 16-12-2021 **/
+/** Listing series page css on 16-12-2021 **/
+.cust-tab-content .custom-btn-gray{font-size: 14px;width: auto;}
+/** Listing series page css END on 16-12-2021 **/
 
     /** profile page css **/
     .profile-section {
@@ -5800,26 +5308,18 @@ span#slide-input {
 }
 
 @media(min-width:768px) and (max-width:991px) {
+/** analytics **/
+#home .bg-white.shadow-lg {
+    height: auto;
+}
+/** end analytics */
 
-    /** analytics **/
-    #home .bg-white.shadow-lg {
-        height: auto;
-    }
-
-    /** end analytics */
-
-    /** dashboard-index page css popup on 16-12-2021 **/
-    /** popup css**/
-    #fullTest_Dashboard .full-txtblock span {
-        padding-left: 30%;
-    }
-
-    #fullTest_Dashboard .full-txtblock {
-        margin: 0px 12px !important;
-    }
-
-    /** end here**/
-    /** end here dashboard-index page css popup on 16-12-2021 **/
+/** dashboard-index page css popup on 16-12-2021 **/
+/** popup css**/
+#fullTest_Dashboard .full-txtblock span{padding-left: 30%;}
+#fullTest_Dashboard .full-txtblock{margin: 0px 12px !important;}
+/** end here**/
+/** end here dashboard-index page css popup on 16-12-2021 **/
     /*Test screen */
     .examSect .tab-btn-box.d-flex.mt-3 a {
         width: 100%;
@@ -5936,83 +5436,56 @@ span#slide-input {
 }
 
 @media only screen and (max-width: 767px) {
-    /**analytics **/
+/**analytics **/
 
-    div#topIIC {
-        margin-top: 40px;
-    }
+div#topIIC {
+    margin-top: 40px;
+}
 
-    #topIIC .d-flex,
-    #sub--proficiency .d-flex {
-        display: inline-block !important;
-        width: 100% !important;
-    }
-
-    #topIIC .bg-white.shadow-lg,
-    #sub--proficiency .bg-white.shadow-lg {
-        height: auto;
-    }
+#topIIC .d-flex, #sub--proficiency .d-flex {
+    display: inline-block !important;
+    width: 100% !important;
+}
+#topIIC .bg-white.shadow-lg, #sub--proficiency .bg-white.shadow-lg{
+    height: auto;
+}
 
 
 
-    div#myTabContent .tab-pane .question-block {
-        padding: 15px 0px;
-    }
+div#myTabContent .tab-pane .question-block {
+    padding: 15px 0px;
+}
+.question{padding-left: 35px;
+    padding-right: 20px;}
+.test-review{margin-top:50px;    margin-bottom: 20px;}
+.back-to-dashbord{top: 6px;}
+.back-to-dashbord {
+    top: 39px;
+    right: 24px;
+	display:none;
+}
+.back-to-dashbord a{font-size:14px;}
+.course-star li strong {
+    width:100% !important;
+    display:block;
+}
+.star-img {
+   width:100% !important;
+    display:block;
+}
+/** dashboard-index page css popup on 16-12-2021 **/
+/** popup css**/
+#fullTest_Dashboard .full-txtblock span{padding-left: 30%;}
 
-    .question {
-        padding-left: 35px;
-        padding-right: 20px;
-    }
+/** end here**/
+/** end here dashboard-index page css popup on 16-12-2021 **/
 
-    .test-review {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
+/** custom page css on 16-12-2021 **/
 
-    .back-to-dashbord {
-        top: 6px;
-    }
+.custom-page .p-3.slick-slide {width:auto!important;}
+.custom-page .slick-list {height:182px;}
 
-    .back-to-dashbord {
-        top: 39px;
-        right: 24px;
-        display: none;
-    }
-
-    .back-to-dashbord a {
-        font-size: 14px;
-    }
-
-    .course-star li strong {
-        width: 100% !important;
-        display: block;
-    }
-
-    .star-img {
-        width: 100% !important;
-        display: block;
-    }
-
-    /** dashboard-index page css popup on 16-12-2021 **/
-    /** popup css**/
-    #fullTest_Dashboard .full-txtblock span {
-        padding-left: 30%;
-    }
-
-    /** end here**/
-    /** end here dashboard-index page css popup on 16-12-2021 **/
-
-    /** custom page css on 16-12-2021 **/
-
-    .custom-page .p-3.slick-slide {
-        width: auto !important;
-    }
-
-    .custom-page .slick-list {
-        height: 182px;
-    }
-
-    /** End custom page css on 16-12-2021 **/
+/** End custom page css on 16-12-2021 **/
     /* For mobile phones: */
     div#collapseExample [class*="col-"] {
         width: 100%;
@@ -6043,80 +5516,32 @@ span#slide-input {
 
 @media(min-width:360px) and (max-width:767px) {
 
-    /** exam analytics page css 14-12-2021**/
-    .exam-analytics .row.mt-5.mb-3 .col-5 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+/** exam analytics page css 14-12-2021**/
+.exam-analytics .row.mt-5.mb-3 .col-5{width:100%; margin-bottom:20px;}
+.exam-analytics .row.mt-5.mb-3 .col-7{width:100%; margin-bottom:20px;}
+.exam-analytics .bg-white.shadow-lg {height: auto;padding-bottom:20px;}
+.exam-analytics button.top-btn-pop{margin-bottom:20px;    width: 100%;}
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {margin-bottom: 20px;}
+.exam-analytics .cust-tabs .nav-link{margin-right:0px;font-size:9px;}
+.exam-analytics .nav.nav-tabs.cust-tabs {width:auto;}
+.exam-analytics .col-12.d-flex.mt-5.mb-3{display:inline-block!important;}
+.exam-analytics select.form-select.rounded-0.ms-3.w-25{margin-left: 0px !important;margin-bottom: 20px;}
+.exam-analytics .row .col-md-4.text-center img{width:100%;}
+.exam-analytics .col-md-9 .p-5 {padding: 1rem!important;}
+.exam-analytics .row.mt-5.mb-3{margin-top:0px!important;}
+.exam-analytics .subj-name{font-size:12px;}
+/** exam analytics page css End 14-12-2021**/	
+/** Listing series page css on 16-12-2021 **/
 
-    .exam-analytics .row.mt-5.mb-3 .col-7 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+.list-series .live-exam .speci-text li {
+    width: 100%;
+    margin-right: 0px;
+}
 
-    .exam-analytics .bg-white.shadow-lg {
-        height: auto;
-        padding-bottom: 20px;
-    }
-
-    .exam-analytics button.top-btn-pop {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .cust-tabs .nav-link {
-        margin-right: 0px;
-        font-size: 9px;
-    }
-
-    .exam-analytics .nav.nav-tabs.cust-tabs {
-        width: auto;
-    }
-
-    .exam-analytics .col-12.d-flex.mt-5.mb-3 {
-        display: inline-block !important;
-    }
-
-    .exam-analytics select.form-select.rounded-0.ms-3.w-25 {
-        margin-left: 0px !important;
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .row .col-md-4.text-center img {
-        width: 100%;
-    }
-
-    .exam-analytics .col-md-9 .p-5 {
-        padding: 1rem !important;
-    }
-
-    .exam-analytics .row.mt-5.mb-3 {
-        margin-top: 0px !important;
-    }
-
-    .exam-analytics .subj-name {
-        font-size: 12px;
-    }
-
-    /** exam analytics page css End 14-12-2021**/
-    /** Listing series page css on 16-12-2021 **/
-
-    .list-series .live-exam .speci-text li {
-        width: 100%;
-        margin-right: 0px;
-    }
-
-    /** Listing series page css END on 16-12-2021 **/
+/** Listing series page css END on 16-12-2021 **/
 
 
-    header {
-        padding: 0px;
-    }
-
+header{padding:0px;}
     /** profile page css **/
     .profile-picture-txt .p-picture {
         width: 55px !important;
@@ -6144,15 +5569,15 @@ span#slide-input {
     .log-out-screen {
         right: 1% !important;
         width: 87% !important;
-        top: 16% !important;
+        top:16% !important;
     }
 
     .subscription {
         right: 1% !important;
         width: 87% !important;
         padding: 15px 20px 15px 25px !important;
-        top: 16% !important;
-        height: 100%;
+      top: 16% !important;
+    height: 100%;
     }
 
     .profile-picture-txt .p-text {
@@ -6163,7 +5588,7 @@ span#slide-input {
         padding: 15px;
         display: inline-block;
         overflow: scroll;
-        height: 70%;
+        height:70%;
     }
 
     .subscription .profile-picture-txt .p-picture {
@@ -6446,354 +5871,354 @@ span#slide-input {
 
 @media (max-width: 500px) {
 
+	
+		
+	/** Listing series page css on 16-12-2021 **/
 
+.list-series .cust-tab-content .custom-btn-gray {
+    width: 100%!important;
+    float: left;
+    font-size: 14px;
+}
 
-    /** Listing series page css on 16-12-2021 **/
-
-    .list-series .cust-tab-content .custom-btn-gray {
-        width: 100% !important;
-        float: left;
-        font-size: 14px;
-    }
-
-    /*
+/*
     .examSect .ans-block.row.mt-5 .mb-4 {
         margin-bottom: 10px !important;
     }
 }
 
 /* end test screen*/
-    @media (max-width: 620px) {
-        .col-sm-12 {
-            width: 100% !important;
-        }
-
-        .bg-white.shadow-lg {
-            height: 345px;
-        }
-
-        .seeAnico img {
-            display: none;
-        }
+@media (max-width: 620px) {
+    .col-sm-12 {
+        width: 100% !important;
     }
 
-    @media (max-width: 576px) {
-        .col-sm-12 {
-            width: 100% !important;
-        }
-
-        .bg-white.shadow-lg {
-            height: 345px;
-        }
-
-        .seeAnico img {
-            display: none;
-        }
-
-        .btn-danger.disabled,
-        .btn-warning.disabled {
-            width: 70%;
-        }
-
-        .active-btn {
-            width: 70%;
-            font-size: 12px;
-            padding: 0px !important;
-        }
-
-        .nav.nav-tabs.cust-tabs {
-            width: 500px;
-        }
-
-        .cust-tab-content {
-            padding: 20px 10px;
-        }
-
-        .main-wrapper {
-            padding-left: 64px;
-        }
-
-        .dash-sidebar {
-            width: 60px;
-        }
-
-        .user-name-block {
-            padding-left: 0px !important;
-        }
-
-        span.notification.me-5.ms-4 {
-            margin: 10px 0px 10px 10px !important;
-        }
-
-        .slbs-link a {
-            font-size: 15px;
-        }
+    .bg-white.shadow-lg {
+        height: 345px;
     }
 
-    @media (max-width:525px) {
+    .seeAnico img {
+        display: none;
+    }
+}
 
-        /** notification page css **/
-        .notification-right {
-            width: 83%;
-        }
-
-        .notification-txt {
-            padding: 15px;
-        }
-
-        .notification-txt span.text-notific {
-            width: 70%;
-        }
-
-        .primary-secondry-btn button.primary-btn1 {
-            margin-bottom: 10px;
-        }
-
-        /** end **/
+@media (max-width: 576px) {
+    .col-sm-12 {
+        width: 100% !important;
     }
 
-    @media (max-width:482px) {
-        .notification-txt span.text-notific {
-            width: 70%;
-        }
+    .bg-white.shadow-lg {
+        height: 345px;
     }
 
-    @media (max-width: 420px) {
-        .course-star li strong {
-            width: 100% !important;
-        }
-
-        .course-star li {
-            padding-bottom: 5px !important;
-        }
-
-        .star-img {
-            width: 80%;
-        }
-
-        .seeAnico img {
-            display: none;
-        }
-
-        .bg-white.shadow-lg {
-            height: 330px;
-        }
-
-
-        span.user-name-block.ps-3.pe-3 {
-            display: none;
-        }
-
-    }
-
-    /*Planner screen */
-    @media (max-width: 401px) {
-        .planner-content {
-            min-width: 75%;
-            max-width: 75%;
-        }
-
-        .open-sub-planner {
-            width: 75% !important;
-        }
-
-    }
-
-
-    /*signup-pay-subscription.html*/
-
-    .PayBttn {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff);
-        border: none;
-        color: #fff;
-    }
-
-    .TotalAmount {
-        background: #00baff !important;
-        border-radius: 25px;
-    }
-
-    .Fullsub-amt-subN {
-        background: #fff;
-        border-radius: 20px;
-        border: solid 1px #bce0fd;
-    }
-
-    .red-dots1 {
-        position: absolute;
-        top: -20px;
-        width: 6px;
-        height: 6px;
-        background: #00baff;
-        border-radius: 10px;
-        left: 50%;
-        margin-left: -3px;
-        z-index: 99;
-    }
-
-    .outer-logo img {
-        width: 110px;
-    }
-
-    .PayBttn:active:focus {
-        box-shadow: none;
-    }
-
-
-    @media(max-width:767px) {
-        [class*="col-"] {
-            /*width: 100%;*/
-        }
-
-        .Fullsub-amt-subN .d-flex {
-            display: block !important;
-        }
-    }
-
-    /*end signup-pay-subscription.html*/
-    /* Signup Payment Gateway */
-    .PaymentGway {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff);
-        border: none;
-        color: #fff;
-    }
-
-    .Pay-MentSect {
-        margin-bottom: 35px;
-    }
-
-    .PaymentGway:active:focus {
-        box-shadow: none;
-    }
-
-    /*end Signup Payment Gateway */
-
-    /** subscription screen **/
-    .subscription {
-        width: 49%;
-        background: #fff;
-        border-radius: 56px;
-        padding: 15px 20px 15px 25px;
-        position: absolute;
-        right: 23%;
-        top: 0%;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    .seeAnico img {
         display: none;
     }
 
-    .subscription .profile-picture-txt .p-picture {
-        height: 100px;
+    .btn-danger.disabled,
+    .btn-warning.disabled {
+        width: 70%;
     }
 
-    .subscription .profile-picture-txt {
-        padding: 20px 0px;
+    .active-btn {
+        width: 70%;
+        font-size: 12px;
+        padding: 0px !important;
     }
 
-    .subscription .profile-picture-txt .p-text {
-        width: 77%;
+    .nav.nav-tabs.cust-tabs {
+        width: 500px;
     }
 
-    .log-out-screen .p-picture {
-        width: 80px;
-        border: 1px solid #5ebbfe;
-        border-radius: 50%;
-        height: 80px;
-        text-align: center;
-        overflow: hidden;
-        margin: 0 auto;
+    .cust-tab-content {
+        padding: 20px 10px;
     }
 
-    .subscription h4 {
-        text-align: left;
-        font-size: 18px;
-        color: #00baff;
-        text-transform: uppercase;
-        font-weight: 600;
-        padding-right: 25px;
+    .main-wrapper {
+        padding-left: 64px;
     }
 
-    .subscrived {
-        width: 100%;
-        display: inline-block;
-        background: #f2f2f2;
-        border-radius: 42px;
-        padding: 31px 20px;
-        margin: 20px 0px 0px;
+    .dash-sidebar {
+        width: 60px;
     }
 
-    .subscrived .p-pictures {
-        float: left;
-        margin-left: 10%;
-        margin-top: 9px;
+    .user-name-block {
+        padding-left: 0px !important;
     }
 
-    .subscription h6 {
-        text-align: right;
+    span.notification.me-5.ms-4 {
+        margin: 10px 0px 10px 10px !important;
     }
 
-    .subscription .form-btns {
-        margin: 20px 0px;
+    .slbs-link a {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:525px) {
+
+    /** notification page css **/
+    .notification-right {
+        width: 83%;
     }
 
-    .subscrived .p-pictures img {
-        width: 40px;
+    .notification-txt {
+        padding: 15px;
     }
 
-    .subscription .form-btns button {
-        width: 264px;
+    .notification-txt span.text-notific {
+        width: 70%;
     }
 
-    /** end here**/
-    /** Log out screen **/
-    .log-out-screen {
-        width: 26.7%;
-        background: #fff;
-        border-radius: 56px;
-        padding: 40px 20px 40px 25px;
-        position: absolute;
-        right: 23%;
-        top: 0%;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    .primary-secondry-btn button.primary-btn1 {
+        margin-bottom: 10px;
+    }
+
+    /** end **/
+}
+
+@media (max-width:482px) {
+    .notification-txt span.text-notific {
+        width: 70%;
+    }
+}
+
+@media (max-width: 420px) {
+    .course-star li strong {
+        width: 100% !important;
+    }
+
+    .course-star li {
+        padding-bottom: 5px !important;
+    }
+
+    .star-img {
+        width: 80%;
+    }
+
+    .seeAnico img {
         display: none;
-
     }
 
-    .profile-section ul li a span i {
-        font-size: 25px;
-        line-height: 30px;
-        margin-right: 5px;
-        width: 30px;
-        height: 30px;
+    .bg-white.shadow-lg {
+        height: 330px;
     }
 
-    .log-out-screen h4 {
-        color: #00baff;
-        font-size: 18px;
-        font-weight: normal;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 50px;
+
+    span.user-name-block.ps-3.pe-3 {
+        display: none;
     }
 
-    .log-out-screen p {
-        text-align: center;
-        color: #2c3348;
-        margin: 10px 0px;
-        font-size: 16px;
-        font-weight: 400;
+}
+
+/*Planner screen */
+@media (max-width: 401px) {
+    .planner-content {
+        min-width: 75%;
+        max-width: 75%;
     }
 
-    .log-out-screen button.save-btn {
-        width: 84%;
+    .open-sub-planner {
+        width: 75% !important;
     }
 
-    /** end here **/
-    /*** profile-show **/
-    /*
+}
+
+
+/*signup-pay-subscription.html*/
+
+.PayBttn {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+}
+
+.TotalAmount {
+    background: #00baff !important;
+    border-radius: 25px;
+}
+
+.Fullsub-amt-subN {
+    background: #fff;
+    border-radius: 20px;
+    border: solid 1px #bce0fd;
+}
+
+.red-dots1 {
+    position: absolute;
+    top: -20px;
+    width: 6px;
+    height: 6px;
+    background: #00baff;
+    border-radius: 10px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 99;
+}
+
+.outer-logo img {
+    width: 110px;
+}
+
+.PayBttn:active:focus {
+    box-shadow: none;
+}
+
+
+@media(max-width:767px) {
+    [class*="col-"] {
+        /*width: 100%;*/
+    }
+
+    .Fullsub-amt-subN .d-flex {
+        display: block !important;
+    }
+}
+
+/*end signup-pay-subscription.html*/
+/* Signup Payment Gateway */
+.PaymentGway {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+}
+
+.Pay-MentSect {
+    margin-bottom: 35px;
+}
+
+.PaymentGway:active:focus {
+    box-shadow: none;
+}
+
+/*end Signup Payment Gateway */
+
+/** subscription screen **/
+.subscription {
+    width: 49%;
+    background: #fff;
+    border-radius: 56px;
+    padding: 15px 20px 15px 25px;
+    position: absolute;
+    right: 23%;
+    top: 0%;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    display: none;
+}
+
+.subscription .profile-picture-txt .p-picture {
+    height: 100px;
+}
+
+.subscription .profile-picture-txt {
+    padding: 20px 0px;
+}
+
+.subscription .profile-picture-txt .p-text {
+    width: 77%;
+}
+
+.log-out-screen .p-picture {
+    width: 80px;
+    border: 1px solid #5ebbfe;
+    border-radius: 50%;
+    height: 80px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.subscription h4 {
+    text-align: left;
+    font-size: 18px;
+    color: #00baff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-right: 25px;
+}
+
+.subscrived {
+    width: 100%;
+    display: inline-block;
+    background: #f2f2f2;
+    border-radius: 42px;
+    padding: 31px 20px;
+    margin: 20px 0px 0px;
+}
+
+.subscrived .p-pictures {
+    float: left;
+    margin-left: 10%;
+    margin-top: 9px;
+}
+
+.subscription h6 {
+    text-align: right;
+}
+
+.subscription .form-btns {
+    margin: 20px 0px;
+}
+
+.subscrived .p-pictures img {
+    width: 40px;
+}
+
+.subscription .form-btns button {
+    width: 264px;
+}
+
+/** end here**/
+/** Log out screen **/
+.log-out-screen {
+    width: 26.7%;
+    background: #fff;
+    border-radius: 56px;
+    padding: 40px 20px 40px 25px;
+    position: absolute;
+    right: 23%;
+    top: 0%;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    display: none;
+
+}
+
+.profile-section ul li a span i {
+    font-size: 25px;
+    line-height: 30px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.log-out-screen h4 {
+    color: #00baff;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.log-out-screen p {
+    text-align: center;
+    color: #2c3348;
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.log-out-screen button.save-btn {
+    width: 84%;
+}
+
+/** end here **/
+/*** profile-show **/
+/*
 .blure-bg {
     content: "";
     position: fixed;
@@ -6811,1542 +6236,1358 @@ span#slide-input {
 }
 */
 
-    .account-wrapper {
-        height: 100vh;
+.account-wrapper {
+    height: 100vh;
 
-        max-width: 100%;
-        position: relative;
-        /* right: 0; */
+    max-width: 100%;
+    position: relative;
+    /* right: 0; */
 
-    }
+}
 
-    .col-xl-3 .slimScrollDiv .slimScrollBar {
-        height: 55% !important;
-    }
+.col-xl-3 .slimScrollDiv .slimScrollBar {
+    height: 55% !important;
+}
 
-    .profile-show {
-        position: absolute;
-        top: 0px;
-        left: -100%;
-        width: 100%;
-        background: #fff;
-        padding: 10px 15px;
-        border-radius: 56px;
-        box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
-    }
+.profile-show {
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 56px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+}
 
-    .profile-picture-txt .p-picture {
-        float: left;
-        width: 18%;
-        border: 1px solid #5ebbfe;
-        border-radius: 50%;
-        height: 60px;
-        text-align: center;
-        overflow: hidden;
-        /*     padding-top: 13px; commented by Dinesh */
-    }
+.profile-picture-txt .p-picture {
+    float: left;
+    width: 18%;
+    border: 1px solid #5ebbfe;
+    border-radius: 50%;
+    height: 60px;
+    text-align: center;
+    overflow: hidden;
+    /*     padding-top: 13px; commented by Dinesh */
+}
 
-    .profile-picture-txt {
-        padding: 20px;
-    }
+.profile-picture-txt {
+    padding: 20px;
+}
 
-    .profile-picture-txt .p-text {
-        float: right;
-        width: 70%;
-        padding-right: 20px;
-    }
+.profile-picture-txt .p-text {
+    float: right;
+    width: 70%;
+    padding-right: 20px;
+}
 
-    .profile-show button span {
-        margin-right: 10px;
-    }
+.profile-show button span {
+    margin-right: 10px;
+}
 
-    .profile-show button span img {
-        width: 20px;
-    }
+.profile-show button span img {
+    width: 20px;
+}
 
-    .profile-show .profile-picture-txt h4 {
-        text-align: left;
-    }
+.profile-show .profile-picture-txt h4 {
+    text-align: left;
+}
 
-    .profile-show button {
+.profile-show button {
 
-        width: 100%;
-        border: none;
-        border-radius: 20px;
-        background: #5ebbfe;
-        color: #fff;
-        font-weight: 500;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        padding: 15px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    background: #5ebbfe;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    padding: 15px 20px;
 
-    }
+}
 
-    .achievement {
-        display: inline-block;
-        width: 100%;
-        padding: 20px 0px;
-    }
+.achievement {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px;
+}
 
-    .achievement ul {
-        padding-left: 0px;
-    }
+.achievement ul {
+    padding-left: 0px;
+}
 
-    .achievement ul li {
-        list-style: none;
-        position: relative;
-        padding-left: 25px;
-        font-size: 16px;
-        font-weight: 400;
-    }
+.achievement ul li {
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+    font-size: 16px;
+    font-weight: 400;
+}
 
-    .achievement ul li:before {
-        content: "";
-        position: absolute;
-        top: 1px;
-        left: -10px;
-        background: url(../images/right-icon.png) no-repeat;
-        width: 28px;
-        height: 25px;
-        background-size: 30px;
+.achievement ul li:before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: -10px;
+    background: url(../images/right-icon.png) no-repeat;
+    width: 28px;
+    height: 25px;
+    background-size: 30px;
 
-    }
+}
 
-    .achievement ul li:after {
-        content: "";
-        position: absolute;
-        top: 2px;
-        right: -14px;
-        background: url(../images/share.png) no-repeat;
-        width: 30px;
-        height: 25px;
-        background-size: 30px;
-    }
-
-
-    .leader-board .achievement ul {
-        overflow-x: initial;
-    }
-
-    /** end here**/
-    /** Edit form css **/
-    .edit-form {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        right: 88%;
-        background: #fff;
-
-        padding: 20px;
-        border-radius: 56px;
-        box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
-        display: none;
-    }
-
-    .edit-img {
-        text-align: center;
-        position: relative;
-    }
-
-    .edit-form .edit-img .p-picture {
-        width: 80px;
-        display: inline-block;
-        overflow: hidden;
-        border: 1px solid #5ebbfe;
-        border-radius: 50%;
-        height: 80px;
-    }
-
-    .edit-form .edit-img .p-picture img {
-        width: 100%;
-    }
-
-    .edit-pic {
-        position: absolute;
-        bottom: -11px;
-        left: 45%;
-        width: 40px;
-        background: #fff;
-        border-radius: 50%;
-        padding: 6px;
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
-    }
-
-    .btm-form-flds {
-        width: 100%;
-        display: inline-block;
-        margin-top: 30px;
-    }
-
-    .btm-form-flds .form-flds {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .btm-form-flds .form-flds input {
-        width: 100%;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        background: #f2f2f2;
-        color: #000;
-    }
-
-    .form-btns {
-        text-align: center;
-        display: inline-block;
-        width: 100%;
-    }
-
-    button.cancel-btn {
-        border-radius: 20px;
-        box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
-        background: #e9e9e9;
-        padding: 15px 30px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #2c3348;
-        text-transform: uppercase;
-        border: none;
-        width: 170px;
-    }
-
-    button.save-btn {
-        border-radius: 20px;
-        box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
-        background: #00baff;
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #fff;
-        padding: 15px 30px;
-        border: none;
-        width: 170px;
-    }
-
-    /** end here **/
-
-    /* dinesh added css */
-    label.error {
-        color: red;
-        font-size: 14px;
-    }
-
-    .leader-pic {
-        width: 60px;
-        height: 60px;
-        border-radius: 30px;
-    }
-
-    .slimScrollBar {
-        z-index: 89;
-    }
-
-    .topic_name {
-        min-width: 113px;
-        text-align: left;
-        letter-spacing: 0px;
-        text-transform: capitalize;
-        opacity: 1;
-        max-width: 170px;
-        white-space: nowrap;
-        overflow-x: hidden;
-        overflow-y: hi;
-        text-overflow: ellipsis;
-    }
-
-    .chapter_name {
-        min-width: 113px;
-        text-align: left;
-        letter-spacing: 0px;
-        text-transform: capitalize;
-        opacity: 1;
-        max-width: 300px;
-        white-space: nowrap;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .p-picture img {
-        width: 100%;
-        height: 100%;
-    }
-
-    /* dinesh added css end */
-
-    /* how much like popup */
-    #favSubResponse .modal-content.rounded-0 {
-        border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-        border: none;
-    }
-
-    #favSubResponse a#nxt-btn {
-        border-radius: 20px !important;
-        background: #13c5ff;
-        color: #fff;
-        border: none;
-        opacity: 0.3;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        width: 204px;
-        padding: 12px 91px;
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    #favSubResponse p {
-        font-family: Manrope;
-        font-size: 28px;
-        line-height: 30px;
-    }
+.achievement ul li:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: -14px;
+    background: url(../images/share.png) no-repeat;
+    width: 30px;
+    height: 25px;
+    background-size: 30px;
+}
 
 
-    #favSubResponse button.btn-close {
-        right: 30px;
-        position: absolute;
-        top: 20px;
-        z-index: 9;
-    }
+.leader-board .achievement ul {
+    overflow-x: initial;
+}
 
-    #favSubResponse .rating.block {
-        justify-content: center !important;
+/** end here**/
+/** Edit form css **/
+.edit-form {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 88%;
+    background: #fff;
 
-    }
+    padding: 20px;
+    border-radius: 56px;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+    display: none;
+}
 
+.edit-img {
+    text-align: center;
+    position: relative;
+}
+
+.edit-form .edit-img .p-picture {
+    width: 80px;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #5ebbfe;
+    border-radius: 50%;
+    height: 80px;
+}
+
+.edit-form .edit-img .p-picture img {
+    width: 100%;
+}
+
+.edit-pic {
+    position: absolute;
+    bottom: -11px;
+    left: 45%;
+    width: 40px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+}
+
+.btm-form-flds {
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.btm-form-flds .form-flds {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btm-form-flds .form-flds input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f2f2f2;
+    color: #000;
+}
+
+.form-btns {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+button.cancel-btn {
+    border-radius: 20px;
+    box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
+    background: #e9e9e9;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3348;
+    text-transform: uppercase;
+    border: none;
+    width: 170px;
+}
+
+button.save-btn {
+    border-radius: 20px;
+    box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
+    background: #00baff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    width: 170px;
+}
+
+/** end here **/
+
+/* dinesh added css */
+label.error {
+    color: red;
+    font-size: 14px;
+}
+
+.leader-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.slimScrollBar {
+    z-index: 89;
+}
+
+.topic_name {
+    min-width: 113px;
+    text-align: left;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hi;
+    text-overflow: ellipsis;
+}
+
+.chapter_name {
+    min-width: 113px;
+    text-align: left;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+.p-picture img {
+    width: 100%;
+    height: 100%;
+}
+
+/* dinesh added css end */
+
+/* how much like popup */
+#favSubResponse .modal-content.rounded-0 {
+    border-radius: 56px !important;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    border: none;
+}
+
+#favSubResponse a#nxt-btn {
+    border-radius: 20px !important;
+    background: #13c5ff;
+    color: #fff;
+    border: none;
+    opacity: 0.3;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    width: 204px;
+    padding: 12px 91px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#favSubResponse p {
+    font-family: Manrope;
+    font-size: 28px;
+    line-height: 30px;
+}
+
+
+#favSubResponse button.btn-close {
+    right: 30px;
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+}
+
+#favSubResponse .rating.block {
+    justify-content: center !important;
+	
+}
+
+#favSubResponse .rating .lbl-text {
+    width: 20%;text-transform: capitalize;
+}
+
+/* end how much like popup */
+/* end how much popup resonsive */
+
+@media(max-width:991px) {
     #favSubResponse .rating .lbl-text {
-        width: 20%;
-        text-transform: capitalize;
+        width: 35% !important;
     }
+}
 
-    /* end how much like popup */
-    /* end how much popup resonsive */
-
-    @media(max-width:991px) {
-        #favSubResponse .rating .lbl-text {
-            width: 35% !important;
-        }
+@media(max-width:767px) {
+    #favSubResponse .rating .lbl-text {
+        width: 35% !important;
     }
+}
 
-    @media(max-width:767px) {
-        #favSubResponse .rating .lbl-text {
-            width: 35% !important;
-        }
-    }
-
-    /* end how much like */
+/* end how much like */
 
 
-    /* full scan test popup */
-    #fullTest_Dashboard .modal-content.rounded-0 {
-        border-radius: 56px !important;
+/* full scan test popup */
+#fullTest_Dashboard .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+#full-txtBlock {
+    border-radius: 42px;
+    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
+}
+
+#h1--P {
+    color: #2c3348 !important;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+#fullTest_Dashboard button.btn-close {
+    right: 30px;
+    position: absolute;
+    top: 20px;
+    z-index: 9;
+}
+
+#fullTest_Dashboard .modal-body.pt-0.text-center {
+    padding-top: 35px !important;
+}
+
+#fullTest_Dashboard .skip-dashboard {
+    background: transparent !important;
+    border: none;
+    color: #00baff !important;
+}
+
+/* end full scan test popup */
+
+/* responsive full scan test popup */
+@media(max-width:767px) {
+    #fullTest_Dashboard .full-txtblock span {
+        font-size: 14px;
+        text-align: center;
+        margin-left: 0px !important;
     }
 
     #full-txtBlock {
-        border-radius: 42px;
-        box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+}
+
+/* end full scan test popup resonsive */
+
+
+
+/** preparation page css on 9-12-2021***/
+
+.preparation .slimScrollBar {
+    background: rgb(98, 194, 254) !important;
+}
+
+.preparation .cust-tab-content {
+    height: 400px !important;
+}
+
+.preparation .name-txt {
+    width: 35%;
+}
+
+/** end here on 9-12-2021 **/
+
+/** preparation page css on 9-12-2021***/
+
+.preparation .slimScrollBar {
+    background: rgb(98, 194, 254) !important;
+}
+
+.preparation .cust-tab-content {
+    height: 500px !important;
+}
+
+.preparation .name-txt {
+    width: 35%;
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** preparation page css on 9-12-2021**/
+    .preparation .name-txt {
+        width: 100%;
+        display: block;
+        font-size: 14px;
     }
 
-    #h1--P {
-        color: #2c3348 !important;
-        font-size: 25px;
-        line-height: 30px;
-        margin-bottom: 15px;
-    }
-
-    #fullTest_Dashboard button.btn-close {
-        right: 30px;
-        position: absolute;
-        top: 20px;
-        z-index: 9;
-    }
-
-    #fullTest_Dashboard .modal-body.pt-0.text-center {
-        padding-top: 35px !important;
-    }
-
-    #fullTest_Dashboard .skip-dashboard {
-        background: transparent !important;
-        border: none;
-        color: #00baff !important;
-    }
-
-    /* end full scan test popup */
-
-    /* responsive full scan test popup */
-    @media(max-width:767px) {
-        #fullTest_Dashboard .full-txtblock span {
-            font-size: 14px;
-            text-align: center;
-            margin-left: 0px !important;
-        }
-
-        #full-txtBlock {
-            margin-left: 12px !important;
-            margin-right: 12px !important;
-        }
-    }
-
-    /* end full scan test popup resonsive */
-
-
-
-    /** preparation page css on 9-12-2021***/
-
-    .preparation .slimScrollBar {
-        background: rgb(98, 194, 254) !important;
+    .preparation .slbs-link a {
+        font-size: 12px;
     }
 
     .preparation .cust-tab-content {
-        height: 400px !important;
+        height: auto !important;
     }
 
-    .preparation .name-txt {
-        width: 35%;
-    }
-
-    /** end here on 9-12-2021 **/
-
-    /** preparation page css on 9-12-2021***/
-
-    .preparation .slimScrollBar {
-        background: rgb(98, 194, 254) !important;
-    }
-
-    .preparation .cust-tab-content {
-        height: 500px !important;
-    }
-
-    .preparation .name-txt {
-        width: 35%;
-    }
-
-    @media(min-width:360px) and (max-width:767px) {
-
-        /** preparation page css on 9-12-2021**/
-        .preparation .name-txt {
-            width: 100%;
-            display: block;
-            font-size: 14px;
-        }
-
-        .preparation .slbs-link a {
-            font-size: 12px;
-        }
-
-        .preparation .cust-tab-content {
-            height: auto !important;
-        }
-
-        /*** end here 9-12-2021**/
-
-    }
-
-    /** end here on 9-12-2021 **/
-    /** Bhim model popup css for preparation page 13-12-2021 desktop view only**/
-
-    .modal-dialog {
-        border-radius: 56px !important;
-    }
-
-    .modal-dialog .modal-content.bg-light {
-        background-color: #ffffff !important;
-        border-radius: 56px !important;
-        padding: 20px;
-    }
-
-    .h-scroll-slim .d-flex.bg-white {
-        border: 1px solid #eee;
-        border-radius: 20px;
-    }
-
-    .ms-auto span.me-1 .bg-light-red {
-        background: #00baff !important;
-    }
-
-    /** End here 13-12-2021**/
-
-    /* 11-12 test screen */
-
-    #test_instruction .modal-content.rounded-0 {
-        border-radius: 56px !important;
-    }
-
-    #test_instruction .test-info {
-        padding: 20px 0;
-        margin: 25px 0;
-    }
-
-    #test_instruction .slimScrollBar {
-        background: #21ccff !important;
-    }
-
-    #test_instruction button#goto-exam-btn {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(241deg, #21ccff, #00baff);
-        border: none;
-        padding: 15px 65px;
-        color: #fff;
-    }
-
-    /* end welcome instructions exam popup */
-    /** End exam popup */
-    #resume-test .modal-content.rounded-0,
-    #FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
-    #endExam .modal-content.rounded-0 {
-        border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-        border: none;
-    }
-
-    #endExam #See-Ana {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(241deg, #21ccff, #00baff);
-        border: none;
-        padding: 15px 65px;
-        color: #fff;
-    }
-
-    /* end end exam popup */
-
-    /*** Rahul Exam analytics page css 13-12-2021 **/
-    .exam-analytics {}
-
-    .exam-analytics span.text-center.w-100 img {
-        width: 100%;
-    }
-
-    .exam-analytics .bg-white.shadow-lg {
-        min-height: 430px;
-    }
-
-    .exam-analytics .map-right-graph img {
-        width: 100%;
-    }
-
-    .exam-analytics .bg-white.shadow.p-3 {
-        border-radius: 56px;
-    }
-
-    .exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
-        border-radius: 56px !important;
-        padding-bottom: 0px !important;
-    }
-
-    .exam-analytics .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-        border-top-left-radius: 56px;
-        border-top-right-radius: 56px;
-        border-radius: 56px;
-        padding-bottom: 33px;
-    }
-
-    #exam_result_analysis .row.mt-5.mb-3 {
-        margin-bottom: 0px !important;
-    }
-
-    .exam-analytics .abrv-graph.bg1 {
-        background: #5cc129;
-        border-radius: 50%;
-    }
-
-    .exam-analytics .abrv-graph.bg2,
-    .exam-analytics .abrv-graph.bg3 {
-        border-radius: 50%;
-    }
-
-    .exam-analytics .abrv-graph.bg2 {
-        background: #e62e2d;
-    }
-
-    .exam-analytics .row.my-4 .col {
-        text-align: center;
-    }
-
-    .exam-analytics button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff);
-        border: none;
-        border-radius: 20px;
-        padding: 15px 10px;
-    }
-
-    .exam-analytics .blue-block {
-        background: #eee;
-        padding: 20px 40px;
-        border-radius: 20px;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-        border-radius: 56px;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
-        border-radius: 56px;
-    }
-
-    .exam-analytics .i-icon {
-        color: #62c2fe;
-    }
-
-    .exam-analytics .i-icon:hover {
-        color: #62c2fe;
-    }
-
-    .exam-analytics .bg-light-success {
-        background: #37c027;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-
-    .exam-analytics .bg-light-red {
-        background: red;
-    }
-
-    .exam-analytics .cust-tab-content {
-        padding: 0px 36px;
-        border-bottom-left-radius: 56px;
-        border-bottom-right-radius: 56px;
-    }
-
-    button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff);
-        border: none;
-        border-radius: 20px;
-        padding: 15px 10px;
-    }
-
-    /*** Exam analytics page css End 13-12-2021 **/
-
-    /** test review page css 7-11-2021 ***/
-    .people-qus {
-        display: flex;
-        color: #231f20;
-        font-size: 18px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        border-bottom: 2px solid #2c3348;
-        padding-bottom: 5px;
-    }
-
-    .pythagoras a {
-        color: #21ccff;
-    }
-
-    .pytha-arc {
-        display: flex;
-        margin-top: 15px;
-    }
-
-    .people-qus strong {
-        font-size: 48px;
-        color: #37c027;
-        padding-right: 22px;
-        line-height: 55px;
-    }
-
-    .percentage-21 {
-        border-radius: 20px;
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-        width: 380px;
-        background: #fff;
-        padding: 10px;
-        position: absolute;
-        top: 10px;
-        right: 26px;
-        display: none;
-    }
-
-    .arc-radius {
-        padding-left: 20px;
-    }
-
-    .perntage1 {
-        display: none;
-    }
-
-    .perntage2 {
-        display: none;
-    }
-
-    .percentage-21.perntage2 {
-        right: 46%;
-        width: 50%;
-    }
-
-    .percentage-21.perntage2 .people-qus strong {
-        font-size: 16px;
-        color: #21ccff;
-        line-height: 20px;
-    }
-
-    .percentage-21.perntage2 .people-qus {
-        display: inline-block;
-        width: 100%;
-    }
-
-    p.mb-0.line-height-18px {
-        line-height: 18px;
-    }
-
-    .pytha-arc h3 {
-        font-size: 16px;
-        font-weight: 600;
-        color: #21ccff;
-    }
-
-    .percentage-21.pythagoras-p2 {
-        display: none !important;
-    }
-
-    .percentage-21 button.close-btn-pr {
-        border: none;
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        background: none;
-        color: #000;
-        font-weight: bold;
-    }
-
-    .tab-wrapper .nav-tabs {
-        /*  z-index: 99999; commented by dinesh*/
-        z-index: 99;
-        position: relative;
-    }
-
-    span.p-icons span {
-        color: red;
-    }
-
-    .answer-section {
-        width: 100%;
-        padding: 30px;
-        background: #eee;
-        border-radius: 56px;
-    }
-
-    button.percentage-digit {
-        float: right;
-        padding: 18px 86px;
-        border: none;
-        background: #00baff;
-        border-radius: 20px;
-        color: #fff;
-    }
-
-    .answer-btn-txt {
-        display: inline-block;
-        width: 100%;
-    }
-
-    .answer-btn-txt span {
-        color: #44cd7f;
-        font-family: Manrope;
-        margin-right: 20px;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: normal;
-    }
-
-    .ans-txt {
-        display: inline-block;
-        width: 100%;
-        margin-top: 30px;
-    }
-
-    .back-to-dashbord {
-        position: absolute;
-        top: 12px;
-        right: 50px;
-        z-index: 99999;
-    }
-
-    .test-review .tab-content {
-        border-radius: 56px;
-        padding-bottom: 10px;
-    }
-
+    /*** end here 9-12-2021**/
+
+}
+
+/** end here on 9-12-2021 **/
+/** Bhim model popup css for preparation page 13-12-2021 desktop view only**/
+
+.modal-dialog {
+    border-radius: 56px !important;
+}
+
+.modal-dialog .modal-content.bg-light {
+    background-color: #ffffff !important;
+    border-radius: 56px !important;
+    padding: 20px;
+}
+
+.h-scroll-slim .d-flex.bg-white {
+    border: 1px solid #eee;
+    border-radius: 20px;
+}
+
+.ms-auto span.me-1 .bg-light-red {
+    background: #00baff !important;
+}
+
+/** End here 13-12-2021**/
+
+/* 11-12 test screen */
+
+#test_instruction .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+#test_instruction .test-info {
+    padding: 20px 0;
+    margin: 25px 0;
+}
+
+#test_instruction .slimScrollBar {
+    background: #21ccff !important;
+}
+
+#test_instruction button#goto-exam-btn {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(241deg, #21ccff, #00baff);
+    border: none;
+    padding: 15px 65px;
+    color: #fff;
+}
+
+/* end welcome instructions exam popup */
+/** End exam popup */
+#resume-test .modal-content.rounded-0,
+#FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
+#endExam .modal-content.rounded-0 {
+    border-radius: 56px !important;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    border: none;
+}
+
+#endExam #See-Ana {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(241deg, #21ccff, #00baff);
+    border: none;
+    padding: 15px 65px;
+    color: #fff;
+}
+
+/* end end exam popup */
+
+/*** Rahul Exam analytics page css 13-12-2021 **/
+.exam-analytics {}
+
+.exam-analytics span.text-center.w-100 img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow-lg {
+    min-height: 430px;
+}
+
+.exam-analytics .map-right-graph img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow.p-3 {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
+    border-radius: 56px !important;
+    padding-bottom: 0px !important;
+}
+
+.exam-analytics .tab-wrapper {
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    border-top-left-radius: 56px;
+    border-top-right-radius: 56px;
+    border-radius: 56px;
+    padding-bottom: 33px;
+}
+#exam_result_analysis .row.mt-5.mb-3 {
+    margin-bottom: 0px !important;
+}
+.exam-analytics .abrv-graph.bg1 {
+    background: #5cc129;
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2,
+.exam-analytics .abrv-graph.bg3 {
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2 {
+    background: #e62e2d;
+}
+
+.exam-analytics .row.my-4 .col {
+    text-align: center;
+}
+
+.exam-analytics button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+.exam-analytics .blue-block {
+    background: #eee;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .i-icon {
+    color: #62c2fe;
+}
+
+.exam-analytics .i-icon:hover {
+    color: #62c2fe;
+}
+
+.exam-analytics .bg-light-success {
+    background: #37c027;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.exam-analytics .bg-light-red {
+    background: red;
+}
+
+.exam-analytics .cust-tab-content {
+    padding: 0px 36px;
+    border-bottom-left-radius: 56px;
+    border-bottom-right-radius: 56px;
+}
+
+button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+/*** Exam analytics page css End 13-12-2021 **/
+
+/** test review page css 7-11-2021 ***/
+.people-qus {
+    display: flex;
+    color: #231f20;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2c3348;
+    padding-bottom: 5px;
+}
+
+.pythagoras a {
+    color: #21ccff;
+}
+
+.pytha-arc {
+    display: flex;
+    margin-top: 15px;
+}
+
+.people-qus strong {
+    font-size: 48px;
+    color: #37c027;
+    padding-right: 22px;
+    line-height: 55px;
+}
+
+.percentage-21 {
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    width: 380px;
+    background: #fff;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 26px;
+    display: none;
+}
+
+.arc-radius {
+    padding-left: 20px;
+}
+
+.perntage1 {
+    display: none;
+}
+
+.perntage2 {
+    display: none;
+}
+
+.percentage-21.perntage2 {
+    right: 46%;
+    width: 50%;
+}
+
+.percentage-21.perntage2 .people-qus strong {
+    font-size: 16px;
+    color: #21ccff;
+    line-height: 20px;
+}
+
+.percentage-21.perntage2 .people-qus {
+    display: inline-block;
+    width: 100%;
+}
+
+p.mb-0.line-height-18px {
+    line-height: 18px;
+}
+
+.pytha-arc h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #21ccff;
+}
+
+.percentage-21.pythagoras-p2 {
+    display: none !important;
+}
+
+.percentage-21 button.close-btn-pr {
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.tab-wrapper .nav-tabs {
+    /*  z-index: 99999; commented by dinesh*/
+    z-index: 99;
+    position: relative;
+}
+
+span.p-icons span {
+    color: red;
+}
+
+.answer-section {
+    width: 100%;
+    padding: 30px;
+    background: #eee;
+    border-radius: 56px;
+}
+
+button.percentage-digit {
+    float: right;
+    padding: 18px 86px;
+    border: none;
+    background: #00baff;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.answer-btn-txt {
+    display: inline-block;
+    width: 100%;
+}
+
+.answer-btn-txt span {
+    color: #44cd7f;
+    font-family: Manrope;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.ans-txt {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.back-to-dashbord {
+    position: absolute;
+    top: 12px;
+    right: 50px;
+    z-index: 99999;
+}
+
+.test-review .tab-content {
+    border-radius: 56px;
+    padding-bottom: 10px;
+}
+
+.test-review-right span.timing {
+    margin-left: 0px;
+}
+
+.review-qus {
+    margin: 20px 0px;
+    overflow: auto;
+    height: 200px;
+    overflow-x: hidden;
+}
+
+.review-qus span a {
+    float: right;
+}
+
+.rview-quses {
+    padding-left: 0px;
+}
+
+.rview-quses li.correctans {
+    border-color: #37c027;
+}
+
+.rview-quses li.incorrectans {
+    border-color: #ee6a5f;
+}
+
+.rview-quses li.notans {
+    border-color: #e4e4e4;
+}
+
+.rview-quses li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0px;
+    display: flex;
+    width: 100%;
+    border-left: 5px solid #eee;
+}
+
+.rview-quses li span {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/** custom scrollbar**/
+/* width */
+.question-block {
+    height: 250px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.question-block::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.question-block::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.question-block::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.question-block::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+.answer-section {
+    height: 200px;
+    overflow: auto;
+    margin: 20px 0px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.answer-section::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.answer-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.answer-section::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.answer-section::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+.review-qus {}
+
+.review-qus::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.review-qus::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.review-qus::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.review-qus::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+.rightSect .number-block {}
+
+.rightSect .number-block::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.rightSect .number-block::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.rightSect .number-block::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.rightSect .number-block::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+
+/** scrollbar css end here**/
+.back-to-dashbord a {
+    color: #00baff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*** End here ***/
+
+
+@media(min-width:991px) and (max-width:1024px) {
+
+/** test review page on 16-12-2021**/
+.test-review-right span.timing {
+    margin-left: 0px;
+}
+.timing{font-size:16px;}
+.rightSect .number-block .btn{margin-right: 0px;}
+.percentage-21.perntage2 .people-qus strong{font-size:15px;}
+/** end here 16-12-2021**/
+/** rahul merge css for profile section  on 16-12-2021**/
+/** profile page css **/
+.profile-section{width: 220px;top:8%;}
+.leader-board{width:310px;    right: 20%;height: 100%; top:8%;}
+.profile-show{height: 100%;    padding: 10px 0px;}
+.subscription .form-btns button{margin-bottom:20px;}
+.log-out-screen{width:50%;right:20%;top:8%;}
+button.cancel-btn{margin-bottom:15px;}
+.subscription{right:20%;top:8%;}
+/** end here **/	
+
+/*** end on 16-12-2021 */
+
+    /** test review page on 8-12-2021**/
     .test-review-right span.timing {
         margin-left: 0px;
     }
 
-    .review-qus {
-        margin: 20px 0px;
-        overflow: auto;
-        height: 200px;
-        overflow-x: hidden;
+    .timing {
+        font-size: 16px;
     }
 
-    .review-qus span a {
-        float: right;
+    .rightSect .number-block .btn {
+        margin-right: 0px;
     }
 
-    .rview-quses {
-        padding-left: 0px;
+    .percentage-21.perntage2 .people-qus strong {
+        font-size: 15px;
     }
 
+    /** end here 8-12-2021**/
+}
 
-    .rview-quses li {
-        position: relative;
-        list-style: none;
-        margin: 10px 0px;
-        display: flex;
-        width: 100%;
-        border-left: 5px solid #eee;
+@media(min-width:768px) and (max-width:990px) {
+.course-star li strong {
+    width:100% !important;
+    display:block;
+}
+.star-img {
+   width:100% !important;
+    display:block;
+}
+.container-fluid .row .col-md-6.ms-auto.text-end{width:100%;}
+/** rahul merge css for profile section  on 16-12-2021**/
+.course-star li strong {width: 100%;display: block;}
+header .container-fluid .row .col-md-6.ms-auto.text-end{width:100%;}
+/** profile page css **/
+.profile-section{width:190px;}
+.leader-board{width:270px;right:20%;height:100%;padding-left:0px;}
+.profile-show{height:100%;padding:10px 0px;}
+.subscription .form-btns button{margin-bottom:20px;}
+.log-out-screen{width:50%;right: 20%;}
+.subscription{right:20%;}
+.profile-picture-txt .p-text{padding-right:0px;}
+.profile-picture-txt {padding:15px;display:inline-block;}
+.subscription .profile-picture-txt .p-picture {height:60px;}
+
+/** end here **/		
+/*** end on 16-12-2021 */
+    /** test review page on 8-12-2021**/
+    .test-review .cust-tabs .nav-link {
+        margin-right: 10px;
+        font-size: 14px;
     }
 
-    .rview-quses li span {
-        padding-right: 5px;
-        padding-left: 5px;
+    .test-review .prev-arow {
+        left: -18px;
+        top: 52px;
     }
 
-    /** custom scrollbar**/
-    /* width */
-    .question-block {
-        height: 250px;
-        overflow: auto;
-        overflow-x: hidden;
+    .test-review div#myTabContent .tab-pane .question-block {
+        padding: 15px 0rem;
     }
 
-    .question-block::-webkit-scrollbar {
-        width: 5px;
+    .test-review .next-arow {
+        top: 52px;
     }
 
-    /* Track */
-    .question-block::-webkit-scrollbar-track {
-        background: #f1f1f1;
+    .rightSect.test-review-right .bg-white {
+        padding: 10px !important;
     }
 
-    /* Handle */
-    .question-block::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
+    .test-review .percentage-21 {
+        width: 310px;
     }
 
-    /* Handle on hover */
-    .question-block::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
+    .percentage-21.perntage2 {
+        right: 16%;
     }
+
+    .people-qus strong {
+        font-size: 30px;
+    }
+
+    /** end here 8-12-2021 **/
+
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+/** test review page on 16-12-2021**/
+
+.answer-section{height:auto;overflow:unset;overflow-x:unset;}
+.percentage-21{width:100%;right: 3px;}
+.percentage-21.perntage2 {right:2%;width:100%;}
+button.percentage-digit{margin-top: 10px;margin-right: 20px;padding: 18px 70px;}
+.people-qus strong{font-size:30px;padding-right:14px;}
+.percentage-21 button.close-btn-pr{right:0px;}
+div#myTabContent .tab-pane .question-block {padding: 15px 0rem;}
+.q-no{left:20px;}
+.cust-tab-content{padding:10px 10px!important;}
+
+/** end here 16-12-2021**/
+
+/** rahul merge css for profile section  on 16-12-2021**/
+button.cancel-btn{margin-bottom:20px;}
+.custom-page .slbs-link.mx-3{float: left;}
+/** profile page css **/
+.profile-section{width:85%;top: -6%;height: auto;z-index:999;}
+.leader-board{width:270px;right:20%;height:100%;padding-left:0px;}
+.subscription .form-btns button{margin-bottom:20px;}
+.log-out-screen{right:1%;    width: 87%;top: 24%;}
+.subscription{right:1%;width: 87%;padding: 15px 20px 15px 25px;top:24%;padding:40px 20px 40px 25px;}
+.profile-picture-txt .p-text{padding-right:0px;}
+.profile-picture-txt {padding:15px;display:inline-block;}
+.subscription .profile-picture-txt .p-picture {height:90px;}
+.profile-section ul{display:flex;margin-bottom: 0px;}
+.profile-section ul li{padding: 15px 10px; margin:0px;text-align:center;width: 120px;}
+.profile-section ul li span{display:block;}
+.leader-board{width: 87%;right:1%;top: 12%;border-top-left-radius: 0;border-top-right-radius: 0px;}
+.profile-show{top: -34%;left: 0%;width: 100%;padding: 30px 15px 40px;border-top-left-radius: 20px !important;border-top-right-radius: 20px !important;border-radius: 0;}
+.edit-form{top: 0%;right: 0%;}
+
+/** end here **/	
+/*** end on 16-12-2021 */	
+    /** test review page on 8-12-2021**/
 
     .answer-section {
         height: 200px;
-        overflow: auto;
-        margin: 20px 0px;
-        position: relative;
-        overflow-x: hidden;
+    overflow: auto;
+    overflow-x: unset;
     }
 
-    .answer-section::-webkit-scrollbar {
-        width: 5px;
+    .percentage-21 {
+        width: 100%;
+        right: 3px;
     }
 
-    /* Track */
-    .answer-section::-webkit-scrollbar-track {
-        background: #f1f1f1;
+    .percentage-21.perntage2 {
+        right: 2%;
+        width: 100%;
     }
 
-    /* Handle */
-    .answer-section::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
+    button.percentage-digit {
+        margin-top: 10px;
+        margin-right: 20px;
+        padding: 18px 70px;
     }
 
-    /* Handle on hover */
-    .answer-section::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
+    .people-qus strong {
+        font-size: 30px;
+        padding-right: 14px;
     }
 
-    .review-qus {}
-
-    .review-qus::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    /* Track */
-    .review-qus::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    /* Handle */
-    .review-qus::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
-    }
-
-    /* Handle on hover */
-    .review-qus::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
-    }
-
-    .rightSect .number-block {}
-
-    .rightSect .number-block::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    /* Track */
-    .rightSect .number-block::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    /* Handle */
-    .rightSect .number-block::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
-    }
-
-    /* Handle on hover */
-    .rightSect .number-block::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
-    }
-
-    /** scrollbar css end here**/
-    .back-to-dashbord a {
-        color: #00baff;
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    /*** End here ***/
-
-
-    @media(min-width:991px) and (max-width:1024px) {
-
-        /** test review page on 16-12-2021**/
-        .test-review-right span.timing {
-            margin-left: 0px;
-        }
-
-        .timing {
-            font-size: 16px;
-        }
-
-        .rightSect .number-block .btn {
-            margin-right: 0px;
-        }
-
-        .percentage-21.perntage2 .people-qus strong {
-            font-size: 15px;
-        }
-
-        /** end here 16-12-2021**/
-        /** rahul merge css for profile section  on 16-12-2021**/
-        /** profile page css **/
-        .profile-section {
-            width: 220px;
-            top: 8%;
-        }
-
-        .leader-board {
-            width: 310px;
-            right: 20%;
-            height: 100%;
-            top: 8%;
-        }
-
-        .profile-show {
-            height: 100%;
-            padding: 10px 0px;
-        }
-
-        .subscription .form-btns button {
-            margin-bottom: 20px;
-        }
-
-        .log-out-screen {
-            width: 50%;
-            right: 20%;
-            top: 8%;
-        }
-
-        button.cancel-btn {
-            margin-bottom: 15px;
-        }
-
-        .subscription {
-            right: 20%;
-            top: 8%;
-        }
-
-        /** end here **/
-
-        /*** end on 16-12-2021 */
-
-        /** test review page on 8-12-2021**/
-        .test-review-right span.timing {
-            margin-left: 0px;
-        }
-
-        .timing {
-            font-size: 16px;
-        }
-
-        .rightSect .number-block .btn {
-            margin-right: 0px;
-        }
-
-        .percentage-21.perntage2 .people-qus strong {
-            font-size: 15px;
-        }
-
-        /** end here 8-12-2021**/
-    }
-
-    @media(min-width:768px) and (max-width:990px) {
-        .course-star li strong {
-            width: 100% !important;
-            display: block;
-        }
-
-        .star-img {
-            width: 100% !important;
-            display: block;
-        }
-
-        .container-fluid .row .col-md-6.ms-auto.text-end {
-            width: 100%;
-        }
-
-        /** rahul merge css for profile section  on 16-12-2021**/
-        .course-star li strong {
-            width: 100%;
-            display: block;
-        }
-
-        header .container-fluid .row .col-md-6.ms-auto.text-end {
-            width: 100%;
-        }
-
-        /** profile page css **/
-        .profile-section {
-            width: 190px;
-        }
-
-        .leader-board {
-            width: 270px;
-            right: 20%;
-            height: 100%;
-            padding-left: 0px;
-        }
-
-        .profile-show {
-            height: 100%;
-            padding: 10px 0px;
-        }
-
-        .subscription .form-btns button {
-            margin-bottom: 20px;
-        }
-
-        .log-out-screen {
-            width: 50%;
-            right: 20%;
-        }
-
-        .subscription {
-            right: 20%;
-        }
-
-        .profile-picture-txt .p-text {
-            padding-right: 0px;
-        }
-
-        .profile-picture-txt {
-            padding: 15px;
-            display: inline-block;
-        }
-
-        .subscription .profile-picture-txt .p-picture {
-            height: 60px;
-        }
-
-        /** end here **/
-        /*** end on 16-12-2021 */
-        /** test review page on 8-12-2021**/
-        .test-review .cust-tabs .nav-link {
-            margin-right: 10px;
-            font-size: 14px;
-        }
-
-        .test-review .prev-arow {
-            left: -18px;
-            top: 52px;
-        }
-
-        .test-review div#myTabContent .tab-pane .question-block {
-            padding: 15px 0rem;
-        }
-
-        .test-review .next-arow {
-            top: 52px;
-        }
-
-        .rightSect.test-review-right .bg-white {
-            padding: 10px !important;
-        }
-
-        .test-review .percentage-21 {
-            width: 310px;
-        }
-
-        .percentage-21.perntage2 {
-            right: 16%;
-        }
-
-        .people-qus strong {
-            font-size: 30px;
-        }
-
-        /** end here 8-12-2021 **/
-
-    }
-
-    @media(min-width:360px) and (max-width:767px) {
-
-        /** test review page on 16-12-2021**/
-
-        .answer-section {
-            height: auto;
-            overflow: unset;
-            overflow-x: unset;
-        }
-
-        .percentage-21 {
-            width: 100%;
-            right: 3px;
-        }
-
-        .percentage-21.perntage2 {
-            right: 2%;
-            width: 100%;
-        }
-
-        button.percentage-digit {
-            margin-top: 10px;
-            margin-right: 20px;
-            padding: 18px 70px;
-        }
-
-        .people-qus strong {
-            font-size: 30px;
-            padding-right: 14px;
-        }
-
-        .percentage-21 button.close-btn-pr {
-            right: 0px;
-        }
-
-        div#myTabContent .tab-pane .question-block {
-            padding: 15px 0rem;
-        }
-
-        .q-no {
-            left: 20px;
-        }
-
-        .cust-tab-content {
-            padding: 10px 10px !important;
-        }
-
-        /** end here 16-12-2021**/
-
-        /** rahul merge css for profile section  on 16-12-2021**/
-        button.cancel-btn {
-            margin-bottom: 20px;
-        }
-
-        .custom-page .slbs-link.mx-3 {
-            float: left;
-        }
-
-        /** profile page css **/
-        .profile-section {
-            width: 85%;
-            top: -6%;
-            height: auto;
-            z-index: 999;
-        }
-
-        .leader-board {
-            width: 270px;
-            right: 20%;
-            height: 100%;
-            padding-left: 0px;
-        }
-
-        .subscription .form-btns button {
-            margin-bottom: 20px;
-        }
-
-        .log-out-screen {
-            right: 1%;
-            width: 87%;
-            top: 24%;
-        }
-
-        .subscription {
-            right: 1%;
-            width: 87%;
-            padding: 15px 20px 15px 25px;
-            top: 24%;
-            padding: 40px 20px 40px 25px;
-        }
-
-        .profile-picture-txt .p-text {
-            padding-right: 0px;
-        }
-
-        .profile-picture-txt {
-            padding: 15px;
-            display: inline-block;
-        }
-
-        .subscription .profile-picture-txt .p-picture {
-            height: 90px;
-        }
-
-        .profile-section ul {
-            display: flex;
-            margin-bottom: 0px;
-        }
-
-        .profile-section ul li {
-            padding: 15px 10px;
-            margin: 0px;
-            text-align: center;
-            width: 120px;
-        }
-
-        .profile-section ul li span {
-            display: block;
-        }
-
-        .leader-board {
-            width: 87%;
-            right: 1%;
-            top: 12%;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0px;
-        }
-
-        .profile-show {
-            top: -34%;
-            left: 0%;
-            width: 100%;
-            padding: 30px 15px 40px;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 20px !important;
-            border-radius: 0;
-        }
-
-        .edit-form {
-            top: 0%;
-            right: 0%;
-        }
-
-        /** end here **/
-        /*** end on 16-12-2021 */
-        /** test review page on 8-12-2021**/
-
-        .answer-section {
-            height: 200px;
-            overflow: auto;
-            overflow-x: unset;
-        }
-
-        .percentage-21 {
-            width: 100%;
-            right: 3px;
-        }
-
-        .percentage-21.perntage2 {
-            right: 2%;
-            width: 100%;
-        }
-
-        button.percentage-digit {
-            margin-top: 10px;
-            margin-right: 20px;
-            padding: 18px 70px;
-        }
-
-        .people-qus strong {
-            font-size: 30px;
-            padding-right: 14px;
-        }
-
-        .percentage-21 button.close-btn-pr {
-            right: 0px;
-        }
-
-        div#myTabContent .tab-pane .question-block {
-            padding: 15px 0rem;
-        }
-
-        .q-no {
-            left: 0px;
-        }
-
-        .cust-tab-content {
-            padding: 10px 10px !important;
-        }
-
-        /** end here 8-12-2021**/
-
-    }
-
-
-    /* share friends */
-    #sharefrnd .modal-content.rounded-0.bg-light {
-        border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-        background-color: #fff !important;
-    }
-
-    #referFrnd {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-        background-image: linear-gradient(237deg, #21ccff, #00baff -1%) !important;
-        border: none;
-    }
-
-    #enterEPnmb {
-        background-color: #f2f2f2 !important;
-        border-radius: 8px !important
-    }
-
-    #enterEurl {
-        background-color: #f2f2f2 !important;
-        border-radius: 8px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    button#button-addon2 {
-        background: #21ccff;
-        border-radius: 8px !important;
-        border-top-left-radius: 0px !important;
-        border-bottom-left-radius: 0px !important;
-    }
-
-    #sharefrnd button.btn-close {
-        position: absolute;
-        right: 32px;
-        top: 20px;
-        z-index: 9;
-    }
-
-    /* end referFrnd */
-    Analytics Subject */ .SubjName {
-        width: 35%;
-    }
-
-    #back2Dsh {
-        height: unset;
-    }
-
-    div#marKs-trends {
-        background: #fff !important;
-        border-radius: 56px !important;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-        margin: 22px 0px;
-    }
-
-    div#time-Avg-quest {
-        background: #fff !important;
-        border-radius: 56px !important;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-        margin: 22px 0px;
-    }
-
-    #marKs-trends .bg-white,
-    #time-Avg-quest .bg-white {
-        background: transparent !important;
-    }
-
-    #f-Numbr-sectin {
-        background: #fff;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-        border-radius: 56px;
-    }
-
-    #f-Numbr-sectin .noshadow {
-        background: transparent !important;
-        box-shadow: none !important;
-    }
-
-    #f-Numbr-sectin .arrow-right-btm-content {
-        left: 0px;
+    .percentage-21 button.close-btn-pr {
         right: 0px;
-        border-radius: 56px;
-        padding: 15px 20px !important;
     }
 
-    #f-Numbr-sectin .inner-arrow-right-btm {
-        right: 12px;
-        bottom: 0px;
+    div#myTabContent .tab-pane .question-block {
+        padding: 15px 0rem;
     }
 
-    #overall button.btn,
-    #home button.btn,
-    .Ex-anal {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff);
-        border: none;
-        color: #fff;
-        margin-right: 15px;
-        margin-bottom: 10px;
+    .q-no {
+        left: 0px;
     }
 
-    #arrow-left-btm .inner-arrow-left-btm {
-        left: 14px !important;
-        bottom: 0px !important;
+    .cust-tab-content {
+        padding: 10px 10px !important;
     }
 
-    #arrow-right-top .inner-arrow-right-top {
-        right: 12px !important;
-        top: 0px !important;
-    }
+    /** end here 8-12-2021**/
 
-    #arrow-left-top .inner-arrow-left-top {
-        right: 12px !important;
-        bottom: 0px !important;
-        top: auto;
-        left: auto;
-    }
-
-    div#topicclose,
-    .padingTT {
-        padding-top: 30px;
-    }
-
-    #myTabContent .bg-light-success {
-        background: #37c027;
-        border-radius: 15px;
-    }
-
-    #myTabContent .prog-box.green,
-    #myTabContent .prog-box.red,
-    #myTabContent .prog-box.secondary {
-        border: none;
-        background: #f2f2f2;
-        color: #231f20;
-        border-radius: 5px;
-        box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    }
-
-    #myTabContent .bg-light-red {
-        background: #ee6a5f;
-    }
-
-    #myTabContent .progress {
-        border-radius: 15rem !important;
-    }
-
-    /* webinar */
-    #upcoming-tutorials img.me-2 {
-        width: 15%;
-    }
-
-    #upcoming-tutorials .modal-content.rounded-0 {
-        border-radius: 56px !important;
-    }
-
-    p.fs-5.profileN {
-        text-align: center;
-        font-size: 12px !important;
-    }
-
-    p.fs-5.profileN span.Colr {
-        color: #1aa4d7;
-    }
-
-    p.fs-5.profileN img {
-        width: 100px !important;
-        height: 100%;
-        border-radius: 50%;
-        margin-bottom: 20px;
-    }
-
-    /* end webinar */
-    /* Download anylatics */
+}
 
 
-    div#exportAnalytics .modal-dialog .modal-content {
-        border-radius: 45px !important;
-    }
+/* share friends */
+#sharefrnd .modal-content.rounded-0.bg-light {
+    border-radius: 56px !important;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    background-color: #fff !important;
+}
 
-    div#contentHtml .text-light-danger {
-        color: #19a4d7;
-    }
+#referFrnd {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+    background-image: linear-gradient(237deg, #21ccff, #00baff -1%) !important;
+    border: none;
+}
 
-    div#contentHtml .bg-white.shadow-lg {
-        height: 100%;
-    }
+#enterEPnmb {
+    background-color: #f2f2f2 !important;
+    border-radius: 8px !important
+}
 
-    div#contentHtml .report-block2 {
-        background: #d0f3ff;
-    }
+#enterEurl {
+    background-color: #f2f2f2 !important;
+    border-radius: 8px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
 
-    div#contentHtml .report-block2 .bg-white {
-        border-radius: 56px;
-        box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
-        background-color: #fff;
-        padding: 30px !important;
-    }
+button#button-addon2 {
+    background: #21ccff;
+    border-radius: 8px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+#sharefrnd button.btn-close {
+    position: absolute;
+    right: 32px;
+    top: 20px;
+    z-index: 9;
+}
+
+/* end referFrnd */
+Analytics Subject */ .SubjName {
+    width: 35%;
+}
+
+#back2Dsh {
+    height: unset;
+}
+
+div#marKs-trends {
+    background: #fff !important;
+    border-radius: 56px !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    margin: 22px 0px;
+}
+
+div#time-Avg-quest {
+    background: #fff !important;
+    border-radius: 56px !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    margin: 22px 0px;
+}
+
+#marKs-trends .bg-white,
+#time-Avg-quest .bg-white {
+    background: transparent !important;
+}
+
+#f-Numbr-sectin {
+    background: #fff;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 56px;
+}
+
+#f-Numbr-sectin .noshadow {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#f-Numbr-sectin .arrow-right-btm-content {
+    left: 0px;
+    right: 0px;
+    border-radius: 56px;
+    padding: 15px 20px !important;
+}
+
+#f-Numbr-sectin .inner-arrow-right-btm {
+    right: 12px;
+    bottom: 0px;
+}
+
+#overall button.btn,
+#home button.btn,
+.Ex-anal {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+    margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+#arrow-left-btm .inner-arrow-left-btm {
+    left: 14px !important;
+    bottom: 0px !important;
+}
+
+#arrow-right-top .inner-arrow-right-top {
+    right: 12px !important;
+    top: 0px !important;
+}
+
+#arrow-left-top .inner-arrow-left-top {
+    right: 12px !important;
+    bottom: 0px !important;
+    top: auto;
+    left: auto;
+}
+
+div#topicclose,
+.padingTT {
+    padding-top: 30px;
+}
+
+#myTabContent .bg-light-success {
+    background: #37c027;
+    border-radius: 15px;
+}
+
+#myTabContent .prog-box.green,
+#myTabContent .prog-box.red,
+#myTabContent .prog-box.secondary {
+    border: none;
+    background: #f2f2f2;
+    color: #231f20;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+
+#myTabContent .bg-light-red {
+    background: #ee6a5f;
+}
+
+#myTabContent .progress {
+    border-radius: 15rem !important;
+}
+
+/* webinar */
+#upcoming-tutorials img.me-2 {
+    width: 15%;
+}
+
+#upcoming-tutorials .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+p.fs-5.profileN {
+    text-align: center;
+    font-size: 12px !important;
+}
+
+p.fs-5.profileN span.Colr {
+    color: #1aa4d7;
+}
+
+p.fs-5.profileN img {
+    width: 100px !important;
+    height: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* end webinar */
+/* Download anylatics */
 
 
-    div#contentHtml .report-block1 {
-        background: #fff;
-        border-radius: 56px;
-    }
+div#exportAnalytics .modal-dialog .modal-content {
+    border-radius: 45px !important;
+}
 
-    .greentxt {
-        font-size: 187px;
-        color: #44cd7f;
-        font-weight: bold;
-        text-align: center;
-    }
+div#contentHtml .text-light-danger {
+    color: #19a4d7;
+}
 
-    .exportUserpic {
-        width: 100px;
-        height: 100px;
-        border-radius: 80px;
-        border: 2px solid #d71921;
-    }
+div#contentHtml .bg-white.shadow-lg {
+    height: 100%;
+}
 
-    .exportUsertxt {
-        margin-left: 20px;
-    }
+div#contentHtml .report-block2 {
+    background: #d0f3ff;
+}
 
-    .exportUsertxt p {
-        margin-bottom: 5px;
-        font-size: 18px;
-    }
+div#contentHtml .report-block2 .bg-white {
+    border-radius: 56px;
+    box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
+    background-color: #fff;
+    padding: 30px !important;
+}
 
-    .exportUsertxt small {
-        font-size: 13px;
-    }
 
-    .report-analysis-block {
-        border-radius: 20px;
-    }
+div#contentHtml .report-block1 {
+    background: #fff;
+    border-radius: 56px;
+}
 
-    .reportHeading {
-        font-size: 40px;
-        font-weight: 400;
-        border-left: 4px solid #00baff;
-        padding: 10px 0 10px 20px;
-        position: relative;
-    }
+.greentxt {
+    font-size: 187px;
+    color: #44cd7f;
+    font-weight: bold;
+    text-align: center;
+}
 
-    .report-block1 .reportHeading {
-        border-left: solid 4px #aff3d0;
-    }
+.exportUserpic {
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    border: 2px solid #d71921;
+}
 
-    /* .reportHeading:after {
+.exportUsertxt {
+    margin-left: 20px;
+}
+
+.exportUsertxt p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.exportUsertxt small {
+    font-size: 13px;
+}
+
+.report-analysis-block {
+    border-radius: 20px;
+}
+
+.reportHeading {
+    font-size: 40px;
+    font-weight: 400;
+    border-left: 4px solid #00baff;
+    padding: 10px 0 10px 20px;
+    position: relative;
+}
+
+.report-block1 .reportHeading {
+    border-left: solid 4px #aff3d0;
+}
+
+/* .reportHeading:after {
     content: "";
     width: 2px;
     height: 40px;
@@ -8358,262 +7599,262 @@ span#slide-input {
     transform: rotate(17deg);
 } */
 
-    .reportHeading span {
-        font-size: 30px;
-        font-weight: 300;
+.reportHeading span {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.report-block2 {
+    background: #fff4cf;
+}
+
+.w-34 {
+    width: 34%;
+}
+
+.export-btn {
+    position: fixed;
+    right: 75px;
+    top: 15px;
+    filter: contrast(0);
+}
+
+.export-btn:hover {
+    filter: contrast(1);
+}
+
+.close-btn {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    filter: contrast(0);
+}
+
+.close-btn:hover {
+    filter: contrast(1);
+}
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 40px;
+    /* width: 100px; */
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    /* text-shadow: 0px 1px 0 #a2a2a2; */
+}
+
+.star-ratings-css-top {
+    color: #ffdc34;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+}
+
+.error {
+    color: #d71921;
+    font-size: 12px;
+}
+
+.Dwonload {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+    margin-right: 15px;
+}
+
+/* end Download anylatics */
+
+
+@media(min-width:768px) and (max-width:990px) {
+
+    /** exam analytics page css 14-12-2021**/
+
+    .exam-analytics .row.mb-4 .col-md-9 {
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    .report-block2 {
-        background: #fff4cf;
+    .exam-analytics .row.mb-4 .col-md-3 {
+        width: 100%;
     }
 
-    .w-34 {
-        width: 34%;
+    .exam-analytics .cust-tabs .nav-link {
+        margin-right: 0px;
+        font-size: 14px;
     }
 
-    .export-btn {
-        position: fixed;
-        right: 75px;
-        top: 15px;
-        filter: contrast(0);
+    /** exam analytics page css End 14-12-2021**/
+
+}
+
+@media(min-width:360px) and (max-width:767px) {
+
+    /** exam analytics page css 14-12-2021**/
+    .exam-analytics .row.mt-5.mb-3 .col-5 {
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    .export-btn:hover {
-        filter: contrast(1);
+    .exam-analytics .row.mt-5.mb-3 .col-7 {
+        width: 100%;
+        margin-bottom: 20px;
     }
 
-    .close-btn {
-        position: fixed;
-        right: 15px;
-        top: 15px;
-        filter: contrast(0);
+    .exam-analytics .bg-white.shadow-lg {
+        height: auto;
+        padding-bottom: 20px;
     }
 
-    .close-btn:hover {
-        filter: contrast(1);
+    .exam-analytics button.top-btn-pop {
+        margin-bottom: 20px;
+        width: 100%;
     }
 
-    .star-ratings-css {
-        unicode-bidi: bidi-override;
-        color: #c5c5c5;
-        font-size: 25px;
-        height: 40px;
-        /* width: 100px; */
-        margin: 0 auto;
-        position: relative;
-        padding: 0;
-        /* text-shadow: 0px 1px 0 #a2a2a2; */
+    .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+        margin-bottom: 20px;
     }
 
-    .star-ratings-css-top {
-        color: #ffdc34;
-        padding: 0;
-        position: absolute;
-        z-index: 1;
-        display: block;
-        top: 0;
-        left: 0;
-        overflow: hidden;
+    .exam-analytics .cust-tabs .nav-link {
+        margin-right: 0px;
+        font-size: 9px;
     }
 
-    .star-ratings-css-bottom {
-        padding: 0;
-        display: block;
-        z-index: 0;
+    .exam-analytics .nav.nav-tabs.cust-tabs {
+        width: auto;
     }
 
-    .error {
-        color: #d71921;
+    .exam-analytics .col-12.d-flex.mt-5.mb-3 {
+        display: inline-block !important;
+    }
+
+    .exam-analytics select.form-select.rounded-0.ms-3.w-25 {
+        margin-left: 0px !important;
+        margin-bottom: 20px;
+    }
+
+    .exam-analytics .row .col-md-4.text-center img {
+        width: 100%;
+    }
+
+    .exam-analytics .col-md-9 .p-5 {
+        padding: 1rem !important;
+    }
+
+    .exam-analytics .row.mt-5.mb-3 {
+        margin-top: 0px !important;
+    }
+
+    .exam-analytics .subj-name {
         font-size: 12px;
     }
 
-    .Dwonload {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to bottom, #21ccff, #00baff);
-        border: none;
-        color: #fff;
-        margin-right: 15px;
-    }
+    /** exam analytics page css End 14-12-2021**/
 
-    /* end Download anylatics */
-
-
-    @media(min-width:768px) and (max-width:990px) {
-
-        /** exam analytics page css 14-12-2021**/
-
-        .exam-analytics .row.mb-4 .col-md-9 {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .row.mb-4 .col-md-3 {
-            width: 100%;
-        }
-
-        .exam-analytics .cust-tabs .nav-link {
-            margin-right: 0px;
-            font-size: 14px;
-        }
-
-        /** exam analytics page css End 14-12-2021**/
-
-    }
-
-    @media(min-width:360px) and (max-width:767px) {
-
-        /** exam analytics page css 14-12-2021**/
-        .exam-analytics .row.mt-5.mb-3 .col-5 {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .row.mt-5.mb-3 .col-7 {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .bg-white.shadow-lg {
-            height: auto;
-            padding-bottom: 20px;
-        }
-
-        .exam-analytics button.top-btn-pop {
-            margin-bottom: 20px;
-            width: 100%;
-        }
-
-        .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .cust-tabs .nav-link {
-            margin-right: 0px;
-            font-size: 9px;
-        }
-
-        .exam-analytics .nav.nav-tabs.cust-tabs {
-            width: auto;
-        }
-
-        .exam-analytics .col-12.d-flex.mt-5.mb-3 {
-            display: inline-block !important;
-        }
-
-        .exam-analytics select.form-select.rounded-0.ms-3.w-25 {
-            margin-left: 0px !important;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .row .col-md-4.text-center img {
-            width: 100%;
-        }
-
-        .exam-analytics .col-md-9 .p-5 {
-            padding: 1rem !important;
-        }
-
-        .exam-analytics .row.mt-5.mb-3 {
-            margin-top: 0px !important;
-        }
-
-        .exam-analytics .subj-name {
-            font-size: 12px;
-        }
-
-        /** exam analytics page css End 14-12-2021**/
-
-    }
+}
 
 
 
-    /* dinesh per question timer 13-11-2021*/
-    .tiny-green {
-        position: relative;
-        padding: 0px;
-        width: 180px;
-        background-color: #E4E4E4;
-        height: 18px;
+/* dinesh per question timer 13-11-2021*/
+.tiny-green {
+    position: relative;
+    padding: 0px;
+    width: 180px;
+    background-color: #E4E4E4;
+    height: 18px;
 
-    }
+}
 
-    .tiny-green div {
+.tiny-green div {
 
-        font-family: arial;
-        font-size: 3px;
-        height: inherit;
-        color: white;
-        text-align: right;
-        text-shadow: 0px 0px 2px #000;
-        text-indent: 9999px;
-        overflow: hidden;
+    font-family: arial;
+    font-size: 3px;
+    height: inherit;
+    color: white;
+    text-align: right;
+    text-shadow: 0px 0px 2px #000;
+    text-indent: 9999px;
+    overflow: hidden;
 
-        background-color: #44CD7F;
-        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+    background-color: #44CD7F;
+    /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
         background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
         background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
         background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
  */
 
 
-    }
+}
 
-    .counter {
-        position: absolute;
-        right: 25px;
-        top: 25px
-    }
+.counter {
+    position: absolute;
+    right: 25px;
+    top: 25px
+}
 
-    .counter .progressBar .seconds {
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        color: #FFF;
-        font-weight: 600;
-        top: -2px;
+.counter .progressBar .seconds {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
+    top: -2px;
 
-    }
+}
 
-    .question-block p {
-        margin-bottom: 0px;
-    }
+.question-block p {
+    margin-bottom: 0px;
+}
 
-    .activequestion {
-        border: 2px solid #5ddaff !important;
-        pointer-events: none;
-        cursor: pointer;
-    }
+.activequestion {
+    border: 2px solid #5ddaff !important;
+    pointer-events: none;
+    cursor: pointer;
+}
 
-    button a {
-        color: inherit !important;
-    }
+button a {
+    color: inherit !important;
+}
 
-    button a:hover {
-        color: inherit !important;
-    }
+button a:hover {
+    color: inherit !important;
+}
 
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999999;
-        display: none;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        outline: 0;
-    }
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
 
-    .SubjName {
-        width: 180px;
-    }
+.SubjName {
+    width: 180px;
+}
 
-    /* dinesh per question timer */
+/* dinesh per question timer */
 
-    @media (min-width: 576px) {
-        #test_instruction .modal-dialog {
-            width: 90% !important;
-            max-width: 90% !important;
-        }
-    }
+@media (min-width: 576px){
+#test_instruction .modal-dialog {
+    width: 90% !important;
+    max-width: 90% !important;
+}
+}

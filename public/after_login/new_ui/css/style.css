@@ -16,6 +16,35 @@ button {
     text-decoration: none;
 }
 
+/* top header svg icon css 17-12-2021 */
+.notification a {
+    border-radius: 8px;
+    position: relative;
+    height: 50px;
+    display: block;
+}
+
+.notification svg {
+    position: absolute;
+    left: -14px;
+    top: -14px;
+}
+
+.notification a:hover {
+    background: #00bdff;
+}
+
+.notification a :hover .cls-4 {
+    stroke: #fff;
+}
+
+.notification.ms-4 {
+    margin-left: 0px !important;
+    width: 50px;
+}
+
+/** end here */
+
 /** rahul css 17-12-2021**/
 
 
@@ -424,6 +453,7 @@ div#time-Avg-quest {
     color: #000;
     margin-right: 15px;
     font-size: 12px;
+    padding: 12px 55px !important;
 }
 
 #overall button.btn.active,
@@ -431,6 +461,14 @@ div#time-Avg-quest {
 .Ex-anal {
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     color: #fff;
+    padding: 10px 50px !important;
+    height: 45px !important;
+    margin-top: 10px;
+}
+
+div#back2Dsh button a {
+    color: #000;
+    padding: 15px 0px;
 }
 
 div#f-Numbr-sectin h4 {
@@ -708,6 +746,8 @@ button#topic-btn {
     background-color: #ffffff !important;
     border-radius: 56px !important;
     padding: 20px;
+    border: none;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
 }
 
 #exam_content_sec .tab-wrapper .nav-tabs {
@@ -2404,7 +2444,7 @@ span.profile-img-user {
 .cust-tab-content {
     background: #fff;
     height: calc(100% - 70px) !important;
-    padding: 0px 15px;
+    padding: 0px 15px !important;
 }
 
 p.tab-title {
