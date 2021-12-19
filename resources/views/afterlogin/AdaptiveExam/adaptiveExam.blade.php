@@ -117,7 +117,133 @@ $questtype='radio';
 
     }
 </style>
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <div id="app">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                </g>
+                            </svg>
+                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                        </div>
+                    </div>
+                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                </div>
+                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <p>
+                    Do you want to review all your answers before you submit the test?
+                </p>
+                <div>
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Continue
+                    </button>
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        Submit TEST
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
+            </div>
+            <div class="modal-body pt-3 p-5">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <div class="scroll">
+                            <div class="test-info">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
+                                        <div class="me-2"></div>
+                                        <div>
+                                            <small>No. Of Questions</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
+                                        <div>
+                                            <small>Target</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
+                                        <div class="me-2 ms-auto"></div>
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
 
+                            </div>
+                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test.
+                                Thank you.)</p>
+                            <div class="instructions pe-3">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give multiple opportunities to the candidates to improve their scores
+                                    in the
+                                    examination if they are not able to give their best in one attempt</p>
+                                <p>In first attempt, the students will get a first-hand experience of taking an
+                                    examination and will know their mistakes which they can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce the chances of dropping a year and droppers would not have to
+                                    waste a full year.</p>
+                                <p>If anyone missed the examination due to reasons beyond control (such as Board
+                                    examination), then he/she will not have to wait for one full year.</p>
+                                <p> A candidate need not appear in all the four Sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+
+                        <h1 class="my-auto text-center">
+
+                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
+
+                        </h1>
+                        <div class="text-left   ">
+
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(window).load(function() {
+        $("#test_instruction").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $('#test_instruction').modal('show');
+    });
+</script>
 <div class="main-wrapper" style="padding-left:0px;">
 
     <div class="content-wrapper examSect" id="exam_content_sec">
@@ -188,8 +314,9 @@ $questtype='radio';
                                             @endif
 
                                         </div>
-                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
+
                                     </div>
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
                                         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
@@ -306,82 +433,7 @@ $questtype='radio';
 </div>
 
 <!-- Modal Test_Instruction-->
-<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
-            </div>
-            <div class="modal-body pt-3 p-5">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
-                        <div class="scroll">
-                            <div class="test-info">
-                                <div class="row justify-content-md-center">
-                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
-                                        <div class="me-2"></div>
-                                        <div>
-                                            <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
-                                        <div>
-                                            <small>Target</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
-                                        <div class="me-2 ms-auto"></div>
-                                        <div>
-                                            <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test.
-                                Thank you.)</p>
-                            <div class="instructions pe-3">
-                                <h3 class="text-uppercase">Instructions</h3>
-                                <p>This will give multiple opportunities to the candidates to improve their scores
-                                    in the
-                                    examination if they are not able to give their best in one attempt</p>
-                                <p>In first attempt, the students will get a first-hand experience of taking an
-                                    examination and will know their mistakes which they can improve while attempting
-                                    for the next time.</p>
-                                <p>This will reduce the chances of dropping a year and droppers would not have to
-                                    waste a full year.</p>
-                                <p>If anyone missed the examination due to reasons beyond control (such as Board
-                                    examination), then he/she will not have to wait for one full year.</p>
-                                <p> A candidate need not appear in all the four Sessions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-
-                        <h1 class="my-auto text-center">
-
-                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
-
-                        </h1>
-                        <div class="text-left   ">
-
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-</div>
 
 
 <!-- Modal END Exam -->
@@ -389,7 +441,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
 
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h2 class="mb-3">Time Over!</h2>
 
@@ -403,50 +455,9 @@ $questtype='radio';
     </div>
 </div>
 
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center pt-2 pb-5">
-                <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <div id="app">
-                        <div class="base-timer">
-                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <g class="base-timer__circle">
-                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
-                                     M 50, 50
-                                     m -45, 0
-                                     a 45,45 0 1,0 90,0
-                                     a 45,45 0 1,0 -90,0
-                                     "></path>
-                                </g>
-                            </svg>
-                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
-                        </div>
-                    </div>
-                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
-                </div>
-                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
-                <p>
-                    Do you want to review all your answers before you submit the test?
-                </p>
-                <div>
-                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
-                        Continue
-                    </button>
-                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                        Submit TEST
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-body text-center pt-2 pb-5">
@@ -510,7 +521,6 @@ $questtype='radio';
         alwaysVisible: true
     });
 
-    alert("hi");
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;

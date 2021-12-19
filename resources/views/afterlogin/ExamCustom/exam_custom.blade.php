@@ -157,7 +157,7 @@ $userData = Session::get('user_data');
     height: '55vh'
   });
 
-  $('#topic_form').hide();
+
   $(document).ready(function() {
 
     $("#topic_form").validate({

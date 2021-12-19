@@ -12,154 +12,6 @@ button {
     text-decoration: none;
 }
 
-.cust-tabs a#Physics_tab_subject.active:nth-child(1):after {
-    left: -80px;
-    width: 80px;
-    background: none;
-    background-color: #fff;
-    border-top-left-radius: 56px;
-}
-
-a#Zoology_tab_subject:nth-child(1):before {
-    right: -53px;
-    border-bottom-right-radius: 14px;
-}
-
-
-
-
-
-
-/* End exam popup*/
-
-#endExam .modal-content.rounded-0 {
-    border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-    border: none;
-}
-
-
-
-#endExam #bt-modal-confirm_over {
-    border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(241deg, #21ccff, #00baff);
-    border: none;
-    padding: 15px 65px;
-    color: #fff;
-}
-
-/* end end exam popup */
-
-/** 18-12-2021*/
-button#saveEdit {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    border: none;
-    border-radius: 10px !important;
-    background: #00bdff !important;
-    padding: 5px 20px;
-}
-
-.my-4 .form-group.col-lg-6.m-auto.border.rounded {
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
-    border-radius: 20px !important;
-    background: #fff;
-}
-
-/* share friends */
-#sharefrnd .modal-content.rounded-0.bg-light {
-    border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-    background-color: #fff !important;
-    border: none;
-}
-#referFrnd{
-border-radius: 20px !important;
-  box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-  background-image: linear-gradient(
-237deg, #21ccff, #00baff -1%) !important;
-    border: none;
-}
-#enterEPnmb{
-background-color: #f2f2f2 !important;
-border-radius:8px !important
-}
-#enterEurl {
-    background-color: #f2f2f2 !important;
-    border-radius: 8px !important;
-    border-bottom-right-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-}
-#sharefrnd button.btn.btn-danger {
-    background: #21ccff!important;
-    border-radius: 8px !important;
-  border-radius:20px !important;
-  border:none !important;
-  height: 45px;
-}
-#sharefrnd input{border: 1px solid #eee !important;background: #eee!important;
-outline:none;
-    border-radius: 8px !important;
-    height: 40px;}
-#sharefrnd input:focus{outline:none !important;box-shadow:none!important;}
-#sharefrnd button.btn-close {
-    position: absolute;
-    right: 32px;
-    top: 20px;
-    z-index: 9;
-}
-/* end referFrnd */
-#exportAnalytics .input-group.mb-3{border: 1px solid #f2f2f2;
-    border-radius: 8px;
-    padding:5px;}
-	#exportAnalytics .input-group.mb-3 input{outline: none;
-    border: none !important;}
-	#exportAnalytics .input-group.mb-4{border: 1px solid #f2f2f2;
-    border-radius: 8px;
-    padding:5px;}
-	#exportAnalytics p.text-center.text-secondary.mb-5{margin-bottom:10px!important}
-	#exportAnalytics div.text-center.my-5{margin-bottom:20px !important;}
-	#exportAnalytics .input-group.mb-3 input:focus{    outline: none;
-    border: none !important;
-    box-shadow: none!important;}
-	#exportAnalytics select.form-select.border-0.rounded-0.ps-0:focus{    outline: none;
-    border: none !important;
-    box-shadow: none!important;}
-	#exportAnalytics button.top-btn-pop{width:225px;}
-.btn:hover{color:#fff;}
-.cust-tabs #overall-tab.active:nth-child(1):after {
-    left: -80px;
-    width: 80px;
-    background: none;
-    background-color: #fff;
-    border-top-left-radius: 56px;
-}
-.examSect .cust-tab-content{padding:0px !important;}
-
-#resume-test .modal-dialog .modal-content.rounded-0{
-	box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-    border-radius: 56px !important;
-    width: 500px;
-    margin: 0px auto;
-    padding: 50px 0px;
-	border: none;
-	}
-#resume-test .modal-dialog .btn.btn-green-custom{    border-radius: 20px !important;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
-    background: #00baff;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;}	
-	
-	.tab-btn-box a.rounded-0:hover{background:#00baff!important;color:#fff!important;}
-	.test-review .cust-tab-content{padding:0px !important;}
-/** end here **/
-
-
 /** top header svg icon css 17-12-2021 **/
 .notification svg{border-radius:8px;}
 .notification svg:hover{background:#00bdff;}
@@ -495,7 +347,7 @@ div#time-Avg-quest {
 }
 #marKs-trends .bg-white, #time-Avg-quest .bg-white {
     background: transparent !important;
-    padding: 15px 0px !important;
+	padding: 20px 0px !important;
 }
 #f-Numbr-sectin{
 	background: #fff;
@@ -525,9 +377,7 @@ div#time-Avg-quest {
     color: #000;
     margin-right: 15px;
     font-size: 12px;
-    padding: 10px 50px !important;
-    height: 45px !important;
-    margin-top: 10px;
+	padding: 12px 55px !important;
 }
 #overall button.btn.active, #home button.btn.active, .Ex-anal{
 	background-image: linear-gradient(to bottom, #21ccff, #00baff) ;
@@ -853,7 +703,7 @@ button#topic-btn {
 .tab-wrapper .nav-tabs{z-index:9;
     position: relative;}
 	span.p-icons span{color:red;}
-.answer-section{width:100%;padding: 30px 20px;background:#eee;border-radius:56px;}
+.answer-section{width:100%;padding: 30px;background:#eee; border-radius:56px;}
 button.percentage-digit{float: right;
     padding:18px 86px;
     border:none;
@@ -865,11 +715,9 @@ button.percentage-digit{float: right;
 	.answer-btn-txt span{display:inline-block;color:#44cd7f;font-family: Manrope;margin-right: 20px;text-transform:uppercase;
   font-size: 16px;
   font-weight: normal;}
-	.ans-txt{
-    display: inline-block;
+	.ans-txt{    display: inline-block;
     width: 100%;
-    margin-top: 0px;
-    }
+    margin-top: 30px;}
 	.tab-wrapper .test-review  .nav-tabs{z-index: 9;
     position: relative;}
 	.test-review .back-to-dashbord{z-index: 9;}
@@ -916,13 +764,8 @@ button.percentage-digit{float: right;
 .question-block::-webkit-scrollbar-thumb:hover {
   background: #d0f3ff; 
 }
-.answer-section{
-    height: 150px;
-    overflow: auto;
-    margin: 0px 0px 0px;
-    position: relative;
-    overflow-x: hidden;
-    }
+.answer-section{height:165px;overflow: auto;margin:20px 0px;    position: relative;
+    overflow-x: hidden;}
 	.answer-section::-webkit-scrollbar {
   width:5px;
 }
@@ -983,16 +826,9 @@ button.percentage-digit{float: right;
   background: #d0f3ff; 
 }
 /** scrollbar css end here**/
-.back-to-dashbord a{
-    color: #00baff;
-    font-size: 12px;
-    font-weight: bold;
-    width: 100px;
-    display: block;
-    text-align: center;
-    padding-left: 30px;
-    padding-top: 9px;
-    }
+.back-to-dashbord a{color: #00baff;
+    font-size: 20px;
+    font-weight: 600;}
 /*** End here ***/
 /*** Exam analytics page css 16-12-2021 **/
 .exam-analytics{}
@@ -1767,7 +1603,7 @@ div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
     padding: 26px !important;
     border-radius: 56px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-    padding-bottom: 0px !important;
+    padding-bottom: 10px !important;
 }
 
 .rightSectH {
@@ -5171,11 +5007,9 @@ span#slide-input {
 
 .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0 {
     border-radius: 20px !important;
-    background-color: #00baff!important;
+    background-color: #5ddaff !important;
     color: #fff;
     text-transform: none;
-    line-height: 29px;
-    border: none;
 }
 
 .examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
@@ -5187,8 +5021,6 @@ span#slide-input {
     border: none;
     text-transform: none;
     color: #2c3348;
-    padding: 13px 20px;
-    line-height: 20px;
 }
 
 .examSect .checkboxans:checked+.ans {
@@ -5207,7 +5039,7 @@ span#slide-input {
 }
 
 .examSect {
-    padding: 28px 45px;
+    padding: 40px 45px;
 }
 
 .examSect .rightSect button.btn.btn-light-green.w-100.rounded-0.mt-3 {
@@ -5216,7 +5048,6 @@ span#slide-input {
     background-image: linear-gradient(240deg, #21ccff, #00baff 1%);
     color: #fff;
     margin-bottom: 15px;
-    padding: 13px 15px;
 }
 
 .examSect .rightSect .bg-white {
@@ -5427,39 +5258,6 @@ span#slide-input {
 }
 
 
-@media(min-width:1200px) and (max-width:1315px) {
-
-.cust-tabs .nav-link {
-    font-size: 16px;
-    padding: 18px 11px;
-}
-
-}
-
-@media(min-width:1199px) and (max-width:1315px) {
-
-.leader-board, .subscription, .log-out-screen {
-    right: 25%;
-}
-}
-
-@media(min-width:1024px) and (max-width:1198px) {
-
-.leader-board, .subscription, .log-out-screen {
-    right: 27%;
-}
-}
-
-
-
-
-
-@media(min-width:1024px) and (max-width:1199px) {
-.cust-tabs .nav-link {
-    font-size: 12px;
-    padding: 18px 10px;
-}
-}
 
 @media(min-width:992px) and (max-width:1280px) {
 

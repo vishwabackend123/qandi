@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <span class="user-pic-block"><img src="{{$imgPath}}" class="user-pic"></span>
+                    <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic"></span>
                     <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
-                    <span class="notification me-5 ms-4"><a data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                    <span class="notification me-5 ms-4"><a id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -69,7 +69,7 @@
                             </svg>
 
                         </a></span>
-                    <span class="notification ms-4"><a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
+                    <span class="notification ms-4"><a id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -563,7 +563,7 @@
                         </div>
                         <div class="form-flds">
                             <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
-                            <p class="">This could be your first, last or nick name</p>
+                            <p class="">This is your display name.</p>
                         </div>
 
                         <div class="form-flds" style="display:none">
@@ -615,7 +615,8 @@
 
                     </div>
                 </div>
-                <h6 class="text-danger">*@php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
+                <h6 class="text-danger">
+                    @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp
                     @if($suscription_status != 0) <p class="text-end text-danger mt-1">*Subscription expires
                         on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                     @else

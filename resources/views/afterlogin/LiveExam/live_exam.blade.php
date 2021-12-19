@@ -164,8 +164,9 @@ $questtype='radio';
                                             @endif
 
                                         </div>
-                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
+
                                     </div>
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
                                         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
@@ -220,7 +221,7 @@ $questtype='radio';
                             <input type="hidden" name="exam_mode" value="Live">
                             <input type="hidden" name="planner_id" value="0">
                             <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -348,7 +349,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
 
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h2 class="mb-3">Time Over!</h2>
 

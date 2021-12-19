@@ -74,7 +74,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 }else{
                                                 $resp_class= '';
                                                 }
-                                                if(in_array($key,$attempt_opt['Answer:'])){
+                                                if(isset($attempt_opt['Answer:']) && in_array($key,$attempt_opt['Answer:'])){
                                                 $checked= "checked";
                                                 }else{
                                                 $checked='';

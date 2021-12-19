@@ -141,18 +141,12 @@ $questtype='radio';
 
                                     <div class="question-block">
                                         <!-- Next and previous button -->
-                                        <a href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
-                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right"></i></a>
+                                        <span style="visibility:hidden">
+                                            <a href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
+                                            <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right"></i></a>
+                                        </span>
                                         <!-- Next and previous button -->
 
-                                        <sapn class="question_difficulty_tag small">
-                                            <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
-                                            <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
-                                            <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
-                                            <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
-
-                                            <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
-                                        </sapn>
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
@@ -180,8 +174,9 @@ $questtype='radio';
                                             @endif
 
                                         </div>
-                                        <span class="qoption_error" id="qoption_err_{{$activeq_id}}"></span>
+
                                     </div>
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qKey))
                                         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
@@ -236,7 +231,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -292,71 +287,69 @@ $questtype='radio';
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    {{--<div class="col col-lg-4 d-flex flex-column align-items-center">
-                                            <div>
-                                                <small>No. Of Questions</small>
-                                                <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
+
+                                    <div class="col col-lg-6 d-flex flex-column align-items-center">
+                                        <div>
+                                            <small>Subject</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col col-lg-6 d-flex flex-column align-items-center">
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>--}}
-                            <div class="col col-lg-6 d-flex flex-column align-items-center">
-                                <div>
-                                    <small>Subject</small>
-                                    <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
-                                </div>
+
                             </div>
-                            <div class="col col-lg-6 d-flex flex-column align-items-center">
-                                <div>
-                                    <small>Duration</small>
-                                    <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
-                                </div>
+                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <div class="instructions pe-3">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give multiple opportunities to the candidates to improve their scores in the
+                                    examination if they are not able to give their best in one attempt</p>
+                                <p>In first attempt, the students will get a first-hand experience of taking an
+                                    examination and will know their mistakes which they can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce the chances of dropping a year and droppers would not have to
+                                    waste a full year.</p>
+                                <p>If anyone missed the examination due to reasons beyond control (such as Board
+                                    examination), then he/she will not have to wait for one full year.</p>
+                                <p> A candidate need not appear in all the four Sessions</p>
                             </div>
                         </div>
-
                     </div>
-                    <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
-                    <div class="instructions pe-3">
-                        <h3 class="text-uppercase">Instructions</h3>
-                        <p>This will give multiple opportunities to the candidates to improve their scores in the
-                            examination if they are not able to give their best in one attempt</p>
-                        <p>In first attempt, the students will get a first-hand experience of taking an
-                            examination and will know their mistakes which they can improve while attempting
-                            for the next time.</p>
-                        <p>This will reduce the chances of dropping a year and droppers would not have to
-                            waste a full year.</p>
-                        <p>If anyone missed the examination due to reasons beyond control (such as Board
-                            examination), then he/she will not have to wait for one full year.</p>
-                        <p> A candidate need not appear in all the four Sessions</p>
+                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+
+                        <h1 class="my-auto text-center">
+
+                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
+
+                        </h1>
+                        <div class="text-left   ">
+
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
 
-                <h1 class="my-auto text-center">
-
-                    <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
-
-                </h1>
-                <div class="text-left   ">
-
-                    <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
-
-                </div>
             </div>
         </div>
-
     </div>
 
 </div>
 <!-- Modal END Exam -->
-<div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+
+<div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
 
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <p class="mb-3">No more questions are available for this topic, Kindly submit your exam!</p>
 
-                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3  goto-exam-btn">
                         Submit TEST
                     </button>
                 </div>
@@ -704,6 +697,7 @@ $questtype='radio';
                     $("#question_section").html(result.html);
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
+
                     $('#endExam').modal('show');
                     //alert("No more question available");
                 }
