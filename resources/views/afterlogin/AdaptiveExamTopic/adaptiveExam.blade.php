@@ -231,7 +231,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -391,7 +391,7 @@ $questtype='radio';
                     want to have a quick review before you Submit?
                 </p>
                 <div>
-                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal" onclick="start()">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
@@ -503,14 +503,16 @@ $questtype='radio';
         startTimer();
     }
 
-    function stop() {
+    function stop(type='') {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
         $(".stop").hide();
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
-        $("#resume-test").modal("show");
+        if(type!=='submit'){
+            $("#resume-test").modal("show");
+        }
     }
 
     function startTimer() {
