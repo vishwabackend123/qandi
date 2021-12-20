@@ -18,8 +18,8 @@
     MathJax.Hub.Config({
       tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
       "HTML-CSS": {
-        linebreaks: { automatic: true, width: "container" }          
-      }              
+        linebreaks: { automatic: true, width: "container" }
+      }
    });
 </script>
 <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -221,7 +221,7 @@ $questtype='radio';
                             <input type="hidden" name="exam_mode" value="Live">
                             <input type="hidden" name="planner_id" value="0">
                             <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -488,11 +488,22 @@ $questtype='radio';
         startTimer();
     }
 
-    function stop() {
+    // function stop() {
+    //     setDisabled(stopBtn);
+    //     removeDisabled(startBtn);
+    //     startBtn.innerHTML = "Continue";
+    //     clearInterval(timerInterval);
+    // }
+    function stop(type='') {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
-        startBtn.innerHTML = "Continue";
+        $(".stop").hide();
+        $(".start").show();
+        // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
+        if(type!=='submit'){
+            $("#resume-test").modal("show");
+        }
     }
 
     function startTimer() {
