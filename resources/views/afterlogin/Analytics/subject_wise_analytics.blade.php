@@ -35,15 +35,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
                                 <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[0]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[0]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[0]->percentage}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p> -->
-                            <!--  <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -51,12 +48,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
                                 <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[1]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[1]->percentage}}%</h4>
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
                             <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p> -->
                             <!-- <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
@@ -67,12 +64,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
                                 <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[2]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[2]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[2]->percentage}}%</h4>
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
                             <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p>
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
@@ -83,12 +80,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
                                 <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[3]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold"> {{$skillPer[3]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[3]->percentage}}%</h4>
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
                             <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p>
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
@@ -399,6 +396,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -456,6 +456,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -511,6 +514,9 @@
 
     Highcharts.chart('month', {
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         chart: {
@@ -588,6 +594,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -646,6 +655,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -702,6 +714,9 @@
 
     Highcharts.chart('month1', {
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         chart: {
@@ -784,6 +799,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             symbolWidth: 40
         },
@@ -830,6 +848,9 @@
             height: 270
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         legend: {

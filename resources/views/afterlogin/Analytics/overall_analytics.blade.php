@@ -495,9 +495,7 @@ $userData = Session::get('user_data');
 
 <script>
     Highcharts.chart('day', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -553,9 +551,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('week', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -609,9 +605,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('month', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -683,9 +677,7 @@ $userData = Session::get('user_data');
 </script>
 <script>
     Highcharts.chart('day1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -740,9 +732,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('week1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -797,9 +787,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('month1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -816,6 +804,9 @@ $userData = Session::get('user_data');
             title: {
                 text: 'Average Marks'
             }
+        },
+        credits: {
+            enabled: false
         },
         exporting: {
             enabled: false

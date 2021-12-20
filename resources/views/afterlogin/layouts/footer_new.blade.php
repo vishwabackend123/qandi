@@ -9,7 +9,7 @@
                 <div class="text-center my-5">
                     <a href="{{route('export_analytics')}}"><button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download</button></a>
                 </div>
-                <p class="text-center text-secondary mb-5">OR</p>
+                <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
                     <div class="input-group-text bg-white rounded-0 border-0"><i class="fa fa-envelope-o text-secondary"></i>
                     </div>
@@ -20,10 +20,10 @@
                     <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
                         <option class="text-secondary">Share it only this time</option>
                     </select>
-                </div>
-                <div class="text-center my-5">
+                </div> -->
+                <!-- <div class="text-center my-5">
                     <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -43,6 +43,8 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/funnel.js"></script>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>

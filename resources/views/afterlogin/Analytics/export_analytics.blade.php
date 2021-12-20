@@ -339,9 +339,7 @@ $userData = Session::get('user_data');
 
     /* time management */
     Highcharts.chart('time_management', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -358,6 +356,12 @@ $userData = Session::get('user_data');
             title: {
                 text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -406,6 +410,9 @@ $userData = Session::get('user_data');
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             symbolWidth: 40
         },
@@ -439,6 +446,9 @@ $userData = Session::get('user_data');
             height: 270
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         legend: {

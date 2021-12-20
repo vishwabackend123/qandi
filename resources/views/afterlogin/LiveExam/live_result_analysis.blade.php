@@ -19,26 +19,11 @@ $userData = Session::get('user_data');
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
-<div class="main-wrapper">
+<div class="main-wrapper" id="exam_result_analysis">
 
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
-    <style>
-        .tab-content {
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
 
-        .cust-tab-content {
-            height: auto !important;
-        }
-
-        .tab-wrapper {
-            position: relative;
-            padding-bottom: 0px;
-            margin-top: 30px;
-        }
-    </style>
     <div class="content-wrapper">
         <div class="container-fluid exam-analytics">
             <div class="row">
@@ -491,6 +476,9 @@ $clsAvg_json=json_encode($clsAvg_arr);
             height: 200
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         title: {
