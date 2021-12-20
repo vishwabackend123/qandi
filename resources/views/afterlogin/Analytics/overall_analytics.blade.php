@@ -16,23 +16,26 @@ $userData = Session::get('user_data');
             <div class="row">
                 <div class="col-lg-12 ">
                     <div class="tab-wrapper">
-                        <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL</a>
-                            </li>
-                            @foreach($user_subjects as $val)
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
-                            </li>
-                            @endforeach
+                        <div id="scroll-mobile">
+                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL</a>
+                                </li>
+                                @foreach($user_subjects as $val)
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
+                                </li>
+                                @endforeach
 
-                            <!--   <li class="ms-auto">
+                                <!--   <li class="ms-auto">
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
-                            <li class="ms-auto">
-                                <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> Export Analytics</a>
-                            </li>
-                        </ul>
+                                <li class="ms-auto">
+                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> Export Analytics</a>
+                                </li>
+
+                            </ul>
+                        </div>
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
                                 <div class="row padingTT">
@@ -46,7 +49,7 @@ $userData = Session::get('user_data');
                                                     <div class="d-flex justify-content-center flex-column h-100 ">
                                                         <span class="text-center">
                                                             <div id="scorecontainer"></div>
-                                                            <!--  <img src="images/left-graph.jpg"> -->
+
                                                         </span>
                                                         <ul class="live-test mt-3">
                                                             <li>
@@ -91,7 +94,7 @@ $userData = Session::get('user_data');
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="progress  ms-auto col-6" style="overflow: visible;">
+                                                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
                                                         @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
                                                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
@@ -123,7 +126,7 @@ $userData = Session::get('user_data');
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
                                             <div id="timeManagementButtons" class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass" id="day_time" onclick="replace('day','week','month')">
+                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass active" id="day_time" onclick="replace('day','week','month')">
                                                     Day
                                                 </button>
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass" id="week_time" onclick="replace('week','day','month')">
@@ -150,7 +153,7 @@ $userData = Session::get('user_data');
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
                                             <div class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark" id="day_mark" onclick="replace1('day1','week1','month1')">
+                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark active" id="day_mark" onclick="replace1('day1','week1','month1')">
                                                     Day
                                                 </button>
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 classMark" id="week_mark" onclick="replace1('week1','day1','month1')">
@@ -492,9 +495,7 @@ $userData = Session::get('user_data');
 
 <script>
     Highcharts.chart('day', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -550,9 +551,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('week', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -606,9 +605,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('month', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -664,14 +661,14 @@ $userData = Session::get('user_data');
 
     function replace(show, hide1, hide2) {
         if (show == 'day') {
-            $(".timeClass").removeClass("btn-light-green");
-            $("#day_time").addClass("btn-light-green");
+            $(".timeClass").removeClass("active");
+            $("#day_time").addClass("active");
         } else if (show == 'week') {
-            $(".timeClass").removeClass("btn-light-green");
-            $("#week_time").addClass("btn-light-green");
+            $(".timeClass").removeClass("active");
+            $("#week_time").addClass("active");
         } else {
-            $(".timeClass").removeClass("btn-light-green");
-            $("#month_time").addClass("btn-light-green");
+            $(".timeClass").removeClass("active");
+            $("#month_time").addClass("active");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -680,9 +677,7 @@ $userData = Session::get('user_data');
 </script>
 <script>
     Highcharts.chart('day1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -737,9 +732,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('week1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -794,9 +787,7 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('month1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -813,6 +804,9 @@ $userData = Session::get('user_data');
             title: {
                 text: 'Average Marks'
             }
+        },
+        credits: {
+            enabled: false
         },
         exporting: {
             enabled: false
@@ -850,14 +844,14 @@ $userData = Session::get('user_data');
 
     function replace1(show, hide1, hide2) {
         if (show == 'day1') {
-            $(".classMark").removeClass("btn-light-green");
-            $("#day_mark").addClass("btn-light-green");
+            $(".classMark").removeClass("active");
+            $("#day_mark").addClass("active");
         } else if (show == 'week1') {
-            $(".classMark").removeClass("btn-light-green");
-            $("#week_mark").addClass("btn-light-green");
+            $(".classMark").removeClass("active");
+            $("#week_mark").addClass("active");
         } else {
-            $(".classMark").removeClass("btn-light-green");
-            $("#month_mark").addClass("btn-light-green");
+            $(".classMark").removeClass("active");
+            $("#month_mark").addClass("active");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";

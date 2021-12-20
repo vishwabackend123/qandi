@@ -44,12 +44,63 @@ $questtype='radio';
 }
 @endphp
 <style>
-    #exam_content_sec .container {
-        max-width: 1280px;
+    .time_taken_css {
+        border-left: 3px Solid #ff6060;
+        width: 200px;
+        font: 14px;
+        color: #2C3348;
+        font-weight: 500;
+        background-color: #e4e4e4;
+        text-align: center;
     }
 
-    #exam_content_sec .tab-content {
-        overflow-y: auto;
+    .time_taken_css span:first-child {
+
+        font-weight: 200;
+
+    }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 180px;
+        background-color: #E4E4E4;
+        height: 18px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #44CD7F;
+        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
 
     }
 </style>
@@ -113,12 +164,14 @@ $questtype='radio';
                                             @endif
 
                                         </div>
+
                                     </div>
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</a>
+                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
                                         @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
                                         </button>
                                         @endif
 
@@ -168,7 +221,7 @@ $questtype='radio';
                             <input type="hidden" name="exam_mode" value="Live">
                             <input type="hidden" name="planner_id" value="0">
                             <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -187,17 +240,17 @@ $questtype='radio';
                         <p class="rightSectH">Legends</p>
                         <div class="row">
                             <div class="col-md-6 legends">
-                                <button class="btn btn-light  rounded-0"> </button>
+                                <button class="btn btn-light p-0  rounded-0"> </button>
                                 <p>Unread</p>
                             </div>
                             <div class="col-md-6 legends">
-                                <button class="btn btn-light-green rounded-0"> </button>
+                                <button class="btn btn-light-green p-0 rounded-0"> </button>
                                 <p>Answered </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 legends">
-                                <button class="btn btn-secondary   rounded-0"> </button>
+                                <button class="btn btn-secondary  p-0 rounded-0"> </button>
                                 <p>Marked for Review</p>
                             </div>
                             <div class="col-md-6 legends">
@@ -296,7 +349,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
 
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h2 class="mb-3">Time Over!</h2>
 
@@ -595,7 +648,7 @@ $questtype='radio';
     }
 
     /* Saved question response */
-    function saveAnswer(question_id) {
+    function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
         $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
@@ -620,6 +673,9 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
@@ -638,7 +694,7 @@ $questtype='radio';
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswer(quest_id) != false) {
+        if (saveAnswer(quest_id, '') != false) {
 
             // marking for review
             $.ajax({

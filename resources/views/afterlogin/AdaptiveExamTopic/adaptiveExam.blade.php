@@ -25,16 +25,6 @@
 $userData = Session::get('user_data');
 @endphp
 <style>
-    #exam_content_sec .container {
-        max-width: 1280px;
-
-    }
-
-    #exam_content_sec .tab-content {
-        overflow-y: auto;
-
-    }
-
     .time_taken_css {
         border-left: 3px Solid #ff6060;
         width: 200px;
@@ -48,6 +38,50 @@ $userData = Session::get('user_data');
     .time_taken_css span:first-child {
 
         font-weight: 200;
+
+    }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 180px;
+        background-color: #E4E4E4;
+        height: 18px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #44CD7F;
+        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
 
     }
 </style>
@@ -107,18 +141,12 @@ $questtype='radio';
 
                                     <div class="question-block">
                                         <!-- Next and previous button -->
-                                        <a href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
-                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right"></i></a>
+                                        <span style="visibility:hidden">
+                                            <a href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
+                                            <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right"></i></a>
+                                        </span>
                                         <!-- Next and previous button -->
 
-                                        <sapn class="question_difficulty_tag small">
-                                            <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
-                                            <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
-                                            <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
-                                            <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
-
-                                            <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
-                                        </sapn>
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
@@ -146,12 +174,14 @@ $questtype='radio';
                                             @endif
 
                                         </div>
+
                                     </div>
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qKey))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</a>
+                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
                                         @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
                                         </button>
                                         @endif
 
@@ -201,7 +231,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -219,17 +249,17 @@ $questtype='radio';
                             <p class="rightSectH" style="display:none;">Legends</p>
                             <div class="row" style="display:none;">
                                 <div class="col-md-6 legends">
-                                    <button class="btn btn-light  rounded-0"> </button>
+                                    <button class="btn btn-light p-0 rounded-0"> </button>
                                     <p>Unread</p>
                                 </div>
                                 <div class="col-md-6 legends">
-                                    <button class="btn btn-light-green rounded-0"> </button>
+                                    <button class="btn btn-light-green p-0 rounded-0"> </button>
                                     <p>Answered </p>
                                 </div>
                             </div>
                             <div class="row" style="display:none;">
                                 <div class="col-md-6 legends">
-                                    <button class="btn btn-secondary   rounded-0"> </button>
+                                    <button class="btn btn-secondary  p-0 rounded-0"> </button>
                                     <p>Marked for Review</p>
                                 </div>
                                 <div class="col-md-6 legends">
@@ -244,17 +274,82 @@ $questtype='radio';
         </div>
     </div>
 </div>
+<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
+            </div>
+            <div class="modal-body pt-3 p-5">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="text-danger text-uppercase">{{$test_name}} </h3>
+                        <div class="scroll">
+                            <div class="test-info">
+                                <div class="row justify-content-md-center">
 
+                                    <div class="col col-lg-6 d-flex flex-column align-items-center">
+                                        <div>
+                                            <small>Subject</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col col-lg-6 d-flex flex-column align-items-center">
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <div class="instructions pe-3">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give multiple opportunities to the candidates to improve their scores in the
+                                    examination if they are not able to give their best in one attempt</p>
+                                <p>In first attempt, the students will get a first-hand experience of taking an
+                                    examination and will know their mistakes which they can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce the chances of dropping a year and droppers would not have to
+                                    waste a full year.</p>
+                                <p>If anyone missed the examination due to reasons beyond control (such as Board
+                                    examination), then he/she will not have to wait for one full year.</p>
+                                <p> A candidate need not appear in all the four Sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+
+                        <h1 class="my-auto text-center">
+
+                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
+
+                        </h1>
+                        <div class="text-left   ">
+
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 <!-- Modal END Exam -->
-<div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+
+<div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
 
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <p class="mb-3">No more questions are available for this topic, Kindly submit your exam!</p>
 
-                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3  goto-exam-btn">
                         Submit TEST
                     </button>
                 </div>
@@ -602,6 +697,7 @@ $questtype='radio';
                     $("#question_section").html(result.html);
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
+
                     $('#endExam').modal('show');
                     //alert("No more question available");
                 }
@@ -643,7 +739,7 @@ $questtype='radio';
     }
 
     /* Saved question response */
-    function saveAnswer(question_id) {
+    function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
         $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
@@ -671,6 +767,8 @@ $questtype='radio';
 
                 if (response.status == 200) {
                     $("#quesnext" + question_id).click();
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
@@ -683,7 +781,7 @@ $questtype='radio';
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswer(quest_id) != false) {
+        if (saveAnswer(quest_id, '') != false) {
 
             // marking for review
             $.ajax({

@@ -177,7 +177,7 @@ $questtype='radio';
                                     <div class="N_tab-btn-box_list">
                                         <div class="ps-3" style="float:left">
 
-                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</button>
+                                            <button class="btn px-5  pull-left btn-light-green rounded-0 saveanswer text-capitalize" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</button>
 
 
                                             <button class="btn px-4 ms-2 btn-light rounded-0 btn-secon-clear savemarkreview text-capitalize" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</button>
@@ -741,7 +741,7 @@ $questtype='radio';
     }
 
     /* Saved question response */
-    function saveAnswer(question_id) {
+    function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
         $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
@@ -769,6 +769,8 @@ $questtype='radio';
 
                 if (response.status == 200) {
                     $("#quesnext" + question_id).click();
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }

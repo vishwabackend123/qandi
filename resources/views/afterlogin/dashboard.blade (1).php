@@ -462,7 +462,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 <script type="text/javascript">
     $(window).on('load', function() {
         /* $('#welcomeModal').modal('show') */
-
+        alert(sessionStorage.getItem('firstVisit'));
         if (sessionStorage.getItem('firstVisit') != '1') {
             $('#welcomeModal').modal('show');
         }

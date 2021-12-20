@@ -52,9 +52,9 @@
                         <p class="text-right" id="wait_otp_div">Resend OTP in 180 sec</p>
                     </div>
 
-                    <p id="resendOtp_link" class="text-right">Resend OTP in 180 sec</p>
+
                     <div class="clearfix"></div>
-                    <p class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
+                    <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
                     <div class="sign-btn"><button type="submit" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign Up</button></div>
                 </div>
             </div>

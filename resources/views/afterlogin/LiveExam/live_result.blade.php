@@ -37,6 +37,6 @@
         </div>
     </div>
 </div>
-@include('afterlogin.layouts.footer')
+@include('afterlogin.layouts.footer_new')
 
 @endsection

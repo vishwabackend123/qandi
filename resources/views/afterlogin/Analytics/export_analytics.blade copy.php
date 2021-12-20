@@ -91,7 +91,7 @@ $userData = Session::get('user_data');
                         <div class="report-block2 p-5">
                             <div class="d-flex">
                                 <span class="me-auto"><img src="{{URL::asset('public/images/main-logo-red.png')}}" /></span>
-                                <span class="text-end">
+                                <span class="text-end text-light">
                                     Detailed Report Analysis<br />
                                     Weekly UniQ Performace Report<br />{{date("F j, Y")}}
                                 </span>
@@ -126,7 +126,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="progress ms-auto col-6" style="overflow: visible">
                                         @if($sub->correct_ans > 0)
-                                        <div class="progress-bar bg-light-green position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                         </div>
                                         @endif
@@ -186,33 +186,32 @@ $userData = Session::get('user_data');
                                     @endif
                                 </div>
                             </div>
-
-                            <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
-                                <p class="text-uppercase fw-bold text-start">
-                                    Time Management
-                                </p>
-                                <div id="time_management"></div>
-                            </div>
-                            <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
-                                <p class="text-uppercase fw-bold text-start">
-                                    Average Time Spent on each Question
-                                </p>
-                                <div id="accPer1"></div>
-                            </div>
-                            <div class="bg-white shadow-lg p-3 px-5 mt-3">
-                                <p class="text-uppercase fw-bold text-start">
-                                    Accuracy Percentage
-                                </p>
-                                <div id="accPer"></div>
-                            </div>
-                            <p class="text-center mt-5 pt-5">
-                                <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
-                                    more: {{ route('register') }}</a>
+                        </div>
+                        <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
+                            <p class="text-uppercase fw-bold text-start">
+                                Time Management
                             </p>
-                            <!-- <h4 class="my-5 text-dark text-center fw-light">
+                            <div id="time_management"></div>
+                        </div>
+                        <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
+                            <p class="text-uppercase fw-bold text-start">
+                                Average Time Spent on each Question
+                            </p>
+                            <div id="accPer1"></div>
+                        </div>
+                        <div class="bg-white shadow-lg p-3 px-5 mt-3">
+                            <p class="text-uppercase fw-bold text-start">
+                                Accuracy Percentage
+                            </p>
+                            <div id="accPer"></div>
+                        </div>
+                        <p class="text-center mt-5 pt-5">
+                            <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
+                                more: {{ route('register') }}</a>
+                        </p>
+                        <!-- <h4 class="my-5 text-dark text-center fw-light">
                                 Detailed Report Analysis
                             </h4> -->
-                        </div>
                     </div>
 
                 </div>
@@ -220,9 +219,9 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-<div id="editor">
-    <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
-    <a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}"></a>
+<div id="editor"></div>
+<a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/images/Group3140@2x.png')}}"></a>
+<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
@@ -339,7 +338,9 @@ $userData = Session::get('user_data');
 
     /* time management */
     Highcharts.chart('time_management', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -356,12 +357,6 @@ $userData = Session::get('user_data');
             title: {
                 text: 'Average Time Taken'
             }
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
         },
         tooltip: {
             formatter: function() {
@@ -410,9 +405,6 @@ $userData = Session::get('user_data');
         credits: {
             enabled: false
         },
-        exporting: {
-            enabled: false
-        },
         legend: {
             symbolWidth: 40
         },
@@ -446,9 +438,6 @@ $userData = Session::get('user_data');
             height: 270
         },
         credits: {
-            enabled: false
-        },
-        exporting: {
             enabled: false
         },
         legend: {

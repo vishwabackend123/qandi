@@ -21,7 +21,8 @@ $userData = Session::get('user_data');
   <!-- End top-navbar Section -->
 
   <div class="content-wrapper">
-    <div class="container-fluid">
+    <div class="container-fluid custom-page">
+
       <div class="row">
         <div class="col-lg-12  p-lg-5 pt-none">
 
@@ -156,7 +157,7 @@ $userData = Session::get('user_data');
     height: '55vh'
   });
 
-  $('#topic_form').hide();
+
   $(document).ready(function() {
 
     $("#topic_form").validate({

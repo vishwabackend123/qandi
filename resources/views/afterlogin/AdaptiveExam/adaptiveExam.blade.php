@@ -72,201 +72,98 @@ $questtype='radio';
         font-weight: 200;
 
     }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 180px;
+        background-color: #E4E4E4;
+        height: 18px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #44CD7F;
+        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
+
+    }
 </style>
-
-<div class="main-wrapper" style="padding-left:0px;">
-
-    <div class="content-wrapper examSect" id="exam_content_sec">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
-
-                    <div class="tab-wrapper h-100">
-                        <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
-                            <input type="hidden" id="current_question" value="{{$activeq_id}}" />
-                            <!-- Exam subject Tabs  -->
-                            <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
-                                @if(!empty($filtered_subject))
-                                @foreach($filtered_subject as $key=>$sub)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}</a>
-                                </li>
-                                @endforeach
-                                @endif
-                            </ul>
-                            <!-- End Exam subject Tabs -->
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div id="question_section" class="">
-                                    <div class="d-flex" id="pause-start">
-                                        <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
-                                            <span id="avg_text">Average Time :</span>
-                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
-                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
-                                                <div id="percentBar_{{$activeq_id}}"></div>
-                                            </div>
-                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
-                                                <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
-                                    </div>
-
-                                    <div class="question-block">
-                                        <!-- Next and previous button -->
-                                        <a href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
-                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></a>
-                                        <!-- Next and previous button -->
-
-                                        <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-
-                                        <div class="ans-block row my-3">
-                                            @if(isset($option_data) && !empty($option_data))
-                                            @php $no=0; @endphp
-                                            @foreach($option_data as $key=>$opt_value)
-                                            @php
-                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                            $dom = new DOMDocument();
-                                            @$dom->loadHTML($opt_value);
-                                            $anchor = $dom->getElementsByTagName('img')->item(0);
-                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                            $latex = "https://math.now.sh?from=".$text;
-                                            $view_opt='<img src="'.$latex.'" />' ;
-                                            @endphp
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                                <div class="border ps-3 ans">
-                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
-                                                </div>
-                                            </div>
-                                            @php $no++; @endphp
-                                            @endforeach
-                                            @endif
-
-                                        </div>
-                                    </div>
-                                    <div class="tab-btn-box  d-flex mt-3">
-                                        @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Next</a>
-                                        @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}')">Save & Submit
-                                        </button>
-                                        @endif
-
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
-
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
-
-                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Right Side Area -->
-
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
-                        <div class="d-flex align-items-center">
-                            <div class="" id="app">
-                                <div class="base-timer">
-                                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                        <g class="base-timer__circle">
-                                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                                            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <div id="app">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
                                      M 50, 50
                                      m -45, 0
                                      a 45,45 0 1,0 90,0
                                      a 45,45 0 1,0 -90,0
                                      "></path>
-                                        </g>
-                                    </svg>
-                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
-                                </div>
-                            </div>
-                            <span class="timing">
-                                <span id="base-timer-label" class="base-timer__label"></span> Time left
-                            </span>
+                                </g>
+                            </svg>
+                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
-                        <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
-                            @csrf
-                            <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
-                            <input type="hidden" name="submit_time" id="final_submit_time" value="">
-                            <input type="hidden" name="test_type" value="{{$test_type}}">
-                            <input type="hidden" name="exam_type" value="{{$exam_type}}">
-                            <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-                            <div class="pull-right">
-                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
-                                </button>
-                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3">Submit</button>
-                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
-                        </form>
-
-                        <p class="rightSectH">Question Palette</p>
-                        <div class="number-block">
-                            @if(isset($keys) && !empty($keys))
-                            @foreach($keys as $ke=>$val)
-
-                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
-                            @endforeach
-                            @endif
-
-                            <!-- <button class="btn btn-secondary  mb-4 rounded-0">2</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0">3</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">4</button>
-                            <button class="btn btn-light rounded-0 mb-4">5</button>
-                            <button class="btn btn-light mb-4 rounded-0">6</button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">9</button>
-                            <button class="btn btn-outline-warning text-dark rounded-0 mb-4">10</button>
-                            <button class="btn btn-light mb-4 rounded-0">11</button>
-                            <button class="btn btn-light mb-4 rounded-0">12</button>
-                            <button class="btn btn-light mb-4 rounded-0">13</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">14</button>
-                            <button class="btn btn-light-green  mb-4 rounded-0">15</button> -->
-                        </div>
-
-                        <p class="rightSectH">Legends</p>
-                        <div class="row">
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-light  rounded-0"> </button>
-                                <p>Unread</p>
-                            </div>
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-light-green rounded-0"> </button>
-                                <p>Answered </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-secondary   rounded-0"> </button>
-                                <p>Marked for Review</p>
-                            </div>
-                            <div class="col-md-6 legends">
-                                <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
-                                <p>Answered & <br>Marked for Review</p>
-                            </div>
-                        </div>
-
-
                     </div>
+                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                </div>
+                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <p>
+                    Do you want to review all your answers before you submit the test?
+                </p>
+                <div>
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Continue
+                    </button>
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        Submit TEST
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Modal Test_Instruction-->
 <div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}"></a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
@@ -337,7 +234,206 @@ $questtype='radio';
         </div>
     </div>
 </div>
+
+<script>
+    $(window).load(function() {
+        $("#test_instruction").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $('#test_instruction').modal('show');
+    });
+</script>
+<div class="main-wrapper" style="padding-left:0px;">
+
+    <div class="content-wrapper examSect" id="exam_content_sec">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+                    <div class="tab-wrapper h-100">
+                        <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                            <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                            <!-- Exam subject Tabs  -->
+                            <div id="scroll-mobile">
+                                <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                                    @if(!empty($filtered_subject))
+                                    @foreach($filtered_subject as $key=>$sub)
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}</a>
+                                    </li>
+                                    @endforeach
+                                    @endif
+                                </ul>
+                            </div>
+                            <!-- End Exam subject Tabs -->
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div id="question_section" class="">
+                                    <div class="d-flex" id="pause-start">
+                                        <div id="counter_{{$activeq_id}}" class="counter  d-flex">
+                                            <span id="avg_text">Average Time :</span>
+                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                <div id="percentBar_{{$activeq_id}}"></div>
+                                            </div>
+                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
+                                                <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
+                                    </div>
+
+                                    <div class="question-block">
+                                        <!-- Next and previous button -->
+                                        <a href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
+                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></a>
+                                        <!-- Next and previous button -->
+
+                                        <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+
+                                        <div class="ans-block row my-3">
+                                            @if(isset($option_data) && !empty($option_data))
+                                            @php $no=0; @endphp
+                                            @foreach($option_data as $key=>$opt_value)
+                                            @php
+                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                            $dom = new DOMDocument();
+                                            @$dom->loadHTML($opt_value);
+                                            $anchor = $dom->getElementsByTagName('img')->item(0);
+                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                            $latex = "https://math.now.sh?from=".$text;
+                                            $view_opt='<img src="'.$latex.'" />' ;
+                                            @endphp
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                <div class="border ps-3 ans">
+                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                </div>
+                                            </div>
+                                            @php $no++; @endphp
+                                            @endforeach
+                                            @endif
+
+                                        </div>
+
+                                    </div>
+                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+                                    <div class="tab-btn-box  d-flex mt-3">
+                                        @if(!empty($next_qid))
+                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
+                                        @else
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
+                                        </button>
+                                        @endif
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
+
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+
+                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side Area -->
+
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5 h-100">
+                        <div class="d-flex align-items-center">
+                            <div class="" id="app">
+                                <div class="base-timer">
+                                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <g class="base-timer__circle">
+                                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                        </g>
+                                    </svg>
+                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                                </div>
+                            </div>
+                            <span class="timing">
+                                <span id="base-timer-label" class="base-timer__label"></span> Time left
+                            </span>
+                        </div>
+                        <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
+                            <input type="hidden" name="submit_time" id="final_submit_time" value="">
+                            <input type="hidden" name="test_type" value="{{$test_type}}">
+                            <input type="hidden" name="exam_type" value="{{$exam_type}}">
+                            <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
+                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
+                        </form>
+
+                        <p class="rightSectH">Question Palette</p>
+                        <div class="number-block">
+                            @if(isset($keys) && !empty($keys))
+                            @foreach($keys as $ke=>$val)
+
+                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
+                            @endforeach
+                            @endif
+
+                            <!-- <button class="btn btn-secondary  mb-4 rounded-0">2</button>
+                            <button class="btn btn-secondary  mb-4 rounded-0">3</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">4</button>
+                            <button class="btn btn-light rounded-0 mb-4">5</button>
+                            <button class="btn btn-light mb-4 rounded-0">6</button>
+                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
+                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">9</button>
+                            <button class="btn btn-outline-warning text-dark rounded-0 mb-4">10</button>
+                            <button class="btn btn-light mb-4 rounded-0">11</button>
+                            <button class="btn btn-light mb-4 rounded-0">12</button>
+                            <button class="btn btn-light mb-4 rounded-0">13</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">14</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">15</button> -->
+                        </div>
+
+                        <p class="rightSectH">Legends</p>
+                        <div class="row">
+                            <div class="col-md-6 legends">
+                                <button class="btn btn-light p-0 rounded-0"> </button>
+                                <p>Unread</p>
+                            </div>
+                            <div class="col-md-6 legends ">
+                                <button class="btn btn-light-green p-0 rounded-0"> </button>
+                                <p>Answered </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 legends">
+                                <button class="btn btn-secondary p-0  rounded-0"> </button>
+                                <p>Marked for Review</p>
+                            </div>
+                            <div class="col-md-6 legends">
+                                <button class="btn btn-secondary p-0 rounded-0"><i class="fa fa-check text-light"></i></button>
+                                <p>Answered & <br>Marked for Review</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Modal Test_Instruction-->
+
 
 
 <!-- Modal END Exam -->
@@ -345,7 +441,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
 
-            <div class="modal-body pt-0 text-center">
+            <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h2 class="mb-3">Time Over!</h2>
 
@@ -359,50 +455,9 @@ $questtype='radio';
     </div>
 </div>
 
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center pt-2 pb-5">
-                <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <div id="app">
-                        <div class="base-timer">
-                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <g class="base-timer__circle">
-                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
-                                     M 50, 50
-                                     m -45, 0
-                                     a 45,45 0 1,0 90,0
-                                     a 45,45 0 1,0 -90,0
-                                     "></path>
-                                </g>
-                            </svg>
-                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
-                        </div>
-                    </div>
-                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
-                </div>
-                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
-                <p>
-                    Do you want to review all your answers before you submit the test?
-                </p>
-                <div>
-                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
-                        Continue
-                    </button>
-                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                        Submit TEST
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-body text-center pt-2 pb-5">
@@ -465,6 +520,7 @@ $questtype='radio';
         railVisible: true,
         alwaysVisible: true
     });
+
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -743,7 +799,7 @@ $questtype='radio';
     }
 
     /* Saved question response */
-    function saveAnswer(question_id) {
+    function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
         $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
@@ -770,6 +826,8 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
@@ -787,7 +845,7 @@ $questtype='radio';
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswer(quest_id) != false) {
+        if (saveAnswer(quest_id, '') != false) {
 
             // marking for review
             $.ajax({

@@ -262,7 +262,7 @@
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download</button>
+                    <a href="{{route('export_analytics')}}"> <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download </button></a>
                 </div>
                 <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
@@ -274,10 +274,10 @@
                     <select class="form-select border-0 rounded-0 ps-0" placeholder="Share it only this time">
                         <option class="text-secondary">Share it only this time</option>
                     </select>
-                </div> -->
+                </div>
                 <div class="text-center my-5">
                     <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-share-alt"></i> &nbsp;Share</button>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -394,8 +394,6 @@ $clsAvg_json=json_encode($clsAvg_arr);
                     y: <?php echo $not_attempt_per_pie; ?>,
                     color: '#e4e4e4' // Jane's color
                 }
-
-
             ]
         }]
     });
@@ -479,6 +477,9 @@ $clsAvg_json=json_encode($clsAvg_arr);
             height: 200
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         title: {

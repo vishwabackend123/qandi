@@ -1,6 +1,5 @@
 <div class="row" id="topicclose">
-    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-
+    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
         <div class="row">
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                 <div class="bg-white shadow-lg py-3 px-3">
@@ -36,15 +35,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
                                 <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[0]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[0]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[0]->percentage}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p> -->
-                            <!--  <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -52,12 +48,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
                                 <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[1]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[1]->percentage}}%</h4>
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
                             <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p> -->
                             <!-- <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
@@ -68,12 +64,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
                                 <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[2]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[2]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[2]->percentage}}%</h4>
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
                             <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p>
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
@@ -84,12 +80,12 @@
                         <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
                             <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
                                 <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
-                                <span>{{round($skillPer[3]->percentage)}}%</span>
+                                <span>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</span>
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold"> {{$skillPer[3]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{$skillPer[3]->percentage}}%</h4>
+                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
                             <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p>
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
@@ -103,21 +99,36 @@
 
 
     </div>
-    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center px-3">
                 <h5 class="dashboard-title ">Topics</h5>
-                <!--  <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto" id="topic-open-btn"><i class="fa fa-expand" aria-hidden="true"></i> Expand</button>
-        -->
             </div>
             <div class="scroll-topic-ana">
                 @if($subProf)
                 @foreach($subProf as $val)
+
                 <div class="d-flex align-items-center mt-3 px-3">
                     <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
                         <span class="mr-3 dashboard-name-txt SubjName">{{$val->topic_name}}</span>
+
+                        <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+
+                            <div class="star-ratings-css">
+                                <div class="star-ratings-css-top" style="width: {{round($val->score)}}%">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <div class="star-ratings-css-bottom">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                            </div>
+
+                            <div class="ms-1 score score-rating js-score">
+                                {{round($val->score)}}%
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress  ms-auto col-6" style="overflow: visible;">
+                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
                         @if($val->correct_ans > 0)
                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
@@ -149,7 +160,7 @@
                 <div id="week" style="display:none"></div>
                 <div id="month" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass" id="s_day_time" onclick="replace('day','week','month')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
                         Day
                     </button>
                     <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
@@ -176,7 +187,7 @@
                 <div id="week1" style="display:none"></div>
                 <div id="month1" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                         Day
                     </button>
                     <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
@@ -385,6 +396,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -440,6 +454,9 @@
 
     Highcharts.chart('week', {
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         chart: {
@@ -499,6 +516,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -554,14 +574,14 @@
 
     function replace(show, hide1, hide2) {
         if (show == 'day') {
-            $(".s_timeClass").removeClass("btn-light-green");
-            $("#s_day_time").addClass("btn-light-green");
+            $(".s_timeClass").removeClass("active");
+            $("#s_day_time").addClass("active");
         } else if (show == 'week') {
-            $(".s_timeClass").removeClass("btn-light-green");
-            $("#s_week_time").addClass("btn-light-green");
+            $(".s_timeClass").removeClass("active");
+            $("#s_week_time").addClass("active");
         } else {
-            $(".s_timeClass").removeClass("btn-light-green");
-            $("#s_month_time").addClass("btn-light-green");
+            $(".s_timeClass").removeClass("active");
+            $("#s_month_time").addClass("active");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -572,6 +592,9 @@
 <script>
     Highcharts.chart('day1', {
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         chart: {
@@ -632,6 +655,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -690,6 +716,9 @@
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -746,14 +775,14 @@
 
     function s_replace1(show, hide1, hide2) {
         if (show == 'day1') {
-            $(".s_classMark").removeClass("btn-light-green");
-            $("#s_day_mark").addClass("btn-light-green");
+            $(".s_classMark").removeClass("active");
+            $("#s_day_mark").addClass("active");
         } else if (show == 'week1') {
-            $(".s_classMark").removeClass("btn-light-green");
-            $("#s_week_mark").addClass("btn-light-green");
+            $(".s_classMark").removeClass("active");
+            $("#s_week_mark").addClass("active");
         } else {
-            $(".s_classMark").removeClass("btn-light-green");
-            $("#s_month_mark").addClass("btn-light-green");
+            $(".s_classMark").removeClass("active");
+            $("#s_month_mark").addClass("active");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -768,6 +797,9 @@
             height: 270
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         legend: {
@@ -816,6 +848,9 @@
             height: 270
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         legend: {

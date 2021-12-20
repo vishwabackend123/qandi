@@ -1,14 +1,14 @@
 <div class="dash-sidebar">
     <div class="sidbar-block">
-        <a href="{{ url('/') }}"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}" </a>
-
+        <a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}" </a>
     </div>
-    <div class="dash-nav-link">
-        <a href="{{ url('/dashboard') }}" class="active-navlink"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="71" viewBox="0 0 72 71">
+    <div class="dash-nav-link   d-flex flex-column">
+        <a href="{{ url('/dashboard') }}" class="active">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="71" viewBox="0 0 120 71">
                 <defs>
                     <style>
                         .a {
-                            fill: transparent;
+                            fill: #00baff;
                         }
 
                         .b,
@@ -18,9 +18,9 @@
 
                         .b,
                         .c {
-                            stroke: #221f20;
+                            stroke: #fff;
                             stroke-width: 1.5px;
-                            opacity: 0.5;
+                            opacity: 1;
                         }
 
                         .c {
@@ -93,155 +93,24 @@
                     </g>
                 </g>
             </svg>
-            <span class="hoverlink">Dashboard</span>
+        </a>
+        <a id="practice_exam" data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <img src="{{URL::asset('public/after_login/new_ui/images/left-icon-2.svg')}}">
+        </a>
+        <a id="preparation_center" data-bs-toggle="collapse" href="#submenupreparation" id="submenupreparationlink">
+            <img src="{{URL::asset('public/after_login/new_ui/images/left-icon-3.svg')}}">
         </a>
 
-        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
-                <defs>
-                    <style>
-                        .aa,
-                        .ff {
-                            fill: #fff;
-                        }
-
-                        .bb {
-                            opacity: 0.5;
-                        }
-
-                        .cc,
-                        .dd {
-                            fill: none;
-                        }
-
-                        .dd {
-                            stroke: #4cb9f9;
-                            stroke-linecap: round;
-                            stroke-linejoin: round;
-                            stroke-width: 1.5px;
-                        }
-
-                        .ee {
-                            opacity: 0;
-                        }
-
-                        .ff {
-                            font-size: 14px;
-                            font-family: Poppins-Light, Poppins;
-                            font-weight: 300;
-                        }
-
-                        .gg {
-                            filter: url(#a);
-                        }
-                    </style>
-                    <filter id="a" x="0" y="0" width="97" height="43" filterUnits="userSpaceOnUse">
-                        <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="bb" />
-                        <feFlood flood-opacity="0.161" />
-                        <feComposite operator="in" in2="bb" />
-                        <feComposite in="SourceGraphic" />
-                    </filter>
-                </defs>
-                <g transform="translate(9 6)">
-                    <rect class="aa" width="48" height="48" rx="8" transform="translate(0 16)" />
-                    <g class="bb" transform="translate(-2.917 11.182)">
-                        <g transform="translate(0 2)">
-                            <path class="cc" d="M0,0H30V30H0Z" transform="translate(11.911 11.818)" />
-                            <path class="dd" d="M3,25.49H8.007L24.281,9.216a3.541,3.541,0,1,0-5.007-5.007L3,20.482V25.49" transform="translate(12.646 12.594)" />
-                            <line class="dd" x2="4.979" y2="4.979" transform="translate(30.052 18.698)" />
-                            <path class="dd" d="M14.2,9.224,7.979,3,3,7.979,9.224,14.2" transform="translate(12.646 12.552)" />
-                            <line class="d" x1="1.867" y2="1.867" transform="translate(18.788 21.82)" />
-                            <path class="dd" d="M16.979,12,23.2,18.224,18.224,23.2,12,16.979" transform="translate(14.975 14.881)" />
-                            <line class="dd" x1="1.867" y2="1.867" transform="translate(30.042 33.074)" />
-                        </g>
-                    </g>
-                    <g class="ee" transform="translate(0 -3)">
-                        <g class="gg" transform="matrix(1, 0, 0, 1, -9, -3)">
-                            <rect class="a" width="79" height="25" transform="translate(9 6)" />
-                        </g><text class="f" transform="translate(12 21)">
-                            <tspan x="0" y="0">Practice</tspan>
-                        </text>
-                    </g>
-                </g>
-            </svg>
-            <span class="hoverlink">Practice</span>
-        </a>
-        <a data-bs-toggle="collapse" href="#submenupreparation" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
-                <defs>
-                    <style>
-                        .aaa,
-                        .eee {
-                            fill: #fff;
-                        }
-
-                        .bbb,
-                        .ccc {
-                            fill: none;
-                        }
-
-                        .ccc {
-                            stroke: #4cb9f9;
-                            stroke-linecap: round;
-                            stroke-linejoin: round;
-                            stroke-width: 1.5px;
-                        }
-
-                        .ddd {
-                            opacity: 0;
-                        }
-
-                        .eee {
-                            font-size: 14px;
-                            font-family: Poppins-Light, Poppins;
-                            font-weight: 300;
-                        }
-
-                        .fff {
-                            filter: url(#a);
-                        }
-                    </style>
-                    <filter id="aaa" x="0" y="0" width="99" height="43" filterUnits="userSpaceOnUse">
-                        <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="bbb" />
-                        <feFlood flood-opacity="0.161" />
-                        <feComposite operator="in" in2="bbb" />
-                        <feComposite in="SourceGraphic" />
-                    </filter>
-                </defs>
-                <g transform="translate(9 6)">
-                    <rect class="aaa" width="48" height="48" rx="8" transform="translate(0 16)" />
-                    <g transform="translate(12 28)">
-                        <g transform="translate(-3.271 -3.271)">
-                            <path class="bbb" d="M0,0H30V30H0Z" />
-                            <path class="ccc" d="M6.233,4H19.794A2.508,2.508,0,0,1,22.26,6.548V21.836a2.508,2.508,0,0,1-2.466,2.548H6.233A1.254,1.254,0,0,1,5,23.11V5.274A1.254,1.254,0,0,1,6.233,4m3.7,0V26.932" transform="translate(1.37 0.52)" />
-                            <line class="ccc" x2="2.548" transform="translate(16.222 10.042)" />
-                            <line class="ccc" x2="2.548" transform="translate(16.222 15.042)" />
-                        </g>
-                    </g>
-                    <g class="ddd" transform="translate(0 -3)">
-                        <g class="fff" transform="matrix(1, 0, 0, 1, -9, -3)">
-                            <rect class="aaa" width="81" height="25" transform="translate(9 6)" />
-                        </g>
-                        <text class="eee" transform="translate(12 21)">
-                            <tspan x="0" y="0">Prepare</tspan>
-                        </text>
-                    </g>
-                </g>
-            </svg>
-            <span class="hoverlink">Prepare</span>
-        </a>
         <a href="#" class="mt-auto" data-bs-toggle="modal" data-bs-target="#sharefrnd">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
                 <defs>
                     <style>
                         .aaaa {
-                            fill: #fff;
+                            fill: #e9e9e9;
                         }
 
                         .bbbb {
-                            stroke: #4cb9f9
+                            stroke: #7b797a
                         }
                     </style>
                 </defs>
@@ -257,6 +126,7 @@
             </svg>
             <span class="hoverlink">Share</span>
         </a>
+
     </div>
     <div class="submenu-L1 collapse width" id="submenu">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
@@ -271,8 +141,8 @@
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
             <a href="{{ url('/exam_custom') }}" class="nav-link"><i class="fas fa-sliders-h rotate-icon"></i> Custom</a>
-            <a href="{{ url('/series_list') }}" class="nav-link"><i class="fas fa-book-open"></i> Test Series</a>
 
+            <a href="{{ url('/series_list') }}" class="nav-link"><i class="fas fa-book-open"></i> Test Series</a>
         </div>
 
     </div>
