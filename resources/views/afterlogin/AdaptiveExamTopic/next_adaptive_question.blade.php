@@ -117,12 +117,12 @@ $questtype='radio';
 
         <!-- Next and previous button -->
         <span style="visibility:hidden">
-            <a href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
+            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
             @if(isset($last_qid) && ($last_qid==$active_q_id))
-            <a href="javascript:void(0);" class="arrow next-arow{{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><i class="fa fa-angle-right"></i></a>
+            <button href="javascript:void(0);" class="arrow next-arow{{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><i class="fa fa-angle-right"></i></button>
 
             @else
-            <a href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><i class="fa fa-angle-right"></i></a>
+            <button href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><i class="fa fa-angle-right"></i></button>
 
             @endif
         </span>
@@ -157,12 +157,9 @@ $questtype='radio';
     </div>
     <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
     <div class="tab-btn-box  d-flex mt-3">
-        @if(!empty($next_qKey))
+
         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}','{{$qNo}}')">Save & Next</a>
-        @else
-        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}','{{$qNo}}')">Save & Submit
-        </a>
-        @endif
+
 
         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
 

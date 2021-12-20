@@ -142,8 +142,8 @@ $questtype='radio';
                                     <div class="question-block">
                                         <!-- Next and previous button -->
                                         <span style="visibility:hidden">
-                                            <a href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></a>
-                                            <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right"></i></a>
+                                            <button href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
+                                            <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right"></i></button>
                                         </span>
                                         <!-- Next and previous button -->
 

@@ -118,7 +118,7 @@ $userData = Session::get('user_data');
                         </div>
                         @endif
 
-                        @if(isset($planner) && !empty($planner))
+
                         <div class="swiper-slide bg-white">
 
                             <div class="test-attend text-center pt-2 pb-2">
@@ -142,6 +142,7 @@ $userData = Session::get('user_data');
                             </div>
 
                         </div>
+                        @if(isset($planner) && !empty($planner))
                         @foreach($planner as $key=>$val)
                         @if($val->test_completed_yn=="N")
                         <div class="swiper-slide bg-white">

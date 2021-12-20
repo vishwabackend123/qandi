@@ -22,12 +22,12 @@
         line-height: 0.5 !important;
     }
 
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-chtml,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-char,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .math,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax_CHTML {
+    .mjx-chtml,
+    .MathJax,
+    .mjx-char,
+    .math,
+    .MathJax,
+    .MathJax_CHTML {
         top: 4px !important;
     }
 
@@ -149,10 +149,10 @@ $questtype='radio';
                                     <div class="question-block">
 
 
-                                        <a href="javascript:void(0);" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i>
-                                        </a>
-                                        <a href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i>
-                                        </a>
+                                        <button href="javascript:void(0);" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><i class="fa fa-angle-left"></i>
+                                        </button>
+                                        <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i>
+                                        </button>
 
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
@@ -804,6 +804,7 @@ $questtype='radio';
 
             $("#submitExam").click();
         } else {
+
             $("#quesnext" + question_id).click();
         }
         return true;
