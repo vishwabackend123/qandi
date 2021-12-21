@@ -2,7 +2,8 @@
     <div class="container-fluid exam-analytics">
         <div class="row">
             <div class="col-12 mb-4">
-                <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i>Export Analytics</button>
+                <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i> &nbsp;Export Analytics
+                </button>
             </div>
         </div>
         <div class="row">
@@ -41,10 +42,10 @@
                                 <path class="circle-bg" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+                                <path class="circle" stroke-dasharray="{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}, 100" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                <text x="18" y="22.35" class="percentage">30%</text>
+                                <text x="18" y="22.35" class="percentage">{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}%</text>
                             </svg>
                         </div>
                         <div class="col-md-8">
@@ -143,8 +144,6 @@
                             @php $subx++; @endphp
                             @endforeach
                             @endif
-
-
                         </ul>
 
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
@@ -262,7 +261,11 @@
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <a href="{{route('export_analytics')}}"> <button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download </button></a>
+                    <a href="{{route('export_analytics')}}">
+                        <button class="btn px-4 top-btn-pop text-white">
+                            <i class="fa fa-download"></i> &nbsp;Download PDF
+                        </button>
+                    </a>
                 </div>
                 <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">

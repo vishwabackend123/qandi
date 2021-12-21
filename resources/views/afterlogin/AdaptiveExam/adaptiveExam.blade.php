@@ -259,7 +259,7 @@ $questtype='radio';
                                     @if(!empty($filtered_subject))
                                     @foreach($filtered_subject as $key=>$sub)
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}</a>
+                                        <a class="nav-link class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}({{$sub->count}})</a>
                                     </li>
                                     @endforeach
                                     @endif
@@ -559,14 +559,14 @@ $questtype='radio';
         startTimer();
     }
 
-    function stop(type='') {
+    function stop(type = '') {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
         $(".stop").hide();
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
-        if(type!=='submit'){
+        if (type !== 'submit') {
             $("#resume-test").modal("show");
         }
     }

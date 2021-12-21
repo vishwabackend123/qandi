@@ -107,6 +107,86 @@ $questtype='radio';
 
 
 @endphp
+<!-- Modal Test_Instruction-->
+<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}"></a>
+            </div>
+            <div class="modal-body pt-3 p-5">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <div class="scroll">
+                            <div class="test-info">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
+                                        <div class="me-2"></div>
+                                        <div>
+                                            <small>No. Of Questions</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
+                                        <div>
+                                            <small>Target</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
+                                        <div class="me-2 ms-auto"></div>
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <div class="instructions pe-3">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give multiple opportunities to the candidates to improve their scores in the
+                                    examination if they are not able to give their best in one attempt</p>
+                                <p>In first attempt, the students will get a first-hand experience of taking an
+                                    examination and will know their mistakes which they can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce the chances of dropping a year and droppers would not have to
+                                    waste a full year.</p>
+                                <p>If anyone missed the examination due to reasons beyond control (such as Board
+                                    examination), then he/she will not have to wait for one full year.</p>
+                                <p> A candidate need not appear in all the four Sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+
+                        <h1 class="my-auto text-center">
+
+                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
+
+                        </h1>
+                        <div class="text-left   ">
+
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $(window).on('load', function() {
+        $('#test_instruction').modal('show');
+
+    });
+</script>
 <div class="main-wrapper" style="padding-left:0px;">
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
@@ -391,10 +471,7 @@ $questtype='radio';
         height: '30vh'
     });
 
-    $(window).on('load', function() {
-        $('#test_instruction').modal('show');
 
-    });
     $('#goto-exam-btn').click(function() {
         $('#exam_content_sec').show();
         startTimer();
@@ -450,14 +527,14 @@ $questtype='radio';
         startTimer();
     }
 
-    function stop(type='') {
+    function stop(type = '') {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
         $(".stop").hide();
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
-        if(type!=='submit'){
+        if (type !== 'submit') {
             $("#resume-test").modal("show");
         }
     }

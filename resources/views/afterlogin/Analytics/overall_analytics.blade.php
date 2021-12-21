@@ -31,7 +31,7 @@ $userData = Session::get('user_data');
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
                                 <li class="ms-auto">
-                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> Export Analytics</a>
+                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> &nbsp;Export Analytics</a>
                                 </li>
 
                             </ul>

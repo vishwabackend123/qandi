@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <a href="{{route('export_analytics')}}"><button class="btn px-5 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download</button></a>
+                    <a href="{{route('export_analytics')}}"><button class="btn px-4 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download PDF</button></a>
                 </div>
                 <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
