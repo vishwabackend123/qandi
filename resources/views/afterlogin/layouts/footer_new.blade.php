@@ -617,7 +617,7 @@
 
     });
 
-    // the following js for edit 
+    // the following js for edit
     $(document).ready(function() {
         $(".edit-btn-show").click(function() {
             $(".edit-form").show();
@@ -637,7 +637,7 @@
         });
     });
 
-    // the following js for blure 
+    // the following js for blure
     $(document).ready(function() {
         $(".main-profile-section.blure-bg").click(function() {
             $(".blure-bg").hide();
@@ -657,7 +657,7 @@
 
     });
 
-    // the following script for log out section 
+    // the following script for log out section
     $(document).ready(function() {
         $(".log-out-btn").click(function() {
 

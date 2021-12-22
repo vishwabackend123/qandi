@@ -380,9 +380,11 @@ $questtype='radio';
                         <p class="rightSectH">Question Palette</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
+                                @php $i = 1; @endphp
                             @foreach($keys as $ke=>$val)
 
-                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
+                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$i}}</button>
+                                @php $i++; @endphp
                             @endforeach
                             @endif
 
