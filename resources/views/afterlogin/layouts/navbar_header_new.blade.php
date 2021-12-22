@@ -607,9 +607,9 @@
                     <div class="p-text">
                         <?php
                         $todaydate = date("d-m-Y"); ?>
-                        <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
+
                         @if(isset($subscription_details) && !empty($subscription_details))
-                        <p>Subscribed for {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}</p>
+                        <h3>Subscribed for {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}</h3>
 
                         @endif
 

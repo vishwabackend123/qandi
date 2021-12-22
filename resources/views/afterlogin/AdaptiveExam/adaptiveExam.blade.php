@@ -5,8 +5,7 @@
     }
 </style>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
@@ -244,7 +243,7 @@ $questtype='radio';
         $('#test_instruction').modal('show');
     });
 </script>
-<div class="main-wrapper" style="padding-left:0px;">
+<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
 
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
@@ -288,7 +287,7 @@ $questtype='radio';
                                         <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
                                         <!-- Next and previous button -->
 
-                                        <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                        <div class="question py-3"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
                                             @if(isset($option_data) && !empty($option_data))
@@ -373,7 +372,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <button type="submit" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -471,7 +470,7 @@ $questtype='radio';
     </div>
 </div>
 
-@include('afterlogin.layouts.footer')
+@include('afterlogin.layouts.footer_new')
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 <!-- browser back disable -->
@@ -505,6 +504,7 @@ $questtype='radio';
 
     });
     $('#goto-exam-btn').click(function() {
+        $('#mainDiv').show();
         $('#exam_content_sec').show();
         startTimer();
         questionstartTimer();

@@ -95,7 +95,7 @@ $questtype='radio';
 
     }
 </style>
-<div class="main-wrapper" style="padding-left:0px;">
+<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
 
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
@@ -455,6 +455,7 @@ $questtype='radio';
 
     });
     $('#goto-exam-btn').click(function() {
+        $('#mainDiv').show();
         $('#exam_content_sec').show();
         startTimer();
         questionstartTimer();

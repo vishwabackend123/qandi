@@ -106,8 +106,8 @@ $userData = Session::get('user_data');
                                     <p>Complete full body scan to</p>
                                     <h3>Unlock Daily Test</h3>
                                     <p>& complete platform features</p>
-                                    <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
-                                        </span></div>
+                                    <!-- <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
+                                        </span></div> -->
                                 </div>
                             </div>
                             <div class="sign-btn">
@@ -150,8 +150,8 @@ $userData = Session::get('user_data');
                                 <div class="col-lg-12 px-0">
                                     <p>Level up in</p>
                                     <h3 class="chapter_name">{{$val->chapter_name}}</h3>
-                                    <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
-                                        </span></div>
+                                    <!-- <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
+                                        </span></div> -->
                                 </div>
                             </div>
                             <div class="sign-btn">
