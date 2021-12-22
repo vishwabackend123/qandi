@@ -105,7 +105,7 @@ $questtype='radio';
     }
 </style>
 
-<div class="main-wrapper" style="padding-left:0px;">
+<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
 
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
@@ -439,8 +439,11 @@ $questtype='radio';
 
     });
     $('#goto-exam-btn').click(function() {
+        $('#mainDiv').show();
         $('#exam_content_sec').show();
         startTimer();
+        /*  questionstartTimer();
+         setEachQuestionTime(); */
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -494,14 +497,14 @@ $questtype='radio';
     //     startBtn.innerHTML = "Continue";
     //     clearInterval(timerInterval);
     // }
-    function stop(type='') {
+    function stop(type = '') {
         setDisabled(stopBtn);
         removeDisabled(startBtn);
         $(".stop").hide();
         $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
-        if(type!=='submit'){
+        if (type !== 'submit') {
             $("#resume-test").modal("show");
         }
     }

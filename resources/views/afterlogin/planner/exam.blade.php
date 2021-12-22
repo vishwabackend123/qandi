@@ -187,7 +187,7 @@ $questtype='radio';
 
     });
 </script>
-<div class="main-wrapper" style="padding-left:0px;">
+<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
@@ -473,11 +473,11 @@ $questtype='radio';
 
 
     $('#goto-exam-btn').click(function() {
+        $('#mainDiv').show();
         $('#exam_content_sec').show();
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
-
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
