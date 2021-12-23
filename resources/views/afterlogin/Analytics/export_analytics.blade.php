@@ -267,6 +267,7 @@
     @include('afterlogin.layouts.footer_new')
 
     <script type="text/javascript">
+
         //Create PDf from HTML...
         function CreatePDFfromHTML() {
             // set attributes and src
