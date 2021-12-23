@@ -826,7 +826,7 @@ $questtype='radio';
                         $("#btn_" + quest_id).removeClass("btn-light-green");
                         $("#btn_" + quest_id).removeClass("btn-light");
                         //$("#btn_" + quest_id).removeClass("btn-light-green");
-                        $("#btn_" + quest_id).toggleClass('btn-light-green btn-secondary');
+                        // $("#btn_" + quest_id).toggleClass('btn-light-green btn-secondary');
 
                         $("#btn_" + quest_id).addClass("btn-secondary");
                         $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
