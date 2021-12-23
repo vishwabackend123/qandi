@@ -1131,18 +1131,9 @@
                     var response = jQuery.parseJSON(response_data);
 
                     if (response.success == true) {
-                        $('#referEmails').val("");
-                        if (response.message != '') {
-                            var sucessmsg = $("#successRef_auth").show();
-                            sucessmsg[0].textContent = response.message;
-
-                            setTimeout(function() {
-                                $('.errRef').fadeOut('fast');
-                            }, 3000);
-
-                        }
-
+                        var check = 0;
                         if (response.duplicate_referrals.length > 0) {
+                            check = 1;
                             const duplicate = response.duplicate_referrals.toString();
 
                             var errormsg = $("#errRef_auth").show();
@@ -1152,6 +1143,15 @@
                             $('.errRef').fadeOut('fast');
                         }, 5000);
                         $('#referEmails').val("");
+                        if (response.message != '' && check == 0) {
+                            var sucessmsg = $("#successRef_auth").show();
+                            sucessmsg[0].textContent = response.message;
+
+                            setTimeout(function() {
+                                $('.errRef').fadeOut('fast');
+                            }, 3000);
+
+                        }
 
                     } else {
                         var errormsg = $("#errRef_auth").show();

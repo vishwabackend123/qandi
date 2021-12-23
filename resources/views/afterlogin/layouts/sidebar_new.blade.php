@@ -304,12 +304,12 @@
                     </div>
                     <h1 class="text-center my-4">Refer a friend</h1>
                     <div class="mb-3">
-                        <input type="text" class="form-control border-0 rounded-0" placeholder="Enter emails / phone numbers" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
+                        <input type="text" class="form-control border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
                         <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
 
 
-                        <span class="invalid-feedback m-0 alert-success errRef p-1 mb-1" role="alert" id="successRef_auth"> </span>
-                        <span class="invalid-feedback m-0 alert-danger errRef p-1" role="alert" id="errRef_auth"> </span>
+                        <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" role="alert" id="successRef_auth"> </p>
+                        <p class="invalid-feedback m-0 alert-danger errRef p-1" role="alert" id="errRef_auth"> </p>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-danger rounded-0 px-5"><i class="fa fa-user-plus" aria-hidden="true"></i> SEND

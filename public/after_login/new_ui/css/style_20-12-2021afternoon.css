@@ -15,182 +15,23 @@ button {
     outline: none;
     text-decoration: none;
 }
-#plannerAddform label.d-block {
-    font-size: 14px;
-    margin-bottom: 2px;
-}
-.exam-analytics .bg-white .row.py-4.mt-4.mb-5 {
-    margin-bottom: 0px !important;
-}
-.exam-analytics .p-5 span.text-center.w-100 img {
-    width: 70% !important;
-}
-.exam-analytics div#myTabContent .tab-pane .hScroll {
-    height: 270px !important;
-}
-#exam_result_analysis h5.dashboard-title.mb-3.text-center {
-    text-align: left !important;
-    padding-left: 15px !important;
-}
-.exam-analytics button.top-btn-pop:hover {
-    background: #00bdff;
-}
-.examSect .rightSect .number-block .btn:hover, .rightSect .number-block .btn:hover {
-    border: solid 2px #00baff !important;
-}
-
-.rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
-	padding-bottom:28px !important;
-	margin-bottom:0px !important;
-}
-
-.ans-block .col-md-6.mb-4 .border:hover {
-        border: 2px solid #00baff !important;
-}
-.answer-section .ans-txt {
-    padding-left: 11%;
-}
-
-.bg-white.shadow-lg.py-5{padding-top: 20px !important;}
-#marks_trend_graph{padding-top:25px;}
-.subscrived .p-text {
-    color: #00baff;
-    font-family: Manrope;
-}
-p.text-end.text-danger.mt-1 {
-    color: #f74645 !important;
-	font-size: 13px;
-}
-.course-star li span{color: #2c3348;
-font-size: 16px;
-font-weight: 600;}
-.course-star li .star-ratings-css .star-ratings-css-bottom span{color:#c5c5c5!important;}
-#scorecontainer, .seeAnico{padding-top:15px!important;}
-button.arrow.prev-arow{position: fixed;
-left: 8%;
-top: 27%;
-z-index: 99;}
-
-button.arrow.next-arow{right: 28.8%;
-position: fixed;
-top: 27%;
-z-index: 99;
-opacity: 1;}
-
-#exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item{margin-right:5px;}
-.custom-page #scroll-mobile #myTab li.nav-item{margin-right:5px;}
-.live-exam #scroll-mobile #myTab li.nav-item{margin-right:5px;}
-.test-review #myTabContent #scroll-mobile #myTab li.nav-item{margin-right:5px;}
-/** Custom changes 22-12-2021 **/
-
-#sharefrnd button.btn-close:before{content:"X";font-size:22px;font-weight:bold; position:absolute;top:10px;right:10px;color:red; /*! width:20px; *//*! height:20px; *//*! opacity: 1 !important; */}
-
-body#main-body {
-    background: #f6f9fd;
-}
-#referalStudent_form h1.text-center.my-4 {
-    font-weight: 600 !important;
-    margin-top: 5px !important;
-    font-size: 36px;
-    margin-bottom: 40px !important;
-}
-
-/** End Custom changes 22-12-2021 **/
-
-/* 21-12-201 timing 9:22pm  */
-.steps-links > div {
-    position: relative;
-    font-size: 14px;
-    font-weight: bold;
-    color: #000;
-}
-.Fullsub-amt-subN.subs-box .col-4 h3{font-size:20px;font-weight: bold;color: #000;}
-.Fullsub-amt-subN.subs-box .col-3 h4.text-success{color: #44cd7f !important;
-font-size: 20px !important;
-font-weight: bold;}
-/* Custom changes 21-12-2021 */
-
-
-/** Custom changes 21-12-2021 **/
-.question-block .next-arow i {
-    position: absolute;
-    right: 15px;
-    top: 15%;
-}
-.question-block .prev-arow i {
-    position: absolute;
-    left: 0px;
-    top: 12%;
-}
-
-#test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
-    font-weight: 600;
-}
-button#goto-exam-btn i {
-    padding-left: 12px;
-}
-span.btnSubic img {
-    padding-right: 10px;
-}
-div#exam_content_sec .cust-tabs .nav-link.active:before {
-    right: -62px;
-}
-
-.main-wrapper.dashboard {
-    height: 100vh !important;background:#f6f9fd !important;
-}
-rect#Rectangle_3408:hover {
-    border-radius: 10px !important;
-}
-circle.g {
-    fill: #00bdff;
-}
-
-body#main-body .seeAnico span img {
-    width: 101px;
-}
-.seeAnico .button-sec.mt-3 {
-    margin-top: 10px !important;
-}
-.form-btns button#saveEdit {
-    padding: 15px 30px;
-    border-radius: 20px !important;
-}
-.cust-gallery .swiper-slide h3 {
-    font-weight: 600;
-    white-space: nowrap;
-    width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-	font-size:30px;
-}
-.sign-btn a button:hover {
-    background: #07beff;
-}
-
-/** End custom-changes 21-12-2021 **/
-
 .custom-page .slick-slide {
     height: auto !important;
 }
-
 button#dropdownMenuLink-topic {
     width: 40px;
     height: 40px;
 }
-
 .preparation .cust-tabs .nav-link.active:before {
     right: -56px;
 }
-
 .preparation .cust-tabs .nav-link.active:after {
     left: -60px;
 }
-
 .preparation .cust-tab-content {
     border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
-    padding: 0px 15px 30px !important;
+	padding: 0px 15px 30px !important;
 }
 
 /** live exam section **/
@@ -199,34 +40,28 @@ button#dropdownMenuLink-topic {
     width: 18%;
 }
 
-.live-exam #home .speci-text li:last-child {
+ .live-exam  #home .speci-text li:last-child {
     margin-right: 30px;
     float: right;
 }
-
 #home h4.py-3 {
     padding-left: 10px;
 }
-
 div#completed h4.py-3 {
     padding-left: 10px;
-	padding-top:50px !important;
 }
 
-.list-series #home .scroll-div-live-exm {
+.list-series #home  .scroll-div-live-exm {
     padding-left: 10px;
 }
-
 .tab-wrapper.live-exam .cust-tab-content {
     border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
 }
-
-.tab-wrapper.live-exam .cust-tabs .nav-link.active:before {
+.tab-wrapper.live-exam  .cust-tabs .nav-link.active:before {
     right: -56px;
 }
-
-.tab-wrapper.live-exam .cust-tabs .nav-link.active:after {
+.tab-wrapper.live-exam  .cust-tabs .nav-link.active:after {
     left: -62px;
 }
 
@@ -265,8 +100,7 @@ a#Zoology_tab_subject:nth-child(1):before {
 }
 
 .notification a:hover {
-    background: #00baff;
-    border-radius: 16px;
+    background: #00bdff;
 }
 
 .notification a :hover .cls-4 {
@@ -290,7 +124,7 @@ a#Zoology_tab_subject:nth-child(1):before {
 #endExam .modal-content.rounded-0 {
     border-radius: 56px !important;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
-    border: none !important;
+    border: none!important;
 }
 
 
@@ -354,10 +188,7 @@ button#saveEdit {
     border-radius: 8px !important;
     border-radius: 20px !important;
     border: none !important;
-    height: 60px;
-    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
-    width: 252px;
+    height: 45px;
 }
 
 #sharefrnd input {
@@ -466,7 +297,6 @@ button#saveEdit {
 
 .test-review .cust-tab-content {
     padding: 0px !important;
-    padding-bottom: 20px !important;
 }
 
 /** end here **/
@@ -493,7 +323,7 @@ span.notification.ms-4 {
     background-color: #fff;
     border-top-left-radius: 56px;
 }
-
+}
 
 /** End here on 17-2-2021 first half**/
 
@@ -516,19 +346,6 @@ span.notification.ms-4 {
 }
 
 #favSubResponse a#nxt-btn {
-    border-radius: 20px !important;
-    background: #13c5ff;
-    color: #fff;
-    border: none;
-
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    width: 204px;
-    padding: 12px 91px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#favSubResponse a#nxt-btn.disabled {
     border-radius: 20px !important;
     background: #13c5ff;
     color: #fff;
@@ -714,7 +531,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(/public/after_login/new_ui/images/before-img.png);
+    background: url(https://app.uniqtoday.com/public/after_login/new_ui/images/before-img.png);
     transition: all 250ms ease;
     height: 81px;
     bottom: -1px;
@@ -743,7 +560,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(/public/after_login/new_ui/images/after-img.png);
+    background: url(https://app.uniqtoday.com/public/after_login/new_ui/images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
@@ -760,7 +577,6 @@ span.notification.ms-4 {
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff !important;
     border: none;
-    /*! max-width: 624px; */
 }
 
 #referFrnd {
@@ -794,8 +610,6 @@ button#button-addon2 {
     right: 32px;
     top: 20px;
     z-index: 9;
-    background: none;
-    opacity: 1;
 }
 
 /* end referFrnd */
@@ -818,7 +632,7 @@ button#button-addon2 {
     background: #00baff;
     border: none;
     padding: 12px 25px;
-    margin-right: 20px; font-weight: 600;
+    margin-right: 20px;
 }
 
 #FullTest_Exam_Panel_Interface_A button#bt-modal-confirm {
@@ -827,7 +641,7 @@ button#button-addon2 {
     background: #00baff;
     border: none;
     color: #fff;
-    padding: 12px 25px;font-weight: 600;
+    padding: 12px 25px;
 }
 
 #topicclose .live-test {
@@ -1210,15 +1024,8 @@ button#topic-btn {
 }
 
 #exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    border: none;
-    border-radius: 20px !important;
-    padding: 15px 10px;
-    font-weight: 600;
-}
-#exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
-    color: #fff !important;
+    border: 1px solid #6ad3fe;
+    border-radius: 10px !important;
 }
 
 #exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
@@ -1339,7 +1146,7 @@ span.p-icons span {
     width: 100%;
     padding: 30px 20px;
     background: #eee;
-    border-radius: 25px;
+    border-radius: 56px;
 }
 
 button.percentage-digit {
@@ -1445,11 +1252,9 @@ button.percentage-digit {
 /** custom scrollbar**/
 /* width */
 .question-block {
-    /*height: 310px;
+    height: 310px;
     overflow: auto;
-    overflow-x: hidden;*/
-	 height: 290px;
-    overflow-y: auto; overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .question-block::-webkit-scrollbar {
@@ -1543,7 +1348,7 @@ button.percentage-digit {
 /** scrollbar css end here**/
 .back-to-dashbord a {
     color: #00baff;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     width: 100px;
     display: block;
@@ -1570,12 +1375,11 @@ button.percentage-digit {
 
 .exam-analytics .bg-white.shadow.p-3 {
     border-radius: 56px;
-	padding: 22px !important;
 }
 
 .exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
     border-radius: 56px !important;
-    padding-bottom: 0px !important;
+    padding-bottom: 20px !important;
 }
 
 .exam-analytics .abrv-graph.bg1 {
@@ -1602,7 +1406,6 @@ button.percentage-digit {
     border: none;
     border-radius: 20px;
     padding: 15px 10px;
-	font-weight: 600;
 }
 
 .exam-analytics .blue-block {
@@ -1774,8 +1577,7 @@ div#collapsePlanner {
 #collapsePlanner .d-flex.align-items-center.text-uppercase {
     text-align: center !important;
     margin: 0 auto;
-    display: block !important;font-weight: 600;
-    font-size: 16px;
+    display: block !important;
 }
 
 a#subject_chapter_1,
@@ -1824,9 +1626,6 @@ input#StartDate {
 
 #collapsePlanner .topic_name {
     font-size: 14px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
 }
 
 #plannerChapter .modal-dialog .modal-content.bg-light {
@@ -1942,7 +1741,7 @@ div#sub-planner {
     width: 100%;
     border: none;
     border-radius: 20px;
-    background: #00c4ff;
+    background: #5ebbfe;
     color: #fff;
     font-weight: 500;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
@@ -2102,7 +1901,7 @@ button.save-btn {
     border-radius: 56px;
     padding: 15px 20px 15px 25px;
     position: absolute;
-    right: 300px;
+    right: 23%;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2177,7 +1976,7 @@ button.save-btn {
     border-radius: 56px;
     padding: 40px 20px 40px 25px;
     position: absolute;
-    right: 300px;
+    right: 23%;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2233,7 +2032,7 @@ button.save-btn {
 /*** rahul css on 16-12-2021 */
 /** Listing series page css on 16-12-2021 **/
 .list-series .live-exam .speci-text li {
-    width: 18%;
+    width: 24%;
     margin-right: 0px;
 }
 
@@ -2287,12 +2086,9 @@ button.save-btn {
 }
 
 .button-sec.mt-3 a {
-    font-size: 13px;
+    font-size: 12px;
     color: #2c3348;
     display: inline-block;
-    background: #e9e9e9;
-    padding: 10px 20px;
-    border-radius: 10px;text-transform: uppercase;
 }
 
 /** popup for just more one step **/
@@ -2359,7 +2155,7 @@ button.save-btn {
     background: #fff;
     height: auto;
     padding: 0px 15px 30px;
-    border-bottom-left-radius: 56px;
+	border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
 }
 
@@ -2402,9 +2198,6 @@ button.save-btn {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
     padding: 15px 5px;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    font-family: 'Manrope' !important;
 }
 
 #welcomeModal .modal-dialog.modal-dialog-centered.modal-lg {
@@ -2510,7 +2303,7 @@ div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
 }
 
 .rightSectH {
-    font-family: 'Manrope';
+    font-family: Poppins;
     font-size: 18px;
     font-weight: 600;
 }
@@ -2605,7 +2398,6 @@ button#goto-exam-btn {
     border: none;
     padding: 15px 65px;
     color: #fff;
-	font-weight:600;
 }
 
 /** end test screen css**/
@@ -2755,7 +2547,7 @@ span.bell-noti {
     border-radius: 56px;
     padding: 15px;
     position: absolute;
-    right: 300px;
+    right: 23%;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2869,7 +2661,6 @@ span.profile-img-user {
     background-color: #fff;
     border-color: transparent;
     border-radius: 0;
-	font-weight: 600;
 }
 
 .cust-tabs .nav-link.active:before {
@@ -2919,9 +2710,8 @@ span.profile-img-user {
 
 .cust-tab-content {
     background: #fff;
-    height: auto;
+    height: calc(100% - 70px) !important;
     padding: 0px 15px !important;
-    padding-bottom: 20px !important;
 }
 
 p.tab-title {
@@ -2950,7 +2740,7 @@ p.tab-title {
     border: none;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     width: 276px;
-    height:60px;
+    height: 50px;
     border-radius: 20px !important;
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     font-size: 18px;
@@ -2970,7 +2760,7 @@ p.tab-title {
     border: none;
     outline: none;
     width: 216px;
-    height:60px;
+    height: 50px;
     color: #2c3348;
     font-size: 18px;
     border-radius: 20px !important;
@@ -3077,7 +2867,7 @@ p.tab-title {
 }
 
 .live-exam .speci-text li:last-child {
-    margin-right: 25px;
+    margin-right: 0px;
     float: right;
 }
 
@@ -3230,7 +3020,7 @@ p.tab-title {
 }
 
 .button-sec {
-    margin-right: 05px;
+    margin-right: 23px;
 }
 
 .button-sec button {
@@ -3442,7 +3232,6 @@ p.success-img {
 
 .bg-light {
     background-color: #f2f2f2 !important;
-	border-radius: 20px !important;
 }
 
 .btn-outline-danger {
@@ -3475,8 +3264,6 @@ p.success-img {
 .btn-light {
     background: #e4e4e4 !important;
     border-color: #e4e4e4;
-	border-radius: 10px !important;
-color: #000 !important;
 }
 
 .btn-light-green {
@@ -3776,7 +3563,6 @@ header {
     font-size: 18px;
     font-weight: 400;
     color: #103361;
-	padding-right: 12px;
 }
 
 
@@ -4046,7 +3832,7 @@ header {
     position: relative;
     margin-right: 15px;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: #515151;
 }
@@ -4110,12 +3896,11 @@ header {
 }
 
 .name-txt-sml {
-text-align: left;
-letter-spacing: 0px;
-color: #2c3348;
-text-transform: capitalize;
-font-weight: 600;
-font-size: 20px;
+    text-align: left;
+    font: normal normal normal 18px/27px Manrope;
+    letter-spacing: 0px;
+    color: #2c3348;
+    text-transform: uppercase;
 }
 
 .text-big {
@@ -4250,7 +4035,7 @@ font-size: 20px;
 
 .score-rating {
     vertical-align: sup;
-    top: -1px;
+    /* top: -5px; */
     position: relative;
     /* font-size: 150%; */
 }
@@ -4470,7 +4255,7 @@ font-size: 20px;
 }
 
 .arrow {
-    position: unset;
+    position: absolute;
     width: 64px;
     color: #c7322d;
     height: 120px;
@@ -4558,13 +4343,11 @@ font-size: 20px;
     border-left: 2px solid #fff;
     border-right: 2px solid #fff;
 }
-.sublinks a i {
-    margin-right: 5px;
-}
+
 .sublinks a {
     color: rgba(35, 31, 32, 0.5);
     white-space: nowrap;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 27px;
     margin-bottom: 10px;
 }
@@ -4817,7 +4600,7 @@ font-size: 20px;
     padding: 0;
     font-size: 20px;
     text-transform: uppercase;
-    font-weight: 400;margin-top: 10px;
+    font-weight: 400;
 }
 
 .dashboard-name-txt {
@@ -4894,10 +4677,8 @@ font-size: 20px;
 }
 
 .graph-txt {
-    font-size: 12px;
+    font-size: 14px;
     display: block;
-    font-weight: 600;
-    padding-top: 5px;
 }
 
 .circular-chart {
@@ -4937,12 +4718,11 @@ font-size: 20px;
 .circular-chart.blue .circle {
     stroke: #3c9ee5;
 }
-tspan {
-    font-family: 'Manrope' !important;
-}
+
 .percentage {
     fill: #2c3348;
-    font-size: 10px;
+    font-family: sans-serif;
+    font-size: 0.8em;
     text-anchor: middle;
 }
 
@@ -5737,7 +5517,7 @@ img.img-responsive {
 }
 
 .content-wrapper .container-fluid.pt-0 {
-    padding: 0px 22px 0px 5px;
+    padding: 0px 18px;
 }
 
 
@@ -5769,7 +5549,6 @@ img.img-responsive {
 span.fs-5.text-danger.text-uppercase {
     font-family: Manrope;
     color: #2c3348 !important;
-	font-weight: 600;
 }
 
 .planner-wrapper .d-flex.align-items-center.justify-content-between {
@@ -5879,9 +5658,6 @@ span#slide-input {
     border-radius: 18px;
     background-color: #d8e0e6;
     color: #2c3348;
-	font-size: 12px !important;
-    position: absolute;
-    top: 72px;
 }
 
 .planner-scroll.row.align-items-center.mb-4 {
@@ -5896,10 +5672,10 @@ span#slide-input {
     box-shadow: 0px 2px 5px 0px #a1def6;
     border-radius: 50%;
     background: #fff;
-    width: 25px;
-    height: 25px;
-    padding-left: 0px;
-    padding-top: 4px;
+    width: 20px;
+    height: 20px;
+    padding-left: 5px;
+    padding-top: 2px;
     color: #221f20;
 }
 
@@ -5945,12 +5721,11 @@ span#slide-input {
 
 .examSect div#myTabContent .tab-pane .question-block {
     padding: 15px 5rem;
-    position: relative;
 }
 
 .examSect div#myTabContent .tab-pane .question-block .arrow {
-    height: auto !important;
-    background: transparent !important;
+    height: 60px !important;
+	    background: transparent !important;
     border: none !important;
 }
 
@@ -5973,16 +5748,11 @@ span#slide-input {
 
 .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0 {
     border-radius: 20px !important;
-    background-color: #ededed !important;
-    color: #2c3348;
+    background-color: #00baff !important;
+    color: #fff;
     text-transform: none;
-    line-height:33px;
+    line-height: 29px;
     border: none;
-}
-.examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0:hover{
-background: #00baff !important;
-    color: #fff !important;
-	box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
 }
 
 .examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
@@ -6008,10 +5778,9 @@ background: #00baff !important;
     border-radius: 50px;
     width: 25px;
     height: 25px;
-    padding-left: 7px;
+    padding-left: 6px;
     font-size: 15px;
     color: #fff;
-    line-height: 23px;
 }
 
 .examSect {
@@ -6025,13 +5794,9 @@ background: #00baff !important;
     color: #fff;
     margin-bottom: 15px;
     padding: 13px 15px;
-    border: none !important;
+	border:none !important;
 }
-.reviewBox2 .col-10.heading h5 {
-    font-family: Manrope;
-    font-size: 16px;
-    font-weight: 600;
-}
+
 .examSect .rightSect .bg-white {
     padding: 26px !important;
     border-radius: 56px;
@@ -6041,7 +5806,7 @@ background: #00baff !important;
 
 .examSect .rightSectH {
     font-family: Manrope;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 

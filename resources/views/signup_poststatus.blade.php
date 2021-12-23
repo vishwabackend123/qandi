@@ -37,7 +37,7 @@
                         <input type="hidden" name="user_stand_value" id="user_stand_value" value="" />
                         <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
                         <div class="text-end mt-5">
-                            <button class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-next-btn">Go Next &gt;</button>
+                            <button class="btn btn-danger text-uppercase disbaled-btn rounded-0 px-5" id="goto-next-btn">Go Next &gt;</button>
                         </div>
                     </form>
                 </div>
@@ -63,6 +63,9 @@
     function user_stand(div_val, div_id) {
         $('.click-box').removeClass('active');
         $('#' + div_id).addClass('active');
+
+        $('#goto-next-btn').removeClass('disbaled-btn');
+        $('#goto-next-btn').addClass('active-btn');
 
         $('#user_stand_value').val(div_val);
         $('#errlog_alert').hide();

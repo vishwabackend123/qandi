@@ -7,7 +7,7 @@ $userData = Session::get('user_data');
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
-<div class="main-wrapper">
+<div class="main-wrapper dashboard">
 
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
@@ -149,7 +149,7 @@ $userData = Session::get('user_data');
                             <div class="row">
                                 <div class="col-lg-12 px-0">
                                     <p>Level up in</p>
-                                    <h3 class="chapter_name">{{$val->chapter_name}}</h3>
+                                    <h3 class="chapter_name" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
                                     <!-- <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
                                         </span></div> -->
                                 </div>
@@ -185,7 +185,7 @@ $userData = Session::get('user_data');
 </div>
 
 <!-- Modal -->
-
+@if($subjects_rating == null || empty($subjects_rating))
 <div class="modal fade" id="welcomeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -211,7 +211,7 @@ $userData = Session::get('user_data');
 </div>
 
 
-@if($subjects_rating == null || empty($subjects_rating))
+
 <div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -323,11 +323,10 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
 <script type="text/javascript">
     $(window).on('load', function() {
-
-        if (sessionStorage.getItem('firstVisit') != '1') {
+        if ($("#welcomeModal").length > 0) {
             $('#welcomeModal').modal('show');
         }
-        sessionStorage.setItem('firstVisit', '1');
+
     });
 
     $(".rating-input").click(function() {
@@ -338,7 +337,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     }); */
 
     function welcome_back() {
-        $('#welcomeModal').modal('hide');
+
 
         if ($("#favSubResponse").length > 0) {
             $("#favSubResponse").modal("show");

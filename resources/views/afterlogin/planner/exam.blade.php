@@ -411,8 +411,8 @@ $questtype='radio';
                     want to have a quick review before you Submit?
                 </p>
                 <div>
-                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
-                        Review
+                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
