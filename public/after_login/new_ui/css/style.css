@@ -51,7 +51,7 @@ button {
     padding-left: 11%;
 }
 
-.bg-white.shadow-lg.py-5{padding-top: 20px !important;}
+.bg-white.shadow-lg.py-5{padding-top: 20px !important; padding:15px;}
 #marks_trend_graph{padding-top:25px;}
 .subscrived .p-text {
     color: #00baff;
@@ -64,7 +64,7 @@ p.text-end.text-danger.mt-1 {
 .course-star li span{color: #2c3348;
 font-size: 16px;
 font-weight: 600;}
-.course-star li .star-ratings-css .star-ratings-css-bottom span{color:#c5c5c5!important;}
+.course-star li .star-ratings-css .star-ratings-css-bottom span{color:#e9e9e9 !important;}
 #scorecontainer, .seeAnico{padding-top:15px!important;}
 button.arrow.prev-arow{position: fixed;
 left: 8%;
@@ -2287,11 +2287,11 @@ button.save-btn {
 }
 
 .button-sec.mt-3 a {
-    font-size: 13px;
+    font-size: 14px;
     color: #2c3348;
     display: inline-block;
-    background: #e9e9e9;
-    padding: 10px 20px;
+    background: rgb(233 233 233 / 50%);
+    padding: 10px;
     border-radius: 10px;text-transform: uppercase;
 }
 
@@ -2319,14 +2319,21 @@ button.save-btn {
 }
 
 /** end here*/
+.pe-1 span.progress_text {
+    padding-left: 15px;
+}
+.testcompltd .test-attend.text-center.pt-2.pb-2 {
+    height: 138px;
+}
 .subject-scroll {
     height: 155px;
-    overflow: overlay;
+    overflow: overlay;width: 92%;
+    margin: 0 auto;margin-top: 10px;
 }
 
 .subject-scroll ul.course-star {
     overflow-x: auto;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 /** scrollbar css **/
@@ -2953,8 +2960,8 @@ p.tab-title {
     height:60px;
     border-radius: 20px !important;
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     color: #fff;
 }
 
@@ -3176,7 +3183,9 @@ p.tab-title {
 /** End css of live exam page css **/
 
 /*** main page css **/
-
+.py-5 .col-lg-7.col-sm-12.col-md-8 {
+    padding: 0px;
+}
 .prgress-i-txt {
     display: inline-block;
     width: 100%;
@@ -3203,22 +3212,21 @@ p.tab-title {
 
 .bg-white.shadow-lg {
     border-radius: 56px;
-    height: 275px;
+    height: 255px;
 }
-
 .live-test {
-    padding-left: 15px;
+    padding-left: 5px;
 }
 
 .live-test li {
     float: left;
     list-style: none;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .live-test li span {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     background: #00baff;
     margin-right: 5px;
     border-radius: 50%;
@@ -3255,13 +3263,13 @@ p.tab-title {
 }
 
 .course-star li strong {
-    width: 40%;
+    width: 45%;
     display: inline-block;
 }
 
 .star-img {
-    width: 42%;
-    display: inline-block;
+    width: 38%;
+    display: inline-block;text-align:center;
 }
 
 .star-img img {
@@ -3348,23 +3356,25 @@ p.tab-title {
 .ms-auto .text-secondary {
     color: #e9e9e9 !important;
 }
-
+.cust-gallery .swiper-slide.bg-white.swiper-slide-active {
+    width: 20% !important;
+}
 .custom-btn-gray {
     border: none;
     outline: none;
     width: 100%;
     height: 50px;
     color: #2c3348;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 20px;
     text-transform: uppercase;
     box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
     background-color: #e9e9e9;
+	font-weight:300;
 }
 
 .custom-btn-gray img {
-    margin-right: 10px;
-    width: 20px !important;
+    margin-right: 5px;
 }
 
 .cust-gallery {

@@ -17,7 +17,7 @@ $userData = Session::get('user_data');
         <div class="container-fluid pt-0">
 
             <div class="row">
-                <div class="col-xl-5 col-lg-8 col-md-8 col-sm-12">
+                <div class="col-xl-4 col-lg-8 col-md-8 col-sm-12">
                     <div class="bg-white shadow-lg py-5">
                         <div class="prgress-i-txt px-3 mb-1">
                             <span class="progress_text">Progress</span>
@@ -39,7 +39,7 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 p-0 text-center seeAnico">
-                                <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.jpg')}}" alt="image not find"></span>
+                                <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.png')}}" alt="image not find"></span>
                                 <div class="button-sec  mt-3"><a href="{{route('overall_analytics')}}">See Analytics</a></div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ $userData = Session::get('user_data');
 
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
                     <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt" style="overflow:hidden;">
                         <div class="prgress-i-txt px-3">
                             <span class="progress_text">Weekly Marks Trends</span>
@@ -161,7 +161,7 @@ $userData = Session::get('user_data');
                             </div>
                         </div>
                         @elseif($val->test_completed_yn=="Y")
-                        <div class="swiper-slide bg-white">
+                        <div class="swiper-slide bg-white testcompltd">
                             <div class="test-attend text-center pt-2 pb-2">
                                 <p>Tests Attempted</p>
                                 <div class="ms-auto">
