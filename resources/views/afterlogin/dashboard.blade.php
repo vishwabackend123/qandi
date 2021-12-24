@@ -337,7 +337,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     }); */
 
     function welcome_back() {
-
+        $('#welcomeModal').modal('hide');
 
         if ($("#favSubResponse").length > 0) {
             $("#favSubResponse").modal("show");
