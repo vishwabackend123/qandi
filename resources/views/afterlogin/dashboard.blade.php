@@ -599,12 +599,12 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
                 {
                     name: 'Inprogress',
                     y: <?php echo $inprogress; ?>,
-                    color: '#fc2f00c7'
+                    color: '#21ccff'
                 },
                 {
                     name: 'Progress',
                     y: <?php echo $progress; ?>,
-                    color: '#ffa81d'
+                    color: '#21ccff'
                 },
                 {
                     name: 'Others',

@@ -37,17 +37,21 @@ $user_id = $userData->id;
                 <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
                 @endif
             </h1>
-            <!-- <div id="scrollDiv"> -->
+            @if($errors->any())
             <div class="row">
-
-                @if($errors->any())
                 <div class="col-md-12 ">
                     <div class="alert alert-danger alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         {{$errors->first()}}
                     </div>
                 </div>
-                @endif
+            </div>
+            @endif
+            <!-- <div id="scrollDiv"> -->
+            <div class="row">
+
+
+
                 @if(isset($subscriptions) && !empty($subscriptions))
                 @if($suscription_status !=0)
                 @foreach($subscriptions as $sub)

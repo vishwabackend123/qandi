@@ -457,61 +457,10 @@
     <div class="account-wrapper new">
         <div class="profile-section">
             <ul>
-                <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar">
-				<svg id="Icon_Profile" data-name="Icon / Profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-			  <defs>
-				<style>
-				  .cls-1, .cls-2 {
-					fill: none;
-				  }
-
-				  .cls-2 {
-					stroke: #000;
-					stroke-linecap: round;
-					stroke-linejoin: round;
-					stroke-width: 1.5px;
-				  }
-				</style>
-			  </defs>
-			  <path id="Path_11495" data-name="Path 11495" class="cls-1" d="M0,0H24V24H0Z"/>
-			  <circle id="Ellipse_1968" data-name="Ellipse 1968" class="cls-2" cx="4" cy="4" r="4" transform="translate(8 3)"/>
-			  <path id="Path_11496" data-name="Path 11496" class="cls-2" d="M6,21V19a4,4,0,0,1,4-4h4a4,4,0,0,1,4,4v2"/>
-			</svg>
-			Account</a>
+                <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar"><span><i class="fa fa-user"></i></span> Account</a>
                 </li>
-                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar">
-				<svg id="Icon_Subscription" data-name="Icon / Subscription" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-      }
-    </style>
-  </defs>
-  <path id="Path_2294" data-name="Path 2294" class="cls-1" d="M0,0H24V24H0Z"/>
-  <path id="Rectangle_2366" data-name="Rectangle 2366" d="M3-.75H15A3.754,3.754,0,0,1,18.75,3v8A3.754,3.754,0,0,1,15,14.75H3A3.754,3.754,0,0,1-.75,11V3A3.754,3.754,0,0,1,3-.75Zm12,14A2.253,2.253,0,0,0,17.25,11V3A2.253,2.253,0,0,0,15,.75H3A2.253,2.253,0,0,0,.75,3v8A2.253,2.253,0,0,0,3,13.25Z" transform="translate(3 5)"/>
-  <path id="Line_330" data-name="Line 330" d="M18,.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H18a.75.75,0,0,1,.75.75A.75.75,0,0,1,18,.75Z" transform="translate(3 10)"/>
-  <path id="Line_331" data-name="Line 331" transform="translate(7 15)"/>
-  <path id="Line_332" data-name="Line 332" d="M2,.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H2A.75.75,0,0,1,2.75,0,.75.75,0,0,1,2,.75Z" transform="translate(11 15)"/>
-</svg>
-				Subscription</a></li>
-                <li><a href="javascript:void(0);" class="log-out-btn accountsidebar">
-<svg id="Icon_Logout" data-name="Icon / Logout" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-      }
-    </style>
-  </defs>
-  <g id="invisible_box" data-name="invisible box">
-    <rect id="Rectangle_2977" data-name="Rectangle 2977" class="cls-1" width="21" height="21"/>
-  </g>
-  <g id="icons_Q2" data-name="icons Q2" transform="translate(1.749 1.749)">
-    <path id="Path_2599" data-name="Path 2599" d="M21.488,20.614V4.874A.874.874,0,0,0,20.614,4H4.874A.874.874,0,0,0,4,4.874V7.061a.874.874,0,0,0,1.006.874.918.918,0,0,0,.743-.918V5.749H19.74V19.74H5.749V18.428a.874.874,0,0,0-1.006-.874A.918.918,0,0,0,4,18.472v2.142a.874.874,0,0,0,.874.874h15.74A.874.874,0,0,0,21.488,20.614Z" transform="translate(-4 -4)"/>
-    <path id="Path_2600" data-name="Path 2600" d="M12.088,22.357l3.891-3.935a.831.831,0,0,0,0-1.224l-3.891-3.935a.918.918,0,0,0-1.18-.087.831.831,0,0,0-.087,1.312l2.448,2.448H4.874a.874.874,0,1,0,0,1.749h8.395l-2.448,2.448a.831.831,0,0,0,.087,1.312.918.918,0,0,0,1.18-.087Z" transform="translate(-4 -9.066)"/>
-  </g>
-</svg> Log out</a></li>
+                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar"><span> <i class="fa fa-credit-card"></i> </span> Subscription</a></li>
+                <li><a href="javascript:void(0);" class="log-out-btn accountsidebar"><span> <i class="fa fa-sign-out"></i></span> Log out</a></li>
             </ul>
         </div>
         <!--profile-section-->

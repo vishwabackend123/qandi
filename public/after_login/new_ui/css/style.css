@@ -19,6 +19,33 @@ button {
     font-size: 14px;
     margin-bottom: 2px;
 }
+#editProfile_form .form-flds p {
+    text-align: right;
+}
+#profile_pic_form img {
+    width: 25px;
+}
+::-webkit-input-placeholder { /* Edge */
+  color: rgba(0, 0, 0, 0.16);;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  color: rgba(0, 0, 0, 0.16);;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.16);;
+}
+/* rahl css 25-12*/
+.profile-section ul li a .cls-1,
+ .profile-section ul li a .cls-2, 
+.profile-section ul li a .cls-3,
+ .profile-section ul li a .cls-4,
+ .profile-section ul li a .cls-5{opacity:1!important;}
+ .sublinks a:hover svg{opacity:1;}
+ .sublinks a svg{opacity:0.5;}
+/* end css */
+
 .exam-analytics .bg-white .row.py-4.mt-4.mb-5 {
     margin-bottom: 0px !important;
 }
@@ -1435,6 +1462,7 @@ button.percentage-digit {
     display: flex;
     width: 100%;
     border-left: 5px solid #eee;
+	overflow-x: auto;
 }
 
 .rview-quses li span {
@@ -1906,13 +1934,12 @@ div#sub-planner {
 
 .profile-picture-txt .p-picture {
     float: left;
-    width: 18%;
-    border: 1px solid #5ebbfe;
+    width: 70px;
+    border: 2px solid #5ebbfe;
     border-radius: 50%;
-    height: 60px;
+    height: 70px;
     text-align: center;
     overflow: hidden;
-    /*     padding-top: 13px; commented by Dinesh */
 }
 
 .profile-picture-txt {
@@ -2043,7 +2070,10 @@ div#sub-planner {
 .btm-form-flds {
     width: 100%;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 0px;
+}
+.leader-board.right-sidebar .edit-form .slimScrollDiv {
+    margin-top: 25px;
 }
 
 .btm-form-flds .form-flds {
@@ -2102,15 +2132,15 @@ button.save-btn {
     border-radius: 56px;
     padding: 15px 20px 15px 25px;
     position: absolute;
-    right: 300px;
+    right: 320px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
 }
 
-.subscription .profile-picture-txt .p-picture {
+/* .subscription .profile-picture-txt .p-picture {
     height: 100px;
-}
+} */
 
 .subscription .profile-picture-txt {
     padding: 20px 0px;
@@ -2177,7 +2207,7 @@ button.save-btn {
     border-radius: 56px;
     padding: 40px 20px 40px 25px;
     position: absolute;
-    right: 300px;
+    right: 320px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2223,6 +2253,7 @@ button.save-btn {
 
 .profile-picture-txt .p-picture img {
     width: 100%;
+    height: 100%;
 }
 
 /** end here **/
@@ -2762,7 +2793,7 @@ span.bell-noti {
     border-radius: 56px;
     padding: 15px;
     position: absolute;
-    right: 300px;
+    right: 320px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2828,7 +2859,7 @@ span.profile-img-user {
     width: 60px;
     height: 60px;
     overflow: hidden;
-    border: 1px solid #4cb9f9;
+    border: 2px solid #4cb9f9;
     border-radius: 50%;
     text-align: center;
     padding-top: 14px;
@@ -5792,7 +5823,7 @@ a#close-edit-planner-btn img {
     box-shadow: 0px 0px 5px 1px #b8b8b8;
     border-radius: 50%;
     width: 25px;
-    height: 25px;
+    height: 25px; padding:2px;
 }
 
 a#edit-planner-btn,

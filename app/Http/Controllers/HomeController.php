@@ -192,6 +192,7 @@ class HomeController extends Controller
             $planner = [];
         }
 
+
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
 
