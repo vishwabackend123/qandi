@@ -28,7 +28,7 @@ button.PayBttn.btn:hover {
 margin: 0 auto;
 text-align: center;}
 .subScrip .row{display: inline-block;}
-.subScrip .row .col-md-4{display: inline-block;max-width: 32.333%;}
+.subScrip .row .col-md-4{display: inline-flex;max-width: 32.333%;}
 
 .subScrip .row button#goto-otp-btn:hover{background-color:00baff!important;background-image:none;}
 .subScrip .row button#goto-otp-btn{height:60px;color:#FFF;}

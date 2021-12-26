@@ -36,6 +36,10 @@ button {
 ::placeholder {
   color: rgba(0, 0, 0, 0.16);;
 }
+.test-attend a.text-secondary.ms-2 {
+    margin-left: 5px !important;
+}
+
 /* rahl css 25-12*/
 .profile-section ul li a .cls-1,
  .profile-section ul li a .cls-2, 
@@ -1924,7 +1928,7 @@ div#sub-planner {
 .profile-show {
     position: absolute;
     top: 0px;
-    left: -100%;
+    left: -90%;
     width: 100%;
     background: #fff;
     padding: 10px 15px;
@@ -1934,10 +1938,10 @@ div#sub-planner {
 
 .profile-picture-txt .p-picture {
     float: left;
-    width: 70px;
+    width: 80px;
     border: 2px solid #5ebbfe;
     border-radius: 50%;
-    height: 70px;
+    height: 80px;
     text-align: center;
     overflow: hidden;
 }
@@ -2666,7 +2670,7 @@ button#goto-exam-btn {
     background: #fff;
     border-radius: 36px;
     box-shadow: 0 1px 30px 0 rgb(0 0 0 / 5%);
-    padding: 24px;
+    padding: 24px;margin-right: 15px;
 }
 
 .notification-txt span.text-notific {
@@ -2785,10 +2789,13 @@ span.bell-noti {
     font-weight: normal;
     opacity: 0.5;
 }
+span.profile-digit {
+    padding-top: 10px !important;
+}
 
 .leader-board {
-    width: 400px;
-    height: 100%;
+    width: 425px;
+    height: max-content;
     background: #fff;
     border-radius: 56px;
     padding: 15px;
@@ -2797,6 +2804,10 @@ span.bell-noti {
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding-left: 60px;
+    min-height: 650px;
 }
 
 .leader-board h4 {
@@ -2826,12 +2837,12 @@ span.bell-noti {
 .leader-board ul li {
     list-style: none;
     display: flex;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .leader-board ul li span {
     display: inline-block;
-    padding-top: 14px;
+    padding-top: 0px;
 }
 
 .leader-board ul li span h3 {
@@ -2850,14 +2861,14 @@ span.bell-noti {
 }
 
 span.profile-digit {
-    font-size: 24px;
+    font-size: 20px;
     color: #2c3348;
     margin-right: 20px;
 }
 
 span.profile-img-user {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     overflow: hidden;
     border: 2px solid #4cb9f9;
     border-radius: 50%;
@@ -2870,8 +2881,9 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 450px;
+    height: 300px;
     overflow: overlay;
+    margin-top: 20px;
 }
 
 /** scrollbar css **/
@@ -3660,7 +3672,7 @@ color: #000 !important;
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 99999;
 }
 
 .dash-nav-link {
@@ -3668,7 +3680,9 @@ color: #000 !important;
     display: flex;
     flex-direction: column;
 }
-
+.status-id.rating {
+    width: 5%;
+}
 .dash-nav-link a {
     display: block;
     position: relative;
@@ -4411,11 +4425,13 @@ font-size: 20px;
     line-height: 27px;
     margin-left: 30px;
 }
-
+ .tiny-green {
+        margin-right: 30px;
+    }
 .base-timer {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 /* scaleX(1) = CLOCKWISE, scaleX(-1) = ANTI-CLOCKWISE */
@@ -4460,6 +4476,7 @@ font-size: 20px;
     justify-content: center;
     font-size: 48px;*/
     width: 80px;
+	    font-weight: 600;
 }
 
 .watch-icon {
@@ -4488,7 +4505,13 @@ font-size: 20px;
     color: #2c3348;
     position: relative;
     padding-left: 50px;
+	padding-top: 12px !important;
+    padding-bottom: 12px !important;line-height:20px;
 }
+.question-block label.question p {
+    margin-bottom: 2px;
+}
+
 
 .q-no {
     position: absolute;
@@ -5141,7 +5164,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 99999;
+    z-index: 999;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -5932,9 +5955,16 @@ span#slide-input {
 /*end Planner screen */
 
 /* Test screen css 30-Nov */
+#exam_result_analysis .cust-tabs a#Physics_tab_subject.active:nth-child(1):after {
+    left: -60px;
+    width: 60px;
+    background: url(/public/after_login/new_ui/images/after-img.png);
+    background-color: transparent;
+    border-top-left-radius: 56px;
+}
 
 .examSect .question-block i.fa {
-    box-shadow: 0px 2px 5px 0px #a1def6;
+    box-shadow: 0px 0px 10px 2px #a1def6;
     border-radius: 50%;
     background: #fff;
     width: 25px;
@@ -6295,7 +6325,7 @@ background: #00baff !important;
     .leader-board,
     .subscription,
     .log-out-screen {
-        right: 25%;
+        right: 320px;
     }
 }
 
@@ -6304,7 +6334,8 @@ background: #00baff !important;
     .leader-board,
     .subscription,
     .log-out-screen {
-        right: 27%;
+        right: 320px;
+		
     }
 }
 
@@ -6320,6 +6351,17 @@ background: #00baff !important;
 }
 
 @media(min-width:992px) and (max-width:1280px) {
+button.arrow.prev-arow {
+    left: 3% !important;
+    top: 25% !important;
+}
+button.arrow.next-arow {
+    right: 26.8% !important;
+    top: 25% !important;
+}
+.time_taken_css {
+    margin-right: 25px !important;
+}
 
     /*Test screen */
     .examSect {
@@ -6332,10 +6374,11 @@ background: #00baff !important;
 
     .examSect div#myTabContent .tab-pane .question-block {
         padding: 15px 2rem;
+		margin-right:40px;
     }
 
     .examSect .question {
-        padding-left: 30px;
+        padding-left: 45px;
         font-family: Manrope;
         font-size: 14px;
     }
@@ -6345,7 +6388,7 @@ background: #00baff !important;
     }
 
     .examSect .rightSect .number-block {
-        height: 30vh !important;
+        height: 100% !important;
     }
 
     /* test screen ed*/
