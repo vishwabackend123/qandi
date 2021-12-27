@@ -143,6 +143,7 @@ $userData = Session::get('user_data');
 
                         </div>
                         @if(isset($planner) && !empty($planner))
+
                         @foreach($planner as $key=>$val)
                         @if($val->test_completed_yn=="N")
                         <div class="swiper-slide bg-white">
@@ -155,9 +156,18 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="sign-btn">
-                                <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
+                                <form action="{{route('planner_exam',[$val->id,$val->chapter_id])}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="chapter_name" value="{{$val->chapter_name}}">
+                                    <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
+                                    <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
+                                    <button type="submit" class="btn btn-primary active-btn text-uppercase">
                                         <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
-                                </a>
+
+                                    <!--  <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
+                                            <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
+                                    </a> -->
+                                </form>
                             </div>
                         </div>
                         @elseif($val->test_completed_yn=="Y")

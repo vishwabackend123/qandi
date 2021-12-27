@@ -371,11 +371,11 @@ trait CommonTrait
         $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
 
 
-        $cacheKey = 'exam_subjects_chapters:' . $subject_id;
+        /*  $cacheKey = 'exam_subjects_chapters:' . $subject_id;
         if ($data = Redis::get($cacheKey)) {
             $chapter_list = json_decode($data);
             return $chapter_list;
-        }
+        } */
 
         $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $subject_id;
 
@@ -400,9 +400,9 @@ trait CommonTrait
             $responsedata = json_decode($response_json);
 
             $chapter_list = $responsedata->response;
-            if (!empty($chapter_list)) {
+            /*  if (!empty($chapter_list)) {
                 Redis::set($cacheKey, json_encode($chapter_list));
-            }
+            } */
         } else {
             $chapter_list = [];
         }

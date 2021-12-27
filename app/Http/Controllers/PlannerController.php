@@ -197,6 +197,7 @@ class PlannerController extends Controller
         $question_count = isset($request->question_count) ? $request->question_count : 30;
         $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
+        $chapter_name = isset($request->chapter_name) ? $request->chapter_name : '';
         $select_topic = isset($request->topics) ? (explode(",", $request->topics)) : [];
 
 
@@ -330,7 +331,8 @@ class PlannerController extends Controller
         $test_type = 'Planner';
         $exam_type = 'P';
 
-        return view('afterlogin.planner.exam', compact('planner_id', 'question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
+
+        return view('afterlogin.planner.exam', compact('planner_id', 'chapter_name', 'question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
     }
 
 

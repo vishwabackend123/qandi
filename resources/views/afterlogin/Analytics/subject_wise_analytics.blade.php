@@ -953,17 +953,20 @@
             data: [{
                     name: 'Score',
                     y: <?php print_r($scoreArray['score']); ?>,
-                    color: '#ffdc34' // Jane's color
+                    color: '#21ccff'
+                    /*  color: '#ffdc34' // Jane's color */
                 },
                 {
                     name: 'Inprogress',
                     y: <?php print_r($scoreArray['inprogress']); ?>,
-                    color: '#fc2f00c7' // Jane's color
+                    color: '#21ccff'
+                    /* color: '#fc2f00c7' // Jane's color */
                 },
                 {
                     name: 'Progress',
                     y: <?php print_r($scoreArray['progress']); ?>,
-                    color: '#ffa81d' // Jane's color
+                    color: '#21ccff'
+                    /* color: '#ffa81d' // Jane's color */
                 },
                 {
                     name: 'Others',
