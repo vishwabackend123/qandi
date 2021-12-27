@@ -29,20 +29,17 @@ class AnalyticsController extends Controller
     {
 
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
-
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
 
-        $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/analytics/overall-analytics/' . $user_id;
+        $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $curl_url,
+            CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -52,200 +49,194 @@ class AnalyticsController extends Controller
             CURLOPT_CUSTOMREQUEST => 'GET',
         ));
 
-        $overallAnalytics = curl_exec($curl);
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $response = json_decode($response);
+        $mockTestScoreCurr = 0;
+        $mockTestScorePre = 0;
+        $subProf = [];
+        if ($response->success === true):
+            $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
+            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+            $subProf = json_decode($response->subject_proficiency);
+        endif;
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-graph/' . $user_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
         curl_close($curl);
 
-        $overallAnalytics = json_decode($overallAnalytics);
-        $res_status = isset($overallAnalytics->success) ? $overallAnalytics->success : false;
+        $overallAnalytics = json_decode($response);
+        $dailyReport = (isset($overallAnalytics->daily_report) && !empty($overallAnalytics->daily_report)) ? json_decode($overallAnalytics->daily_report) : [];
+        $weeklyReport = (isset($overallAnalytics->weekly_report) && !empty($overallAnalytics->weekly_report)) ? json_decode($overallAnalytics->weekly_report) : [];
+        $monthlyReport = (isset($overallAnalytics->monthlyReport) && !empty($overallAnalytics->monthlyReport)) ? json_decode($overallAnalytics->monthlyReport) : [];
 
-        if ($res_status == true) :
-            $scoreData = isset($overallAnalytics->test_score) ? $overallAnalytics->test_score : [];
+        $date1 = [];
+        $correctTime1 = [];
+        $incorrectTime1 = [];
+        foreach ($dailyReport as $val) {
+            array_push($date1, date('d-m', strtotime($val->date)));
+            $parsed = number_format($val->time_spent_on_correct_ques, 3);
+            array_push($correctTime1, (float)$parsed);
+            /* $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
+            array_push($incorrectTime1, (float)$inparsed);
+        }
+        $date1 = json_encode($date1);
+        $correctTime1 = json_encode($correctTime1);
+        $incorrectTime1 = json_encode($incorrectTime1);
 
-            $dailyReport = json_decode($overallAnalytics->daily_report);
-            $weeklyReport = json_decode($overallAnalytics->weekly_report);
-            $monthlyReport = json_decode($overallAnalytics->monthlyReport);
-            $subProf = json_decode($overallAnalytics->subject_proficiency);
-            $accuracy = json_decode($overallAnalytics->accuracy);
-            $timeSpent = json_decode($overallAnalytics->time_taken);
+        $date2 = [];
+        $correctTime2 = [];
+        $incorrectTime2 = [];
+        foreach ($weeklyReport as $val) {
+            array_push($date2, date('d-m', strtotime($val->date)));
+            /*  $parsed = date_parse($val->time_spent_on_correct_ques);
+            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $parsed = number_format($val->time_spent_on_correct_ques, 3);
+            array_push($correctTime2, (float)$parsed);
+            /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
+            array_push($incorrectTime2, (float)$inparsed);
+        }
+        $date2 = json_encode($date2);
+        $correctTime2 = json_encode($correctTime2);
+        $incorrectTime2 = json_encode($incorrectTime2);
 
-            // dd($dailyReport, $weeklyReport, $monthlyReport);
-
-
-            $previous_score_per = $corrent_score_per = $diff_score_per = 0;
-            if (isset($scoreData) && !empty($scoreData)) {
-                $corrent_score_per = isset($scoreData[0]->result_percentage) ? $scoreData[0]->result_percentage : 0;
-                $previous_score_per = isset($scoreData[1]->result_percentage) ? $scoreData[1]->result_percentage : 0;
-                $diff_score_per = $corrent_score_per - $previous_score_per;
-            }
-
-            $scoreArray = [];
-            if ($diff_score_per >= 0) {
-                $score = isset($previous_score_per) ? $previous_score_per : 0;
-                $progress = isset($diff_score_per) ? $diff_score_per : 0;
-                $inprogress = 0;
-                $others = 100 - ($score + $progress);
-
-                $scoreArray['score'] = $score;
-                $scoreArray['progress'] = $progress;
-                $scoreArray['inprogress'] = $inprogress;
-                $scoreArray['others'] = $others;
-            } else {
-                $score = isset($corrent_score_per) ? $corrent_score_per : 0;
-                $inprogress = isset($diff_score_per) ? $diff_score_per : 0;
-                $progress = 0;
-                $others = 100 - ($score + $progress);
-
-                $scoreArray['score'] = $score;
-                $scoreArray['progress'] = $progress;
-                $scoreArray['inprogress'] = $inprogress;
-                $scoreArray['others'] = $others;
-            }
-
-
-
-            $date1 = [];
-            $correctTime1 = [];
-            $incorrectTime1 = [];
-            foreach ($dailyReport as $val) {
-                array_push($date1, date('d-m', strtotime($val->date)));
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime1, (float)$parsed);
-                /* $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime1, (float)$inparsed);
-            }
-            $date1 = json_encode($date1);
-            $correctTime1 = json_encode($correctTime1);
-            $incorrectTime1 = json_encode($incorrectTime1);
-
-            $date2 = [];
-            $correctTime2 = [];
-            $incorrectTime2 = [];
-            foreach ($weeklyReport as $val) {
-                array_push($date2, date('d-m', strtotime($val->date)));
-                /*  $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime2, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime2, (float)$inparsed);
-            }
-            $date2 = json_encode($date2);
-            $correctTime2 = json_encode($correctTime2);
-            $incorrectTime2 = json_encode($incorrectTime2);
-
-            $date3 = [];
-            $correctTime3 = [];
-            $incorrectTime3 = [];
-            foreach ($monthlyReport as $val) {
-                array_push($date3, date('d-m', strtotime($val->date)));
-                /* $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime3, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime3, (float)$inparsed);
-            }
-            $date3 = json_encode($date3);
-            $correctTime3 = json_encode($correctTime3);
-            $incorrectTime3 = json_encode($incorrectTime3);
+        $date3 = [];
+        $correctTime3 = [];
+        $incorrectTime3 = [];
+        foreach ($monthlyReport as $val) {
+            array_push($date3, date('d-m', strtotime($val->date)));
+            /* $parsed = date_parse($val->time_spent_on_correct_ques);
+            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $parsed = number_format($val->time_spent_on_correct_ques, 3);
+            array_push($correctTime3, (float)$parsed);
+            /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
+            array_push($incorrectTime3, (float)$inparsed);
+        }
+        $date3 = json_encode($date3);
+        $correctTime3 = json_encode($correctTime3);
+        $incorrectTime3 = json_encode($incorrectTime3);
 
 
-            $correctAns1 = [];
-            $incorrectAns1 = [];
-            foreach ($dailyReport as $val) {
-                array_push($correctAns1, $val->correct_ans);
-                array_push($incorrectAns1, $val->incorrect_ans);
-            }
+        $correctAns1 = [];
+        $incorrectAns1 = [];
+        foreach ($dailyReport as $val) {
+            array_push($correctAns1, $val->correct_ans);
+            array_push($incorrectAns1, $val->incorrect_ans);
+        }
 
-            $correctAns1 = json_encode($correctAns1);
+        $correctAns1 = json_encode($correctAns1);
 
-            $incorrectAns1 = json_encode($incorrectAns1);
+        $incorrectAns1 = json_encode($incorrectAns1);
 
-            $correctAns2 = [];
-            $incorrectAns2 = [];
-            foreach ($weeklyReport as $val) {
-                array_push($correctAns2, $val->correct_ans);
-                array_push($incorrectAns2, $val->incorrect_ans);
-            }
-            $correctAns2 = json_encode($correctAns2);
-            $incorrectAns2 = json_encode($incorrectAns2);
+        $correctAns2 = [];
+        $incorrectAns2 = [];
+        foreach ($weeklyReport as $val) {
+            array_push($correctAns2, $val->correct_ans);
+            array_push($incorrectAns2, $val->incorrect_ans);
+        }
+        $correctAns2 = json_encode($correctAns2);
+        $incorrectAns2 = json_encode($incorrectAns2);
 
-            $correctAns3 = [];
-            $incorrectAns3 = [];
-            foreach ($monthlyReport as $val) {
-                array_push($correctAns3, $val->correct_ans);
-                array_push($incorrectAns3, $val->incorrect_ans);
-            }
-            $correctAns3 = json_encode($correctAns3);
-            $incorrectAns3 = json_encode($incorrectAns3);
+        $correctAns3 = [];
+        $incorrectAns3 = [];
+        foreach ($monthlyReport as $val) {
+            array_push($correctAns3, $val->correct_ans);
+            array_push($incorrectAns3, $val->incorrect_ans);
+        }
+        $correctAns3 = json_encode($correctAns3);
+        $incorrectAns3 = json_encode($incorrectAns3);
 
-            $day = [];
-            $classAcc = [];
-            $stuAcc = [];
-            foreach ($accuracy as $val) {
-                array_push($day, $val->dateDay);
-                array_push($classAcc, $val->class_accuracy);
-                array_push($stuAcc, $val->student_accuracy);
-            }
-            $day = json_encode($day);
-            $classAcc = json_encode($classAcc);
-            $stuAcc = json_encode($stuAcc);
+        $curl = curl_init();
 
-            $days = [];
-            $classAccuracy = [];
-            $stuAccuracy = [];
-            foreach ($timeSpent as $val) {
-                array_push($days, $val->dateDay);
-                array_push($classAccuracy, $val->class_time_taken);
-                array_push($stuAccuracy, $val->student_time_taken);
-            }
-            $days = json_encode($days);
-            $classAccuracy = json_encode($classAccuracy);
-            $stuAccuracy = json_encode($stuAccuracy);
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-accuracy-timetaken/' . $user_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
 
+        $response = curl_exec($curl);
 
-            return view('afterlogin.Analytics.overall_analytics', compact(
-                'active_id',
-                'days',
-                'classAccuracy',
-                'stuAccuracy',
-                'day',
-                'classAcc',
-                'stuAcc',
-                'subProf',
-                'correctAns1',
-                'incorrectAns1',
-                'correctAns2',
-                'incorrectAns2',
-                'correctAns3',
-                'incorrectAns3',
-                'date1',
-                'correctTime1',
-                'incorrectTime1',
-                'date2',
-                'correctTime2',
-                'incorrectTime2',
-                'date3',
-                'correctTime3',
-                'incorrectTime3',
-                'corrent_score_per',
-                'score',
-                'inprogress',
-                'progress',
-                'others',
-                'scoreArray',
-                'user_subjects'
-            ));
-        else :
-            return redirect()->route('dashboard')->with('error', 'Please appear in exam before checking analytics.');
-        //return redirect-route('')->with('error', 'Please appear in exam before checking analytics. ');
-        endif;
+        curl_close($curl);
+        $response = json_decode($response);
+        $accuracy = json_decode($response->accuracy);
+        $timeSpent = json_decode($response->time_taken);
+        $day = [];
+        $classAcc = [];
+        $stuAcc = [];
+        foreach ($accuracy as $val) {
+            array_push($day, $val->dateDay);
+            array_push($classAcc, $val->class_accuracy);
+            array_push($stuAcc, $val->student_accuracy);
+        }
+        $day = json_encode($day);
+        $classAcc = json_encode($classAcc);
+        $stuAcc = json_encode($stuAcc);
+
+        $days = [];
+        $classAccuracy = [];
+        $stuAccuracy = [];
+        foreach ($timeSpent as $val) {
+            array_push($days, $val->dateDay);
+            array_push($classAccuracy, $val->class_time_taken);
+            array_push($stuAccuracy, $val->student_time_taken);
+        }
+        $days = json_encode($days);
+        $classAccuracy = json_encode($classAccuracy);
+        $stuAccuracy = json_encode($stuAccuracy);
+
+        return view('afterlogin.Analytics.overall_analytics', compact(
+            'active_id',
+            'user_subjects',
+            'mockTestScoreCurr',
+            'mockTestScorePre',
+            'subProf',
+            'date1',
+            'date2',
+            'date3',
+            'days',
+            'correctTime1',
+            'incorrectTime1',
+            'correctTime2',
+            'incorrectTime2',
+            'correctTime3',
+            'incorrectTime3',
+            'correctAns1',
+            'incorrectAns1',
+            'correctAns2',
+            'incorrectAns2',
+            'correctAns3',
+            'incorrectAns3',
+            'classAccuracy',
+            'stuAccuracy',
+            'day',
+            'classAcc',
+            'stuAcc'
+        ));
     }
 
     public function export_analytics(Request $request)
@@ -258,15 +249,12 @@ class AnalyticsController extends Controller
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
 
-
-
-        $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/analytics/overall-analytics/' . $user_id;
+        $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $curl_url,
+            CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -276,161 +264,187 @@ class AnalyticsController extends Controller
             CURLOPT_CUSTOMREQUEST => 'GET',
         ));
 
-        $overallAnalytics = curl_exec($curl);
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $response = json_decode($response);
+        $mockTestScoreCurr = 0;
+        $mockTestScorePre = 0;
+        $subProf = [];
+        if ($response->success === true):
+            $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
+            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+            $subProf = json_decode($response->subject_proficiency);
+        endif;
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-graph/' . $user_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
         curl_close($curl);
 
-        $overallAnalytics = json_decode($overallAnalytics);
-        $res_status = isset($overallAnalytics->success) ? $overallAnalytics->success : false;
+        $overallAnalytics = json_decode($response);
+        $dailyReport = json_decode($overallAnalytics->daily_report);
+        $weeklyReport = json_decode($overallAnalytics->weekly_report);
+        $monthlyReport = json_decode($overallAnalytics->monthlyReport);
+
+        $date1 = [];
+        $correctTime1 = [];
+        $incorrectTime1 = [];
+        foreach ($dailyReport as $val) {
+            array_push($date1, date('d-m', strtotime($val->date)));
+            $parsed = number_format($val->time_spent_on_correct_ques, 3);
+            array_push($correctTime1, (float)$parsed);
+            /* $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
+            array_push($incorrectTime1, (float)$inparsed);
+        }
+        $date1 = json_encode($date1);
+        $correctTime1 = json_encode($correctTime1);
+        $incorrectTime1 = json_encode($incorrectTime1);
+
+        $date2 = [];
+        $correctTime2 = [];
+        $incorrectTime2 = [];
+        foreach ($weeklyReport as $val) {
+            array_push($date2, date('d-m', strtotime($val->date)));
+            /*  $parsed = date_parse($val->time_spent_on_correct_ques);
+            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $parsed = number_format($val->time_spent_on_correct_ques, 3);
+            array_push($correctTime2, (float)$parsed);
+            /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
+            array_push($incorrectTime2, (float)$inparsed);
+        }
+        $date2 = json_encode($date2);
+        $correctTime2 = json_encode($correctTime2);
+        $incorrectTime2 = json_encode($incorrectTime2);
+
+        $date3 = [];
+        $correctTime3 = [];
+        $incorrectTime3 = [];
+        foreach ($monthlyReport as $val) {
+            array_push($date3, date('d-m', strtotime($val->date)));
+            /* $parsed = date_parse($val->time_spent_on_correct_ques);
+            $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $parsed = number_format($val->time_spent_on_correct_ques, 3);
+            array_push($correctTime3, (float)$parsed);
+            /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
+            $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
+            $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
+            array_push($incorrectTime3, (float)$inparsed);
+        }
+        $date3 = json_encode($date3);
+        $correctTime3 = json_encode($correctTime3);
+        $incorrectTime3 = json_encode($incorrectTime3);
 
 
+        $correctAns1 = [];
+        $incorrectAns1 = [];
+        foreach ($dailyReport as $val) {
+            array_push($correctAns1, $val->correct_ans);
+            array_push($incorrectAns1, $val->incorrect_ans);
+        }
 
-        if ($res_status == true) :
-            $scoreData = isset($overallAnalytics->test_score) ? $overallAnalytics->test_score : [];
+        $correctAns1 = json_encode($correctAns1);
 
+        $incorrectAns1 = json_encode($incorrectAns1);
 
+        $correctAns2 = [];
+        $incorrectAns2 = [];
+        foreach ($weeklyReport as $val) {
+            array_push($correctAns2, $val->correct_ans);
+            array_push($incorrectAns2, $val->incorrect_ans);
+        }
+        $correctAns2 = json_encode($correctAns2);
+        $incorrectAns2 = json_encode($incorrectAns2);
 
-            $dailyReport = json_decode($overallAnalytics->daily_report);
-            $weeklyReport = json_decode($overallAnalytics->weekly_report);
-            $monthlyReport = json_decode($overallAnalytics->monthlyReport);
-            $subProf = json_decode($overallAnalytics->subject_proficiency);
-            $unitProf = $overallAnalytics->unit_proficiency;
-            $unitProf = collect(array_values($unitProf));
+        $correctAns3 = [];
+        $incorrectAns3 = [];
+        foreach ($monthlyReport as $val) {
+            array_push($correctAns3, $val->correct_ans);
+            array_push($incorrectAns3, $val->incorrect_ans);
+        }
+        $correctAns3 = json_encode($correctAns3);
+        $incorrectAns3 = json_encode($incorrectAns3);
 
+        $curl = curl_init();
 
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-accuracy-timetaken/' . $user_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
 
-            $subProf_collection = collect($subProf);
-            $overall_prof_perc = $subProf_collection->sum('score');
-            $accuracy = json_decode($overallAnalytics->accuracy);
-            $timeSpent = json_decode($overallAnalytics->time_taken);
+        $response = curl_exec($curl);
 
+        curl_close($curl);
+        $response = json_decode($response);
+        $accuracy = json_decode($response->accuracy);
+        $timeSpent = json_decode($response->time_taken);
+        $day = [];
+        $classAcc = [];
+        $stuAcc = [];
+        foreach ($accuracy as $val) {
+            array_push($day, $val->dateDay);
+            array_push($classAcc, $val->class_accuracy);
+            array_push($stuAcc, $val->student_accuracy);
+        }
+        $day = json_encode($day);
+        $classAcc = json_encode($classAcc);
+        $stuAcc = json_encode($stuAcc);
 
-            $previous_score_per = $corrent_score_per = $diff_score_per = 0;
-            if (isset($scoreData) && !empty($scoreData)) {
-                $corrent_score_per = isset($scoreData[0]->result_percentage) ? $scoreData[0]->result_percentage : 0;
-                $previous_score_per = isset($scoreData[1]->result_percentage) ? $scoreData[1]->result_percentage : 0;
-                $diff_score_per = $corrent_score_per - $previous_score_per;
-            }
+        $days = [];
+        $classAccuracy = [];
+        $stuAccuracy = [];
+        foreach ($timeSpent as $val) {
+            array_push($days, $val->dateDay);
+            array_push($classAccuracy, $val->class_time_taken);
+            array_push($stuAccuracy, $val->student_time_taken);
+        }
+        $days = json_encode($days);
+        $classAccuracy = json_encode($classAccuracy);
+        $stuAccuracy = json_encode($stuAccuracy);
 
-            if ($diff_score_per >= 0) {
-                $score = isset($previous_score_per) ? $previous_score_per : 0;
-                $progress = isset($diff_score_per) ? $diff_score_per : 0;
-                $inprogress = 0;
-                $others = 100 - ($score + $progress);
-            } else {
-                $score = isset($corrent_score_per) ? $corrent_score_per : 0;
-                $inprogress = isset($diff_score_per) ? $diff_score_per : 0;
-                $progress = 0;
-                $others = 100 - ($score + $progress);
-            }
+        $curl = curl_init();
 
-            $date1 = [];
-            $correctTime1 = [];
-            $incorrectTime1 = [];
-            foreach ($dailyReport as $val) {
-                array_push($date1, date('d-m', strtotime($val->date)));
-                /*  $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second'];
-                array_push($correctTime1, $correctTimeSeconds); */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime1, (float)$parsed);
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/export-analytics-extra/' . $user_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
 
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime1, (float)$inparsed);
-            }
-            $date1 = json_encode($date1);
-            $correctTime1 = json_encode($correctTime1);
-            $incorrectTime1 = json_encode($incorrectTime1);
+        $response = curl_exec($curl);
 
-            $date2 = [];
-            $correctTime2 = [];
-            $incorrectTime2 = [];
-            foreach ($weeklyReport as $val) {
-                array_push($date2, date('d-m', strtotime($val->date)));
-
-                /* $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime2, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime2, (float)$inparsed);
-            }
-            $date2 = json_encode($date2);
-            $correctTime2 = json_encode($correctTime2);
-            $incorrectTime2 = json_encode($incorrectTime2);
-
-            $date3 = [];
-            $correctTime3 = [];
-            $incorrectTime3 = [];
-            foreach ($monthlyReport as $val) {
-                array_push($date3, date('d-m', strtotime($val->date)));
-                /* $parsed = date_parse($val->time_spent_on_correct_ques);
-                $correctTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $parsed = number_format($val->time_spent_on_correct_ques, 3);
-                array_push($correctTime3, (float)$parsed);
-                /*  $parsed = date_parse($val->time_spent_on_incorrect_ques);
-                $incorrectTimeSeconds = $parsed['hour'] * 3600 + $parsed['minute'] * 60 + $parsed['second']; */
-                $inparsed = number_format($val->time_spent_on_incorrect_ques, 3);
-                array_push($incorrectTime3, (float)$inparsed);
-            }
-            $date3 = json_encode($date3);
-            $correctTime3 = json_encode($correctTime3);
-            $incorrectTime3 = json_encode($incorrectTime3);
-
-
-            $correctAns1 = [];
-            $incorrectAns1 = [];
-            foreach ($dailyReport as $val) {
-                array_push($correctAns1, $val->correct_ans);
-                array_push($incorrectAns1, $val->incorrect_ans);
-            }
-            $correctAns1 = json_encode($correctAns1);
-            $incorrectAns1 = json_encode($incorrectAns1);
-
-            $correctAns2 = [];
-            $incorrectAns2 = [];
-            foreach ($weeklyReport as $val) {
-                array_push($correctAns2, $val->correct_ans);
-                array_push($incorrectAns2, $val->incorrect_ans);
-            }
-            $correctAns2 = json_encode($correctAns2);
-            $incorrectAns2 = json_encode($incorrectAns2);
-
-            $correctAns3 = [];
-            $incorrectAns3 = [];
-            foreach ($monthlyReport as $val) {
-                array_push($correctAns3, $val->correct_ans);
-                array_push($incorrectAns3, $val->incorrect_ans);
-            }
-            $correctAns3 = json_encode($correctAns3);
-            $incorrectAns3 = json_encode($incorrectAns3);
-
-            $day = [];
-            $classAcc = [];
-            $stuAcc = [];
-            foreach ($accuracy as $val) {
-                array_push($day, $val->dateDay);
-                array_push($classAcc, $val->class_accuracy);
-                array_push($stuAcc, $val->student_accuracy);
-            }
-            $day = json_encode($day);
-            $classAcc = json_encode($classAcc);
-            $stuAcc = json_encode($stuAcc);
-
-            $days = [];
-            $classAccuracy = [];
-            $stuAccuracy = [];
-            foreach ($timeSpent as $val) {
-                array_push($days, $val->dateDay);
-                array_push($classAccuracy, $val->class_time_taken);
-                array_push($stuAccuracy, $val->student_time_taken);
-            }
-            $days = json_encode($days);
-            $classAccuracy = json_encode($classAccuracy);
-            $stuAccuracy = json_encode($stuAccuracy);
+        curl_close($curl);
+        $overallAnalytics = json_decode($response);
+        $unitProf = $overallAnalytics->unit_proficiency;
+        $unitProf = collect(array_values($unitProf));
+        $subProf_collection = collect($subProf);
+        $overall_prof_perc = $subProf_collection->sum('score');
 
             return view('afterlogin.Analytics.export_analytics', compact(
                 'overallAnalytics',
@@ -458,30 +472,24 @@ class AnalyticsController extends Controller
                 'date3',
                 'correctTime3',
                 'incorrectTime3',
-                'corrent_score_per',
-                'score',
-                'inprogress',
-                'progress',
-                'others',
+                'mockTestScoreCurr',
+                'mockTestScorePre',
                 'user_subjects'
             ));
-        else :
-            return back()->with('error', 'Please appear in exam before checking analytics. ');
-        endif;
     }
 
     public function nextTab(Request $request, $sub_id)
     {
-        $scoreArray = isset($request->scoreArray) ? $request->scoreArray : [];
+//        $scoreArray = isset($request->scoreArray) ? $request->scoreArray : [];
         $userData = Session::get('user_data');
 
         $user_id = $userData->id;
 
-        $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
+        $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $api_URL . "api/analytics/subject-wise-analytics/$user_id/$sub_id",
+            CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-score/' . $user_id . '/' . $sub_id,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -496,15 +504,50 @@ class AnalyticsController extends Controller
         curl_close($curl);
         $subAnalytics = json_decode($response);
 
+        $subProf = $subAnalytics->topic_wise_result;
+        $skillPer = $subAnalytics->skill_percentage;
+        $subScore = $subAnalytics->subject_score;
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-graph/' . $user_id . '/' . $sub_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $subAnalytics = json_decode($response);
         $dailyReport = $subAnalytics->daily_report;
         $weeklyReport = $subAnalytics->weekly_report;
         $monthlyReport = $subAnalytics->monthlyReport;
-        $subProf = $subAnalytics->topic_wise_result;
-        $skillPer = $subAnalytics->skill_percentage;
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-accuracy/' . $user_id . '/' . $sub_id,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        $subAnalytics = json_decode($response);
         $accuracy = $subAnalytics->accuracy;
         $timeSpent = $subAnalytics->time_taken;
-        $subScore = $subAnalytics->subject_score;
-
 
         $date1 = [];
         $correctTime1 = [];
@@ -521,7 +564,6 @@ class AnalyticsController extends Controller
         $date1 = json_encode($date1);
         $correctTime1 = json_encode($correctTime1);
         $incorrectTime1 = json_encode($incorrectTime1);
-
 
 
         $date2 = [];
@@ -636,8 +678,7 @@ class AnalyticsController extends Controller
             'incorrectTime2',
             'date3',
             'correctTime3',
-            'incorrectTime3',
-            'scoreArray'
+            'incorrectTime3'
         ));
     }
 
