@@ -379,11 +379,11 @@ $questtype='radio';
                         <p class="rightSectH">Question Palette</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
-                                @php $i = 1; @endphp
+                            @php $i = 1; @endphp
                             @foreach($keys as $ke=>$val)
 
                             <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$i}}</button>
-                                @php $i++; @endphp
+                            @php $i++; @endphp
                             @endforeach
                             @endif
 
@@ -914,6 +914,10 @@ $questtype='radio';
     }
 
     function get_subject_question(subject_id) {
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
+
+        saveQuestionTime(act_question, q_submit_time);
 
         url = "{{ url('adaptive_next_subject_question/') }}/" + subject_id;
         $.ajax({

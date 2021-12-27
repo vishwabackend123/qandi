@@ -875,6 +875,12 @@ $questtype='radio';
     }
 
     function get_subject_question(subject_id) {
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
+
+
+        saveQuestionTime(act_question, q_submit_time);
+
 
         url = "{{ url('ajax_next_subject_question/') }}/" + subject_id;
         $.ajax({

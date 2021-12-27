@@ -15,6 +15,35 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/** 26-12-2021 css**/
+/** custom scrollbar**/
+
+.chaptbox {
+	 height:auto;
+	 max-height:100px;
+    overflow-y: auto; overflow-x: hidden;
+	margin-bottom:10px;
+}
+.chaptbox::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+.chaptbox::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.chaptbox::-webkit-scrollbar-thumb {
+    background: #d0f3ff;
+}
+
+/* Handle on hover */
+.chaptbox::-webkit-scrollbar-thumb:hover {
+    background: #d0f3ff;
+}
+/** end here 26-12-2021**/
+
 #plannerAddform label.d-block {
     font-size: 14px;
     margin-bottom: 2px;
@@ -875,19 +904,19 @@ button#button-addon2 {
     height: unset;
 }
 
-div#marKs-trends {
+div#marKs-trends, div#time-Avg-quest {
     background: #fff !important;
     border-radius: 56px !important;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-    margin: 22px 0px;
+    margin: 22px 0px;    padding: 5px 15px;
 }
 
-div#time-Avg-quest {
+/*div#time-Avg-quest {
     background: #fff !important;
     border-radius: 56px !important;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-    margin: 22px 0px;
-}
+    margin: 22px 0px;    padding: 5px 15px;
+}*/
 
 #marKs-trends .bg-white,
 #time-Avg-quest .bg-white {
@@ -931,6 +960,15 @@ div#time-Avg-quest {
     padding: 10px 50px !important;
     height: 45px !important;
     margin-top: 10px;
+	font-weight:600;
+}
+#overall button.btn:hover, #home button.btn:hover, .Ex-anal:hover {
+    background: #00bdff;
+    color: #fff;
+    font-weight: 600;
+}
+div#back2Dsh button a:hover {
+    color: #fff;
 }
 
 #overall button.btn.active,
@@ -2700,9 +2738,9 @@ div#collapseNotification {
     right: 0px;
     width: 95.5%;
     z-index: 999;
-    background-color: rgb(233 233 233 / 81%);
+    background-color: rgb(255 255 255 / 8%);
     background-blend-mode: hue;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     top: 0;
     padding-top: 92px;
     animation-name: reducetime;
@@ -2710,6 +2748,8 @@ div#collapseNotification {
     animation-fill-mode: both;
     padding-top: 15px !important;
     margin-top: 70px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
 }
 
 .notification-right a img {
@@ -3399,7 +3439,7 @@ p.tab-title {
 .ms-auto .text-secondary {
     color: #e9e9e9 !important;
 }
-.cust-gallery .swiper-slide.bg-white.swiper-slide-active {
+.cust-gallery .swiper-slide:first-child {
     width: 20% !important;
 }
 .custom-btn-gray {
