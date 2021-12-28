@@ -135,7 +135,7 @@ $questtype='radio';
                                         <!-- Next and previous button -->
                                         <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
 
-                                        <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                        <button href="javascript:void(0);" class="arrow next-arow" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
                                         <!-- Next and previous button -->
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
@@ -222,7 +222,7 @@ $questtype='radio';
                             <input type="hidden" name="planner_id" value="0">
                             <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
-                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
+
                         </form>
 
                         <p class="rightSectH">Question Palette</p>
@@ -342,7 +342,19 @@ $questtype='radio';
     </div>
 </div>
 
-
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content rounded-0">
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Resume Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal END Exam -->
 <div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
@@ -483,8 +495,8 @@ $questtype='radio';
     }
 
     function start(withReset = false) {
-        setDisabled(startBtn);
-        removeDisabled(stopBtn);
+        /*  setDisabled(startBtn); */
+        /* removeDisabled(stopBtn); */
         if (withReset) {
             resetVars();
         }
@@ -498,10 +510,10 @@ $questtype='radio';
     //     clearInterval(timerInterval);
     // }
     function stop(type = '') {
-        setDisabled(stopBtn);
-        removeDisabled(startBtn);
-        $(".stop").hide();
-        $(".start").show();
+        /* setDisabled(stopBtn);
+        removeDisabled(startBtn); */
+        /*  $(".stop").hide();
+         $(".start").show(); */
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
         if (type !== 'submit') {
@@ -695,11 +707,12 @@ $questtype='radio';
                 }
             },
         });
-        // $("#quesnext" + question_id).click();
-        if ($("#quesnext" + question_id).is(":disabled") == true) {
 
+        if ($("#quesnext" + question_id).is(":disabled") == true) {
             $("#submitExam").click();
+
         } else {
+
             $("#quesnext" + question_id).click();
 
         }
@@ -821,6 +834,7 @@ $questtype='radio';
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {
+
                 if (timeLeft >= 1) {
                     let timer_left = document.querySelector("#base-timer-path-remaining_alt");
                     let lefttime_exam_h = document.getElementById("lefttime_pop_h");
@@ -829,11 +843,12 @@ $questtype='radio';
                     const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-                    console.log("setCircleDashArray: ", circleDasharray);
+
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);
                     lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
 
                     $('#FullTest_Exam_Panel_Interface_A').modal('show');
 

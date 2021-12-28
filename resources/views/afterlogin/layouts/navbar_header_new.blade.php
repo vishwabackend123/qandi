@@ -6,7 +6,7 @@
                     <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic"></span>
                     <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
-                    <span class="notification me-5 ms-4"><a id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                    <span class="notification me-5 ms-4"><a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -69,7 +69,7 @@
                             </svg>
 
                         </a></span>
-                    <span class="notification ms-4"><a id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
+                    <span class="notification ms-4"><a draggable="false" id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -138,7 +138,7 @@
                             </svg>
 
                         </a></span>
-                    <span class="notification ms-4"><a href="{{route('overall_analytics')}}" title="Analytics">
+                    <span class="notification ms-4"><a draggable="false" href="{{route('overall_analytics')}}" title="Analytics">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -255,14 +255,14 @@
                             @foreach($aSubjects as $skey=>$sVal)
 
                             <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
-                                <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
+                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-gray" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
                                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 30vh;">
                                     <div class="subject_chapter" style="overflow: hidden; width: auto; height: 30vh;">
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
 
                                         </div>
                                         <div class="chaptbox-add ">
-                                            <a href="javascript:void(0);" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
+                                            <a draggable="false" href="javascript:void(0);" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
                                                 <span class=""><img src="{{URL::asset('public/after_login/new_ui/images/plusSign_ic.png')}}"></span>
                                             </a>
                                         </div>
@@ -294,9 +294,9 @@
             <div class="d-flex align-items-center justify-content-between">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <span>
-                    <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
-                    <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
-                    <a data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><i class="fa fa-close"></i></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
+                    <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><i class="fa fa-close"></i></a>
 
                 </span>
 
@@ -382,7 +382,7 @@
                     <span class="cal-date">27</span>
                     <div class="d-flex flex-column ms-3">
                         <span class="cal-txt1">No Test Scheduled</span>
-                        <span><a href="javascript:void(0);" class="cal-txt2">Upcoming Test tomorrow &gt;</a></span>
+                        <span><a draggable="false" href="javascript:void(0);" class="cal-txt2">Upcoming Test tomorrow &gt;</a></span>
                         <!--  <span class="cal-txt3"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i> <i class="fa fa-star"></i></span> -->
                     </div>
@@ -427,7 +427,7 @@
 <div class="notification-block width collapse" id="collapseNotification">
     <div class="planner-wrapper ">
         <div class=" notification-right ">
-            <a href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
+            <a draggable="false" href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
             <div class=" notification-scroll ">
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
@@ -457,61 +457,62 @@
     <div class="account-wrapper new">
         <div class="profile-section">
             <ul>
-                <li class="active"><a href="javascript:void(0);" class="account-profile accountsidebar">
-				<svg id="Icon_Profile" data-name="Icon / Profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-			  <defs>
-				<style>
-				  .cls-1, .cls-2 {
-					fill: none;
-				  }
+                <li class="active"><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
+                        <svg id="Icon_Profile" data-name="Icon / Profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <defs>
+                                <style>
+                                    .cls-1,
+                                    .cls-2 {
+                                        fill: none;
+                                    }
 
-				  .cls-2 {
-					stroke: #000;
-					stroke-linecap: round;
-					stroke-linejoin: round;
-					stroke-width: 1.5px;
-				  }
-				</style>
-			  </defs>
-			  <path id="Path_11495" data-name="Path 11495" class="cls-1" d="M0,0H24V24H0Z"/>
-			  <circle id="Ellipse_1968" data-name="Ellipse 1968" class="cls-2" cx="4" cy="4" r="4" transform="translate(8 3)"/>
-			  <path id="Path_11496" data-name="Path 11496" class="cls-2" d="M6,21V19a4,4,0,0,1,4-4h4a4,4,0,0,1,4,4v2"/>
-			</svg>
-			Account</a>
+                                    .cls-2 {
+                                        stroke: #000;
+                                        stroke-linecap: round;
+                                        stroke-linejoin: round;
+                                        stroke-width: 1.5px;
+                                    }
+                                </style>
+                            </defs>
+                            <path id="Path_11495" data-name="Path 11495" class="cls-1" d="M0,0H24V24H0Z" />
+                            <circle id="Ellipse_1968" data-name="Ellipse 1968" class="cls-2" cx="4" cy="4" r="4" transform="translate(8 3)" />
+                            <path id="Path_11496" data-name="Path 11496" class="cls-2" d="M6,21V19a4,4,0,0,1,4-4h4a4,4,0,0,1,4,4v2" />
+                        </svg>
+                        Account</a>
                 </li>
-                <li><a href="javascript:void(0);" class="subscription-profile accountsidebar">
-				<svg id="Icon_Subscription" data-name="Icon / Subscription" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-      }
-    </style>
-  </defs>
-  <path id="Path_2294" data-name="Path 2294" class="cls-1" d="M0,0H24V24H0Z"/>
-  <path id="Rectangle_2366" data-name="Rectangle 2366" d="M3-.75H15A3.754,3.754,0,0,1,18.75,3v8A3.754,3.754,0,0,1,15,14.75H3A3.754,3.754,0,0,1-.75,11V3A3.754,3.754,0,0,1,3-.75Zm12,14A2.253,2.253,0,0,0,17.25,11V3A2.253,2.253,0,0,0,15,.75H3A2.253,2.253,0,0,0,.75,3v8A2.253,2.253,0,0,0,3,13.25Z" transform="translate(3 5)"/>
-  <path id="Line_330" data-name="Line 330" d="M18,.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H18a.75.75,0,0,1,.75.75A.75.75,0,0,1,18,.75Z" transform="translate(3 10)"/>
-  <path id="Line_331" data-name="Line 331" transform="translate(7 15)"/>
-  <path id="Line_332" data-name="Line 332" d="M2,.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H2A.75.75,0,0,1,2.75,0,.75.75,0,0,1,2,.75Z" transform="translate(11 15)"/>
-</svg>
-				Subscription</a></li>
-                <li><a href="javascript:void(0);" class="log-out-btn accountsidebar">
-<svg id="Icon_Logout" data-name="Icon / Logout" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-      }
-    </style>
-  </defs>
-  <g id="invisible_box" data-name="invisible box">
-    <rect id="Rectangle_2977" data-name="Rectangle 2977" class="cls-1" width="21" height="21"/>
-  </g>
-  <g id="icons_Q2" data-name="icons Q2" transform="translate(1.749 1.749)">
-    <path id="Path_2599" data-name="Path 2599" d="M21.488,20.614V4.874A.874.874,0,0,0,20.614,4H4.874A.874.874,0,0,0,4,4.874V7.061a.874.874,0,0,0,1.006.874.918.918,0,0,0,.743-.918V5.749H19.74V19.74H5.749V18.428a.874.874,0,0,0-1.006-.874A.918.918,0,0,0,4,18.472v2.142a.874.874,0,0,0,.874.874h15.74A.874.874,0,0,0,21.488,20.614Z" transform="translate(-4 -4)"/>
-    <path id="Path_2600" data-name="Path 2600" d="M12.088,22.357l3.891-3.935a.831.831,0,0,0,0-1.224l-3.891-3.935a.918.918,0,0,0-1.18-.087.831.831,0,0,0-.087,1.312l2.448,2.448H4.874a.874.874,0,1,0,0,1.749h8.395l-2.448,2.448a.831.831,0,0,0,.087,1.312.918.918,0,0,0,1.18-.087Z" transform="translate(-4 -9.066)"/>
-  </g>
-</svg> Log out</a></li>
+                <li><a draggable="false" href="javascript:void(0);" class="subscription-profile accountsidebar">
+                        <svg id="Icon_Subscription" data-name="Icon / Subscription" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: none;
+                                    }
+                                </style>
+                            </defs>
+                            <path id="Path_2294" data-name="Path 2294" class="cls-1" d="M0,0H24V24H0Z" />
+                            <path id="Rectangle_2366" data-name="Rectangle 2366" d="M3-.75H15A3.754,3.754,0,0,1,18.75,3v8A3.754,3.754,0,0,1,15,14.75H3A3.754,3.754,0,0,1-.75,11V3A3.754,3.754,0,0,1,3-.75Zm12,14A2.253,2.253,0,0,0,17.25,11V3A2.253,2.253,0,0,0,15,.75H3A2.253,2.253,0,0,0,.75,3v8A2.253,2.253,0,0,0,3,13.25Z" transform="translate(3 5)" />
+                            <path id="Line_330" data-name="Line 330" d="M18,.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H18a.75.75,0,0,1,.75.75A.75.75,0,0,1,18,.75Z" transform="translate(3 10)" />
+                            <path id="Line_331" data-name="Line 331" transform="translate(7 15)" />
+                            <path id="Line_332" data-name="Line 332" d="M2,.75H0A.75.75,0,0,1-.75,0,.75.75,0,0,1,0-.75H2A.75.75,0,0,1,2.75,0,.75.75,0,0,1,2,.75Z" transform="translate(11 15)" />
+                        </svg>
+                        Subscription</a></li>
+                <li><a draggable="false" href="javascript:void(0);" class="log-out-btn accountsidebar">
+                        <svg id="Icon_Logout" data-name="Icon / Logout" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: none;
+                                    }
+                                </style>
+                            </defs>
+                            <g id="invisible_box" data-name="invisible box">
+                                <rect id="Rectangle_2977" data-name="Rectangle 2977" class="cls-1" width="21" height="21" />
+                            </g>
+                            <g id="icons_Q2" data-name="icons Q2" transform="translate(1.749 1.749)">
+                                <path id="Path_2599" data-name="Path 2599" d="M21.488,20.614V4.874A.874.874,0,0,0,20.614,4H4.874A.874.874,0,0,0,4,4.874V7.061a.874.874,0,0,0,1.006.874.918.918,0,0,0,.743-.918V5.749H19.74V19.74H5.749V18.428a.874.874,0,0,0-1.006-.874A.918.918,0,0,0,4,18.472v2.142a.874.874,0,0,0,.874.874h15.74A.874.874,0,0,0,21.488,20.614Z" transform="translate(-4 -4)" />
+                                <path id="Path_2600" data-name="Path 2600" d="M12.088,22.357l3.891-3.935a.831.831,0,0,0,0-1.224l-3.891-3.935a.918.918,0,0,0-1.18-.087.831.831,0,0,0-.087,1.312l2.448,2.448H4.874a.874.874,0,1,0,0,1.749h8.395l-2.448,2.448a.831.831,0,0,0,.087,1.312.918.918,0,0,0,1.18-.087Z" transform="translate(-4 -9.066)" />
+                            </g>
+                        </svg> Log out</a></li>
             </ul>
         </div>
         <!--profile-section-->
@@ -675,8 +676,8 @@
                     @endif
                 </h6>
                 <div class="form-btns">
-                    <a href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a>
-                    <a href="{{route('subscriptions')}}"><button type="button" class="save-btn">Change course</button></a>
+                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a>
+                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="save-btn">Change course</button></a>
                 </div>
             </div>
         </div>
@@ -691,7 +692,7 @@
             <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
             <p>Are you Sure?</p>
             <div class="form-btns">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();" "><button type=" button" class="save-btn">Log out</button></a>
             </div>
 

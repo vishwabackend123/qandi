@@ -917,7 +917,7 @@ $questtype='radio';
                     const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-                    console.log("setCircleDashArray: ", circleDasharray);
+
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);

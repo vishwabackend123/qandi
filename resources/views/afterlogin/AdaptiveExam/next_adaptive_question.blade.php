@@ -18,7 +18,7 @@ $questtype='radio';
 
 <script>
     $(document).ready(function() {
-        alert('{{$aquestionTakenTime}}');
+
         var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
         var questionTime = parseInt(time_allowed) * 60;
 

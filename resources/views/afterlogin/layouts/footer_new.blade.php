@@ -434,6 +434,14 @@
                         ')"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
                     );
                 }
+                if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
+
+                    $('#added_subject_' + subject_id).removeClass('text-gray');
+                    $('#added_subject_' + subject_id).addClass('text-success');
+                } else {
+                    $('#added_subject_' + subject_id).removeClass('text-success');
+                    $('#added_subject_' + subject_id).addClass('text-gray');
+                }
             });
 
 
@@ -517,6 +525,7 @@
                                 chapter_id + ',' + subject_id +
                                 ')"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
                             );
+
                         });
 
                     } else {
@@ -527,6 +536,15 @@
                         $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' +
                             ran_value + '%, #fff ' + ran_value + '%, white 100%)');
 
+                    }
+
+                    if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
+
+                        $('#added_subject_' + subject_id).removeClass('text-gray');
+                        $('#added_subject_' + subject_id).addClass('text-success');
+                    } else {
+                        $('#added_subject_' + subject_id).removeClass('text-success');
+                        $('#added_subject_' + subject_id).addClass('text-gray');
                     }
                 }
             });
@@ -814,6 +832,14 @@
                 $('#errChptAdd_alert').fadeOut('fast');
             }, 5000);
             return false;
+        }
+        if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
+
+            $('#added_subject_' + subject_id).removeClass('text-gray');
+            $('#added_subject_' + subject_id).addClass('text-success');
+        } else {
+            $('#added_subject_' + subject_id).removeClass('text-success');
+            $('#added_subject_' + subject_id).addClass('text-gray');
         }
     }
 
