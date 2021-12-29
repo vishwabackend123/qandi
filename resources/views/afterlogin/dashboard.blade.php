@@ -538,6 +538,20 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             el: ".swiper-pagination",
             clickable: true,
         },
+        breakpoints: {
+            1920: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1028: { // this is all desktop view of my laptop
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            300: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
     });
 </script>
 

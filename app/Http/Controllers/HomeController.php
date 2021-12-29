@@ -64,6 +64,7 @@ class HomeController extends Controller
             return redirect()->route('studentstandfor');
         }
 
+
         $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
         $today_date = Carbon::now();
 
@@ -82,7 +83,8 @@ class HomeController extends Controller
             $suscription_status = 1;
         }
 
-        if (($suscription_status == 0 || $subscription_yn == 'N') && empty($expiry_date)) {
+        if (($suscription_status == 0 || $subscription_yn == 'N' || empty($expiry_date))) {
+
             return redirect()->route('subscriptions');
         }
 

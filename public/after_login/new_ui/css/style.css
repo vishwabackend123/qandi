@@ -16,6 +16,30 @@ button {
     text-decoration: none;
 }
 
+#topicclose #topIIC .bg-white .slimScrollDiv, .padingTT .bg-white .slimScrollDiv {
+    height: 165px !important;
+}
+#topicclose #topIIC .status-id.rating, .padingTT .status-id.rating {
+    width: auto !important;
+}
+#topicclose #topIIC .d-flex.align-items-center.mt-3.px-3, .padingTT .d-flex.align-items-center.mt-3.px-3 {
+    margin-top: 0px !important;
+}
+#topicclose #topIIC .d-flex.align-items-center.px-3, .padingTT .d-flex.align-items-center.px-3 {
+    padding-bottom: 15px;
+}
+#topicclose #topIIC .d-flex.align-items-center.mt-3.px-3 {
+    padding-bottom: 5px !important;
+    margin-top: 0px !important;
+}
+#prof_scroll .d-flex.align-items-center.px-3 {
+    padding-bottom: 0px !important;
+}
+
+.rightSect .slimScrollBar {
+    width: 5px !important;
+    opacity: 0.3 !important;
+}
 .subscription .p-text h3 {
     font-size: 24px;
     line-height: 48px;
@@ -784,7 +808,7 @@ span.notification.ms-4 {
 }
 
 .cust-tabs .nav-link.active:before {
-    right: -70px;
+    right: -56px;
     /* transform: skew(
 30deg, 
 0deg); */
@@ -813,7 +837,7 @@ span.notification.ms-4 {
 }
 
 .cust-tabs .nav-link.active:after {
-    left: -69px;
+    left: -60px;
     /* transform: skew(
 332deg, 
 0deg); */
@@ -6325,7 +6349,17 @@ background: #00baff !important;
 }
 
 @media(max-width:1024px) {
-
+.list-series .live-exam .speci-text li {
+    width: 55%;
+    margin-right: 0px;
+    float: left !important;
+}
+.list-series .live-exam #home .speci-text li {
+    width: 100%;
+}
+.live-exam #home .speci-text li:last-child {
+    width: 55% !important;
+}
 
 
     /** live exam css **/
@@ -6574,6 +6608,9 @@ button.arrow.next-arow {
 	.star-img {
 		width: 70% !important;
 		margin-left: 0px !important;
+	}
+	.live-exam .speci-text li:last-child a button {
+		width: 50%;
 	}
 	
 	/* 28-12*/
@@ -6851,11 +6888,28 @@ button.arrow.next-arow {
 	.button-sec.mt-3 a {
         width: 80%;
 	}
+	.live-exam #home .speci-text li:last-child {
+    width: 100% !important;
+}
+.live-exam #home .speci-text li:last-child button {
+    float: left !important;
+    width: 55% !important;
+}
+.list-series .live-exam .speci-text li a button {
+    width: 55% !important;
+    float: left;
+}
 	.user-name-block {
 		font-size: 12px;
 	}
 	.bg-white.shadow-lg.py-5.ps-3.pe-1 {
 		height: 275px;
+	}
+	.list-series .live-exam .speci-text li {
+		width: 100% !important;
+	}
+	.live-exam .speci-text li:last-child {
+		margin-right: 0px !important;
 	}
 	/* new responsive code 27-12*/
 
@@ -7036,7 +7090,7 @@ button.arrow.next-arow {
     /** Listing series page css on 16-12-2021 **/
 
     .list-series .live-exam .speci-text li {
-        width: 100%;
+        width: 100% !important;
         margin-right: 0px;
     }
 

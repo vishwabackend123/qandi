@@ -889,6 +889,7 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                $("#question_section div").html(result);
                 $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
