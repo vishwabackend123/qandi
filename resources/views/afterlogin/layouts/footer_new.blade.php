@@ -122,13 +122,13 @@
             time: payload.data.time,
         };
         new Notification(title, options);
-
-        $('#recent_notify ').prepend($('<div class="recent-notificattion border-bottom d-flex flex-column py-2 px-3 notify-block">' +
-            '<p class="mb-0">' + title + '</p>' +
-            '<small>' + time + '</small>' +
+        var ballicon = "{{URL::asset('public/after_login/new_ui/images/bell.jpg')}}";
+        $('#recent_notify ').prepend($('<div class="notification-txt">' +
+            '<img src="' + ballicon + '"></span>' +
+            '<span class="text-notific">' + body + '</span>' +
             '</div>'));
 
-        console.log('Message received. ', payload);
+        console.log('Message received footer. ', payload);
         // ...
     });
     if ($(".recent-notificattion")[0]) {
@@ -706,11 +706,11 @@
 
         /*edit planner*/
 
-        /*Refer Firend*/
+        /*Refer Friend*/
         $('.btn-close').click(function() {
             $('#referEmails').val('');
         });
-        /*Refer Firend*/
+        /*Refer Friend*/
     });
 </script>
 <script>

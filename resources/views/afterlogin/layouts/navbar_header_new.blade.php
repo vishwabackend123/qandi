@@ -1,4 +1,12 @@
 <header>
+    <style>
+        body.overlay {
+            position: fixed;
+            overflow-y: hidden;
+            padding-right: 15px;
+            /* Avoid width reflow */
+        }
+    </style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
@@ -429,6 +437,9 @@
         <div class=" notification-right ">
             <a draggable="false" href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
             <div class=" notification-scroll ">
+                <div id="recent_notify">
+
+                </div>
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
                 <div class="notification-txt">

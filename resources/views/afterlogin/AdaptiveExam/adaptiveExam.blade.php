@@ -267,67 +267,69 @@ $questtype='radio';
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
-                                    <div class="d-flex" id="pause-start">
-                                        <div id="counter_{{$activeq_id}}" class="counter  d-flex">
-                                            <span id="avg_text">Average Time :</span>
-                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
-                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
-                                                <div id="percentBar_{{$activeq_id}}"></div>
-                                            </div>
-                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
-                                                <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
-                                    </div>
-
-                                    <div class="question-block">
-                                        <!-- Next and previous button -->
-                                        <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
-                                        <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
-                                        <!-- Next and previous button -->
-
-                                        <div class="question py-3"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-
-                                        <div class="ans-block row my-3">
-                                            @if(isset($option_data) && !empty($option_data))
-                                            @php $no=0; @endphp
-                                            @foreach($option_data as $key=>$opt_value)
-                                            @php
-                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                            $dom = new DOMDocument();
-                                            @$dom->loadHTML($opt_value);
-                                            $anchor = $dom->getElementsByTagName('img')->item(0);
-                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                            $latex = "https://math.now.sh?from=".$text;
-                                            $view_opt='<img src="'.$latex.'" />' ;
-                                            @endphp
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                                <div class="border ps-3 ans">
-                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                    <div>
+                                        <div class="d-flex" id="pause-start">
+                                            <div id="counter_{{$activeq_id}}" class="counter  d-flex">
+                                                <span id="avg_text">Average Time :</span>
+                                                <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                    <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                    <div id="percentBar_{{$activeq_id}}"></div>
+                                                </div>
+                                                <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
+                                                    <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
                                                 </div>
                                             </div>
-                                            @php $no++; @endphp
-                                            @endforeach
-                                            @endif
-
+                                            <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                         </div>
 
-                                    </div>
-                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
-                                    <div class="tab-btn-box  d-flex mt-3">
-                                        @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
-                                        @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
-                                        </button>
-                                        @endif
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
+                                        <div class="question-block">
+                                            <!-- Next and previous button -->
+                                            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
+                                            <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                            <!-- Next and previous button -->
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+                                            <div class="question py-3"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
-                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+                                            <div class="ans-block row my-3">
+                                                @if(isset($option_data) && !empty($option_data))
+                                                @php $no=0; @endphp
+                                                @foreach($option_data as $key=>$opt_value)
+                                                @php
+                                                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                                $dom = new DOMDocument();
+                                                @$dom->loadHTML($opt_value);
+                                                $anchor = $dom->getElementsByTagName('img')->item(0);
+                                                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                                $latex = "https://math.now.sh?from=".$text;
+                                                $view_opt='<img src="'.$latex.'" />' ;
+                                                @endphp
+                                                <div class="col-md-6 mb-4">
+                                                    <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                    <div class="border ps-3 ans">
+                                                        <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                    </div>
+                                                </div>
+                                                @php $no++; @endphp
+                                                @endforeach
+                                                @endif
+
+                                            </div>
+
+                                        </div>
+                                        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+                                        <div class="tab-btn-box  d-flex mt-3">
+                                            @if(!empty($next_qid))
+                                            <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
+                                            @else
+                                            <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
+                                            </button>
+                                            @endif
+                                            <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
+
+                                            <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+
+                                            <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -926,6 +928,10 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
+
                 $("#myTabContent #question_section div").remove();
                 $("#myTabContent #question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);

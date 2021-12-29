@@ -50,6 +50,7 @@ $questtype='radio';
                 $('#q_time_taken_{{$activeq_id}}').show();
                 $('#avg_text_{{$activeq_id}}').hide();
                 $('#progressBar_{{$activeq_id}}').hide();
+
             }
         }, interval);
 
