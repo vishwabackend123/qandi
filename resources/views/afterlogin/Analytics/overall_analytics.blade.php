@@ -1,132 +1,114 @@
-@extends('afterlogin.layouts.app_new')
+@extends('afterlogin.layouts.app')
 
-@php
-$userData = Session::get('user_data');
-@endphp
 @section('content')
+
+
 <!-- Side bar menu -->
-@include('afterlogin.layouts.sidebar_new')
-<!-- sidebar menu end -->
-<div class="main-wrapper">
-    <!-- End start-navbar Section -->
-    @include('afterlogin.layouts.navbar_header_new')
-    <!-- End top-navbar Section -->
+@include('afterlogin.layouts.sidebar')
+<div class="main-wrapper  h-100">
+    <!-- top navbar -->
+    @include('afterlogin.layouts.navbar_header')
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <div class="tab-wrapper">
-                        <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL</a>
-                                </li>
-                                @foreach($user_subjects as $val)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
-                                </li>
-                                @endforeach
-
-                                <!--   <li class="ms-auto">
-                                <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
-                            </li> -->
-                                <li class="ms-auto">
-                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> &nbsp;Export Analytics</a>
-                                </li>
-
-                            </ul>
-                        </div>
+                    <div class="tab-wrapper mt-0">
+                        <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL</a>
+                            </li>
+                            @foreach($user_subjects as $val)
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
+                            </li>
+                            @endforeach
+                            <li class="ms-auto d-flex">
+                                <button onclick="get_upcomming_tutorials()" class="btn btn-outline-danger px-4 text-uppercase  rounded-0 ms-auto me-3 ">
+                                    Upcoming Tutorial
+                                </button>
+                                <a class="btn btn-danger rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> Export Analytics</a>
+                            </li>
+                        </ul>
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
-                                <div class="row padingTT">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                        <div class="bg-white shadow-lg py-5 px-3">
-                                            <div class="prgress-i-txt px-3">
-                                                <span class="progress_text">Progress</span>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12 col-sm-12 col-md-12">
-                                                    <div class="d-flex justify-content-center flex-column h-100 ">
-                                                        <span class="text-center">
-                                                            <div id="scorecontainer"></div>
-
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="bg-white shadow-lg h-100">
+                                            <div class="row p-0 m-0">
+                                                <div class="col-12 ps-0 pe-0">
+                                                    <div class="d-flex justify-content-center flex-column h-100  position-relative">
+                                                        <div id="scorecontainer" class="text-right"></div>
+                                                        <span class=" bg-light p-3 d-flex  justify-content-center flex-column ">
+                                                            <span class="abri"> <span class="abrv-mean bg1"></span>Last
+                                                                Mock Test Score</span>
+                                                            <span class="abri"> <span class="abrv-mean bg2"></span>Progress from previous
+                                                                score</span>
+                                                            <span class="abri"> <span class="abrv-mean bg3"></span>Next
+                                                                Mock Test Target</span>
                                                         </span>
-                                                        <ul class="live-test mt-3">
-                                                            <li>
-                                                                <span class="last-live-test"></span>Last Live Test Score
-                                                            </li>
-                                                            <li>
-                                                                <span class="pre-test"></span>Previous Test
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
 
                                             </div>
-
                                         </div>
                                     </div>
-                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                                        <div class="bg-white shadow-lg py-5 px-3">
-                                            <div class="prgress-i-txt px-3">
-                                                <span class="progress_text">Subject proficiency</span>
-                                            </div>
-                                            <div id="prof_scroll">
-                                                @if(!empty($subProf))
-                                                @foreach($subProf as $key=>$sub)
-                                                <div class="d-flex align-items-center px-3">
-                                                    <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 ">
-                                                        <span class="mr-3 dashboard-name-txt SubjName">{{$sub->subject_name}}</span>
+                                    <div class="col-lg-7 ">
+                                        <div class="bg-white shadow-lg p-3 h-100">
+                                            <h5 class="dashboard-title mb-3">Subject proficiency</h5>
+                                            @if(!empty($subProf))
+                                            @foreach($subProf as $key=>$sub)
+                                            <div class="d-flex align-items-center m-2 mt-3 pb-1">
 
-                                                        <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                                <div class=" d-flex align-items-center   py-2 dashboard-listing-details w-100  me-4">
+                                                    <span class="mr-3 dashboard-name-txt sub-name-box">{{$sub->subject_name}}</span>
 
-                                                            <div class="star-ratings-css">
-                                                                <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
-                                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                </div>
-                                                                <div class="star-ratings-css-bottom">
-                                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                </div>
+                                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+
+                                                        <div class="star-ratings-css">
+                                                            <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
+                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                             </div>
-
-                                                            <div class="ms-1 score score-rating js-score">
-                                                                {{round($sub->score)}}%
+                                                            <div class="star-ratings-css-bottom">
+                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
-                                                        @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
-                                                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
-                                                            <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
+
+                                                        <div class="ms-1 score score-rating js-score">
+                                                            {{round($sub->score)}}%
                                                         </div>
-                                                        @endif
-                                                        @if(isset($sub->incorrect_ans) && $sub->incorrect_ans > 0)
-                                                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
-                                                            <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
-                                                        </div>
-                                                        @endif
-                                                        @if(isset($sub->unanswered) && $sub->unanswered > 0)
-                                                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
-                                                            <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}</span>
-                                                        </div>
-                                                        @endif
                                                     </div>
                                                 </div>
-                                                @endforeach
-                                                @endif
+                                                <div class="progress  col-md-6" style="overflow: visible;">
+                                                    @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
+                                                    <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                                                        <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
+                                                    </div>
+                                                    @endif
+                                                    @if(isset($sub->incorrect_ans) && $sub->incorrect_ans > 0)
+                                                    <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                                                        <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
+                                                    </div>
+                                                    @endif
+                                                    @if(isset($sub->unanswered) && $sub->unanswered > 0)
+                                                    <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                                                        <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}
+                                                        </span>
+                                                    </div>
+                                                    @endif
+                                                </div>
                                             </div>
+                                            @endforeach
+                                            @endif
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row" id="time-Avg-quest">
                                     <div class="col-lg-5 mt-3">
-                                        <div class="bg-white p-3 h-100 px-5 text-center">
+                                        <div id="timeManagementBox" class="bg-white shadow-lg p-3 h-100 px-4 text-center">
                                             <p class="text-uppercase fw-bold text-start">Time Management</p>
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
                                             <div id="timeManagementButtons" class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass active" id="day_time" onclick="replace('day','week','month')">
+                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 timeClass" id="day_time" onclick="replace('day','week','month')">
                                                     Day
                                                 </button>
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass" id="week_time" onclick="replace('week','day','month')">
@@ -139,21 +121,20 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     <div class="col-lg-7  mt-3">
-                                        <div class="bg-white p-3 h-100 px-5">
-                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question</p>
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4">
+                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each
+                                                Question</p>
                                             <div id="accPer1"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row" id="marKs-trends">
                                     <div class="col-lg-5 mt-3">
-                                        <div class="bg-white p-3 h-100 px-5 text-center">
-                                            <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+                                        <div class="bg-white shadow-lg p-3 h-100 px-4 text-center">
+                                            <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
                                             <div class="btn-block mt-5 d-flex justify-content-between">
-                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark active" id="day_mark" onclick="replace1('day1','week1','month1')">
+                                                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark" id="day_mark" onclick="replace1('day1','week1','month1')">
                                                     Day
                                                 </button>
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 classMark" id="week_mark" onclick="replace1('week1','day1','month1')">
@@ -165,23 +146,25 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-7  mt-3">
-                                        <div class="bg-white p-3  px-5">
-                                            <p class="text-uppercase fw-bold text-start">Acuracy Percentage</p>
+                                        <div class="bg-white shadow-lg p-3  px-4">
+                                            <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
                                             <div id="accPer"></div>
                                         </div>
-                                        <div class="bg-white p-3 mt-3 px-5" id="back2Dsh">
+                                        <div class="bg-white shadow-lg p-3 mt-3 px-5">
                                             <div class="d-flex">
-                                                <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
+                                                <a href="{{url('/dashboard')}}" class="btn btn-outline-secondary rounded-0 w-50 me-4">Back
+                                                    to Dashboard
+                                                </a>
+                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+                                                    <i class="fa fa-download"></i> &nbsp;Export Analytics
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -210,8 +193,7 @@ $userData = Session::get('user_data');
 </div>
 
 
-@include('afterlogin.layouts.footer_new')
-
+@include('afterlogin.layouts.footer')
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 @if(isset($active_id) && !empty($active_id))
 <script type="text/javascript">
@@ -224,9 +206,6 @@ $userData = Session::get('user_data');
 <script type="text/javascript">
     $(".scroll-topic-ana").slimscroll({
         height: "20vh",
-    });
-    $("#prof_scroll").slimscroll({
-        height: "25vh",
     });
     $('.scroll-div-live-exm').slimscroll({
         height: '60vh'
@@ -286,7 +265,7 @@ $userData = Session::get('user_data');
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 130,
+            height: 185,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -295,7 +274,7 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{$corrent_score_per}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 60
@@ -342,26 +321,18 @@ $userData = Session::get('user_data');
             type: 'pie',
             innerSize: '85%',
             data: [{
-                    name: 'Score',
-                    y: <?php echo $score; ?>,
-                    /*  color: '#ffdc34' // Jane's color */
-                    color: '#21ccff'
+                    name: 'Last Mock Test Score',
+                    y: <?php echo $mockTestScoreCurr??0; ?>,
+                    color: '#ffdc34' // Jane's color
                 },
                 {
-                    name: 'Inprogress',
-                    y: <?php echo $inprogress; ?>,
-                    /* color: '#fc2f00c7' // Jane's color */
-                    color: '#21ccff'
-                },
-                {
-                    name: 'Progress',
-                    y: <?php echo $progress; ?>,
-                    color: '#21ccff'
-                    /*  color: '#ffa81d' // Jane's color */
+                    name: 'Progress From Previous Score',
+                    y: <?php echo (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? $mockTestScoreCurr - $mockTestScorePre : 0; ?>,
+                    color: '#ffa81d' // Jane's color
                 },
                 {
                     name: 'Others',
-                    y: <?php echo $others; ?>,
+                    y: <?php echo 0; ?>,
                     color: '#e4e4e4' // Jane's color
                 }
             ]
@@ -379,7 +350,7 @@ $userData = Session::get('user_data');
                 url: url,
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    scoreArray: <?php echo json_encode($scoreArray); ?>
+                    {{--scoreArray: <?php echo json_encode($scoreArray); ?>--}}
                 },
                 beforeSend: function() {
                     $('#overlay').fadeIn();
@@ -498,7 +469,9 @@ $userData = Session::get('user_data');
 
 <script>
     Highcharts.chart('day', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -554,7 +527,9 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('week', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -608,7 +583,9 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('month', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -664,14 +641,14 @@ $userData = Session::get('user_data');
 
     function replace(show, hide1, hide2) {
         if (show == 'day') {
-            $(".timeClass").removeClass("active");
-            $("#day_time").addClass("active");
+            $(".timeClass").removeClass("btn-light-green");
+            $("#day_time").addClass("btn-light-green");
         } else if (show == 'week') {
-            $(".timeClass").removeClass("active");
-            $("#week_time").addClass("active");
+            $(".timeClass").removeClass("btn-light-green");
+            $("#week_time").addClass("btn-light-green");
         } else {
-            $(".timeClass").removeClass("active");
-            $("#month_time").addClass("active");
+            $(".timeClass").removeClass("btn-light-green");
+            $("#month_time").addClass("btn-light-green");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -680,7 +657,9 @@ $userData = Session::get('user_data');
 </script>
 <script>
     Highcharts.chart('day1', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -735,7 +714,9 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('week1', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -790,7 +771,9 @@ $userData = Session::get('user_data');
         }]
     });
     Highcharts.chart('month1', {
-
+        credits: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -807,9 +790,6 @@ $userData = Session::get('user_data');
             title: {
                 text: 'Average Marks'
             }
-        },
-        credits: {
-            enabled: false
         },
         exporting: {
             enabled: false
@@ -847,14 +827,14 @@ $userData = Session::get('user_data');
 
     function replace1(show, hide1, hide2) {
         if (show == 'day1') {
-            $(".classMark").removeClass("active");
-            $("#day_mark").addClass("active");
+            $(".classMark").removeClass("btn-light-green");
+            $("#day_mark").addClass("btn-light-green");
         } else if (show == 'week1') {
-            $(".classMark").removeClass("active");
-            $("#week_mark").addClass("active");
+            $(".classMark").removeClass("btn-light-green");
+            $("#week_mark").addClass("btn-light-green");
         } else {
-            $(".classMark").removeClass("active");
-            $("#month_mark").addClass("active");
+            $(".classMark").removeClass("btn-light-green");
+            $("#month_mark").addClass("btn-light-green");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
