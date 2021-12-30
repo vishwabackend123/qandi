@@ -436,10 +436,8 @@
     <div class="planner-wrapper ">
         <div class=" notification-right ">
             <a draggable="false" href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
-            <div class=" notification-scroll ">
-                <div id="recent_notify">
+            <div id="recent_notify" class=" notification-scroll ">
 
-                </div>
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
                 <div class="notification-txt">

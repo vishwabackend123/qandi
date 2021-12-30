@@ -77,7 +77,7 @@
         return messaging.getToken()
     }).then(function(response) {
         if (response) {
-            console.log(response);
+            /*  console.log(response); */
 
             $.ajax({
                 url: "{{ url('/saveFcmToken') }}",
@@ -112,7 +112,7 @@
 
 
     messaging.onMessage((payload) => {
-
+        console.log('Message received footer. ', payload);
         const title = payload.data.title;
 
         const body = payload.data.body;
@@ -124,18 +124,13 @@
         new Notification(title, options);
         var ballicon = "{{URL::asset('public/after_login/new_ui/images/bell.jpg')}}";
         $('#recent_notify ').prepend($('<div class="notification-txt">' +
-            '<img src="' + ballicon + '"></span>' +
+            '<span class="bell-noti"><img src="' + ballicon + '"></span>' +
             '<span class="text-notific">' + body + '</span>' +
             '</div>'));
 
-        console.log('Message received footer. ', payload);
+
         // ...
     });
-    if ($(".recent-notificattion")[0]) {
-        $('#red-dot-notifiction').show();
-    } else {
-        $('#red-dot-notifiction').hide();
-    }
 </script>
 <script>
     $(document).ready(function() {
@@ -405,7 +400,7 @@
             $('#EndDate').val(lastDate);
 
             var planned = <?php echo json_encode($current_week_plan); ?>;
-            console.log(planned);
+
             var count_range_attempted = 0;
             planned.forEach(function(item) {
 

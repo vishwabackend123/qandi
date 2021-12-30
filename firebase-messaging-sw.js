@@ -16,14 +16,14 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler(function (payload) {
-    console.log("Message has received : ", payload);
+   /*  console.log("Message has received : ", payload); */
     const title = payload.data.title;
 
     const options = {
         body: payload.data.body,
         time: payload.data.time,
     };
-    console.log(options);
+  
     return self.registration.showNotification(
         title,
         options,

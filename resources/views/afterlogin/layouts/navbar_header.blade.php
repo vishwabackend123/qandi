@@ -268,28 +268,7 @@ $userData = Session::get('user_data');
             <div class="notification-scroll pe-3">
                 <p class="noti-subheading">Recent</p>
                 <div id="recent_notify">
-                    <!-- <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                        <span class="mb-2">
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-light"></i>
-                            <i class="fa fa-star text-light"></i>
-                        </span>
-                        <small>09:34PM</small>
-                    </div>
-                    <div class="d-flex flex-column bg-white mt-4 py-2 px-3 notify-block">
-                        <p class="mb-0">You have a test tomorrow on Wave Optics</p>
-                        <span class="mb-2">
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-light"></i>
-                            <i class="fa fa-star text-light"></i>
-                        </span>
-                        <small>09:34PM</small>
-                    </div> -->
+
                 </div>
                 <p class="noti-subheading mt-4">Older Notification
                     @if(isset($notifications) && !empty($notifications) && is_array($notifications))
