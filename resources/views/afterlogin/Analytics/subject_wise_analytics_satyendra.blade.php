@@ -1,152 +1,161 @@
-<div class="row" id="topicclose">
-    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
-        <div class="row">
-            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
-                <div class="bg-white shadow-lg py-3 px-3">
-                    <div class="prgress-i-txt px-3">
-                        <span class="progress_text">Progress</span>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-md-12">
-                            <div class="d-flex justify-content-center flex-column h-100 ">
-                                <span class="text-center">
-                                    <div id="subjectscorecontainer" class="text-right"></div>
+<style>
+    .btn-warning-custom {
+        min-width: 220px !important;
+    }
+</style>
+<div class="" id="topicclose">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class=" ">
+                <div class="row m-0 p-0">
+                    <div class="col-7 pe-0">
+                        <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                            <span class=" p-3">
+                                <div id="subjectscorecontainer" class="text-right"></div>
+                            </span>
+                            <span class="mt-auto me-0 bg-light p-3 d-flex  justify-content-center flex-column ">
+                                <span class="abri">
+                                    <span class="abrv-mean bg1">
+                                    </span>
+                                    Last Mock Test Score
                                 </span>
-                                <ul class="live-test mt-3">
-                                    <li>
-                                        <span class="last-live-test"></span>Last Live Test Score
-                                    </li>
-                                    <li>
-                                        <span class="pre-test"></span>Previous Test
-                                    </li>
-                                </ul>
-                            </div>
+                                <span class="abri">
+                                    <span class="abrv-mean bg2">
+                                    </span>
+                                    Progress From Previous Score
+                                </span>
+                                <span class="abri">
+                                    <span class="abrv-mean bg3">
+                                    </span>
+                                    Next Mock Test Target
+                                </span>
+                            </span>
                         </div>
-
                     </div>
-
+                    <div class="col-5 ">
+                        <div class="row position-relative h-100">
+                            @if($skillPer)
+                            <div class="col-6 mb-2 pe-1 h-48">
+                                <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                    <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
+                                        <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
+                                        <span>{{round($skillPer[0]->percentage)}}%</span>
+                                    </a>
+                                </div>
+                                <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-right-btm">
+                                    <h4 class="text-danger text-uppercase skill-name">
+                                        {{$skillPer[0]->skill_name}}
+                                    </h4>
+                                    <h4 class="text-danger text-uppercase fw-2">{{$skillPer[0]->percentage}}%</h4>
+                                    <p></p>
+                                    <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-6  mb-2 ps-1 h-48">
+                                <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                    <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
+                                        <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
+                                        <span>{{round($skillPer[1]->percentage)}}%</span>
+                                    </a>
+                                </div>
+                                <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-left-btm">
+                                    <h4 class="text-danger text-uppercase skill-name">
+                                        {{$skillPer[1]->skill_name}}
+                                    </h4>
+                                    <h4 class="text-danger text-uppercase fw-2">{{$skillPer[1]->percentage}}%</h4>
+                                    <p></p>
+                                    <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-6 pe-1 h-48">
+                                <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                    <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
+                                        <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
+                                        <span>{{round($skillPer[2]->percentage)}}%</span>
+                                    </a>
+                                </div>
+                                <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-right-top">
+                                    <h4 class="text-danger text-uppercase skill-name">
+                                        {{$skillPer[2]->skill_name}}
+                                    </h4>
+                                    <h4 class="text-danger text-uppercase fw-2">{{$skillPer[2]->percentage}}%</h4>
+                                    <p></p>
+                                    <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-6 ps-1 h-48">
+                                <div class="bg-white shadow-lg d-flex justify-content-center flex-column h-100 ">
+                                    <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
+                                        <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
+                                        <span>{{round($skillPer[3]->percentage)}}%</span>
+                                    </a>
+                                </div>
+                                <div class="collapse arrow-right-btm-content p-3" data-bs-dismiss="collapse" id="arrow-left-top">
+                                    <h4 class="text-danger text-uppercase skill-name">
+                                        {{$skillPer[3]->skill_name}}
+                                    </h4>
+                                    <h4 class="text-danger text-uppercase fw-2">{{$skillPer[3]->percentage}}%</h4>
+                                    <p></p>
+                                    <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                <div class="row position-relative" id="f-Numbr-sectin">
-                    @if($skillPer)
-                    <div class="col-6 mb-2 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a class="box-block arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm">
-                                <span>{{substr($skillPer[0]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</span>
-                            </a>
+        </div>
+        <div class="col-lg-7">
+            <div class="bg-white shadow-lg p-3 h-100">
+                <div class="d-flex align-items-center">
+                    <h5 class="dashboard-title ">Topics</h5>
+
+                    <!--  <button class="btn btn-warning-custom px-4 ms-auto text-uppercase rounded-0" id="topic-open-btn">
+                        <i class="fa fa-expand" aria-hidden="true"></i> Expand
+                    </button> -->
+                </div>
+                <div class="scroll-topic-ana p-4">
+                    @if($subProf)
+                    @foreach($subProf as $val)
+                    <div class="d-flex align-items-center mt-3 pb-1">
+                        <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 me-5 ">
+                            <span class="mr-3 dashboard-name-txt">{{$val->topic_name}}</span>
+
                         </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
-                            <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[0]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
-                            <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-6 mb-2 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
-                                <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
-                            <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p> -->
-                            <!-- <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-                            <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-6 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a data-bs-toggle="collapse" href="#arrow-right-top" class="box-block arrow-right-top">
-                                <span>{{substr($skillPer[2]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
-                            <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[2]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p>
-                            <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-                            <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <div class="progress  ms-auto col-5" style="overflow: visible;">
+                            @if($val->correct_ans > 0)
+                            <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
+                                <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
+                            </div>
+                            @endif
+                            @if($val->incorrect_ans > 0)
+                            <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
+                                <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
+                            </div>
+                            @endif
+                            @if($val->unanswered > 0)
+                            <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;">
+                                <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
+                                </span>
+                            </div>
+                            @endif
                         </div>
                     </div>
-                    <div class="col-6 px-2">
-                        <div class="bg-white d-flex justify-content-center flex-column h-100 noshadow">
-                            <a data-bs-toggle="collapse" href="#arrow-left-top" class="box-block arrow-left-top">
-                                <span>{{substr($skillPer[3]->skill_name, 0, 1)}}</span>
-                                <span>{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</span>
-                            </a>
-                        </div>
-                        <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
-                            <h4 class="text-danger text-uppercase fw-2 fw-bold"> {{$skillPer[3]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p>
-                            <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-                            <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
                     @endif
                 </div>
             </div>
         </div>
-
-
     </div>
-    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
-        <div class="bg-white shadow-lg p-3">
-            <div class="d-flex align-items-center px-3">
-                <h5 class="dashboard-title ">Topics</h5>
-            </div>
-            <div class="scroll-topic-ana">
-                @if($subProf)
-                @foreach($subProf as $val)
-
-                <div class="d-flex align-items-center mt-3 px-3">
-                    <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
-                        <span class="mr-3 dashboard-name-txt SubjName">{{$val->topic_name}}</span>
-
-
-                    </div>
-                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
-                        @if($val->correct_ans > 0)
-                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
-                            <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
-                        </div>
-                        @endif
-                        @if($val->incorrect_ans > 0)
-                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
-                            <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
-                        </div>
-                        @endif
-                        @if($val->unanswered > 0)
-                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;">
-                            <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
-                            </span>
-                        </div>
-                        @endif
-                    </div>
-                </div>
-                @endforeach
-                @endif
-            </div>
-        </div>
-    </div>
-    <div class="row" id="time-Avg-quest">
+    <div class="row">
         <div class="col-lg-5 mt-3">
-            <div class="bg-white p-3 h-100 px-5 text-center">
+            <div class="bg-white shadow-lg p-3 h-100 px-3 text-center">
                 <p class="text-uppercase fw-bold text-start">Time Management</p>
                 <div id="day" style="display:block"></div>
                 <div id="week" style="display:none"></div>
                 <div id="month" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass" id="s_day_time" onclick="replace('day','week','month')">
                         Day
                     </button>
                     <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
@@ -159,21 +168,20 @@
             </div>
         </div>
         <div class="col-lg-7  mt-3">
-            <div class="bg-white p-3 h-100 px-5">
-                <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question</p>
+            <div class="bg-white shadow-lg p-3 h-100 px-3">
+                <p class="text-uppercase fw-bold text-start">Average Time Spent on each
+                    Question</p>
                 <div id="accPerSubjectWise1"></div>
             </div>
         </div>
-    </div>
-    <div class="row" id="marKs-trends">
         <div class="col-lg-5 mt-3">
-            <div class="bg-white p-3 h-100 px-5 text-center">
-                <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+            <div class="bg-white shadow-lg p-3 h-100 px-3 text-center">
+                <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
                 <div id="day1" style="display:block"></div>
                 <div id="week1" style="display:none"></div>
                 <div id="month1" style="display:none"></div>
                 <div class="btn-block mt-5 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
+                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                         Day
                     </button>
                     <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
@@ -185,35 +193,29 @@
                 </div>
             </div>
         </div>
+
         <div class="col-lg-7  mt-3">
-            <div class="bg-white p-3  px-5">
-                <p class="text-uppercase fw-bold text-start">Acuracy Percentage</p>
+            <div class="bg-white shadow-lg p-3  px-3">
+                <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
                 <div id="accPerSubjectWise"></div>
             </div>
-            <div class="bg-white p-3 mt-3 px-5" id="back2Dsh">
+            <div class="bg-white shadow-lg p-3 mt-3 px-5">
                 <div class="d-flex">
-                    <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                    <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
+                    <a href="{{url('/dashboard')}}" class="btn btn-outline-secondary rounded-0 w-50 me-4">Back
+                        to Dashboard
+                    </a>
+                    <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+                        <i class="fa fa-download"></i> &nbsp;Export Analytics
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <div class="close-block" id="topicopen">
     <div class="row">
-        <div class="col-12  mb-5">
 
-            <div class="d-flex align-items-center">
-                <a class="topic-btn-collepse h5 text-dark" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>
-                    {{isset($subScore[0]->subject_name)?ucwords($subScore[0]->subject_name):''}}</a>
-                <button class="btn btn-warning px-4 text-uppercase rounded-0 ms-auto topic-btn-collepse" id="topic-btn-collepse"><i class="fa fa-compress" aria-hidden="true"></i>
-                    COLLAPSE
-                </button>
-            </div>
-
-        </div>
         @if($subProf)
         @foreach($subProf as $val)
         <div class="col-md-6 col-lg-4 mb-4 ">
@@ -258,8 +260,8 @@
                     </button>
                     <button class="btn btn-light mb-4 mt-4 me-2 rounded-0">E</button>
                     <!-- <button class="btn btn-danger mb-4 mt-4 ms-auto rounded-0 px-5 selected-btn">
-                        Select
-                    </button> -->
+                                Select
+                            </button> -->
                 </div>
             </div>
         </div>
@@ -457,14 +459,14 @@
 
     function replace(show, hide1, hide2) {
         if (show == 'day') {
-            $(".s_timeClass").removeClass("active");
-            $("#s_day_time").addClass("active");
+            $(".s_timeClass").removeClass("btn-light-green");
+            $("#s_day_time").addClass("btn-light-green");
         } else if (show == 'week') {
-            $(".s_timeClass").removeClass("active");
-            $("#s_week_time").addClass("active");
+            $(".s_timeClass").removeClass("btn-light-green");
+            $("#s_week_time").addClass("btn-light-green");
         } else {
-            $(".s_timeClass").removeClass("active");
-            $("#s_month_time").addClass("active");
+            $(".s_timeClass").removeClass("btn-light-green");
+            $("#s_month_time").addClass("btn-light-green");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -649,14 +651,14 @@
 
     function s_replace1(show, hide1, hide2) {
         if (show == 'day1') {
-            $(".s_classMark").removeClass("active");
-            $("#s_day_mark").addClass("active");
+            $(".s_classMark").removeClass("btn-light-green");
+            $("#s_day_mark").addClass("btn-light-green");
         } else if (show == 'week1') {
-            $(".s_classMark").removeClass("active");
-            $("#s_week_mark").addClass("active");
+            $(".s_classMark").removeClass("btn-light-green");
+            $("#s_week_mark").addClass("btn-light-green");
         } else {
-            $(".s_classMark").removeClass("active");
-            $("#s_month_mark").addClass("active");
+            $(".s_classMark").removeClass("btn-light-green");
+            $("#s_month_mark").addClass("btn-light-green");
         }
         document.getElementById(hide1).style.display = "none";
         document.getElementById(hide2).style.display = "none";
@@ -763,7 +765,7 @@
 <script>
     Highcharts.chart('subjectscorecontainer', {
         chart: {
-            height: 130,
+            height: 185,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -772,7 +774,7 @@
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 56px/70px Manrope; letter-spacing: 0px; color: #231F20;">{{isset($subScore[1]->score)??0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{isset($subScore[1]->score)??0}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 60
@@ -821,12 +823,12 @@
             data: [{
                     name: 'Score',
                     y: <?php print_r(isset($subScore[1]->score) ?? 0); ?>,
-                    color: '#21ccff' // Jane's color
+                    color: '#ffdc34' // Jane's color
                 },
                 {
                     name: 'Progress',
                     y: <?php print_r((isset($subScore[1]->score) &&  isset($subScore[0]->score)) ?? 0); ?>,
-                    color: '#21ccff' // Jane's color
+                    color: '#ffa81d' // Jane's color
                 },
                 {
                     name: 'Others',

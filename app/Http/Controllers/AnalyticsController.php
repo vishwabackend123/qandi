@@ -56,7 +56,7 @@ class AnalyticsController extends Controller
         $mockTestScoreCurr = 0;
         $mockTestScorePre = 0;
         $subProf = [];
-        if ($response->success === true):
+        if ($response->success === true) :
             $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
             $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
             $subProf = json_decode($response->subject_proficiency);
@@ -271,7 +271,7 @@ class AnalyticsController extends Controller
         $mockTestScoreCurr = 0;
         $mockTestScorePre = 0;
         $subProf = [];
-        if ($response->success === true):
+        if ($response->success === true) :
             $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
             $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
             $subProf = json_decode($response->subject_proficiency);
@@ -446,41 +446,41 @@ class AnalyticsController extends Controller
         $subProf_collection = collect($subProf);
         $overall_prof_perc = $subProf_collection->sum('score');
 
-            return view('afterlogin.Analytics.export_analytics', compact(
-                'overallAnalytics',
-                'days',
-                'classAccuracy',
-                'stuAccuracy',
-                'day',
-                'classAcc',
-                'stuAcc',
-                'subProf',
-                'unitProf',
-                'overall_prof_perc',
-                'correctAns1',
-                'incorrectAns1',
-                'correctAns2',
-                'incorrectAns2',
-                'correctAns3',
-                'incorrectAns3',
-                'date1',
-                'correctTime1',
-                'incorrectTime1',
-                'date2',
-                'correctTime2',
-                'incorrectTime2',
-                'date3',
-                'correctTime3',
-                'incorrectTime3',
-                'mockTestScoreCurr',
-                'mockTestScorePre',
-                'user_subjects'
-            ));
+        return view('afterlogin.Analytics.export_analytics', compact(
+            'overallAnalytics',
+            'days',
+            'classAccuracy',
+            'stuAccuracy',
+            'day',
+            'classAcc',
+            'stuAcc',
+            'subProf',
+            'unitProf',
+            'overall_prof_perc',
+            'correctAns1',
+            'incorrectAns1',
+            'correctAns2',
+            'incorrectAns2',
+            'correctAns3',
+            'incorrectAns3',
+            'date1',
+            'correctTime1',
+            'incorrectTime1',
+            'date2',
+            'correctTime2',
+            'incorrectTime2',
+            'date3',
+            'correctTime3',
+            'incorrectTime3',
+            'mockTestScoreCurr',
+            'mockTestScorePre',
+            'user_subjects'
+        ));
     }
 
     public function nextTab(Request $request, $sub_id)
     {
-//        $scoreArray = isset($request->scoreArray) ? $request->scoreArray : [];
+        //        $scoreArray = isset($request->scoreArray) ? $request->scoreArray : [];
         $userData = Session::get('user_data');
 
         $user_id = $userData->id;
@@ -653,6 +653,7 @@ class AnalyticsController extends Controller
         $days = json_encode($days);
         $classAccuracy = json_encode($classAccuracy);
         $stuAccuracy = json_encode($stuAccuracy);
+
 
         return view('afterlogin.Analytics.subject_wise_analytics', compact(
             'subScore',
