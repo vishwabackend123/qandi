@@ -123,7 +123,7 @@ class ResultController extends Controller
     }
 
 
-    public function exam_post_analysis(Request $request)
+    public function exam_post_analysis_score(Request $request)
     {
 
         $userData = Session::get('user_data');
@@ -135,7 +135,9 @@ class ResultController extends Controller
         $curl = curl_init();
         $api_URL = Config::get('constants.API_NEW_URL');
 
-        $curl_url = $api_URL . 'api/post-exam-analytics/' . $user_id . '/' . $exam_id;
+        /* $curl_url = $api_URL . 'api/post-exam-analytics/' . $user_id . '/' . $exam_id;
+ */
+        $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id;
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
@@ -164,7 +166,107 @@ class ResultController extends Controller
             $response = isset($response_data->response) ? $response_data->response : [];
 
 
-            return view('afterlogin.ExamCustom.exam_result', compact('response'));
+            return view('afterlogin.ExamCustom.exam_result1', compact('response'));
+        } else {
+
+            return false;
+        }
+    }
+
+
+    public function exam_post_analysis_attempt(Request $request)
+    {
+
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+
+        $curl_url = "";
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+
+        $curl_url = $api_URL . 'api/mini-post-exam-analytics2/' . $user_id . '/' . $exam_id;
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 120,
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+        $response_json = curl_exec($curl);
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $response_data = (json_decode($response_json));
+            $response = isset($response_data->response) ? $response_data->response : [];
+
+
+            return view('afterlogin.ExamCustom.exam_result2', compact('response'));
+        } else {
+
+            return false;
+        }
+    }
+
+
+    public function exam_post_analysis_rank(Request $request)
+    {
+
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+
+        $curl_url = "";
+        $curl = curl_init();
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+
+        $curl_url = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id;
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 120,
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+        $response_json = curl_exec($curl);
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        if ($httpcode == 200 || $httpcode == 201) {
+            $response_data = (json_decode($response_json));
+            $response = isset($response_data->response) ? $response_data->response : [];
+
+
+            return view('afterlogin.ExamCustom.exam_result3', compact('response'));
         } else {
 
             return false;

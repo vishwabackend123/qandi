@@ -27,7 +27,7 @@ Route::any('/', function () {
     if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
-//                 return view('index');
+        //                 return view('index');
         $landing_URL = Config::get('constants.landing_URL');
         return redirect($landing_URL);
     }
@@ -107,7 +107,12 @@ Route::any('/filter_review_question/{filter}', [App\Http\Controllers\ReviewContr
 
 /* Review Controller Routs */
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
-Route::any('/exam_result_analysis', [App\Http\Controllers\ResultController::class, 'exam_post_analysis'])->name('exam_result_analysis')->middleware('auth', 'menu');
+/* Route::any('/exam_result_analysis', [App\Http\Controllers\ResultController::class, 'exam_post_analysis'])->name('exam_result_analysis')->middleware('auth', 'menu');
+ */
+Route::any('/exam_result_analysis_score', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_score'])->name('exam_result_analysis_score')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_attempt', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_attempt'])->name('exam_result_analysis_attempt')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_rank', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_rank'])->name('exam_result_analysis_rank')->middleware('auth', 'menu');
+
 
 
 /* Book Mark routes */

@@ -129,7 +129,7 @@ $user_id = $userData->id;
                     </div>
                 </div>
                 @else
-                <div class="col-md-4 p-4 ">
+                <div class="col-md-4 p-4 " style="display:none">
                     <div class="bg-white white-box-small subscriptionBox   ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. XXXX {{--$subsprice--}}</p>
@@ -152,7 +152,7 @@ $user_id = $userData->id;
                 @endif
                 @endif
                 @elseif((count($purchasedid)>0) && !empty($userData->id))
-                <div class="col-md-4 p-4 ">
+                <div class="col-md-4 p-4 " style="display:none">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. XXXX {{--$subsprice--}}</p>
@@ -203,7 +203,7 @@ $user_id = $userData->id;
                         </div>
                         @if(!in_array($sub->subscript_id,$purchasedid) )
                         <div class="text-center mt-2">
-                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial 1111></a>
                         </div>
                         @else
                         <div class="text-center mt-2">

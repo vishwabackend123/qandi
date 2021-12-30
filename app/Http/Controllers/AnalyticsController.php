@@ -56,7 +56,7 @@ class AnalyticsController extends Controller
         $mockTestScoreCurr = 0;
         $mockTestScorePre = 0;
         $subProf = [];
-        if ($response->success === true) :
+        if (isset($response->success) && $response->success === true) :
             $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
             $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
             $subProf = json_decode($response->subject_proficiency);
