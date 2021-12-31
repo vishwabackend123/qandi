@@ -16,7 +16,7 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler(function (payload) {
-   /*  console.log("Message has received : ", payload); */
+    console.log("Message has received fw : ", payload);
     const title = payload.data.title;
 
     const options = {

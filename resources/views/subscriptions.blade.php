@@ -203,7 +203,7 @@ $user_id = $userData->id;
                         </div>
                         @if(!in_array($sub->subscript_id,$purchasedid) )
                         <div class="text-center mt-2">
-                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial 1111></a>
+                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial></a>
                         </div>
                         @else
                         <div class="text-center mt-2">

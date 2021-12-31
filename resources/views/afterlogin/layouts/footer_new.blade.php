@@ -77,7 +77,7 @@
         return messaging.getToken()
     }).then(function(response) {
         if (response) {
-            /*  console.log(response); */
+            console.log(response);
 
             $.ajax({
                 url: "{{ url('/saveFcmToken') }}",
@@ -109,8 +109,6 @@
         console.log('An error occurred while retrieving token. ', err);
 
     });
-
-
     messaging.onMessage((payload) => {
         console.log('Message received footer. ', payload);
         const title = payload.data.title;
