@@ -15,6 +15,11 @@ button {
     outline: none;
     text-decoration: none;
 }
+.cust-gallery .swiper-slide.go2Planner {
+    width: 20% !important;
+    height: 228px;
+}
+
 
 #topicclose #topIIC .bg-white .slimScrollDiv, .padingTT .bg-white .slimScrollDiv {
     height: 165px !important;
@@ -3496,9 +3501,11 @@ p.tab-title {
 .ms-auto .text-secondary {
     color: #e9e9e9 !important;
 }
-.cust-gallery .swiper-slide:first-child {
+.cust-gallery .swiper-slide.go2Planner {
     width: 20% !important;
+    height: 228px;
 }
+
 .custom-btn-gray {
     border: none;
     outline: none;
@@ -3527,6 +3534,7 @@ p.tab-title {
 .cust-gallery .swiper-slide {
     border-radius: 56px;
     padding: 35px;
+    height: 225px;
 }
 
 .success-img img {
