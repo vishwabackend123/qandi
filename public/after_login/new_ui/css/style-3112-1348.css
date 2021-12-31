@@ -6749,25 +6749,12 @@ button.arrow.next-arow {
 
 @media(min-width:768px) and (max-width:991px) {
 
+    /** analytics **/
+    #home .bg-white.shadow-lg {
+        height: auto;
+    }
 
-/** rahul css on 31-12-2021**/
-	
-button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
-.fw-bold{font-size:18px;}
-#exam_content_sec.examSect ul#myTab li a{padding:10px 2px;font-size:14px;}
-.examSect div#myTabContent .tab-pane .question-block .arrow {top: 17%!important;}
-.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{right:38%;}	
-.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{left:5%;}
-.rightSect .col-md-6.legends{width:100%;}
-#resume-test .justify-content-center{justify-content:center!important;}
-
-/** end here **/
-	
-/** analytics **/
-
-#home .bg-white.shadow-lg {height:auto;}
-
-/** end analytics */
+    /** end analytics */
 
     /** dashboard-index page css popup on 16-12-2021 **/
     /** popup css**/
@@ -6897,39 +6884,6 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
-	
-	/** rahul css on 31-12-2021**/
-	
-	#exam_content_sec .tab-wrapper.h-100{height:auto!important; margin-bottom:10px;}
-	.examSect div#myTabContent{height:auto!important;}
-	.rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5{height:auto!important;}
-	.question-block{height:auto;}
-	#exam_content_sec .tab-btn-box {bottom:10px;}
-	.examSect div#myTabContent .tab-pane .question-block .arrow {top: 14%!important;}
-    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
-    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
-    .examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow {right: 8%;}
-    .q-no{left:10px;}
-    #exam_content_sec .question-block .question p{font-size:12px;padding-left:10px;}
-    #resume-test .justify-content-center{justify-content:center !important;}
-	.tab-btn-box{position:relative;display:inline-block !important;}
-	.examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0, .examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0, .examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0{
-		line-height:32px;width:100%;display:inline-block;margin-bottom:10px;height:50px;
-	}
-	.examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0{display:inline-block;width:100%;margin-bottom:10px;margin-left:0px !important;}
-	.counter{top:0px !important;}
-	#FullTest_Exam_Panel_Interface_A button#bt-modal-cancel{margin:0px;}
-	#test_instruction .col-md-3.col-lg-3.d-flex.align-items-center{display:inline-block !important;}
-	button#goto-exam-btn{padding:15px 5px !important;font-size: 14px;}
-	
-	button#goto-exam-btn {
-    padding: 15px 40px !important;
-    font-size: 14px;
-    color: #fff !important;
-    opacity: 1;
-}
-	/** end here **/
-	
 	/*new responsive code 27-12*/
 	.button-sec.mt-3 a {
         width: 80%;

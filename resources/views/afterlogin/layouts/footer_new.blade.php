@@ -337,6 +337,7 @@
 
     $(document).ready(function() {
         jQuery("#nodificbell").click(function() {
+            refresh_notification();
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").show();
             jQuery("#profileAcc").hide();
@@ -353,6 +354,21 @@
             jQuery("#collapseNotification").hide();
             //jQuery("#profileAcc").show();
         });
+
+
+        function refresh_notification() {
+            $.ajax({
+                url: "{{ url('/refresh-notifications',) }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(response_data) {
+                    $('#recent_notify').html(response_data);
+
+                },
+            });
+        }
 
     });
 
@@ -429,11 +445,11 @@
                 }
                 if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
 
-                    $('#added_subject_' + subject_id).removeClass('text-gray');
+                    $('#added_subject_' + subject_id).removeClass('text-light');
                     $('#added_subject_' + subject_id).addClass('text-success');
                 } else {
                     $('#added_subject_' + subject_id).removeClass('text-success');
-                    $('#added_subject_' + subject_id).addClass('text-gray');
+                    $('#added_subject_' + subject_id).addClass('text-light');
                 }
             });
 
@@ -533,11 +549,11 @@
 
                     if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
 
-                        $('#added_subject_' + subject_id).removeClass('text-gray');
+                        $('#added_subject_' + subject_id).removeClass('text-light');
                         $('#added_subject_' + subject_id).addClass('text-success');
                     } else {
                         $('#added_subject_' + subject_id).removeClass('text-success');
-                        $('#added_subject_' + subject_id).addClass('text-gray');
+                        $('#added_subject_' + subject_id).addClass('text-light');
                     }
                 }
             });
@@ -828,11 +844,11 @@
         }
         if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
 
-            $('#added_subject_' + subject_id).removeClass('text-gray');
+            $('#added_subject_' + subject_id).removeClass('text-light');
             $('#added_subject_' + subject_id).addClass('text-success');
         } else {
             $('#added_subject_' + subject_id).removeClass('text-success');
-            $('#added_subject_' + subject_id).addClass('text-gray');
+            $('#added_subject_' + subject_id).addClass('text-light');
         }
     }
 

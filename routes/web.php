@@ -220,6 +220,7 @@ Route::any('/adaptive_topic_exam_result', [App\Http\Controllers\AdpativeExamCont
 Route::any('/adaptive_chapter_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_chapter_exam_result'])->name('adaptive_chapter_exam_result')->middleware('auth', 'menu');
 
 Route::any('/clear-all-notifications', [App\Http\Controllers\HomeController::class, 'clearAllNotifications'])->name('clearAllNotifications')->middleware('auth', 'menu');
+Route::any('/refresh-notifications', [App\Http\Controllers\HomeController::class, 'refreshNotification'])->name('refresh-notifications')->middleware('auth');
 
 
 Route::any('/adaptive_exam', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_mock_exam'])->name('adaptive_mock_exam')->middleware('auth', 'menu');

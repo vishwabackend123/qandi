@@ -580,4 +580,40 @@ class HomeController extends Controller
         curl_close($curl);
         return Redirect()->route('dashboard');
     }
+
+
+    public function refreshNotification(Request $request)
+    {
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+
+        $api_URL = Config::get('constants.API_NEW_URL');
+
+        $curl = curl_init();
+        $curl_url = $api_URL . 'api/notification-history/' . $user_id;
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $aResponse = json_decode($response);
+        if (isset($aResponse->success) && $aResponse->success == true) {
+            $notifications = $aResponse->response;
+        } else {
+            $notifications = [];
+        }
+
+
+
+        return view('afterlogin.ajax_notification', compact('notifications'));
+    }
 }

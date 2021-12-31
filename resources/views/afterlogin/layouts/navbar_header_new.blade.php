@@ -263,7 +263,7 @@
                             @foreach($aSubjects as $skey=>$sVal)
 
                             <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
-                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-gray" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
+                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
                                 <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 30vh;">
                                     <div class="subject_chapter" style="overflow: hidden; width: auto; height: 30vh;">
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">

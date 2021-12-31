@@ -100,7 +100,7 @@ $userData = Session::get('user_data');
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
-                        <div class="swiper-slide bg-white">
+                        <div class="swiper-slide bg-white AttmnowSec">
                             <div class="row">
                                 <div class="col-lg-12 px-0">
                                     <p>Complete full body scan to</p>
@@ -119,7 +119,7 @@ $userData = Session::get('user_data');
                         @endif
 
 
-                        <div class="swiper-slide bg-white">
+                        <div class="swiper-slide bg-white go2Planner">
 
                             <div class="test-attend text-center pt-2 pb-2">
                                 <p>Tests Attempted</p>
