@@ -1,6 +1,6 @@
 // Add Firebase products that you want to use
-importScripts('https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/7.23.0/firebase.js');
+
 
 // Firebase SDK
 firebase.initializeApp({
@@ -27,7 +27,9 @@ messaging.setBackgroundMessageHandler(function (payload) {
         time: payload.data.time,
     };
     console.log("body",payload.data.body);
-    return self.registration.showNotification(title,options);
-   
+    return self.registration.showNotification(
+        title,
+        options,
+    );
     
 });
