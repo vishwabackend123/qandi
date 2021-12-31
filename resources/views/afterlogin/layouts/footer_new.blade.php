@@ -109,7 +109,7 @@
         console.log('An error occurred while retrieving token. ', err);
 
     });
-    messaging.onMessage((payload) => {
+    messaging.onMessage(function(payload) {
         console.log('Message received footer. ', payload);
         const title = payload.data.title;
 
