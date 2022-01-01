@@ -15,11 +15,11 @@ button {
     outline: none;
     text-decoration: none;
 }
-
 .cust-gallery .swiper-slide.go2Planner {
     width: 20% !important;
     height: 228px;
 }
+
 
 #topicclose #topIIC .bg-white .slimScrollDiv, .padingTT .bg-white .slimScrollDiv {
     height: 165px !important;
@@ -6685,7 +6685,7 @@ button.arrow.next-arow {
 
     .exam-analytics .cust-tabs .nav-link {
         margin-right: 0px;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     /** exam analytics page css End 14-12-2021**/
@@ -6757,15 +6757,6 @@ button.arrow.next-arow {
 
 @media(min-width:768px) and (max-width:991px) {
 
-a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-		padding: 22px !important;
-	}
-	span.Ex--an {
-		display: none;
-	}
-	.Ex-anal i.me-2.fa.fa-download {
-		margin-right: 0px !important;
-	}
 
 /** rahul css on 31-12-2021**/
 	
@@ -6777,9 +6768,6 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 .examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{left:5%;}
 .rightSect .col-md-6.legends{width:100%;}
 #resume-test .justify-content-center{justify-content:center!important;}
-.subj-name{font-size:12px;}
-.graph-txt{font-size:16px;}
-#myTabContent .slimScrollDiv{height:28vh!important;}
 
 /** end here **/
 	
@@ -6917,30 +6905,6 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
-	/* 01-01-22*/
-	a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-		padding: 22px !important;
-	}
-	span.Ex--an {
-		display: none;
-	}
-	.Ex-anal i.me-2.fa.fa-download {
-		margin-right: 0px !important;
-	}
-	
-	#overall button.btn, #home button.btn {
-		font-size: 12px;
-		padding: 5px 20px !important;
-		width: 40% !important;
-	}
-	#overall button.btn.active, #home button.btn.active{
-		padding: 10px 0px !important;
-	}
-
-
-
-/* 01-01-22 */
-
 	
 	/** rahul css on 31-12-2021**/
 	
@@ -7520,17 +7484,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 
 @media (max-width: 500px) {
 
-#topicclose #topIIC .status-id.rating, .padingTT .status-id.rating {
-    width: 100% !important;
-    font-size: 10px !important;
-}
-.star-ratings-css {
-    font-size: 16px !important;
-    line-height: 35px !important;
-}
-.cust-tab-content .dashboard-name-txt {
-    font-size: 12px !important;
-}
+
 
     /** Listing series page css on 16-12-2021 **/
 
@@ -7587,7 +7541,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
         }
 
         .nav.nav-tabs.cust-tabs {
-            width: 700px;
+            width: 500px;
         }
 
         .cust-tab-content {
@@ -9190,9 +9144,9 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
         box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
         background-image: linear-gradient(to bottom, #21ccff, #00baff);
         border: none;
-        color: #fff;width: 38% !important;
-        margin-right: 15px;font-size: 10px !important;
-        margin-bottom: 10px;padding: 10px !important;
+        color: #fff;
+        margin-right: 15px;
+        margin-bottom: 10px;
     }
 
     #arrow-left-btm .inner-arrow-left-btm {
@@ -9449,7 +9403,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 
         .exam-analytics .cust-tabs .nav-link {
             margin-right: 0px;
-            font-size: 12px;
+            font-size: 14px;
         }
 
         /** exam analytics page css End 14-12-2021**/

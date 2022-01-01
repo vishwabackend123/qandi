@@ -31,7 +31,7 @@ $userData = Session::get('user_data');
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
                                 <li class="ms-auto">
-                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> &nbsp;Export Analytics</a>
+                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> &nbsp;<span class="Ex--an">Export Analytics</span></a>
                                 </li>
 
                             </ul>
@@ -74,8 +74,8 @@ $userData = Session::get('user_data');
                                             <div id="prof_scroll">
                                                 @if(!empty($subProf))
                                                 @foreach($subProf as $key=>$sub)
-                                                <div class="d-flex align-items-center px-3">
-                                                    <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 ">
+                                                <div class="d-flex align-items-center px-3 row">
+                                                    <div class="d-flex align-items-center py-2 dashboard-listing-details col-md-6 col-sm-12">
                                                         <span class="mr-3 dashboard-name-txt SubjName">{{$sub->subject_name}}</span>
 
                                                         <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
