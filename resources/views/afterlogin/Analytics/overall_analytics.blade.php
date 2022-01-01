@@ -39,7 +39,7 @@ $userData = Session::get('user_data');
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
                                 <div class="row padingTT">
-                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                                         <div class="bg-white shadow-lg py-5 px-3">
                                             <div class="prgress-i-txt px-3">
                                                 <span class="progress_text">Progress</span>
@@ -66,7 +66,7 @@ $userData = Session::get('user_data');
 
                                         </div>
                                     </div>
-                                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+                                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
                                         <div class="bg-white shadow-lg py-5 px-3">
                                             <div class="prgress-i-txt px-3">
                                                 <span class="progress_text">Subject proficiency</span>
