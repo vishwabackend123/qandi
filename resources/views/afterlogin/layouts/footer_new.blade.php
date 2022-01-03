@@ -1174,23 +1174,21 @@
                 data: $('#referalStudent_form').serialize(),
                 beforeSend: function() {},
                 success: function(response_data) {
-
                     var response = jQuery.parseJSON(response_data);
 
+
                     if (response.success == true) {
-                        var check = 0;
-                        if (response.duplicate_referrals.length > 0) {
-                            check = 1;
+
+
+                        if ((typeof response.duplicate_referrals !== 'undefined') && (response.duplicate_referrals.length > 0)) {
+
                             const duplicate = response.duplicate_referrals.toString();
 
                             var errormsg = $("#errRef_auth").show();
                             errormsg[0].textContent = "Already referred Email ids : " + duplicate;
                         }
-                        setTimeout(function() {
-                            $('.errRef').fadeOut('fast');
-                        }, 5000);
-                        $('#referEmails').val("");
-                        if (response.message != '' && check == 0) {
+
+                        if (response.message != '') {
                             var sucessmsg = $("#successRef_auth").show();
                             sucessmsg[0].textContent = response.message;
 
@@ -1199,6 +1197,10 @@
                             }, 3000);
 
                         }
+                        setTimeout(function() {
+                            $('.errRef').fadeOut('fast');
+                        }, 5000);
+                        $('#referEmails').val("");
 
                     } else {
                         var errormsg = $("#errRef_auth").show();

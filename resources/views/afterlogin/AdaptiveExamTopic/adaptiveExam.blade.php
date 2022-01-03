@@ -895,8 +895,29 @@ $questtype='radio';
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {
-                form.submit();
+                if (timeLeft >= 1) {
+                    let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+
+                    const circleDasharray = `${(
+                            calculateTimeFraction() * FULL_DASH_ARRAY
+                        ).toFixed(0)} 283`;
+                    console.log("setCircleDashArray: ", circleDasharray);
+                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
+
+                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                    lefttime_exam_s.innerHTML = formatTime(timeLeft);
+
+                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
+                } else {
+                    form.submit();
+                }
+
+
             }
+
 
         });
 
