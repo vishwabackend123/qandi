@@ -616,6 +616,7 @@
 
                 <div class="btm-form-flds  pe-3 pb-5">
                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
+                        @csrf
                         <div class="form-flds">
                             <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
                         </div>

@@ -687,7 +687,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         },
         tooltip: {
             shared: true,
-            valueSuffix: ' units'
+            valueSuffix: ' marks'
         },
         credits: {
             enabled: false

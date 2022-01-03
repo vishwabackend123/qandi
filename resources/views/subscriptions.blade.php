@@ -34,7 +34,7 @@ $user_id = $userData->id;
                 @if(!empty($user_id) && !empty($purchased_ids))
                 <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
                 @elseif(!isset($user_id))
-                <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
+                <a href="{{ url('/') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
                 @endif
             </h1>
             @if($errors->any())

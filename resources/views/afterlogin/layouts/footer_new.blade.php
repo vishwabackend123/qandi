@@ -821,6 +821,14 @@
 
     }
 
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
 
     function handleChange(subject_id) {
 
@@ -1033,12 +1041,16 @@
     });
 
 
-
+    $.validator.addMethod("mobileregx", function(value, element, regexpr) {
+        return regexpr.test(value);
+    }, 'Please enter valid mobile number.');
     $("#editProfile_form").validate({
-
+        rules: {
+            user_mobile: {
+                mobileregx: /^[1-9][0-9]{9}$/,
+            }
+        },
         submitHandler: function(form) {
-
-
             $.ajax({
                 url: "{{ url('/editProfile') }}",
                 type: 'POST',

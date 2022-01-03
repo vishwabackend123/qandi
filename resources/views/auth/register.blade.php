@@ -192,7 +192,7 @@
                 $check = 1;
             } else {
                 //var testMobile = /^\d{10}$/;
-                var testMobile = /^[7-9][0-9]{9}$/;
+                var testMobile = /^[1-9][0-9]{9}$/;
                 if (testMobile.test(mobile_num)) {} else {
                     $("#errlog_mob").html('Please enter valid mobile number');
                     $("#errlog_mob").fadeIn('fast');
