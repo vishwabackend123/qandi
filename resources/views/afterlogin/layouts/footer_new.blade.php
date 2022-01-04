@@ -1221,3 +1221,21 @@
     });
 </script>
 <!-- end planner section move from dashboard -->
+<script>
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 5) {
+
+            $(".planmner-block").css({
+                "margin-top": "0"
+            }).css({
+                "padding-top": "0"
+            })
+        } else {
+            $(".planmner-block").css({
+                "margin-top": "100px"
+            }).css({
+                "padding-top": "15"
+            })
+        }
+    });
+</script>
