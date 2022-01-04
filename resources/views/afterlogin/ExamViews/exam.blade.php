@@ -794,10 +794,45 @@ $questtype='radio';
         }
     }
 
+    /* Saved question response */
+    function saveAnswerAjax(question_id, qNo) {
+        var question_id = question_id;
+        var option_id = [];
+        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+            option_id.push($(this).val());
+        });
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            return false;
+        }
+
+        var q_submit_time = $("#timespend_" + question_id).val();
+        $.ajax({
+            url: "{{ route('saveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+                q_submit_time: q_submit_time
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.status == 200) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                    return true;
+                }
+            },
+        });
+
+    }
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswer(quest_id, '') != false) {
+        if (saveAnswerAjax(quest_id, '') != false) {
 
             // marking for review
             $.ajax({
@@ -820,6 +855,13 @@ $questtype='radio';
 
                 },
             });
+            if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                $("#submitExam").click();
+            } else {
+                $("#quesnext" + quest_id).click();
+
+            }
         }
     }
 
