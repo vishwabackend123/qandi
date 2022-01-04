@@ -4654,11 +4654,15 @@ font-size: 20px;
     position: relative;
     padding-left: 50px;
 	padding-top: 12px !important;
-    padding-bottom: 12px !important;line-height:20px;
+    padding-bottom: 12px !important;line-height:20px;overflow:hidden;
 }
 .question-block label.question p {
     margin-bottom: 2px;
 }
+label.question.m-0.py-3.d-block .MathJax {
+    display: block !important;
+}
+
 
 
 .q-no {
@@ -5330,7 +5334,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 99;
+    z-index: 999;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
