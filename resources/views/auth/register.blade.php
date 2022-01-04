@@ -191,8 +191,8 @@
                 $("#errlog_mob").fadeOut(5000);
                 $check = 1;
             } else {
-                //var testMobile = /^\d{10}$/;
-                var testMobile = /^[1-9][0-9]{9}$/;
+
+                var testMobile = /^[6-9][0-9]{9}$/;
                 if (testMobile.test(mobile_num)) {} else {
                     $("#errlog_mob").html('Please enter valid mobile number');
                     $("#errlog_mob").fadeIn('fast');

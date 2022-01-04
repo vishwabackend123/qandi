@@ -1047,7 +1047,7 @@
     $("#editProfile_form").validate({
         rules: {
             user_mobile: {
-                mobileregx: /^[1-9][0-9]{9}$/,
+                mobileregx: /^[6-9][0-9]{9}$/,
             }
         },
         submitHandler: function(form) {
