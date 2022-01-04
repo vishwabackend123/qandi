@@ -6093,8 +6093,9 @@ span#slide-input {
     background-color: #d8e0e6;
     color: #2c3348;
 	font-size: 12px !important;
-    position: absolute;
-    top: 72px;
+    position: relative;
+    top: auto;
+    bottom: 5px;
 }
 
 .planner-scroll.row.align-items-center.mb-4 {
@@ -6231,7 +6232,7 @@ background: #00baff !important;
     padding-left: 7px;
     font-size: 15px;
     color: #fff;
-    line-height: 23px;
+    line-height: 23px; margin-top: -5px;
 }
 
 .examSect {
@@ -6961,6 +6962,41 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
+	.chaptbox-add a {
+		text-align: center !important;
+		justify-content: center !important;
+	}
+	p.text-end.text-danger.mt-1 {
+		font-size: 12px !important;
+		text-align: left !important;
+	}
+	.edit-form button#cancelEdit, .edit-form button#saveEdit {
+    width: auto !important;
+}
+.edit-form .form-btns {
+    margin-bottom: 30px !important;
+}
+
+	.name-txt-sml {
+    font-size: 16px !important;
+}
+.edit-form .btm-form-flds {
+    margin-top: 0px !important;
+}
+.edit-form .form-btns {
+    margin-top: 0px !important;
+}
+	.cust-gallery .swiper-slide h3 {
+    width: auto !important;
+    font-size: 14px !important;
+    word-break: break-word;
+    white-space: break-spaces;
+}
+.leader-board {
+    border-top-left-radius: 56px !important;
+    border-top-right-radius: 56px !important;
+}
+
 	.list-series .scroll-div-live-exm {
 		height: 400px !important;
 	}
@@ -7007,11 +7043,11 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 	.rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5{height:auto!important;}
 	.question-block{height:auto;}
 	#exam_content_sec .tab-btn-box {bottom:10px;}
-	.examSect div#myTabContent .tab-pane .question-block .arrow {top: 14%!important;}
+	.examSect div#myTabContent .tab-pane .question-block .arrow {top: 35%!important;}
     .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
     .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
     .examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow {right: 8%;}
-    .q-no{left:10px;}
+    .q-no{left:0px;}
     #exam_content_sec .question-block .question p{font-size:12px;padding-left:10px;}
     #resume-test .justify-content-center{justify-content:center !important;}
 	.tab-btn-box{position:relative;display:inline-block !important;}
@@ -7020,7 +7056,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 	}
 	.examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0{display:inline-block;width:100%;margin-bottom:10px;margin-left:0px !important;}
 	.counter{top:0px !important;}
-	#FullTest_Exam_Panel_Interface_A button#bt-modal-cancel{margin:0px;}
+	#FullTest_Exam_Panel_Interface_A button#bt-modal-cancel{margin:0px; width: 200px;}
 	#test_instruction .col-md-3.col-lg-3.d-flex.align-items-center{display:inline-block !important;}
 	button#goto-exam-btn{padding:15px 5px !important;font-size: 14px;}
 	
@@ -7065,6 +7101,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
     .counter {
         margin-right: 0px !important;
         top: 3px;
+		right: 0px !important;
     }
 
     /**analytics **/
@@ -7380,7 +7417,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
     }
 
     .examSect .question {
-        padding: 5px 30px !important;
+        padding: 12px 30px !important;
         font-family: Manrope;
         font-size: 14px;
         line-height: 20px;
@@ -7479,7 +7516,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
     /** live exam css **/
 
     .name-txt {
-        font-size: 18px;
+        font-size: 14px;
         width: 100%;
         display: inline-block;
     }
@@ -7532,7 +7569,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 
     .cust-tab-content .custom-btn-gray {
         width: auto !important;
-        float: right;
+        float: left;
         font-size: 14px;
     }
 
@@ -7555,8 +7592,8 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
     }
 
     .cust-gallery .swiper-slide.bg-white {
-        width: auto !important;
-    }
+    width: 100% !important;
+}
 
     .seeAnico img {
         display: none;
@@ -8155,9 +8192,9 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
         opacity: 1;
         max-width: 300px;
         white-space: nowrap;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        text-overflow: ellipsis;
+            overflow-x: unset !important;
+    overflow-y: unset !important;
+    text-overflow: unset !important;
     }
 
     .p-picture img {
@@ -9089,8 +9126,8 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
             width: 87%;
             right: 1%;
             top: 12%;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0px;
+            border-top-left-radius: 56px;
+            border-top-right-radius: 56px;
         }
 
         .profile-show {
