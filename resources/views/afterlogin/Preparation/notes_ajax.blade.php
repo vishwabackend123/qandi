@@ -28,7 +28,7 @@
             <div>
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                 <p>{!! $pre->resource_desc !!}</p>
-                <a href="{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}" target="_blank"> click me to Notes </a>
+                <a class="text-danger" href='{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}' target="_blank"> <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Show Notes </a>
             </div>
         </div>
         @endforeach

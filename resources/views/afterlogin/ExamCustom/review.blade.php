@@ -281,7 +281,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             },
             success: function(result) {
                 $("#review_rques_blk").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question-block"]);
 
             }
         });

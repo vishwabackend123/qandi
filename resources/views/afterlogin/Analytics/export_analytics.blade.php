@@ -6,7 +6,7 @@ $userData = Session::get('user_data');
 @endphp
 <!-- Side bar menu -->
 
-<div class="  h-100" id="dialog-pdf" title="pdf" stye="display:none;">
+<div class="  h-100" id="dialog-pdf" title="pdf">
     <!-- top navbar -->
 
     <div id="contentHtml" class="content-wrapper py-5">
@@ -214,9 +214,9 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-<div id="editor">
-    <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
-    <a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}"></a>
+<div id="editor"></div>
+<a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
+<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}"></a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>

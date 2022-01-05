@@ -26,7 +26,7 @@
             <div>
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                 <p>{!! $pre->resource_desc !!}</p>
-                <a href="{{$pre->resource_link }}" target="_blank"> click me to Video </a>
+                <a href="{{$pre->resource_link }}" class="text-danger" target="_blank"> <i class="fa fa-play" aria-hidden="true"></i> Play </a>
             </div>
         </div>
 

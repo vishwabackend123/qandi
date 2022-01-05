@@ -34,6 +34,8 @@
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                 <p>{!! $pre->resource_desc !!}</p>
                 <!-- <p class="mt-2 mb-0">36 Slides</p> -->
+                <a class="text-danger" href='{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}' target="_blank"> <i class="fa fa-file-powerpoint-o" aria-hidden="true"></i> Show Presentation </a>
+
             </div>
         </div>
 
@@ -52,6 +54,7 @@
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                 <p>{!! $pre->resource_desc !!}</p>
                 <!-- <p class="mt-2 mb-0">36 Slides</p> -->
+                <a class="text-danger" href='{{"https://student-resource.s3.ap-south-1.amazonaws.com/". $pre->resource_file }}' target="_blank"> <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Show Notes </a>
             </div>
         </div>
 
@@ -69,6 +72,7 @@
             <div>
                 <p class="text-danger m-0 pb-1">{{$pre->resource_name}}</p>
                 <p>{!! $pre->resource_desc !!}</p>
+                <a href="{{$pre->resource_link }}" class="text-danger" target="_blank"> <i class="fa fa-play" aria-hidden="true"></i> Play </a>
             </div>
         </div>
 

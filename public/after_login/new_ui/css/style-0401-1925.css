@@ -6966,14 +6966,6 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
-	#exam_result_analysis .progress {
-		width: 56% !important;
-		max-width: 56%;
-	}
-	.exam-analytics div#myTabContent .tab-pane .hScroll {
-		height: 255px !important;
-	}
-
 	.chaptbox-add a {
 		text-align: center !important;
 		justify-content: center !important;
@@ -7055,7 +7047,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 	.examSect div#myTabContent{height:auto!important;}
 	.rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5{height:auto!important;}
 	.question-block{height:auto;}
-	#exam_content_sec .tab-btn-box {bottom:10px; text-align:center;}
+	#exam_content_sec .tab-btn-box {bottom:10px;}
 	.examSect div#myTabContent .tab-pane .question-block .arrow {top: 35%!important;}
     .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
     .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
@@ -7065,9 +7057,9 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
     #resume-test .justify-content-center{justify-content:center !important;}
 	.tab-btn-box{position:relative;display:inline-block !important;}
 	.examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0, .examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0, .examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0{
-		line-height:32px;width:80%;display:inline-block;margin-bottom:10px;height:50px;
+		line-height:32px;width:100%;display:inline-block;margin-bottom:10px;height:50px;
 	}
-	.examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0{display:inline-block;width:80%;margin-bottom:10px;margin-left:0px !important;}
+	.examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0{display:inline-block;width:100%;margin-bottom:10px;margin-left:0px !important;}
 	.counter{top:0px !important;}
 	#FullTest_Exam_Panel_Interface_A button#bt-modal-cancel{margin:0px; width: 200px;}
 	#test_instruction .col-md-3.col-lg-3.d-flex.align-items-center{display:inline-block !important;}
@@ -7869,7 +7861,7 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 
     .subscrived .p-pictures {
         float: left;
-        margin-left: 0%;
+        margin-left: 10%;
         margin-top: 9px;
     }
 
