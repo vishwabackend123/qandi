@@ -115,7 +115,7 @@
                 mobile: mobile,
             },
             success: function(response_data) {
-                console.log(response_data);
+
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.success == true) {

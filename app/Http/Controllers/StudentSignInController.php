@@ -89,7 +89,15 @@ class StudentSignInController extends Controller
 
             Session::put('OTP', $login_otp);
 
-            return $response_json;
+            if (env('STUDENT_ENV') == 'prod') {
+                $response = [
+                    "message" => "otp sent successfully on registered number",
+                    "success" => true,
+                ];
+                return json_encode($response);
+            } else {
+                return $response_json;
+            }
         }
     }
 
@@ -222,7 +230,15 @@ class StudentSignInController extends Controller
 
             Session::put('OTP', $reg_otp);
 
-            return $response_json;
+            if (env('STUDENT_ENV') == 'prod') {
+                $response = [
+                    "message" => "otp sent successfully on registered number",
+                    "success" => true,
+                ];
+                return json_encode($response);
+            } else {
+                return $response_json;
+            }
         } else {
             $response = [
                 "message" => "email or mobile already exist!!",
