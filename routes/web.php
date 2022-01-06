@@ -41,20 +41,24 @@ Route::any('/logout', function (Request $request) {
     return redirect($landing_URL);
 });
 
-Route::get(
-    '/clear-cache',
-    function () {
-        Artisan::call('cache:clear');
-        return "Cache is cleared";
-    }
-);
-Route::get(
-    '/clear-redis',
-    function () {
-        Redis::flushDB();
-        return "Redis is cleared";
-    }
-);
+
+
+if (env('STUDENT_ENV') != 'prod') {
+    Route::get(
+        '/clear-cache',
+        function () {
+            Artisan::call('cache:clear');
+            return "Cache is cleared";
+        }
+    );
+    Route::get(
+        '/clear-redis',
+        function () {
+            Redis::flushDB();
+            return "Redis is cleared";
+        }
+    );
+}
 
 Auth::routes();
 
