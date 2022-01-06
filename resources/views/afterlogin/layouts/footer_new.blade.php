@@ -1234,7 +1234,24 @@
             $(".planmner-block").css({
                 "margin-top": "100px"
             }).css({
-                "padding-top": "15"
+                "padding-top": "0px"
+            })
+        }
+    });
+	
+	jQuery(window).scroll(function() {
+        if (jQuery(window).scrollTop() > 5) {
+
+            jQuery("#profileAcc").css({
+                "margin-top": "0px"
+            }).css({
+                "padding-top": "15px"
+            })
+        } else {
+            jQuery("#profileAcc").css({
+                "margin-top": "100px"
+            }).css({
+                "padding-top": "0px"
             })
         }
     });
