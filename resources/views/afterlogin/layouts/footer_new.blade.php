@@ -89,7 +89,7 @@
                 },
 
                 success: function(response_data) {
-                    // console.log(response_data);
+                    console.log(response_data);
                 },
                 error: function(xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
@@ -1238,8 +1238,8 @@
             })
         }
     });
-	
-	jQuery(window).scroll(function() {
+
+    jQuery(window).scroll(function() {
         if (jQuery(window).scrollTop() > 5) {
 
             jQuery("#profileAcc").css({
