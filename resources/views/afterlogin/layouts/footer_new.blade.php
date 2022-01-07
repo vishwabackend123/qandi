@@ -55,20 +55,20 @@
 </script>
 <script>
     var firebaseConfig = {
-        apiKey: "AIzaSyAWZZkXXuTHAyNqO2EHqi5nudL40exTmmc",
-        authDomain: "uniq-notifications-9891c.firebaseapp.com",
-        projectId: "uniq-notifications-9891c",
-        storageBucket: "uniq-notifications-9891c.appspot.com",
-        messagingSenderId: "426474366022",
-        appId: "1:426474366022:web:0a94e98859fedd92bd9647",
-        measurementId: "G-9QGWSEL82D"
+        apiKey: "AIzaSyB1_yyExr-EfBlGgRxa1N04mlTgHY_pakU",
+        authDomain: "uniq-notifications-prod.firebaseapp.com",
+        projectId: "uniq-notifications-prod",
+        storageBucket: "uniq-notifications-prod.appspot.com",
+        messagingSenderId: "363979513693",
+        appId: "1:363979513693:web:5bf971e8c21159e1ffd2b4",
+        measurementId: "G-SQHCXXVZY7"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const messaging = firebase.messaging();
 
 
-    messaging.usePublicVapidKey('BF7HuS5x1c-2dYVum2tX1Td43VIvCLBw-IGj2c_uDWYiwilJfzvbazpQ6piLdb4YOVVivLQhfPn9Mlx59tWDz10');
+    messaging.usePublicVapidKey('BD7daxDmQeTVf332TGCtISSp4105y304P9we4PI2Ti5gSFl4EoNMlO3aVEppAzJKj1xlJJ0MUqbweXugwWNhjG8');
 
     // Get Instance ID token. Initially this makes a network call, once retrieved
     // subsequent calls to getToken will return from cache.
@@ -89,7 +89,7 @@
                 },
 
                 success: function(response_data) {
-                    // console.log(response_data);
+                    console.log(response_data);
                 },
                 error: function(xhr, b, c) {
                     console.log("xhr=" + xhr + " b=" + b + " c=" + c);
@@ -1238,8 +1238,8 @@
             })
         }
     });
-	
-	jQuery(window).scroll(function() {
+
+    jQuery(window).scroll(function() {
         if (jQuery(window).scrollTop() > 5) {
 
             jQuery("#profileAcc").css({
