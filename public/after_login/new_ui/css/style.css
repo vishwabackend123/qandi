@@ -7670,6 +7670,10 @@ div#review_rques_blk p {
 }
 
 @media (max-width: 500px) {
+.bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1{display: block !important;}
+.dashboard-name-txt {font-size:14px;}
+.bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1 .col-6{width:84%!important;}
+
 
 #topicclose #topIIC .status-id.rating, .padingTT .status-id.rating {
     width: 100% !important;
