@@ -327,7 +327,7 @@ $questtype='radio';
 
                         <h1 class="my-auto text-center">
 
-                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
+                            <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
 
                         </h1>
                         <div class="text-left   ">

@@ -25,6 +25,9 @@ g#Group_3044 {
 #PreparationCenter_modal_body .d-flex.bg-white.p-3.mt-5 .px-3 {
     padding-top: 1rem;
 }
+#sub-planner .planner-scroll {
+    padding-right: 16px;
+}
 .test-info .me-2 {
     display: none !important;
 }
@@ -1854,7 +1857,7 @@ p#h1--P {
     border-radius: 20px;
     box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
-    width: 68%;
+    width: 100%;
     margin: 0 auto !important;
 }
 
@@ -3450,7 +3453,7 @@ p.tab-title {
 .course-star li strong {
     width: 45%;
     display: inline-block;
-	word-break:break-all;
+	word-break:break-all;font-size:14px;
 }
 
 .star-img {
@@ -6966,6 +6969,9 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
+	.profile-section li a svg {
+    width: 100%;
+}
 	.border-bottom .px-4 {
     padding-left: 0px !important;
 }
@@ -7020,7 +7026,7 @@ div#review_rques_blk p {
 		text-align: left !important;
 	}
 	.edit-form button#cancelEdit, .edit-form button#saveEdit {
-    width: 40% !important;
+    width: 48% !important;
 	
 }
 .edit-form .form-btns {
@@ -7063,7 +7069,7 @@ div#review_rques_blk p {
 
 	/* 01-01-22*/
 	a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-		padding: 22px !important;
+		padding: 22px !important;width:75% !important;
 	}
 	span.Ex--an {
 		display: none;
@@ -7664,6 +7670,10 @@ div#review_rques_blk p {
 }
 
 @media (max-width: 500px) {
+.bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1{display: block !important;}
+.dashboard-name-txt {font-size:14px;}
+.bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1 .col-6{width:84%!important;}
+
 
 #topicclose #topIIC .status-id.rating, .padingTT .status-id.rating {
     width: 100% !important;
@@ -8318,7 +8328,7 @@ div#review_rques_blk p {
         }
 
         #full-txtBlock {
-            margin-left: 12px !important;
+            margin-left: 0px !important;
             margin-right: 12px !important;
         }
     }
