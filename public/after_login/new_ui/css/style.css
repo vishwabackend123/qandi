@@ -6969,6 +6969,9 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
+	.profile-section li a svg {
+    width: 100%;
+}
 	.border-bottom .px-4 {
     padding-left: 0px !important;
 }
@@ -7023,7 +7026,7 @@ div#review_rques_blk p {
 		text-align: left !important;
 	}
 	.edit-form button#cancelEdit, .edit-form button#saveEdit {
-    width: 40% !important;
+    width: 48% !important;
 	
 }
 .edit-form .form-btns {
@@ -7066,7 +7069,7 @@ div#review_rques_blk p {
 
 	/* 01-01-22*/
 	a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-		padding: 22px !important;
+		padding: 22px !important;width:75% !important;
 	}
 	span.Ex--an {
 		display: none;
