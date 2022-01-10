@@ -214,7 +214,7 @@ class LiveExamController extends Controller
         ];
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redis_data));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
 

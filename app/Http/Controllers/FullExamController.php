@@ -21,11 +21,16 @@ class FullExamController extends Controller
 
     public function exam(Request $request, $exam_name)
     {
+
         $filtered_subject = [];
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
+
+        if (Redis::exists('custom_answer_time_' . $user_id)) {
+            Redis::del(Redis::keys('custom_answer_time_' . $user_id));
+        }
+
         if ($exam_name == 'full_exam') {
             $exam_name = 'Full Exam';
         } else {
@@ -155,7 +160,7 @@ class FullExamController extends Controller
         ];
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redis_data));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
 
@@ -248,7 +253,7 @@ class FullExamController extends Controller
         } else {
             $option_data[] = '';
         }
-        $session_result = Redis::get('custom_answer_time');
+        $session_result = Redis::get('custom_answer_time_' . $user_id);
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
@@ -329,7 +334,7 @@ class FullExamController extends Controller
             $option_data[] = '';
         }
 
-        $session_result = Redis::get('custom_answer_time');
+        $session_result = Redis::get('custom_answer_time_' . $user_id);
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];

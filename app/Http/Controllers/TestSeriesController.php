@@ -33,7 +33,7 @@ class TestSeriesController extends Controller
         $open_series = [];
 
         $api_URL = Config::get('constants.API_NEW_URL');
-        $curl_url = $api_URL . 'api/testSeries-list/' . $exam_id.'/'.$user_id;
+        $curl_url = $api_URL . 'api/testSeries-list/' . $exam_id . '/' . $user_id;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -60,7 +60,7 @@ class TestSeriesController extends Controller
         if ($status == true) {
             $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
             $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
-//dd($live_series);
+            //dd($live_series);
             return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
         } else {
 
@@ -81,8 +81,8 @@ class TestSeriesController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        if (Redis::exists('custom_answer_time')) {
-            Redis::del(Redis::keys('custom_answer_time'));
+        if (Redis::exists('custom_answer_time_' . $user_id)) {
+            Redis::del(Redis::keys('custom_answer_time_' . $user_id));
         }
 
         $exam_name = isset($request->series_name) ? $request->series_name : '';
@@ -211,7 +211,7 @@ class TestSeriesController extends Controller
                     'full_time' => $exam_fulltime
                 ];
                 // Push Value in Redis
-                Redis::set('custom_answer_time', json_encode($redis_data));
+                Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                 $tagrets = implode(', ', $aTargets);
                 $test_type = 'Test-Series';
                 $exam_type = 'TS';
