@@ -136,7 +136,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 
-                        <p class="rightSectH">Answere Palette</p>
+                        <p class="rightSectH">Answer Palette</p>
                         <div class="number-block">
                             @php $quKey=1; @endphp
                             @if(isset($all_question_list) && !empty($all_question_list))
