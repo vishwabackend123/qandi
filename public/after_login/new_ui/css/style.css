@@ -6969,6 +6969,10 @@ button#goto-exam-btn{padding:15px 5px!important;font-size:14px;}
 }
 
 @media only screen and (max-width: 767px) {
+button.arrow.prev-arow{position:relative;}
+button.arrow.next-arow{position:relative;}
+
+
 	.profile-section li a svg {
     width: 100%;
 }
@@ -7100,9 +7104,8 @@ div#review_rques_blk p {
 	.question-block{height:auto;}
 	#exam_content_sec .tab-btn-box {bottom:10px; text-align:center;}
 	.examSect div#myTabContent .tab-pane .question-block .arrow {top: 35%!important;}
-    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
-    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 8%;}
-    .examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow {right: 8%;}
+    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {right: 0px; position: absolute; top: 36px !important; }    
+    .examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow { left: 2%;  position: absolute; top: 36px !important;} 
     .q-no{left:0px;}
     #exam_content_sec .question-block .question p{font-size:12px;padding-left:10px;}
     #resume-test .justify-content-center{justify-content:center !important;}
