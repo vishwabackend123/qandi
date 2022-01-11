@@ -190,8 +190,8 @@ class PlannerController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        if (Redis::exists('custom_answer_time')) {
-            Redis::del(Redis::keys('custom_answer_time'));
+        if (Redis::exists('custom_answer_time_' . $user_id)) {
+            Redis::del(Redis::keys('custom_answer_time_' . $user_id));
         }
 
         $question_count = isset($request->question_count) ? $request->question_count : 30;
@@ -318,7 +318,7 @@ class PlannerController extends Controller
         ];
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redis_data));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
         $aTargets = [];
 
         foreach ($filtered_subject as $sub) {

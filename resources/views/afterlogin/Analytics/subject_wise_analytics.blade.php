@@ -187,7 +187,7 @@
         </div>
         <div class="col-lg-7  mt-3">
             <div class="bg-white p-3  px-5">
-                <p class="text-uppercase fw-bold text-start">Acuracy Percentage</p>
+                <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
                 <div id="accPerSubjectWise"></div>
             </div>
             <div class="bg-white p-3 mt-3 px-5" id="back2Dsh">

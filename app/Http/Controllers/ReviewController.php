@@ -36,8 +36,8 @@ class ReviewController extends Controller
         if (Redis::exists($cacheKey)) {
             Redis::del(Redis::keys($cacheKey));
         }
-        if (Redis::exists('review_question')) {
-            Redis::del(Redis::keys('review_question'));
+        if (Redis::exists('review_question:' . $user_id)) {
+            Redis::del(Redis::keys('review_question:' . $user_id));
         }
 
         if (!empty($result_id)) {

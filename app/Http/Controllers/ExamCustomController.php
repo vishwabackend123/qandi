@@ -170,8 +170,8 @@ class ExamCustomController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        if (Redis::exists('custom_answer_time')) {
-            Redis::del(Redis::keys('custom_answer_time'));
+        if (Redis::exists('custom_answer_time_' . $user_id)) {
+            Redis::del(Redis::keys('custom_answer_time_' . $user_id));
         }
 
 
@@ -311,7 +311,7 @@ class ExamCustomController extends Controller
         ];
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redis_data));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
 
@@ -398,7 +398,7 @@ class ExamCustomController extends Controller
         } else {
             $option_data[] = '';
         }
-        $session_result = Redis::get('custom_answer_time');
+        $session_result = Redis::get('custom_answer_time_' . $user_id);
         $sessionResult = json_decode($session_result);
 
 
@@ -410,13 +410,16 @@ class ExamCustomController extends Controller
 
     public function saveAnswer(Request $request)
     {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+
         /* # code... */
         $data = $request->all();
         $question_id = isset($data['question_id']) ? $data['question_id'] : '';
         $option_id = isset($data['option_id']) ? $data['option_id'] : '';
         $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
 
-        $redis_result = Redis::get('custom_answer_time');
+        $redis_result = Redis::get('custom_answer_time_' . $user_id);
 
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
@@ -452,7 +455,7 @@ class ExamCustomController extends Controller
 
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redisArray));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
 
         $response['status'] = 200;
         $response['message'] = "save response successfully";
@@ -463,12 +466,14 @@ class ExamCustomController extends Controller
 
     public function clearResponse(Request $request)
     {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
         /* # code... */
         $data = $request->all();
         $question_id = isset($data['question_id']) ? $data['question_id'] : '';
         $option_id = isset($data['option_id']) ? $data['option_id'] : '';
 
-        $redis_result = Redis::get('custom_answer_time');
+        $redis_result = Redis::get('custom_answer_time_' . $user_id);
 
 
         if (!empty($redis_result)) {
@@ -491,7 +496,7 @@ class ExamCustomController extends Controller
 
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redisArray));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
 
         $response['status'] = 200;
         $response['message'] = "save response successfully";
@@ -572,7 +577,7 @@ class ExamCustomController extends Controller
             $option_data[] = '';
         }
 
-        $session_result = Redis::get('custom_answer_time');
+        $session_result = Redis::get('custom_answer_time_' . $user_id);
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
@@ -788,9 +793,11 @@ class ExamCustomController extends Controller
 
     public function saveQuestionTimeSession(Request $request, $question_id)
     {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
 
         $question_time = $request->q_time;
-        $redis_result = Redis::get('custom_answer_time');
+        $redis_result = Redis::get('custom_answer_time_' . $user_id);
 
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
@@ -817,7 +824,7 @@ class ExamCustomController extends Controller
         $redisArray['taken_time_sec'] = $retrive_time_sec;
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redisArray));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
 
         $response['status'] = 200;
         $response['message'] = "save response successfully";
@@ -837,8 +844,8 @@ class ExamCustomController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        if (Redis::exists('adaptive_session')) {
-            Redis::del(Redis::keys('adaptive_session'));
+        if (Redis::exists('adaptive_session:' . $user_id)) {
+            Redis::del(Redis::keys('adaptive_session:' . $user_id));
         }
 
         $question_count = isset($request->question_count) ? $request->question_count : 30;
@@ -976,7 +983,7 @@ class ExamCustomController extends Controller
         ];
 
         // Push Value in Redis
-        Redis::set('adaptive_session', json_encode($redis_data));
+        Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
 
@@ -1050,7 +1057,7 @@ class ExamCustomController extends Controller
             $optionArray = $this->shuffle_assoc($opArr);
             $option_data = $optionArray;
 
-            $session_result = Redis::get('adaptive_session');
+            $session_result = Redis::get('adaptive_session:' . $user_id);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id->answer) && !empty($sessionResult->given_ans->$quest_id->answer)) ? $sessionResult->given_ans->$quest_id->answer : [];
@@ -1069,9 +1076,11 @@ class ExamCustomController extends Controller
 
     public function saveAdaptiveTimeSession(Request $request, $question_id)
     {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
 
         $question_time = $request->q_time;
-        $redis_result = Redis::get('adaptive_session');
+        $redis_result = Redis::get('adaptive_session:' . $user_id);
 
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
@@ -1100,7 +1109,7 @@ class ExamCustomController extends Controller
 
 
         // Push Value in Redis
-        Redis::set('adaptive_session', json_encode($redisArray));
+        Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
 
         $response['status'] = 200;
         $response['message'] = "save response successfully";
@@ -1111,12 +1120,14 @@ class ExamCustomController extends Controller
 
     public function adaptiveClearResponse(Request $request)
     {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
         /* # code... */
         $data = $request->all();
         $question_id = isset($data['question_id']) ? $data['question_id'] : '';
         $option_id = isset($data['option_id']) ? $data['option_id'] : '';
 
-        $redis_result = Redis::get('adaptive_session');
+        $redis_result = Redis::get('adaptive_session:' . $user_id);
 
 
         if (!empty($redis_result)) {
@@ -1139,7 +1150,7 @@ class ExamCustomController extends Controller
 
 
         // Push Value in Redis
-        Redis::set('adaptive_session', json_encode($redisArray));
+        Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
 
         $response['status'] = 200;
         $response['message'] = "save response successfully";
@@ -1150,13 +1161,15 @@ class ExamCustomController extends Controller
 
     public function saveAdaptiveAnswer(Request $request)
     {
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
         /* # code... */
         $data = $request->all();
         $question_id = isset($data['question_id']) ? $data['question_id'] : '';
         $option_id = isset($data['option_id']) ? $data['option_id'] : '';
         $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
 
-        $redis_result = Redis::get('adaptive_session');
+        $redis_result = Redis::get('adaptive_session:' . $user_id);
 
         if (!empty($redis_result)) {
             $redisArray = json_decode($redis_result, true);
@@ -1199,7 +1212,7 @@ class ExamCustomController extends Controller
 
 
         // Push Value in Redis
-        Redis::set('adaptive_session', json_encode($redisArray));
+        Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
 
         $response['status'] = 200;
         $response['message'] = "save response successfully";
@@ -1218,7 +1231,7 @@ class ExamCustomController extends Controller
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);
 
-        $session_result = Redis::get('adaptive_session');
+        $session_result = Redis::get('adaptive_session:' . $user_id);
         $sessionResult = json_decode($session_result);
         $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
         $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
@@ -1268,8 +1281,8 @@ class ExamCustomController extends Controller
         $res_questions = isset($responsedata->questions) ? $responsedata->questions : [];
 
         if ($res_status == true && !empty($res_questions)) {
-            if (Redis::exists('adaptive_session')) {
-                Redis::del(Redis::keys('adaptive_session'));
+            if (Redis::exists('adaptive_session:' . $user_id)) {
+                Redis::del(Redis::keys('adaptive_session:' . $user_id));
 
                 $questions_count = count($res_questions);
                 $newQuestions = collect($res_questions);
@@ -1288,7 +1301,7 @@ class ExamCustomController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('adaptive_session', json_encode($redis_data));
+                Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
             }
 
             $nArray = array_merge($redisQuestionArray, $res_questions);

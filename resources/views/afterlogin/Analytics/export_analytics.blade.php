@@ -6,7 +6,7 @@ $userData = Session::get('user_data');
 @endphp
 <!-- Side bar menu -->
 
-<div class="  h-100" id="dialog-pdf" title="pdf">
+<div class="h-100" id="dialog-pdf" title="pdf">
     <!-- top navbar -->
 
     <div id="contentHtml" class="content-wrapper py-5">
@@ -215,14 +215,23 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <div id="editor"></div>
-<a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
-<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}"></a>
-</div>
+<!-- <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+ -->
+<a href="javascript:void(0);" class="export-btn" onclick="window.print()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
+
+
+<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}"></a>
+
+
+
+<!-- <script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/html2canvas.js')}}"></script>
+<script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/jsPdf.debug.js')}}"></script>
+ -->
+@include('afterlogin.layouts.footer_new')
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-@include('afterlogin.layouts.footer_new')
 
 
 <script type="text/javascript">

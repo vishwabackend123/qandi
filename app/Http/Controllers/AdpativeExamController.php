@@ -27,6 +27,9 @@ class AdpativeExamController extends Controller
 
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
+        if (Redis::exists('custom_answer_time_' . $user_id)) {
+            Redis::del(Redis::keys('custom_answer_time_' . $user_id));
+        }
 
         $exam_name = 'Mock Test';
 
@@ -157,7 +160,7 @@ class AdpativeExamController extends Controller
 
 
         // Push Value in Redis
-        Redis::set('custom_answer_time', json_encode($redis_data));
+        Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
         $test_type = 'Mocktest';
@@ -232,7 +235,7 @@ class AdpativeExamController extends Controller
         } else {
             $option_data[] = '';
         }
-        $session_result = Redis::get('custom_answer_time');
+        $session_result = Redis::get('custom_answer_time_' . $user_id);
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
@@ -315,7 +318,7 @@ class AdpativeExamController extends Controller
             $option_data[] = '';
         }
 
-        $session_result = Redis::get('custom_answer_time');
+        $session_result = Redis::get('custom_answer_time_' . $user_id);
         $sessionResult = json_decode($session_result);
 
         $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
@@ -336,8 +339,8 @@ class AdpativeExamController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        if (Redis::exists('adaptive_session')) {
-            Redis::del(Redis::keys('adaptive_session'));
+        if (Redis::exists('adaptive_session:' . $user_id)) {
+            Redis::del(Redis::keys('adaptive_session:' . $user_id));
         }
 
 
@@ -486,7 +489,7 @@ class AdpativeExamController extends Controller
         ];
 
         // Push Value in Redis
-        Redis::set('adaptive_session', json_encode($redis_data));
+        Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
 
         $tagrets = implode(', ', $aTargets);
 
@@ -559,7 +562,7 @@ class AdpativeExamController extends Controller
             $optionArray = $this->shuffle_assoc($opArr);
             $option_data = $optionArray;
 
-            $session_result = Redis::get('adaptive_session');
+            $session_result = Redis::get('adaptive_session:' . $user_id);
             $sessionResult = json_decode($session_result);
 
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id->answer) && !empty($sessionResult->given_ans->$quest_id->answer)) ? $sessionResult->given_ans->$quest_id->answer : [];
@@ -588,7 +591,7 @@ class AdpativeExamController extends Controller
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);
 
-        $session_result = Redis::get('adaptive_session');
+        $session_result = Redis::get('adaptive_session:' . $user_id);
         $sessionResult = json_decode($session_result);
         $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
         $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
@@ -638,8 +641,8 @@ class AdpativeExamController extends Controller
         $res_questions = isset($responsedata->questions) ? $responsedata->questions : [];
 
         if ($res_status == true && !empty($res_questions)) {
-            if (Redis::exists('adaptive_session')) {
-                Redis::del(Redis::keys('adaptive_session'));
+            if (Redis::exists('adaptive_session:' . $user_id)) {
+                Redis::del(Redis::keys('adaptive_session:' . $user_id));
 
                 $questions_count = count($res_questions);
                 $newQuestions = collect($res_questions);
@@ -658,7 +661,7 @@ class AdpativeExamController extends Controller
                 ];
 
                 // Push Value in Redis
-                Redis::set('adaptive_session', json_encode($redis_data));
+                Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
             }
 
             $nArray = array_merge($redisQuestionArray, $res_questions);
@@ -685,7 +688,7 @@ class AdpativeExamController extends Controller
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);
 
-        $session_result = Redis::get('adaptive_session');
+        $session_result = Redis::get('adaptive_session:' . $user_id);
         $sessionResult = json_decode($session_result);
         $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
         $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
@@ -755,7 +758,7 @@ class AdpativeExamController extends Controller
         $redis_result = Redis::get($cacheKey);
         $redisQuestionArray = json_decode($redis_result);
 
-        $session_result = Redis::get('adaptive_session');
+        $session_result = Redis::get('adaptive_session:' . $user_id);
         $sessionResult = json_decode($session_result);
         $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
         $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];

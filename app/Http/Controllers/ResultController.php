@@ -31,7 +31,7 @@ class ResultController extends Controller
         $planner_id = isset($request->planner_id) ? $request->planner_id : 0;
         $live_exam_id = isset($request->live_exam_id) ? $request->live_exam_id : 0;
 
-        $redis_json = Redis::get('custom_answer_time');
+        $redis_json = Redis::get('custom_answer_time_' . $user_id);
 
         $redisArray = (isset($redis_json) && !empty($redis_json)) ? json_decode($redis_json) : [];
 
