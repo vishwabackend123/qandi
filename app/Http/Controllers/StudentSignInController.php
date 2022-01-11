@@ -52,7 +52,7 @@ class StudentSignInController extends Controller
             'mobile' => $email_or_mobile
         ];
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/Otp/' . $email_or_mobile;
 
         $curl = curl_init();
@@ -121,7 +121,7 @@ class StudentSignInController extends Controller
 
         $request_json = json_encode($request);
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/studentlogin';
 
         $curl = curl_init();
@@ -196,7 +196,7 @@ class StudentSignInController extends Controller
         ];
         $request_json = json_encode($request);
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/register-otp';
 
         $curl = curl_init();
@@ -281,7 +281,7 @@ class StudentSignInController extends Controller
             $request_json = json_encode($request);
 
 
-            $api_URL = Config::get('constants.API_NEW_URL');
+            $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/student-signup';
 
             $curl = curl_init();

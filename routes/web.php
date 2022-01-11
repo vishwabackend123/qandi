@@ -28,7 +28,8 @@ Route::any('/', function () {
         return Redirect()->route('dashboard');
     } else {
         //                 return view('index');
-        $landing_URL = Config::get('constants.landing_URL');
+        $landing_URL = env('LANDING_URL');
+
         return redirect($landing_URL);
     }
 });
@@ -37,7 +38,7 @@ Route::any('/logout', function (Request $request) {
     //return view('index');
     $request->session()->flush();
 
-    $landing_URL = Config::get('constants.landing_URL');
+    $landing_URL = env('LANDING_URL');
     return redirect($landing_URL);
 });
 

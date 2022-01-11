@@ -36,7 +36,7 @@ class AssessmentExamController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         //$curl_url = $api_URL . 'api/assessment-question-selection';
         $curl_url = $api_URL . 'api/adaptive-assessment-mock-exam';

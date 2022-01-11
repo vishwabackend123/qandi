@@ -825,12 +825,12 @@
                 },
                 {
                     name: 'Progress',
-                    y: <?php print_r((isset($subScore[1]->score) &&  isset($subScore[0]->score)) ?? 0); ?>,
+                    y: <?php print_r((isset($subScore[0]->score) &&  isset($subScore[0]->score)) ?? 0); ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Others',
-                    y: <?php print_r(0); ?>,
+                    y: <?php print_r(100 - (($subScore[1]->score) + ($subScore[0]->score))); ?>,
                     color: '#e4e4e4' // Jane's color
                 }
             ]

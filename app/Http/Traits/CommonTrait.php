@@ -23,7 +23,7 @@ trait CommonTrait
 
         if (!empty($exam_id)) {
 
-            $api_URL = Config::get('constants.API_NEW_URL');
+            $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-all-exams/';
 
             $curl = curl_init();
@@ -72,7 +72,7 @@ trait CommonTrait
             $subject_list = json_decode($data);
             return $subject_list;
         } */
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/' . $exam_id;
+        $api_url = env('API_URL') . 'api/subjects/' . $exam_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -197,7 +197,7 @@ trait CommonTrait
         } */
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
 
         curl_setopt_array($curl, array(
@@ -242,7 +242,7 @@ trait CommonTrait
 
 
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/preference/' . $user_id;
 
 
@@ -285,7 +285,7 @@ trait CommonTrait
 
         $curl = curl_init();
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/user-subscription/' . $user_id;
 
         curl_setopt_array($curl, array(
@@ -326,7 +326,7 @@ trait CommonTrait
         $grade_id =  isset($userData->grade_id) ? $userData->grade_id : 0;
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/get-leadershipBoard/' . $user_id . '/' . $grade_id;
 
 
@@ -377,7 +377,7 @@ trait CommonTrait
             return $chapter_list;
         } */
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $subject_id;
+        $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -421,7 +421,7 @@ trait CommonTrait
 
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
 

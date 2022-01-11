@@ -61,7 +61,7 @@ class RazorpayController extends Controller
         $order_request_json = json_encode($verify_request);
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/payment/verify-payment';
 
 

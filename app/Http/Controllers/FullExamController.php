@@ -48,7 +48,7 @@ class FullExamController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/profiling-test-web/' . $exam_id;
 

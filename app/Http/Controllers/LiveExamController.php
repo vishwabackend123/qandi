@@ -44,7 +44,7 @@ class LiveExamController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/live-exam/live-exam-schedule/' . $exam_id . '/' . $user_id;
+        $api_url = env('API_URL') . 'api/live-exam/live-exam-schedule/' . $exam_id . '/' . $user_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -102,7 +102,7 @@ class LiveExamController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/live-exam/live-exam-web/' . $schedule_id;
 
@@ -236,7 +236,7 @@ class LiveExamController extends Controller
         $exam_id = $userData->grade_id;
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/result-analytics/' . $user_id . '/' . $exam_id . '/' . $result_id;
 
