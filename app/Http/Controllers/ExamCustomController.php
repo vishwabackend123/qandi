@@ -31,7 +31,7 @@ class ExamCustomController extends Controller
         }
 
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjects/' . $exam_id;
+        $api_url = env('API_URL') . 'api/subjects/' . $exam_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -90,7 +90,7 @@ class ExamCustomController extends Controller
         $exam_id = $userData->grade_id;
         $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+        $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -194,7 +194,7 @@ class ExamCustomController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/custom-question-selection';
 
@@ -598,7 +598,7 @@ class ExamCustomController extends Controller
         $filter_by = isset($request->filter_type) ? $request->filter_type : '';
         //$topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/topics-by-chapter-id/' . $user_id . '/' . $chapter_id;
+        $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/' . $chapter_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -676,7 +676,7 @@ class ExamCustomController extends Controller
             //return $chapter_list;
         }
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+        $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -727,7 +727,7 @@ class ExamCustomController extends Controller
         //            $chapter_list = json_decode($data);
         //        } else {
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
+        $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -869,7 +869,7 @@ class ExamCustomController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
 
@@ -1250,7 +1250,7 @@ class ExamCustomController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
 

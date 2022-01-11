@@ -49,7 +49,7 @@ class SubscriptionController extends Controller
 
         $curl = curl_init();
         $curl1 = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
 
         curl_setopt_array($curl, array(
@@ -186,7 +186,7 @@ class SubscriptionController extends Controller
 
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/save-trial-subscription';
 
 
@@ -260,7 +260,7 @@ class SubscriptionController extends Controller
         $order_request_json = json_encode($request);
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/payment/order-id';
 
 
@@ -293,7 +293,7 @@ class SubscriptionController extends Controller
 
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/subscription-package-detail/' . $subscript_id;
 
         $curl = curl_init();
@@ -352,7 +352,7 @@ class SubscriptionController extends Controller
         $request_json = json_encode($request);
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/student-refund';
 
         curl_setopt_array($curl, array(

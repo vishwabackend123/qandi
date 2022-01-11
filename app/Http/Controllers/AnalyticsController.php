@@ -34,7 +34,7 @@ class AnalyticsController extends Controller
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl = curl_init();
 
@@ -249,7 +249,7 @@ class AnalyticsController extends Controller
         //get user exam subjects
         $user_subjects = $this->redis_subjects();
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl = curl_init();
 
@@ -485,7 +485,7 @@ class AnalyticsController extends Controller
 
         $user_id = $userData->id;
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -691,7 +691,7 @@ class AnalyticsController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/upcoming-tutorial/' . $exam_id . '/' . $user_id;
+        $api_url = env('API_URL') . 'api/upcoming-tutorial/' . $exam_id . '/' . $user_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -741,7 +741,7 @@ class AnalyticsController extends Controller
 
         $request = json_encode($inputjson);
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/student-register-tutorial';
+        $api_url = env('API_URL') . 'api/student-register-tutorial';
 
         $curl = curl_init();
         curl_setopt_array($curl, array(

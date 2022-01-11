@@ -46,7 +46,7 @@ class PlannerController extends Controller
 
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/student-planner';
 
@@ -91,7 +91,7 @@ class PlannerController extends Controller
         $exam_id = $userData->grade_id;
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
 
@@ -139,7 +139,7 @@ class PlannerController extends Controller
         $start_date = $request->start_date;
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/student-planner/' . $user_id;
 
@@ -208,7 +208,7 @@ class PlannerController extends Controller
 
         $curl_url = "";
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/planner-question-selection';
 

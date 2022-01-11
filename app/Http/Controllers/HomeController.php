@@ -89,7 +89,7 @@ class HomeController extends Controller
         }
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/studentDashboard/analytics/' . $user_id;
 
         curl_setopt_array($curl, array(
@@ -160,7 +160,7 @@ class HomeController extends Controller
 
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
 
@@ -223,7 +223,7 @@ class HomeController extends Controller
             $request_json = json_encode($request);
 
 
-            $api_URL = Config::get('constants.API_NEW_URL');
+            $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/stage-at-signUp';
 
 
@@ -289,7 +289,7 @@ class HomeController extends Controller
 
             $request_json = json_encode($request_rating);
 
-            $api_URL = Config::get('constants.API_NEW_URL');
+            $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/subject-rating';
 
             $curl = curl_init();
@@ -349,7 +349,7 @@ class HomeController extends Controller
 
         $request_json = json_encode($request);
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/users';
 
         $curl = curl_init();
@@ -436,7 +436,7 @@ class HomeController extends Controller
             if ($request->hasfile('file-input')) {
                 $curl = curl_init();
                 curl_setopt_array($curl, array(
-                    CURLOPT_URL => Config::get('constants.API_NEW_URL') . 'api/update-profile-picture',
+                    CURLOPT_URL => env('API_URL') . 'api/update-profile-picture',
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => '',
                     CURLOPT_MAXREDIRS => 10,
@@ -482,8 +482,8 @@ class HomeController extends Controller
 
         $request_json = json_encode($request);
 
-        $api_URL = Config::get('constants.API_NEW_URL');
-        // $curl_url = 'https://api.uniqtoday.com/api/update_student_token';
+        $api_URL = env('API_URL');
+
         $curl_url = $api_URL . 'api/update_student_token';
 
         $curl = curl_init();
@@ -520,7 +520,7 @@ class HomeController extends Controller
         $searchText = $reqData['search_text'];
 
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/search-friend/' . $class_id . '/' . $searchText;
         curl_setopt_array($curl, array(
             CURLOPT_URL => $curl_url,
@@ -561,7 +561,7 @@ class HomeController extends Controller
 
         $user_id = $userData->id;
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/clear-notifications/' . $user_id;
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -588,7 +588,7 @@ class HomeController extends Controller
 
         $user_id = $userData->id;
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl = curl_init();
         $curl_url = $api_URL . 'api/notification-history/' . $user_id;

@@ -40,7 +40,7 @@ class MenuMiddleware
 
 
         $user_id = $userData->id;
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         /*Preference  data
         */
 

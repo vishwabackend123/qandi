@@ -42,7 +42,7 @@ class ReviewController extends Controller
 
         if (!empty($result_id)) {
             $curl = curl_init();
-            $api_URL = Config::get('constants.API_NEW_URL');
+            $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/question-reviews/' . $result_id;
             curl_setopt_array($curl, array(

@@ -34,7 +34,7 @@ class ReferralController extends Controller
         ];
         $request = json_encode($inputjson);
 
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/insert-referr-student';
 
         $curl = curl_init();
@@ -68,7 +68,7 @@ class ReferralController extends Controller
 
     public function referral_signup($referral_code)
     {
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/get-referr-student/' . $referral_code;
         $curl = curl_init();
 

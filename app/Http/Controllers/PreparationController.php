@@ -26,7 +26,7 @@ class PreparationController extends Controller
 
         $subject_list = $this->redis_subjects();
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapterWiseSummary/' . $exam_id . '/' . $user_id;
+        $api_url = env('API_URL') . 'api/subjectResources/chapterWiseSummary/' . $exam_id . '/' . $user_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -126,7 +126,7 @@ class PreparationController extends Controller
 
         $api_url_pre = 'api/subjectResources/subject-wise-resources';
 
-        $api_url = Config::get('constants.API_NEW_URL') . $api_url_pre . '/' . $user_id . '/' . $exam_id . '/' . $subject_id;
+        $api_url = env('API_URL') . $api_url_pre . '/' . $user_id . '/' . $exam_id . '/' . $subject_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -182,7 +182,7 @@ class PreparationController extends Controller
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/presentations/' . $chapter_id;
+        $api_url = env('API_URL') . 'api/subjectResources/presentations/' . $chapter_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -227,7 +227,7 @@ class PreparationController extends Controller
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/videos/' . $chapter_id;
+        $api_url = env('API_URL') . 'api/subjectResources/videos/' . $chapter_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -273,7 +273,7 @@ class PreparationController extends Controller
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/notes/' . $chapter_id;
+        $api_url = env('API_URL') . 'api/subjectResources/notes/' . $chapter_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -316,7 +316,7 @@ class PreparationController extends Controller
         $chapter_id = $request->chapter_id;
         $values = isset($request->values) ? json_decode($request->values) : [];
 
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/bookmarks/' . $user_id . '/' . $exam_id . '/' . $chapter_id;;
+        $api_url = env('API_URL') . 'api/subjectResources/bookmarks/' . $user_id . '/' . $exam_id . '/' . $chapter_id;;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -360,7 +360,7 @@ class PreparationController extends Controller
 
         // if (!empty($result_id)) {
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
         curl_setopt_array($curl, array(
@@ -527,7 +527,7 @@ class PreparationController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
         curl_setopt_array($curl, array(
@@ -672,7 +672,7 @@ class PreparationController extends Controller
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
         $curl = curl_init();
-        $api_URL = Config::get('constants.API_NEW_URL');
+        $api_URL = env('API_URL');
 
         $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
         curl_setopt_array($curl, array(
@@ -810,7 +810,7 @@ class PreparationController extends Controller
         $exam_id = $userData->grade_id;
         $chapter_id = $request->chapter_id;
         $type = $request->type;
-        $api_url = Config::get('constants.API_NEW_URL') . 'api/subjectResources/chapter-wise-resources/' . $user_id . '/' . $exam_id .  '/' . $chapter_id;
+        $api_url = env('API_URL') . 'api/subjectResources/chapter-wise-resources/' . $user_id . '/' . $exam_id .  '/' . $chapter_id;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
