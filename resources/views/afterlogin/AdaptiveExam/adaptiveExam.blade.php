@@ -120,7 +120,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
             </div>
             <div class="modal-body text-center pt-2 pb-5">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
@@ -162,7 +162,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}" title="Close"></a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
@@ -284,8 +284,8 @@ $questtype='radio';
 
                                         <div class="question-block">
                                             <!-- Next and previous button -->
-                                            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
-                                            <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right"></i></button>
+                                            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
+                                            <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
                                             <!-- Next and previous button -->
 
                                             <div class="question py-3"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
@@ -369,9 +369,9 @@ $questtype='radio';
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                             <div class="pull-right">
-                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
-                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>

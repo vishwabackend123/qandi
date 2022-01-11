@@ -216,22 +216,21 @@ $userData = Session::get('user_data');
 </div>
 <div id="editor"></div>
 <!-- <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
-
  -->
-<a href="javascript:void(0);" class="export-btn" onclick="window.print()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
+
+<a href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
 
 
-<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}"></a>
+<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}" title="Close"></a>
 
 
 
-<!-- <script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/html2canvas.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/jsPdf.debug.js')}}"></script>
- -->
+
 @include('afterlogin.layouts.footer_new')
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
 
 
 <script type="text/javascript">
@@ -251,10 +250,10 @@ $userData = Session::get('user_data');
             var imgData = canvas.toDataURL("image/jpg", 1.0);
             var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
             pdf.addImage(imgData, 'jpg', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-            // for (var i = 1; i <= totalPDFPages; i++) {
-            pdf.addPage(PDF_Width, PDF_Height);
-            pdf.addImage(imgData, 'jpg', top_left_margin, -(PDF_Height) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
-            // }
+            for (var i = 1; i <= totalPDFPages; i++) {
+                pdf.addPage(PDF_Width, PDF_Height);
+                pdf.addImage(imgData, 'jpg', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+            }
             pdf.save("Analytics.pdf");
         });
     }

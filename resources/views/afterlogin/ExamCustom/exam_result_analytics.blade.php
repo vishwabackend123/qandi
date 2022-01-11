@@ -41,7 +41,7 @@ $userData = Session::get('user_data');
                 <div class="modal-content rounded-0 bg-light">
                     <div class="modal-header pb-0 border-0">
 
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
                     </div>
                     <div class="modal-body pt-0 px-5 ">
                         <div class="text-center my-5">
@@ -66,7 +66,7 @@ $userData = Session::get('user_data');
         <div class="modal-content rounded-0  ">
             <div class="modal-header border-0">
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
             <div class="modal-body p-5 text-center">
 
