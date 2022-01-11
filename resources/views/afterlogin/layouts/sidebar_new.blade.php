@@ -355,7 +355,7 @@
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
 
-            <a href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation Center</a>
+            {{-- <a href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation Center</a> --}}
             <a href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
 
         </div>
