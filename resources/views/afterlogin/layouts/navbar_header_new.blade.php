@@ -303,7 +303,7 @@
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <span>
                     <a draggable="false" href="javascript:void(0);" class="link-danger" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
-                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn" title="Cloase edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
                     <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn" title="Close Planner"><i class="fa fa-close"></i></a>
 
                 </span>
