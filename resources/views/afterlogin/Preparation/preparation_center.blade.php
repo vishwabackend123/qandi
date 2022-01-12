@@ -63,10 +63,10 @@ $userData = Session::get('user_data');
                                     <span class="mr-3 name-txt">{{$oSub->subject_name}}</span>
 
                                     <span class="p-icons">
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$pres}}</span></a>
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$notes}}</span></a>
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$video}}</span></a>
-                                        <a href="javascript:void(0);" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$bmark}}</span></a>
+                                        <a href="javascript:void(0);" title="Presentation" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','presentation')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$pres}}</span></a>
+                                        <a href="javascript:void(0);" title="Notes" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$notes}}</span></a>
+                                        <a href="javascript:void(0);" title="Videos" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$video}}</span></a>
+                                        <a href="javascript:void(0);" title="Bookmarks" onclick="get_preparationSubjectData('{{$oSub->subject_id}}','bookmark')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$bmark}}</span></a>
                                     </span>
                                 </div>
                                 <div class="scroll-div">
@@ -74,10 +74,11 @@ $userData = Session::get('user_data');
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
                                         <span class="mr-3 name-txt">{{$val->chapter_name}}</span>
 
-                                        <span class="p-icons"><a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$val->Presentations}}</span></a>
-                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$val->Notes}}</span></a>
-                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$val->Videos}}</span></a>
-                                            <a href="javascript:void(0);" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$val->Bookmarks}}</span></a>
+                                        <span class="p-icons">
+                                            <a href="javascript:void(0);" title="Presentation" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'presentations')"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"><span>{{$val->Presentations}}</span></a>
+                                            <a href="javascript:void(0);" title="Notes" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'notes')"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"><span>{{$val->Notes}}</span></a>
+                                            <a href="javascript:void(0);" title="Videos" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'videos')"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"><span>{{$val->Videos}}</span></a>
+                                            <a href="javascript:void(0);" title="Bookmarks" onclick="get_chapter_wise_data('{{$val->chapter_id}}', 'bookmarks')"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"><span>{{$val->Bookmarks}}</span></a>
                                         </span>
 
 
@@ -131,10 +132,10 @@ $userData = Session::get('user_data');
                         </div> -->
                         <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal" title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Videos"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                         </div>
                     </div>
@@ -186,10 +187,10 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Notes" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Videos"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                         </div>
                     </div>
@@ -242,10 +243,10 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Videos" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                         </div>
                     </div>
@@ -299,10 +300,10 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
+                            <span class="me-1"><a href="javascript:void(0); " title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
+                            <span class="me-1"><a href="javascript:void(0);" title="Videos"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
+                            <span><a href="javascript:void(0);" title="Bookmarks" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
 
                         </div>
                     </div>

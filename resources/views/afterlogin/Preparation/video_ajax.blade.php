@@ -12,10 +12,10 @@
             </div> -->
         </div>
         <div class="ms-auto">
-            <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','presentations')"> {{$preparation_list->total_presentations}}</a></span>
-            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','notes')"> {{$preparation_list->total_notes}}</a></span>
-            <span class="me-1"><a href="javascript:void(0);" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','videos')"> {{$preparation_list->total_videos}}</a></span>
-            <span class="me-1"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','bookmarks')"> {{$preparation_list->total_bookmarks}}</a></span>
+            <span class="me-1"><a href="javascript:void(0);" title="Presentation" data-bs-toggle="modal" data-bs-target="#PreparationCenter_modal"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','presentations')"> {{$preparation_list->total_presentations}}</a></span>
+            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','notes')"> {{$preparation_list->total_notes}}</a></span>
+            <span class="me-1"><a href="javascript:void(0);" title="Videos" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','videos')"> {{$preparation_list->total_videos}}</a></span>
+            <span class="me-1"><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}" onclick="get_chapter_wise_data('{{$preparation_list->chapter_id}}','bookmarks')"> {{$preparation_list->total_bookmarks}}</a></span>
         </div>
     </div>
     <div class="h-scroll-slim">

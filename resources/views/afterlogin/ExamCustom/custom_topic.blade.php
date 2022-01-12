@@ -31,10 +31,10 @@
             </div>
         </div>
         <div class="d-flex align-items-center sub-subject">
-            <a href="#" class="btn rounded-0 me-2 bar-green"><strong>K</strong></a>
-            <a href="#" class="btn rounded-0 me-2 bar-green"><strong>C</strong></a>
-            <a href="#" class="btn rounded-0 me-2 bar-red"><strong>A</strong></a>
-            <a href="#" class="btn rounded-0 me-2"><strong>E</strong></a>
+            <a href="#" class="btn rounded-0 me-2 bar-green" title="KNOWLEDGE"><strong>K</strong></a>
+            <a href="#" class="btn rounded-0 me-2 bar-green" title="COMPREHENSION"><strong>C</strong></a>
+            <a href="#" class="btn rounded-0 me-2 bar-red" title="APPLICATION"><strong>A</strong></a>
+            <a href="#" class="btn rounded-0 me-2" title="EVALUATION"><strong>E</strong></a>
             <a id="chpt_topic_{{$topic->id}}" href="javascript:void(0);" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-light rounded-0 ms-auto px-5 addremovetopic">Select </a>
         </div>
     </div>

@@ -269,9 +269,9 @@
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
 
                                         </div>
-                                        <div class="chaptbox-add ">
+                                        <div class="chaptbox-add " title="Add Chapter">
                                             <a draggable="false" href="javascript:void(0);" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
-                                                <span class=""><img src="{{URL::asset('public/after_login/new_ui/images/plusSign_ic.png')}}"></span>
+                                                <span class="" title="Add Chapter"><img src="{{URL::asset('public/after_login/new_ui/images/plusSign_ic.png')}}"></span>
                                             </a>
                                         </div>
                                     </div>
@@ -601,7 +601,7 @@
                     <div class="edit-pic">
                         <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
                             @csrf
-                            <label for="file-input">
+                            <label for="file-input" title="Edit Profile Pic">
 
                                 <img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}" alt=""></a>
 

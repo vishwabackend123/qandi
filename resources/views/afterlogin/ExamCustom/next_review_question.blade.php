@@ -4,9 +4,10 @@ $option_data = (isset($question_data->question_options) && !empty($question_data
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
+
 @endphp
 <div class="question-block">
-    <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" class="arrow next-arow"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
+    <a href="javascript:void(0);" title="Bookmark" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" class="arrow next-arow"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
     <div class="question pb-3 pt-2"><span class="q-no">Q{{$qNo}}..</span>
         {!! $question_text !!}
     </div>

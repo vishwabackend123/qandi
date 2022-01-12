@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
                                         <div class="d-flex ps-4">
-                                            <button class="btn filter-icon rotate-icon ms-auto mb-2 text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                                            <button class="btn filter-icon rotate-icon ms-auto mb-2 text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true" title="Topic Filter"></i></button>
                                             <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                                                 <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> Low Proficiency</a></li>
                                                 <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> High Proficiency</a></li>

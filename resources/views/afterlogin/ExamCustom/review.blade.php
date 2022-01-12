@@ -14,6 +14,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 <div class="main-wrapper">
 
     <!-- End start-navbar Section -->
@@ -46,7 +50,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     <div id="review_rques_blk">
                                         <div class="question-block">
-                                            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" class="arrow next-arow"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
+                                            <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" class="arrow next-arow" title="Bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
                                             <div class="question pb-3 pt-2"><span class="q-no">Q1.</span>
                                                 {!! $question_text !!}
                                             </div>
@@ -158,14 +162,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                             @endif
                         </div>
 
-                        <div class="review-qus">
+                        <div class="review-qus" id="review_question_list">
                             <div class="d-flex mb-3 reviewBox2">
                                 <div class="col-10 heading">
                                     <h5><strong>Review Questions</strong></h5>
                                 </div>
                                 <div class="col text-end">
                                     <div class="dropdown">
-                                        <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                        <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
 
 
                                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
@@ -244,6 +248,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $('.review-questions-blk').slimscroll({
         height: '58vh'
     });
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_question_list"]);
 
     function bookmarkforreview(quest_id, subject_id, chapt_id) {
         $.ajax({
@@ -280,8 +285,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+
                 $("#review_rques_blk").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question-block"]);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "review_rques_blk"]);
 
             }
         });

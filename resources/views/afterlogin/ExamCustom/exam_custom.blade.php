@@ -57,7 +57,7 @@ $userData = Session::get('user_data');
                   </form>
 
                   <div class="dropdown">
-                    <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                    <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i></button>
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>
@@ -107,7 +107,7 @@ $userData = Session::get('user_data');
                   </div>
                   <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
                     <div class="d-flex px-4">
-                      <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                      <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                       <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                         <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
                         <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>
