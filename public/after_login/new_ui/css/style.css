@@ -16,6 +16,36 @@ button {
     text-decoration: none;
 }
 
+
+/** rahul css new on 13-1-2022 **/
+button.top-btn-pop:hover{   background: #00baff !important;}
+
+#endExam .modal-content.rounded-0{
+	
+outline: 0;
+    border-radius: 56px !important;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    border: none!important;	
+}
+#endExam h2{font-weight:600;}
+#endExam  a.btn-close{margin-right:15px!important;margin-top:10px;}
+
+.add-removeblock {
+    background: #00baff26;
+}
+
+#collapsePlanner button.btn.greenBtnH:hover{background: #00baff !important;}
+div#select-planner-chapter button#add_chapter:hover{background: #00baff !important;}
+
+
+.box-block:hover:after, .box-block:hover span{color:#00bdff!important;}
+a.dropdown-item i.fas{margin-right:5px;}
+
+#collapsePlanner .add-removeblock:hover{
+	    background-color: rgb(33 204 255 / 56%);
+}
+/** Rahul css end here on 13-1-2022**/
+
 /** rahul css on 12-1-2022 **/
 
 .question{display:block!important;}
@@ -1103,7 +1133,7 @@ button#button-addon2 {
 #FullTest_Exam_Panel_Interface_A button#bt-modal-confirm {
     border-radius: 15px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background: #00baff;
+    background: #21ccff;
     border: none;
     color: #fff;
     padding: 12px 25px;font-weight: 600;
@@ -2086,9 +2116,14 @@ div#select-planner-chapter button#add_chapter {
 }
 
 #collapsePlanner .add-removeblock {
-    background: #21ccff;
+
     border-radius: 15px;
+    color: #000;
+
+	background-color: rgb(33 204 255 / 18%);
+
 }
+
 
 #collapsePlanner button.btn.greenBtnH {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
@@ -6115,7 +6150,8 @@ img.img-responsive {
 span.fs-5.text-danger.text-uppercase {
     font-family: Manrope;
     color: #2c3348 !important;
-	font-weight: 600;
+    font-weight: 700;
+    font-size:16px !important;
 }
 
 .planner-wrapper .d-flex.align-items-center.justify-content-between {
@@ -6133,7 +6169,9 @@ a#close-edit-planner-btn img {
 
 a#edit-planner-btn,
 a#close-edit-planner-btn {
-    margin-right: 10px;
+       position: absolute;
+    right: 65px;
+    top: 15px;
 }
 
 .calender-block td.avui>span {
