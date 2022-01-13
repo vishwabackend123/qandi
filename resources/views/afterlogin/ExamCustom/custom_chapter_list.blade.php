@@ -36,7 +36,7 @@
 </div>
 <div class="collapse mb-4" id="chapter_{{$chap->chapter_id}}">
     <div class="d-flex ps-4">
-        <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+        <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true" title="Topics Filter"></i></button>
         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
             <li><a class="dropdown-item" onclick="topiclist_filter('{{$chap->chapter_id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
             <li><a class="dropdown-item" onclick="topiclist_filter('{{$chap->chapter_id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>

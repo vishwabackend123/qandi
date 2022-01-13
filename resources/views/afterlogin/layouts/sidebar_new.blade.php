@@ -1,6 +1,6 @@
 <div class="dash-sidebar">
     <div class="sidbar-block">
-        <a href="{{ url('/') }}"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}" </a>
+        <a href="{{ url('/') }}" title="Home"><img src="{{URL::asset('public/after_login/new_ui/images/inner-logo.png')}}"></a>
 
     </div>
     <div class="dash-nav-link">
@@ -255,7 +255,7 @@
                     </g>
                 </g>
             </svg>
-            <span class="hoverlink">Share</span>
+            <span class="hoverlink">Refer a friend</span>
         </a>
     </div>
     <div class="submenu-L1 collapse width" id="submenu">
@@ -368,8 +368,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <form id="referalStudent_form" action="{{route('store_referral')}}" method="POST">

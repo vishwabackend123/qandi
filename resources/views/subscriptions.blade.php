@@ -49,13 +49,11 @@ $user_id = $userData->id;
             @endif
             <!-- <div id="scrollDiv"> -->
             <div class="row">
-
-
-
                 @if(isset($subscriptions) && !empty($subscriptions))
                 @if($suscription_status !=0)
                 @foreach($subscriptions as $sub)
                 @php
+
                 $subspriceData=(isset($sub->subs_price) && !empty($sub->subs_price))?(array)json_decode($sub->subs_price):[];
 
                 $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
@@ -123,7 +121,7 @@ $user_id = $userData->id;
                             </form>
                         </div>
                         <div class="text-center mt-2">
-                            <apan class="text-success text-decoration-underline">Already in 14 days trail Period. </apan>
+                            <apan class="text-success text-decoration-underline">Already in {{$sub->trial_subscription_duration}} days trail Period. </apan>
                         </div>
 
                     </div>
@@ -170,16 +168,19 @@ $user_id = $userData->id;
                                 <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" disabled id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
+                        @if($sub->trial_subscription_duration>0)
                         @if(!in_array($sub->subscript_id,$purchasedid) )
+
                         <div class="text-center mt-2">
-                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline btn disabled" disabled="disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial ></a>
+                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline btn disabled" disabled="disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trial ></a>
                         </div>
+
                         @else
                         <div class="text-center mt-2">
-                            <span class="text-danger text-decoration-underline">Expired 14 days trial ></span>
+                            <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trial ></span>
                         </div>
                         @endif
-
+                        @endif
                     </div>
                 </div>
                 @else
@@ -201,16 +202,19 @@ $user_id = $userData->id;
                                 <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
+                        @if($sub->trial_subscription_duration>0)
                         @if(!in_array($sub->subscript_id,$purchasedid) )
+
                         <div class="text-center mt-2">
-                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try 14 days trial></a>
+                            <a href="{{route('trial_subscription',$sub->subscript_id)}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trial></a>
                         </div>
+
                         @else
                         <div class="text-center mt-2">
-                            <span class="text-danger text-decoration-underline">Expired 14 days trial ></span>
+                            <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trial ></span>
                         </div>
                         @endif
-
+                        @endif
                     </div>
                 </div>
 

@@ -112,12 +112,12 @@ $questtype='radio';
     <div class="question-block">
         <span style="visibility:hidden">
             <!-- Next and previous button -->
-            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left"></i></button>
+            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
             @if(isset($last_qid) && ($last_qid==$active_q_id))
-            <button href="javascript:void(0);" class="arrow next-arow{{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><i class="fa fa-angle-right"></i></button>
+            <button href="javascript:void(0);" class="arrow next-arow{{(isset($last_qid) && ($last_qid==$active_q_id))?'disabled':''}}" id="quesnext{{ $active_q_id }}"><i class="fa fa-angle-right" title="Next Question"></i></button>
 
             @else
-            <button href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><i class="fa fa-angle-right"></i></button>
+            <button href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $active_q_id }}" onclick="qnext('{{$next_qid}}','{{ $active_q_id }}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
 
             @endif
         </span>
@@ -179,27 +179,24 @@ $questtype='radio';
 </script>
 <!-- check size of screen -->
 <script>
-$(document).ready(function () {
-    $(window).on("resize", function (e) {
+    $(document).ready(function() {
+        $(window).on("resize", function(e) {
+            checkScreenSize();
+        });
+
         checkScreenSize();
+
+        function checkScreenSize() {
+            var newWindowWidth = $(window).width();
+            if (newWindowWidth < 768) {
+                //$('.right').insertBefore('.left');
+                $("#exam_content_sec  #btn_" + question_id).focusout();
+            } else {
+                //$('.left').insertBefore('.right');
+                $("#exam_content_sec  #btn_" + question_id).focus();
+            }
+        }
     });
-
-    checkScreenSize();
-    
-    function checkScreenSize(){
-        var newWindowWidth = $(window).width();
-        if (newWindowWidth < 768) {
-            //$('.right').insertBefore('.left');
-			$("#exam_content_sec  #btn_" + question_id).focusout();
-        }
-        else
-        {
-            //$('.left').insertBefore('.right');
-			$("#exam_content_sec  #btn_" + question_id).focus();
-        }
-    }
-});
-
 </script>
 
 <!-- End check size of screen -->

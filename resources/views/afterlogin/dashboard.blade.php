@@ -39,8 +39,8 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-12 p-0 text-center seeAnico">
-                                <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.png')}}" alt="image not find"></span>
-                                <div class="button-sec  mt-3"><a href="{{route('overall_analytics')}}">See Analytics</a></div>
+                                <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.png')}}" alt="see analytics" title="See Analytics"></span>
+                                <div class="button-sec  mt-3"><a href="{{route('overall_analytics')}}" title="See Analytics">See Analytics</a></div>
                             </div>
                         </div>
                     </div>

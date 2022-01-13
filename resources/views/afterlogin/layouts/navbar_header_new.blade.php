@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic"></span>
+                    <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic" title="Profile Pic"></span>
                     <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4"><a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
@@ -269,9 +269,9 @@
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
 
                                         </div>
-                                        <div class="chaptbox-add ">
+                                        <div class="chaptbox-add " title="Add Chapter">
                                             <a draggable="false" href="javascript:void(0);" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
-                                                <span class=""><img src="{{URL::asset('public/after_login/new_ui/images/plusSign_ic.png')}}"></span>
+                                                <span class="" title="Add Chapter"><img src="{{URL::asset('public/after_login/new_ui/images/plusSign_ic.png')}}"></span>
                                             </a>
                                         </div>
                                     </div>
@@ -287,7 +287,7 @@
 
                         </div>
                         <div class="text-center">
-                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}">
+                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25 " title="Save Planner"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}">
                             </button>
                         </div>
                     </form>
@@ -302,9 +302,9 @@
             <div class="d-flex align-items-center justify-content-between">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <span>
-                    <a draggable="false" href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
-                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
-                    <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn"><i class="fa fa-close"></i></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
+                    <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn" title="Close Planner"><i class="fa fa-close"></i></a>
 
                 </span>
 
@@ -419,7 +419,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
             <div id="select-planner-chapter" class="modal-body pt-0 px-5 ">
 
@@ -601,7 +601,7 @@
                     <div class="edit-pic">
                         <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
                             @csrf
-                            <label for="file-input">
+                            <label for="file-input" title="Edit Profile Pic">
 
                                 <img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}" alt=""></a>
 
