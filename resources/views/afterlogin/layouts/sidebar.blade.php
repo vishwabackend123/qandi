@@ -1,6 +1,6 @@
 <div class="dash-sidebar">
     <div class="sidbar-block">
-        <a draggable="false" href="{{ url('/') }}"><img src="{{URL::asset('public/after_login/images/inner-logo.png')}}" </a>
+        <a draggable="false" target="_blank" href="{{ url('/') }}"><img src="{{URL::asset('public/after_login/images/inner-logo.png')}}" </a>
     </div>
 
     <div class="dash-nav-link">

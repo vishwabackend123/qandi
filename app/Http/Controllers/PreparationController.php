@@ -74,7 +74,7 @@ class PreparationController extends Controller
         $data = $request->all();
         $responsePdf = '';
         if (isset($data) && !empty($data)) :
-            $api_url = 'http://3.108.176.99:8080/api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
+            $api_url = env('API_URL') . 'api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
             $curl = curl_init();
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $api_url,

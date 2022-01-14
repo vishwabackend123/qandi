@@ -24,7 +24,7 @@ trait CommonTrait
         if (!empty($exam_id)) {
 
             $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/get-all-exams/';
+            $curl_url = $api_URL . 'api/get-all-exams';
 
             $curl = curl_init();
             curl_setopt_array($curl, array(

@@ -247,7 +247,7 @@ $questtype='radio';
                             </div>
 
                             <!-- <p class="rightSectH" style="display:none;">Legends</p> -->
-                            <div class="row" style="display:none;">
+                            <div class="row mt-4" style="display:none;">
                                 <div class="col-md-6 legends">
                                     <button class="btn btn-light p-0 rounded-0"> </button>
                                     <p>Unread</p>
