@@ -24,14 +24,14 @@ use Illuminate\Support\Facades\Session;
 
 
 Route::any('/', function () {
-    if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
+    /*  if (isset(Auth::user()->id) && !empty(Auth::user()->id)) {
         return Redirect()->route('dashboard');
     } else {
-        //                 return view('index');
-        $landing_URL = env('LANDING_URL');
+        //                 return view('index'); */
+    $landing_URL = env('LANDING_URL');
 
-        return redirect($landing_URL);
-    }
+    return redirect($landing_URL);
+    /*  } */
 });
 
 Route::any('/logout', function (Request $request) {

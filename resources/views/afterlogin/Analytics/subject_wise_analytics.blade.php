@@ -21,6 +21,7 @@
                                         <span class="pre-test"></span>Previous Test
                                     </li>
                                 </ul>
+
                             </div>
                         </div>
 
@@ -135,17 +136,21 @@
                 </div>
                 @endforeach
                 @endif
+
+
             </div>
+
         </div>
     </div>
     <div class="row" id="time-Avg-quest">
-        <div class="col-lg-5 mt-3">
+        <div class="col-lg-6 mt-3">
             <div class="bg-white p-3 h-100 px-5 text-center">
                 <p class="text-uppercase fw-bold text-start">Time Management</p>
                 <div id="day" style="display:block"></div>
                 <div id="week" style="display:none"></div>
                 <div id="month" style="display:none"></div>
-                <div class="btn-block mt-5 d-flex justify-content-between">
+                <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
+                <div class="btn-block mt-3 d-flex justify-content-between">
                     <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
                         Day
                     </button>
@@ -156,12 +161,14 @@
                         Month
                     </button>
                 </div>
+
             </div>
         </div>
-        <div class="col-lg-7  mt-3">
+        <div class="col-lg-6  mt-3">
             <div class="bg-white p-3 h-100 px-5">
                 <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question</p>
                 <div id="accPerSubjectWise1"></div>
+                <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
             </div>
         </div>
     </div>
@@ -172,7 +179,8 @@
                 <div id="day1" style="display:block"></div>
                 <div id="week1" style="display:none"></div>
                 <div id="month1" style="display:none"></div>
-                <div class="btn-block mt-5 d-flex justify-content-between">
+                <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
+                <div class="btn-block mt-3 d-flex justify-content-between">
                     <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                         Day
                     </button>
@@ -183,19 +191,22 @@
                         Month
                     </button>
                 </div>
+
             </div>
         </div>
-        <div class="col-lg-7  mt-3">
-            <div class="bg-white p-3  px-5">
+        <div class="col-lg-7 mt-3">
+            <div class="bg-white pt-3  px-5">
                 <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
                 <div id="accPerSubjectWise"></div>
+                <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
             </div>
-            <div class="bg-white p-3 mt-3 px-5" id="back2Dsh">
+            <div class="bg-white pt-3  px-5" id="back2Dsh">
                 <div class="d-flex">
                     <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
                     <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
