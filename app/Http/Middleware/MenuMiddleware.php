@@ -28,21 +28,13 @@ class MenuMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
-
         $user_Data = Auth::user();
 
         Session::put('user_data', $user_Data);
         $userData = Session::get('user_data');
 
-
-
-
-
         $user_id = $userData->id;
         $api_URL = env('API_URL');
-        /*Preference  data
-        */
 
         $preferences = $this->redis_Preference();
 
