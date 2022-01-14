@@ -24,7 +24,7 @@ $user_id = $userData->id;
 
 <div id="main" class="subScrip">
     <div class="row" style="height:90px;">
-        <span class="outer-logo"><a href="{{url('/')}}"><img src="{{URL::asset('public/images_new/uniq.png')}}" class="img-fluid" /></a></span>
+        <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" class="img-fluid" /></a></span>
     </div>
     <div class="clearfix"></div>
 
