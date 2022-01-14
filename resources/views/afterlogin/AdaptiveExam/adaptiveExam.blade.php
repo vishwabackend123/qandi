@@ -405,7 +405,7 @@ $questtype='radio';
                             <button class="btn btn-light-green  mb-4 rounded-0">15</button> -->
                         </div>
 
-                        <p class="rightSectH">Legends</p>
+                       <!--  <p class="rightSectH">Legends</p> -->
                         <div class="row">
                             <div class="col-md-6 legends">
                                 <button class="btn btn-light p-0 rounded-0"> </button>
