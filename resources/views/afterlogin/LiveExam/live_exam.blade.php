@@ -225,7 +225,7 @@ $questtype='radio';
 
                         </form>
 
-                        <p class="rightSectH">Question Palette</p>
+                        <p class="rightSectH">Question</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)

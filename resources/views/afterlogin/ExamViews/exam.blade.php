@@ -228,7 +228,7 @@ $questtype='radio';
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
-                        <p class="rightSectH">Question Palette</p>
+                        <p class="rightSectH">Question</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
@@ -240,7 +240,7 @@ $questtype='radio';
 
                         </div>
 
-                        <p class="rightSectH">Legends</p>
+                        <!-- <p class="rightSectH">Legends</p> -->
                         <div class="row">
                             <div class="col-md-6 legends">
                                 <button class="btn btn-light p-0 rounded-0"> </button>

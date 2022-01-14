@@ -237,7 +237,7 @@ $questtype='radio';
 
 
                         <div style=" min-height:300px">
-                            <p class="rightSectH" style="display:none;">Question Palette</p>
+                            <p class="rightSectH" style="display:none;">Question</p>
                             <div class="number-block1" style="display:none;">
                                 @if(isset($keys) && !empty($keys))
                                 @foreach($keys as $ke=>$val)
@@ -246,7 +246,7 @@ $questtype='radio';
                                 @endif
                             </div>
 
-                            <p class="rightSectH" style="display:none;">Legends</p>
+                            <!-- <p class="rightSectH" style="display:none;">Legends</p> -->
                             <div class="row" style="display:none;">
                                 <div class="col-md-6 legends">
                                     <button class="btn btn-light p-0 rounded-0"> </button>

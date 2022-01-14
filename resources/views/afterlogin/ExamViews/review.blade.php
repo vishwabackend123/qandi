@@ -151,7 +151,7 @@
                 <div class="col-lg-3 mt-5 pt-2">
 
                     <div class="bg-white d-flex flex-column justify-content-center mb-4  py-4 px-4">
-                        <p>Question Palette</p>
+                        <p>Question</p>
                         <div class="number-block">
                             <button class="btn btn-light-red mb-4 rounded-0">1</button>
                             <button class="btn btn-light-red mb-4 rounded-0">2</button>
