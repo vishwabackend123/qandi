@@ -357,7 +357,7 @@ $userData = Session::get('user_data');
         $('#overlay').fadeIn();
       },
       success: function(result) {
-        console.log(result);
+
         $("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
         /* $("#topic_section_" + chapt_id).html(result); */
