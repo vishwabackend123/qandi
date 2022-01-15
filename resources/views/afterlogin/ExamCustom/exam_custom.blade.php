@@ -303,7 +303,7 @@ $userData = Session::get('user_data');
     dots: false,
     centerMode: false,
     focusOnSelect: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 2,
     variableWidth: false,
     prevArrow: false,
@@ -311,8 +311,7 @@ $userData = Session::get('user_data');
   });
 
   $('.slbs-link a').click(function() {
-
-    $('.slick-slider').slick('refresh');
+    $('#myTabContent .slick-slider').slick('refresh');
   })
 
 
@@ -332,7 +331,7 @@ $userData = Session::get('user_data');
           $('#overlay').fadeIn();
         },
         success: function(result) {
-          $("#topic_section_" + chapt_id).html('');
+          $("#topic_section_" + chapt_id + " div").remove();
           $("#topic_section_" + chapt_id).html(result);
           $('#myTabContent .slick-slider').slick('refresh');
           $('#overlay').fadeOut();
@@ -358,9 +357,12 @@ $userData = Session::get('user_data');
         $('#overlay').fadeIn();
       },
       success: function(result) {
+        console.log(result);
         $("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
-        $('.slick-slider').slick('refresh');
+        /* $("#topic_section_" + chapt_id).html(result); */
+        $('#myTabContent .slick-slider').slick('refresh');
+
         $('#overlay').fadeOut();
         $('#topic_form').show();
 
