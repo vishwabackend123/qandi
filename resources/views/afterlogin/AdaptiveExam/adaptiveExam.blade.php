@@ -175,7 +175,7 @@ $questtype='radio';
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
@@ -521,8 +521,8 @@ $questtype='radio';
     $('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
-        railVisible: true,
-        alwaysVisible: true
+        /*  railVisible: true,
+         alwaysVisible: true */
     });
 
 

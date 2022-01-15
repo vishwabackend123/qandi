@@ -468,8 +468,7 @@ $questtype='radio';
     $('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
-        railVisible: true,
-        alwaysVisible: true
+
     });
 
     const FULL_DASH_ARRAY = 283;
