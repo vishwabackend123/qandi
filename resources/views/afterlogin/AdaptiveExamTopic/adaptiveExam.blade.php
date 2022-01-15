@@ -306,7 +306,7 @@ $questtype='radio';
                             <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
-                                <p>This will give multiple opportunities to the candidates to improve their scores in the
+                                <p>This will give multiple opportunities to the you to improve their scores in the
                                     examination if they are not able to give their best in one attempt</p>
                                 <p>In first attempt, the students will get a first-hand experience of taking an
                                     examination and will know their mistakes which they can improve while attempting
@@ -315,7 +315,7 @@ $questtype='radio';
                                     waste a full year.</p>
                                 <p>If anyone missed the examination due to reasons beyond control (such as Board
                                     examination), then he/she will not have to wait for one full year.</p>
-                                <p> A candidate need not appear in all the four Sessions</p>
+                                <p> You need not appear in all the four Sessions</p>
                             </div>
                         </div>
                     </div>
