@@ -144,7 +144,7 @@ $questtype='radio';
                                 </div>
 
                             </div>
-                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give multiple opportunities to the candidates to improve their scores in the
