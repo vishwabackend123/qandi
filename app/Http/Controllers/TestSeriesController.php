@@ -86,7 +86,7 @@ class TestSeriesController extends Controller
         }
 
         $exam_name = isset($request->series_name) ? $request->series_name : '';
-        $exam_name = isset($request->series_name) ? $exam_name . '(Test Series)' : '';
+        $exam_name = isset($request->series_name) ? $exam_name  : '';
         $series_id = isset($request->series_id) ? $request->series_id : '';
         $series_type = isset($request->series_type) ? $request->series_type : '';
         $exam_fulltime = isset($request->time_allowed) ? $request->time_allowed : '';
