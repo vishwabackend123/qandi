@@ -16,6 +16,20 @@ button {
     text-decoration: none;
 }
 
+/** Rahul 14-1-2022**/
+
+.name-txt-sml{    white-space: nowrap;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;} 
+	
+	
+	#marKs-trends .btn-block.mt-2.d-flex.justify-content-between{margin-top:30px!important;}
+	#marKs-trends .btn-block.mt-3.d-flex.justify-content-between {
+    margin-top: 45px!important;
+}
+	
+/** end here on 14-1-2022 **/
 
 /** rahul css new on 13-1-2022 **/
 button.top-btn-pop:hover{   background: #00baff !important;}
@@ -375,7 +389,7 @@ left: 8%;
 top: 27%;
 z-index: 99;}
 
-button.arrow.next-arow{right: 28.8%;
+button.arrow.next-arow{right:31%;
 position: fixed;
 top: 27%;
 z-index: 99;
@@ -4480,6 +4494,7 @@ color: #2c3348;
 text-transform: capitalize;
 font-weight: 600;
 font-size: 20px;
+
 }
 
 .text-big {
@@ -6605,12 +6620,13 @@ background: #00baff !important;
     .profile-section {
         width: 220px;
         top: 8%;
+        height: 650px;
     }
 
     .leader-board {
         width: 310px;
         right: 20%;
-        height: 100%;
+        /* height: 100%; */
         top: 8%;
     }
 
@@ -6665,8 +6681,7 @@ background: #00baff !important;
     .leader-board,
     .subscription,
     .log-out-screen {
-        right: 320px;
-		
+        right: 220px;
     }
 }
 
@@ -6825,6 +6840,13 @@ button.arrow.next-arow {
 
 @media(min-width:768px) and (max-width:990px) {
 	
+/** rahul css on 15-1-2022 **/
+
+.bg-white.shadow-lg .progress_text{font-size:16px;}
+
+	
+/** end here on 15-1-2022**/
+	
 	/*28-12*/
 	.course-star li strong {
 		width: 100% !important;
@@ -6928,12 +6950,13 @@ button.arrow.next-arow {
     /** profile page css **/
     .profile-section {
         width: 190px;
+		height:650px;
     }
 
     .leader-board {
         width: 270px;
-        right: 20%;
-        height: 100%;
+        right: 24%;
+        height:650px;
         padding-left: 0px;
     }
 
@@ -6948,11 +6971,11 @@ button.arrow.next-arow {
 
     .log-out-screen {
         width: 50%;
-        right: 20%;
+        right: 24%;
     }
 
     .subscription {
-        right: 20%;
+        right: 24%;
     }
 
     .profile-picture-txt .p-text {
@@ -6965,14 +6988,33 @@ button.arrow.next-arow {
     }
 
     .subscription .profile-picture-txt .p-picture {
-        height: 60px;
+        height: 68px;
+		width: 70px;
     }
+	.subscrived{padding:31px 0px;}
+.subscription .p-text h3 {
+    font-size: 16px;
+    line-height: 55px;
+    padding-left: 10px;
+}
 
+.profile-picture-txt .p-picture {
+
+    width: 65px;
+    height: 65px;
+
+}
     /** end here **/
 }
 
 @media(min-width:768px) and (max-width:991px) {
 
+.profile-picture-txt .p-picture {
+
+    width: 65px;
+    height: 65px;
+
+}
 a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
 		padding: 22px !important;
 	}
@@ -9040,6 +9082,15 @@ div#review_rques_blk p {
 
     @media(min-width:991px) and (max-width:1024px) {
 
+      /** rahul css on 15-1-2022**/
+
+	  .form-btns{margin-top:5px;}
+	  .profile-section, .profile-show, .leader-board{min-height:650px; height:650px;}
+	  .leader-board, .subscription, .log-out-screen {
+    right: 220px;
+}
+	  /** end here on 15-1-2022**/
+     
         /** test review page on 16-12-2021**/
         .test-review-right span.timing {
             margin-left: 0px;
@@ -9121,6 +9172,16 @@ div#review_rques_blk p {
     }
 
     @media(min-width:768px) and (max-width:990px) {
+		
+		/** rhaul- css on 15-1-2022**/
+		 .form-btns{margin-top:5px;}
+		.profile-section{height:650px;}
+		.subScrip .col-md-10.mx-auto{margin-top:115px;}
+		.subScrip .row {
+    display: flex;
+}
+		/** end here on 15-1-2022**/
+		
         .course-star li strong {
             width: 100% !important;
             display: block;
