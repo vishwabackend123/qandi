@@ -120,6 +120,7 @@ $userData = Session::get('user_data');
 
 
                         <div class="swiper-slide bg-white go2Planner">
+                            <span>Weekly Plan</span>
 
                             <div class="test-attend text-center pt-2 pb-2">
                                 <p>Tests Attempted</p>

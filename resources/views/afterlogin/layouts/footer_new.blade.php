@@ -568,7 +568,7 @@
                 $('#search_results').show();
 
                 $.ajax({
-                    url: "searchFreind",
+                    url: "{{ url('/searchFreind',) }}",
                     type: "GET",
                     cache: false,
                     data: {

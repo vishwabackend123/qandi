@@ -543,7 +543,12 @@ class HomeController extends Controller
 
             $resp_list = isset($aResponse->response) ? $aResponse->response : [];
             $collection = collect($resp_list);
-            $search_list = $collection->sortBy('user_rank')->all();
+
+            $sorted = $collection->sortBy(function ($value, $key) {
+
+                return $value->user_rank;
+            });
+            $search_list = $sorted->values();
 
             $response_rtn = [];
             $response_rtn['success'] = $status;

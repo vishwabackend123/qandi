@@ -125,7 +125,7 @@ $questtype='radio';
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions</span>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
@@ -144,10 +144,10 @@ $questtype='radio';
                                 </div>
 
                             </div>
-                            <p class="inst mb-3">(Please Read Carefully for any query before starting the test. Thank you.)</p>
+                            <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
-                                <p>This will give multiple opportunities to the candidates to improve their scores in the
+                                <p>This will give multiple opportunities to the you to improve their scores in the
                                     examination if they are not able to give their best in one attempt</p>
                                 <p>In first attempt, the students will get a first-hand experience of taking an
                                     examination and will know their mistakes which they can improve while attempting
@@ -156,7 +156,7 @@ $questtype='radio';
                                     waste a full year.</p>
                                 <p>If anyone missed the examination due to reasons beyond control (such as Board
                                     examination), then he/she will not have to wait for one full year.</p>
-                                <p> A candidate need not appear in all the four Sessions</p>
+                                <p> You need not appear in all the four Sessions</p>
                             </div>
                         </div>
                     </div>
@@ -320,7 +320,7 @@ $questtype='radio';
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
-                        <p class="rightSectH">Question Palette</p>
+                        <p class="rightSectH">Question</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
                             @foreach($keys as $ke=>$val)
@@ -330,8 +330,8 @@ $questtype='radio';
 
                         </div>
 
-                        <p class="rightSectH">Legends</p>
-                        <div class="row">
+                        <!-- <p class="rightSectH">Legends</p> -->
+                        <div class="row mt-4">
                             <div class="col-md-6 legends">
                                 <button class="btn btn-light p-0 rounded-0"> </button>
                                 <p>Unread</p>
@@ -486,8 +486,7 @@ $questtype='radio';
     $('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
-        railVisible: true,
-        alwaysVisible: true
+
     });
 
     const FULL_DASH_ARRAY = 283;

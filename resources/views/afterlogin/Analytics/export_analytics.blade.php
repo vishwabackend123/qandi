@@ -91,15 +91,15 @@ $userData = Session::get('user_data');
                                     Weekly UniQ Performace Report<br />{{date("F j, Y")}}
                                 </span>
                             </div>
-                            <div class="bg-white shadow-lg p-3 mt-5">
+                            <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
                                 <h5 class="dashboard-title mb-3">Subject proficiency</h5>
                                 @if(!empty($subProf))
                                 @foreach($subProf as $key=>$sub)
                                 <div class="d-flex align-items-center mt-3 pb-1">
                                     <div class="  col-6">
-                                        <div class="row d-flex  align-items-center py-2 dashboard-listing-details  w-100 col-6">
+                                        <div class="row d-flex  align-items-center py-2 dashboard-listing-details  w-100 ">
                                             <span class="col-md-6 mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
-                                            <div class="col-md-6 status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                            <div class="col-md-6 pe-5">
                                                 <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                                     <div class="star-ratings-css">
@@ -119,9 +119,9 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="progress ms-auto col-6" style="overflow: visible">
+                                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
                                         @if($sub->correct_ans > 0)
-                                        <div class="progress-bar bg-light-green position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
+                                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
                                         </div>
                                         @endif
@@ -140,7 +140,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @endforeach
                                 @endif
-
+                                <p class="text-center text-danger"><small>Work on your weak subject to increase the number of questions answered correctly</small></p>
                             </div>
                             <div class="bg-white shadow-lg p-3 mt-5">
                                 <h5 class="dashboard-title mb-3 fw-bold">Unit proficiency</h5>
@@ -186,18 +186,21 @@ $userData = Session::get('user_data');
                                     Time Management
                                 </p>
                                 <div id="time_management"></div>
+                                <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
                             </div>
                             <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
                                 <p class="text-uppercase fw-bold text-start">
                                     Average Time Spent on each Question
                                 </p>
                                 <div id="accPer1"></div>
+                                <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
                             </div>
                             <div class="bg-white shadow-lg p-3 px-5 mt-3">
                                 <p class="text-uppercase fw-bold text-start">
                                     Accuracy Percentage
                                 </p>
                                 <div id="accPer"></div>
+                                <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
                             </div>
                             <p class="text-center mt-5 pt-5">
                                 <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know

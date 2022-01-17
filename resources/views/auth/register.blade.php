@@ -3,7 +3,7 @@
 @section('content')
 <section class="login-bg-img">
 
-    <span class="outer-logo"><a href="#"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
+    <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
     <div class="login_screen">
 
         <form id="studentsignup" method="post">
@@ -27,7 +27,7 @@
                 <p>“Sign-up using your email address and mobile number.”</p>
                 <div class="pt-3 emailNumdiv">
                     <div class="form-group flds">
-                        <input type="text" class="form-control email-addrs disable-value" placeholder="Enter address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off" value="{{$referral_email ?? ''}}">
+                        <input type="text" class="form-control email-addrs disable-value" placeholder="Email address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off" value="{{$referral_email ?? ''}}">
                         <span class="error-sms enter-otp" id="errlog_email">Please enter your email address</span>
                     </div>
 
