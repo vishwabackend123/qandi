@@ -841,7 +841,7 @@
                 },
                 {
                     name: 'Others',
-                    y: <?php print_r(100 - (($subScore[1]->score) + ($subScore[0]->score))); ?>,
+                    y: <?php print_r(100 - ((isset($subScore[1]->score) && ($subScore[0]->score)) ? (($subScore[1]->score) + ($subScore[0]->score)) : 0)); ?>,
                     color: '#e4e4e4' // Jane's color
                 }
             ]
