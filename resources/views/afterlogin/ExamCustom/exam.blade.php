@@ -339,7 +339,7 @@ $questtype='radio';
                                     waste a full year.</p>
                                 <p>If anyone missed the examination due to reasons beyond control (such as Board
                                     examination), then he/she will not have to wait for one full year.</p>
-                                <p> You need not appear in all the four Sessions</p>
+                                <p> You need not appear in all the four Sessions.</p>
                             </div>
                         </div>
                     </div>
