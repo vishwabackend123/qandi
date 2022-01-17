@@ -307,16 +307,14 @@ $questtype='radio';
                             <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
-                                <p>This will give multiple opportunities to the you to improve their scores in the
-                                    examination if they are not able to give their best in one attempt</p>
-                                <p>In first attempt, the students will get a first-hand experience of taking an
-                                    examination and will know their mistakes which they can improve while attempting
+                                <p>This will give you multiple opportunities to improve your scores in the
+                                    examination if you are not able to give your best in one attempt.</p>
+                                <p>In first attempt, you will get a first-hand experience of taking an
+                                    examination and you will know your mistakes which you can improve while attempting
                                     for the next time.</p>
-                                <p>This will reduce the chances of dropping a year and droppers would not have to
-                                    waste a full year.</p>
-                                <p>If anyone missed the examination due to reasons beyond control (such as Board
-                                    examination), then he/she will not have to wait for one full year.</p>
-                                <p> You need not appear in all the four Sessions</p>
+                                <p>This will reduce your chance of dropping a year due to inadequate preparation.</p>
+                                <p>You will not have to yet again lose another year.</p>
+                                <p>If you missed the examination due to reasons beyond control (such as Board examination), then you will not have to wait for one full year and you need not appear in all the four sessions.</p>
                             </div>
                         </div>
                     </div>
