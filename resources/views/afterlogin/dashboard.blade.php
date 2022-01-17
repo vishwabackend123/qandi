@@ -206,7 +206,7 @@ $userData = Session::get('user_data');
             </div>
             <div class="modal-body pt-0 text-center">
 
-                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}},</p>
+                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}}!</p>
                 <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
 
                 @if(isset($subjects_rating) && empty($subjects_rating))
