@@ -438,9 +438,9 @@
                         '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
                         chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' +
                         chapter_name + '</span>' +
-                        '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' +
+                        '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' +
                         subject_id +
-                        ')" title="Suffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
+                        ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
                     );
                 }
                 if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
@@ -530,9 +530,9 @@
                                 chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id +
                                 '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' +
                                 chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                                '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' +
+                                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' +
                                 chapter_id + ',' + subject_id +
-                                ')" title="Suffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
+                                ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
                             );
 
                         });
@@ -791,7 +791,7 @@
 
     }
 
-    function suffle_Chapter(chapt_id, subject_id) {
+    function Shuffle_Chapter(chapt_id, subject_id) {
         var selected_chapters = $("input[name='chapters[]']")
             .map(function() {
                 return $(this).val();
@@ -840,7 +840,7 @@
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                '<span class="ms-auto"><a href="javascript:void(0)" onclick="suffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Suffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
             $('#plannerChapter').modal('hide');
         } else {
             $('#errChptAdd_alert').html('Please select one option.');

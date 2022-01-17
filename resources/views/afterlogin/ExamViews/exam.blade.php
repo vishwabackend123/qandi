@@ -1,8 +1,5 @@
 @extends('afterlogin.layouts.app_new')
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!-- Have fun using Bootstrap JS -->
+
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -12,8 +9,8 @@
     });
 </script>
 @section('content')
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 @php
 $userData = Session::get('user_data');
@@ -423,7 +420,7 @@ $questtype='radio';
     </div>
 </div>
 
-@include('afterlogin.layouts.footer')
+@include('afterlogin.layouts.footer_new')
 <!-- browser back disable -->
 <script>
     window.location.hash = "no-back-button";
