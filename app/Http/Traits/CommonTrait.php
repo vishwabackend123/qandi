@@ -215,11 +215,15 @@ trait CommonTrait
         $response_json = curl_exec($curl);
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $aResponse = json_decode($response_json);
+        $rStatus = isset($aResponse->success) ? $aResponse->success : false;
         curl_close($curl);
-        if ($httpcode == 200 || $httpcode == 201) {
-            $aResponse = json_decode($response_json);
-            $package_list = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
-            /*   Redis::set($cacheKey, json_encode($package_list)); */
+        if ($rStatus != false) {
+
+            /* $package_list = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
+            $current_pack = isset($aResponse->purchased_packages) ? $aResponse->purchased_packages : [];
+            */ /*   Redis::set($cacheKey, json_encode($package_list)); */
+            $package_list = $aResponse;
         } else {
             $package_list = [];
         }

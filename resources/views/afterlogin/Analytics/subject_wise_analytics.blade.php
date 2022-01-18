@@ -15,7 +15,7 @@
                                 </span>
                                 <ul class="live-test mt-3">
                                     <li>
-                                        <span class="last-live-test"></span>Last Live Test Score
+                                        <span class="last-live-test"></span>Last Test Score
                                     </li>
                                     <li>
                                         <span class="pre-test"></span>Previous Test
@@ -111,7 +111,7 @@
 
                 <div class="d-flex align-items-center mt-3 px-3">
                     <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
-                        <span class="mr-3 dashboard-name-txt SubjName">{{$val->topic_name}}</span>
+                        <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->topic_name}}">{{$val->topic_name}}</span>
 
 
                     </div>

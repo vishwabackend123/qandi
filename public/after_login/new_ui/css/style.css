@@ -16,6 +16,14 @@ button {
     text-decoration: none;
 }
 
+/* dinesh 18-1-2022 */
+.SubjName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* dinesh 18-1-2022 */
 
 /** Rahul 14-1-2022**/
 

@@ -30,7 +30,7 @@ $userData = Session::get('user_data');
 
                                     <ul class="live-test mt-1">
                                         <li>
-                                            <span class="last-live-test"></span>Last Live Test Score
+                                            <span class="last-live-test"></span>Last Test Score
                                         </li>
                                         <li>
                                             <span class="pre-test"></span>Previous Test

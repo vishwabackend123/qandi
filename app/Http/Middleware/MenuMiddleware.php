@@ -55,7 +55,9 @@ class MenuMiddleware
 
 
         $subscriptionData = $this->subscribedPackage();
-
+        $subscription_packages = $this->subscription_packages();
+        $latest_pack = isset($subscription_packages->purchased_packages[0]) ? $subscription_packages->purchased_packages[0] : [];
+        $subscription_type = $latest_pack->subscription_t;
 
         $user_subjects = $this->redis_subjects();
 
@@ -110,7 +112,6 @@ class MenuMiddleware
         }
 
 
-
         \Illuminate\Support\Facades\View::share('aSubjects', $user_subjects);
         \Illuminate\Support\Facades\View::share('subjects_rating', $subjects_rating);
         \Illuminate\Support\Facades\View::share('user_stage', $user_stage);
@@ -118,6 +119,7 @@ class MenuMiddleware
         \Illuminate\Support\Facades\View::share('exam_data', $exam_data);
         \Illuminate\Support\Facades\View::share('subscription_details', $subscriptionData);
         \Illuminate\Support\Facades\View::share('suscription_status', $suscription_status);
+        \Illuminate\Support\Facades\View::share('subscription_type', $subscription_type);
         \Illuminate\Support\Facades\View::share('leaderboard_list', $leaderboard_list);
         \Illuminate\Support\Facades\View::share('imgPath', $imgPath);
         \Illuminate\Support\Facades\View::share('current_week_plan', $current_week_plan);

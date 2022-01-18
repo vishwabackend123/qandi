@@ -225,7 +225,7 @@
 <div class="planmner-block width collapse" id="collapsePlanner">
 
     <div class="planner-wrapper">
-        <div class="planner-edit-mode" id="sub-planner">
+        <div class="planner-edit-mode open-sub-planner" id="sub-planner">
             <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
                 <div class="planner-scroll" style="overflow-y: auto; overflow-x: hidden; height: 70vh;">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
@@ -264,8 +264,8 @@
 
                             <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
                                 <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
-                                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 30vh;">
-                                    <div class="subject_chapter" style="overflow: hidden; width: auto; height: 30vh;">
+                                <div class="slimScrollDiv">
+                                    <div class="subject_chapter">
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
 
                                         </div>
@@ -302,8 +302,8 @@
             <div class="d-flex align-items-center justify-content-between">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <span>
-                    <a draggable="false" href="javascript:void(0);" class="link-danger" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
-                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
+                    <a draggable="false" href="javascript:void(0);" class="link-danger " id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
                     <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn" title="Close Planner"><i class="fa fa-close"></i></a>
 
                 </span>
@@ -551,7 +551,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic" src="{{$imgPath_deft}}"></span>
                             <span class="profile-text-user">
                                 <h3>{{($lead->user_name) ? $lead->user_name : 'NA'}}</h3>
-                                <p>{{$lead->score}} Uniq score</p>
+                                <p>{{$lead->score}} UNIQ score</p>
                             </span>
                         </li>
                         @endforeach
@@ -686,8 +686,12 @@
                     @endif
                 </h6>
                 <div class="form-btns">
-                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a>
+                    <!--  <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a> -->
+                    @if(($suscription_status != 0) && ($subscription_type == 'T'))
                     <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="save-btn">Change course</button></a>
+                    @elseif($suscription_status != 0 && $subscription_type == 'P')
+                    <a draggable="false" href="{{route('refund_form')}}"><button type="button" class="save-btn">Refund Form</button></a>
+                    @endif
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@ $userData = Session::get('user_data');
                                                         </span>
                                                         <ul class="live-test mb-0">
                                                             <li>
-                                                                <span class="last-live-test"></span>Last Live Test Score
+                                                                <span class="last-live-test"></span>Last Test Score
                                                             </li>
                                                             <li>
                                                                 <span class="pre-test"></span>Previous Test

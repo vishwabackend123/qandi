@@ -167,7 +167,7 @@
             </svg>
             <span class="hoverlink">Practice</span>
         </a>
-        <a data-bs-toggle="collapse" href="#submenupreparation" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a style="display:none;" data-bs-toggle="collapse" href="#submenupreparation" role="button" aria-expanded="false" aria-controls="collapseExample">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
                 <defs>
                     <style>
