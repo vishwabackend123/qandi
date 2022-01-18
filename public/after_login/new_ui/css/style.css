@@ -3089,6 +3089,7 @@ div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
     color: #2c3348;
 }
 
+/*
 .checkboxans:checked+.ans {
     border: solid 2px #37c027 !important;
     background: transparent;
@@ -3096,6 +3097,52 @@ div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
 
 .checkboxans:checked+.ans span.q-no {
     background: #37c027;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding-left: 6px;
+    font-size: 15px;
+    color: #fff;
+} 18-1-2022*/
+
+
+.correctAnswer {
+    border: solid 2px #37c027 !important;
+    background: transparent;
+}
+
+.correctAnswer span.q-no {
+    background: #37c027;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding-left: 6px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.checkboxans:checked+.correctAnswer {
+    border: solid 2px #37c027 !important;
+    background: transparent;
+}
+
+.checkboxans:checked+.correctAnswer span.q-no {
+    background: #37c027;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding-left: 6px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.checkboxans:checked+.incorrectAnswer {
+    border: solid 2px #d71921 !important;
+    background: transparent;
+}
+
+.checkboxans:checked+.incorrectAnswer span.q-no {
+    background: #d71921;
     border-radius: 50px;
     width: 25px;
     height: 25px;
@@ -6992,21 +7039,7 @@ span#slide-input {
 }
 
 @media(min-width:992px) and (max-width:1280px) {
-    <<<<<<< HEAD button.arrow.prev-arow {
-        left: 3% !important;
-        top: 25% !important;
-    }
 
-    button.arrow.next-arow {
-        right: 26.8% !important;
-        top: 25% !important;
-    }
-
-    .time_taken_css {
-        margin-right: 25px !important;
-    }
-
-    =======
     /** Rahul css on 17-1-2022 **/
 
     .button-sec.mt-3 a {
@@ -7053,8 +7086,6 @@ span#slide-input {
     .time_taken_css {
         margin-right: 25px !important;
     }
-
-    >>>>>>>6b6fcdd0afa79252e8e5c243c44d3b918f37da32
 
     /*Test screen */
     .examSect {
@@ -7799,145 +7830,6 @@ span#slide-input {
         display: inline-block;
         margin-bottom: 10px;
         height: 50px;
-    }
-
-    .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0 {
-        display: inline-block;
-        width: 80%;
-        margin-bottom: 10px;
-        margin-left: 0px !important;
-    }
-
-    .counter {
-        top: 0px !important;
-    }
-
-    #FullTest_Exam_Panel_Interface_A button#bt-modal-cancel {
-        margin: 0px;
-        width: 200px;
-    }
-
-    #test_instruction .col-md-3.col-lg-3.d-flex.align-items-center {
-        display: inline-block !important;
-    }
-
-    button#goto-exam-btn {
-        padding: 15px 5px !important;
-        font-size: 14px;
-    }
-
-    button#goto-exam-btn {
-        padding: 15px 40px !important;
-        font-size: 14px;
-        color: #fff !important;
-        opacity: 1;
-    }
-
-    /** end here **/
-
-    /*new responsive code 27-12*/
-    .button-sec.mt-3 a {
-        width: 80%;
-    }
-
-    .live-exam #home .speci-text li:last-child {
-        width: 100% !important;
-    }
-
-    .live-exam #home .speci-text li:last-child button {
-        float: left !important;
-        width: 55% !important;
-    }
-
-    .list-series .live-exam .speci-text li a button {
-        width: 55% !important;
-        float: left;
-    }
-
-    .user-name-block {
-        font-size: 12px;
-    }
-
-    .bg-white.shadow-lg.py-5.ps-3.pe-1 {
-        height: 275px;
-    }
-
-    <<<<<<< HEAD .list-series .live-exam .speci-text li {
-        width: 100% !important;
-    }
-
-    .live-exam .speci-text li:last-child {
-        margin-right: 0px !important;
-    }
-
-    /* new responsive code 27-12*/
-    =======
-    /** rahul css on 31-12-2021**/
-
-    #exam_content_sec .tab-wrapper.h-100 {
-        height: auto !important;
-        margin-bottom: 10px;
-    }
-
-    .examSect div#myTabContent {
-        height: auto !important;
-    }
-
-    .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
-        height: auto !important;
-    }
-
-    .question-block {
-        height: auto;
-    }
-
-    #exam_content_sec .tab-btn-box {
-        bottom: 10px;
-        text-align: center;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 35% !important;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {
-        right: 0px;
-        position: absolute;
-        top: 36px !important;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow {
-        left: 2%;
-        position: absolute;
-        top: 36px !important;
-    }
-
-    .q-no {
-        left: 0px;
-    }
-
-    #exam_content_sec .question-block .question p {
-        font-size: 12px;
-        padding-left: 10px;
-    }
-
-    #resume-test .justify-content-center {
-        justify-content: center !important;
-    }
-
-    .tab-btn-box {
-        position: relative;
-        display: inline-block !important;
-    }
-
-    .examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
-    .examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
-    .examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
-        line-height: 32px;
-        width: 80%;
-        display: inline-block;
-        margin-bottom: 10px;
-        height: 50px;
         color: #000;
     }
 
@@ -8011,7 +7903,9 @@ span#slide-input {
     }
 
     /* new responsive code 27-12*/
-    >>>>>>>6b6fcdd0afa79252e8e5c243c44d3b918f37da32 .counter {
+
+
+    .counter {
         margin-right: 0px !important;
         top: 3px;
         right: 0px !important;
