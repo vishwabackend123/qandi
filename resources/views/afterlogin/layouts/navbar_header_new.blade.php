@@ -551,7 +551,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic" src="{{$imgPath_deft}}"></span>
                             <span class="profile-text-user">
                                 <h3>{{($lead->user_name) ? $lead->user_name : 'NA'}}</h3>
-                                <p>{{$lead->score}} Unique score</p>
+                                <p>{{$lead->score}} Uniq score</p>
                             </span>
                         </li>
                         @endforeach
@@ -615,7 +615,7 @@
                 <span id="image-upload-response" class=""></span>
 
                 <div class="btm-form-flds  pe-3 pb-5">
-                    <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
+                    <form id="editProfile_form" action="{{url('/editProfile')}}" method="POST" autocomplete="off">
                         @csrf
                         <div class="form-flds">
                             <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>

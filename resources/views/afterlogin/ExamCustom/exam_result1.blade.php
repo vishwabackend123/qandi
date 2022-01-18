@@ -51,8 +51,8 @@
                         <!-- <img src="images/right-graph.jpg"> -->
                     </div>
                     <div class="mt-auto btn-block">
-                        <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button>
-                        <div class="row mt-2">
+                        <!-- <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button> -->
+                        <div class="row mt-4">
                             @if(isset($response->subject_graph) && !empty($response->subject_graph))
                             @foreach($response->subject_graph as $subject)
                             @php $subject=(object)$subject; @endphp
