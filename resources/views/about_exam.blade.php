@@ -42,7 +42,7 @@
         <div class="yellow-block">
             <div class="p-5 bg-light d-flex flex-column align-items-center justify-content-center">
                 <select class="form-select rounded-0 text-white bg-dark w-75 text-uppercase" aria-label="Default select example">
-                    <option selected>JEE-Mains</option>
+                    <option selected>JEE-Main</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
