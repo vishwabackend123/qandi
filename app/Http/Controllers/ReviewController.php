@@ -72,8 +72,6 @@ class ReviewController extends Controller
             endif;
         }
 
-
-
         $result_response = $response ?? [];
 
         $question_data = [];
