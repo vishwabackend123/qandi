@@ -115,6 +115,7 @@ class ResultController extends Controller
 
         if ($check_response == true) {
 
+
             return view('afterlogin.ExamCustom.exam_result_analytics');
         } else {
             return redirect()->route('dashboard');

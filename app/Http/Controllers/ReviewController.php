@@ -36,9 +36,9 @@ class ReviewController extends Controller
         if (Redis::exists($cacheKey)) {
             Redis::del(Redis::keys($cacheKey));
         }
-        if (Redis::exists('review_question:' . $user_id)) {
+        /*  if (Redis::exists('review_question:' . $user_id)) {
             Redis::del(Redis::keys('review_question:' . $user_id));
-        }
+        } */
 
         if (!empty($result_id)) {
             $curl = curl_init();
@@ -79,17 +79,19 @@ class ReviewController extends Controller
 
         if (isset($result_response->all_question) && !empty($result_response->all_question)) {
 
+
             $collection = collect($result_response->all_question);
 
 
-            $grouped = $collection->groupBy('subject_id');
+            // $grouped = $collection->groupBy('subject_id');
             $subject_ids = $collection->pluck('subject_id');
 
-            if (count($grouped) > 1) {
+            /* if (count($grouped) > 1) {
                 $aQuestionslist = $collection->sortBy('subject_id');
             } else {
                 $aQuestionslist = $collection->sortBy('question_id');
-            }
+            } */
+            $aQuestionslist = $collection;
             $subject_list = $subject_ids->unique()->values()->all();
 
             $redis_subjects = $this->redis_subjects();
@@ -248,11 +250,11 @@ class ReviewController extends Controller
             $grouped = $collection->groupBy('subject_id');
             $subject_ids = $collection->pluck('subject_id');
 
-            if (count($grouped) > 1) {
+            /*    if (count($grouped) > 1) {
                 $all_data = $collection->sortBy('subject_id');
-            } else {
-                $all_data = $collection;
-            }
+            } else { */
+            $all_data = $collection;
+            // }
 
             $sq = 1;
 
@@ -367,7 +369,7 @@ class ReviewController extends Controller
 
             $aDefault_seq = collect($result_response->all_question);
             $all_data = collect($result_response->all_question);
-            $all_data = $all_data->sortBy('subject_id');
+            // $all_data = $all_data->sortBy('subject_id');
 
             $allQuestions = $all_data->keyBy('question_id');
             $filtered = $all_data->where('subject_id', $subject_id);
@@ -484,12 +486,12 @@ class ReviewController extends Controller
             $collection = collect($result_response->all_question);
             $grouped = $collection->groupBy('subject_id');
 
-            if (count($grouped) > 1) {
+            /* if (count($grouped) > 1) {
                 $aQuestionslist = $collection->sortBy('subject_id');
             } else {
                 $aQuestionslist = $collection->sortBy('question_id');
-            }
-
+            } */
+            $aQuestionslist = $collection;
             $afterSort = $aQuestionslist;
 
             $i = 1;

@@ -134,7 +134,8 @@ class AssessmentExamController extends Controller
                     $opArr[$key] = $option;
                 }
             }
-            $optionArray = $this->shuffle_assoc($opArr);
+            //$optionArray = $this->shuffle_assoc($opArr);
+            $optionArray = $opArr;
             $option_data = $optionArray;
         } else {
             $option_data[] = '';
