@@ -57,7 +57,7 @@ class MenuMiddleware
         $subscriptionData = $this->subscribedPackage();
         $subscription_packages = $this->subscription_packages();
         $latest_pack = isset($subscription_packages->purchased_packages[0]) ? $subscription_packages->purchased_packages[0] : [];
-        $subscription_type = $latest_pack->subscription_t;
+        $subscription_type = (isset($latest_pack) && !empty($latest_pack)) ? $latest_pack->subscription_t : '';
 
         $user_subjects = $this->redis_subjects();
 
