@@ -157,10 +157,12 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="sign-btn">
-                                <form action="{{route('planner_exam',[$val->id,$val->chapter_id])}}" method="post">
+                                <!-- <form action="{{route('planner_exam',[$val->id,$val->chapter_id])}}" method="post"> -->
+                                <form method="post" action="{{route('plannerExam',[$val->id])}}">
                                     @csrf
                                     <input type="hidden" name="chapter_name" value="{{$val->chapter_name}}">
                                     <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
+                                    <input type="hidden" name="chapter_id" value="{{$val->chapter_id}}">
                                     <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
                                     <button type="submit" class="btn btn-primary active-btn text-uppercase">
                                         <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>

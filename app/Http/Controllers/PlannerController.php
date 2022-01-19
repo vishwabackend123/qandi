@@ -353,4 +353,163 @@ class PlannerController extends Controller
 
         return json_encode($shuffle);
     }
+
+
+    public function plannerAdaptiveExam($planner_id = null, Request $request)
+    {
+        $filtered_subject = [];
+
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+
+        if (Redis::exists('adaptive_session:' . $user_id)) {
+            Redis::del(Redis::keys('adaptive_session:' . $user_id));
+        }
+
+        $question_count = isset($request->question_count) ? $request->question_count : 30;
+        $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
+        $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
+
+        $select_topic = isset($request->topics) ? explode(",", (int)$request->topics, true) : [];
+
+
+        $inputjson['student_id'] = $user_id;
+        $inputjson['exam_id'] = (string)$exam_id;
+        $inputjson['chapter_id'] = $chapter_id;
+        $inputjson['session_id'] = 0;
+        $inputjson['end_test'] = "";
+        $inputjson['exam_over'] = "";
+        $inputjson['questions_list'] = [];
+        $inputjson['answerList'] = [];
+
+        $request = json_encode($inputjson);
+
+
+        $curl_url = "";
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+
+        $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json",
+
+            ),
+        ));
+        $response_json = curl_exec($curl);
+
+        $response_json = str_replace('NaN', '""', $response_json);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $responsedata = json_decode($response_json);
+        $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
+        $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
+        $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
+        $test_name = isset($responsedata->test_name) ? $responsedata->test_name : 'Chapter Level Exam';
+
+        if ($httpcode_response == true) {
+            if (!empty($aQuestionslist)) {
+                $exam_fulltime = $responsedata->time_allowed;
+                $questions_count = count($aQuestionslist);
+            } else {
+                return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+            }
+        } else {
+
+            return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+        }
+        $exam_fulltime = 60; //60min set for cahpter adaptive exam
+        $redis_set = 'True';
+
+        $collection = collect($aQuestionslist)->sortBy('subject_id');
+        $grouped = $collection->groupBy('subject_id');
+        $subject_ids = $collection->pluck('subject_id');
+        $question_ids = $collection->pluck('question_id')->values()->all();
+
+        $subject_list = $subject_ids->unique()->values()->all();
+
+
+        $redis_subjects = $this->redis_subjects();
+        $cSubjects = collect($redis_subjects);
+        $aTargets = [];
+        $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+        foreach ($filtered_subject as $sub) {
+            $count_arr = $collection->where('subject_id', $sub->id)->all();
+            $sub->count = count($count_arr);
+            $aTargets[] = $sub->subject_name;
+        }
+
+
+        $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set);
+        $keys = array_keys($allQuestionDetails);
+
+        $question_data = (object)current($allQuestionDetails);
+
+        $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
+        $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+        $nextquestion_data = (object)next($allQuestionDetails);
+
+        $next_qKey = 1;
+        $prev_qKey = 0;
+
+        if (isset($question_data) && !empty($question_data)) {
+            //$publicPath = url('/') . '/public/images/questions/';
+            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+            $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+            $qs_id = $question_data->question_id;
+            $option_ques = str_replace("'", '"', $question_data->question_options);
+
+            $tempdata = json_decode($option_ques, true);
+            $opArr = [];
+            if (isset($tempdata) && is_array($tempdata)) {
+                foreach ($tempdata as $key => $option) {
+                    $option = str_replace('/public/images/questions/', $publicPath, $option);
+                    $opArr[$key] = $option;
+                }
+            }
+            $optionArray = $this->shuffle_assoc($opArr);
+            $option_data = $optionArray;
+        } else {
+            $option_data[] = '';
+        }
+
+        /* set redis for save exam question response */
+        $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = $aQ_list = [];
+        $redis_data = [
+            'given_ans' => $retrive_array,
+            'taken_time' => $retrive_time_array,
+            'taken_time_sec' => $retrive_time_sec,
+            'answer_swap_cnt' => $answer_swap_cnt,
+            'questions_count' => $questions_count,
+            'all_questions_id' => $question_ids,
+            'full_time' => $exam_fulltime,
+        ];
+
+        // Push Value in Redis
+        Redis::set('adaptive_session:' . $user_id, json_encode($redis_data));
+
+        $tagrets = implode(', ', $aTargets);
+
+        $test_type = 'Planner';
+        $exam_type = 'P';
+
+        return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
+    }
 }

@@ -752,6 +752,7 @@ class AdpativeExamController extends Controller
     {
         $session_id = isset($request->session_id) ? $request->session_id : 0;
         $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
+        $planner_id = isset($request->planner_id) ? $request->planner_id : 0;
         $userData = Session::get('user_data');
 
         $user_id = $userData->id;
@@ -772,6 +773,8 @@ class AdpativeExamController extends Controller
         $inputjson['end_test'] = "yes";
         $inputjson['questions_list'] = array_values($questionList);
         $inputjson['answerList'] = array_values($answerList);
+        $inputjson['answerList'] = array_values($answerList);
+        $inputjson['planner_id'] = $planner_id;
         /* $inputjson['questions_list'] = [];
         $inputjson['answerList'] = []; */
 

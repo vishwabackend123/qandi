@@ -212,8 +212,6 @@ $userData = Session::get('user_data');
                                                     for {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}</p>
                                                 <small>{{isset($subscription_details->subscription_details)?$subscription_details->subscription_details:''}}</small>
                                                 @endif
-                                                <!-- <p class="mb-0">Subscribed for JEE (Main) 2022</p>
-                                                <small>Includes 2 Main Mock Test (Live), 4 Sample Tests</small> -->
                                             </div>
                                         </div>
                                         @php $expirydate=isset($subscription_details->subscription_end_date)? date("d-m-Y", strtotime($subscription_details->subscription_end_date)):''; @endphp

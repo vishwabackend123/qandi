@@ -113,10 +113,10 @@ $questtype='radio';
 
     <div class="question-block">
         <!-- Next and previous button -->
-        <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
+        <button href="javascript:void(0);" {{empty($prev_qid)?'d-none':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
         @if(isset($last_qid) && ($last_qid==$activeq_id))
 
-        <button href="javascript:void(0);" class="arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}"><i class="fa fa-angle-right" title="Next Question"></i></button>
+        <button href="javascript:void(0);" class="arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'d-none':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}"><i class="fa fa-angle-right" title="Next Question"></i></button>
         @else
 
         <button href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}','{{ $activeq_id }}')"><i class="fa fa-angle-right" title="Next Question"></i></button>

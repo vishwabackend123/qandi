@@ -117,47 +117,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="PreparationCenter_modal_body" class="modal-body pt-0 px-5">
-                <div class="main-center">
-                    <h2>Trigonometry</h2>
-                    <div class="d-flex align-items-center">
-                        <!-- <div>
-                            <div class="d-flex align-items-center">
-                                <p class="m-0 pe-3">Proficiency</p>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                            </div>
-                        </div> -->
-                        <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);" data-bs-toggle="modal" class="bg-light-red link-dark py-3 px-2 d-inline-block" data-bs-target="#PreparationCenter_modal" title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Videos"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                        </div>
-                    </div>
-                    <div class="h-scroll-slim">
-                        <div class="d-flex bg-white p-3 align-items-center mt-5">
-                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
-                            <div>
-                                <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                                <p class="mt-2 mb-0">36 Slides</p>
-                            </div>
-                        </div>
-                        <div class="d-flex bg-white p-3 align-items-center mt-2">
-                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon5.svg')}}" /></span>
-                            <div>
-                                <p class="text-danger m-0 pb-1">Presentation on Trigonometry I</p>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                                <p class="mt-2 mb-0">36 Slides</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -172,47 +132,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="notes_modal_body" class="modal-body pt-0 px-5">
-                <div class="main-center">
-                    <h2>Trigonometry</h2>
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <!-- <div class="d-flex align-items-center">
-                                <p class="m-0 pe-3">Proficiency</p>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                            </div> -->
-                        </div>
-                        <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);" title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Notes" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Videos"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                        </div>
-                    </div>
-                    <div class="h-scroll-slim">
-                        <div class="d-flex bg-white p-3 align-items-center mt-5">
-                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
-                            <div>
-                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-
-                                <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
-                            </div>
-                        </div>
-                        <div class="d-flex bg-white p-3 align-items-center mt-2">
-                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon6.svg')}}" /></span>
-                            <div>
-                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-
-                                <p class="mt-2 mb-0">JEE-A-QP-PCM-2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -228,47 +148,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="videos_modal_body" class="modal-body pt-0 px-5">
-                <div class="main-center">
-                    <h2>Trigonometry</h2>
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <!--  <div class="d-flex align-items-center">
-                                <p class="m-0 pe-3">Proficiency</p>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                            </div> -->
-                        </div>
-                        <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0);" title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Videos" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);" title="Bookmarks"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                        </div>
-                    </div>
-                    <div class="h-scroll-slim">
-                        <div class="d-flex bg-white p-3 align-items-center mt-5">
-                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
-                            <div>
-
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-                                <p class="mt-2 mb-0">30 mins</p>
-                            </div>
-                        </div>
-                        <div class="d-flex bg-white p-3 align-items-center mt-2">
-                            <span class="px-3"><img src="{{URL::asset('public/after_login/images/icon8.svg')}}" /></span>
-                            <div>
-                                <p class="text-danger m-0 pb-1">Paper on Trigonometry - I</p>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</p>
-                                <p class="mt-2 mb-0">30 mins</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -285,49 +165,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="bookmark_modal_body" class="modal-body pt-0 px-5">
-                <div class="main-center">
-                    <h2>Trigonometry</h2>
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <!-- <div class="d-flex align-items-center">
-                                <p class="m-0 pe-3">Proficiency</p>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-secondary mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                                <i class="fa fa-star text-light mx-2"></i>
-                            </div> -->
-                        </div>
-                        <div class="ms-auto">
 
-                            <span class="me-1"><a href="javascript:void(0); " title="Presentation"><img src="{{URL::asset('public/after_login/images/Group3081@2x.png')}}"> 34</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Notes"><img src="{{URL::asset('public/after_login/images/Group3082.png')}}"> 41</a></span>
-                            <span class="me-1"><a href="javascript:void(0);" title="Videos"><img src="{{URL::asset('public/after_login/images/Group3083.png')}}"> 28</a></span>
-                            <span><a href="javascript:void(0);" title="Bookmarks" class="bg-light-red link-dark py-3 px-2 d-inline-block"><img src="{{URL::asset('public/after_login/images/Group3084.png')}}"> 127</a></span>
-
-                        </div>
-                    </div>
-                    <div class="h-scroll-slim">
-                        <div class="d-flex bg-white p-3  mt-5">
-                            <span class="px-3">Q1</span>
-                            <div>
-
-                                <p>AB is an arc of length 42 cm on the circumference of a circle with center O and
-                                    radius 12 cm. What is the size of angle AOB in radians?</p>
-                                <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
-                            </div>
-                        </div>
-                        <div class="d-flex bg-white p-3  mt-2">
-                            <span class="px-3">Q2</span>
-                            <div>
-
-                                <p>AB is an arc of length 42 cm on the circumference of a circle with center O and
-                                    radius 12 cm. What is the size of angle AOB in radians?</p>
-                                <p class="mt-2 mb-0 text-end">JEE-A-QP-PCM-2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

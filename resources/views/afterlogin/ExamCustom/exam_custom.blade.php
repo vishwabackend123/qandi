@@ -32,7 +32,7 @@ $userData = Session::get('user_data');
                 @isset($subject_list)
                 @foreach($subject_list as $key=>$subject)
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link {{($key==0)?'active':''}}" id="{{$subject->subject_name}}-tab" data-bs-toggle="tab" href="#{{$subject->subject_name}}" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="{{($key==0)?'true':'false'}}">{{$subject->subject_name}}</a>
+                  <a class="nav-link all_div {{($key==0)?'active':''}}" id="{{$subject->subject_name}}-tab" data-bs-toggle="tab" href="#{{$subject->subject_name}}" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="{{($key==0)?'true':'false'}}">{{$subject->subject_name}}</a>
                 </li>
                 @endforeach
                 @endisset
