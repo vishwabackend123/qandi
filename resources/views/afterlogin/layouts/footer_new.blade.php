@@ -525,15 +525,26 @@
                             var chapter_id = item.chapter_id;
                             var chapter_name = item.chapter_name;
                             var status = item.test_completed_yn;
-                            $('#planner_sub_' + subject_id).append(
-                                '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' +
-                                chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id +
-                                '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' +
-                                chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' +
-                                chapter_id + ',' + subject_id +
-                                ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
-                            );
+                            if (status == "Y") {
+                                count_range_attempted = count_range_attempted + 1;
+                                $('#planner_sub_' + subject_id).append(
+                                    '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
+                                    '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
+                                    chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' +
+                                    chapter_name + '</span>' +
+                                    '</div>'
+                                );
+                            } else {
+                                $('#planner_sub_' + subject_id).append(
+                                    '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' +
+                                    chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id +
+                                    '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' +
+                                    chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                                    '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' +
+                                    chapter_id + ',' + subject_id +
+                                    ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
+                                );
+                            }
 
                         });
 

@@ -101,16 +101,16 @@ $userData = Session::get('user_data');
 
                                         </li>
                                     </ul>
-
+                                    @endforeach
                                 </div>
-                                @endforeach
+                                @else
+                                <div class="row text-center p-4">
+                                    <h5>No series avialable.</h5>
+                                </div>
+                                @endif
 
                             </div>
-                            @else
-                            <div class="row text-center p-4">
-                                <h5>No series avialable.</h5>
-                            </div>
-                            @endif
+
 
                         </div>
 
@@ -121,7 +121,7 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-</div>
+
 
 
 
