@@ -89,6 +89,10 @@ class LiveExamController extends Controller
         $exam_id = $userData->grade_id;
         $live_exam_id = $schedule_id;
 
+        if (Redis::exists('custom_answer_time_' . $user_id)) {
+            Redis::del(Redis::keys('custom_answer_time_' . $user_id));
+        }
+
         $exam_name = 'Live Exam';
 
 

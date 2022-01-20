@@ -176,10 +176,31 @@ $questtype='radio';
 
 
 
-    $("#exam_content_sec  #btn_" + question_id).focus();
+    /*  $("#exam_content_sec  #btn_" + question_id).focus(); */
     //$(".number-block #btn_" + question_id)[0].scrollIntoView();
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
 </script>
+<!-- check size of screen -->
+<script>
+    $(document).ready(function() {
+        $(window).on("resize", function(e) {
+            checkScreenSize();
+        });
+
+        checkScreenSize();
+
+        function checkScreenSize() {
+            var newWindowWidth = $(window).width();
+            if (newWindowWidth < 768) {
+                $("#exam_content_sec  #btn_" + question_id).focusout();
+            } else {
+                $("#exam_content_sec  #btn_" + question_id).focus();
+            }
+        }
+    });
+</script>
+
+<!-- End check size of screen -->
