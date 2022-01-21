@@ -461,7 +461,7 @@ class PreparationController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            /* $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -476,7 +476,7 @@ class PreparationController extends Controller
                 $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
             } elseif ((strpos($explanation, $word2) !== false)) {
                 $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-            }
+            } */
             $tempdata = (array)json_decode($question_data->question_options);
             $opArr = [];
             if (isset($tempdata) && is_array($tempdata)) {
