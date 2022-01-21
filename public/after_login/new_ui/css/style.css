@@ -27,13 +27,15 @@ button {
 
 /** Rahul 14-1-2022**/
 
+
+/** Sachin 21-1-2022**/
 .name-txt-sml {
     white-space: nowrap;
-    width: 80%;
+    width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+/** Sachin 21-1-2022**/
 
 #marKs-trends .btn-block.mt-2.d-flex.justify-content-between {
     margin-top: 30px !important;
