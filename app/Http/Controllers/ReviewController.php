@@ -158,7 +158,7 @@ class ReviewController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            /*  $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -173,17 +173,17 @@ class ReviewController extends Controller
                 $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
             } elseif ((strpos($explanation, $word2) !== false)) {
                 $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-            }
+            } */
             $tempdata = (array)json_decode($question_data->question_options);
             $opArr = [];
             if (isset($tempdata) && is_array($tempdata)) {
                 foreach ($tempdata as $key => $option) {
 
-                    if ((strpos($option, $word1) !== false)) {
+                    /* if ((strpos($option, $word1) !== false)) {
                         $option = str_replace($word1, $publicPath, $option);
                     } elseif ((strpos($option, $word2) !== false)) {
                         $option = str_replace($word2, $publicPath, $option);
-                    }
+                    } */
 
                     $opArr[$key] = $option;
                 }
@@ -196,12 +196,12 @@ class ReviewController extends Controller
                 foreach ($correct_ans as $ankey => $anoption) {
 
 
-                    if ((strpos($anoption, $word1) !== false)) {
+                    /*  if ((strpos($anoption, $word1) !== false)) {
                         $anoption = str_replace($word1, $publicPath, $anoption);
                     } elseif ((strpos($anoption, $word2) !== false)) {
                         $anoption = str_replace($word2, $publicPath, $anoption);
                     }
-
+ */
                     $correct_ans->$ankey = $anoption;
                 }
             }
@@ -287,7 +287,7 @@ class ReviewController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            /* $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -302,17 +302,17 @@ class ReviewController extends Controller
                 $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
             } elseif ((strpos($explanation, $word2) !== false)) {
                 $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-            }
+            } */
             $tempdata = (array)json_decode($question_data->question_options);
             $opArr = [];
             if (isset($tempdata) && is_array($tempdata)) {
                 foreach ($tempdata as $key => $option) {
 
-                    if ((strpos($option, $word1) !== false)) {
+                    /*   if ((strpos($option, $word1) !== false)) {
                         $option = str_replace($word1, $publicPath, $option);
                     } else if ((strpos($option, $word2) !== false)) {
                         $option = str_replace($word2, $publicPath, $option);
-                    }
+                    } */
                     $opArr[$key] = $option;
                 }
             }
@@ -326,11 +326,11 @@ class ReviewController extends Controller
             foreach ($correct_ans as $ankey => $anoption) {
 
 
-                if ((strpos($anoption, $word1) !== false)) {
+                /*   if ((strpos($anoption, $word1) !== false)) {
                     $anoption = str_replace($word1, $publicPath, $anoption);
                 } elseif ((strpos($anoption, $word2) !== false)) {
                     $anoption = str_replace($word2, $publicPath, $anoption);
-                }
+                } */
 
                 $correct_ans->$ankey = $anoption;
             }
@@ -407,7 +407,7 @@ class ReviewController extends Controller
 
             $question_id_array[] = $q_id;
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            /* $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
             if ((strpos($question, $word1) !== false)) {
                 $question_data->question = str_replace($word1, $publicPath, $question_data->question);
             } elseif ((strpos($question, $word2) !== false)) {
@@ -422,17 +422,17 @@ class ReviewController extends Controller
                 $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
             } elseif ((strpos($explanation, $word2) !== false)) {
                 $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-            }
+            } */
             $tempdata = (array)json_decode($question_data->question_options);
             $opArr = [];
             if (isset($tempdata) && is_array($tempdata)) {
                 foreach ($tempdata as $key => $option) {
 
-                    if ((strpos($option, $word1) !== false)) {
+                    /*  if ((strpos($option, $word1) !== false)) {
                         $option = str_replace($word1, $publicPath, $option);
                     } else if ((strpos($option, $word2) !== false)) {
                         $option = str_replace($word2, $publicPath, $option);
-                    }
+                    } */
                     $opArr[$key] = $option;
                 }
             }
@@ -446,11 +446,11 @@ class ReviewController extends Controller
             foreach ($correct_ans as $ankey => $anoption) {
 
 
-                if ((strpos($anoption, $word1) !== false)) {
+                /*   if ((strpos($anoption, $word1) !== false)) {
                     $anoption = str_replace($word1, $publicPath, $anoption);
                 } elseif ((strpos($anoption, $word2) !== false)) {
                     $anoption = str_replace($word2, $publicPath, $anoption);
-                }
+                } */
 
                 $correct_ans->$ankey = $anoption;
             }

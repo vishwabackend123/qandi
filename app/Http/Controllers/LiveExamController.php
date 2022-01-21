@@ -183,9 +183,9 @@ class LiveExamController extends Controller
 
         if (isset($question_data) && !empty($question_data)) {
             //$publicPath = url('/') . '/public/images/questions/';
-            $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-            $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
-            $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+            // $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+            // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+            // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
             $qs_id = $question_data->question_id;
             $option_ques = str_replace("'", '"', $question_data->question_options);
 
@@ -193,7 +193,7 @@ class LiveExamController extends Controller
             $opArr = [];
             if (isset($tempdata) && is_array($tempdata)) {
                 foreach ($tempdata as $key => $option) {
-                    $option = str_replace('/public/images/questions/', $publicPath, $option);
+                    // $option = str_replace('/public/images/questions/', $publicPath, $option);
                     $opArr[$key] = $option;
                 }
             }
