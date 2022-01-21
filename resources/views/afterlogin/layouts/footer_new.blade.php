@@ -1018,7 +1018,7 @@
 
                 var response = jQuery.parseJSON(response_data);
                 if (response.success == true) {
-                    $("#profile_image").attr("src", response.filename);
+                    $(".profileimage").attr("src", response.filename);
                     $('#image-upload-response').removeClass('text-danger');
                     $('#image-upload-response').addClass('text-success');
                     $("#image-upload-response").text(response.message);

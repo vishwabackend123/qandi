@@ -42,6 +42,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
+
         $userData = Session::get('user_data');
 
         $user_id = isset($userData->id) ? $userData->id : 0;
@@ -169,7 +170,7 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function trial_subscription($sub_id, Request $request)
+    public function trial_subscription($sub_id, $exam_year, Request $request)
     {
         $userData = Session::get('user_data');
 
@@ -180,7 +181,7 @@ class SubscriptionController extends Controller
         $trail_purchase_data = [
             'student_id' => $user_id,
             'subscription_id' => $subscription_id,
-            'exam_year' => 2022,
+            'exam_year' =>  $exam_year,
         ];
         $order_request_json = json_encode($trail_purchase_data);
 

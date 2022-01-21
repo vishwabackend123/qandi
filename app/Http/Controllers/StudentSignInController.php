@@ -163,6 +163,8 @@ class StudentSignInController extends Controller
             $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
 
             if (Auth::loginUsingId($user_data->id)) {
+                $user_Data = Auth::user();
+                Session::put('user_data', $user_Data);
 
                 $response['status'] = 200;
 

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
-                    <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic" title="Profile Pic"></span>
+                    <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic profileimage" title="Profile Pic"></span>
                     <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4"><a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
@@ -569,7 +569,7 @@
             <div class="profile-show" style="min-height:650px;">
                 <div class="profile-picture-txt">
                     <div class="p-picture">
-                        <img src="{{$imgPath}}" class="profile-pic uswereditpic">
+                        <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
                     </div>
                     <div class="p-text">
                         <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
@@ -595,7 +595,7 @@
             <div class="edit-form">
                 <div class="edit-img">
                     <div class="p-picture">
-                        <img src="{{$imgPath}}" id="profile_image" class="profile-pic uswereditpic">
+                        <img src="{{$imgPath}}" id="profile_image" class="profile-pic uswereditpic profileimage">
                     </div>
 
                     <div class="edit-pic">
@@ -655,7 +655,7 @@
         <div class="subscription right-sidebar">
             <div class="profile-picture-txt">
                 <div class="p-picture">
-                    <img src="{{$imgPath}}" class="profile-pic uswereditpic">
+                    <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
                 </div>
                 <div class="p-text">
                     <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
