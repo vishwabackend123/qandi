@@ -1417,11 +1417,11 @@ button#button-addon2 {
     max-width: 90%;
 }
 
-d-flex.align-items-center.py-2.dashboard-listing-details.w-100 {
+.d-flex.align-items-center.py-2.dashboard-listing-details.w-100 {
     width: 40% !important;
 }
 
-.col-xl-5.col-lg-6.col-md-6.col-sm-12.progress.ms-auto {
+.col-xl-5.col-lg-6.col-md-6.col-sm-12.progress.ms-auto.sub {
     width: 60% !important;
 }
 
@@ -5704,7 +5704,13 @@ tspan {
 .subj-name {
     font: normal normal normal 18px/27px Manrope;
     color: #2c3348;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 30%;
 }
+
+
 
 .prog-box {
     position: absolute;

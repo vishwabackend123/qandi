@@ -110,12 +110,10 @@
                 @foreach($subProf as $val)
 
                 <div class="d-flex align-items-center mt-3 px-3">
-                    <div class="d-flex align-items-center   py-2 dashboard-listing-details w-100 ">
+                    <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 ">
                         <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->topic_name}}">{{$val->topic_name}}</span>
-
-
                     </div>
-                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
+                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto sub" style="overflow: visible;">
                         @if($val->correct_ans > 0)
                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>

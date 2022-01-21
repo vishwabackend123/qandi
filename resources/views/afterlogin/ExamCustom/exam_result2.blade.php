@@ -12,7 +12,7 @@
         $not_attempt_per=(isset($subject->total_questions) && $subject->total_questions>0)?round((($subject->unanswered_count/$subject->total_questions)*100),2):0;
         @endphp
         <div class="d-flex align-items-center mt-4 mb-2 pb-1">
-            <span class="subj-name me-4 col-3">{{$subject->subject_name}}</span>
+            <span class="subj-name  col-3" title="{{$subject->subject_name}}">{{$subject->subject_name}}</span>
             <div class="progress ms-auto  col-8" style="overflow: visible;">
                 @if($correct_per > 0)
                 <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$correct_per}}%; overflow: visible;">
@@ -89,7 +89,7 @@
                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
 
                         <div class="d-flex align-items-center mt-4 mb-2 pb-1 pe-3">
-                            <span class="subj-name  col-4">{{!empty($topic->topic_name)?$topic->topic_name:''}}</span>
+                            <span class="subj-name  col-4" title="{{!empty($topic->topic_name)?$topic->topic_name:''}}">{{!empty($topic->topic_name)?$topic->topic_name:''}}</span>
                             <div class="progress col-8 ms-auto " style="overflow: visible;">
                                 @if($tcorrect_per > 0)
                                 <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">

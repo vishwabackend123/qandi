@@ -355,12 +355,12 @@ $userData = Session::get('user_data');
                 },
                 {
                     name: 'Progress From Previous Score',
-                    y: <?php echo (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? $mockTestScoreCurr - $mockTestScorePre : 0; ?>,
+                    y: <?php echo $diffmock = (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? ($mockTestScoreCurr - $mockTestScorePre) : 0; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Others',
-                    y: <?php echo 0; ?>,
+                    y: <?php echo (100 - ($mockTestScoreCurr + $diffmock)); ?>,
                     color: '#e4e4e4' // Jane's color
                 }
             ]
