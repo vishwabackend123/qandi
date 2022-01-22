@@ -1417,7 +1417,7 @@ button#button-addon2 {
     max-width: 90%;
 }
 
-.d-flex.align-items-center.py-2.dashboard-listing-details.w-100 {
+.d-flex.align-items-center.py-2.dashboard-listing-details.w-100.sub {
     width: 40% !important;
 }
 

@@ -289,7 +289,7 @@ $userData = Session::get('user_data');
             <div class="modal-body pt-0 text-center">
                 <p id="h1--P" class="h1-p text-success text-uppercase">Just one more step!</p>
                 <p>Take a full body scan test to analyse and plan your preparation journey</p>
-                <a id="full-txtBlock" href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 px-5 py-4">
+                <a id="full-txtBlock" href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 py-4">
                     <i class="fa-li fa fa-check" aria-hidden="true"></i>
                     <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
                 </a>
@@ -562,7 +562,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     /* Score Pie Chart */
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 120,
+            height: 130,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -571,10 +571,10 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             spacingRight: 0,
         },
         title: {
-            text: '<span style=" font: normal normal 200 50px/60px Poppins-ExtraLight; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 18px/27px Poppins-ExtraLight;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            text: '<span style=" font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 45
+            y: 50
         },
         credits: {
             enabled: false
@@ -626,15 +626,15 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
                 {
                     name: 'Inprogress',
                     y: <?php echo $inprogress; ?>,
-                    color: '#21ccff'
+                    color: '#d0f3ff'
                 },
                 {
                     name: 'Progress',
                     y: <?php echo $progress; ?>,
-                    color: '#21ccff'
+                    color: '#d0f3ff'
                 },
                 {
-                    name: 'Others',
+                    name: '',
                     y: <?php echo $others; ?>,
                     color: '#e4e4e4'
                 }

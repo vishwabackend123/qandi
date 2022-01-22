@@ -11,6 +11,7 @@ $userData = Session::get('user_data');
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
+
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -72,7 +73,7 @@ $userData = Session::get('user_data');
                                             <div class="prgress-i-txt px-3">
                                                 <span class="progress_text">Subject proficiency</span>
                                             </div>
-                                            <div id="prof_scroll">
+                                            <div id="prof_scroll" class="scroll-topic-ana pe-2">
                                                 @if(!empty($subProf))
                                                 @foreach($subProf as $key=>$sub)
                                                 <div class="d-flex align-items-center px-3 row">
@@ -302,10 +303,10 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 56px/70px Manrope; letter-spacing: 0px; color: #231F20;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 60
+            y: 50
         },
         credits: {
             enabled: false
@@ -350,17 +351,17 @@ $userData = Session::get('user_data');
             innerSize: '85%',
             data: [{
                     name: 'Last Mock Test Score',
-                    y: <?php echo $mockTestScoreCurr ?? 0; ?>,
+                    y: <?php echo $mockTestScorePre ?? 0; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress From Previous Score',
                     y: <?php echo $diffmock = (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? ($mockTestScoreCurr - $mockTestScorePre) : 0; ?>,
-                    color: '#21ccff' // Jane's color
+                    color: '#d0f3ff' // Jane's color
                 },
                 {
-                    name: 'Others',
-                    y: <?php echo (100 - ($mockTestScoreCurr + $diffmock)); ?>,
+                    name: '',
+                    y: <?php echo (100 - ($mockTestScorePre + $diffmock)); ?>,
                     color: '#e4e4e4' // Jane's color
                 }
             ]
@@ -714,8 +715,7 @@ $userData = Session::get('user_data');
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
+                    this.series.name + ': ' + this.y + '<br/>';
             }
         },
         plotOptions: {
@@ -771,8 +771,7 @@ $userData = Session::get('user_data');
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
+                    this.series.name + ': ' + this.y + '<br/>';
             }
         },
         plotOptions: {
@@ -825,8 +824,7 @@ $userData = Session::get('user_data');
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
+                    this.series.name + ': ' + this.y + '<br/>';
             }
         },
         plotOptions: {

@@ -57,6 +57,7 @@ $userData = Session::get('user_data');
                                             </div>
                                             <div class="row py-5">
                                                 <div class="col-md-12 text-center">
+
                                                     <div id="scorecontainer"></div>
                                                     <div class="status-id-disable     d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
                                                         <div class="star-ratings-css m-0 me-3">
@@ -273,10 +274,10 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 74px/111px Poppins; letter-spacing: 0px; color: #231F20;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 18px/27px Poppins;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 70px/100px Manrope; letter-spacing: 0px; color: #21ccff;">{{$mockTestScoreCurr?$mockTestScoreCurr:0}}</span> <br><span style="font: normal normal normal 18px/27px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 60
+            y: 70
         },
         credits: {
             enabled: false
@@ -321,17 +322,17 @@ $userData = Session::get('user_data');
             innerSize: '85%',
             data: [{
                     name: 'Last Mock Test Score',
-                    y: <?php echo $mockTestScoreCurr ?? 0; ?>,
-                    color: '#ffdc34' // Jane's color
+                    y: <?php echo $mockTestScorePre ?? 0; ?>,
+                    color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress From Previous Score',
-                    y: <?php echo (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? $mockTestScoreCurr - $mockTestScorePre : 0; ?>,
-                    color: '#ffa81d' // Jane's color
+                    y: <?php echo $diffmock = (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? $mockTestScoreCurr - $mockTestScorePre : 0; ?>,
+                    color: '#d0f3ff' // Jane's color
                 },
                 {
                     name: 'Others',
-                    y: <?php echo 0; ?>,
+                    y: <?php echo (100 - ($mockTestScorePre + $diffmock)); ?>,
                     color: '#e4e4e4' // Jane's color
                 }
             ]

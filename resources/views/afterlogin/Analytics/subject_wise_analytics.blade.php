@@ -11,6 +11,7 @@
                         <div class="col-lg-12 col-sm-12 col-md-12">
                             <div class="d-flex justify-content-center flex-column h-100 ">
                                 <span class="text-center">
+
                                     <div id="subjectscorecontainer" class="text-right"></div>
                                 </span>
                                 <ul class="live-test mt-3">
@@ -110,7 +111,7 @@
                 @foreach($subProf as $val)
 
                 <div class="d-flex align-items-center mt-3 px-3">
-                    <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 ">
+                    <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 sub">
                         <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->topic_name}}">{{$val->topic_name}}</span>
                     </div>
                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto sub" style="overflow: visible;">
@@ -278,7 +279,10 @@
     </div>
 </div>
 
-
+@php
+$preSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
+$currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+@endphp
 <script>
     $(".scroll-topic-ana").slimscroll({
         height: "42.5vh",
@@ -510,8 +514,7 @@
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
+                    this.series.name + ': ' + this.y + '<br/>';
             }
         },
 
@@ -568,8 +571,7 @@
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
+                    this.series.name + ': ' + this.y + '<br/>';
             }
         },
 
@@ -626,8 +628,7 @@
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
+                    this.series.name + ': ' + this.y + '<br/>';
             }
         },
 
@@ -781,10 +782,10 @@
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 56px/70px Manrope; letter-spacing: 0px; color: #231F20;">{{isset($subScore[1]->score)??0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #231F20;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 60
+            y: 50
         },
         credits: {
             enabled: false
@@ -829,17 +830,18 @@
             innerSize: '85%',
             data: [{
                     name: 'Score',
-                    y: <?php print_r(isset($subScore[1]->score) ?? 0); ?>,
+                    y: <?php echo $preSocre; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress',
-                    y: <?php print_r((isset($subScore[0]->score) &&  isset($subScore[0]->score)) ?? 0); ?>,
-                    color: '#21ccff' // Jane's color
+                    y: <?php echo $diffmock = ($currSocre - $preSocre) > 0 ? $currSocre - $preSocre : 0 ?>,
+                    color: '#d0f3ff' // Jane's color
                 },
                 {
-                    name: 'Others',
-                    y: <?php print_r(100 - ((isset($subScore[1]->score) && ($subScore[0]->score)) ? (($subScore[1]->score) + ($subScore[0]->score)) : 0)); ?>,
+                    name: '',
+                    y: <?php echo (100 - ($preSocre + $diffmock)); ?>,
+
                     color: '#e4e4e4' // Jane's color
                 }
             ]
