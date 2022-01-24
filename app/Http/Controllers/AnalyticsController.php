@@ -295,9 +295,10 @@ class AnalyticsController extends Controller
         curl_close($curl);
 
         $overallAnalytics = json_decode($response);
-        $dailyReport = json_decode($overallAnalytics->daily_report);
-        $weeklyReport = json_decode($overallAnalytics->weekly_report);
-        $monthlyReport = json_decode($overallAnalytics->monthlyReport);
+
+        $dailyReport = (isset($overallAnalytics->daily_report) && !empty($overallAnalytics->daily_report)) ? json_decode($overallAnalytics->daily_report) : [];
+        $weeklyReport = (isset($overallAnalytics->weekly_report) && !empty($overallAnalytics->weekly_report)) ? json_decode($overallAnalytics->weekly_report) : [];
+        $monthlyReport = (isset($overallAnalytics->monthlyReport) && !empty($overallAnalytics->monthlyReport)) ? json_decode($overallAnalytics->monthlyReport) : [];
 
         $date1 = [];
         $correctTime1 = [];
