@@ -145,7 +145,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-lg-7  mt-3">
                                         <div class="bg-white p-3 h-100 px-5">
-                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question</p>
+                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
                                             <div id="accPer1"></div>
                                             <p class="text-center text-danger mt-3 "><small>Lowering this average will add miles to your success journey</small></p>
                                         </div>
@@ -175,7 +175,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-lg-7  mt-3">
                                         <div class="bg-white pt-3  px-5">
-                                            <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
+                                            <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
                                             <div id="accPer"></div>
                                             <p class="text-center text-danger mt-3 mb-0"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
                                         </div>

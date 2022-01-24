@@ -31,8 +31,10 @@ $user_id = $userData->id;
     <div class="row">
         <div class="col-md-10 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
-                @if(!empty($user_id) && !empty($purchased_ids))
+                @if(!empty($user_id) && $suscription_status!=0)
                 <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
+                @elseif(!empty($user_id) && $suscription_status==0)
+                <a href="{{ url('/') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
                 @elseif(!isset($user_id))
                 <a href="{{ url('/') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
                 @endif
