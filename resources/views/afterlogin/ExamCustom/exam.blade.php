@@ -438,7 +438,7 @@ $questtype='radio';
 
 @include('afterlogin.layouts.footer_new')
 <!-- browser back disable -->
-<script>
+<!-- <script>
     window.location.hash = "no-back-button";
     window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
     window.onhashchange = function() {
@@ -452,6 +452,14 @@ $questtype='radio';
     window.onpopstate = function() {
         history.go(1);
     };
+</script> -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function() {
+            window.history.pushState(null, "", window.location.href);
+        };
+    });
 </script>
 <!-- browser back disable -->
 <script type="text/javascript">
