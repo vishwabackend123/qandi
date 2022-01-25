@@ -5158,6 +5158,9 @@ header {
     margin-right: 0;
 }
 */
+
+/**Start_Sachin_25_01_22*******/
+/***************Add_font_weight***********/
 .question {
     font: normal normal normal 18px/28px Manrope;
     letter-spacing: 0px;
@@ -5168,7 +5171,9 @@ header {
     padding-bottom: 12px !important;
     line-height: 20px;
     overflow: hidden;
+	font-weight: 600;
 }
+/**End_Sachin_25_01_22*******/
 
 .question-block label.question p {
     margin-bottom: 2px;
