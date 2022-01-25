@@ -29,7 +29,7 @@ button.PayBttn.btn:hover {
 margin: 0 auto;
 text-align: center;}
 .subScrip .row{display: inline-block;}
-.subScrip .row .col-md-4{/* display: inline-flex; *//* max-width: 52.333%; */max-width: 100%;}
+.subScrip .row .col-md-4{ display: inline-flex; max-width: 52.333%;}
 
 .subScrip .row button#goto-otp-btn:hover{background-color:00baff!important;background-image:none;}
 .subScrip .row button#goto-otp-btn{height:60px;color:#FFF;}
@@ -426,8 +426,6 @@ button#goto-otp-btn:hover {
         max-width: 85% !important;
         padding: 60px 47px 60px 47px !important;
     }
-
-
 }
 
 @media(min-width:768px) and (max-width:991px) {
@@ -441,15 +439,15 @@ button#goto-otp-btn:hover {
         margin-bottom: 12px;
         height: 68px;
     }
-	
+	h1.main-heading.position-relative {
+		font-size: 38px !important;
+		font-weight: 600 !important;
+	}
 	
 	.subScrip .row .col-md-4 {
 		display: block !important;
 		max-width: 100% !important;
 	}
-	
-	
-	
 
 }
 
