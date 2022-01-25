@@ -54,12 +54,6 @@
 
 </script>
 <script>
-    /** Your web app's Firebase configuration 
-     * Copy from Login 
-     *      Firebase Console -> Select Projects From Top Naviagation 
-     *      -> Left Side bar -> Project Overview -> Project Settings
-     *      -> General -> Scroll Down and Choose CDN for all the details
-     */
     var firebaseConfig = {
         apiKey: "AIzaSyB1_yyExr-EfBlGgRxa1N04mlTgHY_pakU",
         authDomain: "uniq-notifications-prod.firebaseapp.com",
@@ -71,85 +65,69 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
 
-    /**
-     * We can start messaging using messaging() service with firebase object
-     */
-    var messaging = firebase.messaging();
 
-    /** Register your service worker here
-     *  It starts listening to incoming push notifications from here
-     */
-    navigator.serviceWorker.register('{{URL::asset("firebase-messaging-sw.js")}}')
-        .then(function(registration) {
-            /** Since we are using our own service worker ie firebase-messaging-sw.js file */
-            messaging.useServiceWorker(registration);
+    messaging.usePublicVapidKey('BD7daxDmQeTVf332TGCtISSp4105y304P9we4PI2Ti5gSFl4EoNMlO3aVEppAzJKj1xlJJ0MUqbweXugwWNhjG8');
 
-            /** Lets request user whether we need to send the notifications or not */
-            messaging.requestPermission()
-                .then(function() {
-                    /** Standard function to get the token */
-                    messaging.getToken()
-                        .then(function(token) {
-                            /** Here I am logging to my console. This token I will use for testing with PHP Notification */
-                            console.log(token);
-                            /** SAVE TOKEN::From here you need to store the TOKEN by AJAX request to your server */
-                            $.ajax({
-                                url: "{{ url('/saveFcmToken') }}",
-                                type: 'POST',
+    // Get Instance ID token. Initially this makes a network call, once retrieved
+    // subsequent calls to getToken will return from cache.
 
-                                data: {
-                                    "_token": "{{ csrf_token() }}",
-                                    fcm_token: token
-                                },
+    messaging.requestPermission().then(function() {
+        return messaging.getToken()
+    }).then(function(response) {
+        if (response) {
+            console.log(response);
 
-                                success: function(response_data) {
-                                    console.log(response_data);
-                                },
-                                error: function(xhr, b, c) {
-                                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-                                }
-                            });
-                        })
-                        .catch(function(error) {
-                            /** If some error happens while fetching the token then handle here */
-                            //updateUIForPushPermissionRequired();
-                            console.log('Error while fetching the token ' + error);
-                        });
-                })
-                .catch(function(error) {
-                    /** If user denies then handle something here */
-                    console.log('Permission denied ' + error);
-                })
-        })
-        .catch(function() {
-            console.log('Error in registering service worker');
-        });
+            $.ajax({
+                url: "{{ url('/saveFcmToken') }}",
+                type: 'POST',
 
-    /** What we need to do when the existing token refreshes for a user */
-    messaging.onTokenRefresh(function() {
-        messaging.getToken()
-            .then(function(renewedToken) {
-                console.log(renewedToken);
-                /** UPDATE TOKEN::From here you need to store the TOKEN by AJAX request to your server */
-            })
-            .catch(function(error) {
-                /** If some error happens while fetching the token then handle here */
-                console.log('Error in fetching refreshed token ' + error);
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    fcm_token: response
+                },
+
+                success: function(response_data) {
+                    console.log(response_data);
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
             });
+
+            /* sendTokenToServer(currentToken);
+            updateUIForPushEnabled(currentToken); */
+        } else {
+            // Show permission request.
+            console.log('No Instance ID token available. Request permission to generate one.');
+            // Show permission UI.
+            updateUIForPushPermissionRequired();
+            setTokenSentToServer(false);
+        }
+    }).catch((err) => {
+        console.log('An error occurred while retrieving token. ', err);
+
     });
-
-    // Handle incoming messages
     messaging.onMessage(function(payload) {
-        console.log("Payload: " + payload)
-        const notificationTitle = 'Data Message Title';
-        const notificationOptions = {
-            body: 'Data Message body',
-            icon: 'https://c.disquscdn.com/uploads/users/34896/2802/avatar92.jpg',
-            image: 'https://c.disquscdn.com/uploads/users/34896/2802/avatar92.jpg'
-        };
+        console.log('Message received footer. ', payload);
+        const title = payload.data.title;
 
-        return self.registration.showNotification(notificationTitle, notificationOptions);
+        const body = payload.data.body;
+        const time = payload.data.time;
+        const options = {
+            body: payload.data.body,
+            time: payload.data.time,
+        };
+        new Notification(title, options);
+        var ballicon = "{{URL::asset('public/after_login/new_ui/images/bell.jpg')}}";
+        $('#recent_notify ').prepend($('<div class="notification-txt">' +
+            '<span class="bell-noti"><img src="' + ballicon + '"></span>' +
+            '<span class="text-notific">' + body + '</span>' +
+            '</div>'));
+
+
+        // ...
     });
 </script>
 <script>
