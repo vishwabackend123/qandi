@@ -123,7 +123,28 @@
                 .catch(function(error) {
                     /** If user denies then handle something here */
                     console.log('Permission denied ' + error);
-                })
+                });
+
+            messaging.onMessage(function(payload) {
+                console.log('Message received footer. ', payload);
+                const title = payload.data.title;
+
+                const body = payload.data.body;
+                const time = payload.data.time;
+                const options = {
+                    body: payload.data.body,
+                    time: payload.data.time,
+                };
+                new Notification(title, options);
+                var ballicon = "{{URL::asset('public/after_login/new_ui/images/bell.jpg')}}";
+                $('#recent_notify ').prepend($('<div class="notification-txt">' +
+                    '<span class="bell-noti"><img src="' + ballicon + '"></span>' +
+                    '<span class="text-notific">' + body + '</span>' +
+                    '</div>'));
+
+
+                // ...
+            });
         })
         .catch(function() {
             console.log('Error in registering service worker');
