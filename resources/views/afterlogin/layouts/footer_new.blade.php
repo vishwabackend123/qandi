@@ -77,6 +77,9 @@
      */
     var messaging = firebase.messaging();
 
+    messaging.usePublicVapidKey('BF7HuS5x1c-2dYVum2tX1Td43VIvCLBw-IGj2c_uDWYiwilJfzvbazpQ6piLdb4YOVVivLQhfPn9Mlx59tWDz10');
+
+
     /** Register your service worker here
      *  It starts listening to incoming push notifications from here
      */

@@ -188,7 +188,7 @@ trait CommonTrait
         $userData = Session::get('user_data');
 
         $user_id = isset($userData->id) ? $userData->id : 0;
-        $grade_id = $userData->grade_id;
+        $grade_id = isset($userData->grade_id) ? $userData->grade_id : 0;
 
         /* $cacheKey = 'subscription_packages';
         if ($data = Redis::get($cacheKey)) {
