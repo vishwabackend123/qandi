@@ -17,6 +17,7 @@ if(session()->has('user_data')){
 $userData = Session::get('user_data');
 
 $user_id = $userData->id;
+$user_exam_id = $userData->grade_id;
 }
 
 
@@ -64,10 +65,10 @@ $user_id = $userData->id;
 
                 @if(in_array($sub->subscript_id,$purchased_ids) )
                 @php
-                $subscription_type='';
+                //$subscription_type='';
                 $filtered = $aPurchased->where('subscription_id', $sub->subscript_id);
                 $filtered_data = $filtered->first();
-                $subscription_type = $filtered_data->subscription_t;
+                //$subscription_type = $filtered_data->subscription_t;
                 $subscribed_id = $filtered_data->subscription_id;
 
                 $expirydate=isset($filtered_data->subscription_end_date)? date("d-m-y", strtotime($filtered_data->subscription_end_date)):'';
@@ -101,7 +102,7 @@ $user_id = $userData->id;
                     </div>
                 </div>
                 @elseif($subscription_type=="T")
-                @if(($dateTimeExpiry > $dateTimeToday))
+
                 <div class="col-md-4 p-4 ">
                     <div class="bg-white white-box-small subscriptionBox   ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -119,39 +120,17 @@ $user_id = $userData->id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
                         <div class="text-center mt-2">
                             <apan class="text-success text-decoration-underline">Already in {{$sub->trial_subscription_duration}} days trail Period. </apan>
                         </div>
-
                     </div>
                 </div>
-                @else
-                <div class="col-md-4 p-4 " style="display:none">
-                    <div class="bg-white white-box-small subscriptionBox   ">
-                        <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
-                        <p class="price">Rs. {{$subsprice}}</p>
-                        <p class="box-content scroll-content me-3 pr-3">{{$sub->subscription_details}}</p>
-
-                        <div class="text-center mt-4">
-                            <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
-                                @csrf
-                                <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
-                                <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
-                                <input type="hidden" name="exam_period" value="12">
-                                <input type="hidden" name="period_unit" value="month">
-                                <input type="hidden" name="exam_price" value="{{$subsprice}}">
-
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                @endif
                 @endif
                 @elseif((count($purchasedid)>0) && !empty($userData->id))
+
                 <div class="col-md-4 p-4 " style="display:none">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -186,6 +165,7 @@ $user_id = $userData->id;
                     </div>
                 </div>
                 @else
+
                 <div class="col-md-4 p-4 ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -201,7 +181,7 @@ $user_id = $userData->id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
                         @if($sub->trial_subscription_duration>0)
@@ -235,7 +215,8 @@ $user_id = $userData->id;
 
                 @endphp
 
-
+                @if(isset($user_exam_id) && !empty($user_exam_id))
+                @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
                 <div class="col-md-4 p-4 ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -251,14 +232,67 @@ $user_id = $userData->id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <div class="text-center mt-2">
+                                    <span class="text-danger text-decoration-underline">Your paid subscription expired.</span>
+                                </div>
                             </form>
                         </div>
 
 
                     </div>
                 </div>
+                @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type=="T")
+                <div class="col-md-4 p-4 ">
+                    <div class="bg-white white-box-small subscriptionBox  ">
+                        <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
+                        <p class="price">Rs. {{$subsprice}}</p>
+                        <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
 
+                        <div class="text-center mt-4">
+                            <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
+                                @csrf
+                                <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
+                                <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
+                                <input type="hidden" name="exam_period" value="12">
+                                <input type="hidden" name="period_unit" value="month">
+                                <input type="hidden" name="exam_price" value="{{$subsprice}}">
+
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <div class="text-center mt-2">
+                                    <span class="text-danger text-decoration-underline">14 days trail Period expired.</span>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+                @endif
+                @else
+                <div class="col-md-4 p-4 ">
+                    <div class="bg-white white-box-small subscriptionBox  ">
+                        <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
+                        <p class="price">Rs. {{$subsprice}}</p>
+                        <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
+
+                        <div class="text-center mt-4">
+                            <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
+                                @csrf
+                                <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
+                                <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
+                                <input type="hidden" name="exam_period" value="12">
+                                <input type="hidden" name="period_unit" value="month">
+                                <input type="hidden" name="exam_price" value="{{$subsprice}}">
+
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+                @endif
 
                 @endforeach
                 @endif

@@ -688,7 +688,7 @@
                 <div class="form-btns">
                     <!--  <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a> -->
                     @if(($suscription_status != 0) && ($subscription_type == 'T'))
-                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="save-btn">Change course</button></a>
+                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="save-btn">Upgrade</button></a>
                     @elseif($suscription_status != 0 && $subscription_type == 'P')
                     <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a>
                     <a draggable="false" href="{{route('refund_form')}}"><button type="button" class="save-btn">Refund</button></a>

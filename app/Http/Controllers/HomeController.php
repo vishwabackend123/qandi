@@ -83,7 +83,8 @@ class HomeController extends Controller
             $suscription_status = 1;
         }
 
-        if (($suscription_status == 0 || $subscription_yn == 'N' || empty($expiry_date))) {
+
+        if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
 
             return redirect()->route('subscriptions');
         }

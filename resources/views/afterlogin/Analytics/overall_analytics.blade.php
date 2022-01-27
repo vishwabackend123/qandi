@@ -122,7 +122,7 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                                 <div class="row" id="time-Avg-quest">
-                                    <div class="col-lg-5 mt-3">
+                                    <div class="col-lg-6 mt-3">
                                         <div class="bg-white p-3 h-100 px-5 text-center">
                                             <p class="text-uppercase fw-bold text-start">Time Management</p>
                                             <div id="day" style="display:block"></div>
@@ -143,7 +143,7 @@ $userData = Session::get('user_data');
 
                                         </div>
                                     </div>
-                                    <div class="col-lg-7  mt-3">
+                                    <div class="col-lg-6  mt-3">
                                         <div class="bg-white p-3 h-100 px-5">
                                             <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
                                             <div id="accPer1"></div>
@@ -152,7 +152,7 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                                 <div class="row" id="marKs-trends">
-                                    <div class="col-lg-5 mt-3">
+                                    <div class="col-lg-6 mt-3">
                                         <div class="bg-white p-3 h-100 px-5 text-center">
                                             <p class="text-uppercase fw-bold text-start">Marks Trend</p>
                                             <div id="day1" style="display:block"></div>
@@ -173,7 +173,7 @@ $userData = Session::get('user_data');
 
                                         </div>
                                     </div>
-                                    <div class="col-lg-7  mt-3">
+                                    <div class="col-lg-6  mt-3">
                                         <div class="bg-white pt-3  px-5">
                                             <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
                                             <div id="accPer"></div>
