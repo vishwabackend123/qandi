@@ -8,13 +8,13 @@ importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js",
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
 firebase.initializeApp({
-    apiKey: "AIzaSyB1_yyExr-EfBlGgRxa1N04mlTgHY_pakU",
-    authDomain: "uniq-notifications-prod.firebaseapp.com",
-    projectId: "uniq-notifications-prod",
-    storageBucket: "uniq-notifications-prod.appspot.com",
-    messagingSenderId: "363979513693",
-    appId: "1:363979513693:web:5bf971e8c21159e1ffd2b4",
-    measurementId: "G-SQHCXXVZY7"
+    apiKey: "AIzaSyAWZZkXXuTHAyNqO2EHqi5nudL40exTmmc",
+    authDomain: "uniq-notifications-9891c.firebaseapp.com",
+    projectId: "uniq-notifications-9891c",
+    storageBucket: "uniq-notifications-9891c.appspot.com",
+    messagingSenderId: "426474366022",
+    appId: "1:426474366022:web:0a94e98859fedd92bd9647",
+    measurementId: "G-9QGWSEL82D"
 });
 
 // Retrieve an instance of Firebase Messaging so that it can handle background

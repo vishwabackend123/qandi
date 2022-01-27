@@ -146,6 +146,8 @@ class SubscriptionController extends Controller
         $data_difference = $today_date->diffInDays($expiry_date, false);
 
 
+
+
         $suscription_status = 3;
 
         if ($data_difference > 0) {
@@ -159,9 +161,14 @@ class SubscriptionController extends Controller
             $suscription_status = 1;
         }
 
+        $subscription_packages = $this->subscription_packages();
+        $latest_pack = isset($subscription_packages->purchased_packages[0]) ? $subscription_packages->purchased_packages[0] : [];
+        $subscription_type = (isset($latest_pack) && !empty($latest_pack)) ? $latest_pack->subscription_t : '';
 
 
-        return view('subscriptions', compact('subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status'));
+
+
+        return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status'));
     }
 
 
