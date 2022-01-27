@@ -29,7 +29,7 @@ button.PayBttn.btn:hover {
 margin: 0 auto;
 text-align: center;}
 .subScrip .row{display: inline-block;}
-.subScrip .row .col-md-4{ display: inline-flex; max-width: 52.333%;}
+.subScrip .row .col-md-4{ display: inline-flex; max-width: 32.333%;}
 
 .subScrip .row button#goto-otp-btn:hover{background-color:00baff!important;background-image:none;}
 .subScrip .row button#goto-otp-btn{height:60px;color:#FFF;}
@@ -213,9 +213,9 @@ input.form-control.email-addrs {
 	.welcome-heading{font-size: 16px!important;font: inherit!important;}
 	#main .col{padding: 0px;}
 	.subScrip .row .col-md-4 {
-    display: inline-block;
-    max-width: 100%;
-}
+		display: inline-block;
+		max-width: 48%;
+	}
 h1.main-heading.position-relative{font-size:20px!important;}
 .subs-box {
     border: 1px solid #BCE0FD;
@@ -428,6 +428,14 @@ button#goto-otp-btn:hover {
     }
 }
 
+@media(min-width:991px) and (max-width:1120px) {    
+	.subScrip .row .col-md-4 {
+		display: inline-flex;
+		max-width: 75% !important;
+		justify-content: center;
+	}
+}
+
 @media(min-width:768px) and (max-width:991px) {
     .subject_screen {
         max-width: 85% !important;
@@ -439,14 +447,14 @@ button#goto-otp-btn:hover {
         margin-bottom: 12px;
         height: 68px;
     }
-	h1.main-heading.position-relative {
+	.subScrip h1.main-heading.position-relative {
 		font-size: 38px !important;
 		font-weight: 600 !important;
 	}
-	
 	.subScrip .row .col-md-4 {
-		display: block !important;
-		max-width: 100% !important;
+		display: inline-flex;
+		max-width: 75%;
+		justify-content: center;
 	}
 
 }
