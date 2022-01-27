@@ -232,7 +232,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Renew<i class="fas fa-arrow-right"></i></button>
                                 <div class="text-center mt-2">
                                     <span class="text-danger text-decoration-underline">Your paid subscription expired.</span>
                                 </div>
