@@ -214,7 +214,7 @@ input.form-control.email-addrs {
 	#main .col{padding: 0px;}
 	.subScrip .row .col-md-4 {
 		display: inline-block;
-		max-width: 48%;
+		max-width: 100%;
 	}
 h1.main-heading.position-relative{font-size:20px!important;}
 .subs-box {
