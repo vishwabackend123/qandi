@@ -464,7 +464,7 @@
             var count_range_attempted = 0;
             planned.forEach(function(item) {
 
-
+                var base_path = "{{ url('/') }}";
                 var subject_id = item.subject_id;
                 var chapter_id = item.chapter_id;
                 var chapter_name = item.chapter_name;
@@ -486,7 +486,7 @@
                         chapter_name + '</span>' +
                         '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' +
                         subject_id +
-                        ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
+                        ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
                     );
                 }
                 if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
@@ -566,11 +566,12 @@
 
 
                         result.forEach(function(item) {
-                            console.log(item);
+
                             var subject_id = item.subject_id;
                             var chapter_id = item.chapter_id;
                             var chapter_name = item.chapter_name;
                             var status = item.test_completed_yn;
+                            var base_path = "{{ url('/') }}";
                             if (status == "Y") {
                                 count_range_attempted = count_range_attempted + 1;
                                 $('#planner_sub_' + subject_id).append(
@@ -588,7 +589,7 @@
                                     chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
                                     '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' +
                                     chapter_id + ',' + subject_id +
-                                    ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>'
+                                    ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
                                 );
                             }
 
@@ -894,10 +895,12 @@
         var chapters = $('input[name="chapters[]"]').length;
         var chapter_id = $('#planner_chapter_add').val();
         var chapter_name = $('#planner_chapter_add option:selected').text();
+        var base_path = "{{ url('/') }}";
+
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>');
             $('#plannerChapter').modal('hide');
         } else {
             $('#errChptAdd_alert').html('Please select one option.');
