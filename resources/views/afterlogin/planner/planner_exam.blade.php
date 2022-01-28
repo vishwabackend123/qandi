@@ -416,22 +416,64 @@ $questtype='radio';
 </div>
 
 @include('afterlogin.layouts.footer_new')
-<!-- browser back disable -->
-<!-- <script>
-    window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
-    window.onhashchange = function() {
-        window.location.hash = "no-back-button";
-    }
+<!-- page referesh disabled -->
+<script>
+    $(document).ready(function() {
+        /* mouse rightclick */
+        document.oncontextmenu = function() {
+            return false;
+        };
+
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
+
+                return false;
+            }
+            return true;
+        });
+        /* mouse rightclick */
+
+        document.onkeydown = function(e) {
+            // disable F12 key
+            if (e.keyCode == 123 || e.keyCode == 116) {
+                return false;
+            }
+            /* Ctrl+A */
+            if (e.keyCode == 65 && e.ctrlKey) {
+
+                return false;
+            }
+            /* Ctrl+R */
+            if (e.keyCode == 82 && e.ctrlKey) {
+
+                return false;
+            }
+
+            // disable ctrl+shift+I key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                return false;
+            }
+
+            // disable ctrl+shift+J key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+
+            // disable ctrl+U key
+            if (e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+
+            // disable ctrl+P key
+            if (e.ctrlKey && e.keyCode == 80) {
+                return false;
+            }
+        }
+    });
 </script>
-<script type="text/javascript">
-    history.pushState(null, null, location.href);
-    history.back();
-    history.forward();
-    window.onpopstate = function() {
-        history.go(1);
-    };
-</script> -->
+<!-- /page referesh disabled -->
+<!-- browser back disable -->
+
 <script type="text/javascript">
     $(document).ready(function() {
         window.history.pushState(null, "", window.location.href);
@@ -440,7 +482,7 @@ $questtype='radio';
         };
     });
 </script>
-<!-- browser back disable -->
+<!-- /browser back disable -->
 
 <script type="text/javascript">
     $('.number-block').slimscroll({
