@@ -15,7 +15,138 @@ button {
     outline: none;
     text-decoration: none;
 }
+/*31 jan */
+div.form-group.flds span.currect-email {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+.store-mobile img {
+    float: left;
+    width: 24px;
+}
+form#editProfile_form .form-flds {
+    margin-bottom: 10px !important;
+}
+.country-code-name.stu-grade ul li {
+    margin-bottom: 5px !important;
+}
+.currect-value {
+    display: none;
+}
+.form-flds.flds.form-group.stateD {
+    width: 77% !important;
+    float: left;
+}
+.form-flds.locationN {
+    width: 20% !important;
+    float: right;
+}
+.store-mobile {
+    width: 100%;
+    display: inline-block;
+    padding-left: 10px;
+    text-align: left;
+}
+input#usernameloca {
+    text-align: center;
+}
+input.select-grade {
+    background: url(..//images/state-log.png) no-repeat #f2f2f2 !important;
+    padding-left: 40px !important;
+    background-size: 22px !important;
+    background-position: 5px !important;
+}
+input.select-exam {
+    background: url(..//images/city-log.png) no-repeat #f2f2f2 !important;
+    padding-left: 40px !important;
+    background-size: 22px !important;
+    background-position: 5px !important;
+}
+div.form-group.flds span.currect-email {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+.country-code-name {
+    height: 256px;
+    overflow: overlay;
+    padding: 10px;
+    position: absolute;
+    background: #fff;
+    width: 38.8%;
+    z-index: 9;
+    border-radius: 8px;
+    top: 10px;
+    left: 16%;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
+}
+.country-code-name ul {
+    padding-left: 0px;
+    text-align: left;
+}
+.country-code-name ul li {
+    list-style: none;
+    color: #2c3348;
+    font-size: 14px;
+    padding: 3px 20px 5px;
+}
+.country-code-name::-webkit-scrollbar-thumb {
+    background: #888;
+}
+.country-code-name::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.country-code-name::-webkit-scrollbar {
+    width: 3px;
+}
+.country-code-name ul li:hover {
+    background: #f2f2f2;
+    width: 95%;
+}
 
+
+.store-mobile {
+    width: 100%;
+    display: inline-block;
+    padding-left: 10px;
+    text-align: left;
+}
+input.form-control.select-grade {
+    background: url(../images/state-log.png) no-repeat #f2f2f2;
+    padding-left: 40px;
+    background-size: 20px;
+    background-position: 10px;
+}
+/** the following css for placeholder **/
+.contentA input:-ms-input-placeholder {
+    color: #2c3348 !important;
+    font-size: 14px;
+}
+
+.contentA input::placeholder {
+    color: #2c3348 !important;
+    font-size: 14px;
+}
+
+.contentA input::-webkit-input-placeholder {
+    color: #2c3348 !important;
+    font-size: 14px;
+}
+
+
+input::-webkit-input-placeholder{
+    color:#000;
+}
+input:-moz-placeholder {
+    color:#000;
+}
+
+/** placeholder css end here **/
+
+
+
+/*End 31 jan */
 /* dinesh 18-1-2022 */
 .SubjName {
     overflow: hidden;
@@ -470,6 +601,7 @@ div#prof_scroll {
 
 #editProfile_form .form-flds p {
     text-align: right;
+	margin-bottom: 0px !important;
 }
 
 #profile_pic_form img {
@@ -3343,7 +3475,7 @@ div#collapseNotification {
     right: 0px;
     width: 95.5%;
     z-index: 999;
-    background-color: rgb(255 255 255 / 8%);
+    background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
     top: 0;
