@@ -4,10 +4,10 @@
 <section class="login-bg-img">
 
     <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
-    <div class="login_screen">
+    <div class="login_screen" id="login-box">
 
         <form id="studentsignup" method="post">
-            {{-- @csrf --}}
+            @csrf
             <div id="name-box">
                 <p class="mb-0">Welcome to UniQ</p>
                 <p>“Let's start with getting to know you better. What's your name?”</p>
@@ -58,10 +58,64 @@
                     <div class="sign-btn"><button type="submit" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign Up</button></div>
                 </div>
             </div>
+
+
         </form>
 
     </div>
     <!--login_screen-->
+    <!-- Address block -->
+    <div class="login_screen" id="address-box" style="display:block">
+        <p class="mb-0 font-weight-bold auth-txt">Welcome <span class="usernamE">Anmol </span></p>
+        <p class="mb-0 blacktxt"> Tell us a little bit about you</p>
+        <div class="contentA">
+            <form id="addressSignup" method="post">
+                @csrf
+                <input type="hidden" name="student_id" id="student_id" value="31166">
+                <div class="form-group flds">
+                    <div class="store-mobile">
+                        <img src="{{URL::asset('public/images_new/phone-log.png')}}" alt="mobile icon not find">
+                        <span class="pl-2"> <span class="student-mobile">(91+ </span></span>
+                    </div>
+                </div>
+
+                <div class="form-group flds">
+                    <div class="store-mobile">
+                        <img src="{{URL::asset('public/images_new/locationlog.png')}}" alt="mobile icon not find" style="width:20px;">
+                        <span class="pl-2"><span class="student-name">India</span></span>
+                        <input type="hidden" name="country" id="country" value="India">
+                    </div>
+                </div>
+
+
+                <div class="form-group flds">
+                    <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state">
+                    <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
+
+                    <div class="country-code-name stu-grade" id="state_list" style="display:none">
+
+                    </div>
+                </div>
+
+                <div class="form-group flds">
+                    <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city">
+                    <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
+                    <div class="country-code-name stu-exam" id="city_list" style="display:none;">
+
+                    </div>
+
+                </div>
+
+
+                <div class="clearfix"></div>
+                <div class="sign-btn"><button type="submit" class="btn btn-primary active-btn text-uppercase">Go
+                        Next ></button></div>
+
+
+            </form>
+        </div>
+    </div>
+    <!-- Address block -->
 </section>
 
 
@@ -248,17 +302,12 @@
 
         });
 
-        /* $('#otp-verify-btn').click(function() {
-
-            $('#otp-verify-box').addClass('open-box');
-            $('#otp-box').addClass('close-box');
-        }); */
-
-        $('#set-pwd').click(function() {
-
-            $('#set-password-box').addClass('open-box');
-            $('#otp-verify-box').addClass('close-box');
+        $('#otp-verify-btn').click(function() {
+            $('#login-box').addClass('close-box');
+            $('#address-box').addClass('open-box');
         });
+
+
 
         /* Mobile otp authentications */
 
@@ -296,6 +345,7 @@
                     beforeSend: function() {},
                     success: function(response_data) { //debugger;
                         var response = jQuery.parseJSON(response_data);
+                        console.log(response);
                         if (response.status == 400) {
                             if (response.error) {
                                 var errormsg = $("#errlog_auth").show();
@@ -307,11 +357,16 @@
                             }
                             return false
                         } else {
+                            $('#student_id').val(response.student_id);
+                            $('.student-mobile').html("(91+ " + response.mobile + ")");
                             //$('#otp-verify-box').addClass('open-box');
-                            $('#otp-box').addClass('close-box');
+
+                            $('#login-box').addClass('close-box');
+                            $('#address-box').addClass('open-box');
+                            /* $('#otp-box').addClass('close-box');
                             if (response.redirect_url) {
                                 window.location.href = response.redirect_url
-                            }
+                            } */
                         }
 
                     },
@@ -323,8 +378,159 @@
 
         });
 
+        $("#addressSignup").validate({
+            rules: {
+                state: {
+                    required: true,
+                },
+                city: {
+                    required: true,
+                },
+            },
+            messages: {
+                "state": {
+                    required: "Please select state"
+                },
+                "city": {
+                    required: "Please select city"
+                }
+            },
+            submitHandler: function(form) {
+                var student_id = $("#student_id").val();
+                var country = $("#country").val();
+                var state = $("#select-state").val();
+                var city = $("#select-city").val();
+
+                $.ajax({
+                    url: "{{ url('/signupAddress') }}",
+                    type: 'POST',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        student_id: student_id,
+                        country: country,
+                        state: state,
+                        city: city,
+                    },
+                    success: function(response_data) { //debugger;
+                        var response = jQuery.parseJSON(response_data);
+                        if (response.redirect_url) {
+                            window.location.href = response.redirect_url
+                        }
+                    },
+                    error: function(xhr, b, c) {
+                        console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                    }
+                });
+            }
+
+        });
+
+
+        /* search State */
+        $('#select-state').on("click keyup", function(event) {
+            var val = event.target.value;
+            var country = $('#country').val();
+
+            $('#leaderboard_box_div').hide();
+            $('#search_results').show();
+
+            $.ajax({
+                url: "{{ url('/getState',) }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    'search_text': event.target.value,
+                    'country': country,
+                },
+                success: function(response_data) {
+                    let html = '';
+                    var data = jQuery.parseJSON(response_data);
+
+                    if (data.success === true) {
+
+                        html += data.response;
+
+                    } else {
+                        html += `<ul><li>States</li></ul>`;
+                    }
+
+                    $('#state_list').show();
+                    $('#state_list').html(html);
+                }
+            });
+
+        });
+
+
+        /* function for focusout select state */
+        /* $('#select-state').focusout(function() {
+            //$('#state_list').hide();
+        }) */
+
+        /* function for select sity */
+        $('#select-city').on("click keyup", function(event) {
+            $('#state_list').hide();
+            var val = event.target.value;
+            var state = $('#select-state').val();
+
+
+            $('#leaderboard_box_div').hide();
+            $('#search_results').show();
+
+            $.ajax({
+                url: "{{ url('/getCity',) }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    'search_text': event.target.value,
+                    'state': state,
+                },
+                success: function(response_data) {
+                    let html = '';
+                    var data = jQuery.parseJSON(response_data);
+
+                    if (data.success === true) {
+
+                        html += data.response;
+
+                    } else {
+                        html += `<ul><li>Cities</li></ul>`;
+                    }
+                    $('#city_list').html(html);
+                    $('#city_list').show();
+
+                }
+            });
+
+        });
+
+
+        /* function for focusout select state */
+        /*  $('#select-city').focusout(function() {
+             $('#city_list').hide();messages: {
+                "reg_otp": {
+                    required: "Please, enter OTP"
+                }
+            },
+         }) */
+
+
 
     });
+    /* select state function */
+    function selectState(state) {
+
+        $('#select-state').val(state);
+        $('#state_list').hide();
+    }
+
+    /* set selected city */
+    function selectCity(state) {
+        $('#select-city').val(state);
+        $('#city_list').hide();
+    }
 
     function resentOtpTime() {
         var timeLeft = 180;
