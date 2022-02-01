@@ -15,6 +15,14 @@ button {
     outline: none;
     text-decoration: none;
 }
+/* 1st feb */
+.progress .prog-box {
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+
+/* end 1st feb */
+
 /*31 jan */
 div.form-group.flds span.currect-email {
     position: absolute;
@@ -2479,7 +2487,7 @@ p#h1--P {
 
 #exam_content_sec .cust-tab-content {
     background: #fff;
-    height: calc(100% - 0px) !important;
+    height: calc(100% - 0px);
     padding: 0px 15px;
 }
 
@@ -2750,7 +2758,7 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
     display: none;
-    height: 650px !important;
+    height: 550px !important;
     overflow: hidden;
 }
 
@@ -3569,7 +3577,7 @@ span.profile-digit {
 
 .leader-board {
     width: 425px;
-    height: max-content;
+    height: 550px;
     background: #fff;
     border-radius: 56px;
     padding: 15px;
@@ -3581,7 +3589,7 @@ span.profile-digit {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     padding-left: 60px;
-    min-height: 650px;
+    min-height: 550px;
 }
 
 .leader-board h4 {
@@ -3611,7 +3619,7 @@ span.profile-digit {
 .leader-board ul li {
     list-style: none;
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .leader-board ul li span {
@@ -3654,7 +3662,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 500px;
+    height: 400px;
     margin-top: 20px;
     overflow-y: auto;
 }
@@ -3672,7 +3680,7 @@ span.profile-img-user {
 
 /* Handle */
 .profile-detail::-webkit-scrollbar-thumb {
-    background: #888;
+    background: background: rgba(13, 193, 255, 0.4) !important;
 }
 
 /* Handle on hover */
@@ -5850,12 +5858,13 @@ tspan {
 
 
 .prog-box {
+    z-index: 9;
     position: absolute;
-    right: 0;
-    min-width: 31px;
+    right: -14px;
+    min-width: 28px;
     text-align: center;
     font: normal normal normal 16px/20px Manrope;
-    height: 24px;
+    height: 22px;
 }
 
 .prog-box.green {
@@ -7941,7 +7950,7 @@ span#slide-input {
     }
 
     .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
-        height: auto !important;
+        height: auto !important;margin-top: 85px !important;
     }
 
     .question-block {
