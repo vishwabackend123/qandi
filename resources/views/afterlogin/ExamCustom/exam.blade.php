@@ -110,7 +110,7 @@ $questtype='radio';
 }
 
 @endphp
-<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
+<div class="main-wrapper" id="mainDiv">
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
@@ -439,19 +439,31 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    /* Sachin screen changes */
+    function setboxHeight() {
+        var height = $(".rightSect .flex-column").outerHeight();
+        $('.cust-tab-content').css('height', height);
+
+    }
+    setboxHeight();
+    $(window).resize(function() {
+        setboxHeight();
+    });
+    /* /Sachin screen changes */
+
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {

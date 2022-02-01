@@ -347,6 +347,9 @@ class HomeController extends Controller
             "user_name" => $request->username,
             "email" => $request->useremail,
             "mobile" => $request->user_mobile,
+            "city" => $request->city,
+            "state" => $request->state,
+            "country" => $request->country
         ];
 
         $request_json = json_encode($request);

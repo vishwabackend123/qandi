@@ -5,14 +5,9 @@ body {
     height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: Manrope;
+h1,h2,h3,h4,h5{
+	font-family: Manrope;
 }
-
 p {
     color: #2c3348;
     font-size: 14px;
@@ -26,198 +21,24 @@ a {
 a:hover {
     color: #00baff;
 }
-
 button.PayBttn.btn:hover {
     color: #fff;
 }
-
-.blacktxt {
-    color: #2c3348 !important;
-}
-
-.contentA {
-    margin-top: 35px;
-}
-
-div.form-group.flds span.currect-email {
-    position: absolute;
-    right: 10px;
-    top: 8px;
-}
-
-.store-mobile img {
-    float: left;
-    width: 24px;
-}
-
-.currect-value {
-    display: none;
-}
-
-.store-mobile {
-    width: 100%;
-    display: inline-block;
-    padding-left: 10px;
-    text-align: left;
-}
-
-input.form-control.select-grade {
-    background: url(../images/book-icon.png) no-repeat #f2f2f2;
-    padding-left: 40px;
-    background-size: 24px;
-    background-position: 10px;
-}
-
-div.form-group.flds span.currect-email {
-    position: absolute;
-    right: 10px;
-    top: 8px;
-}
-
-.country-code-name {
-    height: 300px;
-    overflow: overlay;
-    padding-top: 10px;
-    position: absolute;
-    background: #fff;
-    width: 38.8%;
-    z-index: 9;
-    border-radius: 8px;
-    top: 10px;
-    left: 16%;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
-}
-
-.country-code-name ul {
-    padding-left: 0px;
-    text-align: left;
-}
-
-.country-code-name ul li {
-    list-style: none;
-    color: #2c3348;
-    font-size: 14px;
-    padding: 3px 20px 5px;
-}
-
-.country-code-name::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-.country-code-name::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.country-code-name::-webkit-scrollbar {
-    width: 3px;
-}
-
-.country-code-name ul li:hover {
-    background: #f2f2f2;
-    width: 95%;
-}
-
-input.form-control.select-exam {
-    background: url(../images_new/city-log.png) no-repeat #f2f2f2;
-    padding-left: 40px;
-    background-size: 20px;
-    background-position: 10px;
-}
-
-.store-mobile img {
-    float: left;
-    width: 24px;
-}
-
-.currect-value {
-    display: none;
-}
-
-.store-mobile {
-    width: 100%;
-    display: inline-block;
-    padding-left: 10px;
-    text-align: left;
-}
-
-input.form-control.select-grade {
-    background: url(../images_new/state-log.png) no-repeat #f2f2f2;
-    padding-left: 40px;
-    background-size: 20px;
-    background-position: 10px;
-}
-
-/** the following css for placeholder **/
-.contentA input:-ms-input-placeholder {
-    color: #2c3348 !important;
-    font-size: 14px;
-}
-
-.contentA input::placeholder {
-    color: #2c3348 !important;
-    font-size: 14px;
-}
-
-.contentA input::-webkit-input-placeholder {
-    color: #2c3348 !important;
-    font-size: 14px;
-}
-
-
-input::-webkit-input-placeholder {
-    color: red;
-}
-
-input:-moz-placeholder {
-    color: red;
-}
-
-/** placeholder css end here **/
-
-
 /** 21-12-2021**/
-.subScrip .row {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
+.subScrip .row{width: 100%;
+margin: 0 auto;
+text-align: center;}
+.subScrip .row{display: inline-block;}
+.subScrip .row .col-md-4{ display: inline-flex; max-width: 32.333%;}
 
-.subScrip .row {
-    display: inline-block;
-}
-
-.subScrip .row .col-md-4 {
-    display: inline-flex;
-    max-width: 32.333%;
-}
-
-.subScrip .row button#goto-otp-btn:hover {
-    background-color: 00baff !important;
-    background-image: none;
-}
-
-.subScrip .row button#goto-otp-btn {
-    height: 60px;
-    color: #FFF;
-}
-
+.subScrip .row button#goto-otp-btn:hover{background-color:00baff!important;background-image:none;}
+.subScrip .row button#goto-otp-btn{height:60px;color:#FFF;}
 /** end here**/
 
 /** 15-12-2021**/
 
-.login-bg-img .login_screen p.mb-0 {
-    color: #00baff;
-    font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 10px;
-}
-
-.login-bg-img .login_screen .sign-btn button:focus {
-    outline: none;
-    box-shadow: none;
-    border: none;
-}
-
+.login-bg-img .login_screen p.mb-0{color:#00baff;font-size: 18px;font-weight:bold;padding-bottom: 10px;}
+.login-bg-img .login_screen .sign-btn button:focus{outline:none; box-shadow:none;border:none;}
 /** end here 15-12-2021**/
 
 /** first screen login/email css **/
@@ -268,7 +89,7 @@ input.form-control.m-email {
 .sign-btn button {
     width: 276px;
     height: 50px;
-    font-size: 16px;
+    font-size:16px;
     font-weight: bold;
     margin: 20px 0px 10px;
     border: none;
@@ -326,7 +147,7 @@ input.form-control {
     border: none;
     height: 48px;
     color: #2c3348;
-    font-size: 14px;
+    font-size:14px;
 }
 
 .not-valid {
@@ -387,37 +208,25 @@ input.form-control.email-addrs {
 
 /** responsive css **/
 @media only screen and (max-width:767px) {
-
-    /** Rahul css on 27-12-2021 css**/
-    .welcome-heading {
-        font-size: 16px !important;
-        font: inherit !important;
-    }
-
-    #main .col {
-        padding: 0px;
-    }
-
-    .subScrip .row .col-md-4 {
-        display: inline-block;
-        max-width: 100%;
-    }
-
-    h1.main-heading.position-relative {
-        font-size: 20px !important;
-    }
-
-    .subs-box {
-        border: 1px solid #BCE0FD;
-        background: #fff;
-        width: 100%;
-    }
-
-    /** end here **/
-
-    .subScrip {
-        height: auto !important;
-    }
+	
+	/** Rahul css on 27-12-2021 css**/
+	.welcome-heading{font-size: 16px!important;font: inherit!important;}
+	#main .col{padding: 0px;}
+	.subScrip .row .col-md-4 {
+		display: inline-block;
+		max-width: 100%;
+	}
+h1.main-heading.position-relative{font-size:20px!important;}
+.subs-box {
+    border: 1px solid #BCE0FD;
+    background: #fff;
+    width: 100%;
+}
+	/** end here **/
+	
+	.subScrip {
+		height: auto !important;
+	}
 
     .login-bg-img {
         padding: 0px 5px;
@@ -431,12 +240,7 @@ input.form-control.email-addrs {
         left: auto;
     }
 
-    .login_screen {
-        margin-top: 30px !important;
-        width: 90%;
-        /*min-height: auto;*/
-        padding: 20px 10px !important;
-    }
+.login_screen {margin-top:30px!important;width:90%;/*min-height: auto;*/padding: 20px 10px !important;}
 }
 
 @media only screen and (max-width:500px) {
@@ -455,7 +259,7 @@ input.form-control.email-addrs {
 
     .sign-btn button {
         margin-top: 5px;
-
+        
     }
 
     div.form-group.flds {
@@ -477,12 +281,10 @@ input.form-control.email-addrs {
     }
 
 }
-
 @media only screen and (max-width:340px) {
-
-    .sign-btn button {
-        width: 230px;
-    }
+	
+.sign-btn button {
+width: 230px;}	
 }
 
 
@@ -508,10 +310,6 @@ input.form-control.email-addrs {
 }
 
 #set-password-box {
-    display: none;
-}
-
-#address-box {
     display: none;
 }
 
@@ -552,7 +350,6 @@ input.form-control.email-addrs {
     color: #2c3348;
     text-align: Center;
 }
-
 /*new css 07/12 Bhim*/
 #chooseSub #goto-next-btn {
     border-radius: 20px !important;
@@ -567,51 +364,39 @@ input.form-control.email-addrs {
     height: 60px;
     line-height: 18px;
 }
-
 #chooseSub #goto-next-btn:hover {
     background: #0cc1ff !important;
     background-color: #0cc1ff !important;
-    border: solid #0cc1ff 0px !important;
+	border: solid #0cc1ff 0px !important;
 }
-
-div#startjust,
-div#eleventh,
-div#twelfth {
+div#startjust, div#eleventh, div#twelfth {
     border-radius: 20px;
 }
-
 h1.main-heading.position-relative {
     color: #00baff;
     text-align: center;
     font-weight: 800;
     font-family: Manrope;
     text-transform: uppercase;
-    font-size: 45px;
+	font-size: 45px;
 }
-
 .subscriptionBox {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff;
-    padding: 30px;
+	padding:30px;
 }
-
-.subScrip {
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-    background-image: linear-gradient(45deg, #d2f3ff, #fff);
-    height: 100%;
+.subScrip{
+	-webkit-backdrop-filter: blur(50px);
+	backdrop-filter: blur(50px);
+	background-image: linear-gradient(
+45deg, #d2f3ff, #fff);
+	height: 100%; 
 }
-
 .slimScrollBar {
     background: rgb(13 193 255) !important;
 }
-
-.subscriptionBox h5.cource-name {
-    font-size: 20px;
-    font-weight: bold;
-}
-
+.subscriptionBox h5.cource-name{font-size: 20px;font-weight: bold;}
 button#goto-otp-btn {
     border-radius: 20px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
@@ -620,15 +405,12 @@ button#goto-otp-btn {
     background-color: #00baff !important;
     /* padding: 18px 10px; */
 }
-
 button#goto-otp-btn:hover {
     background-color: #00baff !important;
 }
-
-.Try14 {
-    color: #00baff !important;
+.Try14{
+	color:#00baff !important;
 }
-
 .subScrip .Try14:hover {
     color: #00baff !important;
     text-decoration: underline;
@@ -646,23 +428,22 @@ button#goto-otp-btn:hover {
     }
 }
 
-@media(min-width:991px) and (max-width:1120px) {
-    .subScrip .row .col-md-4 {
-        display: inline-flex;
-        max-width: 75% !important;
-        justify-content: center;
-    }
-
-    .subScrip {
-        height: auto !important;
-    }
+@media(min-width:991px) and (max-width:1120px) {    
+	.subScrip .row .col-md-4 {
+		display: inline-flex;
+		max-width: 75% !important;
+		justify-content: center;
+	}
+	.subScrip {
+    height: auto !important;
+}
 
 }
 
 @media(min-width:768px) and (max-width:991px) {
-    .subScrip {
-        height: auto !important;
-    }
+	.subScrip {
+    height: auto !important;
+}
 
     .subject_screen {
         max-width: 85% !important;
@@ -674,17 +455,15 @@ button#goto-otp-btn:hover {
         margin-bottom: 12px;
         height: 68px;
     }
-
-    .subScrip h1.main-heading.position-relative {
-        font-size: 38px !important;
-        font-weight: 600 !important;
-    }
-
-    .subScrip .row .col-md-4 {
-        display: inline-flex;
-        max-width: 75%;
-        justify-content: center;
-    }
+	.subScrip h1.main-heading.position-relative {
+		font-size: 38px !important;
+		font-weight: 600 !important;
+	}
+	.subScrip .row .col-md-4 {
+		display: inline-flex;
+		max-width: 75%;
+		justify-content: center;
+	}
 
 }
 

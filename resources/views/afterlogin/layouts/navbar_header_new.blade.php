@@ -525,7 +525,7 @@
             </ul>
         </div>
         <!--profile-section-->
-
+        <!--leader-board-->
         <div class="leader-board right-sidebar">
             <h4><img src="{{URL::asset('public/after_login/new_ui/images/profile-star.png')}}"> Leader Board</h4>
             <div class="search-frnd">
@@ -627,6 +627,27 @@
                             <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
                             <p class="">This is your display name.</p>
                         </div>
+
+                        <div class="form-flds flds form-group stateD">
+                            <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}">
+                            <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
+                            <div class="country-code-name stu-grade" id="state_list" style="display:none">
+
+                            </div>
+                        </div>
+
+                        <div class="form-flds locationN">
+                            <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India">
+                        </div>
+
+                        <div class="form-flds flds form-group ">
+                            <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}">
+                            <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
+                            <div class="country-code-name stu-exam" id="city_list" style="display:none;">
+
+                            </div>
+                        </div>
+
 
                         <div class="form-flds" style="display:none">
                             <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787">

@@ -33,6 +33,8 @@ class MenuMiddleware
         Session::put('user_data', $user_Data);
         $userData = Session::get('user_data');
 
+
+
         $user_id = $userData->id;
         $api_URL = env('API_URL');
 
