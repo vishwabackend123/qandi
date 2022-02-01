@@ -419,6 +419,62 @@ $questtype='radio';
 
 
 @include('afterlogin.layouts.footer_new')
+<!-- page referesh disabled -->
+<script>
+    $(document).ready(function() {
+        /* mouse rightclick */
+        document.oncontextmenu = function() {
+            return false;
+        };
+
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
+
+                return false;
+            }
+            return true;
+        });
+        /* mouse rightclick */
+
+        document.onkeydown = function(e) {
+            // disable F12 key
+            if (e.keyCode == 123 || e.keyCode == 116) {
+                return false;
+            }
+            /* Ctrl+A */
+            if (e.keyCode == 65 && e.ctrlKey) {
+
+                return false;
+            }
+            /* Ctrl+R */
+            if (e.keyCode == 82 && e.ctrlKey) {
+
+                return false;
+            }
+
+            // disable ctrl+shift+I key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                return false;
+            }
+
+            // disable ctrl+shift+J key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+
+            // disable ctrl+U key
+            if (e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+
+            // disable ctrl+P key
+            if (e.ctrlKey && e.keyCode == 80) {
+                return false;
+            }
+        }
+    });
+</script>
+<!-- /page referesh disabled -->
 <!-- browser back disable -->
 <!-- <script>
     window.location.hash = "no-back-button";

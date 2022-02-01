@@ -327,11 +327,12 @@ class StudentSignInController extends Controller
                 $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
                 $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
 
-
                 if (Auth::loginUsingId($student_id)) {
                     $response['status'] = 200;
-                    $response['message'] = "Registration successful";
-                    $response['redirect_url'] = url('dashboard');
+                    $response['student_id'] = $student_id;
+                    $response['mobile'] = $mobile_num;
+                    $response['message'] = $succ_msg;
+                    //  $response['redirect_url'] = url('dashboard');
 
                     return json_encode($response);
                 } else {
@@ -344,6 +345,268 @@ class StudentSignInController extends Controller
             $response['status'] = 400;
             $response['error'] = "Invalid OTP entered.";
             return json_encode($response);
+        }
+    }
+
+
+
+    /**
+     * Country List
+     */
+    public function countryList(Request $request)
+    {
+        $data = $request->all();
+
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/get-country';
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $aResponse = json_decode($response_json);
+        $success = isset($aResponse->success) ? $aResponse->success : false;
+        $country_list = isset($aResponse->response) ? $aResponse->response : false;
+
+        if ($success == false) {
+            $response = [
+                "error" => $err,
+                "success" => false,
+                "status" => 400,
+            ];
+            return json_encode($response);
+        } else {
+            return json_encode($country_list);
+        }
+    }
+
+    /**
+     * get State List with Country
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function stateList(Request $request)
+    {
+        $data = $request->all();
+        $country = isset($data['country']) ? $data['country'] : '';
+        $search = isset($data['search_text']) ? $data['search_text'] : '';
+
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/get-state/' . $country;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $aResponse = json_decode($response_json);
+
+        $success = isset($aResponse->success) ? $aResponse->success : false;
+        $state_list = isset($aResponse->response) ? $aResponse->response : false;
+
+        if (!empty($search)) {
+            $state_list = $this->Search($search, $state_list);
+        }
+
+        sort($state_list);
+        $sOption = '';
+        if ($success == false) {
+            $response = [
+                "error" => $err,
+                "success" => false,
+            ];
+            return json_encode($response);
+        } else {
+
+            $sOption .= '<ul>';
+
+            foreach ($state_list as $keyaState => $oState) {
+                $sOption .= '<li onClick="selectState(`' . $oState . '`)">' . $oState . '</li>';
+            }
+            //return json_encode($country_list);
+            $sOption .= '</ul>';
+            $response = [
+                "success" => true,
+                "response" => $sOption,
+            ];
+            return json_encode($response);
+        }
+    }
+
+    /**
+     * Undocumented function
+     * get city List of selected state
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function cityList(Request $request)
+    {
+        $data = $request->all();
+        $state = isset($data['state']) ? $data['state'] : '';
+        $search = isset($data['search_text']) ? $data['search_text'] : '';
+
+
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/get-cities/' . $state;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $aResponse = json_decode($response_json);
+        $success = isset($aResponse->success) ? $aResponse->success : false;
+        $city_list = isset($aResponse->response) ? $aResponse->response : false;
+
+        if (!empty($search)) {
+            $city_list = $this->Search($search, $city_list);
+        }
+
+        sort($city_list);
+        $sOption = '';
+        if ($success == false) {
+            $response = [
+                "error" => $err,
+                "success" => false,
+            ];
+            return json_encode($response);
+        } else {
+
+            $sOption .= '<ul>';
+
+            foreach ($city_list as $kCity => $oCity) {
+                $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
+            }
+            //return json_encode($country_list);
+            $sOption .= '</ul>';
+            $response = [
+                "success" => true,
+                "response" => $sOption,
+            ];
+            return json_encode($response);
+        }
+    }
+
+    /* function search value in array */
+    function Search($value, $array)
+    {
+        $r_array = [];
+        foreach ($array as $aVal) {
+            $val = strtolower($aVal);
+
+            if (strstr($val, $value)) {
+                array_push($r_array, $aVal);
+            }
+        }
+        return $r_array;
+    }
+
+
+
+    /* signup user address data */
+
+    public function signupAddress(Request $request)
+    {
+        $data = $request->all();
+
+
+        $student_id = $request->input('student_id');
+        $city = $request->input('city');
+        $state = $request->input('state');
+        $country = $request->input('country');
+
+
+        $request = [
+            'id' => $student_id,
+            "city" => $city,
+            "state" => $state,
+            "country" => $country,
+        ];
+
+
+        $request_json = json_encode($request);
+
+
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/update-address';
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request_json,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
+
+
+        $response_json = curl_exec($curl);
+
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $aResponse = json_decode($response_json);
+        $success = isset($aResponse->success) ? $aResponse->success : false;
+
+        if ($success == false) {
+            return json_encode($aResponse);
+        } else {
+            $aResponse->redirect_url = url('dashboard');
+            return json_encode($aResponse);
         }
     }
 }

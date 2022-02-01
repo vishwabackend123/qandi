@@ -96,7 +96,7 @@ $userData = Session::get('user_data');
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
+                                                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto px-0" style="overflow: visible;">
                                                         @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
                                                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>

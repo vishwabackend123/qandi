@@ -217,6 +217,7 @@ $user_exam_id = $userData->grade_id;
 
                 @if(isset($user_exam_id) && !empty($user_exam_id))
                 @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
+
                 <div class="col-md-4 p-4 ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -232,7 +233,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Renew<i class="fas fa-arrow-right"></i></button>
                                 <div class="text-center mt-2">
                                     <span class="text-danger text-decoration-underline">Your paid subscription expired.</span>
                                 </div>
@@ -242,7 +243,7 @@ $user_exam_id = $userData->grade_id;
 
                     </div>
                 </div>
-                @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type=="T")
+                @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type!="P")
                 <div class="col-md-4 p-4 ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
@@ -255,63 +256,31 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                                 <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                                 <input type="hidden" name="exam_period" value="12">
-                                <input type="hidden" name="period_unit" value="month">
-                                <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
-                                <div class="text-center mt-2">
-                                    <span class="text-danger text-decoration-underline">14 days trail Period expired.</span>
-                                </div>
-                            </form>
+
+
                         </div>
-
-
                     </div>
+                    @endif
+
+                    @endforeach
+                    @endif
+                    @endif
+
                 </div>
-                @endif
-                @else
-                <div class="col-md-4 p-4 ">
-                    <div class="bg-white white-box-small subscriptionBox  ">
-                        <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
-                        <p class="price">Rs. {{$subsprice}}</p>
-                        <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
-
-                        <div class="text-center mt-4">
-                            <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
-                                @csrf
-                                <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
-                                <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
-                                <input type="hidden" name="exam_period" value="12">
-                                <input type="hidden" name="period_unit" value="month">
-                                <input type="hidden" name="exam_price" value="{{$subsprice}}">
-
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
-                            </form>
-                        </div>
-
-
-                    </div>
-                </div>
-                @endif
-
-                @endforeach
-                @endif
-                @endif
-
+                <!-- </div> -->
             </div>
-            <!-- </div> -->
         </div>
     </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.2.1.slim.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.2.1.slim.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
 
-@endsection
+    @endsection

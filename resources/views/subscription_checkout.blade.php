@@ -33,10 +33,11 @@ $userData = Session::get('user_data');
                 <h3>{{$subscriptions_data->subscription_name}}</h3>
                 <!-- <span class="d-block">Entrance Prep2022</span> -->
             </div>
-            <div class=" col-4">
-                <select class="form-select border-0 border-bottom  rounded-0">
+            <div class=" col-4 text-center">
+                <sapn>Full Subscription</sapn>
+                <!-- <select class="form-select border-0 border-bottom  rounded-0">
                     <option>Full Subscription</option>
-                </select>
+                </select> -->
             </div>
             <div class="mx-2 col-1">
                 <!-- <select class="form-select border-0 border-bottom rounded-0">
