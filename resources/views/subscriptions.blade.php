@@ -101,7 +101,7 @@ $user_exam_id = $userData->grade_id;
                         </div>
                     </div>
                 </div>
-                @elseif($subscription_type=="T")
+                @elseif($subscription_type!="P")
 
                 <div class="col-md-4 p-4 ">
                     <div class="bg-white white-box-small subscriptionBox   ">
