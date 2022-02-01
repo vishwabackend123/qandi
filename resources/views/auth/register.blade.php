@@ -71,7 +71,7 @@
         <div class="contentA">
             <form id="addressSignup" method="post">
                 @csrf
-                <input type="hidden" name="student_id" id="student_id" value="31166">
+                <input type="hidden" name="student_id" id="student_id" value="">
                 <div class="form-group flds">
                     <div class="store-mobile">
                         <img src="{{URL::asset('public/images_new/phone-log.png')}}" alt="mobile icon not find">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="form-group flds">
+                <div class="form-group flds ">
                     <div class="store-mobile">
                         <img src="{{URL::asset('public/images_new/locationlog.png')}}" alt="mobile icon not find" style="width:20px;">
                         <span class="pl-2"><span class="student-name">India</span></span>
@@ -87,28 +87,28 @@
                     </div>
                 </div>
 
+                <div class="addressfield">
+                    <div class="form-group flds ">
+                        <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state" autocomplete="off">
+                        <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
 
-                <div class="form-group flds">
-                    <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state">
-                    <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
+                        <div class="country-code-name stu-grade" id="state_list" style="display:none">
 
-                    <div class="country-code-name stu-grade" id="state_list" style="display:none">
+                        </div>
+                    </div>
+
+                    <div class="form-group flds ">
+                        <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city" autocomplete="off">
+                        <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
+                        <div class="country-code-name stu-exam" id="city_list" style="display:none;">
+
+                        </div>
 
                     </div>
                 </div>
-
-                <div class="form-group flds">
-                    <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city">
-                    <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
-                    <div class="country-code-name stu-exam" id="city_list" style="display:none;">
-
-                    </div>
-
-                </div>
-
 
                 <div class="clearfix"></div>
-                <div class="sign-btn"><button type="submit" class="btn btn-primary active-btn text-uppercase">Go
+                <div class="sign-btn"><button type="submit" id="address-btn" class="btn btn-primary active-btn text-uppercase">Go
                         Next ></button></div>
 
 
@@ -144,6 +144,24 @@
         }
     });
     $(function() {
+        $('.addressfield input').change(function() {
+
+            var empty = false;
+            $('.addressfield input').each(function() {
+                if ($(this).val() == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#address-btn').attr('disabled', 'disabled');
+                $('#address-btn').addClass("disbaled-btn");
+            } else {
+                $('#address-btn').removeAttr('disabled');
+                $('#address-btn').removeClass("disbaled-btn");
+            }
+        });
+        /* check email or number filled or not */
         $('.emailNumdiv input').keyup(function() {
             var empty = false;
             $('.emailNumdiv input').each(function() {
@@ -161,6 +179,7 @@
             }
         });
 
+        /* check OTP filled or not */
         $('.verifyBox input').keyup(function() {
             var empty = false;
             $('.verifyBox input').each(function() {
@@ -177,6 +196,9 @@
                 $('#otp-verify-btn').removeClass("disbaled-btn");
             }
         });
+
+
+
     });
 
     function isNumber(evt) {

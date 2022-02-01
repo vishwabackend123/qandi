@@ -661,6 +661,87 @@
             $(".notification-right").hide();
             $("#collapseNotification").collapse('toggle');
         });
+
+
+        /* search State */
+        $('#select-state').on("click keyup", function(event) {
+            var val = event.target.value;
+            var country = $('#country').val();
+
+            $('#leaderboard_box_div').hide();
+            $('#search_results').show();
+
+            $.ajax({
+                url: "{{ url('/getState',) }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    'search_text': event.target.value,
+                    'country': country,
+                },
+                success: function(response_data) {
+                    let html = '';
+                    var data = jQuery.parseJSON(response_data);
+
+                    if (data.success === true) {
+
+                        html += data.response;
+
+                    } else {
+                        html += `<ul><li>States</li></ul>`;
+                    }
+
+                    $('#state_list').show();
+                    $('#state_list').html(html);
+                }
+            });
+
+        });
+
+
+        /* function for focusout select state */
+        /* $('#select-state').focusout(function() {
+            //$('#state_list').hide();
+        }) */
+
+        /* function for select sity */
+        $('#select-city').on("click keyup", function(event) {
+            $('#state_list').hide();
+            var val = event.target.value;
+            var state = $('#select-state').val();
+
+
+            $('#leaderboard_box_div').hide();
+            $('#search_results').show();
+
+            $.ajax({
+                url: "{{ url('/getCity',) }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    'search_text': event.target.value,
+                    'state': state,
+                },
+                success: function(response_data) {
+                    let html = '';
+                    var data = jQuery.parseJSON(response_data);
+
+                    if (data.success === true) {
+
+                        html += data.response;
+
+                    } else {
+                        html += `<ul><li>Cities</li></ul>`;
+                    }
+                    $('#city_list').html(html);
+                    $('#city_list').show();
+
+                }
+            });
+        });
+
     });
 
     // the following script for profile section
@@ -693,6 +774,7 @@
         });
         $(".edit-btn-show").click(function() {
             $(".profile-show").hide();
+            $("#leaderboxId").hide();
         });
     });
 
@@ -798,6 +880,20 @@
             $('#submenupreparation2').collapse('toggle');
         }
     });
+
+    /* select state function */
+    function selectState(state) {
+
+        $('#select-state').val(state);
+        $('#state_list').hide();
+    }
+
+    /* set selected city */
+    function selectCity(state) {
+        $('#select-city').val(state);
+        $('#city_list').hide();
+    }
+
 
     function selectChapter(subject_id) {
         var limit = $('#customRange').val();
@@ -1109,7 +1205,7 @@
 
                         $(".profile-show").show();
                         $(".edit-form").hide();
-                        $("#sucessAcc_edit").html("Profile data updated successfully.");
+                        $("#sucessAcc_edit").html("Profile updated successfully.");
                         $("#sucessAcc_edit").fadeIn('slow');
                         $("#sucessAcc_edit").fadeOut(10000);
                     } else {

@@ -110,7 +110,7 @@ $questtype='radio';
 }
 
 @endphp
-<div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
+<div class="main-wrapper" id="mainDiv">
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
@@ -441,8 +441,9 @@ $questtype='radio';
 <script>
     /* Sachin screen changes */
     function setboxHeight() {
-        var height = $(".rightSect").height();
+        var height = $(".rightSect .flex-column").outerHeight();
         $('.cust-tab-content').css('height', height);
+
     }
     setboxHeight();
     $(window).resize(function() {
