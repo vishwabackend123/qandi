@@ -133,8 +133,6 @@ input.form-control.select-grade {
     color: #2c3348 !important;
     font-size: 14px;
 }
-
-
 input::-webkit-input-placeholder{
     color:#000;
 }
@@ -143,6 +141,7 @@ input:-moz-placeholder {
 }
 
 /** placeholder css end here **/
+
 /*End 31 jan */
 /* dinesh 18-1-2022 */
 .SubjName {
