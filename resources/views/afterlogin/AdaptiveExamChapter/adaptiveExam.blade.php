@@ -423,10 +423,10 @@ $questtype='radio';
         $('.cust-tab-content').css('height', height);
 
     }
-    setboxHeight();
+    /* setboxHeight();
     $("window").load(function() {
         setboxHeight();
-    });
+    }); */
 
     $(window).resize(function() {
         setboxHeight();
@@ -529,6 +529,7 @@ $questtype='radio';
     $('#goto-exam-btn').click(function() {
         $('#mainDiv').show();
         $('#exam_content_sec').show();
+        setboxHeight();
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
