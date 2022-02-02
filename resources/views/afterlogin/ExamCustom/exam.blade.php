@@ -443,7 +443,7 @@ $questtype='radio';
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
         $('.cust-tab-content').css('height', height);
-        alert(height);
+        //alert(height);
     }
     /*  setboxHeight();
      $("window").load(function() {
