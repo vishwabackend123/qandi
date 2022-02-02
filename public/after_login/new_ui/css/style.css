@@ -15,6 +15,13 @@ button {
     outline: none;
     text-decoration: none;
 }
+/*2 feb */
+[type=button] {
+    -webkit-appearance: initial !important;
+}
+/*End 2 feb */
+
+
 /* 1st feb */
 .progress .prog-box {
     border-radius: 5px;
@@ -1394,6 +1401,7 @@ span.notification.ms-4 {
 .tab-wrapper {
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
     border-radius: 56px;
+	background: #ffffff;
 }
 
 .tab-wrapper .nav-tabs {
@@ -6809,7 +6817,7 @@ span#slide-input {
 
 .examSect div#myTabContent {
     border-radius: 56px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    /* box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); */
 }
 
 .examSect #myTabContent ul#myTab {
