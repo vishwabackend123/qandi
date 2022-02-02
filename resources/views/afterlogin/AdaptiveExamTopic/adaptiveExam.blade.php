@@ -274,6 +274,8 @@ $questtype='radio';
         </div>
     </div>
 </div>
+
+<!-- test_instruction modal -->
 <div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
@@ -424,10 +426,10 @@ $questtype='radio';
         $('.cust-tab-content').css('height', height);
 
     }
-    setboxHeight();
+    /* setboxHeight();
     $("window").load(function() {
         setboxHeight();
-    });
+    }); */
 
     $(window).resize(function() {
         setboxHeight();
@@ -530,6 +532,7 @@ $questtype='radio';
     $('#goto-exam-btn').click(function() {
         $('#mainDiv').show();
         $('#exam_content_sec').show();
+        setboxHeight();
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
