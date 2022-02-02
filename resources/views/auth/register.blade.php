@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="addressfield">
-                    <div class="form-group flds ">
+                    <div class="form-group flds" id="statebx">
                         <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state" autocomplete="off">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
 
@@ -97,7 +97,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group flds ">
+                    <div class="form-group flds" id="citybx">
                         <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city" autocomplete="off">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
@@ -451,6 +451,7 @@
 
         /* search State */
         $('#select-state').on("click keyup", function(event) {
+            $('#city_list').hide();
             var val = event.target.value;
             var country = $('#country').val();
 
@@ -532,19 +533,26 @@
 
         /* function for focusout select state */
         /*  $('#select-city').focusout(function() {
-             $('#city_list').hide();messages: {
-                "reg_otp": {
-                    required: "Please, enter OTP"
-                }
-            },
+             
          }) */
 
 
 
     });
+    window.addEventListener('click', function(e) {
+        if (document.getElementById('citybx').contains(e.target)) {
+            // Clicked in box
+        } else {
+            $('#city_list').hide();
+        }
+        if (document.getElementById('statebx').contains(e.target)) {
+            // Clicked in box
+        } else {
+            $('#state_list').hide();
+        }
+    });
     /* select state function */
     function selectState(state) {
-
         $('#select-state').val(state);
         $('#state_list').hide();
     }

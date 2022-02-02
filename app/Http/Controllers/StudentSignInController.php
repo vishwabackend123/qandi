@@ -533,13 +533,18 @@ class StudentSignInController extends Controller
     }
 
     /* function search value in array */
-    function Search($value, $array)
+    function Search($search, $array)
     {
+        $search = strtolower($search);
         $r_array = [];
         foreach ($array as $aVal) {
             $val = strtolower($aVal);
 
-            if (strstr($val, $value)) {
+            /* if (strstr($val, $value)) {
+                array_push($r_array, $aVal);
+            } */
+            if (strpos($val, $search) !== FALSE) {
+
                 array_push($r_array, $aVal);
             }
         }
