@@ -330,6 +330,7 @@ class StudentSignInController extends Controller
                 if (Auth::loginUsingId($student_id)) {
                     $response['status'] = 200;
                     $response['student_id'] = $student_id;
+                    $response['user_name'] = ucwords($user_name);
                     $response['mobile'] = $mobile_num;
                     $response['message'] = $succ_msg;
                     //  $response['redirect_url'] = url('dashboard');

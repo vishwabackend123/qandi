@@ -65,8 +65,8 @@
     </div>
     <!--login_screen-->
     <!-- Address block -->
-    <div class="login_screen" id="address-box" style="display:block">
-        <p class="mb-0 font-weight-bold auth-txt">Welcome <span class="usernamE">Anmol </span></p>
+    <div class="login_screen" id="address-box" style="display:none">
+        <p class="mb-0 font-weight-bold auth-txt">Welcome <span class="usernamE"> </span></p>
         <p class="mb-0 blacktxt"> Tell us a little bit about you</p>
         <div class="contentA">
             <form id="addressSignup" method="post">
@@ -75,7 +75,7 @@
                 <div class="form-group flds">
                     <div class="store-mobile">
                         <img src="{{URL::asset('public/images_new/phone-log.png')}}" alt="mobile icon not find">
-                        <span class="pl-2"> <span class="student-mobile">(91+ </span></span>
+                        <span class="pl-2"> <span class="student-mobile"> </span></span>
                     </div>
                 </div>
 
@@ -380,6 +380,7 @@
                             return false
                         } else {
                             $('#student_id').val(response.student_id);
+                            $('.usernamE').html(response.user_name);
                             $('.student-mobile').html("(91+ " + response.mobile + ")");
                             //$('#otp-verify-box').addClass('open-box');
 

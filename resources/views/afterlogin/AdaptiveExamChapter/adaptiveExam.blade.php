@@ -417,6 +417,23 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    /* Sachin screen changes */
+    function setboxHeight() {
+        var height = $(".rightSect .flex-column").outerHeight();
+        $('.cust-tab-content').css('height', height);
+
+    }
+    setboxHeight();
+    $("window").load(function() {
+        setboxHeight();
+    });
+
+    $(window).resize(function() {
+        setboxHeight();
+    });
+    /* /Sachin screen changes */
+
+    /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
         document.oncontextmenu = function() {

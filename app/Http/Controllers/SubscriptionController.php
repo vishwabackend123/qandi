@@ -192,7 +192,6 @@ class SubscriptionController extends Controller
         ];
         $order_request_json = json_encode($trail_purchase_data);
 
-
         $curl = curl_init();
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/save-trial-subscription';
