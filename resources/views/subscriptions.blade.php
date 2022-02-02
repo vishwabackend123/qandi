@@ -214,7 +214,7 @@ $user_exam_id = $userData->grade_id;
                 $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
 
                 @endphp
-                {{$$user_exam_id.' '.$sub->class_exam_id.' '.$subscription_type}}
+                {{$user_exam_id.' '.$sub->class_exam_id.' '.$subscription_type}}
                 @if(isset($user_exam_id) && !empty($user_exam_id))
                 @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
 
