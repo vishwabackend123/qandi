@@ -214,7 +214,7 @@ $user_exam_id = $userData->grade_id;
                 $subsprice=(!empty($subspriceData))?head(array_values($subspriceData)):0;
 
                 @endphp
-
+                {{".."}}
                 @if(isset($user_exam_id) && !empty($user_exam_id))
                 @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
 
@@ -243,9 +243,9 @@ $user_exam_id = $userData->grade_id;
 
                     </div>
                 </div>
-                @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type!="P")
-                <div class="col-md-4 p-4 ">
-                    <div class="bg-white white-box-small subscriptionBox  ">
+                @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type !="P")
+                <div class="col-md-4 p-4">
+                    <div class="bg-white white-box-small subscriptionBox">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
                         <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
