@@ -425,6 +425,10 @@ $questtype='radio';
 
     }
     setboxHeight();
+    $("window").load(function() {
+        setboxHeight();
+    });
+
     $(window).resize(function() {
         setboxHeight();
     });

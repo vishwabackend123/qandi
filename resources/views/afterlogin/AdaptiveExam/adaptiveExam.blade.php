@@ -482,10 +482,15 @@ $questtype='radio';
 
     }
     setboxHeight();
+    $("window").load(function() {
+        setboxHeight();
+    });
+
     $(window).resize(function() {
         setboxHeight();
     });
     /* /Sachin screen changes */
+
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
