@@ -750,6 +750,10 @@
         $(".user-pic-block").click(function() {
             $(".main-profile-section").addClass("blure-bg")
             $(".main-profile-section").toggle();
+            $(".profile-show").hide();
+            $("#LeaDer").hide();
+            $(".edit-form").hide();
+			
         });
         /* $(".account-profile").click(function() {
             $(".main-profile-section").toggle();
@@ -763,6 +767,8 @@
             $(".leader-board").toggle();
             $(".subscription").hide();
             $(".log-out-screen").hide();
+            $(".edit-form").hide();
+			$(".profile-show").toggle();
         });
 
     });
@@ -782,6 +788,7 @@
     $(document).ready(function() {
         $(".cancel-btn").click(function() {
             $(".profile-show").show();
+            $("#LeaDer").show();
 
             $(".edit-form").hide();
             $('#editProfile_form').trigger("reset");
@@ -803,6 +810,8 @@
             $(".subscription").toggle();
             $(".leader-board").hide();
             $(".log-out-screen").hide();
+            $(".edit-form").hide();
+            $(".profile-show").hide();
 
         });
 
@@ -815,6 +824,8 @@
             $(".log-out-screen").toggle();
             $(".subscription").hide();
             $(".leader-board").hide();
+			$(".edit-form").hide();
+            $(".profile-show").hide();
         });
 
     });
@@ -1243,6 +1254,13 @@
             //jQuery(this).removeClass("active");
         });
     });
+	
+	$(document).ready(function() {
+		$('#EdiTbtnnn').click(function(){
+			$('#LeaDer').hide();
+		});
+	});
+	
 </script>
 <!-- planner section move from dashboard -->
 <script>
@@ -1396,3 +1414,5 @@
         }
     });
 </script>
+
+

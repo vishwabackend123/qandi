@@ -19,6 +19,9 @@ button {
 [type=button] {
     -webkit-appearance: initial !important;
 }
+input#country {
+    text-align: center;
+}
 /*End 2 feb */
 
 
@@ -2656,12 +2659,14 @@ div#sub-planner {
 .profile-show {
     position: absolute;
     top: 0px;
-    left: -90%;
-    width: 100%;
+    right: 700px;
+    width: 425px;
     background: #fff;
     padding: 10px 15px;
     border-radius: 56px;
-    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    z-index: 9;
+	min-height: 550px !important;
 }
 
 .profile-picture-txt .p-picture {
@@ -2757,10 +2762,10 @@ div#sub-planner {
 /** end here**/
 /** Edit form css **/
 .edit-form {
-    width: 100%;
+    width: 425px;
     position: absolute;
     top: 0;
-    right: 88%;
+    right: 320px;
     background: #fff;
     padding: 20px;
     border-radius: 56px;
@@ -2776,12 +2781,12 @@ div#sub-planner {
 }
 
 .edit-form .edit-img .p-picture {
-    width: 80px;
+    width: 60px;
     display: inline-block;
     overflow: hidden;
     border: 1px solid #5ebbfe;
     border-radius: 50%;
-    height: 80px;
+    height: 60px;
 }
 
 .edit-form .edit-img .p-picture img {
@@ -2790,13 +2795,14 @@ div#sub-planner {
 
 .edit-pic {
     position: absolute;
-    bottom: -11px;
-    left: 45%;
-    width: 40px;
+    bottom: 0px;
+    left: 47%;
+    width: 25px;
     background: #fff;
     border-radius: 50%;
-    padding: 6px;
+    padding: 0px;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+    height: 25px;
 }
 
 .btm-form-flds {
@@ -3687,8 +3693,8 @@ span.profile-img-user {
 }
 
 /* Handle */
-.profile-detail::-webkit-scrollbar-thumb {
-    background: background: rgba(13, 193, 255, 0.4) !important;
+::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
 }
 
 /* Handle on hover */

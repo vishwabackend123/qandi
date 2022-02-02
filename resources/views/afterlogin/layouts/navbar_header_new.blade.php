@@ -526,7 +526,7 @@
         </div>
         <!--profile-section-->
         <!--leader-board-->
-        <div class="leader-board right-sidebar">
+        <div class="leader-board right-sidebar" id="LeaDer">
             <h4><img src="{{URL::asset('public/after_login/new_ui/images/profile-star.png')}}"> Leader Board</h4>
             <div class="search-frnd">
 
@@ -565,7 +565,13 @@
                     </ul>
                 </div>
             </div>
-            <!--profile-detail-->
+           
+           
+
+        </div>
+        <!--leader-board-->
+		
+		 <!--profile-detail-->
             <div class="profile-show" style="min-height:650px;">
                 <div class="profile-picture-txt">
                     <div class="p-picture">
@@ -576,7 +582,7 @@
                         <p>Class - {{$user_stage}}, Preparing
                             for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
-                        <button class="edit-btn-show"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
+                        <button class="edit-btn-show" id="EdiTbtnnn" ><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
                     </div>
                     <!-- <div class="achievement">
                         <h4>Achievements</h4>
@@ -590,7 +596,8 @@
                 </div>
                 <!--profile-picture-->
             </div>
-            <!--profile-show-->
+			
+		 <!--profile-show-->
 
             <div class="edit-form">
                 <div class="edit-img">
@@ -669,9 +676,7 @@
                 </div>
             </div>
             <!--edit-form-->
-
-        </div>
-        <!--leader-board-->
+			
 
         <div class="subscription right-sidebar">
             <div class="profile-picture-txt">
@@ -755,3 +760,4 @@
         return true;
     }
 </script>
+
