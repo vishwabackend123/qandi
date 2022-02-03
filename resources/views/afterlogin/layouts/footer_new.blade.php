@@ -665,6 +665,7 @@
 
         /* search State */
         $('#select-state').on("click keyup", function(event) {
+            $('#city_list').hide();
             var val = event.target.value;
             var country = $('#country').val();
 
@@ -753,7 +754,7 @@
             $(".profile-show").hide();
             $("#LeaDer").hide();
             $(".edit-form").hide();
-			
+
         });
         /* $(".account-profile").click(function() {
             $(".main-profile-section").toggle();
@@ -768,7 +769,7 @@
             $(".subscription").hide();
             $(".log-out-screen").hide();
             $(".edit-form").hide();
-			$(".profile-show").toggle();
+            $(".profile-show").toggle();
         });
 
     });
@@ -824,7 +825,7 @@
             $(".log-out-screen").toggle();
             $(".subscription").hide();
             $(".leader-board").hide();
-			$(".edit-form").hide();
+            $(".edit-form").hide();
             $(".profile-show").hide();
         });
 
@@ -892,9 +893,20 @@
         }
     });
 
+    window.addEventListener('click', function(e) {
+        if (document.getElementById('citybx').contains(e.target)) {
+            // Clicked in box
+        } else {
+            $('#city_list').hide();
+        }
+        if (document.getElementById('statebx').contains(e.target)) {
+            // Clicked in box
+        } else {
+            $('#state_list').hide();
+        }
+    });
     /* select state function */
     function selectState(state) {
-
         $('#select-state').val(state);
         $('#state_list').hide();
     }
@@ -904,7 +916,6 @@
         $('#select-city').val(state);
         $('#city_list').hide();
     }
-
 
     function selectChapter(subject_id) {
         var limit = $('#customRange').val();
@@ -1216,6 +1227,7 @@
 
                         $(".profile-show").show();
                         $(".edit-form").hide();
+                        $("#LeaDer").show();
                         $("#sucessAcc_edit").html("Profile updated successfully.");
                         $("#sucessAcc_edit").fadeIn('slow');
                         $("#sucessAcc_edit").fadeOut(10000);
@@ -1254,13 +1266,12 @@
             //jQuery(this).removeClass("active");
         });
     });
-	
-	$(document).ready(function() {
-		$('#EdiTbtnnn').click(function(){
-			$('#LeaDer').hide();
-		});
-	});
-	
+
+    $(document).ready(function() {
+        $('#EdiTbtnnn').click(function() {
+            $('#LeaDer').hide();
+        });
+    });
 </script>
 <!-- planner section move from dashboard -->
 <script>
@@ -1414,5 +1425,3 @@
         }
     });
 </script>
-
-

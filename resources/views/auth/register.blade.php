@@ -38,7 +38,6 @@
                     <div class="clearfix"></div>
                     <div class="sign-btn"><button type="button" id="goto-otp-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Next</button></div>
                 </div>
-
             </div>
 
             <div id="otp-box">
@@ -52,16 +51,12 @@
                         <p class="text-right" id="wait_otp_div">Resend OTP in 180 sec</p>
                     </div>
 
-
                     <div class="clearfix"></div>
                     <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
                     <div class="sign-btn"><button type="submit" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase" id="otp-verify-btn">Sign Up</button></div>
                 </div>
             </div>
-
-
         </form>
-
     </div>
     <!--login_screen-->
     <!-- Address block -->
@@ -83,32 +78,28 @@
                     <div class="store-mobile">
                         <img src="{{URL::asset('public/images_new/locationlog.png')}}" alt="mobile icon not find" style="width:20px;">
                         <span class="pl-2"><span class="student-name">India</span></span>
-                        <input type="hidden" name="country" id="country" value="India">
+                        <input type="hidden" name="country" id="country" value="India" required required onkeypress="return lettersOnly(event)">
                     </div>
                 </div>
 
-                <div class="addressfield">
+                <div id="addressfield">
                     <div class="form-group flds" id="statebx">
-                        <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state" autocomplete="off">
+                        <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state" required onkeypress="return lettersOnly(event)" autocomplete="off">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
-
                         <div class="country-code-name stu-grade" id="state_list" style="display:none">
-
                         </div>
                     </div>
 
                     <div class="form-group flds" id="citybx">
-                        <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city" autocomplete="off">
+                        <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city" required onkeypress="return lettersOnly(event)" autocomplete="off">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
-
                         </div>
-
                     </div>
                 </div>
 
                 <div class="clearfix"></div>
-                <div class="sign-btn"><button type="submit" id="address-btn" class="btn btn-primary active-btn text-uppercase">Go
+                <div class="sign-btn"><button type="submit" id="address-btn" disbaled class="btn btn-primary disbaled-btn active-btn text-uppercase">Go
                         Next ></button></div>
 
 
@@ -144,26 +135,11 @@
         }
     });
     $(function() {
-        $('.addressfield input').change(function() {
 
-            var empty = false;
-            $('.addressfield input').each(function() {
-                if ($(this).val() == '') {
-                    empty = true;
-                }
-            });
-
-            if (empty) {
-                $('#address-btn').attr('disabled', 'disabled');
-                $('#address-btn').addClass("disbaled-btn");
-            } else {
-                $('#address-btn').removeAttr('disabled');
-                $('#address-btn').removeClass("disbaled-btn");
-            }
-        });
         /* check email or number filled or not */
         $('.emailNumdiv input').keyup(function() {
             var empty = false;
+
             $('.emailNumdiv input').each(function() {
                 if ($(this).val() == '') {
                     empty = true;
@@ -199,7 +175,27 @@
 
 
 
+
     });
+
+    function addressFieldChnage() {
+
+        var empty = false;
+        $('#addressfield input').each(function() {
+
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#address-btn').attr('disabled', 'disabled');
+            $('#address-btn').addClass("disbaled-btn");
+        } else {
+            $('#address-btn').removeAttr('disabled');
+            $('#address-btn').removeClass("disbaled-btn");
+        }
+    }
 
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
@@ -455,9 +451,6 @@
             var val = event.target.value;
             var country = $('#country').val();
 
-            $('#leaderboard_box_div').hide();
-            $('#search_results').show();
-
             $.ajax({
                 url: "{{ url('/getState',) }}",
                 type: "GET",
@@ -499,8 +492,6 @@
             var state = $('#select-state').val();
 
 
-            $('#leaderboard_box_div').hide();
-            $('#search_results').show();
 
             $.ajax({
                 url: "{{ url('/getCity',) }}",
@@ -555,12 +546,14 @@
     function selectState(state) {
         $('#select-state').val(state);
         $('#state_list').hide();
+        addressFieldChnage();
     }
 
     /* set selected city */
     function selectCity(state) {
         $('#select-city').val(state);
         $('#city_list').hide();
+        addressFieldChnage();
     }
 
     function resentOtpTime() {
