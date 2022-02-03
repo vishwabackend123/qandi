@@ -565,26 +565,26 @@
                     </ul>
                 </div>
             </div>
-           
-           
+
+
 
         </div>
         <!--leader-board-->
-		
-		 <!--profile-detail-->
-            <div class="profile-show" style="min-height:650px;">
-                <div class="profile-picture-txt">
-                    <div class="p-picture">
-                        <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
-                    </div>
-                    <div class="p-text">
-                        <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
-                        <p>Class - {{$user_stage}}, Preparing
-                            for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
-                        <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
-                        <button class="edit-btn-show" id="EdiTbtnnn" ><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
-                    </div>
-                    <!-- <div class="achievement">
+
+        <!--profile-detail-->
+        <div class="profile-show" style="min-height:650px;">
+            <div class="profile-picture-txt">
+                <div class="p-picture">
+                    <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+                </div>
+                <div class="p-text">
+                    <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
+                    <p>Class - {{$user_stage}}, Preparing
+                        for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                    <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
+                    <button class="edit-btn-show" id="EdiTbtnnn"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
+                </div>
+                <!-- <div class="achievement">
                         <h4>Achievements</h4>
                         <ul>
                             <li>You attempted 5 consecutive exams on time!</li>
@@ -593,90 +593,90 @@
                             <li>You attempted 5 consecutive exams on time!</li>
                         </ul>
                     </div> -->
-                </div>
-                <!--profile-picture-->
             </div>
-			
-		 <!--profile-show-->
+            <!--profile-picture-->
+        </div>
 
-            <div class="edit-form">
-                <div class="edit-img">
-                    <div class="p-picture">
-                        <img src="{{$imgPath}}" id="profile_image" class="profile-pic uswereditpic profileimage">
-                    </div>
+        <!--profile-show-->
 
-                    <div class="edit-pic">
-                        <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
-                            @csrf
-                            <label for="file-input" title="Edit Profile Pic">
-
-                                <img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}" alt=""></a>
-
-                            </label>
-                            <input id="file-input" name="file-input" hidden type="file" accept="image/png, image/jpg, image/jpeg" />
-                        </form>
-
-                    </div>
-
+        <div class="edit-form">
+            <div class="edit-img">
+                <div class="p-picture">
+                    <img src="{{$imgPath}}" id="profile_image" class="profile-pic uswereditpic profileimage">
                 </div>
-                <span id="image-upload-response" class=""></span>
 
-                <div class="btm-form-flds  pe-3 pb-5">
-                    <form id="editProfile_form" action="{{url('/editProfile')}}" method="POST" autocomplete="off">
+                <div class="edit-pic">
+                    <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-flds">
-                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
-                        </div>
-                        <div class="form-flds">
-                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
-                        </div>
-                        <div class="form-flds">
-                            <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
-                            <p class="">This is your display name.</p>
-                        </div>
+                        <label for="file-input" title="Edit Profile Pic">
 
-                        <div class="form-flds flds form-group stateD">
-                            <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}">
-                            <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
-                            <div class="country-code-name stu-grade" id="state_list" style="display:none">
+                            <img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}" alt=""></a>
 
-                            </div>
-                        </div>
-
-                        <div class="form-flds locationN">
-                            <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India">
-                        </div>
-
-                        <div class="form-flds flds form-group ">
-                            <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}">
-                            <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
-                            <div class="country-code-name stu-exam" id="city_list" style="display:none;">
-
-                            </div>
-                        </div>
-
-
-                        <div class="form-flds" style="display:none">
-                            <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787">
-                            <p class="">Your User ID</p>
-                        </div>
-                        <div class="form-flds">
-                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
-                        </div>
-
-                        <div class="form-flds">
-                            <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
-                        </div>
-                        <span class="text-danger" role="alert" id="errlog_edit"> </span>
-                        <div class="form-btns">
-                            <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
-                            <button type="submit" id="saveEdit" class="save-btn">save</button>
-                        </div>
+                        </label>
+                        <input id="file-input" name="file-input" hidden type="file" accept="image/png, image/jpg, image/jpeg" />
                     </form>
+
                 </div>
+
             </div>
-            <!--edit-form-->
-			
+            <span id="image-upload-response" class=""></span>
+
+            <div class="btm-form-flds  pe-3 pb-5">
+                <form id="editProfile_form" action="{{url('/editProfile')}}" method="POST" autocomplete="off">
+                    @csrf
+                    <div class="form-flds">
+                        <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
+                    </div>
+                    <div class="form-flds">
+                        <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                    </div>
+                    <div class="form-flds">
+                        <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
+                        <p class="">This is your display name.</p>
+                    </div>
+
+                    <div class="form-flds flds form-group stateD" id="statebx">
+                        <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required onkeypress="return lettersOnly(event)">
+                        <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
+                        <div class="country-code-name stu-grade" id="state_list" style="display:none">
+
+                        </div>
+                    </div>
+
+                    <div class="form-flds locationN">
+                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required onkeypress="return lettersOnly(event)">
+                    </div>
+
+                    <div class="form-flds flds form-group " id="citybx">
+                        <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required onkeypress="return lettersOnly(event)">
+                        <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
+                        <div class="country-code-name stu-exam" id="city_list" style="display:none;">
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-flds" style="display:none">
+                        <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787">
+                        <p class="">Your User ID</p>
+                    </div>
+                    <div class="form-flds">
+                        <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
+                    </div>
+
+                    <div class="form-flds">
+                        <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                    </div>
+                    <span class="text-danger" role="alert" id="errlog_edit"> </span>
+                    <div class="form-btns">
+                        <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
+                        <button type="submit" id="saveEdit" class="save-btn">save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--edit-form-->
+
 
         <div class="subscription right-sidebar">
             <div class="profile-picture-txt">
@@ -760,4 +760,3 @@
         return true;
     }
 </script>
-

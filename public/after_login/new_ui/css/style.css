@@ -15,9 +15,10 @@ button {
     outline: none;
     text-decoration: none;
 }
+
 /*3 feb */
-.exam-analytics #rank_block .col-md-9 ,
-.exam-analytics  #attempt_count_block .col-5{
+.exam-analytics #rank_block .col-md-9,
+.exam-analytics #attempt_count_block .col-5 {
     display: inline-grid;
 }
 
@@ -27,9 +28,11 @@ button {
 [type=button] {
     -webkit-appearance: initial !important;
 }
+
 input#country {
     text-align: center;
 }
+
 /*End 2 feb */
 
 
@@ -47,85 +50,103 @@ div.form-group.flds span.currect-email {
     right: 10px;
     top: 8px;
 }
+
 .store-mobile img {
     float: left;
     width: 24px;
 }
+
 form#editProfile_form .form-flds {
     margin-bottom: 10px !important;
 }
+
 .country-code-name.stu-grade ul li {
     margin-bottom: 5px !important;
 }
+
 .currect-value {
     display: none;
 }
+
 .form-flds.flds.form-group.stateD {
     width: 77% !important;
     float: left;
 }
+
 .form-flds.locationN {
     width: 20% !important;
     float: right;
 }
+
 .store-mobile {
     width: 100%;
     display: inline-block;
     padding-left: 10px;
     text-align: left;
 }
+
 input#usernameloca {
     text-align: center;
 }
+
 input.select-grade {
     background: url(..//images/state-log.png) no-repeat #f2f2f2 !important;
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
 }
+
 input.select-exam {
     background: url(..//images/city-log.png) no-repeat #f2f2f2 !important;
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
 }
+
 div.form-group.flds span.currect-email {
     position: absolute;
     right: 10px;
     top: 8px;
 }
+
 .country-code-name {
-    height: 256px;
+    height: 240px;
     overflow: overlay;
     padding: 10px;
     position: absolute;
     background: #fff;
-    width: 38.8%;
+    width: 45%;
     z-index: 9;
     border-radius: 8px;
     top: 10px;
-    left: 16%;
+    left: 20%;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
 }
+
 .country-code-name ul {
     padding-left: 0px;
     text-align: left;
 }
+
 .country-code-name ul li {
     list-style: none;
     color: #2c3348;
     font-size: 14px;
     padding: 3px 20px 5px;
 }
+
 .country-code-name::-webkit-scrollbar-thumb {
     background: #888;
 }
+
 .country-code-name::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
+
 .country-code-name::-webkit-scrollbar {
     width: 3px;
 }
+
 .country-code-name ul li:hover {
     background: #f2f2f2;
     width: 95%;
@@ -138,12 +159,14 @@ div.form-group.flds span.currect-email {
     padding-left: 10px;
     text-align: left;
 }
+
 input.form-control.select-grade {
     background: url(../images/state-log.png) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 20px;
     background-position: 10px;
 }
+
 /** the following css for placeholder **/
 .contentA input:-ms-input-placeholder {
     color: #2c3348 !important;
@@ -159,11 +182,13 @@ input.form-control.select-grade {
     color: #2c3348 !important;
     font-size: 14px;
 }
-input::-webkit-input-placeholder{
-    color:#000;
+
+input::-webkit-input-placeholder {
+    color: #000;
 }
+
 input:-moz-placeholder {
-    color:#000;
+    color: #000;
 }
 
 /** placeholder css end here **/
@@ -175,9 +200,11 @@ input:-moz-placeholder {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
- .padingTT .prgress-i-txt.px-3 {
-	margin-bottom: 11px;
+
+.padingTT .prgress-i-txt.px-3 {
+    margin-bottom: 11px;
 }
+
 /* dinesh 18-1-2022 */
 
 /** Rahul 14-1-2022**/
@@ -623,7 +650,7 @@ div#prof_scroll {
 
 #editProfile_form .form-flds p {
     text-align: right;
-	margin-bottom: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 #profile_pic_form img {
@@ -1412,7 +1439,7 @@ span.notification.ms-4 {
 .tab-wrapper {
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
     border-radius: 56px;
-	background: #ffffff;
+    background: #ffffff;
 }
 
 .tab-wrapper .nav-tabs {
@@ -2455,6 +2482,7 @@ p#h1--P {
     margin: 0 auto !important;
     font-weight: 600;
 }
+
 /***********************SACHIN_27_01_22-END******************/
 
 #fullTest_Dashboard .skip-dashboard {
@@ -2674,7 +2702,7 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
-	min-height: 550px !important;
+    min-height: 550px !important;
 }
 
 .profile-picture-txt .p-picture {
@@ -5333,8 +5361,9 @@ header {
     padding-bottom: 12px !important;
     line-height: 20px;
     overflow: hidden;
-	font-weight: 600;
+    font-weight: 600;
 }
+
 /**End_Sachin_25_01_22*******/
 
 .question-block label.question p {
@@ -7808,7 +7837,8 @@ span#slide-input {
     button.arrow.next-arow {
         position: relative;
     }
-	.subscrived {
+
+    .subscrived {
         width: 95% !important;
     }
 
@@ -7981,7 +8011,8 @@ span#slide-input {
     }
 
     .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
-        height: auto !important;margin-top: 85px !important;
+        height: auto !important;
+        margin-top: 85px !important;
     }
 
     .question-block {
