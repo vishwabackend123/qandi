@@ -16,6 +16,14 @@ button {
     text-decoration: none;
 }
 
+/*3 feb */
+.exam-analytics #rank_block .col-md-9,
+.exam-analytics #attempt_count_block .col-5 {
+    display: inline-grid;
+}
+
+/*3 feb End*/
+
 /*2 feb */
 [type=button] {
     -webkit-appearance: initial !important;
