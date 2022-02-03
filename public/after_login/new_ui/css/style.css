@@ -17,8 +17,12 @@ button {
 }
 
 /*3 feb */
-.exam-analytics #rank_block .col-md-9,
-.exam-analytics #attempt_count_block .col-5 {
+.exam-analytics #rank_block .col-md-9 ,
+.exam-analytics  #attempt_count_block .col-5 , 
+.exam-analytics .col-5 ,
+.exam-analytics .col-7 ,
+.exam-analytics .col-9 , 
+  .exam-analytics .col-md-9{
     display: inline-grid;
 }
 
@@ -5371,7 +5375,8 @@ header {
 }
 
 label.question.m-0.py-3.d-block .MathJax {
-    display: block !important;
+	display: block !important;
+    outline: none !important;
 }
 
 
@@ -7437,6 +7442,13 @@ span#slide-input {
 }
 
 @media(min-width:768px) and (max-width:990px) {
+	
+	.edit-form {
+		right: 210px !important;
+	}
+	.form-btns {
+		margin-top: 0px !important;
+	}
 
     /** rahul css on 15-1-2022 **/
 
@@ -7556,17 +7568,18 @@ span#slide-input {
     }
 
     .leader-board {
-        width: 270px;
-        right: 24%;
-        height: 650px;
-        padding-left: 0px;
+        width: 329px;
+		right: 24%;
+		height: 550px;
+		padding-left: 70px;
     }
 
     .profile-show {
-        height: 100%;
-        padding: 10px 0px;
-    }
-
+		position: absolute;
+		top: 0px;
+		right: 460px;
+		width: 284px;
+	}
     .subscription .form-btns button {
         margin-bottom: 20px;
     }
