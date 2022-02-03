@@ -80,6 +80,7 @@
      */
     var messaging = firebase.messaging();
 
+
     messaging.usePublicVapidKey('BF7HuS5x1c-2dYVum2tX1Td43VIvCLBw-IGj2c_uDWYiwilJfzvbazpQ6piLdb4YOVVivLQhfPn9Mlx59tWDz10');
 
 
@@ -157,7 +158,8 @@
             image: 'https://c.disquscdn.com/uploads/users/34896/2802/avatar92.jpg'
         };
 
-        return self.registration.showNotification(notificationTitle, notificationOptions);
+        console.log(notificationOptions);
+        //return self.registration.showNotification(notificationTitle, notificationOptions);
     });
 </script>
 <script>

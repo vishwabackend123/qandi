@@ -6,6 +6,25 @@
             padding-right: 15px;
             /* Avoid width reflow */
         }
+
+        .notification {
+            position: relative;
+
+        }
+
+        .badge_nty {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0px 5px;
+            border-radius: 50%;
+            background: red;
+            color: rgb(255 255 255 / 80%);
+            min-height: 12px;
+            min-width: 12px;
+            font-size: 12px;
+            font-weight: 900;
+        }
     </style>
     <div class="container-fluid">
         <div class="row">
@@ -14,7 +33,10 @@
                     <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic profileimage" title="Profile Pic"></span>
                     <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
-                    <span class="notification me-5 ms-4"><a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                    <span class="notification me-5 ms-4">
+
+                        <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -58,6 +80,7 @@
                                         <feComposite operator="in" in2="blur" />
                                         <feComposite in="SourceGraphic" />
                                     </filter>
+
                                 </defs>
                                 <g id="IconButton_Notification_Alert" data-name="IconButton / Notification / Alert" transform="translate(15 15)">
                                     <g class="cls-6" transform="matrix(1, 0, 0, 1, -15, -15)">
@@ -74,7 +97,10 @@
                                         </g>
                                     </g>
                                 </g>
+
+
                             </svg>
+                            <span id="notifydot" class="badge_nty d-none"></span>
 
                         </a></span>
                     <span class="notification ms-4"><a draggable="false" id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
@@ -637,8 +663,8 @@
 
                     <div class="form-flds flds form-group stateD" id="statebx">
                         <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required onkeypress="return lettersOnly(event)">
-                        <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
-                        <div class="country-code-name stu-grade" id="state_list" style="display:none">
+                        <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
+                        <div class=" country-code-name stu-grade" id="state_list" style="display:none">
 
                         </div>
                     </div>
@@ -649,7 +675,7 @@
 
                     <div class="form-flds flds form-group " id="citybx">
                         <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required onkeypress="return lettersOnly(event)">
-                        <span class="currect-email currect-value"><img src="images/success-icon.png"></span>
+                        <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
 
                         </div>
