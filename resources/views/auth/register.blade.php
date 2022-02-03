@@ -545,6 +545,7 @@
     /* select state function */
     function selectState(state) {
         $('#select-state').val(state);
+        $('#select-city').val("");
         $('#state_list').hide();
         addressFieldChnage();
     }
