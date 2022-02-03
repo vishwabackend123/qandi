@@ -15,6 +15,10 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+[type=button] {
+    -webkit-appearance: initial !important;
+}
+
 #endExam .modal-content.rounded-0 {
 
     outline: 0;

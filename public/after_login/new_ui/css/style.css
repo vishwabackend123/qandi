@@ -17,8 +17,12 @@ button {
 }
 
 /*3 feb */
-.exam-analytics #rank_block .col-md-9,
-.exam-analytics #attempt_count_block .col-5 {
+.exam-analytics #rank_block .col-md-9 ,
+.exam-analytics  #attempt_count_block .col-5 , 
+.exam-analytics .col-5 ,
+.exam-analytics .col-7 ,
+.exam-analytics .col-9 , 
+  .exam-analytics .col-md-9{
     display: inline-grid;
 }
 
