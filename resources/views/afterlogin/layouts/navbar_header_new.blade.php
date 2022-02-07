@@ -670,7 +670,7 @@
                     </div>
 
                     <div class="form-flds locationN">
-                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required onkeypress="return lettersOnly(event)">
+                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required disabled onkeypress="return lettersOnly(event)">
                     </div>
 
                     <div class="form-flds flds form-group " id="citybx">

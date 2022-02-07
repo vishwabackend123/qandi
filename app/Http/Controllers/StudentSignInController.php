@@ -434,9 +434,9 @@ class StudentSignInController extends Controller
         $success = isset($aResponse->success) ? $aResponse->success : false;
         $state_list = isset($aResponse->response) ? $aResponse->response : false;
 
-        if (!empty($search)) {
+        /* if (!empty($search)) {
             $state_list = $this->Search($search, $state_list);
-        }
+        } */
 
         sort($state_list);
         $sOption = '';
@@ -503,9 +503,9 @@ class StudentSignInController extends Controller
         $success = isset($aResponse->success) ? $aResponse->success : false;
         $city_list = isset($aResponse->response) ? $aResponse->response : false;
 
-        if (!empty($search)) {
+        /* if (!empty($search)) {
             $city_list = $this->Search($search, $city_list);
-        }
+        } */
 
         sort($city_list);
         $sOption = '';

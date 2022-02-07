@@ -120,7 +120,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
                         <div class="text-center mt-2">
@@ -146,7 +146,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" disabled id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" disabled id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
                         @if($sub->trial_subscription_duration>0)
@@ -181,7 +181,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                             </form>
                         </div>
                         @if($sub->trial_subscription_duration>0)
@@ -236,7 +236,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Renew<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Renew <i class="fas fa-arrow-right"></i></button>
                                 <div class="text-center mt-2">
                                     <span class="text-danger text-decoration-underline">Your paid subscription expired.</span>
                                 </div>
@@ -261,7 +261,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="exam_period" value="12">
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                                 <div class="text-center mt-2">
                                     <span class="text-danger text-decoration-underline">14 days trail Period expired.</span>
                                 </div>
@@ -285,7 +285,7 @@ $user_exam_id = $userData->grade_id;
                                 <input type="hidden" name="exam_period" value="12">
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now<i class="fas fa-arrow-right"></i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                                 <div class="text-center mt-2">
                                     <span class="text-danger text-decoration-underline">14 days trail Period expired.</span>
                                 </div>

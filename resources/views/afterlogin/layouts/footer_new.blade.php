@@ -910,6 +910,7 @@
     /* select state function */
     function selectState(state) {
         $('#select-state').val(state);
+        $('#select-state').valid();
         $('#select-city').val("");
         $('#state_list').hide();
     }
@@ -917,6 +918,7 @@
     /* set selected city */
     function selectCity(state) {
         $('#select-city').val(state);
+        $('#select-city').valid();
         $('#city_list').hide();
     }
 
