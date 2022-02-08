@@ -4,7 +4,7 @@
 <section class="login-bg-img">
 
     <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
-    <div class="login_screen" id="login-box" style="display:none">
+    <div class="login_screen" id="login-box">
 
         <form id="studentsignup" method="post">
             @csrf
@@ -60,7 +60,7 @@
     </div>
     <!--login_screen-->
     <!-- Address block -->
-    <div class="login_screen" id="address-box" style="display:block">
+    <div class="login_screen" id="address-box" style="display:none">
         <p class="mb-0 font-weight-bold auth-txt">Welcome <span class="usernamE"> </span></p>
         <p class="mb-0 blacktxt"> Tell us a little bit about you</p>
         <div class="contentA">
