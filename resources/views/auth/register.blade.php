@@ -4,7 +4,7 @@
 <section class="login-bg-img">
 
     <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
-    <div class="login_screen" id="login-box">
+    <div class="login_screen" id="login-box" style="display:none">
 
         <form id="studentsignup" method="post">
             @csrf
@@ -60,7 +60,7 @@
     </div>
     <!--login_screen-->
     <!-- Address block -->
-    <div class="login_screen" id="address-box" style="display:none">
+    <div class="login_screen" id="address-box" style="display:block">
         <p class="mb-0 font-weight-bold auth-txt">Welcome <span class="usernamE"> </span></p>
         <p class="mb-0 blacktxt"> Tell us a little bit about you</p>
         <div class="contentA">
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="clearfix"></div>
-                <div class="sign-btn"><button type="submit" id="address-btn" disbaled class="btn btn-primary disbaled-btn active-btn text-uppercase">Go
+                <div class="sign-btn"><button type="submit" id="address-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Go
                         Next ></button></div>
 
 
@@ -545,6 +545,7 @@
     /* select state function */
     function selectState(state) {
         $('#select-state').val(state);
+        $('#select-state').valid();
         $('#select-city').val("");
         $('#state_list').hide();
         addressFieldChnage();
@@ -553,6 +554,7 @@
     /* set selected city */
     function selectCity(state) {
         $('#select-city').val(state);
+        $('#select-city').valid();
         $('#city_list').hide();
         addressFieldChnage();
     }

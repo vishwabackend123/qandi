@@ -671,13 +671,7 @@ class ExamCustomController extends Controller
 
         $selected_chapter = isset($request->selected_chapters) ? $request->selected_chapters : [];
 
-        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
-        if ($data = Redis::get($cacheKey)) {
-            $chapter_list = json_decode($data);
 
-            return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
-            //return $chapter_list;
-        }
 
         $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
@@ -702,9 +696,6 @@ class ExamCustomController extends Controller
             $responsedata = json_decode($response_json);
 
             $chapter_list = $responsedata->response;
-            if (!empty($chapter_list)) {
-                Redis::set($cacheKey, json_encode($chapter_list));
-            }
         } else {
             $chapter_list = [];
         }
@@ -725,10 +716,6 @@ class ExamCustomController extends Controller
         $subject_id = $active_subject_id;
 
 
-        //        $cacheKey = 'exam_subjects_chapters:' . $active_subject_id;
-        //        if ($data = Redis::get($cacheKey)) {
-        //            $chapter_list = json_decode($data);
-        //        } else {
 
         $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
@@ -756,11 +743,6 @@ class ExamCustomController extends Controller
         } else {
             $chapter_list = [];
         }
-        //            if (!empty($chapter_list)) {
-        //                Redis::set($cacheKey, json_encode($chapter_list));
-        //            }
-        //        }
-
 
         $collection = collect($chapter_list);
         if ($filter_by == 'asc') {

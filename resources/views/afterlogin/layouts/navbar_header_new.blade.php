@@ -252,8 +252,8 @@
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode open-sub-planner" id="sub-planner">
-            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
-                <div class="planner-scroll" style="overflow-y: auto; overflow-x: hidden; height: 70vh;">
+            <div class="slimScrollDiv">
+                <div class="planner-scroll">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
                     <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
 
@@ -565,6 +565,7 @@
                         @if(isset($leaderboard_list) && !empty($leaderboard_list))
                         @foreach($leaderboard_list as $lead)
                         @php
+
                         if (isset($lead->user_profile_img) && !empty($lead->user_profile_img)) {
                         $imgPath_deft = $lead->user_profile_img;
                         } else {
@@ -572,7 +573,7 @@
                         }
 
                         @endphp
-                        <li>
+                        <li class="{{($lead->user_id==$userData->id)?'active_user':''}}">
                             <span class="profile-digit">{{$lead->user_rank}}.</span>
                             <span class="profile-img-user pt-0"><img class="leader-pic" src="{{$imgPath_deft}}"></span>
                             <span class="profile-text-user">
@@ -662,7 +663,7 @@
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
-                        <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required onkeypress="return lettersOnly(event)">
+                        <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class=" country-code-name stu-grade" id="state_list" style="display:none">
 
@@ -670,15 +671,15 @@
                     </div>
 
                     <div class="form-flds locationN">
-                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required disabled onkeypress="return lettersOnly(event)">
+                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required readonly onkeypress="return lettersOnly(event)">
                     </div>
 
                     <div class="form-flds flds form-group " id="citybx">
-                        <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required onkeypress="return lettersOnly(event)">
+                        <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
-
                         </div>
+                        <span class="small" id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</span>
                     </div>
 
 
