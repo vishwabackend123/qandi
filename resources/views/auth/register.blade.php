@@ -67,10 +67,10 @@
             <form id="addressSignup" method="post">
                 @csrf
                 <input type="hidden" name="student_id" id="student_id" value="">
-                <div class="form-group flds">
-                    <div class="store-mobile">
+                <div class="form-group flds ">
+                    <div class="store-mobile mb-2 pl-2">
                         <img src="{{URL::asset('public/images_new/phone-log.png')}}" alt="mobile icon not find">
-                        <span class="pl-2"> <span class="student-mobile"> </span></span>
+                        <span class="pl-2"> <span class="student-mobile">+91-9879879876</span></span>
                     </div>
                 </div>
 
@@ -78,20 +78,20 @@
                     <div class="store-mobile">
                         <img src="{{URL::asset('public/images_new/locationlog.png')}}" alt="mobile icon not find" style="width:20px;">
                         <span class="pl-2"><span class="student-name">India</span></span>
-                        <input type="hidden" name="country" id="country" value="India" required required onkeypress="return lettersOnly(event)">
+                        <input type="hidden" name="country" id="country" value="India" required onkeypress="return lettersOnly(event)">
                     </div>
                 </div>
 
                 <div id="addressfield">
-                    <div class="form-group flds" id="statebx">
-                        <input type="text" class="form-control pass students select-grade" id="select-state" placeholder="Select your state" name="state" required onkeypress="return lettersOnly(event)" autocomplete="off">
+                    <div class="form-group flds " id="statebx">
+                        <input type="text" class="form-control  students select-grade" id="select-state" placeholder="Select your state" name="state" required readonly onkeypress="return lettersOnly(event)" autocomplete="off">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-grade" id="state_list" style="display:none">
                         </div>
                     </div>
 
                     <div class="form-group flds" id="citybx">
-                        <input type="text" class="form-control pass students select-exam" id="select-city" placeholder="Select your city" name="city" required onkeypress="return lettersOnly(event)" autocomplete="off">
+                        <input type="text" class="form-control  students select-exam" id="select-city" placeholder="Select your city" name="city" required readonly onkeypress="return lettersOnly(event)" autocomplete="off">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
                         </div>
@@ -99,8 +99,9 @@
                 </div>
 
                 <div class="clearfix"></div>
-                <div class="sign-btn"><button type="submit" id="address-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Go
-                        Next ></button></div>
+                <div class="sign-btn">
+                    <button type="submit" id="address-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Go Next ></button>
+                </div>
 
 
             </form>
@@ -377,7 +378,7 @@
                         } else {
                             $('#student_id').val(response.student_id);
                             $('.usernamE').html(response.user_name);
-                            $('.student-mobile').html("(91+ " + response.mobile + ")");
+                            $('.student-mobile').html("+91-" + response.mobile);
                             //$('#otp-verify-box').addClass('open-box');
 
                             $('#login-box').addClass('close-box');

@@ -75,7 +75,8 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name {
-    height: 250px;
+    height: auto;
+    max-height: 210px;
     overflow: overlay;
     padding-top: 10px;
     position: absolute;
@@ -83,7 +84,7 @@ div.form-group.flds span.currect-email {
     width: 38.8%;
     z-index: 9;
     border-radius: 8px;
-    top: 10px;
+    top: 0px;
     right: 0%;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
 }
@@ -203,8 +204,12 @@ input:-moz-placeholder {
 
 /** end here**/
 
-/** 15-12-2021**/
 
+.login_screen .error {
+    color: #f74645;
+}
+
+/** 15-12-2021**/
 .login-bg-img .login_screen p.mb-0 {
     color: #00baff;
     font-size: 18px;
