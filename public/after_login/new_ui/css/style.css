@@ -15,6 +15,76 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/* 08 Feb 2022 Sachin */
+.edit-form {
+    height: 590px !important
+}
+
+.leader-board {
+    min-height: 590px;
+}
+
+.profile-show {
+    min-height: 590px !important;
+}
+
+.edit-form .error {
+    color: #d71921;
+    font-size: inherit;
+}
+
+#editProfile_form {
+    height: 495px;
+    overflow: overlay;
+    padding-right: 10px;
+}
+
+#editProfile_form::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+#editProfile_forms::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+
+
+#editProfile_form::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+}
+
+
+#editProfile_form::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+#editProfile_form .slimScrollBar {
+    background: transparent !important;
+}
+
+.btm-form-flds {
+    padding-right: 0px !important;
+}
+
+.edit-form {
+    padding-right: 11px;
+
+}
+
+form#editProfile_form .form-flds {
+    margin-bottom: 10px !important;
+}
+
+#editProfile_form .form-btns {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*end  08 Feb 2022 Sachin */
 /* 04 Feb 2022 */
 
 .cancel-btn-see {
@@ -33,12 +103,12 @@ button {
 /* 04 Feb 2022  */
 
 /*3 feb */
-.exam-analytics #rank_block .col-md-9 ,
-.exam-analytics  #attempt_count_block .col-5 , 
-.exam-analytics .col-5 ,
-.exam-analytics .col-7 ,
-.exam-analytics .col-9 , 
-  .exam-analytics .col-md-9{
+.exam-analytics #rank_block .col-md-9,
+.exam-analytics #attempt_count_block .col-5,
+.exam-analytics .col-5,
+.exam-analytics .col-7,
+.exam-analytics .col-9,
+.exam-analytics .col-md-9 {
     display: inline-grid;
 }
 
@@ -1031,7 +1101,8 @@ a#Zoology_tab_subject:nth-child(1):before {
     border-radius: 8px;
     position: relative;
     height: 50px;
-    display: block;width: 50px;
+    display: block;
+    width: 50px;
 }
 
 .notification svg {
@@ -5391,7 +5462,7 @@ header {
 }
 
 label.question.m-0.py-3.d-block .MathJax {
-	display: block !important;
+    display: block !important;
     outline: none !important;
 }
 
@@ -7458,13 +7529,14 @@ span#slide-input {
 }
 
 @media(min-width:768px) and (max-width:990px) {
-	
-	.edit-form {
-		right: 210px !important;
-	}
-	.form-btns {
-		margin-top: 0px !important;
-	}
+
+    .edit-form {
+        right: 210px !important;
+    }
+
+    .form-btns {
+        margin-top: 0px !important;
+    }
 
     /** rahul css on 15-1-2022 **/
 
@@ -7585,17 +7657,18 @@ span#slide-input {
 
     .leader-board {
         width: 329px;
-		right: 24%;
-		height: 550px;
-		padding-left: 70px;
+        right: 24%;
+        height: 550px;
+        padding-left: 70px;
     }
 
     .profile-show {
-		position: absolute;
-		top: 0px;
-		right: 460px;
-		width: 284px;
-	}
+        position: absolute;
+        top: 0px;
+        right: 460px;
+        width: 284px;
+    }
+
     .subscription .form-btns button {
         margin-bottom: 20px;
     }
@@ -7853,10 +7926,11 @@ span#slide-input {
     button.arrow.prev-arow {
         position: relative;
     }
-	#sharefrnd .modal-body.pt-0.px-5 {
-    padding-left: 1px !important;
-    padding-right: 1px !important;
-}
+
+    #sharefrnd .modal-body.pt-0.px-5 {
+        padding-left: 1px !important;
+        padding-right: 1px !important;
+    }
 
 
     button.arrow.next-arow {
@@ -7958,7 +8032,7 @@ span#slide-input {
 
     .edit-form .btm-form-flds {
         margin-top: 0px !important;
-		padding-right: 0px !important;
+        padding-right: 0px !important;
     }
 
     .edit-form .form-btns {
@@ -8435,13 +8509,13 @@ span#slide-input {
 
     .profile-show {
         top: 7% !important;
-		left: 13% !important;
-		width: 85% !important;
-		padding: 30px 15px 12px !important;
-		z-index: 999;
-		min-height: 470px !important;
-		border-bottom-left-radius: 20px !important;
-		border-bottom-right-radius: 20px !important;
+        left: 13% !important;
+        width: 85% !important;
+        padding: 30px 15px 12px !important;
+        z-index: 999;
+        min-height: 470px !important;
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
     }
 
     .edit-form {
@@ -9180,11 +9254,11 @@ span#slide-input {
     .edit-pic {
         position: absolute;
         bottom: 0px;
-		left: 45%;
-		width: 40px;
-		background: #fff;
-		border-radius: 50%;
-		padding: 0px;
+        left: 45%;
+        width: 40px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 0px;
         box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
     }
 
@@ -10271,7 +10345,7 @@ span#slide-input {
 
         .edit-form {
             top: 8%;
-			left: 13%;
+            left: 13%;
         }
 
         /** end here **/
