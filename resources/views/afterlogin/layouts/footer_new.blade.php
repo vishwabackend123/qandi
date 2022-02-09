@@ -1231,15 +1231,15 @@
                 empty = true;
             }
         });
-        alert(empty);
+
         if (empty) {
             $('#saveEdit').attr('disabled', 'disabled');
             $('#saveEdit').addClass("disabled-btn");
-            alert("added");
+
         } else {
             $('#saveEdit').removeAttr('disabled');
             $('#saveEdit').removeClass("disabled-btn");
-            alert("remove");
+
         }
 
 
