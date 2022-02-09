@@ -627,8 +627,8 @@
         <!--profile-show-->
 
         <div class="edit-form">
-            <div class="edit-img">
-                <div class="p-picture">
+            <div class="edit-img mb-2">
+                <div class="p-picture ">
                     <img src="{{$imgPath}}" id="profile_image" class="profile-pic uswereditpic profileimage">
                 </div>
 
@@ -651,15 +651,17 @@
             <div class="btm-form-flds  pe-3 pb-5">
                 <form id="editProfile_form" action="{{url('/editProfile')}}" method="POST" autocomplete="off">
                     @csrf
-                    <div class="form-flds">
-                        <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
-                    </div>
-                    <div class="form-flds">
-                        <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                    <div class="d-flex f_l_name_box">
+                        <div class="form-flds">
+                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
+                        </div>
+                        <div class="form-flds">
+                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                        </div>
                     </div>
                     <div class="form-flds">
                         <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
-                        <p class="">This is your display name.</p>
+                        <p>This is your display name.</p>
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
@@ -679,7 +681,7 @@
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
                         </div>
-                        <span class="small" id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</span>
+                        <p class="small" id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</p>
                     </div>
 
 
@@ -687,12 +689,14 @@
                         <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787">
                         <p class="">Your User ID</p>
                     </div>
-                    <div class="form-flds">
-                        <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
-                    </div>
+                    <div class="d-flex f_l_name_box">
+                        <div class="form-flds user_email">
+                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
+                        </div>
 
-                    <div class="form-flds">
-                        <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                        <div class="form-flds user_no">
+                            <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                        </div>
                     </div>
                     <span class="text-danger" role="alert" id="errlog_edit"> </span>
                     <div class="form-btns">

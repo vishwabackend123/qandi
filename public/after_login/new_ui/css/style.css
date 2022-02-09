@@ -17,8 +17,24 @@ button {
 }
 
 /* 08 Feb 2022 Sachin */
+.f_l_name_box {
+    justify-content: space-between;
+}
+
+.f_l_name_box .form-flds {
+    width: 48.5% !important;
+}
+
+.user_email {
+    width: 72% !important;
+}
+
+.user_no {
+    width: 25% !important;
+}
+
 .edit-form {
-    height: 590px !important
+    width: 500px;
 }
 
 .leader-board {
@@ -35,7 +51,7 @@ button {
 }
 
 #editProfile_form {
-    height: 495px;
+    height: 445px;
     overflow: overlay;
     padding-right: 10px;
 }
