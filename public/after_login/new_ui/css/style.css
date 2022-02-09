@@ -88,9 +88,9 @@ button {
 
 }
 
-form#editProfile_form .form-flds {
+/* form#editProfile_form .form-flds {
     margin-bottom: 10px !important;
-}
+} */
 
 #editProfile_form .form-btns {
     text-align: center;
@@ -98,6 +98,19 @@ form#editProfile_form .form-flds {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#statebx,
+#citybx {
+    position: relative;
+}
+
+.country-code-name ul {
+    margin-bottom: 0px;
+}
+
+#city_remark {
+    text-align: left !important;
 }
 
 /*end  08 Feb 2022 Sachin */
@@ -162,9 +175,9 @@ div.form-group.flds span.currect-email {
     width: 24px;
 }
 
-form#editProfile_form .form-flds {
+/* form#editProfile_form .form-flds {
     margin-bottom: 10px !important;
-}
+} */
 
 .country-code-name.stu-grade ul li {
     margin-bottom: 5px !important;
@@ -216,17 +229,19 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name {
-    height: 240px;
+    height: auto;
     overflow: overlay;
     padding: 10px;
     position: absolute;
     background: #fff;
-    width: 45%;
+    width: 100%;
     z-index: 9;
     border-radius: 8px;
-    top: 10px;
+    bottom: 100%;
     left: 20%;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
+    max-height: 150px;
+    max-width: 251px;
 }
 
 .country-code-name ul {
