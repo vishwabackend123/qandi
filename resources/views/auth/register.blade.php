@@ -70,7 +70,7 @@
                 <div class="form-group flds ">
                     <div class="store-mobile mb-2 pl-2">
                         <img src="{{URL::asset('public/images_new/phone-log.png')}}" alt="mobile icon not find">
-                        <span class="pl-2"> <span class="student-mobile">+91-9879879876</span></span>
+                        <span class="pl-2"> <span class="student-mobile"></span></span>
                     </div>
                 </div>
 
@@ -95,6 +95,7 @@
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
                         </div>
+                        <p id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</p>
                     </div>
                 </div>
 
@@ -449,6 +450,7 @@
         /* search State */
         $('#select-state').on("click keyup", function(event) {
             $('#city_list').hide();
+            $('#city_remark').hide()
             var val = event.target.value;
             var country = $('#country').val();
 
@@ -516,7 +518,7 @@
                     }
                     $('#city_list').html(html);
                     $('#city_list').show();
-
+                    $('#city_remark').show();
                 }
             });
 
@@ -536,6 +538,7 @@
             // Clicked in box
         } else {
             $('#city_list').hide();
+            $('#city_remark').hide()
         }
         if (document.getElementById('statebx').contains(e.target)) {
             // Clicked in box
@@ -557,6 +560,7 @@
         $('#select-city').val(state);
         $('#select-city').valid();
         $('#city_list').hide();
+        $('#city_remark').hide()
         addressFieldChnage();
     }
 
