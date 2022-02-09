@@ -681,7 +681,7 @@
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
                         </div>
-                        <p class="align-left" id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</p>
+                        <p id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</p>
                     </div>
 
 
