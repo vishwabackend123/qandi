@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!--  <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
 

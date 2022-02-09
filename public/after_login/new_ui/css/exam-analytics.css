@@ -1,0 +1,566 @@
+
+#overall button.btn,
+#home button.btn,
+.Ex-anal {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background: #e9e9e9;
+    border: none;
+    color: #000;
+    margin-right: 15px;
+    font-size: 12px;
+    padding: 10px 50px !important;
+    height: 45px !important;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+#overall button.btn:hover,
+#home button.btn:hover,
+.Ex-anal:hover {
+    background: #00bdff;
+    color: #fff;
+    font-weight: 600;
+}
+
+div#back2Dsh button a:hover {
+    color: #fff;
+}
+
+#overall button.btn.active,
+#home button.btn.active,
+.Ex-anal {
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    color: #fff;
+    padding: 10px 50px !important;
+    height: 45px !important;
+    margin-top: 10px;
+}
+
+div#back2Dsh button a {
+    color: #000;
+    padding: 15px 0px;
+}
+
+div#f-Numbr-sectin h4 {
+    font-size: 16px;
+}
+
+div#f-Numbr-sectin h4.fw-bold {
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+#arrow-left-btm .inner-arrow-left-btm {
+    left: 14px !important;
+    bottom: 0px !important;
+}
+
+#arrow-right-top .inner-arrow-right-top {
+    right: 12px !important;
+    top: 0px !important;
+}
+
+#arrow-left-top .inner-arrow-left-top {
+    right: 12px !important;
+    bottom: 0px !important;
+    top: auto;
+    left: auto;
+}
+
+div#topicclose,
+.padingTT {
+    padding-top: 30px;
+}
+
+#myTabContent .bg-light-success {
+    background: #37c027;
+    border-radius: 15px;
+}
+
+#myTabContent .prog-box.green,
+#myTabContent .prog-box.red,
+#myTabContent .prog-box.secondary {
+    border: none;
+    background: #f2f2f2;
+    color: #231f20;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+
+#myTabContent .progress {
+    border-radius: 15rem !important;
+}
+#myTabContent .btn.btn-warning {
+    background: #00baff;
+    background-color: #00baff;
+    border-color: #00baff;
+}
+
+
+.exam-analytics .bg-white .row.py-4.mt-4.mb-5 {
+    margin-bottom: 0px !important;
+}
+
+.exam-analytics .p-5 span.text-center.w-100 img {
+    width: 70% !important;
+}
+
+.exam-analytics div#myTabContent .tab-pane .hScroll {
+    height: 270px !important;
+}
+
+#exam_result_analysis h5.dashboard-title.mb-3.text-center {
+    text-align: left !important;
+    padding-left: 15px !important;
+}
+
+.exam-analytics button.top-btn-pop:hover {
+    background: #00bdff;
+}
+
+
+#myTabContent .bg-light-red {
+    background: #ee6a5f;
+    border-radius: 15px;
+}
+
+#myTabContent .arrow:hover {
+    background: transparent !important;
+}
+
+#myTabContent .examSect .rightSect button.btn.btn-light-green.w-100.rounded-0.mt-3 {
+    border-radius: 15px !important;
+    border: none !important;
+}
+/* Test screen css 30-Nov bhim */
+
+div#myTabContent .tab-pane .question-block {
+    padding: 15px 5rem;
+}
+
+div#myTabContent .tab-pane .question-block .arrow {
+    height: 60px !important;
+}
+
+div#myTabContent .tab-pane .question-block p.question.pb-5.pt-5 {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+
+div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0 {
+    border-radius: 20px !important;
+    background-color: #5ddaff !important;
+    color: #fff;
+    text-transform: none;
+}
+
+div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
+div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
+div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    background: #e9e9e9;
+    border: none;
+    text-transform: none;
+    color: #2c3348;
+}
+div#prof_scroll {
+    overflow-x: hidden;
+    height: 171px;
+    overflow-y: auto;
+}
+
+#topicclose #topIIC .bg-white .slimScrollDiv,
+.padingTT .bg-white .slimScrollDiv {
+    height: 165px !important;
+}
+
+#topicclose #topIIC .status-id.rating,
+.padingTT .status-id.rating {
+    width: auto !important;
+}
+
+#topicclose #topIIC .d-flex.align-items-center.mt-3.px-3,
+.padingTT .d-flex.align-items-center.mt-3.px-3 {
+    margin-top: 0px !important;
+}
+
+#topicclose #topIIC .d-flex.align-items-center.px-3,
+.padingTT .d-flex.align-items-center.px-3 {
+    padding-bottom: 15px;
+}
+
+#topicclose #topIIC .d-flex.align-items-center.mt-3.px-3 {
+    padding-bottom: 5px !important;
+    margin-top: 0px !important;
+}
+
+#prof_scroll .d-flex.align-items-center.px-3 {
+    padding-bottom: 0px !important;
+}
+
+.padingTT .prgress-i-txt.px-3 {
+    margin-bottom: 11px;
+}
+/* 14-12-2021 19:47*/
+#topicopen .bg-white.shadow-lg {
+    height: 100% !important;
+}
+
+#marKs-trends .bg-white,
+#time-Avg-quest .bg-white {
+    background: transparent !important;
+    padding: 15px 0px !important;
+}
+
+#f-Numbr-sectin {
+    background: #fff;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 56px;
+}
+
+#f-Numbr-sectin .noshadow {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+#f-Numbr-sectin .arrow-right-btm-content {
+    left: 0px;
+    right: 0px;
+    border-radius: 56px;
+    padding: 15px 20px !important;
+}
+
+#f-Numbr-sectin .inner-arrow-right-btm {
+    right: 12px;
+    bottom: 0px;
+}
+
+/* Download anylatics */
+
+
+div#exportAnalytics .modal-dialog .modal-content {
+    border-radius: 45px !important;
+}
+
+div#contentHtml .text-light-danger {
+    color: #19a4d7;
+}
+
+div#contentHtml .bg-white.shadow-lg {
+    height: 100%;
+}
+
+div#contentHtml .report-block2 {
+    background: #d0f3ff;
+}
+
+div#contentHtml .report-block2 .bg-white {
+    border-radius: 56px;
+    box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
+    background-color: #fff;
+    padding: 30px !important;
+}
+
+
+div#contentHtml .report-block1 {
+    background: #fff;
+    border-radius: 56px;
+}
+
+.greentxt {
+    font-size: 187px;
+    color: #44cd7f;
+    font-weight: bold;
+    text-align: center;
+}
+
+.exportUserpic {
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    border: 2px solid #d71921;
+}
+
+.exportUsertxt {
+    margin-left: 20px;
+}
+
+.exportUsertxt p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.exportUsertxt small {
+    font-size: 13px;
+}
+
+.report-analysis-block {
+    border-radius: 20px;
+}
+
+.reportHeading {
+    font-size: 40px;
+    font-weight: 400;
+    border-left: 4px solid #00baff;
+    padding: 10px 0 10px 20px;
+    position: relative;
+}
+
+.report-block1 .reportHeading {
+    border-left: solid 4px #00baff;
+}
+
+/* .reportHeading:after {
+    content: "";
+    width: 2px;
+    height: 40px;
+    background: #44cd7f;
+    position: absolute;
+    right: -15%;
+    top: 50%;
+    margin-top: -20px;
+    transform: rotate(17deg);
+} */
+
+.reportHeading span {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.report-block2 {
+    background: #fff4cf;
+}
+
+.w-34 {
+    width: 34%;
+}
+
+.export-btn {
+    position: fixed;
+    right: 75px;
+    top: 15px;
+    /* filter: contrast(0); */
+    /* color: transparent; */
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+    border-radius: 20px !important;
+    padding: 5px;
+}
+
+.export-btn:hover {
+    filter: contrast(1);
+}
+
+.close-btn {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    /* filter: contrast(0); */
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+    border-radius: 20px !important;
+    padding: 5px;
+}
+
+.close-btn:hover {
+    filter: contrast(1);
+}
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 25px;
+    height: 40px;
+    /* width: 100px; */
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    /* text-shadow: 0px 1px 0 #a2a2a2; */
+}
+
+.star-ratings-css-top {
+    color: #ffdc34;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+}
+
+.error {
+    color: #d71921;
+    font-size: 12px;
+}
+
+.Dwonload {
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    border: none;
+    color: #fff;
+    margin-right: 15px;
+}
+
+
+.bg-light-secondary {
+    border-radius: 15px;
+}
+
+button#topic-btn {
+    margin-top: 10px;
+}
+
+/* end Download anylatics bhim 16-12-2021 */
+
+
+/* webinar */
+#upcoming-tutorials img.me-2 {
+    width: 15%;
+}
+
+#upcoming-tutorials .modal-content.rounded-0 {
+    border-radius: 56px !important;
+}
+
+p.fs-5.profileN {
+    text-align: center;
+    font-size: 12px !important;
+}
+
+p.fs-5.profileN span.Colr {
+    color: #1aa4d7;
+}
+
+p.fs-5.profileN img {
+    width: 100px !important;
+    height: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* end webinar */
+
+
+/*3 feb */
+.exam-analytics #rank_block .col-md-9 ,
+.exam-analytics  #attempt_count_block .col-5 , 
+.exam-analytics .col-5 ,
+.exam-analytics .col-7 ,
+.exam-analytics .col-9 , 
+  .exam-analytics .col-md-9{
+    display: inline-grid;
+}
+
+/*3 feb End*/
+
+.exam-analytics .cust-tab-content {
+    padding: 0px 15px !important;
+}
+/*** Exam analytics page css 16-12-2021 **/
+.exam-analytics {}
+
+.exam-analytics span.text-center.w-100 img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow-lg {
+    min-height: 430px;
+}
+
+.exam-analytics .map-right-graph img {
+    width: 100%;
+}
+
+.exam-analytics .bg-white.shadow.p-3 {
+    border-radius: 56px;
+    padding: 22px !important;
+}
+
+.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
+    border-radius: 56px !important;
+    padding-bottom: 0px !important;
+}
+
+.exam-analytics .abrv-graph.bg1 {
+    background: #5cc129;
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2,
+.exam-analytics .abrv-graph.bg3 {
+    border-radius: 50%;
+}
+
+.exam-analytics .abrv-graph.bg2 {
+    background: #e62e2d;
+}
+
+.exam-analytics .row.my-4 .col {
+    text-align: center;
+}
+
+.exam-analytics button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #21ccff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+    font-weight: 600;
+}
+
+.exam-analytics .blue-block {
+    background: #eee;
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
+    border-radius: 56px;
+}
+
+.exam-analytics .i-icon {
+    color: #62c2fe;
+}
+
+.exam-analytics .i-icon:hover {
+    color: #62c2fe;
+}
+
+.exam-analytics .bg-light-success {
+    background: #37c027;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.exam-analytics .bg-light-red {
+    background: red;
+}
+
+.exam-analytics .cust-tab-content {
+    padding: 0px 36px;
+    border-bottom-left-radius: 56px;
+    border-bottom-right-radius: 56px;
+}
+
+button.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #21ccff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+}
+
+/*** Exam analytics page css End 13-12-2021 **/
