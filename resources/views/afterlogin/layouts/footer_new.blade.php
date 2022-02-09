@@ -922,6 +922,7 @@
         $('#select-state').valid();
         $('#select-city').val("");
         $('#state_list').hide();
+        editProfileCheck();
     }
 
     /* set selected city */
@@ -930,6 +931,7 @@
         $('#select-city').valid();
         $('#city_list').hide();
         $('#city_remark').hide();
+        editProfileCheck();
     }
 
     function selectChapter(subject_id) {
@@ -1217,6 +1219,31 @@
         });
     });
 
+    $('#editProfile_form input').keyup(function() {
+        editProfileCheck();
+    });
+
+    function editProfileCheck() {
+        var empty = false;
+
+        $('#editProfile_form input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+        alert(empty);
+        if (empty) {
+            $('#saveEdit').attr('disabled', 'disabled');
+            $('#saveEdit').addClass("disabled-btn");
+            alert("added");
+        } else {
+            $('#saveEdit').removeAttr('disabled');
+            $('#saveEdit').removeClass("disabled-btn");
+            alert("remove");
+        }
+
+
+    }
 
     $.validator.addMethod("mobileregx", function(value, element, regexpr) {
         return regexpr.test(value);

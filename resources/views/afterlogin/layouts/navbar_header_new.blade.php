@@ -686,7 +686,7 @@
 
 
                     <div class="form-flds" style="display:none">
-                        <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787">
+                        <!-- <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787"> -->
                         <p class="">Your User ID</p>
                     </div>
                     <div class="d-flex f_l_name_box">
@@ -701,7 +701,7 @@
                     <span class="text-danger" role="alert" id="errlog_edit"> </span>
                     <div class="form-btns">
                         <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
-                        <button type="submit" id="saveEdit" class="save-btn">save</button>
+                        <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
                     </div>
                 </form>
             </div>
