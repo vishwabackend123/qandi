@@ -233,9 +233,9 @@ $userData = Session::get('user_data');
 </script>
 @endif
 <script type="text/javascript">
-    $(".scroll-topic-ana").slimscroll({
+    /* $(".scroll-topic-ana").slimscroll({
         height: "20vh",
-    });
+    }); */
     $('.scroll-div-live-exm').slimscroll({
         height: '60vh'
     });

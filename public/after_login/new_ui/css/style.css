@@ -16,6 +16,21 @@ button {
     text-decoration: none;
 }
 
+/* 9 feb 2022 - Amit-Start */
+
+.go2Planner span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #231f20;
+}
+
+.dash-nav-link a:nth-child(2) .bb {
+    opacity: 1;
+}
+
+/* 9 feb 2022 - Amit-End */
+
+
 /* 08 Feb 2022 Sachin */
 .f_l_name_box {
     justify-content: space-between;
