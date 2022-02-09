@@ -2905,17 +2905,18 @@ div#sub-planner {
 /** end here**/
 /** Edit form css **/
 .edit-form {
-    width: 425px;
+    width: 500px;
     position: absolute;
     top: 0;
     right: 320px;
     background: #fff;
     padding: 20px;
     border-radius: 56px;
-    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
     height: 550px !important;
     overflow: hidden;
+    padding-right: 10px !important;
 }
 
 .edit-img {
