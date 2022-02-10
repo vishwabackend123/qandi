@@ -161,6 +161,15 @@ a.disabled-btn {
     background: #555;
 }
 
+/* 10-0202022 */
+.question td {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #2c3348;
+}
+
 /*end  08 Feb 2022 Sachin */
 /* 04 Feb 2022 */
 
