@@ -170,6 +170,10 @@ a.disabled-btn {
     color: #2c3348;
 }
 
+#review_rques_blk .border {
+    pointer-events: none !important;
+}
+
 /*end  08 Feb 2022 Sachin */
 /* 04 Feb 2022 */
 
@@ -2512,13 +2516,14 @@ button.percentage-digit {
 /** scrollbar css end here**/
 .back-to-dashbord a {
     color: #00baff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
-    width: 100px;
+    width: auto;
     display: block;
     text-align: center;
     padding-left: 30px;
     padding-top: 9px;
+    text-transform: uppercase;
 }
 
 /*** End here ***/
@@ -6942,6 +6947,7 @@ a#close-edit-planner-btn {
     padding: 5px;
     height: 30px;
     margin: 2px auto;
+    line-height: 18px;
 }
 
 .calender-block td.fora>span {
