@@ -128,8 +128,8 @@ trait CommonTrait
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
-
-                    Redis::del($cacheKey);
+                    Redis::del(Redis::keys($cacheKey));
+                    //Redis::del($cacheKey);
                 }
             }
             if ($data = Redis::get($cacheKey)) {
@@ -148,8 +148,8 @@ trait CommonTrait
             $cacheKey = 'CustomQuestionAdaptive:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
-
-                    Redis::del($cacheKey);
+                    Redis::del(Redis::keys($cacheKey));
+                    //Redis::del($cacheKey);
                 }
             }
             if ($data = Redis::get($cacheKey)) {
@@ -168,8 +168,8 @@ trait CommonTrait
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
-
-                    Redis::del($cacheKey);
+                    Redis::del(Redis::keys($cacheKey));
+                    // Redis::del($cacheKey);
                 }
             }
             if ($data = Redis::get($cacheKey)) {
