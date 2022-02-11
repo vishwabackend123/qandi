@@ -15,6 +15,12 @@ button {
     outline: none;
     text-decoration: none;
 }
+.profile-section ul li:hover {
+    background: #d0f3ff;
+}
+.pe-1 .star-ratings-css-bottom span {
+    padding: 0 0px !important;
+}
 
 /* 9 feb 2022 - Amit-Start */
 
@@ -170,13 +176,14 @@ a.disabled-btn {
 }
 
 .active_user {
-    background: #f2f2f2;
+   background: #f2f2f2;
     padding: 10px;
     position: absolute;
     bottom: 28px;
-    width: 100%;
-    max-width: 343px;
+    width: 93%;
+    max-width: 285px;
     padding-bottom: 0px;
+    z-index: 9;
 }
 
 /*end  08 Feb 2022 Sachin */
@@ -820,7 +827,7 @@ span.p-icons span:active {
 
 p.text-end.text-danger.mt-1 {
     color: #f74645 !important;
-    font-size: 13px;
+    font-size: 13px;padding: 5px 20px;
 }
 
 .course-star li span {
@@ -2209,7 +2216,7 @@ div#sub-planner {
 
 .account-wrapper {
     height: 100vh;
-
+	margin-top:10px;
     max-width: 100%;
     position: relative;
     /* right: 0; */
@@ -2223,8 +2230,8 @@ div#sub-planner {
 .profile-show {
     position: absolute;
     top: 0px;
-    right: 700px;
-    width: 425px;
+    right: 540px;
+    width: 365px;
     background: #fff;
     padding: 10px 15px;
     border-radius: 56px;
@@ -2326,10 +2333,10 @@ div#sub-planner {
 /** end here**/
 /** Edit form css **/
 .edit-form {
-    width: 500px;
+    width: 420px;
     position: absolute;
     top: 0;
-    right: 320px;
+    right: 220px;
     background: #fff;
     padding: 20px;
     border-radius: 56px;
@@ -2437,7 +2444,7 @@ button.save-btn {
     border-radius: 56px;
     padding: 15px 20px 15px 25px;
     position: absolute;
-    right: 320px;
+    right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2452,7 +2459,7 @@ button.save-btn {
 }
 
 .subscription .profile-picture-txt .p-text {
-    width: 77%;
+    width: 83%;
 }
 
 .log-out-screen .p-picture {
@@ -2485,8 +2492,8 @@ button.save-btn {
 
 .subscrived .p-pictures {
     float: left;
-    margin-left: 10%;
-    margin-top: 9px;
+    margin-left: 0%;
+    margin-top: 0px;
 }
 
 .subscription h6 {
@@ -2498,7 +2505,8 @@ button.save-btn {
 }
 
 .subscrived .p-pictures img {
-    width: 40px;
+    width: 55px;
+    height: 55px;
 }
 
 .subscription .form-btns button {
@@ -2513,7 +2521,7 @@ button.save-btn {
     border-radius: 56px;
     padding: 40px 20px 40px 25px;
     position: absolute;
-    right: 320px;
+    right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -2934,7 +2942,7 @@ div#collapseNotification {
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
-    top: 0;
+    top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
@@ -2993,7 +3001,7 @@ span.bell-noti {
     position: absolute;
     top: 0%;
     right: 0px;
-    width: 300px;
+    width: 200px;
     height: 100%;
     background: #fff;
 }
@@ -3028,13 +3036,13 @@ span.profile-digit {
 }
 
 .leader-board {
-    width: 425px;
+    width: 370px;
     height: 550px;
     background: #fff;
     border-radius: 56px;
     padding: 15px;
     position: absolute;
-    right: 320px;
+    right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
@@ -5424,7 +5432,7 @@ tspan {
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
-    top: 0;
+    top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
@@ -5441,7 +5449,7 @@ tspan {
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
-    top: 0;
+    top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
