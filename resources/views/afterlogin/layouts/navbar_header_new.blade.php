@@ -12,6 +12,38 @@
 
         }
 
+        .notifications-count {
+            position: absolute;
+            top: 13px;
+            right: 6px;
+            width: auto;
+            height: auto;
+            color: #fff;
+            font-size: 11px;
+            font-family: Arial;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 1px 4px;
+            background-color: #da3225;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #dfdfdf;
+            transform: scale(50);
+            opacity: 0;
+            transition: 0.3s cubic-bezier(0, 0.24, 0.86, 1.08) all;
+            z-index: 1;
+            display: none;
+        }
+
+        .notifications-count.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .notifications-count.zindex {
+            z-index: 3;
+        }
+
         .badge_nty {
             position: absolute;
             top: 10px;
@@ -100,7 +132,7 @@
 
 
                             </svg>
-                            <span id="notifydot" class="badge_nty d-none"></span>
+                            <div id="notificationscount" class="notifications-count active zindex">9</div>
 
                         </a></span>
                     <span class="notification ms-4"><a draggable="false" id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
@@ -313,7 +345,7 @@
 
                         </div>
                         <div class="text-center">
-                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-25 " title="Save Planner"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}">
+                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-31 " title="Save Planner"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}"> Save
                             </button>
                         </div>
                     </form>
