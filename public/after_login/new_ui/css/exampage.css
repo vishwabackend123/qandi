@@ -1,3 +1,15 @@
+/* 10-0202022 */
+.question td {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #2c3348;
+}
+
+#review_rques_blk .border {
+    pointer-events: none !important;
+}
 
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
     box-shadow: none;
@@ -316,6 +328,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .cust-tab-content .scroll-topic-ana {
     height: 150px !important;
+    overflow: overlay;
 }
 .cust-tab-content {
     padding: 0px !important;

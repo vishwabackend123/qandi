@@ -93,7 +93,7 @@ $userData = Session::get('user_data');
                     </div>
 
                     <span class="slbs-link mx-3">
-                      <a class="expand-custom" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" onclick="show_topic('{{$chapters->chapter_id}}')">Expand to Topics</a></span>
+                      <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}')"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to topics</span></a></span>
                     <form method="post" action="{{route('custom_exam_chapter')}}">
                       @csrf
                       <input type="hidden" name="subject_id" value="">
@@ -314,10 +314,24 @@ $userData = Session::get('user_data');
     $('#myTabContent .slick-slider').slick('refresh');
   })
 
+  $('a.expandTopicCollapse span').click(function() {
+    var spanId = this.id;
+    var curr_text = $("#" + spanId).text();
+    var updatetext = ((curr_text == 'Expand to topics') ? 'Collapse topics' : 'Expand to topics');
+    $("#" + spanId).text(updatetext);
+  })
 
+  /* function handleToggleClick() {
+    this.value = (this.value == '+' ? '-' : '+');
+  }
+  document.getElementByName('expandTopicCollapse').onclick = handleToggleClick;
+ */
 
   /* getting Next Question Data */
   function show_topic(chapt_id) {
+
+    this.value = (this.value == 'Expand to topics' ? 'Collapse topics' : 'Expand to topics');
+
     var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
 
     if (topic_length == 0) {
@@ -332,6 +346,7 @@ $userData = Session::get('user_data');
         },
         success: function(result) {
           $("#topic_section_" + chapt_id + " div").remove();
+          // $("#expand_topic_" + chapt_id).text("Collapse topics");
           $("#topic_section_" + chapt_id).html(result);
           $('#myTabContent .slick-slider').slick('refresh');
           $('#overlay').fadeOut();
@@ -340,7 +355,10 @@ $userData = Session::get('user_data');
         }
       });
     } else {
+
+      $("#expand_topic_" + chapt_id).text("Expand to topics");
       $('#topic_form').toggle();
+
     }
   }
 

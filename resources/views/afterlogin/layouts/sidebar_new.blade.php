@@ -289,7 +289,7 @@
                     <path id="Path_19" data-name="Path 19" d="M12,15.75H9A.75.75,0,0,1,8.25,15V12a.75.75,0,0,1,.22-.53l8.5-8.5A2.871,2.871,0,0,1,21.03,7.03l-8.5,8.5A.75.75,0,0,1,12,15.75Zm-2.25-1.5h1.939l8.28-8.28A1.371,1.371,0,0,0,18.03,4.03l-8.28,8.28Z" />
                     <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
                 </svg>
-                Exam</a>
+                Mock Test</a>
             <a href="{{route('live_exam_list')}}" class="nav-link">
                 <svg id="Icon_Live_Exam" data-name="Icon / Live Exam" xmlns="http://www.w3.org/2000/svg" width="21.475" height="24" viewBox="0 0 21.475 24">
                     <defs>

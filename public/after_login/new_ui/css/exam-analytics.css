@@ -195,10 +195,12 @@ div#prof_scroll {
 #topicclose #topIIC .d-flex.align-items-center.mt-3.px-3 {
     padding-bottom: 5px !important;
     margin-top: 0px !important;
+    width: 99%;
 }
 
 #prof_scroll .d-flex.align-items-center.px-3 {
     padding-bottom: 0px !important;
+    width: 100%;
 }
 
 .padingTT .prgress-i-txt.px-3 {

@@ -175,9 +175,9 @@
     $(".notification-scroll").slimscroll({
         height: "70vh",
     });
-    $(".btm-form-flds").slimscroll({
-        height: "68vh",
-    });
+    /*  $(".btm-form-flds").slimscroll({
+         height: "70vh",
+     }); */
 </script>
 <script type="text/javascript">
     // $(window).on('load', function() {
@@ -606,6 +606,7 @@
         $('#search_results').hide();
         $('#search_field').keyup(function(event) {
             var val = event.target.value;
+            var active_id = `{{isset($userData->id)?$userData->id:0}}`;
 
             if (val != '') {
                 $('#leaderboard_box_div').hide();
@@ -620,17 +621,25 @@
                     },
                     success: function(response_data) {
                         let html = '';
+
                         var data = jQuery.parseJSON(response_data);
 
                         if (data.success === true) {
+
                             $.each(data.response, (ele, val) => {
+                                var active_class = '';
                                 if (val.user_profile_img) {
                                     var img_url = val.user_profile_img;
                                 } else {
                                     var img_url = "{{url('/') . '/public/after_login/images/profile.png'}}";
                                 }
 
-                                html += `<li>
+
+                                if (val.user_id == active_id) {
+                                    active_class = 'active_user';
+                                }
+
+                                html += `<li class="${active_class}">
                             <span class="profile-digit">${val.user_rank}.</span>
                             <span class="profile-img-user pt-0"><img class="leader-pic"  src="${img_url}"></span>
                             <span class="profile-text-user">
@@ -668,11 +677,11 @@
         /* search State */
         $('#select-state').on("click keyup", function(event) {
             $('#city_list').hide();
+            $('#city_remark').hide();
             var val = event.target.value;
             var country = $('#country').val();
 
-            $('#leaderboard_box_div').hide();
-            $('#search_results').show();
+
 
             $.ajax({
                 url: "{{ url('/getState',) }}",
@@ -715,8 +724,6 @@
             var state = $('#select-state').val();
 
 
-            $('#leaderboard_box_div').hide();
-            $('#search_results').show();
 
             $.ajax({
                 url: "{{ url('/getCity',) }}",
@@ -740,6 +747,7 @@
                     }
                     $('#city_list').html(html);
                     $('#city_list').show();
+                    $('#city_remark').show();
 
                 }
             });
@@ -900,6 +908,7 @@
             // Clicked in box
         } else {
             $('#city_list').hide();
+            $('#city_remark').hide();
         }
         if (document.getElementById('statebx').contains(e.target)) {
             // Clicked in box
@@ -913,6 +922,7 @@
         $('#select-state').valid();
         $('#select-city').val("");
         $('#state_list').hide();
+        editProfileCheck();
     }
 
     /* set selected city */
@@ -920,6 +930,8 @@
         $('#select-city').val(state);
         $('#select-city').valid();
         $('#city_list').hide();
+        $('#city_remark').hide();
+        editProfileCheck();
     }
 
     function selectChapter(subject_id) {
@@ -1207,6 +1219,31 @@
         });
     });
 
+    $('#editProfile_form input').keyup(function() {
+        editProfileCheck();
+    });
+
+    function editProfileCheck() {
+        var empty = false;
+
+        $('#editProfile_form input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#saveEdit').attr('disabled', 'disabled');
+            $('#saveEdit').addClass("disabled-btn");
+
+        } else {
+            $('#saveEdit').removeAttr('disabled');
+            $('#saveEdit').removeClass("disabled-btn");
+
+        }
+
+
+    }
 
     $.validator.addMethod("mobileregx", function(value, element, regexpr) {
         return regexpr.test(value);

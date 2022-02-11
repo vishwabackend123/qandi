@@ -284,9 +284,9 @@ $preSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
 $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 @endphp
 <script>
-    $(".scroll-topic-ana").slimscroll({
+    /*  $(".scroll-topic-ana").slimscroll({
         height: "42.5vh",
-    });
+    }); */
     $("#topic-open-btn").click(function() {
         $("#topicclose").hide();
         $("#topicopen").show();

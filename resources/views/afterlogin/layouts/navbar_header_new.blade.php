@@ -252,8 +252,8 @@
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode open-sub-planner" id="sub-planner">
-            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 70vh;">
-                <div class="planner-scroll" style="overflow-y: auto; overflow-x: hidden; height: 70vh;">
+            <div class="slimScrollDiv">
+                <div class="planner-scroll">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
                     <span class="invalid-feedback m-0" role="alert" id="errPlanner_alert"> </span>
 
@@ -565,6 +565,7 @@
                         @if(isset($leaderboard_list) && !empty($leaderboard_list))
                         @foreach($leaderboard_list as $lead)
                         @php
+
                         if (isset($lead->user_profile_img) && !empty($lead->user_profile_img)) {
                         $imgPath_deft = $lead->user_profile_img;
                         } else {
@@ -572,7 +573,7 @@
                         }
 
                         @endphp
-                        <li>
+                        <li class="{{($lead->user_id==$userData->id)?'active_user':''}}">
                             <span class="profile-digit">{{$lead->user_rank}}.</span>
                             <span class="profile-img-user pt-0"><img class="leader-pic" src="{{$imgPath_deft}}"></span>
                             <span class="profile-text-user">
@@ -626,8 +627,8 @@
         <!--profile-show-->
 
         <div class="edit-form">
-            <div class="edit-img">
-                <div class="p-picture">
+            <div class="edit-img mb-2">
+                <div class="p-picture ">
                     <img src="{{$imgPath}}" id="profile_image" class="profile-pic uswereditpic profileimage">
                 </div>
 
@@ -650,19 +651,21 @@
             <div class="btm-form-flds  pe-3 pb-5">
                 <form id="editProfile_form" action="{{url('/editProfile')}}" method="POST" autocomplete="off">
                     @csrf
-                    <div class="form-flds">
-                        <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
-                    </div>
-                    <div class="form-flds">
-                        <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                    <div class="d-flex f_l_name_box">
+                        <div class="form-flds">
+                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
+                        </div>
+                        <div class="form-flds">
+                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                        </div>
                     </div>
                     <div class="form-flds">
                         <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
-                        <p class="">This is your display name.</p>
+                        <p>This is your display name.</p>
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
-                        <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required onkeypress="return lettersOnly(event)">
+                        <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class=" country-code-name stu-grade" id="state_list" style="display:none">
 
@@ -670,33 +673,35 @@
                     </div>
 
                     <div class="form-flds locationN">
-                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required disabled onkeypress="return lettersOnly(event)">
+                        <input type="text" name="country" id="country" autocomplete="off" value="India" placeholder="India" required readonly onkeypress="return lettersOnly(event)">
                     </div>
 
                     <div class="form-flds flds form-group " id="citybx">
-                        <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required onkeypress="return lettersOnly(event)">
+                        <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
-
                         </div>
+                        <p id="city_remark" style="display:none;">Select the nearest city if your city is not shown in the list</p>
                     </div>
 
 
                     <div class="form-flds" style="display:none">
-                        <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787">
+                        <!-- <input type="text" name="display name" id="dname" placeholder="https://www.uniq.co.in/_userID_000987787"> -->
                         <p class="">Your User ID</p>
                     </div>
-                    <div class="form-flds">
-                        <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
-                    </div>
+                    <div class="d-flex f_l_name_box">
+                        <div class="form-flds user_email">
+                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
+                        </div>
 
-                    <div class="form-flds">
-                        <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                        <div class="form-flds user_no">
+                            <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
+                        </div>
                     </div>
                     <span class="text-danger" role="alert" id="errlog_edit"> </span>
                     <div class="form-btns">
                         <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
-                        <button type="submit" id="saveEdit" class="save-btn">save</button>
+                        <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
                     </div>
                 </form>
             </div>
