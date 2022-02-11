@@ -22,6 +22,21 @@ button {
     padding: 0 0px !important;
 }
 
+/* 11 feb 2022 - Amit-Start */
+.dash-nav-link a.mt-auto .hoverlink{white-space: nowrap;top: -21px;}
+#sharefrnd .modal-header button.btn-close:before {content: '';position: static;font-size: inherit;}
+#sharefrnd .modal-header button.btn-close img ,
+#plannerChapter .modal-header button.btn-close img {width: 32px;right: 8px;position: relative;top: -8px;}
+.log-out-screen.right-sidebar .form-btns button.save-btn,
+.subscription.right-sidebar .form-btns button.save-btn{ background-image: linear-gradient(to bottom, #21ccff, #00baff);}
+.log-out-screen.right-sidebar .form-btns button.save-btn:hover,
+.subscription.right-sidebar .form-btns button.save-btn:hover{ background: #00baff;}
+div#select-planner-chapter button#add_chapter.btn.btn-green{background-image: linear-gradient(to bottom, #21ccff, #00baff)!important;background: #21ccff;}
+div#select-planner-chapter button#add_chapter.btn.btn-green:hover{ background: #00baff!important;}
+#FullTest_Exam_Panel_Interface_A button#bt-modal-cancel.btn,
+#FullTest_Exam_Panel_Interface_A button#bt-modal-confirm.btn{font-weight: normal;}
+/* 11 feb 2022 - Amit-End */
+
 /* 9 feb 2022 - Amit-Start */
 
 .go2Planner span {

@@ -477,7 +477,9 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close" style="background:none;opacity:1;">
+                    <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}">
+                </button>
             </div>
             <div id="select-planner-chapter" class="modal-body pt-0 px-5 ">
 
