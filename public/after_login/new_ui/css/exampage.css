@@ -14,6 +14,7 @@
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
     box-shadow: none;
 }
+
 #exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item {
     margin-right: 5px;
 }
@@ -53,9 +54,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     color: #fff !important;
     box-shadow: none;
 }
+
 .examSect .rightSect button.btn.btn-light-green.w-100.rounded-0.mt-3:hover {
     background: #00baff !important;
 }
+
 .examSect .rightSect .number-block .btn:hover,
 .rightSect .number-block .btn:hover {
     border: solid 2px #00baff !important;
@@ -330,6 +333,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     height: 150px !important;
     overflow: overlay;
 }
+
 .cust-tab-content {
     padding: 0px !important;
 }
@@ -340,6 +344,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     padding: 0px 15px !important;
     padding-bottom: 20px !important;
 }
+
 .cust-tab-content .custom-btn-gray {
     border: none;
     outline: none;
@@ -353,6 +358,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     background-color: #e9e9e9;
     font-size: 16px;
 }
+
 .rightSect .slimScrollBar {
     width: 5px !important;
     opacity: 0.3 !important;
@@ -464,6 +470,7 @@ a.clearRes:hover {
     overflow-y: auto;
     padding: 5px;
 }
+
 .question-block .next-arow i {
     position: absolute;
     right: 15px;
@@ -524,6 +531,14 @@ a.clearRes:hover {
     padding: 5rem;
     position: relative;
 }
+
 .question {
     display: block !important;
 }
+
+/* Added by kanchan */
+.star-ratings-css-bottom span {
+    padding: 0 4px;
+}
+
+/* Added by kanchan */

@@ -43,6 +43,15 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover{ background: #
     opacity: 1;
 }
 
+/* Kanchan */
+.w-31 {
+    color: #fff;
+    width: 31%;
+    text-transform: uppercase;
+}
+
+/* Kanchan */
+
 /* Added by dinesh */
 button.disabled-btn,
 a.disabled-btn {
@@ -151,12 +160,6 @@ a.disabled-btn {
     text-align: left !important;
 }
 
-.active_user {
-    background: #f2f2f2;
-    padding: 10px;
-    position: static;
-    bottom: 0px;
-}
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -174,6 +177,21 @@ a.disabled-btn {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+/* leaderboard */
+#leaderboard_box_div ul li:nth-last-child(2) {
+    margin-bottom: 70px;
+}
+
+.active_user {
+    background: #f2f2f2;
+    padding: 10px;
+    position: absolute;
+    bottom: 28px;
+    width: 100%;
+    max-width: 343px;
+    padding-bottom: 0px;
 }
 
 /*end  08 Feb 2022 Sachin */
@@ -2666,7 +2684,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 155px;
+    height: 180px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
@@ -2692,6 +2710,7 @@ button.save-btn {
 /* Handle */
 .subject-scroll::-webkit-scrollbar-thumb {
     background: #00bdff;
+    border-radius: 7px;
 }
 
 /* Handle on hover */
@@ -2780,6 +2799,7 @@ button.save-btn {
 .ans-block .col-md-6.mb-4 .border {
     box-shadow: 0px 0px 1px 0px;
 }
+
 /*
 .checkboxans:checked+.ans {
     border: solid 2px #37c027 !important;
