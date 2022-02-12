@@ -249,7 +249,7 @@ class TestSeriesController extends Controller
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
                     Redis::del(Redis::keys($cacheKey));
-                    Redis::del($cacheKey);
+                    //Redis::del($cacheKey);
                 }
             }
             if ($data = Redis::get($cacheKey)) {
