@@ -170,7 +170,7 @@ class LiveExamController extends Controller
         $allQuestions = $aQuestionslist->keyBy('question_id');
         $aQuestions_list = $aQuestionslist->values()->all();
 
-        dd($allQuestions->all());
+
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
         $keys = $allQuestions->keys('question_id')->all();
 

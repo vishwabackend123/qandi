@@ -124,7 +124,7 @@ trait CommonTrait
 
     public function allCustomQlist($user_id, $question_data, $redis_set)
     {
-        dd($question_data);
+
         if (!empty($user_id) &&  !empty($question_data)) {
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
