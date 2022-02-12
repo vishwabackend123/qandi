@@ -1049,9 +1049,8 @@
         e.preventDefault();
 
         $(this).parent().parent().remove();
-
         var pln_sub_id = $(this).parent().parent().attr('id');
-        var sub_id = $(this).attr('id');
+        var subject_id = $(this).attr('value');
         if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
 
             $('#added_subject_' + subject_id).removeClass('text-light');
