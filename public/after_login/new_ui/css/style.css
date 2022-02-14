@@ -33,6 +33,15 @@ span.notification a:hover .cls-4{stroke:#000;}
 .review-qus i.fa.fa-sliders {color: #000;}
 .PayBttn:hover {background: #00baff;transition: none;}
 
+span.notification.notification-icons-active a {
+    box-shadow: 0 0 10px 0 rgba(0, 186, 255, 0.2);
+    background: #00baff;
+    border-radius: 16px;
+}
+span.notification.notification-icons-active a .cls-4 {stroke: #fff;}
+.user-name-block span.notification.ms-4 {margin-left: 10px !important;}
+
+
 /* 14 feb 2022 - Amit-End */    
     
 /* 11 feb 2022 - Amit-Start */
