@@ -55,10 +55,15 @@
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
-                            <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p> -->
-                            <!-- <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
+                         
+                            <p class="arrow-box-content fw-bold"> <span class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}% </span> of questions attempted are of comprehension skills.</p>
+
+                            <p class="arrow-box-content fw-bold">Comprehension tells you your skills of understanding a problem.</p>
+
+                            <p class="arrow-box-content fw-bold">65% is your accuracy in these questions</p>
+
+                            <p class="arrow-box-content fw-bold">Click here to see your Comprehension MyQ Matrix</p> 
+                            
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>

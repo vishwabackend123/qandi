@@ -72,11 +72,31 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover{ background: #
 }
 
 /* Kanchan */
+/* line no-21 */
+.pe-1 .star-ratings-css-top span {
+    padding: 0 2px !important;
+    font-size: 16px;
+}
+.pe-1 .star-ratings-css-bottom span {
+    padding: 0 2px !important;
+    font-size: 16px;
+}
 .w-31 {
     color: #fff;
     width: 31%;
     text-transform: uppercase;
 }
+
+.highcharts-legend-item{
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.arrow-box-content {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.star-img{margin-right: 10px;}
 
 /* Kanchan */
 
@@ -2228,7 +2248,7 @@ div#sub-planner {
 .leader-board ul li span img {
     width: 100%;
     height: 100%;
-    border: solid 2px #00c4ff;
+    border: none;
     border-radius: 50%;
 }
 
@@ -2287,7 +2307,7 @@ div#sub-planner {
 }
 
 .profile-picture-txt {
-    padding: 20px;
+    padding: 8px 20px;
 }
 
 .profile-picture-txt .p-text {
@@ -2305,7 +2325,12 @@ div#sub-planner {
 }
 
 .profile-show .profile-picture-txt h4 {
-    text-align: left;
+    color: #00baff;
+    font-weight: 600;
+	text-align: left;
+}
+.profile-section ul li svg {
+    margin-right: 10px;
 }
 
 .profile-show button {
@@ -2393,7 +2418,7 @@ div#sub-planner {
     width: 60px;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #5ebbfe;
+    border: none;
     border-radius: 50%;
     height: 60px;
 }
@@ -2501,7 +2526,7 @@ button.save-btn {
 
 .log-out-screen .p-picture {
     width: 80px;
-    border: 1px solid #5ebbfe;
+    border: none;
     border-radius: 50%;
     height: 80px;
     text-align: center;
@@ -2605,7 +2630,7 @@ button.save-btn {
 .profile-picture-txt .p-picture img {
     width: 100%;
     height: 100%;
-    border: solid 2px #00c4ff;
+    border: none;
     border-radius: 50%;
 }
 
@@ -2962,7 +2987,7 @@ button#goto-exam-btn {
 .notification-right a {
     z-index: 99;
     position: absolute;
-    top: -20px;
+    top: -12px;
     right: 30px;
     background: #fff;
     border-radius: 50%;
@@ -3077,7 +3102,7 @@ span.profile-digit {
     height: 550px;
     background: #fff;
     border-radius: 56px;
-    padding: 15px;
+    padding: 38px 15px;
     position: absolute;
     right: 220px;
     top: 0%;
@@ -5979,10 +6004,11 @@ tspan {
     transform: rotateZ(136deg);
 }
 
-.arrow-box-content {
+/*.arrow-box-content {
     font-size: 14px;
     margin-bottom: 10px;
-}
+}*/
+
 
 .inner-arrow-left-btm {
     position: absolute;
