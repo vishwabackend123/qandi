@@ -1,21 +1,20 @@
 @extends('afterlogin.layouts.app_new')
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
-</script>
-<!-- Have fun using Bootstrap JS -->
-<script type="text/javascript">
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $('#endExam').modal('show');
-    });
-</script>
 @php
 $userData = Session::get('user_data');
 @endphp
 @section('content')
+
+<!-- Have fun using Bootstrap JS -->
+<script type="text/javascript">
+    window.onload = function() {
+
+        $("#endExam").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        //$('#endExam').modal('show');
+    }
+</script>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
@@ -80,6 +79,7 @@ $userData = Session::get('user_data');
     </div>
 </div>
 @include('afterlogin.layouts.footer_new')
+
 <script>
     $(document).ready(function() {
         url1 = "{{ url('exam_result_analysis_score/') }}";

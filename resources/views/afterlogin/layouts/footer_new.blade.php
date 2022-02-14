@@ -81,6 +81,26 @@
     var messaging = firebase.messaging();
 
 
+
+    // Handle incoming messages
+    messaging.onMessage(function(payload) {
+        console.log("Payload: " + payload)
+        const notificationTitle = 'Data Message Title';
+        const notificationOptions = {
+
+            body: payload.data.body,
+            time: payload.data.time,
+        };
+        $('#recent_notify').prepend($('<div class="notification-txt">' +
+            '<span class="bell-noti"><img src="{{URL::asset(`public/after_login/new_ui/images/bell.jpg`)}}"></span>' +
+            '<span class="text-notific">' + payload.data.title + '</span>' +
+            '</div>'));
+
+        console.log(notificationOptions);
+
+        //return self.registration.showNotification(notificationTitle, notificationOptions);
+    });
+
     messaging.usePublicVapidKey('BF7HuS5x1c-2dYVum2tX1Td43VIvCLBw-IGj2c_uDWYiwilJfzvbazpQ6piLdb4YOVVivLQhfPn9Mlx59tWDz10');
 
 
@@ -146,20 +166,6 @@
                 /** If some error happens while fetching the token then handle here */
                 console.log('Error in fetching refreshed token ' + error);
             });
-    });
-
-    // Handle incoming messages
-    messaging.onMessage(function(payload) {
-        console.log("Payload: " + payload)
-        const notificationTitle = 'Data Message Title';
-        const notificationOptions = {
-            body: 'Data Message body',
-            icon: 'https://c.disquscdn.com/uploads/users/34896/2802/avatar92.jpg',
-            image: 'https://c.disquscdn.com/uploads/users/34896/2802/avatar92.jpg'
-        };
-
-        console.log(notificationOptions);
-        //return self.registration.showNotification(notificationTitle, notificationOptions);
     });
 </script>
 <script>
@@ -472,7 +478,7 @@
                         chapter_name + '</span>' +
                         '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' +
                         subject_id +
-                        ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
+                        ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
                     );
                 }
                 if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
@@ -575,7 +581,7 @@
                                     chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
                                     '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' +
                                     chapter_id + ',' + subject_id +
-                                    ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
+                                    ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
                                 );
                             }
 
@@ -1019,7 +1025,7 @@
 
         if (chapter_id != '' || chapter_id != 0) {
             $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>');
+                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>');
             $('#plannerChapter').modal('hide');
         } else {
             $('#errChptAdd_alert').html('Please select one option.');
@@ -1043,6 +1049,16 @@
         e.preventDefault();
 
         $(this).parent().parent().remove();
+        var pln_sub_id = $(this).parent().parent().attr('id');
+        var subject_id = $(this).attr('value');
+        if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
+
+            $('#added_subject_' + subject_id).removeClass('text-light');
+            $('#added_subject_' + subject_id).addClass('text-success');
+        } else {
+            $('#added_subject_' + subject_id).removeClass('text-success');
+            $('#added_subject_' + subject_id).addClass('text-light');
+        }
     });
     $('#exportAnalytics').on('shown.bs.modal', function() {
         $('#specificSizeInputGroupUsername').val("");
@@ -1437,7 +1453,7 @@
         if ($(window).scrollTop() > 5) {
 
             $(".planmner-block").css({
-                "margin-top": "0"
+                "margin-top": "-6px"
             }).css({
                 "padding-top": "0"
             })
@@ -1454,7 +1470,7 @@
         if (jQuery(window).scrollTop() > 5) {
 
             jQuery("#profileAcc").css({
-                "margin-top": "0px"
+                "margin-top": "-6px"
             }).css({
                 "padding-top": "15px"
             })
@@ -1466,4 +1482,23 @@
             })
         }
     });
+	
+    jQuery(window).scroll(function() {
+        if (jQuery(window).scrollTop() > 5) {
+
+            jQuery("div#collapseNotification").css({
+                "margin-top": "-6px"
+            }).css({
+                "padding-top": "15px"
+            })
+        } else {
+            jQuery("div#collapseNotification").css({
+                "margin-top": "100px"
+            }).css({
+                "padding-top": "0px"
+            })
+        }
+    });
+	
+	
 </script>
