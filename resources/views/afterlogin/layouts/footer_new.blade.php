@@ -1453,7 +1453,7 @@
         if ($(window).scrollTop() > 5) {
 
             $(".planmner-block").css({
-                "margin-top": "0"
+                "margin-top": "-6px"
             }).css({
                 "padding-top": "0"
             })
@@ -1470,7 +1470,7 @@
         if (jQuery(window).scrollTop() > 5) {
 
             jQuery("#profileAcc").css({
-                "margin-top": "0px"
+                "margin-top": "-6px"
             }).css({
                 "padding-top": "15px"
             })
@@ -1482,4 +1482,23 @@
             })
         }
     });
+	
+    jQuery(window).scroll(function() {
+        if (jQuery(window).scrollTop() > 5) {
+
+            jQuery("div#collapseNotification").css({
+                "margin-top": "-6px"
+            }).css({
+                "padding-top": "15px"
+            })
+        } else {
+            jQuery("div#collapseNotification").css({
+                "margin-top": "100px"
+            }).css({
+                "padding-top": "0px"
+            })
+        }
+    });
+	
+	
 </script>
