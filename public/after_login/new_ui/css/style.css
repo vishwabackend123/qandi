@@ -44,11 +44,31 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover{ background: #
 }
 
 /* Kanchan */
+/* line no-21 */
+.pe-1 .star-ratings-css-top span {
+    padding: 0 2px !important;
+    font-size: 16px;
+}
+.pe-1 .star-ratings-css-bottom span {
+    padding: 0 2px !important;
+    font-size: 16px;
+}
 .w-31 {
     color: #fff;
     width: 31%;
     text-transform: uppercase;
 }
+
+.highcharts-legend-item{
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.arrow-box-content {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.star-img{margin-right: 10px;}
 
 /* Kanchan */
 

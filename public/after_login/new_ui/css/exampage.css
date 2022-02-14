@@ -537,8 +537,8 @@ a.clearRes:hover {
 }
 
 /* Added by kanchan */
-.star-ratings-css-bottom span {
-    padding: 0 4px;
-}
+
+.star-ratings-css-bottom span{padding:0 2px;}
+.star-ratings-css-top span{padding:0 2px;}
 
 /* Added by kanchan */
