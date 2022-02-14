@@ -22,6 +22,17 @@ button {
     padding: 0 0px !important;
 }
 
+/* 14 feb 2022 - Amit-Start */
+span.notification a:hover{box-shadow:0 0 10px 0 rgba(123, 123, 123, 0.2);background:#fff;}
+span.notification a:hover .cls-4{stroke:#000;}
+.dash-sidebar .dash-nav-link a:hover .aa , .dash-sidebar .dash-nav-link a:hover .a ,
+.dash-sidebar .dash-nav-link a:hover .aaaa{  fill: #d0f3ff!important;}
+.dash-sidebar .dash-nav-link a:hover .dd , .dash-sidebar .dash-nav-link a:hover .b,
+.dash-sidebar .dash-nav-link a:hover .c , .dash-sidebar .dash-nav-link a:hover .bbbb{stroke: #00bdff !important;}
+.dash-nav-link a.mt-auto g#Group_3044{border-radius:0;}
+
+/* 14 feb 2022 - Amit-End */    
+    
 /* 11 feb 2022 - Amit-Start */
 .dash-nav-link a.mt-auto .hoverlink{white-space: nowrap;top: -21px;}
 #sharefrnd .modal-header button.btn-close:before {content: '';position: static;font-size: inherit;}
