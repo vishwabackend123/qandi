@@ -5995,10 +5995,11 @@ tspan {
     transform: rotateZ(136deg);
 }
 
-.arrow-box-content {
+/*.arrow-box-content {
     font-size: 14px;
     margin-bottom: 10px;
-}
+}*/
+
 
 .inner-arrow-left-btm {
     position: absolute;
