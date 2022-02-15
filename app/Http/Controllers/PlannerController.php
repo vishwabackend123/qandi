@@ -384,6 +384,7 @@ class PlannerController extends Controller
         $inputjson['exam_over'] = "";
         $inputjson['questions_list'] = [];
         $inputjson['answerList'] = [];
+        $inputjson['planner_id'] = $planner_id;
 
         $request = json_encode($inputjson);
 
@@ -411,6 +412,7 @@ class PlannerController extends Controller
             ),
         ));
         $response_json = curl_exec($curl);
+
 
         $response_json = str_replace('NaN', '""', $response_json);
 
@@ -458,9 +460,11 @@ class PlannerController extends Controller
 
 
         $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set);
+
         $keys = array_keys($allQuestionDetails);
 
         $question_data = (object)current($allQuestionDetails);
+        // dd($question_data);
 
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
         $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
