@@ -358,6 +358,7 @@ class PlannerController extends Controller
 
     public function plannerAdaptiveExam($planner_id = null, Request $request)
     {
+
         $filtered_subject = [];
 
         $userData = Session::get('user_data');
@@ -384,6 +385,7 @@ class PlannerController extends Controller
         $inputjson['exam_over'] = "";
         $inputjson['questions_list'] = [];
         $inputjson['answerList'] = [];
+        $inputjson['planner_id'] = $planner_id;
 
         $request = json_encode($inputjson);
 
@@ -412,6 +414,7 @@ class PlannerController extends Controller
         ));
         $response_json = curl_exec($curl);
 
+
         $response_json = str_replace('NaN', '""', $response_json);
 
         $err = curl_error($curl);
@@ -419,6 +422,7 @@ class PlannerController extends Controller
         curl_close($curl);
 
         $responsedata = json_decode($response_json);
+
         $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
         $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
         $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
@@ -429,6 +433,7 @@ class PlannerController extends Controller
                 $exam_fulltime = $responsedata->time_allowed;
                 $questions_count = count($aQuestionslist);
             } else {
+
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } else {
@@ -458,9 +463,11 @@ class PlannerController extends Controller
 
 
         $allQuestionDetails = $this->adaptiveCustomQlist($user_id, $aQuestionslist, $redis_set);
+
         $keys = array_keys($allQuestionDetails);
 
         $question_data = (object)current($allQuestionDetails);
+        // dd($question_data);
 
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
         $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
