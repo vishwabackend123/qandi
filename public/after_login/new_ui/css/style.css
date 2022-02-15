@@ -32,7 +32,9 @@ span.notification a:hover .cls-4{stroke:#000;}
 .dash-nav-link a.mt-auto g#Group_3044{border-radius:0;}
 .review-qus i.fa.fa-sliders {color: #000;}
 .PayBttn:hover {background: #00baff;transition: none;}
-
+/* 14 feb 2022 - Amit-End */    
+    
+/* 15 feb 2022 - Amit-Start */
 span.notification.notification-icons-active a {
     box-shadow: 0 0 10px 0 rgba(0, 186, 255, 0.2);
     background: #00baff;
@@ -40,10 +42,8 @@ span.notification.notification-icons-active a {
 }
 span.notification.notification-icons-active a .cls-4 {stroke: #fff;}
 .user-name-block span.notification.ms-4 {margin-left: 10px !important;}
+/* 15 feb 2022 - Amit-End */ 
 
-
-/* 14 feb 2022 - Amit-End */    
-    
 /* 11 feb 2022 - Amit-Start */
 .dash-nav-link a.mt-auto .hoverlink{white-space: nowrap;top: -21px;}
 #sharefrnd .modal-header button.btn-close:before {content: '';position: static;font-size: inherit;}

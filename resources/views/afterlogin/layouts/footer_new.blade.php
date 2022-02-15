@@ -1489,6 +1489,8 @@
             $(this).siblings().removeClass("notification-icons-active"); 
         } 
     });
+    
+
     jQuery(window).scroll(function() {
         if (jQuery(window).scrollTop() > 5) {
 
