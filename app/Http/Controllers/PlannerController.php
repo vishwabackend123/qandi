@@ -358,6 +358,7 @@ class PlannerController extends Controller
 
     public function plannerAdaptiveExam($planner_id = null, Request $request)
     {
+
         $filtered_subject = [];
 
         $userData = Session::get('user_data');
@@ -421,6 +422,7 @@ class PlannerController extends Controller
         curl_close($curl);
 
         $responsedata = json_decode($response_json);
+
         $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
         $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
         $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
@@ -431,6 +433,7 @@ class PlannerController extends Controller
                 $exam_fulltime = $responsedata->time_allowed;
                 $questions_count = count($aQuestionslist);
             } else {
+
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } else {
