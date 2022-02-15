@@ -164,6 +164,7 @@ $userData = Session::get('user_data');
                                     <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
                                     <input type="hidden" name="chapter_id" value="{{$val->chapter_id}}">
                                     <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
+
                                     <button type="submit" class="btn btn-primary active-btn text-uppercase">
                                         <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
 
@@ -172,6 +173,7 @@ $userData = Session::get('user_data');
                                     </a> -->
                                 </form>
                             </div>
+
                         </div>
                         @elseif($val->test_completed_yn=="Y")
                         <div class="swiper-slide bg-white testcompltd">
@@ -186,6 +188,8 @@ $userData = Session::get('user_data');
                         @endforeach
                         @endif
                     </div>
+
+
                 </div>
                 <!--swiper mySwiper-->
 
@@ -512,23 +516,6 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
         $('.js-average').text((average / $('.rating').length).toFixed(3))
     }
-
-    $('.slick-slider').slick({
-        slidesToScroll: 1,
-        dots: false,
-        centerMode: false,
-        focusOnSelect: false,
-        infinite: true,
-        slidesToShow: 2,
-        variableWidth: false,
-        prevArrow: false,
-        nextArrow: false
-    });
-
-    $('.slbs-link a').click(function() {
-
-        $('.slick-slider').slick('refresh');
-    })
 </script>
 
 <!-- Initialize Swiper -->
@@ -537,18 +524,22 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         slidesPerView: 3,
         spaceBetween: 30,
         freeMode: true,
+        slideToClickedSlide: false,
+        focusableElements: false,
         pagination: {
             el: ".swiper-pagination",
-            clickable: true,
+            clickable: false,
+
         },
         breakpoints: {
             1920: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+
             },
             1028: { // this is all desktop view of my laptop
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
             },
             300: {
                 slidesPerView: 1,
