@@ -28,6 +28,9 @@ form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
     /* color: red; */
     margin-top: -18px !important;
 }
+div#marKs-trends .bg-white p {
+    height: 50px;
+}
 
 /* 14 feb 2022 - Amit-Start */
 span.notification a:hover {
