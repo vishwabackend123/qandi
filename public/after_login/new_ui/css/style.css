@@ -22,6 +22,28 @@ button {
     padding: 0 0px !important;
 }
 
+/* 14 feb 2022 - Amit-Start */
+span.notification a:hover{box-shadow:0 0 10px 0 rgba(123, 123, 123, 0.2);background:#fff;}
+span.notification a:hover .cls-4{stroke:#000;}
+.dash-sidebar .dash-nav-link a:hover .aa , .dash-sidebar .dash-nav-link a:hover .a ,
+.dash-sidebar .dash-nav-link a:hover .aaaa{  fill: #d0f3ff!important;}
+.dash-sidebar .dash-nav-link a:hover .dd , .dash-sidebar .dash-nav-link a:hover .b,
+.dash-sidebar .dash-nav-link a:hover .c , .dash-sidebar .dash-nav-link a:hover .bbbb{stroke: #00bdff !important;}
+.dash-nav-link a.mt-auto g#Group_3044{border-radius:0;}
+.review-qus i.fa.fa-sliders {color: #000;}
+.PayBttn:hover {background: #00baff;transition: none;}
+
+span.notification.notification-icons-active a {
+    box-shadow: 0 0 10px 0 rgba(0, 186, 255, 0.2);
+    background: #00baff;
+    border-radius: 16px;
+}
+span.notification.notification-icons-active a .cls-4 {stroke: #fff;}
+.user-name-block span.notification.ms-4 {margin-left: 10px !important;}
+
+
+/* 14 feb 2022 - Amit-End */    
+    
 /* 11 feb 2022 - Amit-Start */
 .dash-nav-link a.mt-auto .hoverlink{white-space: nowrap;top: -21px;}
 #sharefrnd .modal-header button.btn-close:before {content: '';position: static;font-size: inherit;}
@@ -50,11 +72,31 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover{ background: #
 }
 
 /* Kanchan */
+/* line no-21 */
+.pe-1 .star-ratings-css-top span {
+    padding: 0 2px !important;
+    font-size: 16px;
+}
+.pe-1 .star-ratings-css-bottom span {
+    padding: 0 2px !important;
+    font-size: 16px;
+}
 .w-31 {
     color: #fff;
     width: 31%;
     text-transform: uppercase;
 }
+
+.highcharts-legend-item{
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.arrow-box-content {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.star-img{margin-right: 10px;}
 
 /* Kanchan */
 
@@ -2206,7 +2248,7 @@ div#sub-planner {
 .leader-board ul li span img {
     width: 100%;
     height: 100%;
-    border: solid 2px #00c4ff;
+    border: none;
     border-radius: 50%;
 }
 
@@ -2265,7 +2307,7 @@ div#sub-planner {
 }
 
 .profile-picture-txt {
-    padding: 20px;
+    padding: 8px 20px;
 }
 
 .profile-picture-txt .p-text {
@@ -2283,7 +2325,12 @@ div#sub-planner {
 }
 
 .profile-show .profile-picture-txt h4 {
-    text-align: left;
+    color: #00baff;
+    font-weight: 600;
+	text-align: left;
+}
+.profile-section ul li svg {
+    margin-right: 10px;
 }
 
 .profile-show button {
@@ -2371,7 +2418,7 @@ div#sub-planner {
     width: 60px;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #5ebbfe;
+    border: none;
     border-radius: 50%;
     height: 60px;
 }
@@ -2479,7 +2526,7 @@ button.save-btn {
 
 .log-out-screen .p-picture {
     width: 80px;
-    border: 1px solid #5ebbfe;
+    border: none;
     border-radius: 50%;
     height: 80px;
     text-align: center;
@@ -2583,7 +2630,7 @@ button.save-btn {
 .profile-picture-txt .p-picture img {
     width: 100%;
     height: 100%;
-    border: solid 2px #00c4ff;
+    border: none;
     border-radius: 50%;
 }
 
@@ -2940,7 +2987,7 @@ button#goto-exam-btn {
 .notification-right a {
     z-index: 99;
     position: absolute;
-    top: -20px;
+    top: -12px;
     right: 30px;
     background: #fff;
     border-radius: 50%;
@@ -3055,7 +3102,7 @@ span.profile-digit {
     height: 550px;
     background: #fff;
     border-radius: 56px;
-    padding: 15px;
+    padding: 38px 15px;
     position: absolute;
     right: 220px;
     top: 0%;
@@ -5957,10 +6004,11 @@ tspan {
     transform: rotateZ(136deg);
 }
 
-.arrow-box-content {
+/*.arrow-box-content {
     font-size: 14px;
     margin-bottom: 10px;
-}
+}*/
+
 
 .inner-arrow-left-btm {
     position: absolute;

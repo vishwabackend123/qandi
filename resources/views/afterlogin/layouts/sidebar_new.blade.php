@@ -246,7 +246,7 @@
                     </style>
                 </defs>
                 <g id="Group_3044" data-name="Group 3044" transform="translate(9 6)">
-                    <rect id="Rectangle_3408" class="aaaa" data-name="Rectangle 3408" width="48" height="48" opacity="1" />
+                    <rect id="Rectangle_3408" class="aaaa" data-name="Rectangle 3408" width="48" height="48" opacity="1" rx="8" />
                     <path id="Path_2326" data-name="Path 2326" d="M0,0H30V30H0Z" fill="none" transform="translate(10 10)" />
                     <g id="Group_3043" data-name="Group 3043" transform="translate(10 10)">
                         <circle id="Ellipse_716" class="bbbb" data-name="Ellipse 716" cx="10.167" cy="7.167" r="5.167" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
@@ -401,3 +401,4 @@
         </div>
     </div>
 </div>
+
