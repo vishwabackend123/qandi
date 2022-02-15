@@ -511,16 +511,7 @@ a.clearRes:hover {
     background: #d0f3ff;
 }
 
-.question-block i.fa {
-    box-shadow: 0px 2px 5px 0px #a1def6;
-    border-radius: 50%;
-    background: #fff;
-    width: 20px;
-    height: 20px;
-    padding-left: 5px;
-    padding-top: 2px;
-    color: #221f20;
-}
+
 
 
 .question-block label.question p {
@@ -540,5 +531,16 @@ a.clearRes:hover {
 
 .star-ratings-css-bottom span{padding:0 2px;}
 .star-ratings-css-top span{padding:0 2px;}
+
+.question-block i.fa {
+    border-radius: 50%;
+    background: #fff;
+    width: 36px;
+    height: 36px;
+    color: #221f20;
+    text-align: center;
+    line-height: 36px;
+    box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
+}
 
 /* Added by kanchan */
