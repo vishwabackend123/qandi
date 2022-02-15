@@ -199,19 +199,26 @@ a.disabled-btn {
 }
 
 /* leaderboard */
-#leaderboard_box_div ul li:nth-last-child(2) {
-    margin-bottom: 70px;
-}
+ 
+
+#leaderboard_box_div ul li:last-child {
+    margin-bottom: 50px;
+  }
 
 .active_user {
-   background: #f2f2f2;
-    padding: 10px;
+    background: #f2f2f2;
+    padding: 10px 0px;
     position: absolute;
     bottom: 28px;
-    width: 93%;
-    max-width: 285px;
+    width: -webkit-fill-available;
+    max-width: 290px;
     padding-bottom: 0px;
     z-index: 9;
+}
+.active_user .profile-digit{
+    color: #00c4ff;
+    font-weight: 600;
+   
 }
 
 /*end  08 Feb 2022 Sachin */
@@ -1202,6 +1209,18 @@ button#saveEdit {
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
     background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
     width: 252px;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+
+
+}
+
+.refer_frd img{
+    margin-right: 10px;
 }
 
 #sharefrnd input {
@@ -2219,7 +2238,7 @@ div#sub-planner {
 .leader-board ul li span img {
     width: 100%;
     height: 100%;
-    border: solid 2px #00c4ff;
+    /* border: solid 2px #00c4ff; */
     border-radius: 50%;
 }
 
@@ -2849,8 +2868,9 @@ button.save-btn {
     width: 25px;
     height: 25px;
     padding-left: 6px;
-    font-size: 15px;
+    /* font-size: 15px; */
     color: #fff;
+
 }
 
 .checkboxans:checked+.correctAnswer {
@@ -3134,6 +3154,8 @@ span.profile-digit {
     font-size: 20px;
     color: #2c3348;
     margin-right: 20px;
+    width: 30px;
+    text-align: right;
 }
 
 span.profile-img-user {
@@ -4799,6 +4821,7 @@ label.question.m-0.py-3.d-block .MathJax {
     left: 0px;
     color: #2c3348;
     font-size: 18px;
+    padding-left: 5px;
 }
 
 .ans {
@@ -5949,6 +5972,8 @@ tspan {
 .box-block:hover:after,
 .box-block:hover span {
     color: #d10020;
+    opacity: 1;
+    font-weight: 600;
 }
 
 .arrow-right-btm-content {
@@ -5969,6 +5994,12 @@ tspan {
     color: #fa9599;
     transform: rotateZ(136deg);
 }
+.box-block:after, .box-block span {
+    color: #00bdff !important;
+    opacity: .5;
+}
+
+
 
 .arrow-box-content {
     font-size: 14px;
@@ -5989,7 +6020,7 @@ tspan {
     right: 2px;
     top: -16px;
     font-size: 40px;
-    color: #fa9599;
+    color: #00bdff;
     transform: rotateZ(45deg);
 }
 
