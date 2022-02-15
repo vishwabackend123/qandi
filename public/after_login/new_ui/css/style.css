@@ -904,9 +904,11 @@ p.text-end.text-danger.mt-1 {
     color: #e9e9e9 !important;
 }
 
+ 
+
 #scorecontainer,
 .seeAnico {
-    padding-top: 15px !important;
+    /* padding-top: 15px !important; */
 }
 
 button.arrow.prev-arow {
@@ -1023,10 +1025,12 @@ circle.g {
 
 body#main-body .seeAnico span img {
     width: 101px;
+    padding-top: 10px;
+
 }
 
 .seeAnico .button-sec.mt-3 {
-    margin-top: 10px !important;
+    margin-top: 22px !important;
 }
 
 .form-btns button#saveEdit {
@@ -3571,6 +3575,7 @@ p.tab-title {
 
 .live-test {
     padding-left: 5px;
+    padding-top: 7px;
 }
 
 .live-test li {
