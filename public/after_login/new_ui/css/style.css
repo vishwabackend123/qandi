@@ -21,6 +21,10 @@ button {
 .pe-1 .star-ratings-css-bottom span {
     padding: 0 0px !important;
 }
+form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
+    /* color: red; */
+    margin-top: -18px !important;
+}
 
 /* 14 feb 2022 - Amit-Start */
 span.notification a:hover{box-shadow:0 0 10px 0 rgba(123, 123, 123, 0.2);background:#fff;}
@@ -2278,7 +2282,7 @@ div#sub-planner {
 }
 
 .profile-picture-txt {
-    padding: 8px 20px;
+    padding: 23px 20px;
 }
 
 .profile-picture-txt .p-text {
