@@ -386,8 +386,8 @@
                         <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
                         <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-danger rounded-0 px-5"><i class="fa fa-user-plus" aria-hidden="true"></i> SEND
+                    <div class="text-center refer_frd">
+                        <button type="submit" class="btn btn-danger rounded-0 px-5"><img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" /> SEND
                             INVITE</button>
                     </div>
                     <!--  <p class="py-4 text-center">or Share via Link</p>
@@ -401,3 +401,4 @@
         </div>
     </div>
 </div>
+

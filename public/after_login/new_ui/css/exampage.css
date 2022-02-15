@@ -191,18 +191,21 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     background: transparent;
 }
 
+/********************SACHIN_14_02_22_Start*************/
+
 .examSect .checkboxans:checked+.ans span.q-no {
     background: #37c027;
     border-radius: 50px;
     width: 25px;
     height: 25px;
-    padding-left: 7px;
-    font-size: 15px;
+    /* padding-left: 7px; */
+    /* font-size: 15px; */
     color: #fff;
     line-height: 23px;
-    margin-top: -5px;
-}
+    /* margin-top: -5px; */
 
+}
+/********************SACHIN_14_02_22_end*************/
 .examSect {
     padding: 28px 45px;
 }
