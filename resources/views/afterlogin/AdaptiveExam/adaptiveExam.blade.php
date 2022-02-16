@@ -486,7 +486,7 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
+        /* document.oncontextmenu = function() {
             return false;
         };
 
@@ -496,7 +496,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        });
+        }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
