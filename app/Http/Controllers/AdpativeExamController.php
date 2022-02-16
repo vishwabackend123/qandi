@@ -113,7 +113,7 @@ class AdpativeExamController extends Controller
         $aQuestions_list = $aQuestionslist->values()->all();
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
-        dd($allQuestionDetails);
+
         $keys = $allQuestions->keys('question_id')->all();
 
 
