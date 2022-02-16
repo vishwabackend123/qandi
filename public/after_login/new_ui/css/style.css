@@ -4973,10 +4973,14 @@ header {
     padding-bottom: 12px !important;
     line-height: 20px;
     overflow: hidden;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 /**End_Sachin_25_01_22*******/
+
+#review_rques_blk .question{
+    font-weight: initial;
+}
 
 
 label.question.m-0.py-3.d-block .MathJax {
