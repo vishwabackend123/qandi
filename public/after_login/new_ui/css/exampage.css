@@ -191,9 +191,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     background: transparent;
 }
 
+ /****SACHIN****/
 /********************SACHIN_14_02_22_Start*************/
 
 .examSect .checkboxans:checked+.ans span.q-no {
+    padding-top: 1px;
     background: #37c027;
     border-radius: 50px;
     width: 25px;
@@ -203,6 +205,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     color: #fff;
     line-height: 23px;
     /* margin-top: -5px; */
+    padding-left: 6px;
 
 }
 /********************SACHIN_14_02_22_end*************/
@@ -516,10 +519,12 @@ a.clearRes:hover {
 
 
 
-
+/**********************hide_by_sachin************/
 .question-block label.question p {
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
 }
+
+/**********************hide_by_sachin************/
 .question-block {
     padding: 5rem;
     position: relative;

@@ -3026,6 +3026,7 @@ button.save-btn {
     width: 25px;
     height: 25px;
     padding-left: 6px;
+    padding-top: 2px;
     /* font-size: 15px; */
     color: #fff;
 
@@ -3057,6 +3058,7 @@ button.save-btn {
     width: 25px;
     height: 25px;
     padding-left: 6px;
+    padding-top: 2px;
     /* font-size: 15px; */
     color: #fff;
 }
@@ -4928,6 +4930,8 @@ header {
     font-weight: 600;
 }
 
+
+ /****SACHIN****/
 .watch-icon {
     position: absolute;
     font-size: 20px;
