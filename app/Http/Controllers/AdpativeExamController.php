@@ -176,12 +176,12 @@ class AdpativeExamController extends Controller
 
     public function adaptive_next_question($quest_id, Request $request)
     {
-
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
+
         $cacheKey = 'CustomQuestion:all:' . $user_id;
+        dd($cacheKey, $userData);
         $redis_result = Redis::get($cacheKey);
         if (isset($redis_result) && !empty($redis_result)) :
             $response = json_decode($redis_result);
