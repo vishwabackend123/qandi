@@ -503,6 +503,8 @@ p.fs-5.profileN img {
 .exam-analytics .bg-white.shadow.p-3 {
     border-radius: 56px;
     padding: 22px !important;
+    padding-left: 33px !important;
+
 }
 
 .exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
