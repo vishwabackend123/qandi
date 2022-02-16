@@ -186,7 +186,7 @@ class AdpativeExamController extends Controller
         if (isset($redis_result) && !empty($redis_result)) :
             $response = json_decode($redis_result);
         endif;
-        dd($redis_result, $response);
+        dd($redis_result);
 
         $allQuestions = isset($response) ? $response : []; // redis response as object
         $allQuestionsArr = (array)$allQuestions; //object convert to array
