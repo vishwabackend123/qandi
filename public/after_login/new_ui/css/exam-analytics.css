@@ -71,12 +71,14 @@ div#topicclose,
 .padingTT {
     padding-top: 30px;
 }
-
+/********************Added-by-sachin************/
 #myTabContent .bg-light-success {
     background: #37c027;
     border-radius: 15px;
+    padding-left: 5%;
+    
 }
-
+/********************Added-by-sachin************/
 #myTabContent .prog-box.green,
 #myTabContent .prog-box.red,
 #myTabContent .prog-box.secondary {
@@ -119,11 +121,13 @@ div#topicclose,
     background: #00bdff;
 }
 
-
+/********************Added-by-sachin***margin*********/
 #myTabContent .bg-light-red {
     background: #ee6a5f;
     border-radius: 15px;
+    padding-left: 5%;
 }
+/********************Added-by-sachin************/
 
 #myTabContent .arrow:hover {
     background: transparent !important;
