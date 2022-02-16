@@ -6162,7 +6162,8 @@ tspan {
     bottom: -16px;
     font-size: 40px;
     color: #00bdff;
-    transform: rotateZ(136deg);
+    /* transform: rotateZ(136deg); */
+    transform: rotateZ(-46deg);
 }
 
 .box-block:after,
@@ -6185,7 +6186,8 @@ tspan {
     bottom: -16px;
     font-size: 40px;
     color: #00bdff;
-    transform: rotateZ(230deg);
+   /* transform: rotateZ(230deg);*/
+   transform: rotateZ(407deg);
 }
 
 .inner-arrow-right-top {
@@ -6194,7 +6196,8 @@ tspan {
     top: -16px;
     font-size: 40px;
     color: #00bdff;
-    transform: rotateZ(45deg);
+   /* transform: rotateZ(45deg);*/
+    transform: rotateZ(225deg)
 }
 
 .inner-arrow-left-top {
