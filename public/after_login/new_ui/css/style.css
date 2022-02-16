@@ -32,6 +32,10 @@ div#marKs-trends .bg-white p {
     height: 50px;
 }
 
+/* 15 feb 2022 - Amit-Start */
+.dash-sidebar .dash-nav-link a .b , .dash-sidebar .dash-nav-link a .c{stroke: #00bdff;}
+/* 15 feb 2022 - Amit-End */
+
 /* 14 feb 2022 - Amit-Start */
 span.notification a:hover {
     box-shadow: 0 0 10px 0 rgba(123, 123, 123, 0.2);

@@ -1489,6 +1489,12 @@
             $(this).siblings().removeClass("notification-icons-active"); 
         } 
     });
+    $(".dash-nav-link a").click(function(){
+        if(!$(this).hasClass("active-navlink")){
+            $(this).addClass("active-navlink");
+            $(this).siblings().removeClass("active-navlink");
+        }
+    });
     
 
     jQuery(window).scroll(function() {
