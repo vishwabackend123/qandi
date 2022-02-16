@@ -191,6 +191,7 @@ class AdpativeExamController extends Controller
         $allQuestions = isset($response) ? $response : []; // redis response as object
         $allQuestionsArr = (array)$allQuestions; //object convert to array
 
+        dd($allQuestions);
         $allkeys = array_keys((array)$allQuestions); //Array of all keys
 
         $question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data

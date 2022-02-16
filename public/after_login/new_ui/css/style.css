@@ -31,6 +31,20 @@ form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
 div#marKs-trends .bg-white p {
     height: 50px;
 }
+.cust-tabs li:first-child a {
+    border-top-left-radius: 20px !important;
+}
+#myTabContent .slimScrollDiv {
+    height: 320px !important;
+}
+#myTabContent button i {
+    margin-right: 10px;
+}
+
+.go2Planner button.custom-btn-gray.mt-4 {
+    margin-top: 0px !important;
+}
+
 
 /* 15 feb 2022 - Amit-Start */
 .dash-sidebar .dash-nav-link a .b , .dash-sidebar .dash-nav-link a .c{stroke: #00bdff;}
@@ -1664,12 +1678,12 @@ span.notification.ms-4 {
     box-shadow: none !important;
     border-top-right-radius: 56px;
     border: none;
-    padding-left: 80px !important;
+    padding-left: 24px !important;
 
 }
 
 .cust-tabs .nav-link {
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .tab-wrapper {
@@ -1685,7 +1699,7 @@ span.notification.ms-4 {
     border-top-right-radius: 56px;
     border: none;
     padding-left: 75px;
-    height: 80px;
+    height: 65px;
 }
 
 .cust-tabs .nav-link.active {
@@ -1693,7 +1707,7 @@ span.notification.ms-4 {
     background-color: #fff;
     border-color: transparent;
     border-radius: 0;
-    height: 85px;
+    height: 65px;
 }
 
 .cust-tabs .nav-link.active:before {
@@ -1711,18 +1725,18 @@ span.notification.ms-4 {
     width: 70px;
     background: url(/public/after_login/new_ui/images/before-img.png);
     transition: all 250ms ease;
-    height: 81px;
+    height: 65px;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
     /* border-top: 1px solid transparent;*/
 }
 
 .cust-tabs #Mathematics-tab.active:nth-child(1):after {
-    left: -80px;
-    width: 80px;
+    left: -25px;
+    width: 40px;
     background: none;
     background-color: #fff;
-    border-top-left-radius: 56px;
+    border-top-left-radius: 100%;
 }
 
 .cust-tabs .nav-link.active:after {
@@ -1743,7 +1757,7 @@ span.notification.ms-4 {
     bottom: -1px;
     /* border-right: 1px solid transparent; */
     /* border-top: 1px solid transparent; */
-    height: 81px;
+    height: 65px;
 }
 
 /** end here on 16-12-2021 night css added by Rahul**/
@@ -3432,7 +3446,7 @@ p.tab-title {
     border: none;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     width: 276px;
-    height: 60px;
+    height: 50px;
     border-radius: 20px !important;
     background-image: linear-gradient(to bottom, #21ccff, #21ccff);
     font-size: 16px;
@@ -3878,7 +3892,7 @@ p.success-img {
     background-image: linear-gradient(to bottom, #21ccff, #21ccff);
     border: none;
     border-radius: 20px;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .sign-btn button img {
@@ -4537,7 +4551,7 @@ header {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 400;
-    color: #515151;
+    color: #515151; height:65px;
 }
 
 .cust-tabs .nav-link:focus,
@@ -4916,6 +4930,8 @@ header {
     font-weight: 600;
 }
 
+
+ /****SACHIN****/
 .watch-icon {
     position: absolute;
     font-size: 20px;
