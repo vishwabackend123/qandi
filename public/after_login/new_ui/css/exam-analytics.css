@@ -58,7 +58,7 @@ div#f-Numbr-sectin h4.fw-bold {
  }
 
  /*************************Added_by-sachin_*************/
-
+ /****SACHIN****/
 
 #arrow-left-btm .inner-arrow-left-btm {
     left: 14px !important;
@@ -85,7 +85,7 @@ div#topicclose,
 #myTabContent .bg-light-success {
     background: #37c027;
     border-radius: 15px;
-    padding-left: 5%;
+    padding-left: 3%;
     
 }
 /********************Added-by-sachin************/
@@ -503,6 +503,8 @@ p.fs-5.profileN img {
 .exam-analytics .bg-white.shadow.p-3 {
     border-radius: 56px;
     padding: 22px !important;
+    padding-left: 33px !important;
+
 }
 
 .exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {

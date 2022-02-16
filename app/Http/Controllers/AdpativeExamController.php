@@ -113,6 +113,7 @@ class AdpativeExamController extends Controller
         $aQuestions_list = $aQuestionslist->values()->all();
 
         $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
+
         $keys = $allQuestions->keys('question_id')->all();
 
 
@@ -176,20 +177,21 @@ class AdpativeExamController extends Controller
 
     public function adaptive_next_question($quest_id, Request $request)
     {
-
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
-        $cacheKey = 'CustomQuestion:all:' . $user_id;
-        $redis_result = Redis::get($cacheKey);
 
+        $cacheKey = 'CustomQuestion:all:' . $user_id;
+
+        $redis_result = Redis::get($cacheKey);
         if (isset($redis_result) && !empty($redis_result)) :
             $response = json_decode($redis_result);
         endif;
 
+
         $allQuestions = isset($response) ? $response : []; // redis response as object
         $allQuestionsArr = (array)$allQuestions; //object convert to array
+
 
         $allkeys = array_keys((array)$allQuestions); //Array of all keys
 
