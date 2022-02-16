@@ -50,6 +50,16 @@ div#f-Numbr-sectin h4.fw-bold {
     padding-top: 20px;
 }
 
+/*************************Added_by-sachin*************/
+#f-Numbr-sectin .arrow-box-content span.text-danger{
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+ }
+
+ /*************************Added_by-sachin_*************/
+
+
 #arrow-left-btm .inner-arrow-left-btm {
     left: 14px !important;
     bottom: 0px !important;
