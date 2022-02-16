@@ -1,3 +1,11 @@
+@media(min-width:1316px) and (max-width:1440px) {
+    .pe-1 .star-ratings-css-bottom span {
+       
+        font-size: 13px;
+    }
+}
+
+
 @media(min-width:1281px) and (max-width:1320px) {
     .bg-white.shadow-lg.py-5.px-3 {
         padding-left: 5px !important;
@@ -126,6 +134,11 @@
     .cust-tabs .nav-link {
         font-size: 15px;
         padding: 18px 11px;
+    }
+
+    .pe-1 .star-ratings-css-bottom span {
+        padding: 0 2px !important;
+        font-size: 13px;
     }
 
 }

@@ -3012,6 +3012,7 @@ button.save-btn {
     width: 25px;
     height: 25px;
     padding-left: 6px;
+    padding-top: 2px;
     /* font-size: 15px; */
     color: #fff;
 
@@ -3043,6 +3044,7 @@ button.save-btn {
     width: 25px;
     height: 25px;
     padding-left: 6px;
+    padding-top: 2px;
     /* font-size: 15px; */
     color: #fff;
 }
