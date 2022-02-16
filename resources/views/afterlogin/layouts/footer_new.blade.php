@@ -1483,12 +1483,20 @@
         }
     });
 
-    $(".user-name-block span.notification").click(function() {
-        if (!$(this).hasClass("notification-icons-active")) {
+    $(".user-name-block span.notification").click(function(){
+        if(!$(this).hasClass("notification-icons-active")){
             $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active");
+            $(this).siblings().removeClass("notification-icons-active"); 
+        } 
+    });
+    $(".dash-nav-link a").click(function(){
+        if(!$(this).hasClass("active-navlink")){
+            $(this).addClass("active-navlink");
+            $(this).siblings().removeClass("active-navlink");
         }
     });
+    
+
     jQuery(window).scroll(function() {
         if (jQuery(window).scrollTop() > 5) {
 
@@ -1505,4 +1513,6 @@
             })
         }
     });
+	
+	
 </script>

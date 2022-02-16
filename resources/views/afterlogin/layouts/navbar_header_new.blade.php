@@ -204,6 +204,7 @@
                             </svg>
 
                         </a></span>
+                    
                     <span class="notification ms-4 analytics-icon"><a draggable="false" href="{{route('overall_analytics')}}" title="Analytics">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
