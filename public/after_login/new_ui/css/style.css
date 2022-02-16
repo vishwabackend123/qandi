@@ -28,6 +28,9 @@ form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
     /* color: red; */
     margin-top: -18px !important;
 }
+div#marKs-trends .bg-white p {
+    height: 50px;
+}
 
 /* 14 feb 2022 - Amit-Start */
 span.notification a:hover {
@@ -61,8 +64,8 @@ span.notification a:hover .cls-4 {
 }
 
 .PayBttn:hover {
-    background: #00baff;
-    transition: none;
+        background: #00baff;
+        transition: none;
 }
 
 span.notification.notification-icons-active a {
@@ -3036,7 +3039,7 @@ button.save-btn {
     width: 25px;
     height: 25px;
     padding-left: 6px;
-    font-size: 15px;
+    /* font-size: 15px; */
     color: #fff;
 }
 
@@ -3309,7 +3312,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 400px;
+    height: 375px;
     margin-top: 20px;
     overflow-y: auto;
 }
@@ -4210,7 +4213,7 @@ p.success-img {
 }
 
 .aaa:hover {
-    fill: #000;
+    fill: #000000;
 
 }
 
@@ -5808,7 +5811,7 @@ tspan {
     color: #000000;
     padding: 10px;
     display: block;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     transition: border 0.3s ease;
 }
 
@@ -6129,7 +6132,7 @@ tspan {
     right: 2px;
     bottom: -16px;
     font-size: 40px;
-    color: #fa9599;
+    color: #00bdff;
     transform: rotateZ(136deg);
 }
 
@@ -6152,7 +6155,7 @@ tspan {
     left: 2px;
     bottom: -16px;
     font-size: 40px;
-    color: #fa9599;
+    color: #00bdff;
     transform: rotateZ(230deg);
 }
 
@@ -6170,7 +6173,7 @@ tspan {
     left: 2px;
     top: -16px;
     font-size: 40px;
-    color: #fa9599;
+    color: #00bdff;
     transform: rotateZ(315deg);
 }
 

@@ -103,10 +103,8 @@
                 </div>
             </div>
         </div>
-
-
-    </div>
-    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
+	</div>
+	<div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center px-3">
                 <h5 class="dashboard-title ">Topics</h5>
@@ -146,6 +144,9 @@
 
         </div>
     </div>
+	
+	</div>
+    
     <div class="row" id="time-Avg-quest">
         <div class="col-lg-6 mt-3">
             <div class="bg-white p-3 h-100 px-5 text-center">
@@ -176,8 +177,10 @@
             </div>
         </div>
     </div>
+	
+	
     <div class="row" id="marKs-trends">
-        <div class="col-lg-5 mt-3">
+        <div class="col-lg-6 mt-3">
             <div class="bg-white p-3 h-100 px-5 text-center">
                 <p class="text-uppercase fw-bold text-start">Marks Trend</p>
                 <div id="day1" style="display:block"></div>
@@ -198,7 +201,7 @@
 
             </div>
         </div>
-        <div class="col-lg-7 mt-3">
+        <div class="col-lg-6 mt-3">
             <div class="bg-white pt-3  px-5">
                 <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
                 <div id="accPerSubjectWise"></div>
@@ -213,7 +216,6 @@
 
         </div>
     </div>
-</div>
 
 
 <div class="close-block" id="topicopen">

@@ -541,7 +541,7 @@ a.clearRes:hover {
     height: 36px;
     color: #221f20;
     text-align: center;
-    line-height: 36px;
+    /* line-height: 36px;  */
     box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
 }
 
