@@ -34,6 +34,83 @@ div#marKs-trends .bg-white p {
 
 /* 15 feb 2022 - Amit-Start */
 .dash-sidebar .dash-nav-link a .b , .dash-sidebar .dash-nav-link a .c{stroke: #00bdff;}
+  /******** new dashboard ******/
+.dashboard-cards-block .bg-white.shadow-lg{position:relative;}
+.dashboard-cards-block .bg-white.shadow-lg small i.fa-info {
+    color: #4cb9f9;
+    border: 1px solid #4cb9f9;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 18px;
+}
+.dashboard-cards-block .bg-white.shadow-lg>small{
+    position: absolute;
+    right: 32px;
+    top: 22px;
+    cursor: pointer;
+}
+.topics-box {
+    width: calc(50% - 22px);
+    margin: 16px 10px 0px;
+    display: inline-flex;
+    align-items: end;
+    vertical-align: top;
+}
+.topics-box>b {
+    color: #21ccff;
+    font-size: 15px;
+    font-weight: normal;
+    margin-right: 6px;
+}
+.topics-box span {
+    display: block;
+    box-shadow: inset 0 0 30px 0 rgb(255 255 255 / 51%);
+    border: solid 2px #00baff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 10px 0px;
+}
+.col-md-6 .topics-box:last-child span { border: solid 2px #eb5347;}
+.col-md-6 .topics-box:nth-child(2) span { border: solid 2px #37c027;}
+.col-md-6 .topics-box:nth-child(3) span { border: solid 2px #ffdc34;}
+.topics-box span small {
+    color: #2c3348;
+    font-size: 11px;
+    vertical-align: super;
+}
+.topics-box span b {
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 40px;
+    display: block;
+}
+ul.matrixLists li {
+    font-size: 13px;
+    color: #2c3348;
+    margin-bottom:7px;
+    line-height: 18px;
+    list-style-type:none;
+    position: relative;
+    padding-left: 15px;
+}
+ul.matrixLists li:before{content:'';position: absolute;left: -10px;top: 5px;background-color: #37c027;width: 10px;height: 10px;border-radius: 100%;}
+ul.matrixLists li:nth-child(2):before{background-color: #00baff;}
+ul.matrixLists li:nth-child(3):before{background-color: #ffdc34;}
+ul.matrixLists li:last-child:before{background-color: #eb5347;}
+ul.matrixLists li b {margin-right:8px;}
+.analytics-thumbnail-bg {
+    background-image: url(../images/analytics-thumbnail.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 56px;
+    background-position: center top;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
 /* 15 feb 2022 - Amit-End */
 
 /* 14 feb 2022 - Amit-Start */
