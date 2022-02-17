@@ -19,6 +19,16 @@ button {
     font-size: 14px;
     line-height: 20px;
 }
+.AttmnowSec button {
+    margin-top: 20px !important;
+}
+.cust-gallery .swiper-slide button.btn.btn-primary.active-btn.text-uppercase {
+    margin-top: 41px;
+}
+.go2Planner button.custom-btn-gray.mt-4 {
+    margin-top: 26px !important;
+}
+
 
 .Ex-anal img, #back2Dsh img {
     width: 15px;
@@ -44,7 +54,10 @@ button {
 }
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
     /* color: red; */
-    margin-top: -18px !important;
+    margin-top: 6px !important;
+}
+input#customRange {
+    margin-top: 20px;
 }
 div#marKs-trends .bg-white p {
     height: 50px;
@@ -62,9 +75,6 @@ div#marKs-trends .bg-white p {
     margin-right: 10px;
 }
 
-.go2Planner button.custom-btn-gray.mt-4 {
-    margin-top: 0px !important;
-}
 .tab-wrapper.live-exam .cust-tabs li:first-child .nav-link:after {
     left: -25px;
     width: 40px; 
@@ -2469,7 +2479,7 @@ div#select-planner-chapter button#add_chapter {
 input#EndDate,
 input#StartDate {
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 12px; height: 32px !important;
 }
 
 #collapsePlanner .add-removeblock img {
@@ -3334,7 +3344,7 @@ span.bell-noti {
 }
 
 .profile-section {
-    border-radius: 20px;
+    border-radius: 0px;
     position: absolute;
     top: 0%;
     right: 0px;
@@ -6478,9 +6488,10 @@ a#close-planner-btn img,
 a#close-edit-planner-btn img {
     box-shadow: 0px 0px 5px 1px #b8b8b8;
     border-radius: 50%;
-    width: 25px;
+    width: 25px !important;
     height: 25px;
-    padding: 2px;
+    padding: 3px;
+    margin-top: 1px;
 }
 
 a#edit-planner-btn,
