@@ -552,7 +552,6 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                 }
             }
         },
-
         series: [{
             name: 'Correct Answer',
             data: <?php print_r($correctAns1); ?>,

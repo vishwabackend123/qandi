@@ -85,7 +85,7 @@ Route::any('/verifyOtpRegister', [App\Http\Controllers\StudentSignInController::
 //Route::any('/Dashboard', [App\Http\Controllers\DaController::class, 'verifyotplogin'])->name('dashboard');
 
 /* Subscriptions  routes */
-Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions');
+Route::any('/subscriptions', [App\Http\Controllers\SubscriptionController::class, 'index'])->name('subscriptions')->middleware('menu');
 Route::any('/trial_subscription/{package_id}/{exam_year}', [App\Http\Controllers\SubscriptionController::class, 'trial_subscription'])->name('trial_subscription')->middleware('auth');
 Route::any('/checkout', [App\Http\Controllers\SubscriptionController::class, 'checkout'])->name('checkout')->middleware('auth');
 

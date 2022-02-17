@@ -1,33 +1,29 @@
-@extends('layouts.app')
-<style>
-    .close-btn-subs {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
+@extends('afterlogin.layouts.app_new')
 
-    .subScrip .row {
-        width: 100%;
-        margin: 0 auto;
-    }
-</style>
-@section('content')
 @php
-if(session()->has('user_data')){
 $userData = Session::get('user_data');
 
-$user_id = $userData->id;
-$user_exam_id = $userData->grade_id;
-}
-
-
+$user_id = isset($userData->id)?$userData->id:'';
+$user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 @endphp
+@section('content')
+<!-- Side bar menu -->
+@if(isset($user_id) && !empty($user_id))
+@include('afterlogin.layouts.sidebar_new')
+@endif
 
 <div id="main" class="subScrip">
-    <div class="row" style="height:90px;">
+    <!-- -->
+    <!-- End start-navbar Section -->
+    @if(isset($user_id) && !empty($user_id))
+    @include('afterlogin.layouts.navbar_header_new')
+    @else
+    <div class="row text-left" style="height:90px;">
         <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" class="img-fluid" /></a></span>
     </div>
     <div class="clearfix"></div>
+    @endif
+    <!-- End top-navbar Section -->
 
     <div class="row">
         <div class="col-md-10 mx-auto">
@@ -82,7 +78,7 @@ $user_exam_id = $userData->grade_id;
                 @if($subscription_type=="P")
 
                 <div class="col-md-4 p-4 ">
-                    <div class="bg-white white-box-small subscriptionBox inactive-block  ">
+                    <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
                         <p class="box-content scroll-content me-3 pr-3">{{$sub->subscription_details}}</p>
@@ -305,14 +301,12 @@ $user_exam_id = $userData->grade_id;
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.2.1.slim.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
-
+<!-- Footer Section -->
+@if(isset($user_id) && !empty($user_id))
+@include('afterlogin.layouts.footer_new')
+@endif
+<!-- footer Section end  -->
 
 @endsection
