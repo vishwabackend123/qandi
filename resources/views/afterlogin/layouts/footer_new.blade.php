@@ -1459,7 +1459,7 @@
             })
         } else {
             $(".planmner-block").css({
-                "margin-top": "100px"
+                "margin-top": "70px"
             }).css({
                 "padding-top": "0px"
             })
@@ -1476,7 +1476,7 @@
             })
         } else {
             jQuery("#profileAcc").css({
-                "margin-top": "100px"
+                "margin-top": "70px"
             }).css({
                 "padding-top": "0px"
             })
@@ -1507,7 +1507,7 @@
             })
         } else {
             jQuery("div#collapseNotification").css({
-                "margin-top": "100px"
+                "margin-top": "70px"
             }).css({
                 "padding-top": "0px"
             })
