@@ -403,7 +403,7 @@
                             </div>
                             <p class="py-4 text-center">or Share via Link</p>
                             <div class="input-group mb-5">
-                                    <input type="text" id="linkInput" value="sachin" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" aria-describedby="button-addon2">
+                                    <input type="text" id="linkInput" value="https://www.uniq.co.in/UqID-008291_invit…" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" aria-describedby="button-addon2">
                                     <button class="btn btn-dark rounded-0 border-0" type="button" id="button-addon2" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>
                             </div> 
                     </div> 
