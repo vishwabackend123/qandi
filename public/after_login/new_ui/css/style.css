@@ -15,7 +15,16 @@ button {
     outline: none;
     text-decoration: none;
 }
+#review_rques_blk .question p {
+    font-size: 14px;
+    line-height: 20px;
+}
 
+.Ex-anal img, #back2Dsh img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
 .profile-section ul li:hover {
     background: #d0f3ff;
 }
@@ -42,6 +51,9 @@ div#marKs-trends .bg-white p {
 }
 .cust-tabs li:first-child a {
     border-top-left-radius: 20px !important;
+}
+.live-exam .cust-tabs li:first-child a {
+    padding-left: 0px;
 }
 #myTabContent .slimScrollDiv {
     height: 320px !important;
@@ -1158,8 +1170,9 @@ circle.g {
 }
 
 body#main-body .seeAnico span img {
-    width: 101px;
+    width: 90px;
     padding-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -1227,7 +1240,7 @@ button#dropdownMenuLink-topic {
 
 div#completed h4.py-3 {
     padding-left: 10px;
-    padding-top: 50px !important;
+    /* padding-top: 50px !important; */
 }
 
 .list-series #home .scroll-div-live-exm {
@@ -1244,7 +1257,7 @@ div#completed h4.py-3 {
 }
 
 .tab-wrapper.live-exam .cust-tabs .nav-link.active:after {
-    left: -25px;
+    left: -65px;
     /* width: 40px;
     background: none;
     background-color: #fff;
@@ -2097,7 +2110,7 @@ button.percentage-digit {
 
 
 .answer-section {
-    height: 150px;
+    height: 200px;
     overflow: auto;
     margin: 0px 0px 0px;
     position: relative;
@@ -2803,7 +2816,7 @@ button.save-btn {
     padding: 10px;
     border-radius: 10px;
     text-transform: uppercase;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);font-weight: 600;
 }
 
 /** popup for just more one step **/
@@ -3328,7 +3341,7 @@ span.profile-img-user {
     border-color: transparent;
     border-radius: 0;
     font-weight: 600;
-    padding-right: 20px;
+    padding-right: 20px;padding-left: 20px;
 }
 
 .cust-tabs .nav-link.active:before {
@@ -5486,13 +5499,13 @@ tspan {
 }
 
 .prog-box.green {
-    border: 2px solid #6ec986;
+    border: 0px solid #6ec986;
     background: #f2f2f2;
     color: #231f20;
 }
 
 .prog-box.red {
-    border: 2px solid #c7322d;
+    border: 0px solid #c7322d;
     background: #f2f2f2;
     color: #231f20;
 }
