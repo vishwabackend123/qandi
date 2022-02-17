@@ -14,43 +14,45 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
 
     <div class="content-wrapper">
-        <div class="container-fluid pt-0">
+        <div class="container-fluid pt-0  dashboard-cards-block">
 
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                    <div class="bg-white shadow-lg py-5">
-                        <div class="prgress-i-txt px-3 mb-1">
-                            <span class="progress_text">Progress</span>
-                            <!--  <span class="i-sms">!</span> -->
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8 col-sm-12 col-md-8">
-                                <div class="d-flex justify-content-center flex-column h-100 ">
-                                    <div class="" id="scorecontainer"></div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="bg-white shadow-lg">
+                        <small><i class="fa  fa-info"></i></small>
+                        <div class="row h-100">
+                            <div class="col-lg-7 col-sm-12 col-md-8" style="padding-right:0!important;">
+                                <div style="padding:20px 0 0;">
+                                    <div class="prgress-i-txt px-3 mb-1" style="padding-left:30px!important;">
+                                        <span class="progress_text">MyQ Today</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center flex-column h-100 ">
+                                        <div class="" id="scorecontainer"></div>
 
-                                    <ul class="live-test mt-1">
-                                        <li>
-                                            <span class="last-live-test"></span>Last Test Score
-                                        </li>
-                                        <li>
-                                            <span class="pre-test"></span>Previous Test
-                                        </li>
-                                    </ul>
+                                        <ul class="live-test mt-1">
+                                            <li>
+                                                <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
+                                            </li>
+                                            <!-- <li>
+                                                <span class="pre-test"></span>Previous Test
+                                            </li> -->
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 p-0 text-center seeAnico">
-                                <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.png')}}" alt="see analytics" title="See Analytics"></span>
-                                <div class="button-sec  mt-3"><a href="{{route('overall_analytics')}}" title="See Analytics">See Analytics</a></div>
+                            <div class="col-lg-5 col-md-4 col-sm-12  text-center seeAnico" style="padding-left:0;">
+                                <div class="analytics-thumbnail-bg h-100">
+                                    <div class="button-sec mb-4 mt-3"><a href="{{route('overall_analytics')}}" title="See Analytics">See Analytics</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1">
-                        <!-- <h5 class="dashboard-title mb-5">Subject Performance</h5> -->
+                        <small><i class="fa  fa-info"></i></small>
                         <div class="prgress-i-txt px-0">
-                            <span class="progress_text">Subject Proficiency</span>
-                            <!--                                 <span class="i-sms">!</span> -->
+                            <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
                             <ul class="course-star pe-2">
@@ -81,20 +83,122 @@ $userData = Session::get('user_data');
 
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt" style="overflow:hidden;">
                         <div class="prgress-i-txt px-3">
                             <span class="progress_text">Weekly Marks Trends</span>
-                            <!-- <span class="i-sms">!</span> -->
+                          
                         </div>
-                        <!-- <div id="trend_line_graph"></div> -->
                         <div id="marks_trend_graph"></div>
-                        <!-- <h5 class="dashboard-title pb-4 px-3">Weekly Marks Trends</h5> -->
-                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/right-graph.jpg')}}" class="img-fluid w-100 img-responsive"> -->
+                    </div>
+                </div> -->
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                    <div class="bg-white shadow-lg py-5 myqMatrix-card">
+                        <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
+                        <small><i class="fa  fa-info"></i></small>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="topics-box">
+                                    <b>Q2</b>
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                </div>
+                                <div class="topics-box">
+                                    
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                    <b style="margin:0 0 0 6px">Q1</b>
+                                </div>
+                                <div class="topics-box">    
+                                    <b>Q3</b>
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                </div>
+                                <div class="topics-box">
+                                    
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                    <b style="margin:0 0 0 6px">Q4</b>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="p-0 m-0 matrixLists">
+                                    <li><b>Q1</b> Your strength topics. Keep revising to stay on top.</li>
+                                    <li><b>Q2</b> Convert into strengths with focussed practice </li>
+                                    <li><b>Q3</b> Weakness which can be converted to strength with consistent efforts</li>
+                                    <li class="m-0"><b>Q4</b> Your weakness. Need considerable efforts to convert to strengths  </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <!--row-->
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="bg-white shadow-lg py-5">
+                        <div class="prgress-i-txt mb-2">
+                            <span class="progress_text" style="padding-left: 15px;">Progress Journey</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <figure>
+                                    <img src="{{URL::asset('public/after_login/new_ui/images/progress-journey-graph.png')}}" class="w-100">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chapter-ideal-schedule text-center">
+                                    <span>8</span>
+                                    <small>You are 8 chapter behind the ideal schedule</small>
+                                    <ul class="live-test mt-3 p-0 d-block" style="text-align: left;">
+                                        <li style="margin-right:10px;">
+                                            <span  style="vertical-align:middle;background:#ff0909;"></span>Ideal Pace
+                                        </li>
+                                        <li>
+                                            <span class="last-live-test"></span>Your Pace
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="bg-white shadow-lg py-5">
+                        <div class="prgress-i-txt mb-2">
+                            <span class="progress_text" style="padding-left: 15px;">Weekly Marks Trends</span>
+                        </div>
+                        <figure>
+                            <img src="{{URL::asset('public/after_login/new_ui/images/weekly-trends-graph.png')}}" class="w-100">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-white shadow-lg py-5 task-center-block">
+                        <div class="prgress-i-txt mb-3">
+                            <span class="progress_text" style="padding-left: 15px;">My Task Center</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><img  src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
+                            <button class="btn btntheme" data-bs-toggle="modal" data-bs-target="#matrix">Daily TASK</button>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <span><img  src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
+                            <button class="btn btntheme">Weekly TASK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="cust-gallery">
                 <div class="swiper mySwiper">
@@ -306,7 +410,23 @@ $userData = Session::get('user_data');
 @endif
 <!-- End full exam popup -->
 
-
+<!--------- Modal ------>
+<div class="modal fade" id="matrix">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-light">
+	        <!-- <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+            </div> -->
+            <div class="modal-body text-center">
+                <p>Give more tests for this <br/> section to be populated</p>
+                <div class="text-center mb-4">
+                    <button type="submit" class="btn btn-danger px-5" data-bs-dismiss="modal"> Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------->
 
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')

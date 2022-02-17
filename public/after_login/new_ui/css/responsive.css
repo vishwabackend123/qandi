@@ -1349,7 +1349,16 @@
 }
 
 @media(max-width:767px) {
-
+    /******* New dashboard Amit-Start ******/
+    .dashboard-cards-block .row.h-100>.col-lg-7.col-sm-12.col-md-8 .d-flex.justify-content-center.flex-column.h-100 {
+    padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
+    .analytics-thumbnail-bg{display: block;background-image:none;}
+    .myqMatrix-card.bg-white.shadow-lg{height:auto;padding-bottom: 2.5rem!important;}
+    ul.p-0.m-0.matrixLists {margin-top: 25px!important;padding-left: 20px!important;}
+    .topics-box {width: calc(25% - 18px);margin: 15px 0px 0px 15px;}
+    .topics-box>b{margin: 0 5px 0 0!important;}
+    .topics-box:nth-child(even){flex-direction: row-reverse;}
+    /******* New dashboard Amit-End ******/
 
     /*test screen*/
     .examSect .tab-btn-box.d-flex.mt-3 a {
@@ -1714,6 +1723,9 @@
     }
 
     @media (max-width:482px) {
+        /******* New dashboard Amit-Start ******/
+        .topics-box {width: calc(50% - 18px);}
+        /******* New dashboard Amit-End ******/
         .notification-txt span.text-notific {
             width: 70%;
         }
