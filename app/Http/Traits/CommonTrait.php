@@ -128,15 +128,13 @@ trait CommonTrait
         if (!empty($user_id) &&  !empty($question_data)) {
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
-
                 if ($redis_set == 'True') {
                     Redis::del(Redis::keys($cacheKey));
-
                     //Redis::del($cacheKey);
+                } else {
+                    $data = Redis::get($cacheKey);
+                    return json_decode($data);
                 }
-            } else {
-                $data = Redis::get($cacheKey);;
-                return json_decode($data);
             }
             $data = collect($question_data);
             Redis::set($cacheKey, $data);
@@ -173,11 +171,11 @@ trait CommonTrait
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
                     Redis::del(Redis::keys($cacheKey));
-                    // Redis::del($cacheKey);
+                    //Redis::del($cacheKey);
+                } else {
+                    $data = Redis::get($cacheKey);
+                    return json_decode($data);
                 }
-            }
-            if ($data = Redis::get($cacheKey)) {
-                return json_decode($data);
             }
             $data = collect($question_data);
             Redis::set($cacheKey, $data);

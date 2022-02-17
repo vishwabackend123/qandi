@@ -55,15 +55,15 @@
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
-                         
+
                             <p class="arrow-box-content fw-bold"> <span class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}% </span> of questions attempted are of comprehension skills.</p>
 
                             <p class="arrow-box-content fw-bold">Comprehension tells you your skills of understanding a problem.</p>
 
                             <p class="arrow-box-content fw-bold">65% is your accuracy in these questions</p>
 
-                            <p class="arrow-box-content fw-bold">Click here to see your Comprehension MyQ Matrix</p> 
-                            
+                            <p class="arrow-box-content fw-bold">Click here to see your Comprehension MyQ Matrix</p>
+
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -103,8 +103,8 @@
                 </div>
             </div>
         </div>
-	</div>
-	<div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
+    </div>
+    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center px-3">
                 <h5 class="dashboard-title ">Topics</h5>
@@ -144,78 +144,78 @@
 
         </div>
     </div>
-	
-	</div>
-    
-    <div class="row" id="time-Avg-quest">
-        <div class="col-lg-6 mt-3">
-            <div class="bg-white p-3 h-100 px-5 text-center">
-                <p class="text-uppercase fw-bold text-start">Time Management</p>
-                <div id="day" style="display:block"></div>
-                <div id="week" style="display:none"></div>
-                <div id="month" style="display:none"></div>
-                <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
-                <div class="btn-block mt-3 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
-                        Day
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
-                        Week
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_month_time" onclick="replace('month','day','week')">
-                        Month
-                    </button>
-                </div>
 
-            </div>
-        </div>
-        <div class="col-lg-6  mt-3">
-            <div class="bg-white p-3 h-100 px-5">
-                <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
-                <div id="accPerSubjectWise1"></div>
-                <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
-            </div>
-        </div>
-    </div>
-	
-	
-    <div class="row" id="marKs-trends">
-        <div class="col-lg-6 mt-3">
-            <div class="bg-white p-3 h-100 px-5 text-center">
-                <p class="text-uppercase fw-bold text-start">Marks Trend</p>
-                <div id="day1" style="display:block"></div>
-                <div id="week1" style="display:none"></div>
-                <div id="month1" style="display:none"></div>
-                <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
-                <div class="btn-block mt-3 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
-                        Day
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
-                        Week
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_month_mark" onclick="s_replace1('month1','day1','week1')">
-                        Month
-                    </button>
-                </div>
+</div>
 
-            </div>
-        </div>
-        <div class="col-lg-6 mt-3">
-            <div class="bg-white pt-3  px-5">
-                <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
-                <div id="accPerSubjectWise"></div>
-                <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
-            </div>
-            <div class="bg-white pt-3  px-5" id="back2Dsh">
-                <div class="d-flex">
-                    <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                    <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
-                </div>
+<div class="row" id="time-Avg-quest">
+    <div class="col-lg-6 mt-3">
+        <div class="bg-white p-3 h-100 px-5 text-center">
+            <p class="text-uppercase fw-bold text-start">Time Management</p>
+            <div id="day" style="display:block"></div>
+            <div id="week" style="display:none"></div>
+            <div id="month" style="display:none"></div>
+            <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
+            <div class="btn-block mt-3 d-flex justify-content-between">
+                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
+                    Day
+                </button>
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
+                    Week
+                </button>
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_month_time" onclick="replace('month','day','week')">
+                    Month
+                </button>
             </div>
 
         </div>
     </div>
+    <div class="col-lg-6  mt-3">
+        <div class="bg-white p-3 h-100 px-5">
+            <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
+            <div id="accPerSubjectWise1"></div>
+            <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" id="marKs-trends">
+    <div class="col-lg-6 mt-3">
+        <div class="bg-white p-3 h-100 px-5 text-center">
+            <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+            <div id="day1" style="display:block"></div>
+            <div id="week1" style="display:none"></div>
+            <div id="month1" style="display:none"></div>
+            <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
+            <div class="btn-block mt-3 d-flex justify-content-between">
+                <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
+                    Day
+                </button>
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
+                    Week
+                </button>
+                <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_month_mark" onclick="s_replace1('month1','day1','week1')">
+                    Month
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-6 mt-3">
+        <div class="bg-white pt-3  px-5">
+            <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
+            <div id="accPerSubjectWise"></div>
+            <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
+        </div>
+        <div class="bg-white pt-3  px-5" id="back2Dsh">
+            <div class="d-flex">
+                <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
+                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 <div class="close-block" id="topicopen">
@@ -305,9 +305,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 
     Highcharts.chart('day', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -327,6 +325,12 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             title: {
                 text: 'Average Time Taken (sec)'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
 
         tooltip: {
@@ -362,9 +366,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 
     Highcharts.chart('week', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -393,7 +395,12 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                     'Total: ' + this.point.stackTotal;
             }
         },
-
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
         plotOptions: {
             column: {
                 stacking: 'normal'
@@ -419,9 +426,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 
     Highcharts.chart('month', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'column',
             height: 270
@@ -441,6 +446,12 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             title: {
                 text: 'Average Time Taken'
             }
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
         },
 
         tooltip: {
@@ -494,9 +505,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 
 <script>
     Highcharts.chart('day1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -524,7 +533,12 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                     this.series.name + ': ' + this.y + '<br/>';
             }
         },
-
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
         plotOptions: {
             column: {
                 stacking: 'normal'
@@ -551,9 +565,6 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 
     Highcharts.chart('week1', {
-        credits: {
-            enabled: false
-        },
         chart: {
             type: 'line',
             height: 270
@@ -574,7 +585,12 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                 text: 'Average Marks'
             }
         },
-
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
@@ -608,9 +624,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 
     Highcharts.chart('month1', {
-        credits: {
-            enabled: false
-        },
+
         chart: {
             type: 'line',
             height: 270
@@ -631,7 +645,12 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                 text: 'Average Marks'
             }
         },
-
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
         tooltip: {
             formatter: function() {
                 return '<b>' + this.x + '</b><br/>' +
@@ -690,6 +709,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             symbolWidth: 40
         },
@@ -736,6 +758,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             height: 270
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         legend: {
