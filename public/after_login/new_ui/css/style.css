@@ -19,11 +19,20 @@ button {
 .profile-section ul li:hover {
     background: #d0f3ff;
 }
-
+.live-exam i.fa.fa-circle.text-danger.me-3 {
+    color: #d71921 !important;
+	z-index: 99;
+    position: relative;
+}
+.live-exam li:first-child a.active {
+    padding-left: 0px !important;
+}
 .pe-1 .star-ratings-css-bottom span {
     padding: 0 0px !important;
 }
-
+.container-fluid.list-series .p-lg-5 {
+    padding-top: 10px !important;padding-left: 25px !important;
+}
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
     /* color: red; */
     margin-top: -18px !important;
@@ -43,6 +52,13 @@ div#marKs-trends .bg-white p {
 
 .go2Planner button.custom-btn-gray.mt-4 {
     margin-top: 0px !important;
+}
+.tab-wrapper.live-exam .cust-tabs li:first-child .nav-link:after {
+    left: -25px;
+    width: 40px; 
+    background: none; 
+    background-color: #fff; 
+    border-top-left-radius: 100%;
 }
 
 
@@ -1228,7 +1244,11 @@ div#completed h4.py-3 {
 }
 
 .tab-wrapper.live-exam .cust-tabs .nav-link.active:after {
-    left: -62px;
+    left: -25px;
+    /* width: 40px;
+    background: none;
+    background-color: #fff;
+    border-top-left-radius: 100%; */
 }
 
 /* end live exam section 20-12-2021*/
@@ -1441,8 +1461,8 @@ button#saveEdit {
 }
 
 .cust-tabs #overall-tab.active:nth-child(1):after {
-    left: -80px;
-    width: 80px;
+    left: -25px;
+    width: 35px;
     background: none;
     background-color: #fff;
     border-top-left-radius: 56px;
@@ -1495,8 +1515,8 @@ span.notification.ms-4 {
 /** exam analytics page css 17-12-2021 **/
 
 .cust-tabs #Mathematics_tab_subject.active:nth-child(1):after {
-    left: -80px;
-    width: 80px;
+    left: -25px;
+    width: 40px;
     background: none;
     background-color: #fff;
     border-top-left-radius: 56px;
@@ -1858,75 +1878,12 @@ button#button-addon2 {
 .col-xl-5.col-lg-6.col-md-6.col-sm-12.progress.ms-auto.sub {
     width: 60% !important;
 }
-
-#back2Dsh {
-    height: unset;
-}
-
-div#marKs-trends,
-div#time-Avg-quest {
-    background: #fff !important;
-    border-radius: 56px !important;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-    margin: 22px 0px;
-    padding: 5px 15px;
-}
-
-/*div#time-Avg-quest {
-    background: #fff !important;
-    border-radius: 56px !important;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-    margin: 22px 0px;    padding: 5px 15px;
-}*/
-
-
-
-/** post exam analytics page 16-12-2021**/
-
-#exportAnalytics .modal-dialog .modal-content.bg-light {
-    background-color: #ffffff !important;
-    border-radius: 56px !important;
-    padding: 20px;
-    border: none;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
+#exam_content_sec .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5.h-100 {
+    height: 90vh !important;
 }
 
 
-#exam_result_analysis .row.mt-5.mb-3 {
-    margin-bottom: 55px !important;
-}
 
-#exam_result_analysis .top-btn-pop.text-white a {
-    color: #fff;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #21ccff);
-    border: none;
-    border-radius: 20px !important;
-    padding: 15px 10px;
-    font-weight: 600;
-}
-
-#exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
-    color: #fff !important;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
-    color: #000;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a:hover {
-    color: #fff;
-}
-
-#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1:hover {
-    background: #00baff;
-    color: #fff;
-}
-
-/** end here on 16-12-2021 */
 /** test review page css 16-11-2021 ***/
 .people-qus {
     display: flex;
@@ -2790,7 +2747,7 @@ button.save-btn {
 }
 
 .list-series .scroll-div-live-exm {
-    height: 350px;
+    height: 400px;
     overflow: overlay;
 }
 
@@ -3501,7 +3458,14 @@ p.tab-title {
     font-weight: bold;
     color: #fff;
 }
-
+/**********************Added_by-sachin*************/
+#topic_custom_footer .btn-topic{
+    background: #00baff;
+    background-color: #00baff;
+    border-color: #00baff;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+/**********************Added_by-sachin*****************/
 .active-row {
     border: 1px solid #65d247;
     border-radius: 20px;
@@ -4966,10 +4930,14 @@ header {
     padding-bottom: 12px !important;
     line-height: 20px;
     overflow: hidden;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 /**End_Sachin_25_01_22*******/
+
+#review_rques_blk .question{
+    font-weight: initial;
+}
 
 
 label.question.m-0.py-3.d-block .MathJax {
@@ -6155,7 +6123,8 @@ tspan {
     bottom: -16px;
     font-size: 40px;
     color: #00bdff;
-    transform: rotateZ(136deg);
+    /* transform: rotateZ(136deg); */
+    transform: rotateZ(-46deg);
 }
 
 .box-block:after,
@@ -6178,7 +6147,8 @@ tspan {
     bottom: -16px;
     font-size: 40px;
     color: #00bdff;
-    transform: rotateZ(230deg);
+   /* transform: rotateZ(230deg);*/
+   transform: rotateZ(407deg);
 }
 
 .inner-arrow-right-top {
@@ -6187,7 +6157,8 @@ tspan {
     top: -16px;
     font-size: 40px;
     color: #00bdff;
-    transform: rotateZ(45deg);
+   /* transform: rotateZ(45deg);*/
+    transform: rotateZ(225deg)
 }
 
 .inner-arrow-left-top {

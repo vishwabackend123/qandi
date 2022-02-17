@@ -76,7 +76,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 }
 
 .examSect {
-    padding: 40px 45px;
+    padding: 35px 45px;
 }
 
 .examSect .question-block i.fa {
@@ -209,9 +209,9 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 }
 /********************SACHIN_14_02_22_end*************/
-.examSect {
+/* .examSect {
     padding: 28px 45px;
-}
+} */
 
 .examSect .rightSect button.btn.btn-light-green.w-100.rounded-0.mt-3 {
     border-radius: 20px !important;
