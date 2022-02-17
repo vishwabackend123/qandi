@@ -32,7 +32,7 @@ $userData = Session::get('user_data');
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
                                 <li class="ms-auto">
-                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="me-2 fa fa-download"></i> &nbsp;<span class="Ex--an">Export Analytics</span></a>
+                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}"> &nbsp;<span class="Ex--an">Export Analytics</span></a>
                                 </li>
 
                             </ul>
@@ -182,7 +182,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white  px-5" id="back2Dsh">
                                             <div class="d-flex">
                                                 <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
+                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><img src="{{URL::asset('public/after_login/new_ui/images/download-icn-blk.png')}}"> &nbsp;Export Analytics</button>
                                             </div>
                                         </div>
 

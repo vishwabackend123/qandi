@@ -260,6 +260,7 @@ input:-moz-placeholder {
     position: absolute;
     top: 5%;
     left: 7%;
+    width: auto;
 }
 
 .outer-logo img {
