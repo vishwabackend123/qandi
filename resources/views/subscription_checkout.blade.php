@@ -15,7 +15,9 @@ $userData = Session::get('user_data');
     <div class="container">
         <div class="row">
             <div class="col-md-6 outer-logo">
+            <a href="{{ url('/') }}" title="Home" target="_blank">
                 <img src="{{URL::asset('public/images_new/uniq.png')}}" />
+            </a>    
             </div>
         </div>
     </div>
