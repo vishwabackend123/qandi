@@ -1436,7 +1436,9 @@ button#saveEdit {
 }
 
 .refer_frd img {
-    margin-right: 10px;
+    margin-right: 10px;   
+    width: 20px;
+    margin-bottom: 1px;
 }
 
 #sharefrnd input {
@@ -6481,7 +6483,7 @@ span#slide-input {
     font-weight: 600;
 }
 
-
+    
 
 /*********************************************Refer-frd-popup-start******************Sachin-17-02-2022*********************************/
 
