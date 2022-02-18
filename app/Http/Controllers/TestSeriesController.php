@@ -242,7 +242,7 @@ class TestSeriesController extends Controller
     }
 
 
-    public function allCustomQlist($user_id, $question_data, $redis_set)
+    /* public function allCustomQlist($user_id, $question_data, $redis_set)
     {
         if (!empty($user_id) &&  !empty($question_data)) {
             $cacheKey = 'CustomQuestion:all:' . $user_id;
@@ -260,5 +260,5 @@ class TestSeriesController extends Controller
             return $data->all();
         }
         return [];
-    }
+    } */
 }
