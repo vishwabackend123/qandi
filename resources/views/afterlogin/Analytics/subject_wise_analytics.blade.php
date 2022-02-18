@@ -44,6 +44,13 @@
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[0]->skill_name}}</h4>
                             <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
                            
+                           <!-- <p class="arrow-box-content">of questions attempted are of evaluation skills. Evaluation tells you your problem-solving skills.</p> 
+                           <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
+
+                           <p class="arrow-box-content">is your accuracy in these questions</p> 
+
+                           <h4 class="text-danger fw-2 pt-10 fs-12">See Evaluation MyQ Matirix</h4> -->
+
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
