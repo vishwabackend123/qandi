@@ -125,7 +125,9 @@ trait CommonTrait
     public function allCustomQlist($user_id, $question_data, $redis_set)
     {
 
+
         if (!empty($user_id) &&  !empty($question_data)) {
+
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             if (Redis::exists($cacheKey)) {
                 if ($redis_set == 'True') {
@@ -133,6 +135,7 @@ trait CommonTrait
                     //Redis::del($cacheKey);
                 } else {
                     $data = Redis::get($cacheKey);
+
                     return json_decode($data);
                 }
             }

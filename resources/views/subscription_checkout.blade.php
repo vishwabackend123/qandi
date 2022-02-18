@@ -13,9 +13,11 @@ $userData = Session::get('user_data');
 </style>
 <header>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 outer-logo">
-                <img src="{{URL::asset('public/images_new/uniq.png')}}" />
+        <div class="row" style="height:90px;">
+            <div class="outer-logo">
+                <a href="{{url('/')}}">
+                    <img src="{{URL::asset('public/images_new/uniq.png')}}" />
+                </a>
             </div>
         </div>
     </div>
@@ -59,7 +61,7 @@ $userData = Session::get('user_data');
             <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="{{ env('RAZORPAY_KEY') }}" data-amount="{{$price * 100}}" data-currency="INR" data-order_id="{{$razorpayOrderId}}" data-buttontext="" data-name="{{$subscriptions_data->subscription_name}}" data-description="{{Str::limit($subscriptions_data->subscription_details, 250)}}" data-prefill.name="{{$userData->user_name}}" data-prefill.contact="{{$userData->mobile}}" data-prefill.email="{{$userData->email}}" data-notes.exam_id="{{$subscriptions_data->class_exam_id}}" data-notes.subscription_id="{{$subscriptions_data->id}}" data-notes.month="12" data-theme.color="#d71921" data-button.hide="true">
             </script>
             <input type="hidden" value="{{$subscriptions_data->class_exam_id}}" name="exam_id">
-            <button type="submit" class="backbtn btn  px-5  fs-4"> <i class="fa fa-angle-left px-1"></i> Back </button>
+            <a href="{{ url('/subscriptions') }}" class="backbtn btn  px-5  fs-4"> <i class="fa fa-angle-left px-1"></i> Back </a>
             <button type="submit" class="PayBttn btn  px-5 rounded-0 fs-4"><span class="px-5">Pay</span></button>
         </form>
 
