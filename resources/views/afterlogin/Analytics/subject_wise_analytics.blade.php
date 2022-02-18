@@ -43,13 +43,13 @@
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[0]->skill_name}}</h4>
                             <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
-                           
-                           <!-- <p class="arrow-box-content">of questions attempted are of evaluation skills. Evaluation tells you your problem-solving skills.</p> 
-                           <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
 
-                           <p class="arrow-box-content">is your accuracy in these questions</p> 
+                            <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
+                            <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h4>
 
-                           <h4 class="text-danger fw-2 pt-10 fs-12">See Evaluation MyQ Matirix</h4> -->
+                            <p class="arrow-box-content">is your accuracy in these questions</p>
+
+                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[0]->skill_name}} MyQ Matirix</h4>
 
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -66,16 +66,16 @@
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
                             <h4 class="text-danger text-uppercase fw-2 fw-bold pt-2">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
-                             <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
+                            <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                 performance in the test.</p> 
                            <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
 
-                           <p class="arrow-box-content">of questions attempted are of evaluation skills. Evaluation tells you your problem-solving skills.</p> 
-                           <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
+                            <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
+                            <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
 
-                           <p class="arrow-box-content">is your accuracy in these questions</p> 
+                            <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                           <h4 class="text-danger fw-2 pt-10 fs-12">See Evaluation MyQ Matirix</h4> 
+                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[0]->skill_name}} MyQ Matirix</h4>
 
 
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -91,9 +91,12 @@
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[2]->skill_name}}</h4>
                             <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p>
-                            <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
+                            <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
+                            <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
+
+                            <p class="arrow-box-content">is your accuracy in these questions</p>
+
+                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[0]->skill_name}} MyQ Matirix</h4>
                             <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -107,9 +110,12 @@
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
                             <h4 class="text-danger text-uppercase fw-2 fw-bold"> {{$skillPer[3]->skill_name}}</h4>
                             <h4 class="text-danger text-uppercase fw-2">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
-                            <!-- <p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
-                                performance in the test.</p>
-                            <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
+                            <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
+                            <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
+
+                            <p class="arrow-box-content">is your accuracy in these questions</p>
+
+                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[0]->skill_name}} MyQ Matirix</h4>
                             <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
