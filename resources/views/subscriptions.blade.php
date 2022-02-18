@@ -8,14 +8,14 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 @endphp
 @section('content')
 <!-- Side bar menu -->
-@if(isset($user_id) && !empty($user_id))
+@if(isset($user_id) && !empty($user_id) && !empty($user_exam_id))
 @include('afterlogin.layouts.sidebar_new')
 @endif
 
 <div id="main" class="subScrip">
     <!-- -->
     <!-- End start-navbar Section -->
-    @if(isset($user_id) && !empty($user_id))
+    @if(isset($user_id) && !empty($user_id) && !empty($user_exam_id))
     @include('afterlogin.layouts.navbar_header_new')
     @else
     <div class="row" style="height:90px;">
@@ -304,7 +304,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 
 
 <!-- Footer Section -->
-@if(isset($user_id) && !empty($user_id))
+@if(isset($user_id) && !empty($user_id) && !empty($user_exam_id))
 @include('afterlogin.layouts.footer_new')
 @endif
 <!-- footer Section end  -->
