@@ -440,17 +440,17 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        /*  document.oncontextmenu = function() {
-             return false;
-         };
+        document.oncontextmenu = function() {
+            return false;
+        };
 
-         $(document).mousedown(function(e) {
-             if (e.button == 2) {
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
 
-                 return false;
-             }
-             return true;
-         }); */
+                return false;
+            }
+            return true;
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -905,7 +905,6 @@ $questtype='radio';
     }
 
     function get_subject_question(subject_id) {
-
         var act_question = $("#current_question").val();
         var q_submit_time = $("#timespend_" + act_question).val();
 
@@ -918,6 +917,9 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
 
                 $("#question_section div").html(result);
                 $("#question_section").html(result);

@@ -1415,7 +1415,7 @@ button#saveEdit {
     border-bottom-right-radius: 0px !important;
     border-top-right-radius: 0px !important;
 }
-
+/* comment by sachin 18_02_22*/
 #sharefrnd button.btn.btn-danger {
     background: #21ccff !important;
     border-radius: 8px !important;
@@ -1424,7 +1424,7 @@ button#saveEdit {
     height: 60px;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
     background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
-    width: 252px;
+    /* width: 252px; */
     font-size: 18px;
     font-weight: 600;
     font-stretch: normal;
