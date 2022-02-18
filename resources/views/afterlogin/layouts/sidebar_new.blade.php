@@ -386,12 +386,12 @@
                                 </div>
                                 <div class="backtobox">
                                     <div class="backtobtn"><a><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span></a></div>
-                                    <div class="back_to_ref"><a onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i><span>Copy link</span></a></div>
+                                    <div class="back_to_ref"><a  onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i><span>Copy link</span></a></div>
                                 </div>
                         </div>
                         <div class="emaillinkholder">
                             <div class="mb-3 ">
-                                <input type="text" class=" form-control emaillink border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
+                                <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
 
                                 <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                                 <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
@@ -401,10 +401,11 @@
                                 <button type="submit" class="remove-stuff btn btn-danger rounded-0 px-5"><img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" /> SEND
                                     INVITE</button>
                             </div>
-                            <p class="py-4 text-center">or Share via Link</p>
-                            <div class="input-group mb-5">
-                                    <input type="text" id="linkInput" value="https://www.uniq.co.in/UqID-008291_invit…" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" aria-describedby="button-addon2">
-                                    <button class="btn btn-dark rounded-0 border-0" type="button" id="button-addon2" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>
+                            <p class="py-5 text-center">or Share via Link</p>
+                            <div class="re_link">
+                                <input type="text" id="linkInput" value="https://www.uniq.co.in/UqID-008291_invit…" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…"/>
+                                <a class="copylinkbtn"  type="button"  onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
+                                    
                             </div> 
                     </div> 
                 </form>
@@ -457,83 +458,6 @@ function stateHandle() {
             $(".onsendshow").hide();
         });
 </script>
-
-<style>
-    .onsendshow{
-        display:none;
-    }
-    .backtobox{
-        display: flex;
-        justify-content: space-between;
-    }
-    .invitation-box{
-      
-        text-align: center;
-        margin-bottom: 130px;
-        margin-top: 80px;
-
-    }
-
-    .invitation-box   p{
-        font-size: 18px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #00baff;
-        margin-top: 18px;
-}
- 
-
-   .backtobtn a {
-    background: #e9e9e9;
-    color: #2c3348;
-    font-size: 14px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    padding: 12px 50px;    cursor: pointer;
-   
-    }
-
-    .backtobtn   i{
-        padding-right:10px;
-        font-size: 15px;
-    }
-
-    .backtobtn i .fa{
-        color: #2c3348 !important;
-    }
-
-
-    .back_to_ref a{
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-        background-image: linear-gradient(235deg, #21ccff 93%, #00baff -2%);
-        color: #ffffff;
-        padding: 12px 30px;
-        font-size: 14px;
-        border-radius: 10px ;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;    cursor: pointer;
-  
-    }
-
-    .back_to_ref a i{
-        color: #ffffff;
-        font-size: 15px;    padding-right: 10px;
-    }
-    .back_to_ref a span{
-        color:#ffffff;
-        
-    }
-
-    </style>
-
- 
 
 
  

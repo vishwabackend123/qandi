@@ -1,5 +1,5 @@
 <div class="col-12 mb-4">
-    <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fas fa-download"></i> &nbsp;Export Analytics
+    <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">&nbsp;Export Analytics
     </button>
 </div>
 

@@ -15,7 +15,36 @@ button {
     outline: none;
     text-decoration: none;
 }
+#review_rques_blk .question p {
+    font-size: 14px;
+    line-height: 20px;
+}
+.AttmnowSec button {
+    margin-top: 20px !important;
+}
+.cust-gallery .swiper-slide button.btn.btn-primary.active-btn.text-uppercase {
+    margin-top: 41px;
+}
+.go2Planner button.custom-btn-gray.mt-4 {
+    margin-top: 26px !important;
+}
+a#open-tab {
+    padding-left: 20px !important;
+}
+.custom-page .cust-tabs li:first-child .nav-link:after {
+    left: -25px !important;
+    width: 40px;
+    background: none;
+    background-color: #fff !important;
+    border-top-left-radius: 100%;
+}
 
+
+.Ex-anal img, #back2Dsh img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
 .profile-section ul li:hover {
     background: #d0f3ff;
 }
@@ -35,13 +64,19 @@ button {
 }
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold {
     /* color: red; */
-    margin-top: -18px !important;
+    margin-top: 6px !important;
+}
+input#customRange {
+    margin-top: 20px;
 }
 div#marKs-trends .bg-white p {
     height: 50px;
 }
 .cust-tabs li:first-child a {
     border-top-left-radius: 20px !important;
+}
+.live-exam .cust-tabs li:first-child a {
+    padding-left: 0px;
 }
 #myTabContent .slimScrollDiv {
     height: 320px !important;
@@ -50,9 +85,6 @@ div#marKs-trends .bg-white p {
     margin-right: 10px;
 }
 
-.go2Planner button.custom-btn-gray.mt-4 {
-    margin-top: 0px !important;
-}
 .tab-wrapper.live-exam .cust-tabs li:first-child .nav-link:after {
     left: -25px;
     width: 40px; 
@@ -199,10 +231,22 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
 }
 
 .arrow-box-content {
-    font-size: 10px;
-    margin-bottom: 10px;
+    font-family: Manrope;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+    font-size: 12px;
+    margin-bottom: 0px;
 }
+.arrow-right-btm-content .fw-bold{padding-top: 9px !important;}
+.arrow-right-btm-content .pt-2{padding-top: 2px !important;}
 
+.pt-10{padding-top: 10px;}
+.fs-12{font-size: 12px !important;}
 .star-img {
     margin-right: 8px;
 }
@@ -1158,8 +1202,9 @@ circle.g {
 }
 
 body#main-body .seeAnico span img {
-    width: 101px;
+    width: 90px;
     padding-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -1227,7 +1272,7 @@ button#dropdownMenuLink-topic {
 
 div#completed h4.py-3 {
     padding-left: 10px;
-    padding-top: 50px !important;
+    /* padding-top: 50px !important; */
 }
 
 .list-series #home .scroll-div-live-exm {
@@ -1244,7 +1289,7 @@ div#completed h4.py-3 {
 }
 
 .tab-wrapper.live-exam .cust-tabs .nav-link.active:after {
-    left: -25px;
+    left: -65px;
     /* width: 40px;
     background: none;
     background-color: #fff;
@@ -2097,7 +2142,7 @@ button.percentage-digit {
 
 
 .answer-section {
-    height: 150px;
+    height: 200px;
     overflow: auto;
     margin: 0px 0px 0px;
     position: relative;
@@ -2297,7 +2342,7 @@ div#select-planner-chapter button#add_chapter {
 input#EndDate,
 input#StartDate {
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 12px; height: 32px !important;
 }
 
 #collapsePlanner .add-removeblock img {
@@ -2803,7 +2848,7 @@ button.save-btn {
     padding: 10px;
     border-radius: 10px;
     text-transform: uppercase;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);font-weight: 600;
 }
 
 /** popup for just more one step **/
@@ -3162,7 +3207,7 @@ span.bell-noti {
 }
 
 .profile-section {
-    border-radius: 20px;
+    border-radius: 0px;
     position: absolute;
     top: 0%;
     right: 0px;
@@ -3328,7 +3373,7 @@ span.profile-img-user {
     border-color: transparent;
     border-radius: 0;
     font-weight: 600;
-    padding-right: 20px;
+    padding-right: 20px;padding-left: 20px;
 }
 
 .cust-tabs .nav-link.active:before {
@@ -5486,13 +5531,13 @@ tspan {
 }
 
 .prog-box.green {
-    border: 2px solid #6ec986;
+    border: 0px solid #6ec986;
     background: #f2f2f2;
     color: #231f20;
 }
 
 .prog-box.red {
-    border: 2px solid #c7322d;
+    border: 0px solid #c7322d;
     background: #f2f2f2;
     color: #231f20;
 }
@@ -6306,9 +6351,10 @@ a#close-planner-btn img,
 a#close-edit-planner-btn img {
     box-shadow: 0px 0px 5px 1px #b8b8b8;
     border-radius: 50%;
-    width: 25px;
+    width: 25px !important;
     height: 25px;
-    padding: 2px;
+    padding: 3px;
+    margin-top: 1px;
 }
 
 a#edit-planner-btn,
@@ -6433,4 +6479,144 @@ span#slide-input {
     font-family: Manrope;
     font-size: 16px;
     font-weight: 600;
+}
+
+
+
+/*********************************************Refer-frd-popup-start******************Sachin-17-02-2022*********************************/
+
+#sharefrnd::-webkit-input-placeholder { /* Chrome */
+    color: #746c6e !important;
+}
+
+#sharefrnd:-ms-input-placeholder { /* IE 10+ */
+    color: #746c6e !important;
+}
+
+#sharefrnd::-moz-placeholder { /* Firefox 19+ */
+    color: #746c6e !important;
+     
+}
+
+#sharefrnd:-moz-placeholder { /* Firefox 4 - 18 */
+    color: #746c6e !important;
+}
+
+#sharefrnd input[type=text] {
+    color: #746c6e !important;
+}
+
+.re_link {
+    display: flex;
+    align-items: center;
+}
+
+.copylinkbtn{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+    background: #21ccff;
+    border-radius: 6px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    height: 36px;
+    padding: 0px 32px;
+    text-transform: uppercase;
+    height: 40px;
+}
+
+.copylinkbtn i{
+    padding-right:10px;
+}
+
+
+.onsendshow{
+    display:none;
+}
+
+.backtobox{
+    display: flex;
+    justify-content: space-between;
+}
+
+.invitation-box{
+    text-align: center;
+    margin-bottom: 130px;
+    margin-top: 80px;
+
+}
+
+.invitation-box   p{
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00baff;
+    margin-top: 18px;
+}
+
+
+.backtobtn a {
+    background: #e9e9e9;
+    color: #918f8f;
+    font-size: 14px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 12px 55px;
+    cursor: pointer;
+    background: #e9e9e961;
+
+}
+
+.backtobtn   i{
+    padding-right: 15px;
+    font-size: 24px;
+    color: #918f8f;
+}
+.backtobtn span {
+   
+    color: #918f8f;
+}
+
+.backtobtn i .fa{
+    color: #2c3348 !important;
+}
+
+
+.back_to_ref a{
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(235deg, #21ccff 93%, #00baff -2%);
+    color: #ffffff;
+    padding: 12px 39px;
+    font-size: 14px;
+    border-radius: 10px ;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;    
+    cursor: pointer;
+}
+
+.back_to_ref a i{
+    color: #ffffff;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.back_to_ref a span{
+color:#ffffff;
+
+}
+
+input#linkInput {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+.copylinkbtn:hover{
+    color:#ffffff;
 }
