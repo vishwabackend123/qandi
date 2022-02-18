@@ -48,7 +48,6 @@ class HomeController extends Controller
         $userData = Session::get('user_data');
 
 
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
         $user_subjects = $this->redis_subjects();
@@ -194,8 +193,29 @@ class HomeController extends Controller
         } else {
             $planner = [];
         }
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_ref_url = $api_URL . 'api/get-refer-link/' . $user_id;
 
+        curl_setopt_array($curl, array(
 
+            CURLOPT_URL => $curl_ref_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $ref_response = json_decode($response_json,true);
+        $refer_code=isset($ref_response['referral_code']) && !empty($ref_response['referral_code']) ? $ref_response['referral_code'] : "";
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        Session::put('referal_link', env('APP_URL').'/referral/'.$refer_code);
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
