@@ -28,6 +28,16 @@ button {
 .go2Planner button.custom-btn-gray.mt-4 {
     margin-top: 26px !important;
 }
+a#open-tab {
+    padding-left: 20px !important;
+}
+.custom-page .cust-tabs li:first-child .nav-link:after {
+    left: -25px !important;
+    width: 40px;
+    background: none;
+    background-color: #fff !important;
+    border-top-left-radius: 100%;
+}
 
 
 .Ex-anal img, #back2Dsh img {
