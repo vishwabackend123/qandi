@@ -398,8 +398,48 @@
                                 <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
                             </div>
                             <div class="text-center refer_frd">
-                                <button type="submit" class="remove-stuff btn btn-danger rounded-0 px-5"><img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" /> SEND
-                                    INVITE</button>
+                                <button type="submit" class="remove-stuff btn btn-danger rounded-0 px-5">
+                                    <!-- <img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" />  -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="IconButton_ReferFriend_Default" data-name="IconButton / ReferFriend / Default" width="48" height="48" viewBox="0 0 48 48" style="&#10;    /* background: red; */&#10;">
+                                        <defs>
+                                            <style>
+                                            .cls-1 {
+                                                fill: #fff;
+                                                opacity: 0;
+                                            }
+
+                                            .cls-2, .cls-3 {
+                                                fill: none;
+                                            }
+
+                                            .cls-3 {
+                                                stroke: #ffffff;
+                                                stroke-linecap: round;
+                                                stroke-linejoin: round;
+                                                stroke-width: 1.5px;
+                                            }
+                                            #IconButton_ReferFriend_Default{
+                                                width:42px !important;
+                                                height:42px !important;
+                                            }
+                                           
+                                         </style>
+                                        </defs>
+                                        <rect id="Rectangle_4409" data-name="Rectangle 4409" class="cls-1" width="40" height="40" rx="14"/>
+                                        <g id="Component_78" data-name="Component 78" transform="translate(-3 -3)">
+                                            <g id="Group_1828" data-name="Group 1828" transform="translate(12 12)">
+                                            <g id="Group_1832" data-name="Group 1832">
+                                                <path id="Path_2326" data-name="Path 2326" class="cls-2" d="M0,0H30V30H0Z"/>
+                                                <circle id="Ellipse_716" data-name="Ellipse 716" class="cls-3" cx="5.167" cy="5.167" r="5.167" transform="translate(6.724 3.875)"/>
+                                                <path id="Path_2327" data-name="Path 2327" class="cls-3" d="M3,22.75V20.167A5.167,5.167,0,0,1,8.167,15h5.167A5.167,5.167,0,0,1,18.5,20.167V22.75" transform="translate(0.875 3.375)"/>
+                                                <path id="Path_2328" data-name="Path 2328" class="cls-3" d="M16,11.875h7.75M19.875,8v7.75" transform="translate(3.667 1.889)"/>
+                                            </g>
+                                            </g>
+                                        </g>
+                                        </svg>
+                                
+                                
+                                SEND INVITE</button>
                             </div>
                             <p class="py-5 text-center">or Share via Link</p>
                             <div class="re_link">
