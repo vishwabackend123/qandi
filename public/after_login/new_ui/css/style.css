@@ -970,6 +970,10 @@ div.form-group.flds span.currect-email {
     top: 8px;
 }
 
+#editProfile_form .country-code-name{
+    top: auto;
+}
+
 .country-code-name {
     height: auto;
     overflow: overlay;

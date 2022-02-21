@@ -427,10 +427,13 @@ $(".detail_btn").on("click", function() {
 }
 
 .answer-section {
- 
     position: absolute;
     bottom: 0px;
     width: 98%;
+    top: 52%;
+    border-radius: 56px;
+    border-bottom-left-radius: 56px;
+    border-bottom-right-radius: 56px;
 }
 #review_rques_blk{
     position: relative;

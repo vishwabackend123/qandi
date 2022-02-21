@@ -666,3 +666,127 @@ div#time-Avg-quest {
 }
 
 /* added by Sachin-18-02 */
+
+
+/* added by Navdeep-21-02 */
+.back_page{
+background: #e9e9e9;
+    width: 38px;
+    height: 38px;
+    margin-right: 25px;
+    padding: 6px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 22px !important;
+    line-height: 25px;
+}
+.topics_breadcum{
+padding:12px 10px;	
+margin-right:28px;
+}
+.topics_breadcum a{
+font-size:16px;
+color:#2c3348;	
+ font-weight: 600;
+}
+.topics_breadcum .breadcrumb-item+.breadcrumb-item::before{
+	    content: var(--bs-breadcrumb-divider, ">");
+}
+.topic-details{
+background:#f2f2f2;
+padding:30px;
+border-radius:30px;
+}
+.sub-details{
+ margin: 0 54px 36px 0;
+  padding: 20px 25px;
+  border-radius: 36px;	
+}
+.sub-title h3{
+  font-size: 16px;
+  font-weight: 600;
+  color:#2c3348;
+}
+.all-star ul{
+list-style:none;	
+}
+.all-star ul li{
+display:inline-block;	
+}
+.all-star ul li img{
+    height: 12px;
+    width: 12px;	
+}
+.all-star span{
+font-size: 11px;
+    font-weight: 600;
+    color: #2c3348;
+    padding-left: 6px;
+    margin-top: 4px;  
+}
+.colorfull-bars{
+background:#e9e9e9;
+height:12px;
+border-radius:6px;
+margin:25px 0 12px;
+}
+.green_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #65d247;
+    width: 30%;
+	z-index:4;
+}
+.yellow_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #fba81d;
+    width: 27%;
+	z-index:3;
+	margin-left: -6px;
+}
+.red_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #f74645;
+    width: 25%;
+	z-index:2;
+	margin-left: -6px;
+}
+.skyblue_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #00baff;
+    width: 15%;
+	z-index:1;
+    margin-left: -6px;
+}
+.subject-name{
+list-style:none;
+}
+.subject-name li{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: #2c3348;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 7px 8px 7px 8px;
+    border: solid 1.5px #000;
+    margin-right: 16px;
+    text-align: center;
+}
+.subject-name li:nth-child(1){
+border-color:#65d247;	
+}
+.subject-name li:nth-child(2){
+border-color:#fba81d;	
+}
+.subject-name li:nth-child(3){
+border-color:#f74645;	
+}
+.subject-name li:nth-child(4){
+border-color:#00baff;	
+margin-right:0;
+}
+/* end by Navdeep-21-02 */
