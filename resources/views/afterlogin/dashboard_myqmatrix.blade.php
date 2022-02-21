@@ -13,7 +13,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
-        <div class="container-fluid custom-page">  
+        <div class="container-fluid custom-page">
             <div class="row">
                 <div class="col-md-3">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto">
@@ -199,7 +199,7 @@ $userData = Session::get('user_data');
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="cus-radio-btn">
-                                                            <label>Chemistry in  Everyday life
+                                                            <label>Chemistry in Everyday life
                                                                 <input type="radio" name="radio">
                                                                 <span class="checkmark"></span>
                                                             </label>
@@ -262,24 +262,24 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="tab-pane" id="matrix-questwo" role="tabpanel" aria-labelledby="matrix-questwo-tab">
-                                
+
                             </div>
                             <div class="tab-pane" id="matrix-questhree" role="tabpanel" aria-labelledby="matrix-questhree-tab">
-                                
+
                             </div>
                             <div class="tab-pane" id="matrix-quesfour" role="tabpanel" aria-labelledby="matrix-quesfour-tab">
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 
 <!--------- Modal ------>
-<div class="modal fade" id="matrix" data-bs-backdrop="static">
+<div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <!-- <div class="modal-header pb-0 border-0">
@@ -288,7 +288,7 @@ $userData = Session::get('user_data');
             <div class="modal-body text-center">
                 <p>Give more tests for this <br /> section to be populated</p>
                 <div class="text-center mb-4">
-                    <button type="submit" class="btn btn-danger px-5" data-bs-dismiss="modal"> Back</button>
+                    <a href="{{url('/dashboard')}}" class="btn btn-danger px-5"> Back</a>
                 </div>
             </div>
         </div>
