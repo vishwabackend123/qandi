@@ -508,9 +508,9 @@ class AnalyticsController extends Controller
         curl_close($curl);
         $subAnalytics = json_decode($response);
 
-        $subProf = $subAnalytics->topic_wise_result;
-        $skillPer = $subAnalytics->skill_percentage;
-        $subScore = $subAnalytics->subject_score;
+        $subProf = isset($subAnalytics->topic_wise_result) ? $subAnalytics->topic_wise_result : [];
+        $skillPer = isset($subAnalytics->skill_percentage) ? $subAnalytics->skill_percentage : [];
+        $subScore = isset($subAnalytics->subject_score) ? $subAnalytics->subject_score : [];
 
         $curl = curl_init();
 

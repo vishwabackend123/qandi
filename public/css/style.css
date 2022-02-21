@@ -624,7 +624,14 @@ h1.main-heading.position-relative {
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     background-image: linear-gradient(45deg, #d2f3ff, #fff);
-    height: 100%;
+    height: 100vh !important;
+}
+.subScrip h1.main-heading.position-relative a {
+    font-size: 55px;
+    line-height: 65px;
+}
+.subScrip h1.main-heading.position-relative a img {
+    width: 50px;
 }
 
 .slimScrollBar {

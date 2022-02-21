@@ -404,10 +404,22 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
 }
 
 .arrow-box-content {
-    font-size: 10px;
-    margin-bottom: 10px;
+    font-family: Manrope;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+    font-size: 12px;
+    margin-bottom: 0px;
 }
+.arrow-right-btm-content .fw-bold{padding-top: 9px !important;}
+.arrow-right-btm-content .pt-2{padding-top: 2px !important;}
 
+.pt-10{padding-top: 10px;}
+.fs-12{font-size: 12px !important;}
 .star-img {
     margin-right: 8px;
 }
@@ -1576,7 +1588,7 @@ button#saveEdit {
     border-bottom-right-radius: 0px !important;
     border-top-right-radius: 0px !important;
 }
-
+/* comment by sachin 18_02_22*/
 #sharefrnd button.btn.btn-danger {
     background: #21ccff !important;
     border-radius: 8px !important;
@@ -1585,7 +1597,7 @@ button#saveEdit {
     height: 60px;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
     background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
-    width: 252px;
+    /* width: 252px; */
     font-size: 18px;
     font-weight: 600;
     font-stretch: normal;
@@ -1598,6 +1610,8 @@ button#saveEdit {
 
 .refer_frd img {
     margin-right: 10px;
+    width: 20px;
+    margin-bottom: 1px;
 }
 
 #sharefrnd input {
@@ -2578,7 +2592,7 @@ div#sub-planner {
 
 .account-wrapper {
     height: 100vh;
-    margin-top: 10px;
+    margin-top: 15px;
     max-width: 100%;
     position: relative;
     /* right: 0; */
@@ -6642,7 +6656,7 @@ span#slide-input {
     font-weight: 600;
 }
 
-
+    
 
 /*********************************************Refer-frd-popup-start******************Sachin-17-02-2022*********************************/
 

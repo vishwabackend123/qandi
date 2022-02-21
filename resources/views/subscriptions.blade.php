@@ -18,7 +18,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     @if(isset($user_id) && !empty($user_id))
     @include('afterlogin.layouts.navbar_header_new')
     @else
-    <div class="row text-left" style="height:90px;">
+    <div class="row" style="height:90px;">
         <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" class="img-fluid" /></a></span>
     </div>
     <div class="clearfix"></div>
