@@ -251,7 +251,7 @@ $userData = Session::get('user_data');
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
                         <div class="swiper-slide bg-white AttmnowSec">
                             <div class="row">
-                                <div class="col-lg-12 px-0">
+                                <div class="col-lg-12">
                                     <div class="d-flex">
                                         <span style="margin-right: 20px;">
                                             <img src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}" style="width:80px;">
@@ -313,9 +313,9 @@ $userData = Session::get('user_data');
 
                         @foreach($planner as $key=>$val)
                         @if($val->test_completed_yn=="N")
-                        <div class="swiper-slide bg-white" style="padding: 30px 35px;">
+                        <div class="swiper-slide bg-white" style="padding: 30px 25px;">
                             <div class="row">
-                                <div class="col-lg-12 px-0">
+                                <div class="col-lg-12">
                                     <div class="d-flex">
                                         <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/biology-subject-icon.png')}}"></span>
                                         <div>
@@ -350,9 +350,11 @@ $userData = Session::get('user_data');
                                     <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
                                     <input type="hidden" name="chapter_id" value="{{$val->chapter_id}}">
                                     <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
-
-                                    <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
-                                        <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
+                                    <div class="text-left attempt-schedule-btn d-flex">
+                                        <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
+                                        <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
+                                        <button class="custom-btn-gray mt-2"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" style="width:17px;">Schedule later</button>
+                                    </div>
 
                                     <!--  <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
                                             <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
@@ -362,11 +364,29 @@ $userData = Session::get('user_data');
 
                         </div>
                         @elseif($val->test_completed_yn=="Y")
-                        <div class="swiper-slide bg-white testcompltd">
-                            <div class="test-attend text-center pt-2 pb-2">
-                                <p>Tests Attempted</p>
+                        <div class="swiper-slide bg-white testcompltd completed-test-block">
+                            <div class="test-attend text-center">
+                                <!-- <p>Tests Attempted</p> -->
                                 <div class="ms-auto">
-                                    <h3><span class="text-secondary me-2 chapter_name"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></span>{{$val->chapter_name}}</h3>
+                                    <span class="text-secondary chapter_name mb-2 d-block"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></span>
+                                    <h3 class="mb-0">{{$val->chapter_name}}</h3>
+                                    <ul class="course-star mt-3 mb-0">
+                                        <li style="float:none;">
+                                            <strong style="width:auto;" class="d-block">Proficiency</strong>
+                                            <span class="star-img" style="width:auto;">
+                                                <div class="star-ratings-css ">
+                                                    <div class="star-ratings-css-top">
+                                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                    </div>
+                                                    <div class="star-ratings-css-bottom">
+                                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                    </div>
+                                                </div>
+
+                                            </span>
+                                            <span> 90%</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -928,8 +948,8 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 </script>
 <script>
     $(document).ready(function(){
-        $(".dashboard-cards-block .bg-white>small").click(function(){
-            $(this).children("p").show();
+        $(".dashboard-cards-block .bg-white>small i").click(function(){
+            $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function(){
             $(this).parent("p").hide();

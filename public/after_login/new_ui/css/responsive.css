@@ -177,6 +177,10 @@
 
 @media(min-width:992px) and (max-width:1280px) {
 
+    /******* New dashboard Amit-Start ******/
+    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white{width: 36% !important;}
+    /******* New dashboard Amit-End ******/
+
     /** Rahul css on 17-1-2022 **/
 
     .button-sec.mt-3 a {
