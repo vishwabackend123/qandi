@@ -114,39 +114,39 @@ $userData = Session::get('user_data');
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <label>About MyQ Matrix</label>
-                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br/><br/> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
+                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /><br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                             </p>
                         </small>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="topics-box">
                                     <b>Q2</b>
-                                    <span>
-                                        <b>00</b>
-                                        <small>Topic</small>
-                                    </span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
+                                            <b>00</b>
+                                            <small>Topic</small>
+                                        </span>
+                                    </a>
                                 </div>
                                 <div class="topics-box">
-                                    
-                                    <span>
-                                        <b>00</b>
-                                        <small>Topic</small>
-                                    </span>
+
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
+                                            <b>00</b>
+                                            <small>Topic</small>
+                                        </span></a>
                                     <b style="margin:0 0 0 6px">Q1</b>
                                 </div>
-                                <div class="topics-box">    
+                                <div class="topics-box">
                                     <b>Q3</b>
-                                    <span>
-                                        <b>00</b>
-                                        <small>Topic</small>
-                                    </span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
+                                            <b>00</b>
+                                            <small>Topic</small>
+                                        </span></a>
                                 </div>
                                 <div class="topics-box">
-                                    
-                                    <span>
-                                        <b>00</b>
-                                        <small>Topic</small>
-                                    </span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
+                                            <b>00</b>
+                                            <small>Topic</small>
+                                        </span></a>
                                     <b style="margin:0 0 0 6px">Q4</b>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@ $userData = Session::get('user_data');
                                     <li><b>Q1</b> Your strength topics. Keep revising to stay on top.</li>
                                     <li><b>Q2</b> Convert into strengths with focussed practice </li>
                                     <li><b>Q3</b> Weakness which can be converted to strength with consistent efforts</li>
-                                    <li class="m-0"><b>Q4</b> Your weakness. Need considerable efforts to convert to strengths  </li>
+                                    <li class="m-0"><b>Q4</b> Your weakness. Need considerable efforts to convert to strengths </li>
                                 </ul>
                             </div>
                         </div>
@@ -179,7 +179,7 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">Progress Journey</span>
                         </div>
                         <div class="row">
-                            <div class="col-md-6"> 
+                            <div class="col-md-6">
                                 <figure>
                                     <img src="{{URL::asset('public/after_login/new_ui/images/progress-journey-graph.png')}}" class="w-100">
                                 </figure>
@@ -190,7 +190,7 @@ $userData = Session::get('user_data');
                                     <small>You are 8 chapter behind the ideal schedule</small>
                                     <ul class="live-test mt-3 p-0 d-block" style="text-align: left;">
                                         <li style="margin-right:10px;">
-                                            <span  style="vertical-align:middle;background:#ff0909;"></span>Ideal Pace
+                                            <span style="vertical-align:middle;background:#ff0909;"></span>Ideal Pace
                                         </li>
                                         <li>
                                             <span class="last-live-test"></span>Your Pace
@@ -233,12 +233,13 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">My Task Center</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span><img  src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
-                            <button class="btn btntheme" data-bs-toggle="modal" data-bs-target="#matrix">Daily TASK</button>
+                            <span><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
+                            <a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Daily TASK</a>
+                            <!-- <button class="btn btntheme" data-bs-toggle="modal" data-bs-target="#matrix">Daily TASK</button> -->
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-4">
-                            <span><img  src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"></span>
-                            <button class="btn btntheme">Weekly TASK</button>
+                            <span><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"></span>
+                            <a class="btn btntheme" href="javascript:void(0);">Weekly TASK</a>
                         </div>
                     </div>
                 </div>
@@ -286,7 +287,7 @@ $userData = Session::get('user_data');
 
                             <div class="test-attend text-center pt-2 pb-2">
                                 <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;display:none;">
-                                    <b>Plan Tests</b> <br/>
+                                    <b>Plan Tests</b> <br />
                                     Plan upto seven tests on topics of your choice
                                 </div>
                                 <p>Tests Attempted</p>
@@ -352,7 +353,7 @@ $userData = Session::get('user_data');
                                     <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
                                     <div class="text-left attempt-schedule-btn d-flex">
                                         <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
-                                        <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
+                                            <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
                                         <button class="custom-btn-gray mt-2"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" style="width:17px;">Schedule later</button>
                                     </div>
 
@@ -516,11 +517,11 @@ $userData = Session::get('user_data');
 <div class="modal fade" id="matrix">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
-	        <!-- <div class="modal-header pb-0 border-0">
+            <!-- <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div> -->
             <div class="modal-body text-center">
-                <p>Give more tests for this <br/> section to be populated</p>
+                <p>Give more tests for this <br /> section to be populated</p>
                 <div class="text-center mb-4">
                     <button type="submit" class="btn btn-danger px-5" data-bs-dismiss="modal"> Back</button>
                 </div>
@@ -947,11 +948,11 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     /* Mrks trend Graph */
 </script>
 <script>
-    $(document).ready(function(){
-        $(".dashboard-cards-block .bg-white>small i").click(function(){
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small i").click(function() {
             $(this).siblings("p").show();
         });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function(){
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
             $(this).parent("p").hide();
         });
     });

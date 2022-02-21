@@ -210,12 +210,12 @@ class HomeController extends Controller
         ));
 
         $response_json = curl_exec($curl);
-        $ref_response = json_decode($response_json,true);
-        $refer_code=isset($ref_response['referral_code']) && !empty($ref_response['referral_code']) ? $ref_response['referral_code'] : "";
+        $ref_response = json_decode($response_json, true);
+        $refer_code = isset($ref_response['referral_code']) && !empty($ref_response['referral_code']) ? $ref_response['referral_code'] : "";
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        Session::put('referal_link', env('APP_URL').'/referral/'.$refer_code);
+        Session::put('referal_link', env('APP_URL') . '/referral/' . $refer_code);
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
@@ -645,5 +645,19 @@ class HomeController extends Controller
 
 
         return view('afterlogin.ajax_notification', compact('notifications'));
+    }
+
+
+    /**
+     * 
+     */
+    public function dailytask()
+    {
+        return view('afterlogin.dashboard_dailytask');
+    }
+
+    public function myQMatrix()
+    {
+        return view('afterlogin.dashboard_myqmatrix');
     }
 }

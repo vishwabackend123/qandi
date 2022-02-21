@@ -246,3 +246,8 @@ Route::any('/getCountry', [App\Http\Controllers\StudentSignInController::class, 
 Route::any('/getState', [App\Http\Controllers\StudentSignInController::class, 'stateList'])->name('getState');
 Route::any('/getCity', [App\Http\Controllers\StudentSignInController::class, 'cityList'])->name('getCity');
 Route::any('/signupAddress', [App\Http\Controllers\StudentSignInController::class, 'signupAddress'])->name('signupAddress');
+
+
+/* dashboard new routes */
+Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
+Route::get('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
