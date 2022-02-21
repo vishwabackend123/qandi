@@ -15,6 +15,84 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* MyQMatrix Amit-Start ******/
+.dashboard-cards-block.matrixpage-wrapper .bg-white>small p{z-index: 10;right: -120px;}
+.ulStyle{margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.cus-radio-btn label {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+}
+.cus-radio-btn label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.cus-radio-btn .checkmark {position: absolute;top: 0px;left: 0;height: 26px;width: 26px;background-color: #fff;border-radius: 50%;border: 1px solid #00bdff;}
+.cus-radio-btn label input:checked ~ .checkmark {
+background-color: #2196F3;
+}
+.cus-radio-btn .checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.cus-radio-btn label input:checked ~ .checkmark:after {
+display: block;
+}
+.cus-radio-btn label .checkmark:after {
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+.tabcontent-wrapper{padding:30px 20px 0;}
+.tabcontent-wrapper .btn.btntheme {
+    padding: 10px 24px;
+    font-size: 14px;
+}
+ul.chapter-topic-menu li a {
+    color: #00bdff;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 20px;
+}
+ul.chapter-topic-menu li a.active {
+    font-weight: 600;
+    border-bottom: 2px solid #00bdff;
+}
+a.backto-dash {
+    position: absolute;
+    right: 45px;
+    top: 24px;
+    z-index: 10;
+    color: #00bdff;
+    font-weight: 600;
+}
+span.filtericon {
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-left: 50px;
+    position: relative;
+    top: 4px;
+}
+/******* MyQMatrix Amit-End ******/
+
 #review_rques_blk .question p {
     font-size: 14px;
     line-height: 20px;
@@ -126,9 +204,9 @@ div#marKs-trends .bg-white p {
     margin-right: 6px;
 }
 .topics-box:hover>b{ color: #3de2f8;}
-.col-md-6 .topics-box:hover:last-child>b{ color: #eb5347;;}
-.col-md-6 .topics-box:hover:nth-child(2)>b{  color: #30aa1a;}
-.col-md-6 .topics-box:hover:nth-child(3)>b{ color: #fba81d;}
+.col-md-6 .topics-box:hover:last-child>b,.topicBlocks .topics-box:hover:last-child>b{ color: #eb5347;;}
+.col-md-6 .topics-box:hover:nth-child(2)>b,.topicBlocks .topics-box:hover:nth-child(2)>b{  color: #30aa1a;}
+.col-md-6 .topics-box:hover:nth-child(3)>b,.topicBlocks .topics-box:hover:nth-child(3)>b{ color: #fba81d;}
 .topics-box span {
     display: block;
     box-shadow: inset 0 0 30px 0 rgb(255 255 255 / 51%);
@@ -138,12 +216,12 @@ div#marKs-trends .bg-white p {
     padding: 10px 10px 0px;
 }
 .topics-box:hover span{ background-image: linear-gradient(134deg, #3de2f8 -3%, #4e61ef);color:#fff;border: solid 2px #fff!important;}
-.col-md-6 .topics-box:hover:last-child span{  background-image: linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);}
-.col-md-6 .topics-box:hover:nth-child(2) span{  background-image: linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);}
-.col-md-6 .topics-box:hover:nth-child(3) span{background-image: linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);}
-.col-md-6 .topics-box:last-child span { border: solid 2px #eb5347;}
-.col-md-6 .topics-box:nth-child(2) span { border: solid 2px #37c027;}
-.col-md-6 .topics-box:nth-child(3) span { border: solid 2px #ffdc34;}
+.col-md-6 .topics-box:hover:last-child span,.topicBlocks .topics-box:hover:last-child span{  background-image: linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);}
+.col-md-6 .topics-box:hover:nth-child(2) span,.topicBlocks .topics-box:hover:nth-child(2) span{  background-image: linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);}
+.col-md-6 .topics-box:hover:nth-child(3) span,.topicBlocks .topics-box:hover:nth-child(3) span{background-image: linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);}
+.col-md-6 .topics-box:last-child span,.topicBlocks .topics-box:last-child span { border: solid 2px #eb5347;}
+.col-md-6 .topics-box:nth-child(2) span,.topicBlocks .topics-box:nth-child(2) span { border: solid 2px #37c027;}
+.col-md-6 .topics-box:nth-child(3) span,.topicBlocks .topics-box:nth-child(3) span { border: solid 2px #ffdc34;}
 .topics-box span small {
     font-size: 11px;
     vertical-align: super;
