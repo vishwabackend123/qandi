@@ -211,12 +211,13 @@ $userData = Session::get('user_data');
                                 This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                             </p>
                         </small>
-                        <div class="prgress-i-txt mb-2">
+                        <div class="prgress-i-txt">
                             <span class="progress_text" style="padding-left: 15px;">Weekly Marks Trends</span>
                         </div>
-                        <figure>
+                        <div id="marks_trend_graph"></div>
+                        <!-- <figure>
                             <img src="{{URL::asset('public/after_login/new_ui/images/weekly-trends-graph.png')}}" class="w-100">
-                        </figure>
+                        </figure> -->
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -863,13 +864,10 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     Highcharts.chart('marks_trend_graph', {
         chart: {
             type: 'areaspline',
-            height: 180,
+            height: 165,
             plotBackgroundColor: null,
             zoomType: 'x',
-            marginLeft: -10,
-            marginRight: -10,
-            spacingLeft: 0,
-            spacingRight: 0
+
         },
         title: {
             text: ''
@@ -917,6 +915,8 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
                 fillOpacity: 0.4
             },
             series: {
+                pointPadding: 0,
+                groupPadding: 0,
                 marker: {
                     enabled: true
                 },

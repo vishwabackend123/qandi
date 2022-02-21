@@ -251,3 +251,6 @@ Route::any('/signupAddress', [App\Http\Controllers\StudentSignInController::clas
 /* dashboard new routes */
 Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
 Route::get('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
+
+/* Topic analytics route  */
+Route::any('/topic-analytics', [App\Http\Controllers\AnalyticsController::class, 'topicAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');

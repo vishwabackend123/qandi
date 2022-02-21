@@ -774,4 +774,11 @@ class AnalyticsController extends Controller
 
         return $response_json;
     }
+
+
+
+    public function topicAnalyticsList()
+    {
+        return view('afterlogin.Analytics.topics_analytics');
+    }
 }
