@@ -14,43 +14,59 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
 
     <div class="content-wrapper">
-        <div class="container-fluid pt-0">
+        <div class="container-fluid pt-0  dashboard-cards-block">
 
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                    <div class="bg-white shadow-lg py-5">
-                        <div class="prgress-i-txt px-3 mb-1">
-                            <span class="progress_text">Progress</span>
-                            <!--  <span class="i-sms">!</span> -->
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8 col-sm-12 col-md-8">
-                                <div class="d-flex justify-content-center flex-column h-100 ">
-                                    <div class="" id="scorecontainer"></div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="bg-white shadow-lg">
+                        <small>
+                            <i class="fa  fa-info"></i>
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                <label>About MyQ Today</label>
+                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                            </p>
+                        </small>
+                        <div class="row h-100">
+                            <div class="col-lg-7 col-sm-12 col-md-8" style="padding-right:0!important;">
+                                <div style="padding:20px 0 0;">
+                                    <div class="prgress-i-txt px-3 mb-1" style="padding-left:30px!important;">
+                                        <span class="progress_text">MyQ Today</span>
+                                    </div>
+                                    <div class="d-flex justify-content-center flex-column h-100 ">
+                                        <div class="" id="scorecontainer"></div>
 
-                                    <ul class="live-test mt-1">
-                                        <li>
-                                            <span class="last-live-test"></span>Last Test Score
-                                        </li>
-                                        <li>
-                                            <span class="pre-test"></span>Previous Test
-                                        </li>
-                                    </ul>
+                                        <ul class="live-test mt-1">
+                                            <li>
+                                                <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
+                                            </li>
+                                            <!-- <li>
+                                                <span class="pre-test"></span>Previous Test
+                                            </li> -->
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 p-0 text-center seeAnico">
-                                <span class="text-center"><img src="{{URL::asset('public/after_login/new_ui/images/right-circle-img.png')}}" alt="see analytics" title="See Analytics"></span>
-                                <div class="button-sec  mt-3"><a href="{{route('overall_analytics')}}" title="See Analytics">See Analytics</a></div>
+                            <div class="col-lg-5 col-md-4 col-sm-12  text-center seeAnico" style="padding-left:0;">
+                                <div class="analytics-thumbnail-bg h-100">
+                                    <div class="button-sec mb-4 mt-3"><a href="{{route('overall_analytics')}}" title="See Analytics">See Analytics</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1">
-                        <!-- <h5 class="dashboard-title mb-5">Subject Performance</h5> -->
+                        <small>
+                            <i class="fa  fa-info"></i>
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                <label>About Subject Performance</label>
+                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                            </p>
+                        </small>
                         <div class="prgress-i-txt px-0">
-                            <span class="progress_text">Subject Proficiency</span>
-                            <!--                                 <span class="i-sms">!</span> -->
+                            <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
                             <ul class="course-star pe-2">
@@ -81,20 +97,153 @@ $userData = Session::get('user_data');
 
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt" style="overflow:hidden;">
                         <div class="prgress-i-txt px-3">
                             <span class="progress_text">Weekly Marks Trends</span>
-                            <!-- <span class="i-sms">!</span> -->
+                          
                         </div>
-                        <!-- <div id="trend_line_graph"></div> -->
                         <div id="marks_trend_graph"></div>
-                        <!-- <h5 class="dashboard-title pb-4 px-3">Weekly Marks Trends</h5> -->
-                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/right-graph.jpg')}}" class="img-fluid w-100 img-responsive"> -->
+                    </div>
+                </div> -->
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                    <div class="bg-white shadow-lg py-5 myqMatrix-card">
+                        <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
+                        <small>
+                            <i class="fa  fa-info"></i>
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                <label>About MyQ Matrix</label>
+                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br/><br/> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
+                            </p>
+                        </small>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="topics-box">
+                                    <b>Q2</b>
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                </div>
+                                <div class="topics-box">
+                                    
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                    <b style="margin:0 0 0 6px">Q1</b>
+                                </div>
+                                <div class="topics-box">    
+                                    <b>Q3</b>
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                </div>
+                                <div class="topics-box">
+                                    
+                                    <span>
+                                        <b>00</b>
+                                        <small>Topic</small>
+                                    </span>
+                                    <b style="margin:0 0 0 6px">Q4</b>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="p-0 m-0 matrixLists">
+                                    <li><b>Q1</b> Your strength topics. Keep revising to stay on top.</li>
+                                    <li><b>Q2</b> Convert into strengths with focussed practice </li>
+                                    <li><b>Q3</b> Weakness which can be converted to strength with consistent efforts</li>
+                                    <li class="m-0"><b>Q4</b> Your weakness. Need considerable efforts to convert to strengths  </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <!--row-->
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="bg-white shadow-lg py-5">
+                        <small>
+                            <i class="fa  fa-info"></i>
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                <label>About Progress Journey</label>
+                                Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
+                            </p>
+                        </small>
+                        <div class="prgress-i-txt mb-2">
+                            <span class="progress_text" style="padding-left: 15px;">Progress Journey</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <figure>
+                                    <img src="{{URL::asset('public/after_login/new_ui/images/progress-journey-graph.png')}}" class="w-100">
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chapter-ideal-schedule text-center">
+                                    <span>8</span>
+                                    <small>You are 8 chapter behind the ideal schedule</small>
+                                    <ul class="live-test mt-3 p-0 d-block" style="text-align: left;">
+                                        <li style="margin-right:10px;">
+                                            <span  style="vertical-align:middle;background:#ff0909;"></span>Ideal Pace
+                                        </li>
+                                        <li>
+                                            <span class="last-live-test"></span>Your Pace
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="bg-white shadow-lg py-5">
+                        <small>
+                            <i class="fa  fa-info"></i>
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                <label>About Weekly Marks Trends</label>
+                                This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
+                            </p>
+                        </small>
+                        <div class="prgress-i-txt mb-2">
+                            <span class="progress_text" style="padding-left: 15px;">Weekly Marks Trends</span>
+                        </div>
+                        <figure>
+                            <img src="{{URL::asset('public/after_login/new_ui/images/weekly-trends-graph.png')}}" class="w-100">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-white shadow-lg py-5 task-center-block">
+                        <small>
+                            <i class="fa  fa-info"></i>
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                <label>About My Task Center</label>
+                                A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
+                            </p>
+                        </small>
+                        <div class="prgress-i-txt mb-4">
+                            <span class="progress_text" style="padding-left: 15px;">My Task Center</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><img  src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
+                            <button class="btn btntheme" data-bs-toggle="modal" data-bs-target="#matrix">Daily TASK</button>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <span><img  src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"></span>
+                            <button class="btn btntheme">Weekly TASK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="cust-gallery">
                 <div class="swiper mySwiper">
@@ -102,12 +251,17 @@ $userData = Session::get('user_data');
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
                         <div class="swiper-slide bg-white AttmnowSec">
                             <div class="row">
-                                <div class="col-lg-12 px-0">
-                                    <p>Complete full body scan to</p>
-                                    <h3>Unlock Daily Test</h3>
-                                    <p>& complete platform features</p>
-                                    <!-- <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
-                                        </span></div> -->
+                                <div class="col-lg-12">
+                                    <div class="d-flex">
+                                        <span style="margin-right: 20px;">
+                                            <img src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}" style="width:80px;">
+                                        </span>
+                                        <div>
+                                            <p>Complete the</p>
+                                            <h3>Full Body Scan Test</h3>
+                                            <p>to see complete analytics</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="sign-btn">
@@ -120,9 +274,21 @@ $userData = Session::get('user_data');
 
 
                         <div class="swiper-slide bg-white go2Planner">
+                            <small>
+                                <i class="fa  fa-info"></i>
+                                <p>
+                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                    <label>About Weekly Plan</label>
+                                    To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
+                                </p>
+                            </small>
                             <span>Weekly Plan</span>
 
                             <div class="test-attend text-center pt-2 pb-2">
+                                <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;display:none;">
+                                    <b>Plan Tests</b> <br/>
+                                    Plan upto seven tests on topics of your choice
+                                </div>
                                 <p>Tests Attempted</p>
                                 <div class="ms-auto">
                                     @if(isset($planner) && !empty($planner))
@@ -147,13 +313,33 @@ $userData = Session::get('user_data');
 
                         @foreach($planner as $key=>$val)
                         @if($val->test_completed_yn=="N")
-                        <div class="swiper-slide bg-white">
+                        <div class="swiper-slide bg-white" style="padding: 30px 25px;">
                             <div class="row">
-                                <div class="col-lg-12 px-0">
-                                    <p>Level up in</p>
-                                    <h3 class="chapter_name" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
-                                    <!-- <div> <span><img src="{{URL::asset('public/after_login/new_ui/images/star1.jpg')}}"></span> <span class="ms-1 score score-rating js-score">0%
-                                        </span></div> -->
+                                <div class="col-lg-12">
+                                    <div class="d-flex">
+                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/biology-subject-icon.png')}}"></span>
+                                        <div>
+                                            <p>Level up in</p>
+                                            <h3 class="chapter_name mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
+                                            <ul class="course-star pe-2 m-0">
+                                                <li style="float:none;">
+                                                    <strong style="width:auto;">Proficiency</strong>
+                                                    <span class="star-img" style="width:auto;">
+                                                        <div class="star-ratings-css ">
+                                                            <div class="star-ratings-css-top">
+                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                            </div>
+                                                            <div class="star-ratings-css-bottom">
+                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </span>
+                                                    <span> 90%</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="sign-btn">
@@ -164,9 +350,11 @@ $userData = Session::get('user_data');
                                     <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
                                     <input type="hidden" name="chapter_id" value="{{$val->chapter_id}}">
                                     <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
-
-                                    <button type="submit" class="btn btn-primary active-btn text-uppercase">
-                                        <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
+                                    <div class="text-left attempt-schedule-btn d-flex">
+                                        <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
+                                        <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
+                                        <button class="custom-btn-gray mt-2"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" style="width:17px;">Schedule later</button>
+                                    </div>
 
                                     <!--  <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
                                             <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
@@ -176,11 +364,29 @@ $userData = Session::get('user_data');
 
                         </div>
                         @elseif($val->test_completed_yn=="Y")
-                        <div class="swiper-slide bg-white testcompltd">
-                            <div class="test-attend text-center pt-2 pb-2">
-                                <p>Tests Attempted</p>
+                        <div class="swiper-slide bg-white testcompltd completed-test-block">
+                            <div class="test-attend text-center">
+                                <!-- <p>Tests Attempted</p> -->
                                 <div class="ms-auto">
-                                    <h3><span class="text-secondary me-2 chapter_name"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></span>{{$val->chapter_name}}</h3>
+                                    <span class="text-secondary chapter_name mb-2 d-block"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></span>
+                                    <h3 class="mb-0">{{$val->chapter_name}}</h3>
+                                    <ul class="course-star mt-3 mb-0">
+                                        <li style="float:none;">
+                                            <strong style="width:auto;" class="d-block">Proficiency</strong>
+                                            <span class="star-img" style="width:auto;">
+                                                <div class="star-ratings-css ">
+                                                    <div class="star-ratings-css-top">
+                                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                    </div>
+                                                    <div class="star-ratings-css-bottom">
+                                                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                    </div>
+                                                </div>
+
+                                            </span>
+                                            <span> 90%</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -306,7 +512,23 @@ $userData = Session::get('user_data');
 @endif
 <!-- End full exam popup -->
 
-
+<!--------- Modal ------>
+<div class="modal fade" id="matrix">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 bg-light">
+	        <!-- <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+            </div> -->
+            <div class="modal-body text-center">
+                <p>Give more tests for this <br/> section to be populated</p>
+                <div class="text-center mb-4">
+                    <button type="submit" class="btn btn-danger px-5" data-bs-dismiss="modal"> Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------->
 
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
@@ -723,5 +945,15 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 
     });
     /* Mrks trend Graph */
+</script>
+<script>
+    $(document).ready(function(){
+        $(".dashboard-cards-block .bg-white>small i").click(function(){
+            $(this).siblings("p").show();
+        });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function(){
+            $(this).parent("p").hide();
+        });
+    });
 </script>
 @endsection
