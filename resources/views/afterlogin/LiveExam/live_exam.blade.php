@@ -22,9 +22,7 @@
       }
    });
 </script>
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script> -->
+
 
 @section('content')
 @php
@@ -44,64 +42,8 @@ $questtype='radio';
 }
 @endphp
 <style>
-    .time_taken_css {
-        border-left: 3px Solid #ff6060;
-        width: 200px;
-        font: 14px;
-        color: #2C3348;
-        font-weight: 500;
-        background-color: #e4e4e4;
-        text-align: center;
-    }
-
-    .time_taken_css span:first-child {
-
-        font-weight: 200;
-
-    }
-
-    .counter {
-        position: relative;
-        right: 25px;
-        margin-left: auto;
-        margin-right: -50px;
-    }
-
-    .counter .progressBar .seconds {
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        color: #FFF;
-        font-weight: 600;
-        top: -2px;
-
-    }
-
-    .tiny-green {
-        position: relative;
-        padding: 0px;
-        width: 180px;
-        background-color: #E4E4E4;
-        height: 18px;
-    }
-
-    .tiny-green div {
-        font-family: arial;
-        font-size: 3px;
-        height: inherit;
-        color: white;
-        text-align: right;
-        text-shadow: 0px 0px 2px #000;
-        text-indent: 9999px;
-        overflow: hidden;
-        background-color: #44CD7F;
-        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
-        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
- */
-
-
+    .qiestionTimer {
+        display: none !important;
     }
 </style>
 
@@ -493,21 +435,7 @@ $questtype='radio';
 </script>
 <!-- /page referesh disabled -->
 <!-- browser back disable -->
-<!-- <script>
-    window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
-    window.onhashchange = function() {
-        window.location.hash = "no-back-button";
-    }
-</script>
-<script type="text/javascript">
-    history.pushState(null, null, location.href);
-    history.back();
-    history.forward();
-    window.onpopstate = function() {
-        history.go(1);
-    };
-</script> -->
+
 <script type="text/javascript">
     $(document).ready(function() {
         window.history.pushState(null, "", window.location.href);
