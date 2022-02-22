@@ -790,3 +790,30 @@ border-color:#00baff;
 margin-right:0;
 }
 /* end by Navdeep-21-02 */
+
+
+/*   Added by Sachin-22-02  */
+.flex-box1{
+    display: flex;
+    justify-content: space-between;
+}
+.customgray{
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background: #e9e9e9;
+    border: none;
+    color: #2c3348;
+    margin-right: 15px;
+    font-size: 15px;
+    padding: 10px 50px !important;
+    height: 45px !important;
+  
+}
+
+.customgray i{
+    color: #2c3348;
+}
+
+ 
+
+/*  End by Sachin-22-02  */

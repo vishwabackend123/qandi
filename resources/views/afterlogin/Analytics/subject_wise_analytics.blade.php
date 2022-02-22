@@ -128,8 +128,9 @@
     </div>
     <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
-            <div class="d-flex align-items-center px-3">
-                <h5 class="dashboard-title ">Topics</h5>
+            <div class="d-flex align-items-center px-3 flex-box1">
+                <h5 class="dashboard-title ">Topics </h5>
+                <span class="EXPAND_btn"><button class="customgray"><i class="fa fa-arrows-alt" aria-hidden="true"></i>EXPAND</button></span>
             </div>
             <div class="scroll-topic-ana">
                 @if($subProf)
