@@ -28,11 +28,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                           <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                      <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>50%</span>
                   </div>
@@ -59,11 +59,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Carbon molecules</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>00%</span>
                   </div>
@@ -84,11 +84,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                       <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>50%</span>
                   </div>
@@ -115,11 +115,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules-1</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                          <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                          <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>00%</span>
                   </div>
@@ -140,11 +140,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>50%</span>
                   </div>
@@ -171,11 +171,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>50%</span>
                   </div>
@@ -202,11 +202,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules-4</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>27%</span>
                   </div>
@@ -230,11 +230,11 @@ $userData = Session::get('user_data');
                   <h3 class="m-0 p-0">Basic Biomolecules-4</h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/fill-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/half-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
-                        <li><img src="http://localhost/Uniq_web/public/after_login/new_ui/images/gray-star.png"></li>
+                       <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/half-star.png')}}" alt="half-star"></li>
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                     <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                      </ul>
                      <span>25%</span>
                   </div>
