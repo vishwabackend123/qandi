@@ -16,6 +16,10 @@ button {
     text-decoration: none;
 }
 
+.notification a svg .cls-3 {stroke: none;}
+.bg-white.shadow-lg {
+    margin-bottom: 36px;
+}
 
 /******* MyQMatrix Amit-Start ******/
 .dashboard-cards-block.matrixpage-wrapper .bg-white>small p {
@@ -222,6 +226,14 @@ div#marKs-trends .bg-white p {
 }
 
 /******* New dashboard Amit-Start ******/
+   /**** 22-02-2022 ******/
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
+   {width: 21%!important;}
+    .subject-placeholder-block>span{display: flex;margin-top:10px;}
+    /***********************/
+
 .dashboard-cards-block .bg-white {
     position: relative;
 }
@@ -461,6 +473,7 @@ ul.matrixLists li b {
 
 .sign-btn .attempt-schedule-btn button {
     width: auto;
+    padding: 0 10px;
 }
 
 .attempt-schedule-btn {
@@ -667,7 +680,7 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
     letter-spacing: normal;
     text-align: left;
     color: #707070;
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 0px;
 }
 
@@ -4232,7 +4245,7 @@ p.tab-title {
 }
 
 .star-img {
-    width: 32%;
+    /*width: 32%;*/
     display: inline-block;
     text-align: left;
     margin-left: 12px;
@@ -5481,6 +5494,15 @@ label.question.m-0.py-3.d-block .MathJax {
     position: relative;
 }
 
+#review_rques_blk .arrow {
+    position: absolute;
+    right:0px;
+}
+#review_rques_blk .next-arow {
+    right: 10px;
+   
+}
+
 .arrow {
     position: unset;
     width: 64px;
@@ -5561,7 +5583,7 @@ label.question.m-0.py-3.d-block .MathJax {
 .dash-sidebar .submenu-L2 {
     position: fixed;
     top: 0;
-    left: 190px;
+    left: 201px;
     bottom: 0;
     height: 100%;
 
@@ -7099,3 +7121,5 @@ input#linkInput {
 .copylinkbtn:hover {
     color: #ffffff;
 }
+
+/*********************8/

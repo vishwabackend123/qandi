@@ -132,50 +132,33 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                     <img class="collapsebtn" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}">
                                                 </div>
                                                 <div class="review_expand">
-                                                    
-                                                    <button class="open percent_btn">21%</button>
-                                                    <div class="popup-content">
-                                                        <div class="sa">
-                                                            <div class="first_screen first_screen_popup">
-                                                                <div class="persent_std">
-                                                                    <span class="no-of-persent">21%</span><span class="attend">of the people got this question right</span>
-                                                                </div> 
-                                                                <div class="propt_text">To answer this you need to have</div>
-                                                                <div class="attemp_box row mt-0">
-                                                                    <div class="sub_att_1 col-md-6">
-                                                                    <p>knowledge,Application of</p>
-                                                                    <a class="detail_btn">Pythagoras therem</a>
-                                                                    </div>
-                                                                    <div class="sub_att_1 col-md-6">
-                                                                    <p>knowledge,Application of</p>
-                                                                    <a class="detail_btn2">Pythagoras therem</a>
-                                                                    </div>
-                                                                    
+                                                    <div class='percent_btn'>21%</div>
+                                                    <div class='expand_block'>
+                                                        <div class="first_screen">
+                                                            <div class="persent_std">
+                                                                <span class="no-of-persent">21%</span><span class="attend">of the people got this question right</span>
+                                                            </div> 
+                                                            <div class="propt_text">To answer this you need to have</div>
+                                                            <div class="attemp_box row mt-0">
+                                                                <div class="sub_att_1 col-md-6">
+                                                                <p>knowledge,Application of</p>
+                                                                <a class="detail_btn" onclick="openPopup('div1');"> Pythagoras therem</a>
+                                                                </div>
+                                                                <div class="sub_att_1 col-md-6">
+                                                                <p>knowledge,Application of</p>
+                                                                <a class="detail_btn">PYTHAGORAS THEREM</a>
                                                                 </div>
                                                             </div>
-                                                            <div class="other_screen  second_screen_popup">
-                                                                <div class="detail_text-heading">
-                                                                        <div class="left_box">
-                                                                            <p class="detail_h">Pythagoras therem</p>
-                                                                            <p class="main-catgy">Maths / Geometry</p>
-                                                                        </div>  
-                                                                        <div class="right_box">
-                                                                            <ul>
-                                                                                <li><a href="javascript:void(0);"><i class="fa fa-bookmark-o" aria-hidden="true"></i><span>2</span></a></li>
-                                                                                <li><a href="javascript:void(0);"><i class="fa fa-bookmark-o" aria-hidden="true"></i><span>2</span></a></li>
-                                                                                <li><a href="javascript:void(0);"><i class="fa fa-bookmark-o" aria-hidden="true"></i><span>2</span></a></li>
-                                                                                <li><a href="javascript:void(0);"><i class="fa fa-bookmark-o" aria-hidden="true"></i><span>2</span></a></li>
-                                                                                <li><a href="javascript:void(0);"><i class="fa fa-bookmark-o" aria-hidden="true"></i><span>2</span></a></li>
-                                                                            </ul>
-                                                                        </div> 
-                                                                </div>
-                                                                <p class="detail_text_content">Arc & Radius is a concept from Geometry that helps you get around 12 marks in the final exam.
-                                                                If you are able to get the knowledge, you can easily get 4 marks. If you are able to comprehend and apply the concept, you can get the remaining 8 marks.</p>
-                                                            </div>
-                                                            
                                                         </div>
+                                                            
+                                                       
+                                                        
                                                     </div>
                                                 </div>
+                                           
+                                                
+
+
                                         </div>
                                         <!--answer-section-->
                                     </div>
@@ -188,15 +171,13 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 </div>
                 <!-- Right Side Area -->
 
-<script>
-$(".open").on("click", function() {
-  $(".first_screen_popup").addClass("active");
-});
 
-$(".detail_btn").on("click", function() {
-  $(".second_screen_popup").addClass("active");
-});
-</script>
+  
+
+
+
+ 
+ 
 
  
 <script>
@@ -230,235 +211,25 @@ $(".detail_btn").on("click", function() {
 
     });
 </script>
-
-
-
-
-
-
-<style>
-.expand_button{
-    position: absolute;
-    top: 8%;
-    right: 2%;
-}
-.collapsebtn{
-    display:none;
-}
-
-.right_box ul{
-    padding:0px;
-    margin:0px;
-}
-
-.right_box  span {
-    padding-left: 5px;
-}
-
-.right_box ul li a{
-    color: #605f5f;
-}
-.detail_text_content{
-    font-size: 14px;
-    color: #2c3348;
-    opacity: .99;
-    max-height: 90px;
-    overflow-y: scroll;
-}
-
-.right_box ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 0px 6px;
-    color: red;
-
-} 
-
-.detail_text-heading{
-    display: flex;
-    justify-content: space-between;
-    align-items: self-start;
-}
-
-.detail_text-heading p{
-    font-size:13px;
-}
-
-.review_expand .detail_h{
-    color: #00baff;
-    font-size: 12px;
-    font-weight: bold;
-    width: auto;
-    display: block;
-    text-transform: uppercase;
-    text-align: left;
-    cursor: pointer;
-}
-
-.main-catgy {
-    color:#2c3348;
-}
-
-.review_expand .left_box  p{
-    padding: 0px;
-
-}
-
-.review_expand .expand_button{
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-.percent_btn {
-    color: #ffffff;
-    background-color: #00bdff;
-    border-radius: 17px;
-    padding: 10px 60px;
-    border: navajowhite;
-    font-size: 14px;
-}
-
-.first_screen_popup.active {
-    display: block;
-    z-index: 999;
-}
-
-.second_screen_popup.active  ,.thired_screen_popup.active {
-    display: block;
-}
-
-.other_screen{
-    padding: 14px !important;
-    border-radius: 18px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-    background-color: #ffffff;
-    max-height: 193px;
-    width: 100%;
-    min-width: 400px;
-}
-.first_screen {
-    padding: 14px !important;
-    border-radius: 18px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-    background-color: #ffffff;
-    width:315px;
-}
-
-.no-of-persent{
-    font-size: 36px;
-    font-weight: 600;
-    color: #37c027;
-}
-.attend{
-    width: 178px;
-    object-fit: contain;
-    font-size: 16px;
-    opacity: .99;
-    color: #231f20;
-    padding-left: 14px;
-}
-
-.persent_std{
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #86878b9e;
-}
-
-.attemp_box span{
-    font-size:12px;
-    color: #2c3348;
-}
-
-.attemp_box a{
-    color: #00baff;
-    font-size: 12px;
-    font-weight: bold;
-    width: auto;
-    display: block;
-    text-transform: uppercase;
-    width: 100px;
-    text-align:left;    cursor: pointer;
-}
-.attemp_box{
-    display:flex;
-}
-
-.sub_att_1  p{
-    font-size: 11px;
-    margin-bottom: 0px;
-    color: #2c3348;
-    text-align: left;
-    opacity: .99;
-}
-.propt_text{
-    padding: 20px 0px;
-    text-align: left;
-    font-size: 14px;
-    color: #2c3348;
-    opacity: .99;
-}
-.main-catgy{
-    font-size: 14px;
-    color: #2c3348;
-    opacity: .99;
-}
-.review_expand .button {
-    background-color:#ccc;
-    width:60px;
-}
-
-.first_screen_popup, .second_screen_popup, .thired_screen_popup{
-    display: none;
-}
-
-.review_expand{
-    position: absolute;
-    top: 20%;
-    right: 10%;
-}
-.sa{
-    display: flex;
-    flex-direction: row-reverse;
-    position: relative; top: -41px;
-}
-.second_screen_popup , .thired_screen_popup {
-    position: absolute;
-    right: 295px;
-}
-
-.answer-section {
-    position: absolute;
-    bottom: 0px;
-    width: 98%;
-    top: 52%;
-    border-radius: 56px;
-    border-bottom-left-radius: 56px;
-    border-bottom-right-radius: 56px;
-}
-#review_rques_blk{
-    position: relative;
-}
-
-</style>
 <script>
-$(".button").click(function(e){
-    $(".dropdown").show();
+  $(".percent_btn").click(function(e){
+    $(".expand_block").show();
      e.stopPropagation();
 });
 
-$(".dropdown").click(function(e){
+$(".expand_block").click(function(e){
     e.stopPropagation();
 });
 
 $(document).click(function(){
-    $(".dropdown").hide();
+    $(".expand_block").hide();
 });
-</script>
+  </script>
+  
+
+
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
-
-
-
                         <p class="rightSectH">Answer</p>
                         <div class="number-block">
                             @php $quKey=1; @endphp
