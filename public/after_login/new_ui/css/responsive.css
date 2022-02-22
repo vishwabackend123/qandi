@@ -177,10 +177,6 @@
 
 @media(min-width:992px) and (max-width:1280px) {
 
-    /******* New dashboard Amit-Start ******/
-    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white{width: 36% !important;}
-    /******* New dashboard Amit-End ******/
-
     /** Rahul css on 17-1-2022 **/
 
     .button-sec.mt-3 a {
@@ -1386,6 +1382,12 @@
     /******* MyQMatrix Amit-End ******/
 
     /******* New dashboard Amit-Start ******/
+    /**** 22-02-2022 ******/
+        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
+        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
+        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
+        {width:100%!important;}
+    /**********************/
     .dashboard-cards-block .row.h-100>.col-lg-7.col-sm-12.col-md-8 .d-flex.justify-content-center.flex-column.h-100 {
     padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
     .analytics-thumbnail-bg{display: block;background-image:none;}
