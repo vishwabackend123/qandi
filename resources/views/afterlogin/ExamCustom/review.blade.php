@@ -125,6 +125,40 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 <p>{!! $question_data->reference_text !!}</p>
                                                 @endif
                                             </div>
+
+                                            
+                                                <div class="expand_button">
+                                                    <img class="expandbtn" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}">
+                                                    <img class="collapsebtn" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}">
+                                                </div>
+                                                <div class="review_expand">
+                                                    <div class='percent_btn'>21%</div>
+                                                    <div class='expand_block'>
+                                                        <div class="first_screen">
+                                                            <div class="persent_std">
+                                                                <span class="no-of-persent">21%</span><span class="attend">of the people got this question right</span>
+                                                            </div> 
+                                                            <div class="propt_text">To answer this you need to have</div>
+                                                            <div class="attemp_box row mt-0">
+                                                                <div class="sub_att_1 col-md-6">
+                                                                <p>knowledge,Application of</p>
+                                                                <a class="detail_btn" onclick="openPopup('div1');"> Pythagoras therem</a>
+                                                                </div>
+                                                                <div class="sub_att_1 col-md-6">
+                                                                <p>knowledge,Application of</p>
+                                                                <a class="detail_btn">PYTHAGORAS THEREM</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            
+                                                       
+                                                        
+                                                    </div>
+                                                </div>
+                                           
+                                                
+
+
                                         </div>
                                         <!--answer-section-->
                                     </div>
@@ -137,11 +171,65 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 </div>
                 <!-- Right Side Area -->
 
+
+  
+
+
+
+ 
+ 
+
+ 
+<script>
+        $(document).ready(function(){
+        $(".expandbtn").on('click',function() { 
+            $(".review-qus").css({'height':'400'}); 
+            $(".answer-section").css({'height':'400'}); 
+        });
+
+        $(".collapsebtn").on('click',function() { 
+            $(".review-qus").css({'height':'210'}); 
+            $(".answer-section").css({'height':'200'}); 
+        });
+        });
+</script>
+
+<script>
+    
+    $(document).ready(function(){
+        $(".expandbtn").on('click',function() { 
+            $(".expandbtn").css({'display':'none'}); 
+            $(".collapsebtn").css({'display':'block'}); 
+            
+        });
+
+        $(".collapsebtn").on('click',function() { 
+            $(".collapsebtn").css({'display':'none'}); 
+            $(".expandbtn").css({'display':'block'}); 
+            
+        });
+
+    });
+</script>
+<script>
+  $(".percent_btn").click(function(e){
+    $(".expand_block").show();
+     e.stopPropagation();
+});
+
+$(".expand_block").click(function(e){
+    e.stopPropagation();
+});
+
+$(document).click(function(){
+    $(".expand_block").hide();
+});
+  </script>
+  
+
+
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
-
-
-
                         <p class="rightSectH">Answer</p>
                         <div class="number-block">
                             @php $quKey=1; @endphp
@@ -322,4 +410,38 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         });
     }
 </script>
+
+
+
+
+
+
+
+
+
+ 
+ 
+<script>
+ 
+    function setboxHeight() {
+        var height = $(".rightSect .flex-column").outerHeight();
+        $('.test-review').css('height', height);
+        var calculatedHeight = height - 64 + "px";
+        $('#review_rques_blk').css('height', calculatedHeight);
+       
+    }
+
+        setboxHeight();
+        $( "window" ).load(function() {
+        setboxHeight();
+        });
+    
+
+    $(window).resize(function() {
+        setboxHeight();
+    });
+ 
+</script>
+ 
+ 
 @endsection

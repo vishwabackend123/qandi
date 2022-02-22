@@ -666,3 +666,197 @@ div#time-Avg-quest {
 }
 
 /* added by Sachin-18-02 */
+
+
+/* added by Navdeep-21-02 */
+.back_page{
+background: #e9e9e9;
+    width: 38px;
+    height: 38px;
+    margin-right: 25px;
+    padding: 6px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 22px !important;
+    line-height: 25px;
+}
+.topics_breadcum{
+padding:12px 10px;	
+margin-right:28px;
+}
+.topics_breadcum a{
+font-size:16px;
+color:#2c3348;	
+ font-weight: 600;
+}
+.topics_breadcum .breadcrumb-item+.breadcrumb-item::before{
+	    content: var(--bs-breadcrumb-divider, ">");
+}
+.topic-details{
+background:#f2f2f2;
+padding:30px;
+border-radius:30px;
+}
+.sub-details{
+ margin: 0 54px 36px 0;
+  padding: 20px 25px;
+  border-radius: 36px;	
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.sub-details:hover {
+    -moz-transform: translate(0px, -2px);
+    -webkit-transform: translate(0px, -2px);
+    -o-transform: translate(0px, -2px);
+    -ms-transform: translate(0px, -2px);
+    transform: translate(0px, -2px);
+    -moz-box-shadow: 0 13px 36px rgba(0, 0, 0, 0.11), 0 24px 46px rgba(206, 178, 252, 0);
+    -webkit-box-shadow: 0 13px 36px rgb(0 0 0 / 11%), 0 24px 46px rgb(206 178 252 / 0%);
+    box-shadow: 0 13px 36px rgb(0 0 0 / 11%), 0 24px 46px rgb(206 178 252 / 0%);
+}
+.sub-title h3{
+  font-size: 16px;
+  font-weight: 600;
+  color:#2c3348;
+}
+.all-star ul{
+list-style:none;	
+}
+.all-star ul li{
+display:inline-block;	
+}
+.all-star ul li img{
+    height: 12px;
+    width: 12px;	
+}
+.all-star span{
+font-size: 11px;
+    font-weight: 600;
+    color: #2c3348;
+    padding-left: 6px;
+    margin-top: 4px;  
+}
+.colorfull-bars{
+background:#e9e9e9;
+height:12px;
+border-radius:6px;
+margin:25px 0 12px;
+}
+.green_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #65d247;
+    width: 30%;
+	z-index:4;
+}
+.yellow_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #fba81d;
+    width: 27%;
+	z-index:3;
+	margin-left: -6px;
+}
+.red_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #f74645;
+    width: 25%;
+	z-index:2;
+	margin-left: -6px;
+}
+.skyblue_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #00baff;
+    width: 15%;
+	z-index:1;
+    margin-left: -6px;
+}
+.subject-name{
+list-style:none;
+}
+.subject-name li{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: #2c3348;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 7px 8px 7px 8px;
+    border: solid 1.5px #000;
+    margin-right: 16px;
+    text-align: center;
+}
+.subject-name li:nth-child(1){
+border-color:#37c027;	
+}
+.subject-name li:nth-child(2){
+border-color:#ffdc34;	
+}
+.subject-name li:nth-child(3){
+border-color:#eb5347;	
+}
+.subject-name li:nth-child(4){
+border-color:#00baff;	
+margin-right:0;
+}
+
+.subject-name li:hover:nth-child(1) {
+    background: -moz-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    background: -webkit-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    background:  linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    color: #fff;
+    border-color: #fff;
+}
+.subject-name li:hover:nth-child(2) {
+    background: -moz-linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);
+    background: -webkit-linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);
+    background:  linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);
+    color: #fff;
+    border-color: #fff;
+}
+.subject-name li:hover:nth-child(3) {
+    background: -moz-linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);
+    background: -webkit-linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);
+    background:  linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);
+    color: #fff;
+    border-color: #fff;
+}
+.subject-name li:hover:nth-child(4) {
+    background: -moz-linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
+    background: -webkit-linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
+    background:  linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
+    color: #fff;
+    border-color: #fff;
+}
+
+/* end by Navdeep-21-02 */
+
+
+/*   Added by Sachin-22-02  */
+.flex-box1{
+    display: flex;
+    justify-content: space-between;
+}
+.customgray{
+    border-radius: 20px !important;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background: #e9e9e9;
+    border: none;
+    color: #2c3348;
+    margin-right: 15px;
+    font-size: 15px;
+    padding: 10px 50px !important;
+    height: 45px !important;
+  
+}
+
+.customgray i{
+    color: #2c3348;
+}
+
+ 
+
+/*  End by Sachin-22-02  */
