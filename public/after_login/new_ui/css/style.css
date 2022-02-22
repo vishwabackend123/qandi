@@ -5494,6 +5494,15 @@ label.question.m-0.py-3.d-block .MathJax {
     position: relative;
 }
 
+#review_rques_blk .arrow {
+    position: absolute;
+    right:0px;
+}
+#review_rques_blk .next-arow {
+    right: 10px;
+   
+}
+
 .arrow {
     position: unset;
     width: 64px;
@@ -5574,7 +5583,7 @@ label.question.m-0.py-3.d-block .MathJax {
 .dash-sidebar .submenu-L2 {
     position: fixed;
     top: 0;
-    left: 190px;
+    left: 201px;
     bottom: 0;
     height: 100%;
 
@@ -7112,3 +7121,5 @@ input#linkInput {
 .copylinkbtn:hover {
     color: #ffffff;
 }
+
+/*********************8/
