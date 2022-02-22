@@ -17,6 +17,10 @@ button {
 }
 
 .notification a svg .cls-3 {stroke: none;}
+.bg-white.shadow-lg {
+    margin-bottom: 36px;
+}
+
 /******* MyQMatrix Amit-Start ******/
 .dashboard-cards-block.matrixpage-wrapper .bg-white>small p {
     z-index: 10;
