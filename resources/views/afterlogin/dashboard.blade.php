@@ -247,7 +247,7 @@ $userData = Session::get('user_data');
             </div>
 
 
-            <div class="cust-gallery">
+            <div class="cust-gallery pt-0">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
