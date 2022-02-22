@@ -680,7 +680,7 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
     letter-spacing: normal;
     text-align: left;
     color: #707070;
-    font-size: 12px;
+    font-size: 11px;
     margin-bottom: 0px;
 }
 
@@ -4245,7 +4245,7 @@ p.tab-title {
 }
 
 .star-img {
-    width: 32%;
+    /*width: 32%;*/
     display: inline-block;
     text-align: left;
     margin-left: 12px;
