@@ -16,7 +16,7 @@ button {
     text-decoration: none;
 }
 
-
+.notification a svg .cls-3 {stroke: none;}
 /******* MyQMatrix Amit-Start ******/
 .dashboard-cards-block.matrixpage-wrapper .bg-white>small p {
     z-index: 10;
@@ -461,6 +461,7 @@ ul.matrixLists li b {
 
 .sign-btn .attempt-schedule-btn button {
     width: auto;
+    padding: 0 10px;
 }
 
 .attempt-schedule-btn {
