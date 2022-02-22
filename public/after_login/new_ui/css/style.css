@@ -230,8 +230,10 @@ div#marKs-trends .bg-white p {
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
-   {width: 21%!important;}
+   {width: 265px!important;}
     .subject-placeholder-block>span{display: flex;margin-top:10px;}
+    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}
+    span.text-secondary.chapter_name.mb-2.d-block {text-align: center;}
     /***********************/
 
 .dashboard-cards-block .bg-white {
@@ -438,7 +440,7 @@ ul.matrixLists li b {
 }
 
 .dashboard-cards-block .cust-gallery .swiper-slide h3 {
-    width: 68%;
+    width: 240px;
 }
 
 .dashboard-cards-block .bg-white>small p {

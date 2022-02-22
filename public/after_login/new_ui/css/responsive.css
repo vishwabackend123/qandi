@@ -1387,6 +1387,8 @@
         .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
         .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
         {width:100%!important;}
+        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 100% !important;}
+        
     /**********************/
     .dashboard-cards-block .row.h-100>.col-lg-7.col-sm-12.col-md-8 .d-flex.justify-content-center.flex-column.h-100 {
     padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
