@@ -240,7 +240,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-4">
                             <span><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"></span>
-                            <a class="btn btntheme" href="javascript:void(0);">Weekly TASK</a>
+                            <a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Weekly TASK</a>
                         </div>
                     </div>
                 </div>
