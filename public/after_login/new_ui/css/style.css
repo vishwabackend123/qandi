@@ -713,6 +713,25 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
     color: #2c3348;
 }
 
+.dt_sec-1 span{font-weight: 600 !important;}
+    .dt_sec-1 span img{max-width: 60px;
+    padding-right: 5px;}
+   .dtrow-left {background: #f2f2f2c4;
+    border-radius: 30px;
+    padding: 25px;
+    margin: 10px;}
+    .dtrow-left .btntheme{width: 100%;
+    position: relative;
+    top: 57%;}
+    .dtrow-right {background: #f2f2f2c4;
+    border-radius: 30px;
+    padding: 25px;
+    margin: 10px;}
+    .dtrow-right .btntheme{width: 60%;
+    position: relative;
+    top: 2%;}
+
+
 /* Kanchan */
 
 /* Added by dinesh */
