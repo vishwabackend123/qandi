@@ -15,7 +15,9 @@ button {
     outline: none;
     text-decoration: none;
 }
-
+.bg-white.shadow-lg {
+    margin-bottom: 36px;
+}
 
 /******* MyQMatrix Amit-Start ******/
 .dashboard-cards-block.matrixpage-wrapper .bg-white>small p {
