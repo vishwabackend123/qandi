@@ -5481,6 +5481,15 @@ label.question.m-0.py-3.d-block .MathJax {
     position: relative;
 }
 
+#review_rques_blk .arrow {
+    position: absolute;
+    right:0px;
+}
+#review_rques_blk .next-arow {
+    right: 10px;
+   
+}
+
 .arrow {
     position: unset;
     width: 64px;
