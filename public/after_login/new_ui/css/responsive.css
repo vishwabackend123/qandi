@@ -748,13 +748,33 @@
 }
 
 @media only screen and (max-width: 767px) {
+ /*kanchan css*/
+ .dt_sec-1 span{font-weight: 600 !important;}
+    .dt_sec-1 span img{max-width: 60px;
+    padding-right: 5px;}
+   .dtrow-left {background: #f2f2f2c4;
+    border-radius: 30px;
+    padding: 25px;
+    margin: 10px;}
+    .dtrow-left .btntheme{width: 100%;
+    position: relative;
+    top: 0%;}
+    .dtrow-right {background: #f2f2f2c4;
+    border-radius: 30px;
+    padding: 25px;
+    margin: 10px;}
+    .dtrow-right .btntheme{width: 100%;
+    position: relative;
+    top: 2%;}
+ /*kanchan css*/
+
     button.arrow.prev-arow {
         position: relative;
     }
 	#sharefrnd .modal-body.pt-0.px-5 {
     padding-left: 1px !important;
     padding-right: 1px !important;
-}
+    }
 
 
     button.arrow.next-arow {
