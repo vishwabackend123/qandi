@@ -15,6 +15,8 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+.notification a svg .cls-3 {stroke: none;}
 .bg-white.shadow-lg {
     margin-bottom: 36px;
 }
@@ -224,6 +226,14 @@ div#marKs-trends .bg-white p {
 }
 
 /******* New dashboard Amit-Start ******/
+   /**** 22-02-2022 ******/
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
+   {width: 21%!important;}
+    .subject-placeholder-block>span{display: flex;margin-top:10px;}
+    /***********************/
+
 .dashboard-cards-block .bg-white {
     position: relative;
 }
@@ -463,6 +473,7 @@ ul.matrixLists li b {
 
 .sign-btn .attempt-schedule-btn button {
     width: auto;
+    padding: 0 10px;
 }
 
 .attempt-schedule-btn {
