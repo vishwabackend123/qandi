@@ -275,7 +275,7 @@ $userData = Session::get('user_data');
                         @endif
 
 
-                        <div class="swiper-slide bg-white go2Planner">
+                        <div class="swiper-slide bg-white go2Planner weekylplan-block">
                             <small>
                                 <i class="fa  fa-info"></i>
                                 <p>
@@ -315,8 +315,8 @@ $userData = Session::get('user_data');
 
                         @foreach($planner as $key=>$val)
                         @if($val->test_completed_yn=="N")
-                        <div class="swiper-slide bg-white" style="padding: 30px 25px;">
-                            <div class="row">
+                        <div class="swiper-slide bg-white">
+                            <!-- <div class="row">
                                 <div class="col-lg-12">
                                     <div class="d-flex">
                                         <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/biology-subject-icon.png')}}"></span>
@@ -345,31 +345,45 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="sign-btn">
-                                <!-- <form action="{{route('planner_exam',[$val->id,$val->chapter_id])}}" method="post"> -->
                                 <form method="post" action="{{route('plannerExam',[$val->id])}}">
                                     @csrf
                                     <input type="hidden" name="chapter_name" value="{{$val->chapter_name}}">
                                     <input type="hidden" name="subject_id" value="{{$val->subject_id}}">
                                     <input type="hidden" name="chapter_id" value="{{$val->chapter_id}}">
                                     <input type="hidden" name="exam_id" value="{{$val->exam_id}}">
-                                        <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
-                                            <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
-                                  
-                                    <!-- <div class="text-left attempt-schedule-btn d-flex">
-                                        <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
-                                            <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
-                                        <button class="custom-btn-gray mt-2"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" style="width:17px;">Schedule later</button>
-                                    </div> -->
-
-                                    <!--  <a href="{{route('planner_exam',[$val->id,$val->chapter_id])}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
-                                            <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
-                                    </a> -->
+                                    <button type="submit" class="btn btn-primary active-btn text-uppercase mt-2">
+                                    <img style="margin-left: -10px;" src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button>
                                 </form>
+                            </div> -->
+
+                            <!----- Weekly tests ---->
+                            <small>
+                                <i class="fa  fa-info"></i>
+                                <p>
+                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                    <label>About Weekly Plan</label>
+                                    To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
+                                </p>
+                            </small>
+                            <div class="row weeklytest-block">
+                                <div class="col-lg-12">
+                                    <div class="d-flex">
+                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}"></span>
+                                        <div>
+                                            <p>Plan your</p>
+                                            <h3 class="chapter_name mb-0 w-100">Weekly Tests</h3>
+                                            <p>for regular preparation</p>
+                                            
+                                        </div>
+                                    </div>
+                                    <button style="background-color: #fff;text-transform: none;" class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><i style="margin-right: 5px;" class="fa fa-angle-left"></i> Click on GO TO Planner</button>
+                                </div>
                             </div>
+                            <!-------------------->
 
                         </div>
                         @elseif($val->test_completed_yn=="Y")
-                        <div class="swiper-slide bg-white testcompltd completed-test-block">
+                        <div class="swiper-slide bg-white testcompltd completed-test-block ">
                             <div class="test-attend text-center">
                                 <!-- <p>Tests Attempted</p> -->
                                 <div class="ms-auto">
@@ -395,6 +409,30 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                            <img style="width: 150px;margin-top: -26px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                            <div>
+                                <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
+                                CHEMISTRY
+                            </div>
+                        </div>
+                        <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                        <img style="width: 85px;margin: 10px 0 30px;" src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            <div>
+                                <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
+                                PHYSICS
+                            </div>
+                        </div>
+                        <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                            <span>
+                                <img style="width: 150px;margin-top: -28px;margin-left: -20px;z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img style="width:85px;height:85px;margin-left: -75px;" src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            </span>
+                            <div style="margin-top: -8px;">
+                                <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
+                                MORE
+                            </div>
+                        </div>  
                         @endif
                         @endforeach
                         @endif
@@ -403,7 +441,23 @@ $userData = Session::get('user_data');
 
                 </div>
                 <!--swiper mySwiper-->
-
+                <!-- <ul class="d-inline-flex">
+                    <li class="bg-white">
+                        <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                        <div class="mt-3">
+                            <i class="fas fa-check-circle text-success"></i>
+                            CHEMISTRY
+                        </div>
+                    </li>
+                    <li class="bg-white">
+                        <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                        <div class="mt-3">
+                            <i class="fas fa-check-circle text-success"></i>
+                            PHYSICS
+                        </div>
+                    </li>   
+                </ul> -->
+                   
 
             </div>
 

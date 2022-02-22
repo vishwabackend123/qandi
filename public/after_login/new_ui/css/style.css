@@ -226,6 +226,14 @@ div#marKs-trends .bg-white p {
 }
 
 /******* New dashboard Amit-Start ******/
+   /**** 22-02-2022 ******/
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
+   .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
+   {width: 21%!important;}
+    .subject-placeholder-block>span{display: flex;margin-top:10px;}
+    /***********************/
+
 .dashboard-cards-block .bg-white {
     position: relative;
 }
