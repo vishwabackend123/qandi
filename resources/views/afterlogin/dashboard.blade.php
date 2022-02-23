@@ -349,14 +349,14 @@ $userData = Session::get('user_data');
 
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
-                            <img style="width: 150px;margin-top: -26px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                            <img src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <div>
                                 <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
                                 CHEMISTRY
                             </div>
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
-                            <img style="width: 85px;margin: 10px 0 30px;" src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             <div>
                                 <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
                                 PHYSICS
@@ -364,8 +364,8 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <span>
-                                <img style="width: 150px;margin-top: -28px;margin-left: -20px;z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                                <img style="width:85px;height:85px;margin-left: -75px;" src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                                <img style=";z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             <div style="margin-top: -8px;">
                                 <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
