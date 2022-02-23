@@ -611,7 +611,7 @@ class StudentSignInController extends Controller
                 
                 $exam_id = 1;
                 $inputjson = [
-                    "student_id" => 1,
+                    "student_id" => $student_id,
                     "exam_id" => $exam_id,
                     "email" => $data['refer_email'],
                     "student_refer_by" => $data['refer_code'],

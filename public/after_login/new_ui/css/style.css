@@ -785,10 +785,6 @@ a.disabled-btn {
     min-height: 590px;
 }
 
-.profile-show {
-    min-height: 590px !important;
-}
-
 .edit-form .error {
     color: #d71921;
     font-size: inherit;
@@ -2921,7 +2917,7 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
-    min-height: 550px !important;
+    min-height: 450px !important;
 }
 
 .profile-picture-txt .p-picture {
@@ -3731,7 +3727,7 @@ span.profile-digit {
 
 .leader-board {
     width: 370px;
-    height: 550px;
+    height: 450px;
     background: #fff;
     border-radius: 56px;
     padding: 38px 15px;
@@ -3743,7 +3739,7 @@ span.profile-digit {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     padding-left: 60px;
-    min-height: 550px;
+    min-height: 450px;
 }
 
 .leader-board h4 {
@@ -3818,7 +3814,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 375px;
+    height: 275px;
     margin-top: 20px;
     overflow-y: auto;
 }
@@ -7273,4 +7269,15 @@ margin:25px 0 12px;
 .copylinkbtn:hover {
     color: #ffffff;
 }
+
+
+/*********************8/
+
+/*****navdeep 23-02 ********/
+.box-shadow{
+-webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;  
+-moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;  
+box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;  
+}
+/*****end by navdeep 23-02 ********/
 
