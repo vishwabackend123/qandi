@@ -3,7 +3,7 @@
 @section('content')
 <section class="login-bg-img">
 
-    <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/Q&I_Logo.gif')}}" alt="logo not find"></a></span>
+    <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <div class="login_screen" id="login-box">
 
         <form id="studentsignup" method="post">
