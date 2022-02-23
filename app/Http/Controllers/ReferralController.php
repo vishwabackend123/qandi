@@ -87,9 +87,9 @@ class ReferralController extends Controller
 
         curl_close($curl);
         $refDecode =  json_decode($response);
-        $referral_email = isset($refDecode[0]->referral_email) ? $refDecode[0]->referral_email : '';
+        $referral_email = isset($refDecode[0]->email) ? $refDecode[0]->email : '';
         if (isset($referral_email) && !empty($referral_email)) {
-            return view('auth.register', compact('referral_email'));
+            return view('auth.register', compact('referral_email','referral_code'));
         } else {
             return abort(404);
         }
