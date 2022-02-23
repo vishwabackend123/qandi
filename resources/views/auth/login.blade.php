@@ -3,7 +3,7 @@
 @section('content')
 <section class="login-bg-img">
 
-    <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" alt="logo not find"></a></span>
+    <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <div class="login_screen">
         <p class="mb-0">Welcome to UniQ</p>
         <p>Please login using your registered email/ Mobile number</p>
