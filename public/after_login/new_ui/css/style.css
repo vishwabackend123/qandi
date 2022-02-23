@@ -7199,8 +7199,6 @@ input#linkInput {
     width: 60%;
 }
 .custOmSld a:focus {
-    outline: none !important;
-    border: none !important;
     box-shadow: none !important;
 }
 

@@ -60,10 +60,124 @@ $userData = Session::get('user_data');
                   <div class="dropdown">
                     <button class="btn btn-light rotate-icon ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i></button>
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
-                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>
-                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down"></i> A to Z order</a></li>
-                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','desc')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down-alt"></i> Z to A order</a></li>
+                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);"> 
+<svg id="Group_4864" data-name="Group 4864" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <path id="Path_2676" data-name="Path 2676" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2677" data-name="Path 2677" class="cls-2" d="M4,15l3,3,3-3"/>
+  <path id="Path_2678" data-name="Path 2678" class="cls-3" d="M7,6V18"/>
+  <path id="Path_2679" data-name="Path 2679" class="cls-4" d="M17,3a2,2,0,0,1,2,2V8a2,2,0,0,1-4,0V5A2,2,0,0,1,17,3Z"/>
+  <circle id="Ellipse_785" data-name="Ellipse 785" class="cls-4" cx="2" cy="2" r="2" transform="translate(15 14)"/>
+  <path id="Path_2680" data-name="Path 2680" class="cls-4" d="M19,16v3a2,2,0,0,1-2,2H15.5"/>
+</svg>
+ Low Proficiency</a></li>
+                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);"> 
+<svg id="Group_2976" data-name="Group 2976" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <path id="Path_2671" data-name="Path 2671" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2672" data-name="Path 2672" class="cls-2" d="M4,15l3,3,3-3"/>
+  <path id="Path_2673" data-name="Path 2673" class="cls-3" d="M7,6V18"/>
+  <path id="Path_2674" data-name="Path 2674" class="cls-4" d="M17,14a2,2,0,0,1,2,2v3a2,2,0,0,1-4,0V16A2,2,0,0,1,17,14Z"/>
+  <circle id="Ellipse_784" data-name="Ellipse 784" class="cls-4" cx="2" cy="2" r="2" transform="translate(15 3)"/>
+  <path id="Path_2675" data-name="Path 2675" class="cls-4" d="M19,5V8a2,2,0,0,1-2,2H15.5"/>
+</svg>
+ High Proficiency</a></li>
+                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);">
+<svg id="Group_2978" data-name="Group 2978" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+      }
+
+      .cls-4 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path id="Path_2681" data-name="Path 2681" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2682" data-name="Path 2682" class="cls-2" d="M15,10V5c0-1.38.62-2,2-2s2,.62,2,2v5m0-3H15"/>
+  <path id="Path_2683" data-name="Path 2683" class="cls-2" d="M19,21H15l4-7H15"/>
+  <path id="Path_2684" data-name="Path 2684" class="cls-3" d="M4,15l3,3,3-3"/>
+  <path id="Path_2685" data-name="Path 2685" class="cls-4" d="M7,6V18"/>
+</svg>
+ A to Z order</a></li>
+                      <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','desc')" href="javascript:void(0);">
+<svg id="Group_2979" data-name="Group 2979" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+      }
+
+      .cls-4 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path id="Path_2686" data-name="Path 2686" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2687" data-name="Path 2687" class="cls-2" d="M15,21V16c0-1.38.62-2,2-2s2,.62,2,2v5m0-3H15"/>
+  <path id="Path_2688" data-name="Path 2688" class="cls-2" d="M19,10H15l4-7H15"/>
+  <path id="Path_2689" data-name="Path 2689" class="cls-3" d="M4,15l3,3,3-3"/>
+  <path id="Path_2690" data-name="Path 2690" class="cls-4" d="M7,6V18"/>
+</svg>
+ Z to A order</a></li>
 
                     </ul>
                   </div>
@@ -96,6 +210,133 @@ $userData = Session::get('user_data');
 
                     <span class="slbs-link mx-3">
                       <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}')"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to topics</span></a></span>
+					  
+					<div class="d-flex px-4">
+                      <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+                      <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> 
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_4864" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <path id="Path_2676" data-name="Path 2676" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2677" data-name="Path 2677" class="cls-2" d="M4,15l3,3,3-3"/>
+  <path id="Path_2678" data-name="Path 2678" class="cls-3" d="M7,6V18"/>
+  <path id="Path_2679" data-name="Path 2679" class="cls-4" d="M17,3a2,2,0,0,1,2,2V8a2,2,0,0,1-4,0V5A2,2,0,0,1,17,3Z"/>
+  <circle id="Ellipse_785" data-name="Ellipse 785" class="cls-4" cx="2" cy="2" r="2" transform="translate(15 14)"/>
+  <path id="Path_2680" data-name="Path 2680" class="cls-4" d="M19,16v3a2,2,0,0,1-2,2H15.5"/>
+</svg>
+ Low Proficiency</a></li>
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> 
+<svg id="Group_2976" data-name="Group 2976" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <path id="Path_2671" data-name="Path 2671" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2672" data-name="Path 2672" class="cls-2" d="M4,15l3,3,3-3"/>
+  <path id="Path_2673" data-name="Path 2673" class="cls-3" d="M7,6V18"/>
+  <path id="Path_2674" data-name="Path 2674" class="cls-4" d="M17,14a2,2,0,0,1,2,2v3a2,2,0,0,1-4,0V16A2,2,0,0,1,17,14Z"/>
+  <circle id="Ellipse_784" data-name="Ellipse 784" class="cls-4" cx="2" cy="2" r="2" transform="translate(15 3)"/>
+  <path id="Path_2675" data-name="Path 2675" class="cls-4" d="M19,5V8a2,2,0,0,1-2,2H15.5"/>
+</svg>
+ High Proficiency</a></li>
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','priority')" href="javascript:void(0);">
+<svg id="Group_2978" data-name="Group 2978" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+      }
+
+      .cls-4 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path id="Path_2681" data-name="Path 2681" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2682" data-name="Path 2682" class="cls-2" d="M15,10V5c0-1.38.62-2,2-2s2,.62,2,2v5m0-3H15"/>
+  <path id="Path_2683" data-name="Path 2683" class="cls-2" d="M19,21H15l4-7H15"/>
+  <path id="Path_2684" data-name="Path 2684" class="cls-3" d="M4,15l3,3,3-3"/>
+  <path id="Path_2685" data-name="Path 2685" class="cls-4" d="M7,6V18"/>
+</svg>
+Order by Priority</a></li>
+                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','sequence')" href="javascript:void(0);">
+<svg id="Group_2979" data-name="Group 2979" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+      }
+
+      .cls-4 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path id="Path_2686" data-name="Path 2686" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2687" data-name="Path 2687" class="cls-2" d="M15,21V16c0-1.38.62-2,2-2s2,.62,2,2v5m0-3H15"/>
+  <path id="Path_2688" data-name="Path 2688" class="cls-2" d="M19,10H15l4-7H15"/>
+  <path id="Path_2689" data-name="Path 2689" class="cls-3" d="M4,15l3,3,3-3"/>
+  <path id="Path_2690" data-name="Path 2690" class="cls-4" d="M7,6V18"/>
+</svg>
+ Order by Sequence</a></li>
+
+                      </ul>
+                    </div>
+					
+					
                     <form method="post" action="{{route('custom_exam_chapter')}}">
                       @csrf
                       <input type="hidden" name="subject_id" value="">
@@ -108,7 +349,7 @@ $userData = Session::get('user_data');
 
                   </div>
                   <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
-                    <div class="d-flex px-4">
+                    <!--<div class="d-flex px-4">
                       <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter"><i class="fa fa-sliders" aria-hidden="true"></i></button>
                       <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                         <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
@@ -117,7 +358,7 @@ $userData = Session::get('user_data');
                         <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','sequence')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down-alt"></i> Order by Sequence</a></li>
 
                       </ul>
-                    </div>
+                    </div>-->
                     <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4">
 
 
