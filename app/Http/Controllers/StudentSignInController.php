@@ -607,7 +607,45 @@ class StudentSignInController extends Controller
 
         $aResponse = json_decode($response_json);
         $success = isset($aResponse->success) ? $aResponse->success : false;
+        if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
+                
+                $exam_id = 1;
+                $inputjson = [
+                    "student_id" => $student_id,
+                    "exam_id" => $exam_id,
+                    "email" => $data['refer_email'],
+                    "student_refer_by" => $data['refer_code'],
+                ];
+                $request = json_encode($inputjson);
 
+                $api_URL = env('API_URL');
+                $curl_url = $api_URL . 'api/insert-referr-student';
+
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => $request,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json",
+                    ),
+                ));
+
+                $response_json = curl_exec($curl);
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+                if ($httpcode != 200 || $httpcode != 201) {
+                    return json_encode(array('success' => false, 'message' => 'Something wrong'));
+                } 
+        }
         if ($success == false) {
             return json_encode($aResponse);
         } else {

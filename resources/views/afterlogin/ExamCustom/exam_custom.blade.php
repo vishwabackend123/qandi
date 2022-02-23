@@ -416,13 +416,7 @@ $userData = Session::get('user_data');
 
   }
 </script>
-<script>
-jQuery(document).ready(function(){	
-	jQuery(".addremovetopic").onClick( function() {		
-			jQuery(this).parent().parent().css("border", "2px solid #65d247").toggle();				
-     });
-});
-</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 @endsection

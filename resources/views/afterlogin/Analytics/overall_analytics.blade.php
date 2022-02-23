@@ -866,7 +866,7 @@ $userData = Session::get('user_data');
         document.getElementById(hide2).style.display = "none";
         document.getElementById(show).style.display = "block";
     }
-    $(window).on('load',function(){
+    $(window).on('load', function() {
         $(".analytics-icon").addClass("notification-icons-active");
     });
 </script>

@@ -48,6 +48,9 @@ div#f-Numbr-sectin h4 {
 div#f-Numbr-sectin h4.fw-bold {
     font-size: 16px;
     padding-top: 20px;
+    /**Added_by-kanchan**/
+    margin-bottom: 0.1rem;
+    /**Added_by-kanchan**/
 }
 
 /*************************Added_by-sachin*************/
@@ -860,3 +863,9 @@ margin-right:0;
  
 
 /*  End by Sachin-22-02  */
+
+/*****navdeep 23-02 ********/
+.tab-wrapper>.sub-padding{
+padding-left: 45px !important;    
+}
+/*****end by navdeep 23-02 ********/
