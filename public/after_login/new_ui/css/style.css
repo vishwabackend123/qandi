@@ -5502,12 +5502,12 @@ label.question.m-0.py-3.d-block .MathJax {
 #review_rques_blk .next-arow {
     right: 10px;
    }
-   /**Added_by-kanchan**/
+   /***Added_by-kanchan***/
    #review_rques_blk a i{
     display: none;
 }
 
-/**Added_by-kanchan**/
+/***Added_by-kanchan***/
 .arrow {
     position: unset;
     width: 64px;
