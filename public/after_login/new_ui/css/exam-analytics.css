@@ -47,7 +47,10 @@ div#f-Numbr-sectin h4 {
 
 div#f-Numbr-sectin h4.fw-bold {
     font-size: 16px;
-    padding-top: 20px;margin-bottom: 0.1rem;
+    padding-top: 20px;
+    /**Added_by-kanchan**/
+    margin-bottom: 0.1rem;
+    /**Added_by-kanchan**/
 }
 
 /*************************Added_by-sachin*************/
