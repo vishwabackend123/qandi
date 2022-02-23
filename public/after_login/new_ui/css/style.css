@@ -4471,7 +4471,10 @@ p.success-img {
     background: #e4e4e4 !important;
     border-color: #e4e4e4;
     border-radius: 10px !important;
-    color: #000 !important;
+    /*color: #000 !important;*/
+    /** added by kanchan **/
+    color: #515151 !important;
+    /** added by kanchan **/
 }
 
 .btn-light-green {
@@ -5504,9 +5507,10 @@ label.question.m-0.py-3.d-block .MathJax {
     right: 10px;
    }
    /**Added_by-kanchan**/
-#bkm_28948 {
+   #review_rques_blk a i{
     display: none;
 }
+
 /**Added_by-kanchan**/
 .arrow {
     position: unset;
