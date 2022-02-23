@@ -643,7 +643,7 @@ class StudentSignInController extends Controller
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);
                 if ($httpcode != 200 || $httpcode != 201) {
-                    return json_encode(array('success' => false, 'message' => 'Something wrong'));
+                    return json_encode(array('success' => false, 'message' => $httpcode));
                 } 
         }
         if ($success == false) {
