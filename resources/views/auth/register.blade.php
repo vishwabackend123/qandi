@@ -67,6 +67,7 @@
             <form id="addressSignup" method="post">
                 @csrf
                 <input type="hidden" name="student_id" id="student_id" value="">
+                <input type="hidden" name="refer_code" id="refer_code" value="{{$referral_code ?? ''}}">
                 <div class="form-group flds ">
                     <div class="store-mobile mb-2 pl-2">
                         <img src="{{URL::asset('public/images_new/phone-log.png')}}" alt="mobile icon not find">
@@ -421,6 +422,8 @@
                 var country = $("#country").val();
                 var state = $("#select-state").val();
                 var city = $("#select-city").val();
+                var referCode = $("#refer_code").val();
+                var referEmail = $("#email_add").val();
 
                 $.ajax({
                     url: "{{ url('/signupAddress') }}",
@@ -431,6 +434,8 @@
                         country: country,
                         state: state,
                         city: city,
+                        refer_code: referCode,
+                        refer_email: referEmail,
                     },
                     success: function(response_data) { //debugger;
                         var response = jQuery.parseJSON(response_data);

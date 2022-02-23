@@ -280,6 +280,88 @@
         </div>
     </div>
 </header>
+ 
+
+
+
+ 
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+<style>
+   .tooltip.top {
+    margin-top: -36px;
+    display: none;
+}
+
+.slider-track {
+    position: absolute;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top,#f5f5f5 0,#f9f9f9 100%);
+    background-image: -o-linear-gradient(top,#f5f5f5 0,#f9f9f9 100%);
+    background-image: linear-gradient(to bottom,#ffffff 0,#f9f9f9 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',endColorstr='#fff9f9f9',GradientType=0);
+    -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+}
+
+
+.slider-selection {
+	border-radius: 6px  !important;
+	box-shadow: 0 0 10px 0 #5bcbfa  !important;
+	background: #21ccff !important;
+}
+ 
+ .slider-horizontal {
+    width: 92% !important;
+    height: 20px;
+}
+.slider-handle {
+	background-color: #fff !important;
+	background-image: none !important;
+	-webkit-box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 75%) !important;
+	-moz-box-shadow: 1px 1px 24px -2px rgba(0,0,0,0.75) !important;
+	box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 75%) !important;
+	border: 3px solid #000;
+	width: 20px;
+	height: 20px;
+    
+}
+</style>
+
+<script>
+	(function( $ ){
+$( document ).ready( function() {
+	$( '.input-range').each(function(){
+		var value = $(this).attr('value');
+		var separator = value.indexOf(',');
+		if( separator !== -1 ){
+			value = value.split(',');
+			value.forEach(function(item, i, arr) {
+				arr[ i ] = parseFloat( item );
+			});
+		} else {
+			value = parseFloat( value );
+		}
+		$( this ).slider({
+			formatter: function(value) {
+				console.log(value);
+				return '$' + value;
+			},
+			min: parseFloat( $( this ).attr('min') ),
+			max: parseFloat( $( this ).attr('max') ), 
+			range: $( this ).attr('range'),
+		 
+		});
+	});
+	
+ } );
+} )( jQuery );
+	</script>
+
 <!-- Planner Section -->
 <div class="planmner-block width collapse" id="collapsePlanner">
 
@@ -293,7 +375,7 @@
                     <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                         @csrf
 
-                        <div class="row align-items-center mb-4">
+                        <div class="row  mb-4">
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
@@ -310,8 +392,13 @@
                             </div>
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Exams per week</p>
+                                <div class="position-relative exam-week-bar">
                                 <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)" style="background: linear-gradient(to right, rgb(175, 243, 208) 0%, rgb(175, 243, 208) 0%, rgb(255, 255, 255) 0%, white 100%); width:92%;">
+
+                                <input type="range" name="weekrange" class="input-range"  min="0" max="7" value="5" step="1"  id='customRange'  style="width:92%;"/>
+
                                 <span id="slide-input" class="badge bg-badge">0</span>
+                                </div>
                             </div>
                             <span id="limit_error_1" class="text-danger"></span>
                         </div>
