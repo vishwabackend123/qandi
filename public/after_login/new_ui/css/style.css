@@ -230,8 +230,10 @@ div#marKs-trends .bg-white p {
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
-   {width: 21%!important;}
+   {width: 265px!important;}
     .subject-placeholder-block>span{display: flex;margin-top:10px;}
+    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}
+    span.text-secondary.chapter_name.mb-2.d-block {text-align: center;}
     /***********************/
 
 .dashboard-cards-block .bg-white {
@@ -438,7 +440,7 @@ ul.matrixLists li b {
 }
 
 .dashboard-cards-block .cust-gallery .swiper-slide h3 {
-    width: 68%;
+    width: 240px;
 }
 
 .dashboard-cards-block .bg-white>small p {
@@ -5496,9 +5498,12 @@ label.question.m-0.py-3.d-block .MathJax {
 }
 #review_rques_blk .next-arow {
     right: 10px;
-   
+   }
+   /**Added_by-kanchan**/
+#bkm_28948 {
+    display: none;
 }
-
+/**Added_by-kanchan**/
 .arrow {
     position: unset;
     width: 64px;
@@ -7114,9 +7119,153 @@ input#linkInput {
     border-bottom-right-radius: 0px !important;
 }
 
+.copylinkbtn:hover{
+    color:#ffffff;
+}
+
+/* custom Exam section */
+.addremovetopic {
+    width: 125px;
+    padding: 5px 15px !important;
+}
+.custOmSld span.mr-3.name-txt-sml {
+    font-size: 16px;
+}
+.Kn {
+    border: solid 1.5px #65d247;
+    border-radius: 14px !important;padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+.Co {
+    border: solid 1.5px #fba81d;
+    border-radius: 14px !important;padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+.Ap {
+    border: solid 1.5px #f74645;
+    border-radius: 14px !important;padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+.Ev {
+    border: solid 1.5px #00baff;
+    border-radius: 14px !important;padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+.compLeteS .score {
+    font-size: 12px;
+}
+.custOmSld .range-gauge .range-bar {
+    border-radius: 6px;
+}
+.custOmSld .bg-light {
+    border-radius: 36px;
+    background: #fff !important;
+}
+/*
+.custOmSld .bg-light:hover {
+    border: solid 2px #65d247;
+    border-radius: 36px;
+    background: #fff !important;
+}*/
+.p-3.custOmSld {
+    margin: 0px !important;
+}
+.compLeteS {
+    background: #f2f2f2;border-radius: 20px;
+}
+.compLeteS .star-ratings-css {
+    color: #f2f2f2;
+    font-size: 18px;
+}
+.compLeteS .name-txt-sml {
+    width: 60%;
+}
+.custOmSld a:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.addremovetopic.topic_selected {
+    outline: none !important;
+}
+.custom-page button.slick-prev {
+    position: absolute;
+    z-index: 99;
+    top: 85px;
+    box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
+    background: #fff;
+    border-radius: 50px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    right: 25px;
+    font-size: 25px !important;
+}
+.custom-page button.slick-next.slick-arrow {
+    position: absolute;
+    z-index: 99;
+    top: 85px;
+    box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
+    background: #fff;
+    border-radius: 50px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    right: 25px;
+    font-size: 25px !important;
+}
+
+.colorfull-bars{
+background:#e9e9e9;
+height:12px;
+border-radius:6px;
+margin:25px 0 12px;
+}
+.green_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #65d247;
+    width: 30%;
+	z-index:4;
+}
+.yellow_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #fba81d;
+    width: 27%;
+	z-index:3;
+	margin-left: -6px;
+}
+.red_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #f74645;
+    width: 25%;
+	z-index:2;
+	margin-left: -6px;
+}
+.skyblue_bar {
+    border-radius: 6px;
+    height: 12px;
+    background: #00baff;
+    width: 15%;
+	z-index:1;
+    margin-left: -6px;
+}
+
+
+/* custom Exam section end*/
+
+
 .copylinkbtn:hover {
     color: #ffffff;
 }
+
 
 /*********************8/
 
@@ -7127,3 +7276,4 @@ input#linkInput {
 box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;  
 }
 /*****end by navdeep 23-02 ********/
+

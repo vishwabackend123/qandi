@@ -1,6 +1,6 @@
 @if(isset($topics) && !empty($topics))
 @foreach($topics as $key=>$topic)
-<div class="p-3">
+<div class="p-3 custOmSld">
 
     <div class="bg-light shadow p-3 d-flex flex-column">
         <div class="d-flex align-items-center">
@@ -23,18 +23,29 @@
             </div>
         </div>
 
-        <div class="range-gauge">
+        <!--<div class="range-gauge">
             <div class="range-bar">
                 <div class="gauge-bubble"> </div>
                 <div class="bar-green"> </div>
                 <div class="bar-red"></div>
+                <div class="bar-blue"></div>
             </div>
-        </div>
+        </div>-->
+		
+		<div class="colorfull-bars">
+			  <div class="d-flex">
+				 <span class="green_bar position-relative"></span>
+				 <span class="yellow_bar position-relative"></span>
+				 <span class="red_bar position-relative"></span>
+				 <span class="skyblue_bar position-relative"></span>
+			  </div>
+		   </div>
+	
         <div class="d-flex align-items-center sub-subject">
-            <a href="#" class="btn rounded-0 me-2 bar-green" title="KNOWLEDGE"><strong>K</strong></a>
-            <a href="#" class="btn rounded-0 me-2 bar-green" title="COMPREHENSION"><strong>C</strong></a>
-            <a href="#" class="btn rounded-0 me-2 bar-red" title="APPLICATION"><strong>A</strong></a>
-            <a href="#" class="btn rounded-0 me-2" title="EVALUATION"><strong>E</strong></a>
+            <a href="#" class="btn rounded-0 me-2 bar-green Kn" title="KNOWLEDGE"><strong>K</strong></a>
+            <a href="#" class="btn rounded-0 me-2 bar-green Co" title="COMPREHENSION"><strong>C</strong></a>
+            <a href="#" class="btn rounded-0 me-2 bar-red Ap" title="APPLICATION"><strong>A</strong></a>
+            <a href="#" class="btn rounded-0 me-2 Ev" title="EVALUATION"><strong>E</strong></a>
             <a id="chpt_topic_{{$topic->id}}" href="javascript:void(0);" onclick="addOrRemove('{{$topic->id}}')" class="btn btn-light rounded-0 ms-auto px-5 addremovetopic">Select </a>
         </div>
     </div>

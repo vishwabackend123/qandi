@@ -10,6 +10,7 @@ $userData = Session::get('user_data');
   }
 </style>
 
+
 @section('content')
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
@@ -70,7 +71,8 @@ $userData = Session::get('user_data');
                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                   @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                   @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
-                  <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap  ">
+				  <div class="compLeteS">
+                  <div class="ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap  ">
                     <span class="mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
 
                     <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
@@ -121,6 +123,7 @@ $userData = Session::get('user_data');
 
                     </section>
                   </div>
+				  </div>
                   @endforeach
                   @endif
                 </div>
@@ -301,13 +304,14 @@ $userData = Session::get('user_data');
   $('.slick-slider').slick({
     slidesToScroll: 1,
     dots: false,
+	arrows: true,
     centerMode: false,
     focusOnSelect: false,
     infinite: false,
-    slidesToShow: 2,
+    slidesToShow: 3.2,
     variableWidth: false,
-    prevArrow: false,
-    nextArrow: false
+    prevArrow:'<button class="slick-prev"> < </button>',
+  nextArrow:'<button class="slick-next"> > </button>',
   });
 
   $('.slbs-link a').click(function() {
@@ -412,4 +416,7 @@ $userData = Session::get('user_data');
 
   }
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
 @endsection
