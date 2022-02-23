@@ -12,7 +12,7 @@
 }
 
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
-    box-shadow: none;
+    box-shadow: none;color: #515151 !important;
 }
 
 #exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item {
