@@ -293,7 +293,7 @@
                     <form id="plannerAddform" action="{{route('addPlanner')}}" method="POST">
                         @csrf
 
-                        <div class="row align-items-center mb-4">
+                        <div class="row  mb-4">
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
@@ -310,8 +310,10 @@
                             </div>
                             <div class="col-md-6">
                                 <p class="fw-bold text-uppercase mt-3">Exams per week</p>
-                                <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)" style="background: linear-gradient(to right, rgb(175, 243, 208) 0%, rgb(175, 243, 208) 0%, rgb(255, 255, 255) 0%, white 100%); width:92%;">
-                                <span id="slide-input" class="badge bg-badge">0</span>
+                                <div class="position-relative exam-week-bar">
+                                    <input type="range" name="weekrange" class="exam_range" min="0" max="7" value="5" step="1" id="customRange" oninput="outputUpdate(value)" style="background: linear-gradient(to right, rgb(175, 243, 208) 0%, rgb(175, 243, 208) 0%, rgb(255, 255, 255) 0%, white 100%); width:92%;">
+                                    <span id="slide-input" class="badge bg-badge">0</span>
+                                </div>
                             </div>
                             <span id="limit_error_1" class="text-danger"></span>
                         </div>
