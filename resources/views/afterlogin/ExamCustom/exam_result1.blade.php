@@ -4,8 +4,7 @@
 </div>
 
 <div class="col-lg-4">
-    <div class="bg-white shadow-lg p-3 position-relative">
-
+    <div class="bg-white shadow-lg box-shadow p-3 position-relative">
         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
         <div class="text-center">
             <!-- <img src="images/roundedgraph.jpg"> -->
@@ -29,8 +28,6 @@
 </div>
 <div class="col-lg-8">
     <div class="bg-white shadow-lg p-3  position-relative">
-
-
         <div class="row">
             <div class="col-md-4">
                 <h5 class="dashboard-title mb-3 text-center">Marks %</h5>
