@@ -327,6 +327,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -384,6 +387,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             height: 270
@@ -439,6 +445,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 
     Highcharts.chart('month', {
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         chart: {
@@ -516,6 +525,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -573,6 +585,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         chart: {
             type: 'line',
             height: 270
@@ -628,6 +643,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 
     Highcharts.chart('month1', {
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         chart: {
@@ -709,6 +727,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
         credits: {
             enabled: false
         },
+        exporting: {
+            enabled: false
+        },
         legend: {
             symbolWidth: 40
         },
@@ -755,6 +776,9 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             height: 270
         },
         credits: {
+            enabled: false
+        },
+        exporting: {
             enabled: false
         },
         legend: {
