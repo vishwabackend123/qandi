@@ -7328,3 +7328,6 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
     color: #fff;
     border-color: #fff;
 }
+.bdr-success {
+    border: solid 2px #65d247;
+}
