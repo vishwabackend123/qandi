@@ -56,6 +56,40 @@
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $('.input-range').each(function() {
+                var value = $(this).attr('value');
+
+                var separator = value.indexOf(',');
+                if (separator !== -1) {
+                    value = value.split(',');
+                    value.forEach(function(item, i, arr) {
+                        arr[i] = parseFloat(item);
+                    });
+                } else {
+                    value = parseFloat(value);
+                }
+                $(this).slider({
+                    formatter: function(value) {
+                        console.log(value);
+                        $('#slide-input').html(value);
+
+                        return '$' + value;
+                    },
+                    min: parseFloat($(this).attr('min')),
+                    max: parseFloat($(this).attr('max')),
+                    range: $(this).attr('range'),
+
+                });
+            });
+
+        });
+    })(jQuery);
+</script>
 <script>
     /** Your web app's Firebase configuration 
      * Copy from Login 
@@ -452,7 +486,6 @@
             $('#EndDate').val(lastDate);
 
             var planned = <?php echo json_encode($current_week_plan); ?>;
-
             var count_range_attempted = 0;
             planned.forEach(function(item) {
 
@@ -489,6 +522,8 @@
                     $('#added_subject_' + subject_id).removeClass('text-success');
                     $('#added_subject_' + subject_id).addClass('text-light');
                 }
+                    var selected_count = $('#planner_sub_' + subject_id +' div').length;
+                    $('#count_spam_'+subject_id).text("("+selected_count+")");
             });
 
 
@@ -861,6 +896,8 @@
         var limit = $('#customRange').val();
         $('#slide-input').html(chapters);
 
+        $('.input-range').slider('setValue', chapters);
+
         $('input[name="weekrange').val(chapters);
 
         var rvalue1 = (chapters - 0) / (7 - 0) * 100;
@@ -1045,6 +1082,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
+         var selected_count = $('#planner_sub_' + subject_id +' div').length;
+         $('#count_spam_'+subject_id).text("("+selected_count+")");
     }
 
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
@@ -1061,6 +1100,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
+        var selected_count = $('#planner_sub_' + subject_id +' div').length;
+        $('#count_spam_'+subject_id).text("("+selected_count+")");
     });
     $('#exportAnalytics').on('shown.bs.modal', function() {
         $('#specificSizeInputGroupUsername').val("");

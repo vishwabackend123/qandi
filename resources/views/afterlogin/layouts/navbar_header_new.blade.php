@@ -286,8 +286,7 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+
 <style>
     .tooltip.top {
         margin-top: -36px;
@@ -381,7 +380,7 @@
                             @foreach($aSubjects as $skey=>$sVal)
 
                             <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
-                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
+                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}} <span id="count_spam_{{$sVal->id}}"></span></div>
                                 <div class="slimScrollDiv">
                                     <div class="subject_chapter">
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
@@ -884,36 +883,4 @@
         }
         return true;
     }
-</script>
-<script>
-    (function($) {
-        $(document).ready(function() {
-            $('.input-range').each(function() {
-                var value = $(this).attr('value');
-
-                var separator = value.indexOf(',');
-                if (separator !== -1) {
-                    value = value.split(',');
-                    value.forEach(function(item, i, arr) {
-                        arr[i] = parseFloat(item);
-                    });
-                } else {
-                    value = parseFloat(value);
-                }
-                $(this).slider({
-                    formatter: function(value) {
-                        console.log(value);
-                        $('#slide-input').html(value);
-
-                        return '$' + value;
-                    },
-                    min: parseFloat($(this).attr('min')),
-                    max: parseFloat($(this).attr('max')),
-                    range: $(this).attr('range'),
-
-                });
-            });
-
-        });
-    })(jQuery);
 </script>

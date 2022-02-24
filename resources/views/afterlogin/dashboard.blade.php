@@ -2,7 +2,6 @@
 
 @php
 $userData = Session::get('user_data');
-
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -270,7 +269,29 @@ $userData = Session::get('user_data');
                         </div>
                         @endif
 
+                        @if(isset($planner) && empty($planner))
+                        <div class="swiper-slide bg-white go2Planner weekylplan-block weekly-plan-test">
+                            <small>
+                                <i class="fa  fa-info"></i>
+                                <p>
+                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                    To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
+                                </p>
+                            </small>
+                            <span>Weekly Plan</span>
+                            <div class="test-attend text-center pt-2 pb-2">
 
+                                <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
+                                    <b>Plan Tests</b> <br />
+                                    Plan upto seven tests on topics of your choice
+                                </div>
+                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
+                                    Planner</button>
+
+                            </div>
+
+                        </div>
+                        @elseif(isset($planner) && !empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block">
                             <small>
                                 <i class="fa  fa-info"></i>
@@ -280,38 +301,28 @@ $userData = Session::get('user_data');
                                 </p>
                             </small>
                             <span>Weekly Plan</span>
-
                             <div class="test-attend text-center pt-2 pb-2">
-                                @if(isset($planner) && empty($planner))
-                                <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
-                                    <b>Plan Tests</b> <br />
-                                    Plan upto seven tests on topics of your choice
-                                </div>
-                                @elseif(isset($planner) && !empty($planner))
                                 <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
                                     <b> Tests Attempted</b>
+                                    <div class="ms-auto">
+
+                                        @foreach($planner as $key=>$val)
+                                        @if($val->test_completed_yn=="Y")
+                                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></a>
+                                        @else
+                                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
+
+                                        @endif
+                                        @endforeach
+
+                                    </div>
+                                    <button class="custom-btn-gray" style="margin-top:24px;" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
+                                        Planner</button>
                                 </div>
-
-                                <div class="ms-auto">
-
-                                    @foreach($planner as $key=>$val)
-                                    @if($val->test_completed_yn=="Y")
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></a>
-                                    @else
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
-
-                                    @endif
-                                    @endforeach
-
-                                </div>
-                                @endif
-
-                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
-                                    Planner</button>
-
                             </div>
 
                         </div>
+                        @endif
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white">
 

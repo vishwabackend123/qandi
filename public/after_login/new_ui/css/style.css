@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+.cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
+
 /******* 23-02-2022 Amit-Start ******/
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1rem!important;}
 .exam-week-bar input#customRange {margin-top: 32px;}
@@ -7296,3 +7298,38 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
 }
 /*****end by navdeep 23-02 ********/
 
+.Kn:hover {
+    background: -moz-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    background: -webkit-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    background: linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    color: #fff !important;
+    border-color: #fff;
+}
+.Kn:hover strong, .Co:hover strong, .Ap:hover strong, .Ev:hover strong {
+    color: #fff !important;
+}
+.Co:hover {
+    background: -moz-linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);
+    background: -webkit-linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);
+    background: linear-gradient(135deg, #ffdc34, #ffdc34 18%, #df8b00);
+    color: #fff;
+    border-color: #fff;
+}
+
+.Ap:hover{
+    background: -moz-linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);
+    background: -webkit-linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);
+    background: linear-gradient(135deg, #ffab57, #ffab57 28%, #d83030);
+    color: #fff;
+    border-color: #fff;
+}
+.Ev:hover{
+    background: -moz-linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
+    background: -webkit-linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
+    background: linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
+    color: #fff;
+    border-color: #fff;
+}
+.bdr-success {
+    border: solid 2px #65d247;
+}
