@@ -328,9 +328,14 @@
         border: 3px solid #000;
         width: 20px;
         height: 20px;   
-        
+
 
     }
+
+    .exam-week-bar{
+ 
+    margin-top: 40px;
+}
 </style>
 
 
