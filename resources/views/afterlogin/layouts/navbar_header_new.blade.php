@@ -286,8 +286,7 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+
 <style>
     .tooltip.top {
         margin-top: -36px;
@@ -884,36 +883,4 @@
         }
         return true;
     }
-</script>
-<script>
-    (function($) {
-        $(document).ready(function() {
-            $('.input-range').each(function() {
-                var value = $(this).attr('value');
-
-                var separator = value.indexOf(',');
-                if (separator !== -1) {
-                    value = value.split(',');
-                    value.forEach(function(item, i, arr) {
-                        arr[i] = parseFloat(item);
-                    });
-                } else {
-                    value = parseFloat(value);
-                }
-                $(this).slider({
-                    formatter: function(value) {
-                        console.log(value);
-                        $('#slide-input').html(value);
-
-                        return '$' + value;
-                    },
-                    min: parseFloat($(this).attr('min')),
-                    max: parseFloat($(this).attr('max')),
-                    range: $(this).attr('range'),
-
-                });
-            });
-
-        });
-    })(jQuery);
 </script>

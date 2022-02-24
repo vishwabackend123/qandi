@@ -56,6 +56,40 @@
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $('.input-range').each(function() {
+                var value = $(this).attr('value');
+
+                var separator = value.indexOf(',');
+                if (separator !== -1) {
+                    value = value.split(',');
+                    value.forEach(function(item, i, arr) {
+                        arr[i] = parseFloat(item);
+                    });
+                } else {
+                    value = parseFloat(value);
+                }
+                $(this).slider({
+                    formatter: function(value) {
+                        console.log(value);
+                        $('#slide-input').html(value);
+
+                        return '$' + value;
+                    },
+                    min: parseFloat($(this).attr('min')),
+                    max: parseFloat($(this).attr('max')),
+                    range: $(this).attr('range'),
+
+                });
+            });
+
+        });
+    })(jQuery);
+</script>
 <script>
     /** Your web app's Firebase configuration 
      * Copy from Login 
@@ -860,6 +894,8 @@
         var chapters = $('input[name="chapters[]"]').length;
         var limit = $('#customRange').val();
         $('#slide-input').html(chapters);
+
+        $('.input-range').slider('setValue', chapters);
 
         $('input[name="weekrange').val(chapters);
 
