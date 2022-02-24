@@ -421,7 +421,7 @@ $userData = Session::get('user_data');
                 <input type="hidden" id="selected_tab" name="selected_tab">
                 <input type="hidden" name="question_count" value="30">
                 <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                <div id="topic_custom_footer" class="text-right d-flex align-items-center mt-3">
+                <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
 
                   <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
                   <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
@@ -481,8 +481,16 @@ $userData = Session::get('user_data');
       $('#topic_box_' + value).removeClass('bdr-success');
       $('#chpt_topic_' + value).addClass('btn-light');
     }
-    $('#selected_topic').val(aTopics);
-    //console.log(aTopics);
+    $('#selected_topic').val();
+    if (aTopics.length > 0) {
+      $('#topic_custom_footer').removeClass('d-none');
+      $('#topic_custom_footer').addClass('d-flex');
+    } else {
+      $('#topic_custom_footer').removeClass('d-flex');
+      $('#topic_custom_footer').addClass('d-none');
+    }
+
+    //console.log(aTopics.length);
   }
 
   function clearTopics() {
@@ -490,6 +498,8 @@ $userData = Session::get('user_data');
     $('#selected_topic').val('');
     $('.addremovetopic').removeClass('topic_selected');
     // console.log(aTopics);
+    $('#topic_custom_footer').removeClass('d-flex');
+    $('#topic_custom_footer').addClass('d-none');
   }
 
 
