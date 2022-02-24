@@ -333,9 +333,9 @@
     }
 
     .exam-week-bar{
- 
-    margin-top: 40px;
+    margin-top: 45px;
 }
+
 </style>
 
 
