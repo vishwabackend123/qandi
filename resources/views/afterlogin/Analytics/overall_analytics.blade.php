@@ -239,6 +239,9 @@ $userData = Session::get('user_data');
             </div>
         </div>
     </div>
+    <div class="topics_analytics">
+        @include('afterlogin.Analytics.topics_analytics')
+    </div>
 </div>
 <div class="modal fade" id="upcoming-tutorials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -274,6 +277,7 @@ $userData = Session::get('user_data');
 </script>
 @endif
 <script type="text/javascript">
+    $(".topics_analytics").hide();
     /* $(".scroll-topic-ana").slimscroll({
         height: "20vh",
     }); */
@@ -919,6 +923,27 @@ $userData = Session::get('user_data');
             $(this).parent("p").hide();
         });
     });
+    function expandAnalytics(sub_id) {
+        url = "{{ url('topic-analytics') }}/" + sub_id;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(data) {
+                  $(".topics_analytics").show();
+                  $('.topics_analytics').html(data.html);
+                  $(".overllanaly").hide();
+                  
+                }
+            });
+    }
+    function backPage()
+    {
+       $(".topics_analytics").hide();
+       $(".overllanaly").show();
+      
+    }
 </script>
 
 @endsection

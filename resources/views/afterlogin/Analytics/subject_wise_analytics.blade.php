@@ -935,23 +935,6 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 </script>
 <script>
-    function expandAnalytics(sub_id) {
-        url = "{{ url('topic-analytics') }}/" + sub_id;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-
-                },
-                beforeSend: function() {
-                    $('#overlay').fadeIn();
-                },
-                success: function(result) {
-                    $(".overllanaly").html(result);
-                    $('#overlay').fadeOut();
-                }
-            });
-    }
 
     $(document).ready(function() {
         $(".dashboard-cards-block .bg-white>small i").click(function() {
