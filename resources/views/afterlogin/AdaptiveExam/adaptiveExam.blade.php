@@ -215,7 +215,7 @@ $questtype='radio';
                 <!-- Right Side Area -->
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5 h-100">
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5">
                         <div class="d-flex align-items-center">
                             <div class="" id="app">
                                 <div class="base-timer">
