@@ -12,7 +12,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
 
-    <div class="content-wrapper">
+    <div class="content-wrapper dashboard-cards-block">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 ">
@@ -42,6 +42,13 @@ $userData = Session::get('user_data');
                                 <div class="row padingTT">
                                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                                         <div class="bg-white shadow-lg py-5 px-3">
+                                            <small>
+                                                <i class="fa  fa-info"></i>
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                                                </p>
+                                            </small>
                                             <div class="prgress-i-txt px-3">
                                                 <span class="progress_text">Progress</span>
                                             </div>
@@ -70,6 +77,13 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
                                         <div class="bg-white shadow-lg py-5 px-3">
+                                            <small>
+                                                <i class="fa  fa-info"></i>
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                </p>
+                                            </small>
                                             <div class="prgress-i-txt px-3">
                                                 <span class="progress_text">Subject proficiency</span>
                                             </div>
@@ -124,6 +138,13 @@ $userData = Session::get('user_data');
                                 <div class="row" id="time-Avg-quest">
                                     <div class="col-lg-6 mt-3">
                                         <div class="bg-white p-3 h-100 px-5 text-center">
+                                            <small>
+                                                <i class="fa  fa-info"></i>
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
+                                                </p>
+                                            </small>
                                             <p class="text-uppercase fw-bold text-start">Time Management</p>
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
@@ -145,6 +166,13 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-lg-6  mt-3">
                                         <div class="bg-white p-3 h-100 px-5">
+                                            <small>
+                                                <i class="fa  fa-info"></i>
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
+                                                </p>
+                                            </small>
                                             <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
                                             <div id="accPer1"></div>
                                             <p class="text-center text-danger mt-3 "><small>Lowering this average will add miles to your success journey</small></p>
@@ -154,6 +182,13 @@ $userData = Session::get('user_data');
                                 <div class="row" id="marKs-trends">
                                     <div class="col-lg-6 mt-3">
                                         <div class="bg-white p-3 h-100 px-5 text-center">
+                                            <small>
+                                                <i class="fa  fa-info"></i>
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
+                                                    </p>
+                                            </small>
                                             <p class="text-uppercase fw-bold text-start">Marks Trend</p>
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
@@ -175,6 +210,13 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="col-lg-6  mt-3">
                                         <div class="bg-white pt-3  px-5">
+                                            <small>
+                                                <i class="fa  fa-info"></i>
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
+                                                </p>
+                                            </small>
                                             <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
                                             <div id="accPer"></div>
                                             <p class="text-center text-danger mt-3 mb-0"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
@@ -868,6 +910,15 @@ $userData = Session::get('user_data');
     }
     $(window).on('load', function() {
         $(".analytics-icon").addClass("notification-icons-active");
+    });
+
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small i").click(function() {
+            $(this).siblings("p").show();
+        });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+            $(this).parent("p").hide();
+        });
     });
 </script>
 
