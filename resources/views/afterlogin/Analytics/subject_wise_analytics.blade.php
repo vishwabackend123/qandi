@@ -130,7 +130,7 @@
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center px-3 flex-box1">
                 <h5 class="dashboard-title ">Topics </h5>
-                <span class="EXPAND_btn"><button class="customgray"><i class="fa fa-arrows-alt" aria-hidden="true"></i>EXPAND</button></span>
+                <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})"><i class="fa fa-arrows-alt" aria-hidden="true"></i>EXPAND</button></span>
             </div>
             <div class="scroll-topic-ana">
                 @if($subProf)
@@ -897,4 +897,24 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             ]
         }]
     });
+</script>
+
+<script>
+    function expandAnalytics(sub_id) {
+        url = "{{ url('topic-analytics') }}/" + sub_id;
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+
+                },
+                beforeSend: function() {
+                    $('#overlay').fadeIn();
+                },
+                success: function(result) {
+                    $(".overllanaly").html(result);
+                    $('#overlay').fadeOut();
+                }
+            });
+    }
 </script>

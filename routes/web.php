@@ -253,4 +253,4 @@ Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 
 Route::get('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
 
 /* Topic analytics route  */
-Route::any('/topic-analytics', [App\Http\Controllers\AnalyticsController::class, 'topicAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');
+Route::any('/topic-analytics/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'topicAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');

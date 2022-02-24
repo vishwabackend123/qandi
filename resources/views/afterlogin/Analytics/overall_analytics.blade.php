@@ -12,7 +12,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
 
-    <div class="content-wrapper">
+    <div class="content-wrapper overllanaly">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 ">

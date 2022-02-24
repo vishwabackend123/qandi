@@ -25,9 +25,8 @@ class AnalyticsController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function overall_analytics($active_id = '', Request $request)
-    {
-
+     public function overall_analytics($active_id = '', Request $request)
+     {
         $userData = Session::get('user_data');
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
@@ -684,7 +683,8 @@ class AnalyticsController extends Controller
             'incorrectTime2',
             'date3',
             'correctTime3',
-            'incorrectTime3'
+            'incorrectTime3',
+            'sub_id'
         ));
     }
 
@@ -777,8 +777,17 @@ class AnalyticsController extends Controller
 
 
 
-    public function topicAnalyticsList()
+    public function topicAnalyticsList($sub_id)
     {
-        return view('afterlogin.Analytics.topics_analytics');
+        $user_subjects = json_decode (json_encode($this->redis_subjects(),true));
+        $id = array_search($sub_id, array_column($user_subjects, 'id'));
+        if($id >= 1)
+        {
+            $subject = $user_subjects[$id]->subject_name;
+        }else
+        {
+         $subject = $user_subjects[0]->subject_name;   
+        }
+        return view('afterlogin.Analytics.topics_analytics',compact('sub_id','subject'));
     }
 }

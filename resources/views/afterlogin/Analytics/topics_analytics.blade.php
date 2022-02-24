@@ -7,15 +7,13 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
 <div class="main-wrapper dashboard">
-   <!-- End start-navbar Section -->
-   @include('afterlogin.layouts.navbar_header_new')
-   <!-- End top-navbar Section -->
+  
    <div class="topics_breadcum bg-white">
       <div class="d-flex align-items-center mb-4">
-         <a href="javascript:void(0);" class="back_page"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+         <a href="javascript:void(0);" onclick="backTab({{$sub_id}})" class="back_page"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
          <nav aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
-               <li class="breadcrumb-item"><a href="#" class="text-uppercase">Chemistry</a></li>
+               <li class="breadcrumb-item"><a href="#" class="text-uppercase">{{$subject}}</a></li>
                <li class="breadcrumb-item"><a href="#" class="text-uppercase">Chapter: Biomolecules</a></li>
                <li class="breadcrumb-item"><a href="#" class="text-uppercase">Topics</a></li>
             </ol>
@@ -255,7 +253,11 @@ $userData = Session::get('user_data');
       </div>
    </div>
 </div>
-<!-- Footer Section -->
-@include('afterlogin.layouts.footer_new')
-<!-- footer Section end  -->
+<script>
+    function backTab(sub_id) {
+
+        window.location.reload();
+    }
+</script>
+
 @endsection
