@@ -22,7 +22,7 @@ $userData = Session::get('user_data');
                       align-items-center
                       border-bottom
                     ">
-                                <span><img src="{{URL::asset('public/images_new/uniq.png')}}" style="width:100px;" /></span>
+                                <span><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" style="width:100px;" /></span>
                                 <span class="text-light">{{date("F j, Y")}}</span>
                                 <span class="text-light-danger">Analytics</span>
                             </div>
