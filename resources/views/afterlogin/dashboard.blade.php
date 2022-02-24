@@ -2,7 +2,6 @@
 
 @php
 $userData = Session::get('user_data');
-
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -302,23 +301,24 @@ $userData = Session::get('user_data');
                                 </p>
                             </small>
                             <span>Weekly Plan</span>
+                            <div class="test-attend text-center pt-2 pb-2">
+                                <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
+                                    <b> Tests Attempted</b>
+                                    <div class="ms-auto">
 
-                            <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
-                                <b> Tests Attempted</b>
-                                <div class="ms-auto">
+                                        @foreach($planner as $key=>$val)
+                                        @if($val->test_completed_yn=="Y")
+                                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></a>
+                                        @else
+                                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
 
-                                    @foreach($planner as $key=>$val)
-                                    @if($val->test_completed_yn=="Y")
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></a>
-                                    @else
-                                    <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
+                                        @endif
+                                        @endforeach
 
-                                    @endif
-                                    @endforeach
-
+                                    </div>
+                                    <button class="custom-btn-gray" style="margin-top:24px;" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
+                                        Planner</button>
                                 </div>
-                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/planer.png')}}" alt="icon not find">Go To
-                                    Planner</button>
                             </div>
 
                         </div>
