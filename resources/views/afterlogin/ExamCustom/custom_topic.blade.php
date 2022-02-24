@@ -26,10 +26,10 @@
 
         <div class="colorfull-bars">
             <div class="d-flex">
-                <span class="green_bar position-relative"></span>
-                <span class="yellow_bar position-relative"></span>
-                <span class="red_bar position-relative"></span>
-                <span class="skyblue_bar position-relative"></span>
+                <span class="green_bar position-relative" style="width:{{$topic->K_ques_attempted}}%"></span>
+                <span class="yellow_bar position-relative" style="width:{{$topic->C_ques_attempted}}%"></span>
+                <span class="red_bar position-relative" style="width:{{$topic->A_ques_attempted}}%"></span>
+                <span class="skyblue_bar position-relative" style="width:{{$topic->E_ques_attempted}}%"></span>
             </div>
         </div>
 

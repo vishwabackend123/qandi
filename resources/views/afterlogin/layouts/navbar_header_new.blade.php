@@ -327,7 +327,8 @@
         box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 40%) !important;
         border: 3px solid #000;
         width: 20px;
-        height: 20px;
+        height: 20px;   
+        
 
     }
 </style>
