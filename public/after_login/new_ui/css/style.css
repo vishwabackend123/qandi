@@ -16,10 +16,12 @@ button {
     text-decoration: none;
 }
 
+.cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
+
 /******* 23-02-2022 Amit-Start ******/
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1rem!important;}
 .exam-week-bar input#customRange {margin-top: 32px;}
-.exam-week-bar span#slide-input {position: absolute;right: 0;}
+.exam-week-bar span#slide-input {    position: absolute;right: 2px;bottom: 1px;}
 #calendari table.actiu th button + span {font-weight: 700;font-size: 16px !important;}
 span a#close-edit-planner-btn img {width: 24px !important;height: 24px;margin-top: 2px;}
 .subject-placeholder-block img {width: 100px;margin: 10px 0 20px;}
@@ -7327,4 +7329,7 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
     background: linear-gradient(134deg, #3de2f8 -3%, #4e61ef);
     color: #fff;
     border-color: #fff;
+}
+.bdr-success {
+    border: solid 2px #65d247;
 }

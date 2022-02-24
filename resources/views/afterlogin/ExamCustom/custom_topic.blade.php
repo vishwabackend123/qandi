@@ -2,7 +2,7 @@
 @foreach($topics as $key=>$topic)
 <div class="p-3 custOmSld">
 
-    <div class="bg-light shadow p-3 d-flex flex-column">
+    <div id="topic_box_{{$topic->id}}" class="bg-light shadow p-3 d-flex flex-column">
         <div class="d-flex align-items-center">
             <span class="mr-3 name-txt-sml" title="{{$topic->topic_name}}">{{$topic->topic_name}}</span>
 
@@ -23,24 +23,16 @@
             </div>
         </div>
 
-        <!--<div class="range-gauge">
-            <div class="range-bar">
-                <div class="gauge-bubble"> </div>
-                <div class="bar-green"> </div>
-                <div class="bar-red"></div>
-                <div class="bar-blue"></div>
+
+        <div class="colorfull-bars">
+            <div class="d-flex">
+                <span class="green_bar position-relative" style="width:{{$topic->K_ques_attempted}}%"></span>
+                <span class="yellow_bar position-relative" style="width:{{$topic->C_ques_attempted}}%"></span>
+                <span class="red_bar position-relative" style="width:{{$topic->A_ques_attempted}}%"></span>
+                <span class="skyblue_bar position-relative" style="width:{{$topic->E_ques_attempted}}%"></span>
             </div>
-        </div>-->
-		
-		<div class="colorfull-bars">
-			  <div class="d-flex">
-				 <span class="green_bar position-relative"></span>
-				 <span class="yellow_bar position-relative"></span>
-				 <span class="red_bar position-relative"></span>
-				 <span class="skyblue_bar position-relative"></span>
-			  </div>
-		   </div>
-	
+        </div>
+
         <div class="d-flex align-items-center sub-subject">
             <a href="#" class="btn rounded-0 me-2 bar-green Kn" title="KNOWLEDGE"><strong>K</strong></a>
             <a href="#" class="btn rounded-0 me-2 bar-green Co" title="COMPREHENSION"><strong>C</strong></a>

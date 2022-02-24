@@ -322,14 +322,20 @@
     .slider-handle {
         background-color: #fff !important;
         background-image: none !important;
-        -webkit-box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 75%) !important;
-        -moz-box-shadow: 1px 1px 24px -2px rgba(0, 0, 0, 0.75) !important;
-        box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 75%) !important;
+        -webkit-box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 40%) !important;
+        -moz-box-shadow: 1px 1px 24px -2px rgba(0, 0, 0, 0.40) !important;
+        box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 40%) !important;
         border: 3px solid #000;
         width: 20px;
-        height: 20px;
+        height: 20px;   
+
 
     }
+
+    .exam-week-bar{
+ 
+    margin-top: 40px;
+}
 </style>
 
 
