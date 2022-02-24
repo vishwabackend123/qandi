@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+.cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
+
 /******* 23-02-2022 Amit-Start ******/
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1rem!important;}
 .exam-week-bar input#customRange {margin-top: 32px;}
