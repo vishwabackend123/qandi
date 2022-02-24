@@ -4485,7 +4485,9 @@ p.success-img {
     background: #e4e4e4 !important;
     border-color: #e4e4e4;
     border-radius: 10px !important;
+    /***Added_by-kanchan***/
     color: #515151 !important;
+    /***Added_by-kanchan***/
 }
 
 .btn-light-green {
