@@ -19,7 +19,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     @include('afterlogin.layouts.navbar_header_new')
     @else
     <div class="row" style="height:90px;">
-        <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/uniq.png')}}" class="img-fluid" /></a></span>
+        <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" class="img-fluid" /></a></span>
     </div>
     <div class="clearfix"></div>
     @endif
@@ -28,7 +28,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     <div class="row">
         <div class="col-md-10 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
-               <!-- @if(!empty($user_id) && $suscription_status!=0)
+                <!-- @if(!empty($user_id) && $suscription_status!=0)
                 <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
                 @elseif(!empty($user_id) && $suscription_status==0)
                 <a href="{{ url('/') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
