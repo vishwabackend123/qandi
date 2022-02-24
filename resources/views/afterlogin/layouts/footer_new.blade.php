@@ -486,7 +486,6 @@
             $('#EndDate').val(lastDate);
 
             var planned = <?php echo json_encode($current_week_plan); ?>;
-
             var count_range_attempted = 0;
             planned.forEach(function(item) {
 
@@ -523,6 +522,8 @@
                     $('#added_subject_' + subject_id).removeClass('text-success');
                     $('#added_subject_' + subject_id).addClass('text-light');
                 }
+                    var selected_count = $('#planner_sub_' + subject_id +' div').length;
+                    $('#count_spam_'+subject_id).text("("+selected_count+")");
             });
 
 
@@ -1081,6 +1082,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
+         var selected_count = $('#planner_sub_' + subject_id +' div').length;
+         $('#count_spam_'+subject_id).text("("+selected_count+")");
     }
 
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
@@ -1097,6 +1100,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
+        var selected_count = $('#planner_sub_' + subject_id +' div').length;
+        $('#count_spam_'+subject_id).text("("+selected_count+")");
     });
     $('#exportAnalytics').on('shown.bs.modal', function() {
         $('#specificSizeInputGroupUsername').val("");

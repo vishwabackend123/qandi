@@ -13,11 +13,13 @@
 
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
     box-shadow: none;
-    /**Added_by-kanchan**/
-    color: #515151 !important;
-    /**Added_by-kanchan**/
 }
-
+/***Added_by-kanchan***/
+#exam_content_sec #question_section .tab-btn-box a{color: #515151;}
+#exam_content_sec #question_section .tab-btn-box a :hover{color: #fff;}
+#exam_content_sec #question_section .tab-btn-box .btn-light{color: #515151;}
+#exam_content_sec #question_section .tab-btn-box .btn-light :hover{color: #fff;}
+/***Added_by-kanchan***/
 #exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item {
     margin-right: 5px;
 }
