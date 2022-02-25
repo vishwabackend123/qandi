@@ -4652,7 +4652,7 @@ p.success-img {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 999;
 }
 
 .dash-nav-link {
@@ -7360,4 +7360,7 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
     background: none !important;
     background-color: #fff !important;
     border-top-left-radius: 56px !important;
+}
+#dialog-pdf .report-block2.p-5 img {
+    width: 65px !important;
 }
