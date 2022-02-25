@@ -144,6 +144,22 @@ span.filtericon {
 
 /******* MyQMatrix Amit-End ******/
 
+ 
+/***************************/
+input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #2c3348 !important;
+    opacity: 1; /* Firefox */
+  }
+  
+  input#search_field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #2c3348 !important;
+  }
+  
+  input#search_field::-ms-input-placeholder { /* Microsoft Edge */
+    color: #2c3348 !important;
+  }
+/******************************/
+
 #review_rques_blk .question p {
     font-size: 14px;
     line-height: 20px;

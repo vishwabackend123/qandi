@@ -2,6 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
+
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -338,7 +339,8 @@ $userData = Session::get('user_data');
                             <div class="row weeklytest-block">
                                 <div class="col-lg-12">
                                     <div class="d-flex">
-                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}"></span>
+                                        <span class="subjectIcon" style="margin-right: 20px;">
+                                            <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}"></span>
                                         <div>
                                             <p>Plan your</p>
                                             <h3 class="chapter_name mb-0 w-100">Weekly Tests</h3>
@@ -385,7 +387,7 @@ $userData = Session::get('user_data');
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="d-flex">
-                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/biology-subject-icon.png')}}"></span>
+                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="https://mvp-uniq-static-assets-uat1.s3.ap-south-1.amazonaws.com/{{$val->url}}"></span>
                                         <div>
                                             <p>Level up in</p>
                                             <h3 class="chapter_name mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
@@ -394,7 +396,7 @@ $userData = Session::get('user_data');
                                                     <strong style="width:auto;">Proficiency</strong>
                                                     <span class="star-img" style="width:auto;">
                                                         <div class="star-ratings-css ">
-                                                            <div class="star-ratings-css-top">
+                                                            <div class="star-ratings-css-top" style="width: {{round($val->chapter_score, 2)}}%">
                                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                             </div>
                                                             <div class="star-ratings-css-bottom">
@@ -403,7 +405,7 @@ $userData = Session::get('user_data');
                                                         </div>
 
                                                     </span>
-                                                    <span> 90%</span>
+                                                    <span> {{round($val->chapter_score, 2)}}%</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -422,30 +424,6 @@ $userData = Session::get('user_data');
                                 </form>
                             </div>
 
-                            <!----- Weekly tests ---->
-                            <!-- <small>
-                                <i class="fa  fa-info"></i>
-                                <p>
-                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                    <label>About Weekly Plan</label>
-                                    To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
-                                </p>
-                            </small>
-                            <div class="row weeklytest-block">
-                                <div class="col-lg-12">
-                                    <div class="d-flex">
-                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}"></span>
-                                        <div>
-                                            <p>Plan your</p>
-                                            <h3 class="chapter_name mb-0 w-100">Weekly Tests</h3>
-                                            <p>for regular preparation</p>
-
-                                        </div>
-                                    </div>
-                                    <button style="background-color: #fff;text-transform: none;" class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><i style="margin-right: 5px;" class="fa fa-angle-left"></i> Click on GO TO Planner</button>
-                                </div>
-                            </div> -->
-                            <!-------------------->
 
                         </div>
                         @elseif($val->test_completed_yn=="Y")
@@ -460,7 +438,7 @@ $userData = Session::get('user_data');
                                             <strong style="width:auto;" class="d-block">Proficiency</strong>
                                             <span class="star-img" style="width:auto;">
                                                 <div class="star-ratings-css ">
-                                                    <div class="star-ratings-css-top">
+                                                    <div class="star-ratings-css-top" style="width: {{round($val->chapter_score, 2)}}%">
                                                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                     </div>
                                                     <div class="star-ratings-css-bottom">
@@ -469,7 +447,7 @@ $userData = Session::get('user_data');
                                                 </div>
 
                                             </span>
-                                            <span> 90%</span>
+                                            <span> {{round($val->chapter_score, 2)}}%</span>
                                         </li>
                                     </ul>
                                 </div>
