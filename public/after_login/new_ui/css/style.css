@@ -3618,11 +3618,10 @@ button#goto-exam-btn {
 /** notification page **/
 .notification-right {
     position: absolute;
-    top: 0%;
-    right: 5px;
+    top: 5%;
+    right: 0px;
     border-radius: 36px;
     width: 435px;
-
     padding: 25px 15px 15px 15px;
     z-index: 99;
     /*background: #fff;
@@ -3652,7 +3651,7 @@ button#goto-exam-btn {
     z-index: 99;
     position: absolute;
     top: -12px;
-    right: 30px;
+    right: 15px;
     background: #fff;
     border-radius: 50%;
     width: 30px;
