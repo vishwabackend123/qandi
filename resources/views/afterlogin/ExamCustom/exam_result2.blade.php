@@ -51,8 +51,8 @@
         </div>
     </div>
 </div>
-<div class="col-lg-7z">
-    <div class="position-relative h-100">
+<div class="col-lg-7">
+    <div class="position-relative">
         <div class="tab-wrapper h-100">
             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                 @php $subx=1; @endphp
