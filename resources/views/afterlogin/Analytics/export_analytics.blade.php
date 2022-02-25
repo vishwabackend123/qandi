@@ -22,7 +22,7 @@ $userData = Session::get('user_data');
                       align-items-center
                       border-bottom
                     ">
-                                <span><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" style="width:100px;" /></span>
+                                <span><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" style="padding-bottom:20px;" /></span>
                                 <span class="text-light">{{date("F j, Y")}}</span>
                                 <span class="text-light-danger">Analytics</span>
                             </div>
@@ -86,7 +86,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="report-block2 p-5">
                             <div class="d-flex">
-                                <span class="me-auto"><img src="{{URL::asset('public/images/main-logo-red.png')}}" /></span>
+                                <span class="me-auto"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
                                 <span class="text-end">
                                     Detailed Report Analysis<br />
                                     Weekly UniQ Performace Report<br />{{date("F j, Y")}}
