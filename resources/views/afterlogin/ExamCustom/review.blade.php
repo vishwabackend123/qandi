@@ -308,7 +308,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                         </div>
 
 
-                        <div class="d-flex reviewBox2">
+                        <div class="d-flex reviewBox2 review_heading1">
                             <div class="col-8 heading">
                                 <h5><strong>Review Questions</strong></h5>
                             </div>
@@ -362,7 +362,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                             </div>
                         </div>
 
-                        
+
                         <div class="review-qus" id="review_question_list">
                             <!-- <div class="d-flex mb-3 reviewBox2">
                                 <div class="col-8 heading">

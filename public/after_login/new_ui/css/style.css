@@ -2610,6 +2610,13 @@ button.percentage-digit {
     overflow: auto;
     height: 210px;
     overflow-x: hidden;
+    margin-top: 0px;
+}
+.review_heading1{
+    padding-top: 30px;
+}
+.review_heading1 i{
+    color: #434343 !important;
 }
 
 .review-qus span a {
