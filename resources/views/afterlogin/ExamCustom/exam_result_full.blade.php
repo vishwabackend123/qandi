@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="bg-white shadow-lg p-3  position-relative">
+                <div class="bg-white shadow-lg p-3  position-relative h-100">
 
 
                     <div class="row">
