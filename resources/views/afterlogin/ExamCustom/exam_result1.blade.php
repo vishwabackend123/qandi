@@ -102,9 +102,9 @@ $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
 
-$stuscore_arr[]=$stuscore;
+$stuscore_arr[]=round($stuscore,2);
 $stuscore_json=json_encode($stuscore_arr);
-$clsAvg_arr[]=$clsAvg;
+$clsAvg_arr[]=round($clsAvg,2);
 $clsAvg_json=json_encode($clsAvg_arr);
 
 @endphp
