@@ -2,7 +2,6 @@
     <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">&nbsp;Export Analytics
     </button>
 </div>
-
 <div class="col-lg-4">
     <div class="bg-white shadow-lg box-shadow p-3 position-relative">
         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
@@ -27,7 +26,7 @@
     </div>
 </div>
 <div class="col-lg-8">
-    <div class="bg-white shadow-lg p-3  position-relative">
+    <div class="bg-white shadow-lg box-shadow p-3  position-relative">
         <div class="row">
             <div class="col-md-4">
                 <h5 class="dashboard-title mb-3 text-center">Marks %</h5>

@@ -1,5 +1,5 @@
 <div class="col-lg-5">
-    <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
+    <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100">
 
         <h5 class="dashboard-title mb-3">Subject Score</h5>
 
@@ -53,7 +53,7 @@
 </div>
 <div class="col-lg-7">
     <div class="position-relative h-100">
-        <div class="tab-wrapper h-100">
+        <div class="tab-wrapper h-100 box-shadow">
             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                 @php $subx=1; @endphp
                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
