@@ -522,8 +522,8 @@
                     $('#added_subject_' + subject_id).removeClass('text-success');
                     $('#added_subject_' + subject_id).addClass('text-light');
                 }
-                    var selected_count = $('#planner_sub_' + subject_id +' div').length;
-                    $('#count_spam_'+subject_id).text("("+selected_count+")");
+                var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+                $('#count_spam_' + subject_id).text("(" + selected_count + ")");
             });
 
 
@@ -685,7 +685,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic"  src="${img_url}"></span>
                             <span class="profile-text-user">
                                 <h3>${val.user_name}</h3>
-                                <p>${val.score} Unique score</p>
+                                <p>${val.score} Uniq score</p>
                             </span>
                         </li>`;
 
@@ -1082,8 +1082,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
-         var selected_count = $('#planner_sub_' + subject_id +' div').length;
-         $('#count_spam_'+subject_id).text("("+selected_count+")");
+        var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+        $('#count_spam_' + subject_id).text("(" + selected_count + ")");
     }
 
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
@@ -1100,8 +1100,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
-        var selected_count = $('#planner_sub_' + subject_id +' div').length;
-        $('#count_spam_'+subject_id).text("("+selected_count+")");
+        var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+        $('#count_spam_' + subject_id).text("(" + selected_count + ")");
     });
     $('#exportAnalytics').on('shown.bs.modal', function() {
         $('#specificSizeInputGroupUsername').val("");

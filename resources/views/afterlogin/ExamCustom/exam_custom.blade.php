@@ -481,7 +481,7 @@ $userData = Session::get('user_data');
       $('#topic_box_' + value).removeClass('bdr-success');
       $('#chpt_topic_' + value).addClass('btn-light');
     }
-    $('#selected_topic').val();
+    $('#selected_topic').val(aTopics);
     if (aTopics.length > 0) {
       $('#topic_custom_footer').removeClass('d-none');
       $('#topic_custom_footer').addClass('d-flex');
