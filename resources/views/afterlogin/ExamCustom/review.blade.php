@@ -307,8 +307,62 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                             @endif
                         </div>
 
+
+                        <div class="d-flex reviewBox2">
+                            <div class="col-8 heading">
+                                <h5><strong>Review Questions</strong></h5>
+                            </div>
+                            <div class="col-4 text-end d-flex add_btn_new">
+                                <div class="review_list_expand_btn_box">
+                                    <div class="expand_bnt1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
+                                        <defs>
+                                            <style>
+                                            .cls-1, .cls-2 {
+                                                fill: none;
+                                            }
+
+                                            .cls-2 {
+                                                stroke: #000;
+                                                stroke-linecap: round;
+                                                stroke-linejoin: round;
+                                                stroke-width: 1.5px;
+                                            }
+                                            </style>
+                                        </defs>
+                                        <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14"/>
+                                        <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
+                                            <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z"/>
+                                            <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8"/>
+                                            <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)"/>
+                                            <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16"/>
+                                            <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)"/>
+                                            <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16"/>
+                                            <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)"/>
+                                            <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8"/>
+                                            <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)"/>
+                                        </g>
+                                        </svg>
+                                    </div>  
+                                </div>
+                            
+                                <div class="dropdown">
+                                    <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+
+
+                                    <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')">
+                                                All</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
+                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         <div class="review-qus" id="review_question_list">
-                            <div class="d-flex mb-3 reviewBox2">
+                            <!-- <div class="d-flex mb-3 reviewBox2">
                                 <div class="col-8 heading">
                                     <h5><strong>Review Questions</strong></h5>
                                 </div>
@@ -361,7 +415,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> -->
 
 
                             <ul class="rview-quses" id="filter_questions">
