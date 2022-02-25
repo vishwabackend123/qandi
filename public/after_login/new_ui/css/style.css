@@ -481,7 +481,7 @@ ul.matrixLists li b {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 10%);
-    z-index: 1;
+    z-index: 55;
     padding: 20px 40px 20px 20px;
     position: absolute;
     right: -7px;
@@ -2610,6 +2610,13 @@ button.percentage-digit {
     overflow: auto;
     height: 210px;
     overflow-x: hidden;
+    margin-top: 0px;
+}
+.review_heading1{
+    padding-top: 30px;
+}
+.review_heading1 i{
+    color: #434343 !important;
 }
 
 .review-qus span a {
@@ -3618,11 +3625,10 @@ button#goto-exam-btn {
 /** notification page **/
 .notification-right {
     position: absolute;
-    top: 0%;
-    right: 5px;
+    top: 5%;
+    right: 0px;
     border-radius: 36px;
     width: 435px;
-
     padding: 25px 15px 15px 15px;
     z-index: 99;
     /*background: #fff;
@@ -3652,7 +3658,7 @@ button#goto-exam-btn {
     z-index: 99;
     position: absolute;
     top: -12px;
-    right: 30px;
+    right: 15px;
     background: #fff;
     border-radius: 50%;
     width: 30px;
@@ -4648,7 +4654,7 @@ p.success-img {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 99999;
+    z-index: 1;
 }
 
 .dash-nav-link {
@@ -7348,4 +7354,12 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
 }
 .bdr-success {
     border: solid 2px #65d247;
+}
+
+.cust-tabs li:first-child a:after {
+    left: -25px !important;
+    width: 35px !important;
+    background: none !important;
+    background-color: #fff !important;
+    border-top-left-radius: 56px !important;
 }

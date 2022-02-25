@@ -766,9 +766,8 @@
                     <div class="form-flds flds form-group stateD" id="statebx">
                         <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
-                        <div class=" country-code-name stu-grade" id="state_list" style="display:none">
 
-                        </div>
+                         <div class=" country-code-name stu-grade" id="state_list" style="display:none"></div> 
                     </div>
 
                     <div class="form-flds locationN">

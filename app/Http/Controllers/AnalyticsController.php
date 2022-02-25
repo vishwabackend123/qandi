@@ -25,9 +25,8 @@ class AnalyticsController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function overall_analytics($active_id = '', Request $request)
-    {
-
+     public function overall_analytics($active_id = '', Request $request)
+     {
         $userData = Session::get('user_data');
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
@@ -210,7 +209,8 @@ class AnalyticsController extends Controller
         $days = json_encode($days);
         $classAccuracy = json_encode($classAccuracy);
         $stuAccuracy = json_encode($stuAccuracy);
-
+        $subject = "";
+        $topicList = [];
         return view('afterlogin.Analytics.overall_analytics', compact(
             'active_id',
             'user_subjects',
@@ -237,7 +237,9 @@ class AnalyticsController extends Controller
             'stuAccuracy',
             'day',
             'classAcc',
-            'stuAcc'
+            'stuAcc',
+            'subject',
+            'topicList'
         ));
     }
 
@@ -684,7 +686,8 @@ class AnalyticsController extends Controller
             'incorrectTime2',
             'date3',
             'correctTime3',
-            'incorrectTime3'
+            'incorrectTime3',
+            'sub_id'
         ));
     }
 
@@ -777,8 +780,44 @@ class AnalyticsController extends Controller
 
 
 
-    public function topicAnalyticsList()
+    public function topicAnalyticsList($sub_id)
     {
-        return view('afterlogin.Analytics.topics_analytics');
+        $user_subjects = json_decode (json_encode($this->redis_subjects(),true));
+        $id = array_search($sub_id, array_column($user_subjects, 'id'));
+        if($id >= 1)
+        {
+            $subject = $user_subjects[$id]->subject_name;
+        }else
+        {
+         $subject = $user_subjects[0]->subject_name;   
+        }
+
+        $api_url = env('API_URL') . 'api/topics-by-subject-id/'  . $sub_id;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $api_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response_json = curl_exec($curl);
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        $aResponse = json_decode($response_json,true);
+        $topicList= isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
+        $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id','subject','topicList'))->render();
+
+        return response()->json([
+            'status' => true,
+            'html' => $html,
+            'message' => 'Coupon code applied successfully.',
+        ]);
     }
 }
