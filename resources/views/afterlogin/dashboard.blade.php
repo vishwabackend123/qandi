@@ -387,7 +387,7 @@ $userData = Session::get('user_data');
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="d-flex">
-                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="https://mvp-uniq-static-assets-uat1.s3.ap-south-1.amazonaws.com/{{$val->url}}"></span>
+                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{$val->url}}"></span>
                                         <div>
                                             <p>Level up in</p>
                                             <h3 class="chapter_name mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>

@@ -2085,7 +2085,6 @@ span.notification.ms-4 {
 
 /**  custome page tabing solved z-index value 17-12-2021 fisrt half**/
 .custom-page .tab-wrapper .nav-tabs {
-    z-index: 9;
     position: relative;
 }
 
@@ -2535,7 +2534,6 @@ p.mb-0.line-height-18px {
 }
 
 .tab-wrapper .nav-tabs {
-    z-index: 9;
     position: relative;
 }
 

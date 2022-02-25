@@ -80,6 +80,7 @@ class TestSeriesController extends Controller
 
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
+        $filtered_subject = [];
 
         if (Redis::exists('custom_answer_time_' . $user_id)) {
             Redis::del(Redis::keys('custom_answer_time_' . $user_id));
@@ -146,7 +147,7 @@ class TestSeriesController extends Controller
 
 
                 $collection = collect($aQuestions_list)->sortBy('subt_id');
-                $grouped = $collection->groupBy('subt_id');
+
                 $subject_ids = $collection->pluck('subt_id');
                 $subject_list = $subject_ids->unique()->values()->all();
 
@@ -161,7 +162,8 @@ class TestSeriesController extends Controller
                     $aTargets[] = $sub->subject_name;
                 }
 
-                $allQuestions = $collection->keyBy('question_id')->sortBy('question_id');
+
+                $allQuestions = $collection->keyBy('question_id');
                 $aQuestions_list =  $allQuestions->all();
 
                 $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
