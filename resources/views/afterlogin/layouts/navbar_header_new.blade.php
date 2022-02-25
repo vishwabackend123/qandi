@@ -655,7 +655,7 @@
             <h4><img src="{{URL::asset('public/after_login/new_ui/images/profile-star.png')}}"> Leader Board</h4>
             <div class="search-frnd">
 
-                <input type="text" name="seacrh frnd" id="search_field" placeholder="Search Friend...">
+                <input type="text" name="seacrh frnd" id="search_field" placeholder="Search a friend">
 
             </div>
             <div class="profile-detail">
