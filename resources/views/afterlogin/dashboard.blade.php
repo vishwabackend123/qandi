@@ -2,6 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
+
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -339,7 +340,7 @@ $userData = Session::get('user_data');
                                 <div class="col-lg-12">
                                     <div class="d-flex">
                                         <span class="subjectIcon" style="margin-right: 20px;">
-                                            <img style="width:80px;" src="https://mvp-uniq-static-assets-uat1.s3.ap-south-1.amazonaws.com/{{$val->url}}"></span>
+                                            <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/complete-icon.png')}}"></span>
                                         <div>
                                             <p>Plan your</p>
                                             <h3 class="chapter_name mb-0 w-100">Weekly Tests</h3>

@@ -34,11 +34,11 @@ $userData = Session::get('user_data');
                                 <li class="ms-auto">
                                     <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><!--<img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">-->
                                     <div class="arrow_icon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-    <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"/>
-    <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"/>
-</svg></div>
+                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"/>
+                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"/>
+                                    </svg></div>
                                      &nbsp;<span class="Ex--an">Export Analytics</span></a>
                                 </li>
 
