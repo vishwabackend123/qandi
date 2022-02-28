@@ -620,7 +620,7 @@ $userData = Session::get('user_data');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
             <div class="modal-body text-center">
-                <div class="progressChart"></div>
+                <div class="progressChartExpend"></div>
             </div>
         </div>
     </div>
@@ -1097,13 +1097,13 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             };
             var series =  [{
                   name: 'Ideal Pace',
-                  data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
+                  data: [0.0, 5.0, 10.0, 15.0, 18.2, 21.5, 25.2,
                      26.5],
                      color: '#db2f36'
                }, 
                {
                   name: 'Your Pace',
-                  data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
+                  data: [0, 2, 5.7, 11.3, 17.0, 22.0, 24.8,
                      24.1],
                      color: '#21ccff'
                }
@@ -1125,6 +1125,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             json.credits = credits;
             json.exporting = exporting;
             $('.progressChart').highcharts(json);
+            $('.progressChartExpend').highcharts(json);
          });
       </script>
 @endsection
