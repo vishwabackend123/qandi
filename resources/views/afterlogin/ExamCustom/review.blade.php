@@ -567,7 +567,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 
-<!-----End-for-btn_click_height-click------->
+<!-----End-for-btn_click_height-click----->
 
 
 
