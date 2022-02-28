@@ -694,7 +694,7 @@ a.clearRes:hover {
 }
 .review_expand {
     position: absolute;
-    top: 20%;
+    top: 10%;
     right: 10%;
 }
 .percent_btn {
@@ -746,4 +746,5 @@ a.clearRes:hover {
     margin-top: 50px;
    
 }
-/*Added by sachin-22-02*/
+/*added by sachin-22-02*/
+ 
