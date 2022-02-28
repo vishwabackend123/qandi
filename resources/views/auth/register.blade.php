@@ -323,10 +323,10 @@
 
         });
 
-        $('#otp-verify-btn').click(function() {
-            $('#login-box').addClass('close-box');
-            $('#address-box').addClass('open-box');
-        });
+        /*  $('#otp-verify-btn').click(function() {
+             $('#login-box').addClass('close-box');
+             $('#address-box').addClass('open-box');
+         }); */
 
 
 
