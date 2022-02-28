@@ -517,6 +517,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var calculatedHeight = height - 80 + "px";
         $('.test-review .cust-tab-content').css('height', height);
         $('#review_rques_blk').css('height', calculatedHeight);
+      
 
     }
 
@@ -567,7 +568,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 
-<!-----End-for-btn_click_height-click----->
+<!-----End-for-btn_click_height-click------->
 
 
 
@@ -609,4 +610,69 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 <!-----End-for-percent-btn-click------->
+
+<style>
+    #review_rques_blk .answer-section {
+        margin-top: 0px !important;
+        position: absolute;
+        overflow-x: hidden;
+        bottom: 0px;
+        width: 98%;
+        border-radius: 40px;
+    }
+
+    .expandbtn {
+        display: block;
+    }
+
+
+    .test-review-right .bg-white {
+        background-color: red;
+        position: relative;
+    }
+
+    .test-review-right .review-qus {
+        background-color: #ffffff;
+    }
+
+    .add_btn_new {
+        justify-content: end;
+        flex-direction: row-reverse;
+    }
+
+    .review_list_expand_btn_box img,
+    .expand_button img {
+        width: 34px;
+        cursor: pointer
+    }
+
+    .expand_bnt1 svg,
+    .expandbtn svg,
+    .collapsebtn svg {
+        width: 37px !important;
+
+        cursor: pointer;
+    }
+
+    .expand_bnt1 svg {
+        margin-top: -7px;
+    }
+
+    #review_rques_blk .answer-section {
+        margin-top: 0px !important;
+        position: absolute;
+        overflow-x: hidden;
+        bottom: 0px;
+        width: 99%;
+
+    }
+
+    #review_rques_blk .answer-section {
+        height: 250px;
+    }
+</style>
+
+
+
+
 @endsection

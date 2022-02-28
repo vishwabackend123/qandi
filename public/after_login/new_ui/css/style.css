@@ -186,16 +186,16 @@ span.filtericon {
  
 /***************************/
 input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #2c3348 !important;
-    opacity: 1; /* Firefox */
+    color: rgba(0, 0, 0, 0.50) !important;
+     
   }
   
   input#search_field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #2c3348 !important;
+    color: rgba(0, 0, 0, 0.50) !important;
   }
   
   input#search_field::-ms-input-placeholder { /* Microsoft Edge */
-    color: #2c3348 !important;
+    color: rgba(0, 0, 0, 0.50) !important;  
   }
 /******************************/
 
@@ -3031,6 +3031,7 @@ div#sub-planner {
     color: #00baff;
     font-weight: 600;
     text-align: left;
+    font-size: 20px;
 }
 
 .profile-section ul li svg {
@@ -3823,7 +3824,7 @@ span.profile-digit {
 
 .leader-board h4 {
     text-align: right;
-    font-size: 18px;
+    font-size: 16px;
     color: #00baff;
     text-transform: uppercase;
     font-weight: 600;
