@@ -1477,6 +1477,8 @@
                             $('.errRef').fadeOut('fast');
                         }, 5000);
                         $('#referEmails').val("");
+                        $(".emaillinkholder").hide();
+                        $(".onsendshow").show();
 
                     } else {
                         var errormsg = $("#errRef_auth").show();
