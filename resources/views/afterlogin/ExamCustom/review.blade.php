@@ -51,7 +51,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     <div id="review_rques_blk">
                                         <div class="question-block">
                                             <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" class="arrow next-arow" title="Bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
-                                            <div class="question pb-3 pt-2"><span class="q-no">Q1.</span>
+                                            <div class="question question-height pb-3 pt-2"><span class="q-no">Q1.</span>
                                                 {!! $question_text !!}
                                             </div>
                                             <div class="ans-block row mt-0">
@@ -685,10 +685,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $(document).ready(function() {
         $(".expandbtn").on('click', function() {
             var review_rques_blk_height = $("#review_rques_blk").outerHeight();
-            var review_qus_height = $(".question-block .question").outerHeight();
+            var review_qus_height = $(".question-block .question-height").outerHeight();
             var customheight = review_rques_blk_height - review_qus_height;
             $('.answer-section').css('height', customheight);
-            $('.question-block .question').css('height', review_qus_height);
+            $('.question-block .question-height').css('height', review_qus_height);
 
         });
 
