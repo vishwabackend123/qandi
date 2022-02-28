@@ -616,32 +616,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 
-<!-- <script>
-    function ansHeight() {
-        var review_rques_blk_height = $("#review_rques_blk").outerHeight();
-
-        var review_qus_height =  $(".question-block .question").outerHeight();
-
-        var customheight = review_rques_blk_height -review_qus_height;
-
-        $('.answer-section').css('height', customheight);
-
-        $('.question-block .question').css('height', review_qus_height);
-
-       
-    }
-
-    ansHeight();
-    $( "window" ).load(function() {
-        ansHeight();
-    });
-    
-
-    $(window).resize(function() {
-        ansHeight();
-    });
  
-</script> -->
 
 <script>
     function test_review_right_height() {
