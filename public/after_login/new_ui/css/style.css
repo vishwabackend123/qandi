@@ -1751,10 +1751,18 @@ body#main-body .seeAnico span img {
 .custom-page .slick-slide {
     height: auto !important;
 }
-
+.list-series .cust-tab-content .speci-text span.sub-details {
+    box-shadow: none !important;
+}
 button#dropdownMenuLink-topic {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    margin-top: -15px;
+}
+button#dropdownMenuLink-topic.show {
+    background: #01baff !important;
+	box-shadow: none !important;
+    outline: none !important;
 }
 
 .preparation .cust-tabs .nav-link.active:before {
@@ -3347,10 +3355,24 @@ button.save-btn {
 
 /** custom page css on 16-12-2021 **/
 .custom-page #dropdownMenuLink {
-    width: 40px;
-    height: 40px
+    width: 48px;
+    height: 48px;
+    border-radius: 12px !important;
+    margin-left: 20px !important;
 }
-
+.custom-page #dropdownMenuLink.show {
+    background: #00baff !important;box-shadow: none !important;
+    outline: none !important;
+}
+ul.dropdown-menu.cust-dropdown{
+	border-radius: 36px;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
+	padding: 30px 0px 30px 0px;
+    width: 210px;border: none;
+}
+ul.dropdown-menu.cust-dropdown li {
+    text-indent: 20px;
+}
 /** end here **/
 
 /** rahul dashboad index page css on 16-12-2021**/

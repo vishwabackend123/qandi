@@ -1563,10 +1563,10 @@
         }
     });
 </script>
-<script>
+<!-- <script>
     $(document).ready(function() {
         $(".addremovetopic").on("click", function() {
             $(this).parent().parent().toggleClass('current');
         });
     });
-</script>
+</script> -->
