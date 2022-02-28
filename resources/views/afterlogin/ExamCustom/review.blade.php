@@ -128,8 +128,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
                                             <div class="expand_button">
-                                                <!-- <img  class="expandbtn" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}"> -->
-                                                <!-- <img  class="collapsebtn" style="display: none;" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}"> -->
                                                 <div class="expandbtn">
                                                     <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
                                                         <defs>

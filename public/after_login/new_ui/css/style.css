@@ -153,16 +153,20 @@ span.filtericon {
  
 /***************************/
 input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(0, 0, 0, 0.50) !important;
+    /* color: rgba(0, 0, 0, 0.50) !important; */
+    color: #2c3348 !important;
+    opacity: 0.5 !important;
      
   }
   
   input#search_field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: rgba(0, 0, 0, 0.50) !important;
+    color: #2c3348 !important;
+    opacity: 0.5 !important;
   }
   
   input#search_field::-ms-input-placeholder { /* Microsoft Edge */
-    color: rgba(0, 0, 0, 0.50) !important;  
+    color: #2c3348 !important;
+    opacity: 0.5 !important;
   }
 /******************************/
 
@@ -923,12 +927,11 @@ a.disabled-btn {
 
 .active_user {
     background: #f2f2f2;
-
     padding: 10px 0px;
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 290px;
+    max-width: 301px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -2955,7 +2958,7 @@ div#sub-planner {
 }
 
 .profile-show {
-    position: absolute;
+    /* position: absolute;
     top: 0px;
     right: 540px;
     width: 365px;
@@ -2964,14 +2967,39 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
+    min-height: 450px !important; */
+
+
+   
+    position: absolute;
+    top: 0px;
+    right: 540px;
+    width: 410px;
+    background: #fff;
+    /* padding: 10px 15px; */
+    border-radius: 56px;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    z-index: 9;
     min-height: 450px !important;
+    background-image: url(../images/analytics-thumbnail.png);
+    background-repeat: no-repeat;
+    background-position: left 30% bottom -223px;
+    background-size: cover;
+
+}
+
+.profile-show-holder {
+    background: white;
+    display: flex;
+    border-top-left-radius: 56px;
+    border-top-right-radius: 56px;
 }
 
 .profile-picture-txt .p-picture {
     float: left;
-    width: 80px;
+    width: 140px;
     border-radius: 50%;
-    height: 80px;
+    height: 140px;
     text-align: center;
     overflow: hidden;
 }
@@ -2984,6 +3012,7 @@ div#sub-planner {
     float: right;
     width: 70%;
     padding-right: 20px;
+    padding-left: 20px;
 }
 
 .profile-show button span {
@@ -3773,7 +3802,7 @@ span.profile-digit {
 }
 
 .leader-board {
-    width: 370px;
+    width: 380px;
     height: 450px;
     background: #fff;
     border-radius: 56px;
@@ -3799,13 +3828,19 @@ span.profile-digit {
 }
 
 .search-frnd input {
-    width: 100%;
+    width: 97%;
     border: none;
     padding: 10px 20px 10px 40px;
     border-radius: 8px;
     background: url(../images/search.png) no-repeat #f2f2f2;
     color: #000;
     background-position: 4px;
+    margin-left: 12px;
+}
+
+.profile-picture-txt{
+    display: flex;
+    justify-content: space-between;
 }
 
 .leader-board ul {
@@ -3825,14 +3860,14 @@ span.profile-digit {
 }
 
 .leader-board ul li span h3 {
-    font-size: 16px;
+    font-size: 14px;
     color: #00baff;
     font-weight: normal;
     margin-bottom: 0px;
 }
 
 .leader-board ul li span p {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.5;
     color: #2c3348;
     font-weight: normal;
