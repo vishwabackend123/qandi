@@ -25,13 +25,14 @@
 div#back2Dsh button a:hover {
     color: #fff;
 }
-
+.classMark,.timeClass  {
+    width: 130px;
+}
 #overall button.btn.active,
 #home button.btn.active,
 .Ex-anal {
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     color: #fff;
-    padding: 10px 50px !important;
     height: 45px !important;
     margin-top: 10px;
 }
