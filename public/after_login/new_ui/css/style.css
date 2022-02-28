@@ -16,11 +16,48 @@ button {
     text-decoration: none;
 }
 
+.btn.btnzoom-in-out {
+    font-size: 12px;
+    text-transform: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #5f5d5d!important;
+    padding: 2px 4px;
+    box-shadow: none!important;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
+
 /******* 28-02-2022 Amit-Start ******/
 ul.cust-tabs li:first-child a {
-    border-top-left-radius: 11px !important;
+border-top-left-radius: 11px !important;
 }
-/******* 28-02-2022 Amit-Start ******/
+.onsendshow .back_to_ref a{border-radius: 20px;font-weight:600;}
+.onsendshow .backtobtn a{border-radius: 20px;background: rgba(233,233,233,0.5)!important;}
+.onsendshow .backtobtn i , .onsendshow .backtobtn a span{color: #2c3348;}
+.notification a svg .cls-2 {stroke: none;}
+/******* 28-02-2022 Amit-End ******/
+
 
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
@@ -153,16 +190,16 @@ span.filtericon {
  
 /***************************/
 input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #2c3348 !important;
-    opacity: 1; /* Firefox */
+    color: rgba(0, 0, 0, 0.50) !important;
+     
   }
   
   input#search_field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #2c3348 !important;
+    color: rgba(0, 0, 0, 0.50) !important;
   }
   
   input#search_field::-ms-input-placeholder { /* Microsoft Edge */
-    color: #2c3348 !important;
+    color: rgba(0, 0, 0, 0.50) !important;  
   }
 /******************************/
 
@@ -3001,6 +3038,7 @@ div#sub-planner {
     color: #00baff;
     font-weight: 600;
     text-align: left;
+    font-size: 20px;
 }
 
 .profile-section ul li svg {
@@ -3793,7 +3831,7 @@ span.profile-digit {
 
 .leader-board h4 {
     text-align: right;
-    font-size: 18px;
+    font-size: 16px;
     color: #00baff;
     text-transform: uppercase;
     font-weight: 600;
