@@ -22,15 +22,15 @@ class ReferralController extends Controller
     {
 
         $userData = Session::get('user_data');
-
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
         $referrals = (isset($request->refer_emails) && !empty($request->refer_emails)) ? $request->refer_emails : '';
-
+        $referrals_code = (isset($request->refer_code) && !empty($request->refer_code)) ? $request->refer_code : '';
         $inputjson = [
             "student_id" => $user_id,
             "exam_id" => $exam_id,
             "email" => $referrals,
+            "student_refer_by" => $referrals_code,
         ];
         $request = json_encode($inputjson);
 
@@ -53,7 +53,6 @@ class ReferralController extends Controller
                 "content-type: application/json",
             ),
         ));
-
         $response_json = curl_exec($curl);
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

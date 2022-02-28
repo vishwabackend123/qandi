@@ -177,12 +177,14 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">Progress Journey</span>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <figure>
-                                    <img src="{{URL::asset('public/after_login/new_ui/images/progress-journey-graph.png')}}" class="w-100">
-                                </figure>
+                            <div class="col-md-12">
+                                <div class="progressChart" style="height:180px;margin-top:18px;">
+                                </div>
+                                <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
+                                    <i class="fa fa-arrows" style="margin-right:1px;font-size: 10px"></i>
+                                click to expand</button>
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <div class="chapter-ideal-schedule text-center">
                                     <span>8</span>
                                     <small>You are 8 chapter behind the ideal schedule</small>
@@ -195,7 +197,7 @@ $userData = Session::get('user_data');
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -609,6 +611,25 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-------------------->
+
+<!--------- Graph Expand ------>
+<div class="modal fade" id="graphExpand" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 900px;">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="progressChartExpend"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------->
+
+<div class="loader-block" style="display:none;">  
+    <img  src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
@@ -1035,4 +1056,76 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         });
     });
 </script>
+ <script language = "JavaScript">
+         $(document).ready(function() {
+            var title = {
+               text: ''   
+            };
+            var subtitle = {
+               text: ''
+            };
+            var xAxis = {
+              title: {
+                  text: 'Weeks'
+               },
+               categories: ['W1', 'W2', 'W3', 'W4', 'W5','W6','W7','W8'],
+                  labels: {
+                    useHTML: true, 
+                    rotation: 0,
+                }
+            };
+            var yAxis = {
+               title: {
+                  text: 'No of Chapters'
+               },
+               plotLines: [{
+                  value: 0,
+                  width: 1,
+                  color: '#808080'
+               }]
+            };   
+            var tooltip = {
+               valueSuffix: ''
+            }
+            var legend = {
+               layout: 'horizontal',
+               align: 'center',
+               verticalAlign: 'bottom',
+               bottom: '-20px',
+               floating: false,
+               borderWidth: 0,
+            };
+            var series =  [{
+                  name: 'Ideal Pace',
+                  data: [0.0, 5.0, 10.0, 15.0, 18.2, 21.5, 25.2,
+                     26.5],
+                     color: '#db2f36'
+               }, 
+               {
+                  name: 'Your Pace',
+                  data: [0, 2, 5.7, 11.3, 17.0, 22.0, 24.8,
+                     24.1],
+                     color: '#21ccff'
+               }
+            ];
+            var credits = {
+            enabled: false
+            };
+            var exporting ={
+                enabled: false
+            };
+            var json = {};
+            json.title = title;
+            json.subtitle = subtitle;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.series = series;
+            json.credits = credits;
+            json.exporting = exporting;
+            $('.progressChart').highcharts(json);
+            $('.progressChartExpend').highcharts(json);
+         });
+      </script>
 @endsection

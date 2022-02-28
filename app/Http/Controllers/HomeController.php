@@ -216,6 +216,7 @@ class HomeController extends Controller
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         Session::put('referal_link', env('APP_URL') . 'referral/' . $refer_code);
+        Session::put('referal_code', $refer_code);
 
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
     }
