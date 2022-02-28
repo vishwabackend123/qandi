@@ -627,6 +627,10 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 
+<div class="loader-block">  
+    <img  src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
+
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
 <!-- footer Section end  -->

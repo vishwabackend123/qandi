@@ -29,6 +29,21 @@ button {
     text-decoration: underline;
 }
 .progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
 
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
