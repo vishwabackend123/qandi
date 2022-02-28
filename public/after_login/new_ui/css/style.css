@@ -1951,6 +1951,9 @@ button#saveEdit {
 
 
 }
+#sharefrnd button.btn.btn-danger:hover {
+    background: #00baff !important;
+}
 
 .refer_frd img {
     margin-right: 10px;
@@ -7078,7 +7081,9 @@ span#slide-input {
 .copylinkbtn i {
     padding-right: 10px;
 }
-
+.copylinkbtn:hover{
+background: #00baff;    
+}
 
 .onsendshow {
     display: none;
