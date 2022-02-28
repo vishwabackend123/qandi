@@ -177,10 +177,10 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">Progress Journey</span>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 progressChart">
+                            <div class="col-md-12 progressChart" style="height:180px;">
                                 
                             </div>
-                            <div class="col-md-6">
+                            <!--div class="col-md-6">
                                 <div class="chapter-ideal-schedule text-center">
                                     <span>8</span>
                                     <small>You are 8 chapter behind the ideal schedule</small>
@@ -193,7 +193,7 @@ $userData = Session::get('user_data');
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div-->
                         </div>
                     </div>
                 </div>
