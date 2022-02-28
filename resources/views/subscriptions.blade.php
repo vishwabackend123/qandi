@@ -82,7 +82,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                     <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
-                        <p class="box-content scroll-content me-3 pr-3">{{$sub->subscription_details}}</p>
+                        <p class="box-content scroll-content">{{$sub->subscription_details}}</p>
 
                         <div class="text-center mt-5">
                             <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -93,7 +93,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
 
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5 disabled" disabled id="goto-otp-btn"> Purchased </i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 disabled m-0" disabled id="goto-otp-btn"> Purchased </i></button>
                             </form>
                         </div>
                     </div>
