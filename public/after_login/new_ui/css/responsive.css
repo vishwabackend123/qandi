@@ -3,6 +3,10 @@
        
         font-size: 13px;
     }
+    .slider-horizontal {
+        width: 85% !important;
+        height: 20px;
+    }
 }
 
 
@@ -31,6 +35,11 @@
     .open-sub-planner {
         width: 64.2% !important;
         height: auto !important;
+    }
+
+    .slider-horizontal {
+        width: 85% !important;
+      
     }
 
     /* end planner screen*/
