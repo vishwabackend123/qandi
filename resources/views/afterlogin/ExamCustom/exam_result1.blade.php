@@ -1,5 +1,12 @@
 <div class="col-12 mb-4">
-    <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">&nbsp;Export Analytics
+    <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                                    </svg>
+        &nbsp;Export Analytics
     </button>
 </div>
 <div class="col-lg-4">
@@ -102,9 +109,9 @@ $stuscore=$stuscore+$gh->student_score;
 $clsAvg=$clsAvg+$gh->class_score;
 }
 
-$stuscore_arr[]=$stuscore;
+$stuscore_arr[]=round($stuscore,2);
 $stuscore_json=json_encode($stuscore_arr);
-$clsAvg_arr[]=$clsAvg;
+$clsAvg_arr[]=round($clsAvg,2);
 $clsAvg_json=json_encode($clsAvg_arr);
 
 @endphp
