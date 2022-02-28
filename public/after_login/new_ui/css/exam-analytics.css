@@ -706,12 +706,13 @@ padding:30px;
 border-radius:30px;
 }
 .sub-details{
- margin: 0 54px 36px 0;
-  padding: 20px 25px;
+ margin: 0;
+  padding: 20px 15px;
   border-radius: 36px;	
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    font-size: 17px;
 }
 .sub-details:hover {
     -moz-transform: translate(0px, -2px);
