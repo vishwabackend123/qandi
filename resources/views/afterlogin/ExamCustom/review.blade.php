@@ -565,36 +565,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 
-
-
-
-
-
-
-
-
-
-<!-- <script>
-    function setboxHeight() {
-        var height = $(".rightSect .flex-column").outerHeight();
-        $('.test-review').css('height', height);
-        var calculatedHeight = height - 64 + "px";
-        $('#review_rques_blk').css('height', calculatedHeight);
-       
-    }
-
-    setboxHeight();
-    $( "window" ).load(function() {
-    setboxHeight();
-    });
-    
-
-    $(window).resize(function() {
-        setboxHeight();
-    });
- 
-</script> -->
-
 <script>
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -602,6 +572,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var calculatedHeight = height - 80 + "px";
         $('.test-review .cust-tab-content').css('height', height);
         $('#review_rques_blk').css('height', calculatedHeight);
+        var left_review_sec_h = $("#review_rques_blk").outerHeight();
 
     }
 
@@ -618,7 +589,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
  
 
-<script>
+<!-- <script>
     function test_review_right_height() {
         var review_rightbox_height = $(".test-review-right .bg-white").outerHeight();
         var review_number_block_height = $(".test-review-right .slimScrollDiv").outerHeight();
@@ -641,8 +612,8 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $(window).resize(function() {
         test_review_right_height();
     });
-</script>
-<!----------work-->
+</script> -->
+
 
 
 
