@@ -315,7 +315,7 @@
     }
 
     .slider-horizontal {
-        width: 92% !important;
+        width: 90%;
         height: 20px;
     }
 
@@ -333,7 +333,7 @@
     }
 
     .exam-week-bar{
-    margin-top: 45px;
+    margin-top: 42px;
 }
 
 </style>
