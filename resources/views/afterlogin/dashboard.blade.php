@@ -627,7 +627,7 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 
-<div class="loader-block">  
+<div class="loader-block" style="display:none;">  
     <img  src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
 
