@@ -315,7 +315,7 @@
     }
 
     .slider-horizontal {
-        width: 92%;
+        width: 90%;
         height: 20px;
     }
 

@@ -1,3 +1,13 @@
+@media(min-width:1441px) and (max-width:1660px) {
+    
+    .slider-horizontal {
+        width: 85% !important;
+     
+    }
+}
+
+
+
 @media(min-width:1316px) and (max-width:1440px) {
     .pe-1 .star-ratings-css-bottom span {
        
@@ -44,6 +54,13 @@
 
     /* end planner screen*/
 
+}
+
+@media(min-width:1200px) and (max-width:1300px) {
+    .slider-horizontal {
+        width: 85% !important;
+      
+    }
 }
 
 @media(min-width:1023px) and (max-width:1199px) {
