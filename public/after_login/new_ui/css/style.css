@@ -44,6 +44,9 @@ button {
 .loader-block img {
     width: 200px;
 }
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
 
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
