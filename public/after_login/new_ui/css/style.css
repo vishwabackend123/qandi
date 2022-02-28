@@ -16,11 +16,59 @@ button {
     text-decoration: none;
 }
 
+li.a1TS {
+    width: 42% !important;
+}
+li.a2TS {
+    width: 15% !important;
+}
+li.a3TS {
+    width: 15% !important;
+}
+
+
+.btn.btnzoom-in-out {
+    font-size: 12px;
+    text-transform: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #5f5d5d!important;
+    padding: 2px 4px;
+    box-shadow: none!important;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
+
 /******* 28-02-2022 Amit-Start ******/
 ul.cust-tabs li:first-child a {
-    border-top-left-radius: 11px !important;
+border-top-left-radius: 11px !important;
 }
-/******* 28-02-2022 Amit-Start ******/
+.onsendshow .back_to_ref a{border-radius: 20px;font-weight:600;}
+.onsendshow .backtobtn a{border-radius: 20px;background: rgba(233,233,233,0.5)!important;}
+.onsendshow .backtobtn i , .onsendshow .backtobtn a span{color: #2c3348;}
+.notification a svg .cls-2 {stroke: none;}
+/******* 28-02-2022 Amit-End ******/
+
 
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
@@ -1754,10 +1802,18 @@ body#main-body .seeAnico span img {
 .custom-page .slick-slide {
     height: auto !important;
 }
-
+.list-series .cust-tab-content .speci-text span.sub-details {
+    box-shadow: none !important;
+}
 button#dropdownMenuLink-topic {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    margin-top: -15px;
+}
+button#dropdownMenuLink-topic.show {
+    background: #01baff !important;
+	box-shadow: none !important;
+    outline: none !important;
 }
 
 .preparation .cust-tabs .nav-link.active:before {
@@ -1953,6 +2009,9 @@ button#saveEdit {
     letter-spacing: normal;
 
 
+}
+#sharefrnd button.btn.btn-danger:hover {
+    background: #00baff !important;
 }
 
 .refer_frd img {
@@ -3377,10 +3436,24 @@ button.save-btn {
 
 /** custom page css on 16-12-2021 **/
 .custom-page #dropdownMenuLink {
-    width: 40px;
-    height: 40px
+    width: 48px;
+    height: 48px;
+    border-radius: 12px !important;
+    margin-left: 20px !important;
 }
-
+.custom-page #dropdownMenuLink.show {
+    background: #00baff !important;box-shadow: none !important;
+    outline: none !important;
+}
+ul.dropdown-menu.cust-dropdown{
+	border-radius: 36px;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
+	padding: 30px 0px 30px 0px;
+    width: 210px;border: none;
+}
+ul.dropdown-menu.cust-dropdown li {
+    text-indent: 20px;
+}
 /** end here **/
 
 /** rahul dashboad index page css on 16-12-2021**/
@@ -7114,7 +7187,9 @@ span#slide-input {
 .copylinkbtn i {
     padding-right: 10px;
 }
-
+.copylinkbtn:hover{
+background: #00baff;    
+}
 
 .onsendshow {
     display: none;
