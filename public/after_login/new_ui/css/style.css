@@ -48,6 +48,13 @@ button {
     color: #000!important;
 }
 
+/******* 28-02-2022 Amit-Start ******/
+ul.cust-tabs li:first-child a {
+    border-top-left-radius: 11px !important;
+}
+/******* 28-02-2022 Amit-Start ******/
+
+
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
 /******* 23-02-2022 Amit-Start ******/
