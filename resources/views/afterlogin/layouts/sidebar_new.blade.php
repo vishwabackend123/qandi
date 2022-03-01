@@ -488,12 +488,11 @@
 
         /* Copy the text inside the text field */
         navigator.clipboard.writeText(copyText.value);
-         var sucessmsg = $(".successRef_copy").show();
-                            sucessmsg[0].textContent = "Copied!";
-
-                            setTimeout(function() {
-                                $('.successRef_copy').fadeOut('fast');
-                            }, 3000);
+        $(".successRef_copy").text("Copied!");
+        $(".successRef_copy").show();
+        setTimeout(function() {
+            $('.successRef_copy').fadeOut('fast');
+        }, 3000);
     }
 </script>
 
