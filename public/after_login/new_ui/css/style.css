@@ -117,6 +117,9 @@ label.error{position:absolute;}
 
 
 /******* 02-03-2022 Amit-Start ******/
+.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;}
+.backtobox .backtobtn a {border-radius: 20px;background: rgba(233,233,233,0.5);}
+.backtobox .backtobtn i , .backtobox .backtobtn span{color: #2c3348;}
 .content-wrapper.examSect {height: 100vh;display: flex;align-items: center;}
 div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
 .dashboard-cards-block .bg-white>small p>span img{width: 25px!important;}
