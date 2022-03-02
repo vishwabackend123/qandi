@@ -117,6 +117,7 @@ label.error{position:absolute;}
 
 
 /******* 02-03-2022 Amit-Start ******/
+div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
 .btn.btnzoom-in-out {
     font-size: 12px;
     text-transform: none;
@@ -4481,7 +4482,6 @@ p.tab-title {
     /*width: 32%;*/
     display: inline-block;
     text-align: left;
-    margin-left: 12px;
 }
 
 .star-img img {
@@ -7559,3 +7559,13 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
 #dialog-pdf .report-block2.p-5 img {
     width: 65px !important;
 }
+
+/******02-03 navdeep*****/
+.btn-close {
+    background: url(../images/close-i.png);
+    opacity: 1;
+    background-size: 21px;
+    background-repeat: no-repeat;
+    padding-right: 0 !important;
+}
+/******02-03 navdeep-end*****

@@ -74,7 +74,7 @@ $userData = Session::get('user_data');
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
                                     <strong>{{$sub['subject_name']}}</strong>
-                                    <span class="star-img m-0">
+                                    <span class="star-img">
                                         <div class="star-ratings-css ">
                                             <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -181,8 +181,7 @@ $userData = Session::get('user_data');
                                 <div class="progressChart" style="height:180px;margin-top:18px;">
                                 </div>
                                 <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
-                                    <i class="fa fa-arrows" style="margin-right:1px;font-size: 10px"></i>
-                                click to expand</button>
+                                    <i class="fa fa-arrows" style="margin-right:3px;font-size: 10px"></i>click to expand</button>
                             </div>
                             <!-- <div class="col-md-6">
                                 <div class="chapter-ideal-schedule text-center">
