@@ -988,6 +988,16 @@
     function selectChapter(subject_id) {
         var limit = $('#customRange').val();
         var chapters = $('input[name="chapters[]"]').length;
+        if(limit == '0')
+        {
+            var error_txt = 'Please select Exams Per Week';
+            $('#limit_error').html(error_txt);
+            $('#limit_error').show();
+            setTimeout(function() {
+                $('#limit_error').fadeOut('fast');
+            }, 5000);
+            return false;
+        }
         if (chapters >= limit) {
             var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
             $('#limit_error').html(error_txt);
