@@ -170,6 +170,12 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   }
 /******************************/
 
+
+ 
+ 
+   
+
+
 #review_rques_blk .question p {
     font-size: 14px;
     line-height: 20px;
@@ -1754,10 +1760,15 @@ body#main-body .seeAnico span img {
 .custom-page .slick-slide {
     height: auto !important;
 }
+.status-id .star-ratings-css-bottom {
+    padding: 6px !important;
+}
 
 button#dropdownMenuLink-topic {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    margin-top: -12px;
+	box-shadow: none;
 }
 
 .preparation .cust-tabs .nav-link.active:before {
@@ -3381,8 +3392,8 @@ button.save-btn {
 
 /** custom page css on 16-12-2021 **/
 .custom-page #dropdownMenuLink {
-    width: 40px;
-    height: 40px
+    width: 48px;
+    height: 48px;
 }
 
 /** end here **/
