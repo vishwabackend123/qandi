@@ -396,7 +396,7 @@ $userData = Session::get('user_data');
                                             <ul class="course-star pe-2 m-0">
                                                 <li style="float:none;">
                                                     <strong style="width:auto;">Proficiency</strong>
-                                                    <span class="star-img" style="width:auto;">
+                                                    <span class="star-img p-0" style="width:auto;">
                                                         <div class="star-ratings-css ">
                                                             <div class="star-ratings-css-top" style="width: {{round($val->chapter_score, 2)}}%">
                                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
