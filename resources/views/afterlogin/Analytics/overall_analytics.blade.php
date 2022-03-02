@@ -155,8 +155,8 @@ $userData = Session::get('user_data');
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
-                                            <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
-                                            <div id="timeManagementButtons" class="btn-block mt-2 d-flex justify-content-between">
+                                            <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
+                                            <div id="timeManagementButtons" class="btn-block mt-2 ">
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass active" id="day_time" onclick="replace('day','week','month')">
                                                     Day
                                                 </button>
@@ -199,8 +199,8 @@ $userData = Session::get('user_data');
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
-                                            <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
-                                            <div class="btn-block mt-2 d-flex justify-content-between">
+                                            <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
+                                            <div class="btn-block mt-2 ">
                                                 <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark active" id="day_mark" onclick="replace1('day1','week1','month1')">
                                                     Day
                                                 </button>
