@@ -93,7 +93,8 @@ $userData = Session::get('user_data');
                                 </span>
                             </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
-                                <h5 class="dashboard-title mb-3">Subject proficiency</h5>
+                                
+                                <h5 class="dashboard-title mb-3">Subject Performance </h5>
                                 @if(!empty($subProf))
                                 @foreach($subProf as $key=>$sub)
                                 <div class="d-flex align-items-center mt-3 pb-1">
@@ -141,7 +142,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @endforeach
                                 @endif
-                                <p class="text-center text-danger"><small>Work on your weak subject to increase the number of questions answered correctly</small></p>
+                                <!--p class="text-center text-danger"><small>Work on your weak subject to increase the number of questions answered correctly</small></p-->
                             </div>
                             <div class="bg-white shadow-lg p-3 mt-5">
                                 <h5 class="dashboard-title mb-3 fw-bold">Unit proficiency</h5>
@@ -187,21 +188,21 @@ $userData = Session::get('user_data');
                                     Time Management
                                 </p>
                                 <div id="time_management"></div>
-                                <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
+                                <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
                             </div>
                             <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
                                 <p class="text-uppercase fw-bold text-start">
                                     Average Time Spent on each Question (Last Week)
                                 </p>
                                 <div id="accPer1"></div>
-                                <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
+                                <!--p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p-->
                             </div>
                             <div class="bg-white shadow-lg p-3 px-5 mt-3">
                                 <p class="text-uppercase fw-bold text-start">
                                     Accuracy Percentage (Last Week)
                                 </p>
                                 <div id="accPer"></div>
-                                <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
+                                <!--p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
                             </div>
                             <p class="text-center mt-5 pt-5">
                                 <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
