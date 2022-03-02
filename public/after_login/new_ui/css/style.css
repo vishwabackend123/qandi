@@ -1904,9 +1904,6 @@ body#main-body .seeAnico span img {
 .custom-page .slick-slide {
     height: auto !important;
 }
-.status-id .star-ratings-css-bottom {
-    padding: 6px !important;
-}
 
 button#dropdownMenuLink-topic {
     width: 48px;
@@ -7575,5 +7572,20 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
     background-size: 21px;
     background-repeat: no-repeat;
     padding-right: 0 !important;
+}
+.dashboard .star-ratings-css-top span{
+font-size: 13px;    
+}
+.swiper-slide .star-ratings-css-top span{
+font-size: 14px;    
+}
+.overllanaly .star-ratings-css-top span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-bottom span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-top span{
+font-size: 22px;    
 }
 /******02-03 navdeep-end*****
