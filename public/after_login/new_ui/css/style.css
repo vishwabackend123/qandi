@@ -63,7 +63,7 @@ button {
 /*****shubham(02-03-2022)-end*****/
 
 
-
+/******* 02-03-2022 Amit-Start ******/
 .btn.btnzoom-in-out {
     font-size: 12px;
     text-transform: none;
@@ -95,6 +95,10 @@ button {
 .btn.btnzoom-in-out:hover {
     color: #000!important;
 }
+.notification a svg .cls-2 {
+    stroke: none;
+}
+/******* 02-03-2022 Amit-End ******/
 
 /******* 28-02-2022 Amit-Start ******/
 ul.cust-tabs li:first-child a {
