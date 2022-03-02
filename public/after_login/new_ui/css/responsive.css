@@ -183,6 +183,9 @@
     .log-out-screen {
         /* right: 320px; */
     }
+    .subscription {
+        width: 50%;
+    }
 }
 
 @media(min-width:1024px) and (max-width:1198px) {
@@ -192,6 +195,10 @@
     .log-out-screen {
         right: 220px;
         
+        
+    }
+    .subscription {
+        width: 62%;
     }
 }
 

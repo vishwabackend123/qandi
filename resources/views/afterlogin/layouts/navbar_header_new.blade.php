@@ -811,16 +811,19 @@
         <!--edit-form-->
 
 
-        <div class="subscription right-sidebar">
+        <div class="subscription right-sidebar subscription-box">
             <div class="profile-picture-txt">
-                <div class="p-picture">
-                    <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
-                </div>
-                <div class="p-text">
-                    <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
-                    <p>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                <div class="profile_text_box_heading">
+                    <div class="p-picture">
+                        <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+                    </div>
+                    <div class="p-text">
+                        <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
+                        <p>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
 
+                    </div>
                 </div>
+
                 <div class="subscrived">
                     <div class="p-pictures">
                         <img src="{{URL::asset('public/after_login/new_ui/images/check.png')}}" alt="icon is missing">
