@@ -1,4 +1,11 @@
 /* 10-0202022 */
+img.hsow {
+    display: none;
+}
+img.hsowl {
+    display: none;
+}
+
 .dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;
     background-color: #f2f2f2 !important;
@@ -20,7 +27,11 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show {
     background: #00baff !important;
 	box-shadow:none;	
 }
-button.btn.btn-light.ms-2.text-danger.rounded-0 {
+button.btn.btn-light.ms-auto.text-danger.rounded-0.show{
+	background: #00baff !important;
+	box-shadow:none;
+}
+button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.text-danger.rounded-0  {
     box-shadow: none !important;
 }
 
@@ -573,7 +584,6 @@ a.clearRes:hover {
 }
 .star-ratings-css-top span{
  padding:0 2px;
-color: #e9e9e9;
 }
 
 .question-block i.fa {
@@ -588,7 +598,6 @@ color: #e9e9e9;
 }
 
 /* Added by kanchan */
-
 
 #review_rques_blk .question-block i.fa{
     padding: 10px;

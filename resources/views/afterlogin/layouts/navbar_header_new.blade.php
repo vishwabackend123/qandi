@@ -756,14 +756,14 @@
                     @csrf
                     <div class="d-flex f_l_name_box">
                         <div class="form-flds">
-                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
+                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required maxlength="15">
                         </div>
                         <div class="form-flds">
-                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)" maxlength="15">
                         </div>
                     </div>
                     <div class="form-flds">
-                        <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
+                        <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)" maxlength="25">
                         <p>This is your display name.</p>
                     </div>
 
