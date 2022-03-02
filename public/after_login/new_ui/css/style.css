@@ -16,6 +16,39 @@ button {
     text-decoration: none;
 }
 
+
+.btn.btnzoom-in-out {
+    font-size: 12px;
+    text-transform: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #5f5d5d!important;
+    padding: 2px 4px;
+    box-shadow: none!important;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
+
 /******* 28-02-2022 Amit-Start ******/
 ul.cust-tabs li:first-child a {
     border-top-left-radius: 11px !important;
