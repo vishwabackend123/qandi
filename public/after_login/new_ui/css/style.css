@@ -2090,23 +2090,25 @@ button#saveEdit {
 }
 
 /* comment by sachin 18_02_22*/
-#sharefrnd button.btn.btn-danger {
-    background: #21ccff !important;
+#sharefrnd button.btn {
     border-radius: 8px !important;
     border-radius: 20px !important;
     border: none !important;
     height: 60px;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
     /* width: 252px; */
     font-size: 18px;
     font-weight: 600;
     font-stretch: normal;
-    font-style: normal;
+    font-style: normal;color: #fff;
     line-height: normal;
     letter-spacing: normal;
+    background-image: linear-gradient(to bottom, #21ccff, #21ccff)!important;
 
-
+}
+#sharefrnd button.btn:hover {
+    background-image:none!important;
+    background-color: #00baff !important;
 }
 
 .refer_frd img {

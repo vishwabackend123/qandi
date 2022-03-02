@@ -404,7 +404,7 @@
                             <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
                         </div>
                         <div class="text-center refer_frd">
-                            <button type="submit" class="remove-stuff btn btn-danger rounded-0 px-5">
+                            <button type="submit" class="remove-stuff btn  rounded-0 px-5">
                                 <!-- <img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" />  -->
                                 <svg xmlns="http://www.w3.org/2000/svg" id="IconButton_ReferFriend_Default" data-name="IconButton / ReferFriend / Default" width="48" height="48" viewBox="0 0 48 48" style="&#10;    /* background: red; */&#10;">
                                     <defs>
