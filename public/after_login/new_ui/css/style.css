@@ -60,6 +60,59 @@ button {
 }
 
 /** placeholder css end here **/
+.successRef_copy {
+    transition: 0.5s ease-in-out all;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: fit-content;
+    background: #21ccffba;
+    bottom: 34px;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    color: #fff;
+    transition: 0.5s ease-in-out all;
+    padding: 7px 21px!important;
+    border-radius: 6px;
+
+
+  }
+  .successRef_copy.showmessage {
+    animation: animatemessage 1s ease forwards;
+    opacity: 1;
+    display: block;
+    width: auto;
+    bottom:0px;
+  }
+  .copiedmshblock{position: relative;}
+  @keyframes animatemessage {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -20px);
+    }
+    40% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0);
+    }
+    90% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0px);
+    }
+  }
+.formerror{position: relative;padding-bottom:10px;}
+label.error{position:absolute;}
+
 /*****shubham(02-03-2022)-end*****/
 
 
