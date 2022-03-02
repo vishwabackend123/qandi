@@ -217,6 +217,8 @@ class FullExamController extends Controller
         }
         /* this extra code for test series */
 
+
+
         $key = array_search($quest_id, array_column($allQuestionsArr, 'question_id'));
 
         $qNo = $key + 1;
@@ -312,7 +314,6 @@ class FullExamController extends Controller
             $que_sub_id = (isset($question_data->subt_id)) ? $question_data->subt_id : '';
         }
         /* this extra code for test series */
-
         $key = array_search($activeq_id, array_column($allQuestionsArr, 'question_id'));
 
         $qNo = $key + 1;

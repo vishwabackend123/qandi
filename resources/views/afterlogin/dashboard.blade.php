@@ -2,7 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
-
+$prof_asst_test='N';
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -182,7 +182,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
                                     <i class="fa fa-arrows" style="margin-right:1px;font-size: 10px"></i>
-                                click to expand</button>
+                                    click to expand</button>
                             </div>
                             <!-- <div class="col-md-6">
                                 <div class="chapter-ideal-schedule text-center">
@@ -627,8 +627,8 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 
-<div class="loader-block" style="display:none;">  
-    <img  src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
 
 <!-- Footer Section -->
@@ -1056,76 +1056,78 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         });
     });
 </script>
- <script language = "JavaScript">
-         $(document).ready(function() {
-            var title = {
-               text: ''   
-            };
-            var subtitle = {
-               text: ''
-            };
-            var xAxis = {
-              title: {
-                  text: 'Weeks'
-               },
-               categories: ['W1', 'W2', 'W3', 'W4', 'W5','W6','W7','W8'],
-                  labels: {
-                    useHTML: true, 
-                    rotation: 0,
-                }
-            };
-            var yAxis = {
-               title: {
-                  text: 'No of Chapters'
-               },
-               plotLines: [{
-                  value: 0,
-                  width: 1,
-                  color: '#808080'
-               }]
-            };   
-            var tooltip = {
-               valueSuffix: ''
+<script language="JavaScript">
+    $(document).ready(function() {
+        var title = {
+            text: ''
+        };
+        var subtitle = {
+            text: ''
+        };
+        var xAxis = {
+            title: {
+                text: 'Weeks'
+            },
+            categories: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8'],
+            labels: {
+                useHTML: true,
+                rotation: 0,
             }
-            var legend = {
-               layout: 'horizontal',
-               align: 'center',
-               verticalAlign: 'bottom',
-               bottom: '-20px',
-               floating: false,
-               borderWidth: 0,
-            };
-            var series =  [{
-                  name: 'Ideal Pace',
-                  data: [0.0, 5.0, 10.0, 15.0, 18.2, 21.5, 25.2,
-                     26.5],
-                     color: '#db2f36'
-               }, 
-               {
-                  name: 'Your Pace',
-                  data: [0, 2, 5.7, 11.3, 17.0, 22.0, 24.8,
-                     24.1],
-                     color: '#21ccff'
-               }
-            ];
-            var credits = {
+        };
+        var yAxis = {
+            title: {
+                text: 'No of Chapters'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        };
+        var tooltip = {
+            valueSuffix: ''
+        }
+        var legend = {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            bottom: '-20px',
+            floating: false,
+            borderWidth: 0,
+        };
+        var series = [{
+                name: 'Ideal Pace',
+                data: [0.0, 5.0, 10.0, 15.0, 18.2, 21.5, 25.2,
+                    26.5
+                ],
+                color: '#db2f36'
+            },
+            {
+                name: 'Your Pace',
+                data: [0, 2, 5.7, 11.3, 17.0, 22.0, 24.8,
+                    24.1
+                ],
+                color: '#21ccff'
+            }
+        ];
+        var credits = {
             enabled: false
-            };
-            var exporting ={
-                enabled: false
-            };
-            var json = {};
-            json.title = title;
-            json.subtitle = subtitle;
-            json.xAxis = xAxis;
-            json.yAxis = yAxis;
-            json.tooltip = tooltip;
-            json.legend = legend;
-            json.series = series;
-            json.credits = credits;
-            json.exporting = exporting;
-            $('.progressChart').highcharts(json);
-            $('.progressChartExpend').highcharts(json);
-         });
-      </script>
+        };
+        var exporting = {
+            enabled: false
+        };
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+        json.credits = credits;
+        json.exporting = exporting;
+        $('.progressChart').highcharts(json);
+        $('.progressChartExpend').highcharts(json);
+    });
+</script>
 @endsection
