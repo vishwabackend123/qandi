@@ -74,7 +74,7 @@ $userData = Session::get('user_data');
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
                                     <strong>{{$sub['subject_name']}}</strong>
-                                    <span class="star-img m-0">
+                                    <span class="star-img">
                                         <div class="star-ratings-css ">
                                             <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
