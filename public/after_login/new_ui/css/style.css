@@ -117,9 +117,13 @@ label.error{position:absolute;}
 
 
 /******* 02-03-2022 Amit-Start ******/
-.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;}
+#exam_content_sec .question-block .question p::-webkit-scrollbar {height:4px;}
+#exam_content_sec .question-block .question p{overflow-x: auto;overflow-y: hidden;padding-bottom: 4px;}
+.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;padding: 14px 39px;}
+#dialog-pdf .report-block2.p-5 small p img {width: 25px !important;}
 .backtobox .backtobtn a {border-radius: 20px;background: rgba(233,233,233,0.5);}
 .backtobox .backtobtn i , .backtobox .backtobtn span{color: #2c3348;}
+#sharefrnd.modal button.btn-close {right: 38px;top: 28px;}
 .content-wrapper.examSect {height: 100vh;display: flex;align-items: center;}
 div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
 .dashboard-cards-block .bg-white>small p>span img{width: 25px!important;}
@@ -1906,9 +1910,6 @@ body#main-body .seeAnico span img {
 
 .custom-page .slick-slide {
     height: auto !important;
-}
-.status-id .star-ratings-css-bottom {
-    padding: 6px !important;
 }
 
 button#dropdownMenuLink-topic {
@@ -7600,4 +7601,19 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
     background-repeat: no-repeat;
     padding-right: 0 !important;
 }
-/******02-03 navdeep-end*****
+.dashboard .star-ratings-css-top span{
+font-size: 13px;    
+}
+.swiper-slide .star-ratings-css-top span{
+font-size: 14px;    
+}
+.overllanaly .star-ratings-css-top span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-bottom span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-top span{
+font-size: 22px;    
+}
+/******02-03 navdeep-end******

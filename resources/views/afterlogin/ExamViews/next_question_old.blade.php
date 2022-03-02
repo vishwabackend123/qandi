@@ -111,7 +111,7 @@ $questtype='radio';
     <input type="hidden" name="question_spendtime" id="timespend_{{$activeq_id}}" value="" />
     <div class="question-block N_question-block ">
 
-        <button class="btn arrow prev-arow {{empty($prev_qid)?'disabled':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
+        <button class="btn arrow prev-arow {{($qNo==1)?'d-none':''}}" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')"><img src="{{URL::asset('public/after_login/images/arrowExamLeft_ic.png')}}" /></button>
         @if(isset($last_qid) && ($last_qid==$activeq_id))
         <button class="btn arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}"><img src="{{URL::asset('public/after_login/images/arrowExamRight_ic.png')}}" /></button>
 
