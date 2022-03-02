@@ -203,7 +203,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 <div class='expand_block'>
                                                     <div class="first_screen">
                                                         <div class="persent_std">
-                                                            <span class="no-of-persent">21%</span><span class="attend">of the people got this question right</span>
+                                                            <span class="no-of-persent">{{$question_data->accuracy}}%</span><span class="attend">of the people got this question right</span>
                                                         </div>
                                                         <div class="propt_text">To answer this you need to have</div>
                                                         <div class="attemp_box row mt-0">
