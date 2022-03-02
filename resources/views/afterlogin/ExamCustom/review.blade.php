@@ -199,7 +199,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 </div>
                                             </div>
                                             <div class="review_expand">
-                                                <div class='percent_btn'>21%</div>
+                                                <div class='percent_btn'>{{$question_data->accuracy}}%</div>
                                                 <div class='expand_block'>
                                                     <div class="first_screen">
                                                         <div class="persent_std">
