@@ -858,7 +858,9 @@
         $(".main-profile-section.blure-bg").click(function() {
             $(".blure-bg").hide();
         });
-
+      $('.closeprofile').click(function(){
+        $(".blure-bg").hide();
+      });
     });
 
     // the following script for subscription section  log-out-screen
