@@ -51,7 +51,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     <div id="review_rques_blk">
                                         <div class="question-block">
                                             <a href="javascript:void(0);" id="bkm_{{$activeq_id}}" onclick="bookmarkforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" class="arrow next-arow" title="Bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i></a>
-                                            <div class="question pb-3 pt-2"><span class="q-no">Q1.</span>
+                                            <div class="question question-height pb-3 pt-2"><span class="q-no">Q1.</span>
                                                 {!! $question_text !!}
                                             </div>
                                             <div class="ans-block row mt-0">
@@ -128,8 +128,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
                                             <div class="expand_button">
-                                                <!-- <img  class="expandbtn" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}"> -->
-                                                <!-- <img  class="collapsebtn" style="display: none;" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}"> -->
                                                 <div class="expandbtn">
                                                     <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
                                                         <defs>
@@ -232,62 +230,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     </div>
                 </div>
                 <!-- Right Side Area -->
-
-
-
-
-
-
-                <style>
-                    #review_rques_blk .answer-section {
-                        margin-top: 0px !important;
-                        position: absolute;
-                        overflow-x: hidden;
-                        bottom: 0px;
-                        width: 99%;
-
-                    }
-
-                    #review_rques_blk .answer-section {
-                        height: 250px;
-                    }
-                </style>
-
-
-
-                <!-- <script>
-        $(document).ready(function(){
-        $(".expandbtn").on('click',function() { 
-            $(".review-qus").css({'height':'400'}); 
-            $(".answer-section").css({'height':'400'}); 
-        });
-
-        $(".collapsebtn").on('click',function() { 
-            $(".review-qus").css({'height':'210'}); 
-            $(".answer-section").css({'height':'300'}); 
-        });
-        });
-</script> -->
-
-                <!-- <script>
-    $(document).ready(function(){
-        $(".expandbtn").on('click',function() { 
-            $(".expandbtn").css({'display':'none'}); 
-            $(".collapsebtn").css({'display':'block'}); 
-            
-        });
-
-        $(".collapsebtn").on('click',function() { 
-            $(".collapsebtn").css({'display':'none'}); 
-            $(".expandbtn").css({'display':'block'}); 
-            
-        });
-
-    });
-</script> -->
-
-
-
+ 
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
@@ -565,36 +508,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 
-
-
-
-
-
-
-
-
-
-<!-- <script>
-    function setboxHeight() {
-        var height = $(".rightSect .flex-column").outerHeight();
-        $('.test-review').css('height', height);
-        var calculatedHeight = height - 64 + "px";
-        $('#review_rques_blk').css('height', calculatedHeight);
-       
-    }
-
-    setboxHeight();
-    $( "window" ).load(function() {
-    setboxHeight();
-    });
-    
-
-    $(window).resize(function() {
-        setboxHeight();
-    });
- 
-</script> -->
-
 <script>
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -602,6 +515,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var calculatedHeight = height - 80 + "px";
         $('.test-review .cust-tab-content').css('height', height);
         $('#review_rques_blk').css('height', calculatedHeight);
+      
 
     }
 
@@ -616,93 +530,45 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 
-<!-- <script>
-    function ansHeight() {
-        var review_rques_blk_height = $("#review_rques_blk").outerHeight();
-
-        var review_qus_height =  $(".question-block .question").outerHeight();
-
-        var customheight = review_rques_blk_height -review_qus_height;
-
-        $('.answer-section').css('height', customheight);
-
-        $('.question-block .question').css('height', review_qus_height);
+<!-----Start-for-review_height-click------->
+<script>
+    $(document).ready(function() {
+        var left_review_sec_h = $("#review_rques_blk").outerHeight();
+        var div_height = left_review_sec_h/2;
+        $('.answer-section').css('height', div_height);
+        $('.question-block').css('height', div_height);
 
        
-    }
-
-    ansHeight();
-    $( "window" ).load(function() {
-        ansHeight();
-    });
-    
-
-    $(window).resize(function() {
-        ansHeight();
-    });
- 
-</script> -->
-
-<script>
-    function test_review_right_height() {
-        var review_rightbox_height = $(".test-review-right .bg-white").outerHeight();
-        var review_number_block_height = $(".test-review-right .slimScrollDiv").outerHeight();
-        var review_question_list_height = $(".test-review-right .review-qus").outerHeight();
-
-        $('.test-review-right .bg-white').css('height', review_rightbox_height);
-
-        $('.test-review-right .review-qus').css('height', review_question_list_height);
-
-
-    }
-
-
-    test_review_right_height();
-    $("window").load(function() {
-        ansHeight();
-    });
-
-
-    $(window).resize(function() {
-        test_review_right_height();
     });
 </script>
-<!----------work-->
+<!-----End-for-review_height-click------->
 
 
-
-
-
-
-
-
-
-
-
-
-<!-----Start-for-review-section-expand-on-btn--click------->
+<!-----Start-for-btn_click_height-click------->
 <script>
     $(document).ready(function() {
         $(".expandbtn").on('click', function() {
             var review_rques_blk_height = $("#review_rques_blk").outerHeight();
-            var review_qus_height = $(".question-block .question").outerHeight();
+            var review_qus_height = $(".question-height").outerHeight();
             var customheight = review_rques_blk_height - review_qus_height;
             $('.answer-section').css('height', customheight);
-            $('.question-block .question').css('height', review_qus_height);
-
         });
 
     });
 
     $(".collapsebtn").on('click', function() {
-        var ans_height = $(".answer-section").outerHeight();
-        var que_height = $(".question-block").outerHeight();
-        var intial_height = ans_height - que_height;
-        $('.answer-section').css('height', intial_height);
 
+        var left_review_sec_h1 = $("#review_rques_blk").outerHeight();
+        var div_height1 = left_review_sec_h1/2;
+        $('.answer-section').css('height', div_height1);
+        $('.question-block').css('height', div_height1);
+         
     });
 </script>
-<!-----End-for-review-section-expand-on-btn--click------->
+
+<!-----End-for-btn_click_height-click------->
+
+
 
 <!-----Start-for-expand-btn-click------->
 <script>
@@ -788,6 +654,19 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
     .expand_bnt1 svg {
         margin-top: -7px;
+    }
+
+    #review_rques_blk .answer-section {
+        margin-top: 0px !important;
+        position: absolute;
+        overflow-x: hidden;
+        bottom: 0px;
+        width: 99%;
+
+    }
+
+    #review_rques_blk .answer-section {
+        height: 250px;
     }
 </style>
 

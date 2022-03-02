@@ -91,7 +91,7 @@ $userData = Session::get('user_data');
                                                 </p>
                                             </small>
                                             <div class="prgress-i-txt px-3">
-                                                <span class="progress_text">Subject proficiency</span>
+                                                <span class="progress_text">Subject Performance</span>
                                             </div>
                                             <div id="prof_scroll" class="scroll-topic-ana pe-2">
                                                 @if(!empty($subProf))

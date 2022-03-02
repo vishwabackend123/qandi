@@ -315,7 +315,7 @@
     }
 
     .slider-horizontal {
-        width: 92% !important;
+        width: 90%;
         height: 20px;
     }
 
@@ -333,7 +333,7 @@
     }
 
     .exam-week-bar{
-    margin-top: 45px;
+    margin-top: 42px;
 }
 
 </style>
@@ -699,27 +699,30 @@
 
         <!--profile-detail-->
         <div class="profile-show" style="min-height:650px;">
-            <div class="profile-picture-txt">
-                <div class="p-picture">
-                    <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+            <div class="profile-show-holder">
+                <div class="profile-picture-txt">
+                    <div class="p-picture">
+                        <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+                    </div>
+                    <div class="p-text">
+                        <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
+                        <p>Class - {{$user_stage}}, Preparing
+                            for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                        <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
+                        <button class="edit-btn-show" id="EdiTbtnnn"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
+                    </div>
+                    <!-- <div class="achievement">
+                            <h4>Achievements</h4>
+                            <ul>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                            </ul>
+                        </div> -->
                 </div>
-                <div class="p-text">
-                    <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
-                    <p>Class - {{$user_stage}}, Preparing
-                        for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
-                    <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
-                    <button class="edit-btn-show" id="EdiTbtnnn"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
-                </div>
-                <!-- <div class="achievement">
-                        <h4>Achievements</h4>
-                        <ul>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                        </ul>
-                    </div> -->
             </div>
+
             <!--profile-picture-->
         </div>
 

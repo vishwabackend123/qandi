@@ -40,13 +40,13 @@ $userData = Session::get('user_data');
                                 <div class="scroll-div-live-exm p-4 listing-details">
                                     @foreach($open_series as $open)
                                     <ul class="speci-text">
-                                        <li> <span class="sub-details">{{$open->test_series_name}}</span>
+                                        <li class="a1TS"> <span class="sub-details">{{$open->test_series_name}}</span>
                                         </li>
-                                        <li><strong>{{$open->questions_count}} Questions</strong>
+                                        <li class="a2TS"><strong>{{$open->questions_count}} Questions</strong>
                                         </li>
-                                        <li><strong>{{$open->time_allowed}} min</strong>
+                                        <li class="a3TS"><strong>{{$open->time_allowed}} min</strong>
                                         </li>
-                                        <li>
+                                        <li class="a4TS">
                                             <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="series_name" value="{{$open->test_series_name}}" />
@@ -77,13 +77,13 @@ $userData = Session::get('user_data');
                                 <div class="scroll-div-live-exm p-4 listing-details">
                                     @foreach($live_series as $live)
                                     <ul class="speci-text">
-                                        <li> <span class="sub-details">{{$live->test_series_name}}</span>
+                                        <li class="a1TS"> <span class="sub-details">{{$live->test_series_name}}</span>
                                         </li>
-                                        <li><strong>{{$live->questions_count}} Questions</strong>
+                                        <li class="a2TS"><strong>{{$live->questions_count}} Questions</strong>
                                         </li>
-                                        <li><strong>{{$live->time_allowed}} min</strong>
+                                        <li class="a3TS"><strong>{{$live->time_allowed}} min</strong>
                                         </li>
-                                        <li>
+                                        <li class="a4TS">
                                             <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />

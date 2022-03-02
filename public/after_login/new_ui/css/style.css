@@ -16,6 +16,12 @@ button {
     text-decoration: none;
 }
 
+/******* 28-02-2022 Amit-Start ******/
+ul.cust-tabs li:first-child a {
+    border-top-left-radius: 11px !important;
+}
+/******* 28-02-2022 Amit-Start ******/
+
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
 /******* 23-02-2022 Amit-Start ******/
@@ -147,16 +153,20 @@ span.filtericon {
  
 /***************************/
 input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* color: rgba(0, 0, 0, 0.50) !important; */
     color: #2c3348 !important;
-    opacity: 1; /* Firefox */
+    opacity: 0.5 !important;
+     
   }
   
   input#search_field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #2c3348 !important;
+   color: #2c3348 !important;
+    opacity: 0.5 !important;
   }
   
   input#search_field::-ms-input-placeholder { /* Microsoft Edge */
     color: #2c3348 !important;
+    opacity: 0.5 !important;
   }
 /******************************/
 
@@ -916,13 +926,12 @@ a.disabled-btn {
 }
 
 .active_user {
-    background: #f2f2f2;
-
+    background: #f1f1f1;
     padding: 10px 0px;
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 290px;
+    max-width: 298px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -2949,7 +2958,7 @@ div#sub-planner {
 }
 
 .profile-show {
-    position: absolute;
+    /* position: absolute;
     top: 0px;
     right: 540px;
     width: 365px;
@@ -2958,7 +2967,32 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
+    min-height: 450px !important; */
+
+
+   
+    position: absolute;
+    top: 0px;
+    right: 540px;
+    width: 365px;
+    background: #fff;
+    /* padding: 10px 15px; */
+    border-radius: 30px;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    z-index: 9;
     min-height: 450px !important;
+    background-image: url(../images/analytics-thumbnail.png);
+    background-repeat: no-repeat;
+    background-position: left 30% bottom -157px;
+    background-size: cover;
+
+}
+
+.profile-show-holder {
+    background: white;
+    display: flex;
+    border-top-left-radius: 56px;
+    border-top-right-radius: 56px;
 }
 
 .profile-picture-txt .p-picture {
@@ -2992,6 +3026,7 @@ div#sub-planner {
     color: #00baff;
     font-weight: 600;
     text-align: left;
+    font-size:18px;
 }
 
 .profile-section ul li svg {
@@ -3009,6 +3044,11 @@ div#sub-planner {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     padding: 15px 20px;
 
+}
+
+.profile-show button:hover{
+    background: #00baff;
+    transition: none;
 }
 
 .achievement {
@@ -3307,7 +3347,7 @@ button.save-btn {
 /*** rahul css on 16-12-2021 */
 /** Listing series page css on 16-12-2021 **/
 .list-series .live-exam .speci-text li {
-    width: 18%;
+    width: 24%;
     margin-right: 0px;
 }
 
@@ -3778,13 +3818,13 @@ span.profile-digit {
     display: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    padding-left: 60px;
+    padding-left: 52px;
     min-height: 450px;
 }
 
 .leader-board h4 {
     text-align: right;
-    font-size: 18px;
+    font-size: 14px;
     color: #00baff;
     text-transform: uppercase;
     font-weight: 600;
@@ -3792,24 +3832,31 @@ span.profile-digit {
 }
 
 .search-frnd input {
-    width: 100%;
+    width: 97%;
     border: none;
-    padding: 10px 20px 10px 40px;
+    padding: 8px 20px 8px 40px;
     border-radius: 8px;
     background: url(../images/search.png) no-repeat #f2f2f2;
     color: #000;
     background-position: 4px;
+    margin-left: 10px;
 }
 
 .leader-board ul {
     padding-left: 0px;
     overflow-x: auto;
 }
+.profile-picture-txt .p-text p{
+    color: #2c3348;
+    font-size: 13px;
+    
+}
 
 .leader-board ul li {
     list-style: none;
     display: flex;
     margin-bottom: 12px;
+        padding-left: 10px;
 }
 
 .leader-board ul li span {
@@ -3818,14 +3865,14 @@ span.profile-digit {
 }
 
 .leader-board ul li span h3 {
-    font-size: 16px;
+    font-size: 14px;
     color: #00baff;
     font-weight: normal;
     margin-bottom: 0px;
 }
 
 .leader-board ul li span p {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.5;
     color: #2c3348;
     font-weight: normal;

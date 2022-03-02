@@ -2,12 +2,18 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <a href="{{route('export_analytics')}}"><button class="btn px-4 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download PDF</button></a>
+                    <a href="{{route('export_analytics')}}"><button class="btn px-4 top-btn-pop text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                                    </svg>
+                     &nbsp;Download PDF</button></a>
                 </div>
                 <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
@@ -982,6 +988,16 @@
     function selectChapter(subject_id) {
         var limit = $('#customRange').val();
         var chapters = $('input[name="chapters[]"]').length;
+        if(limit == '0')
+        {
+            var error_txt = 'Please select Exams Per Week';
+            $('#limit_error').html(error_txt);
+            $('#limit_error').show();
+            setTimeout(function() {
+                $('#limit_error').fadeOut('fast');
+            }, 5000);
+            return false;
+        }
         if (chapters >= limit) {
             var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
             $('#limit_error').html(error_txt);
@@ -1471,6 +1487,8 @@
                             $('.errRef').fadeOut('fast');
                         }, 5000);
                         $('#referEmails').val("");
+                        $(".emaillinkholder").hide();
+                        $(".onsendshow").show();
 
                     } else {
                         var errormsg = $("#errRef_auth").show();
@@ -1557,10 +1575,10 @@
         }
     });
 </script>
-<script>
+<!-- <script>
     $(document).ready(function() {
         $(".addremovetopic").on("click", function() {
             $(this).parent().parent().toggleClass('current');
         });
     });
-</script>
+</script> -->
