@@ -15,6 +15,90 @@ button {
     outline: none;
     text-decoration: none;
 }
+/*****shubham(02-03-2022)*****/
+
+.closeprofile {
+    z-index: 99;
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+}
+.closeprofile img {
+    width: 30px;
+}
+/** the following css for placeholder **/
+.edit-form input:-ms-input-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+.edit-form input::placeholder {
+    color: #2c3348;opacity:0.3;
+}
+.edit-form input::-webkit-input-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+
+.edit-form .form-group input:-moz-placeholder {
+    opacity:1;
+}
+.edit-form .form-group input:-ms-input-placeholder {
+    opacity:1;
+}
+.edit-form .form-group input::placeholder {
+    opacity:1;
+}
+.edit-form .form-group input::-webkit-input-placeholder {
+   opacity:1;
+}
+
+.edit-form input:-moz-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+
+/** placeholder css end here **/
+/*****shubham(02-03-2022)-end*****/
+
+
+/******* 02-03-2022 Amit-Start ******/
+.btn.btnzoom-in-out {
+    font-size: 12px;
+    text-transform: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #5f5d5d!important;
+    padding: 2px 4px;
+    box-shadow: none!important;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
+.notification a svg .cls-2 {
+    stroke: none;
+}
+/******* 02-03-2022 Amit-End ******/
 
 /******* 28-02-2022 Amit-Start ******/
 ul.cust-tabs li:first-child a {
