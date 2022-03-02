@@ -419,6 +419,7 @@ $questtype='radio';
 </div>
 
 @include('afterlogin.layouts.footer_new')
+
 <!-- page referesh disabled -->
 <script>
     /* Sachin screen changes */
