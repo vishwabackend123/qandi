@@ -1179,11 +1179,21 @@
         submitHandler: function(form) {
 
             var limit = $('#customRange').val();
-            if (limit <= 0) {
-                $('#limit_error_1').html('Please set at least one exam for the selected week.');
-                $('#limit_error_1').show();
+            if(limit == '0')
+            {
+                var error_txt = 'Please select Exams Per Week';
+                $('#limit_error').html(error_txt);
+                $('#limit_error').show();
                 setTimeout(function() {
-                    $('#limit_error_1').fadeOut('fast');
+                    $('#limit_error').fadeOut('fast');
+                }, 5000);
+                return false;
+            }
+            if (limit <= 0) {
+                $('#limit_error').html('Please set at least one exam for the selected week.');
+                $('#limit_error').show();
+                setTimeout(function() {
+                    $('#limit_error').fadeOut('fast');
                 }, 5000);
                 return false;
             }
@@ -1191,6 +1201,7 @@
             var chapters = $('input[name="chapters[]"]').length;
 
             if (chapters < limit) {
+                $('#limit_error').show();
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 /*setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
@@ -1198,6 +1209,7 @@
                 return false;
             }
             if (chapters > limit) {
+                $('#limit_error').show();
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 /*setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
