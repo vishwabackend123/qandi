@@ -69,12 +69,12 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
-                            <ul class="course-star pe-2">
+                            <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
                                     <strong>{{$sub['subject_name']}}</strong>
-                                    <span class="star-img">
+                                    <span class="star-img m-0">
                                         <div class="star-ratings-css ">
                                             <div class="star-ratings-css-top" style="width: {{round($sub['score'])}}%">
                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -85,7 +85,7 @@ $userData = Session::get('user_data');
                                         </div>
 
                                     </span>
-                                    <span>{{round($sub['score'])}}%</span>
+                                    <span class="">{{round($sub['score'])}}%</span>
 
 
                                 </li>
