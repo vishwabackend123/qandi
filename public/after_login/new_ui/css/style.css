@@ -65,6 +65,10 @@ button {
 
 /******* 02-03-2022 Amit-Start ******/
 div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
+div.sublinks a:active {
+    background: #00bdff!important;
+    color: #fff!important;
+}
 .btn.btnzoom-in-out {
     font-size: 12px;
     text-transform: none;
