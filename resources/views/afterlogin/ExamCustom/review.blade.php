@@ -199,11 +199,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 </div>
                                             </div>
                                             <div class="review_expand">
-                                                <div class='percent_btn'>21%</div>
+                                                <div class='percent_btn'>{{$question_data->accuracy}}%</div>
                                                 <div class='expand_block'>
                                                     <div class="first_screen">
                                                         <div class="persent_std">
-                                                            <span class="no-of-persent">21%</span><span class="attend">of the people got this question right</span>
+                                                            <span class="no-of-persent">{{$question_data->accuracy}}%</span><span class="attend">of the people got this question right</span>
                                                         </div>
                                                         <div class="propt_text">To answer this you need to have</div>
                                                         <div class="attemp_box row mt-0">
@@ -256,102 +256,84 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                             @endif
                         </div>
 
-
-                        <div class="d-flex reviewBox2 review_heading1">
-                            <div class="col-8 heading">
-                                <h5><strong>Review Questions</strong></h5>
-                            </div>
-                            <div class="col-4 text-end d-flex add_btn_new">
-                                <div class="review_list_expand_btn_box">
-                                    <div class="expand_bnt1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
-                                            <defs>
-                                                <style>
-                                                    .cls-1,
-                                                    .cls-2 {
-                                                        fill: none;
-                                                    }
-
-                                                    .cls-2 {
-                                                        stroke: #000;
-                                                        stroke-linecap: round;
-                                                        stroke-linejoin: round;
-                                                        stroke-width: 1.5px;
-                                                    }
-                                                </style>
-                                            </defs>
-                                            <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
-                                            <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
-                                                <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z" />
-                                                <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8" />
-                                                <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)" />
-                                                <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16" />
-                                                <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)" />
-                                                <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16" />
-                                                <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)" />
-                                                <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8" />
-                                                <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)" />
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="dropdown">
-                                    <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
-
-
-                                    <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')">
-                                                All</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
-                                        <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="review-qus" id="review_question_list">
-                            <!-- <div class="d-flex mb-3 reviewBox2">
+                        <div class="review_box_holder">
+                            <div class="d-flex reviewBox2 review_heading1">
                                 <div class="col-8 heading">
                                     <h5><strong>Review Questions</strong></h5>
                                 </div>
                                 <div class="col-4 text-end d-flex add_btn_new">
                                 <div class="review_list_expand_btn_box">
-                                    <div class="expand_bnt1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
-                                        <defs>
-                                            <style>
-                                            .cls-1, .cls-2 {
-                                                fill: none;
-                                            }
+                                            <div class="expandbtn1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
+                                                    <defs>
+                                                        <style>
+                                                            .cls-1,
+                                                            .cls-2 {
+                                                                fill: none;
+                                                            }
 
-                                            .cls-2 {
-                                                stroke: #000;
-                                                stroke-linecap: round;
-                                                stroke-linejoin: round;
-                                                stroke-width: 1.5px;
-                                            }
-                                            </style>
-                                        </defs>
-                                        <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14"/>
-                                        <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
-                                            <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z"/>
-                                            <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8"/>
-                                            <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)"/>
-                                            <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16"/>
-                                            <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)"/>
-                                            <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16"/>
-                                            <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)"/>
-                                            <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8"/>
-                                            <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)"/>
-                                        </g>
-                                        </svg>
-                                    </div>  
-                                </div>
-                             
+                                                            .cls-2 {
+                                                                stroke: #000;
+                                                                stroke-linecap: round;
+                                                                stroke-linejoin: round;
+                                                                stroke-width: 1.5px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
+                                                    <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
+                                                        <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z" />
+                                                        <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8" />
+                                                        <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)" />
+                                                        <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16" />
+                                                        <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)" />
+                                                        <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16" />
+                                                        <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)" />
+                                                        <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8" />
+                                                        <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)" />
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="collapsebtn1" style="display: none;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_6" data-name="Component 226 – 6" width="48" height="48" viewBox="0 0 48 48">
+                                                            <defs>
+                                                                <style>
+                                                                    .cls-1,
+                                                                    .cls-2 {
+                                                                        fill: none;
+                                                                    }
+
+                                                                    .cls-2 {
+                                                                        stroke: #000;
+                                                                        stroke-linecap: round;
+                                                                        stroke-linejoin: round;
+                                                                        stroke-width: 1.5px;
+                                                                    }
+
+                                                                    .cls-1,
+                                                                    .cls-2,
+                                                                    .cls-5 {
+                                                                        opacity: 1;
+                                                                    }
+                                                                </style>
+                                                            </defs>
+                                                            <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
+                                                            <g id="Group_5112" data-name="Group 5112" transform="translate(12 12)">
+                                                                <path id="Path_11585" data-name="Path 11585" class="cls-1" d="M0,0H24V24H0Z" />
+                                                                <path id="Path_11586" data-name="Path 11586" class="cls-2" d="M5,9H9V5" />
+                                                                <line id="Line_617" data-name="Line 617" class="cls-2" x2="6" y2="6" transform="translate(3 3)" />
+                                                                <path id="Path_11587" data-name="Path 11587" class="cls-2" d="M5,15H9v4" />
+                                                                <line id="Line_618" data-name="Line 618" class="cls-2" y1="6" x2="6" transform="translate(3 15)" />
+                                                                <path id="Path_11588" data-name="Path 11588" class="cls-2" d="M19,9H15V5" />
+                                                                <line id="Line_619" data-name="Line 619" class="cls-2" y1="6" x2="6" transform="translate(15 3)" />
+                                                                <path id="Path_11589" data-name="Path 11589" class="cls-2" d="M19,15H15v4" />
+                                                                <line id="Line_620" data-name="Line 620" class="cls-2" x2="6" y2="6" transform="translate(15 15)" />
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+
+                                        </div>
+
                                     <div class="dropdown">
                                         <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
 
@@ -366,43 +348,100 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
 
-                            </div> -->
+
+                            <div class="review-qus" id="review_question_list">
+                                <!-- <div class="d-flex mb-3 reviewBox2">
+                                    <div class="col-8 heading">
+                                        <h5><strong>Review Questions</strong></h5>
+                                    </div>
+                                    <div class="col-4 text-end d-flex add_btn_new">
+                                    <div class="review_list_expand_btn_box">
+                                        <div class="expand_bnt1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
+                                            <defs>
+                                                <style>
+                                                .cls-1, .cls-2 {
+                                                    fill: none;
+                                                }
+
+                                                .cls-2 {
+                                                    stroke: #000;
+                                                    stroke-linecap: round;
+                                                    stroke-linejoin: round;
+                                                    stroke-width: 1.5px;
+                                                }
+                                                </style>
+                                            </defs>
+                                            <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14"/>
+                                            <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
+                                                <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z"/>
+                                                <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8"/>
+                                                <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)"/>
+                                                <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16"/>
+                                                <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)"/>
+                                                <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16"/>
+                                                <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)"/>
+                                                <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8"/>
+                                                <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)"/>
+                                            </g>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                
+                                        <div class="dropdown">
+                                            <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
 
 
-                            <ul class="rview-quses" id="filter_questions">
-                                @php $quKee=1; @endphp
-                                @if(isset($all_question_list) && !empty($all_question_list))
-                                @foreach($all_question_list as $kee=>$value)
-                                @php
+                                            <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('all')">
+                                                        All</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Correct')"> Corrected</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Incorrect')"> Wronged</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);" onclick="get_filtered_question('Unanswered')"> Unattempted</a></li>
 
-                                $key_id=$value->question_id;
-                                @endphp
-                                @if ($value->attempt_status == 'Correct')
-                                <li class="correctans">
-                                    <span class="qus-no">Q.{{$quKee}}</span>
-                                    <span class="qus-txt">{!! $value->question !!}
-                                    </span>
-                                </li>
-                                @elseif ($value->attempt_status == 'Incorrect')
-                                <li class="incorrectans">
-                                    <span class="qus-no">Q.{{$quKee}}</span>
-                                    <span class="qus-txt">{!! $value->question !!}
-                                    </span>
-                                </li>
-                                @else
-                                <li class="notans">
-                                    <span class="qus-no">Q.{{$quKee}}</span>
-                                    <span class="qus-txt">{!! $value->question !!}
-                                    </span>
-                                </li>
-                                @endif
-                                @php $quKee++; @endphp
-                                @endforeach
-                                @endif
-                            </ul>
-                        </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div> -->
+
+
+                                <ul class="rview-quses" id="filter_questions">
+                                    @php $quKee=1; @endphp
+                                    @if(isset($all_question_list) && !empty($all_question_list))
+                                    @foreach($all_question_list as $kee=>$value)
+                                    @php
+
+                                    $key_id=$value->question_id;
+                                    @endphp
+                                    @if ($value->attempt_status == 'Correct')
+                                    <li class="correctans">
+                                        <span class="qus-no">Q.{{$quKee}}</span>
+                                        <span class="qus-txt">{!! $value->question !!}
+                                        </span>
+                                    </li>
+                                    @elseif ($value->attempt_status == 'Incorrect')
+                                    <li class="incorrectans">
+                                        <span class="qus-no">Q.{{$quKee}}</span>
+                                        <span class="qus-txt">{!! $value->question !!}
+                                        </span>
+                                    </li>
+                                    @else
+                                    <li class="notans">
+                                        <span class="qus-no">Q.{{$quKee}}</span>
+                                        <span class="qus-txt">{!! $value->question !!}
+                                        </span>
+                                    </li>
+                                    @endif
+                                    @php $quKee++; @endphp
+                                    @endforeach
+                                    @endif
+                                </ul>
+                            </div>
                         <!--review-qus-->
+                        </div>
 
 
 
@@ -505,6 +544,104 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         });
     }
 </script>
+<!-----Start__Right_Review_Height_Calculation------->
+<script>
+    function review_right_Height() {
+        // var total_right_height = $(".test-review-right .flex-column").outerHeight();
+        var total_right_width = $(".test-review-right .number-block").outerWidth();
+        // var number_block_height = $(".test-review-right .number-block").outerHeight();
+        // var review_box_q_height = $(".test-review-right .review_box_holder").outerHeight();
+        // var div_right123 =total_right_height/2;
+        // $('.number-block').css('height', div_right123);
+        // $('.review_box_holder').css('height', div_right123);
+        $('.review_box_holder').css('width', total_right_width);
+
+    }
+
+    review_right_Height();
+    $("window").load(function() {
+        review_right_Height();
+    });
+
+
+    $(window).resize(function() {
+        review_right_Height();
+    });
+</script>
+
+<!-----End__Right_Review_Height_Calculation------->
+
+<script>
+    $(document).ready(function() {
+        $(".expandbtn1").on('click', function() {
+            var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
+            var numblockheight = $(".test-review-right .number-block").outerHeight();
+            var cal12 = review_box_q_height12 + numblockheight;
+            $('.review_box_holder').css('height', cal12);
+        });
+
+        $(".collapsebtn1").on('click', function() {
+            var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
+            var numblockheight = $(".test-review-right .number-block").outerHeight();
+            var cal12 = review_box_q_height12 - numblockheight;
+            $('.review_box_holder').css('height', cal12);
+        
+        });
+
+    });
+
+  
+</script>
+
+
+<script>
+    $('.expandbtn1').on('click', function() {
+        $('.collapsebtn1').css({
+            display: "block"
+        });
+        $('.expandbtn1').css({
+            display: "none"
+        });
+    });
+
+    $('.collapsebtn1').on('click', function() {
+        $('.collapsebtn1').css({
+            display: "none"
+        });
+        $('.expandbtn1').css({
+            display: "block"
+        });
+    });
+</script>
+
+
+<!-----Start__Left_Review_Height_calculation------->
+<script>
+    function setboxHeight() {
+        var height = $(".rightSect .flex-column").outerHeight();
+
+        // $('.test-review').css('height', height);
+        var calculatedHeight = height - 80 + "px";
+        $('.test-review .cust-tab-content').css('height', height);
+        $('#review_rques_blk').css('height', calculatedHeight);
+
+    }
+
+    setboxHeight();
+    $("window").load(function() {
+        setboxHeight();
+    });
+
+
+    $(window).resize(function() {
+        setboxHeight();
+    });
+</script>
+<!-----End_Left-Review_height_calculation------->
+
+
+
+
 
 
 
@@ -610,7 +747,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <!-----End-for-percent-btn-click------->
 
 <style>
-    #review_rques_blk .answer-section {
+   #review_rques_blk .answer-section {
         margin-top: 0px !important;
         position: absolute;
         overflow-x: hidden;
@@ -636,6 +773,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     .add_btn_new {
         justify-content: end;
         flex-direction: row-reverse;
+        align-items: center;
     }
 
     .review_list_expand_btn_box img,
@@ -646,7 +784,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
     .expand_bnt1 svg,
     .expandbtn svg,
-    .collapsebtn svg {
+    .collapsebtn svg, .expandbtn1 svg,.collapsebtn1 svg {
         width: 37px !important;
 
         cursor: pointer;
@@ -656,14 +794,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         margin-top: -7px;
     }
 
-    #review_rques_blk .answer-section {
-        margin-top: 0px !important;
-        position: absolute;
-        overflow-x: hidden;
-        bottom: 0px;
-        width: 99%;
-
-    }
+  
 
     #review_rques_blk .answer-section {
         height: 250px;

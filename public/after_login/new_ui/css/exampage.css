@@ -1,4 +1,40 @@
 /* 10-0202022 */
+img.hsow {
+    display: none;
+}
+img.hsowl {
+    display: none;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #1e2125;
+    background-color: #f2f2f2 !important;
+}
+ul.dropdown-menu.cust-dropdown.show li a {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+ul.dropdown-menu.cust-dropdown.show li a img {
+    margin-right: 5px;
+}
+ul.dropdown-menu.cust-dropdown.show {
+    border-radius: 32px;
+    border: none;
+	box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
+    padding: 22px 0px 22px 0px;
+}
+button.btn.btn-light.ms-2.text-danger.rounded-0.show {
+    background: #00baff !important;
+	box-shadow:none;	
+}
+button.btn.btn-light.ms-auto.text-danger.rounded-0.show{
+	background: #00baff !important;
+	box-shadow:none;
+}
+button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.text-danger.rounded-0  {
+    box-shadow: none !important;
+}
+
 .question td {
     font-size: 14px;
     line-height: 20px;
@@ -542,8 +578,13 @@ a.clearRes:hover {
 
 /* Added by kanchan */
 
-.star-ratings-css-bottom span{padding:0 2px;}
-.star-ratings-css-top span{padding:0 2px;}
+.star-ratings-css-bottom span{
+    padding:0 2px;
+    color: #e9e9e9;
+}
+.star-ratings-css-top span{
+ padding:0 2px;
+}
 
 .question-block i.fa {
     border-radius: 50%;
@@ -557,7 +598,6 @@ a.clearRes:hover {
 }
 
 /* Added by kanchan */
-
 
 #review_rques_blk .question-block i.fa{
     padding: 10px;

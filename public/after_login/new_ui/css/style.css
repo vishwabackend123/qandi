@@ -15,6 +15,154 @@ button {
     outline: none;
     text-decoration: none;
 }
+/*****shubham(02-03-2022)*****/
+
+.closeprofile {
+    z-index: 99;
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+}
+.closeprofile img {
+    width: 30px;
+}
+/** the following css for placeholder **/
+.edit-form input:-ms-input-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+.edit-form input::placeholder {
+    color: #2c3348;opacity:0.3;
+}
+.edit-form input::-webkit-input-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+
+.edit-form .form-group input:-moz-placeholder {
+    opacity:1;
+}
+.edit-form .form-group input:-ms-input-placeholder {
+    opacity:1;
+}
+.edit-form .form-group input::placeholder {
+    opacity:1;
+}
+.edit-form .form-group input::-webkit-input-placeholder {
+   opacity:1;
+}
+
+.edit-form input:-moz-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+
+/** placeholder css end here **/
+.successRef_copy {
+    transition: 0.5s ease-in-out all;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: fit-content;
+    background: #21ccffba;
+    bottom: 34px;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    color: #fff;
+    transition: 0.5s ease-in-out all;
+    padding: 7px 21px!important;
+    border-radius: 6px;
+
+
+  }
+  .successRef_copy.showmessage {
+    animation: animatemessage 1s ease forwards;
+    opacity: 1;
+    display: block;
+    width: auto;
+    bottom:0px;
+  }
+  .copiedmshblock{position: relative;}
+  @keyframes animatemessage {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -20px);
+    }
+    40% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0);
+    }
+    90% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0px);
+    }
+  }
+.formerror{position: relative;padding-bottom:10px;}
+label.error{position:absolute;}
+
+/*****shubham(02-03-2022)-end*****/
+
+
+/******* 02-03-2022 Amit-Start ******/
+.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;padding: 14px 39px;}
+.backtobox .backtobtn a {border-radius: 20px;background: rgba(233,233,233,0.5);}
+.backtobox .backtobtn i , .backtobox .backtobtn span{color: #2c3348;}
+#sharefrnd.modal button.btn-close {right: 38px;top: 28px;}
+.content-wrapper.examSect {height: 100vh;display: flex;align-items: center;}
+div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
+.dashboard-cards-block .bg-white>small p>span img{width: 25px!important;}
+div.sublinks a:active {
+    background: #00bdff!important;
+    color: #fff!important;
+}
+.btn.btnzoom-in-out {
+    font-size: 12px;
+    text-transform: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #5f5d5d!important;
+    padding: 2px 4px;
+    box-shadow: none!important;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
+.notification a svg .cls-2 {
+    stroke: none;
+}
+/******* 02-03-2022 Amit-End ******/
 
 /******* 28-02-2022 Amit-Start ******/
 ul.cust-tabs li:first-child a {
@@ -169,6 +317,12 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     opacity: 0.5 !important;
   }
 /******************************/
+
+
+ 
+ 
+   
+
 
 #review_rques_blk .question p {
     font-size: 14px;
@@ -1756,8 +1910,10 @@ body#main-body .seeAnico span img {
 }
 
 button#dropdownMenuLink-topic {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    margin-top: -12px;
+	box-shadow: none;
 }
 
 .preparation .cust-tabs .nav-link.active:before {
@@ -1936,23 +2092,25 @@ button#saveEdit {
 }
 
 /* comment by sachin 18_02_22*/
-#sharefrnd button.btn.btn-danger {
-    background: #21ccff !important;
+#sharefrnd button.btn {
     border-radius: 8px !important;
     border-radius: 20px !important;
     border: none !important;
     height: 60px;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
     /* width: 252px; */
     font-size: 18px;
     font-weight: 600;
     font-stretch: normal;
-    font-style: normal;
+    font-style: normal;color: #fff;
     line-height: normal;
     letter-spacing: normal;
+    background-image: linear-gradient(to bottom, #21ccff, #21ccff)!important;
 
-
+}
+#sharefrnd button.btn:hover {
+    background-image:none!important;
+    background-color: #00baff !important;
 }
 
 .refer_frd img {
@@ -3381,8 +3539,8 @@ button.save-btn {
 
 /** custom page css on 16-12-2021 **/
 .custom-page #dropdownMenuLink {
-    width: 40px;
-    height: 40px
+    width: 48px;
+    height: 48px;
 }
 
 /** end here **/
@@ -4333,7 +4491,6 @@ p.tab-title {
     /*width: 32%;*/
     display: inline-block;
     text-align: left;
-    margin-left: 12px;
 }
 
 .star-img img {
@@ -7411,3 +7568,28 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
 #dialog-pdf .report-block2.p-5 img {
     width: 65px !important;
 }
+
+/******02-03 navdeep*****/
+.btn-close {
+    background: url(../images/close-i.png);
+    opacity: 1;
+    background-size: 21px;
+    background-repeat: no-repeat;
+    padding-right: 0 !important;
+}
+.dashboard .star-ratings-css-top span{
+font-size: 13px;    
+}
+.swiper-slide .star-ratings-css-top span{
+font-size: 14px;    
+}
+.overllanaly .star-ratings-css-top span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-bottom span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-top span{
+font-size: 22px;    
+}
+/******02-03 navdeep-end******

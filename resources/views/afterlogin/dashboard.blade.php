@@ -2,7 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
-$prof_asst_test='N';
+
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -69,7 +69,7 @@ $prof_asst_test='N';
                             <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
-                            <ul class="course-star pe-2">
+                            <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
@@ -85,7 +85,7 @@ $prof_asst_test='N';
                                         </div>
 
                                     </span>
-                                    <span>{{round($sub['score'])}}%</span>
+                                    <span class="">{{round($sub['score'])}}%</span>
 
 
                                 </li>
@@ -181,8 +181,7 @@ $prof_asst_test='N';
                                 <div class="progressChart" style="height:180px;margin-top:18px;">
                                 </div>
                                 <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
-                                    <i class="fa fa-arrows" style="margin-right:1px;font-size: 10px"></i>
-                                    click to expand</button>
+                                    <i class="fa fa-arrows" style="margin-right:3px;font-size: 10px"></i>click to expand</button>
                             </div>
                             <!-- <div class="col-md-6">
                                 <div class="chapter-ideal-schedule text-center">

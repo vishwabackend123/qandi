@@ -60,7 +60,8 @@ $userData = Session::get('user_data');
                   <div class="dropdown">
                     <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 					<!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
-					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}">
+					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
+					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow">
 					</button>
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);">
@@ -111,7 +112,8 @@ $userData = Session::get('user_data');
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
 						<!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-						<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}">
+						<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
+					    <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl">
 						</button>
                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);">
@@ -462,6 +464,36 @@ $userData = Session::get('user_data');
     });
 
   }
+  
+  $(document).ready(function() {
+	  $("#dropdownMenuLink").click(function(){
+					
+			if ($("#dropdownMenuLink").hasClass('show')) {
+				$(".hsow").hide();
+			    $(".dsow").show();
+			} else {
+				$(".hsow").show();
+			    $(".dsow").hide();
+			}
+  
+	  });
+  });
+  
+    $(document).ready(function() {
+	  $("#dropdownMenuLink-topic").click(function(){
+					
+			if ($("#dropdownMenuLink-topic").hasClass('show')) {
+				$(".hsowl").hide();
+			    $(".dsowl").show();
+			} else {
+				$(".hsowl").show();
+			    $(".dsowl").hide();
+			}
+  
+	  });
+  });
+  
+  
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
