@@ -3046,6 +3046,11 @@ div#sub-planner {
 
 }
 
+.profile-show button:hover{
+    background: #00baff;
+    transition: none;
+}
+
 .achievement {
     display: inline-block;
     width: 100%;
