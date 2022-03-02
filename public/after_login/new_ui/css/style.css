@@ -117,7 +117,7 @@ label.error{position:absolute;}
 
 
 /******* 02-03-2022 Amit-Start ******/
-.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;}
+.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;padding: 14px 39px;}
 .backtobox .backtobtn a {border-radius: 20px;background: rgba(233,233,233,0.5);}
 .backtobox .backtobtn i , .backtobox .backtobtn span{color: #2c3348;}
 #sharefrnd.modal button.btn-close {right: 38px;top: 28px;}
