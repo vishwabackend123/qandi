@@ -1123,10 +1123,12 @@ a.disabled-btn {
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgba(13, 193, 255, 0.4) !important;
+    border-radius: 10px;
 }
 
 
@@ -2904,11 +2906,13 @@ button.percentage-digit {
 /* Track */
 .answer-section::-webkit-scrollbar-track {
     background: #f1f1f1;
+     border-radius: 10px;
 }
 
 /* Handle */
 .answer-section::-webkit-scrollbar-thumb {
     background: #d0f3ff;
+    border-radius: 10px;
 }
 
 /* Handle on hover */
