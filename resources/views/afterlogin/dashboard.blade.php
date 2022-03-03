@@ -657,6 +657,9 @@ $weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];
 $stu_scroe_json = isset($trend_stu_scroe) ? json_encode($trend_stu_scroe) : [];
 $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
 $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
+$ideal = isset($ideal) ? json_encode($ideal) : [];
+$your_place = isset($your_place) ? json_encode($your_place) : [];
+$progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
 
 @endphp
 
@@ -1070,7 +1073,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             title: {
                 text: 'Weeks'
             },
-            categories: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8'],
+            categories: <?php echo $progress_cat; ?>,
             labels: {
                 useHTML: true,
                 rotation: 0,
@@ -1099,16 +1102,12 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         };
         var series = [{
                 name: 'Ideal Pace',
-                data: [0.0, 5.0, 10.0, 15.0, 18.2, 21.5, 25.2,
-                    26.5
-                ],
+                data: <?php echo $ideal; ?> ,//[0.0, 5.0, 10.0],
                 color: '#db2f36'
             },
             {
                 name: 'Your Pace',
-                data: [0, 2, 5.7, 11.3, 17.0, 22.0, 24.8,
-                    24.1
-                ],
+                data: <?php echo $your_place; ?> ,//[0, 2, 5.7],
                 color: '#21ccff'
             }
         ];
@@ -1136,6 +1135,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     $("#sharefrnd .btn-close").click(function(){
        $(".dash-nav-link a:last-child").removeClass("active-navlink");
        $(".dash-nav-link a:first-child").addClass("active-navlink");
+    });
+    $("#close-planner-btn , .close-bnt").click(function(){
+        $("span.notification.ms-4").removeClass("notification-icons-active");
     });
 </script>
 @endsection

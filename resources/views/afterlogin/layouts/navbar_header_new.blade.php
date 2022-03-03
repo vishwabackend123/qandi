@@ -898,7 +898,17 @@
             <p>Are you Sure?</p>
             <div class="form-btns">
                 <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            sessionStorage.clear();  document.getElementById('logout-form').submit();" "><button type=" button" class="save-btn">Log out</button></a>
+                                 sessionStorage.clear();  document.getElementById('logout-form').submit();" ">
+                                 <button type=" button" class="save-btn logout_btn_new">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
+                                        position: absolute;
+                                        left: 62px;
+                                        top: 20px;
+                                    ">
+                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                                    </svg>
+                                Log out</button>
+                </a>
             </div>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

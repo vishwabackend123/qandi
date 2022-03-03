@@ -215,8 +215,47 @@ class HomeController extends Controller
             Session::put('referal_link', env('APP_URL') . 'referral/' . $refer_code);
             Session::put('referal_code', $refer_code);
          }
+         //progress journey
+            $ideal = [];
+            $your_place = [];
+            $progress_cat = [];
+        if (Session::has('ideal')){
+            $ideal = Session::get('ideal');
+            $your_place = Session::get('your_place');
+            $progress_cat = Session::get('progress_cat');
+        }else
+        {
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
+            curl_setopt_array($curl, array(
 
-        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
+                CURLOPT_URL => $curl_prog_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_preg_json = curl_exec($curl);
+            $response_prog = json_decode($response_preg_json, true);
+            
+            foreach($response_prog['response']['student_progress'] as $key =>$progData)
+            {
+                array_push($ideal, $progData['week_index']);
+                array_push($your_place, $progData['chapter_count']);
+                $week="W".$key+1;
+                array_push($progress_cat, $week);
+
+            }
+            Session::put('ideal',$ideal);
+            Session::put('your_place', $your_place);
+            Session::put('progress_cat', $progress_cat);
+        }
+        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test','ideal','your_place','progress_cat'));
     }
 
     public function student_stand(Request $request)

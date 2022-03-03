@@ -3522,16 +3522,20 @@ button.save-btn {
     width: 83%;
 }
 
+
+/*Added by sachin 03-03-22*/
 .log-out-screen .p-picture {
-    width: 80px;
+    /* width: 80px; */
+    width:84px;
     border: none;
     border-radius: 50%;
-    height: 80px;
+    /* height: 80px; */
+    height: 84px;
     text-align: center;
     overflow: hidden;
     margin: 0 auto;
 }
-
+/*Ended by sachin 03-03-22*/
 .subscription h4 {
     text-align: left;
     font-size: 18px;
@@ -3582,18 +3586,31 @@ button.save-btn {
 }
 
 /** Log out screen **/
+/** Added by sachin 03-03-22 **/
+.logout_btn_new{
+    position: relative;
+}
+.logout_btn_new svg{
+    position: absolute;
+    left: 62px;
+    top: 20px;
+}
+
 .log-out-screen {
     width: 26.7%;
     background: #fff;
     border-radius: 56px;
-    padding: 40px 20px 40px 25px;
+    /* padding: 40px 20px 40px 25px; */
+    padding: 50px 20px 50px 25px;
     position: absolute;
     right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
+    max-width: 360px;
 
 }
+/** End by sachin 03-03-22 **/
 
 .profile-section ul li a span i {
     font-size: 25px;
@@ -3612,13 +3629,25 @@ button.save-btn {
     margin-bottom: 50px;
 }
 
+/** Added by sachin 03-03-22 **/
 .log-out-screen p {
     text-align: center;
     color: #2c3348;
     margin: 10px 0px;
     font-size: 16px;
-    font-weight: 400;
+    /* font-weight: 400; */
+    font-weight: normal;
+    opacity: 1;
 }
+
+
+.log-out-screen .form-btns {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+}
+/** End by sachin **/
 
 .log-out-screen button.save-btn {
     width: 84%;
