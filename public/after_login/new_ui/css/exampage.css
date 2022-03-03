@@ -17,6 +17,10 @@ li.a3TS {
 .btn-topic:hover {
     box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
 }
+.custom-page .cust-tab-content .scroll-div {
+    height: 240px !important;
+    overflow-y: auto !important;
+}
 
 .dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;

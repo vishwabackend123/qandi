@@ -112,7 +112,10 @@ button {
   }
 .formerror{position: relative;padding-bottom:10px;}
 label.error{position:absolute;}
-
+.reviewPanel .cust-tabs .nav-link{min-width:180px;text-align:center;padding-top: 20px;
+    padding-bottom: 20px;} 
+    
+    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
 /*****shubham(02-03-2022)-end*****/
 
 /******* 03-03-2022 Amit-Start ******/
@@ -1061,39 +1064,21 @@ a.disabled-btn {
 
 
 #editProfile_form input::placeholder {
-    color:#2c3348 !important;
-    opacity: 0.3;
-   
+    color: red !important;
+    font-size: 14px;
 }
 
 #editProfile_form input::-webkit-input-placeholder {
-    color:#2c3348 !important;
-    opacity: 0.3;
+    color: red !important;
+    font-size: 14px;
 }
 
-#editProfile_form input::-webkit-input-placeholder {
-    color:#2c3348 !important;opacity: 0.3;
+#editProfile_forminput::-webkit-input-placeholder {
+    color: red !important;
 }
 
-#editProfile_form input:-moz-placeholder {
-    color:#2c3348 !important; opacity: 0.3;
-}
-
-#country input::placeholder {
-    color:#2c3348 !important;
-    opacity: 0.3;
-   
-}
- 
-
-#editProfile_form input#country {
-    color:#2c3348 !important;
-    opacity: 0.7;
-}
-
-#editProfile_form .form-flds input {
-   
-    color: #2c3348;
+#editProfile_forminput:-moz-placeholder {
+    color: red !important;
 }
 
 
@@ -1245,14 +1230,14 @@ input#usernameloca {
 }
 
 input.select-grade {
-    /* background: url(..//images/state-log.png) no-repeat #f2f2f2 !important; */
+    background: url(..//images/state-log.png) no-repeat #f2f2f2 !important;
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
 }
 
 input.select-exam {
-    /* background: url(..//images/city-log.png) no-repeat #f2f2f2 !important; */
+    background: url(..//images/city-log.png) no-repeat #f2f2f2 !important;
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
@@ -1734,19 +1719,11 @@ span.p-icons span:active {
 
 #editProfile_form .form-flds p {
     text-align: right;
-    margin-bottom: 0px !important; opacity: 1;
+    margin-bottom: 0px !important;
 }
 
 #profile_pic_form img {
-    width: 17px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-}
-.svg_icon_input{
-    position: absolute;
-    top: 8px;
-    left: 8px;
+    width: 25px;
 }
 
 ::-webkit-input-placeholder {
@@ -3214,7 +3191,7 @@ div#sub-planner {
     min-height: 450px !important;
     background-image: url(../images/analytics-thumbnail.png);
     background-repeat: no-repeat;
-    background-position: left 30% bottom -199px;
+    background-position: left 30% bottom -180px;
     background-size: cover;
 
 }
