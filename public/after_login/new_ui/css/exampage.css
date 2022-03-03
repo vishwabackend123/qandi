@@ -5,6 +5,22 @@ img.hsow {
 img.hsowl {
     display: none;
 }
+li.a1TS {
+    width: 42% !important;
+}
+li.a2TS {
+    width: 15% !important;
+}
+li.a3TS {
+    width: 15% !important;
+}
+.btn-topic:hover {
+    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
+}
+.custom-page .cust-tab-content .scroll-div {
+    height: 240px !important;
+    overflow-y: auto !important;
+}
 
 .dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;
