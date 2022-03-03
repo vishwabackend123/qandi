@@ -1043,6 +1043,34 @@ a.disabled-btn {
     margin-bottom: 10px;
 }
 
+
+#editProfile_form input::placeholder {
+    color: red !important;
+    font-size: 14px;
+}
+
+#editProfile_form input::-webkit-input-placeholder {
+    color: red !important;
+    font-size: 14px;
+}
+
+#editProfile_forminput::-webkit-input-placeholder {
+    color: red !important;
+}
+
+#editProfile_forminput:-moz-placeholder {
+    color: red !important;
+}
+
+
+
+
+
+
+
+
+
+
 #statebx,
 #citybx {
     position: relative;
@@ -3134,7 +3162,7 @@ div#sub-planner {
    
     position: absolute;
     top: 0px;
-    right: 540px;
+    right: 539px;
     width: 365px;
     background: #fff;
     /* padding: 10px 15px; */
@@ -3144,7 +3172,7 @@ div#sub-planner {
     min-height: 450px !important;
     background-image: url(../images/analytics-thumbnail.png);
     background-repeat: no-repeat;
-    background-position: left 30% bottom -157px;
+    background-position: left 30% bottom -180px;
     background-size: cover;
 
 }
@@ -4016,7 +4044,7 @@ span.profile-digit {
 .search-frnd input {
     width: 97%;
     border: none;
-    padding: 8px 20px 8px 40px;
+    padding: 7px 20px 7px 40px;
     border-radius: 8px;
     background: url(../images/search.png) no-repeat #f2f2f2;
     color: #000;
@@ -4067,7 +4095,11 @@ span.profile-digit {
     margin-right: 20px;
     width: 30px;
     text-align: right;
+   
 }
+
+
+
 
 span.profile-img-user {
     width: 45px;
@@ -4080,6 +4112,7 @@ span.profile-img-user {
 
 .profile-text-user {
     margin-left: 20px;
+    max-width: 160px;
 }
 
 .profile-detail {
