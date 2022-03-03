@@ -112,7 +112,15 @@ button {
   }
 .formerror{position: relative;padding-bottom:10px;}
 label.error{position:absolute;}
-
+.reviewPanel .cust-tabs .nav-link{padding-right: 30px!important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 204px;
+    padding-left: 43px!important;} 
+    
+    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
 /*****shubham(02-03-2022)-end*****/
 
 /******* 03-03-2022 Amit-Start ******/
@@ -126,6 +134,13 @@ label.error{position:absolute;}
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
 .planner-scheduar-block a#close-edit-planner-btn {top: 0;}
 .planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;}
+.dashboard-cards-block .weekylplan-block.bg-white>small p{min-width: 235px; top: -18px;}
+.dashboard-cards-block .progress-journey-card.bg-white>small p{min-width: 350px;}
+a.close-btn, a.export-btn {
+    top: 45px;
+    border-radius: 100%!important;
+    padding: 6px;
+}
 
 
 /******* 03-03-2022 Amit-End ******/
@@ -141,7 +156,7 @@ label.error{position:absolute;}
 #sharefrnd.modal button.btn-close {right: 38px;top: 28px;}
 .content-wrapper.examSect {height: 100vh;display: flex;align-items: center;}
 div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
-.dashboard-cards-block .bg-white>small p>span img{width: 25px!important;}
+.dashboard-cards-block .bg-white>small p>span img{width: 22px!important;}
 div.sublinks a:active {
     background: #00bdff!important;
     color: #fff!important;
@@ -664,7 +679,7 @@ ul.matrixLists li b {
     border-radius: 20px;
     box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 10%);
     z-index: 55;
-    padding: 20px 40px 20px 20px;
+    padding: 15px 30px 15px 20px;
     position: absolute;
     right: -7px;
     top: -7px;
@@ -672,12 +687,13 @@ ul.matrixLists li b {
     display: none;
     text-align: left;
     height: auto!important;
+    font-size: 13px;
 }
 
 .dashboard-cards-block .bg-white>small p>span {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 8px;
+    top: 8px;
 }
 
 .dashboard-cards-block .bg-white>small p label {
@@ -1060,39 +1076,21 @@ a.disabled-btn {
 
 
 #editProfile_form input::placeholder {
-    color:#2c3348 !important;
-    opacity: 0.3;
-   
+    color: red !important;
+    font-size: 14px;
 }
 
 #editProfile_form input::-webkit-input-placeholder {
-    color:#2c3348 !important;
-    opacity: 0.3;
+    color: red !important;
+    font-size: 14px;
 }
 
-#editProfile_form input::-webkit-input-placeholder {
-    color:#2c3348 !important;opacity: 0.3;
+#editProfile_forminput::-webkit-input-placeholder {
+    color: red !important;
 }
 
-#editProfile_form input:-moz-placeholder {
-    color:#2c3348 !important; opacity: 0.3;
-}
-
-#country input::placeholder {
-    color:#2c3348 !important;
-    opacity: 0.3;
-   
-}
- 
-
-#editProfile_form input#country {
-    color:#2c3348 !important;
-    opacity: 0.7;
-}
-
-#editProfile_form .form-flds input {
-   
-    color: #2c3348;
+#editProfile_forminput:-moz-placeholder {
+    color: red !important;
 }
 
 
@@ -1244,14 +1242,14 @@ input#usernameloca {
 }
 
 input.select-grade {
-    /* background: url(..//images/state-log.png) no-repeat #f2f2f2 !important; */
+    background: url(..//images/state-log.png) no-repeat #f2f2f2 !important;
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
 }
 
 input.select-exam {
-    /* background: url(..//images/city-log.png) no-repeat #f2f2f2 !important; */
+    background: url(..//images/city-log.png) no-repeat #f2f2f2 !important;
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
@@ -1733,19 +1731,11 @@ span.p-icons span:active {
 
 #editProfile_form .form-flds p {
     text-align: right;
-    margin-bottom: 0px !important; opacity: 1;
+    margin-bottom: 0px !important;
 }
 
 #profile_pic_form img {
-    width: 17px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-}
-.svg_icon_input{
-    position: absolute;
-    top: 8px;
-    left: 8px;
+    width: 25px;
 }
 
 ::-webkit-input-placeholder {
@@ -3213,7 +3203,7 @@ div#sub-planner {
     min-height: 450px !important;
     background-image: url(../images/analytics-thumbnail.png);
     background-repeat: no-repeat;
-    background-position: left 30% bottom -199px;
+    background-position: left 30% bottom -180px;
     background-size: cover;
 
 }
