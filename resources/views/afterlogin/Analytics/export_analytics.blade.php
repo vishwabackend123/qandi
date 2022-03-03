@@ -261,7 +261,7 @@ $userData = Session::get('user_data');
 <a href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
 
 
-<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}" title="Close"></a>
+<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" title="Close" style="width: 30px;"></a>
 
 
 
