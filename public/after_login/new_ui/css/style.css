@@ -112,8 +112,13 @@ button {
   }
 .formerror{position: relative;padding-bottom:10px;}
 label.error{position:absolute;}
-.reviewPanel .cust-tabs .nav-link{min-width:180px;text-align:center;padding-top: 20px;
-    padding-bottom: 20px;} 
+.reviewPanel .cust-tabs .nav-link{padding-right: 30px!important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 204px;
+    padding-left: 43px!important;} 
     
     div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
 /*****shubham(02-03-2022)-end*****/
