@@ -683,7 +683,7 @@ ul.matrixLists li b {
     position: absolute;
     right: -7px;
     top: -7px;
-    min-width: 380px;
+    min-width: 350px;
     display: none;
     text-align: left;
     height: auto!important;
