@@ -126,8 +126,8 @@ label.error{position:absolute;}
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
 .planner-scheduar-block a#close-edit-planner-btn {top: 0;}
 .planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;}
-
-
+.dashboard-cards-block .weekylplan-block.bg-white>small p{min-width: 235px; top: -18px;}
+.dashboard-cards-block .progress-journey-card.bg-white>small p{min-width: 350px;}
 /******* 03-03-2022 Amit-End ******/
 
 /******* 02-03-2022 Amit-Start ******/
@@ -141,7 +141,7 @@ label.error{position:absolute;}
 #sharefrnd.modal button.btn-close {right: 38px;top: 28px;}
 .content-wrapper.examSect {height: 100vh;display: flex;align-items: center;}
 div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
-.dashboard-cards-block .bg-white>small p>span img{width: 25px!important;}
+.dashboard-cards-block .bg-white>small p>span img{width: 22px!important;}
 div.sublinks a:active {
     background: #00bdff!important;
     color: #fff!important;
@@ -664,7 +664,7 @@ ul.matrixLists li b {
     border-radius: 20px;
     box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 10%);
     z-index: 55;
-    padding: 20px 40px 20px 20px;
+    padding: 15px 30px 15px 20px;
     position: absolute;
     right: -7px;
     top: -7px;
@@ -672,12 +672,13 @@ ul.matrixLists li b {
     display: none;
     text-align: left;
     height: auto!important;
+    font-size: 13px;
 }
 
 .dashboard-cards-block .bg-white>small p>span {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 8px;
+    top: 8px;
 }
 
 .dashboard-cards-block .bg-white>small p label {
