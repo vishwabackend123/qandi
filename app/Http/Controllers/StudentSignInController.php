@@ -122,7 +122,7 @@ class StudentSignInController extends Controller
         $timestamp =  $_SERVER["REQUEST_TIME"];
         $session_otp_time = Session::get('OTP_time');
         //dd(($timestamp - $session_otp_time));
-        if (($timestamp - $session_otp_time) < 600) {
+        if (($timestamp - $session_otp_time) < 180) {
             $request = [
                 'email_or_mobile' => $enteredMobile,
                 'otp' => $enteredOtp
@@ -292,7 +292,7 @@ class StudentSignInController extends Controller
         $timestamp =  $_SERVER["REQUEST_TIME"];
         $session_otp_time = Session::get('OTP_time');
 
-        if (($timestamp - $session_otp_time) < 600) {
+        if (($timestamp - $session_otp_time) < 180) {
             if ($session_otp == $reg_otp) {
                 $request->session()->forget('OTP');
                 $request = [

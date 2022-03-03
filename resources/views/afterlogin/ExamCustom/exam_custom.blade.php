@@ -58,7 +58,7 @@ $userData = Session::get('user_data');
                   </form>
 
                   <div class="dropdown">
-                    <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Chapters Filter">
 					<!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
 					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
 					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow">
