@@ -1230,14 +1230,14 @@ input#usernameloca {
 }
 
 input.select-grade {
-    background: url(..//images/state-log.png) no-repeat #f2f2f2 !important;
+    /* background: url(..//images/state-log.png) no-repeat #f2f2f2 !important; */
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
 }
 
 input.select-exam {
-    background: url(..//images/city-log.png) no-repeat #f2f2f2 !important;
+    /* background: url(..//images/city-log.png) no-repeat #f2f2f2 !important; */
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
@@ -1719,11 +1719,19 @@ span.p-icons span:active {
 
 #editProfile_form .form-flds p {
     text-align: right;
-    margin-bottom: 0px !important;
+    margin-bottom: 0px !important; opacity: 1;
 }
 
 #profile_pic_form img {
-    width: 25px;
+    width: 17px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+.svg_icon_input{
+    position: absolute;
+    top: 8px;
+    left: 8px;
 }
 
 ::-webkit-input-placeholder {
@@ -3191,7 +3199,7 @@ div#sub-planner {
     min-height: 450px !important;
     background-image: url(../images/analytics-thumbnail.png);
     background-repeat: no-repeat;
-    background-position: left 30% bottom -180px;
+    background-position: left 30% bottom -199px;
     background-size: cover;
 
 }

@@ -768,6 +768,17 @@
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
+                    <div class="svg_icon_input">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5073" width="24" height="24" viewBox="0 0 24 24">
+                            <path data-name="Path 11571" d="M0 0h24v24H0z" style="fill:none"/>
+                            <path data-name="Path 11572" d="M5 12H3l9-9 9 9h-2" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 11573" d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 11574" d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                        </svg>
+                    </div>
+
+
+
                         <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
 
@@ -779,6 +790,18 @@
                     </div>
 
                     <div class="form-flds flds form-group " id="citybx">
+                        <div class="svg_icon_input">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5074" width="24" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 11575" d="M0 0h24v24H0z" style="fill:none"/>
+                                <path data-name="Path 11576" d="m8 9 5 5v7H8v-4m0 4H3v-7l5-5m1 1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17h-8" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Line 609" transform="translate(13 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Line 610" transform="translate(17 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Line 611" transform="translate(17 11)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Line 612" transform="translate(17 15)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                            </svg>
+                        </div>
+
+
                         <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
