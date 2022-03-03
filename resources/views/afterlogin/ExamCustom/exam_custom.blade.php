@@ -59,10 +59,10 @@ $userData = Session::get('user_data');
 
                   <div class="dropdown">
                     <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-					<!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
-					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
-					<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow">
-					</button>
+                      <!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
+                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
+                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow">
+                    </button>
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);">
                           <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}">
@@ -111,10 +111,10 @@ $userData = Session::get('user_data');
 
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
-						<!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-						<img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
-					    <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl">
-						</button>
+                          <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl">
+                        </button>
                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);">
                               <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}">
@@ -145,16 +145,7 @@ $userData = Session::get('user_data');
 
                     </div>
                     <div class="collapse mb-4" id="chapter_{{$chapters->chapter_id}}">
-                      <!--<div class="d-flex px-4">
-                      <button class="btn btn-light rotate-icon ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter"><i class="fa fa-sliders" aria-hidden="true"></i></button>
-                      <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
-                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down"></i> Low Proficiency</a></li>
-                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);"> <i class="fas fa-sort-numeric-down-alt"></i> High Proficiency</a></li>
-                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','priority')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down"></i>Order by Priority</a></li>
-                        <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','sequence')" href="javascript:void(0);"><i class="fas fa-sort-alpha-down-alt"></i> Order by Sequence</a></li>
 
-                      </ul>
-                    </div>-->
                       <section id="topic_section_{{$chapters->chapter_id}}" class="slick-slider mb-4">
 
 
@@ -193,11 +184,6 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.footer_new')
 
 <script type="text/javascript">
-  $('.scroll-div').slimscroll({
-    height: '55vh'
-  });
-
-
   $(document).ready(function() {
 
     $("#topic_form").validate({
@@ -230,10 +216,12 @@ $userData = Session::get('user_data');
       aTopics.push(value);
       $('#chpt_topic_' + value).removeClass('btn-light');
       $('#chpt_topic_' + value).addClass('topic_selected');
+      $('#chpt_topic_' + value).html('SELECTED');
       $('#topic_box_' + value).addClass('bdr-success');
     } else {
       aTopics.splice(index, 1);
       $('#chpt_topic_' + value).removeClass('topic_selected');
+      $('#chpt_topic_' + value).html('SELECT');
       $('#topic_box_' + value).removeClass('bdr-success');
       $('#chpt_topic_' + value).addClass('btn-light');
     }
@@ -464,36 +452,34 @@ $userData = Session::get('user_data');
     });
 
   }
-  
+
   $(document).ready(function() {
-	  $("#dropdownMenuLink").click(function(){
-					
-			if ($("#dropdownMenuLink").hasClass('show')) {
-				$(".hsow").hide();
-			    $(".dsow").show();
-			} else {
-				$(".hsow").show();
-			    $(".dsow").hide();
-			}
-  
-	  });
+    $("#dropdownMenuLink").click(function() {
+
+      if ($("#dropdownMenuLink").hasClass('show')) {
+        $(".hsow").hide();
+        $(".dsow").show();
+      } else {
+        $(".hsow").show();
+        $(".dsow").hide();
+      }
+
+    });
   });
-  
-    $(document).ready(function() {
-	  $("#dropdownMenuLink-topic").click(function(){
-					
-			if ($("#dropdownMenuLink-topic").hasClass('show')) {
-				$(".hsowl").hide();
-			    $(".dsowl").show();
-			} else {
-				$(".hsowl").show();
-			    $(".dsowl").hide();
-			}
-  
-	  });
+
+  $(document).ready(function() {
+    $("#dropdownMenuLink-topic").click(function() {
+
+      if ($("#dropdownMenuLink-topic").hasClass('show')) {
+        $(".hsowl").hide();
+        $(".dsowl").show();
+      } else {
+        $(".hsowl").show();
+        $(".dsowl").hide();
+      }
+
+    });
   });
-  
-  
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
