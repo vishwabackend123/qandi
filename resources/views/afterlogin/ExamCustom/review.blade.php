@@ -32,10 +32,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                         <div class="test-review">
 
-                            <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                            <div class="tab-content position-relative cust-tab-content bg-white reviewPanel" id="myTabContent">
                                 <div id="scroll-mobile">
                                     <!-- Exam subject Tabs  -->
-                                    <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                                    <ul class="nav nav-tabs cust-tabs exam-panel " id="myTab" role="tablist">
                                         @if(!empty($filtered_subject))
                                         @foreach($filtered_subject as $key=>$sub)
                                         <li class="nav-item" role="presentation">

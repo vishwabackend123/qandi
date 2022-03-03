@@ -13,7 +13,7 @@
                 <div class="col-lg-9  ps-lg-5">
                     <a href="{{route('dashboard')}}" class="btn btn-danger back-to-d-btn">Back to dashboard</a>
                     <div class="tab-wrapper h-100">
-                        <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs cust-tabs exam-panel " id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mathematics</a>
                             </li>

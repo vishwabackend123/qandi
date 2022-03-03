@@ -86,8 +86,11 @@ class StudentSignInController extends Controller
         } else {
             $msg = $aResponse->message;
             $login_otp = $aResponse->otp;
-
             Session::put('OTP', $login_otp);
+
+            $timestamp =  $_SERVER["REQUEST_TIME"];
+            Session::put('OTP_time',  $timestamp);
+
 
             if (env('STUDENT_ENV') == 'prod') {
                 $response = [
@@ -114,66 +117,80 @@ class StudentSignInController extends Controller
         $enteredOtp = (int)$request->input('login_otp');
         $enteredMobile = (string)$request->input('login_mobile');
 
-        $request = [
-            'email_or_mobile' => $enteredMobile,
-            'otp' => $enteredOtp
-        ];
+        $session_otp = Session::get('OTP');
 
-        $request_json = json_encode($request);
+        $timestamp =  $_SERVER["REQUEST_TIME"];
+        $session_otp_time = Session::get('OTP_time');
+        //dd(($timestamp - $session_otp_time));
+        if (($timestamp - $session_otp_time) < 180) {
+            $request = [
+                'email_or_mobile' => $enteredMobile,
+                'otp' => $enteredOtp
+            ];
 
-        $api_URL = env('API_URL');
-        $curl_url = $api_URL . 'api/studentlogin';
+            $request_json = json_encode($request);
 
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FAILONERROR => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => $request_json,
-            CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/json"
-            ),
-        ));
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/studentlogin';
 
-        $response_json = curl_exec($curl);
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json"
+                ),
+            ));
 
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-        $aResponse = json_decode($response_json);
-        $success = isset($aResponse->success) ? $aResponse->success : false;
+            $response_json = curl_exec($curl);
 
-        if ($success == false) {
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            $aResponse = json_decode($response_json);
+            $success = isset($aResponse->success) ? $aResponse->success : false;
+
+            if ($success == false) {
+                $response = [
+                    "message" => "You have entered a wrong OTP. Please try again",
+                    "error" => $err,
+                    "success" => false,
+                    "status" => 400,
+                ];
+                return json_encode($response);
+            } else {
+                $aResponse = json_decode($response_json);
+                $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
+
+                if (Auth::loginUsingId($user_data->id)) {
+                    $user_Data = Auth::user();
+                    Session::put('user_data', $user_Data);
+
+                    $response['status'] = 200;
+
+                    return json_encode($response);
+                } else {
+                    $response['status'] = 400;
+                    $response['error'] = "Authentication failed please try again.";
+                    return json_encode($response);
+                }
+            }
+        } else {
             $response = [
-                "message" => "You have entered a wrong OTP. Please try again",
-                "error" => $err,
+                "message" => "OTP expired. Please. try again.",
+                "error" => "OTP expired. Please. try again.",
                 "success" => false,
                 "status" => 400,
             ];
             return json_encode($response);
-        } else {
-            $aResponse = json_decode($response_json);
-
-            $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
-
-            if (Auth::loginUsingId($user_data->id)) {
-                $user_Data = Auth::user();
-                Session::put('user_data', $user_Data);
-
-                $response['status'] = 200;
-
-                return json_encode($response);
-            } else {
-                $response['status'] = 400;
-                $response['error'] = "Authentication failed please try again.";
-                return json_encode($response);
-            }
         }
     }
 
@@ -231,6 +248,8 @@ class StudentSignInController extends Controller
             $reg_otp = isset($aResponse->mobile_otp) ? $aResponse->mobile_otp : '';
 
             Session::put('OTP', $reg_otp);
+            $timestamp =  $_SERVER["REQUEST_TIME"];
+            Session::put('OTP_time',  $timestamp);
 
             if (env('STUDENT_ENV') == 'prod') {
                 $response = [
@@ -270,81 +289,89 @@ class StudentSignInController extends Controller
         } else {
             $session_otp = null;
         }
+        $timestamp =  $_SERVER["REQUEST_TIME"];
+        $session_otp_time = Session::get('OTP_time');
 
-        if ($session_otp == $reg_otp) {
-            $request->session()->forget('OTP');
-            $request = [
-                'user_name' => $user_name,
-                'email' => $email_add,
-                'mobile' => (int)$mobile_num,
-            ];
-
-
-            $request_json = json_encode($request);
-
-
-            $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/student-signup';
-
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => $request_json,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json"
-                ),
-            ));
-
-
-            $response_json = curl_exec($curl);
-
-
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-
-            $aResponse = json_decode($response_json);
-            $success = isset($aResponse->success) ? $aResponse->success : false;
-
-            if ($success == false) {
-                $response = [
-
-                    "error" => $err,
-                    "success" => false,
-                    "status" => 400,
+        if (($timestamp - $session_otp_time) < 180) {
+            if ($session_otp == $reg_otp) {
+                $request->session()->forget('OTP');
+                $request = [
+                    'user_name' => $user_name,
+                    'email' => $email_add,
+                    'mobile' => (int)$mobile_num,
                 ];
-                return json_encode($response);
-            } else {
 
-                $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
-                $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
 
-                if (Auth::loginUsingId($student_id)) {
-                    $response['status'] = 200;
-                    $response['student_id'] = $student_id;
-                    $response['user_name'] = ucwords($user_name);
-                    $response['mobile'] = $mobile_num;
-                    $response['message'] = $succ_msg;
-                    //  $response['redirect_url'] = url('dashboard');
+                $request_json = json_encode($request);
 
+
+                $api_URL = env('API_URL');
+                $curl_url = $api_URL . 'api/student-signup';
+
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_FAILONERROR => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                    CURLOPT_POSTFIELDS => $request_json,
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json"
+                    ),
+                ));
+
+
+                $response_json = curl_exec($curl);
+
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+
+                $aResponse = json_decode($response_json);
+                $success = isset($aResponse->success) ? $aResponse->success : false;
+
+                if ($success == false) {
+                    $response = [
+
+                        "error" => $err,
+                        "success" => false,
+                        "status" => 400,
+                    ];
                     return json_encode($response);
                 } else {
-                    $response['status'] = 400;
-                    $response['error'] = "Authentication failed please try again.";
-                    return json_encode($response);
+
+                    $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
+                    $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
+
+                    if (Auth::loginUsingId($student_id)) {
+                        $response['status'] = 200;
+                        $response['student_id'] = $student_id;
+                        $response['user_name'] = ucwords($user_name);
+                        $response['mobile'] = $mobile_num;
+                        $response['message'] = $succ_msg;
+                        //  $response['redirect_url'] = url('dashboard');
+
+                        return json_encode($response);
+                    } else {
+                        $response['status'] = 400;
+                        $response['error'] = "Authentication failed please try again.";
+                        return json_encode($response);
+                    }
                 }
+            } else {
+                $response['status'] = 400;
+                $response['error'] = "Invalid OTP entered.";
+                return json_encode($response);
             }
         } else {
             $response['status'] = 400;
-            $response['error'] = "Invalid OTP entered.";
+            $response['error'] = "OTP expired. Please. try again.";
             return json_encode($response);
         }
     }
@@ -608,43 +635,43 @@ class StudentSignInController extends Controller
         $aResponse = json_decode($response_json);
         $success = isset($aResponse->success) ? $aResponse->success : false;
         if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
-                
-                $exam_id = 1;
-                $inputjson = [
-                    "student_id" => $student_id,
-                    "exam_id" => $exam_id,
-                    "email" => $data['refer_email'],
-                    "student_refer_by" => $data['refer_code'],
-                ];
-                $request = json_encode($inputjson);
 
-                $api_URL = env('API_URL');
-                $curl_url = $api_URL . 'api/insert-referr-student';
+            $exam_id = 1;
+            $inputjson = [
+                "student_id" => $student_id,
+                "exam_id" => $exam_id,
+                "email" => $data['refer_email'],
+                "student_refer_by" => $data['refer_code'],
+            ];
+            $request = json_encode($inputjson);
 
-                $curl = curl_init();
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => $curl_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_FAILONERROR => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 30,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "POST",
-                    CURLOPT_POSTFIELDS => $request,
-                    CURLOPT_HTTPHEADER => array(
-                        "cache-control: no-cache",
-                        "content-type: application/json",
-                    ),
-                ));
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/insert-referr-student';
 
-                $response_json = curl_exec($curl);
-                $err = curl_error($curl);
-                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-                curl_close($curl);
-                if ($httpcode == 400 || $httpcode == 422) {
-                    return json_encode(array('success' => false, 'message' => $httpcode));
-                } 
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $request,
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json",
+                ),
+            ));
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            if ($httpcode == 400 || $httpcode == 422) {
+                return json_encode(array('success' => false, 'message' => $httpcode));
+            }
         }
         if ($success == false) {
             return json_encode($aResponse);
