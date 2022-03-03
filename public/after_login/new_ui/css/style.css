@@ -131,6 +131,13 @@ label.error{position:absolute;}
 .planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;}
 .dashboard-cards-block .weekylplan-block.bg-white>small p{min-width: 235px; top: -18px;}
 .dashboard-cards-block .progress-journey-card.bg-white>small p{min-width: 350px;}
+a.close-btn, a.export-btn {
+    top: 45px;
+    border-radius: 100%!important;
+    padding: 6px;
+}
+
+
 /******* 03-03-2022 Amit-End ******/
 
 /******* 02-03-2022 Amit-Start ******/
