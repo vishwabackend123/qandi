@@ -117,6 +117,7 @@ label.error{position:absolute;}
 
 
 /******* 02-03-2022 Amit-Start ******/
+.dash-sidebar a .b , .dash-sidebar a .c{stroke: #4cb9f9 !important;}
 #exam_content_sec .question-block .question p::-webkit-scrollbar {height:4px;}
 #exam_content_sec .question-block .question p{overflow-x: auto;overflow-y: hidden;padding-bottom: 4px;}
 .backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;padding: 14px 39px;}

@@ -1563,6 +1563,9 @@
             $(this).addClass("notification-icons-active");
             $(this).siblings().removeClass("notification-icons-active");
         }
+        else{
+            $(this).removeClass("notification-icons-active");
+        }
     });
     $(".dash-nav-link a").click(function() {
         if (!$(this).hasClass("active-navlink")) {
@@ -1589,10 +1592,3 @@
         }
     });
 </script>
-<!-- <script>
-    $(document).ready(function() {
-        $(".addremovetopic").on("click", function() {
-            $(this).parent().parent().toggleClass('current');
-        });
-    });
-</script> -->
