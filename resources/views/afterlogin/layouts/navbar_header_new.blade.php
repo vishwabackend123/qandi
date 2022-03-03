@@ -723,8 +723,8 @@
                         </div> -->
                 </div>
             </div>
-
             <!--profile-picture-->
+          
         </div>
 
         <!--profile-show-->
