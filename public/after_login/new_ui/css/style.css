@@ -143,7 +143,8 @@ label.error{position:absolute;}
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between{position: relative;padding-left: 40px;}
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
 .planner-scheduar-block a#close-edit-planner-btn {top: 0;}
-.planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;}
+.planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;width: 25px;
+    height: 25px;}
 .dashboard-cards-block .weekylplan-block.bg-white>small p{min-width: 235px; top: -18px;}
 .dashboard-cards-block .progress-journey-card.bg-white>small p{min-width: 350px;}
 a.close-btn, a.export-btn {
