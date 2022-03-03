@@ -121,6 +121,16 @@ label.error{position:absolute;}
     padding-left: 43px!important;} 
     
     div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
+    .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
+    .planner-scheduar-block{background-color:transparent;}
+    .planner-scheduar-block .planner-edit-mode{box-shadow:none;}
+    .planner-scheduar-block.show .planner-edit-mode{box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);}
+    .planner-scheduar-block.planner-content{box-shadow:none;}
+    .planner-scheduar-block.show .planner-content{    box-shadow: 0px 0px 6px -3px;}
+    .planner-scheduar-block.planmner-block,div#collapseNotification{padding-top:0px!important;}
+    .planner-scheduar-block .planner-wrapper,.notification-block .planner-wrapper {padding-top:15px;}
+    .planner-scheduar-block .planner-content{top:15px}
+
 /*****shubham(02-03-2022)-end*****/
 
 /******* 03-03-2022 Amit-Start ******/
@@ -3962,7 +3972,6 @@ div#collapseNotification {
     animation-name: reducetime;
     animation-duration: 1s;
     animation-fill-mode: both;
-    padding-top: 15px !important;
     margin-top: 70px;
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
