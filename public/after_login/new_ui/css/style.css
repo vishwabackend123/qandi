@@ -432,7 +432,7 @@ div#marKs-trends .bg-white p {
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
    {width: 265px!important;}
     .subject-placeholder-block>span{display: flex;margin-top:10px;justify-content: center;}
-    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}
+/*    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}*/
     span.text-secondary.chapter_name.mb-2.d-block {text-align: center;}
     .subject-placeholder-block span img:first-child {margin-right: -45px;}
     
