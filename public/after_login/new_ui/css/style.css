@@ -115,6 +115,20 @@ label.error{position:absolute;}
 
 /*****shubham(02-03-2022)-end*****/
 
+/******* 03-03-2022 Amit-Start ******/
+.card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
+.planner-scheduar-block .planner-edit-mode{padding:0!important;}
+.planner-scheduar-block .slimScrollDiv {padding: 25px 35px 35px;}
+.card-common-topheading:before {content: '';position: absolute;background-color: #fff;top: 0;left: 0;height: 58px;width: 250px;border-top-left-radius: 56px;border-top-right-radius: 56px;}
+.card-common-topheading span {z-index: 1;position: relative;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:before {content: '';position: absolute;background-color: #fff;top: -16px;left: 0;height: 58px;width: 170px;border-top-left-radius: 42px;border-top-right-radius: 42px;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between{position: relative;padding-left: 40px;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
+.planner-scheduar-block a#close-edit-planner-btn {top: 0;}
+.planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;}
+
+
+/******* 03-03-2022 Amit-End ******/
 
 /******* 02-03-2022 Amit-Start ******/
 .dash-sidebar a .b , .dash-sidebar a .c{stroke: #4cb9f9 !important;}
