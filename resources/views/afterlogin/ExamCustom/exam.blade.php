@@ -90,6 +90,7 @@
 
 
     }
+
 </style>
 @php
 $userData = Session::get('user_data');
@@ -194,9 +195,9 @@ $questtype='radio';
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview "  title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;" >Save & Mark for review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  "  title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Mark for review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
 

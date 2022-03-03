@@ -297,9 +297,9 @@
         width: 34%;
     }
 
-    .cust-gallery .swiper-slide.bg-white {
+    /*.cust-gallery .swiper-slide.bg-white {
         width: 33% !important;
-    }
+    }*/
 
     .bg-white.shadow-lg {
         margin-bottom: 36px;

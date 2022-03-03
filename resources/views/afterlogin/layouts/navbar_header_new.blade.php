@@ -341,10 +341,13 @@
 
 
 <!-- Planner Section -->
-<div class="planmner-block width collapse" id="collapsePlanner">
+<div class="planmner-block width collapse planner-scheduar-block" id="collapsePlanner">
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode open-sub-planner" id="sub-planner">
+            <div class="card-common-topheading">
+                <span>SCHEDULAR</span>
+            </div>
             <div class="slimScrollDiv">
                 <div class="planner-scroll">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>

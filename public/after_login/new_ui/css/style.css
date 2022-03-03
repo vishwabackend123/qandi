@@ -115,6 +115,20 @@ label.error{position:absolute;}
 
 /*****shubham(02-03-2022)-end*****/
 
+/******* 03-03-2022 Amit-Start ******/
+.card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
+.planner-scheduar-block .planner-edit-mode{padding:0!important;}
+.planner-scheduar-block .slimScrollDiv {padding: 25px 35px 35px;}
+.card-common-topheading:before {content: '';position: absolute;background-color: #fff;top: 0;left: 0;height: 58px;width: 250px;border-top-left-radius: 56px;border-top-right-radius: 56px;}
+.card-common-topheading span {z-index: 1;position: relative;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:before {content: '';position: absolute;background-color: #fff;top: -16px;left: 0;height: 58px;width: 170px;border-top-left-radius: 42px;border-top-right-radius: 42px;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between{position: relative;padding-left: 40px;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
+.planner-scheduar-block a#close-edit-planner-btn {top: 0;}
+.planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;}
+
+
+/******* 03-03-2022 Amit-End ******/
 
 /******* 02-03-2022 Amit-Start ******/
 .dash-sidebar a .b , .dash-sidebar a .c{stroke: #4cb9f9 !important;}
@@ -184,7 +198,7 @@ form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1r
 span a#close-edit-planner-btn img {width: 24px !important;height: 24px;margin-top: 2px;}
 .subject-placeholder-block img {width: 100px;margin: 10px 0 20px;}
 .chaptbox-add  a#subject_chapter_1, .chaptbox-add a#subject_chapter_2, .chaptbox-add a#subject_chapter_3,
-.chaptbox-add a#subject_chapter_4, .chaptbox-add a#subject_chapter_5{background: rgba(0,0,0,0.05)!important;opacity: unset;}
+.chaptbox-add a#subject_chapter_4, .chaptbox-add a#subject_chapter_5, .subject_chapter .chaptbox-add a.btn-light{background: rgba(0,0,0,0.05)!important;opacity: unset;}
 .chaptbox-add>a span img {width: 20px;}
 .swiper-slide .course-star li {padding-bottom:0px;}
 .dashboard-cards-block #time-Avg-quest .bg-white>small , .dashboard-cards-block #marKs-trends .bg-white>small {right: 10px;top: 5px;}
@@ -432,7 +446,7 @@ div#marKs-trends .bg-white p {
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
    {width: 265px!important;}
     .subject-placeholder-block>span{display: flex;margin-top:10px;justify-content: center;}
-    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}
+/*    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}*/
     span.text-secondary.chapter_name.mb-2.d-block {text-align: center;}
     .subject-placeholder-block span img:first-child {margin-right: -45px;}
     
