@@ -1104,29 +1104,29 @@ a.disabled-btn {
 }
 
 input#select-state::placeholder , input#select-city::placeholder {
-    color: #00baff !important;
-    opacity: 1 !important;
+    color: #2c3348  !important;
+    opacity: 1 !important;;
  
 }
 
 input#select-state::-webkit-input-placeholder , input#select-city::-webkit-input-placeholder {
-    color: #00baff !important;
+    color: #2c3348  !important;
     opacity: 1 !important;
     
 }
 
 input#select-state::-webkit-input-placeholder , input#select-city::-webkit-input-placeholder {
-    color: #00baff !important;
+    color: #2c3348  !important;
     opacity: 1 !important;
 }
 
 input#select-state:-moz-placeholder, input#select-city:-moz-placeholder {
-    color: #00baff !important;
+    color: #2c3348  !important;
     opacity: 1 !important;
 }
 
 input#select-state::placeholder, input#select-city::placeholder {
-    color: #00baff !important;
+    color: #2c3348  !important;
     opacity: 1 !important;
 }
 
