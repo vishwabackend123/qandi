@@ -14,6 +14,9 @@ li.a2TS {
 li.a3TS {
     width: 15% !important;
 }
+.btn-topic:hover {
+    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
+}
 
 .dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;
