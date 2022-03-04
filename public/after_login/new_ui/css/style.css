@@ -118,14 +118,17 @@ button {
   }
 .formerror{position: relative;padding-bottom:10px;}
 label.error{position:absolute;}
-.reviewPanel .cust-tabs .nav-link{padding-right: 30px!important;
+.reviewPanel .cust-tabs .nav-link{padding-right: 40px!important;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 100%;min-width:auto;
-    padding-left: 30px!important;} 
-    
-    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
+    width: 100%;
+    min-width: 230px;
+    padding-left: 60px!important;} 
+    #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
+    #review_rques_blk .question.question-height .q-no{top:23px}
+    #review_rques_blk .ans-block{padding:0 34px}
+    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  5rem ;}
     .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
     .planner-scheduar-block{background-color:transparent;}
     .planner-scheduar-block .planner-edit-mode{box-shadow:none;}
@@ -396,7 +399,7 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 
 #review_rques_blk .question p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -4065,7 +4068,7 @@ div#collapseNotification {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 9;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
@@ -6605,7 +6608,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 9;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -6622,7 +6625,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 9;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
