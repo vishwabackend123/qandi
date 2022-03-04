@@ -1559,19 +1559,12 @@
     $(".user-name-block span.notification").click(function() {
         if (!$(this).hasClass("notification-icons-active")) {
             $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active"); <<
-            << << < HEAD
+            $(this).siblings().removeClass("notification-icons-active"); 
         } else {
             $(this).removeClass("notification-icons-active");
-        } ===
-        === =
-    }
-    // else{
-    //     $(this).removeClass("notification-icons-active");
-    // }
-    >>>
-    >>> > 7 ae780b73c5be2a784c3db887a57e94048a54fe9
+        }
     });
+
     $(".dash-nav-link a").click(function() {
         if (!$(this).hasClass("active-navlink")) {
             $(this).addClass("active-navlink");
