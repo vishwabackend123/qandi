@@ -13,7 +13,7 @@
                 <p>“Let's start with getting to know you better. What's your name?”</p>
                 <div class="pt-3">
                     <div class="form-group flds">
-                        <input type="text" class="form-control m-email" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" autocomplete="off" s>
+                        <input type="text" class="form-control m-email" name="user_name" id="user_name" placeholder="Hi, this is Rohit / Seema…" onkeypress="return lettersOnly(event)" autocomplete="off" maxlength="25">
                         <span class="error-sms mobil-not-valid" id="errlog_name">Please entered your name</span>
                         <span class="error-sms email-not-valid">Please sign up first or check the email or mobile you have provided</span>
                     </div>
