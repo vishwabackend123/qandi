@@ -594,7 +594,7 @@
 <div class="main-profile-section width collapse" id="profileAcc">
 
     <div class="account-wrapper new">
-    <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
+    <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
         <div class="profile-section">
             <ul>
                 <li class="active"><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
