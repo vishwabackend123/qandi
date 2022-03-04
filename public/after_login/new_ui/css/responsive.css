@@ -6,7 +6,14 @@
     }
 }
 
-
+@media(max-width:1440px){
+    .reviewPanel .cust-tabs .nav-link{
+    padding-right: 20px!important;
+     font-size:16px!important;
+    padding-left: 20px!important;
+    min-width: auto;
+  }
+}
 
 @media(min-width:1316px) and (max-width:1440px) {
     .pe-1 .star-ratings-css-bottom span {
