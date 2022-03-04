@@ -22,6 +22,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg">
                         <small>
                             <i class="fa  fa-info"></i>
+                            <!-- <img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}"> -->
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
