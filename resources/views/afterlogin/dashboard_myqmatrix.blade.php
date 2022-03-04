@@ -19,7 +19,8 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <label>About MyQ Matrix</label>
@@ -301,7 +302,10 @@ $userData = Session::get('user_data');
         $('#matrix').modal('show');
     });
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+                $(this).parent("p").hide();
+            })
             $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {
