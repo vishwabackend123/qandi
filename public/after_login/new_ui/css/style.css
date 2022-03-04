@@ -126,6 +126,7 @@ label.error{position:absolute;}
     min-width: 230px;
     padding-left: 60px!important;} 
     #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
+    #review_rques_blk .question.question-height .q-no{top:23px}
     #review_rques_blk .ans-block{padding:0 34px}
     div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  5rem ;}
     .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
