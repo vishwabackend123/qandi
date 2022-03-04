@@ -58,7 +58,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a></h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a>
 
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -84,7 +84,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a></h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a>
 
 
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -105,7 +105,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a></h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a>
                             <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a></h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a>
                             <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>

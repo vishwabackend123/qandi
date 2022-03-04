@@ -167,11 +167,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 <div class="attemp_box row mt-0">
                     <div class="sub_att_1 col-md-6">
                         <p>knowledge,Application of</p>
-                        <a class="detail_btn" onclick="openPopup('div1');"> Pythagoras therem</a>
+                        <a href="javascript:void(0);" class="detail_btn" onclick="openPopup('div1');"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
                     </div>
                     <div class="sub_att_1 col-md-6">
                         <p>knowledge,Application of</p>
-                        <a class="detail_btn">PYTHAGORAS THEREM</a>
+                        <a href="javascript:void(0);" class="detail_btn">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
                     </div>
                 </div>
             </div>

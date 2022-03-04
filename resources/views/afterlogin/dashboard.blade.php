@@ -6,7 +6,7 @@ $userData = Session::get('user_data');
 @endphp
 @section('content')
 <!-- Modal -->
-
+@if($subjects_rating == null || empty($subjects_rating))
 <div class="modal fade" id="welcomeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -31,7 +31,7 @@ $userData = Session::get('user_data');
     </div>
 </div>
 
-@if($subjects_rating == null || empty($subjects_rating))
+
 
 <div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
