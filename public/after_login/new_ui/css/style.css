@@ -709,6 +709,7 @@ ul.matrixLists li b {
     text-align: left;
     height: auto!important;
     font-size: 13px;
+    left: auto!important;
 }
 
 .dashboard-cards-block .bg-white>small p>span {
