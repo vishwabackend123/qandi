@@ -1592,3 +1592,17 @@
         }
     });
 </script>
+<script>
+    $("#sharefrnd .btn-close").click(function(){
+       $(".dash-nav-link a:last-child").removeClass("active-navlink");
+       $(".dash-nav-link a:first-child").addClass("active-navlink");
+    });
+    $("#close-planner-btn , .close-bnt").click(function(){
+        $("span.notification.ms-4").removeClass("notification-icons-active");
+    });
+    $('#sharefrnd').click(function(event){
+        event.stopPropagation();
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
+    });
+</script>
