@@ -1559,10 +1559,18 @@
     $(".user-name-block span.notification").click(function() {
         if (!$(this).hasClass("notification-icons-active")) {
             $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active");
+            $(this).siblings().removeClass("notification-icons-active"); <<
+            << << < HEAD
         } else {
             $(this).removeClass("notification-icons-active");
-        }
+        } ===
+        === =
+    }
+    // else{
+    //     $(this).removeClass("notification-icons-active");
+    // }
+    >>>
+    >>> > 7 ae780b73c5be2a784c3db887a57e94048a54fe9
     });
     $(".dash-nav-link a").click(function() {
         if (!$(this).hasClass("active-navlink")) {
@@ -1587,5 +1595,19 @@
                 "padding-top": "0px"
             })
         }
+    });
+</script>
+<script>
+    $("#sharefrnd .btn-close").click(function() {
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
+    });
+    $("#close-planner-btn , .close-bnt").click(function() {
+        $("span.notification.ms-4").removeClass("notification-icons-active");
+    });
+    $('#sharefrnd').click(function(event) {
+        event.stopPropagation();
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 </script>

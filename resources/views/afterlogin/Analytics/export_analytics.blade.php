@@ -37,7 +37,8 @@ $userData = Session::get('user_data');
                                     <div class="mx-auto col-md-10">
                                         <div class="bg-white shadow-lg p-5 report-analysis-block">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     <!-- <label>About MyQ Today</label> -->
@@ -102,7 +103,8 @@ $userData = Session::get('user_data');
                             </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
                                 <small>
-                                    <i class="fa  fa-info"></i>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                     <p>
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                         This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
@@ -199,7 +201,8 @@ $userData = Session::get('user_data');
 
                             <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
                                 <small>
-                                    <i class="fa  fa-info"></i>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                     <p>
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                         In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
@@ -213,7 +216,8 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
                                 <small>
-                                    <i class="fa  fa-info"></i>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                     <p>
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                         Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
@@ -227,7 +231,8 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="bg-white shadow-lg p-3 px-5 mt-3">
                                 <small>
-                                    <i class="fa  fa-info"></i>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                     <p>
                                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                         It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
@@ -507,7 +512,7 @@ $userData = Session::get('user_data');
     });
 
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
             $(".dashboard-cards-block .bg-white>small p>span").each(function(){
                 $(this).parent("p").hide();
             });

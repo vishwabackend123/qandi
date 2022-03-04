@@ -102,7 +102,8 @@ $userData = Session::get('user_data');
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="bg-white shadow-lg">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
@@ -140,7 +141,8 @@ $userData = Session::get('user_data');
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
@@ -191,7 +193,8 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 myqMatrix-card">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
@@ -248,7 +251,8 @@ $userData = Session::get('user_data');
                 <div class="col-md-4">
                     <div class="bg-white shadow-lg py-5 progress-journey-card">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
@@ -284,7 +288,8 @@ $userData = Session::get('user_data');
                 <div class="col-md-5">
                     <div class="bg-white shadow-lg py-5">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
@@ -302,7 +307,8 @@ $userData = Session::get('user_data');
                 <div class="col-md-3">
                     <div class="bg-white shadow-lg py-5 task-center-block">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
@@ -355,7 +361,8 @@ $userData = Session::get('user_data');
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block weekly-plan-test">
                             <small>
-                                <i class="fa  fa-info"></i>
+                                <!-- <i class="fa  fa-info"></i> -->
+                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -377,7 +384,8 @@ $userData = Session::get('user_data');
                         @elseif(isset($planner) && !empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block">
                             <small>
-                                <i class="fa  fa-info"></i>
+                                <!-- <i class="fa  fa-info"></i> -->
+                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -412,7 +420,8 @@ $userData = Session::get('user_data');
 
                             <!----- Weekly tests ---->
                             <small>
-                                <i class="fa  fa-info"></i>
+                                <!-- <i class="fa  fa-info"></i> -->
+                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -660,6 +669,9 @@ $weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];
 $stu_scroe_json = isset($trend_stu_scroe) ? json_encode($trend_stu_scroe) : [];
 $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
 $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
+$ideal = isset($ideal) ? json_encode($ideal) : [];
+$your_place = isset($your_place) ? json_encode($your_place) : [];
+$progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
 
 @endphp
 
@@ -1043,7 +1055,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 </script>
 <script>
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
             $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
             });
@@ -1066,7 +1078,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
             title: {
                 text: 'Weeks'
             },
-            categories: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8'],
+            categories: <?php echo $progress_cat; ?>,
             labels: {
                 useHTML: true,
                 rotation: 0,
@@ -1095,16 +1107,12 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         };
         var series = [{
                 name: 'Ideal Pace',
-                data: [0.0, 5.0, 10.0, 15.0, 18.2, 21.5, 25.2,
-                    26.5
-                ],
+                data: <?php echo $ideal; ?>, //[0.0, 5.0, 10.0],
                 color: '#db2f36'
             },
             {
                 name: 'Your Pace',
-                data: [0, 2, 5.7, 11.3, 17.0, 22.0, 24.8,
-                    24.1
-                ],
+                data: <?php echo $your_place; ?>, //[0, 2, 5.7],
                 color: '#21ccff'
             }
         ];
@@ -1128,10 +1136,6 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         $('.progressChartExpend').highcharts(json);
     });
 </script>
-<script>
-    $("#sharefrnd .btn-close").click(function() {
-        $(".dash-nav-link a:last-child").removeClass("active-navlink");
-        $(".dash-nav-link a:first-child").addClass("active-navlink");
-    });
-</script>
+
+
 @endsection

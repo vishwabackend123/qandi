@@ -132,6 +132,16 @@ label.error{position:absolute;}
     .planner-scheduar-block .planner-content{top:15px}
 
 /*****shubham(02-03-2022)-end*****/
+/******* 04-03-2022 shubham-Start ******/
+.tab-wrapper{overflow-x: hidden;}
+.cust-tabs .nav-link{padding-right: 30px!important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 204px;
+    padding-left: 43px!important;}
+/*****shubham(04-03-2022)-end*****/
 
 /******* 03-03-2022 Amit-Start ******/
 .card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
@@ -178,7 +188,7 @@ div.sublinks a:active {
     position: absolute;
     top: 50px;
     right: 20px;
-    color: #5f5d5d!important;
+    color: #28a745!important;
     padding: 2px 4px;
     box-shadow: none!important;
     font-weight: 900;
@@ -402,7 +412,7 @@ a#open-tab {
 #back2Dsh img {
     width: 15px;
     height: 15px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .profile-section ul li:hover {
@@ -699,6 +709,7 @@ ul.matrixLists li b {
     text-align: left;
     height: auto!important;
     font-size: 13px;
+    left: auto!important;
 }
 
 .dashboard-cards-block .bg-white>small p>span {
@@ -1085,24 +1096,53 @@ a.disabled-btn {
     margin-bottom: 10px;
 }
 
-
+/* Added by sachin 03-03-22 */
 #editProfile_form input::placeholder {
-    color: red !important;
-    font-size: 14px;
+    color:#2c3348 !important; opacity: 0.3;
+ 
 }
 
 #editProfile_form input::-webkit-input-placeholder {
-    color: red !important;
-    font-size: 14px;
+    color:#2c3348 !important; opacity: 0.3;
+    
 }
 
 #editProfile_forminput::-webkit-input-placeholder {
-    color: red !important;
+    color:#2c3348 !important; opacity: 0.3;
 }
 
 #editProfile_forminput:-moz-placeholder {
-    color: red !important;
+    color:#2c3348 !important; opacity: 0.3;
 }
+
+input#select-state::placeholder , input#select-city::placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;;
+ 
+}
+
+input#select-state::-webkit-input-placeholder , input#select-city::-webkit-input-placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+    
+}
+
+input#select-state::-webkit-input-placeholder , input#select-city::-webkit-input-placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+}
+
+input#select-state:-moz-placeholder, input#select-city:-moz-placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+}
+
+input#select-state::placeholder, input#select-city::placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+}
+
+/* End by sachin 03-03-22 */
 
 
 
@@ -1196,6 +1236,12 @@ a.disabled-btn {
 
 input#country {
     text-align: center;
+    color: #2c3348;
+    opacity: .7;
+
+}
+#editProfile_form .form-flds input {
+    color: #2c3348;
 }
 
 /*End 2 feb */
@@ -3427,7 +3473,7 @@ button.cancel-btn {
     background: #e9e9e9;
     padding: 15px 30px;
     font-size: 18px;
-    font-weight: 600;
+    /* font-weight: 600; */
     color: #2c3348;
     text-transform: uppercase;
     border: none;
@@ -3487,16 +3533,20 @@ button.save-btn {
     width: 83%;
 }
 
+
+/*Added by sachin 03-03-22*/
 .log-out-screen .p-picture {
-    width: 80px;
+    /* width: 80px; */
+    width:84px;
     border: none;
     border-radius: 50%;
-    height: 80px;
+    /* height: 80px; */
+    height: 84px;
     text-align: center;
     overflow: hidden;
     margin: 0 auto;
 }
-
+/*Ended by sachin 03-03-22*/
 .subscription h4 {
     text-align: left;
     font-size: 18px;
@@ -3547,18 +3597,31 @@ button.save-btn {
 }
 
 /** Log out screen **/
+/** Added by sachin 03-03-22 **/
+.logout_btn_new{
+    position: relative;
+}
+.logout_btn_new svg{
+    position: absolute;
+    left: 62px;
+    top: 20px;
+}
+
 .log-out-screen {
     width: 26.7%;
     background: #fff;
     border-radius: 56px;
-    padding: 40px 20px 40px 25px;
+    /* padding: 40px 20px 40px 25px; */
+    padding: 50px 20px 50px 25px;
     position: absolute;
     right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
+    max-width: 360px;
 
 }
+/** End by sachin 03-03-22 **/
 
 .profile-section ul li a span i {
     font-size: 25px;
@@ -3577,13 +3640,25 @@ button.save-btn {
     margin-bottom: 50px;
 }
 
+/** Added by sachin 03-03-22 **/
 .log-out-screen p {
     text-align: center;
     color: #2c3348;
     margin: 10px 0px;
     font-size: 16px;
-    font-weight: 400;
+    /* font-weight: 400; */
+    font-weight: normal;
+    opacity: 1;
 }
+
+
+.log-out-screen .form-btns {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+}
+/** End by sachin **/
 
 .log-out-screen button.save-btn {
     width: 84%;
@@ -3660,7 +3735,7 @@ button.save-btn {
 
 .live-test li {
     font-size: 12px;
-    color: #2c3348;
+    color: #231f20;
     float: none !important;
     display: inline-block;
 }
@@ -4544,7 +4619,7 @@ p.tab-title {
 
 .live-test {
     padding-left: 5px;
-    padding-top: 7px;
+    padding-top: 0px;
 }
 
 .live-test li {
@@ -4552,14 +4627,14 @@ p.tab-title {
     list-style: none;
     margin-right: 0px;
 }
-
+.live-test li+li{margin-left:70px;}
 .live-test li span {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background: #00baff;
-    margin-right: 5px;
+    margin-right: 8px;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-block;vertical-align: middle;
 }
 
 .live-test li span.pre-test {
