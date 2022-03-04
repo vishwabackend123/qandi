@@ -462,9 +462,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $('.scroll-div').slimscroll({
         height: '40vh'
     });
-    $('.number-block').slimscroll({
-        height: '34vh'
-    });
+    // $('.number-block').slimscroll({
+    //     height: '34vh'
+    // });
     $('.answer-block').slimscroll({
         height: '45vh'
     });
