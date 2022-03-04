@@ -1137,5 +1137,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
        $(".dash-nav-link a:last-child").removeClass("active-navlink");
        $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
+    $("#close-planner-btn , .close-bnt").click(function(){
+        $("span.notification.ms-4").removeClass("notification-icons-active");
+    });
+
 </script>
 @endsection

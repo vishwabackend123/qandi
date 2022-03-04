@@ -1563,9 +1563,9 @@
             $(this).addClass("notification-icons-active");
             $(this).siblings().removeClass("notification-icons-active");
         }
-        else{
-            $(this).removeClass("notification-icons-active");
-        }
+        // else{
+        //     $(this).removeClass("notification-icons-active");
+        // }
     });
     $(".dash-nav-link a").click(function() {
         if (!$(this).hasClass("active-navlink")) {
