@@ -11,7 +11,7 @@
                         </p>
                     </small>
                     <div class="prgress-i-txt px-3">
-                        
+
                         <span class="progress_text">Progress</span>
 
                     </div>
@@ -57,7 +57,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[0]->skill_name}} MyQ Matirix</h4>
+                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a></h4>
 
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -83,7 +83,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[1]->skill_name}} MyQ Matirix</h4>
+                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a></h4>
 
 
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -104,7 +104,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[2]->skill_name}} MyQ Matirix</h4>
+                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a></h4>
                             <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[3]->skill_name}} MyQ Matirix</h4>
+                            <h4 class="text-danger fw-2 pt-10 fs-12"><a href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a></h4>
                             <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -139,14 +139,14 @@
             <div class="d-flex align-items-center px-3 flex-box1">
                 <h5 class="dashboard-title ">Topics </h5>
                 <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})">
-                <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
-    <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none"/>
-    <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-</svg>
-                EXPAND</button></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
+                            <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
+                            <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                        </svg>
+                        EXPAND</button></span>
             </div>
             <div class="scroll-topic-ana">
                 @if($subProf)
@@ -235,7 +235,7 @@
                     <p>
                         <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                         This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
-                        </p>
+                    </p>
                 </small>
                 <p class="text-uppercase fw-bold text-start">Marks Trend</p>
                 <div id="day1" style="display:block"></div>
@@ -273,13 +273,13 @@
                 <div class="d-flex">
                     <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
                     <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
-                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
-                                    </svg>    
-                    &nbsp;Export Analytics</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                            <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                            <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                            <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                            <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                        </svg>
+                        &nbsp;Export Analytics</button>
                 </div>
             </div>
 
@@ -950,7 +950,6 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
     });
 </script>
 <script>
-
     $(document).ready(function() {
         $(".dashboard-cards-block .bg-white>small i").click(function() {
             $(this).siblings("p").show();

@@ -7,13 +7,13 @@
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
                     <a href="{{route('export_analytics')}}"><button class="btn px-4 top-btn-pop text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
-                                    </svg>
-                     &nbsp;Download PDF</button></a>
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                            </svg>
+                            &nbsp;Download PDF</button></a>
                 </div>
                 <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
@@ -858,9 +858,9 @@
         $(".main-profile-section.blure-bg").click(function() {
             $(".blure-bg").hide();
         });
-      $('.closeprofile').click(function(){
-        $(".blure-bg").hide();
-      });
+        $('.closeprofile').click(function() {
+            $(".blure-bg").hide();
+        });
     });
 
     // the following script for subscription section  log-out-screen
@@ -990,8 +990,7 @@
     function selectChapter(subject_id) {
         var limit = $('#customRange').val();
         var chapters = $('input[name="chapters[]"]').length;
-        if(limit == '0')
-        {
+        if (limit == '0') {
             var error_txt = 'Please select Exams Per Week';
             $('#limit_error').html(error_txt);
             $('#limit_error').show();
@@ -1179,8 +1178,7 @@
         submitHandler: function(form) {
 
             var limit = $('#customRange').val();
-            if(limit == '0')
-            {
+            if (limit == '0') {
                 var error_txt = 'Please select Exams Per Week';
                 $('#limit_error').html(error_txt);
                 $('#limit_error').show();
@@ -1562,8 +1560,7 @@
         if (!$(this).hasClass("notification-icons-active")) {
             $(this).addClass("notification-icons-active");
             $(this).siblings().removeClass("notification-icons-active");
-        }
-        else{
+        } else {
             $(this).removeClass("notification-icons-active");
         }
     });

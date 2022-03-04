@@ -5,6 +5,87 @@ $userData = Session::get('user_data');
 
 @endphp
 @section('content')
+<!-- Modal -->
+
+<div class="modal fade" id="welcomeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body pt-0 text-center">
+
+                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}}!</p>
+                <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
+
+                @if(isset($subjects_rating) && empty($subjects_rating))
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s get you started ></a>
+                @else
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
+                @endif
+                <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@if($subjects_rating == null || empty($subjects_rating))
+
+<div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body p-4 pt-0 text-center">
+
+                <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
+
+                <div class="row">
+
+                    @if(isset($aSubjects) && !empty($aSubjects))
+                    @foreach($aSubjects as $sub)
+                    <div class="col-md-12">
+                        <div class="rating block">
+                            <span class="lbl-text">{{$sub->subject_name}}</span>
+                            <div class="rating-wrapper">
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="5" id="{{$sub->subject_name}}_5">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="4" id="{{$sub->subject_name}}_4">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="3" id="{{$sub->subject_name}}_3">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="2" id="{{$sub->subject_name}}_2">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="1" id="{{$sub->subject_name}}_1">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-star"></i></label>
+                            </div>
+                        </div>
+
+                    </div>
+                    @endforeach
+                    @endif
+
+                    <div class="d-flex align-items-center mt-5">
+
+                        <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@endif
+
+<!-- Modal -->
+
+
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
@@ -488,85 +569,7 @@ $userData = Session::get('user_data');
     </div>
 </div>
 
-<!-- Modal -->
-@if($subjects_rating == null || empty($subjects_rating))
-<div class="modal fade" id="welcomeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
 
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            </div>
-            <div class="modal-body pt-0 text-center">
-
-                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}}!</p>
-                <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
-
-                @if(isset($subjects_rating) && empty($subjects_rating))
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s get you started ></a>
-                @else
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
-                @endif
-                <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-<div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            </div>
-            <div class="modal-body p-4 pt-0 text-center">
-
-                <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
-
-                <div class="row">
-
-                    @if(isset($aSubjects) && !empty($aSubjects))
-                    @foreach($aSubjects as $sub)
-                    <div class="col-md-12">
-                        <div class="rating block">
-                            <span class="lbl-text">{{$sub->subject_name}}</span>
-                            <div class="rating-wrapper">
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="5" id="{{$sub->subject_name}}_5">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="4" id="{{$sub->subject_name}}_4">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="3" id="{{$sub->subject_name}}_3">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="2" id="{{$sub->subject_name}}_2">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="1" id="{{$sub->subject_name}}_1">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-star"></i></label>
-                            </div>
-                        </div>
-
-                    </div>
-                    @endforeach
-                    @endif
-
-                    <div class="d-flex align-items-center mt-5">
-
-                        <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-@endif
-
-<!-- Modal -->
 
 <!-- Full exam popup -->
 @if(isset($prof_asst_test) && $prof_asst_test=='N')
@@ -661,13 +664,6 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 @endphp
 
 <script type="text/javascript">
-    $(window).on('load', function() {
-        if ($("#welcomeModal").length > 0) {
-            $('#welcomeModal').modal('show');
-        }
-
-    });
-
     $(".rating-input").click(function() {
         $("#nxt-btn").removeClass("disabled");
     });
@@ -1048,7 +1044,7 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 <script>
     $(document).ready(function() {
         $(".dashboard-cards-block .bg-white>small i").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
             });
             $(this).siblings("p").show();
@@ -1133,9 +1129,9 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
     });
 </script>
 <script>
-    $("#sharefrnd .btn-close").click(function(){
-       $(".dash-nav-link a:last-child").removeClass("active-navlink");
-       $(".dash-nav-link a:first-child").addClass("active-navlink");
+    $("#sharefrnd .btn-close").click(function() {
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 </script>
 @endsection
