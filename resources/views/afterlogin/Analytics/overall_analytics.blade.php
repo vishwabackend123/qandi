@@ -201,7 +201,7 @@ $userData = Session::get('user_data');
                                             <div id="month1" style="display:none"></div>
 
                                             <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
-                                            <div class="btn-block mt-2 d-flex justify-content-between">
+                                            <div class="btn-block mt-2">
                                                 <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark active" id="day_mark" onclick="replace1('day1','week1','month1')">
                                                     Day
                                                 </button>
@@ -347,7 +347,7 @@ $userData = Session::get('user_data');
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 130,
+            height: 160,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -356,10 +356,10 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 50
+            y: 80
         },
         credits: {
             enabled: false
@@ -415,7 +415,7 @@ $userData = Session::get('user_data');
                 {
                     name: '',
                     y: <?php echo (100 - ($mockTestScorePre + $diffmock)); ?>,
-                    color: '#e4e4e4' // Jane's color
+                    color: '#d0f3ff' // Jane's color
                 }
             ]
         }]
