@@ -116,9 +116,8 @@ label.error{position:absolute;}
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 100%;
-    max-width: 204px;
-    padding-left: 43px!important;} 
+    width: 100%;min-width:auto;
+    padding-left: 30px!important;} 
     
     div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
     .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
@@ -139,7 +138,7 @@ label.error{position:absolute;}
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    max-width: 204px;
+    min-width: 204px;
     padding-left: 43px!important;}
 /*****shubham(04-03-2022)-end*****/
 
