@@ -15,6 +15,12 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* 04-03-2022 Amit-Start ******/
+#dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
+
+/******* 04-03-2022 Amit-End ******/
+
 /*****shubham(02-03-2022)*****/
 
 .closeprofile {
