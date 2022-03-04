@@ -512,7 +512,7 @@ $userData = Session::get('user_data');
     });
 
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
             $(".dashboard-cards-block .bg-white>small p>span").each(function(){
                 $(this).parent("p").hide();
             });
