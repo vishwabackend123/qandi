@@ -15,6 +15,12 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* 04-03-2022 Amit-Start ******/
+#dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
+.cust-tabs.nav.nav-tabs .nav-link{min-width: 150px;}
+/******* 04-03-2022 Amit-End ******/
+
 /*****shubham(02-03-2022)*****/
 
 .closeprofile {
@@ -112,15 +118,17 @@ button {
   }
 .formerror{position: relative;padding-bottom:10px;}
 label.error{position:absolute;}
-.reviewPanel .cust-tabs .nav-link{padding-right: 30px!important;
+.reviewPanel .cust-tabs .nav-link{padding-right: 40px!important;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    max-width: 204px;
-    padding-left: 43px!important;} 
-    
-    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
+    min-width: 230px;
+    padding-left: 60px!important;} 
+    #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
+    #review_rques_blk .question.question-height .q-no{top:23px}
+    #review_rques_blk .ans-block{padding:0 34px}
+    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  5rem ;}
     .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
     .planner-scheduar-block{background-color:transparent;}
     .planner-scheduar-block .planner-edit-mode{box-shadow:none;}
@@ -139,11 +147,12 @@ label.error{position:absolute;}
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    max-width: 204px;
+    min-width: 204px;
     padding-left: 43px!important;}
 /*****shubham(04-03-2022)-end*****/
 
 /******* 03-03-2022 Amit-Start ******/
+
 .card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
 .planner-scheduar-block .planner-edit-mode{padding:0!important;}
 .planner-scheduar-block .slimScrollDiv {padding: 25px 35px 35px;}
@@ -153,8 +162,19 @@ label.error{position:absolute;}
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between{position: relative;padding-left: 40px;}
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
 .planner-scheduar-block a#close-edit-planner-btn {top: 0;}
-.planner-scheduar-block span#slide-input{ background-color:rgba(216,224,230,0.5);opacity: 1;font-size: 13px !important;width: 25px;
-    height: 25px;}
+
+/******* 04-03-2022 sachin-Start ******/
+.planner-scheduar-block span#slide-input{
+    background-color:rgba(216,224,230,0.5);
+    opacity: 1;font-size: 13px !important;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/******* 04-03-2022 sachin-end ******/
 .dashboard-cards-block .weekylplan-block.bg-white>small p{min-width: 235px; top: -18px;}
 .dashboard-cards-block .progress-journey-card.bg-white>small p{min-width: 350px;}
 a.close-btn, a.export-btn {
@@ -379,7 +399,7 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 
 #review_rques_blk .question p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -4048,7 +4068,7 @@ div#collapseNotification {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
@@ -6588,7 +6608,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -6605,7 +6625,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);

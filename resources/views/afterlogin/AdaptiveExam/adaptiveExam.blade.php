@@ -464,6 +464,9 @@ $questtype='radio';
         </div>
     </div>
 </div>
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 
 @include('afterlogin.layouts.footer_new')
 
@@ -903,7 +906,11 @@ $questtype='radio';
                 option_id: option_id,
                 q_submit_time: q_submit_time
             },
+            beforeSend: function() {
+              $('.loader-block').show();
+            },
             success: function(response_data) {
+                $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
@@ -946,7 +953,11 @@ $questtype='radio';
                 option_id: option_id,
                 q_submit_time: q_submit_time
             },
+            beforeSend: function() {
+              $('.loader-block').show();
+            },
             success: function(response_data) {
+                $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
@@ -1068,7 +1079,11 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 'q_time': time
             },
+            beforeSend: function() {
+              $('.loader-block').show();
+            },
             success: function(response_data) {
+                $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 
