@@ -242,18 +242,21 @@ class HomeController extends Controller
 
             $response_preg_json = curl_exec($curl);
             $response_prog = json_decode($response_preg_json, true);
-            
-            foreach($response_prog['response']['student_progress'] as $key =>$progData)
-            {
-                array_push($ideal, $progData['week_index']);
-                array_push($your_place, $progData['chapter_count']);
-                $week="W".$key+1;
-                array_push($progress_cat, $week);
+            if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
+                $i = 1;
+                foreach($response_prog['response']['student_progress'] as $progData)
+                {
+                    array_push($ideal, $progData['week_index']);
+                    array_push($your_place, $progData['chapter_count']);
+                    $week="W".$i;
+                    array_push($progress_cat, $week);
+                    $i++;
 
+                }
+              Session::put('ideal',$ideal);
+              Session::put('your_place', $your_place);
+              Session::put('progress_cat', $progress_cat);
             }
-            Session::put('ideal',$ideal);
-            Session::put('your_place', $your_place);
-            Session::put('progress_cat', $progress_cat);
         }
         return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test','ideal','your_place','progress_cat'));
     }
