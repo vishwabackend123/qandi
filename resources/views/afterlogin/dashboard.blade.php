@@ -1139,5 +1139,10 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $("#close-planner-btn , .close-bnt").click(function(){
         $("span.notification.ms-4").removeClass("notification-icons-active");
     });
+    $('#sharefrnd').click(function(event){
+        event.stopPropagation();
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
+    });
 </script>
 @endsection
