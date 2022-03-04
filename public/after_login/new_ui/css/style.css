@@ -132,6 +132,16 @@ label.error{position:absolute;}
     .planner-scheduar-block .planner-content{top:15px}
 
 /*****shubham(02-03-2022)-end*****/
+/******* 04-03-2022 shubham-Start ******/
+.tab-wrapper{overflow-x: hidden;}
+.cust-tabs .nav-link{padding-right: 30px!important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 204px;
+    padding-left: 43px!important;}
+/*****shubham(04-03-2022)-end*****/
 
 /******* 03-03-2022 Amit-Start ******/
 .card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
@@ -402,7 +412,7 @@ a#open-tab {
 #back2Dsh img {
     width: 15px;
     height: 15px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .profile-section ul li:hover {
@@ -3724,7 +3734,7 @@ button.save-btn {
 
 .live-test li {
     font-size: 12px;
-    color: #2c3348;
+    color: #231f20;
     float: none !important;
     display: inline-block;
 }
@@ -4608,7 +4618,7 @@ p.tab-title {
 
 .live-test {
     padding-left: 5px;
-    padding-top: 7px;
+    padding-top: 0px;
 }
 
 .live-test li {
@@ -4616,14 +4626,14 @@ p.tab-title {
     list-style: none;
     margin-right: 0px;
 }
-
+.live-test li+li{margin-left:70px;}
 .live-test li span {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background: #00baff;
-    margin-right: 5px;
+    margin-right: 8px;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-block;vertical-align: middle;
 }
 
 .live-test li span.pre-test {
