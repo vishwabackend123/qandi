@@ -140,12 +140,12 @@
                 <h5 class="dashboard-title ">Topics </h5>
                 <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})">
                 <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
-    <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none"/>
-    <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-</svg>
+                    <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none"/>
+                    <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                    <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                    <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                    <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                </svg>
                 EXPAND</button></span>
             </div>
             <div class="scroll-topic-ana">
