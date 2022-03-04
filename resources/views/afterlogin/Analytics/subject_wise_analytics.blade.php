@@ -183,6 +183,7 @@
 
         </div>
     </div>
+    <div class="col-sm-12">
     <div class="row" id="time-Avg-quest">
         <div class="col-lg-6 mt-3">
             <div class="bg-white p-3 h-100 px-5 text-center">
@@ -285,6 +286,7 @@
 
         </div>
     </div>
+   </div>
 </div>
 
 
@@ -874,7 +876,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 <script>
     Highcharts.chart('subjectscorecontainer', {
         chart: {
-            height: 130,
+            height: 160,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -883,10 +885,10 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 50
+            y: 80
         },
         credits: {
             enabled: false
@@ -943,7 +945,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                     name: '',
                     y: <?php echo (100 - ($preSocre + $diffmock)); ?>,
 
-                    color: '#e4e4e4' // Jane's color
+                    color: '#d0f3ff' // Jane's color
                 }
             ]
         }]
