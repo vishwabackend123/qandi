@@ -4065,7 +4065,7 @@ div#collapseNotification {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 9;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
@@ -6605,7 +6605,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 9;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -6622,7 +6622,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 9;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
