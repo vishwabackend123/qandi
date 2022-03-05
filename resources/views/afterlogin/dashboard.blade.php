@@ -152,7 +152,7 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
-                            <ul class="course-star">
+                            <ul class="course-star mb-0">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
