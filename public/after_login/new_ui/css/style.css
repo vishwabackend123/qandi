@@ -118,7 +118,7 @@ button {
     }
   }
 .formerror{position: relative;padding-bottom:10px;}
-label.error{position:absolute;}
+#referEmails-error{position:absolute;}
 .reviewPanel .cust-tabs .nav-link{padding-right: 40px!important;
     text-align: center;
     padding-top: 20px;
@@ -2102,7 +2102,7 @@ button#dropdownMenuLink-topic {
     margin-top: -12px;
 	box-shadow: none;
 }
-
+.scroll-div .compLeteS div.d-flex.px-4{position: relative;}
 .preparation .cust-tabs .nav-link.active:before {
     right: -56px;
 }
