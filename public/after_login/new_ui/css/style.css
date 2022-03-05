@@ -1150,6 +1150,9 @@ a.disabled-btn {
 #editProfile_form .form-btns button#cancelEdit , #editProfile_form .form-btns button#saveEdit{
     width: 183.5px;
 }
+.edit-form .edit-img {
+    margin-bottom: .8rem !important;
+}
 /* End by sachin 05-03-22 */
 
 
@@ -1257,7 +1260,7 @@ input#select-state::placeholder, input#select-city::placeholder {
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 298px;
+    max-width: 312px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -1847,7 +1850,7 @@ span.p-icons span:active {
 
 #editProfile_form .form-flds p {
     text-align: right;
-    margin-bottom: 0px !important; opacity: 1;
+    margin-bottom: 0px !important; opacity: 1;    font-size: 12px;
 }
 
 #profile_pic_form img {
@@ -3328,16 +3331,16 @@ div#sub-planner {
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
     min-height: 450px !important;
-    background-image: url(../images/analytics-thumbnail.png);
-    background-repeat: no-repeat;
-    background-position: left 30% bottom -199px;
+    background-image: url(../images/analytics-thumbnail2.png);
+    /* background-repeat: no-repeat;
+    background-position: left 30% bottom -199px; */
     background-size: cover;
 
 }
 
 .profile-show-holder {
     background: white;
-     
+    display: flex;
     border-top-left-radius: 56px;
     border-top-right-radius: 56px;
 }
@@ -3480,9 +3483,11 @@ div#sub-planner {
     width: 100%;
 }
 
+
 .edit-pic {
     position: absolute;
-    bottom: 0px;
+    /* bottom: 0px; */
+    bottom: -3px;
     left: 47%;
     width: 25px;
     background: #fff;
@@ -4216,9 +4221,10 @@ span.bell-noti {
 span.profile-digit {
     padding-top: 10px !important;
 }
-
+/*Added by sachin 05-03-22*/
 .leader-board {
-    width: 370px;
+    /* width: 370px; */
+    width:380px;
     height: 450px;
     background: #fff;
     border-radius: 56px;
@@ -4233,6 +4239,7 @@ span.profile-digit {
     padding-left: 52px;
     min-height: 450px;
 }
+/*End by sachin 05-03-22*/
 
 .leader-board h4 {
     text-align: right;
@@ -4243,16 +4250,30 @@ span.profile-digit {
     padding-right: 25px;
 }
 
+
+/* Added by Sachin-05-03-22*/
 .search-frnd input {
-    width: 97%;
+    /* width: 97%;
     border: none;
     padding: 7px 20px 7px 40px;
     border-radius: 8px;
     background: url(../images/search.png) no-repeat #f2f2f2;
     color: #000;
     background-position: 4px;
-    margin-left: 10px;
+    margin-left: 10px; */
+
+    width: 90%;
+    border: none;
+    padding: 7px 20px 7px 40px;
+    border-radius: 8px;
+    background: url(../images/search.png) no-repeat #f2f2f2;
+    color: #000;
+    background-position: 4px;
+    margin-left: 30px;
+
 }
+
+/* End by Sachin-05-03-22*/
 
 .leader-board ul {
     padding-left: 0px;
@@ -4263,13 +4284,15 @@ span.profile-digit {
     font-size: 12px;
     
 }
-
+/* start by Sachin-05-03-22*/
 .leader-board ul li {
     list-style: none;
     display: flex;
     margin-bottom: 12px;
-        padding-left: 10px;
+    /* padding-left: 10px; */
+    padding-left: 30px;
 }
+/* End by Sachin-05-03-22*/
 
 .leader-board ul li span {
     display: inline-block;
