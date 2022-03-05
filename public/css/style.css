@@ -133,9 +133,9 @@ div.form-group.flds span.currect-email {
     background: rgba(13, 193, 255, 0.4) !important;
 }
 
- .country-code-name::-webkit-scrollbar-thumb:hover {
+ /* .country-code-name::-webkit-scrollbar-thumb:hover {
     background: #555 !important;
-}
+} */
 /* shubham-css-end */
 
 input.form-control.select-exam {

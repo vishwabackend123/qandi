@@ -149,7 +149,7 @@
                         </svg>
                         EXPAND</button></span>
             </div>
-            <div class="scroll-topic-ana">
+            <div class="scroll-topic-ana pe-2">
                 @if($subProf)
                 @foreach($subProf as $val)
 

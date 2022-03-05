@@ -1088,9 +1088,9 @@ a.disabled-btn {
 }
 
 
-#editProfile_form::-webkit-scrollbar-thumb:hover {
+/* #editProfile_form::-webkit-scrollbar-thumb:hover {
     background: #555 !important;
-}
+} */
 
 #editProfile_form .slimScrollBar {
     background: transparent !important;
@@ -1388,7 +1388,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(13, 193, 255, 0.4) !important;
 }
 
 .country-code-name::-webkit-scrollbar-track {
@@ -1396,7 +1396,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
 }
 
 .country-code-name ul li:hover {
@@ -3836,7 +3836,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 180px;
+    height: 165px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
