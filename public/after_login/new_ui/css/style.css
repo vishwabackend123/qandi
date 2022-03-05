@@ -152,6 +152,28 @@ label.error{position:absolute;}
     padding-left: 43px!important;}
 /*****shubham(04-03-2022)-end*****/
 
+/* shubham-start(05-03-2022) */
+   .exam-analytics .abrv-graph{width:15px;height:15px;}
+   .exam-analytics .abrv-graph.bg1{color:#37c027   }
+   .exam-analytics  .graph-txt{font-family: Manrope;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #231f20;}
+    .exam-analytics .abrv-graph.bg2{color:#eb5347;}
+    .exam-analytics .abrv-graph.bg3{color:#e9e9e9}
+    .exam-analytics .blue-block span{font-size: 16px;
+        font-weight: 600;text-align: left;color: #231f20;}
+        .exam-analytics .blue-block span.fs-1{font-size: 48px;
+            font-weight: 600;}
+            .exam-analytics .blue-block span.text-dark{color: #231f20;}
+/* shubham(05-03-2022)-end */
+
+
 /******* 03-03-2022 Amit-Start ******/
 
 .card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
@@ -1088,9 +1110,9 @@ a.disabled-btn {
 }
 
 
-#editProfile_form::-webkit-scrollbar-thumb:hover {
+/* #editProfile_form::-webkit-scrollbar-thumb:hover {
     background: #555 !important;
-}
+} */
 
 #editProfile_form .slimScrollBar {
     background: transparent !important;
@@ -1391,7 +1413,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(13, 193, 255, 0.4) !important;
 }
 
 .country-code-name::-webkit-scrollbar-track {
@@ -1399,7 +1421,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
 }
 
 .country-code-name ul li:hover {
@@ -3841,7 +3863,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 180px;
+    height: 165px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
@@ -4967,10 +4989,10 @@ p.success-img {
     background: #d71921 !important;
 }
 
-.btn-light {
-    background: #e4e4e4 !important;
-    border-color: #e4e4e4;
+.btn-light {background: #f4f4f4 !important;
+    border-color: #f4f4f4;
     border-radius: 10px !important;
+    color: #515151 !important;
     /***Added_by-kanchan***/
     color: #515151 !important;
     /***Added_by-kanchan***/
