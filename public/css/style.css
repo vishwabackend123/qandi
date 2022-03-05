@@ -60,7 +60,26 @@ div.form-group.flds span.currect-email {
     padding-left: 10px;
     text-align: left;
 }
+/* shubham-css */
+#addressfield .country-code-name::-webkit-scrollbar {
+    width: 5px;
+}
 
+
+#addressfields .country-code-name::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+
+
+#addressfield .country-code-name::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+}
+
+
+#addressfield .country-code-name::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+/* shubham-css-end */
 input.form-control.select-grade {
     background: url(../images/book-icon.png) no-repeat #f2f2f2;
     padding-left: 40px;

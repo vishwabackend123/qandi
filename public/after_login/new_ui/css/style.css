@@ -3697,7 +3697,8 @@ button.save-btn {
 /** End by sachin **/
 
 .log-out-screen button.save-btn {
-    width: 84%;
+    /* width: 84%; */
+    width: 264px;
 }
 
 .subscription .profile-picture-txt .p-picture img {
