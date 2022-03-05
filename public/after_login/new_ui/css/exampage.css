@@ -39,7 +39,7 @@ ul.dropdown-menu.cust-dropdown.show {
 	box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
     padding: 22px 0px 22px 0px; 
 } 
-.scroll-div .compLeteS div.d-flex.px-4 ul.dropdown-menu.cust-dropdown.show, #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show{top: calc(100% - 35px)!important;}
+ #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show{top: calc(100% - 35px)!important;}
 button.btn.btn-light.ms-2.text-danger.rounded-0.show {
     background: #00baff !important;
 	box-shadow:none;	
