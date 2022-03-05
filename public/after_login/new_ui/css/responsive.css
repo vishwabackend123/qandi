@@ -5,6 +5,7 @@
         padding-left: 30px!important;
         min-width: 180px;
       }
+      .live-test li+li{margin-left:8%;}
 }
 @media(min-width:1441px) and (max-width:1660px) {
     
@@ -18,6 +19,7 @@
         min-width: auto;
       }
       div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 4rem;}
+      .live-test li+li{margin-left:5%;}
 }
 
 @media(max-width:1440px){
@@ -27,6 +29,7 @@
     padding-left: 20px!important;
     min-width: auto;
   }
+  .live-test li+li{margin-left:3%;}
 }
 
 @media(min-width:1316px) and (max-width:1440px) {
