@@ -1,9 +1,23 @@
+@media(min-width:1659px) and (max-width:1750px) {
+    
+    .reviewPanel .cust-tabs .nav-link{
+        padding-right: 30px!important;
+        padding-left: 30px!important;
+        min-width: 180px;
+      }
+}
 @media(min-width:1441px) and (max-width:1660px) {
     
     .slider-horizontal {
         width: 85% !important;
      
     }
+    .reviewPanel .cust-tabs .nav-link{
+        padding-right: 30px!important;
+        padding-left: 30px!important;
+        min-width: auto;
+      }
+      div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 4rem;}
 }
 
 @media(max-width:1440px){
@@ -64,10 +78,13 @@
 }
 
 @media(min-width:1200px) and (max-width:1300px) {
+    div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+
     .slider-horizontal {
         width: 85% !important;
       
     }
+    .back-to-dashbord a{font-size:16px;}
 }
 
 @media(min-width:1023px) and (max-width:1199px) {

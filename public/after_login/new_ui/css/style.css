@@ -15,6 +15,13 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* 04-03-2022 Amit-Start ******/
+#dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
+.cust-tabs.nav.nav-tabs .nav-link{min-width: 150px;}
+.subscription .profile-picture-txt .p-text p {margin-bottom: 0px;}
+/******* 04-03-2022 Amit-End ******/
+
 /*****shubham(02-03-2022)*****/
 
 .closeprofile {
@@ -112,14 +119,17 @@ button {
   }
 .formerror{position: relative;padding-bottom:10px;}
 label.error{position:absolute;}
-.reviewPanel .cust-tabs .nav-link{padding-right: 30px!important;
+.reviewPanel .cust-tabs .nav-link{padding-right: 40px!important;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 100%;min-width:auto;
-    padding-left: 30px!important;} 
-    
-    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  4rem ;}
+    width: 100%;
+    min-width: 230px;
+    padding-left: 60px!important;} 
+    #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
+    #review_rques_blk .question.question-height .q-no{top:23px}
+    #review_rques_blk .ans-block{padding:0 34px}
+    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  5rem ;}
     .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
     .planner-scheduar-block{background-color:transparent;}
     .planner-scheduar-block .planner-edit-mode{box-shadow:none;}
@@ -390,7 +400,7 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 
 
 #review_rques_blk .question p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -2037,7 +2047,7 @@ body#main-body .seeAnico span img {
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sign-btn a button:hover {
@@ -3518,7 +3528,7 @@ button.save-btn {
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
-    max-width: 590px;
+    max-width: 672px;
 }
 
 /* .subscription .profile-picture-txt .p-picture {
@@ -3580,7 +3590,20 @@ button.save-btn {
     /* margin: 20px 0px 0px; */
     margin: 50px 0px 0px;
 }
+/*Added by sachin 05-03-22*/
+.subscription .p-picture {
+    margin-left: 10px;
+}
 
+.subscription .subscrived .p-pictures {
+    margin-left: 3%;
+} 
+.subscription  .subscrived .p-pictures img {
+    width: 50px;
+    height: 50px;
+}
+ 
+/*Ended by sachin 05-03-22*/
 .subscrived .p-pictures {
     float: left;
     margin-left: 0%;
@@ -4059,7 +4082,7 @@ div#collapseNotification {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
@@ -6599,7 +6622,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -6616,7 +6639,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
