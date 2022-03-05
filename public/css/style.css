@@ -60,26 +60,7 @@ div.form-group.flds span.currect-email {
     padding-left: 10px;
     text-align: left;
 }
-/* shubham-css */
-#addressfield .country-code-name::-webkit-scrollbar {
-    width: 5px;
-}
 
-
-#addressfields .country-code-name::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
-}
-
-
-#addressfield .country-code-name::-webkit-scrollbar-thumb {
-    background: rgba(13, 193, 255, 0.4) !important;
-}
-
-
-#addressfield .country-code-name::-webkit-scrollbar-thumb:hover {
-    background: #555 !important;
-}
-/* shubham-css-end */
 input.form-control.select-grade {
     background: url(../images/book-icon.png) no-repeat #f2f2f2;
     padding-left: 40px;
@@ -121,7 +102,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(13, 193, 255, 0.4) !important;
 }
 
 .country-code-name::-webkit-scrollbar-track {
@@ -129,13 +110,33 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
 }
 
 .country-code-name ul li:hover {
     background: #f2f2f2;
     width: 95%;
 }
+
+/* shubham-css */
+ .country-code-name::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+ .country-code-name::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+
+
+.country-code-name::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+}
+
+ .country-code-name::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+/* shubham-css-end */
 
 input.form-control.select-exam {
     background: url(../images_new/city-log.png) no-repeat #f2f2f2;
