@@ -3624,11 +3624,13 @@ button.save-btn {
     width: 55px;
     height: 55px;
 }
-
+/** Added by sachin 05-03-22 **/
 .subscription .form-btns button {
-    width: 237px;
+    /* width: 237px; */
+    width: 264px;
     margin-right: 15px;
 }
+/** Ended by sachin 05-03-22 **/
 
 /** Log out screen **/
 /** Added by sachin 03-03-22 **/
