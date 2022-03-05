@@ -3528,7 +3528,7 @@ button.save-btn {
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
-    max-width: 590px;
+    max-width: 672px;
 }
 
 /* .subscription .profile-picture-txt .p-picture {
@@ -3590,7 +3590,20 @@ button.save-btn {
     /* margin: 20px 0px 0px; */
     margin: 50px 0px 0px;
 }
+/*Added by sachin 05-03-22*/
+.subscription .p-picture {
+    margin-left: 10px;
+}
 
+.subscription .subscrived .p-pictures {
+    margin-left: 3%;
+} 
+.subscription  .subscrived .p-pictures img {
+    width: 50px;
+    height: 50px;
+}
+ 
+/*Ended by sachin 05-03-22*/
 .subscrived .p-pictures {
     float: left;
     margin-left: 0%;
