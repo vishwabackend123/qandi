@@ -1109,13 +1109,27 @@ a.disabled-btn {
     margin-bottom: 10px !important;
 } */
 
+
+/* Added by sachin 05-03-22 */
 #editProfile_form .form-btns {
     text-align: center;
-    display: inline-block;
+    /* display: inline-block;
     width: 100%;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    
 }
+
+#editProfile_form .form-btns button#cancelEdit , #editProfile_form .form-btns button#saveEdit{
+    width: 183.5px;
+}
+/* End by sachin 05-03-22 */
+
 
 /* Added by sachin 03-03-22 */
 #editProfile_form input::placeholder {

@@ -769,7 +769,7 @@
                     </div>
                     <div class="form-flds">
                         <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)" maxlength="25">
-                        <p>This is your display name.</p>
+                        <p>This could be your first, last or nick name</p>
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
