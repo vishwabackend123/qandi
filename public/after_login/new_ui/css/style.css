@@ -16,6 +16,13 @@ button {
     text-decoration: none;
 }
 
+/******* 07-03-2022 Amit-Start ******/
+.cust-gallery .swiper-slide {
+    width: 405px !important;
+}
+
+/******* 07-03-2022 Amit-End ******/
+
 /******* 04-03-2022 Amit-Start ******/
 #dialog-pdf .report-block2.p-5 small>img {
     width: 16px !important;
@@ -161,7 +168,7 @@ button {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    min-width: 230px;
+    min-width: auto !important;
     padding-left: 60px !important;
 }
 
@@ -242,6 +249,7 @@ div#collapseNotification {
 .exam-analytics .abrv-graph {
     width: 15px;
     height: 15px;
+    margin-right: 6px;
 }
 
 .exam-analytics .abrv-graph.bg1 {
@@ -258,6 +266,7 @@ div#collapseNotification {
     letter-spacing: normal;
     text-align: left;
     color: #231f20;
+    padding-top: 0px;
 }
 
 .exam-analytics .abrv-graph.bg2 {
@@ -316,7 +325,20 @@ div#collapseNotification {
     display: inline-block;
 }
 
+.graphdotlisting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.garphlistincom {
+    display: inline-flex;
+    align-items: center;
+}
+
+.garphlistincom+.garphlistincom {
+    margin-left: 20px;
+}
 
 /* shubham(05-03-2022)-end */
 
@@ -749,7 +771,7 @@ input#search_field::-ms-input-placeholder {
 }
 
 .go2Planner button.custom-btn-gray.mt-4 {
-    margin-top: 26px !important;
+    margin-top: 19px !important;
 }
 
 a#open-tab {
@@ -1444,7 +1466,8 @@ a.disabled-btn {
 
 
 #editProfile_forms::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 
@@ -1589,7 +1612,8 @@ input#select-city::placeholder {
 
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+
     border-radius: 10px;
 }
 
@@ -1774,7 +1798,8 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 .country-code-name::-webkit-scrollbar {
@@ -2185,7 +2210,8 @@ span.p-icons span:active {
 
 /* Track */
 .chaptbox::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -3398,7 +3424,8 @@ button.percentage-digit {
 
 /* Track */
 .answer-section::-webkit-scrollbar-track {
-    background: #f1f1f1;
+
+    background: rgba(13, 193, 255, 0.1) !important;
     border-radius: 10px;
 }
 
@@ -3421,7 +3448,8 @@ button.percentage-digit {
 
 /* Track */
 .review-qus::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -4157,7 +4185,8 @@ button.save-btn {
 
 /* Track */
 .list-series .scroll-div-live-exm::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -4258,7 +4287,8 @@ button.save-btn {
 
 /* Track */
 .subject-scroll::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -4359,7 +4389,6 @@ button.save-btn {
     border: solid 2px #37c027 !important;
     background: transparent;
 }
-
 .checkboxans:checked+.ans span.q-no {
     background: #37c027;
     border-radius: 50px;
@@ -4734,7 +4763,8 @@ span.profile-img-user {
 
 /* Track */
 .profile-detail::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -5422,20 +5452,15 @@ p.success-img {
     left: 0;
     z-index: 999;
 }
-
-
-
 .dash-nav-link {
     height: calc(100% - 85px);
     display: flex;
     flex-direction: column;
 }
-
 .dash-nav-link a {
     display: block;
     position: relative;
 }
-
 .hoverlink {
     transition: .5s;
     opacity: 0;
@@ -5450,13 +5475,11 @@ p.success-img {
     z-index: 3;
     left: 10px;
 }
-
 .dash-nav-link a:hover .hoverlink {
     opacity: 1;
     visibility: visible;
     transform: translateY(-4px);
 }
-
 .dash-sidebar a:hover .b,
 .dash-sidebar a:hover .c,
 .dash-sidebar a.active-navlink .b,
@@ -5465,49 +5488,40 @@ p.success-img {
     stroke-width: 1.5px;
     opacity: 1;
 }
-
 .dash-sidebar a:hover .a,
 .dash-sidebar a.active-navlink .a {
     fill: #00bdff;
 }
-
 .dash-sidebar a:hover .dd,
 .dash-sidebar a.active-navlink .dd {
     stroke: #fff !important;
 }
-
 .dash-sidebar a:hover .aa,
 .dash-sidebar a.active-navlink .aa {
     fill: #00bdff;
 }
-
 .dash-sidebar a:hover .bb,
 .dash-sidebar a.active-navlink .bb {
     opacity: 1;
 }
-
 .dash-sidebar a:hover .ccc,
 .dash-sidebar a.active-navlink .ccc {
     stroke: #d71921 !important;
     opacity: 1;
 }
-
 .dash-sidebar a:hover .aaa,
 .dash-sidebar a.active-navlink .aaa {
     fill: #e4e4e4;
 }
-
 .dash-sidebar a:hover .aaaa,
 .dash-sidebar a.active-navlink .aaaa {
     fill: #e4e4e4;
 }
-
 .dash-sidebar a:hover .bbbb,
 .dash-sidebar a.active-navlink .bbbb {
     stroke: #d71921 !important;
     opacity: 1;
 }
-
 .sidbar-block {
     padding: 30px 18px;
 } */
@@ -6893,7 +6907,7 @@ label.question.m-0.py-3.d-block .MathJax {
 }
 
 .circular-chart.green .circle {
-    stroke: #aff3d0;
+    stroke: #21ccff;
 }
 
 .circular-chart.blue .circle {
@@ -8143,7 +8157,7 @@ input#linkInput {
     border: none;
     width: 40px;
     height: 40px;
-    right: 25px;
+    left: 25px;
     font-size: 25px !important;
 }
 
@@ -8213,7 +8227,6 @@ input#linkInput {
 
 
 /*********************8/
-
 /*****navdeep 23-02 ********/
 .box-shadow {
     -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
