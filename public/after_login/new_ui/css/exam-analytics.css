@@ -593,9 +593,6 @@ button.top-btn-pop {
     border-radius: 20px;
     padding: 15px 10px;
 }
-#myTabContent .shadow-lg {
-    box-shadow: 0 2px 10px rgba(0,0,0,.175)!important;
-}
 #back2Dsh {
     height: unset;
 }
@@ -671,6 +668,7 @@ div#time-Avg-quest {
 .Ex-anal {
     margin-top: 10px;
     margin-right: 34px;
+    min-width: 260px;font-size:15px;
 
 }
 
@@ -864,7 +862,7 @@ margin-right:0;
 .customgray svg{
     width: 20px !important; 
     margin-right: 5px;
-    margin-top: -3px;
+    margin-top: -3px; 
 
 }
 

@@ -209,11 +209,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                         <div class="attemp_box row mt-0">
                                                             <div class="sub_att_1 col-md-6">
                                                                 <p>knowledge,Application of</p>
-                                                                <a class="detail_btn" onclick="openPopup('div1');"> Pythagoras therem</a>
+                                                                <a href="javascript:void(0);" class="detail_btn" onclick="openPopup('div1');"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
                                                             </div>
                                                             <div class="sub_att_1 col-md-6">
                                                                 <p>knowledge,Application of</p>
-                                                                <a class="detail_btn">PYTHAGORAS THEREM</a>
+                                                                <a href="javascript:void(0);" class="detail_btn">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -230,10 +230,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     </div>
                 </div>
                 <!-- Right Side Area -->
- 
+
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                        <span>{{$exam_name}}</span>
                         <p class="rightSectH">Answer</p>
                         <div class="number-block">
                             @php $quKey=1; @endphp
@@ -262,77 +263,77 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     <h5><strong>Review Questions</strong></h5>
                                 </div>
                                 <div class="col-4 text-end d-flex add_btn_new">
-                                <div class="review_list_expand_btn_box">
-                                            <div class="expandbtn1">
-                                                <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
-                                                    <defs>
-                                                        <style>
-                                                            .cls-1,
-                                                            .cls-2 {
-                                                                fill: none;
-                                                            }
+                                    <div class="review_list_expand_btn_box">
+                                        <div class="expandbtn1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
+                                                <defs>
+                                                    <style>
+                                                        .cls-1,
+                                                        .cls-2 {
+                                                            fill: none;
+                                                        }
 
-                                                            .cls-2 {
-                                                                stroke: #000;
-                                                                stroke-linecap: round;
-                                                                stroke-linejoin: round;
-                                                                stroke-width: 1.5px;
-                                                            }
-                                                        </style>
-                                                    </defs>
-                                                    <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
-                                                    <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
-                                                        <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z" />
-                                                        <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8" />
-                                                        <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)" />
-                                                        <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16" />
-                                                        <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)" />
-                                                        <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16" />
-                                                        <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)" />
-                                                        <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8" />
-                                                        <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)" />
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="collapsebtn1" style="display: none;">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_6" data-name="Component 226 – 6" width="48" height="48" viewBox="0 0 48 48">
-                                                            <defs>
-                                                                <style>
-                                                                    .cls-1,
-                                                                    .cls-2 {
-                                                                        fill: none;
-                                                                    }
-
-                                                                    .cls-2 {
-                                                                        stroke: #000;
-                                                                        stroke-linecap: round;
-                                                                        stroke-linejoin: round;
-                                                                        stroke-width: 1.5px;
-                                                                    }
-
-                                                                    .cls-1,
-                                                                    .cls-2,
-                                                                    .cls-5 {
-                                                                        opacity: 1;
-                                                                    }
-                                                                </style>
-                                                            </defs>
-                                                            <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
-                                                            <g id="Group_5112" data-name="Group 5112" transform="translate(12 12)">
-                                                                <path id="Path_11585" data-name="Path 11585" class="cls-1" d="M0,0H24V24H0Z" />
-                                                                <path id="Path_11586" data-name="Path 11586" class="cls-2" d="M5,9H9V5" />
-                                                                <line id="Line_617" data-name="Line 617" class="cls-2" x2="6" y2="6" transform="translate(3 3)" />
-                                                                <path id="Path_11587" data-name="Path 11587" class="cls-2" d="M5,15H9v4" />
-                                                                <line id="Line_618" data-name="Line 618" class="cls-2" y1="6" x2="6" transform="translate(3 15)" />
-                                                                <path id="Path_11588" data-name="Path 11588" class="cls-2" d="M19,9H15V5" />
-                                                                <line id="Line_619" data-name="Line 619" class="cls-2" y1="6" x2="6" transform="translate(15 3)" />
-                                                                <path id="Path_11589" data-name="Path 11589" class="cls-2" d="M19,15H15v4" />
-                                                                <line id="Line_620" data-name="Line 620" class="cls-2" x2="6" y2="6" transform="translate(15 15)" />
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-
+                                                        .cls-2 {
+                                                            stroke: #000;
+                                                            stroke-linecap: round;
+                                                            stroke-linejoin: round;
+                                                            stroke-width: 1.5px;
+                                                        }
+                                                    </style>
+                                                </defs>
+                                                <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
+                                                <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
+                                                    <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z" />
+                                                    <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8" />
+                                                    <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)" />
+                                                    <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16" />
+                                                    <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)" />
+                                                    <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16" />
+                                                    <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)" />
+                                                    <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8" />
+                                                    <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)" />
+                                                </g>
+                                            </svg>
                                         </div>
+                                        <div class="collapsebtn1" style="display: none;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_6" data-name="Component 226 – 6" width="48" height="48" viewBox="0 0 48 48">
+                                                <defs>
+                                                    <style>
+                                                        .cls-1,
+                                                        .cls-2 {
+                                                            fill: none;
+                                                        }
+
+                                                        .cls-2 {
+                                                            stroke: #000;
+                                                            stroke-linecap: round;
+                                                            stroke-linejoin: round;
+                                                            stroke-width: 1.5px;
+                                                        }
+
+                                                        .cls-1,
+                                                        .cls-2,
+                                                        .cls-5 {
+                                                            opacity: 1;
+                                                        }
+                                                    </style>
+                                                </defs>
+                                                <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
+                                                <g id="Group_5112" data-name="Group 5112" transform="translate(12 12)">
+                                                    <path id="Path_11585" data-name="Path 11585" class="cls-1" d="M0,0H24V24H0Z" />
+                                                    <path id="Path_11586" data-name="Path 11586" class="cls-2" d="M5,9H9V5" />
+                                                    <line id="Line_617" data-name="Line 617" class="cls-2" x2="6" y2="6" transform="translate(3 3)" />
+                                                    <path id="Path_11587" data-name="Path 11587" class="cls-2" d="M5,15H9v4" />
+                                                    <line id="Line_618" data-name="Line 618" class="cls-2" y1="6" x2="6" transform="translate(3 15)" />
+                                                    <path id="Path_11588" data-name="Path 11588" class="cls-2" d="M19,9H15V5" />
+                                                    <line id="Line_619" data-name="Line 619" class="cls-2" y1="6" x2="6" transform="translate(15 3)" />
+                                                    <path id="Path_11589" data-name="Path 11589" class="cls-2" d="M19,15H15v4" />
+                                                    <line id="Line_620" data-name="Line 620" class="cls-2" x2="6" y2="6" transform="translate(15 15)" />
+                                                </g>
+                                            </svg>
+                                        </div>
+
+                                    </div>
 
                                     <div class="dropdown">
                                         <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
@@ -440,7 +441,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     @endif
                                 </ul>
                             </div>
-                        <!--review-qus-->
+                            <!--review-qus-->
                         </div>
 
 
@@ -462,9 +463,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $('.scroll-div').slimscroll({
         height: '40vh'
     });
-    $('.number-block').slimscroll({
-        height: '34vh'
-    });
+    // $('.number-block').slimscroll({
+    //     height: '34vh'
+    // });
     $('.answer-block').slimscroll({
         height: '45vh'
     });
@@ -585,12 +586,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             var numblockheight = $(".test-review-right .number-block").outerHeight();
             var cal12 = review_box_q_height12 - numblockheight;
             $('.review_box_holder').css('height', cal12);
-        
+
         });
 
     });
-
-  
 </script>
 
 
@@ -652,7 +651,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var calculatedHeight = height - 80 + "px";
         $('.test-review .cust-tab-content').css('height', height);
         $('#review_rques_blk').css('height', calculatedHeight);
-      
+
 
     }
 
@@ -671,11 +670,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <script>
     $(document).ready(function() {
         var left_review_sec_h = $("#review_rques_blk").outerHeight();
-        var div_height = left_review_sec_h/2;
+        var div_height = left_review_sec_h / 2;
         $('.answer-section').css('height', div_height);
         $('.question-block').css('height', div_height);
 
-       
+
     });
 </script>
 <!-----End-for-review_height-click------->
@@ -696,10 +695,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $(".collapsebtn").on('click', function() {
 
         var left_review_sec_h1 = $("#review_rques_blk").outerHeight();
-        var div_height1 = left_review_sec_h1/2;
+        var div_height1 = left_review_sec_h1 / 2;
         $('.answer-section').css('height', div_height1);
         $('.question-block').css('height', div_height1);
-         
+
     });
 </script>
 
@@ -747,7 +746,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <!-----End-for-percent-btn-click------->
 
 <style>
-   #review_rques_blk .answer-section {
+    #review_rques_blk .answer-section {
         margin-top: 0px !important;
         position: absolute;
         overflow-x: hidden;
@@ -784,7 +783,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
     .expand_bnt1 svg,
     .expandbtn svg,
-    .collapsebtn svg, .expandbtn1 svg,.collapsebtn1 svg {
+    .collapsebtn svg,
+    .expandbtn1 svg,
+    .collapsebtn1 svg {
         width: 37px !important;
 
         cursor: pointer;
@@ -794,7 +795,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         margin-top: -7px;
     }
 
-  
+
 
     #review_rques_blk .answer-section {
         height: 250px;

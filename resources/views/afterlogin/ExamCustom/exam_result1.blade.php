@@ -16,20 +16,20 @@
             <!-- <img src="images/roundedgraph.jpg"> -->
             <div id="scorecontainer"></div>
         </div>
-        <div class="row my-4">
-            <div class="col">
-                <span class="abrv-graph bg1"> </span>
-                <span class="graph-txt">Correct Attempts</span>
-            </div>
-            <div class="col">
-                <span class="abrv-graph bg2"> </span>
-                <span class="graph-txt">Wrong Attempts</span>
-            </div>
-            <div class="col">
-                <span class="abrv-graph bg3"> </span>
-                <span class="graph-txt">Not Answered</span>
-            </div>
-        </div>
+        <div class="graphdotlisting my-4">
+                        <div class="garphlistincom">
+                            <span class="abrv-graph bg1"> </span>
+                            <span class="graph-txt">Correct Attempts</span>
+                        </div>
+                        <div class="garphlistincom">
+                            <span class="abrv-graph bg2"> </span>
+                            <span class="graph-txt">Wrong Attempts</span>
+                        </div>
+                        <div class="garphlistincom">
+                            <span class="abrv-graph bg3"> </span>
+                            <span class="graph-txt">Not Answered</span>
+                        </div>
+                    </div>
     </div>
 </div>
 <div class="col-lg-8">
@@ -119,7 +119,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 224,
+            height: 250,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false

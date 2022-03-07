@@ -16,6 +16,9 @@ class VerifyCsrfToken extends Middleware
         '/exam_result_analysis_score',
         '/exam_result_analysis_attempt',
         '/exam_result_analysis_rank',
-        '/logout'
+        '/logout',
+        '/custom_exam_chapter',
+        '/custom_exam',
+        '/exam_custom'
     ];
 }

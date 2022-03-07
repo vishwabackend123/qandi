@@ -401,10 +401,10 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
+                                    <!-- <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
                                     </div>
                                     <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             @endforeach
@@ -418,21 +418,23 @@
                         </div>
                     </form>
                 </div>
-                <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
+                <!-- <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
                 </div>
                 <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="planner-content p-3">
             <div class="d-flex align-items-center justify-content-between">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
+<!--
                 <span>
                     <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
                     <a draggable="false" href="javascript:void(0);" class="link-danger " id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
                     <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn" title="Close Planner"><i class="fa fa-close"></i></a>
 
                 </span>
+-->
 
                 <!--
 <img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%">
@@ -592,7 +594,7 @@
 <div class="main-profile-section width collapse" id="profileAcc">
 
     <div class="account-wrapper new">
-    <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
+    <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
         <div class="profile-section">
             <ul>
                 <li class="active"><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
@@ -767,7 +769,7 @@
                     </div>
                     <div class="form-flds">
                         <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)" maxlength="25">
-                        <p>This is your display name.</p>
+                        <p>This could be your first, last or nick name</p>
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
@@ -896,7 +898,17 @@
             <p>Are you Sure?</p>
             <div class="form-btns">
                 <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            sessionStorage.clear();  document.getElementById('logout-form').submit();" "><button type=" button" class="save-btn">Log out</button></a>
+                                 sessionStorage.clear();  document.getElementById('logout-form').submit();" ">
+                                 <button type=" button" class="save-btn logout_btn_new">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
+                                        position: absolute;
+                                        left: 62px;
+                                        top: 20px;
+                                    ">
+                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                                    </svg>
+                                Log out</button>
+                </a>
             </div>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

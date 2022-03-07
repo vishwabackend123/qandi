@@ -29,6 +29,15 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
+    <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
+
+    <script>
+        $(window).on('load', function() {
+            if ($("#welcomeModal").length > 0) {
+                $('#welcomeModal').modal('show');
+            }
+        });
+    </script>
 </head>
 
 <style>
