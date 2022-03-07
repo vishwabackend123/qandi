@@ -208,8 +208,13 @@ class ReviewController extends Controller
 
             $answerKeys = array_keys((array)$correct_ans);
 
+            if (Session::has('exam_name')) {
+                $exam_name = Session::get('exam_name');
+            } else {
+                $exam_name = '';
+            }
 
-            return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id'));
+            return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
         } else {
             return redirect()->route('dashboard');
         }

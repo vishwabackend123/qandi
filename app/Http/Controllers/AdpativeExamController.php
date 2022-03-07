@@ -170,7 +170,7 @@ class AdpativeExamController extends Controller
         $test_type = 'Mocktest';
         $exam_type = 'PE';
 
-
+        Session::put('exam_name', $exam_name);
 
         return view('afterlogin.AdaptiveExam.adaptiveExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type'));
     }
@@ -505,7 +505,7 @@ class AdpativeExamController extends Controller
 
         $test_type = 'Mocktest';
         $exam_type = 'PT';
-
+        Session::put('exam_name', $test_name);
         return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('test_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
     }
 

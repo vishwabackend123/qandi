@@ -782,6 +782,9 @@ class AnalyticsController extends Controller
 
     public function topicAnalyticsList($sub_id)
     {
+        $userData = Session::get('user_data');
+
+        $user_id = $userData->id;
         $user_subjects = json_decode (json_encode($this->redis_subjects(),true));
         $id = array_search($sub_id, array_column($user_subjects, 'id'));
         if($id >= 1)
@@ -792,7 +795,7 @@ class AnalyticsController extends Controller
          $subject = $user_subjects[0]->subject_name;   
         }
 
-        $api_url = env('API_URL') . 'api/topics-by-subject-id/'  . $sub_id;
+        $api_url = env('API_URL') . 'api/topics-by-subject-id/'.$user_id .'/'  . $sub_id;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
