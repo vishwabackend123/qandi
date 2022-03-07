@@ -1121,7 +1121,8 @@ a.disabled-btn {
 
 
 #editProfile_forms::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 
@@ -1253,7 +1254,8 @@ input#select-state::placeholder, input#select-city::placeholder {
 
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+	background: rgba(13, 193, 255, 0.1) !important;
+
     border-radius: 10px;
 }
 
@@ -1437,7 +1439,8 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 .country-code-name::-webkit-scrollbar {
@@ -1848,7 +1851,8 @@ span.p-icons span:active {
 
 /* Track */
 .chaptbox::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -3051,8 +3055,9 @@ button.percentage-digit {
 
 /* Track */
 .answer-section::-webkit-scrollbar-track {
-    background: #f1f1f1;
-     border-radius: 10px;
+
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -3074,7 +3079,8 @@ button.percentage-digit {
 
 /* Track */
 .review-qus::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -3802,7 +3808,8 @@ button.save-btn {
 
 /* Track */
 .list-series .scroll-div-live-exm::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -3903,7 +3910,8 @@ button.save-btn {
 
 /* Track */
 .subject-scroll::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -4374,7 +4382,8 @@ span.profile-img-user {
 
 /* Track */
 .profile-detail::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 /* Handle */
@@ -7754,7 +7763,7 @@ input#linkInput {
     border: none;
     width: 40px;
     height: 40px;
-    right: 25px;
+    left: 25px;
     font-size: 25px !important;
 }
 .custom-page button.slick-next.slick-arrow {
