@@ -124,7 +124,7 @@ button {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    min-width: 230px;
+    min-width: auto!important;
     padding-left: 60px!important;} 
     #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
     #review_rques_blk .question.question-height .q-no{top:23px}
@@ -153,7 +153,7 @@ button {
 /*****shubham(04-03-2022)-end*****/
 
 /* shubham-start(05-03-2022) */
-   .exam-analytics .abrv-graph{width:15px;height:15px;}
+   .exam-analytics .abrv-graph{width:15px;height:15px;margin-right:6px;}
    .exam-analytics .abrv-graph.bg1{color:#37c027   }
    .exam-analytics  .graph-txt{font-family: Manrope;
     font-size: 12px;
@@ -180,7 +180,11 @@ button {
     #dropdownMenuLink-topic.show .dsowl{display:none;}  
     #dropdownMenuLink-topic.show .hsowl{display:inline-block;} 
     
-    
+    .graphdotlisting{display: flex;
+        align-items: center;
+        justify-content: space-around;}
+        .garphlistincom {    display: inline-flex;
+            align-items: center;}
 
 /* shubham(05-03-2022)-end */
 

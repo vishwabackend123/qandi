@@ -453,7 +453,20 @@ $userData = Session::get('user_data');
       }
     });
 
-  }
+  };
+  // $('.expandTopicCollapse').click(function(){
+  //      $('.scroll-div').animate({
+  //         scrollTop: $( $(this).attr('href') ).offset().top - 100
+  //       }, 500);
+  //   });
+  // $('.scroll-div').scroll(function(){
+  //      $('.expandTopicCollapse').click(function(){
+  //      $('.scroll-div').animate({
+  //         scrollTop: $( $(this).attr('href') ).offset().top - 100
+  //       }, 500);
+  //   });
+  // });
+  
 
   // $(document).ready(function() {
   //   $("#dropdownMenuLink").click(function() {
