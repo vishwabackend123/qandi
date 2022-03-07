@@ -453,35 +453,48 @@ $userData = Session::get('user_data');
       }
     });
 
-  }
+  };
+  // $('.expandTopicCollapse').click(function(){
+  //      $('.scroll-div').animate({
+  //         scrollTop: $( $(this).attr('href') ).offset().top - 100
+  //       }, 500);
+  //   });
+  // $('.scroll-div').scroll(function(){
+  //      $('.expandTopicCollapse').click(function(){
+  //      $('.scroll-div').animate({
+  //         scrollTop: $( $(this).attr('href') ).offset().top - 100
+  //       }, 500);
+  //   });
+  // });
+  
 
-  $(document).ready(function() {
-    $("#dropdownMenuLink").click(function() {
+  // $(document).ready(function() {
+  //   $("#dropdownMenuLink").click(function() {
 
-      if ($("#dropdownMenuLink").hasClass('show')) {
-        $(".hsow").hide();
-        $(".dsow").show();
-      } else {
-        $(".hsow").show();
-        $(".dsow").hide();
-      }
+  //     if ($("#dropdownMenuLink").hasClass('show')) {
+  //       $(".hsow").hide();
+  //       $(".dsow").show();
+  //     } else {
+  //       $(".hsow").show();
+  //       $(".dsow").hide();
+  //     }
 
-    });
-  });
+  //   });
+  // });
 
-  $(document).ready(function() {
-    $("#dropdownMenuLink-topic").click(function() {
+  // $(document).ready(function() {
+  //   $("#dropdownMenuLink-topic").click(function() {
 
-      if ($("#dropdownMenuLink-topic").hasClass('show')) {
-        $(".hsowl").hide();
-        $(".dsowl").show();
-      } else {
-        $(".hsowl").show();
-        $(".dsowl").hide();
-      }
+  //     if ($("#dropdownMenuLink-topic").hasClass('show')) {
+  //       $(".hsowl").hide();
+  //       $(".dsowl").show();
+  //     } else {
+  //       $(".hsowl").show();
+  //       $(".dsowl").hide();
+  //     }
 
-    });
-  });
+  //   });
+  // });
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>

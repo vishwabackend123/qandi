@@ -16,6 +16,10 @@ button {
     text-decoration: none;
 }
 
+/******* 07-03-2022 Amit-Start ******/
+.cust-gallery .swiper-slide{width: 405px!important;}
+/******* 07-03-2022 Amit-End ******/
+
 /******* 04-03-2022 Amit-Start ******/
 #dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
 .cust-tabs.nav.nav-tabs .nav-link{min-width: 150px;}
@@ -124,7 +128,7 @@ button {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
-    min-width: 230px;
+    min-width: auto!important;
     padding-left: 60px!important;} 
     #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
     #review_rques_blk .question.question-height .q-no{top:23px}
@@ -153,7 +157,7 @@ button {
 /*****shubham(04-03-2022)-end*****/
 
 /* shubham-start(05-03-2022) */
-   .exam-analytics .abrv-graph{width:15px;height:15px;}
+   .exam-analytics .abrv-graph{width:15px;height:15px;margin-right:6px;}
    .exam-analytics .abrv-graph.bg1{color:#37c027   }
    .exam-analytics  .graph-txt{font-family: Manrope;
     font-size: 12px;
@@ -171,16 +175,20 @@ button {
         .exam-analytics .blue-block span.fs-1{font-size: 48px;
             font-weight: 600;}
             .exam-analytics .blue-block span.text-dark{color: #231f20;}
-    /* #dropdownMenuLink .dsow{display:inline-block;}  
+    #dropdownMenuLink .dsow{display:inline-block;}  
     #dropdownMenuLink .hsow{display:none;}  
     #dropdownMenuLink.show .dsow{display:none;}  
     #dropdownMenuLink.show .hsow{display:inline-block;}    
     #dropdownMenuLink-topic .dsowl{display:inline-block;}  
     #dropdownMenuLink-topic .hsowl{display:none;}  
     #dropdownMenuLink-topic.show .dsowl{display:none;}  
-    #dropdownMenuLink-topic.show .hsowl{display:inline-block;}  */
+    #dropdownMenuLink-topic.show .hsowl{display:inline-block;} 
     
-    
+    .graphdotlisting{display: flex;
+        align-items: center;
+        justify-content: space-around;}
+        .garphlistincom {    display: inline-flex;
+            align-items: center;}
 
 /* shubham(05-03-2022)-end */
 
@@ -446,7 +454,7 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 .go2Planner button.custom-btn-gray.mt-4 {
-    margin-top: 26px !important;
+    margin-top: 19px !important;
 }
 
 a#open-tab {

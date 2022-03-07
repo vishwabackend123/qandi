@@ -518,7 +518,7 @@ class PlannerController extends Controller
 
         $test_type = 'Planner';
         $exam_type = 'P';
-
+        Session::put('exam_name', $test_name);
         return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
     }
 }

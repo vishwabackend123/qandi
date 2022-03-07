@@ -234,6 +234,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                        <span>{{$exam_name}}</span>
                         <p class="rightSectH">Answer</p>
                         <div class="number-block">
                             @php $quKey=1; @endphp
