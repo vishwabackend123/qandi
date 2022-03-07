@@ -7907,4 +7907,9 @@ font-size: 22px;
 .custom-page .star-ratings-css-top span{
 font-size: 22px;    
 }
-/******02-03 navdeep-end******
+/******02-03 navdeep-end******/
+
+
+/**********vishwa************/
+.progressChartExpend  .highcharts-label.highcharts-series-label{display:none;}
+.progressChart  .highcharts-label.highcharts-series-label{display:none;}
