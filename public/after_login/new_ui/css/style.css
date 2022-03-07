@@ -17,10 +17,8 @@ button {
 }
 
 /******* 07-03-2022 Amit-Start ******/
-.cust-gallery .swiper-slide {
-    width: 405px !important;
-}
-
+.cust-gallery .swiper-slide{width: 405px!important; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(255, 255, 255, 0.51);}
+.swiper-wrapper{padding:36px 0;}
 /******* 07-03-2022 Amit-End ******/
 
 /******* 04-03-2022 Amit-Start ******/
@@ -556,60 +554,17 @@ ul.cust-tabs li:first-child a {
 }
 
 /******* 23-02-2022 Amit-Start ******/
-form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase {
-    margin-top: 1rem !important;
-}
-
-.exam-week-bar input#customRange {
-    margin-top: 32px;
-}
-
-.exam-week-bar span#slide-input {
-    position: absolute;
-    right: 2px;
-    bottom: 1px;
-}
-
-#calendari table.actiu th button+span {
-    font-weight: 700;
-    font-size: 16px !important;
-}
-
-span a#close-edit-planner-btn img {
-    width: 24px !important;
-    height: 24px;
-    margin-top: 2px;
-}
-
-.subject-placeholder-block img {
-    width: 100px;
-    margin: 10px 0 20px;
-}
-
-.chaptbox-add a#subject_chapter_1,
-.chaptbox-add a#subject_chapter_2,
-.chaptbox-add a#subject_chapter_3,
-.chaptbox-add a#subject_chapter_4,
-.chaptbox-add a#subject_chapter_5,
-.subject_chapter .chaptbox-add a.btn-light {
-    background: rgba(0, 0, 0, 0.05) !important;
-    opacity: unset;
-}
-
-.chaptbox-add>a span img {
-    width: 20px;
-}
-
-.swiper-slide .course-star li {
-    padding-bottom: 0px;
-}
-
-.dashboard-cards-block #time-Avg-quest .bg-white>small,
-.dashboard-cards-block #marKs-trends .bg-white>small {
-    right: 10px;
-    top: 5px;
-}
-
+form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1rem!important;}
+.exam-week-bar input#customRange {margin-top: 32px;}
+.exam-week-bar span#slide-input {    position: absolute;right: 2px;bottom: 1px;}
+#calendari table.actiu th button + span {font-weight: 700;font-size: 16px !important;}
+span a#close-edit-planner-btn img {width: 24px !important;height: 24px;margin-top: 2px;}
+.subject-placeholder-block img {width: 100px;margin: 10px 0 15px;}
+.chaptbox-add  a#subject_chapter_1, .chaptbox-add a#subject_chapter_2, .chaptbox-add a#subject_chapter_3,
+.chaptbox-add a#subject_chapter_4, .chaptbox-add a#subject_chapter_5, .subject_chapter .chaptbox-add a.btn-light{background: rgba(0,0,0,0.05)!important;opacity: unset;}
+.chaptbox-add>a span img {width: 20px;}
+.swiper-slide .course-star li {padding-bottom:0px;}
+.dashboard-cards-block #time-Avg-quest .bg-white>small , .dashboard-cards-block #marKs-trends .bg-white>small {right: 10px;top: 5px;}
 /******* 23-02-2022 Amit-End ******/
 
 .notification a svg .cls-3 {
