@@ -1036,7 +1036,8 @@ a.disabled-btn {
 
 
 #editProfile_forms::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
 }
 
 
