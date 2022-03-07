@@ -233,7 +233,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                    <div class="bg-white d-flex flex-column   mb-4   p-5">
                         <span>{{$exam_name}}</span>
                         <div class="number_block_holder">
                             <p class="rightSectH">Answer</p>
@@ -555,6 +555,17 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <style>
 .number-block {
     height: 330px !important;}
+    .test-review-right, .rightSect .bg-white {
+       
+        height: 750px;;
+    }
+   
+
+    .review_box_holder{
+        background: #fff;    position: absolute;
+  
+  bottom: 0px;
+    }
    
 </style>
 
@@ -574,6 +585,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
         $('.review_box_holder').css('width', total_right_width);
         // $('.test-review-right .flex-column').css('height', total_right_height);
+
+        var number_block_holder_height = $(".number_block_holder").outerHeight();
+        $('.number_block_holder').css('height', number_block_holder_height);
+       
 
     }
 
