@@ -2,7 +2,6 @@
 
 @php
 $userData = Session::get('user_data');
-
 @endphp
 @section('content')
 <!-- Modal -->
@@ -152,7 +151,7 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
-                            <ul class="course-star mb-0">
+                            <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
@@ -351,7 +350,7 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="sign-btn">
-                                <a href="{{route('exam','full_exam')}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
+                                <a href="{{route('exam','full_exam')}}"><button  type="submit" class="btn btn-primary active-btn text-uppercase">
                                         <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button></a>
 
                             </div>
