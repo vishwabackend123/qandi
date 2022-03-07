@@ -555,6 +555,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <style>
 .number-block {
     height: 330px !important;}
+   
 </style>
 
 
@@ -569,13 +570,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <script>
     function review_right_Height() {
        var total_right_height = $(".test-review-right .flex-column").outerHeight();
-       
         var total_right_width = $(".test-review-right .number-block").outerWidth();
-        // var number_block_height = $(".test-review-right .number-block").outerHeight();
-        // var review_box_q_height = $(".test-review-right .review_box_holder").outerHeight();
-        // var div_right123 =total_right_height/2;
-        // $('.number-block').css('height', div_right123);
-        // $('.review_box_holder').css('height', div_right123);
 
         $('.review_box_holder').css('width', total_right_width);
         // $('.test-review-right .flex-column').css('height', total_right_height);
@@ -601,15 +596,25 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $(".expandbtn1").on('click', function() {
             var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
             var numblockheight = $(".test-review-right .number-block").outerHeight();
-            var cal12 = review_box_q_height12 + numblockheight;
-            $('.review_box_holder').css('height', cal12);
+            var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
+            var onclickreviewbox= review_box_q_height12 + numblockheight;
+            $('.review_box_holder').css('height', onclickreviewbox);
+            var scrollqheight = onclickreviewbox - reviewBox2height;
+
+            $('#review_question_list').css('height', scrollqheight);
+            
+
         });
 
         $(".collapsebtn1").on('click', function() {
             var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
             var numblockheight = $(".test-review-right .number-block").outerHeight();
-            var cal12 = review_box_q_height12 - numblockheight;
-            $('.review_box_holder').css('height', cal12);
+            var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
+            var onclickreviewbox = review_box_q_height12 - numblockheight;
+            $('.review_box_holder').css('height', onclickreviewbox);
+            var scrollqheight = onclickreviewbox - reviewBox2height;
+
+            $('#review_question_list').css('height', scrollqheight);
 
         });
 
