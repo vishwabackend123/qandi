@@ -16,21 +16,42 @@
                   <h3 class="m-0 p-0" title="{{$list['topic_name']}}"> {{ Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...') }} </h3>
                   <div class="all-star d-flex align-items-center justify-content-between">
                      <ul class="m-0 p-0">
+                        @if($list['topic_score'] >0 && $list['topic_score'] <= 20 || $list['topic_score'] > 20)  
                         <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
-                           <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
-                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
-                      <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        @else
                         <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        @endif
+
+                        @if($list['topic_score'] >20 && $list['topic_score'] <= 40 || $list['topic_score'] > 40)  
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        @else
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        @endif
+                        @if($list['topic_score'] >40 && $list['topic_score'] <= 60 || $list['topic_score'] > 60)  
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        @else
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        @endif
+                        @if($list['topic_score'] >60 && $list['topic_score'] <= 80 || $list['topic_score'] > 80)  
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        @else
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        @endif
+                        @if($list['topic_score'] >80 && $list['topic_score'] <= 100)  
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                        @else
+                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                        @endif
                      </ul>
-                     <span>50%</span>
+                     <span>{{round($list['topic_score'], 2)}}%</span>
                   </div>
                </div>
                <div class="colorfull-bars">
                   <div class="d-flex">
-                     <span class="green_bar position-relative"></span>
-                     <span class="yellow_bar position-relative"></span>
-                     <span class="red_bar position-relative"></span>
-                     <span class="skyblue_bar position-relative"></span>
+                     <span class="green_bar position-relative" style="width:{{$list['K_ques_attempted']}}% !important"></span>
+                     <span class="yellow_bar position-relative" style="width:{{$list['C_ques_attempted']}}% !important"></span>
+                     <span class="red_bar position-relative" style="width:{{$list['A_ques_attempted']}}% !important"></span>
+                     <span class="skyblue_bar position-relative" style="width:{{$list['E_ques_attempted']}}% !important"></span>
                   </div>
                </div>
                <ul class="d-flex align-items-center p-0 m-0 subject-name">

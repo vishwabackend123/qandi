@@ -19,6 +19,7 @@ button {
 /******* 04-03-2022 Amit-Start ******/
 #dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
 .cust-tabs.nav.nav-tabs .nav-link{min-width: 150px;}
+.subscription .profile-picture-txt .p-text p {margin-bottom: 0px;}
 /******* 04-03-2022 Amit-End ******/
 
 /*****shubham(02-03-2022)*****/
@@ -117,7 +118,7 @@ button {
     }
   }
 .formerror{position: relative;padding-bottom:10px;}
-label.error{position:absolute;}
+#referEmails-error{position:absolute;}
 .reviewPanel .cust-tabs .nav-link{padding-right: 40px!important;
     text-align: center;
     padding-top: 20px;
@@ -150,6 +151,39 @@ label.error{position:absolute;}
     min-width: 204px;
     padding-left: 43px!important;}
 /*****shubham(04-03-2022)-end*****/
+
+/* shubham-start(05-03-2022) */
+   .exam-analytics .abrv-graph{width:15px;height:15px;}
+   .exam-analytics .abrv-graph.bg1{color:#37c027   }
+   .exam-analytics  .graph-txt{font-family: Manrope;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #231f20;}
+    .exam-analytics .abrv-graph.bg2{color:#eb5347;}
+    .exam-analytics .abrv-graph.bg3{color:#e9e9e9}
+    .exam-analytics .blue-block span{font-size: 16px;
+        font-weight: 600;text-align: left;color: #231f20;}
+        .exam-analytics .blue-block span.fs-1{font-size: 48px;
+            font-weight: 600;}
+            .exam-analytics .blue-block span.text-dark{color: #231f20;}
+    #dropdownMenuLink .dsow{display:inline-block;}  
+    #dropdownMenuLink .hsow{display:none;}  
+    #dropdownMenuLink.show .dsow{display:none;}  
+    #dropdownMenuLink.show .hsow{display:inline-block;}    
+    #dropdownMenuLink-topic .dsowl{display:inline-block;}  
+    #dropdownMenuLink-topic .hsowl{display:none;}  
+    #dropdownMenuLink-topic.show .dsowl{display:none;}  
+    #dropdownMenuLink-topic.show .hsowl{display:inline-block;} 
+    
+    
+
+/* shubham(05-03-2022)-end */
+
 
 /******* 03-03-2022 Amit-Start ******/
 
@@ -1087,9 +1121,9 @@ a.disabled-btn {
 }
 
 
-#editProfile_form::-webkit-scrollbar-thumb:hover {
+/* #editProfile_form::-webkit-scrollbar-thumb:hover {
     background: #555 !important;
-}
+} */
 
 #editProfile_form .slimScrollBar {
     background: transparent !important;
@@ -1108,13 +1142,30 @@ a.disabled-btn {
     margin-bottom: 10px !important;
 } */
 
+
+/* Added by sachin 05-03-22 */
 #editProfile_form .form-btns {
     text-align: center;
-    display: inline-block;
+    /* display: inline-block;
     width: 100%;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    
 }
+
+#editProfile_form .form-btns button#cancelEdit , #editProfile_form .form-btns button#saveEdit{
+    width: 183.5px;
+}
+.edit-form .edit-img {
+    margin-bottom: .8rem !important;
+}
+/* End by sachin 05-03-22 */
+
 
 /* Added by sachin 03-03-22 */
 #editProfile_form input::placeholder {
@@ -1220,7 +1271,7 @@ input#select-state::placeholder, input#select-city::placeholder {
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 298px;
+    max-width: 312px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -1373,7 +1424,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(13, 193, 255, 0.4) !important;
 }
 
 .country-code-name::-webkit-scrollbar-track {
@@ -1381,7 +1432,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
 }
 
 .country-code-name ul li:hover {
@@ -1810,7 +1861,7 @@ span.p-icons span:active {
 
 #editProfile_form .form-flds p {
     text-align: right;
-    margin-bottom: 0px !important; opacity: 1;
+    margin-bottom: 0px !important; opacity: 1;    font-size: 12px;
 }
 
 #profile_pic_form img {
@@ -2046,7 +2097,7 @@ body#main-body .seeAnico span img {
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sign-btn a button:hover {
@@ -2065,7 +2116,7 @@ button#dropdownMenuLink-topic {
     margin-top: -12px;
 	box-shadow: none;
 }
-
+.scroll-div .compLeteS div.d-flex.px-4{position: relative;}
 .preparation .cust-tabs .nav-link.active:before {
     right: -56px;
 }
@@ -3291,16 +3342,16 @@ div#sub-planner {
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
     min-height: 450px !important;
-    background-image: url(../images/analytics-thumbnail.png);
-    background-repeat: no-repeat;
-    background-position: left 30% bottom -199px;
+    background-image: url(../images/analytics-thumbnail2.png);
+    /* background-repeat: no-repeat;
+    background-position: left 30% bottom -199px; */
     background-size: cover;
 
 }
 
 .profile-show-holder {
     background: white;
-     
+    display: flex;
     border-top-left-radius: 56px;
     border-top-right-radius: 56px;
 }
@@ -3443,9 +3494,11 @@ div#sub-planner {
     width: 100%;
 }
 
+
 .edit-pic {
     position: absolute;
-    bottom: 0px;
+    /* bottom: 0px; */
+    bottom: -3px;
     left: 47%;
     width: 25px;
     background: #fff;
@@ -3527,7 +3580,7 @@ button.save-btn {
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
-    max-width: 590px;
+    max-width: 672px;
 }
 
 /* .subscription .profile-picture-txt .p-picture {
@@ -3589,7 +3642,20 @@ button.save-btn {
     /* margin: 20px 0px 0px; */
     margin: 50px 0px 0px;
 }
+/*Added by sachin 05-03-22*/
+.subscription .p-picture {
+    margin-left: 10px;
+}
 
+.subscription .subscrived .p-pictures {
+    margin-left: 3%;
+} 
+.subscription  .subscrived .p-pictures img {
+    width: 50px;
+    height: 50px;
+}
+ 
+/*Ended by sachin 05-03-22*/
 .subscrived .p-pictures {
     float: left;
     margin-left: 0%;
@@ -3610,11 +3676,13 @@ button.save-btn {
     width: 55px;
     height: 55px;
 }
-
+/** Added by sachin 05-03-22 **/
 .subscription .form-btns button {
-    width: 237px;
+    /* width: 237px; */
+    width: 264px;
     margin-right: 15px;
 }
+/** Ended by sachin 05-03-22 **/
 
 /** Log out screen **/
 /** Added by sachin 03-03-22 **/
@@ -3681,7 +3749,8 @@ button.save-btn {
 /** End by sachin **/
 
 .log-out-screen button.save-btn {
-    width: 84%;
+    /* width: 84%; */
+    width: 264px;
 }
 
 .subscription .profile-picture-txt .p-picture img {
@@ -3805,7 +3874,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 180px;
+    height: 165px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
@@ -4163,9 +4232,10 @@ span.bell-noti {
 span.profile-digit {
     padding-top: 10px !important;
 }
-
+/*Added by sachin 05-03-22*/
 .leader-board {
-    width: 370px;
+    /* width: 370px; */
+    width:380px;
     height: 450px;
     background: #fff;
     border-radius: 56px;
@@ -4180,6 +4250,7 @@ span.profile-digit {
     padding-left: 52px;
     min-height: 450px;
 }
+/*End by sachin 05-03-22*/
 
 .leader-board h4 {
     text-align: right;
@@ -4190,16 +4261,30 @@ span.profile-digit {
     padding-right: 25px;
 }
 
+
+/* Added by Sachin-05-03-22*/
 .search-frnd input {
-    width: 97%;
+    /* width: 97%;
     border: none;
     padding: 7px 20px 7px 40px;
     border-radius: 8px;
     background: url(../images/search.png) no-repeat #f2f2f2;
     color: #000;
     background-position: 4px;
-    margin-left: 10px;
+    margin-left: 10px; */
+
+    width: 90%;
+    border: none;
+    padding: 7px 20px 7px 40px;
+    border-radius: 8px;
+    background: url(../images/search.png) no-repeat #f2f2f2;
+    color: #000;
+    background-position: 4px;
+    margin-left: 30px;
+
 }
+
+/* End by Sachin-05-03-22*/
 
 .leader-board ul {
     padding-left: 0px;
@@ -4210,13 +4295,15 @@ span.profile-digit {
     font-size: 12px;
     
 }
-
+/* start by Sachin-05-03-22*/
 .leader-board ul li {
     list-style: none;
     display: flex;
     margin-bottom: 12px;
-        padding-left: 10px;
+    /* padding-left: 10px; */
+    padding-left: 30px;
 }
+/* End by Sachin-05-03-22*/
 
 .leader-board ul li span {
     display: inline-block;
@@ -4913,10 +5000,10 @@ p.success-img {
     background: #d71921 !important;
 }
 
-.btn-light {
-    background: #e4e4e4 !important;
-    border-color: #e4e4e4;
+.btn-light {background: #f4f4f4 !important;
+    border-color: #f4f4f4;
     border-radius: 10px !important;
+    color: #515151 !important;
     /***Added_by-kanchan***/
     color: #515151 !important;
     /***Added_by-kanchan***/

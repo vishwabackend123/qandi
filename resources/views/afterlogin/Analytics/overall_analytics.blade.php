@@ -47,7 +47,7 @@ $userData = Session::get('user_data');
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
                                 <div class="row padingTT">
                                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                                        <div class="bg-white shadow-lg py-5 px-3">
+                                        <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
                                                 <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -83,7 +83,7 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                                        <div class="bg-white shadow-lg py-5 px-3">
+                                        <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
                                                 <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
