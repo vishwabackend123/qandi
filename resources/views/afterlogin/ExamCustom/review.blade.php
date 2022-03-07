@@ -553,7 +553,8 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 <style>
-.number-block {height: 330px !important;}
+.number-block {
+    height: 330px !important;}
 </style>
 
 

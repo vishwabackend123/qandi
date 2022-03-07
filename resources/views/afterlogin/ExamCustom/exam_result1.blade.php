@@ -17,19 +17,19 @@
             <div id="scorecontainer"></div>
         </div>
         <div class="graphdotlisting my-4">
-                        <div class="garphlistincom">
-                            <span class="abrv-graph bg1"> </span>
-                            <span class="graph-txt">Correct Attempts</span>
-                        </div>
-                        <div class="garphlistincom">
-                            <span class="abrv-graph bg2"> </span>
-                            <span class="graph-txt">Wrong Attempts</span>
-                        </div>
-                        <div class="garphlistincom">
-                            <span class="abrv-graph bg3"> </span>
-                            <span class="graph-txt">Not Answered</span>
-                        </div>
-                    </div>
+            <div class="garphlistincom">
+                <span class="abrv-graph bg1"> </span>
+                <span class="graph-txt">Correct Attempts</span>
+            </div>
+            <div class="garphlistincom">
+                <span class="abrv-graph bg2"> </span>
+                <span class="graph-txt">Wrong Attempts</span>
+            </div>
+            <div class="garphlistincom">
+                <span class="abrv-graph bg3"> </span>
+                <span class="graph-txt">Not Answered</span>
+            </div>
+        </div>
     </div>
 </div>
 <div class="col-lg-8">

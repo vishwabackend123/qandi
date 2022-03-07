@@ -146,18 +146,18 @@ $userData = Session::get('user_data');
                         @endif
 
 
-                        <div class="row py-4 mt-4 mb-5">
-                            <div class="col d-flex align-items-center">
+                        <div class="graphdotlisting my-4">
+                            <div class="garphlistincom">
                                 <span class="abrv-graph bg1"> </span>
-                                <span class="graph-txt d-inline-block ms-2">Correct Attempts</span>
+                                <span class="graph-txt">Correct Attempts</span>
                             </div>
-                            <div class="col d-flex align-items-center">
+                            <div class="garphlistincom">
                                 <span class="abrv-graph bg2"> </span>
-                                <span class="graph-txt d-inline-block ms-2">Wrong Attempts</span>
+                                <span class="graph-txt">Wrong Attempts</span>
                             </div>
-                            <div class="col d-flex align-items-center">
+                            <div class="garphlistincom">
                                 <span class="abrv-graph bg3"> </span>
-                                <span class="graph-txt d-inline-block ms-2">Not Answered</span>
+                                <span class="graph-txt">Not Answered</span>
                             </div>
                         </div>
                     </div>
