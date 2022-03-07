@@ -167,7 +167,7 @@ button {
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: #231f20;}
+    color: #231f20;padding-top:0px;}
     .exam-analytics .abrv-graph.bg2{color:#eb5347;}
     .exam-analytics .abrv-graph.bg3{color:#e9e9e9}
     .exam-analytics .blue-block span{font-size: 16px;
@@ -186,9 +186,10 @@ button {
     
     .graphdotlisting{display: flex;
         align-items: center;
-        justify-content: space-around;}
+        justify-content:center;}
         .garphlistincom {    display: inline-flex;
             align-items: center;}
+            .garphlistincom+.garphlistincom{margin-left:20px;}
 
 /* shubham(05-03-2022)-end */
 

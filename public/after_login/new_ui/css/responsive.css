@@ -33,10 +33,16 @@
   }
   .live-test li+li{margin-left:3%;}
   div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 2rem;}
+  .garphlistincom+.garphlistincom{margin-left:10px;}
+  .exam-analytics .abrv-graph{    width: 10px;
+    height: 10px;}
+
 
 }
 
 @media(min-width:1316px) and (max-width:1440px) {
+  .garphlistincom+.garphlistincom{margin-left:8px;}
+  .exam-analytics .abrv-graph{padding-right:2px;}
     .pe-1 .star-ratings-css-bottom span {
        
         font-size: 13px;
