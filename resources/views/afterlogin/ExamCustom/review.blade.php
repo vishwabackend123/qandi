@@ -233,7 +233,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                    <div class="bg-white d-flex flex-column   mb-4   p-5">
                         <span>{{$exam_name}}</span>
                         <div class="number_block_holder">
                             <p class="rightSectH">Answer</p>
@@ -555,6 +555,18 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <style>
 .number-block {
     height: 330px !important;}
+    .test-review-right, .rightSect .bg-white {
+       
+        height: 750px;;
+    }
+   
+
+    .review_box_holder{
+        background: #fff;    position: absolute;
+  
+  bottom: 0px;
+    }
+   
 </style>
 
 
@@ -569,16 +581,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <script>
     function review_right_Height() {
        var total_right_height = $(".test-review-right .flex-column").outerHeight();
-       
         var total_right_width = $(".test-review-right .number-block").outerWidth();
-        // var number_block_height = $(".test-review-right .number-block").outerHeight();
-        // var review_box_q_height = $(".test-review-right .review_box_holder").outerHeight();
-        // var div_right123 =total_right_height/2;
-        // $('.number-block').css('height', div_right123);
-        // $('.review_box_holder').css('height', div_right123);
 
         $('.review_box_holder').css('width', total_right_width);
         // $('.test-review-right .flex-column').css('height', total_right_height);
+
+        var number_block_holder_height = $(".number_block_holder").outerHeight();
+        $('.number_block_holder').css('height', number_block_holder_height);
+       
 
     }
 
@@ -601,15 +611,25 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $(".expandbtn1").on('click', function() {
             var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
             var numblockheight = $(".test-review-right .number-block").outerHeight();
-            var cal12 = review_box_q_height12 + numblockheight;
-            $('.review_box_holder').css('height', cal12);
+            var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
+            var onclickreviewbox= review_box_q_height12 + numblockheight;
+            $('.review_box_holder').css('height', onclickreviewbox);
+            var scrollqheight = onclickreviewbox - reviewBox2height;
+
+            $('#review_question_list').css('height', scrollqheight);
+            
+
         });
 
         $(".collapsebtn1").on('click', function() {
             var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
             var numblockheight = $(".test-review-right .number-block").outerHeight();
-            var cal12 = review_box_q_height12 - numblockheight;
-            $('.review_box_holder').css('height', cal12);
+            var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
+            var onclickreviewbox = review_box_q_height12 - numblockheight;
+            $('.review_box_holder').css('height', onclickreviewbox);
+            var scrollqheight = onclickreviewbox - reviewBox2height;
+
+            $('#review_question_list').css('height', scrollqheight);
 
         });
 

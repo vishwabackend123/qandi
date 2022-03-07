@@ -2,7 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
-@endphp
+@endphp 
 @section('content')
 <!-- Modal -->
 @if($subjects_rating == null || empty($subjects_rating))
@@ -248,7 +248,7 @@ $userData = Session::get('user_data');
 
             <div class="row">
                 <div class="col-md-4">
-                    <div class="bg-white shadow-lg py-5 progress-journey-card">
+                    <div class="bg-white shadow-lg py-5 progress-journey-card m-0">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -285,7 +285,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="bg-white shadow-lg py-5">
+                    <div class="bg-white shadow-lg py-5 m-0">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -304,7 +304,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="bg-white shadow-lg py-5 task-center-block">
+                    <div class="bg-white shadow-lg py-5 task-center-block m-0">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -330,7 +330,7 @@ $userData = Session::get('user_data');
             </div>
 
 
-            <div class="cust-gallery pt-0">
+            <div class="cust-gallery p-0">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
@@ -447,14 +447,16 @@ $userData = Session::get('user_data');
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <img src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <div>
-                                <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
+                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width:24px;;margin-right:4px;">
                                 CHEMISTRY
                             </div>
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             <div>
-                                <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
+                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width:24px;;margin-right:4px;">
                                 PHYSICS
                             </div>
                         </div>
@@ -464,7 +466,8 @@ $userData = Session::get('user_data');
                                 <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             <div style="margin-top: -8px;">
-                                <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i>
+                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width:24px;;margin-right:4px;">
                                 MORE
                             </div>
                         </div>
@@ -521,7 +524,10 @@ $userData = Session::get('user_data');
                             <div class="test-attend text-center">
                                 <!-- <p>Tests Attempted</p> -->
                                 <div class="ms-auto">
-                                    <span class="text-secondary chapter_name mb-2 d-block"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></span>
+                                    <span class="text-secondary chapter_name mb-2 d-block">
+                                        <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
+                                        <img style="width:55px;" src="{{URL::asset('public/after_login/new_ui/images/tickmark.png')}}">
+                                    </span>
                                     <h3 class="mb-0">{{$val->chapter_name}}</h3>
                                     <ul class="course-star mt-3 mb-0">
                                         <li style="float:none;">
