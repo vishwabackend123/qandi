@@ -32,7 +32,7 @@
     min-width: auto;
   }
   .live-test li+li{margin-left:3%;}
-  div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 2rem;}
+  div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
   .garphlistincom+.garphlistincom{margin-left:10px;}
   .exam-analytics .abrv-graph{    width: 10px;
     height: 10px;}
