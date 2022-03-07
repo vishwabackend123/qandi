@@ -367,7 +367,7 @@ $userData = Session::get('user_data');
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
                             </small>
-                            <span>Weekly Plan</span>
+                            <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
 
                                 <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
@@ -390,7 +390,7 @@ $userData = Session::get('user_data');
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
                             </small>
-                            <span>Weekly Plan</span>
+                            <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
                                 <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
                                     <b> Tests Attempted</b>
