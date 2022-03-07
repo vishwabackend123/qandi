@@ -25,7 +25,6 @@
 $userData = Session::get('user_data');
 
 @endphp
-
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -160,7 +159,7 @@ $questtype='radio';
 
                                         <div class="question-block">
                                             <!-- Next and previous button -->
-                                            <button href="javascript:void(0);" {{empty($prev_qid)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'disabled':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
+                                            <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
                                             <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
                                             <!-- Next and previous button -->
 
@@ -250,7 +249,11 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                    </svg>
+                                </span>&nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -461,10 +464,11 @@ $questtype='radio';
         </div>
     </div>
 </div>
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 
 @include('afterlogin.layouts.footer_new')
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 
 <script>
     /* Sachin screen changes */
@@ -902,7 +906,11 @@ $questtype='radio';
                 option_id: option_id,
                 q_submit_time: q_submit_time
             },
+            beforeSend: function() {
+              $('.loader-block').show();
+            },
             success: function(response_data) {
+                $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
@@ -945,7 +953,11 @@ $questtype='radio';
                 option_id: option_id,
                 q_submit_time: q_submit_time
             },
+            beforeSend: function() {
+              $('.loader-block').show();
+            },
             success: function(response_data) {
+                $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
@@ -1067,7 +1079,11 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 'q_time': time
             },
+            beforeSend: function() {
+              $('.loader-block').show();
+            },
             success: function(response_data) {
+                $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 

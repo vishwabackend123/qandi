@@ -2,12 +2,18 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
             <div class="modal-body pt-0 px-5 ">
                 <div class="text-center my-5">
-                    <a href="{{route('export_analytics')}}"><button class="btn px-4 top-btn-pop text-white"><i class="fa fa-download"></i> &nbsp;Download PDF</button></a>
+                    <a href="{{route('export_analytics')}}"><button class="btn px-4 top-btn-pop text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                            </svg>
+                            &nbsp;Download PDF</button></a>
                 </div>
                 <!--  <p class="text-center text-secondary mb-5">OR</p>
                 <div class="input-group mb-3">
@@ -30,7 +36,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
@@ -522,8 +528,8 @@
                     $('#added_subject_' + subject_id).removeClass('text-success');
                     $('#added_subject_' + subject_id).addClass('text-light');
                 }
-                    var selected_count = $('#planner_sub_' + subject_id +' div').length;
-                    $('#count_spam_'+subject_id).text("("+selected_count+")");
+                var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+                $('#count_spam_' + subject_id).text("(" + selected_count + ")");
             });
 
 
@@ -685,7 +691,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic"  src="${img_url}"></span>
                             <span class="profile-text-user">
                                 <h3>${val.user_name}</h3>
-                                <p>${val.score} Unique score</p>
+                                <p>${val.score} Uniq score</p>
                             </span>
                         </li>`;
 
@@ -852,7 +858,9 @@
         $(".main-profile-section.blure-bg").click(function() {
             $(".blure-bg").hide();
         });
-
+        $('.closeprofile').click(function() {
+            $(".blure-bg").hide();
+        });
     });
 
     // the following script for subscription section  log-out-screen
@@ -982,6 +990,15 @@
     function selectChapter(subject_id) {
         var limit = $('#customRange').val();
         var chapters = $('input[name="chapters[]"]').length;
+        if (limit == '0') {
+            var error_txt = 'Please select Exams Per Week';
+            $('#limit_error').html(error_txt);
+            $('#limit_error').show();
+            setTimeout(function() {
+                $('#limit_error').fadeOut('fast');
+            }, 5000);
+            return false;
+        }
         if (chapters >= limit) {
             var error_txt = 'You can not select more than ' + limit + ' chapter for selected week';
             $('#limit_error').html(error_txt);
@@ -1082,8 +1099,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
-         var selected_count = $('#planner_sub_' + subject_id +' div').length;
-         $('#count_spam_'+subject_id).text("("+selected_count+")");
+        var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+        $('#count_spam_' + subject_id).text("(" + selected_count + ")");
     }
 
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
@@ -1100,8 +1117,8 @@
             $('#added_subject_' + subject_id).removeClass('text-success');
             $('#added_subject_' + subject_id).addClass('text-light');
         }
-        var selected_count = $('#planner_sub_' + subject_id +' div').length;
-        $('#count_spam_'+subject_id).text("("+selected_count+")");
+        var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+        $('#count_spam_' + subject_id).text("(" + selected_count + ")");
     });
     $('#exportAnalytics').on('shown.bs.modal', function() {
         $('#specificSizeInputGroupUsername').val("");
@@ -1161,11 +1178,20 @@
         submitHandler: function(form) {
 
             var limit = $('#customRange').val();
-            if (limit <= 0) {
-                $('#limit_error_1').html('Please set at least one exam for the selected week.');
-                $('#limit_error_1').show();
+            if (limit == '0') {
+                var error_txt = 'Please select Exams Per Week';
+                $('#limit_error').html(error_txt);
+                $('#limit_error').show();
                 setTimeout(function() {
-                    $('#limit_error_1').fadeOut('fast');
+                    $('#limit_error').fadeOut('fast');
+                }, 5000);
+                return false;
+            }
+            if (limit <= 0) {
+                $('#limit_error').html('Please set at least one exam for the selected week.');
+                $('#limit_error').show();
+                setTimeout(function() {
+                    $('#limit_error').fadeOut('fast');
                 }, 5000);
                 return false;
             }
@@ -1173,6 +1199,7 @@
             var chapters = $('input[name="chapters[]"]').length;
 
             if (chapters < limit) {
+                $('#limit_error').show();
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 /*setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
@@ -1180,6 +1207,7 @@
                 return false;
             }
             if (chapters > limit) {
+                $('#limit_error').show();
                 $('#limit_error').html('Select minimum ' + limit + ' chapter for planner.');
                 /*setTimeout(function() {
                     $('#limit_error').fadeOut('fast');
@@ -1471,6 +1499,8 @@
                             $('.errRef').fadeOut('fast');
                         }, 5000);
                         $('#referEmails').val("");
+                        $(".emaillinkholder").hide();
+                        $(".onsendshow").show();
 
                     } else {
                         var errormsg = $("#errRef_auth").show();
@@ -1529,9 +1559,12 @@
     $(".user-name-block span.notification").click(function() {
         if (!$(this).hasClass("notification-icons-active")) {
             $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active");
+            $(this).siblings().removeClass("notification-icons-active"); 
+        } else {
+            $(this).removeClass("notification-icons-active");
         }
     });
+
     $(".dash-nav-link a").click(function() {
         if (!$(this).hasClass("active-navlink")) {
             $(this).addClass("active-navlink");
@@ -1558,9 +1591,16 @@
     });
 </script>
 <script>
-    $(document).ready(function() {
-        $(".addremovetopic").on("click", function() {
-            $(this).parent().parent().toggleClass('current');
-        });
+    $("#sharefrnd .btn-close").click(function() {
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
+    });
+    $("#close-planner-btn , .close-bnt").click(function() {
+        $("span.notification.ms-4").removeClass("notification-icons-active");
+    });
+    $('#sharefrnd').click(function(event) {
+        event.stopPropagation();
+        $(".dash-nav-link a:last-child").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 </script>

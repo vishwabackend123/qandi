@@ -1,8 +1,52 @@
+@media(min-width:1659px) and (max-width:1750px) {
+    
+    .reviewPanel .cust-tabs .nav-link{
+        padding-right: 30px!important;
+        padding-left: 30px!important;
+        min-width: 180px;
+      }
+      .live-test li+li{margin-left:8%;}
+}
+@media(min-width:1441px) and (max-width:1660px) {
+    
+    .slider-horizontal {
+        width: 85% !important;
+     
+    }
+    .reviewPanel .cust-tabs .nav-link{
+        padding-right: 30px!important;
+        padding-left: 30px!important;
+        min-width: auto;
+      }
+      div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 4rem;}
+      .live-test li+li{margin-left:5%;}
+}
+
+@media(max-width:1440px){
+    .reviewPanel .cust-tabs .nav-link{
+    padding-right: 20px!important;
+     font-size:16px!important;
+    padding-left: 20px!important;
+    min-width: auto;
+  }
+  .live-test li+li{margin-left:3%;}
+}
+
 @media(min-width:1316px) and (max-width:1440px) {
     .pe-1 .star-ratings-css-bottom span {
        
         font-size: 13px;
     }
+    .slider-horizontal {
+        width: 85% !important;
+        height: 20px;
+    }
+
+    .subscription .form-btns button {
+        width: 250px;
+       
+    }
+
 }
 
 
@@ -33,8 +77,23 @@
         height: auto !important;
     }
 
+    .slider-horizontal {
+        width: 85% !important;
+      
+    }
+
     /* end planner screen*/
 
+}
+
+@media(min-width:1200px) and (max-width:1300px) {
+    div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+
+    .slider-horizontal {
+        width: 85% !important;
+      
+    }
+    .back-to-dashbord a{font-size:16px;}
 }
 
 @media(min-width:1023px) and (max-width:1199px) {
@@ -51,6 +110,11 @@
     }
 
     /** end here **/
+
+    .slider-horizontal {
+        width: 85% !important;
+        height: 20px;
+    }
 }
 
 @media(max-width:1024px) {
@@ -142,6 +206,10 @@
         padding: 0 2px !important;
         font-size: 13px;
     }
+    .subscription .form-btns button {
+        width: 230px;
+       
+    }
 
 }
 
@@ -152,6 +220,9 @@
     .log-out-screen {
         /* right: 320px; */
     }
+    .subscription {
+        width: 50%;
+    }
 }
 
 @media(min-width:1024px) and (max-width:1198px) {
@@ -161,6 +232,10 @@
     .log-out-screen {
         right: 220px;
         
+        
+    }
+    .subscription {
+        width: 62%;
     }
 }
 
@@ -259,9 +334,9 @@
         width: 34%;
     }
 
-    .cust-gallery .swiper-slide.bg-white {
+    /*.cust-gallery .swiper-slide.bg-white {
         width: 33% !important;
-    }
+    }*/
 
     .bg-white.shadow-lg {
         margin-bottom: 36px;

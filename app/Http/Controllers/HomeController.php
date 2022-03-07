@@ -42,11 +42,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
-
         $userData = Session::get('user_data');
-
 
         $user_id = $userData->id;
         $exam_id = $userData->grade_id;
@@ -193,31 +189,76 @@ class HomeController extends Controller
         } else {
             $planner = [];
         }
-        $curl = curl_init();
-        $api_URL = env('API_URL');
-        $curl_ref_url = $api_URL . 'api/get-refer-link/' . $user_id;
+        if (!Session::has('referal_code')){
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_ref_url = $api_URL . 'api/get-refer-link/' . $user_id;
 
-        curl_setopt_array($curl, array(
+            curl_setopt_array($curl, array(
 
-            CURLOPT_URL => $curl_ref_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-        ));
+                CURLOPT_URL => $curl_ref_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
 
-        $response_json = curl_exec($curl);
-        $ref_response = json_decode($response_json, true);
-        $refer_code = isset($ref_response['referral_code']) && !empty($ref_response['referral_code']) ? $ref_response['referral_code'] : "";
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
-        Session::put('referal_link', env('APP_URL') . 'referral/' . $refer_code);
+            $response_json = curl_exec($curl);
+            $ref_response = json_decode($response_json, true);
+            $refer_code = isset($ref_response['referral_code']) && !empty($ref_response['referral_code']) ? $ref_response['referral_code'] : "";
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            Session::put('referal_link', env('APP_URL') . 'referral/' . $refer_code);
+            Session::put('referal_code', $refer_code);
+         }
+         //progress journey
+            $ideal = [];
+            $your_place = [];
+            $progress_cat = [];
+        if (Session::has('ideal')){
+            $ideal = Session::get('ideal');
+            $your_place = Session::get('your_place');
+            $progress_cat = Session::get('progress_cat');
+        }else
+        {
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
+            curl_setopt_array($curl, array(
 
-        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test'));
+                CURLOPT_URL => $curl_prog_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_preg_json = curl_exec($curl);
+            $response_prog = json_decode($response_preg_json, true);
+            if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
+                $i = 1;
+                foreach($response_prog['response']['student_progress'] as $progData)
+                {
+                    array_push($ideal, $progData['week_index']);
+                    array_push($your_place, $progData['chapter_count']);
+                    $week="W".$i;
+                    array_push($progress_cat, $week);
+                    $i++;
+
+                }
+              Session::put('ideal',$ideal);
+              Session::put('your_place', $your_place);
+              Session::put('progress_cat', $progress_cat);
+            }
+        }
+        return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test','ideal','your_place','progress_cat'));
     }
 
     public function student_stand(Request $request)

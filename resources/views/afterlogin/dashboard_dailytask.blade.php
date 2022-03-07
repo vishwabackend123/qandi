@@ -148,7 +148,10 @@ $userData = Session::get('user_data');
         $('#matrix').modal('show');
     });
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+                $(this).parent("p").hide();
+            });
             $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {

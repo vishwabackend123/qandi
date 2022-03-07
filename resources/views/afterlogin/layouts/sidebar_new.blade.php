@@ -384,6 +384,9 @@
                             <img src="{{URL::asset('public/after_login/images/Success-Medium.png')}}" />
                             <p>Invitation Send</p>
                         </div>
+                        <div class="copiedmshblock">
+                           <p class="invalid-feedback m-0 alert-success  p-1 mb-1 successRef_copy" > </p>
+                        </div>
                         <div class="backtobox">
                             <div class="backtobtn"><a><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span></a></div>
                             <div class="back_to_ref"><a onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i><span>Copy link</span></a></div>
@@ -391,14 +394,17 @@
                     </div>
                     <div class="emaillinkholder">
                         <div class="mb-3 ">
+                            <div class="formerror">
                             <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
+                            <input type="hidden" name="refer_code" id="refer_code" value="{{ session()->get('referal_code') }}">
 
                             <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                             <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
+                          </div>
                             <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
                         </div>
                         <div class="text-center refer_frd">
-                            <button type="submit" class="remove-stuff btn btn-danger rounded-0 px-5">
+                            <button type="submit" class="remove-stuff btn  rounded-0 px-5">
                                 <!-- <img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" />  -->
                                 <svg xmlns="http://www.w3.org/2000/svg" id="IconButton_ReferFriend_Default" data-name="IconButton / ReferFriend / Default" width="48" height="48" viewBox="0 0 48 48" style="&#10;    /* background: red; */&#10;">
                                     <defs>
@@ -443,8 +449,10 @@
                                 SEND INVITE
                             </button>
                         </div>
-                        <p class="py-5 text-center">or Share via Link</p>
-
+                        <div class="py-5 copiedmshblock">
+                          <p class=" text-center">or Share via Link</p>
+                          <p class="invalid-feedback m-0 alert-success  p-1 mb-1 successRef_copy" > </p>
+                         </div>
                         <div class="re_link">
                             <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" />
                             <a class="copylinkbtn" type="button" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
@@ -461,7 +469,7 @@
 <script>
     let input = document.querySelector(".emaillink");
     let button = document.querySelector(".remove-stuff");
-    button.disabled = true;
+    //button.disabled = true;
     input.addEventListener("change", stateHandle);
 
     function stateHandle() {
@@ -485,6 +493,12 @@
 
         /* Copy the text inside the text field */
         navigator.clipboard.writeText(copyText.value);
+        $(".successRef_copy").text("Copied!");
+        $(".successRef_copy").addClass('showmessage');
+        setTimeout(function() {
+            // $('.successRef_copy').fadeOut('fast');
+            $(".successRef_copy").removeClass('showmessage');
+        }, 4000);
     }
 </script>
 
@@ -492,12 +506,13 @@
 
 <script>
     $(".remove-stuff").click(function() {
-        $(".emaillinkholder").hide();
-        $(".onsendshow").show();
+        //$(".emaillinkholder").hide();
+        //$(".onsendshow").show();
     });
 
     $(".backtobtn").click(function() {
         $(".emaillinkholder").show();
         $(".onsendshow").hide();
     });
+
 </script>

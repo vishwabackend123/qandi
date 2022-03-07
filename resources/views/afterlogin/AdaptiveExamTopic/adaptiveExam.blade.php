@@ -142,7 +142,7 @@ $questtype='radio';
                                     <div class="question-block">
                                         <!-- Next and previous button -->
                                         <span style="visibility:hidden">
-                                            <button href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'disabled':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
+                                            <button href="javascript:void(0);" {{empty($prev_qKey)?'disabled':''}} id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qKey}}')" class="arrow prev-arow {{empty($prev_qKey)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
                                             <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
                                         </span>
                                         <!-- Next and previous button -->
@@ -187,7 +187,7 @@ $questtype='radio';
 
                                         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
                                     </div>
@@ -231,7 +231,11 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic"><img src="{{URL::asset('public/after_login/new_ui/images/submit-iconn.png')}}"></span>Submit</button>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                    </svg>
+                                </span>&nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 

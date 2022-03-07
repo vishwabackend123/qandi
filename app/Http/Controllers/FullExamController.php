@@ -210,6 +210,15 @@ class FullExamController extends Controller
 
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
         $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
+
+        /* this extra code for test series */
+        if (empty($que_sub_id)) {
+            $que_sub_id = (isset($question_data->subt_id)) ? $question_data->subt_id : '';
+        }
+        /* this extra code for test series */
+
+
+
         $key = array_search($quest_id, array_column($allQuestionsArr, 'question_id'));
 
         $qNo = $key + 1;
@@ -278,9 +287,18 @@ class FullExamController extends Controller
         endif;
 
         $allQuestions = isset($response) ? $response : []; // redis response as object
+
         $collection = collect($allQuestions);
         $filtered = $collection->where('subject_id', $subject_id);
         $filtered_questions = $filtered->values()->all();
+        /* this extra code for test series */
+        if (empty($filtered_questions)) {
+
+            $filtered = $collection->where('subt_id', $subject_id);
+            $filtered_questions = $filtered->values()->all();
+        }
+
+        /* this extra code for test series */
 
         $allQuestionsArr = (array)$allQuestions; //object convert to array
 
@@ -291,8 +309,11 @@ class FullExamController extends Controller
         $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
 
         $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
-
-
+        /* this extra code for test series */
+        if (empty($que_sub_id)) {
+            $que_sub_id = (isset($question_data->subt_id)) ? $question_data->subt_id : '';
+        }
+        /* this extra code for test series */
         $key = array_search($activeq_id, array_column($allQuestionsArr, 'question_id'));
 
         $qNo = $key + 1;
@@ -342,6 +363,7 @@ class FullExamController extends Controller
 
         $aGivenAns = (isset($sessionResult->given_ans->$activeq_id) && !empty($sessionResult->given_ans->$activeq_id)) ? $sessionResult->given_ans->$activeq_id : [];
         $aquestionTakenTime = isset($sessionResult->taken_time_sec->$activeq_id) ? $sessionResult->taken_time_sec->$activeq_id : 0;
+
 
         return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
     }

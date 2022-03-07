@@ -19,11 +19,12 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <label>About MyQ Matrix</label>
-                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /><br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
+                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                             </p>
                         </small>
                         <div class="topicBlocks mt-3">
@@ -301,7 +302,10 @@ $userData = Session::get('user_data');
         $('#matrix').modal('show');
     });
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+                $(this).parent("p").hide();
+            })
             $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {

@@ -315,7 +315,7 @@
     }
 
     .slider-horizontal {
-        width: 92% !important;
+        width: 90%;
         height: 20px;
     }
 
@@ -333,7 +333,7 @@
     }
 
     .exam-week-bar{
-    margin-top: 45px;
+    margin-top: 42px;
 }
 
 </style>
@@ -341,10 +341,13 @@
 
 
 <!-- Planner Section -->
-<div class="planmner-block width collapse" id="collapsePlanner">
+<div class="planmner-block width collapse planner-scheduar-block" id="collapsePlanner">
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode open-sub-planner" id="sub-planner">
+            <div class="card-common-topheading">
+                <span>SCHEDULAR</span>
+            </div>
             <div class="slimScrollDiv">
                 <div class="planner-scroll">
                     <span class="valid-feedback m-0" role="alert" id="successPlanner_alert"> </span>
@@ -398,10 +401,10 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
+                                    <!-- <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
                                     </div>
                                     <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             @endforeach
@@ -415,21 +418,23 @@
                         </div>
                     </form>
                 </div>
-                <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
+                <!-- <div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;">
                 </div>
                 <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="planner-content p-3">
             <div class="d-flex align-items-center justify-content-between">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
+<!--
                 <span>
                     <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
                     <a draggable="false" href="javascript:void(0);" class="link-danger " id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
                     <a draggable="false" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" id="close-planner-btn" title="Close Planner"><i class="fa fa-close"></i></a>
 
                 </span>
+-->
 
                 <!--
 <img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%">
@@ -589,6 +594,7 @@
 <div class="main-profile-section width collapse" id="profileAcc">
 
     <div class="account-wrapper new">
+    <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
         <div class="profile-section">
             <ul>
                 <li class="active"><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
@@ -699,28 +705,31 @@
 
         <!--profile-detail-->
         <div class="profile-show" style="min-height:650px;">
-            <div class="profile-picture-txt">
-                <div class="p-picture">
-                    <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+            <div class="profile-show-holder">
+                <div class="profile-picture-txt">
+                    <div class="p-picture">
+                        <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+                    </div>
+                    <div class="p-text">
+                        <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
+                        <p>Class - {{$user_stage}}, Preparing
+                            for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                        <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
+                        <button class="edit-btn-show" id="EdiTbtnnn"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
+                    </div>
+                    <!-- <div class="achievement">
+                            <h4>Achievements</h4>
+                            <ul>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                                <li>You attempted 5 consecutive exams on time!</li>
+                            </ul>
+                        </div> -->
                 </div>
-                <div class="p-text">
-                    <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
-                    <p>Class - {{$user_stage}}, Preparing
-                        for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
-                    <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
-                    <button class="edit-btn-show" id="EdiTbtnnn"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
-                </div>
-                <!-- <div class="achievement">
-                        <h4>Achievements</h4>
-                        <ul>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                            <li>You attempted 5 consecutive exams on time!</li>
-                        </ul>
-                    </div> -->
             </div>
             <!--profile-picture-->
+          
         </div>
 
         <!--profile-show-->
@@ -752,23 +761,33 @@
                     @csrf
                     <div class="d-flex f_l_name_box">
                         <div class="form-flds">
-                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required>
+                            <input type="text" name="firstname" autocomplete="off" id="firstname" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return lettersOnly(event)" required maxlength="15">
                         </div>
                         <div class="form-flds">
-                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)">
+                            <input type="text" name="lastname" autocomplete="off" id="lastname" placeholder="Last Name" value="{{$userData->last_name}}" required onkeypress="return lettersOnly(event)" maxlength="15">
                         </div>
                     </div>
                     <div class="form-flds">
-                        <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)">
-                        <p>This is your display name.</p>
+                        <input type="text" name="username" id="username" autocomplete="off" value="{{ucwords($userData->user_name)}}" placeholder="Display Name" required onkeypress="return lettersOnly(event)" maxlength="25">
+                        <p>This could be your first, last or nick name</p>
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
+                    <div class="svg_icon_input">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5073" width="24" height="24" viewBox="0 0 24 24">
+                            <path data-name="Path 11571" d="M0 0h24v24H0z" style="fill:none"/>
+                            <path data-name="Path 11572" d="M5 12H3l9-9 9 9h-2" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 11573" d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 11574" d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                        </svg>
+                    </div>
+
+
+
                         <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
-                        <div class=" country-code-name stu-grade" id="state_list" style="display:none">
 
-                        </div>
+                         <div class=" country-code-name stu-grade" id="state_list" style="display:none"></div> 
                     </div>
 
                     <div class="form-flds locationN">
@@ -776,6 +795,18 @@
                     </div>
 
                     <div class="form-flds flds form-group " id="citybx">
+                        <div class="svg_icon_input">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5074" width="24" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 11575" d="M0 0h24v24H0z" style="fill:none"/>
+                                <path data-name="Path 11576" d="m8 9 5 5v7H8v-4m0 4H3v-7l5-5m1 1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17h-8" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Line 609" transform="translate(13 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Line 610" transform="translate(17 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Line 611" transform="translate(17 11)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Line 612" transform="translate(17 15)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                            </svg>
+                        </div>
+
+
                         <input type="text" class="pass students select-exam" id="select-city" placeholder="Select your city" name="city" value="{{ucwords($userData->city)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
                         <div class="country-code-name stu-exam" id="city_list" style="display:none;">
@@ -808,16 +839,19 @@
         <!--edit-form-->
 
 
-        <div class="subscription right-sidebar">
+        <div class="subscription right-sidebar subscription-box">
             <div class="profile-picture-txt">
-                <div class="p-picture">
-                    <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
-                </div>
-                <div class="p-text">
-                    <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
-                    <p>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
+                <div class="profile_text_box_heading">
+                    <div class="p-picture">
+                        <img src="{{$imgPath}}" class="profile-pic uswereditpic profileimage">
+                    </div>
+                    <div class="p-text">
+                        <h4 class="activeUserName">{{ucwords($userData->user_name)}}</h4>
+                        <p>Class - {{$user_stage}}, Preparing for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
 
+                    </div>
                 </div>
+
                 <div class="subscrived">
                     <div class="p-pictures">
                         <img src="{{URL::asset('public/after_login/new_ui/images/check.png')}}" alt="icon is missing">
@@ -864,7 +898,17 @@
             <p>Are you Sure?</p>
             <div class="form-btns">
                 <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                            sessionStorage.clear();  document.getElementById('logout-form').submit();" "><button type=" button" class="save-btn">Log out</button></a>
+                                 sessionStorage.clear();  document.getElementById('logout-form').submit();" ">
+                                 <button type=" button" class="save-btn logout_btn_new">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
+                                        position: absolute;
+                                        left: 62px;
+                                        top: 20px;
+                                    ">
+                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                                    </svg>
+                                Log out</button>
+                </a>
             </div>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -47,9 +47,10 @@ $userData = Session::get('user_data');
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
                                 <div class="row padingTT">
                                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                                        <div class="bg-white shadow-lg py-5 px-3">
+                                        <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
@@ -82,16 +83,17 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                                        <div class="bg-white shadow-lg py-5 px-3">
+                                        <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
                                                 </p>
                                             </small>
                                             <div class="prgress-i-txt px-3">
-                                                <span class="progress_text">Subject proficiency</span>
+                                                <span class="progress_text">Subject Performance</span>
                                             </div>
                                             <div id="prof_scroll" class="scroll-topic-ana pe-2">
                                                 @if(!empty($subProf))
@@ -145,7 +147,8 @@ $userData = Session::get('user_data');
                                     <div class="col-lg-6 mt-3">
                                         <div class="bg-white p-3 h-100 px-5 text-center">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
@@ -155,8 +158,8 @@ $userData = Session::get('user_data');
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
-                                            <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
-                                            <div id="timeManagementButtons" class="btn-block mt-2 d-flex justify-content-between">
+                                            <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->                                           
+                                            <div id="timeManagementButtons" class="btn-block mt-2 ">
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass active" id="day_time" onclick="replace('day','week','month')">
                                                     Day
                                                 </button>
@@ -173,7 +176,8 @@ $userData = Session::get('user_data');
                                     <div class="col-lg-6  mt-3">
                                         <div class="bg-white p-3 h-100 px-5">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
@@ -181,7 +185,7 @@ $userData = Session::get('user_data');
                                             </small>
                                             <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
                                             <div id="accPer1"></div>
-                                            <p class="text-center text-danger mt-3 "><small>Lowering this average will add miles to your success journey</small></p>
+                                            <!--p class="text-center text-danger mt-3 "><small>Lowering this average will add miles to your success journey</small></p-->
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +193,8 @@ $userData = Session::get('user_data');
                                     <div class="col-lg-6 mt-3">
                                         <div class="bg-white p-3 h-100 px-5 text-center">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
@@ -199,8 +204,9 @@ $userData = Session::get('user_data');
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
-                                            <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
-                                            <div class="btn-block mt-2 d-flex justify-content-between">
+
+                                            <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
+                                            <div class="btn-block mt-2">
                                                 <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark active" id="day_mark" onclick="replace1('day1','week1','month1')">
                                                     Day
                                                 </button>
@@ -217,7 +223,8 @@ $userData = Session::get('user_data');
                                     <div class="col-lg-6  mt-3">
                                         <div class="bg-white pt-3  px-5">
                                             <small>
-                                                <i class="fa  fa-info"></i>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
@@ -225,7 +232,7 @@ $userData = Session::get('user_data');
                                             </small>
                                             <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
                                             <div id="accPer"></div>
-                                            <p class="text-center text-danger mt-3 mb-0"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
+                                            <!--p class="text-center text-danger mt-3 mb-0"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
                                         </div>
                                         <div class="bg-white  px-5" id="back2Dsh">
                                             <div class="d-flex">
@@ -346,7 +353,7 @@ $userData = Session::get('user_data');
 <script>
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 130,
+            height: 160,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -355,10 +362,10 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 50
+            y: 80
         },
         credits: {
             enabled: false
@@ -414,7 +421,7 @@ $userData = Session::get('user_data');
                 {
                     name: '',
                     y: <?php echo (100 - ($mockTestScorePre + $diffmock)); ?>,
-                    color: '#e4e4e4' // Jane's color
+                    color: '#d0f3ff' // Jane's color
                 }
             ]
         }]
@@ -923,7 +930,10 @@ $userData = Session::get('user_data');
     });
 
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+                $(this).parent("p").hide();
+            })
             $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {

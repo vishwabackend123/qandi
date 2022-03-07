@@ -5,6 +5,87 @@ $userData = Session::get('user_data');
 
 @endphp
 @section('content')
+<!-- Modal -->
+@if($subjects_rating == null || empty($subjects_rating))
+<div class="modal fade" id="welcomeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body pt-0 text-center">
+
+                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}}!</p>
+                <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
+
+                @if(isset($subjects_rating) && empty($subjects_rating))
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s get you started ></a>
+                @else
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
+                @endif
+                <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body p-4 pt-0 text-center">
+
+                <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
+
+                <div class="row">
+
+                    @if(isset($aSubjects) && !empty($aSubjects))
+                    @foreach($aSubjects as $sub)
+                    <div class="col-md-12">
+                        <div class="rating block">
+                            <span class="lbl-text">{{$sub->subject_name}}</span>
+                            <div class="rating-wrapper">
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="5" id="{{$sub->subject_name}}_5">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="4" id="{{$sub->subject_name}}_4">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="3" id="{{$sub->subject_name}}_3">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="2" id="{{$sub->subject_name}}_2">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-star"></i></label>
+                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="1" id="{{$sub->subject_name}}_1">
+                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-star"></i></label>
+                            </div>
+                        </div>
+
+                    </div>
+                    @endforeach
+                    @endif
+
+                    <div class="d-flex align-items-center mt-5">
+
+                        <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@endif
+
+<!-- Modal -->
+
+
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
@@ -21,7 +102,8 @@ $userData = Session::get('user_data');
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <div class="bg-white shadow-lg">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
@@ -59,7 +141,8 @@ $userData = Session::get('user_data');
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
@@ -69,7 +152,7 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
-                            <ul class="course-star pe-2">
+                            <ul class="course-star mb-0">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
@@ -85,7 +168,7 @@ $userData = Session::get('user_data');
                                         </div>
 
                                     </span>
-                                    <span>{{round($sub['score'])}}%</span>
+                                    <span class="">{{round($sub['score'])}}%</span>
 
 
                                 </li>
@@ -110,10 +193,11 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 myqMatrix-card">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /><br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
+                                A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                             </p>
                         </small>
                         <div class="row">
@@ -165,9 +249,10 @@ $userData = Session::get('user_data');
 
             <div class="row">
                 <div class="col-md-4">
-                    <div class="bg-white shadow-lg py-5">
+                    <div class="bg-white shadow-lg py-5 progress-journey-card">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
@@ -177,12 +262,13 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">Progress Journey</span>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <figure>
-                                    <img src="{{URL::asset('public/after_login/new_ui/images/progress-journey-graph.png')}}" class="w-100">
-                                </figure>
+                            <div class="col-md-12">
+                                <div class="progressChart" style="height:180px;margin-top:18px;">
+                                </div>
+                                <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
+                                    <i class="fa fa-arrows" style="margin-right:3px;font-size: 10px"></i>click to expand</button>
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <div class="chapter-ideal-schedule text-center">
                                     <span>8</span>
                                     <small>You are 8 chapter behind the ideal schedule</small>
@@ -195,14 +281,15 @@ $userData = Session::get('user_data');
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="bg-white shadow-lg py-5">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
@@ -220,7 +307,8 @@ $userData = Session::get('user_data');
                 <div class="col-md-3">
                     <div class="bg-white shadow-lg py-5 task-center-block">
                         <small>
-                            <i class="fa  fa-info"></i>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
@@ -273,7 +361,8 @@ $userData = Session::get('user_data');
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block weekly-plan-test">
                             <small>
-                                <i class="fa  fa-info"></i>
+                                <!-- <i class="fa  fa-info"></i> -->
+                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -295,7 +384,8 @@ $userData = Session::get('user_data');
                         @elseif(isset($planner) && !empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block">
                             <small>
-                                <i class="fa  fa-info"></i>
+                                <!-- <i class="fa  fa-info"></i> -->
+                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -330,7 +420,8 @@ $userData = Session::get('user_data');
 
                             <!----- Weekly tests ---->
                             <small>
-                                <i class="fa  fa-info"></i>
+                                <!-- <i class="fa  fa-info"></i> -->
+                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -387,7 +478,7 @@ $userData = Session::get('user_data');
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="d-flex">
-                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="https://mvp-uniq-static-assets-uat1.s3.ap-south-1.amazonaws.com/{{$val->url}}"></span>
+                                        <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{$val->url}}"></span>
                                         <div>
                                             <p>Level up in</p>
                                             <h3 class="chapter_name mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
@@ -487,85 +578,7 @@ $userData = Session::get('user_data');
     </div>
 </div>
 
-<!-- Modal -->
-@if($subjects_rating == null || empty($subjects_rating))
-<div class="modal fade" id="welcomeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
 
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            </div>
-            <div class="modal-body pt-0 text-center">
-
-                <p class="wl-user-title">Hello {{!empty($userData->user_name)?ucwords($userData->user_name):'Guest'}}!</p>
-                <h3 class=" wel-msg">Welcome to the <span class="text-danger">Game</span></h3>
-
-                @if(isset($subjects_rating) && empty($subjects_rating))
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s get you started ></a>
-                @else
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
-                @endif
-                <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-<div class="modal fade" id="favSubResponse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            </div>
-            <div class="modal-body p-4 pt-0 text-center">
-
-                <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
-
-                <div class="row">
-
-                    @if(isset($aSubjects) && !empty($aSubjects))
-                    @foreach($aSubjects as $sub)
-                    <div class="col-md-12">
-                        <div class="rating block">
-                            <span class="lbl-text">{{$sub->subject_name}}</span>
-                            <div class="rating-wrapper">
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="5" id="{{$sub->subject_name}}_5">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_5"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="4" id="{{$sub->subject_name}}_4">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_4"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="3" id="{{$sub->subject_name}}_3">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_3"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="2" id="{{$sub->subject_name}}_2">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_2"><i class="fa fa-star"></i></label>
-                                <input class="rating-input" type="radio" name="{{$sub->id}}" value="1" id="{{$sub->subject_name}}_1">
-                                <label class="rating-heart" for="{{$sub->subject_name}}_1"><i class="fa fa-star"></i></label>
-                            </div>
-                        </div>
-
-                    </div>
-                    @endforeach
-                    @endif
-
-                    <div class="d-flex align-items-center mt-5">
-
-                        <a href="#" class="btn rating-next-btn disabled  rounded-0 ms-auto px-4" id="nxt-btn" onclick="store_rating();">Next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-@endif
-
-<!-- Modal -->
 
 <!-- Full exam popup -->
 @if(isset($prof_asst_test) && $prof_asst_test=='N')
@@ -610,6 +623,25 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 
+<!--------- Graph Expand ------>
+<div class="modal fade" id="graphExpand" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 900px;">
+        <div class="modal-content rounded-0 bg-light">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="progressChartExpend"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------->
+
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
+
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
 <!-- footer Section end  -->
@@ -637,17 +669,13 @@ $weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];
 $stu_scroe_json = isset($trend_stu_scroe) ? json_encode($trend_stu_scroe) : [];
 $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
 $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
+$ideal = isset($ideal) ? json_encode($ideal) : [];
+$your_place = isset($your_place) ? json_encode($your_place) : [];
+$progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
 
 @endphp
 
 <script type="text/javascript">
-    $(window).on('load', function() {
-        if ($("#welcomeModal").length > 0) {
-            $('#welcomeModal').modal('show');
-        }
-
-    });
-
     $(".rating-input").click(function() {
         $("#nxt-btn").removeClass("disabled");
     });
@@ -1027,7 +1055,10 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
 </script>
 <script>
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                $(this).parent("p").hide();
+            });
             $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {
@@ -1035,4 +1066,76 @@ $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
         });
     });
 </script>
+<script language="JavaScript">
+    $(document).ready(function() {
+        var title = {
+            text: ''
+        };
+        var subtitle = {
+            text: ''
+        };
+        var xAxis = {
+            title: {
+                text: 'Weeks'
+            },
+            categories: <?php echo $progress_cat; ?>,
+            labels: {
+                useHTML: true,
+                rotation: 0,
+            }
+        };
+        var yAxis = {
+            title: {
+                text: 'No of Chapters'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        };
+        var tooltip = {
+            valueSuffix: ''
+        }
+        var legend = {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            bottom: '-20px',
+            floating: false,
+            borderWidth: 0,
+        };
+        var series = [{
+                name: 'Ideal Pace',
+                data: <?php echo $ideal; ?>, //[0.0, 5.0, 10.0],
+                color: '#db2f36'
+            },
+            {
+                name: 'Your Pace',
+                data: <?php echo $your_place; ?>, //[0, 2, 5.7],
+                color: '#21ccff'
+            }
+        ];
+        var credits = {
+            enabled: false
+        };
+        var exporting = {
+            enabled: false
+        };
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+        json.credits = credits;
+        json.exporting = exporting;
+        $('.progressChart').highcharts(json);
+        $('.progressChartExpend').highcharts(json);
+    });
+</script>
+
+
 @endsection

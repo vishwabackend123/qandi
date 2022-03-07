@@ -4,14 +4,15 @@
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                 <div class="bg-white shadow-lg py-3 px-3">
                     <small>
-                        <i class="fa  fa-info"></i>
+                        <!-- <i class="fa  fa-info"></i> -->
+                        <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                         <p>
                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                             A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
                         </p>
                     </small>
                     <div class="prgress-i-txt px-3">
-                        
+
                         <span class="progress_text">Progress</span>
 
                     </div>
@@ -57,7 +58,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[0]->skill_name}} MyQ Matirix</h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a>
 
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -83,7 +84,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[1]->skill_name}} MyQ Matirix</h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a>
 
 
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -104,7 +105,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[2]->skill_name}} MyQ Matirix</h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a>
                             <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -123,7 +124,7 @@
 
                             <p class="arrow-box-content">is your accuracy in these questions</p>
 
-                            <h4 class="text-danger fw-2 pt-10 fs-12">See {{$skillPer[3]->skill_name}} MyQ Matirix</h4>
+                            <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a>
                             <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -138,9 +139,17 @@
         <div class="bg-white shadow-lg p-3">
             <div class="d-flex align-items-center px-3 flex-box1">
                 <h5 class="dashboard-title ">Topics </h5>
-                <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})"><i class="fa fa-arrows-alt" aria-hidden="true"></i>EXPAND</button></span>
+                <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
+                            <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
+                            <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                        </svg>
+                        EXPAND</button></span>
             </div>
-            <div class="scroll-topic-ana">
+            <div class="scroll-topic-ana pe-2">
                 @if($subProf)
                 @foreach($subProf as $val)
 
@@ -175,99 +184,112 @@
 
         </div>
     </div>
-    <div class="row" id="time-Avg-quest">
-        <div class="col-lg-6 mt-3">
-            <div class="bg-white p-3 h-100 px-5 text-center">
-                <small>
-                    <i class="fa  fa-info"></i>
-                    <p>
-                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                        In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
-                    </p>
-                </small>
-                <p class="text-uppercase fw-bold text-start">Time Management</p>
-                <div id="day" style="display:block"></div>
-                <div id="week" style="display:none"></div>
-                <div id="month" style="display:none"></div>
-                <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
-                <div class="btn-block mt-3 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
-                        Day
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
-                        Week
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_month_time" onclick="replace('month','day','week')">
-                        Month
-                    </button>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-lg-6  mt-3">
-            <div class="bg-white p-3 h-100 px-5">
-                <small>
-                    <i class="fa  fa-info"></i>
-                    <p>
-                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                        Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
-                    </p>
-                </small>
-                <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
-                <div id="accPerSubjectWise1"></div>
-                <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="row" id="marKs-trends">
-        <div class="col-lg-5 mt-3">
-            <div class="bg-white p-3 h-100 px-5 text-center">
-                <small>
-                    <i class="fa  fa-info"></i>
-                    <p>
-                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                        This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
+    <div class="col-sm-12">
+        <div class="row" id="time-Avg-quest">
+            <div class="col-lg-6 mt-3">
+                <div class="bg-white p-3 h-100 px-5 text-center">
+                    <small>
+                        <!-- <i class="fa  fa-info"></i> -->
+                        <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                        <p>
+                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                            In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
                         </p>
-                </small>
-                <p class="text-uppercase fw-bold text-start">Marks Trend</p>
-                <div id="day1" style="display:block"></div>
-                <div id="week1" style="display:none"></div>
-                <div id="month1" style="display:none"></div>
-                <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
-                <div class="btn-block mt-3 d-flex justify-content-between">
-                    <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
-                        Day
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
-                        Week
-                    </button>
-                    <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_month_mark" onclick="s_replace1('month1','day1','week1')">
-                        Month
-                    </button>
-                </div>
+                    </small>
+                    <p class="text-uppercase fw-bold text-start">Time Management</p>
+                    <div id="day" style="display:block"></div>
+                    <div id="week" style="display:none"></div>
+                    <div id="month" style="display:none"></div>
+                    <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
+                    <div class="btn-block mt-3 d-flex justify-content-between">
+                        <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
+                            Day
+                        </button>
+                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_week_time" onclick="replace('week','day','month')">
+                            Week
+                        </button>
+                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_timeClass" id="s_month_time" onclick="replace('month','day','week')">
+                            Month
+                        </button>
+                    </div>
 
+                </div>
+            </div>
+            <div class="col-lg-6  mt-3">
+                <div class="bg-white p-3 h-100 px-5">
+                    <small>
+                        <!-- <i class="fa  fa-info"></i> -->
+                        <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                        <p>
+                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                            Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
+                        </p>
+                    </small>
+                    <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
+                    <div id="accPerSubjectWise1"></div>
+                    <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
+                </div>
             </div>
         </div>
-        <div class="col-lg-7 mt-3">
-            <div class="bg-white pt-3  px-5">
-                <small>
-                    <i class="fa  fa-info"></i>
-                    <p>
-                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                        It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
-                    </p>
-                </small>
-                <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
-                <div id="accPerSubjectWise"></div>
-                <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
-            </div>
-            <div class="bg-white pt-3  px-5" id="back2Dsh">
-                <div class="d-flex">
-                    <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                    <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><i class="fa fa-download"></i> &nbsp;Export Analytics</button>
+        <div class="row" id="marKs-trends">
+            <div class="col-lg-5 mt-3">
+                <div class="bg-white p-3 h-100 px-5 text-center">
+                    <small>
+                        <!-- <i class="fa  fa-info"></i> -->
+                        <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                        <p>
+                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                            This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
+                        </p>
+                    </small>
+                    <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+                    <div id="day1" style="display:block"></div>
+                    <div id="week1" style="display:none"></div>
+                    <div id="month1" style="display:none"></div>
+                    <p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p>
+                    <div class="btn-block mt-3 d-flex justify-content-between">
+                        <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
+                            Day
+                        </button>
+                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_week_mark" onclick="s_replace1('week1','day1','month1')">
+                            Week
+                        </button>
+                        <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 s_classMark" id="s_month_mark" onclick="s_replace1('month1','day1','week1')">
+                            Month
+                        </button>
+                    </div>
+
                 </div>
             </div>
+            <div class="col-lg-7 mt-3">
+                <div class="bg-white pt-3  px-5">
+                    <small>
+                        <!-- <i class="fa  fa-info"></i> -->
+                        <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                        <p>
+                            <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                            It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
+                        </p>
+                    </small>
+                    <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
+                    <div id="accPerSubjectWise"></div>
+                    <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
+                </div>
+                <div class="bg-white pt-3  px-5" id="back2Dsh">
+                    <div class="d-flex">
+                        <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
+                        <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                            </svg>
+                            &nbsp;Export Analytics</button>
+                    </div>
+                </div>
 
+            </div>
         </div>
     </div>
 </div>
@@ -859,7 +881,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 <script>
     Highcharts.chart('subjectscorecontainer', {
         chart: {
-            height: 130,
+            height: 160,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -868,10 +890,10 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 50
+            y: 80
         },
         credits: {
             enabled: false
@@ -928,16 +950,18 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
                     name: '',
                     y: <?php echo (100 - ($preSocre + $diffmock)); ?>,
 
-                    color: '#e4e4e4' // Jane's color
+                    color: '#d0f3ff' // Jane's color
                 }
             ]
         }]
     });
 </script>
 <script>
-
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small i").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                $(this).parent("p").hide();
+            })
             $(this).siblings("p").show();
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {

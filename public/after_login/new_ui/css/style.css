@@ -16,6 +16,268 @@ button {
     text-decoration: none;
 }
 
+/******* 04-03-2022 Amit-Start ******/
+#dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
+.cust-tabs.nav.nav-tabs .nav-link{min-width: 150px;}
+.subscription .profile-picture-txt .p-text p {margin-bottom: 0px;}
+/******* 04-03-2022 Amit-End ******/
+
+/*****shubham(02-03-2022)*****/
+
+.closeprofile {
+    z-index: 99;
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    background: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+}
+.closeprofile img {
+    width: 30px;
+}
+/** the following css for placeholder **/
+.edit-form input:-ms-input-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+.edit-form input::placeholder {
+    color: #2c3348;opacity:0.3;
+}
+.edit-form input::-webkit-input-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+
+.edit-form .form-group input:-moz-placeholder {
+    opacity:1;
+}
+.edit-form .form-group input:-ms-input-placeholder {
+    opacity:1;
+}
+.edit-form .form-group input::placeholder {
+    opacity:1;
+}
+.edit-form .form-group input::-webkit-input-placeholder {
+   opacity:1;
+}
+
+.edit-form input:-moz-placeholder {
+    color: #2c3348;opacity:0.3;
+}
+
+/** placeholder css end here **/
+.successRef_copy {
+    transition: 0.5s ease-in-out all;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: fit-content;
+    background: #21ccffba;
+    bottom: 34px;
+    left: 50%;
+    transform: translate(-50%, -20px);
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    color: #fff;
+    transition: 0.5s ease-in-out all;
+    padding: 7px 21px!important;
+    border-radius: 6px;
+
+
+  }
+  .successRef_copy.showmessage {
+    animation: animatemessage 1s ease forwards;
+    opacity: 1;
+    display: block;
+    width: auto;
+    bottom:0px;
+  }
+  .copiedmshblock{position: relative;}
+  @keyframes animatemessage {
+    0% {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -20px);
+    }
+    40% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0);
+    }
+    90% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0);
+    }
+    100% {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, 0px);
+    }
+  }
+.formerror{position: relative;padding-bottom:10px;}
+#referEmails-error{position:absolute;}
+.reviewPanel .cust-tabs .nav-link{padding-right: 40px!important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    min-width: 230px;
+    padding-left: 60px!important;} 
+    #review_rques_blk .question{margin-bottom:20px; margin-top:20px;}
+    #review_rques_blk .question.question-height .q-no{top:23px}
+    #review_rques_blk .ans-block{padding:0 34px}
+    div#myTabContent.reviewPanel  .tab-pane .question-block{padding: 15px  5rem ;}
+    .planner-scheduar-block.show{background-color: rgba(255, 255, 255, 0.81);}
+    .planner-scheduar-block{background-color:transparent;}
+    .planner-scheduar-block .planner-edit-mode{box-shadow:none;}
+    .planner-scheduar-block.show .planner-edit-mode{box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);}
+    .planner-scheduar-block.planner-content{box-shadow:none;}
+    .planner-scheduar-block.show .planner-content{    box-shadow: 0px 0px 6px -3px;}
+    .planner-scheduar-block.planmner-block,div#collapseNotification{padding-top:0px!important;}
+    .planner-scheduar-block .planner-wrapper,.notification-block .planner-wrapper {padding-top:15px;}
+    .planner-scheduar-block .planner-content{top:15px}
+
+/*****shubham(02-03-2022)-end*****/
+/******* 04-03-2022 shubham-Start ******/
+.tab-wrapper{overflow-x: hidden;}
+.cust-tabs .nav-link{padding-right: 30px!important;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    min-width: 204px;
+    padding-left: 43px!important;}
+/*****shubham(04-03-2022)-end*****/
+
+/* shubham-start(05-03-2022) */
+   .exam-analytics .abrv-graph{width:15px;height:15px;}
+   .exam-analytics .abrv-graph.bg1{color:#37c027   }
+   .exam-analytics  .graph-txt{font-family: Manrope;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #231f20;}
+    .exam-analytics .abrv-graph.bg2{color:#eb5347;}
+    .exam-analytics .abrv-graph.bg3{color:#e9e9e9}
+    .exam-analytics .blue-block span{font-size: 16px;
+        font-weight: 600;text-align: left;color: #231f20;}
+        .exam-analytics .blue-block span.fs-1{font-size: 48px;
+            font-weight: 600;}
+            .exam-analytics .blue-block span.text-dark{color: #231f20;}
+    #dropdownMenuLink .dsow{display:inline-block;}  
+    #dropdownMenuLink .hsow{display:none;}  
+    #dropdownMenuLink.show .dsow{display:none;}  
+    #dropdownMenuLink.show .hsow{display:inline-block;}    
+    #dropdownMenuLink-topic .dsowl{display:inline-block;}  
+    #dropdownMenuLink-topic .hsowl{display:none;}  
+    #dropdownMenuLink-topic.show .dsowl{display:none;}  
+    #dropdownMenuLink-topic.show .hsowl{display:inline-block;} 
+    
+    
+
+/* shubham(05-03-2022)-end */
+
+
+/******* 03-03-2022 Amit-Start ******/
+
+.card-common-topheading {border-top-left-radius: 56px;background-color: #f6f9fd;padding: 15px 0px 15px 65px;border-top-right-radius: 56px;color: #2c3348;font-weight: 700;font-size: 18px;position: relative;}
+.planner-scheduar-block .planner-edit-mode{padding:0!important;}
+.planner-scheduar-block .slimScrollDiv {padding: 25px 35px 35px;}
+.card-common-topheading:before {content: '';position: absolute;background-color: #fff;top: 0;left: 0;height: 58px;width: 250px;border-top-left-radius: 56px;border-top-right-radius: 56px;}
+.card-common-topheading span {z-index: 1;position: relative;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:before {content: '';position: absolute;background-color: #fff;top: -16px;left: 0;height: 58px;width: 170px;border-top-left-radius: 42px;border-top-right-radius: 42px;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between{position: relative;padding-left: 40px;}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase{z-index: 1;font-size: 18px!important;}
+.planner-scheduar-block a#close-edit-planner-btn {top: 0;}
+
+/******* 04-03-2022 sachin-Start ******/
+.planner-scheduar-block span#slide-input{
+    background-color:rgba(216,224,230,0.5);
+    opacity: 1;font-size: 13px !important;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/******* 04-03-2022 sachin-end ******/
+.dashboard-cards-block .weekylplan-block.bg-white>small p{min-width: 235px; top: -18px;}
+.dashboard-cards-block .progress-journey-card.bg-white>small p{min-width: 350px;}
+a.close-btn, a.export-btn {
+    top: 45px;
+    border-radius: 100%!important;
+    padding: 6px;
+}
+
+
+/******* 03-03-2022 Amit-End ******/
+
+/******* 02-03-2022 Amit-Start ******/
+.dash-sidebar a .b , .dash-sidebar a .c{stroke: #4cb9f9 !important;}
+#exam_content_sec .question-block .question p::-webkit-scrollbar {height:4px;}
+#exam_content_sec .question-block .question p{overflow-x: auto;overflow-y: hidden;padding-bottom: 4px;}
+.backtobox .back_to_ref a{border-radius: 20px;font-weight: 600;padding: 14px 39px;}
+#dialog-pdf .report-block2.p-5 small p img {width: 25px !important;}
+.backtobox .backtobtn a {border-radius: 20px;background: rgba(233,233,233,0.5);}
+.backtobox .backtobtn i , .backtobox .backtobtn span{color: #2c3348;}
+#sharefrnd.modal button.btn-close {right: 38px;top: 28px;}
+.content-wrapper.examSect {height: 100vh;display: flex;align-items: center;}
+div.sublinks a[aria-expanded="true"] {background: #00bdff!important;color: #fff!important;}
+.dashboard-cards-block .bg-white>small p>span img{width: 22px!important;}
+div.sublinks a:active {
+    background: #00bdff!important;
+    color: #fff!important;
+}
+.btn.btnzoom-in-out {
+    font-size: 12px;
+    text-transform: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    color: #28a745!important;
+    padding: 2px 4px;
+    box-shadow: none!important;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.progressChart .highcharts-background{fill: transparent;}
+.loader-block {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+.loader-block img {
+    width: 200px;
+}
+.btn.btnzoom-in-out:hover {
+    color: #000!important;
+}
+.notification a svg .cls-2 {
+    stroke: none;
+}
+/******* 02-03-2022 Amit-End ******/
+
+/******* 28-02-2022 Amit-Start ******/
+ul.cust-tabs li:first-child a {
+    border-top-left-radius: 11px !important;
+}
+/******* 28-02-2022 Amit-Start ******/
+
 .cust-gallery .swiper-slide.weekly-plan-test{padding: 18px 35px 35px;}
 
 /******* 23-02-2022 Amit-Start ******/
@@ -26,7 +288,7 @@ form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1r
 span a#close-edit-planner-btn img {width: 24px !important;height: 24px;margin-top: 2px;}
 .subject-placeholder-block img {width: 100px;margin: 10px 0 20px;}
 .chaptbox-add  a#subject_chapter_1, .chaptbox-add a#subject_chapter_2, .chaptbox-add a#subject_chapter_3,
-.chaptbox-add a#subject_chapter_4, .chaptbox-add a#subject_chapter_5{background: rgba(0,0,0,0.05)!important;opacity: unset;}
+.chaptbox-add a#subject_chapter_4, .chaptbox-add a#subject_chapter_5, .subject_chapter .chaptbox-add a.btn-light{background: rgba(0,0,0,0.05)!important;opacity: unset;}
 .chaptbox-add>a span img {width: 20px;}
 .swiper-slide .course-star li {padding-bottom:0px;}
 .dashboard-cards-block #time-Avg-quest .bg-white>small , .dashboard-cards-block #marKs-trends .bg-white>small {right: 10px;top: 5px;}
@@ -147,21 +409,31 @@ span.filtericon {
  
 /***************************/
 input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* color: rgba(0, 0, 0, 0.50) !important; */
     color: #2c3348 !important;
-    opacity: 1; /* Firefox */
+    opacity: 0.5 !important;
+     
   }
   
   input#search_field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #2c3348 !important;
+   color: #2c3348 !important;
+    opacity: 0.5 !important;
   }
   
   input#search_field::-ms-input-placeholder { /* Microsoft Edge */
     color: #2c3348 !important;
+    opacity: 0.5 !important;
   }
 /******************************/
 
+
+ 
+ 
+   
+
+
 #review_rques_blk .question p {
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -194,7 +466,7 @@ a#open-tab {
 #back2Dsh img {
     width: 15px;
     height: 15px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .profile-section ul li:hover {
@@ -264,7 +536,7 @@ div#marKs-trends .bg-white p {
    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
    {width: 265px!important;}
     .subject-placeholder-block>span{display: flex;margin-top:10px;justify-content: center;}
-    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}
+/*    .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 400px !important;}*/
     span.text-secondary.chapter_name.mb-2.d-block {text-align: center;}
     .subject-placeholder-block span img:first-child {margin-right: -45px;}
     
@@ -481,21 +753,23 @@ ul.matrixLists li b {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 10%);
-    z-index: 1;
-    padding: 20px 40px 20px 20px;
+    z-index: 55;
+    padding: 15px 30px 15px 20px;
     position: absolute;
     right: -7px;
     top: -7px;
-    min-width: 380px;
+    min-width: 350px;
     display: none;
     text-align: left;
     height: auto!important;
+    font-size: 13px;
+    left: auto!important;
 }
 
 .dashboard-cards-block .bg-white>small p>span {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 8px;
+    top: 8px;
 }
 
 .dashboard-cards-block .bg-white>small p label {
@@ -847,9 +1121,9 @@ a.disabled-btn {
 }
 
 
-#editProfile_form::-webkit-scrollbar-thumb:hover {
+/* #editProfile_form::-webkit-scrollbar-thumb:hover {
     background: #555 !important;
-}
+} */
 
 #editProfile_form .slimScrollBar {
     background: transparent !important;
@@ -868,13 +1142,87 @@ a.disabled-btn {
     margin-bottom: 10px !important;
 } */
 
+
+/* Added by sachin 05-03-22 */
 #editProfile_form .form-btns {
     text-align: center;
-    display: inline-block;
+    /* display: inline-block;
     width: 100%;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    
 }
+
+#editProfile_form .form-btns button#cancelEdit , #editProfile_form .form-btns button#saveEdit{
+    width: 183.5px;
+}
+.edit-form .edit-img {
+    margin-bottom: .8rem !important;
+}
+/* End by sachin 05-03-22 */
+
+
+/* Added by sachin 03-03-22 */
+#editProfile_form input::placeholder {
+    color:#2c3348 !important; opacity: 0.3;
+ 
+}
+
+#editProfile_form input::-webkit-input-placeholder {
+    color:#2c3348 !important; opacity: 0.3;
+    
+}
+
+#editProfile_forminput::-webkit-input-placeholder {
+    color:#2c3348 !important; opacity: 0.3;
+}
+
+#editProfile_forminput:-moz-placeholder {
+    color:#2c3348 !important; opacity: 0.3;
+}
+
+input#select-state::placeholder , input#select-city::placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;;
+ 
+}
+
+input#select-state::-webkit-input-placeholder , input#select-city::-webkit-input-placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+    
+}
+
+input#select-state::-webkit-input-placeholder , input#select-city::-webkit-input-placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+}
+
+input#select-state:-moz-placeholder, input#select-city:-moz-placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+}
+
+input#select-state::placeholder, input#select-city::placeholder {
+    color: #2c3348  !important;
+    opacity: 1 !important;
+}
+
+/* End by sachin 03-03-22 */
+
+
+
+
+
+
+
+
+
 
 #statebx,
 #citybx {
@@ -897,10 +1245,12 @@ a.disabled-btn {
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: rgba(13, 193, 255, 0.4) !important;
+    border-radius: 10px;
 }
 
 
@@ -916,13 +1266,12 @@ a.disabled-btn {
 }
 
 .active_user {
-    background: #f2f2f2;
-
+    background: #f1f1f1;
     padding: 10px 0px;
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 290px;
+    max-width: 312px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -942,7 +1291,7 @@ a.disabled-btn {
     background: #e9e9e9;
     padding: 15px 30px;
     font-size: 18px;
-    font-weight: 600;
+    /* font-weight: 600; */
     color: #2c3348;
     text-transform: uppercase;
     border: none;
@@ -958,6 +1307,12 @@ a.disabled-btn {
 
 input#country {
     text-align: center;
+    color: #2c3348;
+    opacity: .7;
+
+}
+#editProfile_form .form-flds input {
+    color: #2c3348;
 }
 
 /*End 2 feb */
@@ -1017,14 +1372,14 @@ input#usernameloca {
 }
 
 input.select-grade {
-    background: url(..//images/state-log.png) no-repeat #f2f2f2 !important;
+    /* background: url(..//images/state-log.png) no-repeat #f2f2f2 !important; */
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
 }
 
 input.select-exam {
-    background: url(..//images/city-log.png) no-repeat #f2f2f2 !important;
+    /* background: url(..//images/city-log.png) no-repeat #f2f2f2 !important; */
     padding-left: 40px !important;
     background-size: 22px !important;
     background-position: 5px !important;
@@ -1069,7 +1424,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(13, 193, 255, 0.4) !important;
 }
 
 .country-code-name::-webkit-scrollbar-track {
@@ -1077,7 +1432,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
 }
 
 .country-code-name ul li:hover {
@@ -1441,7 +1796,7 @@ span.p-icons span:active {
 }
 
 .subscription .p-text h3 {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 48px;
 }
 
@@ -1506,11 +1861,20 @@ span.p-icons span:active {
 
 #editProfile_form .form-flds p {
     text-align: right;
-    margin-bottom: 0px !important;
+    margin-bottom: 0px !important; opacity: 1;    font-size: 12px;
 }
 
 #profile_pic_form img {
-    width: 25px;
+    width: 17px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.svg_icon_input{
+    position: absolute;
+    top: 8px;
+    left: 8px;
 }
 
 ::-webkit-input-placeholder {
@@ -1733,7 +2097,7 @@ body#main-body .seeAnico span img {
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sign-btn a button:hover {
@@ -1747,10 +2111,12 @@ body#main-body .seeAnico span img {
 }
 
 button#dropdownMenuLink-topic {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    margin-top: -12px;
+	box-shadow: none;
 }
-
+.scroll-div .compLeteS div.d-flex.px-4{position: relative;}
 .preparation .cust-tabs .nav-link.active:before {
     right: -56px;
 }
@@ -1927,23 +2293,25 @@ button#saveEdit {
 }
 
 /* comment by sachin 18_02_22*/
-#sharefrnd button.btn.btn-danger {
-    background: #21ccff !important;
+#sharefrnd button.btn {
     border-radius: 8px !important;
     border-radius: 20px !important;
     border: none !important;
     height: 60px;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    background-image: linear-gradient(237deg, var(--neon-blue) 91%, var(--bright-sky-blue) -1%);
     /* width: 252px; */
     font-size: 18px;
     font-weight: 600;
     font-stretch: normal;
-    font-style: normal;
+    font-style: normal;color: #fff;
     line-height: normal;
     letter-spacing: normal;
+    background-image: linear-gradient(to bottom, #21ccff, #21ccff)!important;
 
-
+}
+#sharefrnd button.btn:hover {
+    background-image:none!important;
+    background-color: #00baff !important;
 }
 
 .refer_frd img {
@@ -2085,7 +2453,6 @@ span.notification.ms-4 {
 
 /**  custome page tabing solved z-index value 17-12-2021 fisrt half**/
 .custom-page .tab-wrapper .nav-tabs {
-    z-index: 9;
     position: relative;
 }
 
@@ -2535,7 +2902,6 @@ p.mb-0.line-height-18px {
 }
 
 .tab-wrapper .nav-tabs {
-    z-index: 9;
     position: relative;
 }
 
@@ -2610,6 +2976,13 @@ button.percentage-digit {
     overflow: auto;
     height: 210px;
     overflow-x: hidden;
+    margin-top: 0px;
+}
+.review_heading1{
+    padding-top: 30px;
+}
+.review_heading1 i{
+    color: #434343 !important;
 }
 
 .review-qus span a {
@@ -2670,11 +3043,13 @@ button.percentage-digit {
 /* Track */
 .answer-section::-webkit-scrollbar-track {
     background: #f1f1f1;
+     border-radius: 10px;
 }
 
 /* Handle */
 .answer-section::-webkit-scrollbar-thumb {
     background: #d0f3ff;
+    border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -2944,7 +3319,7 @@ div#sub-planner {
 }
 
 .profile-show {
-    position: absolute;
+    /* position: absolute;
     top: 0px;
     right: 540px;
     width: 365px;
@@ -2953,7 +3328,32 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     z-index: 9;
+    min-height: 450px !important; */
+
+
+   
+    position: absolute;
+    top: 0px;
+    right: 539px;
+    width: 365px;
+    background: #fff;
+    /* padding: 10px 15px; */
+    border-radius: 30px;
+    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    z-index: 9;
     min-height: 450px !important;
+    background-image: url(../images/analytics-thumbnail2.png);
+    /* background-repeat: no-repeat;
+    background-position: left 30% bottom -199px; */
+    background-size: cover;
+
+}
+
+.profile-show-holder {
+    background: white;
+    display: flex;
+    border-top-left-radius: 56px;
+    border-top-right-radius: 56px;
 }
 
 .profile-picture-txt .p-picture {
@@ -2967,6 +3367,7 @@ div#sub-planner {
 
 .profile-picture-txt {
     padding: 23px 20px;
+    width:100%;
 }
 
 .profile-picture-txt .p-text {
@@ -2987,6 +3388,7 @@ div#sub-planner {
     color: #00baff;
     font-weight: 600;
     text-align: left;
+    font-size:18px;
 }
 
 .profile-section ul li svg {
@@ -3004,6 +3406,11 @@ div#sub-planner {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     padding: 15px 20px;
 
+}
+
+.profile-show button:hover{
+    background: #00baff;
+    transition: none;
 }
 
 .achievement {
@@ -3087,9 +3494,11 @@ div#sub-planner {
     width: 100%;
 }
 
+
 .edit-pic {
     position: absolute;
-    bottom: 0px;
+    /* bottom: 0px; */
+    bottom: -3px;
     left: 47%;
     width: 25px;
     background: #fff;
@@ -3137,7 +3546,7 @@ button.cancel-btn {
     background: #e9e9e9;
     padding: 15px 30px;
     font-size: 18px;
-    font-weight: 600;
+    /* font-weight: 600; */
     color: #2c3348;
     text-transform: uppercase;
     border: none;
@@ -3150,7 +3559,7 @@ button.save-btn {
     background: #00baff;
     font-size: 18px;
     text-transform: uppercase;
-    font-weight: 600;
+    /* font-weight: 600; */
     color: #fff;
     padding: 15px 30px;
     border: none;
@@ -3164,43 +3573,64 @@ button.save-btn {
     width: 49%;
     background: #fff;
     border-radius: 56px;
-    padding: 15px 20px 15px 25px;
+    /* padding: 15px 20px 15px 20px; */
+    padding: 40px;
     position: absolute;
     right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
+    max-width: 672px;
 }
 
 /* .subscription .profile-picture-txt .p-picture {
     height: 100px;
 } */
 
+
+.profile_text_box_heading{
+    display: flex;
+    align-items: center;
+}
+
+.profile_text_box_heading .p-picture{
+    margin-right: 25px;
+}
+
 .subscription .profile-picture-txt {
-    padding: 20px 0px;
+    /* padding: 20px 0px; */
+    padding: 0px;
 }
 
 .subscription .profile-picture-txt .p-text {
     width: 83%;
 }
 
+
+/*Added by sachin 03-03-22*/
 .log-out-screen .p-picture {
-    width: 80px;
+    /* width: 80px; */
+    width:84px;
     border: none;
     border-radius: 50%;
-    height: 80px;
+    /* height: 80px; */
+    height: 84px;
     text-align: center;
     overflow: hidden;
     margin: 0 auto;
 }
-
+/*Ended by sachin 03-03-22*/
 .subscription h4 {
     text-align: left;
     font-size: 18px;
     color: #00baff;
     text-transform: uppercase;
-    font-weight: 600;
+    /* font-weight: 600; */
     padding-right: 25px;
+}
+
+.subscription-box .subscription h4{
+    word-break: break-word;
 }
 
 .subscrived {
@@ -3209,9 +3639,23 @@ button.save-btn {
     background: #f2f2f2;
     border-radius: 42px;
     padding: 31px 20px;
-    margin: 20px 0px 0px;
+    /* margin: 20px 0px 0px; */
+    margin: 50px 0px 0px;
+}
+/*Added by sachin 05-03-22*/
+.subscription .p-picture {
+    margin-left: 10px;
 }
 
+.subscription .subscrived .p-pictures {
+    margin-left: 3%;
+} 
+.subscription  .subscrived .p-pictures img {
+    width: 50px;
+    height: 50px;
+}
+ 
+/*Ended by sachin 05-03-22*/
 .subscrived .p-pictures {
     float: left;
     margin-left: 0%;
@@ -3224,31 +3668,48 @@ button.save-btn {
 
 .subscription .form-btns {
     margin: 20px 0px;
+    margin-bottom: 0px;
+    margin-top: 60px;
 }
 
 .subscrived .p-pictures img {
     width: 55px;
     height: 55px;
 }
-
+/** Added by sachin 05-03-22 **/
 .subscription .form-btns button {
-    width: 250px;
+    /* width: 237px; */
+    width: 264px;
     margin-right: 15px;
 }
+/** Ended by sachin 05-03-22 **/
 
 /** Log out screen **/
+/** Added by sachin 03-03-22 **/
+.logout_btn_new{
+    position: relative;
+}
+.logout_btn_new svg{
+    position: absolute;
+    left: 62px;
+    top: 20px;
+}
+
 .log-out-screen {
     width: 26.7%;
     background: #fff;
     border-radius: 56px;
-    padding: 40px 20px 40px 25px;
+    /* padding: 40px 20px 40px 25px; */
+    padding: 50px 20px 50px 25px;
     position: absolute;
     right: 220px;
     top: 0%;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     display: none;
+    max-width: 360px;
 
 }
+/** End by sachin 03-03-22 **/
 
 .profile-section ul li a span i {
     font-size: 25px;
@@ -3267,16 +3728,29 @@ button.save-btn {
     margin-bottom: 50px;
 }
 
+/** Added by sachin 03-03-22 **/
 .log-out-screen p {
     text-align: center;
     color: #2c3348;
     margin: 10px 0px;
     font-size: 16px;
-    font-weight: 400;
+    /* font-weight: 400; */
+    font-weight: normal;
+    opacity: 1;
 }
 
+
+.log-out-screen .form-btns {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+}
+/** End by sachin **/
+
 .log-out-screen button.save-btn {
-    width: 84%;
+    /* width: 84%; */
+    width: 264px;
 }
 
 .subscription .profile-picture-txt .p-picture img {
@@ -3302,7 +3776,7 @@ button.save-btn {
 /*** rahul css on 16-12-2021 */
 /** Listing series page css on 16-12-2021 **/
 .list-series .live-exam .speci-text li {
-    width: 18%;
+    width: 24%;
     margin-right: 0px;
 }
 
@@ -3336,8 +3810,8 @@ button.save-btn {
 
 /** custom page css on 16-12-2021 **/
 .custom-page #dropdownMenuLink {
-    width: 40px;
-    height: 40px
+    width: 48px;
+    height: 48px;
 }
 
 /** end here **/
@@ -3350,7 +3824,7 @@ button.save-btn {
 
 .live-test li {
     font-size: 12px;
-    color: #2c3348;
+    color: #231f20;
     float: none !important;
     display: inline-block;
 }
@@ -3400,7 +3874,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 180px;
+    height: 165px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
@@ -3618,11 +4092,10 @@ button#goto-exam-btn {
 /** notification page **/
 .notification-right {
     position: absolute;
-    top: 0%;
-    right: 5px;
+    top: 5%;
+    right: 0px;
     border-radius: 36px;
     width: 435px;
-
     padding: 25px 15px 15px 15px;
     z-index: 99;
     /*background: #fff;
@@ -3652,7 +4125,7 @@ button#goto-exam-btn {
     z-index: 99;
     position: absolute;
     top: -12px;
-    right: 30px;
+    right: 15px;
     background: #fff;
     border-radius: 50%;
     width: 30px;
@@ -3664,7 +4137,7 @@ div#collapseNotification {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(6px);
@@ -3673,7 +4146,6 @@ div#collapseNotification {
     animation-name: reducetime;
     animation-duration: 1s;
     animation-fill-mode: both;
-    padding-top: 15px !important;
     margin-top: 70px;
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
@@ -3760,9 +4232,10 @@ span.bell-noti {
 span.profile-digit {
     padding-top: 10px !important;
 }
-
+/*Added by sachin 05-03-22*/
 .leader-board {
-    width: 370px;
+    /* width: 370px; */
+    width:380px;
     height: 450px;
     background: #fff;
     border-radius: 56px;
@@ -3774,39 +4247,63 @@ span.profile-digit {
     display: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    padding-left: 60px;
+    padding-left: 52px;
     min-height: 450px;
 }
+/*End by sachin 05-03-22*/
 
 .leader-board h4 {
     text-align: right;
-    font-size: 18px;
+    font-size: 14px;
     color: #00baff;
     text-transform: uppercase;
     font-weight: 600;
     padding-right: 25px;
 }
 
+
+/* Added by Sachin-05-03-22*/
 .search-frnd input {
-    width: 100%;
+    /* width: 97%;
     border: none;
-    padding: 10px 20px 10px 40px;
+    padding: 7px 20px 7px 40px;
     border-radius: 8px;
     background: url(../images/search.png) no-repeat #f2f2f2;
     color: #000;
     background-position: 4px;
+    margin-left: 10px; */
+
+    width: 90%;
+    border: none;
+    padding: 7px 20px 7px 40px;
+    border-radius: 8px;
+    background: url(../images/search.png) no-repeat #f2f2f2;
+    color: #000;
+    background-position: 4px;
+    margin-left: 30px;
+
 }
+
+/* End by Sachin-05-03-22*/
 
 .leader-board ul {
     padding-left: 0px;
     overflow-x: auto;
 }
-
+.profile-picture-txt .p-text p{
+    color: #2c3348;
+    font-size: 12px;
+    
+}
+/* start by Sachin-05-03-22*/
 .leader-board ul li {
     list-style: none;
     display: flex;
     margin-bottom: 12px;
+    /* padding-left: 10px; */
+    padding-left: 30px;
 }
+/* End by Sachin-05-03-22*/
 
 .leader-board ul li span {
     display: inline-block;
@@ -3814,14 +4311,14 @@ span.profile-digit {
 }
 
 .leader-board ul li span h3 {
-    font-size: 16px;
+    font-size: 14px;
     color: #00baff;
     font-weight: normal;
     margin-bottom: 0px;
 }
 
 .leader-board ul li span p {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.5;
     color: #2c3348;
     font-weight: normal;
@@ -3834,7 +4331,11 @@ span.profile-digit {
     margin-right: 20px;
     width: 30px;
     text-align: right;
+   
 }
+
+
+
 
 span.profile-img-user {
     width: 45px;
@@ -3847,6 +4348,7 @@ span.profile-img-user {
 
 .profile-text-user {
     margin-left: 20px;
+    max-width: 160px;
 }
 
 .profile-detail {
@@ -4224,7 +4726,7 @@ p.tab-title {
 
 .live-test {
     padding-left: 5px;
-    padding-top: 7px;
+    padding-top: 0px;
 }
 
 .live-test li {
@@ -4232,14 +4734,14 @@ p.tab-title {
     list-style: none;
     margin-right: 0px;
 }
-
+.live-test li+li{margin-left:70px;}
 .live-test li span {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background: #00baff;
-    margin-right: 5px;
+    margin-right: 8px;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-block;vertical-align: middle;
 }
 
 .live-test li span.pre-test {
@@ -4282,7 +4784,6 @@ p.tab-title {
     /*width: 32%;*/
     display: inline-block;
     text-align: left;
-    margin-left: 12px;
 }
 
 .star-img img {
@@ -4499,10 +5000,10 @@ p.success-img {
     background: #d71921 !important;
 }
 
-.btn-light {
-    background: #e4e4e4 !important;
-    border-color: #e4e4e4;
+.btn-light {background: #f4f4f4 !important;
+    border-color: #f4f4f4;
     border-radius: 10px !important;
+    color: #515151 !important;
     /***Added_by-kanchan***/
     color: #515151 !important;
     /***Added_by-kanchan***/
@@ -4648,7 +5149,7 @@ p.success-img {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 99999;
+    z-index: 999;
 }
 
 .dash-nav-link {
@@ -4772,7 +5273,11 @@ p.success-img {
 .ff{fill:#000;}*/
 /** sidebar end here 15-12-2021 **/
 .slimScrollBar {
-    background: rgb(13 193 255) !important;
+    background: rgb(13 193 255) !important;width: 4px !important;
+    height: 22px !important;
+}
+#topicclose .col-xl-7.col-lg-7.col-md-7.col-sm-12 p {
+    left: 0%;
 }
 
 .main-wrapper {
@@ -6190,7 +6695,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -6207,7 +6712,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 999;
+    z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     backdrop-filter: blur(4px);
@@ -7349,3 +7854,39 @@ box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !im
 .bdr-success {
     border: solid 2px #65d247;
 }
+
+.cust-tabs li:first-child a:after {
+    left: -25px !important;
+    width: 35px !important;
+    background: none !important;
+    background-color: #fff !important;
+    border-top-left-radius: 56px !important;
+}
+#dialog-pdf .report-block2.p-5 img {
+    width: 65px !important;
+}
+
+/******02-03 navdeep*****/
+.btn-close {
+    background: url(../images/close-i.png);
+    opacity: 1;
+    background-size: 21px;
+    background-repeat: no-repeat;
+    padding-right: 0 !important;
+}
+.dashboard .star-ratings-css-top span{
+font-size: 13px;    
+}
+.swiper-slide .star-ratings-css-top span{
+font-size: 14px;    
+}
+.overllanaly .star-ratings-css-top span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-bottom span{
+font-size: 22px;    
+}
+.custom-page .star-ratings-css-top span{
+font-size: 22px;    
+}
+/******02-03 navdeep-end******

@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
             <div class="row">
                 <div class="col-lg-9 mx-auto">
 
-                    <div class="bg-white">
+                    <div class="bg-white dashboard-cards-block">
                         <div class="report-block1 p-4">
                             <div class="
                       d-flex
@@ -22,7 +22,7 @@ $userData = Session::get('user_data');
                       align-items-center
                       border-bottom
                     ">
-                                <span><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" style="width:100px;" /></span>
+                                <span><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" style="padding-bottom:20px;" /></span>
                                 <span class="text-light">{{date("F j, Y")}}</span>
                                 <span class="text-light-danger">Analytics</span>
                             </div>
@@ -36,6 +36,15 @@ $userData = Session::get('user_data');
                                 <div class="row">
                                     <div class="mx-auto col-md-10">
                                         <div class="bg-white shadow-lg p-5 report-analysis-block">
+                                            <small>
+                                                <!-- <i class="fa  fa-info"></i> -->
+                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <p>
+                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                                    <!-- <label>About MyQ Today</label> -->
+                                                    A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                                                </p>
+                                            </small>
                                             <div class="d-flex align-items-center border-bottom pb-4">
                                                 <div>
                                                     <h1 class="reportHeading">
@@ -86,14 +95,22 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="report-block2 p-5">
                             <div class="d-flex">
-                                <span class="me-auto"><img src="{{URL::asset('public/images/main-logo-red.png')}}" /></span>
+                                <span class="me-auto"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
                                 <span class="text-end">
                                     Detailed Report Analysis<br />
                                     Weekly UniQ Performace Report<br />{{date("F j, Y")}}
                                 </span>
                             </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
-                                <h5 class="dashboard-title mb-3">Subject proficiency</h5>
+                                <small>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                    <p>
+                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                    </p>
+                                </small>
+                                <h5 class="dashboard-title mb-3">Subject Performance </h5>
                                 @if(!empty($subProf))
                                 @foreach($subProf as $key=>$sub)
                                 <div class="d-flex align-items-center mt-3 pb-1">
@@ -141,7 +158,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @endforeach
                                 @endif
-                                <p class="text-center text-danger"><small>Work on your weak subject to increase the number of questions answered correctly</small></p>
+                                <!--p class="text-center text-danger"><small>Work on your weak subject to increase the number of questions answered correctly</small></p-->
                             </div>
                             <div class="bg-white shadow-lg p-3 mt-5">
                                 <h5 class="dashboard-title mb-3 fw-bold">Unit proficiency</h5>
@@ -183,25 +200,49 @@ $userData = Session::get('user_data');
                             </div>
 
                             <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
+                                <small>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                    <p>
+                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                        In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
+                                    </p>
+                                </small>
                                 <p class="text-uppercase fw-bold text-start">
                                     Time Management
                                 </p>
                                 <div id="time_management"></div>
-                                <p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p>
+                                <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
                             </div>
                             <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
+                                <small>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                    <p>
+                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                        Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
+                                    </p>
+                                </small>
                                 <p class="text-uppercase fw-bold text-start">
                                     Average Time Spent on each Question (Last Week)
                                 </p>
                                 <div id="accPer1"></div>
-                                <p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p>
+                                <!--p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p-->
                             </div>
                             <div class="bg-white shadow-lg p-3 px-5 mt-3">
+                                <small>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                    <p>
+                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                        It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
+                                    </p>
+                                </small>
                                 <p class="text-uppercase fw-bold text-start">
                                     Accuracy Percentage (Last Week)
                                 </p>
                                 <div id="accPer"></div>
-                                <p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p>
+                                <!--p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
                             </div>
                             <p class="text-center mt-5 pt-5">
                                 <a href="{{ route('register') }}" class="link-primary" target="_blank">To Know
@@ -225,7 +266,7 @@ $userData = Session::get('user_data');
 <a href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
 
 
-<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/close-icoons.png')}}" title="Close"></a>
+<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" title="Close" style="width: 30px;"></a>
 
 
 
@@ -469,5 +510,18 @@ $userData = Session::get('user_data');
             color: '#6ec986',
         }]
     });
+
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+                $(this).parent("p").hide();
+            });
+            $(this).siblings("p").show();
+        });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+            $(this).parent("p").hide();
+        });
+    });
 </script>
+
 @endsection
