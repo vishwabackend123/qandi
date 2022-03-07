@@ -178,7 +178,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         </div>
     </div>
 </div>
-<!-- <script>
+<script>
     $('.answer-block').slimscroll({
         height: '45vh'
     });
@@ -189,36 +189,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
-</script> -->
-<!-----Start-for-review-section-expand-on-btn--click------->
-<!-- <script>
-    $(document).ready(function() {
-        $(".expandbtn").on('click', function() {
-            var review_rques_blk_height = $("#review_rques_blk").outerHeight();
-            var review_qus_height = $(".question-block .question").outerHeight();
-            var customheight = review_rques_blk_height - review_qus_height;
-            $('.answer-section').css('height', customheight);
-            $('.question-block .question').css('height', review_qus_height);
+</script> 
 
-        });
-
-    });
-
-    $(".collapsebtn").on('click', function() {
-        var ans_height = $(".answer-section").outerHeight();
-        var que_height = $(".question-block").outerHeight();
-        var intial_height = ans_height - que_height;
-        $('.answer-section').css('height', intial_height);
-
-    });
-</script> -->
-<!-----End-for-review-section-expand-on-btn--click------->
 
 <style>
     .number-block {
     height: 330px !important;
-}
-    </style>
+    }
+</style>
 
 
 <!-----Start__Left_Review_Height_calculation------->
@@ -284,15 +262,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 </script>
 
 <!-----End-for-btn_click_height-click------->
-
-
-
-
-
-
-
-
-
 
 <!-----Start-for-expand-btn-click------->
 <script>
