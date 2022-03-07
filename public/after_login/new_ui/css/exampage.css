@@ -20,6 +20,7 @@ li.a3TS {
 .custom-page .cust-tab-content .scroll-div {
     height: 240px !important;
     overflow-y: auto !important;
+	overflow-x: hidden;
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
