@@ -1,11 +1,11 @@
 <div class="col-12 mb-4">
     <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
         <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
-                                    </svg>
+            <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+            <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+            <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+            <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+        </svg>
         &nbsp;Export Analytics
     </button>
 </div>
@@ -176,12 +176,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
             data: [{
                     name: 'Correct Attempts',
                     y: <?php echo $correct_per_pie; ?>,
-                    color: '#AFF3D0' // Jane's color
+                    color: '#5cc129' // Jane's color
                 },
                 {
                     name: 'Wrong Attempts',
                     y: <?php echo $incorrect_per_pie; ?>,
-                    color: '#ff9999' // Jane's color
+                    color: '#eb5347' // Jane's color
                 },
                 {
                     name: 'Not Answered',
@@ -228,7 +228,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
         series: [{
             name: "Your Score",
             data: <?php echo $stuscore_json; ?>,
-            color: '#AFF3D0'
+            color: '#5cc129'
         }, {
             name: "Class Average",
             data: <?php echo $clsAvg_json; ?>,
