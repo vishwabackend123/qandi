@@ -235,26 +235,28 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
                         <span>{{$exam_name}}</span>
-                        <p class="rightSectH">Answer</p>
-                        <div class="number-block">
-                            @php $quKey=1; @endphp
-                            @if(isset($all_question_list) && !empty($all_question_list))
+                        <div class="number_block_holder">
+                            <p class="rightSectH">Answer</p>
+                            <div class="number-block">
+                                @php $quKey=1; @endphp
+                                @if(isset($all_question_list) && !empty($all_question_list))
 
-                            @foreach($all_question_list as $ke=>$val)
-                            @php
-                            $key_id=$val->question_id;
-                            @endphp
+                                @foreach($all_question_list as $ke=>$val)
+                                @php
+                                $key_id=$val->question_id;
+                                @endphp
 
-                            @if ($val->attempt_status == 'Correct')
-                            <button class="btn btn-light-green mb-4 rounded-0 next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
-                            @elseif ($val->attempt_status == 'Incorrect')
-                            <button class="btn btn-danger mb-4 rounded-0 next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
-                            @else
-                            <button class="btn btn-light rounded-0 mb-4 next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
-                            @endif
-                            @php $quKey++; @endphp
-                            @endforeach
-                            @endif
+                                @if ($val->attempt_status == 'Correct')
+                                <button class="btn btn-light-green mb-4 rounded-0 next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
+                                @elseif ($val->attempt_status == 'Incorrect')
+                                <button class="btn btn-danger mb-4 rounded-0 next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
+                                @else
+                                <button class="btn btn-light rounded-0 mb-4 next_button" id="btn_{{$key_id}}" onclick="qnext('{{$key_id}}')">{{$quKey}}</button>
+                                @endif
+                                @php $quKey++; @endphp
+                                @endforeach
+                                @endif
+                            </div>
                         </div>
 
                         <div class="review_box_holder">
@@ -545,17 +547,38 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         });
     }
 </script>
+
+
+
+
+
+<style>
+.number-block {
+    height: 330px !important;}
+</style>
+
+
+
+
+
+
+
+
+
 <!-----Start__Right_Review_Height_Calculation------->
 <script>
     function review_right_Height() {
-        // var total_right_height = $(".test-review-right .flex-column").outerHeight();
+       var total_right_height = $(".test-review-right .flex-column").outerHeight();
+       
         var total_right_width = $(".test-review-right .number-block").outerWidth();
         // var number_block_height = $(".test-review-right .number-block").outerHeight();
         // var review_box_q_height = $(".test-review-right .review_box_holder").outerHeight();
         // var div_right123 =total_right_height/2;
         // $('.number-block').css('height', div_right123);
         // $('.review_box_holder').css('height', div_right123);
+
         $('.review_box_holder').css('width', total_right_width);
+        // $('.test-review-right .flex-column').css('height', total_right_height);
 
     }
 
@@ -569,6 +592,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         review_right_Height();
     });
 </script>
+
 
 <!-----End__Right_Review_Height_Calculation------->
 
@@ -614,12 +638,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 </script>
 
 
+
+
+
 <!-----Start__Left_Review_Height_calculation------->
 <script>
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
-
-        // $('.test-review').css('height', height);
+        $('.test-review').css('height', height);
         var calculatedHeight = height - 80 + "px";
         $('.test-review .cust-tab-content').css('height', height);
         $('#review_rques_blk').css('height', calculatedHeight);
@@ -638,34 +664,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 </script>
 <!-----End_Left-Review_height_calculation------->
 
-
-
-
-
-
-
-<script>
-    function setboxHeight() {
-        var height = $(".rightSect .flex-column").outerHeight();
-        // $('.test-review').css('height', height);
-        var calculatedHeight = height - 80 + "px";
-        $('.test-review .cust-tab-content').css('height', height);
-        $('#review_rques_blk').css('height', calculatedHeight);
-
-
-    }
-
-    setboxHeight();
-    $("window").load(function() {
-        setboxHeight();
-    });
-
-
-    $(window).resize(function() {
-        setboxHeight();
-    });
-</script>
-
 <!-----Start-for-review_height-click------->
 <script>
     $(document).ready(function() {
@@ -679,15 +677,16 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 </script>
 <!-----End-for-review_height-click------->
 
-
 <!-----Start-for-btn_click_height-click------->
 <script>
     $(document).ready(function() {
         $(".expandbtn").on('click', function() {
             var review_rques_blk_height = $("#review_rques_blk").outerHeight();
             var review_qus_height = $(".question-height").outerHeight();
+            var margin = review_qus_height - 20 + "px";
             var customheight = review_rques_blk_height - review_qus_height;
-            $('.answer-section').css('height', customheight);
+            var finalheight = customheight - 30 + "px";
+            $('.answer-section').css('height', finalheight);
         });
 
     });
@@ -703,8 +702,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 </script>
 
 <!-----End-for-btn_click_height-click------->
-
-
 
 <!-----Start-for-expand-btn-click------->
 <script>
@@ -799,6 +796,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
     #review_rques_blk .answer-section {
         height: 250px;
+    }
+
+    .number-block{
+        height: 330px !important;
     }
 </style>
 
