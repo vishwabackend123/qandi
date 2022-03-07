@@ -27,7 +27,7 @@
                 <p>“Sign-up using your email address and mobile number.”</p>
                 <div class="pt-3 emailNumdiv">
                     <div class="form-group flds">
-                        <input type="text" class="form-control email-addrs disable-value" placeholder="Email address" name="email_add" minlength="8" maxlength="35" id="email_add" autocomplete="off" value="">
+                        <input type="text" class="form-control email-addrs disable-value" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" autocomplete="off" value="">
                         <span class="error-sms enter-otp" id="errlog_email">Please enter your email address</span>
                     </div>
 
