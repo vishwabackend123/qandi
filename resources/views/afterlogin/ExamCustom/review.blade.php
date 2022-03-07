@@ -544,81 +544,20 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         });
     }
 </script>
-<!-----Start__Right_Review_Height_Calculation------->
-<script>
-    function review_right_Height() {
-        // var total_right_height = $(".test-review-right .flex-column").outerHeight();
-        var total_right_width = $(".test-review-right .number-block").outerWidth();
-        // var number_block_height = $(".test-review-right .number-block").outerHeight();
-        // var review_box_q_height = $(".test-review-right .review_box_holder").outerHeight();
-        // var div_right123 =total_right_height/2;
-        // $('.number-block').css('height', div_right123);
-        // $('.review_box_holder').css('height', div_right123);
-        $('.review_box_holder').css('width', total_right_width);
-
-    }
-
-    review_right_Height();
-    $("window").load(function() {
-        review_right_Height();
-    });
 
 
-    $(window).resize(function() {
-        review_right_Height();
-    });
-</script>
-
-<!-----End__Right_Review_Height_Calculation------->
-
-<script>
-    $(document).ready(function() {
-        $(".expandbtn1").on('click', function() {
-            var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
-            var numblockheight = $(".test-review-right .number-block").outerHeight();
-            var cal12 = review_box_q_height12 + numblockheight;
-            $('.review_box_holder').css('height', cal12);
-        });
-
-        $(".collapsebtn1").on('click', function() {
-            var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
-            var numblockheight = $(".test-review-right .number-block").outerHeight();
-            var cal12 = review_box_q_height12 - numblockheight;
-            $('.review_box_holder').css('height', cal12);
-
-        });
-
-    });
-</script>
-
-
-<script>
-    $('.expandbtn1').on('click', function() {
-        $('.collapsebtn1').css({
-            display: "block"
-        });
-        $('.expandbtn1').css({
-            display: "none"
-        });
-    });
-
-    $('.collapsebtn1').on('click', function() {
-        $('.collapsebtn1').css({
-            display: "none"
-        });
-        $('.expandbtn1').css({
-            display: "block"
-        });
-    });
-</script>
+<style>
+    .number-block {
+    height: 330px !important;
+}
+    </style>
 
 
 <!-----Start__Left_Review_Height_calculation------->
 <script>
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
-
-        // $('.test-review').css('height', height);
+        $('.test-review').css('height', height);
         var calculatedHeight = height - 80 + "px";
         $('.test-review .cust-tab-content').css('height', height);
         $('#review_rques_blk').css('height', calculatedHeight);
@@ -636,34 +575,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 <!-----End_Left-Review_height_calculation------->
-
-
-
-
-
-
-
-<script>
-    function setboxHeight() {
-        var height = $(".rightSect .flex-column").outerHeight();
-        // $('.test-review').css('height', height);
-        var calculatedHeight = height - 80 + "px";
-        $('.test-review .cust-tab-content').css('height', height);
-        $('#review_rques_blk').css('height', calculatedHeight);
-
-
-    }
-
-    setboxHeight();
-    $("window").load(function() {
-        setboxHeight();
-    });
-
-
-    $(window).resize(function() {
-        setboxHeight();
-    });
-</script>
+ 
 
 <!-----Start-for-review_height-click------->
 <script>
@@ -685,8 +597,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $(".expandbtn").on('click', function() {
             var review_rques_blk_height = $("#review_rques_blk").outerHeight();
             var review_qus_height = $(".question-height").outerHeight();
+            var margin = review_qus_height - 20 + "px";
             var customheight = review_rques_blk_height - review_qus_height;
-            $('.answer-section').css('height', customheight);
+            var finalheight = customheight - 30 + "px";
+            $('.answer-section').css('height', finalheight);
         });
 
     });
@@ -798,6 +712,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
     #review_rques_blk .answer-section {
         height: 250px;
+    }
+
+    .number-block{
+        height: 330px !important;
     }
 </style>
 
