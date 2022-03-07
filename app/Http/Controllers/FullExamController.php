@@ -168,11 +168,9 @@ class FullExamController extends Controller
         $test_type = 'Profiling';
         $exam_type = 'P';
         $series_id = "";
+
+        Session::put('exam_name', $exam_name);
         return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
-
-
-
-        //return view('afterlogin.ExamViews.exam', compact('exam_name', 'exam_fulltime', 'exam_ques_count'));
     }
 
     function exam_result()

@@ -16,6 +16,10 @@ button {
     text-decoration: none;
 }
 
+/******* 07-03-2022 Amit-Start ******/
+.cust-gallery .swiper-slide{width: 405px!important;}
+/******* 07-03-2022 Amit-End ******/
+
 /******* 04-03-2022 Amit-Start ******/
 #dialog-pdf .report-block2.p-5 small>img {width: 16px !important;}
 .cust-tabs.nav.nav-tabs .nav-link{min-width: 150px;}
@@ -450,7 +454,7 @@ input#search_field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 .go2Planner button.custom-btn-gray.mt-4 {
-    margin-top: 26px !important;
+    margin-top: 19px !important;
 }
 
 a#open-tab {

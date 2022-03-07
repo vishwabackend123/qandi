@@ -2,7 +2,6 @@
 
 @php
 $userData = Session::get('user_data');
-
 @endphp
 @section('content')
 <!-- Modal -->
@@ -152,7 +151,7 @@ $userData = Session::get('user_data');
                             <span class="progress_text">Subject Performance</span>
                         </div>
                         <div class="subject-scroll">
-                            <ul class="course-star mb-0">
+                            <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
                                 <li>
@@ -351,7 +350,7 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="sign-btn">
-                                <a href="{{route('exam','full_exam')}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
+                                <a href="{{route('exam','full_exam')}}"><button  type="submit" class="btn btn-primary active-btn text-uppercase">
                                         <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button></a>
 
                             </div>
@@ -368,7 +367,7 @@ $userData = Session::get('user_data');
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
                             </small>
-                            <span>Weekly Plan</span>
+                            <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
 
                                 <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
@@ -391,7 +390,7 @@ $userData = Session::get('user_data');
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
                             </small>
-                            <span>Weekly Plan</span>
+                            <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
                                 <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
                                     <b> Tests Attempted</b>
