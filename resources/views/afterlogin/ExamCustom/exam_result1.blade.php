@@ -10,7 +10,7 @@
     </button>
 </div>
 <div class="col-lg-4">
-    <div class="bg-white shadow-lg box-shadow p-3 position-relative m-0">
+    <div class="bg-white shadow-lg box-shadow p-3 position-relative m-0 custom-box-shadow">
         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
         <div class="text-center">
             <!-- <img src="images/roundedgraph.jpg"> -->
@@ -33,7 +33,7 @@
     </div>
 </div>
 <div class="col-lg-8">
-    <div class="bg-white shadow-lg box-shadow p-3  position-relative m-0">
+    <div class="bg-white shadow-lg box-shadow p-3  position-relative m-0 custom-box-shadow">
         <div class="row">
             <div class="col-md-4">
                 <h5 class="dashboard-title mb-3 text-center">Marks %</h5>

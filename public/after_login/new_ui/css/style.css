@@ -16,8 +16,10 @@ button {
     text-decoration: none;
 }
 
- .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
-
+.dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
+.box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important}
 /******* 07-03-2022 Amit-Start ******/
 .cust-gallery .swiper-slide{width: 405px!important; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(255, 255, 255, 0.51);}
 .swiper-wrapper{padding:36px 0;}
