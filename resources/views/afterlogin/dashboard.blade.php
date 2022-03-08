@@ -118,7 +118,7 @@ $userData = Session::get('user_data');
                                     <div class="d-flex justify-content-center flex-column h-100 ">
                                         <div class="" id="scorecontainer"></div>
 
-                                        <ul class="live-test mt-1">
+                                        <ul class="live-test">
                                             <li>
                                                 <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
                                             </li>
@@ -888,7 +888,7 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     /* Score Pie Chart */
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 130,
+            height: 160,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false,
@@ -897,10 +897,10 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
             spacingRight: 0,
         },
         title: {
-            text: '<span style=" font: normal normal 200 48px/60px Manrope; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 50
+            y: 60
         },
         credits: {
             enabled: false
