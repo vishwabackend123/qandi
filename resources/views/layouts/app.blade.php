@@ -30,10 +30,6 @@
 
 
   @yield('content')
-
-
-
-
   <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
   <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
 
