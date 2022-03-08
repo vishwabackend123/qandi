@@ -1,3 +1,9 @@
+@media(max-width:1900px){
+    #review_rques_blk .question {
+        margin-top: 20px;
+    }
+
+}
 @media(min-width:1659px) and (max-width:1750px) {
     
     .reviewPanel .cust-tabs .nav-link{
@@ -7,8 +13,11 @@
       }
       .live-test li+li{margin-left:8%;}
     div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+   
 
 }
+
+
 @media(min-width:1441px) and (max-width:1660px) {
     
     .slider-horizontal {
@@ -25,6 +34,8 @@
 }
 
 @media(max-width:1440px){
+    #review_rques_blk .question.question-height {padding-left:50px;}       
+
     .reviewPanel .cust-tabs .nav-link{
     padding-right: 20px!important;
      font-size:16px!important;
