@@ -1,5 +1,5 @@
 <div class="col-lg-5">
-    <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100">
+    <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100 custom-box-shadow">
     <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -60,7 +60,7 @@
 </div>
 <div class="col-lg-7">
     <div class="position-relative h-100">
-        <div class="tab-wrapper h-100 box-shadow">
+        <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                 @php $subx=1; @endphp
                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
