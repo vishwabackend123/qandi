@@ -338,7 +338,10 @@ div#collapseNotification {
 .garphlistincom+.garphlistincom {
     margin-left: 20px;
 }
-
+#sharefrnd{width: 96%;
+    right: 0px;left:auto}
+    #sharefrnd> .modal-backdrop{width: 96%;
+        right: 0px;left:auto}
 /* shubham(05-03-2022)-end */
 
 
@@ -5509,7 +5512,7 @@ p.success-img {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .dash-nav-link {
