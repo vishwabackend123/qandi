@@ -170,7 +170,7 @@ button {
     padding-bottom: 20px;
     width: 100%;
     min-width: auto !important;
-    padding-left: 60px !important;
+    padding-left: 62px !important;
 }
 
 #review_rques_blk .question {
@@ -179,7 +179,7 @@ button {
 }
 
 #review_rques_blk .question.question-height .q-no {
-    top: 23px
+    top: 22%;
 }
 
 #review_rques_blk .ans-block {
