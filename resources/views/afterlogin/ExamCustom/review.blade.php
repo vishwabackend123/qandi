@@ -553,20 +553,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 <style>
-.number-block {
-    height: 330px !important;}
-    .test-review-right, .rightSect .bg-white {
-       
-        height: 750px;;
-    }
-   
-
-    .review_box_holder{
-        background: #fff;    position: absolute;
-  
-  bottom: 0px;
-    }
-   
+.number-block {height: 330px !important;}
+.test-review-right, .rightSect .bg-white {height: 750px;;}
+.review_box_holder{position: absolute;bottom: 25px;background: #fff;}
 </style>
 
 
@@ -610,9 +599,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     $(document).ready(function() {
         $(".expandbtn1").on('click', function() {
             var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
-            var numblockheight = $(".test-review-right .number-block").outerHeight();
             var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
-            var onclickreviewbox= review_box_q_height12 + numblockheight;
+            var number_block_holder_height = $(".test-review-right .number_block_holder").outerHeight();
+            var onclickreviewbox= review_box_q_height12 + number_block_holder_height;
             $('.review_box_holder').css('height', onclickreviewbox);
             var scrollqheight = onclickreviewbox - reviewBox2height;
 
@@ -623,9 +612,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
         $(".collapsebtn1").on('click', function() {
             var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
-            var numblockheight = $(".test-review-right .number-block").outerHeight();
             var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
-            var onclickreviewbox = review_box_q_height12 - numblockheight;
+            var number_block_holder_height = $(".test-review-right .number_block_holder").outerHeight();
+            var onclickreviewbox = review_box_q_height12 - number_block_holder_height;
             $('.review_box_holder').css('height', onclickreviewbox);
             var scrollqheight = onclickreviewbox - reviewBox2height;
 

@@ -25,7 +25,7 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
     <div id="exam_result_analysis">
         <div class="content-wrapper">
-            <div class="container-fluid exam-analytics">
+            <div class="container-fluid exam-analytics  dashboard-cards-block">
                 <div class="row" id="score_block">
                 </div>
                 <div class="row mt-5 mb-3" id="attempt_count_block">
@@ -133,5 +133,6 @@ $userData = Session::get('user_data');
         height: "50vh",
     });
 </script>
+
 
 @endsection
