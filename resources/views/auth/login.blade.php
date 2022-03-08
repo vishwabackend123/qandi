@@ -40,7 +40,9 @@
     </div>
     <!--login_screen-->
 </section>
-
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -107,6 +109,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $('.loader-block').show();
         $.ajax({
             url: "{{ route('sendotplogin') }}",
             type: 'POST',
@@ -115,6 +118,7 @@
                 mobile: mobile,
             },
             success: function(response_data) {
+                $('.loader-block').hide();
 
                 var response = jQuery.parseJSON(response_data);
 
@@ -196,9 +200,10 @@
                         login_mobile: login_mobile,
                         login_otp: login_otp,
                     },
-                    beforeSend: function() {},
+                    beforeSend: function() {  $('.loader-block').show(); },
 
                     success: function(response_data) { //debugger;
+                         $('.loader-block').hide();
 
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {
