@@ -183,7 +183,7 @@ $questtype='radio';
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
 
@@ -231,9 +231,9 @@ $questtype='radio';
                                 </button>
                             </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
-                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                    <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
