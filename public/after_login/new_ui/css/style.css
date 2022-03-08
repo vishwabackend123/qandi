@@ -19,6 +19,7 @@ button {
 /******* 07-03-2022 Amit-Start ******/
 .cust-gallery .swiper-slide{width: 405px!important; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(255, 255, 255, 0.51);}
 .swiper-wrapper{padding:36px 0;}
+.calender-block #calendari table tr:first-child th {padding-top: 15px;}
 /******* 07-03-2022 Amit-End ******/
 
 /******* 04-03-2022 Amit-Start ******/
@@ -346,7 +347,7 @@ div#collapseNotification {
 .card-common-topheading {
     border-top-left-radius: 56px;
     background-color: #f6f9fd;
-    padding: 15px 0px 15px 65px;
+    padding: 22px 0px 23px 65px;
     border-top-right-radius: 56px;
     color: #2c3348;
     font-weight: 700;
@@ -359,7 +360,7 @@ div#collapseNotification {
 }
 
 .planner-scheduar-block .slimScrollDiv {
-    padding: 25px 35px 35px;
+    padding: 15px 35px 35px;
 }
 
 .card-common-topheading:before {
@@ -368,10 +369,27 @@ div#collapseNotification {
     background-color: #fff;
     top: 0;
     left: 0;
-    height: 58px;
-    width: 250px;
+    height: 75px;
+    width: 245px;
     border-top-left-radius: 56px;
-    border-top-right-radius: 56px;
+}
+.card-common-topheading:after {
+    content: '';
+    position: absolute;
+    background: url(../images/before-img.png) no-repeat;
+    left: 235px;
+    top: 0;
+    height: 72px;
+    width: 70px;
+}
+.planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after{
+    content: '';
+    position: absolute;
+    background: url(../images/before-img.png) no-repeat;
+    left: 165px;
+    top: -15px;
+    height: 75px;
+    width: 70px;
 }
 
 .card-common-topheading span {
@@ -385,15 +403,14 @@ div#collapseNotification {
     background-color: #fff;
     top: -16px;
     left: 0;
-    height: 58px;
+    height: 74px;
     width: 170px;
     border-top-left-radius: 42px;
-    border-top-right-radius: 42px;
 }
 
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between {
     position: relative;
-    padding-left: 40px;
+    padding-left: 50px;
 }
 
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between span.fs-5.text-danger.text-uppercase {
@@ -555,8 +572,7 @@ ul.cust-tabs li:first-child a {
 
 /******* 23-02-2022 Amit-Start ******/
 form#plannerAddform .col-md-6:nth-child(2) .fw-bold.text-uppercase{margin-top:1rem!important;}
-.exam-week-bar input#customRange {margin-top: 32px;}
-.exam-week-bar span#slide-input {    position: absolute;right: 2px;bottom: 1px;}
+.exam-week-bar span#slide-input {position: absolute;right: 2px;bottom: -2px;width: 26px;height: 26px;border-radius: 100%;padding: 0;font-size: 16px !important;}
 #calendari table.actiu th button + span {font-weight: 700;font-size: 16px !important;}
 span a#close-edit-planner-btn img {width: 24px !important;height: 24px;margin-top: 2px;}
 .subject-placeholder-block img {width: 100px;margin: 10px 0 15px;}
@@ -7731,7 +7747,7 @@ span.fs-5.text-danger.text-uppercase {
 }
 
 .planner-wrapper .d-flex.align-items-center.justify-content-between {
-    padding: 0px 20px;
+    padding: 8px 20px;
 }
 
 a#edit-planner-btn img,

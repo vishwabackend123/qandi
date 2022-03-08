@@ -1,6 +1,13 @@
 <div class="col-lg-5">
     <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100">
-
+    <small>
+                            <!-- <i class="fa  fa-info"></i> -->
+                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <p>
+                                <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                            </p>
+                        </small>
         <h5 class="dashboard-title mb-3">Subject Score</h5>
 
         @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
@@ -124,5 +131,18 @@
 <script>
     $(".topicdiv-scroll").slimscroll({
         height: "50vh",
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                $(this).parent("p").hide();
+            });
+            $(this).siblings("p").show();
+        });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+            $(this).parent("p").hide();
+        });
     });
 </script>
