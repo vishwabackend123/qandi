@@ -388,8 +388,15 @@
                            <p class="invalid-feedback m-0 alert-success  p-1 mb-1 successRef_copy" > </p>
                         </div>
                         <div class="backtobox">
-                            <div class="backtobtn"><a><i class="fa fa-angle-left" aria-hidden="true"></i><span>Back</span></a></div>
-                            <div class="back_to_ref"><a onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i><span>Copy link</span></a></div>
+                            <div class="backtobtn"><a>
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                <span>Back</span>
+                            </a></div>
+                            <div class="back_to_ref"><a onclick="copylinkfunction()">
+                                <img style="padding-right:8px;width:22px;" src="{{URL::asset('public/after_login/new_ui/images/copy-icon.png')}}">
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <span>Copy link</span>
+                            </a></div>
                         </div>
                     </div>
                     <div class="emaillinkholder">
