@@ -904,10 +904,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
     }
-    .rview-quses li::-webkit-scrollbar {
+.rview-quses li::-webkit-scrollbar {
     height: 6px;
-    
-    }
+
+}
 
 .review_heading{
     font-size:18px;
