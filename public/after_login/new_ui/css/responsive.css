@@ -50,7 +50,7 @@
     .compLeteS .name-txt-sml{width: 57%;
         padding-right: 10px;font-size:14px;}
         .custom-page .star-ratings-css-bottom span{font-size:20px;}
-        #sharefrnd{width: 95%;}
+        /* #sharefrnd{width: 95%;} */
 }
 
 @media(min-width:1316px) and (max-width:1440px) {
