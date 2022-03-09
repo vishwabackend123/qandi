@@ -51,7 +51,7 @@
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-btm">
                             <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[0]->skill_name}}</h4>
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[0]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
 
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
                             <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[1]->skill_name}}</h4>
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[1]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</h4>
                                 <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                     performance in the test.</p> 
@@ -101,7 +101,7 @@
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-right-top">
                             <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold">{{$skillPer[2]->skill_name}}</h4>
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[2]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skills. {{$skillPer[2]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-top">
                             <div class="alpha-extended-view">
-                                <h4 class="text-danger text-uppercase fw-2 fw-bold"> {{$skillPer[3]->skill_name}}</h4>
+                                <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;"> {{$skillPer[3]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skills. {{$skillPer[3]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
