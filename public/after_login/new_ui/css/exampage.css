@@ -476,7 +476,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 }
 .padding_26{
     padding: 26px !important;
-    padding-bottom: 0px !important;
+    padding-bottom: 0px !important  ;
 }
 
 .rightSectH {
@@ -701,7 +701,7 @@ a.clearRes:hover {
   
 .first_screen {
 	padding: 14px !important;
-	border-radius: 18px;
+    border-radius: 16px;
 	box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
 	background-color: #ffffff;
 	width: 315px;
@@ -774,6 +774,7 @@ a.clearRes:hover {
 	display: initial;
 	position: absolute;
     right: 0px;
+    cursor: pointer;
  
 	 
  
