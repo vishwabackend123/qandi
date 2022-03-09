@@ -487,6 +487,7 @@
             var lastday = new Date(date.setDate(last)).toUTCString(); */
             var firstDate = formatDate(firstday);
             var lastDate = formatDate(lastday);
+
             $('#StartDate').val(firstDate);
 
             $('#EndDate').val(lastDate);
@@ -1559,7 +1560,7 @@
     $(".user-name-block span.notification").click(function() {
         if (!$(this).hasClass("notification-icons-active")) {
             $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active"); 
+            $(this).siblings().removeClass("notification-icons-active");
         } else {
             $(this).removeClass("notification-icons-active");
         }
