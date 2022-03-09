@@ -19,10 +19,10 @@ button {
 .colorfull-bars .d-flex span {
     margin-left: 0px;
 }
-div#f-Numbr-sectin .arrow-right-btm-content{padding: 24px 24px !important;}
+div#f-Numbr-sectin .arrow-right-btm-content{padding: 24px 20px !important;}
 div#arrow-left-top .inner-arrow-left-top , div#arrow-right-top .inner-arrow-right-top{right: 10px !important;}
-div#arrow-left-btm .inner-arrow-left-btm {left: 10px !important;}
-.alpha-extended-view {max-height:206px;overflow-y: auto;}
+div#arrow-left-btm .inner-arrow-left-btm {right: 10px !important;top: 0;left: auto!important;bottom: auto!important;}
+/* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
 .planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 190px);}
 .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
