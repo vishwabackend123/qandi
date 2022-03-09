@@ -554,11 +554,11 @@ div.sublinks a:active {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+    z-index: 10000;
 }
 
 .loader-block img {
-    width: 200px;
+    width: 140px;
 }
 
 .btn.btnzoom-in-out:hover {
@@ -5674,7 +5674,7 @@ p.success-img {
 header {
     padding: 24px 0;
     position: relative;
-    z-index: 999;
+    z-index: 99;
 }
 
 .user-pic {
