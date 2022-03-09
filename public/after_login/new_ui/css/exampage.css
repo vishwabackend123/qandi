@@ -761,8 +761,8 @@ a.clearRes:hover {
 }
 .review_expand {
     position: absolute;
-    top: 10%;
-    right: 10%;
+    top: 5%;
+    right: 6%;
 }
 .percent_btn {
 	color: #ffffff;
@@ -802,8 +802,8 @@ a.clearRes:hover {
 }
 .expand_button {
     position: absolute;
-    top: 8%;
-    right: 2%;
+    top: 4%;
+    right: 1%;
 }
 
 .expandbtn{

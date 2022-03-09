@@ -234,7 +234,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column   mb-4">
-                        <span class="subtitle padding_26">{{$exam_name}}</span>
+                        <span class="subtitle padding_26" title="{{$exam_name}}">{{$exam_name}}</span>
                         <div class="number_block_holder padding_26">
                             <p class="rightSectH">Answer</p>
                             <div class="number-block">
@@ -554,7 +554,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 <style>
 /* .number-block {height:260px !important;} */
-.test-review-right, .rightSect .bg-white {height: 750px;;}
+.test-review-right, .rightSect .bg-white {height: 750px;}
 .review_box_holder{
     position: absolute;
     bottom: 25px;
@@ -918,6 +918,7 @@ span.subtitle.padding_26 {
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .review_heading1 .heading{
