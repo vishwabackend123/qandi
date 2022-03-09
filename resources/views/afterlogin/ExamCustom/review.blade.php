@@ -881,6 +881,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     .expandbtn1 svg,
     .collapsebtn1 svg {
         width: 37px !important;
+        height: 37px !important;
 
         cursor: pointer;
     }
@@ -908,15 +909,21 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     
     }
 
-    .review_heading{
-        font-size:18px;
-    }
-    span.subtitle.padding_26 {
+.review_heading{
+    font-size:18px;
+    margin: 0px;
+}
+span.subtitle.padding_26 {
     white-space: nowrap;
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
-    }
+}
+
+.review_heading1 .heading{
+    display: flex;
+    align-items: center;
+}
 
   
 </style>
