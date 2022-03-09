@@ -759,6 +759,12 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var div_height = left_review_sec_h / 2;
         $('.answer-section').css('height', div_height);
         $('.question-block').css('height', div_height);
+        var question_block_width = $("#review_rques_blk .question-block").outerWidth();
+        $('.question-block').css('width', question_block_width);
+        $('.answer-section').css('width', question_block_width);
+        var question_block_height = $(".question-block").outerHeight();
+        var question_block_height_cal = question_block_height -10 + "px";
+        $('.question-block').css('height', question_block_height_cal);
 
 
     });
@@ -785,6 +791,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var div_height1 = left_review_sec_h1 / 2;
         $('.answer-section').css('height', div_height1);
         $('.question-block').css('height', div_height1);
+        var question_block_height = $(".question-block").outerHeight();
+        var question_block_height_cal = question_block_height -10 + "px";
+        $('.question-block').css('height', question_block_height_cal);
 
     });
 </script>
