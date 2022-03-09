@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
-    height: 100%;
+    height: 100%
 }
 
 h1,
@@ -10,68 +10,68 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: Manrope;
+    font-family: Manrope
 }
 
 p {
     color: #2c3348;
-    font-size: 14px;
+    font-size: 14px
 }
 
 a {
     color: #00baff;
-    font-size: 14px;
+    font-size: 14px
 }
 
 a:hover {
-    color: #00baff;
+    color: #00baff
 }
 
 button.PayBttn.btn:hover {
-    color: #fff;
+    color: #fff
 }
 
 .blacktxt {
-    color: #2c3348 !important;
+    color: #2c3348 !important
 }
 
 .contentA {
-    margin-top: 35px;
+    margin-top: 35px
 }
 
 div.form-group.flds span.currect-email {
     position: absolute;
     right: 10px;
-    top: 8px;
+    top: 8px
 }
 
 .store-mobile img {
     float: left;
-    width: 24px;
+    width: 24px
 }
 
 .currect-value {
-    display: none;
+    display: none
 }
 
 .store-mobile {
     width: 100%;
     display: inline-block;
     padding-left: 10px;
-    text-align: left;
+    text-align: left
 }
 
 input.form-control.select-grade {
-    background: url(../images_new/book-icon.png) no-repeat #f2f2f2;
+    background: url(/images/book-icon.png?6967bdebf4f4972bafdb7f44973c801d) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 24px;
-    background-position: 10px;
+    background-position: 10px
 }
 
 div.form-group.flds span.currect-email {
     position: absolute;
     right: 10px;
-    top: 8px;
+    top: 8px
 }
 
 .country-code-name {
@@ -84,208 +84,184 @@ div.form-group.flds span.currect-email {
     width: 38.8%;
     z-index: 9;
     border-radius: 8px;
-    top: 0px;
+    top: 0;
     right: 0%;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%)
 }
 
 .country-code-name ul {
-    padding-left: 0px;
-    text-align: left;
+    padding-left: 0;
+    text-align: left
 }
 
 .country-code-name ul li {
     list-style: none;
     color: #2c3348;
     font-size: 14px;
-    padding: 3px 20px 5px;
+    padding: 3px 20px 5px
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: rgba(13, 193, 255, 0.4) !important;
+    background: rgba(13, 193, 255, .4) !important
 }
 
 .country-code-name::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f1f1
 }
 
 .country-code-name::-webkit-scrollbar {
-    width: 5px;
+    width: 5px
 }
 
 .country-code-name ul li:hover {
     background: #f2f2f2;
-    width: 95%;
+    width: 95%
 }
 
-/* shubham-css */
 .country-code-name::-webkit-scrollbar {
-    width: 5px;
+    width: 5px
 }
-
 
 .country-code-name::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
+    background: #f1f1f1 !important
 }
-
 
 .country-code-name::-webkit-scrollbar-thumb {
-    background: rgba(13, 193, 255, 0.4) !important;
+    background: rgba(13, 193, 255, .4) !important
 }
 
-/* .country-code-name::-webkit-scrollbar-thumb:hover {
-    background: #555 !important;
-} */
-/* shubham-css-end */
-
 input.form-control.select-exam {
-    background: url(../images_new/city-log.png) no-repeat #f2f2f2;
+    background: url(/images/city-log.png?4f80a4c8af898e26c646eca47683331b) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 20px;
-    background-position: 10px;
+    background-position: 10px
 }
 
 .store-mobile img {
     float: left;
-    width: 24px;
+    width: 24px
 }
 
 .currect-value {
-    display: none;
+    display: none
 }
 
 .store-mobile {
     width: 100%;
     display: inline-block;
     padding-left: 10px;
-    text-align: left;
+    text-align: left
 }
 
 input.form-control.select-grade {
-    background: url(../images_new/state-log.png) no-repeat #f2f2f2;
+    background: url(/images/state-log.png?88ddaa13b0286726d39b78ff06ae2ffb) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 20px;
-    background-position: 10px;
+    background-position: 10px
 }
 
-/* placeholder city state registration */
 #select-city::-webkit-input-placeholder {
-    color: #00baff !important;
+    color: #00baff !important
 }
 
 #select-state::-webkit-input-placeholder {
-    color: #00baff !important;
+    color: #00baff !important
 }
 
 .form-control.select-exam,
 .form-control.select-grade {
-    color: #00baff !important;
+    color: #00baff !important
 }
-
-/* placeholder city state registration */
-
-/** the following css for placeholder **/
-
 
 .contentA input:-ms-input-placeholder {
     color: #2c3348 !important;
-    font-size: 14px;
+    font-size: 14px
+}
+
+.contentA input::-moz-placeholder {
+    color: #2c3348 !important;
+    font-size: 14px
 }
 
 .contentA input::placeholder {
     color: #2c3348 !important;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .contentA input::-webkit-input-placeholder {
     color: #2c3348 !important;
-    font-size: 14px;
+    font-size: 14px
 }
 
-
 input::-webkit-input-placeholder {
-    color: red;
+    color: red
 }
 
 input:-moz-placeholder {
-    color: red;
+    color: red
 }
 
-/** placeholder css end here **/
-
-
-/** 21-12-2021**/
 .subScrip .row {
     width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: center
 }
 
 .subScrip .row {
-    display: inline-block;
+    display: inline-block
 }
 
 .subScrip .row .col-md-4 {
     display: inline-flex;
-    max-width: 32.333%;
+    max-width: 32.333%
 }
 
 .subScrip .row button#goto-otp-btn:hover {
     background-color: 00baff !important;
-    background-image: none;
+    background-image: none
 }
 
 .subScrip .row button#goto-otp-btn {
     height: 60px;
-    color: #FFF;
+    color: #FFF
 }
-
-/** end here**/
-
 
 .login_screen .error {
-    color: #f74645;
+    color: #f74645
 }
 
-/** 15-12-2021**/
 .login-bg-img .login_screen p.mb-0 {
     color: #00baff;
     font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 10px;
+    font-weight: 700;
+    padding-bottom: 10px
 }
 
 .login-bg-img .login_screen .sign-btn button:focus {
     outline: none;
     box-shadow: none;
-    border: none;
+    border: none
 }
 
-/** end here 15-12-2021**/
-
-/** first screen login/email css **/
 .login-bg-img {
-    background: url(../images_new/bg-signup.png)no-repeat 0 0 fixed;
+    background: url(/images/bg-signup.png?69ec61bf1a4f493525f0566147735515)no-repeat 0 0 fixed;
     height: 100%;
     background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    position: fixed;
+    position: fixed
 }
 
 .outer-logo {
     position: absolute;
     top: 5%;
     left: 7%;
-    width: 100px;
+    width: 100px
 }
 
 .outer-logo img {
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 
 .login_screen {
@@ -296,74 +272,77 @@ input:-moz-placeholder {
     padding: 40px 47px 60px 47px;
     text-align: center;
     margin: 120px auto 0;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .16)
 }
 
 div.form-group.flds {
-    position: relative;
+    position: relative
 }
 
 input.form-control.m-email {
-    background: url(../images_new/profile-icon.png) no-repeat #f2f2f2;
+    background: url(/images/profile-icon.png?9ee373a991017f96adf15956d919d1ab) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 24px;
-    background-position: 10px;
+    background-position: 10px
 }
 
 .sign-btn button {
     width: 276px;
     height: 50px;
     font-size: 16px;
-    font-weight: bold;
-    margin: 20px 0px 10px;
+    font-weight: 700;
+    margin: 20px 0 10px;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 20px
 }
 
 button.disbaled-btn:disabled {
-    opacity: 0.3;
+    opacity: .3;
     background: #21ccff;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%)
 }
 
 button.disbaled-btn {
-    opacity: 0.3;
+    opacity: .3;
     background: #21ccff;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%)
 }
 
 .active-btn {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background-image: linear-gradient(to bottom, #21ccff, #00baff);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff)
 }
 
 div.form-group.flds {
     position: relative;
-    text-align: left;
+    text-align: left
 }
 
 div.form-group.flds span.error-sms {
-    color: #f74645;
+    color: #f74645
 }
 
-/** the following css for placeholder **/
 input.form-control:-ms-input-placeholder {
     color: #2c3348;
-    font-size: 14px;
+    font-size: 14px
+}
+
+input.form-control::-moz-placeholder {
+    color: #2c3348;
+    font-size: 14px
 }
 
 input.form-control::placeholder {
     color: #2c3348;
-    font-size: 14px;
+    font-size: 14px
 }
 
 input.form-control::-ms-input-placeholder {
     color: #2c3348;
-    font-size: 14px;
+    font-size: 14px
 }
 
-/** placeholder css end here **/
 input.form-control {
     background: #f2f2f2;
     border-radius: 8px;
@@ -371,113 +350,90 @@ input.form-control {
     border: none;
     height: 48px;
     color: #2c3348;
-    font-size: 14px;
+    font-size: 14px
 }
 
 .not-valid {
-    display: none;
+    display: none
 }
 
 input.form-control:focus {
     outline: none;
     border: none;
-    box-shadow: none;
+    box-shadow: none
 }
 
 button.disbaled-btn:hover {
-    background: #21ccff;
+    background: #21ccff
 }
 
 .mobil-not-valid {
-    display: none;
+    display: none
 }
 
 .email-not-valid {
-    display: none;
+    display: none
 }
 
-/** end here **/
-
-/** css for OTP screen **/
-
 input.form-control.pass {
-    background: url(../images_new/pass-icon.png) no-repeat #f2f2f2;
+    background: url(/images/pass-icon.png?adf824f685715fe097dc198a23ebb504) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 24px;
-    background-position: 10px;
+    background-position: 10px
 }
 
 .enter-otp {
-    display: none;
+    display: none
 }
 
 .wrong-otp {
-    display: none;
+    display: none
 }
-
-/** End here **/
-
-/** **/
 
 input.form-control.email-addrs {
-    background: url(../images_new/email.png) no-repeat #f2f2f2;
+    background: url(/images/email.png?814000467f4f2080fcfa76ee21f1c8e7) no-repeat #f2f2f2;
     padding-left: 40px;
     background-size: 24px;
-    background-position: 10px;
+    background-position: 10px
 }
 
-/** end here **/
-
-
-/** less height css **/
-@media (min-width: 1200px) and (max-width: 1300px) {
+@media (min-width:1200px) and (max-width:1300px) {
     .contentA {
-        margin-top: 0px !important;
+        margin-top: 0px !important
     }
 }
 
-/** less height css end here**/
-
-
-
-
-
-/** responsive css **/
 @media only screen and (max-width:767px) {
-
-    /** Rahul css on 27-12-2021 css**/
     .welcome-heading {
         font-size: 16px !important;
-        font: inherit !important;
+        font: inherit !important
     }
 
     #main .col {
-        padding: 0px;
+        padding: 0
     }
 
     .subScrip .row .col-md-4 {
         display: inline-block;
-        max-width: 100%;
+        max-width: 100%
     }
 
     h1.main-heading.position-relative {
-        font-size: 20px !important;
+        font-size: 20px !important
     }
 
     .subs-box {
         border: 1px solid #BCE0FD;
         background: #fff;
-        width: 100%;
+        width: 100%
     }
 
-    /** end here **/
-
     .subScrip {
-        height: auto !important;
+        height: auto !important
     }
 
     .login-bg-img {
-        padding: 0px 5px;
+        padding: 0 5px
     }
 
     .outer-logo {
@@ -485,96 +441,86 @@ input.form-control.email-addrs {
         top: 5%;
         text-align: center;
         display: block;
-        left: auto;
+        left: auto
     }
 
     .login_screen {
         margin-top: 30px !important;
         width: 90%;
-        /*min-height: auto;*/
-        padding: 20px 10px !important;
+        padding: 20px 10px !important
     }
 }
 
 @media only screen and (max-width:500px) {
-
     .login_screen {
-        padding: 10px;
+        padding: 10px
     }
 
     div.form-group.flds span.error-sms {
-        font-size: 14px;
+        font-size: 14px
     }
 
     div.form-group.flds {
-        margin-top: 0px;
+        margin-top: 0
     }
 
     .sign-btn button {
-        margin-top: 5px;
-
+        margin-top: 5px
     }
 
     div.form-group.flds {
-        height: auto;
+        height: auto
     }
 }
 
 @media only screen and (max-width:414px) {
     .outer-logo {
-        top: 2%;
+        top: 2%
     }
 
     .login_screen {
-        margin-top: 30px;
+        margin-top: 30px
     }
 
     .login_screen {
-        border-radius: 36px;
+        border-radius: 36px
     }
-
 }
 
 @media only screen and (max-width:340px) {
-
     .sign-btn button {
-        width: 230px;
+        width: 230px
     }
 }
 
-
-/* added by dinesh */
 #otp-box {
-    display: none;
+    display: none
 }
 
 #email-box {
-    display: none;
+    display: none
 }
 
 .open-box {
-    display: block !important;
+    display: block !important
 }
 
 .close-box {
-    display: none !important;
+    display: none !important
 }
 
 #otp-verify-box {
-    display: none;
+    display: none
 }
 
 #set-password-box {
-    display: none;
+    display: none
 }
 
 #address-box {
-    display: none;
+    display: none
 }
 
-/* dinesh end */
-
-/*select subject 04/12/2021 */
 .subject_screen {
     max-width: 65%;
     min-height: 400px;
@@ -583,34 +529,33 @@ input.form-control.email-addrs {
     padding: 60px 47px 60px 47px;
     text-align: center;
     margin: 120px auto 0;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%)
 }
 
 .click-box:hover,
 .click-box.active {
-    background: #f2f2f2;
+    background: #f2f2f2
 }
 
 .click-box {
     cursor: pointer;
-    transition: all 0.4s;
+    transition: all 0.4s
 }
 
 .welcome-heading {
     font: normal normal normal 28px/42px Manrope;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #2c3348;
-    text-align: center;
+    text-align: center
 }
 
 .welcome-msg {
     font: normal normal normal 14px/24px Manrope;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #2c3348;
-    text-align: Center;
+    text-align: Center
 }
 
-/*new css 07/12 Bhim*/
 #chooseSub #goto-next-btn {
     border-radius: 20px !important;
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
@@ -619,22 +564,22 @@ input.form-control.email-addrs {
     padding: 18px 30px;
     background-color: #00baff !important;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 700;
     width: 276px;
     height: 60px;
-    line-height: 18px;
+    line-height: 18px
 }
 
 #chooseSub #goto-next-btn:hover {
     background: #0cc1ff !important;
     background-color: #0cc1ff !important;
-    border: solid #0cc1ff 0px !important;
+    border: solid #0cc1ff 0px !important
 }
 
 div#startjust,
 div#eleventh,
 div#twelfth {
-    border-radius: 20px;
+    border-radius: 20px
 }
 
 h1.main-heading.position-relative {
@@ -643,39 +588,39 @@ h1.main-heading.position-relative {
     font-weight: 800;
     font-family: Manrope;
     text-transform: uppercase;
-    font-size: 45px;
+    font-size: 45px
 }
 
 .subscriptionBox {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff;
-    padding: 30px;
+    padding: 30px
 }
 
 .subScrip {
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     background-image: linear-gradient(45deg, #d2f3ff, #fff);
-    height: 100vh !important;
+    height: 100vh !important
 }
 
 .subScrip h1.main-heading.position-relative a {
     font-size: 55px;
-    line-height: 65px;
+    line-height: 65px
 }
 
 .subScrip h1.main-heading.position-relative a img {
-    width: 50px;
+    width: 50px
 }
 
 .slimScrollBar {
-    background: rgb(13 193 255) !important;
+    background: rgb(13 193 255) !important
 }
 
 .subscriptionBox h5.cource-name {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700
 }
 
 button#goto-otp-btn {
@@ -683,32 +628,26 @@ button#goto-otp-btn {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     border: none;
-    background-color: #00baff !important;
-    /* padding: 18px 10px; */
+    background-color: #00baff !important
 }
 
 button#goto-otp-btn:hover {
-    background-color: #00baff !important;
+    background-color: #00baff !important
 }
 
 .Try14 {
-    color: #00baff !important;
+    color: #00baff !important
 }
 
 .subScrip .Try14:hover {
     color: #00baff !important;
-    text-decoration: underline;
+    text-decoration: underline
 }
-
-
-/* end new css */
-
-/* responsive */
 
 @media(min-width:991px) and (max-width:1280px) {
     .subject_screen {
         max-width: 85% !important;
-        padding: 60px 47px 60px 47px !important;
+        padding: 60px 47px 60px 47px !important
     }
 }
 
@@ -716,57 +655,54 @@ button#goto-otp-btn:hover {
     .subScrip .row .col-md-4 {
         display: inline-flex;
         max-width: 75% !important;
-        justify-content: center;
+        justify-content: center
     }
 
     .subScrip {
-        height: auto !important;
+        height: auto !important
     }
-
 }
 
 @media(min-width:768px) and (max-width:991px) {
     .subScrip {
-        height: auto !important;
+        height: auto !important
     }
 
     .subject_screen {
         max-width: 85% !important;
-        padding: 60px 47px 60px 47px !important;
+        padding: 60px 47px 60px 47px !important
     }
 
     .subject_screen img.img-responsive.stand-image {
         width: 60%;
         margin-bottom: 12px;
-        height: 68px;
+        height: 68px
     }
 
     .subScrip h1.main-heading.position-relative {
         font-size: 38px !important;
-        font-weight: 600 !important;
+        font-weight: 600 !important
     }
 
     .subScrip .row .col-md-4 {
         display: inline-flex;
         max-width: 75%;
-        justify-content: center;
+        justify-content: center
     }
-
 }
 
 @media(max-width:767px) {
     .subject_screen {
         max-width: 95% !important;
         padding: 25px !important;
-        margin: 20px auto 0 !important;
+        margin: 20px auto 0 !important
     }
 
     .subject_screen img.img-responsive.stand-image {
         width: 50%;
         margin-bottom: 12px;
-        height: 50px;
+        height: 50px
     }
-
 }
 
 .loader-block {
@@ -778,13 +714,10 @@ button#goto-otp-btn:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1000
 }
 
 .loader-block img {
-    width: 200px;
+    width: 200px
 }
-
-
-/* end responsive choose subject */
