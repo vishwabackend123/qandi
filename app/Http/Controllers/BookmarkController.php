@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Log;
 
 
 class BookmarkController extends Controller
@@ -22,54 +23,60 @@ class BookmarkController extends Controller
     public function addbookmark(Request $request)
     {
 
-        $userData = Session::get('user_data');
+        try {
+            $userData = Session::get('user_data');
 
-        $user_id = $userData->id;
-        $exam_id = $userData->grade_id;
-        $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
-        $question_id = isset($request->question_id) ? $request->question_id : 0;
-        $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+            $subject_id = isset($request->subject_id) ? $request->subject_id : 0;
+            $question_id = isset($request->question_id) ? $request->question_id : 0;
+            $chapter_id = isset($request->chapter_id) ? $request->chapter_id : 0;
 
-        $inputjson['subject_id'] = (int)$subject_id;
-        $inputjson['student_id'] = (int)$user_id; //30776; //(string);
-        $inputjson['exam_id'] = (int)$exam_id;
-        $inputjson['question_id'] = (int)$question_id;
-        $inputjson['chapter_id'] = (int)$chapter_id;
+            $inputjson['subject_id'] = (int)$subject_id;
+            $inputjson['student_id'] = (int)$user_id; //30776; //(string);
+            $inputjson['exam_id'] = (int)$exam_id;
+            $inputjson['question_id'] = (int)$question_id;
+            $inputjson['chapter_id'] = (int)$chapter_id;
 
-        $request = json_encode($inputjson);
+            $request = json_encode($inputjson);
 
 
 
-        $api_URL = env('API_URL');
+            $api_URL = env('API_URL');
 
-        $curl_url = $api_URL . 'api/bookmark-questions';
+            $curl_url = $api_URL . 'api/bookmark-questions';
 
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $curl_url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FAILONERROR => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => $request,
-            CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache",
-                "content-type: application/json",
-            ),
-        ));
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => $request,
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json",
+                ),
+            ));
 
-        $response_json = curl_exec($curl);
-        $err = curl_error($curl);
-        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        curl_close($curl);
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
 
-        if ($httpcode == 200 || $httpcode == 201) {
-            return $response_json;
-        } else {
-            return $err;
+            if ($httpcode == 200 || $httpcode == 201) {
+                return $response_json;
+            } else {
+                return $err;
+            }
+        }
+        catch(\Exception $e)
+        {
+            Log::info($e->getMessage());
         }
     }
 }

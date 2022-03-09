@@ -413,7 +413,7 @@ div#contentHtml .report-block1 {
     position: absolute;
     z-index: 1;
     display: block;
-    top: 0;
+    top: -2px!important;
     left: 0;
     overflow: hidden;
 }
@@ -875,3 +875,10 @@ margin-right:0;
 padding-left: 45px !important;    
 }
 /*****end by navdeep 23-02 ********/
+
+/*****navdeep 09-03 ********/
+#score_block .btn svg {
+    position: relative;
+    bottom: 2px;
+}
+/*****end by navdeep 09-03 ********/
