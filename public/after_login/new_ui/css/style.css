@@ -4255,7 +4255,7 @@ button.save-btn {
 
 .subject-scroll ul.course-star {
     overflow-x: auto;
-    margin-top: 5px;
+    margin-top: 5px;margin-bottom: 0px;
 }
 
 /** scrollbar css **/
