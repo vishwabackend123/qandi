@@ -262,7 +262,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                         <div class="review_box_holder padding_26">
                             <div class="d-flex reviewBox2 review_heading1">
                                 <div class="col-8 heading">
-                                    <h5><strong>Review Questions</strong></h5>
+                                    <h5 class="review_heading"><strong>Review Questions</strong></h5>
                                 </div>
                                 <div class="col-4 text-end d-flex add_btn_new">
                                     <div class="review_list_expand_btn_box">
@@ -907,6 +907,18 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     height: 6px;
     
     }
+
+    .review_heading{
+        font-size:18px;
+    }
+    span.subtitle.padding_26 {
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+  
 </style>
 
 
