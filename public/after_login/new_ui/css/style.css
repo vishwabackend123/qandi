@@ -19,6 +19,11 @@ button {
 .colorfull-bars .d-flex span {
     margin-left: 0px;
 }
+div#f-Numbr-sectin .arrow-right-btm-content{padding: 24px 24px !important;}
+div#arrow-left-top .inner-arrow-left-top , div#arrow-right-top .inner-arrow-right-top{right: 10px !important;}
+div#arrow-left-btm .inner-arrow-left-btm {left: 10px !important;}
+.alpha-extended-view {max-height:206px;overflow-y: auto;}
+#arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
 .planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 190px);}
 .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
 .box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
@@ -5524,7 +5529,7 @@ p.success-img {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .dash-nav-link {
