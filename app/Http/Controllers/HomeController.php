@@ -141,18 +141,15 @@ class HomeController extends Controller
                 }
             }
 
-            $previous_score_per = $corrent_score_per = $diff_score_per = 0;
+           /* $previous_score_per = $corrent_score_per = $diff_score_per = 0;
             if (isset($scoreData) && !empty($scoreData))
             {
 
-                $corrent_score_per = isset($scoreData[0]['result_percentage']) ? $scoreData[0]['result_percentage'] : 0;
+                //$corrent_score_per = isset($scoreData[0]['result_percentage']) ? $scoreData[0]['result_percentage'] : 0;
                 $previous_score_per = isset($scoreData[1]['result_percentage']) ? $scoreData[1]['result_percentage'] : 0;
                 $diff_score_per = $corrent_score_per - $previous_score_per;
             }
-            else
-            {
-            }
-
+            
             if ($diff_score_per >= 0)
             {
                 $score = isset($previous_score_per) ? $previous_score_per : 0;
@@ -166,7 +163,7 @@ class HomeController extends Controller
                 $inprogress = isset($diff_score_per) ? $diff_score_per : 0;
                 $progress = 0;
                 $others = 100 - ($score + $progress);
-            }
+            } */
 
             $curl = curl_init();
             $api_URL = env('API_URL');
@@ -278,6 +275,37 @@ class HomeController extends Controller
                     Session::put('progress_cat', $progress_cat);
                 }
             }
+            if (!Session::has('corrent_score_per'))
+            {
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
+                curl_setopt_array($curl, array(
+
+                    CURLOPT_URL => $curl_myq_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "POST",
+                ));
+
+                $response_myq_json = curl_exec($curl);
+                $response_myq = json_decode($response_myq_json, true);
+                $corrent_score_per = isset($response_myq['MyQToday Score']) && !empty($response_myq['MyQToday Score']) ? $response_myq['MyQToday Score'] : 0;
+                $corrent_score_per = (int) $corrent_score_per;
+                Session::put('corrent_score_per', $corrent_score_per);
+            }else
+            {
+               $corrent_score_per =Session::get('corrent_score_per');
+            }
+
+            $score = isset($corrent_score_per) ? $corrent_score_per : 0;
+            $progress =  0;
+            $inprogress = 0;
+            $others = 100 - ($score);
             return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat'));
         }
         catch(\Exception $e)
