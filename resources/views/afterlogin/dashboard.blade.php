@@ -630,12 +630,12 @@ $userData = Session::get('user_data');
 
 <!--------- Graph Expand ------>
 <div class="modal fade" id="graphExpand" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 100%; max-height: 100%;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 100%; max-height: 100%;margin: 1.75rem 20px">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             </div>
-            <div class="modal-body text-center">
+            <div class="modal-body text-center p-0">
                 <div class="progressChartExpend"></div>
             </div>
         </div>

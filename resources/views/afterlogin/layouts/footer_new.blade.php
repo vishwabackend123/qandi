@@ -35,7 +35,9 @@
         </div>
     </div>
 </div>
-
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
@@ -402,6 +404,7 @@
 <!-- End Planner Section -->
 <script>
     $(document).ready(function() {
+      
         jQuery("#notification-tog").click(function() {
             jQuery("#collapseExample").hide();
             jQuery("#notification").show();
@@ -419,6 +422,8 @@
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").show();
             jQuery("#profileAcc").hide();
+            jQuery("#profileAcc").removeClass('show');
+
         });
 
 
@@ -426,11 +431,12 @@
             jQuery("#collapsePlanner").show();
             jQuery("#collapseNotification").hide();
             jQuery("#profileAcc").hide();
+            jQuery("#profileAcc").removeClass('show');
         });
         jQuery(".UserPro").click(function() {
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").hide();
-            //jQuery("#profileAcc").show();
+            jQuery("#profileAcc").toggleClass('show');
         });
 
 
@@ -487,6 +493,7 @@
             var lastday = new Date(date.setDate(last)).toUTCString(); */
             var firstDate = formatDate(firstday);
             var lastDate = formatDate(lastday);
+
             $('#StartDate').val(firstDate);
 
             $('#EndDate').val(lastDate);
@@ -1019,11 +1026,18 @@
                 "_token": "{{ csrf_token() }}",
                 selected_chapters: selected_chapters
             },
-
+            beforeSend: function() {
+                    $('.loader-block').show();
+                },
             success: function(response_data) {
                 $('#select-planner-chapter').html(response_data);
                 $('#plannerChapter').modal('show');
+                $('.loader-block').hide();
             },
+            error: function(data, errorThrown)
+            {
+              $('.loader-block').hide();
+            }
 
 
         });
@@ -1221,10 +1235,11 @@
                 data: $('#plannerAddform').serialize(),
                 beforeSend: function() {
                     $('#overlay').fadeIn();
+                    $('.loader-block').show();
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-
+                    $('.loader-block').hide();
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);
@@ -1248,7 +1263,7 @@
 
                 },
                 error: function(xhr, b, c) {
-                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                    $('.loader-block').hide();
                 }
             });
         }
@@ -1559,7 +1574,7 @@
     $(".user-name-block span.notification").click(function() {
         if (!$(this).hasClass("notification-icons-active")) {
             $(this).addClass("notification-icons-active");
-            $(this).siblings().removeClass("notification-icons-active"); 
+            $(this).siblings().removeClass("notification-icons-active");
         } else {
             $(this).removeClass("notification-icons-active");
         }
@@ -1603,4 +1618,25 @@
         $(".dash-nav-link a:last-child").removeClass("active-navlink");
         $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
+
+    $('.UserPro,#plannCal,.notification,.close-bnt').click(function(){
+        setTimeout(function () {
+            
+            if($('.notification-block').hasClass('show')){
+            //    alert('aaa')
+                  $('html').addClass("scrollnone")
+            
+               }else if( $( '.main-profile-section').hasClass('show')){
+                   $('html').addClass("scrollnone") 
+               }else if( $( '.planmner-block').hasClass('show')){
+                   $('html').addClass("scrollnone") 
+               }
+               else{
+                $('html').removeClass("scrollnone") 
+               }
+        }, 500);
+       
+           
+        // $("html").toggleClass("scrollnone");
+       });
 </script>

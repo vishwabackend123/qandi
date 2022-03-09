@@ -276,6 +276,9 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 
 
 @include('afterlogin.layouts.footer_new')
@@ -433,6 +436,7 @@ $userData = Session::get('user_data');
         if (sub_id === null) {
             window.location.reload();
         } else {
+            
             url = "{{ url('next_tab/') }}/" + sub_id;
             $.ajax({
                 url: url,
@@ -442,10 +446,16 @@ $userData = Session::get('user_data');
                 },
                 beforeSend: function() {
                     $('#overlay').fadeIn();
+                    $('.loader-block').show();
                 },
                 success: function(result) {
                     $("#overall").html(result);
                     $('#overlay').fadeOut();
+                    $('.loader-block').hide();
+                },
+                error: function(data, errorThrown)
+                {
+                  $('.loader-block').hide();
                 }
             });
         }
@@ -947,11 +957,19 @@ $userData = Session::get('user_data');
                 data: {
                     "_token": "{{ csrf_token() }}",
                 },
+                 beforeSend: function() {
+                    $('.loader-block').show();
+                },
                 success: function(data) {
                   $(".topics_analytics").show();
                   $('.topics_analytics').html(data.html);
                   $(".overllanaly").hide();
+                  $('.loader-block').hide();
                   
+                },
+                error: function(data, errorThrown)
+                {
+                  $('.loader-block').hide();
                 }
             });
     }

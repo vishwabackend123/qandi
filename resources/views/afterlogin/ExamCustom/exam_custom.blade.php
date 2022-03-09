@@ -474,7 +474,7 @@ $userData = Session::get('user_data');
   //       }, 500);
   //   });
   // });
-  
+
 
   // $(document).ready(function() {
   //   $("#dropdownMenuLink").click(function() {
