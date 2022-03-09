@@ -903,9 +903,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
     }
-    /* .number-block{
-        height: 330px !important;
-    } */
+    .rview-quses li::-webkit-scrollbar {
+    height: 6px;
+    
+    }
 </style>
 
 
