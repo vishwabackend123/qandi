@@ -5674,7 +5674,7 @@ p.success-img {
 header {
     padding: 24px 0;
     position: relative;
-    z-index: 999;
+    z-index: 99;
 }
 
 .user-pic {
