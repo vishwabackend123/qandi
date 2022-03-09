@@ -41,9 +41,7 @@ $userData = Session::get('user_data');
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
-              @isset($subject_list)
-              @foreach($subject_list as $skey=>$sub)
-			  <div class="Flat-left">
+			<div class="Flat-left">
 			  <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
                 @csrf
                 <input type="hidden" id="selected_topic" name="topics">
@@ -57,6 +55,10 @@ $userData = Session::get('user_data');
                 </div>
               </form>
 			  </div>
+			  
+              @isset($subject_list)
+              @foreach($subject_list as $skey=>$sub)
+			  
 			  
               <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
 

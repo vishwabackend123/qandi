@@ -18,7 +18,7 @@ li.a3TS {
     box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
-    height: 240px !important;
+    height: 310px !important;
     overflow-y: auto !important;
 	overflow-x: hidden;
 }
@@ -816,3 +816,11 @@ a.clearRes:hover {
 }
 /*added by sachin-22-02*/
  
+ 
+ @media (min-width: 1200px) and (max-width: 1300px){
+.custom-page .cust-tab-content .scroll-div {
+    height: 275px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+}
+}
