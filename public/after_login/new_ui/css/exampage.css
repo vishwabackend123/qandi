@@ -471,6 +471,14 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     padding-bottom: 0px !important;
 }
 
+.test-review-right .bg-white.d-flex.flex-column.mb-4 {
+    padding:0px !important;
+}
+.padding_26{
+    padding: 26px !important;
+    padding-bottom: 0px !important;
+}
+
 .rightSectH {
     font-family: 'Manrope';
     font-size: 18px;
