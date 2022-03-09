@@ -327,15 +327,14 @@
         box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 40%) !important;
         border: 3px solid #000;
         width: 20px;
-        height: 20px;   
+        height: 20px;
 
 
     }
 
-    .exam-week-bar{
-    margin-top: 42px;
-}
-
+    .exam-week-bar {
+        margin-top: 42px;
+    }
 </style>
 
 
@@ -362,7 +361,7 @@
                                 <div class="d-flex align-items-center row">
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">Start Date</label>
-                                        <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required="" min="2021-11-29">
+                                        <input type="date" id="StartDate" name="start_date" class="form-control bg-light border-0 p-2 text-center text-uppercase" required="">
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">End Date</label>
@@ -427,7 +426,7 @@
         <div class="planner-content p-3">
             <div class="d-flex align-items-center justify-content-between">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
-<!--
+                <!--
                 <span>
                     <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
                     <a draggable="false" href="javascript:void(0);" class="link-danger " id="close-edit-planner-btn" title="Close edit planner"><img style="width:24px;" src="{{URL::asset('public/after_login/new_ui/images/Layer-4.png')}}" class="bg-white"></a>
@@ -594,7 +593,7 @@
 <div class="main-profile-section width collapse" id="profileAcc">
 
     <div class="account-wrapper new">
-    <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
+        <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
         <div class="profile-section">
             <ul>
                 <li class="active"><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
@@ -729,7 +728,7 @@
                 </div>
             </div>
             <!--profile-picture-->
-          
+
         </div>
 
         <!--profile-show-->
@@ -773,21 +772,21 @@
                     </div>
 
                     <div class="form-flds flds form-group stateD" id="statebx">
-                    <div class="svg_icon_input">
-                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5073" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 11571" d="M0 0h24v24H0z" style="fill:none"/>
-                            <path data-name="Path 11572" d="M5 12H3l9-9 9 9h-2" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-                            <path data-name="Path 11573" d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-                            <path data-name="Path 11574" d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-                        </svg>
-                    </div>
+                        <div class="svg_icon_input">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5073" width="24" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 11571" d="M0 0h24v24H0z" style="fill:none" />
+                                <path data-name="Path 11572" d="M5 12H3l9-9 9 9h-2" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 11573" d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 11574" d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                            </svg>
+                        </div>
 
 
 
                         <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
 
-                         <div class=" country-code-name stu-grade" id="state_list" style="display:none"></div> 
+                        <div class=" country-code-name stu-grade" id="state_list" style="display:none"></div>
                     </div>
 
                     <div class="form-flds locationN">
@@ -797,12 +796,12 @@
                     <div class="form-flds flds form-group " id="citybx">
                         <div class="svg_icon_input">
                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5074" width="24" height="24" viewBox="0 0 24 24">
-                                <path data-name="Path 11575" d="M0 0h24v24H0z" style="fill:none"/>
-                                <path data-name="Path 11576" d="m8 9 5 5v7H8v-4m0 4H3v-7l5-5m1 1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17h-8" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-                                <path data-name="Line 609" transform="translate(13 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
-                                <path data-name="Line 610" transform="translate(17 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
-                                <path data-name="Line 611" transform="translate(17 11)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
-                                <path data-name="Line 612" transform="translate(17 15)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0"/>
+                                <path data-name="Path 11575" d="M0 0h24v24H0z" style="fill:none" />
+                                <path data-name="Path 11576" d="m8 9 5 5v7H8v-4m0 4H3v-7l5-5m1 1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17h-8" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                                <path data-name="Line 609" transform="translate(13 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0" />
+                                <path data-name="Line 610" transform="translate(17 7)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0" />
+                                <path data-name="Line 611" transform="translate(17 11)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0" />
+                                <path data-name="Line 612" transform="translate(17 15)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0h0" />
                             </svg>
                         </div>
 
@@ -900,14 +899,14 @@
                 <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
                                  sessionStorage.clear();  document.getElementById('logout-form').submit();" ">
                                  <button type=" button" class="save-btn logout_btn_new">
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
                                         position: absolute;
                                         left: 62px;
                                         top: 20px;
                                     ">
-                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
-                                    </svg>
-                                Log out</button>
+                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                    </svg>
+                    Log out</button>
                 </a>
             </div>
 

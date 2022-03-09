@@ -15,6 +15,34 @@ button {
     outline: none;
     text-decoration: none;
 }
+/* bhim css -09mar*/
+
+.Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
+    margin-left: 0px !important;
+}
+.Flat-left {
+    width: 65%;float:left;
+}
+.Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+.Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn {
+    width: 220px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.Flat-right {
+    float: right;
+}
+.Flat-left form#topic_form {
+    margin-bottom: 0px !important;
+    margin-top: 23px;
+}
+
+/* end bhim css -09mar*/
+
+
 
 .colorfull-bars .d-flex span {
     margin-left: 0px;
