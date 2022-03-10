@@ -27,7 +27,7 @@ button {
 #marKs-trends .bg-white#back2Dsh {padding: 0px !important;margin-top: -7px;}
 #back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto svg path+path {stroke: #000!important;}
 #back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto:hover svg path+path {stroke: #fff!important;}
-
+#time-Avg-quest .s_timeClass , #marKs-trends .s_classMark {width: 130px;}
 
 
 /******* 10-03-2022 Amit-End ******/
