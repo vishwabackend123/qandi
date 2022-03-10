@@ -143,8 +143,16 @@
     </div>
     <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
+            <small>
+                <!-- <i class="fa  fa-info"></i> -->
+                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                <p>
+                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                </p>
+            </small>
             <div class="d-flex align-items-center px-3 flex-box1">
-                <h5 class="dashboard-title ">Topics </h5>
+                <h5 class="dashboard-title ">Topic Performance  </h5>
                 <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})">
                         <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
                             <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
