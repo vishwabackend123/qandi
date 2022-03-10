@@ -1027,16 +1027,16 @@
                 selected_chapters: selected_chapters
             },
             beforeSend: function() {
-                    $('.loader-block').show();
+                   // $('.loader-block').show();
                 },
             success: function(response_data) {
                 $('#select-planner-chapter').html(response_data);
                 $('#plannerChapter').modal('show');
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
             },
             error: function(data, errorThrown)
             {
-              $('.loader-block').hide();
+              //$('.loader-block').hide();
             }
 
 
@@ -1235,11 +1235,11 @@
                 data: $('#plannerAddform').serialize(),
                 beforeSend: function() {
                     $('#overlay').fadeIn();
-                    $('.loader-block').show();
+                    //$('.loader-block').show();
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    $('.loader-block').hide();
+                    //$('.loader-block').hide();
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);
@@ -1263,7 +1263,7 @@
 
                 },
                 error: function(xhr, b, c) {
-                    $('.loader-block').hide();
+                    //$('.loader-block').hide();
                 }
             });
         }

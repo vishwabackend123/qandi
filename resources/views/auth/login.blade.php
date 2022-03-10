@@ -109,7 +109,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $('.loader-block').show();
+        //$('.loader-block').show();
         $.ajax({
             url: "{{ route('sendotplogin') }}",
             type: 'POST',
@@ -118,7 +118,7 @@
                 mobile: mobile,
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
 
                 var response = jQuery.parseJSON(response_data);
 
@@ -200,10 +200,10 @@
                         login_mobile: login_mobile,
                         login_otp: login_otp,
                     },
-                    beforeSend: function() {  $('.loader-block').show(); },
+                    beforeSend: function() {   },
 
                     success: function(response_data) { //debugger;
-                         $('.loader-block').hide();
+                         //$('.loader-block').hide();
 
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {
