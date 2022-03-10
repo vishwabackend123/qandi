@@ -15,6 +15,16 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* 10-03-2022 Amit-Start ******/
+.overllanaly .dashboard-name-txt {text-transform: none;font-weight: bold;}
+.overllanaly .cust-tab-content .scroll-topic-ana {height: 170px !important;}
+.overllanaly .box-shadow , .overllanaly .shadow-lg {
+    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+}
+/******* 10-03-2022 Amit-End ******/
 /* bhim css -09mar*/
 
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
@@ -49,14 +59,14 @@ button {
 }
 div#f-Numbr-sectin .arrow-right-btm-content{padding: 24px 20px !important;}
 div#arrow-left-top .inner-arrow-left-top , div#arrow-right-top .inner-arrow-right-top{right: 10px !important;}
-div#arrow-left-btm .inner-arrow-left-btm {right: 10px !important;top: 0;left: auto!important;bottom: auto!important;}
+div#arrow-left-btm .inner-arrow-left-btm {right: 10px !important;left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
 .planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 190px);}
 .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
-.box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
-    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important}
+.box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important}
 /******* 07-03-2022 Amit-Start ******/
 .cust-gallery .swiper-slide{width: 405px!important; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(255, 255, 255, 0.51);}
 .swiper-wrapper{padding:36px 0;}
@@ -1659,7 +1669,7 @@ input#select-city::placeholder {
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 312px;
+    max-width: 328px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -4550,15 +4560,16 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
+      backdrop-filter: blur(7px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+    /* -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px); */
 }
 
 .notification-right a img {
@@ -8350,4 +8361,25 @@ input#linkInput {
 
 .progressChart .highcharts-label.highcharts-series-label {
     display: none;
+}
+
+/* scrollbar css */
+/* use this class for scroll */
+.uniform-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.uniform-scroll::-webkit-scrollbar-track {
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
+}
+
+
+.uniform-scroll::-webkit-scrollbar-thumb {
+    background: #00bdff;
+    border-radius: 10px;
+}
+
+.uniform-scroll::-webkit-scrollbar-thumb:hover {
+    background: #00bdff;
 }
