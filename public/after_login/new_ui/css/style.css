@@ -15,6 +15,13 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* 10-03-2022 Amit-Start ******/
+.overllanaly .dashboard-name-txt {
+    text-transform: none;
+    font-weight: bold;
+}
+/******* 10-03-2022 Amit-End ******/
 /* bhim css -09mar*/
 
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
