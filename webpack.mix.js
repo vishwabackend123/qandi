@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+let minifier = require('minifier');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,3 +16,9 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+minifier.minify('public/css/style.css');
+minifier.minify('public/after_login/new_ui/css/style.css');
+minifier.minify('public/after_login/new_ui/css/exam-analytics.css');
+minifier.minify('public/after_login/new_ui/css/exampage.css');
+minifier.minify('public/after_login/new_ui/css/responsive.css');
