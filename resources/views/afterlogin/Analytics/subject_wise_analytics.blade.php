@@ -143,9 +143,17 @@
     </div>
     <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
+            <small>
+                <!-- <i class="fa  fa-info"></i> -->
+                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                <p>
+                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                </p>
+            </small>
             <div class="d-flex align-items-center px-3 flex-box1">
-                <h5 class="dashboard-title ">Topics </h5>
-                <span class="EXPAND_btn"><button class="customgray" onclick="expandAnalytics({{$sub_id}})">
+                <h5 class="dashboard-title ">Topic Performance  </h5>
+                <span class="EXPAND_btn"><button style="margin-right: 40px;" class="customgray" onclick="expandAnalytics({{$sub_id}})">
                         <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
                             <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
                             <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
@@ -207,7 +215,7 @@
                     <div id="week" style="display:none"></div>
                     <div id="month" style="display:none"></div>
                     <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
-                    <div class="btn-block mt-3 d-flex justify-content-between">
+                    <div class="btn-block mt-3">
                         <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
                             Day
                         </button>
@@ -238,7 +246,7 @@
             </div>
         </div>
         <div class="row" id="marKs-trends">
-            <div class="col-lg-5 mt-3">
+            <div class="col-lg-6 mt-3">
                 <div class="bg-white p-3 h-100 px-5 text-center">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
@@ -253,7 +261,7 @@
                     <div id="week1" style="display:none"></div>
                     <div id="month1" style="display:none"></div>
                     <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
-                    <div class="btn-block mt-3 d-flex justify-content-between">
+                    <div class="btn-block mt-2">
                         <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                             Day
                         </button>
@@ -267,7 +275,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-7 mt-3">
+            <div class="col-lg-6 mt-3">
                 <div class="bg-white pt-3  px-5">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->

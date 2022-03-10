@@ -218,12 +218,13 @@ input:-moz-placeholder {
 .subScrip .row {
     width: 100%;
     margin: 0 auto;
-    text-align: center;
 }
 
+/*
 .subScrip .row {
     display: inline-block;
 }
+*/
 
 .subScrip .row .col-md-4 {
     display: inline-flex;

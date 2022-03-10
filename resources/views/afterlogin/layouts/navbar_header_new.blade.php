@@ -781,8 +781,6 @@
                             </svg>
                         </div>
 
-
-
                         <input type="text" class="pass students select-grade" id="select-state" placeholder="Select your state" name="state" value="{{ucwords($userData->state)}}" required readonly onkeypress="return lettersOnly(event)" spellcheck="false">
                         <span class="currect-email currect-value"><img src="{{URL::asset('public/images_new/success-icon.png')}}"></span>
 
@@ -827,7 +825,7 @@
                             <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
                         </div>
                     </div>
-                    <span class="text-danger" role="alert" id="errlog_edit"> </span>
+                    <span class="text-danger" role="alert" id="errlog_edit" style="color:#dc3545 !important"> </span>
                     <div class="form-btns">
                         <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
                         <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
@@ -853,7 +851,14 @@
 
                 <div class="subscrived">
                     <div class="p-pictures">
-                        <img src="{{URL::asset('public/after_login/new_ui/images/check.png')}}" alt="icon is missing">
+                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/check.png')}}" alt="icon is missing"> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+                            <g data-name="Group 5043" transform="translate(-1110 -408)">
+                                <circle data-name="Ellipse 720" cx="30" cy="30" r="30" transform="translate(1110 408)" style="fill:#44cd7f" />
+                                <path data-name="Path 2334" d="m9 20 10 10 20-20" transform="translate(1116 418)" style="fill:none;stroke:#fff;stroke-linecap:square;stroke-width:4px" />
+                            </g>
+                        </svg>
+
                     </div>
                     <div class="p-text">
                         <?php

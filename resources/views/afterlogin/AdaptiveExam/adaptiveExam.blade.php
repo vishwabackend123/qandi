@@ -708,7 +708,7 @@ $questtype='radio';
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+        // console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -733,7 +733,7 @@ $questtype='radio';
         const circleDasharray = `${(
                 calculateTimeFraction() * FULL_DASH_ARRAY
             ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+        // console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -907,10 +907,10 @@ $questtype='radio';
                 q_submit_time: q_submit_time
             },
             beforeSend: function() {
-              $('.loader-block').show();
+                //$('.loader-block').show();
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
@@ -954,10 +954,10 @@ $questtype='radio';
                 q_submit_time: q_submit_time
             },
             beforeSend: function() {
-              $('.loader-block').show();
+                //$('.loader-block').show();
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
@@ -1080,10 +1080,10 @@ $questtype='radio';
                 'q_time': time
             },
             beforeSend: function() {
-              $('.loader-block').show();
+                //$('.loader-block').show();
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                // $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 
@@ -1107,7 +1107,7 @@ $questtype='radio';
                     const circleDasharray = `${(
                             calculateTimeFraction() * FULL_DASH_ARRAY
                         ).toFixed(0)} 283`;
-                    console.log("setCircleDashArray: ", circleDasharray);
+                    // console.log("setCircleDashArray: ", circleDasharray);
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);

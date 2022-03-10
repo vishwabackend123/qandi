@@ -83,7 +83,7 @@
                 }
                 $(this).slider({
                     formatter: function(value) {
-                        console.log(value);
+
                         $('#slide-input').html(value);
 
                         return '$' + value;
@@ -404,7 +404,7 @@
 <!-- End Planner Section -->
 <script>
     $(document).ready(function() {
-      
+
         jQuery("#notification-tog").click(function() {
             jQuery("#collapseExample").hide();
             jQuery("#notification").show();
@@ -1027,16 +1027,15 @@
                 selected_chapters: selected_chapters
             },
             beforeSend: function() {
-                    $('.loader-block').show();
-                },
+                // $('.loader-block').show();
+            },
             success: function(response_data) {
                 $('#select-planner-chapter').html(response_data);
                 $('#plannerChapter').modal('show');
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
             },
-            error: function(data, errorThrown)
-            {
-              $('.loader-block').hide();
+            error: function(data, errorThrown) {
+                //$('.loader-block').hide();
             }
 
 
@@ -1235,11 +1234,11 @@
                 data: $('#plannerAddform').serialize(),
                 beforeSend: function() {
                     $('#overlay').fadeIn();
-                    $('.loader-block').show();
+                    //$('.loader-block').show();
                 },
                 success: function(response_data) {
                     var response = jQuery.parseJSON(response_data);
-                    $('.loader-block').hide();
+                    //$('.loader-block').hide();
                     if (response.success == true) {
                         var massage = response.massage;
                         $('#successPlanner_alert').html(massage);
@@ -1263,7 +1262,7 @@
 
                 },
                 error: function(xhr, b, c) {
-                    $('.loader-block').hide();
+                    //$('.loader-block').hide();
                 }
             });
         }
@@ -1354,9 +1353,19 @@
         rules: {
             user_mobile: {
                 mobileregx: /^[6-9][0-9]{9}$/,
-            }
+            },
         },
         submitHandler: function(form) {
+            var emailField=$('#useremail').val();
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (reg.test(emailField) == false) 
+            {
+                $("#errlog_edit").html("Invalid email id");
+                $("#errlog_edit").fadeIn('slow');
+                $("#errlog_edit").fadeOut(10000);
+
+                return false;
+            }
             $.ajax({
                 url: "{{ url('/editProfile') }}",
                 type: 'POST',
@@ -1619,24 +1628,23 @@
         $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 
-    $('.UserPro,#plannCal,.notification,.close-bnt').click(function(){
-        setTimeout(function () {
-            
-            if($('.notification-block').hasClass('show')){
-            //    alert('aaa')
-                  $('html').addClass("scrollnone")
-            
-               }else if( $( '.main-profile-section').hasClass('show')){
-                   $('html').addClass("scrollnone") 
-               }else if( $( '.planmner-block').hasClass('show')){
-                   $('html').addClass("scrollnone") 
-               }
-               else{
-                $('html').removeClass("scrollnone") 
-               }
+    $('.UserPro,#plannCal,.notification,.close-bnt').click(function() {
+        setTimeout(function() {
+
+            if ($('.notification-block').hasClass('show')) {
+                //    alert('aaa')
+                $('html').addClass("scrollnone")
+
+            } else if ($('.main-profile-section').hasClass('show')) {
+                $('html').addClass("scrollnone")
+            } else if ($('.planmner-block').hasClass('show')) {
+                $('html').addClass("scrollnone")
+            } else {
+                $('html').removeClass("scrollnone")
+            }
         }, 500);
-       
-           
+
+
         // $("html").toggleClass("scrollnone");
-       });
+    });
 </script>

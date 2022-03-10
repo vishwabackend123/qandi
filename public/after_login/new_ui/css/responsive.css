@@ -2891,7 +2891,6 @@
         background: #d0f3ff;
     }
 
-    .review-qus {}
 
     .review-qus::-webkit-scrollbar {
         width: 5px;
@@ -2912,7 +2911,7 @@
         background: #d0f3ff;
     }
 
-    .rightSect .number-block {}
+
 
     .rightSect .number-block::-webkit-scrollbar {
         width: 5px;

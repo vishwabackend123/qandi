@@ -234,7 +234,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
                     <div class="bg-white d-flex flex-column   mb-4">
-                        <span class="subtitle padding_26">{{$exam_name}}</span>
+                        <span class="subtitle padding_26" title="{{$exam_name}}">{{$exam_name}}</span>
                         <div class="number_block_holder padding_26">
                             <p class="rightSectH">Answer</p>
                             <div class="number-block">
@@ -554,7 +554,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 <style>
 /* .number-block {height:260px !important;} */
-.test-review-right, .rightSect .bg-white {height: 750px;;}
+.test-review-right, .rightSect .bg-white {height: 700px;}
 .review_box_holder{
     position: absolute;
     bottom: 25px;
@@ -650,11 +650,18 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
             var scrollqheight = onclickreviewbox - reviewBox2height;
 
-            $('#review_question_list').css('height', scrollqheight);
+            // $('#review_question_list').css('height', scrollqheight);
 
             $(".review_box_holder").css("border-top-left-radius", "56px");
             $(".review_box_holder").css("border-top-right-radius", "56px");
             $(".review_box_holder").css("box-shadow", "0 -10px 20px -4px rgb(0 0 0 / 10%)");
+
+            var review_box_holder_final_height = $(".test-review-right .review_box_holder").outerHeight();
+            $('#review_question_list').css('height', review_box_holder_final_height);
+
+            var review_expand_scroll_height =  $("#review_question_list").outerHeight();
+            var math_cal_height = review_expand_scroll_height - 50 + "px";
+            $('#review_question_list').css('height', math_cal_height);
             
 
           
@@ -840,73 +847,69 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <!-----End-for-percent-btn-click------->
 
 <style>
-    #review_rques_blk .answer-section {
-        margin-top: 0px !important;
-        position: absolute;
-        overflow-x: hidden;
-        bottom: 0px;
-        width: 98%;
-        border-radius: 40px;
-    }
+#review_rques_blk .answer-section {
+    margin-top: 0px !important;
+    position: absolute;
+    overflow-x: hidden;
+    bottom: 0px;
+    width: 98%;
+    border-radius: 40px;
+}
 
-    .expandbtn {
-        display: block;
-    }
-
-
-    .test-review-right .bg-white {
-        background-color: red;
-        position: relative;
-    }
-
-    .test-review-right .review-qus {
-        background-color: #ffffff;
-    }
-
-    .add_btn_new {
-        justify-content: end;
-        flex-direction: row-reverse;
-        align-items: center;
-    }
-
-    .review_list_expand_btn_box img,
-    .expand_button img {
-        width: 34px;
-        cursor: pointer
-    }
-
-    .expand_bnt1 svg,
-    .expandbtn svg,
-    .collapsebtn svg,
-    .expandbtn1 svg,
-    .collapsebtn1 svg {
-        width: 37px !important;
-        height: 37px !important;
-
-        cursor: pointer;
-    }
-
-    .expand_bnt1 svg {
-        margin-top: -7px;
-    }
+.expandbtn {
+    display: block;
+}
 
 
+.test-review-right .bg-white {
+    background-color: red;
+    position: relative;
+}
 
-    #review_rques_blk .answer-section {
-        height: 250px;
-    }
-    
-    .review_box_holder  .d-flex.reviewBox2.review_heading1 {
-        padding-top:0px;
-    }
+.test-review-right .review-qus {
+    background-color: #ffffff;
+}
 
-    .review_box_holder{
-        border-bottom-left-radius: 56px;
+.add_btn_new {
+    justify-content: end;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.review_list_expand_btn_box img,
+.expand_button img {
+    width: 34px;
+    cursor: pointer;
+}
+
+.expand_bnt1 svg,
+.expandbtn svg,
+.collapsebtn svg,
+.expandbtn1 svg,
+.collapsebtn1 svg {
+    width: 37px !important;
+    height: 37px !important;
+    cursor: pointer;
+}
+
+.expand_bnt1 svg {
+    margin-top: -7px;
+}
+
+#review_rques_blk .answer-section {
+    height: 250px;
+}
+
+.review_box_holder  .d-flex.reviewBox2.review_heading1 {
+    padding-top:0px;
+}
+
+.review_box_holder{
+    border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
-    }
+}
 .rview-quses li::-webkit-scrollbar {
     height: 6px;
-
 }
 
 .review_heading{
@@ -918,6 +921,7 @@ span.subtitle.padding_26 {
     width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .review_heading1 .heading{
@@ -925,7 +929,7 @@ span.subtitle.padding_26 {
     align-items: center;
 }
 
-  
+
 </style>
 
 
