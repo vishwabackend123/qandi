@@ -1669,7 +1669,7 @@ input#select-city::placeholder {
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 312px;
+    max-width: 328px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -4560,15 +4560,16 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
+      backdrop-filter: blur(7px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+    /* -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px); */
 }
 
 .notification-right a img {
