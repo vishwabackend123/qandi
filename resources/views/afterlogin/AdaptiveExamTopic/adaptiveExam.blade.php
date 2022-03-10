@@ -232,9 +232,9 @@ $questtype='radio';
                                 </button>
                             </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
-                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                    <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
@@ -653,7 +653,7 @@ $questtype='radio';
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+        //console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -678,7 +678,7 @@ $questtype='radio';
         const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+        //console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -988,7 +988,7 @@ $questtype='radio';
                     const circleDasharray = `${(
                             calculateTimeFraction() * FULL_DASH_ARRAY
                         ).toFixed(0)} 283`;
-                    console.log("setCircleDashArray: ", circleDasharray);
+                    //console.log("setCircleDashArray: ", circleDasharray);
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);

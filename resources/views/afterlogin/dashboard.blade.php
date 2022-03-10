@@ -2,7 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
-@endphp 
+@endphp
 @section('content')
 <!-- Modal -->
 @if($subjects_rating == null || empty($subjects_rating))
@@ -350,7 +350,7 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="sign-btn">
-                                <a href="{{route('exam','full_exam')}}"><button  type="submit" class="btn btn-primary active-btn text-uppercase">
+                                <a href="{{route('exam','full_exam')}}"><button type="submit" class="btn btn-primary active-btn text-uppercase">
                                         <img src="{{URL::asset('public/after_login/new_ui/images/right-white.png')}}">attempt now!</button></a>
 
                             </div>
@@ -709,16 +709,7 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
 
             subjects_rating[name] = value;
         });
-        /*  console.log(subjects_rating);
-         var existing = JSON.parse(localStorage.getItem("store_data") || '[]');
-         console.log(existing);
-         existing['subjects_rating'] = subjects_rating;
-         console.log(existing['subjects_rating']);
-         localStorage.setItem('store_data', JSON.stringify(existing));
 
-         var storeddata = JSON.parse(localStorage.getItem("store_data"));
-
-         console.log(storeddata); */
         $.ajax({
             url: "{{ url('/dailyWelcomeUpdates') }}",
             type: 'POST',
@@ -787,7 +778,7 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
 
             $(this).closest('.rating').data('vote', $(this).data('value'));
             calculateAverage()
-            console.log(parseInt($(this).data('value')));
+            // console.log(parseInt($(this).data('value')));
 
         })
 
@@ -802,7 +793,7 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
             $(this).closest('.rating').data('vote', $(this).data('value'));
             calculateAverage()
 
-            console.log(parseInt($(this).data('value')));
+            // console.log(parseInt($(this).data('value')));
         })
 
         $('.half').hover(function() {
