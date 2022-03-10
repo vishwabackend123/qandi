@@ -15,6 +15,13 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+/******* 10-03-2022 Amit-Start ******/
+.overllanaly .dashboard-name-txt {
+    text-transform: none;
+    font-weight: bold;
+}
+/******* 10-03-2022 Amit-End ******/
 /* bhim css -09mar*/
 
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
@@ -8347,4 +8354,25 @@ input#linkInput {
 
 .progressChart .highcharts-label.highcharts-series-label {
     display: none;
+}
+
+/* scrollbar css */
+/* use this class for scroll */
+.uniform-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.uniform-scroll::-webkit-scrollbar-track {
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
+}
+
+
+.uniform-scroll::-webkit-scrollbar-thumb {
+    background: #00bdff;
+    border-radius: 10px;
+}
+
+.uniform-scroll::-webkit-scrollbar-thumb:hover {
+    background: #00bdff;
 }
