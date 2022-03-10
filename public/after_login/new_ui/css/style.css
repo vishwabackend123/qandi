@@ -4298,7 +4298,7 @@ button.save-btn {
 
 .live-test li {
     font-size: 12px;
-    color: #231f20;
+    color: #2c3348;
     float: none !important;
     display: inline-block;
 }
@@ -5291,7 +5291,7 @@ p.tab-title {
     font-size: 18px;
     font-weight: 400;
     text-transform: none;
-    color: #231f20;
+    color: #2c3348;
 }
 
 /* Hide the browser's default checkbox */
