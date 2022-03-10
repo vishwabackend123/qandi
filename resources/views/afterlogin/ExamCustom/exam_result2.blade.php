@@ -83,7 +83,7 @@
                 @endphp
                 <div class="tab-pane fade show @if($topx==1) active @endif" id="{{$subject->subject_name}}_subject" role="tabpanel" aria-labelledby="{{$subject->subject_name}}_tab_subject">
 
-                    <div class="hScroll topicdiv-scroll pb-5">
+                    <div class="hScroll topicdiv-scroll pb-0">
                         @if(isset($response->topic_wise_result) && !empty($response->topic_wise_result))
                         @foreach($response->topic_wise_result as $topic)
                         @php $topic=(object)$topic; @endphp
@@ -129,9 +129,9 @@
     </div>
 </div>
 <script>
-    $(".topicdiv-scroll").slimscroll({
+    /*$(".topicdiv-scroll").slimscroll({
         height: "50vh",
-    });
+    });*/
 </script>
 <script>
     $(document).ready(function() {

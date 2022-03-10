@@ -36,7 +36,7 @@ $userData = Session::get('user_data');
 
 
                                 <h4 class="py-3">Upcoming Live Exams</h4>
-                                <div class="scroll-div-live-exm">
+                                <div class="scroll-div-live-exm pb-0 mb-3">
                                     @if(!empty($schedule_list))
 
                                     @foreach($schedule_list as $sche)
@@ -146,7 +146,7 @@ $userData = Session::get('user_data');
 
                             <div class="tab-pane fade show" id="completed" role="tabpanel" aria-labelledby="over-tab">
                                 <h4 class="py-3">Live Exams Results</h4>
-                                <div class="scroll-div-live-exm">
+                                <div class="scroll-div-live-exm pb-0 mb-3">
                                     @if(!empty($completed_list))
 
                                     @foreach($completed_list as $sche)
@@ -195,8 +195,8 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.footer_new')
 
 <script type="text/javascript">
-    $('.scroll-div-live-exm').slimscroll({
+    /*$('.scroll-div-live-exm').slimscroll({
         height: '60vh'
-    });
+    });*/
 </script>
 @endsection

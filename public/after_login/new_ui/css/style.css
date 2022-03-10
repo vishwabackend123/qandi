@@ -15,6 +15,16 @@ button {
     outline: none;
     text-decoration: none;
 }
+/* bhim css -10mar*/
+
+.instructions{
+	height:170px;
+	overflow-y:auto;
+}
+/* bhim css -10mar*/
+
+
+
 /* bhim css -09mar*/
 
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
@@ -269,9 +279,9 @@ div#collapseNotification {
 
 /*****shubham(02-03-2022)-end*****/
 /******* 04-03-2022 shubham-Start ******/
-.tab-wrapper {
+/*.tab-wrapper {
     overflow-x: hidden;
-}
+}*/
 
 .cust-tabs .nav-link {
     padding-right: 30px !important;
@@ -4192,7 +4202,7 @@ button.save-btn {
 }
 
 .list-series .scroll-div-live-exm {
-    height: 400px;
+    height: 350px;
     overflow: overlay;
 }
 

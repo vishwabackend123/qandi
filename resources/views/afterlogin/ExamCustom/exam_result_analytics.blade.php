@@ -129,9 +129,9 @@ $userData = Session::get('user_data');
             }
         });
     });
-    $(".topicdiv-scroll").slimscroll({
+    /*$(".topicdiv-scroll").slimscroll({
         height: "50vh",
-    });
+    });*/
 </script>
 
 

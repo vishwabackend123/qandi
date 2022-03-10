@@ -394,7 +394,7 @@ $questtype='radio';
 
                             </div>
                             <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
-                            <div class="instructions pe-3">
+                            <div class="instructions pe-3 uniform-scroll">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give you multiple opportunities to improve your scores in the
                                     examination if you are not able to give your best in one attempt.</p>
@@ -568,13 +568,13 @@ $questtype='radio';
 </script>
 <!-- browser back disable -->
 <script type="text/javascript">
-    $('.number-block').slimscroll({
+    /*$('.number-block').slimscroll({
         height: '20vh'
     });
 
     $('.answer-block').slimscroll({
         height: '30vh'
-    });
+    });*/
 
     $(window).on('load', function() {
         $("#test_instruction").modal({
@@ -596,12 +596,12 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-    $('.instructions').slimscroll({
+    /*$('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
-        /*  railVisible: true,
-         alwaysVisible: true */
-    });
+        railVisible: true,
+         alwaysVisible: true 
+    });*/
 
 
     const FULL_DASH_ARRAY = 283;

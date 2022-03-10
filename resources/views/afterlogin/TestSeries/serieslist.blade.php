@@ -37,7 +37,7 @@ $userData = Session::get('user_data');
 
 
                                 @if(!empty($open_series))
-                                <div class="scroll-div-live-exm p-4 listing-details">
+                                <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3">
                                     @foreach($open_series as $open)
                                     <ul class="speci-text">
                                         <li class="a1TS"> <span class="sub-details">{{$open->test_series_name}}</span>
@@ -74,7 +74,7 @@ $userData = Session::get('user_data');
 
                             <div class="tab-pane fade show " id="live" role="tabpanel" aria-labelledby="live-tab">
                                 @if(!empty($live_series))
-                                <div class="scroll-div-live-exm p-4 listing-details">
+                                <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3">
                                     @foreach($live_series as $live)
                                     <ul class="speci-text">
                                         <li class="a1TS"> <span class="sub-details">{{$live->test_series_name}}</span>
