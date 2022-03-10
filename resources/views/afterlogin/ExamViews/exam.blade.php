@@ -656,7 +656,7 @@ $questtype='radio';
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+        //console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -681,7 +681,7 @@ $questtype='radio';
         const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+        //console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 

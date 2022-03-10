@@ -183,9 +183,9 @@ $questtype='radio';
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;" >Save & Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Save & Mark for review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 " title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;" >Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 " title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Mark for review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
                                     </div>
@@ -230,12 +230,12 @@ $questtype='radio';
                                 </button>
                             </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                            <span class="btnSubic">
+                                <span class="btnSubic">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                         <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
                                     </svg>
                                 </span>
-                            &nbsp;&nbsp;&nbsp;Submit</button>
+                                &nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
 
@@ -652,7 +652,7 @@ $questtype='radio';
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+        // console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -677,7 +677,7 @@ $questtype='radio';
         const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+        // console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -985,7 +985,7 @@ $questtype='radio';
                     const circleDasharray = `${(
                             calculateTimeFraction() * FULL_DASH_ARRAY
                         ).toFixed(0)} 283`;
-                    console.log("setCircleDashArray: ", circleDasharray);
+                    //console.log("setCircleDashArray: ", circleDasharray);
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);
