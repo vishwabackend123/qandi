@@ -3459,8 +3459,6 @@ button.percentage-digit {
     background: #d0f3ff;
 }
 
-.review-qus {}
-
 .review-qus::-webkit-scrollbar {
     width: 5px;
 }

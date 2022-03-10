@@ -435,7 +435,6 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     margin-bottom: 0px !important;
 }
 
-.rightSect .number-block {}
 
 .rightSect .number-block::-webkit-scrollbar {
     width: 5px;
