@@ -443,12 +443,13 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
         line-height: normal;
         letter-spacing: normal;
         text-align: right;color:#00baff!important;text-transform:uppercase;}
-        .exportAnaylisis .export-block h2{font-size: 60px;
+    .exportAnaylisis .export-block h2{font-size: 60px;
             font-weight: 200;
             text-align: center;color:#2c3348}
-            .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
-            .exportAnaylisis .export-block  .greentxt{font-size: 187px;
+     .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
+   .exportAnaylisis .export-block  .greentxt{font-size: 187px;
                 font-weight: 600;}
+    .dashbaordmargin   {margin-left:25px;}         
 /* shubham-end(10-03-2022) */
 
 

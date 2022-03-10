@@ -119,7 +119,7 @@ $userData = Session::get('user_data');
                                         <div class="" id="scorecontainer"></div>
 
                                         <ul class="live-test">
-                                            <li>
+                                            <li class="dashbaordmargin">
                                                 <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
                                             </li>
                                             <!-- <li>
