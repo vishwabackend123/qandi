@@ -907,10 +907,10 @@ $questtype='radio';
                 q_submit_time: q_submit_time
             },
             beforeSend: function() {
-                $('.loader-block').show();
+                //$('.loader-block').show();
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
@@ -954,10 +954,10 @@ $questtype='radio';
                 q_submit_time: q_submit_time
             },
             beforeSend: function() {
-                $('.loader-block').show();
+                //$('.loader-block').show();
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
@@ -1080,10 +1080,10 @@ $questtype='radio';
                 'q_time': time
             },
             beforeSend: function() {
-                $('.loader-block').show();
+                //$('.loader-block').show();
             },
             success: function(response_data) {
-                $('.loader-block').hide();
+                // $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 
