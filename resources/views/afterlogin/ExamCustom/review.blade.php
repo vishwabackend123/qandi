@@ -554,7 +554,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 <style>
 /* .number-block {height:260px !important;} */
-.test-review-right, .rightSect .bg-white {height: 750px;}
+.test-review-right, .rightSect .bg-white {height: 700px;}
 .review_box_holder{
     position: absolute;
     bottom: 25px;
@@ -650,11 +650,18 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
             var scrollqheight = onclickreviewbox - reviewBox2height;
 
-            $('#review_question_list').css('height', scrollqheight);
+            // $('#review_question_list').css('height', scrollqheight);
 
             $(".review_box_holder").css("border-top-left-radius", "56px");
             $(".review_box_holder").css("border-top-right-radius", "56px");
             $(".review_box_holder").css("box-shadow", "0 -10px 20px -4px rgb(0 0 0 / 10%)");
+
+            var review_box_holder_final_height = $(".test-review-right .review_box_holder").outerHeight();
+            $('#review_question_list').css('height', review_box_holder_final_height);
+
+            var review_expand_scroll_height =  $("#review_question_list").outerHeight();
+            var math_cal_height = review_expand_scroll_height - 50 + "px";
+            $('#review_question_list').css('height', math_cal_height);
             
 
           
