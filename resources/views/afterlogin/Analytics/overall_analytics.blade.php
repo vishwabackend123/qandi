@@ -237,7 +237,16 @@ $userData = Session::get('user_data');
                                         <div class="bg-white  px-5" id="back2Dsh">
                                             <div class="d-flex">
                                                 <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
-                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><img src="{{URL::asset('public/after_login/new_ui/images/download-icn-blk.png')}}"> &nbsp;Export Analytics</button>
+                                                <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+                                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/download-icn-blk.png')}}"> 
+                                                    &nbsp;Export Analytics</button> -->
+                                                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                                                    </svg>
+                                                    &nbsp;Export Analytics</button>
                                             </div>
                                         </div>
 

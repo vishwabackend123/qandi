@@ -1353,9 +1353,19 @@
         rules: {
             user_mobile: {
                 mobileregx: /^[6-9][0-9]{9}$/,
-            }
+            },
         },
         submitHandler: function(form) {
+            var emailField=$('#useremail').val();
+            var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (reg.test(emailField) == false) 
+            {
+                $("#errlog_edit").html("Invalid email id");
+                $("#errlog_edit").fadeIn('slow');
+                $("#errlog_edit").fadeOut(10000);
+
+                return false;
+            }
             $.ajax({
                 url: "{{ url('/editProfile') }}",
                 type: 'POST',

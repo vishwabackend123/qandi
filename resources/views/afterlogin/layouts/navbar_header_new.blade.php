@@ -825,7 +825,7 @@
                             <input type="text" name="user_mobile" id="user_mobile" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
                         </div>
                     </div>
-                    <span class="text-danger" role="alert" id="errlog_edit"> </span>
+                    <span class="text-danger" role="alert" id="errlog_edit" style="color:#dc3545 !important"> </span>
                     <div class="form-btns">
                         <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
                         <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
