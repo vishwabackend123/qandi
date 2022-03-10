@@ -399,6 +399,52 @@ div#collapseNotification {
 html.scrollnone{overflow-y: hidden;padding-right:10px;}
 /* shubham-end(09-03-2022) */
 
+/* shubham-start(10-03-2022) */
+  .exportAnaylisis .bg-white.shadow-lg  .dashboard-title {font-size: 18px;
+    font-weight: 500!important;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #231f20;} 
+    .exportAnaylisis .bg-white.shadow-lg  .dashboard-name-txt{font-size: 18px;
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #231f20;text-transform: capitalize;}
+   .exportAnaylisis  .garphheading{font-size: 16px;
+    font-weight: 600!important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #2c3348;
+}
+.exportAnaylisis .detailedtext{ font-size: 17px;color:#2c3348; }
+.exportAnaylisis .detailedtext span{font-weight: 200; opacity: 0.5;}
+.exportAnaylisis .detailedtext b{font-weight:600; opacity: 0.8;}
+.exportAnaylisis .headeranaylsismain{padding-bottom:40px;}
+.exportAnaylisis .headeranaylsismain .text-light {font-size: 18px;
+    font-weight: 200;
+    text-align: center;color:#2c3348;}
+    .exportAnaylisis .text-light-danger{ font-size: 17px;
+        font-weight: 200;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: right;color:#00baff!important;text-transform:uppercase;}
+        .exportAnaylisis .export-block h2{font-size: 60px;
+            font-weight: 200;
+            text-align: center;color:#2c3348}
+            .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
+            .exportAnaylisis .export-block  .greentxt{font-size: 187px;
+                font-weight: 600;}
+/* shubham-end(10-03-2022) */
+
+
+
 
 /******* 03-03-2022 Amit-Start ******/
 
