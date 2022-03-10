@@ -17,14 +17,22 @@ button {
 }
 
 /******* 10-03-2022 Amit-Start ******/
-.overllanaly .dashboard-name-txt {text-transform: none;font-weight: bold;}
+.overllanaly .dashboard-name-txt {text-transform: none;font-weight: bold;color: #231f20;}
 .overllanaly .cust-tab-content .scroll-topic-ana {height: 170px !important;}
 .overllanaly .box-shadow , .overllanaly .shadow-lg {
     -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
     -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
     box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
 }
+#marKs-trends .bg-white#back2Dsh {padding: 0px !important;margin-top: -7px;}
+#back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto svg path+path {stroke: #000!important;}
+#back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto:hover svg path+path {stroke: #fff!important;}
+
+
+
 /******* 10-03-2022 Amit-End ******/
+
+
 /* bhim css -09mar*/
 
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
@@ -1715,7 +1723,7 @@ input#select-city::placeholder {
     position: absolute;
     bottom: 28px;
     width: -webkit-fill-available;
-    max-width: 312px;
+    max-width: 328px;
     padding-bottom: 0px;
     z-index: 9;
 }
@@ -4606,15 +4614,16 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    backdrop-filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
+      backdrop-filter: blur(7px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+    /* -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px); */
 }
 
 .notification-right a img {
