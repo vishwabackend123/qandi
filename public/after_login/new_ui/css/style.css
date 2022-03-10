@@ -8370,7 +8370,7 @@ input#linkInput {
 
 .uniform-scroll::-webkit-scrollbar-thumb {
     background: #00bdff;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 .uniform-scroll::-webkit-scrollbar-thumb:hover {
