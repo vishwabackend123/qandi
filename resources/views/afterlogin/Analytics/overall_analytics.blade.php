@@ -446,16 +446,16 @@ $userData = Session::get('user_data');
                 },
                 beforeSend: function() {
                     $('#overlay').fadeIn();
-                    $('.loader-block').show();
+                    //$('.loader-block').show();
                 },
                 success: function(result) {
                     $("#overall").html(result);
                     $('#overlay').fadeOut();
-                    $('.loader-block').hide();
+                    //$('.loader-block').hide();
                 },
                 error: function(data, errorThrown)
                 {
-                  $('.loader-block').hide();
+                  //$('.loader-block').hide();
                 }
             });
         }
@@ -958,18 +958,18 @@ $userData = Session::get('user_data');
                     "_token": "{{ csrf_token() }}",
                 },
                  beforeSend: function() {
-                    $('.loader-block').show();
+                   // $('.loader-block').show();
                 },
                 success: function(data) {
                   $(".topics_analytics").show();
                   $('.topics_analytics').html(data.html);
                   $(".overllanaly").hide();
-                  $('.loader-block').hide();
+                  //$('.loader-block').hide();
                   
                 },
                 error: function(data, errorThrown)
                 {
-                  $('.loader-block').hide();
+                  //$('.loader-block').hide();
                 }
             });
     }
