@@ -20,10 +20,10 @@
 
   <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
 
-  @if(env('MINIFY_STATIC_ASSETS') == 'false')
-  <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
-  @else
+  @if(env('MINIFY_STATIC_ASSETS') == 'true')
   <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}">
+  @else
+  <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
   @endif
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
