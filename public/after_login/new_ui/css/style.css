@@ -3459,8 +3459,6 @@ button.percentage-digit {
     background: #d0f3ff;
 }
 
-.review-qus {}
-
 .review-qus::-webkit-scrollbar {
     width: 5px;
 }
@@ -7102,7 +7100,7 @@ tspan {
 .radioans:checked+.ans {
     background: #fff4cf;
 }
-
+/* Added by Sachin-10-03-22 */
 #profileAcc {
     position: fixed;
     right: 0px;
@@ -7110,7 +7108,8 @@ tspan {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
+    backdrop-filter: blur(7px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
@@ -7119,6 +7118,7 @@ tspan {
     padding-top: 5px;
     margin-top: 70px;
 }
+/* End by Sachin-10-03-22 */
 
 .planmner-block {
     position: fixed;
