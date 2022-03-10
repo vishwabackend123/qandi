@@ -2541,7 +2541,7 @@ body#main-body .seeAnico span img {
 }
 
 .seeAnico .button-sec.mt-3 {
-    margin-top: 22px !important;
+    margin-top: 22px !important;    margin-bottom: 15px!important;
 }
 
 .form-btns button#saveEdit {
