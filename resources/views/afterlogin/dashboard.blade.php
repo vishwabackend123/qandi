@@ -953,7 +953,7 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
                 {
                     name: '',
                     y: <?php echo $others; ?>,
-                    color: '#e4e4e4'
+                    color: '#d0f3ff'
                 }
 
 
