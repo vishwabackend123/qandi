@@ -98,7 +98,7 @@ $userData = Session::get('user_data');
                                 <span class="me-auto"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
                                 <span class="text-end detailedtext">
                                     <b>Detailed</b> <span> Report Analysis<br />
-                                    Weekly UniQ Performace Report<br />{{date("F j, Y")}}</span>
+                                        Weekly Q&I Performace Report<br />{{date("F j, Y")}}</span>
                                 </span>
                             </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
@@ -522,7 +522,7 @@ $userData = Session::get('user_data');
 
     $(document).ready(function() {
         $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
             });
             $(this).siblings("p").show();

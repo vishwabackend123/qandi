@@ -602,7 +602,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic"  src="${img_url}"></span>
                             <span class="profile-text-user">
                                 <h3>${val.user_name}</h3>
-                                <p>${val.score} Unique score</p>
+                                <p>${val.score} Q&I score</p>
                             </span>
                         </li>`;
 
