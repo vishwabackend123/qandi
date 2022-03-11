@@ -24,6 +24,7 @@ $userData = Session::get('user_data');
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Open Test Series</a>
                                 </li>
+								
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true">Live Test Series</a>
                                 </li>
