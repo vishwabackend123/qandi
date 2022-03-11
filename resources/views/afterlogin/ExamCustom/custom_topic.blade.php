@@ -2,7 +2,7 @@
 @foreach($topics as $key=>$topic)
 <div class="p-3 custOmSld">
 
-    <div id="topic_box_{{$topic->id}}" class="bg-light shadow p-3 d-flex flex-column">
+    <div id="topic_box_{{$topic->id}}" class="bg-light shadow p-3 d-flex flex-column topicboxdin">
         <div class="d-flex align-items-center">
             <span class="mr-3 name-txt-sml" title="{{$topic->topic_name}}">{{$topic->topic_name}}</span>
 
