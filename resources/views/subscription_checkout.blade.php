@@ -16,7 +16,7 @@ $userData = Session::get('user_data');
     <div class="container">
         <div class="row">
             <div class="col-md-6 outer-logo">
-                <a href="{{ url('/') }}" title="Home" target="_blank">
+                <a href="{{ env('LANDING_URL') }}" title="Home" target="_blank">
                     <img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" />
                 </a>
             </div>

@@ -3,7 +3,7 @@
 @section('content')
 <section class="login-bg-img">
 
-    <span class="outer-logo"><a href="#"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
+    <span class="outer-logo"><a href="{{ env('LANDING_URL') }}"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <!--subject_screen-->
     <div id="main" class="subject_screen">
         <div class="row">
