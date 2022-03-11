@@ -86,10 +86,10 @@ div#arrow-left-top .inner-arrow-left-top , div#arrow-right-btm .inner-arrow-righ
     bottom: -25px !important;
 }
 div#arrow-right-top .inner-arrow-right-top {
-    right: -8px !important;
-    top: -25px !important;
+    right: -6px!important;
+    top: -23px!important;
 }
-div#arrow-left-btm .inner-arrow-left-btm {right: 10px !important;left: auto!important;transform: rotateZ(-46deg);}
+div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
 .planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 190px);}
