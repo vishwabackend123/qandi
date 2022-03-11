@@ -370,7 +370,7 @@ $userData = Session::get('user_data');
                             <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
 
-                                <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
+                                <div class="text-center" style="font-size: 14px;max-width: 180px;margin: 0 auto;">
                                     <b>Plan Tests</b> <br />
                                     Plan upto seven tests on topics of your choice
                                 </div>
@@ -392,7 +392,7 @@ $userData = Session::get('user_data');
                             </small>
                             <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
-                                <div class="text-center" style="font-size: 14px;max-width: 170px;margin: 0 auto;">
+                                <div class="text-center" style="font-size: 14px;max-width: 180px;margin: 0 auto;">
                                     <b> Tests Attempted</b>
                                     <div class="ms-auto">
 
