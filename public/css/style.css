@@ -266,7 +266,7 @@ input:-moz-placeholder {
 
 /** first screen login/email css **/
 .login-bg-img {
-    background: url(../images_new/bg-signup.png)no-repeat 0 0 fixed;
+    background: url(../images_new/bg-signup.webp)no-repeat 0 0 fixed;
     height: 100%;
     background-position: center;
     -webkit-background-size: cover;

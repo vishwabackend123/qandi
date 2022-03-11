@@ -339,6 +339,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
     /*$(".topicdiv-scroll").slimscroll({
         height: "50vh",
     });*/
+	
     Highcharts.chart('scorecontainer', {
         chart: {
             height: 224,
