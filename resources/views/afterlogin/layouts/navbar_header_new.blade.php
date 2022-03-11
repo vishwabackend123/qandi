@@ -665,7 +665,7 @@
             </div>
             <div class="profile-detail">
                 <div id="leaderboard_box_div">
-                    <ul>
+                    <ul class="p-0 m-0">
                         @if(isset($leaderboard_list) && !empty($leaderboard_list))
                         @foreach($leaderboard_list as $lead)
                         @php

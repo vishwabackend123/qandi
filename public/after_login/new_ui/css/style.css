@@ -1758,10 +1758,10 @@ input#select-city::placeholder {
 
 /* leaderboard */
 
-
+/*
 #leaderboard_box_div ul li:last-child {
     margin-bottom: 50px;
-}
+}*/
 
 .active_user {
     background: #f1f1f1;
@@ -3877,7 +3877,7 @@ div#sub-planner {
 }
 
 .profile-picture-txt {
-    padding: 23px 20px;
+    padding: 35px 20px;
     width: 100%;
 }
 
@@ -4878,7 +4878,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 275px;
+    height: 215px;
     margin-top: 20px;
     overflow-y: auto;
 }
