@@ -3,9 +3,10 @@
 @section('content')
 <section class="login-bg-img">
 
-    <span class="outer-logo"><a href="{{url('/')}}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
+    <span class="outer-logo"><a href="{{ env('LANDING_URL') }}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <div class="login_screen">
         <p class="mb-0">Welcome to UniQ</p>
+        {{ env('LANDING_URL') }}
         <p>Please login using your registered email/ Mobile number</p>
         <div class="pt-3 login-screen">
             <form id="studentlogin" method="post">
@@ -200,10 +201,10 @@
                         login_mobile: login_mobile,
                         login_otp: login_otp,
                     },
-                    beforeSend: function() {   },
+                    beforeSend: function() {},
 
                     success: function(response_data) { //debugger;
-                         //$('.loader-block').hide();
+                        //$('.loader-block').hide();
 
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {

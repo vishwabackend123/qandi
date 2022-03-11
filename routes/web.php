@@ -28,18 +28,18 @@ Route::any('/', function () {
         return Redirect()->route('dashboard');
     } else {
         //                 return view('index'); */
-    $landing_URL = env('LANDING_URL');
-
-    return redirect($landing_URL);
+    /* $landing_URL = env('LANDING_URL');
+    return redirect($landing_URL); */
+    return Redirect()->route('login');
     /*  } */
 });
 
 Route::any('/logout', function (Request $request) {
     //return view('index');
     $request->session()->flush();
-
-    $landing_URL = env('LANDING_URL');
-    return redirect($landing_URL);
+    return Redirect()->route('login');
+    /*  $landing_URL = env('LANDING_URL');
+    return redirect($landing_URL); */
 });
 
 
