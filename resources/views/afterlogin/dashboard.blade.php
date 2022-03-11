@@ -400,12 +400,12 @@ $userData = Session::get('user_data');
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
-                                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
+                                            <img style="width:20px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
                                         </a>
                                         @else
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle" aria-hidden="true"></i> -->
-                                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
+                                            <img style="width:20px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
                                         </a>
 
                                         @endif
