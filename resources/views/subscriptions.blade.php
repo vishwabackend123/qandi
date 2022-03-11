@@ -77,7 +77,6 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 
 
                 @if($subscription_type=="P")
-
                 <div class="col-md-4 p-4 m-auto text-center">
                     <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
