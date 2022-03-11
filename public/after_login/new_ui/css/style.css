@@ -16,8 +16,13 @@ button {
     text-decoration: none;
 }
 
-#marks_trend_graph .highcharts-legend-item.highcharts-line-series.highcharts-color-undefined .highcharts-point{fill:#00baff;}
+#marks_trend_graph .highcharts-series-0 .highcharts-point {fill: #00baff;}
+#marks_trend_graph .highcharts-series-1 .highcharts-point {fill: #ffdc34;}
+#marks_trend_graph .highcharts-series-2 .highcharts-point {fill: #eb5347;}
 a.Ex-anal {min-width: 230px;}
+.task-center-block .d-flex.justify-content-between.align-items-center {padding-left: 15px;}
+.common-cards-boxshadow .shadow-lg , .common-cards-boxshadow .cust-gallery .swiper-slide
+{ box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51)!important;}
 
 /* bhim css -10mar*/
 
@@ -27,6 +32,16 @@ a.Ex-anal {min-width: 230px;}
 }
 /* bhim css -10mar*/
 
+/* Added by Sachin-11-03-22*/
+#plannerAddform .text-light {
+    color: #D6D6D6 !important;
+    font-size: 21px;
+}
+
+#plannerAddform .text-success {
+    color: #33e485 !important;font-size: 21px;
+}
+/* End by Sachin-11-03-22*/
 
 /******* 10-03-2022 Amit-Start ******/
 .overllanaly .dashboard-name-txt {text-transform: none;font-weight: bold;color: #231f20;}
@@ -93,7 +108,7 @@ div#arrow-right-top .inner-arrow-right-top {
 div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
-.planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 222px);padding-bottom:60px;}
+.planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 240px);padding-bottom:15px;}
 .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
 .box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
     -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
@@ -472,7 +487,14 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
      .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
    .exportAnaylisis .export-block  .greentxt{font-size: 187px;
                 font-weight: 600;}
-    .dashbaordmargin   {margin-left:25px;}         
+    .dashbaordmargin   {margin-left:25px;}  
+    .subscriptionBox {text-align:center;}
+    .subscriptionBox .text-success.text-decoration-underline ,.subscriptionBox  .text-center.mt-2  {    color: #00baff;margin-top:20px!important;} 
+    .subscriptionBox   .price{text-align:center; font-size: 15px;}
+    .subscriptionBox   p.box-content {line-height: 24px;
+        font-weight: 500;
+        font-size: 15px;text-align:center;margin-bottom:40px;}   
+
 /* shubham-end(10-03-2022) */
 
 
@@ -1167,7 +1189,7 @@ ul.matrixLists li b {
 }
 
 .task-center-block .d-flex>span img {
-    width: 52px;
+    width: 50px;
 }
 
 .btn.btntheme {
