@@ -27,6 +27,16 @@ a.Ex-anal {min-width: 230px;}
 }
 /* bhim css -10mar*/
 
+/* Added by Sachin-11-03-22*/
+#plannerAddform .text-light {
+    color: #D6D6D6 !important;
+    font-size: 21px;
+}
+
+#plannerAddform .text-success {
+    color: #33e485 !important;font-size: 21px;
+}
+/* End by Sachin-11-03-22*/
 
 /******* 10-03-2022 Amit-Start ******/
 .overllanaly .dashboard-name-txt {text-transform: none;font-weight: bold;color: #231f20;}
