@@ -557,12 +557,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 .test-review-right, .rightSect .bg-white {
     height:680px;
 }
-.review_box_holder{
-    position: absolute;
-    bottom: 25px;
-    background: #fff;
-    overflow: hidden;
-}
+.review_box_holder{position: absolute; bottom: 25px;background: #fff;overflow: hidden;}
 </style>
 
 
