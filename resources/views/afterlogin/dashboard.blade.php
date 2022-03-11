@@ -95,7 +95,7 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
 
     <div class="content-wrapper">
-        <div class="container-fluid pt-0  dashboard-cards-block">
+        <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
 
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
@@ -398,9 +398,15 @@ $userData = Session::get('user_data');
 
                                         @foreach($planner as $key=>$val)
                                         @if($val->test_completed_yn=="Y")
-                                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle text-success" aria-hidden="true"></i></a>
+                                        <a href="#" class="text-secondary ms-2">
+                                            <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
+                                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
+                                        </a>
                                         @else
-                                        <a href="#" class="text-secondary ms-2"><i class="fas fa-check-circle" aria-hidden="true"></i></a>
+                                        <a href="#" class="text-secondary ms-2">
+                                            <!-- <i class="fas fa-check-circle" aria-hidden="true"></i> -->
+                                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
+                                        </a>
 
                                         @endif
                                         @endforeach
