@@ -9,6 +9,10 @@
             backdrop: "static",
             keyboard: false
         });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
 
     });
 </script>
@@ -521,7 +525,7 @@ $questtype='radio';
 <!-- browser back disable -->
 
 <script type="text/javascript">
-   /* $('.number-block').slimscroll({
+    /* $('.number-block').slimscroll({
         height: '20vh'
     });
     $('.answer-block').slimscroll({

@@ -80,7 +80,7 @@
             enabled: false
         },
         series: [{
-            name: 'Q&Iusers',
+            name: 'Q&I users',
             data: [
                 ['', <?php echo $response->total_participants; ?>],
                 ['AIR', <?php echo $response->user_rank; ?>],

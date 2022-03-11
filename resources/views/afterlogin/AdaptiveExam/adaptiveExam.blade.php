@@ -13,6 +13,10 @@
             backdrop: "static",
             keyboard: false
         });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
 
         history.pushState(null, null, location.href);
         window.onpopstate = function() {
