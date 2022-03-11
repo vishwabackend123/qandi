@@ -553,14 +553,16 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 <style>
-/* .number-block {height:260px !important;} */
-.test-review-right, .rightSect .bg-white {height: 700px;}
+ 
+.test-review-right, .rightSect .bg-white {
+    height:680px;
+}
 .review_box_holder{
-    position: absolute;
+    position: absolute; 
     bottom: 25px;
     background: #fff;
     overflow: hidden;
-}
+    }
 </style>
 
 
