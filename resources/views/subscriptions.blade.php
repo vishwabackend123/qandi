@@ -48,7 +48,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
             </div>
             @endif
             <!-- <div id="scrollDiv"> -->
-            <div class="row">
+            <div class="row justify-content-center">
                 @if(isset($subscriptions) && !empty($subscriptions))
                 @if($suscription_status !=0)
                 @foreach($subscriptions as $sub)
@@ -77,7 +77,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
 
 
                 @if($subscription_type=="P")
-                <div class="col-md-4 p-4 m-auto text-center">
+                <div class="col-md-4 p-4  text-center">
                     <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -99,7 +99,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 </div>
                 @elseif($subscription_type!="P")
 
-                <div class="col-md-4 p-4 text-center m-auto">
+                <div class="col-md-4 p-4 text-center ">
                     <div class="bg-white white-box-small subscriptionBox">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -127,7 +127,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 @endif
                 @elseif((count($purchasedid)>0) && !empty($userData->id))
 
-                <div class="col-md-4 p-4 text-center m-auto" style="display:none">
+                <div class="col-md-4 p-4 text-center " style="display:none">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -162,7 +162,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 </div>
                 @else
 
-                <div class="col-md-4 p-4 text-center m-auto">
+                <div class="col-md-4 p-4 text-center ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -217,7 +217,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 @if(isset($user_exam_id) && !empty($user_exam_id) && $collect_Sub->contains('class_exam_id', $user_exam_id))
                 @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
 
-                <div class="col-md-4 p-4 text-center m-auto">
+                <div class="col-md-4 p-4 text-center ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -243,7 +243,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                     </div>
                 </div>
                 @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type !="P")
-                <div class="col-md-4 p-4 text-center m-auto">
+                <div class="col-md-4 p-4 text-center">
                     <div class="bg-white white-box-small subscriptionBox">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -267,7 +267,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 </div>
                 @endif
                 @else
-                <div class="col-md-4 p-4 text-center m-auto">
+                <div class="col-md-4 p-4 text-center">
                     <div class="bg-white white-box-small subscriptionBox">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
