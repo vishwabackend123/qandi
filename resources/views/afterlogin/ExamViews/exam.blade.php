@@ -6,6 +6,10 @@
             backdrop: "static",
             keyboard: false
         });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
     });
 </script>
 @section('content')

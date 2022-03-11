@@ -7,7 +7,10 @@
             backdrop: "static",
             keyboard: false
         });
-
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
     });
 </script>
 
@@ -164,9 +167,9 @@ $questtype='radio';
                             <input type="hidden" name="planner_id" value="0">
                             <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
-                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                    <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit
                             </button>
 
