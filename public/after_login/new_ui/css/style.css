@@ -108,7 +108,7 @@ div#arrow-right-top .inner-arrow-right-top {
 div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
-.planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 240px);padding-bottom:15px;}
+.planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 240px);}
 .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
 .box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
     -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
@@ -505,7 +505,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
 .card-common-topheading {
     border-top-left-radius: 56px;
     background-color: #f6f9fd;
-    padding: 22px 0px 23px 65px;
+    padding: 24px 0px 26px 65px;
     border-top-right-radius: 56px;
     color: #2c3348;
     font-weight: 700;
@@ -527,7 +527,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     background-color: #fff;
     top: 0;
     left: 0;
-    height: 75px;
+    height: 78px;
     width: 245px;
     border-top-left-radius: 56px;
 }
@@ -537,7 +537,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     background: url(../images/before-img.png) no-repeat;
     left: 235px;
     top: 0;
-    height: 72px;
+    height: 78px;
     width: 70px;
 }
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after{
