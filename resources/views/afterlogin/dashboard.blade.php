@@ -119,7 +119,7 @@ $userData = Session::get('user_data');
                                         <div class="" id="scorecontainer"></div>
 
                                         <ul class="live-test">
-                                            <li>
+                                            <li class="dashbaordmargin">
                                                 <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
                                             </li>
                                             <!-- <li>
@@ -953,7 +953,7 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
                 {
                     name: '',
                     y: <?php echo $others; ?>,
-                    color: '#e4e4e4'
+                    color: '#d0f3ff'
                 }
 
 

@@ -215,7 +215,7 @@
                     <div id="week" style="display:none"></div>
                     <div id="month" style="display:none"></div>
                     <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
-                    <div class="btn-block mt-3 d-flex justify-content-between">
+                    <div class="btn-block mt-3">
                         <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_timeClass active" id="s_day_time" onclick="replace('day','week','month')">
                             Day
                         </button>
@@ -246,7 +246,7 @@
             </div>
         </div>
         <div class="row" id="marKs-trends">
-            <div class="col-lg-5 mt-3">
+            <div class="col-lg-6 mt-3">
                 <div class="bg-white p-3 h-100 px-5 text-center">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
@@ -261,7 +261,7 @@
                     <div id="week1" style="display:none"></div>
                     <div id="month1" style="display:none"></div>
                     <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
-                    <div class="btn-block mt-3 d-flex justify-content-between">
+                    <div class="btn-block mt-2">
                         <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 s_classMark active" id="s_day_mark" onclick="s_replace1('day1','week1','month1')">
                             Day
                         </button>
@@ -275,7 +275,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-7 mt-3">
+            <div class="col-lg-6 mt-3">
                 <div class="bg-white pt-3  px-5">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->

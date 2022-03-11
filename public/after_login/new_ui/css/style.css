@@ -27,7 +27,7 @@ button {
 #marKs-trends .bg-white#back2Dsh {padding: 0px !important;margin-top: -7px;}
 #back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto svg path+path {stroke: #000!important;}
 #back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto:hover svg path+path {stroke: #fff!important;}
-
+#time-Avg-quest .s_timeClass , #marKs-trends .s_classMark {width: 130px;}
 
 
 /******* 10-03-2022 Amit-End ******/
@@ -443,12 +443,13 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
         line-height: normal;
         letter-spacing: normal;
         text-align: right;color:#00baff!important;text-transform:uppercase;}
-        .exportAnaylisis .export-block h2{font-size: 60px;
+    .exportAnaylisis .export-block h2{font-size: 60px;
             font-weight: 200;
             text-align: center;color:#2c3348}
-            .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
-            .exportAnaylisis .export-block  .greentxt{font-size: 187px;
+     .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
+   .exportAnaylisis .export-block  .greentxt{font-size: 187px;
                 font-weight: 600;}
+    .dashbaordmargin   {margin-left:25px;}         
 /* shubham-end(10-03-2022) */
 
 
@@ -558,7 +559,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
 
 a.close-btn,
 a.export-btn {
-    top: 45px;
+    top: 38px;
     border-radius: 100% !important;
     padding: 6px;
 }
@@ -2540,7 +2541,7 @@ body#main-body .seeAnico span img {
 }
 
 .seeAnico .button-sec.mt-3 {
-    margin-top: 22px !important;
+    margin-top: 22px !important;    margin-bottom: 15px!important;
 }
 
 .form-btns button#saveEdit {

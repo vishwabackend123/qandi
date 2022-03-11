@@ -263,10 +263,10 @@ $userData = Session::get('user_data');
 <!-- <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
  -->
 
-<a href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
+<a style="box-shadow: none;padding: 0;" href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print"><img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/export-download-icon.png')}}"></a>
 
 
-<a href="{{ url('/dashboard') }}" class="close-btn"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" title="Close" style="width: 30px;"></a>
+<a style="box-shadow: none;padding: 0;" href="{{ url('/dashboard') }}" class="close-btn"><img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/export-cross-icon.png')}}" title="Close" style="width: 30px;"></a>
 
 
 
