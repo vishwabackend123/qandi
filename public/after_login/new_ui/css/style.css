@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+a.Ex-anal {min-width: 230px;}
+
 /* bhim css -10mar*/
 
 .instructions{
@@ -41,7 +43,6 @@ button {
 
 /******* 10-03-2022 Amit-End ******/
 
->>>>>>> e2dbebafbc62aba7cb32fa93252bd324eddb53d0
 
 /* bhim css -09mar*/
 
@@ -75,8 +76,19 @@ button {
 .colorfull-bars .d-flex span {
     margin-left: 0px;
 }
-div#f-Numbr-sectin .arrow-right-btm-content{padding: 24px 20px !important;}
-div#arrow-left-top .inner-arrow-left-top , div#arrow-right-top .inner-arrow-right-top{right: 10px !important;}
+div#f-Numbr-sectin .arrow-right-btm-content {
+    padding: 0px !important;
+    margin: 24px 20px;
+    border-radius: 0!important;
+}
+div#arrow-left-top .inner-arrow-left-top , div#arrow-right-btm .inner-arrow-right-btm , div#arrow-left-btm .inner-arrow-left-btm{
+    right: -8px !important;
+    bottom: -25px !important;
+}
+div#arrow-right-top .inner-arrow-right-top {
+    right: -8px !important;
+    top: -25px !important;
+}
 div#arrow-left-btm .inner-arrow-left-btm {right: 10px !important;left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
