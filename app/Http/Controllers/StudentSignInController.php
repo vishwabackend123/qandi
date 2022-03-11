@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\StudentUsers;
@@ -31,7 +32,7 @@ class StudentSignInController extends Controller
     public function index()
     {
         //return view('home');
-        
+
     }
 
     /**
@@ -42,8 +43,7 @@ class StudentSignInController extends Controller
      */
     public function sendotplogin(Request $request)
     {
-        try
-        {
+        try {
             $postData = $request->all();
             $email_or_mobile = isset($postData['mobile']) ? (string)$postData['mobile'] : '';
 
@@ -75,14 +75,11 @@ class StudentSignInController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response_json);
 
-            if ($aResponse->success != true)
-            {
+            if ($aResponse->success != true) {
                 $msg = $aResponse->message;
-                $response = ["message" => $msg, "error" => $err, "success" => false, ];
+                $response = ["message" => $msg, "error" => $err, "success" => false,];
                 return json_encode($response);
-            }
-            else
-            {
+            } else {
                 $msg = $aResponse->message;
                 $login_otp = $aResponse->otp;
                 Session::put('OTP', $login_otp);
@@ -90,19 +87,14 @@ class StudentSignInController extends Controller
                 $timestamp = $_SERVER["REQUEST_TIME"];
                 Session::put('OTP_time', $timestamp);
 
-                if (env('STUDENT_ENV') == 'prod')
-                {
-                    $response = ["message" => "otp sent successfully on registered number", "success" => true, ];
+                if (env('STUDENT_ENV') == 'prod') {
+                    $response = ["message" => "otp sent successfully on registered number", "success" => true,];
                     return json_encode($response);
-                }
-                else
-                {
+                } else {
                     return $response_json;
                 }
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -115,8 +107,7 @@ class StudentSignInController extends Controller
      */
     public function verifyotplogin(Request $request)
     {
-        try
-        {
+        try {
 
             $data = $request->all();
 
@@ -127,9 +118,8 @@ class StudentSignInController extends Controller
 
             $timestamp = $_SERVER["REQUEST_TIME"];
             $session_otp_time = Session::get('OTP_time');
-            //dd(($timestamp - $session_otp_time));
-            if (($timestamp - $session_otp_time) < 180)
-            {
+
+            if (($timestamp - $session_otp_time) < 180) {
                 $request = ['email_or_mobile' => $enteredMobile, 'otp' => $enteredOtp];
 
                 $request_json = json_encode($request);
@@ -151,7 +141,7 @@ class StudentSignInController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json"
-                    ) ,
+                    ),
                 ));
 
                 $response_json = curl_exec($curl);
@@ -162,41 +152,31 @@ class StudentSignInController extends Controller
                 $aResponse = json_decode($response_json);
                 $success = isset($aResponse->success) ? $aResponse->success : false;
 
-                if ($success == false)
-                {
-                    $response = ["message" => "You have entered a wrong OTP. Please try again", "error" => $err, "success" => false, "status" => 400, ];
+                if ($success == false) {
+                    $response = ["message" => "You have entered a wrong OTP. Please try again", "error" => $err, "success" => false, "status" => 400,];
                     return json_encode($response);
-                }
-                else
-                {
+                } else {
                     $aResponse = json_decode($response_json);
                     $user_data = isset($aResponse->result[0]) ? $aResponse->result[0] : [];
 
-                    if (Auth::loginUsingId($user_data->id))
-                    {
+                    if (Auth::loginUsingId($user_data->id)) {
                         $user_Data = Auth::user();
                         Session::put('user_data', $user_Data);
 
                         $response['status'] = 200;
 
                         return json_encode($response);
-                    }
-                    else
-                    {
+                    } else {
                         $response['status'] = 400;
                         $response['error'] = "Authentication failed please try again.";
                         return json_encode($response);
                     }
                 }
-            }
-            else
-            {
-                $response = ["message" => "OTP expired. Please. try again.", "error" => "OTP expired. Please. try again.", "success" => false, "status" => 400, ];
+            } else {
+                $response = ["message" => "OTP expired. Please. try again.", "error" => "OTP expired. Please. try again.", "success" => false, "status" => 400,];
                 return json_encode($response);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -209,14 +189,13 @@ class StudentSignInController extends Controller
      */
     public function sendotpsignup(Request $request)
     {
-        try
-        {
+        try {
             $postData = $request->all();
 
             $mobile = isset($postData['mobile']) ? $postData['mobile'] : '';
             $emailid = isset($postData['email']) ? $postData['email'] : '';
 
-            $request = ['email' => $emailid, 'mobile' => (int)$mobile, ];
+            $request = ['email' => $emailid, 'mobile' => (int)$mobile,];
             $request_json = json_encode($request);
 
             $api_URL = env('API_URL');
@@ -236,7 +215,7 @@ class StudentSignInController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json"
-                ) ,
+                ),
             ));
 
             $response_json = curl_exec($curl);
@@ -245,8 +224,7 @@ class StudentSignInController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
-            if ($httpcode == 200 || $httpcode == 201)
-            {
+            if ($httpcode == 200 || $httpcode == 201) {
                 $aResponse = json_decode($response_json);
 
                 $reg_otp = isset($aResponse->mobile_otp) ? $aResponse->mobile_otp : '';
@@ -255,35 +233,27 @@ class StudentSignInController extends Controller
                 $timestamp = $_SERVER["REQUEST_TIME"];
                 Session::put('OTP_time', $timestamp);
 
-                if (env('STUDENT_ENV') == 'prod')
-                {
-                    $response = ["message" => "otp sent successfully on registered number", "success" => true, ];
+                if (env('STUDENT_ENV') == 'prod') {
+                    $response = ["message" => "otp sent successfully on registered number", "success" => true,];
                     return json_encode($response);
-                }
-                else
-                {
+                } else {
                     return $response_json;
                 }
-            }
-            else
-            {
-                $response = ["message" => "email or mobile already exist!!", "error" => $err, "success" => false, "status" => 400, ];
+            } else {
+                $response = ["message" => "email or mobile already exist!!", "error" => $err, "success" => false, "status" => 400,];
                 return json_encode($response);
 
                 //return $response_json;
-                
+
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
 
     public function verifyOtpRegister(Request $request)
     {
-        try
-        {
+        try {
 
             $data = $request->all();
 
@@ -292,24 +262,19 @@ class StudentSignInController extends Controller
             $mobile_num = $request->input('mobile_num');
             $user_name = $request->input('user_name');
 
-            if (Session::has('OTP'))
-            {
+            if (Session::has('OTP')) {
                 $session_otp = Session::get('OTP');
-            }
-            else
-            {
+            } else {
                 $session_otp = null;
             }
             $timestamp = $_SERVER["REQUEST_TIME"];
             $session_otp_time = Session::get('OTP_time');
 
-            if (($timestamp - $session_otp_time) < 180)
-            {
-                if ($session_otp == $reg_otp)
-                {
+            if (($timestamp - $session_otp_time) < 180) {
+                if ($session_otp == $reg_otp) {
                     $request->session()
                         ->forget('OTP');
-                    $request = ['user_name' => $user_name, 'email' => $email_add, 'mobile' => (int)$mobile_num, ];
+                    $request = ['user_name' => $user_name, 'email' => $email_add, 'mobile' => (int)$mobile_num,];
 
                     $request_json = json_encode($request);
 
@@ -330,7 +295,7 @@ class StudentSignInController extends Controller
                         CURLOPT_HTTPHEADER => array(
                             "cache-control: no-cache",
                             "content-type: application/json"
-                        ) ,
+                        ),
                     ));
 
                     $response_json = curl_exec($curl);
@@ -342,21 +307,18 @@ class StudentSignInController extends Controller
                     $aResponse = json_decode($response_json);
                     $success = isset($aResponse->success) ? $aResponse->success : false;
 
-                    if ($success == false)
-                    {
+                    if ($success == false) {
                         $response = [
 
-                        "error" => $err, "success" => false, "status" => 400, ];
+                            "error" => $err, "success" => false, "status" => 400,
+                        ];
                         return json_encode($response);
-                    }
-                    else
-                    {
+                    } else {
 
                         $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
                         $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
 
-                        if (Auth::loginUsingId($student_id))
-                        {
+                        if (Auth::loginUsingId($student_id)) {
                             $response['status'] = 200;
                             $response['student_id'] = $student_id;
                             $response['user_name'] = ucwords($user_name);
@@ -364,31 +326,23 @@ class StudentSignInController extends Controller
                             $response['message'] = $succ_msg;
                             //  $response['redirect_url'] = url('dashboard');
                             return json_encode($response);
-                        }
-                        else
-                        {
+                        } else {
                             $response['status'] = 400;
                             $response['error'] = "Authentication failed please try again.";
                             return json_encode($response);
                         }
                     }
-                }
-                else
-                {
+                } else {
                     $response['status'] = 400;
                     $response['error'] = "Invalid OTP entered.";
                     return json_encode($response);
                 }
-            }
-            else
-            {
+            } else {
                 $response['status'] = 400;
                 $response['error'] = "OTP expired. Please. try again.";
                 return json_encode($response);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -398,8 +352,7 @@ class StudentSignInController extends Controller
      */
     public function countryList(Request $request)
     {
-        try
-        {
+        try {
             $data = $request->all();
 
             $api_URL = env('API_URL');
@@ -428,18 +381,13 @@ class StudentSignInController extends Controller
             $success = isset($aResponse->success) ? $aResponse->success : false;
             $country_list = isset($aResponse->response) ? $aResponse->response : false;
 
-            if ($success == false)
-            {
-                $response = ["error" => $err, "success" => false, "status" => 400, ];
+            if ($success == false) {
+                $response = ["error" => $err, "success" => false, "status" => 400,];
                 return json_encode($response);
-            }
-            else
-            {
+            } else {
                 return json_encode($country_list);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -452,8 +400,7 @@ class StudentSignInController extends Controller
      */
     public function stateList(Request $request)
     {
-        try
-        {
+        try {
             $data = $request->all();
             $country = isset($data['country']) ? $data['country'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : '';
@@ -490,28 +437,22 @@ class StudentSignInController extends Controller
 
             sort($state_list);
             $sOption = '';
-            if ($success == false)
-            {
-                $response = ["error" => $err, "success" => false, ];
+            if ($success == false) {
+                $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
-            }
-            else
-            {
+            } else {
 
                 $sOption .= '<ul>';
 
-                foreach ($state_list as $keyaState => $oState)
-                {
+                foreach ($state_list as $keyaState => $oState) {
                     $sOption .= '<li onClick="selectState(`' . $oState . '`)">' . $oState . '</li>';
                 }
                 //return json_encode($country_list);
                 $sOption .= '</ul>';
-                $response = ["success" => true, "response" => $sOption, ];
+                $response = ["success" => true, "response" => $sOption,];
                 return json_encode($response);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -525,8 +466,7 @@ class StudentSignInController extends Controller
      */
     public function cityList(Request $request)
     {
-        try
-        {
+        try {
             $data = $request->all();
             $state = isset($data['state']) ? $data['state'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : '';
@@ -563,28 +503,22 @@ class StudentSignInController extends Controller
 
             sort($city_list);
             $sOption = '';
-            if ($success == false)
-            {
-                $response = ["error" => $err, "success" => false, ];
+            if ($success == false) {
+                $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
-            }
-            else
-            {
+            } else {
 
                 $sOption .= '<ul>';
 
-                foreach ($city_list as $kCity => $oCity)
-                {
+                foreach ($city_list as $kCity => $oCity) {
                     $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
                 }
                 //return json_encode($country_list);
                 $sOption .= '</ul>';
-                $response = ["success" => true, "response" => $sOption, ];
+                $response = ["success" => true, "response" => $sOption,];
                 return json_encode($response);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -592,27 +526,22 @@ class StudentSignInController extends Controller
     /* function search value in array */
     function Search($search, $array)
     {
-        try
-        {
+        try {
             $search = strtolower($search);
             $r_array = [];
-            foreach ($array as $aVal)
-            {
+            foreach ($array as $aVal) {
                 $val = strtolower($aVal);
 
                 /* if (strstr($val, $value)) {
                 array_push($r_array, $aVal);
                 } */
-                if (strpos($val, $search) !== false)
-                {
+                if (strpos($val, $search) !== false) {
 
                     array_push($r_array, $aVal);
                 }
             }
             return $r_array;
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -621,8 +550,7 @@ class StudentSignInController extends Controller
 
     public function signupAddress(Request $request)
     {
-        try
-        {
+        try {
             $data = $request->all();
 
             $student_id = $request->input('student_id');
@@ -630,7 +558,7 @@ class StudentSignInController extends Controller
             $state = $request->input('state');
             $country = $request->input('country');
 
-            $request = ['id' => $student_id, "city" => $city, "state" => $state, "country" => $country, ];
+            $request = ['id' => $student_id, "city" => $city, "state" => $state, "country" => $country,];
 
             $request_json = json_encode($request);
 
@@ -651,7 +579,7 @@ class StudentSignInController extends Controller
                 CURLOPT_HTTPHEADER => array(
                     "cache-control: no-cache",
                     "content-type: application/json"
-                ) ,
+                ),
             ));
 
             $response_json = curl_exec($curl);
@@ -662,11 +590,10 @@ class StudentSignInController extends Controller
 
             $aResponse = json_decode($response_json);
             $success = isset($aResponse->success) ? $aResponse->success : false;
-            if (isset($data['refer_code']) && !empty(isset($data['refer_code'])))
-            {
+            if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
 
                 $exam_id = 1;
-                $inputjson = ["student_id" => $student_id, "exam_id" => $exam_id, "email" => $data['refer_email'], "student_refer_by" => $data['refer_code'], ];
+                $inputjson = ["student_id" => $student_id, "exam_id" => $exam_id, "email" => $data['refer_email'], "student_refer_by" => $data['refer_code'],];
                 $request = json_encode($inputjson);
 
                 $api_URL = env('API_URL');
@@ -686,35 +613,28 @@ class StudentSignInController extends Controller
                     CURLOPT_HTTPHEADER => array(
                         "cache-control: no-cache",
                         "content-type: application/json",
-                    ) ,
+                    ),
                 ));
 
                 $response_json = curl_exec($curl);
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);
-                if ($httpcode == 400 || $httpcode == 422)
-                {
+                if ($httpcode == 400 || $httpcode == 422) {
                     return json_encode(array(
                         'success' => false,
                         'message' => $httpcode
                     ));
                 }
             }
-            if ($success == false)
-            {
+            if ($success == false) {
                 return json_encode($aResponse);
-            }
-            else
-            {
+            } else {
                 $aResponse->redirect_url = url('dashboard');
                 return json_encode($aResponse);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
 }
-

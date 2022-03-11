@@ -16,7 +16,7 @@
     <form id="studentsignup" method="post">
         @csrf
         <div class="ms-auto login-box me-auto" id="name-box">
-            <div class="welcome-heading">Welcome to UniQ </div>
+            <div class="welcome-heading">Welcome to Q&I </div>
             <p class="welcome-msg text-center">“Let's start with getting to know you better.
                 What's <b>your name</b>?”</p>
             <div class="text-box mt-5 py-3">
@@ -33,7 +33,7 @@
 
         <div class="ms-auto login-box me-auto" id="email-box">
             <!-- <div><a href="#" class="back-btn" id="backname"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
-            <div class="welcome-heading">Welcome to UniQ </div>
+            <div class="welcome-heading">Welcome to Q&I </div>
             <p class="welcome-msg text-center">“Sign-up using your email address and mobile number.” </p>
             <div class="text-box mt-4">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>
@@ -52,7 +52,7 @@
 
         <div class="ms-auto login-box me-auto" id="otp-box">
             <!-- <div><a href="#" class="back-btn" id="backmobile"><img src="{{URL::asset('public/images/back-btn.png')}}"></a></div> -->
-            <div class="welcome-heading">Welcome to UniQ </div>
+            <div class="welcome-heading">Welcome to Q&I </div>
             <p class="welcome-msg text-center">“You must have received an OTP from us in your inbox or message” </p>
             <div class="text-box mt-5 py-3">
                 <span class="text-icon"><img src="{{URL::asset('public/images/mail.png')}}"></span>

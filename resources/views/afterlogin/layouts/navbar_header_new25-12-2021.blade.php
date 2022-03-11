@@ -490,7 +490,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic" src="{{$imgPath_deft}}"></span>
                             <span class="profile-text-user">
                                 <h3>{{($lead->user_name) ? $lead->user_name : 'NA'}}</h3>
-                                <p>{{$lead->score}} Unique score</p>
+                                <p>{{$lead->score}} Q&I score</p>
                             </span>
                         </li>
                         @endforeach

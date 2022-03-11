@@ -9,7 +9,7 @@
         <form id="studentsignup" method="post">
             @csrf
             <div id="name-box">
-                <p class="mb-0">Welcome to UniQ</p>
+                <p class="mb-0">Welcome to Q&I </p>
                 <p>“Let's start with getting to know you better. What's your name?”</p>
                 <div class="pt-3">
                     <div class="form-group flds">
@@ -23,7 +23,7 @@
             </div>
 
             <div id="email-box">
-                <p class="mb-0">Welcome to UniQ</p>
+                <p class="mb-0">Welcome to Q&I </p>
                 <p>“Sign-up using your email address and mobile number.”</p>
                 <div class="pt-3 emailNumdiv">
                     <div class="form-group flds">
@@ -41,7 +41,7 @@
             </div>
 
             <div id="otp-box">
-                <p class="mb-0">Welcome to UniQ</p>
+                <p class="mb-0">Welcome to Q&I </p>
                 <p>"You must have received an OTP from us in your inbox or message"</p>
                 <div class="pt-3 verifyBox">
                     <div class="form-group flds">

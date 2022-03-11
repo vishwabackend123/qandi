@@ -98,7 +98,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 <!-- <div class="active-bg-gray">
                                     <ul class="speci-text">
-                                        <li> <span class="sub-details">UniQ Advance Level Exam - Series 4</span>
+                                        <li> <span class="sub-details">Q&I Advance Level Exam - Series 4</span>
                                         </li>
                                         <li><strong>20-21 NOV 2021</strong>
                                         </li>
@@ -198,6 +198,5 @@ $userData = Session::get('user_data');
     /*$('.scroll-div-live-exm').slimscroll({
         height: '60vh'
     });*/
-	
 </script>
 @endsection
