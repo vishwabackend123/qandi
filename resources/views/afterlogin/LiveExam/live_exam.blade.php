@@ -451,12 +451,12 @@ $questtype='radio';
 </script>
 <!-- browser back disable -->
 <script type="text/javascript">
-    $('.number-block').slimscroll({
+    /*$('.number-block').slimscroll({
         height: '20vh'
     });
     $('.answer-block').slimscroll({
         height: '30vh'
-    });
+    });*/
 
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
@@ -474,11 +474,12 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-    $('.instructions').slimscroll({
+    /*$('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
+    });*/
 
-    });
+
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;

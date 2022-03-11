@@ -133,6 +133,4 @@ $userData = Session::get('user_data');
         height: "50vh",
     });*/
 </script>
-
-
 @endsection

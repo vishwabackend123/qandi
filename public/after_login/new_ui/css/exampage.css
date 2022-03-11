@@ -90,7 +90,8 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 #exam_content_sec .question-block .question p {
     font-size: 14px;
     line-height: 20px;
-    margin-bottom: 2px;
+    margin: 0px;
+    padding: 0px;
 }
 
 #exam_content_sec .cust-tab-content {

@@ -198,5 +198,6 @@ $userData = Session::get('user_data');
     /*$('.scroll-div-live-exm').slimscroll({
         height: '60vh'
     });*/
+	
 </script>
 @endsection

@@ -143,7 +143,7 @@ $questtype='radio';
             <div class="col-md-6 mb-4">
                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                 <div class=" border ps-3 ans">
-                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"> <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                    <label class="question mb-0 mt-1 d-flex align-items-center " for="option_{{$activeq_id}}_{{$key}}"> <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                 </div>
             </div>
             @php $no++; @endphp
