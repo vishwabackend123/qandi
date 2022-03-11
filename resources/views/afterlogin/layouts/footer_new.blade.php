@@ -697,7 +697,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic"  src="${img_url}"></span>
                             <span class="profile-text-user">
                                 <h3>${val.user_name}</h3>
-                                <p>${val.score} Uniq score</p>
+                                <p>${val.score} Q&I score</p>
                             </span>
                         </li>`;
 
@@ -1355,10 +1355,9 @@
             },
         },
         submitHandler: function(form) {
-            var emailField=$('#useremail').val();
+            var emailField = $('#useremail').val();
             var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-            if (reg.test(emailField) == false) 
-            {
+            if (reg.test(emailField) == false) {
                 $("#errlog_edit").html("Invalid email id");
                 $("#errlog_edit").fadeIn('slow');
                 $("#errlog_edit").fadeOut(10000);

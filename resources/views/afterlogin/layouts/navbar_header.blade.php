@@ -71,7 +71,7 @@ $userData = Session::get('user_data');
                                                                 <span><img src="{{$imgPath_deft}}" class="leader-pic" /></span>
                                                                 <div class="leader-txt">
                                                                     <p>{{($lead->user_name) ? $lead->user_name : 'NA'}}</p>
-                                                                    <small>{{$lead->score}} Unique score</small>
+                                                                    <small>{{$lead->score}} Q&I score</small>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -537,7 +537,7 @@ $userData = Session::get('user_data');
                                                                 <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
-                                                                    <small>${val.score} Unique score</small>
+                                                                    <small>${val.score} Q&I score</small>
                                                                 </div>
                                                             </div>
                                                         </li>`;

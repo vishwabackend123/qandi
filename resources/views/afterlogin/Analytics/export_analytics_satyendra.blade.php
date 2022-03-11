@@ -154,7 +154,7 @@ $userData = Session::get('user_data');
                                 <span class="me-auto"><img src="{{URL::asset('public/images/main-logo-red.png')}}" /></span>
                                 <span class="text-end text-light">
                                     Detailed Report Analysis<br />
-                                    Weekly UniQ Performace Report<br />{{date("F j, Y")}}
+                                    Weekly Q&I Performace Report<br />{{date("F j, Y")}}
                                 </span>
                             </div>
                             <div class="bg-white shadow-lg p-3 mt-5">

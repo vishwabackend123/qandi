@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <button class="btn px-5 top-btn-pop text-white" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
-                 <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
-                                    </svg>    
-                &nbsp;Export Analytics
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                    </svg>
+                    &nbsp;Export Analytics
                 </button>
             </div>
         </div>
@@ -270,13 +270,13 @@
                 <div class="text-center my-5">
                     <a href="{{route('export_analytics')}}">
                         <button class="btn px-4 top-btn-pop text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
-                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
-                                    </svg>   
-                        &nbsp;Download PDF
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
+                                <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                                <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
+                            </svg>
+                            &nbsp;Download PDF
                         </button>
                     </a>
                 </div>
@@ -339,7 +339,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
     /*$(".topicdiv-scroll").slimscroll({
         height: "50vh",
     });*/
-	
+
     Highcharts.chart('scorecontainer', {
         chart: {
             height: 224,
@@ -518,7 +518,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
             enabled: false
         },
         series: [{
-            name: 'Uniq users',
+            name: 'Q&I users',
             data: [
                 ['', <?php echo $response->total_participants; ?>],
                 ['AIR', <?php echo $response->user_rank; ?>],

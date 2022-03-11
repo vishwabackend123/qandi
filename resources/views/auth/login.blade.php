@@ -5,7 +5,7 @@
 
     <span class="outer-logo"><a href="{{ env('LANDING_URL') }}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <div class="login_screen">
-        <p class="mb-0">Welcome to UniQ</p>
+        <p class="mb-0">Welcome to Q&I </p>
         <p>Please login using your registered email/ Mobile number</p>
         <div class="pt-3 login-screen">
             <form id="studentlogin" method="post">
