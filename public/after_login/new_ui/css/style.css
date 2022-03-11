@@ -545,8 +545,8 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     position: absolute;
     background: url(../images/before-img.png) no-repeat;
     left: 165px;
-    top: -15px;
-    height: 75px;
+    top: -16px;
+    height: 78px;
     width: 70px;
 }
 
@@ -561,7 +561,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     background-color: #fff;
     top: -16px;
     left: 0;
-    height: 74px;
+    height: 78px;
     width: 170px;
     border-top-left-radius: 42px;
 }
@@ -1758,10 +1758,10 @@ input#select-city::placeholder {
 
 /* leaderboard */
 
-
+/*
 #leaderboard_box_div ul li:last-child {
     margin-bottom: 50px;
-}
+}*/
 
 .active_user {
     background: #f1f1f1;
@@ -2398,7 +2398,7 @@ span.p-icons span:active {
 }
 
 .test-attend a.text-secondary.ms-2 {
-    margin-left: 5px !important;
+    margin-left:3px !important;
 }
 
 /* rahl css 25-12*/
@@ -3877,7 +3877,7 @@ div#sub-planner {
 }
 
 .profile-picture-txt {
-    padding: 23px 20px;
+    padding: 35px 20px;
     width: 100%;
 }
 
@@ -4878,7 +4878,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 275px;
+    height: 215px;
     margin-top: 20px;
     overflow-y: auto;
 }
@@ -7907,7 +7907,7 @@ span.fs-5.text-danger.text-uppercase {
 }
 
 .planner-wrapper .d-flex.align-items-center.justify-content-between {
-    padding: 8px 20px;
+    padding: 10px 20px;
 }
 
 a#edit-planner-btn img,
