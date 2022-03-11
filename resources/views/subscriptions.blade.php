@@ -48,7 +48,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
             </div>
             @endif
             <!-- <div id="scrollDiv"> -->
-            <div class="row">
+            <div class="row justify-content-center">
                 @if(isset($subscriptions) && !empty($subscriptions))
                 @if($suscription_status !=0)
                 @foreach($subscriptions as $sub)

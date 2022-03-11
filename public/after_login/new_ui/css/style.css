@@ -471,7 +471,14 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
      .exportAnaylisis .export-block  p{font-size:17px;color:#2c3348}
    .exportAnaylisis .export-block  .greentxt{font-size: 187px;
                 font-weight: 600;}
-    .dashbaordmargin   {margin-left:25px;}         
+    .dashbaordmargin   {margin-left:25px;}  
+    .subscriptionBox {text-align:center;}
+    .subscriptionBox .text-success.text-decoration-underline ,.subscriptionBox  .text-center.mt-2  {    color: #00baff;margin-top:20px!important;} 
+    .subscriptionBox   .price{text-align:center; font-size: 15px;}
+    .subscriptionBox   p.box-content {line-height: 24px;
+        font-weight: 500;
+        font-size: 15px;text-align:center;margin-bottom:40px;}   
+
 /* shubham-end(10-03-2022) */
 
 
