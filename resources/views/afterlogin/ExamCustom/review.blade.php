@@ -553,7 +553,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 <style>
-/* .number-block {height:260px !important;} */
+ 
 .test-review-right, .rightSect .bg-white {
     height:680px;
 }
