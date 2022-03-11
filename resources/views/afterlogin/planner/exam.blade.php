@@ -474,12 +474,12 @@ $questtype='radio';
             }
         });
     });
-    $('.number-block').slimscroll({
+   /* $('.number-block').slimscroll({
         height: '20vh'
     });
     $('.answer-block').slimscroll({
         height: '30vh'
-    });
+    });*/
 
 
     $('#goto-exam-btn').click(function() {
@@ -493,11 +493,11 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-    $('.instructions').slimscroll({
+   /* $('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
 
-    });
+    });*/
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
