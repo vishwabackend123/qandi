@@ -601,11 +601,11 @@ input.form-control.email-addrs {
     font: normal normal normal 28px/42px Manrope;
     letter-spacing: 0px;
     color: #2c3348;
-    text-align: center;
+    text-align: center;margin-bottom:10px;
 }
 
 .welcome-msg {
-    font: normal normal normal 14px/24px Manrope;
+    font: normal normal normal 16px/24px Manrope;
     letter-spacing: 0px;
     color: #2c3348;
     text-align: Center;
