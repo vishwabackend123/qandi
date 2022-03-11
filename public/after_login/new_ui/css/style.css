@@ -86,8 +86,8 @@ div#arrow-left-top .inner-arrow-left-top , div#arrow-right-btm .inner-arrow-righ
     bottom: -25px !important;
 }
 div#arrow-right-top .inner-arrow-right-top {
-    right: -6px!important;
-    top: -23px!important;
+    right: -5px!important;
+    top: -22px!important;
 }
 div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
