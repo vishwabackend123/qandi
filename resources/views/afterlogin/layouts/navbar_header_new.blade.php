@@ -941,11 +941,11 @@
 
 <style>
     .planner-content , #sub-planner{
-        height: calc(100% - 150px) !important; 
+         height: calc(100% - 150px) !important; 
     }
     .planner-scheduar-block.show .planner-content {
-    box-shadow: 0px 0px 6px -3px;
-    background: #fff;
-}
+        box-shadow: 0px 0px 6px -3px;
+        background: #fff;
+    }
     </style>
  
