@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+
+div.planner-scheduar-block .planner-wrapper .planner-content {background: #f6f9fd;}
 #marks_trend_graph .highcharts-series-0 .highcharts-point {fill: #00baff;}
 #marks_trend_graph .highcharts-series-1 .highcharts-point {fill: #ffdc34;}
 #marks_trend_graph .highcharts-series-2 .highcharts-point {fill: #eb5347;}
@@ -7063,7 +7065,9 @@ tspan {
     font-size: 10px;
     text-anchor: middle;
 }
-
+.circular-chart text{
+    font-size: 8px;
+}
 .blue-block {
     background: #f3f7ff;
     padding: 20px 40px;
