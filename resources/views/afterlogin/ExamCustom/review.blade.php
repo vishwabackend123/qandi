@@ -338,7 +338,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     </div>
 
                                     <div class="dropdown">
-                                        <a class="btn rotate-icon pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters"><i class="fa fa-sliders" aria-hidden="true"></i></a>
+                                        <a class="btn pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters">
+                                            <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
+                                        <img src="{{URL::asset('public/after_login/new_ui/images/filter-icon.png')}}" alt="">
+                                    
+                                    </a>
 
 
                                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
