@@ -941,7 +941,7 @@
 
 <style>
     .planner-content , #sub-planner{
-         height: calc(100% - 100px) !important; 
+         height: calc(100% - 100px) !important;
     }
     .planner-scheduar-block.show .planner-content {
         box-shadow: 0px 0px 6px -3px;
