@@ -123,7 +123,12 @@ $userData = Session::get('user_data');
     </div>
 </div>
 
-
+<script>
+    $(window).on('load', function() {
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
+    });
+</script>
 
 
 
