@@ -3,6 +3,14 @@
         margin-top: 20px;
     }
 
+    .subscriptionBox p.box-content {height: 150px;}
+
+}
+
+
+ 
+@media(min-width:1659px) and (max-width:1750px) {
+    .subscriptionBox p.box-content {height: 150px;}
 }
 @media(min-width:1659px) and (max-width:1750px) {
     
@@ -13,6 +21,7 @@
       }
       .live-test li+li{margin-left:8%;}
     div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+    .subscriptionBox p.box-content {height: 170px;}
    
 
 }
@@ -70,7 +79,7 @@
         width: 250px;
        
     }
-    
+
     .subscriptionBox p.box-content {height:220px;}
 
 }
@@ -3895,5 +3904,26 @@
         #test_instruction .modal-dialog {
             width: 90% !important;
             max-width: 90% !important;
+        }
+    }
+    @media  (max-height:700px){
+        .subscriptionBox p.box-content {
+            overflow: overlay;
+            height: 150px;
+            
+            padding-right: 9px;
+            margin: auto 0px;
+
+        }
+    }
+
+    @media screen and ( max-height: 699px ) {
+        .subscriptionBox p.box-content {
+            overflow: overlay;
+            height: 150px;
+            
+            padding-right: 9px;
+            margin: auto 0px;
+
         }
     }
