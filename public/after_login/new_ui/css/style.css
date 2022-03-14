@@ -16,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+
 .overllanaly .cust-tabs .nav-link.active:before{background-repeat:no-repeat;height:78px;}
 .overllanaly .cust-tabs .nav-link.active:after{background-repeat:no-repeat;left:-56px;}
 .overllanaly .tab-wrapper .nav-tabs , .overllanaly .cust-tabs .nav-link.active , .overllanaly .cust-tabs .nav-link.active:after{height: 78px;}
