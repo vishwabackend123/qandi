@@ -10,7 +10,7 @@
             <div class="col-md-12 mx-auto  ">
                 <div class="bg-white white-box-big" id="chooseSub">
                     <div class="welcome-heading">How far are you in your preparation journey?</div>
-                    <p class="welcome-msg text-center">This will help us personalise the UniQ experience for you</p>
+                    <p class="welcome-msg text-center">This will help us personalise the Q&I experience for you</p>
 
                     <div class="row text-center pt-3">
                         <div class="col">

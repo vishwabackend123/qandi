@@ -16,8 +16,15 @@ button {
     text-decoration: none;
 }
 
-#marks_trend_graph .highcharts-legend-item.highcharts-line-series.highcharts-color-undefined .highcharts-point{fill:#00baff;}
+
+div.planner-scheduar-block .planner-wrapper .planner-content {background: #f6f9fd;}
+#marks_trend_graph .highcharts-series-0 .highcharts-point {fill: #00baff;}
+#marks_trend_graph .highcharts-series-1 .highcharts-point {fill: #ffdc34;}
+#marks_trend_graph .highcharts-series-2 .highcharts-point {fill: #eb5347;}
 a.Ex-anal {min-width: 230px;}
+.task-center-block .d-flex.justify-content-between.align-items-center {padding-left: 15px;}
+.common-cards-boxshadow .shadow-lg , .common-cards-boxshadow .cust-gallery .swiper-slide
+{ box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51)!important;}
 
 /* bhim css -10mar*/
 
@@ -27,10 +34,20 @@ a.Ex-anal {min-width: 230px;}
 }
 /* bhim css -10mar*/
 
+/* Added by Sachin-11-03-22*/
+#plannerAddform .text-light {
+    color: #D6D6D6 !important;
+    font-size: 21px;
+}
+
+#plannerAddform .text-success {
+    color: #33e485 !important;font-size: 21px;
+}
+/* End by Sachin-11-03-22*/
 
 /******* 10-03-2022 Amit-Start ******/
 .overllanaly .dashboard-name-txt {text-transform: none;font-weight: bold;color: #231f20;}
-.overllanaly .cust-tab-content .scroll-topic-ana {height: 170px !important;}
+.overllanaly .cust-tab-content .scroll-topic-ana {height: 150px !important;}
 .overllanaly .box-shadow , .overllanaly .shadow-lg {
     -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
     -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
@@ -93,7 +110,7 @@ div#arrow-right-top .inner-arrow-right-top {
 div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotateZ(-46deg);}
 /* .alpha-extended-view {max-height:206px;overflow-y: auto;} */
 #arrow-left-btm .inner-arrow-left-btm , #arrow-right-btm .inner-arrow-right-btm , #arrow-right-top .inner-arrow-right-top{font-size: 38px;}
-.planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 240px);padding-bottom:15px;}
+.planmner-block.planner-scheduar-block .planner-scroll{overflow-y: auto;max-height: calc(100vh - 240px);}
 .dashboard-cards-block #topicclose .bg-white>small p{min-width: 240px;}
 .box-shadow.custom-box-shadow{-webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
     -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
@@ -490,7 +507,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
 .card-common-topheading {
     border-top-left-radius: 56px;
     background-color: #f6f9fd;
-    padding: 22px 0px 23px 65px;
+    padding: 24px 0px 26px 65px;
     border-top-right-radius: 56px;
     color: #2c3348;
     font-weight: 700;
@@ -512,7 +529,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     background-color: #fff;
     top: 0;
     left: 0;
-    height: 75px;
+    height: 78px;
     width: 245px;
     border-top-left-radius: 56px;
 }
@@ -522,7 +539,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     background: url(../images/before-img.png) no-repeat;
     left: 235px;
     top: 0;
-    height: 72px;
+    height: 78px;
     width: 70px;
 }
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after{
@@ -530,8 +547,8 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     position: absolute;
     background: url(../images/before-img.png) no-repeat;
     left: 165px;
-    top: -15px;
-    height: 75px;
+    top: -16px;
+    height: 78px;
     width: 70px;
 }
 
@@ -546,7 +563,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     background-color: #fff;
     top: -16px;
     left: 0;
-    height: 74px;
+    height: 78px;
     width: 170px;
     border-top-left-radius: 42px;
 }
@@ -1174,7 +1191,7 @@ ul.matrixLists li b {
 }
 
 .task-center-block .d-flex>span img {
-    width: 52px;
+    width: 50px;
 }
 
 .btn.btntheme {
@@ -1743,10 +1760,10 @@ input#select-city::placeholder {
 
 /* leaderboard */
 
-
+/*
 #leaderboard_box_div ul li:last-child {
     margin-bottom: 50px;
-}
+}*/
 
 .active_user {
     background: #f1f1f1;
@@ -2383,7 +2400,7 @@ span.p-icons span:active {
 }
 
 .test-attend a.text-secondary.ms-2 {
-    margin-left: 5px !important;
+    margin-left:3px !important;
 }
 
 /* rahl css 25-12*/
@@ -3862,7 +3879,7 @@ div#sub-planner {
 }
 
 .profile-picture-txt {
-    padding: 23px 20px;
+    padding: 35px 20px;
     width: 100%;
 }
 
@@ -4595,6 +4612,11 @@ button#goto-exam-btn {
 
 /** end test screen css**/
 /** notification page **/
+.notification-scroll {
+    overflow-y: auto;
+    height: 411px;
+    margin-top: 15px;
+}
 .notification-right {
     position: absolute;
     top: 5%;
@@ -4611,9 +4633,16 @@ button#goto-exam-btn {
     margin-bottom: 20px;
     background: #fff;
     border-radius: 36px;
-    box-shadow: 0 1px 30px 0 rgb(0 0 0 / 5%);
-    padding: 24px;
-    margin-right: 15px;
+   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51);
+    -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51);
+-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51);
+    padding: 18px 24px;
+    align-items: center;
+    display: flex;
+    display: -webkit-box;      
+    display: -moz-box;         
+    display: -ms-flexbox;     
+    display: -webkit-flex; 
 }
 
 .notification-txt span.text-notific {
@@ -4863,7 +4892,7 @@ span.profile-img-user {
 }
 
 .profile-detail {
-    height: 275px;
+    height: 215px;
     margin-top: 20px;
     overflow-y: auto;
 }
@@ -7036,7 +7065,9 @@ tspan {
     font-size: 10px;
     text-anchor: middle;
 }
-
+.circular-chart text{
+    font-size: 8px;
+}
 .blue-block {
     background: #f3f7ff;
     padding: 20px 40px;
@@ -7892,7 +7923,7 @@ span.fs-5.text-danger.text-uppercase {
 }
 
 .planner-wrapper .d-flex.align-items-center.justify-content-between {
-    padding: 8px 20px;
+    padding: 10px 20px;
 }
 
 a#edit-planner-btn img,

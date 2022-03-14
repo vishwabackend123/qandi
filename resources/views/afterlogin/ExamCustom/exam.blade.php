@@ -6,7 +6,10 @@
             backdrop: "static",
             keyboard: false
         });
-
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
     });
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
@@ -175,7 +178,7 @@ $questtype='radio';
                                             <div class="col-md-6 mb-4">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
-                                                    <label class="question mb-0 mt-1 d-flex align-items-center" for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                    <label class="question m-0 d-flex align-items-center" for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
                                                 </div>
                                             </div>
                                             @php $no++; @endphp

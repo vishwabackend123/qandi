@@ -41,40 +41,40 @@ $userData = Session::get('user_data');
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
-			<div class="Flat-left">
-			  <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
-                @csrf
-                <input type="hidden" id="selected_topic" name="topics">
-                <input type="hidden" id="selected_tab" name="selected_tab">
-                <input type="hidden" name="question_count" value="30">
-                <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
+              <div class="Flat-left">
+                <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
+                  @csrf
+                  <input type="hidden" id="selected_topic" name="topics">
+                  <input type="hidden" id="selected_tab" name="selected_tab">
+                  <input type="hidden" name="question_count" value="30">
+                  <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
+                  <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
 
-                  <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
-                  <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
-                </div>
-              </form>
-			  </div>
-			  
+                    <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
+                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                  </div>
+                </form>
+              </div>
+
               @isset($subject_list)
               @foreach($subject_list as $skey=>$sub)
-			  
-			  
+
+
               <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
 
                 <div class="d-flex px-4 py-2 align-items-center justify-content-between">
-                 <!--<span class="  mr-3 name-txt ">{{$sub->subject_name}}</span>
+                  <!--<span class="  mr-3 name-txt ">{{$sub->subject_name}}</span>
                   <p class="mb-0 ms-auto me-4 tab-title">You can pick topics / sub-topics or</p>-->
-				  <div class="Flat-right">
-                  <form method="post" action="{{route('custom_exam')}}">
-                    @csrf
-                    <input type="hidden" name="subject_id" value="{{$sub->id}}">
-                    <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
-                    <input type="hidden" name="question_count" value="30">
-                    <button type="submit" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 active-btn"><i class=" fa fa-pencil-square-o" aria-hidden="true"></i> take FULL test</button>
+                  <div class="Flat-right">
+                    <form method="post" action="{{route('custom_exam')}}">
+                      @csrf
+                      <input type="hidden" name="subject_id" value="{{$sub->id}}">
+                      <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
+                      <input type="hidden" name="question_count" value="30">
+                      <button type="submit" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 active-btn"><i class=" fa fa-pencil-square-o" aria-hidden="true"></i> take FULL test</button>
 
-                  </form>
-				  </div>
+                    </form>
+                  </div>
 
                   <div class="dropdown">
 
@@ -183,7 +183,7 @@ $userData = Session::get('user_data');
               </div>
               @endforeach
               @endisset
-              
+
             </div>
           </div>
         </div>
@@ -251,6 +251,8 @@ $userData = Session::get('user_data');
     aTopics = [];
     $('#selected_topic').val('');
     $('.addremovetopic').removeClass('topic_selected');
+    $('.addremovetopic').html('SELECT');
+    $('.topicboxdin').removeClass('bdr-success');
     // console.log(aTopics);
     $('#topic_custom_footer').removeClass('d-flex');
     $('#topic_custom_footer').addClass('d-none');
@@ -400,7 +402,7 @@ $userData = Session::get('user_data');
           // $("#expand_topic_" + chapt_id).text("Collapse topics");
           $("#topic_section_" + chapt_id).html(result);
           //$('#myTabContent .slick-slider').slick('refresh');
-		  $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
+          $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
           $('#overlay').fadeOut();
           $('#topic_form').show();
 
@@ -432,7 +434,7 @@ $userData = Session::get('user_data');
         $("#topic_section_" + chapt_id).html(result);
         /* $("#topic_section_" + chapt_id).html(result); */
         //$('#myTabContent .slick-slider').slick('refresh');
-		$("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
+        $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
 
         $('#overlay').fadeOut();
         $('#topic_form').show();

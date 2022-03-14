@@ -14,7 +14,7 @@
                     <h4>Everyone prepares for the big game,</h4>
                     <h3>Few become the game.</h3>
                     <p>
-                        An AI/ML based self-assessment and self-analysis tool, UniQ,
+                        An AI/ML based self-assessment and self-analysis tool, Q&I,
                         offers the most exhaustive question bank, well researched
                         solutions and comprehensive practice tests, for students
                         aspiring to excel in All India level competitive exams.
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="yellow-bg-block">
-        What’s Exciting with <span class="text-danger">UniQ</span>
+        What’s Exciting with <span class="text-danger">Q&I</span>
     </div>
     <div class="container">
         <div class="row align-items-center mt-5 pt-5">

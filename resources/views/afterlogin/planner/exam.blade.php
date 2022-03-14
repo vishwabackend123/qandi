@@ -10,7 +10,10 @@
             backdrop: "static",
             keyboard: false
         });
-
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
     });
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
@@ -315,9 +318,9 @@ $questtype='radio';
                                 </button>
                             </div>
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
-                                    </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                    <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
@@ -474,12 +477,12 @@ $questtype='radio';
             }
         });
     });
-   /* $('.number-block').slimscroll({
-        height: '20vh'
-    });
-    $('.answer-block').slimscroll({
-        height: '30vh'
-    });*/
+    /* $('.number-block').slimscroll({
+         height: '20vh'
+     });
+     $('.answer-block').slimscroll({
+         height: '30vh'
+     });*/
 
 
     $('#goto-exam-btn').click(function() {
@@ -493,11 +496,11 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-   /* $('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
+    /* $('.instructions').slimscroll({
+         height: '33vh',
+         color: '#ff9999',
 
-    });*/
+     });*/
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;

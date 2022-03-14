@@ -135,7 +135,7 @@
                             <div id="notificationscount" class="notifications-count active zindex">9</div>
 
                         </a></span>
-                    <span class="notification ms-4"><a draggable="false" id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
+                    <span class="notification ms-4 planmner_icon"><a draggable="false" id="plannCal" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample" title="Planner">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="78" viewBox="0 0 78 78">
                                 <defs>
                                     <style>
@@ -665,7 +665,7 @@
             </div>
             <div class="profile-detail">
                 <div id="leaderboard_box_div">
-                    <ul>
+                    <ul class="p-0 m-0">
                         @if(isset($leaderboard_list) && !empty($leaderboard_list))
                         @foreach($leaderboard_list as $lead)
                         @php
@@ -682,7 +682,7 @@
                             <span class="profile-img-user pt-0"><img class="leader-pic" src="{{$imgPath_deft}}"></span>
                             <span class="profile-text-user">
                                 <h3>{{($lead->user_name) ? $lead->user_name : 'NA'}}</h3>
-                                <p>{{$lead->score}} UNIQ score</p>
+                                <p>{{$lead->score}} Q&I score</p>
                             </span>
                         </li>
                         @endforeach
@@ -938,3 +938,14 @@
         return true;
     }
 </script>
+
+<style>
+    .planner-content , #sub-planner{
+         height: calc(100% - 120px) !important;
+    }
+    .planner-scheduar-block.show .planner-content {
+        box-shadow: 0px 0px 6px -3px;
+        background: #fff;
+    }
+    </style>
+ 

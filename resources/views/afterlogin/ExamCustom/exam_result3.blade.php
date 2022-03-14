@@ -48,7 +48,7 @@
 
 <script>
     Highcharts.setOptions({
-        colors: ['#ff9999',  '#aff3d0']
+        colors: ['#ff9999', '#aff3d0']
     });
     Highcharts.chart('rank', {
         chart: {
@@ -80,7 +80,7 @@
             enabled: false
         },
         series: [{
-            name: 'Uniq users',
+            name: 'Q&I users',
             data: [
                 ['', <?php echo $response->total_participants; ?>],
                 ['AIR', <?php echo $response->user_rank; ?>],

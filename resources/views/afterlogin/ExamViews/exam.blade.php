@@ -6,6 +6,10 @@
             backdrop: "static",
             keyboard: false
         });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
     });
 </script>
 @section('content')
@@ -947,7 +951,7 @@ $questtype='radio';
         }
     }
 
-    function clearResponse(quest_id, subject_id) {
+    function clearResponse(quest_id, subject_id, qNo) {
 
         var response = [];
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {

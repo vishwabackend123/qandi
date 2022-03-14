@@ -68,6 +68,11 @@ button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.te
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
     box-shadow: none;
 }
+
+/***12-03-22-Added_by_Sachin***/
+.examSect .fade , .examSect, #endExam, #FullTest_Exam_Panel_Interface_A{ transition: initial;}
+/***12-03-22-Ended_by_Sachin***/
+
 /***Added_by-kanchan***/
 #exam_content_sec #question_section .tab-btn-box a{color: #515151;}
 #exam_content_sec #question_section .tab-btn-box a :hover{color: #fff;}
@@ -91,7 +96,6 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     font-size: 14px;
     line-height: 20px;
     margin: 0px;
-    padding: 0px;
 }
 
 #exam_content_sec .cust-tab-content {
@@ -398,7 +402,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .cust-tab-content .scroll-topic-ana {
     height: 150px !important;
-    overflow: overlay;
+    overflow-y: auto;
 }
 
 .cust-tab-content {

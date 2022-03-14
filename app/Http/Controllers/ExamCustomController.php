@@ -91,9 +91,7 @@ class ExamCustomController extends Controller
             }
 
             return view('afterlogin.ExamCustom.exam_custom', compact('subject_list', 'subject_chapter_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -141,9 +139,7 @@ class ExamCustomController extends Controller
             $chapters = $sorted->values()->all();
 
             return $chapters;
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -181,17 +177,15 @@ class ExamCustomController extends Controller
             }
 
             return $topic_list;
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
     public function subject_exam(Request $request)
     {
-       try {
+        try {
             $filtered_subject = [];
 
             $userData = Session::get('user_data');
@@ -351,9 +345,7 @@ class ExamCustomController extends Controller
             Session::put('exam_name', $exam_name);
 
             return view('afterlogin.ExamCustom.exam', compact('test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -372,9 +364,7 @@ class ExamCustomController extends Controller
                 $random[$key] = $list[$key];
             }
             return $random;
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -451,9 +441,7 @@ class ExamCustomController extends Controller
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
             return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -513,9 +501,7 @@ class ExamCustomController extends Controller
 
 
             return json_encode($response);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -539,7 +525,8 @@ class ExamCustomController extends Controller
                 $retrive_time_array = $redisArray['taken_time'];
                 $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
 
-                $retrive_array[$question_id] = '';
+                //clearing response of question
+                unset($retrive_array[$question_id]);
             }
             if (isset($answer_swap_cnt[$question_id])) {
                 $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
@@ -560,9 +547,7 @@ class ExamCustomController extends Controller
 
 
             return json_encode($response);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -649,9 +634,7 @@ class ExamCustomController extends Controller
 
 
             return view('afterlogin.ExamCustom.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -726,9 +709,7 @@ class ExamCustomController extends Controller
             }
 
             return view('afterlogin.ExamCustom.custom_topic', compact('topics'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -737,7 +718,7 @@ class ExamCustomController extends Controller
     public function ajax_chapter_list($active_subject_id, Request $request)
     {
         try {
-            
+
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -775,11 +756,9 @@ class ExamCustomController extends Controller
             }
 
             return view('afterlogin.chpater_planner', compact('chapter_list', 'active_subject_id', 'selected_chapter'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }   
+        }
     }
 
 
@@ -852,9 +831,7 @@ class ExamCustomController extends Controller
             }
 
             return view('afterlogin.ExamCustom.custom_chapter_list', compact('chapters', 'subject_id'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -901,9 +878,7 @@ class ExamCustomController extends Controller
 
 
             return json_encode($response);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -1070,11 +1045,9 @@ class ExamCustomController extends Controller
             Session::put('exam_name', $test_name);
 
             return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
@@ -1156,11 +1129,9 @@ class ExamCustomController extends Controller
             } else {
                 return response(array('status' => 'failed'));
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
@@ -1207,9 +1178,7 @@ class ExamCustomController extends Controller
 
 
             return json_encode($response);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -1233,7 +1202,9 @@ class ExamCustomController extends Controller
                 $retrive_time_array = $redisArray['taken_time'];
                 $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
 
-                $retrive_array[$question_id] = '';
+                //clearing response of question
+                unset($retrive_array[$question_id]);
+                //$retrive_array[$question_id] = '';
             }
             if (isset($answer_swap_cnt[$question_id])) {
                 $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
@@ -1254,9 +1225,7 @@ class ExamCustomController extends Controller
 
 
             return json_encode($response);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -1264,67 +1233,64 @@ class ExamCustomController extends Controller
     public function saveAdaptiveAnswer(Request $request)
     {
         try {
-                $userData = Session::get('user_data');
-                $user_id = $userData->id;
-                /* # code... */
-                $data = $request->all();
-                $question_id = isset($data['question_id']) ? $data['question_id'] : '';
-                $option_id = isset($data['option_id']) ? $data['option_id'] : '';
-                $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+            /* # code... */
+            $data = $request->all();
+            $question_id = isset($data['question_id']) ? $data['question_id'] : '';
+            $option_id = isset($data['option_id']) ? $data['option_id'] : '';
+            $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
 
-                $redis_result = Redis::get('adaptive_session:' . $user_id);
+            $redis_result = Redis::get('adaptive_session:' . $user_id);
 
-                if (!empty($redis_result)) {
-                    $redisArray = json_decode($redis_result, true);
-                    $retrive_array = $redisArray['given_ans'];
-                    $retrive_time_array = $redisArray['taken_time'];
-                    $answer_swap_cnt = $redisArray['answer_swap_cnt'];
-                    $retrive_time_sec = $redisArray['taken_time_sec'];
+            if (!empty($redis_result)) {
+                $redisArray = json_decode($redis_result, true);
+                $retrive_array = $redisArray['given_ans'];
+                $retrive_time_array = $redisArray['taken_time'];
+                $answer_swap_cnt = $redisArray['answer_swap_cnt'];
+                $retrive_time_sec = $redisArray['taken_time_sec'];
 
-                    $retrive_time_sec[$question_id] = (int)$q_submit_time;
-                    //$time_taken = $redisArray['time_taken'] ?? array();
-                    if (isset($option_id) && $option_id != '') {
+                $retrive_time_sec[$question_id] = (int)$q_submit_time;
 
-                        $retrive_array[$question_id]['answer'] = $option_id;
-                        $retrive_array[$question_id]['timetaken'] = gmdate('H:i:s', (int)$q_submit_time);
-                        $retrive_array[$question_id]['question_id'] = (int)$question_id;
+                if (isset($option_id) && $option_id != '') {
 
-                        $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
-                    }
-                } else {
-                    $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = [];
-                    if (isset($option_id) && $option_id != '') {
-
-                        $retrive_array[$question_id] = $option_id;
-                        $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
-                    }
-                    $retrive_time_sec[$question_id] = (int)$q_submit_time;
+                    $retrive_array[$question_id]['answer'] = $option_id;
+                    $retrive_array[$question_id]['timetaken'] = gmdate('H:i:s', (int)$q_submit_time);
+                    $retrive_array[$question_id]['question_id'] = (int)$question_id;
+                    $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
                 }
-                if (isset($answer_swap_cnt[$question_id])) {
-                    $retrive_array[$question_id]['attemptCount'] = $answer_swap_cnt[$question_id] + 1;
-                    $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
-                } else {
-                    $answer_swap_cnt[$question_id] = 0;
-                    $retrive_array[$question_id]['attemptCount'] = 0;
+            } else {
+                $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = [];
+                if (isset($option_id) && $option_id != '') {
+
+                    $retrive_array[$question_id] = $option_id;
+                    $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
                 }
+                $retrive_time_sec[$question_id] = (int)$q_submit_time;
+            }
+            if (isset($answer_swap_cnt[$question_id])) {
+                $retrive_array[$question_id]['attemptCount'] = $answer_swap_cnt[$question_id] + 1;
+                $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
+            } else {
+                $answer_swap_cnt[$question_id] = 0;
+                $retrive_array[$question_id]['attemptCount'] = 0;
+            }
 
-                $redisArray['given_ans'] = $retrive_array;
-                $redisArray['taken_time'] = $retrive_time_array;
-                $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
-                $redisArray['taken_time_sec'] = $retrive_time_sec;
+            $redisArray['given_ans'] = $retrive_array;
+            $redisArray['taken_time'] = $retrive_time_array;
+            $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
+            $redisArray['taken_time_sec'] = $retrive_time_sec;
 
 
-                // Push Value in Redis
-                Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
+            // Push Value in Redis
+            Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
 
-                $response['status'] = 200;
-                $response['message'] = "save response successfully";
+            $response['status'] = 200;
+            $response['message'] = "save response successfully";
 
 
-                return json_encode($response);
-        }
-        catch(\Exception $e)
-        {
+            return json_encode($response);
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -1423,9 +1389,7 @@ class ExamCustomController extends Controller
 
                 return [];
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
