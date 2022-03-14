@@ -1,3 +1,16 @@
+@media screen and ( max-height: 699px ) {
+    .subscriptionBox p.box-content {
+        overflow: overlay;
+        height: 150px;
+        
+        padding-right: 9px;
+        margin: auto 0px;
+
+    }
+}
+
+
+
 @media(max-width:1900px){
     #review_rques_blk .question {
         margin-top: 20px;
@@ -3917,13 +3930,4 @@
         }
     }
 
-    @media screen and ( max-height: 699px ) {
-        .subscriptionBox p.box-content {
-            overflow: overlay;
-            height: 150px;
-            
-            padding-right: 9px;
-            margin: auto 0px;
-
-        }
-    }
+   
