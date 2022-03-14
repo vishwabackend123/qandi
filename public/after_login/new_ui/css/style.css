@@ -16,7 +16,9 @@ button {
     text-decoration: none;
 }
 
-
+.overllanaly .cust-tabs .nav-link.active:before{background-repeat:no-repeat;height:78px;}
+.overllanaly .cust-tabs .nav-link.active:after{background-repeat:no-repeat;left:-56px;}
+.overllanaly .tab-wrapper .nav-tabs , .overllanaly .cust-tabs .nav-link.active , .overllanaly .cust-tabs .nav-link.active:after{height: 78px;}
 div.planner-scheduar-block .planner-wrapper .planner-content {background: #f6f9fd;}
 #marks_trend_graph .highcharts-series-0 .highcharts-point {fill: #00baff;}
 #marks_trend_graph .highcharts-series-1 .highcharts-point {fill: #ffdc34;}
@@ -3208,7 +3210,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(/public/after_login/new_ui/images/after-img.png);
+    background: url(../images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
