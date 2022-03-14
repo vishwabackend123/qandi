@@ -388,7 +388,7 @@
                             @foreach($aSubjects as $skey=>$sVal)
 
                             <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
-                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}} <span id="count_spam_{{$sVal->id}}"></span></div>
+                                <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="subject_tik me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}} <span class="count_spam_div" id="count_spam_{{$sVal->id}}"></span></div>
                                 <div class="slimScrollDiv">
                                     <div class="subject_chapter">
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
@@ -818,7 +818,7 @@
                     </div>
                     <div class="d-flex f_l_name_box">
                         <div class="form-flds user_email">
-                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id"  minlength="8" maxlength="64" />
+                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" minlength="8" maxlength="64" />
                         </div>
 
                         <div class="form-flds user_no">
@@ -940,12 +940,13 @@
 </script>
 
 <style>
-    .planner-content , #sub-planner{
-         height: calc(100% - 120px) !important;
+    .planner-content,
+    #sub-planner {
+        height: calc(100% - 120px) !important;
     }
+
     .planner-scheduar-block.show .planner-content {
         box-shadow: 0px 0px 6px -3px;
         background: #fff;
     }
-    </style>
- 
+</style>
