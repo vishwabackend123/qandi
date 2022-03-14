@@ -1628,20 +1628,22 @@
 
     $('.UserPro,#plannCal,.notification,.close-bnt').click(function() {
         setTimeout(function() {
-
             if ($('.notification-block').hasClass('show')) {
-                //    alert('aaa')
+                $('.main-profile-section').removeClass("show");
+                $('.planmner-block').removeClass("show");
                 $('html').addClass("scrollnone")
-
             } else if ($('.main-profile-section').hasClass('show')) {
+                $('.notification-block').removeClass("show");
+                $('.planmner-block').removeClass("show");
                 $('html').addClass("scrollnone")
             } else if ($('.planmner-block').hasClass('show')) {
+                 $('.notification-block').removeClass("show");
+                $('.main-profile-section').removeClass("show");
                 $('html').addClass("scrollnone")
             } else {
                 $('html').removeClass("scrollnone")
             }
         }, 500);
-
 
         // $("html").toggleClass("scrollnone");
     });
