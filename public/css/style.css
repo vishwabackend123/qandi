@@ -239,6 +239,9 @@ input:-moz-placeholder {
 .subScrip .row button#goto-otp-btn {
     height: 60px;
     color: #FFF;
+    padding-right: 2rem!important;
+    padding-left: 2rem!important;
+
 }
 
 /** end here**/
@@ -651,14 +654,14 @@ h1.main-heading.position-relative {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff;
-    padding: 30px;
+    padding: 25px;
 }
 
 .subScrip {
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     background-image: linear-gradient(45deg, #d2f3ff, #fff);
-    height: 100vh !important;
+   min-height: 100vh !important;
 }
 
 .subScrip h1.main-heading.position-relative a {

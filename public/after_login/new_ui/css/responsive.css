@@ -15,7 +15,7 @@
         margin-top: 20px;
     }
 
-    .subscriptionBox p.box-content {height: 150px;}
+ 
 
 }
 
@@ -69,7 +69,8 @@
     height: 10px;}
     .compLeteS .name-txt-sml{width: 57%;
         padding-right: 10px;font-size:14px;}
-        .custom-page .star-ratings-css-bottom span{font-size:20px;}
+        .custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:20px;} 
+        
        
 }
 
@@ -139,6 +140,7 @@
       
     }
     .back-to-dashbord a{font-size:16px;}
+    .subscriptionBox h5.cource-name { font-size: 18px;}
 }
 
 @media(min-width:1023px) and (max-width:1199px) {

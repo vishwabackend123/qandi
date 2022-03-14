@@ -43,7 +43,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 <!-- <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script> -->
-<script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/jquery.slimscroll.min.js')}}"></script> 
+<script type="text/javascript" src="{{URL::asset('public/after_login/new_ui/js/jquery.slimscroll.min.js')}}"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -511,7 +511,7 @@
                     $('#planner_sub_' + subject_id).append(
                         '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
                         '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
-                        chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="'+chapter_name+'">' +
+                        chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="' + chapter_name + '">' +
                         chapter_name + '</span>' +
                         '</div>'
                     );
@@ -519,7 +519,7 @@
                     $('#planner_sub_' + subject_id).append(
                         '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
                         '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
-                        chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="'+chapter_name+'">' +
+                        chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="' + chapter_name + '">' +
                         chapter_name + '</span>' +
                         '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' +
                         subject_id +
@@ -592,7 +592,8 @@
                     var response = jQuery.parseJSON(response_data);
                     if (response.range > 0) {
                         $("div").remove(".add-removeblock");
-                        $('#customRange').val(response.range);
+                        //$('#customRange').val(response.range);
+                        $('.input-range').slider('setValue', response.range);
                         $('#slide-input').html(response.range);
 
                         var ran_value = (response.range - 0) / (7 - 0) * 100;
@@ -616,7 +617,7 @@
                                 $('#planner_sub_' + subject_id).append(
                                     '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id +
                                     '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' +
-                                    chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="'+chapter_name+'">' +
+                                    chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="' + chapter_name + '">' +
                                     chapter_name + '</span>' +
                                     '</div>'
                                 );
@@ -625,24 +626,38 @@
                                     '<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' +
                                     chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id +
                                     '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' +
-                                    chapter_id + '" class="topic_name" title="'+chapter_name+'" >' + chapter_name + '</span>' +
+                                    chapter_id + '" class="topic_name" title="' + chapter_name + '" >' + chapter_name + '</span>' +
                                     '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' +
                                     chapter_id + ',' + subject_id +
                                     ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>'
                                 );
                             }
 
+                            if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
+                                $('#added_subject_' + subject_id).removeClass('text-light');
+                                $('#added_subject_' + subject_id).addClass('text-success');
+                            } else {
+                                $('#added_subject_' + subject_id).removeClass('text-success');
+                                $('#added_subject_' + subject_id).addClass('text-light');
+                            }
+                            var selected_count = $('#planner_sub_' + subject_id + ' div').length;
+                            $('#count_spam_' + subject_id).text("(" + selected_count + ")");
                         });
 
                     } else {
                         $("div").remove(".add-removeblock");
-                        $('#customRange').val(response.range);
+                        //$('#customRange').val(response.range);
+                        $('.input-range').slider('setValue', response.range);
                         $('#slide-input').html(response.range);
                         var ran_value = (response.range - 0) / (7 - 0) * 100;
                         $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' +
                             ran_value + '%, #fff ' + ran_value + '%, white 100%)');
 
+                        $('.count_spam_div').text("");
+                        $('.subject_tik').removeClass('text-success');
+                        $('.subject_tik').addClass('text-light');
                     }
+
 
                     if ($('#planner_sub_' + subject_id + ' .add-removeblock').length > 0) {
 
@@ -1092,7 +1107,7 @@
 
 
         if (chapter_id != '' || chapter_id != 0) {
-            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="'+chapter_name+'">' + chapter_name + '</span>' +
+            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name" title="' + chapter_name + '">' + chapter_name + '</span>' +
                 '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" title="Shuffle Chapter"><img class="mx-2" src="' + base_path + '/public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" value="' + subject_id + '" class="chapter_remove" title="Remove Chapter"><img src="' + base_path + '/public/after_login/images/remove_ic.png"></a></span></div>');
             $('#plannerChapter').modal('hide');
         } else {
@@ -1412,7 +1427,7 @@
     /*dashboard left navigation */
     jQuery(document).ready(function() {
         jQuery('.dash-nav-link a').click(function() {
-            jQuery('a').removeClass("active");
+            jQuery('.dash-nav-link a').removeClass("active");
             jQuery(this).addClass("active");
             //jQuery(this).removeClass("active");
         });
@@ -1637,7 +1652,7 @@
                 $('.planmner-block').removeClass("show");
                 $('html').addClass("scrollnone")
             } else if ($('.planmner-block').hasClass('show')) {
-                 $('.notification-block').removeClass("show");
+                $('.notification-block').removeClass("show");
                 $('.main-profile-section').removeClass("show");
                 $('html').addClass("scrollnone")
             } else {
@@ -1649,7 +1664,10 @@
     });
 </script>
 <script>
-    $(".dash-nav-link a:last-child").click(function(){
+    $(".dash-nav-link a:last-child").click(function() {
         $("body").addClass("refer-modal-open")
+    });
+    $("#sharefrnd .btn-close").click(function(){
+        $("body").removeClass("refer-modal-open")
     });
 </script>
