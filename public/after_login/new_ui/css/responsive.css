@@ -31,6 +31,7 @@
       }
       div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
       .live-test li+li{margin-left:5%;}
+      .subscriptionBox p.box-content {height: 200px;}
 }
 
 @media(max-width:1440px){
@@ -69,6 +70,7 @@
         width: 250px;
        
     }
+    .subscriptionBox p.box-content {height:220px;}
 
 }
 
