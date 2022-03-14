@@ -1,3 +1,7 @@
+<style>
+    div.dash-sidebar{z-index: 9999;}
+</style>
+
 @extends('afterlogin.layouts.app_new')
 
 @php
