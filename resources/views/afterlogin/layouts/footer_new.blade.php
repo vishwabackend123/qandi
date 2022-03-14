@@ -1652,4 +1652,7 @@
     $(".dash-nav-link a:last-child").click(function(){
         $("body").addClass("refer-modal-open")
     });
+    $("#sharefrnd .btn-close").click(function(){
+        $("body").removeClass("refer-modal-open")
+    });
 </script>
