@@ -1,8 +1,7 @@
-@media screen and ( max-height: 699px ) {
+@media screen and ( max-height: 650px ) {
     .subscriptionBox p.box-content {
         overflow: overlay;
         height: 150px;
-        
         padding-right: 9px;
         margin: auto 0px;
 
