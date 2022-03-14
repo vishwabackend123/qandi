@@ -16,7 +16,13 @@ button {
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 
+=======
+.overllanaly .cust-tabs .nav-link.active:before{background-repeat:no-repeat;height:78px;}
+.overllanaly .cust-tabs .nav-link.active:after{background-repeat:no-repeat;left:-56px;}
+.overllanaly .tab-wrapper .nav-tabs , .overllanaly .cust-tabs .nav-link.active , .overllanaly .cust-tabs .nav-link.active:after{height: 78px;}
+>>>>>>> 4b4ddd13363dd59c05e1ab5b7e264bc611651c0e
 div.planner-scheduar-block .planner-wrapper .planner-content {background: #f6f9fd;}
 #marks_trend_graph .highcharts-series-0 .highcharts-point {fill: #00baff;}
 #marks_trend_graph .highcharts-series-1 .highcharts-point {fill: #ffdc34;}
@@ -618,6 +624,7 @@ a.export-btn {
 .dash-sidebar a .b,
 .dash-sidebar a .c {
     stroke: #4cb9f9 !important;
+    opacity: 1;
 }
 
 #exam_content_sec .question-block .question p::-webkit-scrollbar {

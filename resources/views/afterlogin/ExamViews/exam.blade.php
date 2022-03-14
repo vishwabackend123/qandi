@@ -1,5 +1,8 @@
 @extends('afterlogin.layouts.app_new')
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- BS JavaScript -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
