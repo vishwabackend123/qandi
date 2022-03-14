@@ -601,7 +601,7 @@ $userData = Session::get('user_data');
                     <i class="fa-li fa fa-check" aria-hidden="true"></i>
                     <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
                 </a>
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip to Dashboard &gt;</a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip &gt;</a>
             </div>
 
         </div>
