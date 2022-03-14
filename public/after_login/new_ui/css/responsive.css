@@ -2,7 +2,14 @@
     #review_rques_blk .question {
         margin-top: 20px;
     }
+    .subscriptionBox p.box-content {height: 150px;}
 
+}
+
+
+ 
+@media(min-width:1659px) and (max-width:1750px) {
+    .subscriptionBox p.box-content {height: 150px;}
 }
 @media(min-width:1659px) and (max-width:1750px) {
     
@@ -13,6 +20,7 @@
       }
       .live-test li+li{margin-left:8%;}
     div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+    .subscriptionBox p.box-content {height: 170px;}
    
 
 }
@@ -70,7 +78,7 @@
         width: 250px;
        
     }
-    
+
     .subscriptionBox p.box-content {height:220px;}
 
 }
