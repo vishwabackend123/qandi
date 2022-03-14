@@ -564,7 +564,7 @@
 <div class="notification-block width collapse" id="collapseNotification">
     <div class="planner-wrapper ">
         <div class=" notification-right ">
-            <a draggable="false" href="javascript:void(0);" class="close-bnt"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
+            <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
             <div id="recent_notify" class=" notification-scroll ">
 
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
