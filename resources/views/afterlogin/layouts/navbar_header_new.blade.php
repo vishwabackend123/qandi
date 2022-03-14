@@ -818,7 +818,7 @@
                     </div>
                     <div class="d-flex f_l_name_box">
                         <div class="form-flds user_email">
-                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id" />
+                            <input type="email" name="useremail" autocomplete="off" id="useremail" value="{{$userData->email}}" required placeholder="Your e-Mail Id"  minlength="8" maxlength="64" />
                         </div>
 
                         <div class="form-flds user_no">
