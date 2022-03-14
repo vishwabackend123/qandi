@@ -95,7 +95,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="report-block2 p-6">
                             <div class="d-flex">
-                                <span class="me-auto"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
+                                <span class="me-auto anaylticslogo"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
                                 <span class="text-end detailedtext">
                                     <b>Detailed</b> <span> Report Analysis<br />
                                         Weekly Q&I Performace Report<br />{{date("F j, Y")}}</span>
