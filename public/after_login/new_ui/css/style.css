@@ -15,10 +15,14 @@ button {
     outline: none;
     text-decoration: none;
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
 =======
+=======
+.refer-modal-open .dash-sidebar{z-index: 9999;}
+>>>>>>> 99ab721da8cae74f19b75cba7df785d4ed1d0095
 .overllanaly .cust-tabs .nav-link.active:before{background-repeat:no-repeat;height:78px;}
 .overllanaly .cust-tabs .nav-link.active:after{background-repeat:no-repeat;left:-56px;}
 .overllanaly .tab-wrapper .nav-tabs , .overllanaly .cust-tabs .nav-link.active , .overllanaly .cust-tabs .nav-link.active:after{height: 78px;}

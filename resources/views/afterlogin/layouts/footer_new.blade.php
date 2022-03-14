@@ -1648,3 +1648,8 @@
         // $("html").toggleClass("scrollnone");
     });
 </script>
+<script>
+    $(".dash-nav-link a:last-child").click(function(){
+        $("body").addClass("refer-modal-open")
+    });
+</script>
