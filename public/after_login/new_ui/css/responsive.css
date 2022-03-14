@@ -1,4 +1,4 @@
-@media screen and ( max-height: 650px ) {
+@media screen and ( max-height: 700px ) {
     .subscriptionBox p.box-content {
         overflow: overlay;
         height: 150px;
@@ -21,9 +21,7 @@
 
 
  
-@media(min-width:1659px) and (max-width:1750px) {
-    .subscriptionBox p.box-content {height: 150px;}
-}
+ 
 @media(min-width:1659px) and (max-width:1750px) {
     
     .reviewPanel .cust-tabs .nav-link{
@@ -33,7 +31,7 @@
       }
       .live-test li+li{margin-left:8%;}
     div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
-    .subscriptionBox p.box-content {height: 170px;}
+    
    
 
 }
@@ -52,7 +50,7 @@
       }
       div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
       .live-test li+li{margin-left:5%;}
-      .subscriptionBox p.box-content {height: 200px;}
+   
 }
 
 @media(max-width:1440px){
@@ -92,7 +90,7 @@
        
     }
 
-    .subscriptionBox p.box-content {height:220px;}
+ 
 
 }
 
@@ -3918,15 +3916,6 @@
             max-width: 90% !important;
         }
     }
-    @media  (max-height:700px){
-        .subscriptionBox p.box-content {
-            overflow: overlay;
-            height: 150px;
-            
-            padding-right: 9px;
-            margin: auto 0px;
-
-        }
-    }
+  
 
    
