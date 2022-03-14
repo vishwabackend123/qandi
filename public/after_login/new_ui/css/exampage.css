@@ -68,6 +68,11 @@ button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.te
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
     box-shadow: none;
 }
+
+/***12-03-22-Added_by_Sachin***/
+.examSect .fade , .examSect, #endExam, #FullTest_Exam_Panel_Interface_A{ transition: initial;}
+/***12-03-22-Ended_by_Sachin***/
+
 /***Added_by-kanchan***/
 #exam_content_sec #question_section .tab-btn-box a{color: #515151;}
 #exam_content_sec #question_section .tab-btn-box a :hover{color: #fff;}

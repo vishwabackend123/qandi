@@ -951,7 +951,7 @@ $questtype='radio';
         }
     }
 
-    function clearResponse(quest_id, subject_id) {
+    function clearResponse(quest_id, subject_id, qNo) {
 
         var response = [];
         $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
