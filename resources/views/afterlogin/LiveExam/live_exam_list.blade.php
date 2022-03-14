@@ -198,5 +198,9 @@ $userData = Session::get('user_data');
     /*$('.scroll-div-live-exm').slimscroll({
         height: '60vh'
     });*/
+    $(window).on('load', function() {
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
+    });
 </script>
 @endsection
