@@ -1427,7 +1427,7 @@
     /*dashboard left navigation */
     jQuery(document).ready(function() {
         jQuery('.dash-nav-link a').click(function() {
-            jQuery('a').removeClass("active");
+            jQuery('.dash-nav-link a').removeClass("active");
             jQuery(this).addClass("active");
             //jQuery(this).removeClass("active");
         });
