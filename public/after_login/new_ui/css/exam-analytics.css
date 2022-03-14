@@ -413,7 +413,7 @@ div#contentHtml .report-block1 {
     position: absolute;
     z-index: 1;
     display: block;
-    top: -2px!important;
+    top: -1px!important;
     left: 0;
     overflow: hidden;
 }

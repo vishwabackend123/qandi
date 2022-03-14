@@ -15,6 +15,7 @@ button {
     outline: none;
     text-decoration: none;
 }
+
 .refer-modal-open .dash-sidebar{z-index: 9999;}
 .overllanaly .cust-tabs .nav-link.active:before{background-repeat:no-repeat;height:78px;}
 .overllanaly .cust-tabs .nav-link.active:after{background-repeat:no-repeat;left:-56px;}
@@ -498,7 +499,7 @@ html.scrollnone{overflow-y: hidden;padding-right:10px;}
     .subscriptionBox   p.box-content {line-height: 24px;
         font-weight: 500;
         font-size: 15px;text-align:center;margin-bottom:40px;}   
-
+     
 /* shubham-end(10-03-2022) */
 
 
@@ -3211,7 +3212,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(../images/after-img.png);
+    background: url(/public/after_login/new_ui/images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */

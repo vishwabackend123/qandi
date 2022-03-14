@@ -507,6 +507,10 @@ $userData = Session::get('user_data');
 
   //   });
   // });
+  $(window).on('load', function() {
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
+    });
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
