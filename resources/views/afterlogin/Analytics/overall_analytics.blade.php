@@ -255,6 +255,9 @@ $userData = Session::get('user_data');
 
 
                             </div>
+                                <div class="topics_analytics">
+                                @include('afterlogin.Analytics.topics_analytics')
+                                </div>
 
                         </div>
                     </div>
@@ -262,9 +265,7 @@ $userData = Session::get('user_data');
             </div>
         </div>
     </div>
-    <div class="topics_analytics">
-        @include('afterlogin.Analytics.topics_analytics')
-    </div>
+    
 </div>
 <div class="modal fade" id="upcoming-tutorials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -445,7 +446,8 @@ $userData = Session::get('user_data');
         if (sub_id === null) {
             window.location.reload();
         } else {
-            
+            $(".topics_analytics").hide();
+            $("#overall").show();
             url = "{{ url('next_tab/') }}/" + sub_id;
             $.ajax({
                 url: url,
@@ -972,8 +974,9 @@ $userData = Session::get('user_data');
                 success: function(data) {
                   $(".topics_analytics").show();
                   $('.topics_analytics').html(data.html);
-                  $(".overllanaly").hide();
+                  //$(".overllanaly").hide();
                   //$('.loader-block').hide();
+                  $('#overall').hide();
                   
                 },
                 error: function(data, errorThrown)
@@ -985,7 +988,7 @@ $userData = Session::get('user_data');
     function backPage()
     {
        $(".topics_analytics").hide();
-       $(".overllanaly").show();
+       $("#overall").show();
       
     }
 </script>
