@@ -16,6 +16,24 @@ button {
     text-decoration: none;
 }
 
+.cust-gallery.dashGallery{position: relative;}
+span.swipe-arrow img {width: 20px;}
+span.swipe-arrow {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+span.swipe-arrow:hover{background-color: rgba(0,0,0,1);}
 .refer-modal-open .dash-sidebar{z-index: 9999;}
 .overllanaly .cust-tabs .nav-link.active:before{background-repeat:no-repeat;height:78px;}
 .overllanaly .cust-tabs .nav-link.active:after{background-repeat:no-repeat;left:-56px;}
@@ -3215,7 +3233,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(/public/after_login/new_ui/images/after-img.png);
+    background: url(../images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
@@ -4933,8 +4951,10 @@ span.profile-img-user {
 
 
 /** custom page css **/
+
 .cust-tabs .nav-link.active {
-    color: #231f20;
+    /* color: #231f20; */
+    color: #2c3348;
     background-color: #fff;
     border-color: transparent;
     border-radius: 0;
@@ -6120,16 +6140,18 @@ header {
     background-color: none;
 }
 
+/* Added by sachin 15-03-22*/
 .cust-tabs .nav-link {
     position: relative;
     margin-right: 15px;
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 400;
-    color: #515151;
+    /* color: #515151; */
+    color: #2c3348;
     height: 65px;
 }
-
+/* End by sachin 15-03-22*/
 .cust-tabs .nav-link:focus,
 .cust-tabs .nav-link:hover {
     border-color: transparent;
@@ -6179,14 +6201,17 @@ header {
     border-right: 1px solid transparent;
     border-top: 1px solid transparent;
 }
-
+/*Added by sachin 15-03-2022*/
 .name-txt {
     text-align: left;
     font: normal normal 600 16px/22px Manrope;
     letter-spacing: 0px;
     color: #231f20;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    text-transform: capitalize;
 }
+
+/*End by sachin 15-03-2022*/
 
 .name-txt-sml {
     text-align: left;
