@@ -2311,7 +2311,8 @@ span.p-icons span:active {
 }
 
 .addremovetopic.topic_selected {
-    background-color: #08beff !important;
+    /* background-color: #08beff !important; */
+    background-color: #5ddaff !important;
     color: #ffffff !important;
 }
 
