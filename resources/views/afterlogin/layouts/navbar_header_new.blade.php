@@ -596,7 +596,7 @@
         <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
         <div class="profile-section">
             <ul>
-                <li class="active"><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
+                <li><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
                         <svg id="Icon_Profile" data-name="Icon / Profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <defs>
                                 <style>
