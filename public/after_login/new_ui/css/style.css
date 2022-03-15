@@ -121,6 +121,7 @@ div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotate
 /******* 07-03-2022 Amit-Start ******/
 .cust-gallery .swiper-slide{width: 405px!important; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(255, 255, 255, 0.51);}
 .swiper-wrapper{padding:36px 0;}
+.dashGallery .swiper-wrapper{height:auto!important;}
 .calender-block #calendari table tr:first-child th {padding-top: 15px;}
 /******* 07-03-2022 Amit-End ******/
 
@@ -1444,6 +1445,8 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
     padding: 0 2px !important;
     font-size: 18px;
 }
+.pe-1 .course-star  .star-ratings-css-bottom span{font-size:13px}
+ 
 
 .w-31 {
     color: #fff;
@@ -4400,7 +4403,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 165px;
+    height: 167px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
@@ -4930,8 +4933,10 @@ span.profile-img-user {
 
 
 /** custom page css **/
+
 .cust-tabs .nav-link.active {
-    color: #231f20;
+    /* color: #231f20; */
+    color: #2c3348;
     background-color: #fff;
     border-color: transparent;
     border-radius: 0;
@@ -6117,16 +6122,18 @@ header {
     background-color: none;
 }
 
+/* Added by sachin 15-03-22*/
 .cust-tabs .nav-link {
     position: relative;
     margin-right: 15px;
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 400;
-    color: #515151;
+    /* color: #515151; */
+    color: #2c3348;
     height: 65px;
 }
-
+/* End by sachin 15-03-22*/
 .cust-tabs .nav-link:focus,
 .cust-tabs .nav-link:hover {
     border-color: transparent;
