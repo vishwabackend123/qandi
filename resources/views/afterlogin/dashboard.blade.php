@@ -115,11 +115,11 @@ $userData = Session::get('user_data');
                         </small>
                         <div class="row h-100">
                             <div class="col-lg-7 col-sm-12 col-md-8" style="padding-right:0!important;">
-                                <div style="padding:20px 0 0;">
+                                <div style="padding:20px 0 0px 5px;">
                                     <div class="prgress-i-txt px-3 mb-1" style="padding-left:30px!important;">
                                         <span class="progress_text">MyQ Today</span>
                                     </div>
-                                    <div class="d-flex justify-content-center flex-column h-100 ">
+                                    <div class="d-flex  flex-column">
                                         <div class="" id="scorecontainer"></div>
 
                                         <ul class="live-test">
@@ -334,7 +334,7 @@ $userData = Session::get('user_data');
             </div>
 
 
-            <div class="cust-gallery p-0">
+            <div class="cust-gallery p-0 dashGallery">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
