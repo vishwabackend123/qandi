@@ -350,7 +350,7 @@ $userData = Session::get('user_data');
     $('.js-average').text((average / $('.rating').length).toFixed(3))
   }
 
-  $('.slick-slider').slick({
+  var $opts = {
     slidesToScroll: 1,
     dots: false,
     arrows: true,
@@ -361,8 +361,9 @@ $userData = Session::get('user_data');
     variableWidth: false,
     prevArrow: '<button class="slick-prev"> < </button>',
     nextArrow: '<button class="slick-next"> > </button>',
-  });
-
+  }
+  $('.slider').slick('unslick');
+  $(".slider").not('.slick-initialized').slick();
   /*$('.slbs-link a').click(function() {
     $('#myTabContent .slick-slider').slick('refresh');
   })*/
@@ -399,13 +400,12 @@ $userData = Session::get('user_data');
         },
         success: function(result) {
           $("#topic_section_" + chapt_id + " div").remove();
-          // $("#expand_topic_" + chapt_id).text("Collapse topics");
           $("#topic_section_" + chapt_id).html(result);
+
           //$('#myTabContent .slick-slider').slick('refresh');
-          $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
+          $("#chapter_" + chapt_id + ' .slick-slider').slick($opts);
           $('#overlay').fadeOut();
           $('#topic_form').show();
-
         }
       });
     } else {
@@ -508,9 +508,9 @@ $userData = Session::get('user_data');
   //   });
   // });
   $(window).on('load', function() {
-        $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
-    });
+    $(".dash-nav-link a:first-child").removeClass("active-navlink");
+    $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
+  });
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>

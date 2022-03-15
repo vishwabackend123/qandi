@@ -70,17 +70,3 @@
 </div>
 @endforeach
 @endif
-<script>
-    $('.slick-slider').slick({
-        slidesToScroll: 1,
-        dots: false,
-        arrows: true,
-        centerMode: false,
-        focusOnSelect: false,
-        infinite: false,
-        slidesToShow: 3.2,
-        variableWidth: false,
-        prevArrow: '<button class="slick-prev"> < </button>',
-        nextArrow: '<button class="slick-next"> > </button>',
-    });
-</script>
