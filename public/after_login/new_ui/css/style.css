@@ -3233,7 +3233,7 @@ span.notification.ms-4 {
     top: 0px;
     /* height: 100%; */
     width: 70px;
-    background: url(/public/after_login/new_ui/images/after-img.png);
+    background: url(../images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
