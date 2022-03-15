@@ -253,31 +253,25 @@ class HomeController extends Controller
                     Session::put('progress_cat', $progress_cat);
                 }
             }
-            if (!Session::has('corrent_score_per')) {
-                $curl = curl_init();
-                $api_URL = env('API_URL');
-                $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
-                curl_setopt_array($curl, array(
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
+            curl_setopt_array($curl, array(
 
-                    CURLOPT_URL => $curl_myq_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "POST",
-                ));
+                CURLOPT_URL => $curl_myq_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+            ));
 
-                $response_myq_json = curl_exec($curl);
-                $response_myq = json_decode($response_myq_json, true);
-                $corrent_score_per = isset($response_myq['MyQToday Score']) && !empty($response_myq['MyQToday Score']) ? $response_myq['MyQToday Score'] : 0;
-                $corrent_score_per = (int) $corrent_score_per;
-                Session::put('corrent_score_per', $corrent_score_per);
-            } else {
-                $corrent_score_per = Session::get('corrent_score_per');
-            }
-
+            $response_myq_json = curl_exec($curl);
+            $response_myq = json_decode($response_myq_json, true);
+            $corrent_score_per = isset($response_myq['MyQToday Score']) && !empty($response_myq['MyQToday Score']) ? $response_myq['MyQToday Score'] : 0;
+            $corrent_score_per = (int) $corrent_score_per;
             $score = isset($corrent_score_per) ? $corrent_score_per : 0;
             $progress =  0;
             $inprogress = 0;
