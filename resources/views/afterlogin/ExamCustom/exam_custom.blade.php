@@ -80,8 +80,13 @@ $userData = Session::get('user_data');
 
                     <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Chapters Filter">
                       <!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
-                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
-                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow">
+                      <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
+                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow"> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4860" width="24" height="24" viewBox="0 0 24 24">
+                          <path data-name="Path 11531" d="M0 0h24v24H0z" style="fill:none"/>
+                          <path data-name="Path 11532" d="m3 9 4-4 4 4M7 5v14" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                          <path data-name="Path 11533" d="m21 15-4 4-4-4m4 4V5" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                      </svg>
                     </button>
 
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
@@ -133,8 +138,14 @@ $userData = Session::get('user_data');
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
                           <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl">
+                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl"> -->
+
+                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4860" width="24" height="24" viewBox="0 0 24 24">
+                              <path data-name="Path 11531" d="M0 0h24v24H0z" style="fill:none"/>
+                              <path data-name="Path 11532" d="m3 9 4-4 4 4M7 5v14" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 11533" d="m21 15-4 4-4-4m4 4V5" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                          </svg>
                         </button>
                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);">
