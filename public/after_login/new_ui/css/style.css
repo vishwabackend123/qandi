@@ -121,6 +121,7 @@ div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotate
 /******* 07-03-2022 Amit-Start ******/
 .cust-gallery .swiper-slide{width: 405px!important; box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(255, 255, 255, 0.51);}
 .swiper-wrapper{padding:36px 0;}
+.dashGallery .swiper-wrapper{height:auto!important;}
 .calender-block #calendari table tr:first-child th {padding-top: 15px;}
 /******* 07-03-2022 Amit-End ******/
 
@@ -4402,7 +4403,7 @@ button.save-btn {
 }
 
 .subject-scroll {
-    height: 165px;
+    height: 167px;
     overflow: overlay;
     width: 92%;
     margin: 0 auto;
