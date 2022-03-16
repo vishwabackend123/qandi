@@ -31,14 +31,16 @@ $userData = Session::get('user_data');
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
                                 <li class="ms-auto">
-                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics"><!--<img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">-->
-                                    <div class="arrow_icon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
-                                        <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"/>
-                                        <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-                                        <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
-                                        <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"/>
-                                    </svg></div>
-                                     &nbsp;<span class="Ex--an">Export Analytics</span></a>
+                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+                                        <!--<img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">-->
+                                        <div class="arrow_icon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
+                                                <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none" />
+                                                <path data-name="Path 83" d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                                                <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" />
+                                                <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12" />
+                                            </svg></div>
+                                        &nbsp;<span class="Ex--an">Export Analytics</span>
+                                    </a>
                                 </li>
 
                             </ul>
@@ -158,7 +160,7 @@ $userData = Session::get('user_data');
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
-                                            <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->                                           
+                                            <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
                                             <div id="timeManagementButtons" class="btn-block mt-2 ">
                                                 <button class="btn btn-outline-secondary text-uppercase rounded-0 px-5 timeClass active" id="day_time" onclick="replace('day','week','month')">
                                                     Day
@@ -198,7 +200,7 @@ $userData = Session::get('user_data');
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
-                                                    </p>
+                                                </p>
                                             </small>
                                             <p class="text-uppercase fw-bold text-start">Marks Trend</p>
                                             <div id="day1" style="display:block"></div>
@@ -246,7 +248,8 @@ $userData = Session::get('user_data');
                                                         <path data-name="Path 84" d="m7 11 5 5 5-5" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
                                                         <path data-name="Line 45" transform="translate(11.79 4)" style="stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v12"></path>
                                                     </svg>
-                                                    &nbsp;Export Analytics</button>
+                                                    &nbsp;Export Analytics
+                                                </button>
                                             </div>
                                         </div>
 
@@ -255,9 +258,9 @@ $userData = Session::get('user_data');
 
 
                             </div>
-                                <div class="topics_analytics">
+                            <div class="topics_analytics">
                                 @include('afterlogin.Analytics.topics_analytics')
-                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -265,7 +268,7 @@ $userData = Session::get('user_data');
             </div>
         </div>
     </div>
-    
+
 </div>
 <div class="modal fade" id="upcoming-tutorials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -423,18 +426,18 @@ $userData = Session::get('user_data');
             innerSize: '85%',
             data: [{
                     name: 'Last Mock Test Score',
-                    y: <?php echo $mockTestScoreCurr ?? 0; ?>,
+                    y: <?php echo $lastscore ?? 0; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress From Previous Score',
-                    y: <?php echo $mockTestScorePre ?? 0; ?>,
+                    y: <?php echo $progress ?>,
                     color: '#d0f3ff' // Jane's color
                 },
                 {
                     name: '',
-                    y: <?php echo $otherScorePre;?>,
-                    color: '' // Jane's color
+                    y: <?php echo (100 - ($lastscore + $progress)); ?>,
+                    color: '#efefef' // Jane's color
                 }
             ]
         }]
@@ -464,9 +467,8 @@ $userData = Session::get('user_data');
                     $('#overlay').fadeOut();
                     //$('.loader-block').hide();
                 },
-                error: function(data, errorThrown)
-                {
-                  //$('.loader-block').hide();
+                error: function(data, errorThrown) {
+                    //$('.loader-block').hide();
                 }
             });
         }
@@ -952,7 +954,7 @@ $userData = Session::get('user_data');
 
     $(document).ready(function() {
         $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
             })
             $(this).siblings("p").show();
@@ -961,35 +963,35 @@ $userData = Session::get('user_data');
             $(this).parent("p").hide();
         });
     });
+
     function expandAnalytics(sub_id) {
         url = "{{ url('topic-analytics') }}/" + sub_id;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                 beforeSend: function() {
-                   // $('.loader-block').show();
-                },
-                success: function(data) {
-                  $(".topics_analytics").show();
-                  $('.topics_analytics').html(data.html);
-                  //$(".overllanaly").hide();
-                  //$('.loader-block').hide();
-                  $('#overall').hide();
-                  
-                },
-                error: function(data, errorThrown)
-                {
-                  //$('.loader-block').hide();
-                }
-            });
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            beforeSend: function() {
+                // $('.loader-block').show();
+            },
+            success: function(data) {
+                $(".topics_analytics").show();
+                $('.topics_analytics').html(data.html);
+                //$(".overllanaly").hide();
+                //$('.loader-block').hide();
+                $('#overall').hide();
+
+            },
+            error: function(data, errorThrown) {
+                //$('.loader-block').hide();
+            }
+        });
     }
-    function backPage()
-    {
-       $(".topics_analytics").hide();
-       $("#overall").show();
-      
+
+    function backPage() {
+        $(".topics_analytics").hide();
+        $("#overall").show();
+
     }
 </script>
 

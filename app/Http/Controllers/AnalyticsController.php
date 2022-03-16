@@ -27,7 +27,7 @@ class AnalyticsController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function overall_analytics($active_id = '', Request $request)
-     {
+    {
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
@@ -56,11 +56,14 @@ class AnalyticsController extends Controller
             $response = json_decode($response);
             $mockTestScoreCurr = 0;
             $mockTestScorePre = 0;
+            $lastscore = $progress = 0;
             $otherScorePre = 100;
             $subProf = [];
             if (isset($response->success) && $response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
                 $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+                $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
+                $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
                 $subProf = json_decode($response->subject_proficiency);
                 $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
@@ -219,7 +222,8 @@ class AnalyticsController extends Controller
                 'active_id',
                 'user_subjects',
                 'mockTestScoreCurr',
-                'mockTestScorePre',
+                'lastscore',
+                'progress',
                 'subProf',
                 'date1',
                 'date2',
@@ -246,17 +250,14 @@ class AnalyticsController extends Controller
                 'topicList',
                 'otherScorePre'
             ));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
 
     public function export_analytics(Request $request)
     {
-        try
-        {
+        try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -497,17 +498,14 @@ class AnalyticsController extends Controller
                 'user_subjects',
                 'otherScorePre'
             ));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
 
     public function nextTab(Request $request, $sub_id)
     {
-        try 
-        {   
+        try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $api_URL = env('API_URL');
@@ -708,9 +706,7 @@ class AnalyticsController extends Controller
                 'incorrectTime3',
                 'sub_id'
             ));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -718,8 +714,7 @@ class AnalyticsController extends Controller
 
     public function tutorials_session()
     {
-        try 
-        {   
+        try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
@@ -753,9 +748,7 @@ class AnalyticsController extends Controller
             }
 
             return view('afterlogin.Analytics.ajax_tutorials', compact('data'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -767,8 +760,7 @@ class AnalyticsController extends Controller
 
     public function tutorials_signup($tutorial_id)
     {
-        try 
-        { 
+        try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
@@ -806,9 +798,7 @@ class AnalyticsController extends Controller
             curl_close($curl);
 
             return $response_json;
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -817,22 +807,19 @@ class AnalyticsController extends Controller
 
     public function topicAnalyticsList($sub_id)
     {
-        try 
-        {
+        try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
-            $user_subjects = json_decode (json_encode($this->redis_subjects(),true));
+            $user_subjects = json_decode(json_encode($this->redis_subjects(), true));
             $id = array_search($sub_id, array_column($user_subjects, 'id'));
-            if($id >= 1)
-            {
+            if ($id >= 1) {
                 $subject = $user_subjects[$id]->subject_name;
-            }else
-            {
-             $subject = $user_subjects[0]->subject_name;   
+            } else {
+                $subject = $user_subjects[0]->subject_name;
             }
 
-            $api_url = env('API_URL') . 'api/topics-by-subject-id/'.$user_id .'/'  . $sub_id;
+            $api_url = env('API_URL') . 'api/topics-by-subject-id/' . $user_id . '/'  . $sub_id;
 
             $curl = curl_init();
             curl_setopt_array($curl, array(
@@ -850,18 +837,16 @@ class AnalyticsController extends Controller
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
-            $aResponse = json_decode($response_json,true);
-            $topicList= isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
-            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id','subject','topicList'))->render();
+            $aResponse = json_decode($response_json, true);
+            $topicList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
+            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList'))->render();
 
             return response()->json([
                 'status' => true,
                 'html' => $html,
                 'message' => 'Coupon code applied successfully.',
             ]);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

@@ -44,6 +44,22 @@
             }
         });
     </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src=https://www.googletagmanager.com/gtag/js?id=G-Z8BHJH4PZ8></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-Z8BHJH4PZ8');
+    </script>
 </head>
 
 <style>

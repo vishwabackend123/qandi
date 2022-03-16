@@ -412,7 +412,7 @@ $userData = Session::get('user_data');
 
       $("#expand_topic_" + chapt_id).text("Expand to topics");
       $('#topic_form').toggle();
-
+      $("#chapter_" + chapt_id + ' .slick-slider').slick($opts);
     }
   }
 
@@ -505,37 +505,42 @@ $userData = Session::get('user_data');
   //       $(".dsowl").hide();
   //     }
 
-  //   });
+
+  <
+  script src = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" >
+    <
+    />
+  // });
   // });
   $(window).on('load', function() {
-        $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
-    });
+    $(".dash-nav-link a:first-child").removeClass("active-navlink");
+    $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
+  });
 </script>
 
 <script>
-   $('.expandTopicCollapse').click(function(){
+  $('.expandTopicCollapse').click(function() {
     $(this).parents('.ClickBack').toggleClass('newelement');
 
-    });
+  });
 </script>
 
 
 <style>
-  .newelement{
+  .newelement {
     background: white !important;
     border-radius: 21px;
     border: 6px solid #f2f2f2;
     margin-top: 14px;
   }
-  .newelement form{
-    margin-bottom:0px;
+
+  .newelement form {
+    margin-bottom: 0px;
   }
-  .newelement button#dropdownMenuLink-topic{
+
+  .newelement button#dropdownMenuLink-topic {
     margin-top: 0px;
   }
-  </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</style>
 
 @endsection
