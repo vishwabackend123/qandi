@@ -945,9 +945,10 @@ a#open-tab {
 
 .live-exam i.fa.fa-circle.text-danger.me-3 {
     color: #d71921 !important;
-    z-index: 99;
+    z-index: 9; /* before chaging the z-index please open the account section  */
     position: relative;
 }
+
 
 .live-exam li:first-child a.active {
     padding-left: 0px !important;
