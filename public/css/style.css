@@ -712,7 +712,8 @@ button#goto-otp-btn:hover {
 @media(min-width:991px) and (max-width:1280px) {
     .subject_screen {
         max-width: 85% !important;
-        padding: 60px 47px 60px 47px !important;
+        padding: 40px 47px 40px 47px !important;
+        margin-top:150px;
     }
 }
 

@@ -57,6 +57,7 @@ class AnalyticsController extends Controller
             $mockTestScoreCurr = 0;
             $mockTestScorePre = 0;
             $lastscore = $progress = 0;
+            $otherScorePre = 100;
             $subProf = [];
             if (isset($response->success) && $response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
@@ -64,6 +65,7 @@ class AnalyticsController extends Controller
                 $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
                 $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
                 $subProf = json_decode($response->subject_proficiency);
+                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -245,7 +247,8 @@ class AnalyticsController extends Controller
                 'classAcc',
                 'stuAcc',
                 'subject',
-                'topicList'
+                'topicList',
+                'otherScorePre'
             ));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -285,10 +288,12 @@ class AnalyticsController extends Controller
             $mockTestScoreCurr = 0;
             $mockTestScorePre = 0;
             $subProf = [];
+            $otherScorePre = 100;
             if ($response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
                 $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
                 $subProf = json_decode($response->subject_proficiency);
+                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -490,7 +495,8 @@ class AnalyticsController extends Controller
                 'incorrectTime3',
                 'mockTestScoreCurr',
                 'mockTestScorePre',
-                'user_subjects'
+                'user_subjects',
+                'otherScorePre'
             ));
         } catch (\Exception $e) {
             Log::info($e->getMessage());

@@ -1599,6 +1599,7 @@
             $(this).siblings().removeClass("notification-icons-active");
         } else {
             $(this).removeClass("notification-icons-active");
+            $('#collapsePlanner').hide();
         }
     });
 
