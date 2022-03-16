@@ -378,8 +378,9 @@
 </div>
 
 @php
-$preSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
-$currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+$preSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+$currSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
+$otherSocre = 100 - ($currSocre + $preSocre);
 @endphp
 <script>
     /*  $(".scroll-topic-ana").slimscroll({
@@ -904,7 +905,7 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($subScore[1]->score)?$subScore[1]->score:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 80
@@ -952,19 +953,19 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             innerSize: '85%',
             data: [{
                     name: 'Score',
-                    y: <?php echo $preSocre; ?>,
+                    y: <?php echo $currSocre; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress',
-                    y: <?php echo $diffmock = ($currSocre - $preSocre) > 0 ? $currSocre - $preSocre : 0 ?>,
+                    y: <?php echo $preSocre; ?>,
                     color: '#d0f3ff' // Jane's color
                 },
                 {
                     name: '',
-                    y: <?php echo (100 - ($preSocre + $diffmock)); ?>,
+                    y: <?php echo $otherSocre; ?>,
 
-                    color: '#d0f3ff' // Jane's color
+                    color: '' // Jane's color
                 }
             ]
         }]
