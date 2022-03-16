@@ -143,6 +143,7 @@ div#arrow-left-btm .inner-arrow-left-btm {left: auto!important;transform: rotate
 /******* 07-03-2022 Amit-End ******/
 
 /******* 04-03-2022 Amit-Start ******/
+.highcharts-a11y-proxy-button{    font-family: 'Manrope', sans-serif !important;}
 #dialog-pdf .report-block2.p-5 small>img {
     width: 16px !important;
 }
@@ -8491,14 +8492,15 @@ input#linkInput {
 
 .custom-page .star-ratings-css-bottom span {
     font-size: 22px;
-    /* line-height: 38px; */
+    line-height: 38px;
 }
 .custom-page .score-rating{
-    /* top: 1px; */
+    top: 1px;
 }
 
 .custom-page .star-ratings-css-top span {
     font-size: 22px;
+    line-height: 38px;
 }
 
 /******02-03 navdeep-end******/
