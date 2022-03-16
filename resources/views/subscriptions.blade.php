@@ -19,7 +19,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     @include('afterlogin.layouts.navbar_header_new')
     @else
     <div class="row" style="height:90px;">
-        <span class="outer-logo"><a href="{{ env('LANDING_URL') }}" target="_blank"><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" class="img-fluid" /></a></span>
+        <span class="outer-logo"><a href="{{ env('LANDING_URL') }}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" class="img-fluid" /></a></span>
     </div>
     <div class="clearfix"></div>
     @endif
