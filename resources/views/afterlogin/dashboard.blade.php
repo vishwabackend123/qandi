@@ -331,8 +331,6 @@ $userData = Session::get('user_data');
 
 
             <div class="cust-gallery p-0 dashGallery">
-                <!-- <span class="swipe-arrow"><i class="fa fa-angle-right"></i></span> -->
-                <span class="swipe-arrow"><img src="{{URL::asset('public/after_login/new_ui/images/right-arrow.png')}}"></span>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         @if(isset($prof_asst_test) && $prof_asst_test=='N')
@@ -1140,10 +1138,5 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
         $('.progressChartExpend').highcharts(json);
     });
 </script>
-<script>
-    $("span.swipe-arrow").click(function(){
-        $(".swiper-wrapper").css("transform","translate3d(-772.954px, 0px, 0px)");
-        $(".swiper-wrapper").css("transition-duration","1000ms");
-    });
-</script>
+
 @endsection
