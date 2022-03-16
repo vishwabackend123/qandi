@@ -16,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+.bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong{font-size:16px;}
 .overllanaly .shadow-lg#f-Numbr-sectin {
     -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%),inset 0 0 0 0 rgb(0 0 0 / 51%)!important;
     -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
@@ -32,7 +33,7 @@ div.planner-scheduar-block .planner-wrapper .planner-content {background: #f6f9f
 #marks_trend_graph .highcharts-series-1 .highcharts-point {fill: #ffdc34;}
 #marks_trend_graph .highcharts-series-2 .highcharts-point {fill: #eb5347;}
 a.Ex-anal {min-width: 230px;}
-.task-center-block .d-flex.justify-content-between.align-items-center {padding-left: 15px;}
+.task-center-block .d-flex.justify-content-between.align-items-center {padding:0 10px;}
 .common-cards-boxshadow .shadow-lg , .common-cards-boxshadow .cust-gallery .swiper-slide
 { box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51)!important;}
 
@@ -1222,7 +1223,7 @@ ul.matrixLists li b {
 
 .task-center-block .btn.btntheme {
     width: 100%;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .dashboard-cards-block .cust-gallery .swiper-slide h3 {
@@ -8481,14 +8482,15 @@ input#linkInput {
 
 .custom-page .star-ratings-css-bottom span {
     font-size: 22px;
-    /* line-height: 38px; */
+    line-height: 38px;
 }
 .custom-page .score-rating{
-    /* top: 1px; */
+    top: 1px;
 }
 
 .custom-page .star-ratings-css-top span {
     font-size: 22px;
+    line-height: 38px;
 }
 
 /******02-03 navdeep-end******/
