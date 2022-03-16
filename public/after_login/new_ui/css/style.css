@@ -16,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+#review_rques_blk .percent_btn{white-space: nowrap;width: 140px;text-align: center;padding: 10px 10px;}
 .bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong{font-size:16px;}
 .overllanaly .shadow-lg#f-Numbr-sectin {
     -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%),inset 0 0 0 0 rgb(0 0 0 / 51%)!important;
@@ -8525,3 +8526,11 @@ input#linkInput {
 .uniform-scroll::-webkit-scrollbar-thumb:hover {
     background: #00bdff;
 }
+
+
+/*****navdeep 16-03-2022*********/
+#test_instruction h1 {
+    font-size: 30px;
+}
+
+/*************************/
