@@ -128,9 +128,7 @@ class ResultController extends Controller
                 return redirect()->route('dashboard');
                 /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -185,9 +183,7 @@ class ResultController extends Controller
 
                 return false;
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -241,9 +237,7 @@ class ResultController extends Controller
 
                 return false;
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -297,9 +291,7 @@ class ResultController extends Controller
 
                 return false;
             }
-         }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

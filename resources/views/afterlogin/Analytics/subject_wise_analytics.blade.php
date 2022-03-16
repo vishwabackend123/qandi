@@ -152,7 +152,7 @@
                 </p>
             </small>
             <div class="d-flex align-items-center px-3 flex-box1">
-                <h5 class="dashboard-title ">Topic Performance  </h5>
+                <h5 class="dashboard-title ">Topic Performance </h5>
                 <span class="EXPAND_btn"><button style="margin-right: 40px;" class="customgray" onclick="expandAnalytics({{$sub_id}})">
                         <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
                             <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
@@ -378,8 +378,14 @@
 </div>
 
 @php
+$lastscore = $progress = 0;
+
 $preSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
 $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+$lastscore = ($currSocre >= $preSocre) ? $preSocre : $currSocre;
+$progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
+
+
 @endphp
 <script>
     /*  $(".scroll-topic-ana").slimscroll({
@@ -952,19 +958,19 @@ $currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
             innerSize: '85%',
             data: [{
                     name: 'Score',
-                    y: <?php echo $preSocre; ?>,
+                    y: <?php echo $lastscore; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress',
-                    y: <?php echo $diffmock = ($currSocre - $preSocre) > 0 ? $currSocre - $preSocre : 0 ?>,
+                    y: <?php echo $progress ?>,
                     color: '#d0f3ff' // Jane's color
                 },
                 {
                     name: '',
-                    y: <?php echo (100 - ($preSocre + $diffmock)); ?>,
+                    y: <?php echo (100 - ($lastscore + $progress)); ?>,
 
-                    color: '#d0f3ff' // Jane's color
+                    color: '#efefef' // Jane's color
                 }
             ]
         }]
