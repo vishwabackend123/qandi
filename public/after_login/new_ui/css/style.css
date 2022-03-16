@@ -8526,3 +8526,11 @@ input#linkInput {
 .uniform-scroll::-webkit-scrollbar-thumb:hover {
     background: #00bdff;
 }
+
+
+/*****navdeep 16-03-2022*********/
+#test_instruction h1 {
+    font-size: 30px;
+}
+
+/*************************/
