@@ -423,18 +423,18 @@ $userData = Session::get('user_data');
             innerSize: '85%',
             data: [{
                     name: 'Last Mock Test Score',
-                    y: <?php echo $mockTestScorePre ?? 0; ?>,
+                    y: <?php echo $mockTestScoreCurr ?? 0; ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress From Previous Score',
-                    y: <?php echo $diffmock = (isset($mockTestScoreCurr) && isset($mockTestScorePre)) ? ($mockTestScoreCurr - $mockTestScorePre) : 0; ?>,
+                    y: <?php echo $mockTestScorePre ?? 0; ?>,
                     color: '#d0f3ff' // Jane's color
                 },
                 {
                     name: '',
-                    y: <?php echo (100 - ($mockTestScorePre + $diffmock)); ?>,
-                    color: '#d0f3ff' // Jane's color
+                    y: <?php echo $otherScorePre;?>,
+                    color: '' // Jane's color
                 }
             ]
         }]

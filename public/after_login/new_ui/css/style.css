@@ -8483,14 +8483,15 @@ input#linkInput {
 
 .custom-page .star-ratings-css-bottom span {
     font-size: 22px;
-    /* line-height: 38px; */
+    line-height: 38px;
 }
 .custom-page .score-rating{
-    /* top: 1px; */
+    top: 1px;
 }
 
 .custom-page .star-ratings-css-top span {
     font-size: 22px;
+    line-height: 38px;
 }
 
 /******02-03 navdeep-end******/
