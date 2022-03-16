@@ -826,7 +826,7 @@
                         </div>
                     </div>
                     <span class="text-danger" role="alert" id="errlog_edit" style="color:#dc3545 !important"> </span>
-                    <div class="form-btns">
+                    <div class="form-btns mt-lg-3">
                         <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
                         <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
                     </div>
@@ -879,7 +879,7 @@
                     <p class="text-end text-danger mt-1">*Subscription has already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                     @endif
                 </h6>
-                <div class="form-btns">
+                <div class="form-btns mt-lg-3">
                     <!--  <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a> -->
                     @if(($suscription_status != 0) && ($subscription_type == 'T'))
                     <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="save-btn">Upgrade</button></a>
