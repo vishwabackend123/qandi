@@ -199,12 +199,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                                 </div>
                                             </div>
                                             <div class="review_expand">
-                                                <div class='percent_btn'>{{$question_data->accuracy}}%</div>
+                                                <div class='percent_btn'>{{(isset($question_data->accuracy) && !empty($question_data->accuracy))? $question_data->accuracy. '%':'View Details'}}</div>
                                                 <div class='expand_block'>
                                                     <div class="first_screen">
+                                                        @if(isset($question_data->accuracy) && !empty($question_data->accuracy))
                                                         <div class="persent_std">
                                                             <span class="no-of-persent">{{$question_data->accuracy}}%</span><span class="attend">of the people got this question right</span>
                                                         </div>
+                                                        @endif
                                                         <div class="propt_text">To answer this you need to have</div>
                                                         <div class="attemp_box row mt-0">
                                                             <div class="sub_att_1 col-md-6">
@@ -340,9 +342,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     <div class="dropdown">
                                         <a class="btn pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters">
                                             <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-                                        <img src="{{URL::asset('public/after_login/new_ui/images/filter-icon.png')}}" alt="">
-                                    
-                                    </a>
+                                            <img src="{{URL::asset('public/after_login/new_ui/images/filter-icon.png')}}" alt="">
+
+                                        </a>
 
 
                                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
@@ -557,15 +559,16 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
 
 <style>
- 
-.test-review-right, .rightSect .bg-white {
-    height:680px;
-}
-.review_box_holder{
-    position: absolute; 
-    bottom: 25px;
-    background: #fff;
-    overflow: hidden;
+    .test-review-right,
+    .rightSect .bg-white {
+        height: 680px;
+    }
+
+    .review_box_holder {
+        position: absolute;
+        bottom: 25px;
+        background: #fff;
+        overflow: hidden;
     }
 </style>
 
@@ -580,7 +583,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <!-----Start__Right_Review_Height_Calculation------->
 <script>
     function review_right_Height() {
-       var total_right_height = $(".test-review-right .flex-column").outerHeight();
+        var total_right_height = $(".test-review-right .flex-column").outerHeight();
         var total_right_width = $(".test-review-right .number_block_holder").outerWidth();
 
         $('.review_box_holder').css('width', total_right_width);
@@ -588,7 +591,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
         var number_block_holder_height = $(".number_block_holder").outerHeight();
         $('.number_block_holder').css('height', number_block_holder_height);
-       
+
 
     }
 
@@ -612,13 +615,13 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $('.review_box_holder').css('height', test_review_height_div);
 
 
-   
+
 
         var number_block_holdercontainer = $(".number_block_holder").outerHeight();
         var review_box_holdercontainer = $(".review_box_holder").outerHeight();
         var number_block_holdercontainerplus = number_block_holdercontainer + 100 + "px";
         var review_box_holdercontainercontainerminus = review_box_holdercontainer - 100 + "px";
-      
+
         $('.number_block_holder').css('height', number_block_holdercontainerplus);
         $('.review_box_holder').css('height', review_box_holdercontainercontainerminus);
 
@@ -627,10 +630,10 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
         var number_block_holder_height = $(".number_block_holder").outerHeight();
         var numberblockHeight = number_block_holder_height - 180 + "px";
-        
-        var height_divided =number_block_holder_height - numberblockHeight;
+
+        var height_divided = number_block_holder_height - numberblockHeight;
         $('.number_block_holder .number-block').css('height', numberblockHeight);
-        
+
 
 
     });
@@ -647,7 +650,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
             var number_block_holder_height = $(".test-review-right .number_block_holder").outerHeight();
 
-            var onclickreviewbox= review_box_q_height12 + number_block_holder_height;
+            var onclickreviewbox = review_box_q_height12 + number_block_holder_height;
 
             var review_box_holder_total = onclickreviewbox - 80 + "px";
 
@@ -665,20 +668,20 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             var review_box_holder_final_height = $(".test-review-right .review_box_holder").outerHeight();
             $('#review_question_list').css('height', review_box_holder_final_height);
 
-            var review_expand_scroll_height =  $("#review_question_list").outerHeight();
+            var review_expand_scroll_height = $("#review_question_list").outerHeight();
             var math_cal_height = review_expand_scroll_height - 50 + "px";
             $('#review_question_list').css('height', math_cal_height);
-            
 
-          
-           
-            
+
+
+
+
 
         });
 
         $(".collapsebtn1").on('click', function() {
             // var review_box_q_height12 = $(".test-review-right .review_box_holder").outerHeight();
-            
+
             // var reviewBox2height = $(".test-review-right .reviewBox2").outerHeight();
             // var number_block_holder_height = $(".test-review-right .number_block_holder").outerHeight();
             // var onclickreviewbox = review_box_q_height12 - number_block_holder_height;
@@ -694,7 +697,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
             var number_block_holder_height = $(".test-review-right .number_block_holder").outerHeight();
 
-            var onclickreviewbox= review_box_q_height12 - number_block_holder_height;
+            var onclickreviewbox = review_box_q_height12 - number_block_holder_height;
 
             var review_box_holder_total = onclickreviewbox + 80 + "px";
 
@@ -709,8 +712,8 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             $(".review_box_holder").css("border-top-right-radius", "0px");
             $(".review_box_holder").css("box-shadow", "none");
 
-          
-      
+
+
 
         });
 
@@ -776,7 +779,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $('.question-block').css('width', question_block_width);
         $('.answer-section').css('width', question_block_width);
         var question_block_height = $(".question-block").outerHeight();
-        var question_block_height_cal = question_block_height -10 + "px";
+        var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
 
 
@@ -805,7 +808,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $('.answer-section').css('height', div_height1);
         $('.question-block').css('height', div_height1);
         var question_block_height = $(".question-block").outerHeight();
-        var question_block_height_cal = question_block_height -10 + "px";
+        var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
 
     });
@@ -853,89 +856,89 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 <!-----End-for-percent-btn-click------->
 
 <style>
-#review_rques_blk .answer-section {
-    margin-top: 0px !important;
-    position: absolute;
-    overflow-x: hidden;
-    bottom: 0px;
-    width: 98%;
-    border-radius: 40px;
-}
+    #review_rques_blk .answer-section {
+        margin-top: 0px !important;
+        position: absolute;
+        overflow-x: hidden;
+        bottom: 0px;
+        width: 98%;
+        border-radius: 40px;
+    }
 
-.expandbtn {
-    display: block;
-}
-
-
-.test-review-right .bg-white {
-    background-color: red;
-    position: relative;
-}
-
-.test-review-right .review-qus {
-    background-color: #ffffff;
-}
-
-.add_btn_new {
-    justify-content: end;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-.review_list_expand_btn_box img,
-.expand_button img {
-    width: 34px;
-    cursor: pointer;
-}
-
-.expand_bnt1 svg,
-.expandbtn svg,
-.collapsebtn svg,
-.expandbtn1 svg,
-.collapsebtn1 svg {
-    width: 37px !important;
-    height: 37px !important;
-    cursor: pointer;
-}
-
-.expand_bnt1 svg {
-    margin-top: -7px;
-}
-
-#review_rques_blk .answer-section {
-    height: 250px;
-}
-
-.review_box_holder  .d-flex.reviewBox2.review_heading1 {
-    padding-top:0px;
-}
-
-.review_box_holder{
-    border-bottom-left-radius: 56px;
-    border-bottom-right-radius: 56px;
-}
-.rview-quses li::-webkit-scrollbar {
-    height: 6px;
-}
-
-.review_heading{
-    font-size:18px;
-    margin: 0px;
-}
-span.subtitle.padding_26 {
-    white-space: nowrap;
-    width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-}
-
-.review_heading1 .heading{
-    display: flex;
-    align-items: center;
-}
+    .expandbtn {
+        display: block;
+    }
 
 
+    .test-review-right .bg-white {
+        background-color: red;
+        position: relative;
+    }
+
+    .test-review-right .review-qus {
+        background-color: #ffffff;
+    }
+
+    .add_btn_new {
+        justify-content: end;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    .review_list_expand_btn_box img,
+    .expand_button img {
+        width: 34px;
+        cursor: pointer;
+    }
+
+    .expand_bnt1 svg,
+    .expandbtn svg,
+    .collapsebtn svg,
+    .expandbtn1 svg,
+    .collapsebtn1 svg {
+        width: 37px !important;
+        height: 37px !important;
+        cursor: pointer;
+    }
+
+    .expand_bnt1 svg {
+        margin-top: -7px;
+    }
+
+    #review_rques_blk .answer-section {
+        height: 250px;
+    }
+
+    .review_box_holder .d-flex.reviewBox2.review_heading1 {
+        padding-top: 0px;
+    }
+
+    .review_box_holder {
+        border-bottom-left-radius: 56px;
+        border-bottom-right-radius: 56px;
+    }
+
+    .rview-quses li::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .review_heading {
+        font-size: 18px;
+        margin: 0px;
+    }
+
+    span.subtitle.padding_26 {
+        white-space: nowrap;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+    }
+
+    .review_heading1 .heading {
+        display: flex;
+        align-items: center;
+    }
 </style>
 
 

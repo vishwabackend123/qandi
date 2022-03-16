@@ -157,12 +157,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         </div>
     </div>
     <div class="review_expand">
-        <div class='percent_btn'>{{$question_data->accuracy}}%</div>
+        <div class='percent_btn'>{{(isset($question_data->accuracy) && !empty($question_data->accuracy))? $question_data->accuracy. '%':'View Details'}}</div>
         <div class='expand_block'>
             <div class="first_screen">
+                @if(isset($question_data->accuracy) && !empty($question_data->accuracy))
                 <div class="persent_std">
                     <span class="no-of-persent">{{$question_data->accuracy}}%</span><span class="attend">of the people got this question right</span>
                 </div>
+                @endif
                 <div class="propt_text">To answer this you need to have</div>
                 <div class="attemp_box row mt-0">
                     <div class="sub_att_1 col-md-6">
@@ -189,7 +191,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");
     $("#myTab .class_" + subject_id).addClass("active");
-</script> 
+</script>
 
 
 <style>
@@ -219,7 +221,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
     });
 </script>
 <!-----End_Left-Review_height_calculation------->
- 
+
 
 <!-----Start-for-review_height-click------->
 <script>
@@ -232,7 +234,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $('.question-block').css('width', question_block_width);
         $('.answer-section').css('width', question_block_width);
         var question_block_height = $(".question-block").outerHeight();
-        var question_block_height_cal = question_block_height -10 + "px";
+        var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
 
 
@@ -252,7 +254,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             var finalheight = customheight - 30 + "px";
             $('.answer-section').css('height', finalheight);
 
-            
+
         });
 
     });
@@ -264,9 +266,9 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         $('.answer-section').css('height', div_height1);
         $('.question-block').css('height', div_height1);
         var question_block_height = $(".question-block").outerHeight();
-        var question_block_height_cal = question_block_height -10 + "px";
+        var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
-        
+
 
     });
 </script>
