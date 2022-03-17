@@ -16,6 +16,21 @@ button {
     text-decoration: none;
 }
 
+#sharefrnd .modal-header .btn-close:focus{box-shadow:none;}
+.cust-gallery.dashGallery .swiper-button-next:after, .cust-gallery.dashGallery .swiper-button-prev:after{font-size: 22px;}
+.cust-gallery.dashGallery .swiper-button-prev , .cust-gallery.dashGallery .swiper-button-next{
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+}
+.cust-gallery.dashGallery .swiper-button-prev{left:0;}
+.cust-gallery.dashGallery .swiper-button-prev.swiper-button-disabled, 
+.cust-gallery.dashGallery .swiper-button-next.swiper-button-disabled{ 
+    /* background-color: rgba(0,0,0,0.4);opacity:1; */
+    display: none;
+}
 #review_rques_blk .percent_btn{white-space: nowrap;width: 140px;text-align: center;padding: 10px 10px;}
 .bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong{font-size:16px;}
 .overllanaly .shadow-lg#f-Numbr-sectin {
