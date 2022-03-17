@@ -26,7 +26,10 @@ button {
 }
 .cust-gallery.dashGallery .swiper-button-prev{left:0;}
 .cust-gallery.dashGallery .swiper-button-prev.swiper-button-disabled, 
-.cust-gallery.dashGallery .swiper-button-next.swiper-button-disabled{ background-color: rgba(0,0,0,0.4);opacity:1;}
+.cust-gallery.dashGallery .swiper-button-next.swiper-button-disabled{ 
+    /* background-color: rgba(0,0,0,0.4);opacity:1; */
+    display: none;
+}
 #review_rques_blk .percent_btn{white-space: nowrap;width: 140px;text-align: center;padding: 10px 10px;}
 .bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong{font-size:16px;}
 .overllanaly .shadow-lg#f-Numbr-sectin {
