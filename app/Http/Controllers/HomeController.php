@@ -61,16 +61,17 @@ class HomeController extends Controller
             }
 
             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
+            $trial_expired_yn = (isset($preferences->trial_expired_yn) && !empty($preferences->trial_expired_yn)) ? $preferences->trial_expired_yn : '';
             $today_date = Carbon::now();
 
             $expiry_date = (isset($preferences->subscription_expiry_date) && !empty($preferences->subscription_expiry_date)) ? $preferences->subscription_expiry_date : '';
 
-            $data_difference = $today_date->diffInDays($expiry_date, false);
+            $date_difference = $today_date->diffInDays($expiry_date, false);
 
-            if ($data_difference > 0) {
+            if ($date_difference > 0) {
                 //not expired
                 $suscription_status = 2;
-            } elseif ($data_difference < 0) {
+            } elseif ($date_difference < 0) {
                 //expired
                 $suscription_status = 0;
             } else {
@@ -129,29 +130,6 @@ class HomeController extends Controller
                 }
             }
 
-            /* $previous_score_per = $corrent_score_per = $diff_score_per = 0;
-            if (isset($scoreData) && !empty($scoreData))
-            {
-
-                //$corrent_score_per = isset($scoreData[0]['result_percentage']) ? $scoreData[0]['result_percentage'] : 0;
-                $previous_score_per = isset($scoreData[1]['result_percentage']) ? $scoreData[1]['result_percentage'] : 0;
-                $diff_score_per = $corrent_score_per - $previous_score_per;
-            }
-            
-            if ($diff_score_per >= 0)
-            {
-                $score = isset($previous_score_per) ? $previous_score_per : 0;
-                $progress = isset($diff_score_per) ? $diff_score_per : 0;
-                $inprogress = 0;
-                $others = 100 - ($score + $progress);
-            }
-            else
-            {
-                $score = isset($corrent_score_per) ? $corrent_score_per : 0;
-                $inprogress = isset($diff_score_per) ? $diff_score_per : 0;
-                $progress = 0;
-                $others = 100 - ($score + $progress);
-            } */
 
             $curl = curl_init();
             $api_URL = env('API_URL');
@@ -276,7 +254,7 @@ class HomeController extends Controller
             $progress =  0;
             $inprogress = 0;
             $others = 100 - ($score);
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat'));
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
