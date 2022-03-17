@@ -634,6 +634,28 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 
+<!--------- Modal trial-box------>
+<div class="modal fade custommodal" id="trialbox">
+    <div class="modal-dialog modal-dialog-centered trialbox">
+        <div class="modal-content rounded-0 bg-light p-5">
+            <div class="modal-body text-center p-0">
+                <p class="pb-5 mt-4 m-0">Your trial expires in <span>12 days</span> <br>Subscribe now!</p>
+                <div class="text-center mb-4">
+                    <button type="submit" class="btn btn-danger px-5 col-lg-7" data-bs-dismiss="modal"> Get Subscription</button>
+                </div>
+                <a href="javascript:void(0);">Do it later</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------->
+
+<script>
+  $(window).on('load', function() {
+        $('#trialbox').modal('show');
+    });
+</script>
+
 <!--------- Graph Expand ------>
 <div class="modal fade" id="graphExpand" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 100%; max-height: 100%;margin: 1.75rem 20px">
@@ -1138,5 +1160,6 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
         $('.progressChartExpend').highcharts(json);
     });
 </script>
+
 
 @endsection

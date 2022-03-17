@@ -8533,5 +8533,36 @@ input#linkInput {
 #test_instruction h1 {
     font-size: 30px;
 }
-
+    .custommodal{
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: none;
+    }
+    .trialbox {
+    max-width: 600px;
+}
+.trialbox p {
+    font-size: 30px;
+    text-align: center;
+    color: #2c3348;
+    font-weight: 500;
+}
+    .trialbox p span{
+    color:#00baff;
+    font-weight: 600;
+}
+    .trialbox .btn-danger {
+    height: 60px;
+    border-radius: 20px;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+   -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
+    font-size: 16px;
+    border: none;
+    line-height: 52px;
+}
+    .trialbox a{
+    color: #00baff;
+    font-size: 16px;
+    }
 /*************************/
