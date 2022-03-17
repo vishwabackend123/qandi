@@ -254,3 +254,6 @@ Route::get('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 
 
 /* Topic analytics route  */
 Route::any('/topic-analytics/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'topicAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');
+
+/* discount code  */
+Route::any('/ajax_validate_coupon_code', [App\Http\Controllers\SubscriptionController::class, 'ajaxValidateCouponCode'])->middleware('auth');

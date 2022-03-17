@@ -413,4 +413,51 @@ class SubscriptionController extends Controller
             Log::info($e->getMessage());
         }
     }
+    public function ajaxValidateCouponCode(Request $request)
+    {
+        try {
+            $rquestData = $request->all();
+            $couponCode = $rquestData['couponCode'];
+            $curl = curl_init();
+            $curl1 = curl_init();
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/coupon/' . $couponCode;
+
+            curl_setopt_array($curl, array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            $aResponse = json_decode($response_json);
+            $response_status = isset($aResponse->success) ? $aResponse->success : false;
+            if ($response_status) {
+                 return response()->json([
+                    'status' => true,
+                    'data' => $aResponse->response,
+                    'message' => 'Coupon code applied successfully.',
+                    ]);
+            }else
+            {
+                return response()->json([
+                    'status' => false,
+                    'data' => [],
+                    'message' => $aResponse->error,
+                    ]);
+            }      
+        } catch(\Exception $e) {
+            
+        }
+    }
 }
