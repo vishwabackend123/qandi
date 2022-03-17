@@ -474,6 +474,8 @@ class StudentSignInController extends Controller
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-cities/' . $state;
 
+            $curl_url = str_replace(" ", '%20', $curl_url);
+
             $curl = curl_init();
             curl_setopt_array($curl, array(
 
