@@ -30,8 +30,8 @@ $userData = Session::get('user_data');
         <div class="px-5  pt-3 border-bg-left border-bg-right"><span class="red-dots1"></span>Shipping</div>
         <div class="px-5  pt-3 border-bg-left"><span class="red-dots1"></span>Payments</div>
     </div>
-    <div class="Fullsub-amt-subN subs-box p-3 col-6 mt-5">
-        <div class="d-flex align-items-center">
+    <div class="Fullsub-amt-subN subs-box p-4 col-6 mt-5 totalpaymentbox">
+        <div class="d-flex align-items-center justify-content-between">
             <div class="col-4">
                 <h3>{{$subscriptions_data->subscription_name}}</h3>
                 <!-- <span class="d-block">Entrance Prep2022</span> -->
@@ -42,21 +42,43 @@ $userData = Session::get('user_data');
                     <option>Full Subscription</option>
                 </select> -->
             </div>
+<!--
             <div class="mx-2 col-1">
-                <!-- <select class="form-select border-0 border-bottom rounded-0">
+                 <select class="form-select border-0 border-bottom rounded-0">
                     <option>1</option>
-                </select> -->
+                </select>
             </div>
-            <div class="col-3">
-                <h4 class="text-success fs-5 m-0">₹ {{$price}}</h4>
+-->
+            <div class="col-4">
+                <h4 class="text-success fs-5 m-0 text-right">₹ {{$price}}</h4>
             </div>
         </div>
+        <div class="d-flex align-items-center justify-content-between mt-3">
+        <p class="p-0 m-0 coupontext">Apply Coupon</p>
+       <button type="button" class="btn applybtn col-lg-2 col-md-3" data-toggle="modal" data-target="couponbox"> Apply</button>   
+        </div>
     </div>
-    <div class="TotalAmount mt-5 col-6 bg-danger p-3 d-flex align-items-center">
-        <span class="fs-5 text-white">Total</span>
-        <span class="fs-5 text-white ms-auto">₹ {{$price}}</span>
+    <div class="TotalAmount mt-5 col-md-6 col-12 bg-danger p-4">
+        <div>
+        <div class="d-flex  align-items-center justify-content-between pb-2">
+        <span class="fs-5 text-white">Total Mrp</span>
+        <span class="fs-5 text-white ms-auto fw-normal">₹ {{$price}}</span>
+       </div>
+         <div class="d-flex align-items-center justify-content-between pb-2">
+         <span class="fs-5 text-white">Discount  Mrp</span>
+        <span class="fs-5 fw-normal text-white ms-auto">-₹ 1000</span>
+        </div>
+         <div class="d-flex align-items-center justify-content-between pb-2 border-bottom">
+         <span class="fs-5 text-white">Coupon Discount </span>
+        <span class="fs-5 fw-normal text-white ms-auto position-relative">-₹ 100</span>
+        </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between pt-2">
+         <span class="fs-5 text-white fw-bold">Total Amout</span>
+        <span class="fs-5 fw-bold text-white ms-auto">8900</span>
+        </div>
     </div>
-    <div class="d-flex align-items-center justify-content-between mt-5">
+    <div class="d-flex align-items-center justify-content-between mt-5 mb-5">
         <form action="{{ route('razorpay.payment.store') }}" method="POST">
             @csrf
             <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="{{ env('RAZORPAY_KEY') }}" data-amount="{{$price * 100}}" data-currency="INR" data-order_id="{{$razorpayOrderId}}" data-buttontext="" data-name="{{$subscriptions_data->subscription_name}}" data-description="{{Str::limit($subscriptions_data->subscription_details, 250)}}" data-prefill.name="{{$userData->user_name}}" data-prefill.contact="{{$userData->mobile}}" data-prefill.email="{{$userData->email}}" data-notes.exam_id="{{$subscriptions_data->class_exam_id}}" data-notes.subscription_id="{{$subscriptions_data->id}}" data-notes.month="12" data-theme.color="#d71921" data-button.hide="true">
@@ -68,6 +90,22 @@ $userData = Session::get('user_data');
 
     </div>
 </section>
+
+<!--------- Modal trial-box------>
+<div class="modal fade custommodal" id="couponbox">
+    <div class="modal-dialog modal-dialog-centered trialbox">
+        <div class="modal-content rounded-0 bg-light p-5">
+            <div class="modal-body text-center p-0">
+                <p class="pb-4 mt-4 m-0">Apply Coupon</p>
+                <input class="form-control bg-light mb-4" type="texr" placeholder="Enter Coupon Code">
+                <div class="text-center mb-4">
+                    <button type="submit" class="btn btn-danger px-5 col-lg-6 col-sm-12" data-bs-dismiss="modal">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------->
 
 
 
@@ -83,6 +121,11 @@ $userData = Session::get('user_data');
 <script type="text/javascript">
     $('.scroll-div').slimscroll({
         height: '40vh'
+    });
+</script>
+<script>
+  $(window).on('click', function() {
+        $('#couponbox').modal('show');
     });
 </script>
 
