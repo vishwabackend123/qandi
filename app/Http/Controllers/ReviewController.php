@@ -220,9 +220,7 @@ class ReviewController extends Controller
             } else {
                 return redirect()->route('dashboard');
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -352,9 +350,7 @@ class ReviewController extends Controller
 
 
             return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -478,9 +474,7 @@ class ReviewController extends Controller
 
 
             return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -558,9 +552,7 @@ class ReviewController extends Controller
 
 
             return view('afterlogin.ExamCustom.review_question_filter', compact('all_question_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
