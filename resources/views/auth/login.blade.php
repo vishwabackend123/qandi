@@ -55,9 +55,14 @@
 <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
 <script>
+var input = document.getElementById("mobile_num");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    sentotplogin();
+  }
+});
     $('#resendOtp_link').hide();
-
-
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
