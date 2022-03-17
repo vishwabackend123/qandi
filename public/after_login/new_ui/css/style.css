@@ -16,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+#sharefrnd .modal-header .btn-close:focus{box-shadow:none;}
 .cust-gallery.dashGallery .swiper-button-next:after, .cust-gallery.dashGallery .swiper-button-prev:after{font-size: 22px;}
 .cust-gallery.dashGallery .swiper-button-prev , .cust-gallery.dashGallery .swiper-button-next{
     background-color: rgba(0,0,0,0.7);
