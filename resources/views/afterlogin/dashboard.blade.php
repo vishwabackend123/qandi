@@ -561,6 +561,8 @@ $userData = Session::get('user_data');
                         @endif
                     </div>
 
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
                 </div>
                 <!--swiper mySwiper-->
@@ -876,6 +878,7 @@ $userData = Session::get('user_data');
         }
     </script>
 
+
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -888,6 +891,10 @@ $userData = Session::get('user_data');
                 el: ".swiper-pagination",
                 clickable: false,
 
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
             breakpoints: {
                 1920: {
