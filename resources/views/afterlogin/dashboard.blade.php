@@ -560,7 +560,9 @@ $userData = Session::get('user_data');
                         @endforeach
                         @endif
                     </div>
-
+                    
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
                 </div>
                 <!--swiper mySwiper-->
@@ -862,6 +864,10 @@ $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
             el: ".swiper-pagination",
             clickable: false,
 
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
         breakpoints: {
             1920: {
