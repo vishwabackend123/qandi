@@ -80,8 +80,14 @@ $userData = Session::get('user_data');
 
                     <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Chapters Filter">
                       <!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
-                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
-                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow">
+                      <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
+                      <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow"> -->
+
+                      <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4860" width="24" height="24" viewBox="0 0 24 24">
+                        <path data-name="Path 11531" d="M0 0h24v24H0z" style="fill:none"/>
+                        <path data-name="Path 11532" d="m3 9 4-4 4 4M7 5v14" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                        <path data-name="Path 11533" d="m21 15-4 4-4-4m4 4V5" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                    </svg>
                     </button>
 
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
@@ -133,21 +139,59 @@ $userData = Session::get('user_data');
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
                           <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl">
-                        </button>
+                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl"> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4860" width="24" height="24" viewBox="0 0 24 24">
+                              <path data-name="Path 11531" d="M0 0h24v24H0z" style="fill:none"/>
+                              <path data-name="Path 11532" d="m3 9 4-4 4 4M7 5v14" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 11533" d="m21 15-4 4-4-4m4 4V5" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                          </svg>
+                          </button>
                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);">
-                              <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}">
+                              <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}"> -->
+                              <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                                <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                            </svg>
                               Low Proficiency</a></li>
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_desc')" href="javascript:void(0);">
-                              <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}">
+                              <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}"> -->
+
+                              <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                                  <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                                  <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              </svg>
                               High Proficiency</a></li>
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','priority')" href="javascript:void(0);">
-                              <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}">
+                              <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}"> -->
+                              <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                                  <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                                  <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              </svg>
                               Order by Priority</a></li>
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','sequence')" href="javascript:void(0);">
-                              <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}">
+                              <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}"> -->
+                              <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                                  <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                                  <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                  <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              </svg>
                               Order by Sequence</a></li>
 
                         </ul>
