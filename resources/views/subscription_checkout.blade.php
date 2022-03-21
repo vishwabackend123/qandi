@@ -46,29 +46,47 @@ $userData = Session::get('user_data');
             </div>
 -->
             <div class="col-4">
+                @if($discount_code)
+                <h4 class="text-success fs-5 m-0 text-right">₹ {{$price + $discounted_price}}</h4>
+                @else
                 <h4 class="text-success fs-5 m-0 text-right">₹ {{$price}}</h4>
+                @endif
             </div>
         </div>
         <div class="d-flex align-items-center justify-content-between mt-3">
             <p class="p-0 m-0 coupontext">Apply Coupon</p>
-            <button type="button" class="btn applybtn col-lg-2 col-md-3 apply_coupan" data-toggle="modal" data-target="couponbox"> Apply</button>
+            @if($discount_code)
+             <form action="{{route('checkout')}}" if="checkout_{{$subscript_id}}" method="post" >
+                @csrf
+                <input type="hidden" name="exam_id" value="{{$exam_id}}">
+                <input type="hidden" name="subscript_id" value="{{$subscript_id}}">
+                <input type="hidden" name="exam_period" value="12">
+                <input type="hidden" name="period_unit" value="month">
+                <input type="hidden" name="exam_price" value="{{$price + $discounted_price}}">
+                <button type="submit" class="btn applybtn col-lg-2 col-md-3 remove_coupan" style="width:80px">Remove </button>
+            </form>
+            @else
+            <button type="button" class="btn applybtn col-lg-2 col-md-3 apply_coupan" data-toggle="modal" data-target="couponbox"> Apply </button>
+            @endif
         </div>
     </div>
     <div class="TotalAmount mt-5 col-md-6 col-12 bg-danger p-4">
+        @if($discount_code)
         <div class="discount_div">
             <div class="d-flex  align-items-center justify-content-between pb-2">
                 <span class="fs-5 text-white">Amout</span>
-                <span class="fs-5 text-white ms-auto fw-normal">₹ {{$price}}</span>
+                <span class="fs-5 text-white ms-auto fw-normal">₹ {{$price + $discounted_price}}</span>
             </div>
             <div class="d-flex align-items-center justify-content-between pb-2">
                 <span class="fs-5 text-white">Discount</span>
-                <span class="fs-5 fw-normal text-white ms-auto discount_span">-₹ 1000</span>
+                <span class="fs-5 fw-normal text-white ms-auto discount_span">-₹ {{$discounted_price}}</span>
             </div>
             <div class="d-flex align-items-center justify-content-between pb-2 border-bottom">
                 <span class="fs-5 text-white">Coupon Discount </span>
-                <span class="fs-5 fw-normal text-white ms-auto position-relative coupon_discount">% 10</span>
+                <span class="fs-5 fw-normal text-white ms-auto position-relative coupon_discount">% {{$coupon_discount}}</span>
             </div>
         </div>
+        @endif
         <div class="d-flex align-items-center justify-content-between pt-2">
             <span class="fs-5 text-white fw-bold">Total Amout</span>
             <span class="fs-5 fw-bold text-white ms-auto total_amount_span">{{$price}}</span>
@@ -89,14 +107,22 @@ $userData = Session::get('user_data');
 <div class="modal fade custommodal" id="couponbox">
     <div class="modal-dialog modal-dialog-centered trialbox">
         <div class="modal-content rounded-0 bg-light p-5">
-            <div class="modal-body text-center p-0">
-                <p class="pb-4 mt-4 m-0">Apply Coupon</p>
-                <input class="form-control bg-light mb-4" id="inputcode" type="text" placeholder="Enter Coupon Code">
-                <span style="color: red;" class="error_msg"></span>
-                <div class="text-center mb-4">
-                    <button type="button" class="btn btn-danger px-5 col-lg-6 col-sm-12 validate_coupan" data-bs-dismiss="modal">Apply</button>
+            <form action="{{route('checkout')}}" if="checkout_{{$subscript_id}}" method="post" id="formId">
+                @csrf
+                <input type="hidden" name="exam_id" value="{{$exam_id}}">
+                <input type="hidden" name="subscript_id" value="{{$subscript_id}}">
+                <input type="hidden" name="exam_period" value="12">
+                <input type="hidden" name="period_unit" value="month">
+                <input type="hidden" name="exam_price" value="{{$price}}">
+                <div class="modal-body text-center p-0">
+                    <p class="pb-4 mt-4 m-0">Apply Coupon</p>
+                    <input class="form-control bg-light mb-4" name="discount_code" id="inputcode" type="text" placeholder="Enter Coupon Code">
+                    <span style="color: red;" class="error_msg"></span>
+                    <div class="text-center mb-4">
+                        <button type="submit" class="btn btn-danger px-5 col-lg-6 col-sm-12 validate_coupan" data-bs-dismiss="modal">Apply</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -108,11 +134,11 @@ $userData = Session::get('user_data');
 <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 <script>
 $(document).ready(function() {
-    $('.discount_div').hide();
     $('.apply_coupan').on('click', function() {
         $('#couponbox').modal('show');
     });
-    $('.validate_coupan').click(function() {
+    $('.validate_coupan').click(function(e) {
+        e.preventDefault();
         var inputvalue = $('#inputcode').val();
         var price = '<?php echo $price?>';
         if (inputvalue) {
@@ -126,31 +152,28 @@ $(document).ready(function() {
                 beforeSend: function() {},
                 success: function(response_data) {
                     if (response_data.status == true) {
-                        var discount_amoun = (price * response_data.data.coupon_discount) / 100;
-                        var total_amount = price - discount_amoun;
-                        $('.discount_span').text('-₹ ' + discount_amoun);
-                        $('.coupon_discount').text('%  ' + response_data.data.coupon_discount);
-                        $('.total_amount_span').text(total_amount);
-                        $("script").attr("data-amount", total_amount)
-                        $('#couponbox').modal('hide');
-                        $('.discount_div').show();
+                        $("#formId").submit();
                     } else {
+                        e.preventDefault();
                         $('.error_msg').text(response_data.message);
                         $('.error_msg').show();
                         setTimeout(function() {
                             $('.error_msg').hide();
                         }, 3000);
+                        return false;
                     }
 
                 },
-                error: function(data, errorThrown) {}
+
             });
+
         } else {
             $('.error_msg').text("Please enter valid code");
             $('.error_msg').show();
             setTimeout(function() {
                 $('.error_msg').hide();
             }, 3000);
+            return false;
         }
     })
 });
