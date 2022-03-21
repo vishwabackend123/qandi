@@ -115,7 +115,8 @@
                         }
 
                         .dd {
-                            stroke: #221f20;
+                            <!-- stroke: #221f20; -->
+                            stroke: #38d430;
                             stroke-linecap: round;
                             stroke-linejoin: round;
                             stroke-width: 1.5px;
@@ -241,7 +242,9 @@
                         }
 
                         .bbbb {
-                            stroke: #7b797a
+                            stroke: #7b797a;
+                            stroke: #38d430;
+                            
                         }
                     </style>
                 </defs>
