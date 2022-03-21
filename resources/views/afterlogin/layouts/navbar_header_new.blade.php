@@ -714,7 +714,14 @@
                         <p>Class - {{$user_stage}}, Preparing
                             for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
-                        <button class="edit-btn-show" id="EdiTbtnnn"><span><img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""></span>EDIT</button>
+                        <button class="edit-btn-show" id="EdiTbtnnn"><span>
+                            <!--<img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5034" width="24" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 2668" d="M0 0h24v24H0z" style="fill:none"/>
+                                <path data-name="Path 2669" d="M4 20h4L18.5 9.5a2.828 2.828 0 0 0-4-4L4 16v4" style="stroke:#fff;stroke-linecap:square;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Line 460" transform="translate(13.5 6.5)" style="stroke-linejoin:round;stroke:#fff;stroke-linecap:square;stroke-width:1.5px;fill:none" d="m0 0 4 4"/>
+                            </svg>
+                    </span>EDIT</button>
                     </div>
                     <!-- <div class="achievement">
                             <h4>Achievements</h4>
