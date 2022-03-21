@@ -241,7 +241,6 @@
                         .aaaa {
                             fill: #fff;
                         }
-
                         .bbbb {
                             <!-- stroke: #4cb9f9; -->
                             stroke:#38d430
