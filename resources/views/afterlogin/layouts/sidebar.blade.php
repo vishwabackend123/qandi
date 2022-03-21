@@ -117,6 +117,7 @@
                         .dd {
                             <!-- stroke: #221f20; -->
                             stroke: #38d430;
+                            
                             stroke-linecap: round;
                             stroke-linejoin: round;
                             stroke-width: 1.5px;

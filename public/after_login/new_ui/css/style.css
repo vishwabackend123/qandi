@@ -1377,6 +1377,7 @@ span.notification a:hover .cls-4 {
 .dash-sidebar .dash-nav-link a:hover .c,
 .dash-sidebar .dash-nav-link a:hover .bbbb {
     /* stroke: #00bdff !important; */
+    
     stroke: #38d430 !important;
     
   
@@ -3931,7 +3932,7 @@ div#sub-planner {
 }
 
 .profile-show button span {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .profile-show button span img {
