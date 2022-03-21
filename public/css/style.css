@@ -796,5 +796,15 @@ button#goto-otp-btn:hover {
 @media(max-width:1280px) and (max-height:700px) {
 .outer-logo img{width:70%;}
 .login_screen{margin: 120px auto 0;}
-.subject_screen{padding: 29px 47px!important;}
+.subject_screen{padding: 29px 47px!important;margin-bottom: 50px;}
+.login-bg-img{overflow-y: auto;}
+.login-bg-img::-webkit-scrollbar {
+    width: 5px;
+}
+.login-bg-img::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+.login-bg-img::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+}
 }
