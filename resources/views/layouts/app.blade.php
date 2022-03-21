@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
-  <script async src=https://www.googletagmanager.com/gtag/js?id=G-Z8BHJH4PZ8></script>
+  <script async src=https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY></script>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -42,7 +42,7 @@
 
 
 
-    gtag('config', 'G-Z8BHJH4PZ8');
+    gtag('config', 'G-5M3C3F04YY');
   </script>
 </head>
 
