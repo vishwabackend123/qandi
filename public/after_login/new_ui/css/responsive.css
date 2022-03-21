@@ -333,13 +333,11 @@
 
 
     button.arrow.prev-arow {
-        left: 3% !important;
-        top: 25% !important;
+        left: 3%;
     }
 
     button.arrow.next-arow {
-        right: 26.8% !important;
-        top: 25% !important;
+        right: 27%;
     }
 
     .time_taken_css {
@@ -364,10 +362,6 @@
         padding-left: 45px;
         font-family: Manrope;
         font-size: 14px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 70px;
     }
 
     /*.examSect .rightSect .number-block {
