@@ -149,7 +149,18 @@ $questtype='radio';
                                             <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qKey)?'disabled':''}}" {{empty($next_qKey)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qKey}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
                                         </span>
                                         <!-- Next and previous button -->
+                                        <!-- Static data  for demo -->
+                                        @if(env('ADAPTIVE_DEMO') == 'true')
+                                        <sapn class="question_difficulty_tag small">
+                                            <span class="small me-2">Subject Id: {!! $subject_id !!}</span> |
+                                            <span class="small mx-2">Chapter Id: {!! $chapter_id !!}</span> |
+                                            <span class="small mx-2">Topic Id: {!! $topic_id !!}</span> |
+                                            <span class="small mx-2">Question Id: {!! $activeq_id !!}</span> |
+                                            <span class="small ms-2">Difficulty Level: {!! $difficulty_level !!}</span>
+                                        </sapn>
+                                        @endif
 
+                                        <!-- Static data  for demo -->
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
@@ -176,6 +187,39 @@ $questtype='radio';
                                             @endforeach
                                             @endif
 
+                                            @if(env('ADAPTIVE_DEMO') == 'true')
+                                            <!-- --------- correct answer for demo---------- -->
+                                            <style>
+                                                #demo_ans p {
+                                                    display: inline
+                                                }
+                                            </style>
+                                            <span id="demo_ans" class="d-flex">
+                                                <span>Correct Answers :</span>
+                                                @php $no_ans=0; @endphp
+                                                @if(isset($correct_answers) && !empty($correct_answers))
+
+                                                @foreach($correct_answers as $anskey=>$ans_value)
+                                                @php
+                                                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+
+                                                $dom2 = new DOMDocument();
+                                                @$dom2->loadHTML($ans_value);
+                                                $anchorAns = $dom2->getElementsByTagName('img')->item(0);
+                                                $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
+                                                $anslatex = "https://math.now.sh?from=".$anstext;
+                                                $view_ans='<img src="'.$anslatex.'" />' ;
+                                                @endphp
+                                                <label><span class="ms-2"> {{$alpha[$anskey-1]}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
+
+
+                                                @php $no_ans++; @endphp
+                                                @endforeach
+                                                @endif
+
+                                            </span>
+                                            <!-- --------- correct answer for demo---------- -->
+                                            @endif
                                         </div>
 
                                     </div>
