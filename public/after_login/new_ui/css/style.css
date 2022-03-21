@@ -2504,14 +2504,14 @@ p.text-end.text-danger.mt-1 {
 button.arrow.prev-arow {
     position: fixed;
     left: 8%;
-    top: 27%;
+    top: 40%;
     z-index: 99;
 }
 
 button.arrow.next-arow {
     right: 31%;
     position: fixed;
-    top: 27%;
+    top: 40%;
     z-index: 99;
     opacity: 1;
 }
