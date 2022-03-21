@@ -643,7 +643,7 @@ $userData = Session::get('user_data');
             <div class="modal-body text-center p-0">
                 <p class="pb-5 mt-4 m-0">Your trial expires in <span>{{$date_difference}} days</span> <br>Subscribe now!</p>
                 <div class="text-center mb-4">
-                    <a href="{{route('subscriptions')}}" class="btn btn-danger text-white px-5 col-lg-7" data-bs-dismiss="modal"> Get Subscription</a>
+                    <a href="{{route('subscriptions')}}" class="btn btn-danger text-white px-5 col-lg-7"> Get Subscription</a>
                 </div>
                 <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-dismiss="modal">Do it later</a>
             </div>
