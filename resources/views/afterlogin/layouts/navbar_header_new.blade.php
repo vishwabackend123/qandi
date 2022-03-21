@@ -412,7 +412,7 @@
 
                         </div>
                         <div class="text-center">
-                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-31 " title="Save Planner"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}"> Save
+                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-31 " title="Save Planner" id="saveplannerbutton"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}" > Save
                             </button>
                         </div>
                     </form>
