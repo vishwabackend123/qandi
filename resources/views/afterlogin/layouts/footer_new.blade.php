@@ -940,6 +940,7 @@
             $('#referEmails').val('');
         });
         /*Refer Friend*/
+
     });
 </script>
 <script>
@@ -1128,6 +1129,24 @@
         }
         var selected_count = $('#planner_sub_' + subject_id + ' div').length;
         $('#count_spam_' + subject_id).text("(" + selected_count + ")");
+
+        var limitrange = $("#customRange").val();
+        var chapterscount = $('input[name="chapters[]"]').length;
+        if (limitrange == '0') {
+            $('#saveplannerbutton').addClass('disabled');  
+        }
+        else if (limitrange <= 0) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if (chapterscount < limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if(limitrange == chapterscount){
+            $('#saveplannerbutton').removeClass('disabled');
+        }
     }
 
     $('.chaptbox').on('click', '.chapter_remove', function(e) {
@@ -1146,6 +1165,23 @@
         }
         var selected_count = $('#planner_sub_' + subject_id + ' div').length;
         $('#count_spam_' + subject_id).text("(" + selected_count + ")");
+        var limitrange = $("#customRange").val();
+        var chapterscount = $('input[name="chapters[]"]').length;
+        if (limitrange == '0') {
+            $('#saveplannerbutton').addClass('disabled');  
+        }
+        else if (limitrange <= 0) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if (chapterscount < limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if(limitrange == chapterscount){
+            $('#saveplannerbutton').removeClass('disabled');
+        }
     });
     $('#exportAnalytics').on('shown.bs.modal', function() {
         $('#specificSizeInputGroupUsername').val("");
@@ -1670,5 +1706,24 @@
     });
     $("#sharefrnd .btn-close").click(function(){
         $("body").removeClass("refer-modal-open")
+    });
+    $("#customRange").change(function(){
+        var limit = $(this).val();
+        var chapters = $('input[name="chapters[]"]').length;
+        if (limit == '0') {
+            $('#saveplannerbutton').addClass('disabled');  
+        }
+        else if (limit <= 0) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if (chapters < limit) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if (chapters > limit) {
+            $('#saveplannerbutton').addClass('disabled');
+        }
+        else if(limit == chapters){
+            $('#saveplannerbutton').removeClass('disabled');
+        }
     });
 </script>
