@@ -380,8 +380,8 @@
 @php
 $lastscore = $progress = 0;
 
-$preSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
-$currSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+$preSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
+$currSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
 $lastscore = ($currSocre >= $preSocre) ? $preSocre : $currSocre;
 $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
 
