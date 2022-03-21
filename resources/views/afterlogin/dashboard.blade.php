@@ -88,7 +88,7 @@ $userData = Session::get('user_data');
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
-<div class="main-wrapper dashboard">
+<div class="main-wrapper dashboard wrapper-dashboard">
 
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')

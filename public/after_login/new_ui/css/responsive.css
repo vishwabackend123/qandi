@@ -77,7 +77,7 @@
 @media(min-width:1316px) and (max-width:1440px) {
   .garphlistincom+.garphlistincom{margin-left:8px;}
   .exam-analytics .abrv-graph{padding-right:2px;}
-    .pe-1 .star-ratings-css-bottom span {
+    .pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span{
        
         font-size: 13px;
     }
@@ -249,7 +249,7 @@
         padding: 18px 11px;
     }
 
-    .pe-1 .star-ratings-css-bottom span {
+    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span {
         padding: 0 2px !important;
         font-size: 13px;
     }
