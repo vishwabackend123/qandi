@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif !important;
-    overflow-x: hidden;
 }
 
 a {
@@ -17,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+.wrapper-dashboard{overflow-x: hidden;}
 .cust-gallery  .swiper{overflow: visible;}
 #sharefrnd .modal-header .btn-close:focus{box-shadow:none;}
 .cust-gallery.dashGallery .swiper-button-next:after, .cust-gallery.dashGallery .swiper-button-prev:after{font-size: 22px;}
@@ -3932,7 +3932,7 @@ div#sub-planner {
 }
 
 .profile-show button span {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .profile-show button span img {
@@ -8504,7 +8504,7 @@ input#linkInput {
 }
 
 .dashboard .star-ratings-css-top span {
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .swiper-slide .star-ratings-css-top span {

@@ -562,21 +562,45 @@ $userData = Session::get('user_data');
 </script>
 
 <script>
-  $('.expandTopicCollapse').click(function() {
+    $('.expandTopicCollapse').click(function() {
     $(this).parents('.ClickBack').toggleClass('newelement');
+  });
+  $('.expandTopicCollapse').one( "click", function() {
     var scrollpas=$('.scroll-div').scrollTop();
       var blockpos=$(this).offset().top;
       var scrollblock=$( $(this).attr('href') ).offset().top;
+      
       if( scrollpas>0){
-        $('.scroll-div').animate({
-          scrollTop:scrollblock+scrollpas-blockpos 
-        }, 500);
-      }else{
-        $('.scroll-div').animate({
-          scrollTop:scrollblock-blockpos
-        }, 500);
-      }
+       
+         if(blockpos>400){
+           $('.scroll-div').animate({
+            scrollTop:scrollblock+scrollpas-blockpos + 150
+           }, 500);
+         }else{
+          $('.scroll-div').animate({
+            scrollTop:scrollblock+scrollpas-blockpos 
+          }, 500);
+         };
 
+      }else{
+        if(scrollpas<=0 && blockpos<300 ){
+          $('.scroll-div').animate({
+          scrollTop:scrollblock-blockpos 
+          }, 500);
+        }
+        else if(scrollpas<=0 && blockpos>350){
+          $('.scroll-div').animate({
+          scrollTop:scrollblock-blockpos +50
+          }, 500);
+        }
+        else{
+          $('.scroll-div').animate({
+            scrollTop:scrollblock-blockpos+scrollpas
+          }, 500);
+         };
+      
+      }
+   
   });
 </script>
 
