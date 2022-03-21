@@ -645,7 +645,10 @@ a.export-btn {
 /******* 02-03-2022 Amit-Start ******/
 .dash-sidebar a .b,
 .dash-sidebar a .c {
-    stroke: #4cb9f9 !important;
+    /* stroke: #4cb9f9 !important; */
+    stroke: #38d430 !important;
+  
+
     opacity: 1;
 }
 
@@ -1362,14 +1365,19 @@ span.notification a:hover .cls-4 {
 .dash-sidebar .dash-nav-link a:hover .aa,
 .dash-sidebar .dash-nav-link a:hover .a,
 .dash-sidebar .dash-nav-link a:hover .aaaa {
-    fill: #d0f3ff !important;
+    /* fill: #d0f3ff !important; */
+    fill: #38d4301c !important;
+    
 }
 
 .dash-sidebar .dash-nav-link a:hover .dd,
 .dash-sidebar .dash-nav-link a:hover .b,
 .dash-sidebar .dash-nav-link a:hover .c,
 .dash-sidebar .dash-nav-link a:hover .bbbb {
-    stroke: #00bdff !important;
+    /* stroke: #00bdff !important; */
+    stroke: #38d430 !important;
+    
+  
 }
 
 .dash-nav-link a.mt-auto g#Group_3044 {
@@ -1387,7 +1395,7 @@ span.notification a:hover .cls-4 {
 
 span.notification.notification-icons-active a {
     box-shadow: 0 0 10px 0 rgba(0, 186, 255, 0.2);
-    background: #00baff;
+    background: #38d430;
     border-radius: 16px;
 }
 
@@ -5767,7 +5775,8 @@ p.success-img {
 
 .dash-sidebar a:hover .a,
 .dash-sidebar a.active-navlink .a {
-    fill: #00bdff;
+    /* fill: #00bdff;    */
+     fill: #38d430;
 }
 
 .dash-sidebar a:hover .dd,
@@ -5777,7 +5786,10 @@ p.success-img {
 
 .dash-sidebar a:hover .aa,
 .dash-sidebar a.active-navlink .aa {
-    fill: #00bdff;
+    /* fill: #00bdff; */
+    fill: #38d430;
+    
+
 }
 
 .dash-sidebar a:hover .bb,
@@ -5793,12 +5805,15 @@ p.success-img {
 
 .dash-sidebar a:hover .aaa,
 .dash-sidebar a.active-navlink .aaa {
-    fill: #00bdff;
+    /* fill: #00bdff; */
+
+    fill: #38d430;
 }
 
 .dash-sidebar a:hover .aaaa,
 .dash-sidebar a.active-navlink .aaaa {
-    fill: #00bdff;
+    /* fill: #00bdff; */
+    fill: #38d430;
 }
 
 .dash-sidebar a:hover .bbbb,
