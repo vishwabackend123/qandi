@@ -8274,7 +8274,8 @@ input#linkInput {
 }
 
 .Kn {
-    border: solid 1.5px #65d247;
+    /* border: solid 1.5px #65d247; */
+    border: solid 1.5px #5f4fdd;
     border-radius: 14px !important;
     padding: 5px;
     width: 40px;
@@ -8440,9 +8441,12 @@ input#linkInput {
 /*****end by navdeep 23-02 ********/
 
 .Kn:hover {
-    background: -moz-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    /* background: -moz-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
     background: -webkit-linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
-    background: linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a);
+    background: linear-gradient(135deg, #b8e638, #b8e638 24%, #30aa1a); */
+    background: -moz-linear-gradient(135deg, #5f4fdd, #5f4fdd 24%, #57508b);
+    background: -webkit-linear-gradient(135deg, #5f4fdd, #5f4fdd 24%, #57508b);
+    background: linear-gradient(135deg, #5f4fdd, #5f4fdd 24%, #57508b);
     color: #fff !important;
     border-color: #fff;
 }
