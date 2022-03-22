@@ -545,7 +545,7 @@ $userData = Session::get('user_data');
         },
         yAxis: {
             title: {
-                text: 'Time Spent'
+                text: 'Time Spent (Sec)'
             }
         },
         xAxis: {
@@ -598,7 +598,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken'
+                text: 'Average Time Taken (sec)'
             }
         },
         credits: {
@@ -655,7 +655,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken'
+                text: 'Average Time Taken (sec)'
             }
         },
         credits: {

@@ -75,14 +75,24 @@ $userData = Session::get('user_data');
 <script type="text/javascript">
 $(document).ready(function() {
     $('.saveEdit').addClass('disabled');
-    $('.refund_class').on('blur keyup', function() {
-        if ($("#refund_form").valid()) {
-            console.log("hi");
-            $(".saveEdit").removeClass('disabled');
-        } else {
-            $('.saveEdit').addClass('disabled');
-        }
+    $('.refund_class').keyup(function() {
+        refundformCheck();
     });
+    function refundformCheck() {
+        var empty = false;
+        $('.refund_class').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+        if (empty) {
+            $('.saveEdit').addClass('disabled');
+
+        } else {
+            $('.saveEdit').removeClass('disabled');
+        }
+    }
+
     $.validator.addMethod("regx", function(value, element, regexpr) {
         return regexpr.test(value);
     }, 'Enter valid IFSC code');
