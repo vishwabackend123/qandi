@@ -400,12 +400,12 @@ $userData = Session::get('user_data');
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
-                                            <img style="width:20px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
+                                            <img style="width:42px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
                                         </a>
                                         @else
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle" aria-hidden="true"></i> -->
-                                            <img style="width:20px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
+                                            <img style="width:42px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
                                         </a>
 
                                         @endif
@@ -454,7 +454,7 @@ $userData = Session::get('user_data');
                             <img src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <div>
                                 <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
-                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width:24px;;margin-right:4px;">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 CHEMISTRY
                             </div>
                         </div>
@@ -462,7 +462,7 @@ $userData = Session::get('user_data');
                             <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             <div>
                                 <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
-                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width:24px;;margin-right:4px;">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 PHYSICS
                             </div>
                         </div>
@@ -473,7 +473,7 @@ $userData = Session::get('user_data');
                             </span>
                             <div style="margin-top: -8px;">
                                 <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
-                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width:24px;;margin-right:4px;">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 MORE
                             </div>
                         </div>

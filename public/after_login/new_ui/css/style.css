@@ -16,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+.test-attend a.text-secondary.ms-2 img{margin: -10px -10px -18px -9px;}
 .wrapper-dashboard{overflow-x: hidden;}
 .cust-gallery  .swiper{overflow: visible;}
 #sharefrnd .modal-header .btn-close:focus{box-shadow:none;}
@@ -2442,7 +2443,7 @@ span.p-icons span:active {
 }
 
 .test-attend a.text-secondary.ms-2 {
-    margin-left:3px !important;
+    margin-left:0px !important;
 }
 
 /* rahl css 25-12*/
