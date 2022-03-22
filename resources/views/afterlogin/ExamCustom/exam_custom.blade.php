@@ -134,7 +134,7 @@ $userData = Session::get('user_data');
                       </div>
 
                       <span class="slbs-link mx-3">
-                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}')"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to Topics</span></a></span>
+                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}')"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to topics</span></a></span>
 
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -562,7 +562,7 @@ $userData = Session::get('user_data');
 </script>
 
 <script>
-    $('.expandTopicCollapse').click(function() {
+  $('.expandTopicCollapse').click(function() {
     $(this).parents('.ClickBack').toggleClass('newelement');
   });
   $('#Mathematics .expandTopicCollapse').one( "click", function() {
@@ -601,8 +601,7 @@ $userData = Session::get('user_data');
          };
       
       }
-   
-  });
+    });
   $('#Physics .expandTopicCollapse').one( "click", function() {
     var scrollpas2=$('#chapter_list_2').scrollTop();
       var blockpos2=$(this).offset().top;
