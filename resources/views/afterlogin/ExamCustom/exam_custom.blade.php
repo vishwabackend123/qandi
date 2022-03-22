@@ -558,7 +558,6 @@ $userData = Session::get('user_data');
             scrollTop:scrollblock-blockpos+scrollpas
           }, 500);
          };
-      
       }
     }
 </script>
