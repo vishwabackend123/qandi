@@ -565,40 +565,116 @@ $userData = Session::get('user_data');
   $('.expandTopicCollapse').click(function() {
     $(this).parents('.ClickBack').toggleClass('newelement');
   });
-  $('.expandTopicCollapse').one("click", function() {
-    var scrollpas = $('.scroll-div').scrollTop();
-    var blockpos = $(this).offset().top;
-    var scrollblock = $($(this).attr('href')).offset().top;
+  $('#Mathematics .expandTopicCollapse').one( "click", function() {
 
-    if (scrollpas > 0) {
+    var scrollpas=$('#chapter_list_1').scrollTop();
+      var blockpos=$(this).offset().top;
+      var scrollblock=$( $(this).attr('href') ).offset().top;
+      
+      if( scrollpas>0){
+       
+         if(blockpos>400){
+           $('#chapter_list_1').animate({
+            scrollTop:scrollblock+scrollpas-blockpos + 150
+           }, 500);
+         }else{
+          $('#chapter_list_1').animate({
+            scrollTop:scrollblock+scrollpas-blockpos 
+          }, 500);
+         };
 
-      if (blockpos > 400) {
-        $('.scroll-div').animate({
-          scrollTop: scrollblock + scrollpas - blockpos + 150
-        }, 500);
-      } else {
-        $('.scroll-div').animate({
-          scrollTop: scrollblock + scrollpas - blockpos
-        }, 500);
-      };
+      }else{
+        if(scrollpas<=0 && blockpos<300 ){
+          $('#chapter_list_1').animate({
+          scrollTop:scrollblock-blockpos 
+          }, 500);
+        }
+        else if(scrollpas<=0 && blockpos>350){
+          $('#chapter_list_1').animate({
+          scrollTop:scrollblock-blockpos +50
+          }, 500);
+        }
+        else{
+          $('#chapter_list_1').animate({
+            scrollTop:scrollblock-blockpos+scrollpas
+          }, 500);
+         };
+      
+      }
+    });
+  $('#Physics .expandTopicCollapse').one( "click", function() {
+    var scrollpas2=$('#chapter_list_2').scrollTop();
+      var blockpos2=$(this).offset().top;
+      var scrollblock2=$( $(this).attr('href') ).offset().top;
+      
+      if( scrollpas2>0){
+       
+         if(blockpos2>400){
+           $('#chapter_list_2').animate({
+            scrollTop:scrollblock2+scrollpas2-blockpos2 + 150
+           }, 500);
+         }else{
+          $('#chapter_list_2').animate({
+            scrollTop:scrollblock2+scrollpas2-blockpos2 
+          }, 500);
+         };
 
-    } else {
-      if (scrollpas <= 0 && blockpos < 300) {
-        $('.scroll-div').animate({
-          scrollTop: scrollblock - blockpos
-        }, 500);
-      } else if (scrollpas <= 0 && blockpos > 350) {
-        $('.scroll-div').animate({
-          scrollTop: scrollblock - blockpos + 50
-        }, 500);
-      } else {
-        $('.scroll-div').animate({
-          scrollTop: scrollblock - blockpos + scrollpas
-        }, 500);
-      };
+      }else{
+        if(scrollpas2<=0 && blockpos2<300 ){
+          $('#chapter_list_2').animate({
+          scrollTop:scrollblock2-blockpos2
+          }, 500);
+        }
+        else if(scrollpas2<=0 && blockpos2>350){
+          $('#chapter_list_2').animate({
+          scrollTop:scrollblock2-blockpos2 +50
+          }, 500);
+        }
+        else{
+          $('#chapter_list_2').animate({
+            scrollTop:scrollblock2-blockpos2+scrollpas2
+          }, 500);
+         };
+      
+      }
+   
+  });
+  $('#Chemistry .expandTopicCollapse').one( "click", function() {
+    var scrollpas3=$('#chapter_list_3').scrollTop();
+      var blockpos3=$(this).offset().top;
+      var scrollblock3=$( $(this).attr('href') ).offset().top;
+      
+      if( scrollpas3>0){
+       
+         if(blockpos3>400){
+           $('#chapter_list_3').animate({
+            scrollTop:scrollblock3+scrollpas3-blockpos3 + 150
+           }, 500);
+         }else{
+          $('#chapter_list_3').animate({
+            scrollTop:scrollblock3+scrollpas3-blockpos3
+          }, 500);
+         };
 
-    }
-
+      }else{
+        if(scrollpas3<=0 && blockpos3<300 ){
+          $('#chapter_list_3').animate({
+          scrollTop:scrollblock3-blockpos3
+          }, 500);
+        }
+        else if(scrollpas3<=0 && blockpos3>350){
+          $('#chapter_list_3').animate({
+          scrollTop:scrollblock3-blockpos3 +50
+          }, 500);
+        }
+        else{
+          $('#chapter_list_3').animate({
+            scrollTop:scrollblock3-blockpos3+scrollpas3
+          }, 500);
+         };
+      
+      }
+   
   });
 </script>
 
