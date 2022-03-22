@@ -1,9 +1,5 @@
 @extends('afterlogin.layouts.app_new')
-<style>
-    html {
-        user-select: none;
-    }
-</style>
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -495,7 +491,7 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        /* document.oncontextmenu = function() {
+        document.oncontextmenu = function() {
             return false;
         };
 
@@ -505,7 +501,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        }); */
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {

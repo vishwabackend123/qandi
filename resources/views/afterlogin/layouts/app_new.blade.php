@@ -91,6 +91,10 @@
         display: block;
         z-index: 0;
     }
+
+    html {
+        user-select: none;
+    }
 </style>
 
 <body class="login-body-bg" id="main-body">

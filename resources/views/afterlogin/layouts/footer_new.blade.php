@@ -670,7 +670,7 @@
                 }
             });
         });
-
+        $("#StartDate").trigger('change');
         $('#search_results').hide();
         $('#search_field').keyup(function(event) {
             var val = event.target.value;
