@@ -134,7 +134,7 @@ $userData = Session::get('user_data');
                       </div>
 
                       <span class="slbs-link mx-3">
-                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}')"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to topics</span></a></span>
+                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to topics</span></a></span>
 
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -429,8 +429,8 @@ $userData = Session::get('user_data');
  */
 
   /* getting Next Question Data */
-  function show_topic(chapt_id) {
-
+  function show_topic(chapt_id,sub_id) {
+    
     this.value = (this.value == 'Expand to topics' ? 'Collapse topics' : 'Expand to topics');
 
     var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
@@ -453,7 +453,7 @@ $userData = Session::get('user_data');
           $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
           $('#overlay').fadeOut();
           $('#topic_form').show();
-
+          scroll_topic(chapt_id,sub_id);
         }
       });
     } else {
@@ -514,47 +514,6 @@ $userData = Session::get('user_data');
     });
 
   };
-  // $('.expandTopicCollapse').click(function(){
-  //      $('.scroll-div').animate({
-  //         scrollTop: $( $(this).attr('href') ).offset().top - 100
-  //       }, 500);
-  //   });
-  // $('.scroll-div').scroll(function(){
-  //      $('.expandTopicCollapse').click(function(){
-  //      $('.scroll-div').animate({
-  //         scrollTop: $( $(this).attr('href') ).offset().top - 100
-  //       }, 500);
-  //   });
-  // });
-
-
-  // $(document).ready(function() {
-  //   $("#dropdownMenuLink").click(function() {
-
-  //     if ($("#dropdownMenuLink").hasClass('show')) {
-  //       $(".hsow").hide();
-  //       $(".dsow").show();
-  //     } else {
-  //       $(".hsow").show();
-  //       $(".dsow").hide();
-  //     }
-
-  //   });
-  // });
-
-  // $(document).ready(function() {
-  //   $("#dropdownMenuLink-topic").click(function() {
-
-  //     if ($("#dropdownMenuLink-topic").hasClass('show')) {
-  //       $(".hsowl").hide();
-  //       $(".dsowl").show();
-  //     } else {
-  //       $(".hsowl").show();
-  //       $(".dsowl").hide();
-  //     }
-
-  //   });
-  // });
   $(window).on('load', function() {
     $(".dash-nav-link a:first-child").removeClass("active-navlink");
     $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
@@ -565,117 +524,43 @@ $userData = Session::get('user_data');
   $('.expandTopicCollapse').click(function() {
     $(this).parents('.ClickBack').toggleClass('newelement');
   });
-  $('#Mathematics .expandTopicCollapse').one( "click", function() {
-
-    var scrollpas=$('#chapter_list_1').scrollTop();
-      var blockpos=$(this).offset().top;
-      var scrollblock=$( $(this).attr('href') ).offset().top;
+ 
+  function scroll_topic(chapter_id,sub_id) {
+    var scrollpas=$('#chapter_list_'+sub_id).scrollTop();
+      var blockpos=$('#clicktopic_'+chapter_id).offset().top;
+      var scrollblock=$( $('#clicktopic_'+chapter_id).attr('href') ).offset().top;
       
       if( scrollpas>0){
        
          if(blockpos>400){
-           $('#chapter_list_1').animate({
+           $('#chapter_list_'+sub_id).animate({
             scrollTop:scrollblock+scrollpas-blockpos + 150
            }, 500);
          }else{
-          $('#chapter_list_1').animate({
+          $('#chapter_list_'+sub_id).animate({
             scrollTop:scrollblock+scrollpas-blockpos 
           }, 500);
          };
 
       }else{
         if(scrollpas<=0 && blockpos<300 ){
-          $('#chapter_list_1').animate({
+          $('#chapter_list_'+sub_id).animate({
           scrollTop:scrollblock-blockpos 
           }, 500);
         }
         else if(scrollpas<=0 && blockpos>350){
-          $('#chapter_list_1').animate({
+          $('#chapter_list_'+sub_id).animate({
           scrollTop:scrollblock-blockpos +50
           }, 500);
         }
         else{
-          $('#chapter_list_1').animate({
+          $('#chapter_list_'+sub_id).animate({
             scrollTop:scrollblock-blockpos+scrollpas
           }, 500);
          };
       
       }
-    });
-  $('#Physics .expandTopicCollapse').one( "click", function() {
-    var scrollpas2=$('#chapter_list_2').scrollTop();
-      var blockpos2=$(this).offset().top;
-      var scrollblock2=$( $(this).attr('href') ).offset().top;
-      
-      if( scrollpas2>0){
-       
-         if(blockpos2>400){
-           $('#chapter_list_2').animate({
-            scrollTop:scrollblock2+scrollpas2-blockpos2 + 150
-           }, 500);
-         }else{
-          $('#chapter_list_2').animate({
-            scrollTop:scrollblock2+scrollpas2-blockpos2 
-          }, 500);
-         };
-
-      }else{
-        if(scrollpas2<=0 && blockpos2<300 ){
-          $('#chapter_list_2').animate({
-          scrollTop:scrollblock2-blockpos2
-          }, 500);
-        }
-        else if(scrollpas2<=0 && blockpos2>350){
-          $('#chapter_list_2').animate({
-          scrollTop:scrollblock2-blockpos2 +50
-          }, 500);
-        }
-        else{
-          $('#chapter_list_2').animate({
-            scrollTop:scrollblock2-blockpos2+scrollpas2
-          }, 500);
-         };
-      
-      }
-   
-  });
-  $('#Chemistry .expandTopicCollapse').one( "click", function() {
-    var scrollpas3=$('#chapter_list_3').scrollTop();
-      var blockpos3=$(this).offset().top;
-      var scrollblock3=$( $(this).attr('href') ).offset().top;
-      
-      if( scrollpas3>0){
-       
-         if(blockpos3>400){
-           $('#chapter_list_3').animate({
-            scrollTop:scrollblock3+scrollpas3-blockpos3 + 150
-           }, 500);
-         }else{
-          $('#chapter_list_3').animate({
-            scrollTop:scrollblock3+scrollpas3-blockpos3
-          }, 500);
-         };
-
-      }else{
-        if(scrollpas3<=0 && blockpos3<300 ){
-          $('#chapter_list_3').animate({
-          scrollTop:scrollblock3-blockpos3
-          }, 500);
-        }
-        else if(scrollpas3<=0 && blockpos3>350){
-          $('#chapter_list_3').animate({
-          scrollTop:scrollblock3-blockpos3 +50
-          }, 500);
-        }
-        else{
-          $('#chapter_list_3').animate({
-            scrollTop:scrollblock3-blockpos3+scrollpas3
-          }, 500);
-         };
-      
-      }
-   
-  });
+    }
 </script>
 
 
