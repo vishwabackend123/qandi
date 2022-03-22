@@ -304,6 +304,9 @@ div#contentHtml .report-block1 {
     font-weight: bold;
     text-align: center;
 }
+.export-block .greentxt{
+    color: #00baff;
+}
 
 .exportUserpic {
     width: 100px;
@@ -748,7 +751,7 @@ margin:25px 0 12px;
 .green_bar {
     border-radius: 6px;
     height: 12px;
-    background: #65d247;
+    background: #5f4fdd;
     width: 30%;
 	z-index:4;
 }
