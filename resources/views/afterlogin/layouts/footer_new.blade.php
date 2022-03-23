@@ -1731,7 +1731,7 @@
     });
 
     
-    $(".notification.me-5.ms-4 ").click(function() {
-        $(".notification-block.width ").addClass("show");
-    });
+    // $(".notification.me-5.ms-4 ").click(function() {
+    //     $(".notification-block.width ").addClass("show");
+    // });
 </script>
