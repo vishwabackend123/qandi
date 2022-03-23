@@ -2,7 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
-$planner=[];
+
 @endphp
 @section('content')
 <!-- Modal -->
