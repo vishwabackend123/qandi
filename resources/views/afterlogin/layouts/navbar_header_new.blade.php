@@ -962,7 +962,6 @@
         background: #fff;
     }
     .clear_div  .dropdown ul.dropdown-menu.cust-dropdown.show {
-   
       transform: translate(-104px, 50px);
 }
 </style>

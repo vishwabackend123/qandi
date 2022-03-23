@@ -557,7 +557,6 @@ $userData = Session::get('user_data');
     });
 </script>
 
-
 <script type="text/javascript">
     $(document).ready(function() {
         $('.close').click(function() {
