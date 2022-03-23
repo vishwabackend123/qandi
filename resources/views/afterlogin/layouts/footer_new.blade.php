@@ -1730,8 +1730,10 @@
         $(".user-name-block span.notification").removeClass("notification-icons-active")
     });
 
-    
-    // $(".notification.me-5.ms-4 ").click(function() {
-    //     $(".notification-block.width ").addClass("show");
-    // });
+    $(".notification.me-5.ms-4").click(function() {
+        if($(this).hasClass("notification-icons-active"))
+        {
+           $("#collapseNotification").addClass("show");
+        }
+    });
 </script>
