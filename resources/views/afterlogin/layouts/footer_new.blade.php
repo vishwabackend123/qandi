@@ -1730,4 +1730,9 @@
     $(".user-pic-block.UserPro").click(function() {
         $(".user-name-block span.notification").removeClass("notification-icons-active")
     });
+
+    
+    $(".notification.me-5.ms-4 ").click(function() {
+        $(".notification-block.width ").addClass("show");
+    });
 </script>
