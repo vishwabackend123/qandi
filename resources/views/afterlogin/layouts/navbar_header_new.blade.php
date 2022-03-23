@@ -387,9 +387,9 @@
                             @if(isset($aSubjects) && !empty($aSubjects))
                             @foreach($aSubjects as $skey=>$sVal)
 
-                            <div class="col mb-4 ">
+                            <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
                                 <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="subject_tik me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}} <span class="count_spam_div" id="count_spam_{{$sVal->id}}"></span></div>
-                                <div class="slimScrollDiv for_part">
+                                <div class="slimScrollDiv">
                                     <div class="subject_chapter">
                                         <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
 
@@ -961,17 +961,8 @@
         box-shadow: 0px 0px 6px -3px;
         background: #fff;
     }
-    .slimScrollDiv .for_part {
-    padding:5px;
-}
-
-.clear_div  {
-
-}
-
-.clear_div  .dropdown ul.dropdown-menu.cust-dropdown.show {
-    top: calc(100% - 35px)!important;
-    right: 0px !important;
-    transform: translate(-104px, 50px) !important;
+    .clear_div  .dropdown ul.dropdown-menu.cust-dropdown.show {
+   
+      transform: translate(-104px, 50px);
 }
 </style>
