@@ -2,6 +2,7 @@
 
 @php
 $userData = Session::get('user_data');
+$planner=[];
 @endphp
 @section('content')
 <!-- Modal -->
@@ -607,7 +608,7 @@ $userData = Session::get('user_data');
                 <p>Take a full body scan test to analyse and plan your preparation journey</p>
                 <a id="full-txtBlock" href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 py-4">
                     <!-- <i class="fa-li fa fa-check" aria-hidden="true"></i> -->
-                    <img style="width: 75px;margin-right: 20px;" src="{{URL::asset('public/after_login/new_ui/images/full-scan-check.png')}}">
+                    <img style="width:65px;margin-right: 20px;" src="{{URL::asset('public/after_login/new_ui/images/full-scan-check.png')}}">
                     <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
                 </a>
                 <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip &gt;</a>
