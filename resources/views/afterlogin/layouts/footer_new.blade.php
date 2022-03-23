@@ -160,7 +160,6 @@
                     messaging.getToken()
                         .then(function(token) {
                             /** Here I am logging to my console. This token I will use for testing with PHP Notification */
-                            console.log(token);
                             /** SAVE TOKEN::From here you need to store the TOKEN by AJAX request to your server */
                             $.ajax({
                                 url: "{{ url('/saveFcmToken') }}",
