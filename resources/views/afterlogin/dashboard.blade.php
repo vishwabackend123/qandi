@@ -2,7 +2,6 @@
 
 @php
 $userData = Session::get('user_data');
-
 @endphp
 @section('content')
 <!-- Modal -->
@@ -42,7 +41,7 @@ $userData = Session::get('user_data');
             </div>
             <div class="modal-body p-4 pt-0 text-center">
 
-                <p class="rating-headline mt-5 mb-4"> How much do you like each of these subjects?</p>
+                <p class="rating-headline mt-5 mb-4"> How well do you generally perform in these subjects?</p>
 
                 <div class="row">
 
@@ -600,18 +599,17 @@ $userData = Session::get('user_data');
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-
                 <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body pt-0 text-center">
-                <p id="h1--P" class="h1-p text-success text-uppercase">Just one more step!</p>
-                <p>Take a full body scan test to analyse and plan your preparation journey</p>
+                <p id="h1--P" class="h1-p text-success">Get your Performance Analytics!</p>
+                <p>Take a test and get a complete analysis of your preparation</p>
                 <a id="full-txtBlock" href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 py-4">
                     <!-- <i class="fa-li fa fa-check" aria-hidden="true"></i> -->
                     <img style="width:65px;margin-right: 20px;" src="{{URL::asset('public/after_login/new_ui/images/full-scan-check.png')}}">
                     <span class="text-white ms-4 ">Take full body scan of<br>75 questions test</span>
                 </a>
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">Skip &gt;</a>
+                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">SKIP</a>
             </div>
 
         </div>

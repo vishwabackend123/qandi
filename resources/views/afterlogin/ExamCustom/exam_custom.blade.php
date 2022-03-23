@@ -62,7 +62,7 @@ $userData = Session::get('user_data');
 
               <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
 
-                <div class="d-flex px-4 py-2 align-items-center justify-content-between">
+                <div class="d-flex px-4 py-2 align-items-center clear_div ">
                   <!--<span class="  mr-3 name-txt ">{{$sub->subject_name}}</span>
                   <p class="mb-0 ms-auto me-4 tab-title">You can pick topics / sub-topics or</p>-->
                   <div class="Flat-right">
@@ -620,6 +620,24 @@ $userData = Session::get('user_data');
   .newelement button#dropdownMenuLink-topic {
     margin-top: 0px;
   }
+  .clear_div{
+    justify-content: end;
+  }
+  .custom-page #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show {
+    top: calc(100% - 35px)!important;
+    right: 0px !important;
+   
+}
+
+.clear_div .dropdown{
+  margin-left: 20px;
+}
+
+#clear-filter {
+  color: #21ccff;
+    font-size: 16px;
+    padding-left: 13px;
+}
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
