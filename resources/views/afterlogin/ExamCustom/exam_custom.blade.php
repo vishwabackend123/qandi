@@ -106,6 +106,7 @@ $userData = Session::get('user_data');
 
                     </ul>
                   </div>
+                  <a class="" id="clear-filter" href="javascript:void(0);" onclick="clear_chapter_filter('{{$sub->id}}','clear')" style="display:none">Clear</a>
                 </div>
                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                   @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
@@ -411,9 +412,28 @@ $userData = Session::get('user_data');
     nextArrow: '<button class="slick-next"> > </button>',
   });
 
-  /*$('.slbs-link a').click(function() {
-    $('#myTabContent .slick-slider').slick('refresh');
-  })*/
+  function destroyCarousel(slick_id) {
+    if ($(slick_id).hasClass('slick-initialized')) {
+      $(slick_id).slick('unslick');
+    }
+  }
+
+
+  function applySlider(slick_id) {
+    $(slick_id).slick({
+      slidesToScroll: 1,
+      dots: false,
+      arrows: true,
+      centerMode: false,
+      focusOnSelect: false,
+      infinite: false,
+      slidesToShow: 3.2,
+      variableWidth: false,
+      prevArrow: '<button class="slick-prev"> < </button>',
+      nextArrow: '<button class="slick-next"> > </button>',
+    });
+  }
+
 
   $('a.expandTopicCollapse span').click(function() {
     var spanId = this.id;
@@ -422,15 +442,11 @@ $userData = Session::get('user_data');
     $("#" + spanId).text(updatetext);
   })
 
-  /* function handleToggleClick() {
-    this.value = (this.value == '+' ? '-' : '+');
-  }
-  document.getElementByName('expandTopicCollapse').onclick = handleToggleClick;
- */
+
 
   /* getting Next Question Data */
-  function show_topic(chapt_id,sub_id) {
-    
+  function show_topic(chapt_id, sub_id) {
+
     this.value = (this.value == 'Expand to topics' ? 'Collapse topics' : 'Expand to topics');
 
     var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
@@ -446,14 +462,17 @@ $userData = Session::get('user_data');
           $('#overlay').fadeIn();
         },
         success: function(result) {
+          var slick_id = "#topic_section_" + chapt_id;
+          destroyCarousel(slick_id); // destroy slick slider first
+
           $("#topic_section_" + chapt_id + " div").remove();
-          // $("#expand_topic_" + chapt_id).text("Collapse topics");
           $("#topic_section_" + chapt_id).html(result);
-          //$('#myTabContent .slick-slider').slick('refresh');
-          $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
+
+          applySlider(slick_id); // apply slick slider again
+
           $('#overlay').fadeOut();
           $('#topic_form').show();
-          scroll_topic(chapt_id,sub_id);
+          scroll_topic(chapt_id, sub_id);
         }
       });
     } else {
@@ -506,8 +525,33 @@ $userData = Session::get('user_data');
       success: function(result) {
         $("#chapter_list_" + sub_id).html('');
         $("#chapter_list_" + sub_id).html(result);
-        /*  $('.slick-slider').slick('refresh'); */
+
         $('#overlay').fadeOut();
+        $('#clear-filter').show();
+
+
+      }
+    });
+
+  };
+
+  function clear_chapter_filter(sub_id, filter_type) {
+    url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+    $.ajax({
+      url: url,
+      data: {
+        "_token": "{{ csrf_token() }}",
+        "filter_type": filter_type
+      },
+      beforeSend: function() {
+        $('#overlay').fadeIn();
+      },
+      success: function(result) {
+        $("#chapter_list_" + sub_id).html('');
+        $("#chapter_list_" + sub_id).html(result);
+
+        $('#overlay').fadeOut();
+        $('#clear-filter').hide();
 
 
       }
@@ -521,45 +565,43 @@ $userData = Session::get('user_data');
 </script>
 
 <script>
-  $('.expandTopicCollapse').click(function() {
+  $("body").on("click", ".expandTopicCollapse", function(event) {
     $(this).parents('.ClickBack').toggleClass('newelement');
   });
- 
-  function scroll_topic(chapter_id,sub_id) {
-    var scrollpas=$('#chapter_list_'+sub_id).scrollTop();
-      var blockpos=$('#clicktopic_'+chapter_id).offset().top;
-      var scrollblock=$( $('#clicktopic_'+chapter_id).attr('href') ).offset().top;
-      
-      if( scrollpas>0){
-       
-         if(blockpos>400){
-           $('#chapter_list_'+sub_id).animate({
-            scrollTop:scrollblock+scrollpas-blockpos + 150
-           }, 500);
-         }else{
-          $('#chapter_list_'+sub_id).animate({
-            scrollTop:scrollblock+scrollpas-blockpos 
-          }, 500);
-         };
 
-      }else{
-        if(scrollpas<=0 && blockpos<300 ){
-          $('#chapter_list_'+sub_id).animate({
-          scrollTop:scrollblock-blockpos 
-          }, 500);
-        }
-        else if(scrollpas<=0 && blockpos>350){
-          $('#chapter_list_'+sub_id).animate({
-          scrollTop:scrollblock-blockpos +50
-          }, 500);
-        }
-        else{
-          $('#chapter_list_'+sub_id).animate({
-            scrollTop:scrollblock-blockpos+scrollpas
-          }, 500);
-         };
-      }
+  function scroll_topic(chapter_id, sub_id) {
+    var scrollpas = $('#chapter_list_' + sub_id).scrollTop();
+    var blockpos = $('#clicktopic_' + chapter_id).offset().top;
+    var scrollblock = $($('#clicktopic_' + chapter_id).attr('href')).offset().top;
+
+    if (scrollpas > 0) {
+
+      if (blockpos > 400) {
+        $('#chapter_list_' + sub_id).animate({
+          scrollTop: scrollblock + scrollpas - blockpos + 150
+        }, 500);
+      } else {
+        $('#chapter_list_' + sub_id).animate({
+          scrollTop: scrollblock + scrollpas - blockpos
+        }, 500);
+      };
+
+    } else {
+      if (scrollpas <= 0 && blockpos < 300) {
+        $('#chapter_list_' + sub_id).animate({
+          scrollTop: scrollblock - blockpos
+        }, 500);
+      } else if (scrollpas <= 0 && blockpos > 350) {
+        $('#chapter_list_' + sub_id).animate({
+          scrollTop: scrollblock - blockpos + 50
+        }, 500);
+      } else {
+        $('#chapter_list_' + sub_id).animate({
+          scrollTop: scrollblock - blockpos + scrollpas
+        }, 500);
+      };
     }
+  }
 </script>
 
 

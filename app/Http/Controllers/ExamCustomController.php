@@ -773,8 +773,6 @@ class ExamCustomController extends Controller
 
             $subject_id = $active_subject_id;
 
-
-
             $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
             $curl = curl_init();
