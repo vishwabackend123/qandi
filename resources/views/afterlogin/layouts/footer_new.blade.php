@@ -1726,4 +1726,8 @@
             $('#saveplannerbutton').removeClass('disabled');
         }
     });
+
+    $(".user-pic-block.UserPro").click(function() {
+        $(".user-name-block span.notification").removeClass("notification-icons-active")
+    });
 </script>
