@@ -40,7 +40,7 @@ $userData = Session::get('user_data');
                                 <label for="fname" class="col-md-4">Account Holder Name*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" required maxlength="50">
+                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" autocomplete="off" required maxlength="50">
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">Bank Name*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" required maxlength="50">
+                                        <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" autocomplete="off" required maxlength="50">
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">Account No*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="acc_no" onkeypress="return isNumber(event)" class="form-control refund_class" name="acc_no" placeholder="Account No.." maxlength="16" required>
+                                        <input type="text" id="acc_no" onkeypress="return isNumber(event)" class="form-control refund_class" name="acc_no" placeholder="Account No.." autocomplete="off" maxlength="16" required>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">IFSC Code*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="ifsc_code" class="form-control refund_class" name="ifsc_code" placeholder="IFSC Code.." required maxlength="11">
+                                        <input type="text" id="ifsc_code" class="form-control refund_class" name="ifsc_code" placeholder="IFSC Code.." required maxlength="11" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
