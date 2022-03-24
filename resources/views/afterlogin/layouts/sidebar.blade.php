@@ -1,8 +1,7 @@
 <div class="dash-sidebar">
     <div class="sidbar-block">
-        <a draggable="false" target="_blank" href="{{ env('LANDING_URL') }}"><img src="{{URL::asset('public/after_login/images/inner-logo.png')}}" </a>
+        <a draggable="false" target="_blank" href="{{ env('LANDING_URL') }}"><img src="{{URL::asset('public/after_login/images/inner-logo.png')}}"> </a> 
     </div>
-
     <div class="dash-nav-link">
         <a draggable="false" href="{{ url('/dashboard') }}" class="active-navlink" id="dashboard"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="71" viewBox="0 0 72 71">
                 <defs>
@@ -95,7 +94,6 @@
             </svg>
             <span class="hoverlink">Dashboard</span>
         </a>
-
         <a draggable="false" data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" id="Practice">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
                 <defs>
@@ -262,17 +260,14 @@
             <span class="hoverlink">Share</span>
         </a>
     </div>
-
     <div class="submenu-L1 collapse width" id="submenu">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
             <a draggable="false" class="nav-link" data-bs-toggle="collapse" href="#submenu2" aria-expanded="false"><i class="fa fa-pencil" aria-hidden="true"></i> Practice</a>
-
             {{--<a draggable="false" href="{{route('assessment_exam')}}" class="nav-link"><i class="far fa-edit"></i> Exam</a> --}}
             <a draggable="false" href="{{route('adaptive_mock_exam')}}" class="nav-link"><i class="far fa-edit"></i> Exam</a>
             <a draggable="false" href="{{route('live_exam_list')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Live</a>
         </div>
-
     </div>
     <div class="submenu-L2 collapse width" id="submenu2">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
@@ -286,12 +281,10 @@
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
             {{--<a draggable="false" class="nav-link" data-bs-toggle="collapse" href="#submenupreparation2" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-pencil" aria-hidden="true"></i> About Exam</a>--}}
-
             <a draggable="false" href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation Center</a>
             <a draggable="false" href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
             {{--<a draggable="false" href="{{route('download_exampaper')}}" class="nav-link"><i class="fas fa-external-link-alt"></i> Previous Year Qn. Papers</a>--}}
         </div>
-
     </div>
     <div class="submenu-L2 collapse width" id="submenupreparation2">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
@@ -304,18 +297,14 @@
             <a draggable="false" href="#" class="nav-link"> <img src="{{URL::asset('public/after_login/images/Group3061.png')}}"> Counselling Procedure</a>
             <a draggable="false" href="#" class="nav-link"><i class="fas fa-book-open"></i> Preparation Resources</a>
             <a draggable="false" href="#" class="nav-link"><img src="{{URL::asset('public/after_login/images/Group3057.png')}}"> Popular Courses</a>
-
         </div>
     </div>
 </div>
-
-
 <!--Refer a friend Modal -->
 <div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
             <div class="modal-header pb-0 border-0">
-
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body  py-4 px-5 ">
@@ -328,14 +317,10 @@
                     <div class="mb-3">
                         <input type="test" class="form-control border-0 rounded-0" placeholder="Enter emails" id="referEmails" name="refer_emails" autocomplete="off" required>
                         <div id="emailHelp" class="form-text text-end">*use ‘,’ between two emails to separate</div>
-
                         <span class="invalid-feedback m-0 alert-success errRef p-1 mb-1" role="alert" id="successRef_auth"> </span>
                         <span class="invalid-feedback m-0 alert-danger errRef p-1" role="alert" id="errRef_auth"> </span>
-
-
                     </div>
                     <div class="text-center">
-
                         <button type="submit" class="btn btn-danger rounded-0 px-5"><img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" /> SEND INVITE</button>
                     </div>
                 </form>
@@ -345,7 +330,6 @@
                     <button class="btn btn-dark rounded-0 border-0" type="button" id="button-addon2"><i class="fa fa-files-o" aria-hidden="true"></i> Copy</button>
                 </div> -->
             </div>
-
         </div>
     </div>
 </div>

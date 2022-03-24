@@ -3794,7 +3794,7 @@ input#StartDate {
 #collapsePlanner a.chapter_remove img {
     width: 16px;
     position: relative;
-    top: -0.8px
+    top: -0.8px;
 }
 
 #collapsePlanner .topic_name {

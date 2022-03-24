@@ -12,15 +12,12 @@
                         </p>
                     </small>
                     <div class="prgress-i-txt px-3">
-
                         <span class="progress_text">Progress</span>
-
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-md-12">
                             <div class="d-flex justify-content-center flex-column h-100 ">
                                 <span class="text-center">
-
                                     <div id="subjectscorecontainer" class="text-right"></div>
                                 </span>
                                 <ul class="live-test mt-3">
@@ -31,12 +28,9 @@
                                         <span class="pre-test"></span>Previous Test
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
@@ -53,12 +47,9 @@
                             <div class="alpha-extended-view">
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[0]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
-
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h4>
-
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a>
                             </div>
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -69,8 +60,6 @@
                             <a data-bs-toggle="collapse" href="#arrow-left-btm" class="box-block arrow-left-btm">
                                 <span>{{substr($skillPer[1]->skill_name, 0, 1)}}</span>
                                 <span>{{number_format((float)$skillPer[1]->percentage, 2, '.', '')}}%</span>
-
-
                             </a>
                         </div>
                         <div class="collapse arrow-right-btm-content p-4" data-bs-dismiss="collapse" id="arrow-left-btm">
@@ -80,15 +69,11 @@
                                 <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                     performance in the test.</p> 
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skills. {{$skillPer[1]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
-
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a>
                             </div>
-
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -105,9 +90,7 @@
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skills. {{$skillPer[2]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
-
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a>
                             </div>
                             <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -126,9 +109,7 @@
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skills. {{$skillPer[3]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
-
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a>
                             </div>
                             <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -138,8 +119,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
     <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12" id="topIIC">
         <div class="bg-white shadow-lg p-3">
@@ -166,7 +145,6 @@
             <div class="scroll-topic-ana pe-2">
                 @if($subProf)
                 @foreach($subProf as $val)
-
                 <div class="d-flex align-items-center mt-3 px-3">
                     <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 sub">
                         <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->topic_name}}">{{$val->topic_name}}</span>
@@ -192,10 +170,7 @@
                 </div>
                 @endforeach
                 @endif
-
-
             </div>
-
         </div>
     </div>
     <div class="col-sm-12">
@@ -226,7 +201,6 @@
                             Month
                         </button>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-6  mt-3">
@@ -272,7 +246,6 @@
                             Month
                         </button>
                     </div>
-
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
@@ -302,17 +275,13 @@
                             &nbsp;Export Analytics</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
-
 <div class="close-block" id="topicopen">
     <div class="row">
         <div class="col-12  mb-5">
-
             <div class="d-flex align-items-center">
                 <a class="topic-btn-collepse h5 text-dark" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i>
                     {{isset($subScore[0]->subject_name)?ucwords($subScore[0]->subject_name):''}}</a>
@@ -320,7 +289,6 @@
                     COLLAPSE
                 </button>
             </div>
-
         </div>
         @if($subProf)
         @foreach($subProf as $val)
@@ -328,9 +296,7 @@
             <div class="bg-white shadow-lg p-3 sub-topic-box active-box">
                 <div class="d-flex align-items-center py-2 listing-details ">
                     <span class="mr-3 topics-name">{{$val->topic_name}}</span>
-
                     <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
                         <div class="star-ratings-css">
                             <div class="star-ratings-css-top" style="width: 0%">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -339,22 +305,17 @@
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
                         </div>
-
                         <div class="ms-1 score score-rating js-score">
                             0%
                         </div>
                     </div>
-
                 </div>
                 <div class="progress" style="overflow: visible;">
                     <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:40%;overflow: visible;">
-
                     </div>
                     <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:30%;overflow: visible;">
-
                     </div>
                     <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:20%;overflow: visible;">
-
                     </div>
                 </div>
                 <div class="d-flex align-items-center flex-wrap">
@@ -373,619 +334,616 @@
         </div>
         @endforeach
         @endif
-
     </div>
 </div>
-
 @php
 $lastscore = $progress = 0;
-
 $preSocre = isset($subScore[1]->score) ? $subScore[1]->score : 0;
 $currSocre = isset($subScore[0]->score) ? $subScore[0]->score : 0;
 $lastscore = ($currSocre >= $preSocre) ? $preSocre : $currSocre;
 $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
-
-
 @endphp
 <script>
-    /*  $(".scroll-topic-ana").slimscroll({
+/*  $(".scroll-topic-ana").slimscroll({
         height: "42.5vh",
     }); */
-    $("#topic-open-btn").click(function() {
-        $("#topicclose").hide();
-        $("#topicopen").show();
+$("#topic-open-btn").click(function() {
+    $("#topicclose").hide();
+    $("#topicopen").show();
 
-    });
-    $(".topic-btn-collepse").click(function() {
-        $("#topicopen").hide();
-        $("#topicclose").show();
-    });
+});
+$(".topic-btn-collepse").click(function() {
+    $("#topicopen").hide();
+    $("#topicclose").show();
+});
 
-    Highcharts.chart('day', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
+Highcharts.chart('day', {
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
 
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: <?php print_r($date1); ?>
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
         title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date1); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (sec)'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime1); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('week', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date2); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (sec)'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime2); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime2); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('month', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date3); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (sec)'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime3); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime3); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    function replace(show, hide1, hide2) {
-        if (show == 'day') {
-            $(".s_timeClass").removeClass("active");
-            $("#s_day_time").addClass("active");
-        } else if (show == 'week') {
-            $(".s_timeClass").removeClass("active");
-            $("#s_week_time").addClass("active");
-        } else {
-            $(".s_timeClass").removeClass("active");
-            $("#s_month_time").addClass("active");
+            text: 'Average Time Taken (sec)'
         }
-        document.getElementById(hide1).style.display = "none";
-        document.getElementById(hide2).style.display = "none";
-        document.getElementById(show).style.display = "block";
-    }
-</script>
+    },
 
-<script>
-    Highcharts.chart('day1', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date1); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns1); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('week1', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date2); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns2); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns2); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    Highcharts.chart('month1', {
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-
-        title: {
-            text: ''
-        },
-
-        xAxis: {
-            categories: <?php print_r($date3); ?>
-        },
-
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns3); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns3); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    function s_replace1(show, hide1, hide2) {
-        if (show == 'day1') {
-            $(".s_classMark").removeClass("active");
-            $("#s_day_mark").addClass("active");
-        } else if (show == 'week1') {
-            $(".s_classMark").removeClass("active");
-            $("#s_week_mark").addClass("active");
-        } else {
-            $(".s_classMark").removeClass("active");
-            $("#s_month_mark").addClass("active");
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
         }
-        document.getElementById(hide1).style.display = "none";
-        document.getElementById(hide2).style.display = "none";
-        document.getElementById(show).style.display = "block";
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime1); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime1); ?>,
+        color: '#ff9999'
+    }]
+});
+
+Highcharts.chart('week', {
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
+
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: <?php print_r($date2); ?>
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Time Taken (sec)'
+        }
+    },
+
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
+        }
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime2); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime2); ?>,
+        color: '#ff9999'
+    }]
+});
+
+Highcharts.chart('month', {
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
+
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: <?php print_r($date3); ?>
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Time Taken (sec)'
+        }
+    },
+
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
+        }
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime3); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime3); ?>,
+        color: '#ff9999'
+    }]
+});
+
+function replace(show, hide1, hide2) {
+    if (show == 'day') {
+        $(".s_timeClass").removeClass("active");
+        $("#s_day_time").addClass("active");
+    } else if (show == 'week') {
+        $(".s_timeClass").removeClass("active");
+        $("#s_week_time").addClass("active");
+    } else {
+        $(".s_timeClass").removeClass("active");
+        $("#s_month_time").addClass("active");
     }
+    document.getElementById(hide1).style.display = "none";
+    document.getElementById(hide2).style.display = "none";
+    document.getElementById(show).style.display = "block";
+}
+
 </script>
-
 <script>
-    Highcharts.chart('accPerSubjectWise', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
+Highcharts.chart('day1', {
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    chart: {
+        type: 'line',
+        height: 270
+    },
 
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: <?php print_r($date1); ?>
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
         title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Accuracy Percentage'
-            }
-        },
+            text: 'Average Marks'
+        }
+    },
 
-        xAxis: {
-            categories: <?php print_r($day); ?>
-        },
-        plotOptions: {
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>';
+        }
+    },
 
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            label: false,
+            events: {
+                legendItemClick: function() {
+                    return false;
                 }
             }
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($classAcc); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($stuAcc); ?>,
-            color: '#6ec986',
-        }]
-    });
-</script>
+        }
+    },
 
-<script>
-    Highcharts.chart('accPerSubjectWise1', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
+    series: [{
+        name: 'Correct Answer',
+        data: <?php print_r($correctAns1); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer',
+        data: <?php print_r($incorrectAns1); ?>,
+        color: '#ff9999'
+    }]
+});
 
+Highcharts.chart('week1', {
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    chart: {
+        type: 'line',
+        height: 270
+    },
+
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: <?php print_r($date2); ?>
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
         title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Average Time Spent (Sec)'
-            }
-        },
+            text: 'Average Marks'
+        }
+    },
 
-        xAxis: {
-            categories: <?php print_r($days); ?>
-        },
-        plotOptions: {
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>';
+        }
+    },
 
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            label: false,
+            events: {
+                legendItemClick: function() {
+                    return false;
                 }
             }
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($classAccuracy); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($stuAccuracy); ?>,
-            color: '#6ec986',
-        }]
-    });
-</script>
+        }
+    },
 
-<script>
-    Highcharts.chart('subjectscorecontainer', {
-        chart: {
-            height: 160,
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false,
-            spacingTop: 0,
-            spacingBottom: 0,
-            spacingRight: 0,
-        },
+    series: [{
+        name: 'Correct Answer',
+        data: <?php print_r($correctAns2); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer',
+        data: <?php print_r($incorrectAns2); ?>,
+        color: '#ff9999'
+    }]
+});
+
+Highcharts.chart('month1', {
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    chart: {
+        type: 'line',
+        height: 270
+    },
+
+    title: {
+        text: ''
+    },
+
+    xAxis: {
+        categories: <?php print_r($date3); ?>
+    },
+
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
         title: {
-            text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 80
+            text: 'Average Marks'
+        }
+    },
+
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>';
+        }
+    },
+
+    plotOptions: {
+        column: {
+            stacking: 'normal'
         },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            pointFormat: '<b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
+        series: {
+            label: false,
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+
+    series: [{
+        name: 'Correct Answer',
+        data: <?php print_r($correctAns3); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer',
+        data: <?php print_r($incorrectAns3); ?>,
+        color: '#ff9999'
+    }]
+});
+
+function s_replace1(show, hide1, hide2) {
+    if (show == 'day1') {
+        $(".s_classMark").removeClass("active");
+        $("#s_day_mark").addClass("active");
+    } else if (show == 'week1') {
+        $(".s_classMark").removeClass("active");
+        $("#s_week_mark").addClass("active");
+    } else {
+        $(".s_classMark").removeClass("active");
+        $("#s_month_mark").addClass("active");
+    }
+    document.getElementById(hide1).style.display = "none";
+    document.getElementById(hide2).style.display = "none";
+    document.getElementById(show).style.display = "block";
+}
+
+</script>
+<script>
+Highcharts.chart('accPerSubjectWise', {
+    chart: {
+        type: 'spline',
+        height: 270
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    legend: {
+        symbolWidth: 40
+    },
+
+    title: {
+        text: ''
+    },
+    yAxis: {
+        title: {
+            text: 'Accuracy Percentage'
+        }
+    },
+
+    xAxis: {
+        categories: <?php print_r($day); ?>
+    },
+    plotOptions: {
+
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Class Average',
+        data: <?php print_r($classAcc); ?>,
+        color: '#ff9999',
+        dashStyle: 'ShortDash'
+    }, {
+        name: 'Student Average',
+        data: <?php print_r($stuAcc); ?>,
+        color: '#6ec986',
+    }]
+});
+
+</script>
+<script>
+Highcharts.chart('accPerSubjectWise1', {
+    chart: {
+        type: 'spline',
+        height: 270
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    legend: {
+        symbolWidth: 40
+    },
+
+    title: {
+        text: ''
+    },
+    yAxis: {
+        title: {
+            text: 'Average Time Spent (Sec)'
+        }
+    },
+
+    xAxis: {
+        categories: <?php print_r($days); ?>
+    },
+    plotOptions: {
+
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Class Average',
+        data: <?php print_r($classAccuracy); ?>,
+        color: '#ff9999',
+        dashStyle: 'ShortDash'
+    }, {
+        name: 'Student Average',
+        data: <?php print_r($stuAccuracy); ?>,
+        color: '#6ec986',
+    }]
+});
+
+</script>
+<script>
+Highcharts.chart('subjectscorecontainer', {
+    chart: {
+        height: 160,
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false,
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingRight: 0,
+    },
+    title: {
+        text: '<span style="font: normal normal 200 80px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 80
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: '<b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: false,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+            },
             point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: false,
-                    distance: -50,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white'
+                events: {
+                    legendItemClick: function() {
+                        this.slice(null);
+                        return false;
                     }
-                },
-                point: {
-                    events: {
-                        legendItemClick: function() {
-                            this.slice(null);
-                            return false;
-                        }
-                    }
-                },
-                startAngle: -140,
-                endAngle: 140,
-                center: ['50%', '50%'],
-                size: '100%'
-            }
-        },
-        series: [{
-            type: 'pie',
-            innerSize: '85%',
-            data: [{
-                    name: 'Score',
-                    y: <?php echo $lastscore; ?>,
-                    color: '#21ccff' // Jane's color
-                },
-                {
-                    name: 'Progress',
-                    y: <?php echo $progress ?>,
-                    color: '#d0f3ff' // Jane's color
-                },
-                {
-                    name: '',
-                    y: <?php echo (100 - ($lastscore + $progress)); ?>,
-
-                    color: '#efefef' // Jane's color
                 }
-            ]
-        }]
-    });
+            },
+            startAngle: -140,
+            endAngle: 140,
+            center: ['50%', '50%'],
+            size: '100%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        innerSize: '85%',
+        data: [{
+                name: 'Score',
+                y: <?php echo $lastscore; ?>,
+                color: '#21ccff' // Jane's color
+            },
+            {
+                name: 'Progress',
+                y: <?php echo $progress ?>,
+                color: '#d0f3ff' // Jane's color
+            },
+            {
+                name: '',
+                y: <?php echo (100 - ($lastscore + $progress)); ?>,
+
+                color: '#efefef' // Jane's color
+            }
+        ]
+    }]
+});
+
 </script>
 <script>
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                $(this).parent("p").hide();
-            })
-            $(this).siblings("p").show();
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+$(document).ready(function() {
+    $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        $(".dashboard-cards-block .bg-white>small p>span").each(function() {
             $(this).parent("p").hide();
-        });
+        })
+        $(this).siblings("p").show();
     });
+    $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+        $(this).parent("p").hide();
+    });
+});
+
 </script>
