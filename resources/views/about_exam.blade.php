@@ -17,7 +17,6 @@
     <script src="https://kit.fontawesome.com/5880030aeb.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-
     <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{URL::asset('public/css/pre-login-style.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -33,7 +32,6 @@
             <a href="{{ route('login') }}" class="side-links">Login</a>
             <a href="{{ route('register') }}" class="red-btn mt-2">Sign up</a>
         </div>
-
     </div>
     <div class="static-left-nav">
         <div class="logo-block bg-white p-4">
@@ -64,7 +62,6 @@
         <header class="pre-login-header">
             <div class="container-fluid ">
                 <div class="row">
-
                     <div class="col ms-auto text-end">
                         <span onclick="openNav()" class="nav-btn-box"><span class="nav-btn"></span></span>
                     </div>
@@ -92,11 +89,9 @@
                                 <div class="col-3"><span>Subjects</span> <span class="d-block">Physics, Chemistry, Mathematics</span>
                                 </div>
                                 <div class="col-3"><span>Qualify</span> <span class="d-block"> </span> </div>
-
                             </div>
                             <div class="row mt-5">
                                 <div class="col-3"><span>Question Type</span> <span class="d-block">Objective</span> </div>
-
                             </div>
                             <h1 class="fs-1 mt-5 mb-3">What is JEE Main?</h1>
                             <p>JEE is one of the most prestigious and challenging entrance examinations in the country. Lakhs of
@@ -137,44 +132,40 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
-
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0
 .min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
-
     <script type="text/javascript" src="{{URL::asset('public/js/jquery.slimscroll.min.js')}}"></script>
     <script type="text/javascript">
-        /* Set the width of the side navigation to 250px */
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "600px";
-        }
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "600px";
+    }
 
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-        // $(window).on('load', function() {
-        //     $('#welcomeModal').modal('show');
-        // });
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    // $(window).on('load', function() {
+    //     $('#welcomeModal').modal('show');
+    // });
 
-        $('.scroll-div').slimscroll({
-            height: '40vh'
-        });
-        $('.hScroll').slimscroll({
-            height: '45vh'
-        });
+    $('.scroll-div').slimscroll({
+        height: '40vh'
+    });
+    $('.hScroll').slimscroll({
+        height: '45vh'
+    });
 
-        $('.about-exam').slimscroll({
-            height: '80vh'
-        });
+    $('.about-exam').slimscroll({
+        height: '80vh'
+    });
+
     </script>
 </body>
 

@@ -17,12 +17,10 @@
         <script src="https://kit.fontawesome.com/5880030aeb.js" crossorigin="anonymous"></script>
         <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-
         <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{URL::asset('public/css/pre-login-style.css')}}">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
-
 
 <body class="faq-page h-100" id="main-body">
     <div id="mySidenav" class="sidenav d-flex align-items-center flex-column justify-content-center">
@@ -34,18 +32,14 @@
             <a href="{{ route('login') }}" class="side-links">Login</a>
             <a href="{{ route('register') }}" class="red-btn mt-2">Sign up</a>
         </div>
-
     </div>
     <div class="static-left-nav">
         <div class="logo-block bg-white p-4">
-
         </div>
         <div class="yellow-block">
             <div class="p-5 bg-light d-flex flex-column align-items-center justify-content-center">
-
             </div>
             <div class="d-flex flex-column  p-5 h-75 static-left-links">
-
             </div>
         </div>
     </div>
@@ -69,7 +63,6 @@
                         <h1 class="fs-1 mt-5 mb-3 fw-800 text-center text-uppercase">Frequently Asked Questions</h1>
                         <div class="about-exam">
                             <div class="accordion" id="accordionExample">
-
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         I am unable to login?
@@ -77,11 +70,8 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
-
-
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         How do I reset my password?
@@ -89,11 +79,8 @@
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
-
-
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         How do I update my profile?
@@ -101,18 +88,15 @@
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading4">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                                         How do I set a goal for me?
-
                                     </button>
                                 </h2>
                                 <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="headingfive">
@@ -122,7 +106,6 @@
                                 </h2>
                                 <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading5">
@@ -132,10 +115,8 @@
                                 </h2>
                                 <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
-
                                 <h2 class="accordion-header" id="heading6">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapseThree">
                                         Image based questions are taking time to load?
@@ -144,7 +125,6 @@
                                 <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"" id=" #accordionExample">
                                     " data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading7">
@@ -154,7 +134,6 @@
                                 </h2>
                                 <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading8">
@@ -164,7 +143,6 @@
                                 </h2>
                                 <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading9">
@@ -174,7 +152,6 @@
                                 </h2>
                                 <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading10">
@@ -184,7 +161,6 @@
                                 </h2>
                                 <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading11">
@@ -194,7 +170,6 @@
                                 </h2>
                                 <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
                                 <h2 class="accordion-header" id="heading12">
@@ -204,49 +179,44 @@
                                 </h2>
                                 <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0
 .min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.bundle.min.js')}}"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
-
     <script type="text/javascript" src="{{URL::asset('public/js/jquery.slimscroll.min.js')}}"></script>
     <script type="text/javascript">
-        /* Set the width of the side navigation to 250px */
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "600px";
-        }
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "600px";
+    }
 
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 
-        $('.scroll-div').slimscroll({
-            height: '40vh'
-        });
-        $('.hScroll').slimscroll({
-            height: '45vh'
-        });
+    $('.scroll-div').slimscroll({
+        height: '40vh'
+    });
+    $('.hScroll').slimscroll({
+        height: '45vh'
+    });
 
-        $('.about-exam').slimscroll({
-            height: '80vh'
-        });
-        var starClicked = false;
+    $('.about-exam').slimscroll({
+        height: '80vh'
+    });
+    var starClicked = false;
+
     </script>
 </body>
 
