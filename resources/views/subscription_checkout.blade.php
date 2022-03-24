@@ -56,7 +56,7 @@ $userData = Session::get('user_data');
         <div class="d-flex align-items-center justify-content-between mt-3">
             <p class="p-0 m-0 coupontext">Apply Coupon</p>
             @if($discount_code)
-             <form action="{{route('checkout')}}" if="checkout_{{$subscript_id}}" method="post" >
+            <form action="{{route('checkout')}}" if="checkout_{{$subscript_id}}" method="post">
                 @csrf
                 <input type="hidden" name="exam_id" value="{{$exam_id}}">
                 <input type="hidden" name="subscript_id" value="{{$subscript_id}}">
@@ -127,11 +127,8 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-------------------->
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js" integrity="sha512-6Uv+497AWTmj/6V14BsQioPrm3kgwmK9HYIyWP+vClykX52b0zrDGP7lajZoIY1nNlX4oQuh7zsGjmF7D0VZYA==" crossorigin="anonymous"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
+
+
 <script>
 $(document).ready(function() {
     $('.apply_coupan').on('click', function() {
@@ -166,7 +163,6 @@ $(document).ready(function() {
                 },
 
             });
-
         } else {
             $('.error_msg').text("Please enter valid code");
             $('.error_msg').show();

@@ -1,7 +1,6 @@
 <div class="dash-sidebar">
     <div class="sidbar-block">
         <a href="{{ env('LANDING_URL') }}" title="Home" target="_blank"><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}"></a>
-
     </div>
     <div class="dash-nav-link">
         <a href="{{ url('/dashboard') }}" class="active-navlink"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="71" viewBox="0 0 72 71">
@@ -95,7 +94,6 @@
             </svg>
             <span class="hoverlink">Dashboard</span>
         </a>
-
         <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
                 <defs>
@@ -307,7 +305,6 @@
                 </svg>
                 Live</a>
         </div>
-
     </div>
     <div class="submenu-L2 collapse width" id="submenu2">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
@@ -332,7 +329,6 @@
                     <path id="Line_99" data-name="Line 99" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(18 4)" />
                     <path id="Line_100" data-name="Line 100" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(18 11)" />
                 </svg>
-
                 Custom</a>
             <a href="{{ url('/series_list') }}" class="nav-link"><svg id="Preset_Exam" data-name="Preset Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
@@ -349,22 +345,16 @@
                     <path id="Line_367" data-name="Line 367" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(12 6)" />
                     <path id="Line_368" data-name="Line 368" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(21 6)" />
                 </svg> Test Series</a>
-
         </div>
-
     </div>
     <div class="submenu-L1 collapse width" id="submenupreparation">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
-
             {{-- <a href="{{route('preparation_center')}}" class="nav-link"><i class="far fa-edit"></i> Preparation Center</a> --}}
             <a href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
-
         </div>
-
     </div>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -406,7 +396,6 @@
                             <div class="formerror">
                                 <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
                                 <input type="hidden" name="refer_code" id="refer_code" value="{{ session()->get('referal_code') }}">
-
                                 <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                                 <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
                             </div>
@@ -453,8 +442,6 @@
                                         </g>
                                     </g>
                                 </svg>
-
-
                                 SEND INVITE
                             </button>
                         </div>
@@ -465,62 +452,58 @@
                         <div class="re_link">
                             <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" />
                             <a class="copylinkbtn" type="button" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
-
                         </div>
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>
-
 <script>
-    let input = document.querySelector(".emaillink");
-    let button = document.querySelector(".remove-stuff");
-    //button.disabled = true;
-    input.addEventListener("change", stateHandle);
+let input = document.querySelector(".emaillink");
+let button = document.querySelector(".remove-stuff");
+//button.disabled = true;
+input.addEventListener("change", stateHandle);
 
-    function stateHandle() {
-        if (document.querySelector(".emaillink").value === "") {
-            button.disabled = true;
-        } else {
-            button.disabled = false;
-        }
+function stateHandle() {
+    if (document.querySelector(".emaillink").value === "") {
+        button.disabled = true;
+    } else {
+        button.disabled = false;
     }
+}
+
 </script>
-
-
 <script>
-    function copylinkfunction() {
-        /* Get the text field */
-        var copyText = document.getElementById("linkInput");
+function copylinkfunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("linkInput");
 
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-        /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
-        $(".successRef_copy").text("Copied!");
-        $(".successRef_copy").addClass('showmessage');
-        setTimeout(function() {
-            // $('.successRef_copy').fadeOut('fast');
-            $(".successRef_copy").removeClass('showmessage');
-        }, 4000);
-    }
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+    $(".successRef_copy").text("Copied!");
+    $(".successRef_copy").addClass('showmessage');
+    setTimeout(function() {
+        // $('.successRef_copy').fadeOut('fast');
+        $(".successRef_copy").removeClass('showmessage');
+    }, 4000);
+}
+
 </script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
 <script>
-    $(".remove-stuff").click(function() {
-        //$(".emaillinkholder").hide();
-        //$(".onsendshow").show();
-    });
+$(".remove-stuff").click(function() {
+    //$(".emaillinkholder").hide();
+    //$(".onsendshow").show();
+});
 
-    $(".backtobtn").click(function() {
-        $(".emaillinkholder").show();
-        $(".onsendshow").hide();
-    });
+$(".backtobtn").click(function() {
+    $(".emaillinkholder").show();
+    $(".onsendshow").hide();
+});
+
 </script>

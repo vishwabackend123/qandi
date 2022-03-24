@@ -8,7 +8,6 @@ $userData = Session::get('user_data');
                 <div class=" d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block"><a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{$imgPath}}" class="user-pic"></a></span>
                     <span class="user-name-block ps-3 me-3">Welcome, <span class="activeUserName" id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
-
                     <span class="notification me-5 ms-4">
                         <a data-bs-toggle="collapse" href="#notification" role="button" aria-expanded="false" aria-controls="notification" class="top-link " id="notification-tog">
                             <img src="{{URL::asset('public/after_login/images/Group3205.png')}}">
@@ -33,15 +32,12 @@ $userData = Session::get('user_data');
                 </div>
                 <div class="profile-menu">
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-
                         <div class="offcanvas-body">
                             <div class="d-flex flex-column justify-content-center align-items-start profile-links">
                                 <span><a href="javascript:void(0);" id="profile-click"><img src="{{URL::asset('public/after_login/images/Group 3093.png')}}">Account</a></span>
                                 <span><a href="javascript:void(0);" id="subscribe-click"><img src="{{URL::asset('public/after_login/images/Group 3105.png')}}">Subscription</a></span>
-
                                 <span>
                                     <a href="javascript:void(0);" id="logout-click"><img src="{{URL::asset('public/after_login/images/Layer -7.png')}}">Logout</a>
-
                                 </span>
                             </div>
                         </div>
@@ -65,7 +61,6 @@ $userData = Session::get('user_data');
                                                                 } else {
                                                                 $imgPath_deft = url('/') . '/public/after_login/images/profile.png';
                                                                 }
-
                                                                 @endphp
                                                                 {{--<span><img src="{{URL::asset('public/after_login/images/DSC_0004.png')}}" class="leader-pic" /></span> --}}
                                                                 <span><img src="{{$imgPath_deft}}" class="leader-pic" /></span>
@@ -77,7 +72,6 @@ $userData = Session::get('user_data');
                                                         </li>
                                                         @endforeach
                                                         @endif
-
                                                     </ol>
                                                 </div>
                                                 <div id="search_results" class="py-1">
@@ -90,19 +84,16 @@ $userData = Session::get('user_data');
                                                     <label class="ps-0 pb-1">Search a Friend</label>
                                                     <input type="text" name="search_field" id="search_field" class="ps-2" value="" placeholder="Search By Name" />
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="myAccountblock profileAccount" id="profile">
                                     <div class="d-flex text-start h-100">
                                         <div class="leaderBoardBlockedit">
                                             <div class="bg-white p-3 text-left ms-4 read-mode h-100">
                                                 <span class="position-relative d-inline-block ">
                                                     <img src="{{$imgPath}}" class="profile-pic uswereditpic" />
-
                                                     <form id="profile_pic_form" method="POST" id="contact" name="13" class="form-horizontal" enctype="multipart/form-data">
                                                         <span class="image-upload">
                                                             <label for="file-input">
@@ -122,55 +113,43 @@ $userData = Session::get('user_data');
                                                         </button>
                                                     </div>
                                                     {{-- <div>--}}
-                                                    {{-- <h5 class="text-uppercase fw-bold">Achievements</h5>--}}
-                                                    {{-- <div class="scroll-achiv  pe-3">--}}
-                                                    {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
-                                                    {{-- </p>--}}
-                                                    {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
-                                                    {{-- </p>--}}
-                                                    {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
-                                                    {{-- </p>--}}
-
-                                                    {{-- </div>--}}
-                                                    {{-- </div>--}}
+                                                        {{-- <h5 class="text-uppercase fw-bold">Achievements</h5>--}}
+                                                        {{-- <div class="scroll-achiv  pe-3">--}}
+                                                            {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+                                                                {{-- </p>--}}
+                                                            {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+                                                                {{-- </p>--}}
+                                                            {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+                                                                {{-- </p>--}}
+                                                            {{-- </div>--}}
+                                                        {{-- </div>--}}
                                                 </div>
                                                 <div class="profile-form-block profilescrollblock pe-3 pb-2" id="profile-form">
                                                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
                                                         @csrf
                                                         <div class="text-box mt-3">
-
                                                             <input type="text" name="firstname" autocomplete="off" id="firstname" class="ps-2" value="{{$userData->first_name}}" placeholder="First Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required />
-
                                                         </div>
-
                                                         <div class="text-box mt-2">
-
                                                             <input type="text" name="lastname" autocomplete="off" id="lastname" class="ps-2" value="{{$userData->last_name}}" required placeholder="Last Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
-
                                                         </div>
                                                         <div class="text-box mt-2">
-
                                                             <input type="text" name="username" id="username" class="ps-2" autocomplete="off" value="{{ucwords($userData->user_name)}}" required placeholder="Display Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
                                                             <div id="emailHelp" class="form-text">This could be your
                                                                 first, last or nick name.
                                                             </div>
                                                         </div>
                                                         <div class="text-box mt-2">
-
                                                             <!--  <input type="text" name="searchname" id="searchname" class="ps-2" value="" minlength="10" maxlength="10" placeholder="https://www.uniq.co.in/_userID_000987787" /> -->
                                                             <div id="emailHelp" class="form-text">Your User ID</div>
                                                         </div>
                                                         <div class="text-box mt-3">
                                                             <input type="email" name="useremail" autocomplete="off" id="useremail" class="ps-2" value="{{$userData->email}}" required placeholder="Your Email Id" />
                                                         </div>
-
                                                         <div class="text-box mt-2">
-
                                                             <input type="text" name="user_mobile" id="user_mobile" class="ps-2" autocomplete="off" value="{{$userData->mobile}}" minlength="10" maxlength="10" onkeypress="return isNumber(event)" placeholder="Your Contact Number" required />
-
                                                         </div>
                                                         <span class="invalid-feedback m-0" role="alert" id="errlog_edit"> </span>
-
                                                         <div class=" text-box mt-4 text-end">
                                                             <button type="button" id="cancelEdit" class="btn-light rounded-0 btn px-5 btn-sm">Cancel
                                                             </button>
@@ -186,7 +165,6 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                         </div>
-
                         <div class="myAccountblock d-none" id="subscribe">
                             <div class="d-flex text-start">
                                 <div class="subscribeBlock">
@@ -199,7 +177,6 @@ $userData = Session::get('user_data');
                                                 <h5 class="activeUserName">{{ucwords($userData->user_name)}}</h5>
                                                 <small>Class - {{$user_stage}}, Preparing
                                                     for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</small>
-
                                             </div>
                                         </div>
                                         <div class="d-flex bg-light align-items-center px-4 py-3">
@@ -220,7 +197,6 @@ $userData = Session::get('user_data');
                                         @else
                                         <p class="text-end text-danger mt-1">*Subscription has already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                                         @endif
-
                                         <!-- <p class="text-end text-danger mt-1">*Subscription expires on 23rd April, 2022</p> -->
                                         <div class=" text-box mt-4 text-end">
                                             <a href="{{route('subscriptions')}}" class="btn-light rounded-0 btn px-5 btn-sm">See Details</a>
@@ -230,24 +206,18 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                         </div>
-
                         <div class="myAccountblock d-none" id="logout-block">
                             <div class="d-flex text-start align-items-center justify-content-center h-100">
                                 <div class="logoutBlock">
                                     <div class="bg-white p-4 text-left ms-4 text-center">
-
                                         <p>Are you sure?</p>
-
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                             sessionStorage.clear();  document.getElementById('logout-form').submit();" class="btn btn-danger rounded-0 px-5">
                                             Logout
                                         </a>
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +236,6 @@ $userData = Session::get('user_data');
             <div class="notification-scroll pe-3">
                 <p class="noti-subheading">Recent</p>
                 <div id="recent_notify">
-
                 </div>
                 <p class="noti-subheading mt-4">Older Notification
                     @if(isset($notifications) && !empty($notifications) && is_array($notifications))
@@ -276,14 +245,11 @@ $userData = Session::get('user_data');
                     @endif
                 </p>
                 <div id="old_notify">
-
                     @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                     @foreach($notifications as $val)
                     <div class="border-bottom d-flex flex-column py-2 px-3 notify-block">
-
                         <h6 class="mb-0">{{ $val->title }}</h6>
                         <p class="mb-0">{{ $val->message }}</p>
-
                         <small>{{ $val->notification_date }}</small>
                     </div>
                     @endforeach
@@ -293,10 +259,8 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-
 <!-- notification End-->
 <div class="collapse planmner-block width" id="collapseExample">
-
     <div class="planner-wrapper">
         <div class="planner-edit-mode" id="sub-planner">
             <div class="planner-scroll">
@@ -333,7 +297,6 @@ $userData = Session::get('user_data');
                             <div class="d-flex align-items-center text-uppercase"><i class="me-2 fa fa-check-circle text-success" aria-hidden="true"></i> {{$sVal->subject_name}}</div>
                             <div class="subject_chapter">
                                 <div id="planner_sub_{{$sVal->id}}" class="chaptbox pt-2">
-
                                 </div>
                                 <div class="chaptbox-add ">
                                     <a href="#" class="btn btn-light d-flex align-items-center justify-content-center" id="subject_chapter_{{$sVal->id}}" onClick="selectChapter('{{$sVal->id}}');">
@@ -358,7 +321,6 @@ $userData = Session::get('user_data');
                     <a href="javascript:void(0);" class="link-danger" id="edit-planner-btn"><img src="{{URL::asset('public/after_login/images/edit.png')}}"></a>
                     <a href="javascript:void(0);" class="link-danger close-sub-planner" id="close-edit-planner-btn"><img style="width:24px;" src="{{URL::asset('public/after_login/images/Layer-4.png')}}" class="bg-white"></a>
                     <a href="javascript:void(0);" class="close" data-dismiss="modal" id="close-planner-btn"><img src="{{URL::asset('public/after_login/images/close.png')}}" width="35%"></a>
-
                 </span>
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
                 <!-- <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
@@ -386,154 +348,152 @@ $userData = Session::get('user_data');
                 </div>
                 <div class="d-flex remind-box flex-column">
                     <span class="remind-txt"><i class="fas fa-bars"></i><textarea placeholder="Add description" disabled></textarea></span>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function() {
-        jQuery("#notification-tog").click(function() {
-            jQuery("#collapseExample").hide();
-            jQuery("#notification").show();
+$(document).ready(function() {
+    jQuery("#notification-tog").click(function() {
+        jQuery("#collapseExample").hide();
+        jQuery("#notification").show();
+    });
+
+    jQuery("#collapseExample-tog").click(function() {
+        jQuery("#collapseExample").show();
+        jQuery("#notification").hide();
+    });
+});
+
+document.getElementById("customRange").oninput = function() {
+    $('#slide-input').html(this.value);
+    var value = (this.value - this.min) / (this.max - this.min) * 100
+    this.style.background = 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + value + '%, #fff ' + value + '%, white 100%)'
+};
+
+$(document).ready(function() {
+
+    var today = new Date().toISOString().split('T')[0];
+
+    var dateW = new Date(today);
+    var firstW = dateW.getDate() - dateW.getDay() + 1;
+    var firstdayW = new Date(dateW.setDate(firstW)).toUTCString();
+    var firstDateW = formatDate(firstdayW);
+
+    document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
+
+    var range_val = $('#customRange').val();
+    if (range_val > 0) {
+        /* set range for */
+        var rvalue = (range_val - 0) / (7 - 0) * 100;
+        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
+
+        var curr = new Date;
+        var date = new Date(curr);
+        var first = date.getDate() - date.getDay() + 1;
+
+        var last = first + 6; // last day is the first day + 6
+
+        var firstday = new Date(date.setDate(first)).toUTCString();
+        var lastday = new Date(date.setDate(last)).toUTCString();
+        var firstDate = formatDate(firstday);
+        var lastDate = formatDate(lastday);
+        $('#StartDate').val(firstDate);
+
+        $('#EndDate').val(lastDate);
+
+        var planned = <?php echo json_encode($current_week_plan); ?>;
+        console.log(planned);
+        planned.forEach(function(item) {
+
+            var subject_id = item.subject_id;
+            var chapter_id = item.chapter_id;
+            var chapter_name = item.chapter_name;
+            var status = item.test_completed_yn;
+            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
         });
 
-        jQuery("#collapseExample-tog").click(function() {
-            jQuery("#collapseExample").show();
-            jQuery("#notification").hide();
+    }
+
+
+    $('#StartDate').change(function(event) {
+        var start_date = this.value;
+
+        $.ajax({
+            url: "{{ 'getWeeklyPlanSchedule' }}",
+            type: "GET",
+            cache: false,
+            data: {
+                'start_date': start_date
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.range > 0) {
+                    $("div").remove(".add-removeblock");
+                    $('#customRange').val(response.range);
+                    $('#slide-input').html(response.range);
+
+                    var ran_value = (response.range - 0) / (7 - 0) * 100;
+                    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+
+
+                    var planned_edit = response.planner;
+                    var result = Object.values(planned_edit);
+
+
+                    result.forEach(function(item) {
+                        console.log(item);
+                        var subject_id = item.subject_id;
+                        var chapter_id = item.chapter_id;
+                        var chapter_name = item.chapter_name;
+                        var status = item.test_completed_yn;
+                        $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                            '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+                    });
+
+                } else {
+                    $("div").remove(".add-removeblock");
+                    $('#customRange').val(response.range);
+                    $('#slide-input').html(response.range);
+                    var ran_value = (response.range - 0) / (7 - 0) * 100;
+                    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+
+                }
+            }
         });
     });
 
-    document.getElementById("customRange").oninput = function() {
-        $('#slide-input').html(this.value);
-        var value = (this.value - this.min) / (this.max - this.min) * 100
-        this.style.background = 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + value + '%, #fff ' + value + '%, white 100%)'
-    };
+    $('#search_results').hide();
+    $('#search_field').keyup(function(event) {
+        var val = event.target.value;
 
-    $(document).ready(function() {
-
-        var today = new Date().toISOString().split('T')[0];
-
-        var dateW = new Date(today);
-        var firstW = dateW.getDate() - dateW.getDay() + 1;
-        var firstdayW = new Date(dateW.setDate(firstW)).toUTCString();
-        var firstDateW = formatDate(firstdayW);
-
-        document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
-
-        var range_val = $('#customRange').val();
-        if (range_val > 0) {
-            /* set range for */
-            var rvalue = (range_val - 0) / (7 - 0) * 100;
-            $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
-
-            var curr = new Date;
-            var date = new Date(curr);
-            var first = date.getDate() - date.getDay() + 1;
-
-            var last = first + 6; // last day is the first day + 6
-
-            var firstday = new Date(date.setDate(first)).toUTCString();
-            var lastday = new Date(date.setDate(last)).toUTCString();
-            var firstDate = formatDate(firstday);
-            var lastDate = formatDate(lastday);
-            $('#StartDate').val(firstDate);
-
-            $('#EndDate').val(lastDate);
-
-            var planned = <?php echo json_encode($current_week_plan); ?>;
-            console.log(planned);
-            planned.forEach(function(item) {
-
-                var subject_id = item.subject_id;
-                var chapter_id = item.chapter_id;
-                var chapter_name = item.chapter_name;
-                var status = item.test_completed_yn;
-                $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                    '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
-            });
-
-        }
-
-
-        $('#StartDate').change(function(event) {
-            var start_date = this.value;
+        if (val != '') {
+            $('#leaderboard_box_div').hide();
+            $('#search_results').show();
 
             $.ajax({
-                url: "{{ 'getWeeklyPlanSchedule' }}",
+                url: "{{ 'searchFreind' }}",
                 type: "GET",
                 cache: false,
                 data: {
-                    'start_date': start_date
+                    'search_text': event.target.value
                 },
                 success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
-                    if (response.range > 0) {
-                        $("div").remove(".add-removeblock");
-                        $('#customRange').val(response.range);
-                        $('#slide-input').html(response.range);
 
-                        var ran_value = (response.range - 0) / (7 - 0) * 100;
-                        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+                    let html = '';
+                    var data = jQuery.parseJSON(response_data);
+                    if (data.success === true) {
 
-
-                        var planned_edit = response.planner;
-                        var result = Object.values(planned_edit);
-
-
-                        result.forEach(function(item) {
-                            console.log(item);
-                            var subject_id = item.subject_id;
-                            var chapter_id = item.chapter_id;
-                            var chapter_name = item.chapter_name;
-                            var status = item.test_completed_yn;
-                            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
-                        });
-
-                    } else {
-                        $("div").remove(".add-removeblock");
-                        $('#customRange').val(response.range);
-                        $('#slide-input').html(response.range);
-                        var ran_value = (response.range - 0) / (7 - 0) * 100;
-                        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
-
-                    }
-                }
-            });
-        });
-
-        $('#search_results').hide();
-        $('#search_field').keyup(function(event) {
-            var val = event.target.value;
-
-            if (val != '') {
-                $('#leaderboard_box_div').hide();
-                $('#search_results').show();
-
-                $.ajax({
-                    url: "{{ 'searchFreind' }}",
-                    type: "GET",
-                    cache: false,
-                    data: {
-                        'search_text': event.target.value
-                    },
-                    success: function(response_data) {
-
-                        let html = '';
-                        var data = jQuery.parseJSON(response_data);
-                        if (data.success === true) {
-
-                            $.each(data.response, (ele, val) => {
-                                if (val.user_profile_img) {
-                                    var img_url = val.user_profile_img;
-                                } else {
-                                    var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
-                                }
-                                html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
+                        $.each(data.response, (ele, val) => {
+                            if (val.user_profile_img) {
+                                var img_url = val.user_profile_img;
+                            } else {
+                                var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
+                            }
+                            html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
                                                                 <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
@@ -541,43 +501,44 @@ $userData = Session::get('user_data');
                                                                 </div>
                                                             </div>
                                                         </li>`;
-                            });
+                        });
 
-                        } else {
-                            html += `<p>Data not available!</p>`;
-                        }
-                        $('#search_results .leaderNameBlock-search').html(html);
+                    } else {
+                        html += `<p>Data not available!</p>`;
                     }
-                });
-            } else {
-                $('#search_results').hide();
-                $('#leaderboard_box_div').show();
-            }
-        });
+                    $('#search_results .leaderNameBlock-search').html(html);
+                }
+            });
+        } else {
+            $('#search_results').hide();
+            $('#leaderboard_box_div').show();
+        }
     });
+});
+
 </script>
-
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.close').click(function() {
-            $('#collapseExample').hide();
+$(document).ready(function() {
+    $('.close').click(function() {
+        $('#collapseExample').hide();
 
-            calendari(document.getElementById('calendari'), new Date());
-        });
-        /*edit planner*/
-        var chapters = $('input[name="chapters[]"]').length;
-        var limit = $('#customRange').val();
-        $('#slide-input').html(chapters);
-        $('input[name="weekrange').val(chapters);
-        var rvalue1 = (chapters - 0) / (7 - 0) * 100;
-        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
-
-        /*edit planner*/
-
-        /*Refer Firend*/
-        $('.btn-close').click(function() {
-            $('#referEmails').val('');
-        });
-        /*Refer Firend*/
+        calendari(document.getElementById('calendari'), new Date());
     });
+    /*edit planner*/
+    var chapters = $('input[name="chapters[]"]').length;
+    var limit = $('#customRange').val();
+    $('#slide-input').html(chapters);
+    $('input[name="weekrange').val(chapters);
+    var rvalue1 = (chapters - 0) / (7 - 0) * 100;
+    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
+
+    /*edit planner*/
+
+    /*Refer Firend*/
+    $('.btn-close').click(function() {
+        $('#referEmails').val('');
+    });
+    /*Refer Firend*/
+});
+
 </script>
