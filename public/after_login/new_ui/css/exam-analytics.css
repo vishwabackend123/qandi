@@ -589,7 +589,7 @@ p.fs-5.profileN img {
     border-bottom-left-radius: 56px;
     border-bottom-right-radius: 56px;
 }
-
+#attempt_count_block .progress-bar{border-radius: 20px;}
 button.top-btn-pop {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     background-image: linear-gradient(to bottom, #21ccff, #21ccff);
