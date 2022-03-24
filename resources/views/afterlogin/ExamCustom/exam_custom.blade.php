@@ -111,9 +111,9 @@ $userData = Session::get('user_data');
                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                   @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                   @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
-                  <div class="compLeteS">
-                    <div class="ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap  ">
-                      <span class="mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
+                  <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
+                    <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
+                      <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
 
                       <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
@@ -472,12 +472,15 @@ $userData = Session::get('user_data');
 
           $('#overlay').fadeOut();
           $('#topic_form').show();
-          scroll_topic(chapt_id, sub_id);
+          // scroll_topic(chapt_id, sub_id);
+          $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
+
         }
       });
     } else {
 
       $("#expand_topic_" + chapt_id).text("Expand to topics");
+      $("clicktopic_" + chapt_id).focus();
       $('#topic_form').toggle();
 
     }
@@ -620,24 +623,26 @@ $userData = Session::get('user_data');
   .newelement button#dropdownMenuLink-topic {
     margin-top: 0px;
   }
-  .clear_div{
+
+  .clear_div {
     justify-content: end;
   }
+
   .custom-page #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show {
-    top: calc(100% - 35px)!important;
+    top: calc(100% - 35px) !important;
     right: 0px !important;
-   
-}
 
-.clear_div .dropdown{
-  margin-left: 20px;
-}
+  }
 
-#clear-filter {
-  color: #21ccff;
+  .clear_div .dropdown {
+    margin-left: 20px;
+  }
+
+  #clear-filter {
+    color: #21ccff;
     font-size: 16px;
     padding-left: 13px;
-}
+  }
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
