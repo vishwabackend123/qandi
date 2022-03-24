@@ -68,6 +68,7 @@ class HomeController extends Controller
 
             $date_difference = $today_date->diffInDays($expiry_date, false);
 
+
             if ($date_difference > 0) {
                 //not expired
                 $suscription_status = 2;

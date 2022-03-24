@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+div#collapseNotification.notification-block{display: none!important;}
+div#collapseNotification.notification-block.notification-block-active{display: block!important;}
 .test-attend a.text-secondary.ms-2 img{margin: -10px -10px -18px -9px;}
 .wrapper-dashboard{overflow-x: hidden;}
 .cust-gallery  .swiper{overflow: visible;}
@@ -2685,7 +2687,7 @@ button#dropdownMenuLink-topic {
 
 /** live exam section **/
 
-.list-series .live-exam #home .speci-text li,.list-series .live-exam #completed .speci-text li {
+.list-series .live-exam #home .speci-text li {
     width: 18%;
 }
 

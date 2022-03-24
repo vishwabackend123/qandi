@@ -580,7 +580,8 @@ p.fs-5.profileN img {
 }
 
 .exam-analytics .bg-light-red {
-    background: red;
+    background: red;border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .exam-analytics .cust-tab-content {
