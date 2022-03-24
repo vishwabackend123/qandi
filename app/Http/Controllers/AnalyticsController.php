@@ -61,11 +61,11 @@ class AnalyticsController extends Controller
             $subProf = [];
             if (isset($response->success) && $response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-                $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
-                $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
-                $subProf = json_decode($response->subject_proficiency);
-                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+            $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
+            $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
+            $subProf = json_decode($response->subject_proficiency);
+            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -291,9 +291,9 @@ class AnalyticsController extends Controller
             $otherScorePre = 100;
             if ($response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-                $subProf = json_decode($response->subject_proficiency);
-                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+            $subProf = json_decode($response->subject_proficiency);
+            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();

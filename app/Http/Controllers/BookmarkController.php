@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 
-
 class BookmarkController extends Controller
 {
     //
@@ -22,7 +21,6 @@ class BookmarkController extends Controller
 
     public function addbookmark(Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -73,9 +71,7 @@ class BookmarkController extends Controller
             } else {
                 return $err;
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

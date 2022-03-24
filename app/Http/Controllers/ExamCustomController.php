@@ -80,7 +80,6 @@ class ExamCustomController extends Controller
 
             if (!empty($subject_list)) {
                 foreach ($subject_list as $row) {
-
                     $subject_id = $row->id;
                     $aSubject_chapters = $this->get_subject_chapter($subject_id);
 
@@ -250,7 +249,6 @@ class ExamCustomController extends Controller
             $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
 
             if ($httpcode_response == true) {
-
                 if (!empty($aQuestions_list)) {
                     //$exam_fulltime = $responsedata->time_allowed;
                     $questions_count = count($aQuestions_list);
@@ -350,7 +348,7 @@ class ExamCustomController extends Controller
         }
     }
 
-    function shuffle_assoc($list)
+    public function shuffle_assoc($list)
     {
         try {
             if (!is_array($list)) {
@@ -718,7 +716,6 @@ class ExamCustomController extends Controller
     public function ajax_chapter_list($active_subject_id, Request $request)
     {
         try {
-
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -960,7 +957,6 @@ class ExamCustomController extends Controller
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
             } else {
-
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
             $exam_fulltime = 60; //60min set for cahpter adaptive exam
@@ -1079,7 +1075,6 @@ class ExamCustomController extends Controller
             $next_question_data = isset($allQuestions[$key]) ? $allQuestions[$key] : []; // required question all data
 
             if (empty($next_question_data)) {
-
                 $question_data = $this->getNextAdpativeQues($session_id, $key, $chapter_id);
             } else {
                 $question_data = $next_question_data;
@@ -1251,7 +1246,6 @@ class ExamCustomController extends Controller
                 $retrive_time_sec[$question_id] = (int)$q_submit_time;
 
                 if (isset($option_id) && $option_id != '') {
-
                     $retrive_array[$question_id]['answer'] = $option_id;
                     $retrive_array[$question_id]['timetaken'] = gmdate('H:i:s', (int)$q_submit_time);
                     $retrive_array[$question_id]['question_id'] = (int)$question_id;
@@ -1260,7 +1254,6 @@ class ExamCustomController extends Controller
             } else {
                 $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = [];
                 if (isset($option_id) && $option_id != '') {
-
                     $retrive_array[$question_id] = $option_id;
                     $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
                 }
@@ -1384,7 +1377,6 @@ class ExamCustomController extends Controller
 
                 return $next_question_data;
             } else {
-
                 return [];
             }
         } catch (\Exception $e) {

@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Config;
@@ -79,7 +77,6 @@ class AdpativeExamController extends Controller
                 $exam_fulltime = $responsedata->time_allowed ?? '';
 
                 $exam_ques_count = $questions_count = count($aQuestions_list);
-                //$exam_fulltime = $questions_count;
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;
@@ -263,7 +260,6 @@ class AdpativeExamController extends Controller
 
     public function adaptive_next_subject_question($subject_id, Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -556,7 +552,6 @@ class AdpativeExamController extends Controller
             $next_question_data = isset($allQuestions[$key]) ? $allQuestions[$key] : []; // required question all data
 
             if (empty($next_question_data)) {
-
                 $question_data = $this->getNextAdpativeQues($session_id, $key, $topic_id);
             } else {
                 $question_data = $next_question_data;
@@ -703,7 +698,6 @@ class AdpativeExamController extends Controller
 
                 return $next_question_data;
             } else {
-
                 return [];
             }
         } catch (\Exception $e) {
@@ -772,10 +766,8 @@ class AdpativeExamController extends Controller
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
-
                 return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
-
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
@@ -852,7 +844,6 @@ class AdpativeExamController extends Controller
             if ($check_response == true) {
                 return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
-
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
