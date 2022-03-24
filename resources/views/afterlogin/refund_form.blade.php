@@ -34,13 +34,13 @@ $userData = Session::get('user_data');
             <div class="row">
                 <div class="col-lg-7 m-auto refund-money bg-white">
                     <div class=" p-3" id="refund_block_form">
-                        <form id="refund_form" action="{{route('refund_form_submit')}}" method="post" autocomplete="off">
+                        <form id="refund_form" action="{{route('refund_form_submit')}}" method="post">
                             @csrf
                             <div class="text-box form-group row align-items-center mb-4">
                                 <label for="fname" class="col-md-4">Account Holder Name<span class="text-red">*</span></label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" autocomplete="nope" required maxlength="50">
+                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" required maxlength="50" autocomplete="new-password">
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">Bank Name<span class="text-red">*</span></label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" autocomplete="chrome-off" required maxlength="50">
+                                        <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" required maxlength="50">
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">Account No<span class="text-red">*</span></label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="acc_no" onkeypress="return isNumber(event)" class="form-control refund_class" name="acc_no" placeholder="Account No.." autocomplete="off" maxlength="16" required>
+                                        <input type="text" id="acc_no" onkeypress="return isNumber(event)" class="form-control refund_class" name="acc_no" placeholder="Account No.." maxlength="16" required>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">IFSC Code<span class="text-red">*</span></label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="ifsc_code" class="form-control refund_class" name="ifsc_code" placeholder="IFSC Code.." required maxlength="11" autocomplete="off">
+                                        <input type="text" id="ifsc_code" class="form-control refund_class" name="ifsc_code" placeholder="IFSC Code.." required maxlength="11">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ $userData = Session::get('user_data');
                                 <label for="subject" class="col-md-4">Message<span class="text-red">*</span></label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <textarea id="subject" name="subject" placeholder="Write something.." autocomplete="off" class="refund_class"></textarea>
+                                        <textarea id="subject" name="subject" placeholder="Write something.." required class="refund_class"></textarea>
                                     </div>
                                 </div>
                             </div>
