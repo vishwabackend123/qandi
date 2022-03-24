@@ -100,6 +100,8 @@ $userData = Session::get('user_data');
             refundformCheck();
         });
 
+        $("form").attr('autocomplete', 'off');
+
         function refundformCheck() {
             var empty = false;
             $('.refund_class').each(function() {
