@@ -1733,7 +1733,13 @@
     $(".notification.me-5.ms-4").click(function() {
         if($(this).hasClass("notification-icons-active"))
         {
-           $("#collapseNotification").addClass("show");
+           $("div#collapseNotification.notification-block").addClass("notification-block-active");
         }
+        else{
+            $("div#collapseNotification.notification-block").removeClass("notification-block-active");
+        }
+    });
+    $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
+        $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
 </script>
