@@ -31,33 +31,53 @@ $userData = Session::get('user_data');
         <div class="container-fluid">
             <!--  -->
             <div class="row">
-                <div class=" form-group col-lg-6 m-auto border rounded">
+                <div class="col-lg-7 m-auto refund-money bg-white">
                     <div class=" p-3" id="refund_block_form">
                         <form id="refund_form" action="{{route('refund_form_submit')}}">
                             @csrf
-                            <div class="text-box mt-0">
-                                <label for="fname">Account Holder Name</label>
+                            <div class="text-box form-group row align-items-center mb-4">
+                                <label for="fname" class="col-md-4">Account Holder Name*</label>
+                                <div class="col-md-8">
+                                <div class="position-relative required-filed">
                                 <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" required maxlength="50">
+                                </div>
+                                </div>
                             </div>
-                            <div class="text-box mt-2">
-                                <label for="lname">Bank Name</label>
+                            <div class="text-box form-group row align-items-center mb-4">
+                                <label for="lname" class="col-md-4">Bank Name*</label>
+                                 <div class="col-md-8">
+                                      <div class="position-relative required-filed">
                                 <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" required maxlength="50">
+                                     </div>
+                                </div>
                             </div>
-                            <div class="text-box mt-2">
-                                <label for="lname">Account No.</label>
+                            <div class="text-box form-group row align-items-center mb-4">
+                                <label for="lname" class="col-md-4">Account No*</label>
+                                <div class="col-md-8">
+                                 <div class="position-relative required-filed">
                                 <input type="text" id="acc_no" onkeypress="return isNumber(event)" class="form-control refund_class" name="acc_no" placeholder="Account No.." maxlength="16" required>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text-box mt-2">
-                                <label for="lname">IFSC Code</label>
+                            <div class="text-box form-group row align-items-center mb-4">
+                                <label for="lname" class="col-md-4">IFSC Code*</label>
+                                <div class="col-md-8">
+                                 <div class="position-relative required-filed">
                                 <input type="text" id="ifsc_code" class="form-control refund_class" name="ifsc_code" placeholder="IFSC Code.." required maxlength="11">
+                                </div>
+                                </div>
                             </div>
-                            <div class="text-box mt-2">
-                                <label for="subject">Subject</label>
-                                <textarea id="subject" name="subject" placeholder="Write something.." row="4" required class="refund_class"></textarea>
+                            <div class="text-box form-group row align-items-center mb-4">
+                                <label for="subject" class="col-md-4">Message</label>
+                                 <div class="col-md-8">
+                                 <div class="position-relative required-filed">
+                                <textarea id="subject" name="subject" placeholder="Write something.." required class="refund_class"></textarea>
+                                     </div>
+                                </div>
                             </div>
                             <div class="mt-3">
                                 <button type="submit" id="saveEdit" class="btn btn-danger  rounded saveEdit">
-                                    Save
+                                    Submit
                                 </button>
                             </div>
                             <div class="col-md-12 text-center">
