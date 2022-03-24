@@ -412,7 +412,13 @@
 
                         </div>
                         <div class="text-center">
-                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-31 " title="Save Planner" id="saveplannerbutton"><img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}" > Save
+                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-31 tickicon" title="Save Planner" id="saveplannerbutton">
+                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}" >  -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17.299" height="12.989" viewBox="0 0 20.299 15.989">
+                                    <path data-name="Path 2641" d="m5 13.388 6.04 6.388L23.119 7" transform="translate(-3.91 -5.969)" style="fill:none;stroke:#fff;stroke-width:3px"/>
+                                </svg>
+                                
+                                Save
                             </button>
                         </div>
                     </form>
@@ -963,5 +969,12 @@
     }
     .clear_div  .dropdown ul.dropdown-menu.cust-dropdown.show {
       transform: translate(-104px, 50px) !important;
+    
+}
+.tickicon {
+    height: 50px;
+}
+.tickicon svg{
+    margin-right: 5px;
 }
 </style>
