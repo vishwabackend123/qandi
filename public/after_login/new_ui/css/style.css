@@ -3788,13 +3788,13 @@ input#StartDate {
 }
 
 #collapsePlanner .add-removeblock img {
-    width: 16px;
+    width: 18px;
 }
 
 #collapsePlanner a.chapter_remove img {
     width: 16px;
     position: relative;
-    top: -1px;
+    top: -0.8px;
 }
 
 #collapsePlanner .topic_name {
