@@ -40,7 +40,7 @@ $userData = Session::get('user_data');
                                 <label for="fname" class="col-md-4">Account Holder Name*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" autocomplete="new-password" required maxlength="50">
+                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" autocomplete="nope" required maxlength="50">
                                     </div>
                                 </div>
                             </div>
