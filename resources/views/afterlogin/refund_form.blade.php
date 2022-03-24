@@ -40,7 +40,7 @@ $userData = Session::get('user_data');
                                 <label for="fname" class="col-md-4">Account Holder Name*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" autocomplete="false" required maxlength="50">
+                                        <input type="text" id="fname" class="form-control refund_class" name="firstname" placeholder="Your name.." onkeypress="return lettersOnly(event)" autocomplete="off" required maxlength="50">
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ $userData = Session::get('user_data');
                                 <label for="lname" class="col-md-4">Bank Name*</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" autocomplete="false" required maxlength="50">
+                                        <input type="text" id="bank_name" class="form-control refund_class" name="bank_name" placeholder="Bank Name.." onkeypress="return lettersOnly(event)" autocomplete="off" required maxlength="50">
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ $userData = Session::get('user_data');
                                 <label for="subject" class="col-md-4">Message</label>
                                 <div class="col-md-8">
                                     <div class="position-relative required-filed">
-                                        <textarea id="subject" name="subject" placeholder="Write something.." required class="refund_class"></textarea>
+                                        <textarea id="subject" name="subject" placeholder="Write something.." autocomplete="off" class="refund_class"></textarea>
                                     </div>
                                 </div>
                             </div>
