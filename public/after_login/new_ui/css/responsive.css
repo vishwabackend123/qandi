@@ -171,7 +171,7 @@
         float: left !important;
     }
 
-    .list-series .live-exam #home .speci-text li {
+    .list-series .live-exam #home .speci-text li,.list-series .live-exam #completed .speci-text li  {
         width: 100%;
     }
 

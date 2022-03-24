@@ -2685,7 +2685,7 @@ button#dropdownMenuLink-topic {
 
 /** live exam section **/
 
-.list-series .live-exam #home .speci-text li {
+.list-series .live-exam #home .speci-text li,.list-series .live-exam #completed .speci-text li {
     width: 18%;
 }
 
