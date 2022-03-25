@@ -1,53 +1,21 @@
 @extends('afterlogin.layouts.app_new')
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!-- Have fun using Bootstrap JS -->
-<script type="text/javascript">
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $("#FullTest_Exam_Panel_Interface_A").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-            history.go(1);
-        };
-    });
-</script>
 @section('content')
+    @php
+        $userData = Session::get('user_data');
+    @endphp
 @php
-$userData = Session::get('user_data');
-
-@endphp
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-
-@php
-$question_text = isset($question_data->question)?$question_data->question:'';
-$subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
-$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
-$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
-$template_type = isset($question_data->template_type)?$question_data->template_type:'';
-$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
-
-
+    $question_text = isset($question_data->question)?$question_data->question:'';
+    $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+    $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+    $topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
+    $template_type = isset($question_data->template_type)?$question_data->template_type:'';
+    $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 if($template_type==1){
-$type_class='checkboxans';
-$questtype='checkbox';
+    $type_class='checkboxans';
+    $questtype='checkbox';
 }else{
-$type_class='radioans';
-$questtype='radio';
+    $type_class='radioans';
+    $questtype='radio';
 }
 @endphp
 <style>
@@ -116,11 +84,7 @@ $questtype='radio';
 
     }
 </style>
-
-
-
 <div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
-
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
@@ -157,15 +121,12 @@ $questtype='radio';
                                             </div>
                                             <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                         </div>
-
                                         <div class="question-block">
                                             <!-- Next and previous button -->
                                             <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
                                             <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
                                             <!-- Next and previous button -->
-
                                             <div class="question py-3"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-
                                             <div class="ans-block row my-3">
                                                 @if(isset($option_data) && !empty($option_data))
                                                 @php $no=0; @endphp
@@ -188,9 +149,7 @@ $questtype='radio';
                                                 @php $no++; @endphp
                                                 @endforeach
                                                 @endif
-
                                             </div>
-
                                         </div>
                                         <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                         <div class="tab-btn-box  d-flex mt-3">
@@ -201,9 +160,7 @@ $questtype='radio';
                                             </button>
                                             @endif
                                             <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
-
                                             <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
-
                                             <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
                                         </div>
                                     </div>
@@ -213,7 +170,6 @@ $questtype='radio';
                     </div>
                 </div>
                 <!-- Right Side Area -->
-
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5">
                         <div class="d-flex align-items-center">
@@ -257,18 +213,15 @@ $questtype='radio';
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
                             <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
-
                         <p class="rightSectH">Question</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
                             @php $i = 1; @endphp
                             @foreach($keys as $ke=>$val)
-
                             <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$i}}</button>
                             @php $i++; @endphp
                             @endforeach
                             @endif
-
                             <!-- <button class="btn btn-secondary  mb-4 rounded-0">2</button>
                             <button class="btn btn-secondary  mb-4 rounded-0">3</button>
                             <button class="btn btn-light-green  mb-4 rounded-0">4</button>
@@ -284,7 +237,6 @@ $questtype='radio';
                             <button class="btn btn-light-green  mb-4 rounded-0">14</button>
                             <button class="btn btn-light-green  mb-4 rounded-0">15</button> -->
                         </div>
-
                         <!--  <p class="rightSectH">Legends</p> -->
                         <div class="row mt-4">
                             <div class="col-md-6 legends">
@@ -306,15 +258,12 @@ $questtype='radio';
                                 <p>Answered & <br>Marked for Review</p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Modal Test_Instruction-->
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -347,15 +296,15 @@ $questtype='radio';
                     You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
-                <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 textsubmit">
-                      <span class="btnSubic">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
-                                    </svg>
-                                </span> &nbsp;&nbsp;&nbsp;Submit TEST
+                        <span class="btnSubic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                            </svg>
+                        </span> &nbsp;&nbsp;&nbsp;Submit TEST
                     </button>
                 </div>
             </div>
@@ -396,7 +345,6 @@ $questtype='radio';
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
                             <div class="instructions pe-3 uniform-scroll">
@@ -413,49 +361,33 @@ $questtype='radio';
                         </div>
                     </div>
                     <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-
                         <h1 class="my-auto text-center">
-
                             <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
-
                         </h1>
                         <div class="text-left   ">
-
                             <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
-
-
 <!-- Modal END Exam -->
 <div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
-
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h2 class="mb-3">Time Over!</h2>
-
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
                     </button>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
-
-
 <div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
@@ -472,108 +404,111 @@ $questtype='radio';
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
-
 @include('afterlogin.layouts.footer_new')
-
-<script>
-    /* Sachin screen changes */
-    function setboxHeight() {
-        var height = $(".rightSect .flex-column").outerHeight();
-        $('.cust-tab-content').css('height', height);
-
-    }
-    /*  setboxHeight();
-     $("window").load(function() {
-         setboxHeight();
-     }); */
-
-    $(window).resize(function() {
-        setboxHeight();
-    });
-    /* /Sachin screen changes */
-
-    /* page referesh disabled */
-    $(document).ready(function() {
-        /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
-
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
-
-                return false;
-            }
-            return true;
-        });
-        /* mouse rightclick */
-
-        document.onkeydown = function(e) {
-            // disable F12 key
-            if (e.keyCode == 123 || e.keyCode == 116) {
-                return false;
-            }
-            /* Ctrl+A */
-            if (e.keyCode == 65 && e.ctrlKey) {
-
-                return false;
-            }
-            /* Ctrl+R */
-            if (e.keyCode == 82 && e.ctrlKey) {
-
-                return false;
-            }
-
-            // disable ctrl+shift+I key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                return false;
-            }
-
-            // disable ctrl+shift+J key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-                return false;
-            }
-
-            // disable ctrl+U key
-            if (e.ctrlKey && e.keyCode == 85) {
-                return false;
-            }
-
-            // disable ctrl+P key
-            if (e.ctrlKey && e.keyCode == 80) {
-                return false;
-            }
-        }
-    });
-</script>
-<!-- /page referesh disabled -->
-<!-- browser back disable -->
-<!-- <script>
-    window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
-    window.onhashchange = function() {
-        window.location.hash = "no-back-button";
-    }
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
+$(window).load(function() {
+    $("#endExam").modal({
+        backdrop: "static",
+        keyboard: false
+    });
+    $("#FullTest_Exam_Panel_Interface_A").modal({
+        backdrop: "static",
+        keyboard: false
+    });
+
     history.pushState(null, null, location.href);
-    history.back();
-    history.forward();
     window.onpopstate = function() {
         history.go(1);
     };
-</script> -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        window.history.pushState(null, "", window.location.href);
-        window.onpopstate = function() {
-            window.history.pushState(null, "", window.location.href);
-        };
+});
+
+</script>
+<script>
+/* Sachin screen changes */
+function setboxHeight() {
+    var height = $(".rightSect .flex-column").outerHeight();
+    $('.cust-tab-content').css('height', height);
+
+}
+/*  setboxHeight();
+ $("window").load(function() {
+     setboxHeight();
+ }); */
+
+$(window).resize(function() {
+    setboxHeight();
+});
+/* /Sachin screen changes */
+
+/* page referesh disabled */
+$(document).ready(function() {
+    /* mouse rightclick */
+    document.oncontextmenu = function() {
+        return false;
+    };
+
+    $(document).mousedown(function(e) {
+        if (e.button == 2) {
+
+            return false;
+        }
+        return true;
     });
+    /* mouse rightclick */
+
+    document.onkeydown = function(e) {
+        // disable F12 key
+        if (e.keyCode == 123 || e.keyCode == 116) {
+            return false;
+        }
+        /* Ctrl+A */
+        if (e.keyCode == 65 && e.ctrlKey) {
+
+            return false;
+        }
+        /* Ctrl+R */
+        if (e.keyCode == 82 && e.ctrlKey) {
+
+            return false;
+        }
+
+        // disable ctrl+shift+I key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            return false;
+        }
+
+        // disable ctrl+shift+J key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            return false;
+        }
+
+        // disable ctrl+U key
+        if (e.ctrlKey && e.keyCode == 85) {
+            return false;
+        }
+
+        // disable ctrl+P key
+        if (e.ctrlKey && e.keyCode == 80) {
+            return false;
+        }
+    }
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
+});
+
 </script>
 <!-- browser back disable -->
 <script type="text/javascript">
-    /*$('.number-block').slimscroll({
+/*$('.number-block').slimscroll({
         height: '20vh'
     });
 
@@ -581,282 +516,404 @@ $questtype='radio';
         height: '30vh'
     });*/
 
-    $(window).on('load', function() {
-        $("#test_instruction").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $('#test_instruction').modal('show');
-
+$(window).on('load', function() {
+    $("#test_instruction").modal({
+        backdrop: "static",
+        keyboard: false
     });
-    $('#goto-exam-btn').click(function() {
-        $('#mainDiv').show();
-        $('#exam_content_sec').show();
-        setboxHeight();
-        startTimer();
-        questionstartTimer();
-        setEachQuestionTime();
-    });
-    $('.selctbtn').click(function() {
-        $('.qoption_error').hide();
-    });
+    $('#test_instruction').modal('show');
 
-    /*$('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
-        railVisible: true,
-         alwaysVisible: true 
-    });*/
+});
+$('#goto-exam-btn').click(function() {
+    $('#mainDiv').show();
+    $('#exam_content_sec').show();
+    setboxHeight();
+    startTimer();
+    questionstartTimer();
+    setEachQuestionTime();
+});
+$('.selctbtn').click(function() {
+    $('.qoption_error').hide();
+});
 
-
-    const FULL_DASH_ARRAY = 283;
-    const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
-
-    //All buttons
-    let startBtn = document.querySelector(".start");
-    let stopBtn = document.querySelector(".stop");
-    let resetBtn = document.querySelector(".reset");
-
-    //DOM elements
-    let timer = document.querySelector("#base-timer-path-remaining");
-    let timeLabel = document.getElementById("base-timer-label");
-
-    //Time related vars
-    const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
-    let timePassed = -1;
-    let timeLeft = TIME_LIMIT;
-    let timerInterval = null;
+/*$('.instructions').slimscroll({
+    height: '33vh',
+    color: '#ff9999',
+    railVisible: true,
+     alwaysVisible: true 
+});*/
 
 
-    function reset() {
-        clearInterval(timerInterval);
+const FULL_DASH_ARRAY = 283;
+const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
+
+//All buttons
+let startBtn = document.querySelector(".start");
+let stopBtn = document.querySelector(".stop");
+let resetBtn = document.querySelector(".reset");
+
+//DOM elements
+let timer = document.querySelector("#base-timer-path-remaining");
+let timeLabel = document.getElementById("base-timer-label");
+
+//Time related vars
+const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
+let timePassed = -1;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+
+
+function reset() {
+    clearInterval(timerInterval);
+    resetVars();
+    startBtn.innerHTML = "Start";
+    timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
+}
+
+function start(withReset = false) {
+    setDisabled(startBtn);
+    removeDisabled(stopBtn);
+    $(".stop").show();
+    $(".start").hide();
+    if (withReset) {
         resetVars();
-        startBtn.innerHTML = "Start";
-        timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
     }
+    startTimer();
+}
 
-    function start(withReset = false) {
-        setDisabled(startBtn);
-        removeDisabled(stopBtn);
-        $(".stop").show();
-        $(".start").hide();
-        if (withReset) {
-            resetVars();
+function stop(type = '') {
+    setDisabled(stopBtn);
+    removeDisabled(startBtn);
+    $(".stop").hide();
+    $(".start").show();
+    // startBtn.innerHTML = "Continue";
+    clearInterval(timerInterval);
+    if (type !== 'submit') {
+        $("#resume-test").modal("show");
+    }
+}
+
+
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        $('#final_submit_time').val(timePassed);
+        timeLabel.innerHTML = formatTime(timeLeft);
+        setCircleDasharray();
+
+        if (timeLeft === 0) {
+
+            timeIsUp();
         }
+    }, 1000);
+}
+
+window.addEventListener("load", () => {
+    // startTimer();
+    timeLabel.innerHTML = formatTime(TIME_LIMIT);
+    // setDisabled(stopBtn);
+});
+
+//---------------------------------------------
+//HELPER METHODS
+//---------------------------------------------
+function setDisabled(button) {
+    button.setAttribute("disabled", true);
+}
+
+function removeDisabled(button) {
+    button.removeAttribute("disabled");
+}
+
+function timeIsUp() {
+
+    /*  setDisabled(startBtn);
+     removeDisabled(stopBtn); */
+    clearInterval(timerInterval);
+    $('#endExam').modal('show');
+
+    /* let confirmReset = confirm("Time is UP! Wanna restart?");
+    if (confirmReset) {
+        reset();
         startTimer();
+    } else {
+        reset();
+    } */
+}
+
+function resetVars() {
+    // removeDisabled(startBtn);
+    // setDisabled(stopBtn);
+    timePassed = -1;
+    timeLeft = TIME_LIMIT;
+    // console.log(timePassed, timeLeft);
+
+    timeLabel.innerHTML = formatTime(TIME_LIMIT);
+}
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    if (seconds < 10) {
+        seconds = `0${seconds}`;
     }
 
-    function stop(type = '') {
-        setDisabled(stopBtn);
-        removeDisabled(startBtn);
-        $(".stop").hide();
-        $(".start").show();
-        // startBtn.innerHTML = "Continue";
-        clearInterval(timerInterval);
-        if (type !== 'submit') {
-            $("#resume-test").modal("show");
-        }
-    }
+    return `${minutes} min ${seconds} sec`;
+}
 
+function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / TIME_LIMIT;
+    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
 
-
-    function startTimer() {
-        timerInterval = setInterval(() => {
-            timePassed = timePassed += 1;
-            timeLeft = TIME_LIMIT - timePassed;
-            $('#final_submit_time').val(timePassed);
-            timeLabel.innerHTML = formatTime(timeLeft);
-            setCircleDasharray();
-
-            if (timeLeft === 0) {
-
-                timeIsUp();
-            }
-        }, 1000);
-    }
-
-    window.addEventListener("load", () => {
-        // startTimer();
-        timeLabel.innerHTML = formatTime(TIME_LIMIT);
-        // setDisabled(stopBtn);
-    });
-
-    //---------------------------------------------
-    //HELPER METHODS
-    //---------------------------------------------
-    function setDisabled(button) {
-        button.setAttribute("disabled", true);
-    }
-
-    function removeDisabled(button) {
-        button.removeAttribute("disabled");
-    }
-
-    function timeIsUp() {
-
-        /*  setDisabled(startBtn);
-         removeDisabled(stopBtn); */
-        clearInterval(timerInterval);
-        $('#endExam').modal('show');
-
-        /* let confirmReset = confirm("Time is UP! Wanna restart?");
-        if (confirmReset) {
-            reset();
-            startTimer();
-        } else {
-            reset();
-        } */
-    }
-
-    function resetVars() {
-        // removeDisabled(startBtn);
-        // setDisabled(stopBtn);
-        timePassed = -1;
-        timeLeft = TIME_LIMIT;
-        // console.log(timePassed, timeLeft);
-
-        timeLabel.innerHTML = formatTime(TIME_LIMIT);
-    }
-
-    function formatTime(time) {
-        const minutes = Math.floor(time / 60);
-        let seconds = time % 60;
-
-        if (seconds < 10) {
-            seconds = `0${seconds}`;
-        }
-
-        return `${minutes} min ${seconds} sec`;
-    }
-
-    function calculateTimeFraction() {
-        const rawTimeFraction = timeLeft / TIME_LIMIT;
-        return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-    }
-
-    function setCircleDasharray() {
-        const circleDasharray = `${(
+function setCircleDasharray() {
+    const circleDasharray = `${(
                 calculateTimeFraction() * FULL_DASH_ARRAY
             ).toFixed(0)} 283`;
-        // console.log("setCircleDashArray: ", circleDasharray);
-        timer.setAttribute("stroke-dasharray", circleDasharray);
-    }
+    // console.log("setCircleDashArray: ", circleDasharray);
+    timer.setAttribute("stroke-dasharray", circleDasharray);
+}
 
-    /* per question timer */
-    /*  var setEachQuestionTimeNext_countdown;
-     var totalSeconds = -1;
+/* per question timer */
+/*  var setEachQuestionTimeNext_countdown;
+ var totalSeconds = -1;
 
-     function setEachQuestionTime() {
-         setEachQuestionTimeNext_countdown = setInterval(function() {
-             ++totalSeconds;
-             $('.timespend_first').val(totalSeconds);
-
-
-         }, 1000);
-     } */
-    /* per question timer */
-    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
-    var fsec = time_allowed * 60;
-    var up_timer = 0;
-    var countdown_txt = " Seconds";
-    var upcounter_txt = " Mins";
-    var ctimer;
-    var setEachQuestionTimeNext_countdown;
-    var timer_countdown;
-
-    function questionstartTimer() {
-
-        timer_countdown = setInterval(function() {
-            fsec--;
-            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
-            progressBar(fsec, $('.progressBar_first'));
-            if (fsec == -1) {
-                clearInterval(timer_countdown);
-                $('.progressBar_first').css('background-color', '#E4E4E4');
-                $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
-                $('#q_time_taken_first').show();
-                $('#avg_text').hide();
-                $('.progressBar_first').hide();
-            }
-
-        }, 1000);
-
-    }
+ function setEachQuestionTime() {
+     setEachQuestionTimeNext_countdown = setInterval(function() {
+         ++totalSeconds;
+         $('.timespend_first').val(totalSeconds);
 
 
-    function progressBar(percent, $element) {
-        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
-        $element.find('div').animate({
-            width: progressBarWidth
-        }, 500).html(percent + "%&nbsp;");
-        if (percent <= 20) {
-            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
-        }
-        if (percent <= 0) {
+     }, 1000);
+ } */
+/* per question timer */
+var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+var fsec = time_allowed * 60;
+var up_timer = 0;
+var countdown_txt = " Seconds";
+var upcounter_txt = " Mins";
+var ctimer;
+var setEachQuestionTimeNext_countdown;
+var timer_countdown;
+
+function questionstartTimer() {
+
+    timer_countdown = setInterval(function() {
+        fsec--;
+        //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+        progressBar(fsec, $('.progressBar_first'));
+        if (fsec == -1) {
+            clearInterval(timer_countdown);
             $('.progressBar_first').css('background-color', '#E4E4E4');
             $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+            $('#q_time_taken_first').show();
+            $('#avg_text').hide();
+            $('.progressBar_first').hide();
         }
+
+    }, 1000);
+
+}
+
+
+function progressBar(percent, $element) {
+    var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+    $element.find('div').animate({
+        width: progressBarWidth
+    }, 500).html(percent + "%&nbsp;");
+    if (percent <= 20) {
+        $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
     }
-
-    var minutesLabel = document.getElementById("up_minutes");
-    var secondsLabel = document.getElementById("up_seconds");
-    //var totalSec = document.getElementById("tsec");
-    var totalSeconds = -1;
-
-
-    function setEachQuestionTime() {
-        setEachQuestionTimeNext_countdown = setInterval(function() {
-            ++totalSeconds;
-            $('.timespend_first').val(totalSeconds);
-            secondsLabel.innerHTML = pad(totalSeconds % 60);
-
-            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-            //totalSec.innerHTML = pad(totalSeconds);
-        }, 1000);
+    if (percent <= 0) {
+        $('.progressBar_first').css('background-color', '#E4E4E4');
+        $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
     }
+}
 
-    function pad(val) {
-        var valString = val + "";
-        if (valString.length < 2) {
-            return "0" + valString;
-        } else {
-            return valString;
+var minutesLabel = document.getElementById("up_minutes");
+var secondsLabel = document.getElementById("up_seconds");
+//var totalSec = document.getElementById("tsec");
+var totalSeconds = -1;
+
+
+function setEachQuestionTime() {
+    setEachQuestionTimeNext_countdown = setInterval(function() {
+        ++totalSeconds;
+        $('.timespend_first').val(totalSeconds);
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        //totalSec.innerHTML = pad(totalSeconds);
+    }, 1000);
+}
+
+function pad(val) {
+    var valString = val + "";
+    if (valString.length < 2) {
+        return "0" + valString;
+    } else {
+        return valString;
+    }
+}
+
+/* per question timer end */
+/* per question timer end */
+
+
+/* getting Next Question Data */
+function qnext(question_id) {
+    var act_question = $("#current_question").val();
+    var q_submit_time = $("#timespend_" + act_question).val();
+
+    saveQuestionTime(act_question, q_submit_time);
+
+    url = "{{ url('adaptive_next_question/') }}/" + question_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        success: function(result) {
+            clearInterval(ctimer);
+            clearInterval(timer_countdown);
+            clearInterval(setEachQuestionTimeNext_countdown);
+
+            $("#question_section div").remove();
+            $("#question_section").html(result);
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+
         }
-    }
-
-    /* per question timer end */
-    /* per question timer end */
+    });
+}
 
 
-    /* getting Next Question Data */
-    function qnext(question_id) {
-        var act_question = $("#current_question").val();
-        var q_submit_time = $("#timespend_" + act_question).val();
+/* mark or review */
+function markforreview(quest_id, subject_id, chapt_id) {
+    $.ajax({
+        url: "{{ route('markforreview') }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            question_id: quest_id,
+            subject_id: subject_id,
+            chapter_id: chapt_id
+        },
+        success: function(response_data) {
+            var response = jQuery.parseJSON(response_data);
 
-        saveQuestionTime(act_question, q_submit_time);
-
-        url = "{{ url('adaptive_next_question/') }}/" + question_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(result) {
-                clearInterval(ctimer);
-                clearInterval(timer_countdown);
-                clearInterval(setEachQuestionTimeNext_countdown);
-
-                $("#question_section div").remove();
-                $("#question_section").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+            if (response.success == true) {
+                $("#btn_" + quest_id).removeClass("btn-light");
+                $("#btn_" + quest_id).addClass("btn-secondary");
+            } else {
 
             }
-        });
+            if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                $("#submitExam").click();
+            } else {
+                $("#quesnext" + quest_id).click();
+
+            }
+
+        },
+    });
+}
+
+/* Saved question response */
+function saveAnswer(question_id, qNo) {
+    var question_id = question_id;
+    var option_id = [];
+    $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+        option_id.push($(this).val());
+    });
+    if (option_id.length === 0) {
+        $('#qoption_err_' + question_id).html("Please select your response.");
+        $('#qoption_err_' + question_id).addClass('text-danger');
+        $('#qoption_err_' + question_id).fadeIn('fast');
+        return false;
     }
 
+    var q_submit_time = $("#timespend_" + question_id).val();
+    $.ajax({
+        url: "{{ route('saveAnswer') }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            question_id: question_id,
+            option_id: option_id,
+            q_submit_time: q_submit_time
+        },
+        beforeSend: function() {
+            //$('.loader-block').show();
+        },
+        success: function(response_data) {
+            //$('.loader-block').hide();
+            var response = jQuery.parseJSON(response_data);
 
-    /* mark or review */
-    function markforreview(quest_id, subject_id, chapt_id) {
+            if (response.status == 200) {
+                $("#btn_" + question_id).find('i').remove();
+                $("#btn_" + question_id).html(qNo);
+                $("#btn_" + question_id).removeClass("btn-light");
+                $("#btn_" + question_id).addClass("btn-light-green");
+            }
+        },
+    });
+    if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+        $("#submitExam").click();
+    } else {
+        $("#quesnext" + question_id).click();
+
+    }
+}
+
+function saveAnswerAjax(question_id, qNo) {
+    var question_id = question_id;
+    var option_id = [];
+    $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+        option_id.push($(this).val());
+    });
+    if (option_id.length === 0) {
+        $('#qoption_err_' + question_id).html("Please select your response.");
+        $('#qoption_err_' + question_id).addClass('text-danger');
+        $('#qoption_err_' + question_id).fadeIn('fast');
+        return false;
+    }
+
+    var q_submit_time = $("#timespend_" + question_id).val();
+    $.ajax({
+        url: "{{ route('saveAnswer') }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            question_id: question_id,
+            option_id: option_id,
+            q_submit_time: q_submit_time
+        },
+        beforeSend: function() {
+            //$('.loader-block').show();
+        },
+        success: function(response_data) {
+            //$('.loader-block').hide();
+            var response = jQuery.parseJSON(response_data);
+            if (response.status == 200) {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                return true;
+            }
+        },
+    });
+
+}
+
+
+function savemarkreview(quest_id, subject_id, chapt_id) {
+    /* saving response */
+    if (saveAnswerAjax(quest_id, '') != false) {
+
+        // marking for review
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
@@ -868,276 +925,154 @@ $questtype='radio';
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
-
                 if (response.success == true) {
                     $("#btn_" + quest_id).removeClass("btn-light");
+                    $("#btn_" + quest_id).removeClass("btn-light-green");
                     $("#btn_" + quest_id).addClass("btn-secondary");
-                } else {
-
-                }
-                if ($("#quesnext" + quest_id).is(":disabled") == true) {
-
-                    $("#submitExam").click();
-                } else {
-                    $("#quesnext" + quest_id).click();
-
+                    $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
                 }
 
             },
         });
-    }
-
-    /* Saved question response */
-    function saveAnswer(question_id, qNo) {
-        var question_id = question_id;
-        var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
-        if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
-            $('#qoption_err_' + question_id).addClass('text-danger');
-            $('#qoption_err_' + question_id).fadeIn('fast');
-            return false;
-        }
-
-        var q_submit_time = $("#timespend_" + question_id).val();
-        $.ajax({
-            url: "{{ route('saveAnswer') }}",
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                question_id: question_id,
-                option_id: option_id,
-                q_submit_time: q_submit_time
-            },
-            beforeSend: function() {
-                //$('.loader-block').show();
-            },
-            success: function(response_data) {
-                //$('.loader-block').hide();
-                var response = jQuery.parseJSON(response_data);
-
-                if (response.status == 200) {
-                    $("#btn_" + question_id).find('i').remove();
-                    $("#btn_" + question_id).html(qNo);
-                    $("#btn_" + question_id).removeClass("btn-light");
-                    $("#btn_" + question_id).addClass("btn-light-green");
-                }
-            },
-        });
-        if ($("#quesnext" + question_id).is(":disabled") == true) {
+        if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
             $("#submitExam").click();
         } else {
-            $("#quesnext" + question_id).click();
+            $("#quesnext" + quest_id).click();
 
         }
+        return true;
+    }
+}
+
+function clearResponse(quest_id, subject_id, qNo) {
+
+    var response = [];
+    $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+        response = $(this).prop('checked', false);
+    });
+
+    if (response.length == 0) {
+        $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+        $('#qoption_err_' + quest_id).addClass('text-danger');
+        $('#qoption_err_' + quest_id).fadeIn('fast');
+        return false;
     }
 
-    function saveAnswerAjax(question_id, qNo) {
-        var question_id = question_id;
-        var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
-        if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
-            $('#qoption_err_' + question_id).addClass('text-danger');
-            $('#qoption_err_' + question_id).fadeIn('fast');
-            return false;
+    $("#btn_" + quest_id).addClass("btn-light");
+    $("#btn_" + quest_id).removeClass("btn-light-green");
+    $("#btn_" + quest_id).removeClass("btn-secondary");
+
+    $.ajax({
+        url: "{{ route('clearResponse') }}",
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            question_id: quest_id,
+            subject_id: subject_id,
+        },
+        success: function(response_data) {
+            var response = jQuery.parseJSON(response_data);
+            if (response.status == 200) {
+                $("#btn_" + quest_id).find('i').remove();
+                $("#btn_" + quest_id).html(qNo);
+            }
+
+        },
+    });
+
+}
+
+function get_subject_question(subject_id) {
+    var act_question = $("#current_question").val();
+    var q_submit_time = $("#timespend_" + act_question).val();
+
+    saveQuestionTime(act_question, q_submit_time);
+
+    url = "{{ url('adaptive_next_subject_question/') }}/" + subject_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        success: function(result) {
+            clearInterval(ctimer);
+            clearInterval(timer_countdown);
+            clearInterval(setEachQuestionTimeNext_countdown);
+
+            $("#myTabContent #question_section div").remove();
+            $("#myTabContent #question_section").html(result);
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
         }
-
-        var q_submit_time = $("#timespend_" + question_id).val();
-        $.ajax({
-            url: "{{ route('saveAnswer') }}",
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                question_id: question_id,
-                option_id: option_id,
-                q_submit_time: q_submit_time
-            },
-            beforeSend: function() {
-                //$('.loader-block').show();
-            },
-            success: function(response_data) {
-                //$('.loader-block').hide();
-                var response = jQuery.parseJSON(response_data);
-                if (response.status == 200) {
-                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                    return true;
-                }
-            },
-        });
-
-    }
+    });
 
 
-    function savemarkreview(quest_id, subject_id, chapt_id) {
-        /* saving response */
-        if (saveAnswerAjax(quest_id, '') != false) {
+}
 
-            // marking for review
-            $.ajax({
-                url: "{{ route('markforreview') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    question_id: quest_id,
-                    subject_id: subject_id,
-                    chapter_id: chapt_id
-                },
-                success: function(response_data) {
-                    var response = jQuery.parseJSON(response_data);
-                    if (response.success == true) {
-                        $("#btn_" + quest_id).removeClass("btn-light");
-                        $("#btn_" + quest_id).removeClass("btn-light-green");
-                        $("#btn_" + quest_id).addClass("btn-secondary");
-                        $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
-                    }
+function saveQuestionTime(question_id, time) {
 
-                },
-            });
-            if ($("#quesnext" + quest_id).is(":disabled") == true) {
-
-                $("#submitExam").click();
-            } else {
-                $("#quesnext" + quest_id).click();
+    url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            'q_time': time
+        },
+        beforeSend: function() {
+            //$('.loader-block').show();
+        },
+        success: function(response_data) {
+            // $('.loader-block').hide();
+            var response = jQuery.parseJSON(response_data);
+            if (response.status == 200) {
 
             }
-            return true;
         }
-    }
-
-    function clearResponse(quest_id, subject_id, qNo) {
-
-        var response = [];
-        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            response = $(this).prop('checked', false);
-        });
-
-        if (response.length == 0) {
-            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
-            $('#qoption_err_' + quest_id).addClass('text-danger');
-            $('#qoption_err_' + quest_id).fadeIn('fast');
-            return false;
-        }
-
-        $("#btn_" + quest_id).addClass("btn-light");
-        $("#btn_" + quest_id).removeClass("btn-light-green");
-        $("#btn_" + quest_id).removeClass("btn-secondary");
-
-        $.ajax({
-            url: "{{ route('clearResponse') }}",
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                question_id: quest_id,
-                subject_id: subject_id,
-            },
-            success: function(response_data) {
-                var response = jQuery.parseJSON(response_data);
-                if (response.status == 200) {
-                    $("#btn_" + quest_id).find('i').remove();
-                    $("#btn_" + quest_id).html(qNo);
-                }
-
-            },
-        });
-
-    }
-
-    function get_subject_question(subject_id) {
-        var act_question = $("#current_question").val();
-        var q_submit_time = $("#timespend_" + act_question).val();
-
-        saveQuestionTime(act_question, q_submit_time);
-
-        url = "{{ url('adaptive_next_subject_question/') }}/" + subject_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(result) {
-                clearInterval(ctimer);
-                clearInterval(timer_countdown);
-                clearInterval(setEachQuestionTimeNext_countdown);
-
-                $("#myTabContent #question_section div").remove();
-                $("#myTabContent #question_section").html(result);
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-            }
-        });
+    });
 
 
-    }
-
-    function saveQuestionTime(question_id, time) {
-
-        url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: {
-                "_token": "{{ csrf_token() }}",
-                'q_time': time
-            },
-            beforeSend: function() {
-                //$('.loader-block').show();
-            },
-            success: function(response_data) {
-                // $('.loader-block').hide();
-                var response = jQuery.parseJSON(response_data);
-                if (response.status == 200) {
-
-                }
-            }
-        });
+}
 
 
-    }
+$(document).ready(function() {
+    $("#form_exam_submit").validate({
 
+        submitHandler: function(form) {
+            if (timeLeft >= 1) {
+                let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-    $(document).ready(function() {
-        $("#form_exam_submit").validate({
-
-            submitHandler: function(form) {
-                if (timeLeft >= 1) {
-                    let timer_left = document.querySelector("#base-timer-path-remaining_alt");
-                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
-                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
-
-                    const circleDasharray = `${(
+                const circleDasharray = `${(
                             calculateTimeFraction() * FULL_DASH_ARRAY
                         ).toFixed(0)} 283`;
-                    // console.log("setCircleDashArray: ", circleDasharray);
-                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
+                // console.log("setCircleDashArray: ", circleDasharray);
+                timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
-                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                    lefttime_exam_s.innerHTML = formatTime(timeLeft);
+                lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                lefttime_exam_s.innerHTML = formatTime(timeLeft);
 
-                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                $('#FullTest_Exam_Panel_Interface_A').modal('show');
 
-                } else {
-                    form.submit();
-                }
-
-
+            } else {
+                form.submit();
             }
 
-        });
 
-        $('#bt-modal-confirm').click(function() {
+        }
 
-            $('#form_exam_submit')[0].submit();
-        });
-        $('#bt-modal-confirm_over').click(function() {
-
-            $('#form_exam_submit')[0].submit();
-        });
     });
-</script>
 
+    $('#bt-modal-confirm').click(function() {
+
+        $('#form_exam_submit')[0].submit();
+    });
+    $('#bt-modal-confirm_over').click(function() {
+
+        $('#form_exam_submit')[0].submit();
+    });
+});
+
+</script>
 @endsection

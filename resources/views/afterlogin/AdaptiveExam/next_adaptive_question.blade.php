@@ -5,8 +5,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
-
-
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -15,7 +13,6 @@ $type_class='radioans';
 $questtype='radio';
 }
 @endphp
-
 <script>
     $(document).ready(function() {
 
@@ -102,31 +99,22 @@ $questtype='radio';
             <span id="avg_text_{{$activeq_id}}">Average Time :</span>
             <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
-
                 <div id="percentBar1_{{$activeq_id}}"></div>
-
             </div>
             <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$activeq_id}}"></span>:<span id="up_seconds_{{$activeq_id}}"></span>mins</div>
-
         </div>
     </div>
     <input type="hidden" name="question_spendtime" id="timespend_{{$activeq_id}}" value="" />
-
-
     <div class="question-block">
         <!-- Next and previous button -->
         <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}','{{ $activeq_id }}')" class="arrow prev-arow {{($qNo==1)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
         @if(isset($last_qid) && ($last_qid==$activeq_id))
-
         <button href="javascript:void(0);" class="arrow next-arow {{(isset($last_qid) && ($last_qid==$activeq_id))?'d-none':''}}" {{(isset($last_qid) && ($last_qid==$activeq_id))?'disabled':''}} id="quesnext{{ $activeq_id }}"><i class="fa fa-angle-right" title="Next Question"></i></button>
         @else
-
         <button href="javascript:void(0);" class="arrow next-arow " id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}','{{ $activeq_id }}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
         @endif
         <!-- Next and previous button -->
-
         <div class="question py-3 d-flex"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
-
         <div class="ans-block row my-3">
             @if(isset($option_data) && !empty($option_data))
             @php $no=0; @endphp
@@ -149,7 +137,6 @@ $questtype='radio';
             @php $no++; @endphp
             @endforeach
             @endif
-
         </div>
     </div>
     <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
@@ -160,48 +147,43 @@ $questtype='radio';
         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}','{{$qNo}}');">Save & Next
         </a>
         @endif
-
         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for review</a>
-
         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
-
         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}','{{$qNo}}')">Clear Response</a>
-
     </div>
 </div>
-
 <script>
-    var question_id = '{{$activeq_id}}';
-    $(".next_button").removeClass("activequestion");
-    $("#btn_" + question_id).addClass("activequestion");
+var question_id = '{{$activeq_id}}';
+$(".next_button").removeClass("activequestion");
+$("#btn_" + question_id).addClass("activequestion");
 
-    //$("#exam_content_sec  #btn_" + question_id).focus();
+//$("#exam_content_sec  #btn_" + question_id).focus();
 
-    $("#current_question").val(question_id);
+$("#current_question").val(question_id);
 
-    var subject_id = '{{$subject_id}}';
-    $("#myTab .all_div").removeClass("active");
-    $("#myTab .class_" + subject_id).addClass("active");
+var subject_id = '{{$subject_id}}';
+$("#myTab .all_div").removeClass("active");
+$("#myTab .class_" + subject_id).addClass("active");
+
 </script>
-
 <!-- check size of screen -->
 <script>
-    $(document).ready(function() {
-        $(window).on("resize", function(e) {
-            checkScreenSize();
-        });
-
+$(document).ready(function() {
+    $(window).on("resize", function(e) {
         checkScreenSize();
-
-        function checkScreenSize() {
-            var newWindowWidth = $(window).width();
-            if (newWindowWidth < 768) {
-                $("#exam_content_sec  #btn_" + question_id).focusout();
-            } else {
-                $("#exam_content_sec  #btn_" + question_id).focus();
-            }
-        }
     });
-</script>
 
+    checkScreenSize();
+
+    function checkScreenSize() {
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            $("#exam_content_sec  #btn_" + question_id).focusout();
+        } else {
+            $("#exam_content_sec  #btn_" + question_id).focus();
+        }
+    }
+});
+
+</script>
 <!-- End check size of screen -->
