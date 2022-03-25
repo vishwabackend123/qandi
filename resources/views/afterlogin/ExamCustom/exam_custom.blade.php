@@ -51,7 +51,7 @@ $userData = Session::get('user_data');
                   <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
 
                     <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
-                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
+                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topics</button>
                   </div>
                 </form>
               </div>
