@@ -718,7 +718,7 @@ div.sublinks a:active {
     position: absolute;
     top: 50px;
     right: 20px;
-    color: #28a745 !important;
+    color: #00baff !important;
     padding: 2px 4px;
     box-shadow: none !important;
     font-weight: 900;
@@ -746,9 +746,9 @@ div.sublinks a:active {
     width: 140px;
 }
 
-.btn.btnzoom-in-out:hover {
+/* .btn.btnzoom-in-out:hover {
     color: #000 !important;
-}
+} */
 
 .notification a svg .cls-2 {
     stroke: none;
@@ -8638,5 +8638,21 @@ max-width: 450px;
     position: absolute;
     bottom: -22px;
     background: transparent;
+}
+/*************************/
+
+/**********25-03************/
+.reviewbtn{
+background: #e9e9e9 !important;    
+}
+.textsubmit{
+background: #00baff !important;    
+}
+.testtimehead{
+color: #2c3348;    
+}
+.lefttime{
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
 }
 /*************************/
