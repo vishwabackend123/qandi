@@ -92,16 +92,48 @@ $userData = Session::get('user_data');
 
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);">
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}">
+                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}"> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                              <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                              <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                          </svg>
                           Low Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);">
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}">
+                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}"> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                              <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                              <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                          </svg>
                           High Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);">
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}">
+                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}"> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                              <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                              <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                          </svg>
                           A to Z order</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','desc')" href="javascript:void(0);">
-                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}">
+                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}"> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                              <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
+                              <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                              <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                          </svg>
                           Z to A order</a></li>
 
                     </ul>
@@ -135,7 +167,7 @@ $userData = Session::get('user_data');
                       </div>
 
                       <span class="slbs-link mx-3">
-                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to topics</span></a></span>
+                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to Topics</span></a></span>
 
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -438,7 +470,7 @@ $userData = Session::get('user_data');
   $('a.expandTopicCollapse span').click(function() {
     var spanId = this.id;
     var curr_text = $("#" + spanId).text();
-    var updatetext = ((curr_text == 'Expand to topics') ? 'Collapse topics' : 'Expand to topics');
+    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
     $("#" + spanId).text(updatetext);
   })
 
@@ -447,7 +479,7 @@ $userData = Session::get('user_data');
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
 
-    this.value = (this.value == 'Expand to topics' ? 'Collapse topics' : 'Expand to topics');
+    this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
 
     var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
 
@@ -479,7 +511,7 @@ $userData = Session::get('user_data');
       });
     } else {
 
-      $("#expand_topic_" + chapt_id).text("Expand to topics");
+      $("#expand_topic_" + chapt_id).text("Expand to Topics");
       $("clicktopic_" + chapt_id).focus();
       $('#topic_form').toggle();
 
