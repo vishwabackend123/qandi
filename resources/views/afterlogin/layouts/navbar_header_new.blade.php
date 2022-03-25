@@ -985,7 +985,7 @@
     padding: 0px;
 }
 .sub_box{
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .sub_box .slimScrollDiv{
     padding: 10px;
