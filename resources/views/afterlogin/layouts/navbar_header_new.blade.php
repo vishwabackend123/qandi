@@ -971,9 +971,7 @@
       transform: translate(-104px, 50px) !important;
     
 }
-.tickicon {
-    height: 50px;
-}
+ 
 .tickicon svg{
     margin-right: 5px;
 }
