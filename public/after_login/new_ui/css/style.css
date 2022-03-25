@@ -8640,3 +8640,19 @@ max-width: 450px;
     background: transparent;
 }
 /*************************/
+
+/**********25-03************/
+.reviewbtn{
+background: #e9e9e9 !important;    
+}
+.textsubmit{
+background: #00baff !important;    
+}
+.testtimehead{
+color: #2c3348;    
+}
+.lefttime{
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+}
+/*************************/
