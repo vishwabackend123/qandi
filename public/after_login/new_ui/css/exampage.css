@@ -74,10 +74,11 @@ button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.te
 /***12-03-22-Ended_by_Sachin***/
 
 /***Added_by-kanchan***/
-#exam_content_sec #question_section .tab-btn-box a{color: #515151;}
+#exam_content_sec #question_section .tab-btn-box a{color: #2c3348;font-weight: normal;font-family: 'Poppins', sans-serif;}
+#exam_content_sec .btn-light{color: #2c3348 !important;}
+#exam_content_sec .btn-light:hover{color: #fff !important;}
 #exam_content_sec #question_section .tab-btn-box a :hover{color: #fff;}
-#exam_content_sec #question_section .tab-btn-box .btn-light{color: #515151;}
-#exam_content_sec #question_section .tab-btn-box .btn-light :hover{color: #fff;}
+#exam_content_sec #question_section .tab-btn-box .a :hover{color: #fff;}
 /***Added_by-kanchan***/
 #exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item {
     margin-right: 5px;
