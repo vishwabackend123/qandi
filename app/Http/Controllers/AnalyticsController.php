@@ -61,11 +61,11 @@ class AnalyticsController extends Controller
             $subProf = [];
             if (isset($response->success) && $response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-            $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
-            $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
-            $subProf = json_decode($response->subject_proficiency);
-            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+                $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
+                $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
+                $subProf = json_decode($response->subject_proficiency);
+                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -265,6 +265,7 @@ class AnalyticsController extends Controller
 
             //get user exam subjects
             $user_subjects = $this->redis_subjects();
+            $sub_count = (isset($user_subjects) && !empty($user_subjects)) ? count($user_subjects) : 1;
 
             $api_URL = env('API_URL');
 
@@ -291,9 +292,9 @@ class AnalyticsController extends Controller
             $otherScorePre = 100;
             if ($response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-            $subProf = json_decode($response->subject_proficiency);
-            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+                $subProf = json_decode($response->subject_proficiency);
+                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -465,7 +466,7 @@ class AnalyticsController extends Controller
             $unitProf = $overallAnalytics->unit_proficiency;
             $unitProf = collect(array_values($unitProf));
             $subProf_collection = collect($subProf);
-            $overall_prof_perc = $subProf_collection->sum('score');
+            $overall_prof_perc = $subProf_collection->sum('score') / $sub_count;
 
             return view('afterlogin.Analytics.export_analytics', compact(
                 'overallAnalytics',

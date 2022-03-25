@@ -350,7 +350,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 }
 
 .examSect a.clearRes:hover {
-    background: #f74645 !important;
+    background: #eb4344 !important;
     opacity: 1;
     box-shadow: none !important;
     color: #fff !important;
