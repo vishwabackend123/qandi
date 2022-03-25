@@ -982,7 +982,7 @@
 .col-xl-4.col-lg-4.col-md-6.mb-4.col_max.col_min {
     max-width: 25%;
     min-width: 25%;
-    padding: 0px;
+   
 }
 .sub_box{
     justify-content: space-around;
