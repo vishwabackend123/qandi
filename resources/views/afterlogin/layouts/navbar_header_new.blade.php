@@ -382,12 +382,12 @@
                             <span id="limit_error_1" class="text-danger"></span>
                         </div>
 
-                        <div class=" row mt-4">
+                        <div class=" row mt-4 sub_box">
                             <span id="limit_error" class="text-danger"></span>
                             @if(isset($aSubjects) && !empty($aSubjects))
                             @foreach($aSubjects as $skey=>$sVal)
 
-                            <div class="col-xl-4 col-lg-4 col-md-6 mb-4 ">
+                            <div class="col-xl-4 col-lg-4 col-md-6 mb-4 col_max col_min">
                                 <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="subject_tik me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}} <span class="count_spam_div" id="count_spam_{{$sVal->id}}"></span></div>
                                 <div class="slimScrollDiv">
                                     <div class="subject_chapter">
@@ -977,4 +977,18 @@
 .tickicon svg{
     margin-right: 5px;
 }
+
+
+.col-xl-4.col-lg-4.col-md-6.mb-4.col_max.col_min {
+    max-width: 25%;
+    min-width: 25%;
+    padding: 0px;
+}
+.sub_box{
+    justify-content: space-between;
+}
+.sub_box .slimScrollDiv{
+    padding: 10px;
+}
+ 
 </style>
