@@ -70,6 +70,8 @@ a.Ex-anal {min-width: 230px;}
 #plannerAddform .text-light {
     color: #D6D6D6 !important;
     font-size: 21px;
+    position: relative;top: 2px;
+    
 }
 
 #plannerAddform .text-success {
