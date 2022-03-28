@@ -238,7 +238,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                     <div class="bg-white d-flex flex-column   mb-4">
                         <span class="subtitle padding_26" title="{{$exam_name}}">{{$exam_name}}</span>
                         <div class="number_block_holder padding_26">
-                            <p class="rightSectH">Answer</p>
+                            <p class="rightSectH">Answer Palette</p>
                             <div class="number-block">
                                 @php $quKey=1; @endphp
                                 @if(isset($all_question_list) && !empty($all_question_list))

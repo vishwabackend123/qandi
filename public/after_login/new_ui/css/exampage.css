@@ -254,14 +254,13 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect .checkboxans:checked+.ans {
     border: solid 1px #37c027 !important;
-    background: transparent;
+    background: #e3f0fe;
 }
 
  /****SACHIN****/
 /********************SACHIN_14_02_22_Start*************/
 
 .examSect .checkboxans:checked+.ans span.q-no {
-    padding-top: 1px;
     background: #37c027;
     border-radius: 50px;
     width: 25px;
@@ -271,7 +270,9 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     color: #fff;
     line-height: 23px;
     /* margin-top: -5px; */
-    padding-left: 6px;
+    padding-left: 3px;
+    font-size: 14px;
+    text-align: center;
 
 }
 /********************SACHIN_14_02_22_end*************/
@@ -818,7 +819,14 @@ a.clearRes:hover {
    
 }
 /*added by sachin-22-02*/
- 
+
+/******28-03****/
+.number-block .btn-check:focus+.btn-light, .number-block .btn-light:focus {
+    border-color: #62b8ec;
+    box-shadow: none;
+    border-width: 2px;
+}
+/******28-03****/ 
  
  @media (min-width: 1200px) and (max-width: 1300px){
 .custom-page .cust-tab-content .scroll-div {

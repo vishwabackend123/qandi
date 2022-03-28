@@ -57,7 +57,7 @@
                                 <div class="answer-block p-3 mb-5">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <p class="mb-0 text-green">answer :</p>
+                                            <p class="mb-0 text-green">answer1 :</p>
                                         </div>
 
                                         <div class="col-md-7">
