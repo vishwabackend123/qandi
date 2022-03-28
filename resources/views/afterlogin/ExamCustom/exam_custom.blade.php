@@ -94,49 +94,53 @@ $userData = Session::get('user_data');
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);">
                           <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}"> -->
                           <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-    <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none"/>
-    <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-    <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-    <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-</svg>
-                          Low Proficiency</a></li>
+                            <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none" />
+                            <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                          </svg>
+                          Low Proficiency
+                        </a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);">
                           <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}"> -->
                           <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
-                              <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none" />
+                            <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
                           </svg>
-                          High Proficiency</a></li>
+                          High Proficiency
+                        </a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);">
                           <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}"> -->
                           <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2978" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2681" d="M0 0h24v24H0z" style="fill:none"/>
-                              <path data-name="Path 2682" d="M15 10V5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2683" d="M19 21h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2684" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2685" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 2681" d="M0 0h24v24H0z" style="fill:none" />
+                            <path data-name="Path 2682" d="M15 10V5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2683" d="M19 21h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2684" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2685" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
                           </svg>
-                          A to Z order</a></li>
+                          A to Z order
+                        </a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','desc')" href="javascript:void(0);">
                           <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}"> -->
                           <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2979" width="24" height="24" viewBox="0 0 24 24">
-                              <path data-name="Path 2686" d="M0 0h24v24H0z" style="fill:none"/>
-                              <path data-name="Path 2687" d="M15 21v-5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2688" d="M19 10h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2689" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
-                              <path data-name="Path 2690" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
+                            <path data-name="Path 2686" d="M0 0h24v24H0z" style="fill:none" />
+                            <path data-name="Path 2687" d="M15 21v-5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2688" d="M19 10h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2689" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                            <path data-name="Path 2690" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
                           </svg>
-                          Z to A order</a></li>
+                          Z to A order
+                        </a></li>
 
                     </ul>
                   </div>
-                  <a class="" id="clear-filter" href="javascript:void(0);" onclick="clear_chapter_filter('{{$sub->id}}','clear')" style="display:none">Clear</a>
+                  <a class="clear-filter" href="javascript:void(0);" onclick="clear_chapter_filter('{{$sub->id}}','clear')" style="display:none">Clear</a>
                 </div>
                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                   @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
@@ -182,12 +186,12 @@ $userData = Session::get('user_data');
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);">
                               <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}"> -->
                               <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-                                  <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none"/>
-                                  <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none" />
+                                <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
                               </svg>
                               Low Proficiency
                             </a></li>
@@ -195,12 +199,12 @@ $userData = Session::get('user_data');
                               <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}"> -->
 
                               <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                                  <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"/>
-                                  <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
-                                  <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"/>
+                                <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none" />
+                                <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
                               </svg>
                               High Proficiency
                             </a></li>
@@ -560,7 +564,7 @@ $userData = Session::get('user_data');
         $("#chapter_list_" + sub_id).html(result);
 
         $('#overlay').fadeOut();
-        $('#clear-filter').show();
+        $('.clear-filter').show();
 
 
       }
@@ -584,7 +588,7 @@ $userData = Session::get('user_data');
         $("#chapter_list_" + sub_id).html(result);
 
         $('#overlay').fadeOut();
-        $('#clear-filter').hide();
+        $('.clear-filter').hide();
 
 
       }
@@ -668,7 +672,7 @@ $userData = Session::get('user_data');
     margin-left: 20px;
   }
 
-  #clear-filter {
+  .clear-filter {
     color: #21ccff;
     font-size: 16px;
     padding-left: 13px;
