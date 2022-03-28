@@ -51,7 +51,7 @@ $userData = Session::get('user_data');
                   <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
 
                     <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
-                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topics</button>
+                    <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topic</button>
                   </div>
                 </form>
               </div>
@@ -62,7 +62,7 @@ $userData = Session::get('user_data');
 
               <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
 
-                <div class="d-flex px-4 py-2 align-items-center clear_div ">
+                <div class="d-flex px-4 py-2 align-items-center justify-content-between">
                   <!--<span class="  mr-3 name-txt ">{{$sub->subject_name}}</span>
                   <p class="mb-0 ms-auto me-4 tab-title">You can pick topics / sub-topics or</p>-->
                   <div class="Flat-right">
@@ -92,62 +92,27 @@ $userData = Session::get('user_data');
 
                     <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_asc')" href="javascript:void(0);">
-                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}"> -->
-                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none" />
-                            <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                          </svg>
-                          Low Proficiency
-                        </a></li>
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}">
+                          Low Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','prof_desc')" href="javascript:void(0);">
-                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}"> -->
-                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none" />
-                            <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                          </svg>
-                          High Proficiency
-                        </a></li>
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-2976.png')}}">
+                          High Proficiency</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','asc')" href="javascript:void(0);">
-                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}"> -->
-                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2978" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 2681" d="M0 0h24v24H0z" style="fill:none" />
-                            <path data-name="Path 2682" d="M15 10V5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2683" d="M19 21h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2684" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2685" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
-                          </svg>
-                          A to Z order
-                        </a></li>
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-2978.png')}}">
+                          A to Z order</a></li>
                       <li><a class="dropdown-item" onclick="chapterlist_filter('{{$sub->id}}','desc')" href="javascript:void(0);">
-                          <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}"> -->
-                          <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2979" width="24" height="24" viewBox="0 0 24 24">
-                            <path data-name="Path 2686" d="M0 0h24v24H0z" style="fill:none" />
-                            <path data-name="Path 2687" d="M15 21v-5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2688" d="M19 10h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2689" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
-                            <path data-name="Path 2690" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
-                          </svg>
-                          Z to A order
-                        </a></li>
+                          <img src="{{URL::asset('public/after_login/new_ui/images/Group-2979.png')}}">
+                          Z to A order</a></li>
 
                     </ul>
                   </div>
-                  <a class="clear-filter" href="javascript:void(0);" onclick="clear_chapter_filter('{{$sub->id}}','clear')" style="display:none">Clear</a>
                 </div>
                 <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                   @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                   @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
-                  <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
-                    <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
-                      <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
+                  <div class="compLeteS">
+                    <div class="ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap  ">
+                      <span class="mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
 
                       <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
@@ -185,13 +150,13 @@ $userData = Session::get('user_data');
                         <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
                           <li><a class="dropdown-item" onclick="topiclist_filter('{{$chapters->chapter_id}}','prof_asc')" href="javascript:void(0);">
                               <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4864.png')}}"> -->
-                              <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-                                <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none" />
-                                <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
-                                <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
-                                <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                                <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
-                                <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                              <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
+                                <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none" />
+                                <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
+                                <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none" />
                               </svg>
                               Low Proficiency
                             </a></li>
@@ -446,42 +411,27 @@ $userData = Session::get('user_data');
     nextArrow: '<button class="slick-next"> > </button>',
   });
 
-  function destroyCarousel(slick_id) {
-    if ($(slick_id).hasClass('slick-initialized')) {
-      $(slick_id).slick('unslick');
-    }
-  }
-
-
-  function applySlider(slick_id) {
-    $(slick_id).slick({
-      slidesToScroll: 1,
-      dots: false,
-      arrows: true,
-      centerMode: false,
-      focusOnSelect: false,
-      infinite: false,
-      slidesToShow: 3.2,
-      variableWidth: false,
-      prevArrow: '<button class="slick-prev"> < </button>',
-      nextArrow: '<button class="slick-next"> > </button>',
-    });
-  }
-
+  /*$('.slbs-link a').click(function() {
+    $('#myTabContent .slick-slider').slick('refresh');
+  })*/
 
   $('a.expandTopicCollapse span').click(function() {
     var spanId = this.id;
     var curr_text = $("#" + spanId).text();
-    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
+    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse topics' : 'Expand to Topics');
     $("#" + spanId).text(updatetext);
   })
 
-
+  /* function handleToggleClick() {
+    this.value = (this.value == '+' ? '-' : '+');
+  }
+  document.getElementByName('expandTopicCollapse').onclick = handleToggleClick;
+ */
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
 
-    this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
+    this.value = (this.value == 'Expand to Topics' ? 'Collapse topics' : 'Expand to Topics');
 
     var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
 
@@ -496,25 +446,19 @@ $userData = Session::get('user_data');
           $('#overlay').fadeIn();
         },
         success: function(result) {
-          var slick_id = "#topic_section_" + chapt_id;
-          destroyCarousel(slick_id); // destroy slick slider first
-
           $("#topic_section_" + chapt_id + " div").remove();
+          // $("#expand_topic_" + chapt_id).text("Collapse topics");
           $("#topic_section_" + chapt_id).html(result);
-
-          applySlider(slick_id); // apply slick slider again
-
+          //$('#myTabContent .slick-slider').slick('refresh');
+          $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
           $('#overlay').fadeOut();
           $('#topic_form').show();
-          // scroll_topic(chapt_id, sub_id);
-          $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
-
+          scroll_topic(chapt_id, sub_id);
         }
       });
     } else {
 
       $("#expand_topic_" + chapt_id).text("Expand to Topics");
-      $("clicktopic_" + chapt_id).focus();
       $('#topic_form').toggle();
 
     }
@@ -562,33 +506,8 @@ $userData = Session::get('user_data');
       success: function(result) {
         $("#chapter_list_" + sub_id).html('');
         $("#chapter_list_" + sub_id).html(result);
-
+        /*  $('.slick-slider').slick('refresh'); */
         $('#overlay').fadeOut();
-        $('.clear-filter').show();
-
-
-      }
-    });
-
-  };
-
-  function clear_chapter_filter(sub_id, filter_type) {
-    url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
-    $.ajax({
-      url: url,
-      data: {
-        "_token": "{{ csrf_token() }}",
-        "filter_type": filter_type
-      },
-      beforeSend: function() {
-        $('#overlay').fadeIn();
-      },
-      success: function(result) {
-        $("#chapter_list_" + sub_id).html('');
-        $("#chapter_list_" + sub_id).html(result);
-
-        $('#overlay').fadeOut();
-        $('.clear-filter').hide();
 
 
       }
@@ -602,7 +521,7 @@ $userData = Session::get('user_data');
 </script>
 
 <script>
-  $("body").on("click", ".expandTopicCollapse", function(event) {
+  $('.expandTopicCollapse').click(function() {
     $(this).parents('.ClickBack').toggleClass('newelement');
   });
 
@@ -656,26 +575,6 @@ $userData = Session::get('user_data');
 
   .newelement button#dropdownMenuLink-topic {
     margin-top: 0px;
-  }
-
-  .clear_div {
-    justify-content: end;
-  }
-
-  .custom-page #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show {
-    top: calc(100% - 35px) !important;
-    right: 0px !important;
-
-  }
-
-  .clear_div .dropdown {
-    margin-left: 20px;
-  }
-
-  .clear-filter {
-    color: #21ccff;
-    font-size: 16px;
-    padding-left: 13px;
   }
 </style>
 

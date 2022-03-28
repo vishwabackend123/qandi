@@ -75,7 +75,8 @@ a.Ex-anal {min-width: 230px;}
 }
 
 #plannerAddform .text-success {
-    color: #33e485 !important;font-size: 21px;
+    color: #33e485 !important;font-size: 21px; position: relative;top: 2px;
+   
 }
 /* End by Sachin-11-03-22*/
 
