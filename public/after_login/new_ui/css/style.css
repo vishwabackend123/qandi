@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+.tab-content.position-relative.cust-tab-content.bg-white.sub-padding{padding-bottom: 40px!important;}
+.overllanaly .cust-tab-content #topicclose .scroll-topic-ana {height: 140px !important;}
 div#collapseNotification.notification-block{display: none!important;}
 div#collapseNotification.notification-block.notification-block-active{display: block!important;}
 .test-attend a.text-secondary.ms-2 img{margin: -10px -10px -18px -9px;}
