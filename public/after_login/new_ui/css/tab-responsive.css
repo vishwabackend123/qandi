@@ -1,14 +1,23 @@
 @media(max-width:1199px){
    .newtabview.bg-white.shadow-lg{margin-top: 36px!important;}
-
+   .user-name-block{font-size: 16px;}
+   header .col-md-6.ms-auto{width: 100%;}
+   .bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong,.course-star li strong{font-size: 14px;}
+   .button-sec.mt-3 a{font-size:12px;}
+   .task-center-block .btn.btntheme{font-size:14px;}
+   .subjectIcon img{width:60px!important}
+   .cust-gallery .swiper-slide h3{font-size:20px;}
+   .custom-btn-gray{font-size:14px;}
+   .cust-tabs.nav.nav-tabs .nav-link{min-width:auto;font-size: 14px;padding-left:20px!important;padding-right:20px!important;}
+   
 }
 
 @media(max-width:1023px){
-	
+	.dashboard-cards-block .bg-white>small p{    min-width: 275px;}
 }
 
 @media(max-width:991px){
-	
+    .cust-tabs.nav.nav-tabs .nav-link{font-size: 13px;}	
 }
 
 @media(max-width:768px){
