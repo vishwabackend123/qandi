@@ -328,20 +328,20 @@ if($template_type==1){
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span></span>
+                                            <span class="d-block"><span class="inst-text">{{$questions_count}} MCQ </span><span></span>Questions</span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
                                         <div>
                                             <small>Target</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                            <span class="d-block inst-text"><span>{{$tagrets}}</span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-lg-3 d-flex   align-items-center">
                                         <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                            <span class="d-block inst-text"><span>{{$exam_fulltime}}</span> Minutes</span>
                                         </div>
                                     </div>
                                 </div>
