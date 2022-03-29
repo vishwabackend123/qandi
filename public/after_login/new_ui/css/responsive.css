@@ -8,12 +8,20 @@
     }
 }
 
-@media screen and ( max-height: 800px ) {
+
+
+
+@media screen and ( max-height:800px ) {
     .test-review-right, .rightSect .bg-white {
-        height: 500px !important;
+        height: 650px !important;
     }
 }
 
+@media screen and ( max-height: 767px ) {
+    .test-review-right, .rightSect .bg-white {
+        height: 620px !important;
+    }
+}
 
 
 @media(max-width:1900px){
