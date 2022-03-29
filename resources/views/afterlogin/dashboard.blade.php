@@ -74,7 +74,7 @@ $userData = Session::get('user_data');
     <div class="content-wrapper">
         <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="col-xl-4 col-lg-6 col-md-7  col-sm-12">
                     <div class="bg-white shadow-lg">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
@@ -86,7 +86,7 @@ $userData = Session::get('user_data');
                             </p>
                         </small>
                         <div class="row h-100">
-                            <div class="col-lg-7 col-sm-12 col-md-8" style="padding-right:0!important;">
+                            <div class="col-lg-7 col-sm-12 col-md-7" style="padding-right:0!important;">
                                 <div style="padding:20px 0 0;">
                                     <div class="prgress-i-txt px-3 mb-1" style="padding-left:30px!important;">
                                         <span class="progress_text">MyQ Today</span>
@@ -104,7 +104,7 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-4 col-sm-12  text-center seeAnico" style="padding-left:0;">
+                            <div class="col-lg-5 col-md-5 col-sm-12  text-center seeAnico" style="padding-left:0;">
                                 <div class="analytics-thumbnail-bg h-100">
                                     <div class="button-sec mb-4 mt-3"><a href="{{route('overall_analytics')}}" title="See Analytics">See Analytics</a></div>
                                 </div>
@@ -112,7 +112,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                <div class="col-xl-3 col-lg-6 col-md-5 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
@@ -158,7 +158,7 @@ $userData = Session::get('user_data');
                         <div id="marks_trend_graph"></div>
                     </div>
                 </div> -->
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                <div class="col-xl-5  col-md-12 col-sm-12">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
@@ -214,8 +214,8 @@ $userData = Session::get('user_data');
                 </div>
             </div>
             <!--row-->
-            <div class="row">
-                <div class="col-md-4">
+            <div class="row ">
+                <div class="col-xl-4 col-md-12">
                     <div class="bg-white shadow-lg py-5 progress-journey-card m-0">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
@@ -252,8 +252,8 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="bg-white shadow-lg py-5 m-0">
+                <div class="col-xl-5 col-md-6">
+                    <div class="bg-white shadow-lg py-5 m-0 newtabview">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -271,8 +271,8 @@ $userData = Session::get('user_data');
                         </figure> -->
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="bg-white shadow-lg py-5 task-center-block m-0">
+                <div class="col-xl-3 col-md-6">
+                    <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">

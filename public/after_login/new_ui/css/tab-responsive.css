@@ -1,5 +1,6 @@
 @media(max-width:1199px){
-	
+   .newtabview.bg-white.shadow-lg{margin-top: 36px!important;}
+
 }
 
 @media(max-width:1023px){
