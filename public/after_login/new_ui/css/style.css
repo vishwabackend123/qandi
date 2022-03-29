@@ -16,7 +16,9 @@ button {
     text-decoration: none;
 }
 
-#attempt_count_block .cust-tabs.nav.nav-tabs .nav-link {min-width: 130px;}
+
+#attempt_count_block .nav.nav-tabs.cust-tabs.exam-panel a#Zoology_tab_subject:before {right: -58px;}
+#attempt_count_block .cust-tabs.nav.nav-tabs .nav-link {min-width: 130px;padding: 18px 30px!important;}
 .login-body-bg .subScrip{backdrop-filter: none;-webkit-backdrop-filter:none;}
 .tab-content.position-relative.cust-tab-content.bg-white.sub-padding{padding-bottom: 40px!important;}
 .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {height: 140px !important;}
