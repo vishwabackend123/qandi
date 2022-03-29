@@ -4664,7 +4664,9 @@ button#goto-exam-btn {
 .goto-exam-btn img{
 width: 15px;    
 }
-
+.test-info .inst-text {
+    color: #33c8ff;
+}
 /** end test screen css**/
 /** notification page **/
 .notification-scroll {
