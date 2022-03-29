@@ -320,7 +320,7 @@ if($template_type==1){
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <h1 class="text-danger text-uppercase examhead">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
