@@ -346,7 +346,7 @@ if($template_type==1){
                                     </div>
                                 </div>
                             </div>
-                            <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3 uniform-scroll">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give you multiple opportunities to improve your scores in the
@@ -362,7 +362,7 @@ if($template_type==1){
                     </div>
                     <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
                         <h1 class="my-auto text-center">
-                            <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
+                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
                         <div class="text-left   ">
                             <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
