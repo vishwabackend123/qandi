@@ -12,5 +12,7 @@
 
 @media(max-width:768px){
 
-	
+	.tickicon{
+        width: 50%;
+    }
 }
