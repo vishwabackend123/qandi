@@ -10,7 +10,7 @@
 
 @media screen and ( max-height: 800px ) {
     .test-review-right, .rightSect .bg-white {
-        height: 600px !important;
+        height: 570px !important;
     }
 }
 
