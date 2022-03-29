@@ -365,7 +365,7 @@ if($template_type==1){
                             <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
                         </h1>
                         <div class="text-left   ">
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
                 </div>
