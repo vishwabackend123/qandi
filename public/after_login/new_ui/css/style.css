@@ -4349,6 +4349,7 @@ button.save-btn {
     width: 24%;
     margin-right: 0px;
 }
+.list-series .live-exam #completed .speci-text li{ width: 19%;}
 
 .list-series .scroll-div-live-exm {
     height: 350px;
