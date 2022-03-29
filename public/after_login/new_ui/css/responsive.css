@@ -10,16 +10,17 @@
 
 
 
-
 @media screen and ( max-height:800px ) {
     .test-review-right, .rightSect .bg-white {
-        height: 650px !important;
+        height: 600px !important;
     }
 }
 
+ 
+
 @media screen and ( max-height: 767px ) {
     .test-review-right, .rightSect .bg-white {
-        height: 620px !important;
+        height: 500px !important;
     }
 }
 

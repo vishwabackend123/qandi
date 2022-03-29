@@ -4667,6 +4667,9 @@ width: 15px;
 .test-info .inst-text {
     color: #33c8ff;
 }
+.test-info small {
+    color: #2c3348;
+}
 /** end test screen css**/
 /** notification page **/
 .notification-scroll {
@@ -5568,7 +5571,9 @@ p.success-img {
 .text-danger {
     color: #07beff !important;
 }
-
+.examhead{
+   color: #00baff !important;
+}
 .bg-danger {
     background: #d71921 !important;
 }
