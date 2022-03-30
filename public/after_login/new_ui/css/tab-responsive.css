@@ -58,7 +58,10 @@
 	.tickicon{width: 50%;}
     .leader-board{height: 450px;}
     .active_user {max-width: 259px;}
-    .profile-show {right: 409px;width:284px;}
+    .profile-show {right: 400px;width:284px;}
     span.profile-digit{margin-right:10px;}
+    .profile-section {width: 150px;}
+    .profile-section ul li a{font-size: 14px;}
+    .leader-board{right: 22%;}
     
 }
