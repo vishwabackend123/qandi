@@ -9,15 +9,23 @@
    .cust-gallery .swiper-slide h3{font-size:20px;}
    .custom-btn-gray{font-size:14px;}
    .cust-tabs.nav.nav-tabs .nav-link{min-width:auto;font-size: 14px;padding-left:20px!important;padding-right:20px!important;}
+   .subscription .form-btns button {width: 222px;}
+   .subscrived svg{width:46px;}
    
 }
 
 @media(max-width:1023px){
 	.dashboard-cards-block .bg-white>small p{    min-width: 275px;}
+    .subscription .form-btns button {width: 222px;}
+    .subscrived svg{width:40px;}
+    .subscrived .p-text{padding-right: 0px;}
+    .subscription .p-text h3 {font-size: 16px;}
+    .subscription h4{font-size: 15px;}
 }
 
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{font-size: 13px;}	
+    .subscription .form-btns button {width: 160px;font-size: 14px;}
 }
 
 @media(max-width:768px){
