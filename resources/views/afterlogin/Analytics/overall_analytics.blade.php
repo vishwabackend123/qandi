@@ -65,16 +65,19 @@ $userData = Session::get('user_data');
                                                 <div class="col-lg-12 col-sm-12 col-md-12">
                                                     <div class="d-flex justify-content-center flex-column h-100 ">
                                                         <span class="text-center">
-                                                            <div id="scorecontainer"></div>
+                                                            <!--  <div id="scorecontainer"></div> -->
+
+                                                            <div id="comparegraph"></div>
+
                                                         </span>
-                                                        <ul class="live-test mb-0">
+                                                        <!--  <ul class="live-test mb-0">
                                                             <li>
                                                                 <span class="last-live-test"></span>Last Test Score
                                                             </li>
                                                             <li>
                                                                 <span class="pre-test"></span>Previous Test
                                                             </li>
-                                                        </ul>
+                                                        </ul> -->
                                                         <!--  <p class="text-center text-danger px-4"><small>Reach your target score with a steady progress over each test</small></p> -->
                                                     </div>
 
@@ -302,6 +305,10 @@ $userData = Session::get('user_data');
 
 
 @include('afterlogin.layouts.footer_new')
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -372,9 +379,75 @@ $userData = Session::get('user_data');
         });
     }
 </script>
-
 <script>
-    Highcharts.chart('scorecontainer', {
+    /* score comparison graph */
+    Highcharts.chart('comparegraph', {
+        chart: {
+            type: 'column',
+            height: 185,
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['']
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: ''
+            }
+        }, {
+            title: {
+                text: ''
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [{
+            name: 'Previous score',
+            color: '#d0f3ff',
+            data: [<?php echo $mockTestScorePre; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0
+        }, {
+            name: 'Latest score',
+            color: '#21ccff',
+            data: [<?php echo $mockTestScoreCurr; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0.1
+        }]
+    });
+    /* score comparison graph */
+</script>
+<script>
+    /* Highcharts.chart('scorecontainer', {
         chart: {
             height: 160,
             plotBackgroundColor: null,
@@ -433,76 +506,28 @@ $userData = Session::get('user_data');
             innerSize: '85%',
             data: [{
                     name: 'Last Mock Test Score',
-                    y: <?php echo $lastscore ?? 0; ?>,
+                    y: <?php //echo $lastscore ?? 0; 
+                        ?>,
                     color: '#21ccff' // Jane's color
                 },
                 {
                     name: 'Progress From Previous Score',
-                    y: <?php echo $progress ?>,
+                    y: <?php //echo $progress 
+                        ?>,
                     color: '#d0f3ff' // Jane's color
                 },
                 {
                     name: '',
-                    y: <?php echo (100 - ($lastscore + $progress)); ?>,
+                    y: <?php //echo (100 - ($lastscore + $progress)); 
+                        ?>,
                     color: '#efefef' // Jane's color
                 }
             ]
         }]
-    });
-
-    /* score comparison graph */
-    /*  Highcharts.chart('compareGraph', {
-         chart: {
-             type: 'column'
-         },
-         title: {
-             text: ''
-         },
-         xAxis: {
-             categories: [
-                 'Score %'
-             ]
-         },
-         yAxis: [{
-             min: 0,
-             title: {
-                 text: null
-             }
-         }, {
-             title: {
-                 text: null
-             },
-             opposite: true
-         }],
-         legend: {
-             shadow: false
-         },
-         tooltip: {
-             shared: true
-         },
-         plotOptions: {
-             column: {
-                 grouping: false,
-                 shadow: false,
-                 borderWidth: 0
-             }
-         },
-         series: [{
-             name: 'Previous score',
-             color: 'rgba(165,170,217,1)',
-             data: [73],
-             pointPadding: 0.3,
-             pointPlacement: 0
-         }, {
-             name: 'Latest score',
-             color: 'rgba(126,86,134,.9)',
-             data: [90],
-             pointPadding: 0.3,
-             pointPlacement: 0.1
-         }]
-     }); */
-    /* score comparison graph */
+    }); */
 </script>
+
+
 
 <script>
     function nxtTab(sub_id) {
