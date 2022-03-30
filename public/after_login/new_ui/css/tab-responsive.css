@@ -13,6 +13,10 @@
    .subscrived svg{width:46px;}
    .cust-gallery .swiper-slide.bg-white{width: 405px!important;margin-right:30px!important;}
    .bg-white.shadow-lg .progress_text {font-size: 16px;}
+   .overllanaly .star-ratings-css-top span,.overllanaly .star-ratings-css{font-size:18px;}
+   .dashboard-name-txt,.score{font-size:14px;}
+   #marKs-trends .col-lg-6,#time-Avg-quest .col-lg-6{width:100%;}
+   div#marKs-trends, div#time-Avg-quest{    margin-bottom: 36px;margin-top: 0px;}
    
 }
 
@@ -23,11 +27,13 @@
     .subscrived .p-text{padding-right: 0px;}
     .subscription .p-text h3 {font-size: 16px;}
     .subscription h4{font-size: 15px;}
+    a.Ex-anal span.Ex--an{display:inline-block;}
 }
 
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{font-size: 13px;}	
     .subscription .form-btns button {width: 160px;font-size: 14px;}
+    .overllanaly .tab-wrapper #scroll-mobile{    padding-bottom: 40px;}
 }
 
 @media(max-width:768px){
