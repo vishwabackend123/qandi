@@ -385,7 +385,7 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 42px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 42px/60px Manrope; letter-spacing: 0px; color: #00baff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 50

@@ -862,7 +862,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 42px/80px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 42px/6g0px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
             y: 50
@@ -873,6 +873,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
         exporting: {
             enabled: false
         },
+
         tooltip: {
             pointFormat: '<b>{point.percentage:.1f}%</b>'
         },
