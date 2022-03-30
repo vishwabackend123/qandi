@@ -18,16 +18,17 @@
                         <div class="col-lg-12 col-sm-12 col-md-12">
                             <div class="d-flex justify-content-center flex-column h-100 ">
                                 <span class="text-center">
-                                    <div id="subjectscorecontainer" class="text-right"></div>
+                                    <!-- <div id="subjectscorecontainer" class="text-right"></div> -->
+                                    <div id="subject-comparegraph" class="text-right"></div>
                                 </span>
-                                <ul class="live-test mt-3">
+                                <!-- <ul class="live-test mt-3">
                                     <li>
                                         <span class="last-live-test"></span>Last Test Score
                                     </li>
                                     <li>
                                         <span class="pre-test"></span>Previous Test
                                     </li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                     </div>
@@ -851,83 +852,151 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
     });
 </script>
 <script>
-    Highcharts.chart('subjectscorecontainer', {
+    /* score comparison graph */
+    Highcharts.chart('subject-comparegraph', {
         chart: {
-            height: 160,
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false,
-            spacingTop: 0,
-            spacingBottom: 0,
-            spacingRight: 0,
+            type: 'column',
+            height: 185,
         },
         title: {
-            text: '<span style="font: normal normal 200 42px/6g0px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 50
+            text: ''
         },
+        xAxis: {
+            categories: ['']
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Score %'
+            }
+        }, {
+            title: {
+                text: ''
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
+
         credits: {
             enabled: false
         },
         exporting: {
             enabled: false
         },
-
-        tooltip: {
-            pointFormat: '<b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: false,
-                    distance: -50,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white'
-                    }
-                },
-                point: {
-                    events: {
-                        legendItemClick: function() {
-                            this.slice(null);
-                            return false;
-                        }
-                    }
-                },
-                startAngle: -140,
-                endAngle: 140,
-                center: ['50%', '50%'],
-                size: '100%'
-            }
-        },
         series: [{
-            type: 'pie',
-            innerSize: '85%',
-            data: [{
-                    name: 'Score',
-                    y: <?php echo $lastscore; ?>,
-                    color: '#21ccff' // Jane's color
-                },
-                {
-                    name: 'Progress',
-                    y: <?php echo $progress ?>,
-                    color: '#d0f3ff' // Jane's color
-                },
-                {
-                    name: '',
-                    y: <?php echo (100 - ($lastscore + $progress)); ?>,
-
-                    color: '#efefef' // Jane's color
-                }
-            ]
+            name: 'Previous score',
+            color: '#d0f3ff',
+            data: [<?php echo $preSocre; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0
+        }, {
+            name: 'Latest score',
+            color: '#21ccff',
+            data: [<?php echo $currSocre; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0.1
         }]
     });
+    /* score comparison graph */
+
+    /* score pie graph */
+    /*  Highcharts.chart('subjectscorecontainer', {
+         chart: {
+             height: 160,
+             plotBackgroundColor: null,
+             plotBorderWidth: 0,
+             plotShadow: false,
+             spacingTop: 0,
+             spacingBottom: 0,
+             spacingRight: 0,
+         },
+         title: {
+             text: '<span style="font: normal normal 200 42px/60px Manrope; letter-spacing: 0px; color: #00baff;">{{isset($currSocre) ? $currSocre:0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
+             align: 'center',
+             verticalAlign: 'middle',
+             y: 50
+         },
+         credits: {
+             enabled: false
+         },
+         exporting: {
+             enabled: false
+         },
+
+         tooltip: {
+             pointFormat: '<b>{point.percentage:.1f}%</b>'
+         },
+         accessibility: {
+             point: {
+                 valueSuffix: '%'
+             }
+         },
+         plotOptions: {
+             pie: {
+                 dataLabels: {
+                     enabled: false,
+                     distance: -50,
+                     style: {
+                         fontWeight: 'bold',
+                         color: 'white'
+                     }
+                 },
+                 point: {
+                     events: {
+                         legendItemClick: function() {
+                             this.slice(null);
+                             return false;
+                         }
+                     }
+                 },
+                 startAngle: -140,
+                 endAngle: 140,
+                 center: ['50%', '50%'],
+                 size: '100%'
+             }
+         },
+         series: [{
+             type: 'pie',
+             innerSize: '85%',
+             data: [{
+                     name: 'Score',
+                     y: <?php echo $lastscore; ?>,
+                     color: '#21ccff' // Jane's color
+                 },
+                 {
+                     name: 'Progress',
+                     y: <?php echo $progress ?>,
+                     color: '#d0f3ff' // Jane's color
+                 },
+                 {
+                     name: '',
+                     y: <?php echo (100 - ($lastscore + $progress)); ?>,
+
+                     color: '#efefef' // Jane's color
+                 }
+             ]
+         }]
+     }); */
+    /* score pie graph */
 </script>
 <script>
     $(document).ready(function() {
