@@ -16,8 +16,12 @@
    .overllanaly .star-ratings-css-top span,.overllanaly .star-ratings-css{font-size:18px;}
    .dashboard-name-txt,.score{font-size:14px;}
    #marKs-trends .col-lg-6,#time-Avg-quest .col-lg-6{width:100%;}
-   div#marKs-trends, div#time-Avg-quest{    margin-bottom: 36px;margin-top: 0px;}
-   
+   div#marKs-trends, div#time-Avg-quest{    margin-bottom: 36px;margin-top: 0px;    padding-bottom: 20px}
+   .sub-title h3{font-size: 14px;flex: 2;}
+   .topic-details{padding:20px;}
+   .subject-name li{    width: 30px;
+    height: 30px;    font-size: 14px;line-height: 13px;}
+    .fw-bold{font-size:16px;}
 }
 
 @media(max-width:1023px){
