@@ -60,6 +60,11 @@
     .subscription .form-btns button {width: 140px;font-size: 12px;}
 	.tickicon{width: 50%;}
     .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
-
-    
+    .leader-board{height: 450px;}
+    .active_user {max-width: 259px;}
+    .profile-show {right: 400px;width:284px;}
+    span.profile-digit{margin-right:10px;}
+    .profile-section {width: 150px;}
+    .profile-section ul li a{font-size: 14px;}
+    .leader-board{right: 22%;}   
 }
