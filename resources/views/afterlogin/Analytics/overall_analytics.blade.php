@@ -256,25 +256,25 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                {{--<div class="row">
 
                                     <p>Total Score => 100%</p>
                                     <p>Latest Test Score => {{$mockTestScoreCurr}}%</p>
-                                    <p>Previous Test Score => {{$mockTestScorePre}}%</p>
-                                    <p>Progress from previous score => {{$mockTestScoreCurr-$mockTestScorePre}}%</p>
-                                    <p>Far from Goa (grey)l => {{100 -$mockTestScoreCurr}}%</p>
-                                </div>
-                            </div>
-                            <div class="topics_analytics">
-                                @include('afterlogin.Analytics.topics_analytics')
-                            </div>
-
+                                <p>Previous Test Score => {{$mockTestScorePre}}%</p>
+                                <p>Progress from previous score => {{$mockTestScoreCurr-$mockTestScorePre}}%</p>
+                                <p>Far from Goa (grey)l => {{100 -$mockTestScoreCurr}}%</p>
+                            </div>--}}
                         </div>
+                        <div class="topics_analytics">
+                            @include('afterlogin.Analytics.topics_analytics')
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </div>
 <div class="modal fade" id="upcoming-tutorials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -449,6 +449,59 @@ $userData = Session::get('user_data');
             ]
         }]
     });
+
+    /* score comparison graph */
+    /*  Highcharts.chart('compareGraph', {
+         chart: {
+             type: 'column'
+         },
+         title: {
+             text: ''
+         },
+         xAxis: {
+             categories: [
+                 'Score %'
+             ]
+         },
+         yAxis: [{
+             min: 0,
+             title: {
+                 text: null
+             }
+         }, {
+             title: {
+                 text: null
+             },
+             opposite: true
+         }],
+         legend: {
+             shadow: false
+         },
+         tooltip: {
+             shared: true
+         },
+         plotOptions: {
+             column: {
+                 grouping: false,
+                 shadow: false,
+                 borderWidth: 0
+             }
+         },
+         series: [{
+             name: 'Previous score',
+             color: 'rgba(165,170,217,1)',
+             data: [73],
+             pointPadding: 0.3,
+             pointPlacement: 0
+         }, {
+             name: 'Latest score',
+             color: 'rgba(126,86,134,.9)',
+             data: [90],
+             pointPadding: 0.3,
+             pointPlacement: 0.1
+         }]
+     }); */
+    /* score comparison graph */
 </script>
 
 <script>
