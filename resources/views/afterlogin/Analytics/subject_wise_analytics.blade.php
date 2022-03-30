@@ -867,7 +867,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
         yAxis: [{
             min: 0,
             title: {
-                text: ''
+                text: 'Score %'
             }
         }, {
             title: {

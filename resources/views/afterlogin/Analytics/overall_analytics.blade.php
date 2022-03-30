@@ -395,7 +395,7 @@ $userData = Session::get('user_data');
         yAxis: [{
             min: 0,
             title: {
-                text: ''
+                text: 'Score %'
             }
         }, {
             title: {
