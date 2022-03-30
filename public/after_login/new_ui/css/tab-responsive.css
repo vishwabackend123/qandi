@@ -22,6 +22,14 @@
    .subject-name li{    width: 30px;
     height: 30px;    font-size: 14px;line-height: 13px;}
     .fw-bold{font-size:16px;}
+    div#contentHtml .report-block1{padding:2rem;}
+    .exportAnaylisis .headeranaylsismain{padding-bottom: 16px;}
+    .exportAnaylisis .export-block h2 { font-size: 40px; margin-top: 1rem!important;}
+    .exportAnaylisis .export-block .greentxt { font-size: 130px;}
+    .exportAnaylisis .justify-content-center {
+        justify-content: center !important;
+    }
+    
 }
 
 @media(max-width:1023px){
@@ -38,6 +46,11 @@
     .cust-tabs.nav.nav-tabs .nav-link{font-size: 13px;}	
     .subscription .form-btns button {width: 140px;font-size: 12px;}
     .overllanaly .tab-wrapper #scroll-mobile{    padding-bottom: 40px;}
+    .reportHeading{font-size:28px;}
+    .reportHeading span{font-size:22px;}
+    .exportUserpic {
+        width: 70px;
+        height: 70px;}
 }
 
 @media(max-width:768px){
