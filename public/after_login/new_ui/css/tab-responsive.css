@@ -56,5 +56,9 @@
 @media(max-width:768px){
     .subscription .form-btns button {width: 140px;font-size: 12px;}
 	.tickicon{width: 50%;}
+    .leader-board{height: 450px;}
+    .active_user {max-width: 259px;}
+    .profile-show {right: 409px;width:284px;}
+    span.profile-digit{margin-right:10px;}
     
 }
