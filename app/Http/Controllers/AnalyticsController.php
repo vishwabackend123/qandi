@@ -222,6 +222,7 @@ class AnalyticsController extends Controller
                 'active_id',
                 'user_subjects',
                 'mockTestScoreCurr',
+                'mockTestScorePre',
                 'lastscore',
                 'progress',
                 'subProf',

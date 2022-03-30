@@ -256,7 +256,14 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
 
+                                <div class="row">
 
+                                    <p>Total Score => 100%</p>
+                                    <p>Latest Test Score => {{$mockTestScoreCurr}}%</p>
+                                    <p>Previous Test Score => {{$mockTestScorePre}}%</p>
+                                    <p>Progress from previous score => {{$mockTestScoreCurr-$mockTestScorePre}}%</p>
+                                    <p>Far from Goa (grey)l => {{100 -$mockTestScoreCurr}}%</p>
+                                </div>
                             </div>
                             <div class="topics_analytics">
                                 @include('afterlogin.Analytics.topics_analytics')
@@ -378,10 +385,10 @@ $userData = Session::get('user_data');
             spacingRight: 0,
         },
         title: {
-            text: '<span style="font: normal normal 200 60px/60px Manrope; letter-spacing: 0px; color: #00baff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
+            text: '<span style="font: normal normal 200 42px/60px Manrope; letter-spacing: 0px; color: #00baff;">{{$mockTestScoreCurr??0}}</span> <br><span style="font: normal normal normal 16px/22px Manrope;letter-spacing: 0px;color: #00baff;"> / 100 </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 60
+            y: 50
         },
         credits: {
             enabled: false
