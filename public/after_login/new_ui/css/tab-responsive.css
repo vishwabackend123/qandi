@@ -1,4 +1,9 @@
-@media(max-width:1199px){
+@media screen and (max-width:1199px){
+    .planersecdualsub{justify-content: space-between !important;}
+    .planersecdualsub .slimScrollDiv {padding: 0;}
+    #collapsePlanner .planersecdualsub .d-flex.align-items-center.text-uppercase{text-align: left !important;}
+    .exam-week-tabe {margin-top: 25px !important;margin-bottom: 25px;margin-left: 15px;}
+    .exam-week-tabe .slider-horizontal {width: 92% !important;}
    .newtabview.bg-white.shadow-lg{margin-top: 36px!important;}
    .user-name-block{font-size: 16px;}
    header .col-md-6.ms-auto{width: 100%;}
@@ -51,6 +56,8 @@
     .exportUserpic {
         width: 70px;
         height: 70px;}
+.exam-week-tabe .slider-horizontal {width: 88% !important;}
+.planersavebtn{justify-content: center!important;}
 }
 
 @media(max-width:768px){
