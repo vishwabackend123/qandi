@@ -62,13 +62,15 @@
     .exportUserpic {
         width: 70px;
         height: 70px;}
-.exam-week-tabe .slider-horizontal {width: 88% !important;}
-.planersavebtn{justify-content: center!important;}
+    .exam-week-tabe .slider-horizontal {width: 88% !important;}
+    .planersavebtn{justify-content: center!important;}
         .exportAnaylisis{padding-top:70px!important}
         a.close-btn, a.export-btn{top: 17px;}
         a.close-btn img, a.export-btn img{width:50px!important;}
 }
-
+@media screen and (max-width:880px){
+#collapsePlanner {padding-left: 15px;}
+}
 @media(max-width:768px){
     .subscription .form-btns button {width: 140px;font-size: 12px;}
 	.tickicon{width: 50%;}
