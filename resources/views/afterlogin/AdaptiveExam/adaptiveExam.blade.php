@@ -320,24 +320,24 @@ if($template_type==1){
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase examhead">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
+                                    <div class="col-md-5 col-lg-5">
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
                                             <span class="d-block"><span class="inst-text">{{$questions_count}} MCQ </span><span></span>Questions</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
+                                    <div class="col-md-4 col-lg-4">
                                         <div>
                                             <small>Target</small>
                                             <span class="d-block inst-text"><span>{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
+                                    <div class="col-md-3 col-lg-3">
                                         <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
