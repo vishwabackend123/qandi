@@ -37,6 +37,8 @@
     .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
     .exportAnaylisis .garphheading{font-size:14px;}
     .exportAnaylisis .status-id.rating{width: 30%;}
+    .exportAnaylisis .detailedtext {font-size: 15px;}
+    .anaylticslogo img {width: 70px;  }
 }
 
 @media(max-width:1023px){
