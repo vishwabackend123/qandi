@@ -22,23 +22,22 @@
 
 @media(max-width:1023px){
 	.dashboard-cards-block .bg-white>small p{    min-width: 275px;}
-    .subscription .form-btns button {width: 222px;}
-    .subscrived svg{width:40px;}
+    .subscription .form-btns button {width: 160px;font-size: 14px;}
+    .subscrived svg{width:30px;}
     .subscrived .p-text{padding-right: 0px;}
-    .subscription .p-text h3 {font-size: 16px;}
+    .subscription .p-text h3 {font-size: 12px;}
     .subscription h4{font-size: 15px;}
     a.Ex-anal span.Ex--an{display:inline-block;}
 }
 
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{font-size: 13px;}	
-    .subscription .form-btns button {width: 160px;font-size: 14px;}
+    .subscription .form-btns button {width: 140px;font-size: 12px;}
     .overllanaly .tab-wrapper #scroll-mobile{    padding-bottom: 40px;}
 }
 
 @media(max-width:768px){
-
-	.tickicon{
-        width: 50%;
-    }
+    .subscription .form-btns button {width: 140px;font-size: 12px;}
+	.tickicon{width: 50%;}
+    
 }
