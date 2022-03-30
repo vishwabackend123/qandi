@@ -234,7 +234,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                 <!-- Right Side Area -->
 
 
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect test-review-right for-review-screen">
                     <div class="bg-white d-flex flex-column   mb-4">
                         <span class="subtitle padding_26" title="{{$exam_name}}">{{$exam_name}}</span>
                         <div class="number_block_holder padding_26">
