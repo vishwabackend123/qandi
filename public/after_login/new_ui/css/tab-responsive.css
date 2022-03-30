@@ -36,6 +36,7 @@
     }
     .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
     .exportAnaylisis .garphheading{font-size:14px;}
+    .exportAnaylisis .status-id.rating{width: 30%;}
 }
 
 @media(max-width:1023px){
@@ -46,6 +47,8 @@
     .subscription .p-text h3 {font-size: 12px;}
     .subscription h4{font-size: 15px;}
     a.Ex-anal span.Ex--an{display:inline-block;}
+    .exportAnaylisis .status-id.rating{width: 50%;}
+
 }
 
 @media(max-width:991px){
