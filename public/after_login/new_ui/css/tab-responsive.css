@@ -29,7 +29,8 @@
     .exportAnaylisis .justify-content-center {
         justify-content: center !important;
     }
-    .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:16px;}
+    .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
+    .exportAnaylisis .garphheading{font-size:14px;}
 }
 
 @media(max-width:1023px){
