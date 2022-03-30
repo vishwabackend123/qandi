@@ -9,8 +9,13 @@
    .cust-gallery .swiper-slide h3{font-size:20px;}
    .custom-btn-gray{font-size:14px;}
    .cust-tabs.nav.nav-tabs .nav-link{min-width:auto;font-size: 14px;padding-left:20px!important;padding-right:20px!important;}
+<<<<<<< HEAD
    .subscription .form-btns button {width: 222px;}
    .subscrived svg{width:46px;}
+=======
+   .cust-gallery .swiper-slide.bg-white{width: 405px!important;margin-right:30px!important;}
+   .bg-white.shadow-lg .progress_text {font-size: 16px;}
+>>>>>>> 1d2fe0a03311bb282a2cd31c6e497d53b366590f
    
 }
 
