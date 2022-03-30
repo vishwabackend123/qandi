@@ -49,6 +49,9 @@
     .subscription .p-text h3 {font-size: 12px;}
     .subscription h4{font-size: 15px;}
     a.Ex-anal span.Ex--an{display:inline-block;}
+    .profile-show {top: 8%;padding: initial;height: auto;right: 485px;}
+    .active_user{max-width: 258px;}
+    .leader-board{right: 23%; height: auto;}
     .exportAnaylisis .status-id.rating{width: 50%;}
 
 }
@@ -59,6 +62,25 @@
     .overllanaly .tab-wrapper #scroll-mobile{    padding-bottom: 40px;}
     .reportHeading{font-size:28px;}
     .reportHeading span{font-size:22px;}
+
+    .exportUserpic {width: 70px; height: 70px;}
+ 
+    .active_user {max-width: 259px;}
+    .refund-money{width: 80%;}
+    .leader-board {right: 195px;height: auto; }
+    .profile-show {right: 470px;    top: 0px; ;}
+    
+     
+    
+}
+ 
+@media(max-width:768px){
+    .subscription .form-btns button {width: 140px;font-size: 12px;}
+	.tickicon{width: 50%;}
+    .profile-show {top: 0;}
+    .profile-show {right: 406px; height: auto;}
+   
+
     .exportUserpic {
         width: 70px;
         height: 70px;}
