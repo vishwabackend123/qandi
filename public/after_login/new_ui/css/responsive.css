@@ -237,20 +237,20 @@
         margin-bottom: 20px;
     }
 
-    .log-out-screen {
+    /* .log-out-screen {
         width: 50%;
         right: 20%;
         top: 8%;
-    }
+    } */
 
     button.cancel-btn {
         margin-bottom: 15px;
     }
 
-    .subscription {
+    /* .subscription {
         right: 20%;
         top: 8%;
-    }
+    } */
 
     /** end here **/
 }
@@ -630,10 +630,10 @@
         margin-bottom: 20px;
     }
 
-    .log-out-screen {
+    /* .log-out-screen {
         width: 50%;
         right: 24%;
-    }
+    } */
 
     .subscription {
         right: 24%;
