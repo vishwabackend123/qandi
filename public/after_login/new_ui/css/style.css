@@ -936,9 +936,9 @@ input#search_field::-ms-input-placeholder {
 
 #review_rques_blk .question p {
     font-size: 17px;
-    line-height: 20px;
+    line-height: 20px;font-feature-settings: "liga" 0;
 }
-
+.answer-section .answer-btn-txt,.answer-section .ans-txt{font-feature-settings: "liga" 0;}
 .AttmnowSec button {
     margin-top: 20px !important;
 }
@@ -3583,7 +3583,7 @@ button.percentage-digit {
 
 .rview-quses li span {
     padding-right: 5px;
-    padding-left: 5px;
+    padding-left: 5px;font-feature-settings: "liga" 0;
 }
 
 /** custom scrollbar**/
@@ -8658,6 +8658,12 @@ max-width: 450px;
     position: absolute;
     bottom: -22px;
     background: transparent;
+}
+.text-red{
+    color: #F00;
+}
+#refund_block_form .required-filed input{
+font-size: 14px !important;
 }
 /*************************/
 
