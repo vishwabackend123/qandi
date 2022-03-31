@@ -245,6 +245,9 @@
     #collapsePlanner {
        padding-left: 15px;
    }
+   .profile-show {
+    right: 455px;width: 280px;
+    }
 }
 @media(max-width:768px){
     .subscription .form-btns button {
