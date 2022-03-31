@@ -40,6 +40,8 @@
     .exportAnaylisis .detailedtext {font-size: 15px;}
     .anaylticslogo img {width: 70px;  }
     .log-out-screen {width: 50%;}
+    .subscription .p-text h3 {
+        font-size: 14px; }
 }
 
 @media(max-width:1023px){
@@ -51,9 +53,11 @@
   
     a.Ex-anal span.Ex--an{display:inline-block;}
     .profile-show {top: 8%;padding: initial;height: auto;right: 478px;}
-    .active_user{max-width: 258px;}
+ 
     .leader-board{right: 23%; height: auto;}
     .exportAnaylisis .status-id.rating{width: 50%;}
+    .subscription .p-text h3 {font-size: 16px;}
+    .log-out-screen {right:235px;    top: 0%; }
 
 }
 
@@ -66,17 +70,15 @@
 
     .exportUserpic {width: 70px; height: 70px;}
  
-    .active_user {max-width: 259px;}
+ 
     .refund-money{width: 80%;}
-    .leader-board {right: 225px;height: auto; }
-    .profile-show {right: 470px;    top: 0px; ;}
+    .leader-board {right: 200px;height: auto;     width: 325px;}
+    .profile-show {right: 463px;
+        top: 0px;
+        WIDTH: 235PX;}
 
-    .profile-section, .leader-board { top: 0px; }
-    .log-out-screen {
-
-        right: 230px;    top: 0%;
-       
-    }
+    
+    .log-out-screen {right: 200px;    top: 0%; }
     .subscription .p-text h3 {
         font-size: 16px;
         line-height: 48px;
@@ -84,6 +86,31 @@
     .subscrived svg {
         width: 37px;
     }
+   .profile-show .profile-picture-txt .p-picture ,.profile-picture-txt .p-text {
+        float: none;margin: auto;
+    }
+   .profile-show .profile-picture-txt .p-text {
+       
+        width: 80%;
+        padding-right:0px;
+        text-align: center;
+        margin: auto;
+    }
+    .profile-show .profile-picture-txt h4 {
+        text-align: center;
+    }
+    .active_user {
+    
+        max-width: 274px;
+     
+    }
+    span.profile-img-user {
+        width: 35px;
+        height: 35px;
+    
+    }
+
+ 
     
      
     
