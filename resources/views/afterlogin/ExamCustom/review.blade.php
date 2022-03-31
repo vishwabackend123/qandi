@@ -340,9 +340,20 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                     </div>
 
                                     <div class="dropdown">
-                                        <a class="btn pt-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters">
+                                        <a class="btn p-0 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Filters">
                                             <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-                                            <img src="{{URL::asset('public/after_login/new_ui/images/filter-icon.png')}}" alt="">
+                                    <svg data-name="Group 2283" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path data-name="Path 194" d="M0 0h24v24H0z" style="fill:none"/>
+                                    <rect data-name="Rectangle 15" width="4" height="5" rx="1" transform="translate(4 6)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                    <path data-name="Line 95" transform="translate(6 4)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v2"/>
+                                    <path data-name="Line 96" transform="translate(6 11)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v9"/>
+                                    <rect data-name="Rectangle 16" width="4" height="5" rx="1" transform="translate(10 14)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                    <path data-name="Line 97" transform="translate(12 4)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v10"/>
+                                    <path data-name="Line 98" transform="translate(12 19)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v1"/>
+                                    <rect data-name="Rectangle 17" width="4" height="6" rx="1" transform="translate(16 5)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"/>
+                                    <path data-name="Line 99" transform="translate(18 4)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v1"/>
+                                    <path data-name="Line 100" transform="translate(18 11)" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none" d="M0 0v9"/>
+                                </svg>
 
                                         </a>
 
