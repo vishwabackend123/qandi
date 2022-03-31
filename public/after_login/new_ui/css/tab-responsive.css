@@ -1,286 +1,316 @@
 @media screen and (max-width:1199px){
-     .planersecdualsub{
-        justify-content: space-between !important;
-    }
-     .planersecdualsub .slimScrollDiv {
-        padding: 0;
-    }
-     #collapsePlanner .planersecdualsub .d-flex.align-items-center.text-uppercase{
-        text-align: left !important;
-    }
-     .exam-week-tabe {
-        margin-top: 25px !important;
-        margin-bottom: 25px;
-        margin-left: 15px;
-    }
-     .exam-week-tabe .slider-horizontal {
-        width: 92% !important;
-    }
-     .newtabview.bg-white.shadow-lg{
-        margin-top: 36px!important;
-    }
-     .user-name-block{
-        font-size: 16px;
-    }
-     header .col-md-6.ms-auto{
-        width: 100%;
-    }
-     .bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong,.course-star li strong{
+    .planersecdualsub{
+       justify-content: space-between !important;
+   }
+    .planersecdualsub .slimScrollDiv {
+       padding: 0;
+   }
+    #collapsePlanner .planersecdualsub .d-flex.align-items-center.text-uppercase{
+       text-align: left !important;
+   }
+    .exam-week-tabe {
+       margin-top: 25px !important;
+       margin-bottom: 25px;
+       margin-left: 15px;
+   }
+    .exam-week-tabe .slider-horizontal {
+       width: 92% !important;
+   }
+    .newtabview.bg-white.shadow-lg{
+       margin-top: 36px!important;
+   }
+    .user-name-block{
+       font-size: 16px;
+   }
+    header .col-md-6.ms-auto{
+       width: 100%;
+   }
+    .bg-white.shadow-lg.py-5.ps-3.pe-1 .course-star li strong,.course-star li strong{
+       font-size: 14px;
+   }
+    .button-sec.mt-3 a{
+       font-size:12px;
+   }
+    .task-center-block .btn.btntheme{
+       font-size:14px;
+   }
+    .subjectIcon img{
+       width:60px!important
+   }
+    .cust-gallery .swiper-slide h3{
+       font-size:20px;
+   }
+    .custom-btn-gray{
+       font-size:14px;
+   }
+    .cust-tabs.nav.nav-tabs .nav-link{
+       min-width:auto;
+       font-size: 14px;
+       padding-left:20px!important;
+       padding-right:20px!important;
+   }
+    .subscription .form-btns button {
+       width: 222px;
+   }
+    .subscrived svg{
+       width:46px;
+   }
+    .cust-gallery .swiper-slide.bg-white{
+       width: 405px!important;
+       margin-right:30px!important;
+   }
+    .bg-white.shadow-lg .progress_text {
+       font-size: 16px;
+   }
+    .overllanaly .star-ratings-css-top span,.overllanaly .star-ratings-css{
+       font-size:18px;
+   }
+    .dashboard-name-txt,.score{
+       font-size:14px;
+   }
+    #marKs-trends .col-lg-6,#time-Avg-quest .col-lg-6{
+       width:100%;
+   }
+    div#marKs-trends, div#time-Avg-quest{
+        margin-bottom: 36px;
+       margin-top: 0px;
+        padding-bottom: 20px
+   }
+    .sub-title h3{
+       font-size: 14px;
+       flex: 2;
+   }
+    .topic-details{
+       padding:20px;
+   }
+    .subject-name li{
+        width: 30px;
+        height: 30px;
         font-size: 14px;
-    }
-     .button-sec.mt-3 a{
-        font-size:12px;
-    }
-     .task-center-block .btn.btntheme{
-        font-size:14px;
-    }
-     .subjectIcon img{
-        width:60px!important
-    }
-     .cust-gallery .swiper-slide h3{
-        font-size:20px;
-    }
-     .custom-btn-gray{
-        font-size:14px;
-    }
-     .cust-tabs.nav.nav-tabs .nav-link{
-        min-width:auto;
-        font-size: 14px;
-        padding-left:20px!important;
-        padding-right:20px!important;
-    }
-     .subscription .form-btns button {
-        width: 222px;
-    }
-     .subscrived svg{
-        width:46px;
-    }
-     .cust-gallery .swiper-slide.bg-white{
-        width: 405px!important;
-        margin-right:30px!important;
-    }
-     .bg-white.shadow-lg .progress_text {
-        font-size: 16px;
-    }
-     .overllanaly .star-ratings-css-top span,.overllanaly .star-ratings-css{
-        font-size:18px;
-    }
-     .dashboard-name-txt,.score{
-        font-size:14px;
-    }
-     #marKs-trends .col-lg-6,#time-Avg-quest .col-lg-6{
-        width:100%;
-    }
-     div#marKs-trends, div#time-Avg-quest{
-         margin-bottom: 36px;
-        margin-top: 0px;
-         padding-bottom: 20px
-    }
-     .sub-title h3{
-        font-size: 14px;
-        flex: 2;
-    }
-     .topic-details{
-        padding:20px;
-    }
-     .subject-name li{
-         width: 30px;
-         height: 30px;
-         font-size: 14px;
-        line-height: 13px;
-    }
-     .fw-bold{
-        font-size:16px;
-    }
-     div#contentHtml .report-block1{
-        padding:2rem;
-    }
-     .exportAnaylisis .headeranaylsismain{
-        padding-bottom: 16px;
-    }
-     .exportAnaylisis .export-block h2 {
-         font-size: 40px;
-         margin-top: 1rem!important;
-    }
-     .exportAnaylisis .export-block .greentxt {
-         font-size: 130px;
-    }
-     .exportAnaylisis .justify-content-center {
-         justify-content: center !important;
-    }
-     .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{
-        font-size:14px;
-    }
-     .exportAnaylisis .garphheading{
-        font-size:14px;
-    }
-     .exportAnaylisis .status-id.rating{
-        width: 30%;
-    }
-     .exportAnaylisis .detailedtext {
-        font-size: 15px;
-    }
-     .anaylticslogo img {
-        width: 70px;
-    }
-     .log-out-screen {
-        width: 50%;
-    }
+       line-height: 13px;
+   }
+    .fw-bold{
+       font-size:16px;
+   }
+    div#contentHtml .report-block1{
+       padding:2rem;
+   }
+    .exportAnaylisis .headeranaylsismain{
+       padding-bottom: 16px;
+   }
+    .exportAnaylisis .export-block h2 {
+        font-size: 40px;
+        margin-top: 1rem!important;
+   }
+    .exportAnaylisis .export-block .greentxt {
+        font-size: 130px;
+   }
+    .exportAnaylisis .justify-content-center {
+        justify-content: center !important;
+   }
+    .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{
+       font-size:14px;
+   }
+    .exportAnaylisis .garphheading{
+       font-size:14px;
+   }
+    .exportAnaylisis .status-id.rating{
+       width: 30%;
+   }
+    .exportAnaylisis .detailedtext {
+       font-size: 15px;
+   }
+    .anaylticslogo img {
+       width: 70px;
+   }
+    .log-out-screen {
+       width: 50%;
+   }
+   .log-out-screen {width: 50%;}
+   .subscription .p-text h3 {font-size: 14px; }
 }
- @media(max-width:1023px){
-     .dashboard-cards-block .bg-white>small p{
-         min-width: 275px;
+@media(max-width:1023px){
+    .dashboard-cards-block .bg-white>small p{
+        min-width: 275px;
+   }
+    .subscription .form-btns button {
+       width: 160px;
+       font-size: 14px;
+   }
+    .subscrived svg{
+       width:45px;
+   }
+    .subscrived .p-text{
+       padding-right: 0px;
+   }
+    a.Ex-anal span.Ex--an{
+       display:inline-block;
+   }
+    .profile-show {
+       top: 8%;
+       padding: initial;
+       height: auto;
+       right: 478px;
+   }
+   .active_user{
+    max-width: 258px;
     }
-     .subscription .form-btns button {
-        width: 160px;
-        font-size: 14px;
-    }
-     .subscrived svg{
-        width:45px;
-    }
-     .subscrived .p-text{
-        padding-right: 0px;
-    }
-     a.Ex-anal span.Ex--an{
-        display:inline-block;
-    }
-     .profile-show {
-        top: 8%;
-        padding: initial;
-        height: auto;
-        right: 478px;
-    }
-     .active_user{
-        max-width: 258px;
-    }
-     .leader-board{
-        right: 23%;
-         height: auto;
-    }
-     .exportAnaylisis .status-id.rating{
-        width: 50%;
-    }
-}
- @media(max-width:991px){
-     .cust-tabs.nav.nav-tabs .nav-link{
-        font-size: 13px;
-    }
-     .subscription .form-btns button {
-        width: 140px;
-        font-size: 12px;
-    }
-     .overllanaly .tab-wrapper #scroll-mobile{
-         padding-bottom: 40px;
-    }
-     .reportHeading{
-        font-size:28px;
-    }
-     .reportHeading span{
-        font-size:22px;
-    }
-     .exportUserpic {
-        width: 70px;
-         height: 70px;
-    }
-     .active_user {
-        max-width: 259px;
-    }
-     .refund-money{
-        width: 80%;
-    }
-     .leader-board {
-        right: 225px;
+    .leader-board{
+    right: 23%;
         height: auto;
     }
-     .profile-show {
-        right: 470px;
-         top: 0px;
-         ;
-    }
-     .profile-section, .leader-board {
-         top: 0px;
-    }
-     .log-out-screen {
-         right: 230px;
-         top: 0%;
-    }
-     .subscription .p-text h3 {
-         font-size: 16px;
-         line-height: 48px;
-    }
-     .subscrived svg {
-         width: 37px;
-    }
-     .planersavebtn {
-         justify-content: center!important;
-    }
+    
+  
+    .exportAnaylisis .status-id.rating{
+       width: 50%;
+   }
+
+   .leader-board{right: 23%; height: auto;}
+   .exportAnaylisis .status-id.rating{width: 50%;}
+   .subscription .p-text h3 {font-size: 16px;}
+   .log-out-screen {right:235px;    top: 0%; }
 }
- @media (min-width: 769px) and (max-width: 990px){
-     .subscription {
-        right: 204px;
-        width: 60%;
-    }
-}
- @media screen and (max-width:880px){
-     #collapsePlanner {
-        padding-left: 15px;
-    }
-}
- @media(max-width:768px){
-     .subscription .form-btns button {
-        width: 140px;
-        font-size: 12px;
-    }
-     .subscription {
-        width: 65%;
-    }
-     .tickicon{
-        width: 50%;
-    }
-     .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{
-        font-size:14px;
-    }
-     .active_user {
-        max-width: 259px;
-    }
-     .profile-show {
-        right: 400px;
-        width:284px;
-    }
-     span.profile-digit{
-        margin-right:10px;
-    }
-     .profile-section {
-        width: 150px;
-    }
-     .profile-section ul li a{
-        font-size: 14px;
-    }
-     .leader-board{
-        right: 22%;
-         height: 450px;
-    }
-     .exportUserpic {
-         width: 70px;
-         height: 70px;
-    }
-     .exam-week-tabe .slider-horizontal {
-        width: 88% !important;
-    }
-     .planersavebtn{
+@media(max-width:991px){
+    .cust-tabs.nav.nav-tabs .nav-link{
+       font-size: 13px;
+   }
+    .subscription .form-btns button {
+       width: 140px;
+       font-size: 12px;
+   }
+    .overllanaly .tab-wrapper #scroll-mobile{
+        padding-bottom: 40px;
+   }
+    .reportHeading{
+       font-size:28px;
+   }
+    .reportHeading span{
+       font-size:22px;
+   }
+    .exportUserpic {
+       width: 70px;
+        height: 70px;
+   }
+    .active_user {
+       max-width: 259px;
+   }
+    .refund-money{
+       width: 80%;
+   }
+    .leader-board {
+       right: 225px;
+       height: auto;
+   }
+    .profile-show {
+       right: 470px;
+        top: 0px;
+        ;
+   }
+    .profile-section, .leader-board {
+        top: 0px;
+   }
+    .log-out-screen {
+        right: 230px;
+        top: 0%;
+   }
+    .subscription .p-text h3 {
+        font-size: 16px;
+        line-height: 48px;
+   }
+    .subscrived svg {
+        width: 37px;
+   }
+    .planersavebtn {
         justify-content: center!important;
-    }
-     .exportAnaylisis{
-        padding-top:70px!important
-    }
-     a.close-btn, a.export-btn{
-        top: 17px;
-    }
-     a.close-btn img, a.export-btn img{
-        width:50px!important;
-    }
-     .log-out-screen {
-         right: 170px;
-         top: 0%;
-    }
+   }
+    .profile-show .profile-picture-txt .p-picture ,.profile-picture-txt .p-text {float: none;margin: auto;}
+    .profile-show .profile-picture-txt .p-text { width: 80%;padding-right:0px;text-align: center; margin: auto;}
+    .profile-show .profile-picture-txt h4 {text-align: center;}
+    .active_user { max-width: 274px;}
+    .profile-img-user {width: 35px;height: 35px;}
+    .refund-money{width: 80%;}
+    .leader-board {right: 200px;height: auto;     width: 325px;}
+    .profile-show {right: 463px;top: 0px; WIDTH: 235PX;}
+ 
+    
+    .log-out-screen {right: 200px;    top: 0%; }
+}
+@media (min-width: 769px) and (max-width: 990px){
+    .subscription {
+       right: 204px;
+       width: 60%;
+   }
+}
+@media screen and (max-width:880px){
+    #collapsePlanner {
+       padding-left: 15px;
+   }
+}
+@media(max-width:768px){
+    .subscription .form-btns button {
+       width: 140px;
+       font-size: 12px;
+   }
+    .subscription {
+       width: 65%;
+   }
+    .tickicon{
+       width: 50%;
+   }
+    .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{
+       font-size:14px;
+   }
+    .active_user {
+       max-width: 259px;
+   }
+    .profile-show {
+       right: 400px;
+       width:284px;
+   }
+    span.profile-digit{
+       margin-right:10px;
+   }
+    .profile-section {
+       width: 150px;
+   }
+    .profile-section ul li a{
+       font-size: 14px;
+   }
+    .leader-board{
+       right: 22%;
+        height: 450px;
+   }
+    .exportUserpic {
+        width: 70px;
+        height: 70px;
+   }
+    .exam-week-tabe .slider-horizontal {
+       width: 88% !important;
+   }
+    .planersavebtn{
+       justify-content: center!important;
+   }
+    .exportAnaylisis{
+       padding-top:70px!important
+   }
+    a.close-btn, a.export-btn{
+       top: 17px;
+   }
+    a.close-btn img, a.export-btn img{
+       width:50px!important;
+   }
+    .log-out-screen {
+        right: 170px;
+        top: 0%;
+   }
+   .subscription .form-btns button {width: 140px;font-size: 12px;}
+   .subscription {width: 65%;}
+   .tickicon{width: 50%;}
+   .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
+   .active_user {max-width: 259px;}
+   .profile-show {right: 400px;width:284px;}
+   span.profile-digit{margin-right:10px;}
+   .profile-section {width: 150px;}
+   .profile-section ul li a{font-size: 14px;}
+   .leader-board{right: 22%; height: 450px;} 
 }
