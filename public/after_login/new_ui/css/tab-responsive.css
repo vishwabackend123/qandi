@@ -126,6 +126,8 @@
     .log-out-screen {
        width: 50%;
    }
+   .log-out-screen {width: 50%;}
+   .subscription .p-text h3 {font-size: 14px; }
 }
 @media(max-width:1023px){
     .dashboard-cards-block .bg-white>small p{
@@ -150,16 +152,23 @@
        height: auto;
        right: 478px;
    }
-    .active_user{
-       max-width: 258px;
-   }
+   .active_user{
+    max-width: 258px;
+    }
     .leader-board{
-       right: 23%;
+    right: 23%;
         height: auto;
-   }
+    }
+    
+  
     .exportAnaylisis .status-id.rating{
        width: 50%;
    }
+
+   .leader-board{right: 23%; height: auto;}
+   .exportAnaylisis .status-id.rating{width: 50%;}
+   .subscription .p-text h3 {font-size: 16px;}
+   .log-out-screen {right:235px;    top: 0%; }
 }
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{
@@ -214,6 +223,17 @@
     .planersavebtn {
         justify-content: center!important;
    }
+    .profile-show .profile-picture-txt .p-picture ,.profile-picture-txt .p-text {float: none;margin: auto;}
+    .profile-show .profile-picture-txt .p-text { width: 80%;padding-right:0px;text-align: center; margin: auto;}
+    .profile-show .profile-picture-txt h4 {text-align: center;}
+    .active_user { max-width: 274px;}
+    .profile-img-user {width: 35px;height: 35px;}
+    .refund-money{width: 80%;}
+    .leader-board {right: 200px;height: auto;     width: 325px;}
+    .profile-show {right: 463px;top: 0px; WIDTH: 235PX;}
+ 
+    
+    .log-out-screen {right: 200px;    top: 0%; }
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
@@ -283,4 +303,14 @@
         right: 170px;
         top: 0%;
    }
+   .subscription .form-btns button {width: 140px;font-size: 12px;}
+   .subscription {width: 65%;}
+   .tickicon{width: 50%;}
+   .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
+   .active_user {max-width: 259px;}
+   .profile-show {right: 400px;width:284px;}
+   span.profile-digit{margin-right:10px;}
+   .profile-section {width: 150px;}
+   .profile-section ul li a{font-size: 14px;}
+   .leader-board{right: 22%; height: 450px;} 
 }
