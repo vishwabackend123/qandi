@@ -149,17 +149,18 @@ $questtype='radio';
                                             @foreach($option_data as $key=>$opt_value)
                                             @php
                                             $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                            $dom = new DOMDocument();
+                                            /* $dom = new DOMDocument();
                                             @$dom->loadHTML($opt_value);
                                             $anchor = $dom->getElementsByTagName('img')->item(0);
                                             $text = isset($anchor)? $anchor->getAttribute('alt') : '';
                                             $latex = "https://math.now.sh?from=".$text;
-                                            $view_opt='<img src="'.$latex.'" />' ;
+                                            $view_opt='<img src="'.$latex.'" />' ; */
                                             @endphp
                                             <div class="col-md-6 mb-4">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
-                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                    <!-- <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label> -->
+                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! $opt_value !!}</label>
                                                 </div>
                                             </div>
                                             @php $no++; @endphp
@@ -453,17 +454,17 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -506,21 +507,7 @@ $questtype='radio';
 </script>
 <!-- /page referesh disabled -->
 <!-- browser back disable -->
-<!-- <script>
-    window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
-    window.onhashchange = function() {
-        window.location.hash = "no-back-button";
-    }
-</script>
-<script type="text/javascript">
-    history.pushState(null, null, location.href);
-    history.back();
-    history.forward();
-    window.onpopstate = function() {
-        history.go(1);
-    };
-</script> -->
+
 <script type="text/javascript">
     $(document).ready(function() {
         window.history.pushState(null, "", window.location.href);
