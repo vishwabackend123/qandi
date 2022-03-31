@@ -8659,6 +8659,12 @@ max-width: 450px;
     bottom: -22px;
     background: transparent;
 }
+.text-red{
+    color: #F00;
+}
+#refund_block_form .required-filed input{
+font-size: 14px !important;
+}
 /*************************/
 
 /**********25-03************/
