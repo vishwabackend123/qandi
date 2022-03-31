@@ -15,7 +15,7 @@ button {
     outline: none;
     text-decoration: none;
 }
-
+  
 
 #attempt_count_block .nav.nav-tabs.cust-tabs.exam-panel a#Zoology_tab_subject:before {right: -58px;}
 #attempt_count_block .cust-tabs.nav.nav-tabs .nav-link {min-width: 130px;padding: 18px 30px!important;}
@@ -8678,3 +8678,6 @@ font-family: 'Poppins', sans-serif;
 font-size: 20px;
 }
 /*************************/
+
+.res_flex a{flex: 1;}
+.savebtnmargin{margin-right: 10px;}
