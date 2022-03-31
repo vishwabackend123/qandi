@@ -119,8 +119,9 @@ div#topicclose,
     margin-bottom: 0px !important;
 }
 
-.exam-analytics .p-5 span.text-center.w-100 img {
+.exam-analytics .p-5 span.text-center.w-100 img{
     width: 70% !important;
+    padding: 30px 20px 40px;
 }
 
 .exam-analytics div#myTabContent .tab-pane .hScroll {

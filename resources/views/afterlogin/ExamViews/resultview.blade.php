@@ -324,7 +324,7 @@
                 <div class="col-md-3">
                     <div class="bg-white shadow p-5 d-flex flex-column position-relative">
                         <!-- <a href="#" class="i-icon"><i class="fas fa-info-circle"></i></a> -->
-                        <span class="text-center w-100"><img src="{{URL::asset('public/after_login/images//bottom-right.jpg')}}" /></span>
+                        <span class="text-center w-100"><img src="{{URL::asset('public/after_login/images//bottom-right.svg')}}" /></span>
                         <a href="{{route('examreview')}}" class="btn-danger btn rounded-0 w-100 mt-3">Review Questions</a>
                         <a href="{{route('dashboard')}}" class="btn-outline-secondary btn rounded-0 w-100 mt-3">Back to Dashboard</a>
                     </div>
