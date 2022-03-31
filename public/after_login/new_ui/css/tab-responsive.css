@@ -126,6 +126,8 @@
     .log-out-screen {
        width: 50%;
    }
+   .log-out-screen {width: 50%;}
+   .subscription .p-text h3 {font-size: 14px; }
 }
 @media(max-width:1023px){
     .dashboard-cards-block .bg-white>small p{
@@ -145,28 +147,36 @@
        display:inline-block;
    }
     .profile-show {
-       top: 8%;
-       padding: initial;
        height: auto;
-       right: 478px;
    }
-    .active_user{
-       max-width: 258px;
-   }
+   .active_user{
+    max-width: 328px;
+    }
     .leader-board{
-       right: 23%;
+    right: 23%;
         height: auto;
-   }
+    }
+    
+  
     .exportAnaylisis .status-id.rating{
        width: 50%;
    }
+
+   .leader-board{right: 23%; height: auto;}
+   .exportAnaylisis .status-id.rating{width: 50%;}
+   .subscription .p-text h3 {font-size: 14px;
+    padding-left: 30px;}
+   .log-out-screen {right:235px;    top: 0%; }
+   .subscription {
+    width:50%;
+}
 }
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{
        font-size: 13px;
    }
     .subscription .form-btns button {
-       width: 140px;
+        width: 180px;
        font-size: 12px;
    }
     .overllanaly .tab-wrapper #scroll-mobile{
@@ -210,21 +220,73 @@
    }
     .subscrived svg {
         width: 37px;
+        margin-right: 25px;
+       
    }
     .planersavebtn {
         justify-content: center!important;
    }
+    .profile-show .profile-picture-txt .p-picture ,.profile-picture-txt .p-text {float: none;margin: auto;}
+    .profile-show .profile-picture-txt .p-text { width: 80%;padding-right:0px;text-align: center; margin: auto;}
+    .profile-show .profile-picture-txt h4 {text-align: center;font-size: 14px;}
+    .active_user { max-width: 274px;}
+    .profile-img-user {width: 35px;height: 35px;}
+    .refund-money{width: 80%;}
+    .leader-board {right: 200px;height: auto;     width: 325px;}
+    .profile-show {right: 463px;top: 0px; WIDTH: 283PX;}
+    .log-out-screen {right: 200px;    top: 0%; padding: 20px;}
+    .subscription {width: 60%;}
+    .profile-show button {    padding: 10px 20px;
+        font-size: 12px;}
+    .leader-board ul li span h3 {font-size: 12px;}
+    span.profile-digit {font-size: 16px; }
+    .profile-section ul li {margin: 10px 0px;padding: 15px;}
+    #editProfile_form .form-flds input {
+   
+        font-size: 13px;
+    }
+    #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit{
+        font-size: 12px;
+    }
+    .edit-form {
+       
+        height: auto;
+      
+    }
+    
+    
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
        right: 204px;
        width: 60%;
    }
+   
 }
 @media screen and (max-width:880px){
     #collapsePlanner {
        padding-left: 15px;
    }
+ 
+    .profile-show {
+        right: 455px;
+        width: 235px;
+    }
+    .profile-picture-txt {
+        padding: 15px 20px;
+        width: 100%;
+    }
+    span.profile-img-user {
+        width: 35px;
+        height: 35px;
+    }
+    .profile-picture-txt .p-text p {
+        font-size: 11px;
+    }
+    .subscription .profile-picture-txt .p-text {
+        width: 100%;
+    }
+    .subscription {padding:20px;}
 }
 @media(max-width:768px){
     .subscription .form-btns button {
@@ -283,4 +345,17 @@
         right: 170px;
         top: 0%;
    }
+   .subscription .form-btns button {width: 140px;font-size: 12px;}
+   .subscription {width: 65%;}
+   .tickicon{width: 50%;}
+   .exportAnaylisis .bg-white.shadow-lg .dashboard-name-txt{font-size:14px;}
+   .active_user {max-width: 273px;;}
+   .profile-show {right: 418px;width:261px;}
+   span.profile-digit{margin-right:10px;}
+   .profile-section {width: 150px;}
+   .profile-section ul li a{font-size: 14px;}
+   .leader-board{right: 22%; height: 450px;} 
+   span.profile-img-user {width: 35px;height: 35px;}
+   .subscription .profile-picture-txt .p-text {width: 100%;}
+   .subscrived {margin: 20px 0px 0px;}
 }
