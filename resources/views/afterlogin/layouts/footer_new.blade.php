@@ -1744,6 +1744,7 @@
     });
     $(".custom-btn-gray").click(function(){
         $(".planmner_icon").addClass("notification-icons-active");
+        $("#collapsePlanner").show();
     });
     
 </script>

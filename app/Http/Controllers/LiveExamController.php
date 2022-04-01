@@ -79,9 +79,7 @@ class LiveExamController extends Controller
 
 
             return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -196,7 +194,8 @@ class LiveExamController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -233,9 +232,7 @@ class LiveExamController extends Controller
             $tagrets = implode(', ', $aTargets);
 
             return view('afterlogin.LiveExam.live_exam', compact('live_exam_id', 'filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -287,9 +284,7 @@ class LiveExamController extends Controller
 
                 return redirect()->back();
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

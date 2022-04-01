@@ -58,13 +58,14 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
                                                 @foreach($option_data as $key=>$opt_value)
                                                 @php
+                                                /*
                                                 $dom = new DOMDocument();
                                                 @$dom->loadHTML($opt_value);
                                                 $anchor = $dom->getElementsByTagName('img')->item(0);
                                                 $text = isset($anchor)? $anchor->getAttribute('alt') : '';
                                                 $latex = "https://math.now.sh?from=".$text;
                                                 $view_opt='<img src="'.$latex.'" />' ;
-
+                                                */
 
                                                 @endphp
                                                 <div class="col-md-6 mb-4">

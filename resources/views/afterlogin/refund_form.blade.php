@@ -27,7 +27,7 @@ $userData = Session::get('user_data');
 <div class="main-wrapper">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
-    <div class="content-wrapper my-4">
+    <div class="content-wrapper my-4 me-sm-3 me-2">
         <!-- dashboard html section-->
         <div class="container-fluid">
             <!--  -->
@@ -76,13 +76,16 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-3">
-                                <button type="submit" id="saveEdit" class="btn btn-danger  rounded saveEdit">
+                            <div class="mt-3 row">
+                                <div class="col-md-4 col-0"></div>
+                                <div class="col-md-8 col-12  text-md-start text-center">
+                                <button type="submit" id="saveEdit" class="btn btn-danger m-0 rounded saveEdit">
                                     Submit
                                 </button>
+                                </div>
                             </div>
                             <div class="col-md-12 text-center">
-                                <span id="refund_response" class=""></span>
+                                <span id="refund_response"></span>
                             </div>
                         </form>
                     </div>
