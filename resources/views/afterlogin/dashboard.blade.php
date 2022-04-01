@@ -337,7 +337,7 @@ $userData = Session::get('user_data');
                                     <b>Plan Tests</b> <br />
                                     Plan upto seven tests on topics of your choice
                                 </div>
-                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find"  style="width:16px;">Go To
+                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find"  style="width:15px;margin-top: -1px;">Go To
                                     Planner</button>
                             </div>
                         </div>
@@ -370,7 +370,7 @@ $userData = Session::get('user_data');
                                         @endif
                                         @endforeach
                                     </div>
-                                    <button class="custom-btn-gray" style="margin-top:24px;" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find" style="width:16px;">Go To
+                                    <button class="custom-btn-gray" style="margin-top:24px;" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find" style="width:15px;margin-top: -1px;">Go To
                                         Planner</button>
                                 </div>
                             </div>

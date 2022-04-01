@@ -1742,5 +1742,9 @@
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
+    $(".custom-btn-gray").click(function(){
+        $(".planmner_icon").addClass("notification-icons-active");
+        $("#collapsePlanner").show();
+    });
     
 </script>
