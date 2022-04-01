@@ -295,4 +295,54 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
+    public function examResultList ()
+    {
+        //try {
+            $offset = 0;
+            $limit = 10;
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+            $curl_url = "";
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+
+
+            $curl_url = $api_URL . 'api/student-result-list/' . $user_id . '/' . $offset . '/' . $limit;
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 120,
+                CURLOPT_TIMEOUT => 120,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json"
+                ),
+            ));
+
+            $response_json = curl_exec($curl);
+
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            if ($httpcode == 200 || $httpcode == 201) {
+                $response_data = (json_decode($response_json));
+                $result_data = isset($response_data->response) ? $response_data->response : [];
+               
+                return view('afterlogin.ExamViews.exam_result_list', compact('result_data'));
+            } else {
+
+                return false;
+            }
+
+        //} catch (\Exception $e) {
+          //Log::info($e->getMessage());   
+        //}
+    }
 }
