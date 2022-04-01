@@ -1132,18 +1132,14 @@
         var limitrange = $("#customRange").val();
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
-            $('#saveplannerbutton').addClass('disabled');  
-        }
-        else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount < limitrange) {
+        } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount > limitrange) {
+        } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if(limitrange == chapterscount){
+        } else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
         }
     }
@@ -1167,18 +1163,14 @@
         var limitrange = $("#customRange").val();
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
-            $('#saveplannerbutton').addClass('disabled');  
-        }
-        else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount < limitrange) {
+        } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount > limitrange) {
+        } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if(limitrange == chapterscount){
+        } else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
         }
     });
@@ -1703,25 +1695,21 @@
     $(".dash-nav-link a:last-child").click(function() {
         $("body").addClass("refer-modal-open")
     });
-    $("#sharefrnd .btn-close").click(function(){
+    $("#sharefrnd .btn-close").click(function() {
         $("body").removeClass("refer-modal-open")
     });
-    $("#customRange").change(function(){
+    $("#customRange").change(function() {
         var limit = $(this).val();
         var chapters = $('input[name="chapters[]"]').length;
         if (limit == '0') {
-            $('#saveplannerbutton').addClass('disabled');  
-        }
-        else if (limit <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapters < limit) {
+        } else if (limit <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapters > limit) {
+        } else if (chapters < limit) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if(limit == chapters){
+        } else if (chapters > limit) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limit == chapters) {
             $('#saveplannerbutton').removeClass('disabled');
         }
     });
@@ -1731,20 +1719,18 @@
     });
 
     $(".notification.me-5.ms-4").click(function() {
-        if($(this).hasClass("notification-icons-active"))
-        {
-           $("div#collapseNotification.notification-block").addClass("notification-block-active");
-        }
-        else{
+        if ($(this).hasClass("notification-icons-active")) {
+            $("div#collapseNotification.notification-block").addClass("notification-block-active");
+        } else {
             $("div#collapseNotification.notification-block").removeClass("notification-block-active");
         }
     });
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
-    $(".custom-btn-gray").click(function(){
+    $(".goto-planner-btn").click(function() {
+        $("html, body, .wrapper-dashboard").animate({ scrollTop: 0 }, "100");
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
-    
 </script>
