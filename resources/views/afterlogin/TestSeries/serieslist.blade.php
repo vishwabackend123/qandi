@@ -68,7 +68,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 @else
                                 <div class="row text-center p-4">
-                                    <h5>No series avialable.</h5>
+                                    <h5>No series available.</h5>
                                 </div>
                                 @endif
                             </div>
