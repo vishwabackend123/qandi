@@ -1729,6 +1729,7 @@
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
     $(".custom-btn-gray").click(function() {
+        $("html, body, .wrapper-dashboard").animate({ scrollTop: 0 }, "100");
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
