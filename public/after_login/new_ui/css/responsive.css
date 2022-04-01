@@ -232,10 +232,10 @@
         /* top: 8%; */
     }
 
-    .profile-show {
+    /* .profile-show {
         height: 100%;
         padding: 10px 0px;
-    }
+    } */
 
     .subscription .form-btns button {
         margin-bottom: 20px;
@@ -3040,7 +3040,7 @@
         }
 
         .profile-show {
-            height: 100%;
+            height: auto%;
             padding: 10px 0px;
         }
 
