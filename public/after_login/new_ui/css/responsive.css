@@ -839,10 +839,6 @@
         display: inline-block;
     }
 
-    .justify-content-center {
-        justify-content: left !important;
-    }
-
     .slbs-link a {
         color: #21ccff;
         font-size: 20px;
@@ -1708,11 +1704,6 @@
 
     .tab-wrapper .dropdown {
         display: inline-block;
-    }
-
-    .justify-content-center {
-        justify-content: left !important;
-
     }
 
     .slbs-link a {
