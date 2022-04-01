@@ -15,7 +15,7 @@ $userData = Session::get('user_data');
                 <div class="col-lg-9 mx-auto">
 
                     <div class="bg-white dashboard-cards-block">
-                        <div class="report-block1 p-6">
+                        <div class="report-block1 pb-0 p-6">
                             <div class="
                       d-flex
                       justify-content-between
@@ -27,15 +27,31 @@ $userData = Session::get('user_data');
                                 <span class="text-light-danger">Analytics</span>
                             </div>
                             <div class="export-block">
-                                <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
-                                <p class="text-center">
-                                    No. Of students participated for the exam.
-                                </p>
-                                <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
+                                <div class="rankholder">
+                                    <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
+                                    <p class="text-center">
+                                        No. Of students participated for the exam.
+                                    </p>
+                                    <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
+                                </div>
+                            
 
                                 <div class="row">
                                     <div class="mx-auto col-md-10">
-                                        <div class="bg-white shadow-lg p-5 report-analysis-block">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="report-block2 p-6">
+                            <div class="d-flex">
+                                <span class="me-auto anaylticslogo"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
+                                <span class="text-end detailedtext">
+                                    <b>Detailed</b> <span> Report Analysis<br />
+                                        Weekly Q&I Performace Report<br />{{date("F j, Y")}}</span>
+                                </span>
+                            </div>
+                            <div class="bg-white mt-5 shadow-lg p-5 report-analysis-block">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
                                                 <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -89,18 +105,6 @@ $userData = Session::get('user_data');
 
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="report-block2 p-6">
-                            <div class="d-flex">
-                                <span class="me-auto anaylticslogo"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
-                                <span class="text-end detailedtext">
-                                    <b>Detailed</b> <span> Report Analysis<br />
-                                        Weekly Q&I Performace Report<br />{{date("F j, Y")}}</span>
-                                </span>
-                            </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
