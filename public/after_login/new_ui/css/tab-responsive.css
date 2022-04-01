@@ -46,8 +46,8 @@
     .cust-tabs.nav.nav-tabs .nav-link{
        min-width:auto;
        font-size: 14px;
-       padding-left:20px!important;
-       padding-right:20px!important;
+       padding-left:15px!important;
+       padding-right:15px!important;
    }
  
     .subscrived svg{
@@ -75,11 +75,11 @@
         padding-bottom: 20px
    }
     .sub-title h3{
-       font-size: 14px;
+       font-size: 13px;
        flex: 2;
    }
     .topic-details{
-       padding:20px;
+       padding:20px 10px;
    }
     .subject-name li{
         width: 30px;
@@ -128,14 +128,16 @@
    .subscription .p-text h3 {font-size: 14px; }
    #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {
     margin-bottom: 15px;}
-}
+    .sub-details{padding: 20px 10px;}
+    .dashboard-cards-block .bg-white>small p{
+        min-width: 290px;
+   }
+
 
 
  
 @media(max-width:1023px){
-    .dashboard-cards-block .bg-white>small p{
-        min-width: 275px;
-   }
+   
     .subscription .form-btns button {
      
        font-size: 14px;
@@ -173,6 +175,9 @@
    .subscription {
     width:50%;
 }
+.overllanaly .tab-wrapper #scroll-mobile{
+    padding-bottom: 40px;
+}
 }
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{
@@ -182,9 +187,7 @@
  
        font-size: 12px;
    }
-    .overllanaly .tab-wrapper #scroll-mobile{
-        padding-bottom: 40px;
-   }
+   
     .reportHeading{
        font-size:28px;
    }
@@ -251,8 +254,15 @@
         height: auto;
       
     }
-    
-    
+    .exportAnaylisis {
+        padding-top: 70px!important;
+    }
+    a.close-btn img, a.export-btn img {
+        width: 50px!important;
+    }
+    a.close-btn, a.export-btn {
+        top: 17px;
+    }
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
@@ -329,15 +339,6 @@
    }
     .planersavebtn{
        justify-content: center!important;
-   }
-    .exportAnaylisis{
-       padding-top:70px!important
-   }
-    a.close-btn, a.export-btn{
-       top: 17px;
-   }
-    a.close-btn img, a.export-btn img{
-       width:50px!important;
    }
     .log-out-screen {
         right: 170px;

@@ -172,9 +172,7 @@ class FullExamController extends Controller
 
             Session::put('exam_name', $exam_name);
             return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -253,9 +251,11 @@ class FullExamController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
+
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
@@ -276,11 +276,9 @@ class FullExamController extends Controller
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
             return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
     public function next_subject_question($subject_id, Request $request)
@@ -378,10 +376,8 @@ class FullExamController extends Controller
 
 
             return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }   
+        }
     }
 }
