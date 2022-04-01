@@ -132,6 +132,8 @@
     .dashboard-cards-block .bg-white>small p{
         min-width: 290px;
    }
+   div#contentHtml .bg-white.shadow-lg {
+    padding: 45px 30px 0px!important;}
 }
 
 
