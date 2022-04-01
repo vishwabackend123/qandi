@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <div style="padding:20px 20px 10px;"> <img  src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}"> </div>
+    <div style="padding:20px 20px 10px;"> <img  src="{{URL::asset('public/images_new/QI_Logo.gif')}}" style="width: 50px;"> </div>
     <div class="error-page text-center">
         <img  src="{{URL::asset('public/after_login/new_ui/images/404-image.jpg')}}" style="width:400px;">
         <div class="text-center" style="margin-top: -30px;">
