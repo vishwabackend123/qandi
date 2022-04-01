@@ -38,7 +38,7 @@ $userData = Session::get('user_data');
                                         </li>
                                         <li>{{$sche->no_of_question}} Questions</a>
                                         </li>
-                                        <li><a href="{{route('live_exam_result',$sche->id)}}">
+                                        <li><a href="{{route('exam_review',$sche->id)}}">
                                                 <button class="custom-btn-gray"></i>Exam Result
                                                 </button>
                                             </a>
