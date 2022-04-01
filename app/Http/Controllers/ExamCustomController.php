@@ -303,7 +303,8 @@ class ExamCustomController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -415,7 +416,8 @@ class ExamCustomController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -607,7 +609,8 @@ class ExamCustomController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -999,7 +1002,8 @@ class ExamCustomController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -1094,7 +1098,8 @@ class ExamCustomController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
