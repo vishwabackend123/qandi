@@ -21,8 +21,9 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     <div class="clearfix"></div>
     @endif
     <!-- End top-navbar Section -->
+    <div class="container">
     <div class="row">
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-12 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
                 <!-- @if(!empty($user_id) && $suscription_status!=0)
                 <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
@@ -65,7 +66,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 $dateTimeToday = strtotime($todaydate);
                 @endphp
                 @if($subscription_type=="P")
-                <div class="col-md-4 p-4  text-center">
+                <div class="col-md-4 col-9 mt-4 mb-4 text-center">
                     <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
