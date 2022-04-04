@@ -127,7 +127,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect .rightSect .number-block .btn:hover,
 .rightSect .number-block .btn:hover {
-    border: solid 2px #00baff !important;
+    border: solid 2px #12c3ff !important;
 }
 
 .examSect .cust-tab-content {
@@ -216,7 +216,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect .border.ps-3.ans {
     border-radius: 16px;
-    border: solid 1px #707070;
+    border: solid 1px #707070 !important;
     padding: 0px;
 }
 
@@ -823,7 +823,7 @@ a.clearRes:hover {
 
 /******28-03****/
 .number-block .btn-check:focus+.btn-light, .number-block .btn-light:focus {
-    border-color: #62b8ec;
+    border-color: #12c3ff;
     box-shadow: none;
     border-width: 2px;
 }
