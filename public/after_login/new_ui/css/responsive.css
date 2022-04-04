@@ -11,7 +11,7 @@
 
 
 @media screen and ( max-height:800px ) {
-    .test-review-right, .rightSect .bg-white {
+    .for-review-screen, .for-review-screen .bg-white {
         height: 600px !important;
     }
 }
@@ -19,9 +19,10 @@
  
 
 @media screen and ( max-height: 767px ) {
-    .test-review-right, .rightSect .bg-white {
+    .for-review-screen, .for-review-screen .bg-white {
         height: 500px !important;
     }
+    
 }
 
 
@@ -77,6 +78,10 @@
     padding-left: 20px!important;
     min-width: auto;
   }
+  .exam-analytics .p-5 span.text-center.w-100 img{
+    width: 70% !important;
+    padding: 30px 10px 40px;
+}
   .live-test li+li{margin-left:3%;}
   div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
   .garphlistincom+.garphlistincom{margin-left:10px;}
@@ -167,10 +172,8 @@
 
     /** notification page css **/
     .notification-right {
-        top: 20%;
         right: 0;
     }
-
     /** end here **/
 
     .slider-horizontal {

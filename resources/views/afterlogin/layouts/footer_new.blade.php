@@ -1132,18 +1132,14 @@
         var limitrange = $("#customRange").val();
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
-            $('#saveplannerbutton').addClass('disabled');  
-        }
-        else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount < limitrange) {
+        } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount > limitrange) {
+        } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if(limitrange == chapterscount){
+        } else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
         }
     }
@@ -1167,18 +1163,14 @@
         var limitrange = $("#customRange").val();
         var chapterscount = $('input[name="chapters[]"]').length;
         if (limitrange == '0') {
-            $('#saveplannerbutton').addClass('disabled');  
-        }
-        else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount < limitrange) {
+        } else if (limitrange <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapterscount > limitrange) {
+        } else if (chapterscount < limitrange) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if(limitrange == chapterscount){
+        } else if (chapterscount > limitrange) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limitrange == chapterscount) {
             $('#saveplannerbutton').removeClass('disabled');
         }
     });
@@ -1677,7 +1669,7 @@
         $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 
-    $('.UserPro,#plannCal,.notification,.close-bnt').click(function() {
+    $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
         setTimeout(function() {
             if ($('.notification-block').hasClass('notification-block-active')) {
                 // $('.main-profile-section').removeClass("show");
@@ -1703,25 +1695,21 @@
     $(".dash-nav-link a:last-child").click(function() {
         $("body").addClass("refer-modal-open")
     });
-    $("#sharefrnd .btn-close").click(function(){
+    $("#sharefrnd .btn-close").click(function() {
         $("body").removeClass("refer-modal-open")
     });
-    $("#customRange").change(function(){
+    $("#customRange").change(function() {
         var limit = $(this).val();
         var chapters = $('input[name="chapters[]"]').length;
         if (limit == '0') {
-            $('#saveplannerbutton').addClass('disabled');  
-        }
-        else if (limit <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapters < limit) {
+        } else if (limit <= 0) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if (chapters > limit) {
+        } else if (chapters < limit) {
             $('#saveplannerbutton').addClass('disabled');
-        }
-        else if(limit == chapters){
+        } else if (chapters > limit) {
+            $('#saveplannerbutton').addClass('disabled');
+        } else if (limit == chapters) {
             $('#saveplannerbutton').removeClass('disabled');
         }
     });
@@ -1731,16 +1719,29 @@
     });
 
     $(".notification.me-5.ms-4").click(function() {
-        if($(this).hasClass("notification-icons-active"))
-        {
-           $("div#collapseNotification.notification-block").addClass("notification-block-active");
-        }
-        else{
+        if ($(this).hasClass("notification-icons-active")) {
+            $("div#collapseNotification.notification-block").addClass("notification-block-active");
+        } else {
             $("div#collapseNotification.notification-block").removeClass("notification-block-active");
         }
     });
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
-    
+    $(".goto-planner-btn").click(function() {
+        $("html, body, .wrapper-dashboard").animate({ scrollTop: 0 }, "100");
+        $(".planmner_icon").addClass("notification-icons-active");
+        $("#collapsePlanner").show();
+    });
+    // $(".user-pic-block.UserPro").on('click',function(){
+    //     $(".profile-section ul li:first-child").toggleClass("active");
+    //     if( $(".profile-section ul li:first-child").hasClass("active") ){
+    //         $("#LeaDer").addClass("showAccountCard");
+    //         $(".profile-show").addClass("showAccountCard")
+    //     }
+    //     else{
+    //         $("#LeaDer").removeClass("showAccountCard");
+    //         $(".profile-show").removeClass("showAccountCard")
+    //     }
+    // });
 </script>

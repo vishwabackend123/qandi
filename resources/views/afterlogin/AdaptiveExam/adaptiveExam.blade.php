@@ -1,21 +1,21 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
-    @php
-        $userData = Session::get('user_data');
-    @endphp
 @php
-    $question_text = isset($question_data->question)?$question_data->question:'';
-    $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
-    $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
-    $topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
-    $template_type = isset($question_data->template_type)?$question_data->template_type:'';
-    $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+$userData = Session::get('user_data');
+@endphp
+@php
+$question_text = isset($question_data->question)?$question_data->question:'';
+$subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
+$chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
+$template_type = isset($question_data->template_type)?$question_data->template_type:'';
+$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 if($template_type==1){
-    $type_class='checkboxans';
-    $questtype='checkbox';
+$type_class='checkboxans';
+$questtype='checkbox';
 }else{
-    $type_class='radioans';
-    $questtype='radio';
+$type_class='radioans';
+$questtype='radio';
 }
 @endphp
 <style>
@@ -133,12 +133,13 @@ if($template_type==1){
                                                 @foreach($option_data as $key=>$opt_value)
                                                 @php
                                                 $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                                $dom = new DOMDocument();
+                                                /* $dom = new DOMDocument();
                                                 @$dom->loadHTML($opt_value);
                                                 $anchor = $dom->getElementsByTagName('img')->item(0);
                                                 $text = isset($anchor)? $anchor->getAttribute('alt') : '';
                                                 $latex = "https://math.now.sh?from=".$text;
                                                 $view_opt='<img src="'.$latex.'" />' ;
+                                                */
                                                 @endphp
                                                 <div class="col-md-6 mb-4">
                                                     <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
@@ -320,24 +321,24 @@ if($template_type==1){
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase examhead">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
+                                    <div class="col-md-5 col-lg-5">
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
                                             <span class="d-block"><span class="inst-text">{{$questions_count}} MCQ </span><span></span>Questions</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
+                                    <div class="col-md-4 col-lg-4">
                                         <div>
                                             <small>Target</small>
                                             <span class="d-block inst-text"><span>{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
+                                    <div class="col-md-3 col-lg-3">
                                         <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
@@ -408,107 +409,104 @@ if($template_type==1){
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
-$(window).load(function() {
-    $("#endExam").modal({
-        backdrop: "static",
-        keyboard: false
-    });
-    $("#FullTest_Exam_Panel_Interface_A").modal({
-        backdrop: "static",
-        keyboard: false
-    });
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
 
-    history.pushState(null, null, location.href);
-    window.onpopstate = function() {
-        history.go(1);
-    };
-});
-
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
+    });
 </script>
 <script>
-/* Sachin screen changes */
-function setboxHeight() {
-    var height = $(".rightSect .flex-column").outerHeight();
-    $('.cust-tab-content').css('height', height);
+    /* Sachin screen changes */
+    function setboxHeight() {
+        var height = $(".rightSect .flex-column").outerHeight();
+        $('.cust-tab-content').css('height', height);
 
-}
-/*  setboxHeight();
- $("window").load(function() {
-     setboxHeight();
- }); */
-
-$(window).resize(function() {
-    setboxHeight();
-});
-/* /Sachin screen changes */
-
-/* page referesh disabled */
-$(document).ready(function() {
-    /* mouse rightclick */
-    document.oncontextmenu = function() {
-        return false;
-    };
-
-    $(document).mousedown(function(e) {
-        if (e.button == 2) {
-
-            return false;
-        }
-        return true;
-    });
-    /* mouse rightclick */
-
-    document.onkeydown = function(e) {
-        // disable F12 key
-        if (e.keyCode == 123 || e.keyCode == 116) {
-            return false;
-        }
-        /* Ctrl+A */
-        if (e.keyCode == 65 && e.ctrlKey) {
-
-            return false;
-        }
-        /* Ctrl+R */
-        if (e.keyCode == 82 && e.ctrlKey) {
-
-            return false;
-        }
-
-        // disable ctrl+shift+I key
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-            return false;
-        }
-
-        // disable ctrl+shift+J key
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-            return false;
-        }
-
-        // disable ctrl+U key
-        if (e.ctrlKey && e.keyCode == 85) {
-            return false;
-        }
-
-        // disable ctrl+P key
-        if (e.ctrlKey && e.keyCode == 80) {
-            return false;
-        }
     }
-});
+    /*  setboxHeight();
+     $("window").load(function() {
+         setboxHeight();
+     }); */
 
+    $(window).resize(function() {
+        setboxHeight();
+    });
+    /* /Sachin screen changes */
+
+    /* page referesh disabled */
+    $(document).ready(function() {
+        /* mouse rightclick */
+        document.oncontextmenu = function() {
+            return false;
+        };
+
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
+
+                return false;
+            }
+            return true;
+        });
+        /* mouse rightclick */
+
+        document.onkeydown = function(e) {
+            // disable F12 key
+            if (e.keyCode == 123 || e.keyCode == 116) {
+                return false;
+            }
+            /* Ctrl+A */
+            if (e.keyCode == 65 && e.ctrlKey) {
+
+                return false;
+            }
+            /* Ctrl+R */
+            if (e.keyCode == 82 && e.ctrlKey) {
+
+                return false;
+            }
+
+            // disable ctrl+shift+I key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                return false;
+            }
+
+            // disable ctrl+shift+J key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+
+            // disable ctrl+U key
+            if (e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+
+            // disable ctrl+P key
+            if (e.ctrlKey && e.keyCode == 80) {
+                return false;
+            }
+        }
+    });
 </script>
 <script type="text/javascript">
-$(document).ready(function() {
-    window.history.pushState(null, "", window.location.href);
-    window.onpopstate = function() {
+    $(document).ready(function() {
         window.history.pushState(null, "", window.location.href);
-    };
-});
-
+        window.onpopstate = function() {
+            window.history.pushState(null, "", window.location.href);
+        };
+    });
 </script>
 <!-- browser back disable -->
 <script type="text/javascript">
-/*$('.number-block').slimscroll({
+    /*$('.number-block').slimscroll({
         height: '20vh'
     });
 
@@ -516,404 +514,282 @@ $(document).ready(function() {
         height: '30vh'
     });*/
 
-$(window).on('load', function() {
-    $("#test_instruction").modal({
-        backdrop: "static",
-        keyboard: false
+    $(window).on('load', function() {
+        $("#test_instruction").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $('#test_instruction').modal('show');
+
     });
-    $('#test_instruction').modal('show');
-
-});
-$('#goto-exam-btn').click(function() {
-    $('#mainDiv').show();
-    $('#exam_content_sec').show();
-    setboxHeight();
-    startTimer();
-    questionstartTimer();
-    setEachQuestionTime();
-});
-$('.selctbtn').click(function() {
-    $('.qoption_error').hide();
-});
-
-/*$('.instructions').slimscroll({
-    height: '33vh',
-    color: '#ff9999',
-    railVisible: true,
-     alwaysVisible: true 
-});*/
-
-
-const FULL_DASH_ARRAY = 283;
-const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
-
-//All buttons
-let startBtn = document.querySelector(".start");
-let stopBtn = document.querySelector(".stop");
-let resetBtn = document.querySelector(".reset");
-
-//DOM elements
-let timer = document.querySelector("#base-timer-path-remaining");
-let timeLabel = document.getElementById("base-timer-label");
-
-//Time related vars
-const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
-let timePassed = -1;
-let timeLeft = TIME_LIMIT;
-let timerInterval = null;
-
-
-function reset() {
-    clearInterval(timerInterval);
-    resetVars();
-    startBtn.innerHTML = "Start";
-    timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
-}
-
-function start(withReset = false) {
-    setDisabled(startBtn);
-    removeDisabled(stopBtn);
-    $(".stop").show();
-    $(".start").hide();
-    if (withReset) {
-        resetVars();
-    }
-    startTimer();
-}
-
-function stop(type = '') {
-    setDisabled(stopBtn);
-    removeDisabled(startBtn);
-    $(".stop").hide();
-    $(".start").show();
-    // startBtn.innerHTML = "Continue";
-    clearInterval(timerInterval);
-    if (type !== 'submit') {
-        $("#resume-test").modal("show");
-    }
-}
-
-
-
-function startTimer() {
-    timerInterval = setInterval(() => {
-        timePassed = timePassed += 1;
-        timeLeft = TIME_LIMIT - timePassed;
-        $('#final_submit_time').val(timePassed);
-        timeLabel.innerHTML = formatTime(timeLeft);
-        setCircleDasharray();
-
-        if (timeLeft === 0) {
-
-            timeIsUp();
-        }
-    }, 1000);
-}
-
-window.addEventListener("load", () => {
-    // startTimer();
-    timeLabel.innerHTML = formatTime(TIME_LIMIT);
-    // setDisabled(stopBtn);
-});
-
-//---------------------------------------------
-//HELPER METHODS
-//---------------------------------------------
-function setDisabled(button) {
-    button.setAttribute("disabled", true);
-}
-
-function removeDisabled(button) {
-    button.removeAttribute("disabled");
-}
-
-function timeIsUp() {
-
-    /*  setDisabled(startBtn);
-     removeDisabled(stopBtn); */
-    clearInterval(timerInterval);
-    $('#endExam').modal('show');
-
-    /* let confirmReset = confirm("Time is UP! Wanna restart?");
-    if (confirmReset) {
-        reset();
+    $('#goto-exam-btn').click(function() {
+        $('#mainDiv').show();
+        $('#exam_content_sec').show();
+        setboxHeight();
         startTimer();
-    } else {
-        reset();
-    } */
-}
+        questionstartTimer();
+        setEachQuestionTime();
+    });
+    $('.selctbtn').click(function() {
+        $('.qoption_error').hide();
+    });
 
-function resetVars() {
-    // removeDisabled(startBtn);
-    // setDisabled(stopBtn);
-    timePassed = -1;
-    timeLeft = TIME_LIMIT;
-    // console.log(timePassed, timeLeft);
+    /*$('.instructions').slimscroll({
+        height: '33vh',
+        color: '#ff9999',
+        railVisible: true,
+         alwaysVisible: true 
+    });*/
 
-    timeLabel.innerHTML = formatTime(TIME_LIMIT);
-}
 
-function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    const FULL_DASH_ARRAY = 283;
+    const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
 
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
+    //All buttons
+    let startBtn = document.querySelector(".start");
+    let stopBtn = document.querySelector(".stop");
+    let resetBtn = document.querySelector(".reset");
+
+    //DOM elements
+    let timer = document.querySelector("#base-timer-path-remaining");
+    let timeLabel = document.getElementById("base-timer-label");
+
+    //Time related vars
+    const TIME_LIMIT = '{{$exam_fulltime*60}}'; //in seconds
+    let timePassed = -1;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+
+
+    function reset() {
+        clearInterval(timerInterval);
+        resetVars();
+        startBtn.innerHTML = "Start";
+        timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
     }
 
-    return `${minutes} min ${seconds} sec`;
-}
+    function start(withReset = false) {
+        setDisabled(startBtn);
+        removeDisabled(stopBtn);
+        $(".stop").show();
+        $(".start").hide();
+        if (withReset) {
+            resetVars();
+        }
+        startTimer();
+    }
 
-function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / TIME_LIMIT;
-    return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-}
+    function stop(type = '') {
+        setDisabled(stopBtn);
+        removeDisabled(startBtn);
+        $(".stop").hide();
+        $(".start").show();
+        // startBtn.innerHTML = "Continue";
+        clearInterval(timerInterval);
+        if (type !== 'submit') {
+            $("#resume-test").modal("show");
+        }
+    }
 
-function setCircleDasharray() {
-    const circleDasharray = `${(
+
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timePassed = timePassed += 1;
+            timeLeft = TIME_LIMIT - timePassed;
+            $('#final_submit_time').val(timePassed);
+            timeLabel.innerHTML = formatTime(timeLeft);
+            setCircleDasharray();
+
+            if (timeLeft === 0) {
+
+                timeIsUp();
+            }
+        }, 1000);
+    }
+
+    window.addEventListener("load", () => {
+        // startTimer();
+        timeLabel.innerHTML = formatTime(TIME_LIMIT);
+        // setDisabled(stopBtn);
+    });
+
+    //---------------------------------------------
+    //HELPER METHODS
+    //---------------------------------------------
+    function setDisabled(button) {
+        button.setAttribute("disabled", true);
+    }
+
+    function removeDisabled(button) {
+        button.removeAttribute("disabled");
+    }
+
+    function timeIsUp() {
+
+        /*  setDisabled(startBtn);
+         removeDisabled(stopBtn); */
+        clearInterval(timerInterval);
+        $('#endExam').modal('show');
+
+        /* let confirmReset = confirm("Time is UP! Wanna restart?");
+        if (confirmReset) {
+            reset();
+            startTimer();
+        } else {
+            reset();
+        } */
+    }
+
+    function resetVars() {
+        // removeDisabled(startBtn);
+        // setDisabled(stopBtn);
+        timePassed = -1;
+        timeLeft = TIME_LIMIT;
+        // console.log(timePassed, timeLeft);
+
+        timeLabel.innerHTML = formatTime(TIME_LIMIT);
+    }
+
+    function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+
+        return `${minutes} min ${seconds} sec`;
+    }
+
+    function calculateTimeFraction() {
+        const rawTimeFraction = timeLeft / TIME_LIMIT;
+        return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+    }
+
+    function setCircleDasharray() {
+        const circleDasharray = `${(
                 calculateTimeFraction() * FULL_DASH_ARRAY
             ).toFixed(0)} 283`;
-    // console.log("setCircleDashArray: ", circleDasharray);
-    timer.setAttribute("stroke-dasharray", circleDasharray);
-}
+        // console.log("setCircleDashArray: ", circleDasharray);
+        timer.setAttribute("stroke-dasharray", circleDasharray);
+    }
 
-/* per question timer */
-/*  var setEachQuestionTimeNext_countdown;
- var totalSeconds = -1;
+    /* per question timer */
+    /*  var setEachQuestionTimeNext_countdown;
+     var totalSeconds = -1;
 
- function setEachQuestionTime() {
-     setEachQuestionTimeNext_countdown = setInterval(function() {
-         ++totalSeconds;
-         $('.timespend_first').val(totalSeconds);
+     function setEachQuestionTime() {
+         setEachQuestionTimeNext_countdown = setInterval(function() {
+             ++totalSeconds;
+             $('.timespend_first').val(totalSeconds);
 
 
-     }, 1000);
- } */
-/* per question timer */
-var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
-var fsec = time_allowed * 60;
-var up_timer = 0;
-var countdown_txt = " Seconds";
-var upcounter_txt = " Mins";
-var ctimer;
-var setEachQuestionTimeNext_countdown;
-var timer_countdown;
+         }, 1000);
+     } */
+    /* per question timer */
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var fsec = time_allowed * 60;
+    var up_timer = 0;
+    var countdown_txt = " Seconds";
+    var upcounter_txt = " Mins";
+    var ctimer;
+    var setEachQuestionTimeNext_countdown;
+    var timer_countdown;
 
-function questionstartTimer() {
+    function questionstartTimer() {
 
-    timer_countdown = setInterval(function() {
-        fsec--;
-        //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
-        progressBar(fsec, $('.progressBar_first'));
-        if (fsec == -1) {
-            clearInterval(timer_countdown);
+        timer_countdown = setInterval(function() {
+            fsec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+            progressBar(fsec, $('.progressBar_first'));
+            if (fsec == -1) {
+                clearInterval(timer_countdown);
+                $('.progressBar_first').css('background-color', '#E4E4E4');
+                $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_first').show();
+                $('#avg_text').hide();
+                $('.progressBar_first').hide();
+            }
+
+        }, 1000);
+
+    }
+
+
+    function progressBar(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
+        }
+        if (percent <= 0) {
             $('.progressBar_first').css('background-color', '#E4E4E4');
             $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
-            $('#q_time_taken_first').show();
-            $('#avg_text').hide();
-            $('.progressBar_first').hide();
         }
-
-    }, 1000);
-
-}
-
-
-function progressBar(percent, $element) {
-    var progressBarWidth = percent * $element.width() / (time_allowed * 60);
-    $element.find('div').animate({
-        width: progressBarWidth
-    }, 500).html(percent + "%&nbsp;");
-    if (percent <= 20) {
-        $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
     }
-    if (percent <= 0) {
-        $('.progressBar_first').css('background-color', '#E4E4E4');
-        $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+
+    var minutesLabel = document.getElementById("up_minutes");
+    var secondsLabel = document.getElementById("up_seconds");
+    //var totalSec = document.getElementById("tsec");
+    var totalSeconds = -1;
+
+
+    function setEachQuestionTime() {
+        setEachQuestionTimeNext_countdown = setInterval(function() {
+            ++totalSeconds;
+            $('.timespend_first').val(totalSeconds);
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
+
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
+        }, 1000);
     }
-}
 
-var minutesLabel = document.getElementById("up_minutes");
-var secondsLabel = document.getElementById("up_seconds");
-//var totalSec = document.getElementById("tsec");
-var totalSeconds = -1;
-
-
-function setEachQuestionTime() {
-    setEachQuestionTimeNext_countdown = setInterval(function() {
-        ++totalSeconds;
-        $('.timespend_first').val(totalSeconds);
-        secondsLabel.innerHTML = pad(totalSeconds % 60);
-
-        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-        //totalSec.innerHTML = pad(totalSeconds);
-    }, 1000);
-}
-
-function pad(val) {
-    var valString = val + "";
-    if (valString.length < 2) {
-        return "0" + valString;
-    } else {
-        return valString;
-    }
-}
-
-/* per question timer end */
-/* per question timer end */
-
-
-/* getting Next Question Data */
-function qnext(question_id) {
-    var act_question = $("#current_question").val();
-    var q_submit_time = $("#timespend_" + act_question).val();
-
-    saveQuestionTime(act_question, q_submit_time);
-
-    url = "{{ url('adaptive_next_question/') }}/" + question_id;
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        success: function(result) {
-            clearInterval(ctimer);
-            clearInterval(timer_countdown);
-            clearInterval(setEachQuestionTimeNext_countdown);
-
-            $("#question_section div").remove();
-            $("#question_section").html(result);
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
         }
-    });
-}
-
-
-/* mark or review */
-function markforreview(quest_id, subject_id, chapt_id) {
-    $.ajax({
-        url: "{{ route('markforreview') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            question_id: quest_id,
-            subject_id: subject_id,
-            chapter_id: chapt_id
-        },
-        success: function(response_data) {
-            var response = jQuery.parseJSON(response_data);
-
-            if (response.success == true) {
-                $("#btn_" + quest_id).removeClass("btn-light");
-                $("#btn_" + quest_id).addClass("btn-secondary");
-            } else {
-
-            }
-            if ($("#quesnext" + quest_id).is(":disabled") == true) {
-
-                $("#submitExam").click();
-            } else {
-                $("#quesnext" + quest_id).click();
-
-            }
-
-        },
-    });
-}
-
-/* Saved question response */
-function saveAnswer(question_id, qNo) {
-    var question_id = question_id;
-    var option_id = [];
-    $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-        option_id.push($(this).val());
-    });
-    if (option_id.length === 0) {
-        $('#qoption_err_' + question_id).html("Please select your response.");
-        $('#qoption_err_' + question_id).addClass('text-danger');
-        $('#qoption_err_' + question_id).fadeIn('fast');
-        return false;
     }
 
-    var q_submit_time = $("#timespend_" + question_id).val();
-    $.ajax({
-        url: "{{ route('saveAnswer') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            question_id: question_id,
-            option_id: option_id,
-            q_submit_time: q_submit_time
-        },
-        beforeSend: function() {
-            //$('.loader-block').show();
-        },
-        success: function(response_data) {
-            //$('.loader-block').hide();
-            var response = jQuery.parseJSON(response_data);
+    /* per question timer end */
+    /* per question timer end */
 
-            if (response.status == 200) {
-                $("#btn_" + question_id).find('i').remove();
-                $("#btn_" + question_id).html(qNo);
-                $("#btn_" + question_id).removeClass("btn-light");
-                $("#btn_" + question_id).addClass("btn-light-green");
-            }
-        },
-    });
-    if ($("#quesnext" + question_id).is(":disabled") == true) {
 
-        $("#submitExam").click();
-    } else {
-        $("#quesnext" + question_id).click();
+    /* getting Next Question Data */
+    function qnext(question_id) {
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
 
-    }
-}
+        saveQuestionTime(act_question, q_submit_time);
 
-function saveAnswerAjax(question_id, qNo) {
-    var question_id = question_id;
-    var option_id = [];
-    $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-        option_id.push($(this).val());
-    });
-    if (option_id.length === 0) {
-        $('#qoption_err_' + question_id).html("Please select your response.");
-        $('#qoption_err_' + question_id).addClass('text-danger');
-        $('#qoption_err_' + question_id).fadeIn('fast');
-        return false;
-    }
+        url = "{{ url('adaptive_next_question/') }}/" + question_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
 
-    var q_submit_time = $("#timespend_" + question_id).val();
-    $.ajax({
-        url: "{{ route('saveAnswer') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            question_id: question_id,
-            option_id: option_id,
-            q_submit_time: q_submit_time
-        },
-        beforeSend: function() {
-            //$('.loader-block').show();
-        },
-        success: function(response_data) {
-            //$('.loader-block').hide();
-            var response = jQuery.parseJSON(response_data);
-            if (response.status == 200) {
+                $("#question_section div").remove();
+                $("#question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                return true;
+
             }
-        },
-    });
-
-}
+        });
+    }
 
 
-function savemarkreview(quest_id, subject_id, chapt_id) {
-    /* saving response */
-    if (saveAnswerAjax(quest_id, '') != false) {
-
-        // marking for review
+    /* mark or review */
+    function markforreview(quest_id, subject_id, chapt_id) {
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
@@ -925,154 +801,275 @@ function savemarkreview(quest_id, subject_id, chapt_id) {
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
+
                 if (response.success == true) {
                     $("#btn_" + quest_id).removeClass("btn-light");
-                    $("#btn_" + quest_id).removeClass("btn-light-green");
                     $("#btn_" + quest_id).addClass("btn-secondary");
-                    $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
+                } else {
+
+                }
+                if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                    $("#submitExam").click();
+                } else {
+                    $("#quesnext" + quest_id).click();
+
                 }
 
             },
         });
-        if ($("#quesnext" + quest_id).is(":disabled") == true) {
+    }
+
+    /* Saved question response */
+    function saveAnswer(question_id, qNo) {
+        var question_id = question_id;
+        var option_id = [];
+        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+            option_id.push($(this).val());
+        });
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            return false;
+        }
+
+        var q_submit_time = $("#timespend_" + question_id).val();
+        $.ajax({
+            url: "{{ route('saveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+                q_submit_time: q_submit_time
+            },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
+            success: function(response_data) {
+                //$('.loader-block').hide();
+                var response = jQuery.parseJSON(response_data);
+
+                if (response.status == 200) {
+                    $("#btn_" + question_id).find('i').remove();
+                    $("#btn_" + question_id).html(qNo);
+                    $("#btn_" + question_id).removeClass("btn-light");
+                    $("#btn_" + question_id).addClass("btn-light-green");
+                }
+            },
+        });
+        if ($("#quesnext" + question_id).is(":disabled") == true) {
 
             $("#submitExam").click();
         } else {
-            $("#quesnext" + quest_id).click();
+            $("#quesnext" + question_id).click();
 
         }
-        return true;
-    }
-}
-
-function clearResponse(quest_id, subject_id, qNo) {
-
-    var response = [];
-    $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-        response = $(this).prop('checked', false);
-    });
-
-    if (response.length == 0) {
-        $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
-        $('#qoption_err_' + quest_id).addClass('text-danger');
-        $('#qoption_err_' + quest_id).fadeIn('fast');
-        return false;
     }
 
-    $("#btn_" + quest_id).addClass("btn-light");
-    $("#btn_" + quest_id).removeClass("btn-light-green");
-    $("#btn_" + quest_id).removeClass("btn-secondary");
-
-    $.ajax({
-        url: "{{ route('clearResponse') }}",
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            question_id: quest_id,
-            subject_id: subject_id,
-        },
-        success: function(response_data) {
-            var response = jQuery.parseJSON(response_data);
-            if (response.status == 200) {
-                $("#btn_" + quest_id).find('i').remove();
-                $("#btn_" + quest_id).html(qNo);
-            }
-
-        },
-    });
-
-}
-
-function get_subject_question(subject_id) {
-    var act_question = $("#current_question").val();
-    var q_submit_time = $("#timespend_" + act_question).val();
-
-    saveQuestionTime(act_question, q_submit_time);
-
-    url = "{{ url('adaptive_next_subject_question/') }}/" + subject_id;
-    $.ajax({
-        url: url,
-        data: {
-            "_token": "{{ csrf_token() }}",
-        },
-        success: function(result) {
-            clearInterval(ctimer);
-            clearInterval(timer_countdown);
-            clearInterval(setEachQuestionTimeNext_countdown);
-
-            $("#myTabContent #question_section div").remove();
-            $("#myTabContent #question_section").html(result);
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+    function saveAnswerAjax(question_id, qNo) {
+        var question_id = question_id;
+        var option_id = [];
+        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+            option_id.push($(this).val());
+        });
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            return false;
         }
-    });
+
+        var q_submit_time = $("#timespend_" + question_id).val();
+        $.ajax({
+            url: "{{ route('saveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+                q_submit_time: q_submit_time
+            },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
+            success: function(response_data) {
+                //$('.loader-block').hide();
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+                    return true;
+                }
+            },
+        });
+
+    }
 
 
-}
+    function savemarkreview(quest_id, subject_id, chapt_id) {
+        /* saving response */
+        if (saveAnswerAjax(quest_id, '') != false) {
 
-function saveQuestionTime(question_id, time) {
+            // marking for review
+            $.ajax({
+                url: "{{ route('markforreview') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    question_id: quest_id,
+                    subject_id: subject_id,
+                    chapter_id: chapt_id
+                },
+                success: function(response_data) {
+                    var response = jQuery.parseJSON(response_data);
+                    if (response.success == true) {
+                        $("#btn_" + quest_id).removeClass("btn-light");
+                        $("#btn_" + quest_id).removeClass("btn-light-green");
+                        $("#btn_" + quest_id).addClass("btn-secondary");
+                        $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
+                    }
 
-    url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
-    $.ajax({
-        url: url,
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            'q_time': time
-        },
-        beforeSend: function() {
-            //$('.loader-block').show();
-        },
-        success: function(response_data) {
-            // $('.loader-block').hide();
-            var response = jQuery.parseJSON(response_data);
-            if (response.status == 200) {
+                },
+            });
+            if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
+                $("#submitExam").click();
+            } else {
+                $("#quesnext" + quest_id).click();
 
             }
+            return true;
         }
-    });
+    }
+
+    function clearResponse(quest_id, subject_id, qNo) {
+
+        var response = [];
+        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+            response = $(this).prop('checked', false);
+        });
+
+        if (response.length == 0) {
+            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+            $('#qoption_err_' + quest_id).addClass('text-danger');
+            $('#qoption_err_' + quest_id).fadeIn('fast');
+            return false;
+        }
+
+        $("#btn_" + quest_id).addClass("btn-light");
+        $("#btn_" + quest_id).removeClass("btn-light-green");
+        $("#btn_" + quest_id).removeClass("btn-secondary");
+
+        $.ajax({
+            url: "{{ route('clearResponse') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: quest_id,
+                subject_id: subject_id,
+            },
+            success: function(response_data) {
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+                    $("#btn_" + quest_id).find('i').remove();
+                    $("#btn_" + quest_id).html(qNo);
+                }
+
+            },
+        });
+
+    }
+
+    function get_subject_question(subject_id) {
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
+
+        saveQuestionTime(act_question, q_submit_time);
+
+        url = "{{ url('adaptive_next_subject_question/') }}/" + subject_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
+
+                $("#myTabContent #question_section div").remove();
+                $("#myTabContent #question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+            }
+        });
 
 
-}
+    }
+
+    function saveQuestionTime(question_id, time) {
+
+        url = "{{ url('saveQuestionTimeSession') }}/" + question_id;
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                'q_time': time
+            },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
+            success: function(response_data) {
+                // $('.loader-block').hide();
+                var response = jQuery.parseJSON(response_data);
+                if (response.status == 200) {
+
+                }
+            }
+        });
 
 
-$(document).ready(function() {
-    $("#form_exam_submit").validate({
+    }
 
-        submitHandler: function(form) {
-            if (timeLeft >= 1) {
-                let timer_left = document.querySelector("#base-timer-path-remaining_alt");
-                let lefttime_exam_h = document.getElementById("lefttime_pop_h");
-                let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-                const circleDasharray = `${(
+    $(document).ready(function() {
+        $("#form_exam_submit").validate({
+
+            submitHandler: function(form) {
+                if (timeLeft >= 1) {
+                    let timer_left = document.querySelector("#base-timer-path-remaining_alt");
+                    let lefttime_exam_h = document.getElementById("lefttime_pop_h");
+                    let lefttime_exam_s = document.getElementById("lefttime_pop_s");
+
+                    const circleDasharray = `${(
                             calculateTimeFraction() * FULL_DASH_ARRAY
                         ).toFixed(0)} 283`;
-                // console.log("setCircleDashArray: ", circleDasharray);
-                timer_left.setAttribute("stroke-dasharray", circleDasharray);
+                    // console.log("setCircleDashArray: ", circleDasharray);
+                    timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
-                lefttime_exam_h.innerHTML = formatTime(timeLeft);
-                lefttime_exam_s.innerHTML = formatTime(timeLeft);
+                    lefttime_exam_h.innerHTML = formatTime(timeLeft);
+                    lefttime_exam_s.innerHTML = formatTime(timeLeft);
 
-                $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
 
-            } else {
-                form.submit();
+                } else {
+                    form.submit();
+                }
+
+
             }
 
+        });
 
-        }
+        $('#bt-modal-confirm').click(function() {
 
+            $('#form_exam_submit')[0].submit();
+        });
+        $('#bt-modal-confirm_over').click(function() {
+
+            $('#form_exam_submit')[0].submit();
+        });
     });
-
-    $('#bt-modal-confirm').click(function() {
-
-        $('#form_exam_submit')[0].submit();
-    });
-    $('#bt-modal-confirm_over').click(function() {
-
-        $('#form_exam_submit')[0].submit();
-    });
-});
-
 </script>
 @endsection

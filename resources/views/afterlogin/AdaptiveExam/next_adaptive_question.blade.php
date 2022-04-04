@@ -121,12 +121,14 @@ $questtype='radio';
             @foreach($option_data as $key=>$opt_value)
             @php
             $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+            /*
             $dom = new DOMDocument();
             @$dom->loadHTML($opt_value);
             $anchor = $dom->getElementsByTagName('img')->item(0);
             $text = isset($anchor)? $anchor->getAttribute('alt') : '';
             $latex = "https://math.now.sh?from=".$text;
             $view_opt='<img src="'.$latex.'" />' ;
+            */
             @endphp
             <div class="col-md-6 mb-4">
                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
@@ -153,37 +155,35 @@ $questtype='radio';
     </div>
 </div>
 <script>
-var question_id = '{{$activeq_id}}';
-$(".next_button").removeClass("activequestion");
-$("#btn_" + question_id).addClass("activequestion");
+    var question_id = '{{$activeq_id}}';
+    $(".next_button").removeClass("activequestion");
+    $("#btn_" + question_id).addClass("activequestion");
 
-//$("#exam_content_sec  #btn_" + question_id).focus();
+    //$("#exam_content_sec  #btn_" + question_id).focus();
 
-$("#current_question").val(question_id);
+    $("#current_question").val(question_id);
 
-var subject_id = '{{$subject_id}}';
-$("#myTab .all_div").removeClass("active");
-$("#myTab .class_" + subject_id).addClass("active");
-
+    var subject_id = '{{$subject_id}}';
+    $("#myTab .all_div").removeClass("active");
+    $("#myTab .class_" + subject_id).addClass("active");
 </script>
 <!-- check size of screen -->
 <script>
-$(document).ready(function() {
-    $(window).on("resize", function(e) {
+    $(document).ready(function() {
+        $(window).on("resize", function(e) {
+            checkScreenSize();
+        });
+
         checkScreenSize();
-    });
 
-    checkScreenSize();
-
-    function checkScreenSize() {
-        var newWindowWidth = $(window).width();
-        if (newWindowWidth < 768) {
-            $("#exam_content_sec  #btn_" + question_id).focusout();
-        } else {
-            $("#exam_content_sec  #btn_" + question_id).focus();
+        function checkScreenSize() {
+            var newWindowWidth = $(window).width();
+            if (newWindowWidth < 768) {
+                $("#exam_content_sec  #btn_" + question_id).focusout();
+            } else {
+                $("#exam_content_sec  #btn_" + question_id).focus();
+            }
         }
-    }
-});
-
+    });
 </script>
 <!-- End check size of screen -->

@@ -68,9 +68,7 @@ class TestSeriesController extends Controller
 
                 return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -193,7 +191,8 @@ class TestSeriesController extends Controller
                         // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                         // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                         $qs_id = $question_data->question_id;
-                        $option_ques = str_replace("'", '"', $question_data->question_options);
+                        //$option_ques = str_replace("'", '"', $question_data->question_options);
+                        $option_ques = $question_data->question_options;
 
                         $tempdata = json_decode($option_ques, true);
                         $opArr = [];
@@ -235,9 +234,7 @@ class TestSeriesController extends Controller
             } else {
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

@@ -119,8 +119,9 @@ div#topicclose,
     margin-bottom: 0px !important;
 }
 
-.exam-analytics .p-5 span.text-center.w-100 img {
+.exam-analytics .p-5 span.text-center.w-100 img{
     width: 70% !important;
+    padding: 30px 20px 40px;
 }
 
 .exam-analytics div#myTabContent .tab-pane .hScroll {
@@ -887,3 +888,16 @@ padding-left: 45px !important;
     bottom: 2px;
 }
 /*****end by navdeep 09-03 ********/
+
+
+.exam-analytics a.top-btn-pop {
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background-image: linear-gradient(to bottom, #21ccff, #21ccff);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 10px;
+    font-weight: 600;
+}
+.exam-analytics a.top-btn-pop:hover {
+    background: #00bdff;
+}

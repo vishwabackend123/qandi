@@ -15,7 +15,7 @@ $userData = Session::get('user_data');
                 <div class="col-lg-9 mx-auto">
 
                     <div class="bg-white dashboard-cards-block">
-                        <div class="report-block1 p-6">
+                        <div class="report-block1 pb-0 p-6">
                             <div class="
                       d-flex
                       justify-content-between
@@ -27,15 +27,31 @@ $userData = Session::get('user_data');
                                 <span class="text-light-danger">Analytics</span>
                             </div>
                             <div class="export-block">
-                                <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
-                                <p class="text-center">
-                                    No. Of students participated for the exam.
-                                </p>
-                                <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
+                                <div class="rankholder">
+                                    <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
+                                    <p class="text-center">
+                                        No. Of students participated for the exam.
+                                    </p>
+                                    <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
+                                </div>
+                            
 
                                 <div class="row">
                                     <div class="mx-auto col-md-10">
-                                        <div class="bg-white shadow-lg p-5 report-analysis-block">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="report-block2 p-6">
+                            <div class="d-flex">
+                                <span class="me-auto anaylticslogo"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
+                                <span class="text-end detailedtext">
+                                    <b>Detailed</b> <span> Report Analysis<br />
+                                        Weekly Q&I Performace Report<br />{{date("F j, Y")}}</span>
+                                </span>
+                            </div>
+                            <div class="bg-white mt-5 shadow-lg p-5 report-analysis-block">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
                                                 <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -66,8 +82,11 @@ $userData = Session::get('user_data');
                                             </div>
                                             <div class="row py-5">
                                                 <div class="col-md-12 text-center">
-
-                                                    <div id="scorecontainer"></div>
+                                                    <div class="prgress-i-txt px-3">
+                                                        <span class="progress_text">Progress</span>
+                                                    </div>
+                                                    <!--div id="scorecontainer"></div-->
+                                                    <div id="comparegraph"></div>
                                                     <div class="status-id-disable     d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
                                                         <div class="star-ratings-css m-0 me-3">
                                                             <div class="star-ratings-css-top" style="width: {{round($overall_prof_perc)}}%">
@@ -83,24 +102,12 @@ $userData = Session::get('user_data');
 
                                                     </div>
                                                     <p class="text-center text-light mt-3">
-                                                        Overall Proficiency
+                                                        Overall Subjects Proficiency
                                                     </p>
                                                 </div>
 
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="report-block2 p-6">
-                            <div class="d-flex">
-                                <span class="me-auto anaylticslogo"><img src="{{URL::asset('public/after_login/new_ui/images/QnI_Logo.gif')}}" /></span>
-                                <span class="text-end detailedtext">
-                                    <b>Detailed</b> <span> Report Analysis<br />
-                                        Weekly Q&I Performace Report<br />{{date("F j, Y")}}</span>
-                                </span>
-                            </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
@@ -540,6 +547,91 @@ $userData = Session::get('user_data');
             $(this).parent("p").hide();
         });
     });
+</script>
+<script>
+    /* score comparison graph */
+    Highcharts.chart('comparegraph', {
+        chart: {
+            type: 'column',
+            height: 185,
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['']
+        },
+        yAxis: [{
+            min: 0,
+            max:100,
+            title: {
+                text: 'Score %'
+            }
+        }, {
+            title: {
+                text: ''
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                }
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [{
+            name: 'Previous score',
+            color: '#d0f3ff',
+            data: [<?php echo $mockTestScorePre; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0,
+            dataLabels: {
+                enabled: true,
+                align: 'left',
+                x: 0,
+                y: 0,
+                rotation: 0,
+            }
+        }, {
+            name: 'Latest score',
+            color: '#21ccff',
+            data: [<?php echo $mockTestScoreCurr; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0.1,
+            dataLabels: {
+                enabled: true,
+                align: 'left',
+                x: 0,
+                y: 0,
+                rotation: 0,
+            }
+        }]
+    });
+    /* score comparison graph */
 </script>
 
 @endsection

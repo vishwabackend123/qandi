@@ -73,7 +73,7 @@ class AssessmentExamController extends Controller
                 $exam_fulltime = $responsedata->time_allowed ?? '';
 
                 $exam_ques_count = $questions_count = count($aQuestions_list);
-            //$exam_fulltime = $questions_count;
+                //$exam_fulltime = $questions_count;
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;
@@ -124,7 +124,8 @@ class AssessmentExamController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
