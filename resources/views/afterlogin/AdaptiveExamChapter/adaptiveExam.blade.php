@@ -237,7 +237,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">
                                 <span class="btnSubic">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                         <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
@@ -380,7 +380,7 @@ $questtype='radio';
                     <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
                 <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
-             <p>
+                <p>
                     You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
@@ -388,7 +388,7 @@ $questtype='radio';
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                     <span class="btnSubic">
+                        <span class="btnSubic">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                 <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
                             </svg>
@@ -1027,6 +1027,7 @@ $questtype='radio';
                     if (response_ans == false) {
                         return false;
                     } else {
+                        stop('submit');
                         $('#FullTest_Exam_Panel_Interface_A').modal('show');
                     }
 
