@@ -111,7 +111,7 @@ $questtype='radio';
                 <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
-                            <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+
                             <!-- Exam subject Tabs  -->
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @if(!empty($filtered_subject))
@@ -823,6 +823,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 
@@ -851,7 +854,40 @@ $questtype='radio';
 
 
     }
+    /* Saved current question response before Submit */
+    function submitsaveAnswer(question_id) {
+        var question_id = question_id;
+        var option_id = [];
+        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+            option_id.push($(this).val());
+        });
+        if (option_id.length === 0) {
+            $('#qoption_err_' + question_id).html("Please select one response or provide an answer before submitting.");
+            $('#qoption_err_' + question_id).addClass('text-danger');
+            $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
+            return false;
+        }
 
+        var q_submit_time = $("#timespend_" + question_id).val();
+        $.ajax({
+            url: "{{ route('saveAdaptiveAnswer') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                question_id: question_id,
+                option_id: option_id,
+                q_submit_time: q_submit_time
+            },
+            success: function(response_data) {
+                return true;
+            },
+        });
+
+
+    }
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
@@ -980,7 +1016,16 @@ $questtype='radio';
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);
                     lefttime_exam_s.innerHTML = formatTime(timeLeft);
 
-                    $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                    var act_question = $("#current_question").val();
+                    var response_ans = submitsaveAnswer(act_question);
+
+                    if (response_ans == false) {
+                        return false;
+                    } else {
+                        $('#FullTest_Exam_Panel_Interface_A').modal('show');
+                    }
+
+                    /*   $('#FullTest_Exam_Panel_Interface_A').modal('show'); */
 
                 } else {
                     form.submit();
