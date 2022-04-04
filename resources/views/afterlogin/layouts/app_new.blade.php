@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
     @else
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
