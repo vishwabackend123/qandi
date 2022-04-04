@@ -357,6 +357,7 @@ $userData = Session::get('user_data');
                                     <b> Tests Attempted</b>
                                     <div class="ms-auto">
                                         @foreach($planner as $key=>$val)
+
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
@@ -421,7 +422,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <span>
-                                <img style=";z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                                 <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             <div style="margin-top: -8px;">
@@ -504,6 +505,20 @@ $userData = Session::get('user_data');
                         </div>
                         @endif
                         @endforeach
+                        @if(isset($subjectPlanner_miss) && $subjectPlanner_miss==true)
+                        <!-- <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                            <span>
+                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            </span>
+                            <div style="margin-top: -8px;">
+                               
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
+                                MORE
+                            </div>
+                        </div>
+ -->
+                        @endif
                         @endif
                     </div>
                     <div class="swiper-button-prev"></div>
