@@ -25,16 +25,17 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.min.css')}}"> -->
     @else
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
+    <!-- <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}"> -->
     @endif
 
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
