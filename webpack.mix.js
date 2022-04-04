@@ -22,3 +22,4 @@ minifier.minify('public/after_login/new_ui/css/style.css');
 minifier.minify('public/after_login/new_ui/css/exam-analytics.css');
 minifier.minify('public/after_login/new_ui/css/exampage.css');
 minifier.minify('public/after_login/new_ui/css/responsive.css');
+minifier.minify('public/after_login/new_ui/css/tab-responsive.css');
