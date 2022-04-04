@@ -194,8 +194,8 @@ $questtype='radio';
                                         <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
                                         </button>
                                         @endif
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Save & Mark for review</a>
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled title="Questions can be reviewed after submission." style="color: #515151 !important; opacity: .65 !important;">Save & Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Mark for Review</a>
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
                                     </div>
                                 </div>
@@ -377,12 +377,11 @@ $questtype='radio';
                             <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
                     </div>
-                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                    <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
-                <p>
-                    You haven’t attempted all of the questions. Do you
-                    want to have a quick review before you Submit?
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
+             <p>
+                    You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
