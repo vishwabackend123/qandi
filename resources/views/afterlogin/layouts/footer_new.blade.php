@@ -1728,8 +1728,20 @@
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
-    $(".custom-btn-gray").click(function() {
+    $(".goto-planner-btn").click(function() {
+        $("html, body, .wrapper-dashboard").animate({ scrollTop: 0 }, "100");
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
+    // $(".user-pic-block.UserPro").on('click',function(){
+    //     $(".profile-section ul li:first-child").toggleClass("active");
+    //     if( $(".profile-section ul li:first-child").hasClass("active") ){
+    //         $("#LeaDer").addClass("showAccountCard");
+    //         $(".profile-show").addClass("showAccountCard")
+    //     }
+    //     else{
+    //         $("#LeaDer").removeClass("showAccountCard");
+    //         $(".profile-show").removeClass("showAccountCard")
+    //     }
+    // });
 </script>
