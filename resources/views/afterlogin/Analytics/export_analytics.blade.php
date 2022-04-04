@@ -577,7 +577,8 @@ $userData = Session::get('user_data');
             shadow: false
         },
         tooltip: {
-            shared: true
+            shared: true,
+            enabled :false
         },
         plotOptions: {
             column: {
