@@ -216,7 +216,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect .border.ps-3.ans {
     border-radius: 16px;
-    border: solid 1px #707070;
+    border: solid 1px #707070 !important;
     padding: 0px;
 }
 
