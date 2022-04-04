@@ -3513,7 +3513,7 @@ button.percentage-digit {
     margin-right: 20px;
     text-transform: uppercase;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: normal;vertical-align: top;
 }
 
 .ans-txt {
