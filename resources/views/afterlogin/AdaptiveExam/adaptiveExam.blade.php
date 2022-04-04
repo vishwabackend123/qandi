@@ -133,7 +133,7 @@ $questtype='radio';
                                                 @foreach($option_data as $key=>$opt_value)
                                                 @php
                                                 $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                                */$dom = new DOMDocument();
+                                                /*$dom = new DOMDocument();
                                                 @$dom->loadHTML($opt_value);
                                                 $anchor = $dom->getElementsByTagName('img')->item(0);
                                                 $text = isset($anchor)? $anchor->getAttribute('alt') : '';
