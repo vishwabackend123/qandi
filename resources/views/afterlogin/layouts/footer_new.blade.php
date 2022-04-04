@@ -1669,7 +1669,7 @@
         $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 
-    $('.UserPro,#plannCal,.notification,.close-bnt').click(function() {
+    $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
         setTimeout(function() {
             if ($('.notification-block').hasClass('notification-block-active')) {
                 // $('.main-profile-section').removeClass("show");
