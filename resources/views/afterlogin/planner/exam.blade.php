@@ -119,7 +119,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:''}}{{!empty($chapter_name)?'('.$chapter_name.')':''}}</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:''}}{{!empty($chapter_name)?'('.$chapter_name.')':''}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -127,7 +127,7 @@ $questtype='radio';
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> </span>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions </span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
@@ -164,7 +164,7 @@ $questtype='radio';
 
                         <h1 class="my-auto text-center">
 
-                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
+                            <span class="d-block mt-3 fw-bold">All the Best {{$userData->user_name}}!</span>
 
                         </h1>
                         <div class="text-left   ">
