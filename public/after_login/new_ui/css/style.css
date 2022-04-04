@@ -4574,7 +4574,7 @@ button.save-btn {
 
 .border.ps-3.ans {
     border-radius: 16px;
-    border: solid 1px #707070;
+    border: solid 1px #707070 !important;
     padding: 0px;
 }
 
