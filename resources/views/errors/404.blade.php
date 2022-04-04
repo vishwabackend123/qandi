@@ -13,10 +13,8 @@
     <div style="padding:20px;"> <img  src="{{URL::asset('public/images_new/QI_Logo.gif')}}" style="width: 50px;"> </div>
     <div class="error-page text-center" style="padding: 0 15px;">
         <img  src="{{URL::asset('public/after_login/new_ui/images/404-image.png')}}" style="max-width:500px;width:100%;margin-bottom:25px;">
-        <div class="text-center">
-            <p style="margin-bottom: 30px;font-size: 30px;color: #231f20;font-weight:bold;">SORRY! THIS PAGE WAS LOST</p>
-            <a href="{{url('/dashboard')}}" class="btn btn-backtopage">Back To Dashboard</a>
-        </div>
+        <p style="margin-bottom: 30px;font-size: 30px;color: #231f20;font-weight:bold;">SORRY! THIS PAGE WAS LOST</p>
+        <a href="{{url('/dashboard')}}" class="btn btn-backtopage">Back To Dashboard</a>
     </div>
 </body>
 </html>
