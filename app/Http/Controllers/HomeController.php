@@ -48,6 +48,9 @@ class HomeController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $user_subjects = $this->redis_subjects();
+
+
+
             $preferences = $this->redis_Preference();
 
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
@@ -120,7 +123,7 @@ class HomeController extends Controller
                 $subjectData = [];
                 $trendResponse = [];
             }
-
+            $uSubjects = [];
             if (empty($subjectData)) {
                 foreach ($user_subjects as $key => $sub) {
                     $sub->total_questions = 0;
@@ -128,6 +131,7 @@ class HomeController extends Controller
                     $sub->score = 0;
 
                     $subjectData[$key] = (array)$sub;
+                    array_push($uSubjects, $sub->id);
                 }
             }
 
@@ -161,10 +165,11 @@ class HomeController extends Controller
                 $planner_list = isset($response->result) ? $response->result : [];
                 $cPlanner = collect($planner_list);
                 $sorted_list = $cPlanner->sortBy('test_completed_yn', SORT_NATURAL);
-                $planner = $sorted_list->values()
-                    ->all();
+                $planner = $sorted_list->values()->all();
+                $plucked = $cPlanner->pluck('subject_id');
+                $planner_subject = $plucked->all();
             } else {
-                $planner = [];
+                $planner = $planner_subject = [];
             }
             if (!Session::has('referal_code')) {
                 $curl = curl_init();
@@ -255,7 +260,14 @@ class HomeController extends Controller
             $progress =  0;
             $inprogress = 0;
             $others = 100 - ($score);
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference'));
+
+            if (empty(array_diff($planner_subject, $uSubjects))) {
+                $subjectPlanner_miss = true;
+            } else {
+                $subjectPlanner_miss = false;
+            }
+
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
