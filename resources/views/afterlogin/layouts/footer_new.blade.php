@@ -1733,4 +1733,15 @@
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
+    // $(".user-pic-block.UserPro").on('click',function(){
+    //     $(".profile-section ul li:first-child").toggleClass("active");
+    //     if( $(".profile-section ul li:first-child").hasClass("active") ){
+    //         $("#LeaDer").addClass("showAccountCard");
+    //         $(".profile-show").addClass("showAccountCard")
+    //     }
+    //     else{
+    //         $("#LeaDer").removeClass("showAccountCard");
+    //         $(".profile-show").removeClass("showAccountCard")
+    //     }
+    // });
 </script>
