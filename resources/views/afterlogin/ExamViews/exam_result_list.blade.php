@@ -24,11 +24,34 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="tab-content cust-tab-content  bg-white" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h4 class="py-3">Exam Result list</h4>
-                                <div class="scroll-div-live-exm pb-0 mb-3">
+                                <div class="result-list-filter-row">
+                                    <h4 class="py-3">Exam Result list</h4>
+                                    <div class="sub-filter py-3">
+                                        <form >
+                                            <div class="sub-filter-type">
+                                                <select class="selectpicker select" data-show-subtext="false" data-live-search="true">
+                                                    <option disabled selected>Select Test</option>
+                                                    <option value='Assessment'>Assessment</option>
+                                                    <option value='Mocktest'>Mocktest</option> 
+                                                    <option value='Test-Series'>Test-Series</option>
+                                                </select>
+                                            </div>
+                                            <div class="sub-search">
+                                                <div class="input-group">
+                                                    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control">
+                                                <div class="input-group-append">
+                                                    <button id="button-addon1" type="submit" class=" "><i class="fa fa-search"></i></button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="scroll-div-live-exm pb-0 mb-3"  id="pagingBox">
                                     @if(!empty($result_data))
                                     @foreach($result_data as $sche)
-                                    
+                                   
                                     <ul class="speci-text">
                                         <li> <span class="sub-details">{{$sche->test_type}}</span>
                                         </li>
@@ -51,6 +74,11 @@ $userData = Session::get('user_data');
                                     </div>
                                     @endif
                                 </div>
+                                <div class="pagination">
+                                <div id='page_navigation'></div>
+                                <input type='hidden' id='current_page' />
+                                    <input type='hidden' id='show_per_page' />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -63,3 +91,9 @@ $userData = Session::get('user_data');
 <script type="text/javascript">
 </script>
 @endsection
+
+ 
+
+ 
+
+    

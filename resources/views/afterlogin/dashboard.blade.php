@@ -337,7 +337,7 @@ $userData = Session::get('user_data');
                                     <b>Plan Tests</b> <br />
                                     Plan upto seven tests on topics of your choice
                                 </div>
-                                <button class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find"  style="width:16px;">Go To
+                                <button class="custom-btn-gray mt-4 goto-planner-btn" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find" style="width:15px;margin-top: -1px;">Go To
                                     Planner</button>
                             </div>
                         </div>
@@ -357,6 +357,7 @@ $userData = Session::get('user_data');
                                     <b> Tests Attempted</b>
                                     <div class="ms-auto">
                                         @foreach($planner as $key=>$val)
+
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
@@ -370,7 +371,7 @@ $userData = Session::get('user_data');
                                         @endif
                                         @endforeach
                                     </div>
-                                    <button class="custom-btn-gray" style="margin-top:24px;" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find" style="width:16px;">Go To
+                                    <button class="custom-btn-gray goto-planner-btn" style="margin-top:24px;" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find" style="width:15px;margin-top: -1px;">Go To
                                         Planner</button>
                                 </div>
                             </div>
@@ -398,7 +399,7 @@ $userData = Session::get('user_data');
                                             <p>for regular preparation</p>
                                         </div>
                                     </div>
-                                    <button style="background-color: #fff;text-transform: none;" class="custom-btn-gray mt-4" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><i style="margin-right: 5px;" class="fa fa-angle-left"></i> Click on GO TO Planner</button>
+                                    <button style="background-color: #fff;text-transform: none;" class="custom-btn-gray mt-4 goto-planner-btn" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><i style="margin-right: 5px;" class="fa fa-angle-left"></i> Click on GO TO Planner</button>
                                 </div>
                             </div>
                             <!-------------------->
@@ -421,7 +422,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <span>
-                                <img style=";z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                                 <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             <div style="margin-top: -8px;">
@@ -504,6 +505,20 @@ $userData = Session::get('user_data');
                         </div>
                         @endif
                         @endforeach
+                        @if(isset($subjectPlanner_miss) && $subjectPlanner_miss==true)
+                        <!-- <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                            <span>
+                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            </span>
+                            <div style="margin-top: -8px;">
+                               
+                                <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
+                                MORE
+                            </div>
+                        </div>
+ -->
+                        @endif
                         @endif
                     </div>
                     <div class="swiper-button-prev"></div>
@@ -805,7 +820,7 @@ $userData = Session::get('user_data');
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
             spaceBetween: 30,
             freeMode: true,
             slideToClickedSlide: false,
@@ -821,12 +836,12 @@ $userData = Session::get('user_data');
             },
             breakpoints: {
                 1920: {
-                    slidesPerView: 3,
+                    slidesPerView: 'auto',
                     spaceBetween: 30,
 
                 },
                 1028: { // this is all desktop view of my laptop
-                    slidesPerView: 3,
+                    slidesPerView: 'auto',
                     spaceBetween: 30,
                 },
                 300: {

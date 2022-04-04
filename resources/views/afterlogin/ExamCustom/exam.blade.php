@@ -171,12 +171,14 @@ $questtype='radio';
                                             @foreach($option_data as $key=>$opt_value)
                                             @php
                                             $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                            /*
                                             $dom = new DOMDocument();
                                             @$dom->loadHTML($opt_value);
                                             $anchor = $dom->getElementsByTagName('img')->item(0);
                                             $text = isset($anchor)? $anchor->getAttribute('alt') : '';
                                             $latex = "https://math.now.sh?from=".$text;
                                             $view_opt='<img src="'.$latex.'" />' ;
+                                            */
                                             @endphp
                                             <div class="col-md-6 mb-4">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
@@ -849,6 +851,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 
@@ -897,6 +902,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 

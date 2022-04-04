@@ -80,11 +80,9 @@ class PlannerController extends Controller
             } else {
                 return $err;
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
@@ -130,11 +128,9 @@ class PlannerController extends Controller
 
                 return false;
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
     public function getWeeklyPlanSchedule(Request $request)
@@ -190,11 +186,9 @@ class PlannerController extends Controller
 
                 return json_encode(array('range' => $range, 'status' => 'failed'));
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
@@ -306,7 +300,8 @@ class PlannerController extends Controller
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
                 $question_data->subject_id = isset($subject_id) ? $subject_id : '';
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -351,11 +346,9 @@ class PlannerController extends Controller
 
 
             return view('afterlogin.planner.exam', compact('planner_id', 'chapter_name', 'question_data', 'tagrets', 'exam_name', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_type', 'exam_type'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
@@ -376,11 +369,9 @@ class PlannerController extends Controller
             $shuffle = $filtered->random();
 
             return json_encode($shuffle);
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }    
+        }
     }
 
 
@@ -511,7 +502,8 @@ class PlannerController extends Controller
                 // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
                 // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                $option_ques = str_replace("'", '"', $question_data->question_options);
+                //$option_ques = str_replace("'", '"', $question_data->question_options);
+                $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
@@ -549,9 +541,7 @@ class PlannerController extends Controller
             $exam_type = 'P';
             Session::put('exam_name', $test_name);
             return view('afterlogin.planner.planner_exam', compact('planner_id', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
