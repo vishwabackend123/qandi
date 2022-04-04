@@ -784,6 +784,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 
@@ -830,6 +833,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 
