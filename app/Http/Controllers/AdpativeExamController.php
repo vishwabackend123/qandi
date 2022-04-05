@@ -510,6 +510,7 @@ class AdpativeExamController extends Controller
                 'questions_count' => $questions_count,
                 'all_questions_id' => $question_ids,
                 'full_time' => $exam_fulltime,
+                'adaptive_api_url' => $curl_url,
             ];
 
             // Push Value in Redis
@@ -628,6 +629,7 @@ class AdpativeExamController extends Controller
             $sessionResult = json_decode($session_result);
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
+            $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? (array)$sessionResult->adaptive_api_url : '';
 
 
             $inputjson['student_id'] = (int)$user_id;
@@ -645,7 +647,8 @@ class AdpativeExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+            $curl_url = isset($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
+            dd($curl_url);
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
@@ -728,6 +731,7 @@ class AdpativeExamController extends Controller
             $sessionResult = json_decode($session_result);
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
+            $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? (array)$sessionResult->adaptive_api_url : '';
 
 
             $inputjson['student_id'] = (int)$user_id;
@@ -744,7 +748,7 @@ class AdpativeExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+            $curl_url = isset($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
