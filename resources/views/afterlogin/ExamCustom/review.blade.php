@@ -99,7 +99,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
                                             </div>
                                         </div>
                                         <div class="answer-section">
-                                            <div class="answer-btn-txt"><span>Answer:</span>
+                                            <div class="answer-btn-txt"><span class="text-uppercase">Answer:</span>
                                                 <span> @php $mn=0; @endphp
                                                     @foreach($correct_ans as $akey=>$ans_value)
                                                     @php
@@ -952,6 +952,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         display: flex;
         align-items: center;
     }
+   
 </style>
 
 

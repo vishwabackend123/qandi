@@ -3511,11 +3511,14 @@ button.percentage-digit {
     color: #44cd7f;
     font-family: Manrope;
     margin-right: 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 16px;
     font-weight: normal;vertical-align: top;
 }
 
+.text-uppercase{
+    text-transform: uppercase !important;
+}
 .ans-txt {
     display: inline-block;
     width: 100%;
@@ -3550,9 +3553,10 @@ button.percentage-digit {
 .review-qus {
     margin: 20px 0px;
     overflow: auto;
-    height: 210px;
+    /* height: 210px; */
     overflow-x: hidden;
     margin-top: 0px;
+    height: 165px;
 }
 
 .review_heading1 {
