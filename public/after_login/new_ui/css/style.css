@@ -957,7 +957,7 @@ input#search_field::-ms-input-placeholder {
     font-size: 17px;
     line-height: 20px;font-feature-settings: "liga" 0;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: hidden;padding-right: 6px;
 }
 #review_rques_blk .question p::-webkit-scrollbar {
     height: 4px;
