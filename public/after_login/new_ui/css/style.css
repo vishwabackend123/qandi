@@ -17,8 +17,8 @@ button {
 }
 
 
-/* #LeaDer.showAccountCard , .profile-show.showAccountCard{display: block!important;}
-#LeaDer , .profile-show{display: none!important;} */
+#LeaDer.showCard , .profile-show.showCard , .subscription-box.showCard , .log-out-screen.showCard{display: block!important;}
+#LeaDer , .profile-show , .log-out-screen , .subscription-box{display: none!important;}
 .user-pic-block.UserPro{cursor: pointer;}
 .live-exam .sub-details{display: inline-block;padding: 0px 15px;}
 #attempt_count_block .nav.nav-tabs.cust-tabs.exam-panel a#Zoology_tab_subject:before {right: -58px;}
