@@ -15,6 +15,23 @@
         });
     });
 </script>
+<style>
+    .allownumericwithdecimal {
+        width: 100%;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        background: #f2f2f2;
+        color: #000;
+    }
+
+    .allownumericwithdecimal::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #757575;
+        opacity: 0.8;
+        /* Firefox */
+    }
+</style>
 @section('content')
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 
@@ -33,7 +50,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -108,6 +125,7 @@ $questtype='radio';
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                            <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <!-- Exam subject Tabs  -->
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @if(!empty($filtered_subject))
@@ -144,6 +162,7 @@ $questtype='radio';
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+                                            @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -165,6 +184,12 @@ $questtype='radio';
                                             </div>
                                             @php $no++; @endphp
                                             @endforeach
+                                            @endif
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+                                            </div>
                                             @endif
 
                                         </div>
@@ -435,6 +460,15 @@ $questtype='radio';
 
 <!-- page referesh disabled -->
 <script>
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        alert(this.value);
+        $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+            event.preventDefault();
+        }
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -829,9 +863,22 @@ $questtype='radio';
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
+        console.log(option_id);
+
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -841,6 +888,7 @@ $questtype='radio';
             }, 8000);
             return false;
         }
+
 
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
@@ -1043,9 +1091,7 @@ $questtype='radio';
                     let lefttime_exam_h = document.getElementById("lefttime_pop_h");
                     let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-                    const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
+                    const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
 
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 

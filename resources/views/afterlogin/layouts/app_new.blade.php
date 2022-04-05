@@ -38,6 +38,8 @@
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+
     <script>
         $(window).on('load', function() {
             if ($("#welcomeModal").length > 0) {

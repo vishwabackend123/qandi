@@ -1096,6 +1096,8 @@
         return true;
     }
 
+
+
     function handleChange(subject_id) {
 
         var limit = $('#customRange').val();
@@ -1729,7 +1731,9 @@
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
     $(".goto-planner-btn").click(function() {
-        $("html, body, .wrapper-dashboard").animate({ scrollTop: 0 }, "100");
+        $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+        }, "100");
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
