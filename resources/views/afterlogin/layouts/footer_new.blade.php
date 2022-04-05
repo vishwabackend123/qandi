@@ -1734,28 +1734,29 @@
         $("#collapsePlanner").show();
     });
 
-    // $(".user-pic-block.UserPro").click(function(){
-    //     $(".profile-section ul li:first-child").toggleClass("active");
-    //     if( $(".profile-section ul li:first-child").hasClass("active") ){
-    //         $("#LeaDer").addClass("showAccountCard");
-    //         $(".profile-show").addClass("showAccountCard")
-    //     }
-    // });
-    // $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").click(function(){
-    //     $("#LeaDer").removeClass("showAccountCard");
-    //     $(".profile-show").removeClass("showAccountCard")
-    // });
-    // $(".profile-section ul li:first-child").click(function(){
-    //     $(this).addClass("active");
-    // });
+    $(".user-pic-block.UserPro").on('click',function(){
+        $(".profile-section ul li:first-child").addClass("active");
+        $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").removeClass("active");
+        if( $(".profile-section ul li:first-child").hasClass("active") ){
+            $("#LeaDer , .profile-show").addClass("showCard");
+            $(".log-out-screen , .subscription-box").removeClass("showCard");
+        }
+    });
 
-    // $(document).mouseup(function(e) 
-    // {
-    //     var container = $(".profile-section ul li:first-child");
-    //     if (!container.is(e.target) && container.has(e.target).length === 0) 
-    //     {
-    //     alert("jo");
-    //     }
-    // });
+    $(".profile-section ul").on('click',function(){
+        if( $(".profile-section ul li:nth-child(2)").hasClass("active") ){
+            $(".subscription-box").addClass("showCard");
+            $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");
+        }
+        else if( $(".profile-section ul li:nth-child(3)").hasClass("active") ){
+            $(".log-out-screen").addClass("showCard");
+            $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
+        } 
+        else if( $(".profile-section ul li:first-child").hasClass("active") ){
+            $("#LeaDer , .profile-show").addClass("showCard");
+            $(".log-out-screen , .subscription-box").removeClass("showCard");
+        }
+    });
+
 </script>
 
