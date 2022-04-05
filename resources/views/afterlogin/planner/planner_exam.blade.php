@@ -384,19 +384,23 @@ $questtype='radio';
                             <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
                     </div>
-                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                    <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
-                    You haven’t attempted all of the questions. Do you
-                    want to have a quick review before you Submit?
+                    You haven’t attempted all of the questions. <br>
+					Do you want to have a quick review before you Submit?
                 </p>
                 <div>
-                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
                         Continue
                     </button>
-                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                        Submit TEST
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 textsubmit">
+                       <span class="btnSubic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                            </svg>
+                        </span> &nbsp;&nbsp;&nbsp;Submit TEST
                     </button>
                 </div>
             </div>
