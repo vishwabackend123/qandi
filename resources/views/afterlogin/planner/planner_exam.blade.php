@@ -307,7 +307,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h3 class="text-danger text-uppercase">{{$test_name}} </h3>
+                        <h3 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{$test_name}} </h3>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -342,16 +342,11 @@ $questtype='radio';
                         </div>
                     </div>
                     <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-
-                        <h1 class="my-auto text-center">
-
-                            <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
-
+						<h1 class="my-auto text-center">
+                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
                         <div class="text-left   ">
-
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
-
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
                 </div>

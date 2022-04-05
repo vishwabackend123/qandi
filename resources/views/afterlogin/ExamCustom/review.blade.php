@@ -632,20 +632,51 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 
         var number_block_holdercontainer = $(".number_block_holder").outerHeight();
         var review_box_holdercontainer = $(".review_box_holder").outerHeight();
-        var number_block_holdercontainerplus = number_block_holdercontainer + 100 + "px";
-        var review_box_holdercontainercontainerminus = review_box_holdercontainer - 100 + "px";
+        // var review_question_list_height =   $('#review_question_list').css('height', test_review_height_div);
 
-        $('.number_block_holder').css('height', number_block_holdercontainerplus);
-        $('.review_box_holder').css('height', review_box_holdercontainercontainerminus);
+        // var min_height_q_list_h = review_question_list_height - 200 + "px";
+
+        // $('#review_question_list').css('height', min_height_q_list_h);
+
+        // var number_block_holdercontainerplus = number_block_holdercontainer + 100 + "px";
+        // var review_box_holdercontainercontainerminus = review_box_holdercontainer - 100 + "px";
+
+        // $('.number_block_holder').css('height', number_block_holdercontainerplus);
+        // $('.review_box_holder').css('height', review_box_holdercontainercontainerminus);
 
 
 
 
         var number_block_holder_height = $(".number_block_holder").outerHeight();
-        var numberblockHeight = number_block_holder_height - 180 + "px";
+        var numberblockHeight = number_block_holder_height - 170 + "px";
 
         var height_divided = number_block_holder_height - numberblockHeight;
         $('.number_block_holder .number-block').css('height', numberblockHeight);
+
+
+
+        var review_box_holder_final_height = $(".test-review-right .review_box_holder").outerHeight();
+        $('#review_question_list').css('height', review_box_holder_final_height);
+        var review_expand_scroll_height = $("#review_question_list").outerHeight();
+        var math_cal_height = review_expand_scroll_height - 80 + "px";
+        $('#review_question_list').css('height', math_cal_height);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -720,6 +751,8 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
             var scrollqheight = onclickreviewbox + reviewBox2height;
 
             $('#review_question_list').css('height', scrollqheight);
+
+        
 
             $(".review_box_holder").css("border-top-left-radius", "0px");
             $(".review_box_holder").css("border-top-right-radius", "0px");
@@ -952,7 +985,6 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         display: flex;
         align-items: center;
     }
-   
 </style>
 
 
