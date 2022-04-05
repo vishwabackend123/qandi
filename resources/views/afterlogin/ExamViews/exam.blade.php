@@ -290,7 +290,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -338,9 +338,8 @@ $questtype='radio';
                             <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
 
                         </h1>
-                        <div class="text-left   ">
-
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+                        <div class="text-left">
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp;<img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
 
                         </div>
                     </div>
