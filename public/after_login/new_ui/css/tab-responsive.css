@@ -132,7 +132,10 @@
     .dashboard-cards-block .bg-white>small p{
         min-width: 290px;
    }
- 
+   .status-id.rating{width: auto;}
+   .listing-details .name-txt{font-size: 14px;}
+   .slbs-link a{    font-size: 14px;}
+   .cust-tab-content .custom-btn-gray{font-size: 14px;}
 }
 
  
@@ -295,6 +298,16 @@
         width: 100%;
     }
     .subscription {padding:20px;}
+}
+@media(max-width:861px){
+    .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after {
+    width: 60px;
+}
+}
+@media(max-width:820px){
+    .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after {
+    width: 47px;
+}
 }
 @media(max-width:768px){
     .subscription .form-btns button {

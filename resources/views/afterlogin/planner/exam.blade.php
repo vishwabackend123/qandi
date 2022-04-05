@@ -119,7 +119,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">{{isset($exam_name)?$exam_name:''}}{{!empty($chapter_name)?'('.$chapter_name.')':''}}</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:''}}{{!empty($chapter_name)?'('.$chapter_name.')':''}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -127,7 +127,7 @@ $questtype='radio';
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> </span>
+                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions </span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
@@ -161,16 +161,11 @@ $questtype='radio';
                         </div>
                     </div>
                     <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-
-                        <h1 class="my-auto text-center">
-
-                            <span class="d-block mt-3 fw-bold">All the Best! {{$userData->user_name}}</span>
-
-                        </h1>
-                        <div class="text-left   ">
-
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
-
+						<h1 class="my-auto text-center">
+                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
+                        </h1>                        
+						<div class="text-left   ">
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
 
@@ -409,19 +404,23 @@ $questtype='radio';
                             <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
                     </div>
-                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                    <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
-                    You haven’t attempted all of the questions. Do you
-                    want to have a quick review before you Submit?
+                    You haven’t attempted all of the questions.<br>
+					Do you want to have a quick review before you Submit?
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                        Submit TEST
+                      <span class="btnSubic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                            </svg>
+                        </span> &nbsp;&nbsp;&nbsp;Submit TEST
                     </button>
                 </div>
             </div>
@@ -784,6 +783,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 
@@ -830,6 +832,9 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            setTimeout(function() {
+                $('#qoption_err_' + question_id).fadeOut("fast");
+            }, 8000);
             return false;
         }
 
