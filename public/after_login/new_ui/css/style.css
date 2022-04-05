@@ -16,7 +16,10 @@ button {
     text-decoration: none;
 }
 
-/* .showAccountCard{display: block!important;} */
+
+/* #LeaDer.showAccountCard , .profile-show.showAccountCard{display: block!important;}
+#LeaDer , .profile-show{display: none!important;} */
+.user-pic-block.UserPro{cursor: pointer;}
 .live-exam .sub-details{display: inline-block;padding: 0px 15px;}
 #attempt_count_block .nav.nav-tabs.cust-tabs.exam-panel a#Zoology_tab_subject:before {right: -58px;}
 #attempt_count_block .cust-tabs.nav.nav-tabs .nav-link {min-width: 130px;padding: 18px 30px!important;}
@@ -953,6 +956,11 @@ input#search_field::-ms-input-placeholder {
 #review_rques_blk .question p {
     font-size: 17px;
     line-height: 20px;font-feature-settings: "liga" 0;
+    overflow-x: auto;
+    overflow-y: hidden;padding-right: 6px;
+}
+#review_rques_blk .question p::-webkit-scrollbar {
+    height: 4px;
 }
 .answer-section .answer-btn-txt,.answer-section .ans-txt{font-feature-settings: "liga" 0;}
 .AttmnowSec button {
