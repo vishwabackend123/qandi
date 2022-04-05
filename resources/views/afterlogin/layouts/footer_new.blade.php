@@ -1733,15 +1733,29 @@
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
-    // $(".user-pic-block.UserPro").on('click',function(){
+
+    // $(".user-pic-block.UserPro").click(function(){
     //     $(".profile-section ul li:first-child").toggleClass("active");
     //     if( $(".profile-section ul li:first-child").hasClass("active") ){
     //         $("#LeaDer").addClass("showAccountCard");
     //         $(".profile-show").addClass("showAccountCard")
     //     }
-    //     else{
-    //         $("#LeaDer").removeClass("showAccountCard");
-    //         $(".profile-show").removeClass("showAccountCard")
+    // });
+    // $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").click(function(){
+    //     $("#LeaDer").removeClass("showAccountCard");
+    //     $(".profile-show").removeClass("showAccountCard")
+    // });
+    // $(".profile-section ul li:first-child").click(function(){
+    //     $(this).addClass("active");
+    // });
+
+    // $(document).mouseup(function(e) 
+    // {
+    //     var container = $(".profile-section ul li:first-child");
+    //     if (!container.is(e.target) && container.has(e.target).length === 0) 
+    //     {
+    //     alert("jo");
     //     }
     // });
+
 </script>

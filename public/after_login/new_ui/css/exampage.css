@@ -61,9 +61,9 @@ button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.te
     color: #2c3348;
 }
 
-#review_rques_blk .border {
+/* #review_rques_blk .border {
     pointer-events: none !important;
-}
+} */
 
 #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
     box-shadow: none;
