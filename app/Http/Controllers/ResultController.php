@@ -297,9 +297,22 @@ class ResultController extends Controller
     }
     public function examResultList ()
     {
-        //try {
-            $offset = 0;
+        try {
+            
+            $result_data = [];
+            $current_page = 1;
+
+            return view('afterlogin.ExamViews.exam_result_list', compact('result_data','current_page'));
+
+        } catch (\Exception $e) {
+          Log::info($e->getMessage());   
+        }
+    }
+    public function getExamResultData($page_no)
+    {
             $limit = 10;
+            $offset = ($page_no-1) * $limit;  
+            $current_page = $page_no;
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
@@ -327,22 +340,22 @@ class ResultController extends Controller
 
             $response_json = curl_exec($curl);
 
-
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (json_decode($response_json));
                 $result_data = isset($response_data->response) ? $response_data->response : [];
+                $html = view('afterlogin.ExamViews.result_list', compact('result_data','current_page'))->render();
+                return response()->json([
+                'status' => true,
+                'html' => $html,
+                'message' => 'success.',
+            ]);
                
-                return view('afterlogin.ExamViews.exam_result_list', compact('result_data'));
             } else {
 
                 return false;
             }
-
-        //} catch (\Exception $e) {
-          //Log::info($e->getMessage());   
-        //}
     }
 }

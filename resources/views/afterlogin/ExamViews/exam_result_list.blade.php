@@ -27,57 +27,37 @@ $userData = Session::get('user_data');
                                 <div class="result-list-filter-row">
                                     <h4 class="py-3">Exam Result list</h4>
                                     <div class="sub-filter py-3">
-                                        <form >
+                                        <form>
                                             <div class="sub-filter-type">
-                                                <select class="selectpicker select" data-show-subtext="false" data-live-search="true">
-                                                    <option disabled selected>Select Test</option>
+                                                <select class="selectpicker select select_filter" data-show-subtext="false" data-live-search="true">
+                                                    <option value="" selected>Select Test</option>
                                                     <option value='Assessment'>Assessment</option>
-                                                    <option value='Mocktest'>Mocktest</option> 
+                                                    <option value='Mocktest'>Mocktest</option>
                                                     <option value='Test-Series'>Test-Series</option>
                                                 </select>
                                             </div>
-                                            <div class="sub-search">
+                                            <!--div class="sub-search">
                                                 <div class="input-group">
                                                     <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control">
                                                 <div class="input-group-append">
                                                     <button id="button-addon1" type="submit" class=" "><i class="fa fa-search"></i></button>
                                                 </div>
                                                 </div>
-                                            </div>
+                                            </div-->
                                         </form>
                                     </div>
                                 </div>
-
-                                <div class="scroll-div-live-exm pb-0 mb-3"  id="pagingBox">
-                                    @if(!empty($result_data))
-                                    @foreach($result_data as $sche)
-                                   
-                                    <ul class="speci-text">
-                                        <li> <span class="sub-details">{{$sche->test_type}}</span>
-                                        </li>
-                                        <li><strong>Exam Date: {{date('d-m-Y', strtotime($sche->created_at));}}</strong>
-                                        </li>
-                                        <li><strong>Test Time: {{date('H:i:s', strtotime($sche->created_at));}} </strong>
-                                        </li>
-                                        <li>{{$sche->no_of_question}} Questions</a>
-                                        </li>
-                                        <li><a href="{{route('exam_review',$sche->id)}}">
-                                                <button class="custom-btn-gray"></i>Exam Result
-                                                </button>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    @endforeach
-                                    @else
-                                    <div class="text-center">
-                                        <span class="sub-details">No result history available right now.</span>
-                                    </div>
-                                    @endif
+                                <div class="scroll-div-live-exm pb-0 mb-3" id="pagingBox">
+                                    @include('afterlogin.ExamViews.result_list')
                                 </div>
                                 <div class="pagination">
-                                <div id='page_navigation'></div>
-                                <input type='hidden' id='current_page' />
-                                    <input type='hidden' id='show_per_page' />
+                                    <div id='page_navigation'></div>
+                                    <div id="page_navigation">
+                                        <a class="previous_link" href="javascript:void(0);">Prev</a>
+                                        <a class="page_link first_class" href="javascript:void(0);" longdesc="0">1</a>
+                                        <a class="page_link second_class" href="javascript:void(0);" longdesc="1">2</a>
+                                        <a class="next_link" href="javascript:void(0);">Next</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -87,13 +67,72 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 @include('afterlogin.layouts.footer_new')
 <script type="text/javascript">
+$(document).ready(function() {
+    $('.first_class').addClass('active_page');
+    getExamResultData(1);
+    $('.second_class').click(function() {
+        $(this).addClass('active_page');
+        $('.first_class').removeClass('active_page');
+        $('.previous_link').removeClass('active_page');
+        $('.next_link').removeClass('active_page');
+        getExamResultData(2);
+    });
+    $('.first_class').click(function() {
+        $(this).addClass('active_page');
+        $('.second_class').removeClass('active_page');
+        $('.previous_link').removeClass('active_page');
+        $('.next_link').removeClass('active_page');
+        getExamResultData(1);
+    });
+    $('.previous_link').click(function() {
+        var page_no = parseInt($('#current_page').val() - 1);
+        if (page_no > 0) {
+            getExamResultData(page_no);
+            $(this).addClass('active_page');
+            $('.second_class').removeClass('active_page');
+            $('.first_class').removeClass('active_page');
+            $('.next_link').removeClass('active_page');
+        }
+
+
+    });
+    $('.next_link').click(function() {
+        $(this).addClass('active_page');
+        $('.second_class').removeClass('active_page');
+        $('.first_class').removeClass('active_page');
+        $('.previous_link').removeClass('active_page');
+        var current_page = $('#current_page').val();
+        var page_no = parseInt(current_page) + 1;
+        getExamResultData(page_no);
+    });
+
+    function getExamResultData(page_no) {
+        $('.loader-block').show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: "{{ url('get_exam_result_data') }}/" + page_no,
+            type: 'GET',
+            success: function(data) {
+                $('.loader-block').hide();
+                $('#pagingBox').html(data.html);
+            },
+        });
+    }
+    $('.select_filter').change(function(){
+       var  filter_val = $(this).val();
+       
+
+    });
+});
+
 </script>
 @endsection
-
- 
-
- 
-
-    

@@ -259,3 +259,4 @@ Route::any('/topic-analytics/{sub_id}', [App\Http\Controllers\AnalyticsControlle
 Route::any('/ajax_validate_coupon_code', [App\Http\Controllers\SubscriptionController::class, 'validatDiscountCode'])->middleware('auth');
 /*exam history */
 Route::any('/exam_result_list', [App\Http\Controllers\ResultController::class, 'examResultList'])->middleware('auth','menu');
+Route::any('/get_exam_result_data/{page_no}', [App\Http\Controllers\ResultController::class, 'getExamResultData'])->middleware('auth','menu');
