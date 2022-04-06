@@ -125,9 +125,9 @@ $questtype='radio';
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
 
@@ -232,34 +232,34 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">Live Exam</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">Live Exam</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
+                                    <div class="col-md-5 col-lg-5">
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> </span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
+                                    <div class="col-md-4 col-lg-4">
                                         <div>
                                             <small>Target</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                            <span class="d-block"><span class="inst-text d-block">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
+                                    <div class="col-md-3 col-lg-3 d-flex">
                                         <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give you multiple opportunities to improve your scores in the
@@ -277,7 +277,7 @@ $questtype='radio';
 
                         <h1 class="my-auto text-center">
 
-                            <span class="d-block mt-3 fw-bold">All the Best! </span><span class="unaaame fw-bold">{{$userData->user_name}}</span>
+                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
 
                         </h1>
                         <div class="text-left   ">
