@@ -730,7 +730,8 @@ button#goto-otp-btn:hover {
 @media(min-width:991px) and (max-width:1120px) {
     .subScrip .row .col-md-4 {
         display: inline-flex;
-        max-width: 75% !important;
+        max-width: 100% !important;
+		width:49%;
         justify-content: center;
     }
 
