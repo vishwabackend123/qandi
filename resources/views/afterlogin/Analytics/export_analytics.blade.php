@@ -82,8 +82,11 @@ $userData = Session::get('user_data');
                                             </div>
                                             <div class="row py-5">
                                                 <div class="col-md-12 text-center">
-
-                                                    <div id="scorecontainer"></div>
+                                                    <div class="prgress-i-txt px-3">
+                                                        <span class="progress_text">Progress</span>
+                                                    </div>
+                                                    <!--div id="scorecontainer"></div-->
+                                                    <div id="comparegraph"></div>
                                                     <div class="status-id-disable     d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
                                                         <div class="star-ratings-css m-0 me-3">
                                                             <div class="star-ratings-css-top" style="width: {{round($overall_prof_perc)}}%">
@@ -99,7 +102,7 @@ $userData = Session::get('user_data');
 
                                                     </div>
                                                     <p class="text-center text-light mt-3">
-                                                        Overall Proficiency
+                                                        Overall Subjects Proficiency
                                                     </p>
                                                 </div>
 
@@ -544,6 +547,92 @@ $userData = Session::get('user_data');
             $(this).parent("p").hide();
         });
     });
+</script>
+<script>
+    /* score comparison graph */
+    Highcharts.chart('comparegraph', {
+        chart: {
+            type: 'column',
+            height: 185,
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['']
+        },
+        yAxis: [{
+            min: 0,
+            max:100,
+            title: {
+                text: 'Score %'
+            }
+        }, {
+            title: {
+                text: ''
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true,
+            enabled :false
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                }
+            },
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+            }
+        },
+
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        series: [{
+            name: 'Previous score',
+            color: '#d0f3ff',
+            data: [<?php echo $mockTestScorePre; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0,
+            dataLabels: {
+                enabled: true,
+                align: 'left',
+                x: 0,
+                y: 0,
+                rotation: 0,
+            }
+        }, {
+            name: 'Latest score',
+            color: '#21ccff',
+            data: [<?php echo $mockTestScoreCurr; ?>],
+            pointPadding: 0.3,
+            pointPlacement: 0.1,
+            dataLabels: {
+                enabled: true,
+                align: 'left',
+                x: 0,
+                y: 0,
+                rotation: 0,
+            }
+        }]
+    });
+    /* score comparison graph */
 </script>
 
 @endsection

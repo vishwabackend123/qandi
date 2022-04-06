@@ -415,9 +415,9 @@
                             <button class="btn greenBtnH rounded-0 text-uppercase px-5 text-white col-xl-3 col-lg-4 col-md-6 tickicon" title="Save Planner" id="saveplannerbutton">
                                 <!-- <img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}" >  -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="17.299" height="12.989" viewBox="0 0 20.299 15.989">
-                                    <path data-name="Path 2641" d="m5 13.388 6.04 6.388L23.119 7" transform="translate(-3.91 -5.969)" style="fill:none;stroke:#fff;stroke-width:3px"/>
+                                    <path data-name="Path 2641" d="m5 13.388 6.04 6.388L23.119 7" transform="translate(-3.91 -5.969)" style="fill:none;stroke:#fff;stroke-width:3px" />
                                 </svg>
-                                
+
                                 Save
                             </button>
                         </div>
@@ -707,12 +707,12 @@
 
         </div>
         <!--leader-board-->
-<style>
-    #EdiTbtnnn svg{
-        position: relative;
-    top: -2px;
-    }
-</style>
+        <style>
+            #EdiTbtnnn svg {
+                position: relative;
+                top: -2px;
+            }
+        </style>
         <!--profile-detail-->
         <div class="profile-show" style="min-height:650px;">
             <div class="profile-show-holder">
@@ -726,13 +726,13 @@
                             for {{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</p>
                         <span class="text-success" role="alert" id="sucessAcc_edit"> </span>
                         <button class="edit-btn-show" id="EdiTbtnnn"><span>
-                            <!--<img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""> -->
-                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5034" width="18" height="18" viewBox="0 0 21 21">
-                                <path data-name="Path 2668" d="M0 0h24v24H0z" style="fill:none"/>
-                                <path data-name="Path 2669" d="M4 20h4L18.5 9.5a2.828 2.828 0 0 0-4-4L4 16v4" style="stroke:#fff;stroke-linecap:square;stroke-width:1.5px;fill:none"/>
-                                <path data-name="Line 460" transform="translate(13.5 6.5)" style="stroke-linejoin:round;stroke:#fff;stroke-linecap:square;stroke-width:1.5px;fill:none" d="m0 0 4 4"/>
-                            </svg>
-                    </span>EDIT</button>
+                                <!--<img src="{{URL::asset('public/after_login/new_ui/images/edit-icon.png')}}" alt=""> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 5034" width="18" height="18" viewBox="0 0 21 21">
+                                    <path data-name="Path 2668" d="M0 0h24v24H0z" style="fill:none" />
+                                    <path data-name="Path 2669" d="M4 20h4L18.5 9.5a2.828 2.828 0 0 0-4-4L4 16v4" style="stroke:#fff;stroke-linecap:square;stroke-width:1.5px;fill:none" />
+                                    <path data-name="Line 460" transform="translate(13.5 6.5)" style="stroke-linejoin:round;stroke:#fff;stroke-linecap:square;stroke-width:1.5px;fill:none" d="m0 0 4 4" />
+                                </svg>
+                            </span>EDIT</button>
                     </div>
                     <!-- <div class="achievement">
                             <h4>Achievements</h4>
@@ -967,25 +967,27 @@
         box-shadow: 0px 0px 6px -3px;
         background: #fff;
     }
-    .clear_div  .dropdown ul.dropdown-menu.cust-dropdown.show {
-      transform: translate(-104px, 50px) !important;
-    
-}
- 
-.tickicon svg{
-    margin-right: 5px;
-}
+
+    .clear_div .dropdown ul.dropdown-menu.cust-dropdown.show {
+        transform: translate(-104px, 50px) !important;
+
+    }
+
+    .tickicon svg {
+        margin-right: 5px;
+    }
 
 
-.col-xl-4.col-lg-4.col-md-6.mb-4.col_max.col_min {
-    max-width: 25%;
-    min-width: 25%;
-}
-.sub_box{
-    justify-content: space-around;
-}
-.sub_box .slimScrollDiv{
-    padding: 10px;
-}
- 
+    .col-xl-4.col-lg-4.col-md-6.mb-4.col_max.col_min {
+        max-width: 25%;
+        min-width: 25%;
+    }
+
+    .sub_box {
+        justify-content: space-around;
+    }
+
+    .sub_box .slimScrollDiv {
+        padding: 10px;
+    }
 </style>

@@ -1096,6 +1096,8 @@
         return true;
     }
 
+
+
     function handleChange(subject_id) {
 
         var limit = $('#customRange').val();
@@ -1669,7 +1671,7 @@
         $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
 
-    $('.UserPro,#plannCal,.notification,.close-bnt').click(function() {
+    $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
         setTimeout(function() {
             if ($('.notification-block').hasClass('notification-block-active')) {
                 // $('.main-profile-section').removeClass("show");
@@ -1728,8 +1730,37 @@
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
     });
-    $(".custom-btn-gray").click(function() {
+    $(".goto-planner-btn").click(function() {
+        $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+        }, "100");
         $(".planmner_icon").addClass("notification-icons-active");
         $("#collapsePlanner").show();
     });
+
+    $(".user-pic-block.UserPro").on('click',function(){
+        $(".profile-section ul li:first-child").addClass("active");
+        $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").removeClass("active");
+        if( $(".profile-section ul li:first-child").hasClass("active") ){
+            $("#LeaDer , .profile-show").addClass("showCard");
+            $(".log-out-screen , .subscription-box").removeClass("showCard");
+        }
+    });
+
+    $(".profile-section ul").on('click',function(){
+        if( $(".profile-section ul li:nth-child(2)").hasClass("active") ){
+            $(".subscription-box").addClass("showCard");
+            $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");
+        }
+        else if( $(".profile-section ul li:nth-child(3)").hasClass("active") ){
+            $(".log-out-screen").addClass("showCard");
+            $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
+        } 
+        else if( $(".profile-section ul li:first-child").hasClass("active") ){
+            $("#LeaDer , .profile-show").addClass("showCard");
+            $(".log-out-screen , .subscription-box").removeClass("showCard");
+        }
+    });
+
 </script>
+
