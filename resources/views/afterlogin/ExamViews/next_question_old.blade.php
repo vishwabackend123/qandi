@@ -9,7 +9,7 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }

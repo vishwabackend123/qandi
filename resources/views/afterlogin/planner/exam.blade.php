@@ -102,7 +102,7 @@ $template_type = isset($question_data->template_type)?$question_data->template_t
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -161,10 +161,10 @@ $questtype='radio';
                         </div>
                     </div>
                     <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-						<h1 class="my-auto text-center">
+                        <h1 class="my-auto text-center">
                             <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
-                        </h1>                        
-						<div class="text-left   ">
+                        </h1>
+                        <div class="text-left   ">
                             <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
@@ -227,6 +227,7 @@ $questtype='radio';
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+                                            @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -250,7 +251,12 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
 
+                                            </div>
+                                            @endif
                                         </div>
 
                                     </div>
@@ -409,14 +415,14 @@ $questtype='radio';
                 <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
                     You haven’t attempted all of the questions.<br>
-					Do you want to have a quick review before you Submit?
+                    Do you want to have a quick review before you Submit?
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                      <span class="btnSubic">
+                        <span class="btnSubic">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                 <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
                             </svg>
@@ -470,6 +476,19 @@ $questtype='radio';
 <!-- browser back disable -->
 
 <script type="text/javascript">
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
+
     $(document).ready(function() {
         $(window).keyup(function(e) {
             if (e.keyCode == 44) {
