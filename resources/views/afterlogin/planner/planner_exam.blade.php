@@ -342,7 +342,7 @@ $questtype='radio';
                         </div>
                     </div>
                     <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
-						<h1 class="my-auto text-center">
+                        <h1 class="my-auto text-center">
                             <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
                         <div class="text-left   ">
@@ -389,14 +389,14 @@ $questtype='radio';
                 <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
                     You haven’t attempted all of the questions. <br>
-					Do you want to have a quick review before you Submit?
+                    Do you want to have a quick review before you Submit?
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 textsubmit">
-                       <span class="btnSubic">
+                        <span class="btnSubic">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                 <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
                             </svg>
