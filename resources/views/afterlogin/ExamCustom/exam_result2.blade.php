@@ -92,7 +92,7 @@
                             <div class="progress col-8 ms-auto " style="overflow: visible;">
                                 @if($tcorrect_per > 0)
                                 <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
-                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">{{$topic->correct_count}}</span>
+                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}">{{$topic->correct_count}}</span>
                                 </div>
                                 @endif
                                 @if($tincorrect_per > 0)
