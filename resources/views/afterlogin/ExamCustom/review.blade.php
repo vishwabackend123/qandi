@@ -650,7 +650,7 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
         var number_block_holder_height = $(".number_block_holder").outerHeight();
         var numberblockHeight = number_block_holder_height - 170 + "px";
 
-        var height_divided = number_block_holder_height - numberblockHeight;
+        // var height_divided = number_block_holder_height - numberblockHeight;
         $('.number_block_holder .number-block').css('height', numberblockHeight);
 
 
