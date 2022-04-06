@@ -1,4 +1,16 @@
 /* 10-0202022 */
+.allownumericwithdecimal {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f2f2f2;
+    color: #000;
+}
+.allownumericwithdecimal::placeholder {
+    color: #757575;
+    opacity: 0.8;
+}
 img.hsow {
     display: none;
 }

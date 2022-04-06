@@ -16,7 +16,22 @@ button {
     text-decoration: none;
 }
 
-
+.main-profile-section.blure-bg{animation: none!important;}
+.profile-show.animateAccountCard,#LeaDer.animateAccountCard{
+    animation-name: cssAnimation;
+    animation-duration:0.8s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+from {
+    transform: translateX(55%);
+}
+to {
+    transform: none;
+}
+}
 #LeaDer.showCard , .profile-show.showCard , .subscription-box.showCard , .log-out-screen.showCard{display: block!important;}
 #LeaDer , .profile-show , .log-out-screen , .subscription-box{display: none!important;}
 .user-pic-block.UserPro{cursor: pointer;}
@@ -1244,6 +1259,8 @@ ul.matrixLists li b {
     display: flex;
     justify-content: center;
     align-items: end;
+    align-items: flex-end;
+  -webkit-align-items: flex-end;
 }
 
 .chapter-ideal-schedule small {
@@ -2853,7 +2870,7 @@ button#saveEdit {
     border-radius: 56px !important;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff !important;
-    border: none;
+    border: none;left: 35px;
 }
 
 #referFrnd {
@@ -3298,7 +3315,7 @@ span.notification.ms-4 {
     border-radius: 56px !important;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff !important;
-    border: none;
+    border: none;left: 35px;
     /*! max-width: 624px; */
 }
 
