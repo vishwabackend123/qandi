@@ -12,7 +12,7 @@ $correct_answers = isset($question_data->answers)?json_decode($question_data->an
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -139,6 +139,7 @@ $questtype='radio';
         </div>
         <!-- Options -->
         <div class="ans-block row mt-5 N_radioans">
+            @if($template_type==1 || $template_type==2)
             @if(isset($option_data) && !empty($option_data))
             @php $no=0; @endphp
             @foreach($option_data as $key=>$opt_value)
@@ -163,6 +164,12 @@ $questtype='radio';
 
             @php $no++; @endphp
             @endforeach
+            @endif
+            @elseif($template_type==11)
+            <div class="col-md-6 mb-4">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+            </div>
             @endif
 
             <!-- --------- correct answer for demo---------- -->
