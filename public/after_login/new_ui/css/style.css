@@ -2868,7 +2868,7 @@ button#saveEdit {
     border-radius: 56px !important;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff !important;
-    border: none;
+    border: none;left: 35px;
 }
 
 #referFrnd {
@@ -3313,7 +3313,7 @@ span.notification.ms-4 {
     border-radius: 56px !important;
     box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
     background-color: #fff !important;
-    border: none;
+    border: none;left: 35px;
     /*! max-width: 624px; */
 }
 
