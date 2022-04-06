@@ -1761,6 +1761,9 @@
             $(".log-out-screen , .subscription-box").removeClass("showCard");
         }
     });
+    $(".profile-picture-txt #EdiTbtnnn").click(function(){
+        $("#LeaDer , .profile-show").removeClass("showCard");
+    });
 
 </script>
 
