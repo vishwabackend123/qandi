@@ -185,6 +185,7 @@ $questtype='radio';
 
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);
+    $("#current_question_type").val(template_type);
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");

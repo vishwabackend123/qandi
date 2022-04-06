@@ -170,6 +170,7 @@ $questtype='radio';
     //$("#exam_content_sec  #btn_" + question_id).focus();
 
     $("#current_question").val(question_id);
+    $("#current_question_type").val(template_type);
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");

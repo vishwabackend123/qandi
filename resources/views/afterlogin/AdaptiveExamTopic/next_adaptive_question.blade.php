@@ -226,6 +226,7 @@ $questtype='radio';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);
+    $("#current_question_type").val(template_type);
 
 
 

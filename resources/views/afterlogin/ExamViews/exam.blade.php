@@ -868,7 +868,7 @@ $questtype='radio';
                 option_id.push($(this).val());
             });
         }
-        console.log(option_id);
+
 
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");

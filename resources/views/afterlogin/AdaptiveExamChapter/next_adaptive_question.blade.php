@@ -223,6 +223,7 @@ $questtype='radio';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);
+    $("#current_question_type").val(template_type);
 
     //$("#exam_content_sec  #btn_" + question_id).focus();
     // $(".number-block #btn_" + question_id)[0].scrollIntoView();
