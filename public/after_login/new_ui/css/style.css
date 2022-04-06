@@ -1259,6 +1259,9 @@ ul.matrixLists li b {
     display: flex;
     justify-content: center;
     align-items: end;
+    -webkit-justify-content: flex-end;
+    align-items: flex-end;
+  -webkit-align-items: flex-end;
 }
 
 .chapter-ideal-schedule small {
