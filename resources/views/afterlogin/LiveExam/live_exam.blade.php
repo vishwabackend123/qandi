@@ -232,28 +232,28 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-danger text-uppercase">Live Exam</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">Live Exam</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    <div class="col-md-5 col-lg-5 d-flex   align-items-center">
+                                    <div class="col-md-5 col-lg-5">
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> </span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
+                                    <div class="col-md-4 col-lg-4">
                                         <div>
                                             <small>Target</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                            <span class="d-block"><span class="inst-text d-block">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3 d-flex   align-items-center">
+                                    <div class="col-md-3 col-lg-3 d-flex">
                                         <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
                                         </div>
                                     </div>
                                 </div>
