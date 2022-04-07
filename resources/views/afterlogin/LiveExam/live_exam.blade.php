@@ -42,7 +42,7 @@ $template_type = isset($question_data->template_type)?$question_data->template_t
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -63,6 +63,7 @@ $questtype='radio';
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                            <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <!-- Exam subject Tabs  -->
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @if(!empty($filtered_subject))
@@ -76,7 +77,7 @@ $questtype='radio';
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-                                <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+
                                 <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                 <div id="question_section" class="">
                                     <div class="question-block">
@@ -89,6 +90,7 @@ $questtype='radio';
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+                                            @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -112,7 +114,12 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
 
+                                            </div>
+                                            @endif
                                         </div>
 
                                     </div>
@@ -282,7 +289,7 @@ $questtype='radio';
                         </h1>
                         <div class="text-left   ">
 
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp;<img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
 
                         </div>
                     </div>
@@ -352,17 +359,22 @@ $questtype='radio';
                             <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
                         </div>
                     </div>
-                    <p class="m-0 ms-3"><strong id="lefttime_pop_h"></strong> Left</p>
+                    <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3>You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
-                    Do you want to review all your answers before you submit the test?
+                    You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
-                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        <span class="btnSubic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                            </svg>
+                        </span>&nbsp;&nbsp;&nbsp;
                         Submit TEST
                     </button>
                 </div>
@@ -376,6 +388,18 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -698,9 +722,19 @@ $questtype='radio';
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');

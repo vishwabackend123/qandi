@@ -757,7 +757,8 @@ section.d-flex.flex-column.align-items-center.justify-content-center.h-100 {
 @media(min-width:991px) and (max-width:1120px) {
     .subScrip .row .col-md-4 {
         display: inline-flex;
-        max-width: 75% !important;
+        max-width: 100% !important;
+		width:49%;
         justify-content: center;
     }
 
