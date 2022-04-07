@@ -562,7 +562,8 @@ class AdpativeExamController extends Controller
             } else {
                 $question_data = $next_question_data;
             }
-            $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
+
+            $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //current question id
             $quest_id = $activeq_id;
             $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
             $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
@@ -629,7 +630,8 @@ class AdpativeExamController extends Controller
             $sessionResult = json_decode($session_result);
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
-            $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? (array)$sessionResult->adaptive_api_url : '';
+            $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? $sessionResult->adaptive_api_url : '';
+
 
 
             $inputjson['student_id'] = (int)$user_id;
@@ -647,8 +649,8 @@ class AdpativeExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            $curl_url = isset($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
-            dd($curl_url);
+            $curl_url = !empty($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
+
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
@@ -667,6 +669,8 @@ class AdpativeExamController extends Controller
                 ),
             ));
             $response_json = curl_exec($curl);
+
+
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -731,7 +735,7 @@ class AdpativeExamController extends Controller
             $sessionResult = json_decode($session_result);
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
-            $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? (array)$sessionResult->adaptive_api_url : '';
+            $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? $sessionResult->adaptive_api_url : '';
 
 
             $inputjson['student_id'] = (int)$user_id;
@@ -748,7 +752,8 @@ class AdpativeExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            $curl_url = isset($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
+            // $curl_url = !empty($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
+            $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
