@@ -683,6 +683,10 @@
         height: 65px;
 
     }
+	.rankholder {
+		background-position: 20px -140px !important;
+		height: 345px !important;
+	}
 
     a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
         padding: 22px !important;

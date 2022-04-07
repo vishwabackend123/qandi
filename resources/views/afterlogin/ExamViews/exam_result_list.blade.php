@@ -20,14 +20,11 @@ $userData = Session::get('user_data');
       <div class="container-fluid custom-page">
          <div class="row">
             <div class="col-lg-12  p-lg-5 pt-none">
-               <div class="tab-wrapper">
+               <div class="result-list bg-white tab-wrapper">
                   <div id="scroll-mobile">
                      <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                           <a class="nav-link all_div active" id="Mathematics-tab" data-bs-toggle="tab" href="#Mathematics" role="tab" aria-controls="Mathematics" aria-selected="true">Mock</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                           <a class="nav-link all_div " id="Physics-tab" data-bs-toggle="tab" href="#Physics" role="tab" aria-controls="Physics" aria-selected="false">Attempted</a>
+                           <a class="nav-link all_div active" id="Mathematics-tab" data-bs-toggle="tab" href="#Mathematics" role="tab" aria-controls="Mathematics" aria-selected="true">Attempted</a>
                         </li>
                      </ul>
                   </div>
@@ -38,17 +35,16 @@ $userData = Session::get('user_data');
                            <div class="compLeteS" id="chapter_box_324">
                               <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
                                  <div class="d-flex align-items-center justify-content-between result-list-head">
-                                    <h4 class="m-0 p-0">JEE Main Full Syllabus 2021</h4>
+                                    <h4 class="m-lg-0 p-0">JEE Main Full Syllabus 2021</h4>
                                     <p class="m-0 p-0">01st Sept 2021</p>
                                  </div>
                                  <div class="d-flex align-items-center justify-content-center morning-slot">
                                     <p class="m-0 p-0">Morning Slots</p>
-                                    <span class="slbs-link mx-3">
+                                    <span class="slbs-link ms-5 me-lg-0 me-2">
                                     <a class="expand-custom expandTopicCollapse" aria-controls="chapter_324" data-bs-toggle="collapse" href="#chapter_324" role="button" aria-expanded="true" value="Expand to Topics" onclick="show_topic('324','1')" id="clicktopic_324"><span id="expand_topic_324">Hide Details</span></a></span>
                                  </div>
-                                 <div class="d-flex align-items-center justify-content-between result-list-btns">
-                                    <a href="javascript:void(0);"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <button class="btn result-review ml-3">Review Exam</button>
+                                 <div class="result-list-btns">
+                                    <button class="btn result-review w-100">Review Exam</button>
                                  </div>
                               </div>
                               <div class="mb-4 collapse" id="chapter_324">
@@ -57,7 +53,7 @@ $userData = Session::get('user_data');
                                        <p class="p-0 mb-3">Score:<span>102</span>/300</p>
                                        <button class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</button>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center paper-summery ps-5 pe-2">
+                                    <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
                                        <div class="paper-sub">
                                           <small>No of Question</small>
                                           <span>90 MCQ</span>
@@ -77,21 +73,20 @@ $userData = Session::get('user_data');
                                     </div>
                                  </div>
                               </div>
-                               </div>
-                             <div class="compLeteS" id="chapter_box_325">
+                           </div>
+                           <div class="compLeteS" id="chapter_box_325">
                               <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
                                  <div class="d-flex align-items-center justify-content-between result-list-head">
-                                    <h4 class="m-0 p-0">Application of Derivatives</h4>
+                                    <h4 class="m-lg-0 p-0">Application of Derivatives</h4>
                                     <p class="m-0 p-0">10st Sept 2021</p>
                                  </div>
                                  <div class="d-flex align-items-center justify-content-center morning-slot">
                                     <p class="m-0 p-0">Evening Slots</p>
-                                    <span class="slbs-link mx-3">
-                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_324" data-bs-toggle="collapse" href="#chapter_325" role="button" aria-expanded="true" value="Expand to Topics" onclick="show_topic('324','1')" id="clicktopic_324"><span id="expand_topic_324">Hide Details</span></a></span>
+                                    <span class="slbs-link ms-5 me-lg-0 me-2">
+                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_324" data-bs-toggle="collapse" href="#chapter_325" role="button" aria-expanded="true" value="Expand to Topics" onclick="show_topic('324','1')" id="clicktopic_324"><span id="expand_topic_325">Hide Details</span></a></span>
                                  </div>
-                                 <div class="d-flex align-items-center justify-content-between result-list-btns">
-                                    <a href="javascript:void(0);"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                    <button class="btn result-review ml-3">Review Exam</button>
+                                 <div class="result-list-btns">
+                                    <button class="btn result-review w-100">Review Exam</button>
                                  </div>
                               </div>
                               <div class="mb-4 collapse" id="chapter_325">
@@ -100,7 +95,7 @@ $userData = Session::get('user_data');
                                        <p class="p-0 mb-3">Score:<span>102</span>/300</p>
                                        <button class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</button>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center paper-summery ps-5 pe-2">
+                                    <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
                                        <div class="paper-sub">
                                           <small>No of Question</small>
                                           <span>90 MCQ</span>
@@ -119,192 +114,6 @@ $userData = Session::get('user_data');
                                        </div>
                                     </div>
                                  </div>
-                              </div>
-                               </div>
-                            
-                            
-                      
-                            
-                            
-                        </div>
-                     </div>
-                     <div class="tab-pane fade show " id="Physics" role="tabpanel" aria-labelledby="Physics-tab">
-                        <div class="d-flex px-4 py-2 align-items-center clear_div ">
-                           <div class="dropdown">
-                              <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Chapters Filter">
-                                 <!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
-                                 <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-4860.png" class="dsow">
-                                    <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-4860-white.png" class="hsow"> -->
-                                 <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4860" width="24" height="24" viewBox="0 0 24 24">
-                                    <path data-name="Path 11531" d="M0 0h24v24H0z" style="fill:none"></path>
-                                    <path data-name="Path 11532" d="m3 9 4-4 4 4M7 5v14" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                    <path data-name="Path 11533" d="m21 15-4 4-4-4m4 4V5" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                 </svg>
-                              </button>
-                              <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink">
-                                 <li>
-                                    <a class="dropdown-item" onclick="chapterlist_filter('2','prof_asc')" href="javascript:void(0);">
-                                       <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-4864.png"> -->
-                                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-                                          <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none"></path>
-                                          <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                                          <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                       </svg>
-                                       Low Proficiency
-                                    </a>
-                                 </li>
-                                 <li>
-                                    <a class="dropdown-item" onclick="chapterlist_filter('2','prof_desc')" href="javascript:void(0);">
-                                       <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-2976.png"> -->
-                                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                                          <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"></path>
-                                          <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                                          <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                       </svg>
-                                       High Proficiency
-                                    </a>
-                                 </li>
-                                 <li>
-                                    <a class="dropdown-item" onclick="chapterlist_filter('2','asc')" href="javascript:void(0);">
-                                       <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-2978.png"> -->
-                                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2978" width="24" height="24" viewBox="0 0 24 24">
-                                          <path data-name="Path 2681" d="M0 0h24v24H0z" style="fill:none"></path>
-                                          <path data-name="Path 2682" d="M15 10V5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2683" d="M19 21h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2684" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2685" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                       </svg>
-                                       A to Z order
-                                    </a>
-                                 </li>
-                                 <li>
-                                    <a class="dropdown-item" onclick="chapterlist_filter('2','desc')" href="javascript:void(0);">
-                                       <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-2979.png"> -->
-                                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2979" width="24" height="24" viewBox="0 0 24 24">
-                                          <path data-name="Path 2686" d="M0 0h24v24H0z" style="fill:none"></path>
-                                          <path data-name="Path 2687" d="M15 21v-5c0-1.38.62-2 2-2s2 .62 2 2v5m0-3h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2688" d="M19 10h-4l4-7h-4" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2689" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 2690" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                       </svg>
-                                       Z to A order
-                                    </a>
-                                 </li>
-                              </ul>
-                           </div>
-                           <a class="clear-filter" href="javascript:void(0);" onclick="clear_chapter_filter('2','clear')" style="display:none">Clear</a>
-                        </div>
-                        <div class="scroll-div" id="chapter_list_2">
-                           <div class="compLeteS" id="chapter_box_253">
-                              <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
-                                 <span class=" mr-3 name-txt" title="Alternating current">Alternating current</span>
-                                 <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                                    <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                                       <div class="star-ratings-css">
-                                          <div class="star-ratings-css-top" style="width: 0%">
-                                             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                          </div>
-                                          <div class="star-ratings-css-bottom">
-                                             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                          </div>
-                                       </div>
-                                       <div class="ms-1 score score-rating js-score">
-                                          0%
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <span class="slbs-link mx-3">
-                                 <a class="expand-custom expandTopicCollapse" aria-controls="chapter_253" data-bs-toggle="collapse" href="#chapter_253" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('253','2')" id="clicktopic_253"><span id="expand_topic_253">Expand to Topics</span></a></span>
-                                 <div class="d-flex px-4">
-                                    <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
-                                       <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
-                                       <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-4860.png" class="dsowl">
-                                          <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-4860-white.png" class="hsowl"> -->
-                                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4860" width="24" height="24" viewBox="0 0 24 24">
-                                          <path data-name="Path 11531" d="M0 0h24v24H0z" style="fill:none"></path>
-                                          <path data-name="Path 11532" d="m3 9 4-4 4 4M7 5v14" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                          <path data-name="Path 11533" d="m21 15-4 4-4-4m4 4V5" style="stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
-                                       </svg>
-                                    </button>
-                                    <ul class="dropdown-menu cust-dropdown" aria-labelledby="dropdownMenuLink-topic">
-                                       <li>
-                                          <a class="dropdown-item" onclick="topiclist_filter('253','prof_asc')" href="javascript:void(0);">
-                                             <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-4864.png"> -->
-                                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4864" width="24" height="24" viewBox="0 0 24 24">
-                                                <path data-name="Path 2676" d="M0 0h24v24H0z" style="fill:none"></path>
-                                                <path data-name="Path 2677" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2678" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2679" d="M17 3a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <circle data-name="Ellipse 785" cx="2" cy="2" r="2" transform="translate(15 14)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                                                <path data-name="Path 2680" d="M19 16v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                             </svg>
-                                             Low Proficiency
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a class="dropdown-item" onclick="topiclist_filter('253','prof_desc')" href="javascript:void(0);">
-                                             <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-2976.png"> -->
-                                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                                                <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"></path>
-                                                <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                                                <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                             </svg>
-                                             High Proficiency
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a class="dropdown-item" onclick="topiclist_filter('253','priority')" href="javascript:void(0);">
-                                             <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-2978.png"> -->
-                                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                                                <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"></path>
-                                                <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                                                <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                             </svg>
-                                             Order by Priority
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a class="dropdown-item" onclick="topiclist_filter('253','sequence')" href="javascript:void(0);">
-                                             <!-- <img src="http://app.thomsondigital2021.com/public/after_login/new_ui/images/Group-2979.png"> -->
-                                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 2976" width="24" height="24" viewBox="0 0 24 24">
-                                                <path data-name="Path 2671" d="M0 0h24v24H0z" style="fill:none"></path>
-                                                <path data-name="Path 2672" d="m4 15 3 3 3-3" style="stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2673" d="M7 6v12" style="stroke-linejoin:round;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <path data-name="Path 2674" d="M17 14a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-3a2 2 0 0 1 2-2z" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                                <circle data-name="Ellipse 784" cx="2" cy="2" r="2" transform="translate(15 3)" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></circle>
-                                                <path data-name="Path 2675" d="M19 5v3a2 2 0 0 1-2 2h-1.5" style="stroke-linecap:square;stroke:#000;stroke-width:1.5px;fill:none"></path>
-                                             </svg>
-                                             Order by Sequence
-                                          </a>
-                                       </li>
-                                    </ul>
-                                 </div>
-                                 <form method="post" action="http://app.thomsondigital2021.com/custom_exam_chapter">
-                                    <input type="hidden" name="_token" value="Nkk2x4ZCUoSVNEV8tv3UnM1GOaJwR4VPgeB9F9JE">                        <input type="hidden" name="subject_id" value="">
-                                    <input type="hidden" name="subject_name" value="Physics">
-                                    <input type="hidden" name="chapter_id" value="253">
-                                    <input type="hidden" name="question_count" value="30">
-                                    <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
-                                 </form>
-                              </div>
-                              <div class="collapse mb-4" id="chapter_253">
-                                 <section id="topic_section_253" class="slick-slider mb-4 slick-initialized">
-                                    <div class="slick-list draggable">
-                                       <div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);"></div>
-                                    </div>
-                                 </section>
                               </div>
                            </div>
                         </div>
@@ -513,7 +322,7 @@ $userData = Session::get('user_data');
    $('a.expandTopicCollapse span').click(function() {
      var spanId = this.id;
      var curr_text = $("#" + spanId).text();
-     var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
+     var updatetext = ((curr_text == 'Show Details') ? 'Hide Details' : 'Show Details');
      $("#" + spanId).text(updatetext);
    })
    
@@ -522,7 +331,7 @@ $userData = Session::get('user_data');
    /* getting Next Question Data */
    function show_topic(chapt_id, sub_id) {
    
-     this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
+     this.value = (this.value == 'Show Details' ? 'Hide Details' : 'Show Details');
    
      var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
    
@@ -727,7 +536,7 @@ $userData = Session::get('user_data');
    font-weight: 600;
    }
    .morning-slot{
-   flex: 1.8;    
+   flex: 2;    
    }
    .morning-slot p{
    color: #231f20;
@@ -735,7 +544,7 @@ $userData = Session::get('user_data');
    font-weight: 600; 
    }
    .result-list-btns{
-   flex: 1.5;    
+   flex: 1;    
    }
    .result-list-btns a{
    width: 57px;
@@ -774,6 +583,8 @@ $userData = Session::get('user_data');
    background: #13c5ff;
    background-color: #13c5ff;
    border-color: #13c5ff;
+   -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+   -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
    font-size: 14px;
    font-weight: 600;
@@ -801,9 +612,30 @@ $userData = Session::get('user_data');
    font-size: 13px;
    font-weight: 600;
    }
-    .result-list-table .slbs-link a {
-    font-size: 14px;
-}
+   .result-list-table .slbs-link a {
+   font-size: 14px;
+   font-weight: 600;
+   }
+   @media only screen and (max-width: 1199px){
+   .result-list-head h4 {
+   font-size: 15px;
+   flex:1;
+   margin-right: 20px;
+   margin-bottom: 0;
+   }    
+   .result-list-head p {
+   font-size: 15px;
+   flex: 1;
+   } 
+   }
+   @media only screen and (max-width: 991px){
+   .result-list .d-flex.justify-content-between {
+   display: flex !important;
+   }
+   .result-review {
+   font-size: 13px;
+   }
+   }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 @endsection

@@ -9105,9 +9105,8 @@ input#linkInput {
     background-image: url(../images/exportbg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top -100px right-201px;
-    background-position: -31px -226px;
-    height: 696px;
+    background-position: 0px -140px;
+    height: 480px;
 }
 
 .rankholder .greentxt {
