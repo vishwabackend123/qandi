@@ -123,6 +123,7 @@ class HomeController extends Controller
                 $subjectData = [];
                 $trendResponse = [];
             }
+
             $uSubjects = [];
             if (empty($subjectData)) {
                 foreach ($user_subjects as $key => $sub) {
@@ -267,7 +268,7 @@ class HomeController extends Controller
                 $subjectPlanner_miss = false;
             }
 
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss'));
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
