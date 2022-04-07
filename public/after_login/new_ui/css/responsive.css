@@ -668,10 +668,8 @@
     }
 
     .profile-picture-txt .p-picture {
-
-        width: 65px;
-        height: 65px;
-
+        width: 30%;
+        height: auto !important;
     }
 
     /** end here **/

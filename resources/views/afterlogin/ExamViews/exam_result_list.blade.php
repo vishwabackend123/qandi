@@ -57,7 +57,7 @@ $userData = Session::get('user_data');
                                        <p class="p-0 mb-3">Score:<span>102</span>/300</p>
                                        <button class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</button>
                                     </div>
-                                    <div class="d-flex justify-content-between paper-summery ps-5 pe-2">
+                                    <div class="d-flex justify-content-between align-items-center paper-summery ps-5 pe-2">
                                        <div class="paper-sub">
                                           <small>No of Question</small>
                                           <span>90 MCQ</span>
@@ -78,14 +78,14 @@ $userData = Session::get('user_data');
                                  </div>
                               </div>
                                </div>
-                             <div class="compLeteS" id="chapter_box_324">
+                             <div class="compLeteS" id="chapter_box_325">
                               <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
                                  <div class="d-flex align-items-center justify-content-between result-list-head">
-                                    <h4 class="m-0 p-0">JEE Main Full Syllabus 2021</h4>
-                                    <p class="m-0 p-0">01st Sept 2021</p>
+                                    <h4 class="m-0 p-0">Application of Derivatives</h4>
+                                    <p class="m-0 p-0">10st Sept 2021</p>
                                  </div>
                                  <div class="d-flex align-items-center justify-content-center morning-slot">
-                                    <p class="m-0 p-0">Morning Slots</p>
+                                    <p class="m-0 p-0">Evening Slots</p>
                                     <span class="slbs-link mx-3">
                                     <a class="expand-custom expandTopicCollapse" aria-controls="chapter_324" data-bs-toggle="collapse" href="#chapter_325" role="button" aria-expanded="true" value="Expand to Topics" onclick="show_topic('324','1')" id="clicktopic_324"><span id="expand_topic_324">Hide Details</span></a></span>
                                  </div>
@@ -100,7 +100,7 @@ $userData = Session::get('user_data');
                                        <p class="p-0 mb-3">Score:<span>102</span>/300</p>
                                        <button class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</button>
                                     </div>
-                                    <div class="d-flex justify-content-between paper-summery ps-5 pe-2">
+                                    <div class="d-flex justify-content-between align-items-center paper-summery ps-5 pe-2">
                                        <div class="paper-sub">
                                           <small>No of Question</small>
                                           <span>90 MCQ</span>
@@ -121,6 +121,9 @@ $userData = Session::get('user_data');
                                  </div>
                               </div>
                                </div>
+                            
+                            
+                      
                             
                             
                         </div>
@@ -729,7 +732,7 @@ $userData = Session::get('user_data');
    .morning-slot p{
    color: #231f20;
    font-size: 14px;
-   font-weight: 400; 
+   font-weight: 600; 
    }
    .result-list-btns{
    flex: 1.5;    
@@ -785,6 +788,7 @@ $userData = Session::get('user_data');
    }
    .paper-sub {
    font-size: 13px;
+   flex: 1;
    }
    .paper-sub span {
    color: #00baff;
@@ -797,6 +801,9 @@ $userData = Session::get('user_data');
    font-size: 13px;
    font-weight: 600;
    }
+    .result-list-table .slbs-link a {
+    font-size: 14px;
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 @endsection

@@ -506,18 +506,18 @@ $userData = Session::get('user_data');
                         @endif
                         @endforeach
                         @if(isset($subjectPlanner_miss) && $subjectPlanner_miss==true)
-                        <!-- <div class="swiper-slide bg-white text-center subject-placeholder-block">
-                            <span>
-                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                                <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
-                            </span>
-                            <div style="margin-top: -8px;">
-                               
+                        @foreach($subjectData as $sKey=>$sVal)
+                        @if(!in_array($sVal['id'],$planner_subject))
+                        <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                            <img src="{{$sVal['subject_thumbnail_image_path']}}">
+                            <div>
+                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
-                                MORE
+                                {{strtoupper($sVal['subject_name'])}}
                             </div>
                         </div>
- -->
+                        @endif
+                        @endforeach
                         @endif
                         @endif
                     </div>
