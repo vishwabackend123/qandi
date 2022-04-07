@@ -371,3 +371,9 @@
    .subscription .profile-picture-txt .p-text {width: 100%;}
    .subscrived {margin: 20px 0px 0px;}
 }
+
+@media(max-width:767px){
+    
+.padd-right-0{padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
+
+}

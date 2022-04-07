@@ -86,7 +86,7 @@ $userData = Session::get('user_data');
                             </p>
                         </small>
                         <div class="row h-100">
-                            <div class="col-lg-7 col-sm-12 col-md-7" style="padding-right:0!important;">
+                            <div class="col-lg-7 col-sm-12 col-md-7 padd-right-0">
                                 <div style="padding:20px 0 0;">
                                     <div class="prgress-i-txt px-3 mb-1" style="padding-left:30px!important;">
                                         <span class="progress_text">MyQ Today</span>
