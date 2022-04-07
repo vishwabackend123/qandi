@@ -110,7 +110,7 @@ $template_type = isset($question_data->template_type)?$question_data->template_t
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -125,6 +125,7 @@ $questtype='radio';
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                            <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile">
                                 <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
@@ -166,6 +167,7 @@ $questtype='radio';
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+                                            @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -189,7 +191,12 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
 
+                                            </div>
+                                            @endif
                                         </div>
 
                                     </div>
@@ -452,6 +459,18 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -844,9 +863,19 @@ $questtype='radio';
         var question_id = question_id;
         var nextquestId = '{{$next_qid}}';
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');

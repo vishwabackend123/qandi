@@ -5,10 +5,11 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
+
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -116,6 +117,7 @@ $questtype='radio';
         <!-- Next and previous button -->
         <div class="question py-3 d-flex"><span class="q-no">Q{{$qNo}}.</span>{!! $question_text !!}</div>
         <div class="ans-block row my-3">
+            @if($template_type==1 || $template_type==2)
             @if(isset($option_data) && !empty($option_data))
             @php $no=0; @endphp
             @foreach($option_data as $key=>$opt_value)
@@ -138,6 +140,12 @@ $questtype='radio';
             </div>
             @php $no++; @endphp
             @endforeach
+            @endif
+            @elseif($template_type==11)
+            <div class="col-md-6 mb-4">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+            </div>
             @endif
         </div>
     </div>
@@ -162,6 +170,7 @@ $questtype='radio';
     //$("#exam_content_sec  #btn_" + question_id).focus();
 
     $("#current_question").val(question_id);
+    $("#current_question_type").val(template_type);
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");
@@ -183,6 +192,18 @@ $questtype='radio';
             } else {
                 $("#exam_content_sec  #btn_" + question_id).focus();
             }
+        }
+    });
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
         }
     });
 </script>
