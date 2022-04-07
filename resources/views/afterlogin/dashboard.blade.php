@@ -845,8 +845,8 @@ $userData = Session::get('user_data');
                     spaceBetween: 30,
                 },
                 300: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
+                    slidesPerView: 'auto',
+                    spaceBetween: 30
                 }
             }
         });
