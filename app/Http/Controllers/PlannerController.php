@@ -487,7 +487,7 @@ class PlannerController extends Controller
             $keys = array_keys($allQuestionDetails);
 
             $question_data = (object)current($allQuestionDetails);
-            // dd($question_data);
+
 
             $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
             $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
