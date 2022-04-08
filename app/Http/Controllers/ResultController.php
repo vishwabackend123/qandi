@@ -310,9 +310,16 @@ class ResultController extends Controller
             $result_data = $this->getAllResult($exam_type);
             foreach($result_data as $key => $value)
             {
-                $id=explode(',', $value->subject_id_list);
-                $filtered_subject = $cSubjects->whereIn('id', $id)->all();
-                $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
+                $id = explode(',', $value->subject_id_list);
+                if($id)
+                {
+                   $filtered_subject = $cSubjects->whereIn('id', $id)->all();
+                   $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
+                }else
+                {
+                    $result_data[$key]->subject_name = "";
+                }
+                
             }
             return view('afterlogin.ExamViews.mock_result_list', compact('result_data'));
         } catch (\Exception $e) {
