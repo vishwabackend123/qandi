@@ -180,6 +180,7 @@
 .overllanaly .tab-wrapper #scroll-mobile{
     padding-bottom: 40px;
 }
+.profile-show{background-position: center 28px;}
 }
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{
