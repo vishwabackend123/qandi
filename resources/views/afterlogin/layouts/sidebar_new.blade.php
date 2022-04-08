@@ -275,7 +275,7 @@
                     <path id="Line_32" data-name="Line 32" d="M4,4.75a.748.748,0,0,1-.53-.22l-4-4A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l4,4A.75.75,0,0,1,4,4.75Z" transform="translate(13.5 6.5)" />
                 </svg>
                 Practice</a>
-            <a href="{{route('adaptive_mock_exam')}}" class="nav-link">
+            <a class="nav-link" data-bs-toggle="collapse" href="#submenu3" aria-expanded="false" aria-controls="collapseExample">
                 <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
@@ -345,6 +345,41 @@
                     <path id="Line_367" data-name="Line 367" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(12 6)" />
                     <path id="Line_368" data-name="Line 368" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(21 6)" />
                 </svg> Test Series</a>
+        </div>
+    </div>
+    <div class="submenu-L2 collapse width" id="submenu3">
+        <div class="mt-5 mb-5 pb-5 pt-5"></div>
+        <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
+            <a href="{{route('adaptive_mock_exam')}}" class="nav-link">
+               <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: none;
+                            }
+                        </style>
+                    </defs>
+                    <path id="Path_17" data-name="Path 17" class="cls-1" d="M0,0H24V24H0Z" />
+                    <path id="Path_18" data-name="Path 18" d="M15,20.75H6A2.753,2.753,0,0,1,3.25,18V9A2.753,2.753,0,0,1,6,6.25H9a.75.75,0,0,1,0,1.5H6A1.251,1.251,0,0,0,4.75,9v9A1.251,1.251,0,0,0,6,19.25h9A1.251,1.251,0,0,0,16.25,18V15a.75.75,0,0,1,1.5,0v3A2.753,2.753,0,0,1,15,20.75Z" />
+                    <path id="Path_19" data-name="Path 19" d="M12,15.75H9A.75.75,0,0,1,8.25,15V12a.75.75,0,0,1,.22-.53l8.5-8.5A2.871,2.871,0,0,1,21.03,7.03l-8.5,8.5A.75.75,0,0,1,12,15.75Zm-2.25-1.5h1.939l8.28-8.28A1.371,1.371,0,0,0,18.03,4.03l-8.28,8.28Z" />
+                    <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
+                </svg>
+                Mock Test</a>
+            <a href="{{ url('/exam_result_list/Mocktest') }}" class="nav-link">
+            <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: none;
+                            }
+                        </style>
+                    </defs>
+                    <path id="Path_17" data-name="Path 17" class="cls-1" d="M0,0H24V24H0Z" />
+                    <path id="Path_18" data-name="Path 18" d="M15,20.75H6A2.753,2.753,0,0,1,3.25,18V9A2.753,2.753,0,0,1,6,6.25H9a.75.75,0,0,1,0,1.5H6A1.251,1.251,0,0,0,4.75,9v9A1.251,1.251,0,0,0,6,19.25h9A1.251,1.251,0,0,0,16.25,18V15a.75.75,0,0,1,1.5,0v3A2.753,2.753,0,0,1,15,20.75Z" />
+                    <path id="Path_19" data-name="Path 19" d="M12,15.75H9A.75.75,0,0,1,8.25,15V12a.75.75,0,0,1,.22-.53l8.5-8.5A2.871,2.871,0,0,1,21.03,7.03l-8.5,8.5A.75.75,0,0,1,12,15.75Zm-2.25-1.5h1.939l8.28-8.28A1.371,1.371,0,0,0,18.03,4.03l-8.28,8.28Z" />
+                    <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
+                </svg>
+                Attempted</a>
         </div>
     </div>
     <div class="submenu-L1 collapse width" id="submenupreparation">
@@ -435,14 +470,13 @@
                                     <g id="Component_78" data-name="Component 78" transform="translate(-3 -3)">
                                         <g id="Group_1828" data-name="Group 1828" transform="translate(12 12)">
                                             <g id="Group_1832" data-name="Group 1832">
-                                                <path id="Path_2326" data-name="Path 2326" class="cls-2" d="M0,0H30V30H0Z" style=""/>
+                                                <path id="Path_2326" data-name="Path 2326" class="cls-2" d="M0,0H30V30H0Z" style="" />
                                                 <circle id="Ellipse_716" data-name="Ellipse 716" class="cls-3" cx="5.167" cy="5.167" r="5.167" transform="translate(6.724 3.875)" />
                                                 <path id="Path_2327" data-name="Path 2327" class="cls-3" d="M3,22.75V20.167A5.167,5.167,0,0,1,8.167,15h5.167A5.167,5.167,0,0,1,18.5,20.167V22.75" transform="translate(0.875 3.375)" />
                                                 <path id="Path_2328" data-name="Path 2328" class="cls-3" d="M16,11.875h7.75M19.875,8v7.75" transform="translate(3.667 1.889)" />
                                             </g>
                                         </g>
                                     </g>
-                                
                                 </svg>
                                 SEND INVITE
                             </button>
