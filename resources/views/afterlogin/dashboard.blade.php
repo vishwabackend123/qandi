@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
+
 @endphp
 @section('content')
 <!-- Modal -->

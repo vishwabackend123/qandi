@@ -33,7 +33,7 @@ class FullExamController extends Controller
             }
 
             if ($exam_name == 'full_exam') {
-                $exam_name = 'Full Exam';
+                $exam_name = 'Full Body Scan Test';
             } else {
                 $exam_name = 'Mock Test';
             }
