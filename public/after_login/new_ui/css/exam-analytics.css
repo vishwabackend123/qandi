@@ -2,7 +2,7 @@
 #home button.btn,
 .Ex-anal {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background: #e9e9e9;
     border: none;
     color: #000;
@@ -100,7 +100,7 @@ div#topicclose,
     background: #f2f2f2;
     color: #231f20;
     border-radius: 5px;
-    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
 }
 
 #myTabContent .progress {
@@ -111,7 +111,7 @@ div#topicclose,
     background: #13c5ff;
     background-color: #13c5ff;
     border-color: #13c5ff;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
 }
 
 
