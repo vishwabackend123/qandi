@@ -1636,7 +1636,7 @@
 
     /** live exam end **/
     .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgba(0,0 0,0.1);
         border-top-left-radius: 56px;
         border-top-right-radius: 56px;
 
@@ -1982,7 +1982,7 @@
         position: absolute;
         right: 23%;
         top: 0%;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0, 0, 0,0.16);
         display: none;
     }
 
@@ -2058,7 +2058,7 @@
         position: absolute;
         right: 23%;
         top: 0%;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
         display: none;
 
     }
@@ -2177,7 +2177,7 @@
         background: #5ebbfe;
         color: #fff;
         font-weight: 500;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         padding: 15px 20px;
 
     }
@@ -2269,7 +2269,7 @@
 		background: #fff;
 		border-radius: 50%;
 		padding: 0px;
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
     }
 
     .btm-form-flds {
@@ -2401,7 +2401,7 @@
 
     #full-txtBlock {
         border-radius: 42px;
-        box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff) !important;
     }
 
@@ -2521,7 +2521,7 @@
     .ms-auto span.me-1 .bg-light-red {
         background: #00baff !important;
         border-radius: 10px;
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
         margin-right: 15px;
     }
 
@@ -2544,7 +2544,7 @@
 
     #test_instruction button#goto-exam-btn {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(241deg, #21ccff, #21ccff);
         border: none;
         padding: 15px 65px;
@@ -2558,7 +2558,7 @@
     #FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
     #endExam .modal-content.rounded-0 {
         border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
         border: none;
     }
 
@@ -3412,7 +3412,7 @@
     /* share friends */
     #sharefrnd .modal-content.rounded-0.bg-light {
         border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
         background-color: #fff !important;
     }
 
@@ -3505,7 +3505,7 @@
     #home button.btn,
     .Ex-anal {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         color: #fff;
@@ -3550,7 +3550,7 @@
         background: #f2f2f2;
         color: #231f20;
         border-radius: 5px;
-        box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: 0 3px 10px 0 rgba(0,0,0 ,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
     }
 
     #myTabContent .bg-light-red {
@@ -3609,7 +3609,7 @@
 
     div#contentHtml .report-block2 .bg-white {
         border-radius: 56px;
-        box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
+        box-shadow: 0 0 20px 0 rgba(123,123,123 ,0.2);
         background-color: #fff;
         padding: 30px !important;
     }
@@ -3746,7 +3746,7 @@
 
     .Dwonload {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         color: #fff;
