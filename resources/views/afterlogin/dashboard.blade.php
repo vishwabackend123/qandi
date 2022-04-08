@@ -129,7 +129,6 @@ $userData = Session::get('user_data');
                             <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
-
                                 <li>
                                     <strong>{{$sub['subject_name']}}</strong>
                                     <span class="star-img">
@@ -507,14 +506,14 @@ $userData = Session::get('user_data');
                         @endif
                         @endforeach
                         @if(isset($subjectPlanner_miss) && $subjectPlanner_miss==true)
-                        @foreach($user_subjects as $sKey=>$sVal)
-                        @if(!in_array($sVal->id,$planner_subject))
+                        @foreach($subjectData as $sKey=>$sVal)
+                        @if(!in_array($sVal['id'],$planner_subject))
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
-                            <img src="{{$sVal->subject_thumbnail_image_path}}">
+                            <img src="{{$sVal['subject_thumbnail_image_path']}}">
                             <div>
                                 <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
-                                {{strtoupper($sVal->subject_name)}}
+                                {{strtoupper($sVal['subject_name'])}}
                             </div>
                         </div>
                         @endif
