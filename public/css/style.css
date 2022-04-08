@@ -493,10 +493,10 @@ input.form-control.email-addrs {
     }
 
     .login_screen {
-        margin-top: 30px !important;
+        margin-top: 50px !important;
         width: 90%;
         /*min-height: auto;*/
-        padding: 20px 10px !important;
+        padding: 20px 20px !important;
     }
 }
 
