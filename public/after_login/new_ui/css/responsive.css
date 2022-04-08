@@ -2564,7 +2564,7 @@
 
     #endExam #See-Ana {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0. 8);
         background-image: linear-gradient(241deg, #21ccff, #21ccff);
         border: none;
         padding: 15px 65px;
@@ -2598,7 +2598,7 @@
     }
 
     .exam-analytics .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
         border-top-left-radius: 56px;
         border-top-right-radius: 56px;
         border-radius: 56px;
@@ -2628,7 +2628,7 @@
     }
 
     .exam-analytics button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         border-radius: 20px;
@@ -2674,7 +2674,7 @@
     }
 
     button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         border-radius: 20px;
@@ -2712,7 +2712,7 @@
 
     .percentage-21 {
         border-radius: 20px;
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
         width: 380px;
         background: #fff;
         padding: 10px;
