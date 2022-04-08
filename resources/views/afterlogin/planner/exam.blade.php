@@ -127,13 +127,13 @@ $questtype='radio';
                                         <div class="me-2"></div>
                                         <div>
                                             <small>No. Of Questions</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$questions_count}} MCQ</span> Questions </span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$questions_count}} MCQ</span> Questions </span>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 d-flex  align-items-center ms-auto me-left">
                                         <div>
                                             <small>Target</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
                                     <div class="col-md-3 col-lg-3 d-flex   align-items-center">
@@ -146,7 +146,7 @@ $questtype='radio';
                                 </div>
 
                             </div>
-                            <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give you multiple opportunities to improve your scores in the

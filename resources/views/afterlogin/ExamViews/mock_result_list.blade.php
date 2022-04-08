@@ -80,7 +80,7 @@ $userData = Session::get('user_data');
                                             <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
                                                 <div class="score-show text-center">
                                                     <p class="p-0 mb-3">Score:<span>{{$sche->marks_gain}}</span>/{{$sche->no_of_question * 4}}</p>
-                                                    <a href="{{route('overall_analytics')}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</a>
+                                                    <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</a>
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
                                                     <div class="paper-sub">
