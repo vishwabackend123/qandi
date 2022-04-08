@@ -366,5 +366,9 @@ class ResultController extends Controller
             return false;
         }
     }
+    public function getExamResultAnalytics ($result_id)
+    {
+        return view('afterlogin.ExamCustom.exam_result_analytics');        
+    }
     
 }
