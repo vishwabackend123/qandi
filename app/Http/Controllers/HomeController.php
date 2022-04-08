@@ -49,7 +49,9 @@ class HomeController extends Controller
             $exam_id = $userData->grade_id;
             $user_subjects = $this->redis_subjects();
 
-
+            $uSubjects = [];
+            $subCollection = collect($user_subjects);
+            $uSubjects = $subCollection->pluck('id')->toArray();
 
             $preferences = $this->redis_Preference();
 
@@ -124,7 +126,8 @@ class HomeController extends Controller
                 $trendResponse = [];
             }
 
-            $uSubjects = [];
+
+
             if (empty($subjectData)) {
                 foreach ($user_subjects as $key => $sub) {
                     $sub->total_questions = 0;
@@ -132,9 +135,10 @@ class HomeController extends Controller
                     $sub->score = 0;
 
                     $subjectData[$key] = (array)$sub;
-                    array_push($uSubjects, $sub->id);
                 }
             }
+
+
 
 
             $curl = curl_init();
@@ -268,7 +272,8 @@ class HomeController extends Controller
                 $subjectPlanner_miss = false;
             }
 
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject'));
+
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

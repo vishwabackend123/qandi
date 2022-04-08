@@ -959,6 +959,13 @@
             menu_opened === true) {
             $('#submenu2').collapse('toggle');
         }
+        var menu_opened = $('#submenu3').hasClass('show');
+
+        if (!$(e.target).closest('#submenu').length &&
+            !$(e.target).is('#submenu3') &&
+            menu_opened === true) {
+            $('#submenu3').collapse('toggle');
+        }
 
         var menu_opened = $('#submenupreparation').hasClass('show');
 
