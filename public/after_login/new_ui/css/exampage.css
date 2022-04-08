@@ -27,7 +27,7 @@ li.a3TS {
     width: 15% !important;
 }
 .btn-topic:hover {
-    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
+    box-shadow: 0 3px 10px 0 rgba(255,255,255, 0.8) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
     height: 310px !important;
@@ -49,7 +49,7 @@ ul.dropdown-menu.cust-dropdown.show li a img {
 ul.dropdown-menu.cust-dropdown.show {
     border-radius: 32px;
     border: none;
-	box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
+	box-shadow: 0 0 30px 0 rgb(0,0,0,0.1), inset 0 0 0 0 rgba(0,0,0,0.51);
     padding: 22px 0px 22px 0px; 
 } 
  .custom-page #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show{top: calc(100% - 35px)!important;}
@@ -247,14 +247,14 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0:hover {
     background: #00baff !important;
     color: #fff !important;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
 }
 
 .examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
 .examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
 .examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
     background: #e9e9e9;
     border: none;
     text-transform: none;
@@ -293,7 +293,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect .rightSect button.btn.btn-light-green.w-100.rounded-0.mt-3 {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(240deg, #21ccff, #21ccff 1%);
     color: #fff;
     margin-bottom: 15px;
@@ -376,7 +376,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect #test_instruction .modal-body.pt-3.p-5 {
     border-radius: 56px;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
 }
 
 .examSect #test_instruction .modal-content.rounded-0 {
@@ -398,7 +398,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .examSect button#goto-exam-btn {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(241deg, #21ccff, #21ccff);
     border: none;
     padding: 15px 65px;
@@ -438,7 +438,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     font-size: 18px;
     border-radius: 20px !important;
     text-transform: uppercase;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
     background-color: #e9e9e9;
     font-size: 16px;
 }
@@ -475,7 +475,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .rightSect button.btn.btn-light-green.w-100.rounded-0.mt-3 {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(240deg, #21ccff, #21ccff 1%);
     color: #fff;
     margin-bottom: 15px;
@@ -637,7 +637,7 @@ a.clearRes:hover {
     color: #221f20;
     text-align: center;
     /* line-height: 36px;  */
-    box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
+    box-shadow: 1px 1px 15px 0 rgba(0,186,255,0.4);
 }
 
 /* Added by kanchan */
@@ -654,7 +654,7 @@ a.clearRes:hover {
 .other_screen {
     padding: 14px !important;
     border-radius: 18px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
     background-color: #ffffff;
     max-height: 193px;
     width: 100%;
@@ -719,7 +719,7 @@ a.clearRes:hover {
 .first_screen {
 	padding: 14px !important;
     border-radius: 16px;
-	box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 	background-color: #ffffff;
 	width: 315px;
     z-index: 999;
@@ -799,7 +799,7 @@ a.clearRes:hover {
 .review_expand .popup{
     padding: 14px !important;
     border-radius: 18px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
     background-color: #ffffff;
     position: absolute;
     top: 0px;
@@ -878,7 +878,7 @@ a.clearRes:hover {
     padding: 5px 18px;
     font-weight: 600;
     text-transform: uppercase;
-    box-shadow: 0px 17px 10px -10px rgb(206 206 206 / 40%);
+    box-shadow: 0px 17px 10px -10px rgba(206,206,206,0.40);
 }
 
  .pagination {
