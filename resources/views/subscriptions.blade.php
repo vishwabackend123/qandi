@@ -65,7 +65,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 $dateTimeToday = strtotime($todaydate);
                 @endphp
                 @if($subscription_type=="P")
-                <div class="col-md-4 p-4  text-center">
+                <div class="col-xl-4 col-lg-6 col-sm-9 col-12 p-4 text-center">
                     <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -78,7 +78,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                 <input type="hidden" name="exam_period" value="12">
                                 <input type="hidden" name="period_unit" value="month">
                                 <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 disabled m-0" disabled id="goto-otp-btn"> Purchased </i></button>
+                                <button type="submit" class="btn btn-danger text-uppercase rounded-0 disabled m-0 w-100" disabled id="goto-otp-btn"> Purchased</button>
                             </form>
                         </div>
                     </div>
