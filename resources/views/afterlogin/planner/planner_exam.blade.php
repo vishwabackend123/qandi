@@ -348,7 +348,7 @@ $questtype='radio';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-4 ps-lg-5 d-flex   justify-content-center flex-column">
                         <h1 class="my-auto text-center">
                             <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
