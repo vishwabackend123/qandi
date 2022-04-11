@@ -1,6 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
+
 @endphp
 @section('content')
 <!-- Modal -->
@@ -86,7 +87,7 @@ $userData = Session::get('user_data');
                             </p>
                         </small>
                         <div class="row h-100">
-                            <div class="col-lg-7 col-sm-12 col-md-7" style="padding-right:0!important;">
+                            <div class="col-lg-7 col-sm-12 col-md-7 padd-right-0">
                                 <div style="padding:20px 0 0;">
                                     <div class="prgress-i-txt px-3 mb-1" style="padding-left:30px!important;">
                                         <span class="progress_text">MyQ Today</span>
@@ -129,6 +130,7 @@ $userData = Session::get('user_data');
                             <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
+
                                 <li>
                                     <strong>{{$sub['subject_name']}}</strong>
                                     <span class="star-img">
@@ -506,18 +508,18 @@ $userData = Session::get('user_data');
                         @endif
                         @endforeach
                         @if(isset($subjectPlanner_miss) && $subjectPlanner_miss==true)
-                        <!-- <div class="swiper-slide bg-white text-center subject-placeholder-block">
-                            <span>
-                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                                <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
-                            </span>
-                            <div style="margin-top: -8px;">
-                               
+                        @foreach($user_subjects as $sKey=>$sVal)
+                        @if(!in_array($sVal->id,$planner_subject))
+                        <div class="swiper-slide bg-white text-center subject-placeholder-block">
+                            <img src="{{$sVal->subject_thumbnail_image_path}}">
+                            <div>
+                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
-                                MORE
+                                {{strtoupper($sVal->subject_name)}}
                             </div>
                         </div>
- -->
+                        @endif
+                        @endforeach
                         @endif
                         @endif
                     </div>
@@ -845,8 +847,8 @@ $userData = Session::get('user_data');
                     spaceBetween: 30,
                 },
                 300: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
+                    slidesPerView: 'auto',
+                    spaceBetween: 30
                 }
             }
         });

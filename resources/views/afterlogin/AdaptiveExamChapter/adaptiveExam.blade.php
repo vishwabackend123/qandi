@@ -76,7 +76,7 @@ $correct_answers = isset($question_data->answers)?json_decode($question_data->an
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -102,6 +102,7 @@ $questtype='radio';
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                                <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                                 <div id="question_section" class="">
                                     <div class="d-flex " id="pause-start">
                                         <div id="counter_{{$activeq_id}}" class="counter  d-flex">
@@ -135,6 +136,7 @@ $questtype='radio';
                                         <!-- Static data  for demo -->
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
                                         <div class="ans-block row my-3">
+                                            @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -156,6 +158,12 @@ $questtype='radio';
                                             </div>
                                             @php $no++; @endphp
                                             @endforeach
+                                            @endif
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+                                            </div>
                                             @endif
                                             <!-- --------- correct answer for demo---------- -->
                                             @if(env('ADAPTIVE_DEMO') == 'true')
@@ -237,7 +245,7 @@ $questtype='radio';
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">
                                 <span class="btnSubic">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                         <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
@@ -429,6 +437,18 @@ $questtype='radio';
 </script>
 <!-- page referesh disabled -->
 <script>
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -816,9 +836,19 @@ $questtype='radio';
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -1027,6 +1057,8 @@ $questtype='radio';
                     if (response_ans == false) {
                         return false;
                     } else {
+                        stop('submit');
+
                         $('#FullTest_Exam_Panel_Interface_A').modal('show');
                     }
 

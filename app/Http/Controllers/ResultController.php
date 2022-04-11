@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
+use App\Http\Traits\CommonTrait;
 
 
 class ResultController extends Controller
 {
+     use CommonTrait;
     public function __construct()
     {
         $this->middleware('auth');
@@ -37,6 +39,7 @@ class ResultController extends Controller
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : 'Practice';
             $planner_id = isset($request->planner_id) ? $request->planner_id : 0;
             $live_exam_id = isset($request->live_exam_id) ? $request->live_exam_id : 0;
+            $test_series_id = isset($request->series_id) ? $request->series_id : 0;
 
             $redis_json = Redis::get('custom_answer_time_' . $user_id);
 
@@ -79,6 +82,7 @@ class ResultController extends Controller
             $inputjson['exam_type'] = $exam_type;
             $inputjson['planner_id'] = $planner_id;
             $inputjson['live_exam_id'] = $live_exam_id;
+            $inputjson['test_series_id'] = $test_series_id;
 
             $request = json_encode($inputjson);
 
@@ -295,67 +299,76 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
-    public function examResultList ()
+    public function examResultList($exam_type)
     {
         try {
-            
+
             $result_data = [];
-            $current_page = 1;
 
-            return view('afterlogin.ExamViews.exam_result_list', compact('result_data','current_page'));
-
+            $redis_subjects = $this->redis_subjects();
+            $cSubjects = collect($redis_subjects);
+            $result_data = $this->getAllResult($exam_type);
+            foreach($result_data as $key => $value)
+            {
+                $id = explode(',', $value->subject_id_list);
+                if($id)
+                {
+                   $filtered_subject = $cSubjects->whereIn('id', $id)->all();
+                   $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
+                }else
+                {
+                    $result_data[$key]->subject_name = "";
+                }
+                
+            }
+            return view('afterlogin.ExamViews.mock_result_list', compact('result_data'));
         } catch (\Exception $e) {
-          Log::info($e->getMessage());   
+            Log::info($e->getMessage());
         }
     }
-    public function getExamResultData($page_no)
+    public function getAllResult($exam_type)
     {
-            $limit = 10;
-            $offset = ($page_no-1) * $limit;  
-            $current_page = $page_no;
-            $userData = Session::get('user_data');
-            $user_id = $userData->id;
-            $exam_id = $userData->grade_id;
-            $curl_url = "";
-            $curl = curl_init();
-            $api_URL = env('API_URL');
+        $limit = 10;
+        $offset = 0;
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
+        $exam_id = $userData->grade_id;
+        $curl_url = "";
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/student-result-list/' . $user_id . '/?pagination_start=' . $offset . '&limit=' . $limit . '&test_type=' . $exam_type;
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 120,
+            CURLOPT_TIMEOUT => 120,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json"
+            ),
+        ));
 
+        $response_json = curl_exec($curl);
 
-            $curl_url = $api_URL . 'api/student-result-list/' . $user_id . '/' . $offset . '/' . $limit;
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        if ($httpcode == 200 || $httpcode == 201) {
+            $response_data = (json_decode($response_json));
+            $result_data = isset($response_data->response) ? $response_data->response : [];  
+            return $result_data;         
+        } else {
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 120,
-                CURLOPT_TIMEOUT => 120,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json"
-                ),
-            ));
-
-            $response_json = curl_exec($curl);
-
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
-            if ($httpcode == 200 || $httpcode == 201) {
-                $response_data = (json_decode($response_json));
-                $result_data = isset($response_data->response) ? $response_data->response : [];
-                $html = view('afterlogin.ExamViews.result_list', compact('result_data','current_page'))->render();
-                return response()->json([
-                'status' => true,
-                'html' => $html,
-                'message' => 'success.',
-            ]);
-               
-            } else {
-
-                return false;
-            }
+            return false;
+        }
     }
+    public function getExamResultAnalytics ($result_id)
+    {
+        return view('afterlogin.ExamCustom.exam_result_analytics');        
+    }
+    
 }

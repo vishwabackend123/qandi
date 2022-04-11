@@ -15,23 +15,7 @@
         });
     });
 </script>
-<style>
-    .allownumericwithdecimal {
-        width: 100%;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        background: #f2f2f2;
-        color: #000;
-    }
 
-    .allownumericwithdecimal::placeholder {
-        /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: #757575;
-        opacity: 0.8;
-        /* Firefox */
-    }
-</style>
 @section('content')
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 
@@ -162,6 +146,7 @@ $questtype='radio';
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+
                                             @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
@@ -248,6 +233,7 @@ $questtype='radio';
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
+                            <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
                             <div class="pull-right">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
@@ -429,7 +415,7 @@ $questtype='radio';
                     You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
-                <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
@@ -466,9 +452,12 @@ $questtype='radio';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
-        alert(this.value);
-        $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
     });
@@ -880,7 +869,7 @@ $questtype='radio';
                 option_id.push($(this).val());
             });
         }
-        console.log(option_id);
+
 
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
