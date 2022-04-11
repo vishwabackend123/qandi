@@ -16,7 +16,7 @@ use App\Http\Traits\CommonTrait;
 
 class ResultController extends Controller
 {
-     use CommonTrait;
+    use CommonTrait;
     public function __construct()
     {
         $this->middleware('auth');
@@ -308,18 +308,14 @@ class ResultController extends Controller
             $redis_subjects = $this->redis_subjects();
             $cSubjects = collect($redis_subjects);
             $result_data = $this->getAllResult($exam_type);
-            foreach($result_data as $key => $value)
-            {
+            foreach ($result_data as $key => $value) {
                 $id = explode(',', $value->subject_id_list);
-                if($id)
-                {
-                   $filtered_subject = $cSubjects->whereIn('id', $id)->all();
-                   $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
-                }else
-                {
+                if ($id) {
+                    $filtered_subject = $cSubjects->whereIn('id', $id)->all();
+                    $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
+                } else {
                     $result_data[$key]->subject_name = "";
                 }
-                
             }
             return view('afterlogin.ExamViews.mock_result_list', compact('result_data'));
         } catch (\Exception $e) {
@@ -359,16 +355,15 @@ class ResultController extends Controller
         curl_close($curl);
         if ($httpcode == 200 || $httpcode == 201) {
             $response_data = (json_decode($response_json));
-            $result_data = isset($response_data->response) ? $response_data->response : [];  
-            return $result_data;         
+            $result_data = isset($response_data->response) ? $response_data->response : [];
+            return $result_data;
         } else {
 
             return false;
         }
     }
-    public function getExamResultAnalytics ($result_id)
+    public function getExamResultAnalytics($result_id)
     {
-        return view('afterlogin.ExamCustom.exam_result_analytics');        
+        return view('afterlogin.ExamCustom.exam_result_analytics');
     }
-    
 }

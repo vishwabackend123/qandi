@@ -628,6 +628,11 @@ $userData = Session::get('user_data');
     $i = 1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
+    if($i==5){
+    $weekDisplay = "Current Week";;
+    }else{
+    $weekDisplay = "W" . $i;
+    }
     $week = "W" . $i;
     array_push($aWeeks, $week);
     array_push($trend_stu_scroe, $trend['student_score']);
@@ -981,6 +986,15 @@ $userData = Session::get('user_data');
                 min: 0
             },
             tooltip: {
+                /*  formatter: function(tooltip) {
+                     if (this.x == 'W5') {
+                         var header = `<span style="color: Black;">${this.x}(Current Week)</span><br/>`;
+                     } else {
+                         var header = `<span style="color: Black;">${this.x}</span><br/>`;
+                     }
+
+                     return header + (tooltip.bodyFormatter(this.points).join(''))
+                 }, */
                 shared: true,
                 valueSuffix: ' marks'
             },
