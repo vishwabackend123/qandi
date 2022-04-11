@@ -127,7 +127,6 @@ class HomeController extends Controller
             }
 
 
-
             if (empty($subjectData)) {
                 foreach ($user_subjects as $key => $sub) {
                     $sub->total_questions = 0;
