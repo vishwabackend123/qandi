@@ -181,6 +181,10 @@
     padding-bottom: 40px;
 }
 .profile-show{background-position: center 28px;}
+.practice-series-lists .cust-tab-content .custom-btn-gray{width: 100%;}
+.practice-series-lists.list-series .live-exam .speci-text li.a4TS{width: 28%;}
+.practice-series-lists .sub-details{font-size:15px;}
+
 }
 @media(max-width:991px){
     .cust-tabs.nav.nav-tabs .nav-link{
@@ -298,6 +302,9 @@
         width: 100%;
     }
     .subscription {padding:20px;}
+    .practice-series-lists li.a1TS {width: 38% !important;}
+    .practice-series-lists li.a2TS {margin-right: 10px!important;}
+
 }
 @media(max-width:861px){
     .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after {
