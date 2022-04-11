@@ -67,6 +67,7 @@ $questtype='radio';
                                                 {!! $question_text !!}
                                             </div>
                                             <div class="ans-block row mt-0">
+                                                @if($template_type==1 || $template_type==2)
                                                 @if(isset($option_data) && !empty($option_data))
                                                 @php $no=0;
                                                 $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
@@ -107,6 +108,13 @@ $questtype='radio';
                                                     </div>
                                                 </div>@php $no++; @endphp
                                                 @endforeach
+                                                @endif
+                                                @elseif($template_type==11)
+                                                @php $attemptedByUser=isset($attempt_opt['Answer:'][0])?$attempt_opt['Answer:'][0]:''; @endphp
+                                                <div class="col-md-12 mb-4">
+                                                    <span>Your Answer : </span>
+                                                    <span>{{$attemptedByUser}}</span>
+                                                </div>
                                                 @endif
                                             </div>
                                         </div>
