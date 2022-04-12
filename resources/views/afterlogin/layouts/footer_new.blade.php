@@ -983,6 +983,20 @@
             $('#submenupreparation2').collapse('toggle');
         }
     });
+    $('.menu2').click(function(){
+        var menu_opened = $('#submenu3').hasClass('show');
+
+        if (menu_opened === true) {
+            $('#submenu3').collapse('toggle');
+        }        
+    });
+    $('.menu3').click(function(){
+        var menu_opened = $('#submenu2').hasClass('show');
+
+        if (menu_opened === true) {
+            $('#submenu2').collapse('toggle');
+        }        
+    });
 
     window.addEventListener('click', function(e) {
         if (document.getElementById('citybx').contains(e.target)) {
