@@ -34,7 +34,7 @@ $userData = Session::get('user_data');
                                 <div class="scroll-div mt-4" id="chapter_list_1">
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
-                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
+                                        <div class="ClickBack d-flex  justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
                                             <div class="d-flex  justify-content-between result-list-head">
                                                 <h4 class="m-lg-0 p-0">@if($sche->test_series_name)
                                                   {{$sche->test_series_name}}
