@@ -280,7 +280,7 @@ $questtype='radio';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-4 ps-lg-2 ps-xl-5  d-flex align-items-center justify-content-center flex-column">
 
                         <h1 class="my-auto text-center">
 

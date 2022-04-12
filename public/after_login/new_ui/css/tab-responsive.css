@@ -1,4 +1,8 @@
 @media screen and (max-width:1199px){
+    #test_instruction .col-lg-4.flex-column.justify-content-center{
+        width: 90%;
+        margin-top: 10px;
+    }
     .planersecdualsub{
        justify-content: space-between !important;
    }
