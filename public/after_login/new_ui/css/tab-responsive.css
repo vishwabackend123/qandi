@@ -279,6 +279,9 @@
     a.close-btn, a.export-btn {
         top: 17px;
     }
+    .review_expand {
+        right: 9%;
+    }
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
