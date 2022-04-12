@@ -476,6 +476,11 @@ $questtype='radio';
             event.preventDefault();
         }
     });
+    jQuery(function() {
+        jQuery(".markerDiv").click(function() {
+            $('input[type=radio]', this).prop("checked", true);
+        });
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -588,11 +593,6 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-    $('.markerDiv').on('click', function() {
-        var checkbox = $(this).children('input[type="radio"]');
-        checkbox.prop('checked', !checkbox.prop('checked'));
-
-    });
 
     $('.instructions').slimscroll({
         height: '33vh',

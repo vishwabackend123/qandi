@@ -266,10 +266,10 @@ $questtype='radio';
         }
     });
 
-    $('.markerDiv').on('click', function() {
-        var checkbox = $(this).children('input[type="radio"]');
-        checkbox.prop('checked', !checkbox.prop('checked'));
-
+    jQuery(function() {
+        jQuery(".markerDiv").click(function() {
+            $('input[type=radio]', this).prop("checked", true);
+        });
     });
 </script>
 

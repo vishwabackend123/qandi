@@ -553,12 +553,11 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-    $('.markerDiv').on('click', function() {
-        var checkbox = $(this).children('input[type="radio"]');
-        checkbox.prop('checked', !checkbox.prop('checked'));
-
+    jQuery(function() {
+        jQuery(".markerDiv").click(function() {
+            $('input[type=radio]', this).prop("checked", true);
+        });
     });
-
     /*$('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
