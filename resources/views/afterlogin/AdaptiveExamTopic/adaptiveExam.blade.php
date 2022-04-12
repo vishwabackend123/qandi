@@ -345,7 +345,7 @@ $questtype='radio';
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-lg-12 col-xl-8">
                         <h3 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{$test_name}} </h3>
                         <div class="scroll">
                             <div class="test-info">
@@ -379,7 +379,7 @@ $questtype='radio';
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
 
                         <h1 class="my-auto text-center">
 
