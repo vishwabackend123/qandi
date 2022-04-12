@@ -300,7 +300,7 @@ $questtype='radio';
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12 col-xl-8">
                         <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
@@ -342,7 +342,7 @@ $questtype='radio';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
 
                         <h1 class="my-auto text-center">
 

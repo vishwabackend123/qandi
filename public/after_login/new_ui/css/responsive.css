@@ -833,7 +833,7 @@
     }
 
     .tab-wrapper .d-flex.justify-content-between {
-        display: inline-block !important;
+        /* display: inline-block !important; */
         width: 100%;
     }
 
