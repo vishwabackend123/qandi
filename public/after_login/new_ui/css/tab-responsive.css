@@ -153,7 +153,19 @@
 .addremovetopic {width: 110px;font-size: 14px;}
 }
 
- 
+@media(max-width:1024px){
+
+    .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, 
+    .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width: 25%!important;margin-right: 0!important;}
+    .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
+    .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 15%!important;}
+    .live-exam-list-wrapper.list-series .live-exam #home .speci-text li, 
+    .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li{width: 20%!important;}
+    .list-series.live-exam-list-wrapper h4.py-3{font-size: 20px;}
+
+}
+
+
 @media(max-width:1023px){
    
     .subscription .form-btns button {
@@ -302,6 +314,12 @@
     #attempted .paper-summery{padding-left: 15px!important;}
     #attempted .score-show{max-width: 180px;}
     #attempted .paper-sub{padding: 0 10px 0 0;}
+    .live-exam-list-wrapper.list-series .live-exam #home .speci-text li, 
+    .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li{width: 33.33%!important;}
+    .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, 
+    .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width: 33.33%!important;margin-right: 0!important;}
+    .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
+    .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 33.33%!important;}
     
 }
 @media (min-width: 769px) and (max-width: 990px){
