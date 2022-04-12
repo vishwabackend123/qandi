@@ -182,7 +182,7 @@ $questtype='radio';
                                             $view_opt='<img src="'.$latex.'" />' ;
                                             */
                                             @endphp
-                                            <div class="col-md-6 mb-4">
+                                            <div class="col-md-6 mb-4 markerDiv">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
                                                     <label class="question m-0 d-flex align-items-center" for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
@@ -211,7 +211,7 @@ $questtype='radio';
 
                                         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview " title="Questions can be reviewed after submission.">Save & Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission." >Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission.">Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
 
@@ -344,7 +344,7 @@ $questtype='radio';
                                 </div>
 
                             </div>
-                        <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give you multiple opportunities to improve your scores in the
@@ -424,7 +424,7 @@ $questtype='radio';
                     <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
                 <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
-               <p>
+                <p>
                     You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
@@ -494,17 +494,17 @@ $questtype='radio';
 
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -586,6 +586,12 @@ $questtype='radio';
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
+    });
+
+    $('.markerDiv').on('click', function() {
+        var checkbox = $(this).children('input[type="radio"]');
+        checkbox.prop('checked', !checkbox.prop('checked'));
+
     });
 
     $('.instructions').slimscroll({

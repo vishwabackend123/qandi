@@ -181,7 +181,7 @@ $questtype='radio';
                                             $view_opt='<img src="'.$latex.'" />' ;
                                             */
                                             @endphp
-                                            <div class="col-md-6 mb-4">
+                                            <div class="col-md-6 mb-4 markerDiv">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
                                                     <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
@@ -445,7 +445,7 @@ $questtype='radio';
                     <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
                 <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
-               <p>
+                <p>
                     You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
@@ -453,7 +453,7 @@ $questtype='radio';
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                             <span class="btnSubic">
+                        <span class="btnSubic">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                 <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
                             </svg>
@@ -615,6 +615,12 @@ $questtype='radio';
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
+    });
+
+    $('.markerDiv').on('click', function() {
+        var checkbox = $(this).children('input[type="radio"]');
+        checkbox.prop('checked', !checkbox.prop('checked'));
+
     });
 
     $('.instructions').slimscroll({

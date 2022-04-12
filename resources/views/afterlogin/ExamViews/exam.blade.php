@@ -160,7 +160,7 @@ $questtype='radio';
                                             $latex = "https://math.now.sh?from=".$text;
                                             $view_opt='<img src="'.$latex.'" />' ; */
                                             @endphp
-                                            <div class="col-md-6 mb-4">
+                                            <div class="col-md-6 mb-4 markerDiv">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
                                                     <!-- <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label> -->
@@ -568,11 +568,17 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
-    $('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
+    $('.markerDiv').on('click', function() {
+        var checkbox = $(this).children('input[type="radio"]');
+        checkbox.prop('checked', !checkbox.prop('checked'));
 
     });
+
+    /*  $('.instructions').slimscroll({
+         height: '33vh',
+         color: '#ff9999',
+
+     }); */
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;

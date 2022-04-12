@@ -139,7 +139,7 @@ $questtype='radio';
             $view_opt='<img src="'.$latex.'" />' ;
             */
             @endphp
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6 mb-4 markerDiv">
                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                 <div class=" border ps-3 ans">
                     <!-- <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"> <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label> -->
@@ -223,6 +223,12 @@ $questtype='radio';
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
+    });
+
+    $('.markerDiv').on('click', function() {
+        var checkbox = $(this).children('input[type="radio"]');
+        checkbox.prop('checked', !checkbox.prop('checked'));
+
     });
 </script>
 
