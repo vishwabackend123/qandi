@@ -70,7 +70,7 @@ $userData = Session::get('user_data');
                                             <div class="d-flex align-items-center justify-content-center morning-slot">
                                                 <p class="m-0 p-0">{{$slot}} Slots</p>
                                                 <span class="slbs-link ms-5 me-lg-0 me-2">
-                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Hide Details</span></a></span>
+                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Show Details</span></a></span>
                                             </div>
                                             <div class="result-list-btns">
                                                 <a href="{{route('exam_review',$sche->id)}}" class="btn result-review w-100">Review Exam</a>
@@ -118,7 +118,7 @@ $userData = Session::get('user_data');
 $('a.expandTopicCollapse span').click(function() {
     var spanId = this.id;
     var curr_text = $("#" + spanId).text();
-    var updatetext = ((curr_text == 'Show Details') ? 'Hide Details' : 'Show Details');
+    var updatetext = ((curr_text == 'Hide Details') ? 'Show Details' : 'Hide Details');
     $("#" + spanId).text(updatetext);
 });
 $(window).on('load', function() {
@@ -204,13 +204,12 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
 }
 
 .result-list-btns a {
-    width: 57px;
+    line-height: 37px;
     height: 48px;
     text-align: center;
     display: block;
     background: #f4f4f4;
     border-radius: 10px;
-    color: #515151;
 }
 
 .result-list-btns a .fa {
@@ -251,7 +250,7 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     font-size: 14px;
     font-weight: 600;
-    color: #fff;
+    line-height: 32px;
     border-radius: 20px;
     height: 45px;
     width: 208px;
@@ -265,6 +264,7 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
 .paper-sub {
     font-size: 13px;
     flex: 1;
+    word-break: break-all;
 }
 
 .paper-sub span {
