@@ -282,6 +282,7 @@
     .review_expand {
         right: 9%;
     }
+    
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
