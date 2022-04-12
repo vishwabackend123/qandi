@@ -261,7 +261,7 @@
     <div class="submenu-L1 collapse width" id="submenu">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
-            <a class="nav-link" data-bs-toggle="collapse" href="#submenu2" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link menu2" data-bs-toggle="collapse" href="#submenu2" aria-expanded="false" aria-controls="collapseExample">
                 <svg id="Icon_Practice_Test" data-name="Icon / Practice Test" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
@@ -275,7 +275,7 @@
                     <path id="Line_32" data-name="Line 32" d="M4,4.75a.748.748,0,0,1-.53-.22l-4-4A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l4,4A.75.75,0,0,1,4,4.75Z" transform="translate(13.5 6.5)" />
                 </svg>
                 Practice</a>
-            <a class="nav-link" data-bs-toggle="collapse" href="#submenu3" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link menu3" data-bs-toggle="collapse" href="#submenu3" aria-expanded="false" aria-controls="collapseExample">
                 <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
