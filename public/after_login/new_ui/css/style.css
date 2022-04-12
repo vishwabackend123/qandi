@@ -16,6 +16,7 @@ button {
     text-decoration: none;
 }
 
+#attempted .result-list-btns a{line-height: 34px;}
 .padd-right-0{padding-right:0!important;}
 .main-profile-section.blure-bg{animation: none!important;}
 .profile-show.animateAccountCard,#LeaDer.animateAccountCard{
