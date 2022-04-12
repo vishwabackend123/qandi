@@ -348,19 +348,19 @@ $questtype='radio';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex   justify-content-center flex-column">
+                    <div class="col-lg-12 col-xl-4 ps-xl-5 ps-lg-2 d-flex align-items-lg-center justify-content-center flex-column">
                         <h1 class="my-auto text-center">
                             <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
-                        <div class="row justify-content-center">
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn col-lg-12 col-sm-6 mt-lg-0 mt-3" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
+                        <div class="row justify-content-center mt-lg-0 mt-3">
+                        <button class="btn  text-uppercase rounded-0 px-5 col-lg-12 col-sm-6 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-        </div>
+        </div>    
     </div>
 </div>
  
