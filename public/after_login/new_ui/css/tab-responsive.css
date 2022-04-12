@@ -1,3 +1,8 @@
+@media screen and (max-width:1300px){
+    .status-id.rating {
+        width: auto;
+    }
+}
 @media screen and (max-width:1199px){
     #test_instruction .col-lg-4.flex-column.justify-content-center{
         width: 90%;
@@ -139,6 +144,9 @@
    .listing-details .name-txt{font-size: 14px;}
    .slbs-link a{    font-size: 14px;}
    .cust-tab-content .custom-btn-gray{font-size: 14px;}
+   .btn-clear-sel,.btn-topic,.active-btn{font-size:14px;}
+   .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn {    width: 190px !important;}
+   .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic { padding-left: 19px !important;padding-right: 19px !important;}
 }
 
  
