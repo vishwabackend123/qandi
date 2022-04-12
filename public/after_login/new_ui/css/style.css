@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+
+.practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
 #attempted .result-list-btns a{line-height: 34px;}
 .padd-right-0{padding-right:0!important;}
 .main-profile-section.blure-bg{animation: none!important;}

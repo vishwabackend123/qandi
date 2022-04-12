@@ -34,8 +34,8 @@ $userData = Session::get('user_data');
                                 <div class="scroll-div mt-4" id="chapter_list_1">
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
-                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
-                                            <div class="d-flex align-items-center justify-content-between result-list-head">
+                                        <div class="ClickBack d-flex  justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
+                                            <div class="d-flex  justify-content-between result-list-head">
                                                 <h4 class="m-lg-0 p-0">@if($sche->test_series_name)
                                                   {{$sche->test_series_name}}
                                                   @elseif($sche->live_exam_name)
@@ -67,7 +67,7 @@ $userData = Session::get('user_data');
                                           $slot = "Night";
                                           }
                                           ?>
-                                            <div class="d-flex align-items-center justify-content-center morning-slot">
+                                            <div class="d-flex  justify-content-center morning-slot">
                                                 <p class="m-0 p-0">{{$slot}} Slots</p>
                                                 <span class="slbs-link ms-5 me-lg-0 me-2">
                                                     <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Show Details</span></a></span>

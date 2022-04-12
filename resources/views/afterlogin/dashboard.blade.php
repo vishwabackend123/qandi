@@ -624,17 +624,21 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
     @php
-    $trend_stu_scroe=$trend_avg_scroe=$trend_max_scroe=$aWeeks = [];
+    $trend_stu_scroe=$trend_avg_scroe=$trend_max_scroe=$aWeeks = $weekdates=[];
     $i = 1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
-    if($i==5){
-    $weekDisplay = "Current Week";;
-    }else{
-    $weekDisplay = "W" . $i;
-    }
+
     $week = "W" . $i;
     array_push($aWeeks, $week);
+
+    $timestamp = strtotime( $trend['date']);
+
+    $last_date=date("j M", $timestamp);
+
+    $first_date = date('j M', strtotime('-6 days', $timestamp));
+
+    array_push($weekdates, $first_date."-".$last_date);
     array_push($trend_stu_scroe, $trend['student_score']);
     array_push($trend_avg_scroe, $trend['average_score']);
     array_push($trend_max_scroe, $trend['max_score']);
@@ -646,6 +650,7 @@ $userData = Session::get('user_data');
     array_push($trend_max_scroe, 0);
     }
     $weeks_json = isset($aWeeks) ? json_encode($aWeeks) : [];
+    $weekdates_json = isset($weekdates) ? json_encode($weekdates) : [];
     $stu_scroe_json = isset($trend_stu_scroe) ? json_encode($trend_stu_scroe) : [];
     $avg_scroe_json = isset($trend_avg_scroe) ? json_encode($trend_avg_scroe) : [];
     $max_scroe_json = isset($trend_max_scroe) ? json_encode($trend_max_scroe) : [];
@@ -972,7 +977,7 @@ $userData = Session::get('user_data');
                 accessibility: {
                     rangeDescription: 'Range: start to current week'
                 },
-                categories: <?php echo $weeks_json; ?>,
+                categories: <?php echo $weekdates_json; ?>,
 
             },
             yAxis: {
@@ -986,15 +991,15 @@ $userData = Session::get('user_data');
                 min: 0
             },
             tooltip: {
-                /*  formatter: function(tooltip) {
-                     if (this.x == 'W5') {
-                         var header = `<span style="color: Black;">${this.x}(Current Week)</span><br/>`;
-                     } else {
-                         var header = `<span style="color: Black;">${this.x}</span><br/>`;
-                     }
+                formatter: function(tooltip) {
+                    if (this.x == 'W5') {
+                        var header = `<span style="color: Black;">${this.x}(Current Week)</span><br/>`;
+                    } else {
+                        var header = `<span style="color: Black;">${this.x}</span><br/>`;
+                    }
 
-                     return header + (tooltip.bodyFormatter(this.points).join(''))
-                 }, */
+                    return header + (tooltip.bodyFormatter(this.points).join(''))
+                },
                 shared: true,
                 valueSuffix: ' marks'
             },
