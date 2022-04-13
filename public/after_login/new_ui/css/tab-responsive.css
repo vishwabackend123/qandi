@@ -151,6 +151,7 @@
    .sub-subject .btn.rounded-0.me-2{    border-radius: 9px !important; padding: 5px;width: 35px; height: 35px;}
 .sub-subject strong { font-size: 14px;}
 .addremovetopic {width: 110px;font-size: 14px;}
+.examhead{font-size:22px;}
 }
 
 @media(max-width:1024px){
@@ -162,12 +163,16 @@
     .live-exam-list-wrapper.list-series .live-exam #home .speci-text li, 
     .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li{width: 20%!important;}
     .list-series.live-exam-list-wrapper h4.py-3{font-size: 20px;}
-
+    .q-no{
+        left: -5px;
+        font-size: 16px;
+        padding-left: 0px;}
 }
 
 
 @media(max-width:1023px){
-   
+    #exam_content_sec .tab-btn-box{    flex-wrap: wrap;}
+    #exam_content_sec #question_section .tab-btn-box a{width: 48%;line-height: 30px;margin-bottom: 9px;}
     .subscription .form-btns button {
      
        font-size: 14px;

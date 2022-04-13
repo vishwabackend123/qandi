@@ -670,7 +670,7 @@ $questtype='radio';
         var number_block_holder_height = $(".number_block_holder").outerHeight();
         var numberblockHeight = number_block_holder_height - 170 + "px";
 
-        var height_divided = number_block_holder_height - numberblockHeight;
+        // var height_divided = number_block_holder_height - numberblockHeight;
         $('.number_block_holder .number-block').css('height', numberblockHeight);
 
 

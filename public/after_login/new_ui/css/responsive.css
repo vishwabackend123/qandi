@@ -790,7 +790,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 2rem;
+        padding: 15px 1rem;
     }
 
     .examSect ul#myTab li a {
@@ -1704,7 +1704,7 @@
     }
 
     .tab-wrapper .d-flex.justify-content-between {
-        display: inline-block !important;
+        /* display: inline-block !important; */
         width: 100%;
         padding-left: 0px !important;
         padding-right: 0px !important;
