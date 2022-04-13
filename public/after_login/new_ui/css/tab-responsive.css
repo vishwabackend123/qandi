@@ -180,8 +180,8 @@
         height: 20px;}
         
     #exam_content_sec .tab-btn-box{    flex-wrap: wrap;}
-    #exam_content_sec #question_section .tab-btn-box a{width: 48%;line-height: 30px;margin-bottom: 9px;    margin-left: 0px!important;
-        margin-right: 11px;}
+    #exam_content_sec #question_section .tab-btn-box a{width: 47.5%;line-height: 30px;margin-bottom: 9px;    margin-left: 0px!important;
+        margin-right: 8px;}
     .subscription .form-btns button {
      
        font-size: 14px;
