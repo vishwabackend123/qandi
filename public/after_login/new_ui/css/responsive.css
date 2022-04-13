@@ -1704,7 +1704,7 @@
     }
 
     .tab-wrapper .d-flex.justify-content-between {
-        display: inline-block !important;
+        /* display: inline-block !important; */
         width: 100%;
         padding-left: 0px !important;
         padding-right: 0px !important;
