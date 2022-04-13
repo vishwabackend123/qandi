@@ -152,10 +152,12 @@
 .sub-subject strong { font-size: 14px;}
 .addremovetopic {width: 110px;font-size: 14px;}
 .examhead{font-size:22px;}
+.rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
 }
 
 @media(max-width:1024px){
-
+    .timing{margin-left: 14px;
+        font-size: 16px;}
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, 
     .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width: 25%!important;margin-right: 0!important;}
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
@@ -166,12 +168,15 @@
     .q-no{
         left: -5px;
         font-size: 16px;}
+        .examSect .checkboxans:checked+.ans span.q-no{left: 0px;width: 22px;
+            height: 22px;line-height: 21px;}
 }
 
 
 @media(max-width:1023px){
     #exam_content_sec .tab-btn-box{    flex-wrap: wrap;}
-    #exam_content_sec #question_section .tab-btn-box a{width: 48%;line-height: 30px;margin-bottom: 9px;}
+    #exam_content_sec #question_section .tab-btn-box a{width: 48%;line-height: 30px;margin-bottom: 9px;    margin-left: 0px!important;
+        margin-right: 11px;}
     .subscription .form-btns button {
      
        font-size: 14px;
