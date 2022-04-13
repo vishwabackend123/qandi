@@ -157,7 +157,8 @@
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
-
+.examSect .rightSect button.btn.btn-secondary i{    font-size: 12px;}
+.base-timer {width: 48px; height: 48px;}
 }
 
 @media(max-width:1024px){
