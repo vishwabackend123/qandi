@@ -138,6 +138,8 @@ class ReviewController extends Controller
                 $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
                 $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
                 $activeChapt_id = isset($question_data->chapter_id) ? $question_data->chapter_id : '';
+                $template_type = isset($question_data->template_type) ? $question_data->template_type : '';
+
                 $chapter_list = $this->redis_chapter_list($activesub_id);
                 $collection_chpater = collect($chapter_list);
                 $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
@@ -191,24 +193,25 @@ class ReviewController extends Controller
                     }
                 }
                 $question_data->question_options = json_encode($opArr);
+                if ($template_type == 1 || $template_type == 2) {
+                    $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+                    $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
 
-                $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
+                    if (isset($correct_ans)) {
+                        foreach ($correct_ans as $ankey => $anoption) {
 
-                if (isset($correct_ans)) {
-                    foreach ($correct_ans as $ankey => $anoption) {
-
-
-                        /*  if ((strpos($anoption, $word1) !== false)) {
-                            $anoption = str_replace($word1, $publicPath, $anoption);
-                        } elseif ((strpos($anoption, $word2) !== false)) {
-                            $anoption = str_replace($word2, $publicPath, $anoption);
+                            $correct_ans->$ankey = $anoption;
                         }
-     */
-                        $correct_ans->$ankey = $anoption;
                     }
+
+                    $answerKeys = array_keys((array)$correct_ans);
+                } elseif ($template_type == 11) {
+                    $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+                    $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
+                    $answerKeys = 0;
                 }
 
-                $answerKeys = array_keys((array)$correct_ans);
+
 
                 if (Session::has('exam_name')) {
                     $exam_name = Session::get('exam_name');
@@ -261,11 +264,8 @@ class ReviewController extends Controller
                 $grouped = $collection->groupBy('subject_id');
                 $subject_ids = $collection->pluck('subject_id');
 
-                /*    if (count($grouped) > 1) {
-                    $all_data = $collection->sortBy('subject_id');
-                } else { */
+
                 $all_data = $collection;
-                // }
 
                 $sq = 1;
 
@@ -282,10 +282,11 @@ class ReviewController extends Controller
                 $question = $question_data->question;
                 $reference_text = $question_data->reference_text;
                 $explanation = $question_data->explanation;
-                $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+
 
                 $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
                 $activeChapt_id = isset($question_data->chapter_id) ? $question_data->chapter_id : '';
+                $template_type = isset($question_data->template_type) ? $question_data->template_type : '';
                 $chapter_list = $this->redis_chapter_list($activesub_id);
                 $collection_chpater = collect($chapter_list);
                 $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
@@ -295,58 +296,39 @@ class ReviewController extends Controller
                 $question_data->chapter_name = $chapter_name;
 
 
-
                 $question_id_array[] = $q_id;
-                //$publicPath = url('/') . '/public/images/questions/';
-                /* $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                if ((strpos($question, $word1) !== false)) {
-                    $question_data->question = str_replace($word1, $publicPath, $question_data->question);
-                } elseif ((strpos($question, $word2) !== false)) {
-                    $question_data->question = str_replace($word2, $publicPath, $question_data->question);
-                }
-                if ((strpos($reference_text, $word1) !== false)) {
-                    $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
-                } elseif ((strpos($reference_text, $word2) !== false)) {
-                    $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
-                }
-                if ((strpos($explanation, $word1) !== false)) {
-                    $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
-                } elseif ((strpos($explanation, $word2) !== false)) {
-                    $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-                } */
+
                 $tempdata = (array)json_decode($question_data->question_options);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
 
-                        /*   if ((strpos($option, $word1) !== false)) {
-                            $option = str_replace($word1, $publicPath, $option);
-                        } else if ((strpos($option, $word2) !== false)) {
-                            $option = str_replace($word2, $publicPath, $option);
-                        } */
                         $opArr[$key] = $option;
                     }
                 }
             }
+
+
             $question_data->question_options = json_encode($opArr);
 
+            if ($template_type == 1 || $template_type == 2) {
+                $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+                $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
 
-            $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
+                if (isset($correct_ans)) {
+                    foreach ($correct_ans as $ankey => $anoption) {
 
-            if (isset($correct_ans)) {
-                foreach ($correct_ans as $ankey => $anoption) {
-
-
-                    /*   if ((strpos($anoption, $word1) !== false)) {
-                        $anoption = str_replace($word1, $publicPath, $anoption);
-                    } elseif ((strpos($anoption, $word2) !== false)) {
-                        $anoption = str_replace($word2, $publicPath, $anoption);
-                    } */
-
-                    $correct_ans->$ankey = $anoption;
+                        $correct_ans->$ankey = $anoption;
+                    }
                 }
+
+                $answerKeys = array_keys((array)$correct_ans);
+            } elseif ($template_type == 11) {
+                $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+                $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
+                $answerKeys = 0;
             }
-            $answerKeys = array_keys((array)$correct_ans);
+
 
 
             return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));
@@ -408,10 +390,11 @@ class ReviewController extends Controller
                 $question = $question_data->question;
                 $reference_text = $question_data->reference_text;
                 $explanation = $question_data->explanation;
-                $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+
 
                 $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
                 $activeChapt_id = isset($question_data->chapter_id) ? $question_data->chapter_id : '';
+                $template_type = isset($question_data->template_type) ? $question_data->template_type : '';
                 $chapter_list = $this->redis_chapter_list($activesub_id);
                 $collection_chpater = collect($chapter_list);
                 $filter = $collection_chpater->where('chapter_id', $activeChapt_id)->first();
@@ -455,22 +438,25 @@ class ReviewController extends Controller
             $question_data->question_options = json_encode($opArr);
 
 
-            $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
-
-            if (isset($correct_ans)) {
-                foreach ($correct_ans as $ankey => $anoption) {
 
 
-                    /*   if ((strpos($anoption, $word1) !== false)) {
-                        $anoption = str_replace($word1, $publicPath, $anoption);
-                    } elseif ((strpos($anoption, $word2) !== false)) {
-                        $anoption = str_replace($word2, $publicPath, $anoption);
-                    } */
+            if ($template_type == 1 || $template_type == 2) {
+                $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+                $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
 
-                    $correct_ans->$ankey = $anoption;
+                if (isset($correct_ans)) {
+                    foreach ($correct_ans as $ankey => $anoption) {
+
+                        $correct_ans->$ankey = $anoption;
+                    }
                 }
+
+                $answerKeys = array_keys((array)$correct_ans);
+            } elseif ($template_type == 11) {
+                $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
+                $correct_ans = isset($question_data->answers) ? json_decode($question_data->answers) : '';
+                $answerKeys = 0;
             }
-            $answerKeys = array_keys((array)$correct_ans);
 
 
             return view('afterlogin.ExamCustom.next_review_question', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id'));

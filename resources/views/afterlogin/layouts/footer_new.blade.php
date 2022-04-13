@@ -959,6 +959,13 @@
             menu_opened === true) {
             $('#submenu2').collapse('toggle');
         }
+        var menu_opened = $('#submenu3').hasClass('show');
+
+        if (!$(e.target).closest('#submenu').length &&
+            !$(e.target).is('#submenu3') &&
+            menu_opened === true) {
+            $('#submenu3').collapse('toggle');
+        }
 
         var menu_opened = $('#submenupreparation').hasClass('show');
 
@@ -975,6 +982,20 @@
             menu_opened === true) {
             $('#submenupreparation2').collapse('toggle');
         }
+    });
+    $('.menu2').click(function(){
+        var menu_opened = $('#submenu3').hasClass('show');
+
+        if (menu_opened === true) {
+            $('#submenu3').collapse('toggle');
+        }        
+    });
+    $('.menu3').click(function(){
+        var menu_opened = $('#submenu2').hasClass('show');
+
+        if (menu_opened === true) {
+            $('#submenu2').collapse('toggle');
+        }        
     });
 
     window.addEventListener('click', function(e) {
@@ -1739,6 +1760,7 @@
     });
 
     $(".user-pic-block.UserPro").on('click',function(){
+        $("#LeaDer , .profile-show").addClass("animateAccountCard");
         $(".profile-section ul li:first-child").addClass("active");
         $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").removeClass("active");
         if( $(".profile-section ul li:first-child").hasClass("active") ){
@@ -1748,6 +1770,7 @@
     });
 
     $(".profile-section ul").on('click',function(){
+        $("#LeaDer , .profile-show").removeClass("animateAccountCard");
         if( $(".profile-section ul li:nth-child(2)").hasClass("active") ){
             $(".subscription-box").addClass("showCard");
             $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");

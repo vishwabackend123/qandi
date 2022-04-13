@@ -139,7 +139,7 @@ $questtype='radio';
             $view_opt='<img src="'.$latex.'" />' ;
             */
             @endphp
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6 mb-4 markerDiv">
                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" @php if(in_array($key,$aGivenAns)){echo 'checked' ; } @endphp type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                 <div class=" border ps-3 ans">
                     <!-- <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"> <span class="q-no">{{$alpha[$no]}}. </span>{!! !empty($text)?$view_opt:$opt_value; !!}</label> -->
@@ -151,7 +151,7 @@ $questtype='radio';
             @endif
             @elseif($template_type==11)
             <div class="col-md-6 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" maxlength="20" value="">
 
             </div>
             @endif
@@ -215,11 +215,20 @@ $questtype='radio';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
-
-        $(this).val($(this).val().replace(/[^0-9\.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
             event.preventDefault();
         }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
+
+    jQuery(function() {
+        jQuery(".markerDiv").click(function() {
+            $('input[type=radio]', this).prop("checked", true);
+        });
     });
 </script>
 

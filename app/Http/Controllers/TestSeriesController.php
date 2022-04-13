@@ -62,7 +62,7 @@ class TestSeriesController extends Controller
             if ($status == true) {
                 $open_series = isset($aResponse->test_series_open) ? json_decode($aResponse->test_series_open) : [];
                 $live_series = isset($aResponse->test_series_live) ? json_decode($aResponse->test_series_live) : [];
-                //dd($live_series);
+
                 return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
             } else {
 

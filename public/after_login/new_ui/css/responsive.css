@@ -668,10 +668,8 @@
     }
 
     .profile-picture-txt .p-picture {
-
-        width: 65px;
-        height: 65px;
-
+        width: 30%;
+        height: auto !important;
     }
 
     /** end here **/
@@ -685,6 +683,10 @@
         height: 65px;
 
     }
+	.rankholder {
+		background-position: 20px -140px !important;
+		height: 345px !important;
+	}
 
     a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
         padding: 22px !important;
@@ -840,7 +842,7 @@
     }
 
     .justify-content-center {
-        justify-content: left !important;
+        justify-content: center !important;margin-left:25px;
     }
 
     .slbs-link a {
@@ -1708,11 +1710,6 @@
 
     .tab-wrapper .dropdown {
         display: inline-block;
-    }
-
-    .justify-content-center {
-        justify-content: left !important;
-
     }
 
     .slbs-link a {

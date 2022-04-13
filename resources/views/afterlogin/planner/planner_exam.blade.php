@@ -98,7 +98,7 @@ $correct_answers = isset($question_data->answers)?json_decode($question_data->an
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}else{
+}elseif($template_type==2){
 $type_class='radioans';
 $questtype='radio';
 }
@@ -126,6 +126,7 @@ $questtype='radio';
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <input type="hidden" id="current_question" value="{{$activeq_id}}" />
+                                <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                                 <div id="question_section" class="">
                                     <div class="d-flex " id="pause-start">
                                         <div id="counter_{{$activeq_id}}" class="counter  d-flex">
@@ -152,6 +153,7 @@ $questtype='radio';
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+                                            @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
@@ -165,7 +167,7 @@ $questtype='radio';
                                             $view_opt='<img src="'.$latex.'" />' ;
                                             */
                                             @endphp
-                                            <div class="col-md-6 mb-4">
+                                            <div class="col-md-6 mb-4 markerDiv">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
                                                     <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
@@ -174,7 +176,12 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
 
+                                            </div>
+                                            @endif
                                         </div>
 
                                     </div>
@@ -187,9 +194,9 @@ $questtype='radio';
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
                                     </div>
@@ -315,19 +322,19 @@ $questtype='radio';
                                     <div class="col col-lg-6 d-flex flex-column align-items-center">
                                         <div>
                                             <small>Subject</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$tagrets}}</span></span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
                                     <div class="col col-lg-6 d-flex flex-column align-items-center">
                                         <div>
                                             <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="text-danger">{{$exam_fulltime}}</span> Minutes</span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <p class="inst mb-3">Please read carefully for any query before starting the test.</p>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
                             <div class="instructions pe-3">
                                 <h3 class="text-uppercase">Instructions</h3>
                                 <p>This will give you multiple opportunities to improve your scores in the
@@ -425,6 +432,18 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -532,6 +551,11 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
 
+    jQuery(function() {
+        jQuery(".markerDiv").click(function() {
+            $('input[type=radio]', this).prop("checked", true);
+        });
+    });
     /*$('.instructions').slimscroll({
         height: '33vh',
         color: '#ff9999',
@@ -815,9 +839,19 @@ $questtype='radio';
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
