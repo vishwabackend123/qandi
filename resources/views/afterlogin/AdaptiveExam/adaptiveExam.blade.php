@@ -89,7 +89,7 @@ $questtype='radio';
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-9 col-lg-9 col-12 mb-lg-0 mb-4">
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 mb-lg-0 mb-4">
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
@@ -180,7 +180,7 @@ $questtype='radio';
                     </div>
                 </div>
                 <!-- Right Side Area -->
-                <div class="col-xl-3 col-lg-3 col-12 rightSect">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5">
                         <div class="d-flex align-items-center">
                             <div class="" id="app">
