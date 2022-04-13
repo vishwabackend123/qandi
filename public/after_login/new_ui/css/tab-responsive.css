@@ -159,6 +159,7 @@
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
 .examSect .rightSect button.btn.btn-secondary i{    font-size: 12px;}
 .base-timer {width: 48px; height: 48px;}
+.counter{    margin-right: -45px;}
 }
 
 @media(max-width:1024px){
