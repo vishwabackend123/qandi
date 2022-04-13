@@ -4,6 +4,7 @@
     }
 }
 @media screen and (max-width:1199px){
+
     #test_instruction .col-lg-4.flex-column.justify-content-center{
         width: 90%;
         margin-top: 10px;
@@ -153,6 +154,10 @@
 .addremovetopic {width: 110px;font-size: 14px;}
 .examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
+
 }
 
 @media(max-width:1024px){
