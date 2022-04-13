@@ -252,6 +252,12 @@ $questtype='radio';
                 $("#exam_content_sec  #btn_" + question_id).focusout();
             } else {
                 $("#exam_content_sec  #btn_" + question_id).focus();
+                $("#exam_content_sec  #btn_" + question_id).keypress(function(e) {
+
+                    if (e.keyCode === 13 || e.keyCode === 32) {
+                        e.preventDefault();
+                    }
+                });
             }
         }
     });
