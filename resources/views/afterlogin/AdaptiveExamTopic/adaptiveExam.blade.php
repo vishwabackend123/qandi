@@ -297,7 +297,7 @@ $questtype='radio';
                         </form>
 
 
-                        <div style=" min-height:300px">
+                        <div style=" min-height:300px" class="setTabExamhight">
                             <p class="rightSectH" style="display:none;">Question</p>
                             <div class="number-block1" style="display:none;">
                                 @if(isset($keys) && !empty($keys))
