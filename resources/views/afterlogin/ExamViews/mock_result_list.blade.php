@@ -35,7 +35,7 @@ $userData = Session::get('user_data');
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
                                         <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
-                                            <div class="d-flex align-items-center justify-content-between result-list-head">
+                                            <div class="d-flex align-items-start justify-content-between result-list-head">
                                                 <h4 class="m-lg-0 p-0">@if($sche->test_series_name)
                                                   {{$sche->test_series_name}}
                                                   @elseif($sche->live_exam_name)
@@ -181,6 +181,7 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
     color: #231f20;
     font-size: 16px;
     font-weight: 600;
+    flex: 1;
 }
 
 .result-list-head p {
@@ -287,14 +288,11 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
 
 @media only screen and (max-width: 1199px) {
     .result-list-head h4 {
-        font-size: 15px;
-        flex: 1;
-        margin-right: 20px;
-        margin-bottom: 0;
+        font-size: 14px;
     }
 
     .result-list-head p {
-        font-size: 15px;
+        font-size: 14px;
         flex: 1;
     }
 }
@@ -307,6 +305,12 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
     .result-review {
         font-size: 13px;
     }
+    .paper-sub small {
+    font-size: 12px;
+}
+.paper-sub span {
+    font-size: 13px;
+}
 }
 
 </style>
