@@ -338,7 +338,7 @@ class ExamCustomController extends Controller
 
             $tagrets = implode(', ', $aTargets);
 
-            $test_type = 'Mocktest';
+            $test_type = 'Assessment';
             $exam_type = 'PT';
             $exam_name = "Mock Test";
             Session::put('exam_name', $exam_name);
@@ -1037,7 +1037,7 @@ class ExamCustomController extends Controller
 
             $tagrets = implode(', ', $aTargets);
 
-            $test_type = 'Mocktest';
+            $test_type = 'Assessment';
             $exam_type = 'PT';
 
             Session::put('exam_name', $test_name);
