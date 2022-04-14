@@ -14,6 +14,10 @@ $userData = Session::get('user_data');
         });
         //$('#endExam').modal('show');
     }
+    history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
 </script>
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
