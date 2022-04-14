@@ -265,6 +265,10 @@
     .list-series .scroll-div-live-exm{padding: 0.2rem!important;}
     .counter{margin-right:-24px!important}
    #test_instruction .col-xl-4.ps-xl-5.ps-lg-2 .justify-content-center{width:100%;}
+   #scroll-mobile::-webkit-scrollbar {
+    width: 0px;
+    height: 5px !important;
+}
    .Flat-left {
     width: 100%;
     float: none;
