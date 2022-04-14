@@ -184,7 +184,7 @@
 
 @media(max-width:1024px) {
     .list-series .live-exam .speci-text li {
-        width: 55%;
+        /* width: 55%; */
         margin-right: 0px;
         float: left !important;
     }
