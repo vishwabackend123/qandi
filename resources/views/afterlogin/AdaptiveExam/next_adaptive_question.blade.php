@@ -207,6 +207,20 @@ $questtype='radio';
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
+                event.preventDefault();
+                return;
+            }
+
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
+                event.preventDefault();
+                return;
+            }
+
+        }
     });
 
     jQuery(function() {
