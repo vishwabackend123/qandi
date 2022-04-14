@@ -239,7 +239,16 @@
 
 }
 @media(max-width:991px){
-
+   .tabintablet {
+        overflow-x: scroll;
+       overflow-y: hidden;
+    }
+.tabintablet .nav.nav-tabs.cust-tabs {
+    width: 700px;
+}
+    .tabintablet ul#myTab li a {
+    line-height: 42px;
+}
     li.a1TS {
         width: 39% !important;
     }
