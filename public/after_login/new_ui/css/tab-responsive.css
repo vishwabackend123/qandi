@@ -235,11 +235,14 @@
 .practice-series-lists .cust-tab-content .custom-btn-gray{width: 100%;}
 .practice-series-lists.list-series .live-exam .speci-text li.a4TS{width: 28%;}
 .practice-series-lists .sub-details{font-size:15px;}
-.practice-series-lists.list-series .live-exam .speci-text li.a4TS{width: 28%;}
 #favSubResponse p{font-size:24px;}
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    div#scorecontainer {padding: 0 5px; }
+    #marks_trend_graph{    padding-top: 18px;}
+.practice-series-lists.list-series .live-exam .speci-text li.a4TS{width: 26%;}
+
     #fullTest_Dashboard .full-txtblock span {
         padding-left: 5%;
     }
