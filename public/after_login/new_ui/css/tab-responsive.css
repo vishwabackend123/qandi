@@ -239,6 +239,7 @@
 
 }
 @media(max-width:991px){
+
     li.a1TS {
         width: 39% !important;
     }
@@ -246,6 +247,7 @@
     li.a2TS {
         min-width: 116px;
     }
+    .slbs-link.ms-5 {margin-left:1.5rem!important;}
     .list-series .scroll-div-live-exm{padding: 0.2rem!important;}
     .counter{margin-right:-24px}
    #test_instruction .col-xl-4.ps-xl-5.ps-lg-2 .justify-content-center{width:100%;}
