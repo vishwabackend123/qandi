@@ -1,4 +1,20 @@
-@extends('afterlogin.layouts.app_new')
+@extends('afterlogin.layouts.app_new')<script type="text/javascript">
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
+    });
+</script>
 @section('content')
 @php
 $userData = Session::get('user_data');
@@ -275,7 +291,7 @@ $questtype='radio';
     </div>
 </div>
 <!-- Modal Test_Instruction-->
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
@@ -417,23 +433,7 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <!-- Have fun using Bootstrap JS -->
-<script type="text/javascript">
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $("#FullTest_Exam_Panel_Interface_A").modal({
-            backdrop: "static",
-            keyboard: false
-        });
 
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-            history.go(1);
-        };
-    });
-</script>
 <script>
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
