@@ -191,12 +191,7 @@ $questtype='radio';
                 $("#exam_content_sec  #btn_" + question_id).focusout();
             } else {
                 $("#exam_content_sec  #btn_" + question_id).focus();
-                $("#exam_content_sec  #btn_" + question_id).keypress(function(e) {
 
-                    if (e.keyCode === 13 || e.keyCode === 32) {
-                        e.preventDefault();
-                    }
-                });
             }
         }
     });
@@ -208,7 +203,7 @@ $questtype='radio';
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
     });

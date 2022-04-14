@@ -472,7 +472,7 @@ $questtype='radio';
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
     });
@@ -480,7 +480,15 @@ $questtype='radio';
         jQuery(".markerDiv").click(function() {
             $('input[type=radio]', this).prop("checked", true);
         });
+
+        $("#exam_content_sec  .next_button").keypress(function(e) {
+            if (e.keyCode === 13 || e.keyCode === 32) {
+
+                e.preventDefault();
+            }
+        });
     });
+
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -822,7 +830,7 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+
                 $("#btn_" + question_id).position().top;
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
@@ -830,6 +838,8 @@ $questtype='radio';
 
                 $("#question_section div").remove();
                 $("#question_section").html(result);
+
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
 
             }
         });
