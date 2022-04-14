@@ -374,7 +374,7 @@
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, 
     .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width: 33.33%!important;margin-right: 0!important;}
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
-    .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 33.33%!important;}
+    .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 55.33%!important;}
     
 }
 @media (min-width: 769px) and (max-width: 990px){
