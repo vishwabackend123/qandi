@@ -9,7 +9,7 @@
         &nbsp;Export Analytics
     </button>
 </div>
-<div class="col-lg-4">
+<div class="col-lg-4 mb-lg-0 mb-4">
     <div class="bg-white shadow-lg box-shadow p-3 position-relative m-0 custom-box-shadow">
         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
         <div class="text-center">

@@ -1,4 +1,4 @@
-<div class="col-lg-5">
+<div class="col-lg-5 mb-lg-0 mb-4">
     <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100 custom-box-shadow">
         <h5 class="dashboard-title mb-3">Subject Score</h5>
 
