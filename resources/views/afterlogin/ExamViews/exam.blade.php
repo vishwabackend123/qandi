@@ -450,17 +450,7 @@ $questtype='radio';
 <!-- page referesh disabled -->
 <script>
     /* Allow only numeric with decimal */
-    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
-        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-            event.preventDefault();
-        }
-        var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-            event.preventDefault();
-        }
-    });
+
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -567,11 +557,31 @@ $questtype='radio';
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
-
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        alert(e.keyCode);
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+    });
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
             $('input[type=radio]', this).prop("checked", true);
         });
+
+        $("#exam_content_sec  .next_button").keypress(function(e) {
+            if (e.keyCode === 13 || e.keyCode === 32) {
+                alert(e.keyCode);
+                e.preventDefault();
+            }
+        });
+
+
     });
     /*  $('.instructions').slimscroll({
          height: '33vh',
