@@ -26,7 +26,7 @@ class ReviewController extends Controller
 
     /* creating review with api */
 
-    public function getReview($result_id)
+    public function getReview($result_id,$pageName = "")
     {
 
         try {
@@ -221,10 +221,17 @@ class ReviewController extends Controller
 
                 return view('afterlogin.ExamCustom.review', compact('question_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'all_question_list', 'attempt_opt', 'correct_ans', 'answerKeys', 'filtered_subject', 'activesub_id', 'exam_name'));
             } else {
-                return redirect()->route('dashboard');
+                if ($pageName == 'attempted') {
+                    return Redirect::back()->withErrors(['Data does not exist for this result id.']);
+                }else
+                {
+                    return redirect()->route('dashboard');    
+                }
+                
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
+            return Redirect::back()->withErrors(['There is some error  for this result id.']);
         }
     }
 

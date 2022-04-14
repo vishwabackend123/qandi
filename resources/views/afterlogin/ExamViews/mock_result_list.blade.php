@@ -19,6 +19,18 @@ $userData = Session::get('user_data');
     <div class="content-wrapper">
         <div class="container-fluid custom-page">
             <div class="row">
+            @if(count($errors) > 0 )
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <ul class="p-0 m-0" style="list-style: none;">
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
                 <div class="col-lg-12  p-lg-5 pt-none">
                     <div class="result-list bg-white tab-wrapper">
                         <div id="scroll-mobile">
@@ -32,6 +44,7 @@ $userData = Session::get('user_data');
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
                                 <div class="scroll-div mt-4" id="chapter_list_1">
+                                  @if(!empty($result_data))
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
                                         <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
@@ -73,7 +86,7 @@ $userData = Session::get('user_data');
                                                     <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Show Details</span></a></span>
                                             </div>
                                             <div class="result-list-btns">
-                                                <a href="{{route('exam_review',$sche->id)}}" class="btn result-review w-100">Review Exam</a>
+                                                <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn result-review w-100">Review Exam</a>
                                             </div>
                                         </div>
                                         <div class="mb-4 collapse" id="chapter_{{$sche->id}}">
@@ -104,7 +117,13 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     @endforeach
+                                    @else
+                                    <div class="text-center">
+                                        <span class="sub-details">No result history available right now.</span>
+                                    </div>
+                                    @endif
                                 </div>
+
                             </div>
                         </div>
                     </div>

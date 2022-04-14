@@ -28,7 +28,7 @@ $userData = Session::get('user_data');
         <div class="col-lg-12  p-lg-5 pt-none">
 
           <div class="tab-wrapper">
-            <div id="scroll-mobile">
+            <div id="scroll-mobile" class="tabintablet">
               <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                 @isset($subject_list)
                 @foreach($subject_list as $key=>$subject)
@@ -444,6 +444,32 @@ $userData = Session::get('user_data');
     variableWidth: false,
     prevArrow: '<button class="slick-prev"> < </button>',
     nextArrow: '<button class="slick-next"> > </button>',
+
+    responsive: [
+  {
+  breakpoint: 1024,
+  settings: {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    infinite: true
+  }
+  },
+  {
+  breakpoint: 600,
+  settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }
+  },
+{
+  breakpoint: 480,
+  settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }
+}
+ ]
+
   });
 
   function destroyCarousel(slick_id) {
