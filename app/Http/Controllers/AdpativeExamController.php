@@ -777,6 +777,8 @@ class AdpativeExamController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
+            //dd($response_json, $request, $curl_url);
+
             $response_data = (json_decode($response_json));
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
