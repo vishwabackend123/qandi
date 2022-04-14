@@ -560,7 +560,7 @@ $questtype='radio';
 
         $("#exam_content_sec  .next_button").keypress(function(e) {
             if (e.keyCode === 13 || e.keyCode === 32) {
-                alert(e.keyCode);
+
                 e.preventDefault();
             }
         });

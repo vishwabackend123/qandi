@@ -558,7 +558,7 @@ $questtype='radio';
         $('.qoption_error').hide();
     });
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-        alert(e.keyCode);
+
         //this.value = this.value.replace(/[^0-9\.]/g,'');
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
@@ -576,7 +576,7 @@ $questtype='radio';
 
         $("#exam_content_sec  .next_button").keypress(function(e) {
             if (e.keyCode === 13 || e.keyCode === 32) {
-                alert(e.keyCode);
+
                 e.preventDefault();
             }
         });
