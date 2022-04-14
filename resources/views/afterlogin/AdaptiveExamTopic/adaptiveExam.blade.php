@@ -190,15 +190,8 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
-                                            @elseif($template_type==11)
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
-
-                                            </div>
-                                            @endif
-
-                                            @if(env('ADAPTIVE_DEMO') == 'true')
                                             <!-- --------- correct answer for demo---------- -->
+                                            @if(env('ADAPTIVE_DEMO') == 'true')
                                             <style>
                                                 #demo_ans p {
                                                     display: inline
@@ -228,8 +221,18 @@ $questtype='radio';
                                                 @endif
 
                                             </span>
-                                            <!-- --------- correct answer for demo---------- -->
                                             @endif
+                                            <!-- --------- correct answer for demo---------- -->
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+                                            </div>
+                                            @endif
+
+
+
+
                                         </div>
 
                                     </div>

@@ -164,6 +164,7 @@ $questtype='radio';
 </div>
 <script>
     var question_id = '{{$activeq_id}}';
+    var template_type = '{{$template_type}}';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
 

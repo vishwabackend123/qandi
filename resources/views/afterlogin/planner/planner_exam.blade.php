@@ -176,6 +176,38 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
+                                            <!-- --------- correct answer for demo---------- -->
+                                            @if(env('ADAPTIVE_DEMO') == 'true')
+                                            <style>
+                                                #demo_ans p {
+                                                    display: inline
+                                                }
+                                            </style>
+                                            <span id="demo_ans" class="d-flex">
+                                                <span>Correct Answers :</span>
+                                                @php $no_ans=0; @endphp
+                                                @if(isset($correct_answers) && !empty($correct_answers))
+
+                                                @foreach($correct_answers as $anskey=>$ans_value)
+                                                @php
+
+                                                $dom2 = new DOMDocument();
+                                                @$dom2->loadHTML($ans_value);
+                                                $anchorAns = $dom2->getElementsByTagName('img')->item(0);
+                                                $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
+                                                $anslatex = "https://math.now.sh?from=".$anstext;
+                                                $view_ans='<img src="'.$anslatex.'" />' ;
+                                                @endphp
+                                                <label><span class="ms-2"> {{$alpha[$anskey-1]}}. </span>{!! !empty($anstext)?$view_ans:$ans_value; !!}</label>
+
+
+                                                @php $no_ans++; @endphp
+                                                @endforeach
+                                                @endif
+
+                                            </span>
+                                            @endif
+                                            <!-- --------- correct answer for demo---------- -->
                                             @elseif($template_type==11)
                                             <div class="col-md-6 mb-4">
                                                 <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
@@ -393,7 +425,7 @@ $questtype='radio';
                     </div>
                     <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span<!-- --------- correct answer for demo---------- -->> left!</h3>
                 <p>
                     You haven’t attempted all of the questions. <br>
                     Do you want to have a quick review before you Submit?

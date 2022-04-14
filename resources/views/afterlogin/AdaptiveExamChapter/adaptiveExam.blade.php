@@ -159,12 +159,6 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
-                                            @elseif($template_type==11)
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
-
-                                            </div>
-                                            @endif
                                             <!-- --------- correct answer for demo---------- -->
                                             @if(env('ADAPTIVE_DEMO') == 'true')
                                             <style>
@@ -192,6 +186,13 @@ $questtype='radio';
                                             </span>
                                             @endif
                                             <!-- --------- correct answer for demo---------- -->
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+                                            </div>
+                                            @endif
+
                                         </div>
                                     </div>
                                     <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
