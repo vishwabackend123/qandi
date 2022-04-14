@@ -85,6 +85,17 @@ $userData = Session::get('user_data');
     </div>
 </div>
 @include('afterlogin.layouts.footer_new')
+<!-- browser back disable -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function() {
+            window.history.pushState(null, "", window.location.href);
+        };
+    });
+</script>
+<!-- browser back disable -->
 
 <script>
     $(document).ready(function() {
