@@ -111,6 +111,7 @@ $questtype='radio';
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <!-- Exam subject Tabs  -->
+                            <div id="scroll-mobile" class="tabintablet">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @if(!empty($filtered_subject))
                                 @foreach($filtered_subject as $key=>$sub)
@@ -120,6 +121,7 @@ $questtype='radio';
                                 @endforeach
                                 @endif
                             </ul>
+                            </div>
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
