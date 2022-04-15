@@ -165,6 +165,9 @@
     padding: 10px 7px;
     font-size: 12px;
 }
+.exam-analytics a.top-btn-pop, #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
+    font-size: 12px;
+}
 
 
 
