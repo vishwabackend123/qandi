@@ -90,8 +90,8 @@ button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.te
 #exam_content_sec .btn-light{color: #2c3348 !important;}
 #exam_content_sec .btn-light:hover{color: #fff !important;}
 #exam_content_sec #question_section .tab-btn-box a :hover{color: #fff;}
-#exam_content_sec #question_section .tab-btn-box .a :hover{color: #fff;}   
-
+#exam_content_sec #question_section .tab-btn-box .a :hover{color: #fff;}
+.examSect .rightSect .number-block .btn:hover{color: #2c3348 !important;}
 /***Added_by-kanchan***/
 #exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item {
     margin-right: 5px;

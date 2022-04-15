@@ -163,13 +163,6 @@ $questtype='radio';
             @php $no++; @endphp
             @endforeach
             @endif
-            @elseif($template_type==11)
-            <div class="col-md-6 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
-
-            </div>
-            @endif
-
             <!-- --------- correct answer for demo---------- -->
             @if(env('ADAPTIVE_DEMO') == 'true')
             <style>
@@ -202,6 +195,14 @@ $questtype='radio';
             </span>
             @endif
             <!-- --------- correct answer for demo---------- -->
+            @elseif($template_type==11)
+            <div class="col-md-6 mb-4">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+            </div>
+            @endif
+
+
 
         </div>
     </div>
@@ -220,6 +221,7 @@ $questtype='radio';
 </div>
 <script>
     var question_id = '{{$active_q_id}}';
+    var template_type = '{{$template_type}}';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
     $("#current_question").val(question_id);
@@ -262,8 +264,22 @@ $questtype='radio';
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
+        }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
+                event.preventDefault();
+                return;
+            }
+
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
+                event.preventDefault();
+                return;
+            }
+
         }
     });
 
