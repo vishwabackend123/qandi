@@ -387,7 +387,7 @@ $questtype='radio';
     </div>
 </div>
 
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
@@ -485,8 +485,22 @@ $questtype='radio';
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
+        }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
+                event.preventDefault();
+                return;
+            }
+
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
+                event.preventDefault();
+                return;
+            }
+
         }
     });
 
@@ -521,7 +535,7 @@ $questtype='radio';
             $('input[type=radio]', this).prop("checked", true);
         });
 
-        $("#exam_content_sec  .next_button").keypress(function(e) {
+        $("#exam_content_sec .next_button").keypress(function(e) {
             if (e.keyCode === 13 || e.keyCode === 32) {
 
                 e.preventDefault();

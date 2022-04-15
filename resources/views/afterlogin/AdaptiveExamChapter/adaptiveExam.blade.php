@@ -159,12 +159,6 @@ $questtype='radio';
                                             @php $no++; @endphp
                                             @endforeach
                                             @endif
-                                            @elseif($template_type==11)
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
-
-                                            </div>
-                                            @endif
                                             <!-- --------- correct answer for demo---------- -->
                                             @if(env('ADAPTIVE_DEMO') == 'true')
                                             <style>
@@ -192,6 +186,13 @@ $questtype='radio';
                                             </span>
                                             @endif
                                             <!-- --------- correct answer for demo---------- -->
+                                            @elseif($template_type==11)
+                                            <div class="col-md-6 mb-4">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+
+                                            </div>
+                                            @endif
+
                                         </div>
                                     </div>
                                     <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
@@ -361,7 +362,7 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true">
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
@@ -445,8 +446,22 @@ $questtype='radio';
             event.preventDefault();
         }
         var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 0) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
+        }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
+                event.preventDefault();
+                return;
+            }
+
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
+                event.preventDefault();
+                return;
+            }
+
         }
     });
     /* Sachin screen changes */
@@ -558,7 +573,7 @@ $questtype='radio';
             $('input[type=radio]', this).prop("checked", true);
         });
 
-        $("#exam_content_sec  .next_button").keypress(function(e) {
+        $("#exam_content_sec .next_button").keypress(function(e) {
             if (e.keyCode === 13 || e.keyCode === 32) {
 
                 e.preventDefault();
