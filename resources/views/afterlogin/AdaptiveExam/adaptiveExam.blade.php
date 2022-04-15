@@ -571,16 +571,20 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
-            $('input[type=radio]', this).prop("checked", true);
-        });
+            if (template_type == 2) {
+                $('input[type=radio]', this).prop("checked", true);
+            } else {
+                var $checks = $(this).find('input[type=checkbox]');
 
-        $("#exam_content_sec .next_button").keypress(function(e) {
+                $checks.prop("checked", !$checks.is(":checked"));
 
-            if (e.keyCode === 13 || e.keyCode === 32) {
-
-                e.preventDefault();
             }
         });
+    });
+
+    $(document).on('keydown', function(e) {
+        if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
+            e.preventDefault();
     });
     /*$('.instructions').slimscroll({
         height: '33vh',
