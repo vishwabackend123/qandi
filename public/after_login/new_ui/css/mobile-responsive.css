@@ -68,6 +68,7 @@
     .sublinks a{font-size:14px;padding: 0.5rem 0.5rem;}
     .text-start.sublinks a svg {width: 20px;height: 20px;}
     .dash-sidebar .submenu-L2{left:165px;}
+    .sidbar-block {padding: 30px 18px 30px 10px;}
     .bg-white.shadow-lg {
         height: auto!important;
     }
