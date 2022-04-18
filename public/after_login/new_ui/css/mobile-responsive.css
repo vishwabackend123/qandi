@@ -34,6 +34,15 @@
     #profileAcc{
         top: -3px;
     }
+    .dashbaordmargin {
+        margin-left: 0px;
+    }
+    .seeAnico .button-sec.mt-3{    padding: 0px 0px 0px 17px;
+        margin-right: 0px;}
+        .button-sec.mt-3 a {    width: auto;
+            margin: 0 auto;
+            padding: 10px 30px;
+        }
 }
 
 @media(max-width:500px){
