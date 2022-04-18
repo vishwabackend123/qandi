@@ -82,6 +82,13 @@
         }
         #overall #back2Dsh button.btn.btn-outline-danger{margin:10px 0 0 0!important;}
         #back2Dsh>.d-flex{justify-content: center;}
+        .tab-wrapper{position: relative;}
+        .overllanaly .tab-wrapper #scroll-mobile{padding-bottom:0px;}
+        .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs li.ms-auto{    z-index: 9999;
+            position: absolute;
+            top: 84px;
+            left: 12px;}
+        .overllanaly .cust-tab-content{padding-top: 50px!important;}
 
 }
 
