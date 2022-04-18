@@ -3,7 +3,7 @@
     
 }
 @media(max-width:500px){
-
+    .topics-box { width: calc(50% - 11px); margin: 15px 0px 0px 8px;}
     
 }
 @media(max-width:420px){
