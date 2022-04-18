@@ -76,6 +76,13 @@
         .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {right: -10px;top: 0px;}
         #marKs-trends .bg-white, #time-Avg-quest .bg-white{padding: 0!important;}
         #overall button.btn, #home button.btn, .Ex-anal{width: auto!important;}
+        .tab-wrapper{position: relative;}
+        .overllanaly .tab-wrapper #scroll-mobile{padding-bottom:0px;}
+        .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs li.ms-auto{    z-index: 9999;
+            position: absolute;
+            top: 84px;
+            left: 12px;}
+            .overllanaly .cust-tab-content{padding-top: 50px!important;}
 
 }
 
