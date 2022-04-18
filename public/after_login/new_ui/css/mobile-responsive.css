@@ -72,6 +72,8 @@
     .bg-white.shadow-lg {
         height: auto!important;
     }
+    .subject-placeholder-block img {
+        width: 80px;}
 }
 
 @media(max-width:420px){
