@@ -3,7 +3,7 @@
         display: flex;
         margin-bottom: 0px;
         justify-content: center;
-        padding-left: 2rem;
+        padding-left: 2rem; 
     
     }
     .profile-section {
@@ -19,11 +19,27 @@
     
 
     .sublinks a{font-size:14px;}
-
+    .subscription .form-btns {
+    margin-top: 20px;
+}
+.subscrived {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subscription .p-text h3 {
+    font-size: 14px;
+    line-height: inherit;
+    margin: 0;
+}  
+.subscrived svg {
+    margin-right: 0;
+}
 }
 @media(max-width:576px){
     .dash-sidebar .submenu-L1{left:60px;}
     .dash-nav-link a:first-child svg {width: 63px;}
+    .dash-nav-link a:nth-child(2) svg {width: 90px;}
 
 
 }
