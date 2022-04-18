@@ -489,12 +489,14 @@ input.form-control.email-addrs {
         top: 5%;
         text-align: center;
         display: block;
-        left: auto;
+        left: 0px;
+		margin-bottom: 20px !important;
+		padding: 30px 10px;
     }
 
     .login_screen {
-        margin-top: 50px !important;
-        width: 90%;
+        margin-top: 35px !important;
+		width: 95%;
         /*min-height: auto;*/
         padding: 20px 20px !important;
     }
