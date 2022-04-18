@@ -71,6 +71,9 @@
         .content-wrapper .container-fluid.pt-0 {
             padding: 0px 10px 0px 5px;
         }
+        div#marKs-trends .bg-white p {height: auto;}
+        .fw-bold {font-size: 14px;}
+        .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {right: -4px;top: 14px;}
 
 }
 
