@@ -2,3 +2,10 @@
 
     
 }
+@media(max-width:500px){
+
+    
+}
+@media(max-width:420px){
+    .dashboard-cards-block .bg-white>small p { min-width: 227px; padding: 15px 25px 15px 10px; }  
+}
