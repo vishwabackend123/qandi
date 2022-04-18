@@ -1,5 +1,21 @@
 @media(max-width:767px){
-
+    .profile-section ul {
+        display: flex;
+        margin-bottom: 0px;
+        justify-content: center;
+        padding-left: 2rem;
+    
+    }
+    .profile-section {
+        width: 100%;
+    }
+    .profile-section ul li {
+        padding: 0px;
+        width: auto;
+    }
+    .profile-section ul li svg {
+        margin-right: 0px;
+    }
     
 }
 @media(max-width:500px){
