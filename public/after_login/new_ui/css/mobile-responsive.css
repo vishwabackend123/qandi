@@ -52,7 +52,7 @@
         }
         .topics-box{justify-content:left;}
         .topics-box:first-child{margin-left:0px;}
-        .progressChartExpend{min-width:900px;}
+        .progressChartExpend{min-width:1600px;}
         #graphExpand .modal-body {overflow-x: auto;}
         #graphExpand .modal-body::-webkit-scrollbar{height:5px;}
 }
