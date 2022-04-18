@@ -82,6 +82,7 @@
             position: absolute;
             top: 84px;
             left: 12px;}
+            .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
             .overllanaly .cust-tab-content{padding-top: 50px!important;}
 
 }
