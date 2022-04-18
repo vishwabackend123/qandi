@@ -1,32 +1,33 @@
 @media(max-width:767px){
-    .sublinks a{font-size:14px;}
     .subscription .form-btns {
     margin-top: 20px;
+    }
+    .subscrived {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .subscription .p-text h3 {
+        font-size: 14px;
+        line-height: inherit;
+        margin: 0;
+    }  
+    .subscrived svg {
+        margin-right: 0;
+    }
 }
-.subscrived {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.subscription .p-text h3 {
-    font-size: 14px;
-    line-height: inherit;
-    margin: 0;
-}  
-.subscrived svg {
-    margin-right: 0;
-}
-}
-@media(max-width:576px){
-    .dash-sidebar .submenu-L1{left:60px;}
-    .dash-nav-link a:first-child svg {width: 63px;}
-    .dash-nav-link a:nth-child(2) svg {width: 90px;}
 
-}
 @media(max-width:500px){
     .topics-box { width: calc(50% - 11px); margin: 15px 0px 0px 8px;}
     .dashboard-cards-block .progress-journey-card.bg-white>small p { min-width: 290px;} 
+    .dash-sidebar .submenu-L1{left:60px;}
+    .dash-nav-link a:first-child svg {width: 63px;}
+    .dash-nav-link a:nth-child(2) svg {width: 90px;}
+    .sublinks a{font-size:14px;}
+    .text-start.sublinks a svg {width: 20px;height: 20px;}
+    .dash-sidebar .submenu-L2{left:180px;}
 }
+
 @media(max-width:420px){
     .dashboard-cards-block .bg-white>small p ,.dashboard-cards-block .progress-journey-card.bg-white>small p{ min-width: 227px; padding: 15px 25px 15px 10px; }  
 }
