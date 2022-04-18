@@ -86,11 +86,11 @@
         .overllanaly .tab-wrapper #scroll-mobile{padding-bottom:0px;}
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs li.ms-auto{    z-index: 9999;
             position: absolute;
-            top: 84px;
+            top: 64px;
             left: 12px;}
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
         .overllanaly .cust-tab-content{padding-top: 50px!important;}
-
+        .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
 
 }
 
