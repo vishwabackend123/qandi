@@ -184,7 +184,7 @@
 
 @media(max-width:1024px) {
     .list-series .live-exam .speci-text li {
-        width: 55%;
+        /* width: 55%; */
         margin-right: 0px;
         float: left !important;
     }
@@ -219,42 +219,42 @@
     }
 
     /** profile page css **/
-    .profile-section {
+    /* .profile-section {
         width: 220px;
         top: 8%;
         height: 650px;
-    }
+    } */
 
     .leader-board {
-        width: 310px;
-        right: 20%;
+        /* width: 310px;
+        right: 20%; */
         /* height: 100%; */
-        top: 8%;
+        /* top: 8%; */
     }
 
-    .profile-show {
+    /* .profile-show {
         height: 100%;
         padding: 10px 0px;
-    }
+    } */
 
     .subscription .form-btns button {
         margin-bottom: 20px;
     }
 
-    .log-out-screen {
+    /* .log-out-screen {
         width: 50%;
         right: 20%;
         top: 8%;
-    }
+    } */
 
     button.cancel-btn {
         margin-bottom: 15px;
     }
 
-    .subscription {
+    /* .subscription {
         right: 20%;
         top: 8%;
-    }
+    } */
 
     /** end here **/
 }
@@ -493,12 +493,13 @@
 
 @media(min-width:768px) and (max-width:990px) {
 	
+    .live-exam-list-wrapper .cust-tab-content .custom-btn-gray{ width: 216px;}
 	.edit-form {
 		right: 210px !important;
 	}
-	.form-btns {
+	/* .form-btns {
 		margin-top: 0px !important;
-	}
+	} */
 
     /** rahul css on 15-1-2022 **/
 
@@ -520,7 +521,7 @@
     }
 
     .live-exam .speci-text li:last-child a button {
-        width: 50%;
+        width: 100%;
     }
 
     /* 28-12*/
@@ -617,27 +618,27 @@
         height: 650px;
     }
 
-    .leader-board {
+    /* .leader-board {
         width: 329px;
 		right: 24%;
 		height: 550px;
 		padding-left: 70px;
-    }
+    } */
 
-    .profile-show {
+    /* .profile-show {
 		position: absolute;
 		top: 0px;
 		right: 460px;
 		width: 284px;
-	}
+	} */
     .subscription .form-btns button {
         margin-bottom: 20px;
     }
 
-    .log-out-screen {
+    /* .log-out-screen {
         width: 50%;
         right: 24%;
-    }
+    } */
 
     .subscription {
         right: 24%;
@@ -647,19 +648,19 @@
         padding-right: 0px;
     }
 
-    .profile-picture-txt {
+    /* .profile-picture-txt {
         padding: 15px;
         display: inline-block;
-    }
+    } */
 
-    .subscription .profile-picture-txt .p-picture {
+    /* .subscription .profile-picture-txt .p-picture {
         height: 68px;
         width: 70px;
-    }
+    } */
 
-    .subscrived {
+    /* .subscrived {
         padding: 31px 0px;
-    }
+    } */
 
     .subscription .p-text h3 {
         font-size: 16px;
@@ -789,7 +790,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 2rem;
+        padding: 15px 1rem;
     }
 
     .examSect ul#myTab li a {
@@ -833,7 +834,7 @@
     }
 
     .tab-wrapper .d-flex.justify-content-between {
-        display: inline-block !important;
+        /* display: inline-block !important; */
         width: 100%;
     }
 
@@ -841,8 +842,9 @@
         display: inline-block;
     }
 
+
     .justify-content-center {
-        justify-content: center !important;margin-left:25px;
+        justify-content: center !important;
     }
 
     .slbs-link a {
@@ -863,7 +865,7 @@
     }
 
     .bg-white.shadow-lg {
-        height: 245px;
+        height: 256px;
     }
 
     /* planner screen */
@@ -1635,14 +1637,14 @@
 
     /** live exam end **/
     .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgba(0,0 0,0.1);
         border-top-left-radius: 56px;
         border-top-right-radius: 56px;
 
     }
 
     #scroll-mobile {
-        overflow-y: scroll;
+        overflow-x: scroll;
         border-top-left-radius: 56px;
         border-top-right-radius: 56px;
     }
@@ -1702,7 +1704,7 @@
     }
 
     .tab-wrapper .d-flex.justify-content-between {
-        display: inline-block !important;
+        /* display: inline-block !important; */
         width: 100%;
         padding-left: 0px !important;
         padding-right: 0px !important;
@@ -1981,7 +1983,7 @@
         position: absolute;
         right: 23%;
         top: 0%;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0, 0, 0,0.16);
         display: none;
     }
 
@@ -2057,7 +2059,7 @@
         position: absolute;
         right: 23%;
         top: 0%;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
         display: none;
 
     }
@@ -2176,7 +2178,7 @@
         background: #5ebbfe;
         color: #fff;
         font-weight: 500;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         padding: 15px 20px;
 
     }
@@ -2268,7 +2270,7 @@
 		background: #fff;
 		border-radius: 50%;
 		padding: 0px;
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
     }
 
     .btm-form-flds {
@@ -2400,7 +2402,7 @@
 
     #full-txtBlock {
         border-radius: 42px;
-        box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff) !important;
     }
 
@@ -2520,7 +2522,7 @@
     .ms-auto span.me-1 .bg-light-red {
         background: #00baff !important;
         border-radius: 10px;
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
         margin-right: 15px;
     }
 
@@ -2543,7 +2545,7 @@
 
     #test_instruction button#goto-exam-btn {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(241deg, #21ccff, #21ccff);
         border: none;
         padding: 15px 65px;
@@ -2557,13 +2559,13 @@
     #FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
     #endExam .modal-content.rounded-0 {
         border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
         border: none;
     }
 
     #endExam #See-Ana {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0. 8);
         background-image: linear-gradient(241deg, #21ccff, #21ccff);
         border: none;
         padding: 15px 65px;
@@ -2597,7 +2599,7 @@
     }
 
     .exam-analytics .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
         border-top-left-radius: 56px;
         border-top-right-radius: 56px;
         border-radius: 56px;
@@ -2627,7 +2629,7 @@
     }
 
     .exam-analytics button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         border-radius: 20px;
@@ -2673,7 +2675,7 @@
     }
 
     button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         border-radius: 20px;
@@ -2711,7 +2713,7 @@
 
     .percentage-21 {
         border-radius: 20px;
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
         width: 380px;
         background: #fff;
         padding: 10px;
@@ -3037,7 +3039,7 @@
         }
 
         .profile-show {
-            height: 100%;
+            height: auto%;
             padding: 10px 0px;
         }
 
@@ -3411,7 +3413,7 @@
     /* share friends */
     #sharefrnd .modal-content.rounded-0.bg-light {
         border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
         background-color: #fff !important;
     }
 
@@ -3504,7 +3506,7 @@
     #home button.btn,
     .Ex-anal {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         color: #fff;
@@ -3549,7 +3551,7 @@
         background: #f2f2f2;
         color: #231f20;
         border-radius: 5px;
-        box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: 0 3px 10px 0 rgba(0,0,0 ,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
     }
 
     #myTabContent .bg-light-red {
@@ -3608,7 +3610,7 @@
 
     div#contentHtml .report-block2 .bg-white {
         border-radius: 56px;
-        box-shadow: 0 0 20px 0 rgb(123 123 123 / 20%);
+        box-shadow: 0 0 20px 0 rgba(123,123,123 ,0.2);
         background-color: #fff;
         padding: 30px !important;
     }
@@ -3745,7 +3747,7 @@
 
     .Dwonload {
         border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
         background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
         color: #fff;

@@ -16,12 +16,12 @@ button {
     text-decoration: none;
 }
 
-.main-profile-section.blure-bg {
-    animation: none !important;
-}
 
-.profile-show.animateAccountCard,
-#LeaDer.animateAccountCard {
+.practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
+#attempted .result-list-btns a{line-height: 34px;}
+.padd-right-0{padding-right:0!important;}
+.main-profile-section.blure-bg{animation: none!important;}
+.profile-show.animateAccountCard,#LeaDer.animateAccountCard{
     animation-name: cssAnimation;
     animation-duration: 0.8s;
     animation-iteration-count: 1;
@@ -144,9 +144,9 @@ div#collapseNotification.notification-block.notification-block-active {
 }
 
 .overllanaly .shadow-lg#f-Numbr-sectin {
-    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.10), inset 0 0 0 0 rgba(0,0,0,0.51) !important;
     -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1), inset 0 0 0 0 rgba(0,0,0,0.51) !important;
     margin-left: -5px;
     margin-right: -5px;
 }
@@ -245,9 +245,9 @@ a.Ex-anal {
 
 .overllanaly .box-shadow,
 .overllanaly .shadow-lg {
-    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
-    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
-    box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
+    -webkit-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+    -moz-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+    box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
 }
 
 #marKs-trends .bg-white#back2Dsh {
@@ -351,9 +351,9 @@ div#arrow-left-btm .inner-arrow-left-btm {
 }
 
 .box-shadow.custom-box-shadow {
-    -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important;
-    -moz-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 0 rgba(0, 0, 0, 0.51) !important;
-    box-shadow: 0 0 18px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%) !important
+    -webkit-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;;
+    -moz-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+    box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
 }
 
 /******* 07-03-2022 Amit-Start ******/
@@ -555,7 +555,7 @@ div#myTabContent.reviewPanel .tab-pane .question-block {
 }
 
 .planner-scheduar-block.show .planner-edit-mode {
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
 
 .planner-scheduar-block.planner-content {
@@ -1479,12 +1479,15 @@ span.text-secondary.chapter_name.mb-2.d-block {
 
 .topics-box span {
     display: block;
-    box-shadow: inset 0 0 30px 0 rgb(255 255 255 / 51%);
+    /* box-shadow: inset 0 0 30px 0 rgb(255 255 255 / 51%);
+    -webkit-box-shadow: inset 0 0 30px 0 rgb(255 255 255 / 51%);
+  -moz-box-shadow: inset 0 0 30px 0 rgb(255 255 255 / 51%); */
     border: solid 2px #00baff;
     text-align: center;
     border-radius: 8px;
     padding: 10px 10px 0px;
     color: #2c3348;
+    background-color: #fff;
 }
 
 .topics-box:hover span {
@@ -1607,7 +1610,7 @@ ul.matrixLists li b {
 
 .btn.btntheme {
     border-radius: 20px;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(232deg, #21ccff 95%, #00baff -5%);
     color: #fff;
     border: 0;
@@ -1631,7 +1634,7 @@ ul.matrixLists li b {
 .dashboard-cards-block .bg-white>small p {
     background-color: #fff;
     border-radius: 20px;
-    box-shadow: 2px 5px 15px 0 rgb(0 0 0 / 10%);
+    box-shadow: 2px 5px 15px 0 rgba(0,0,0,0.1);
     z-index: 55;
     padding: 15px 30px 15px 20px;
     position: absolute;
@@ -1700,7 +1703,7 @@ ul.matrixLists li b {
     height: 60px;
     padding: 17.5px 53.7px 17px 69px;
     border-radius: 20px;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
     font-size: 18px;
     font-weight: 600;
@@ -1967,7 +1970,7 @@ button.disabled-btn,
 a.disabled-btn {
     opacity: 0.3;
     background: #21ccff;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
 }
 
 /* 9 feb 2022 - Amit-End */
@@ -2205,7 +2208,7 @@ input#select-city::placeholder {
 
 .cancel-btn-see {
     border-radius: 20px;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
     background: #e9e9e9;
     padding: 15px 30px;
     font-size: 18px;
@@ -2240,7 +2243,7 @@ input#country {
 /* 1st feb */
 .progress .prog-box {
     border-radius: 5px;
-    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
 }
 
 /* end 1st feb */
@@ -2325,7 +2328,7 @@ div.form-group.flds span.currect-email {
     border-radius: 8px;
     bottom: 100%;
     left: 20%;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.16);
     max-height: 150px;
     max-width: 251px;
 }
@@ -2444,7 +2447,7 @@ button.top-btn-pop:hover {
 
     outline: 0;
     border-radius: 56px !important;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
     border: none !important;
 }
 
@@ -2518,7 +2521,7 @@ a.dropdown-item i.fas {
 button.active-btn:hover {
     color: #fff;
     background: #00baff;
-    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: 0 3px 10px 0 rgba(255,255,255,0.8);
     padding: 0px;
 }
 
@@ -2526,7 +2529,7 @@ button.active-btn:hover {
 .btn-topic:hover {
     color: #fff;
     background: #00baff;
-    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: 0 3px 10px 0 rgba(255,255,255,0.8);
 }
 
 #topic_custom_footer .btn-clear-sel:hover {
@@ -2594,7 +2597,7 @@ button.active-btn:hover {
 }
 
 #refund_block_form #refund_form .mt-3 button#saveEdit {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     border: none;
     border-radius: 10px !important;
@@ -2694,7 +2697,7 @@ g#Group_3044 {
 
 .preparation span.p-icons a {
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 0 10px 0 rgba(0,0,0.0.2);
     background-color: #fff;
     padding: 5px;
     margin-right: 15px;
@@ -3163,7 +3166,7 @@ a#Zoology_tab_subject:nth-child(1):before {
 
 #endExam .modal-content.rounded-0 {
     border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     border: none !important;
 }
 
@@ -3171,7 +3174,7 @@ a#Zoology_tab_subject:nth-child(1):before {
 
 #endExam #bt-modal-confirm_over {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(241deg, #21ccff, #00baff);
     border: none;
     padding: 15px 65px;
@@ -3182,7 +3185,7 @@ a#Zoology_tab_subject:nth-child(1):before {
 
 /** 18-12-2021*/
 button#saveEdit {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     border: none;
     border-radius: 10px !important;
@@ -3193,7 +3196,7 @@ button#saveEdit {
 /* share friends */
 #sharefrnd .modal-content.rounded-0.bg-light {
     border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     background-color: #fff !important;
     border: none;
     left: 35px;
@@ -3324,7 +3327,7 @@ button#saveEdit {
 
 
 #resume-test .modal-dialog .modal-content.rounded-0 {
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     border-radius: 56px !important;
     width: 500px;
     margin: 0px auto;
@@ -3334,7 +3337,7 @@ button#saveEdit {
 
 #resume-test .modal-dialog .btn.btn-green-custom {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
     background: #00baff;
     font-size: 18px;
     text-transform: uppercase;
@@ -3392,7 +3395,7 @@ span.notification.ms-4 {
 /* how much like popup */
 #favSubResponse .modal-content.rounded-0 {
     border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     border: none;
 }
 
@@ -3402,7 +3405,7 @@ span.notification.ms-4 {
     color: #fff;
     border: none;
 
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     width: 204px;
     padding: 12px 91px;
     font-size: 18px;
@@ -3415,7 +3418,7 @@ span.notification.ms-4 {
     color: #fff;
     border: none;
     opacity: 0.3;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     width: 204px;
     padding: 12px 91px;
     font-size: 18px;
@@ -3451,7 +3454,7 @@ span.notification.ms-4 {
 /* Signup Payment Gateway */
 .PaymentGway {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     border: none;
     color: #fff;
@@ -3472,7 +3475,7 @@ span.notification.ms-4 {
 
 .PayBttn {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #00baff);
     border: none;
     color: #fff;
@@ -3519,13 +3522,13 @@ span.notification.ms-4 {
     border-radius: 56px !important;
     padding: 20px;
     border: none !important;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
 
 .ms-auto span.me-1 .bg-light-red {
     background: #00baff !important;
     border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 }
 
 .preparation .tab-wrapper .nav-tabs {
@@ -3560,7 +3563,7 @@ span.notification.ms-4 {
 }
 
 .tab-wrapper {
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
     border-radius: 56px;
     background: #ffffff;
 }
@@ -3639,7 +3642,7 @@ span.notification.ms-4 {
 /* share friends */
 #sharefrnd .modal-content.rounded-0.bg-light {
     border-radius: 56px !important;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     background-color: #fff !important;
     border: none;
     left: 35px;
@@ -3687,7 +3690,7 @@ button#button-addon2 {
 /* Analytics  Subject 16-12-2021 bhim */
 #FullTest_Exam_Panel_Interface_A .modal-content.rounded-0 {
     border-radius: 56px !important;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
     border: none;
 }
 
@@ -3697,7 +3700,7 @@ button#button-addon2 {
 
 #FullTest_Exam_Panel_Interface_A button#bt-modal-cancel {
     border-radius: 15px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background: #00baff;
     border: none;
     padding: 12px 25px;
@@ -3707,8 +3710,13 @@ button#button-addon2 {
 
 #FullTest_Exam_Panel_Interface_A button#bt-modal-confirm {
     border-radius: 15px !important;
+<<<<<<< HEAD
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+    background: #21ccff;
+=======
     box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     background: #00baff;
+>>>>>>> 2ead56ef52c1927288e1c63c15f1838bf613e4fe
     border: none;
     color: #fff;
     padding: 12px 25px;
@@ -3768,7 +3776,7 @@ button#button-addon2 {
 
 .percentage-21 {
     border-radius: 20px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
     width: 380px;
     background: #fff;
     padding: 10px;
@@ -4067,7 +4075,7 @@ p#h1--P {
 /***********************SACHIN_27_01_22-START******************/
 #full-txtBlock {
     border-radius: 20px;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #21ccff) !important;
     width: 65%;
     margin: 0 auto !important;
@@ -4143,7 +4151,7 @@ a#subject_chapter_5 {
 
 div#select-planner-chapter button#add_chapter {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     border: none;
     background-image: linear-gradient(247deg, #21ccff, #21ccff);
     padding: 10px 50px;
@@ -4154,13 +4162,13 @@ div#select-planner-chapter button#add_chapter {
     border-radius: 15px;
     color: #000;
 
-    background-color: rgb(33 204 255 / 18%);
+    background-color: rgba(33,204,255,0.18);
 
 }
 
 
 #collapsePlanner button.btn.greenBtnH {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(0deg, #21ccff, #21ccff 22%);
     border-radius: 15px !important;
     border: none;
@@ -4195,11 +4203,11 @@ input#StartDate {
     border-radius: 56px !important;
     padding: 20px;
     border: none;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
 
 #plannerChapter button.btn.greenBtnH {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(0deg, #21ccff, #21ccff 22%);
     border-radius: 15px !important;
     border: none;
@@ -4279,13 +4287,14 @@ div#sub-planner {
     background: #fff;
     /* padding: 10px 15px; */
     border-radius: 30px;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     z-index: 9;
     min-height: 450px !important;
     background-image: url(../images/analytics-thumbnail2.png);
     /* background-repeat: no-repeat;
     background-position: left 30% bottom -199px; */
     background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -4343,7 +4352,7 @@ div#sub-planner {
     background: #00c4ff;
     color: #fff;
     font-weight: 500;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     padding: 15px 20px;
 
 }
@@ -4409,7 +4418,7 @@ div#sub-planner {
     background: #fff;
     padding: 20px;
     border-radius: 56px;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     display: none;
     height: 550px !important;
     overflow: hidden;
@@ -4444,7 +4453,7 @@ div#sub-planner {
     background: #fff;
     border-radius: 50%;
     padding: 0px;
-    box-shadow: 0 0 10px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
     height: 25px;
 }
 
@@ -4518,7 +4527,7 @@ button.save-btn {
     position: absolute;
     right: 220px;
     top: 0%;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     display: none;
     max-width: 672px;
 }
@@ -4650,7 +4659,7 @@ button.save-btn {
     position: absolute;
     right: 220px;
     top: 0%;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     display: none;
     max-width: 360px;
 
@@ -4715,6 +4724,8 @@ button.save-btn {
     border: none;
     border-radius: 50%;
 }
+
+.exportAnaylisis .status-id.rating{width: 20%;}
 
 /** end here **/
 
@@ -4786,11 +4797,11 @@ button.save-btn {
     font-size: 14px;
     color: #2c3348;
     display: inline-block;
-    background: #e9e9e9;
+    background: #efefef;
     padding: 10px;
     border-radius: 10px;
     text-transform: uppercase;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    /* box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%); */
     font-weight: 600;
 }
 
@@ -4884,7 +4895,7 @@ button.save-btn {
 #welcomeModal .modal-content.rounded-0 {
     border-radius: 56px !important;
     border-radius: 56px;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     border: none;
 }
 
@@ -4912,7 +4923,7 @@ button.save-btn {
 #welcomeModal .btn-danger {
     border-radius: 20px !important;
     border: none;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #21ccff) !important;
     padding: 15px 5px;
     font-size: 18px !important;
@@ -5011,7 +5022,7 @@ button.save-btn {
 
 #test_instruction .modal-body.pt-3.p-5 {
     border-radius: 56px;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
     background: #ffffff;
 }
 
@@ -5034,7 +5045,7 @@ button.save-btn {
 
 button#goto-exam-btn {
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background: #00baff;
     border: none;
     padding: 15px 65px;
@@ -5224,7 +5235,7 @@ span.profile-digit {
     position: absolute;
     right: 220px;
     top: 0%;
-    box-shadow: 0 3px 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     display: none;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -5422,7 +5433,7 @@ span.profile-img-user {
 .tab-wrapper .nav-tabs {
     background: #f6f9fd;
     border-top-left-radius: 56px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
     border-top-right-radius: 56px;
     border: none;
     padding-left: 30px;
@@ -5443,7 +5454,7 @@ p.tab-title {
     outline: none;
     width: 270px;
     border-radius: 20px !important;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     height: 50px;
     font-size: 18px;
     font-weight: 600;
@@ -5453,7 +5464,7 @@ p.tab-title {
 
 .active-btn {
     border: none;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255.255,0.8);
     width: 276px;
     height: 50px;
     border-radius: 20px !important;
@@ -5482,7 +5493,7 @@ p.tab-title {
     font-size: 18px;
     border-radius: 20px !important;
     text-transform: uppercase;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
     line-height: 35px;
     background-color: #e9e9e9;
 }
@@ -5501,7 +5512,7 @@ p.tab-title {
 
 .btn-topic {
     border: none;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     width: auto;
     height: 50px;
     border-radius: 20px !important;
@@ -5516,7 +5527,7 @@ p.tab-title {
     background: #13c5ff;
     background-color: #13c5ff;
     border-color: #13c5ff;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
 }
 
 /**********************Added_by-sachin*****************/
@@ -5878,8 +5889,8 @@ p.tab-title {
     font-size: 16px;
     border-radius: 20px;
     text-transform: uppercase;
-    box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
-    background-color: #e9e9e9;
+    /* box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%); */
+    background-color: #f3f3f3;
     font-weight: 300;
 }
 
@@ -5910,7 +5921,7 @@ p.success-img {
 }
 
 .active-btn {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #21ccff);
     border: none;
     border-radius: 20px;
@@ -6550,7 +6561,7 @@ header {
     background: #49aa66;
     color: #fff;
     text-decoration: none;
-    box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
+    box-shadow: 0 0 0 0rem rgba(0,123,255,0.25);
 }
 
 .tab-btn-box {
@@ -6675,7 +6686,7 @@ header {
     background: #dbba43;
     color: #000;
     text-decoration: none;
-    box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
+    box-shadow: 0 0 0 0rem rgba(0,123,255,0.25);
 }
 
 .left-red-border {
@@ -7590,7 +7601,7 @@ tspan {
     background: #f2f2f2;
     color: #231f20;
     border-radius: 5px;
-    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%), inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
 
 }
 
@@ -8476,7 +8487,7 @@ a#close-edit-planner-btn {
 .open-sub-planner {
     width: 67.2% !important;
     border-radius: 56px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
 
 .planner-edit-mode {
@@ -8492,7 +8503,7 @@ p.fw-bold.text-uppercase.mt-3 {
 }
 
 button.btn.greenBtnH {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(0deg, #21ccff, #21ccff 22%);
     border-radius: 20px !important;
 }
@@ -8643,7 +8654,7 @@ span#slide-input {
 
 
 .back_to_ref a {
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(235deg, #21ccff 93%, #00baff -2%);
     color: #ffffff;
     padding: 12px 39px;
@@ -8767,7 +8778,7 @@ input#linkInput {
     position: absolute;
     z-index: 99;
     top: 85px;
-    box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
+    box-shadow: 1px 1px 15px 0 rgba(0,186,255,0.4);
     background: #fff;
     border-radius: 50px;
     border: none;
@@ -8781,7 +8792,7 @@ input#linkInput {
     position: absolute;
     z-index: 99;
     top: 85px;
-    box-shadow: 1px 1px 15px 0 rgb(0 186 255 / 40%);
+    box-shadow: 1px 1px 15px 0 rgba(0,186,255,0.4);
     background: #fff;
     border-radius: 50px;
     border: none;
@@ -9012,9 +9023,9 @@ input#linkInput {
 .trialbox .btn-danger {
     height: 60px;
     border-radius: 20px;
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+    -webkit-box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+    -moz-box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background-image: linear-gradient(to bottom, #21ccff, #00baff) !important;
     font-size: 16px;
     border: none;
@@ -9059,10 +9070,10 @@ input#linkInput {
 }
 
 .refund-money {
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
-    -webkit-box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
-    -moz-box-shadow: 0 0 30px 0 rgb(0 0 0 / 16%);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
+    -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
+    -moz-box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
     border-radius: 20px;
 }
 
@@ -9101,6 +9112,8 @@ input#linkInput {
 }
 
 /*************************/
+.res_flex a{flex: 1;}
+.savebtnmargin{margin-right: 10px;}
 .rankholder {
     background-image: url(../images/exportbg.png);
     background-repeat: no-repeat;

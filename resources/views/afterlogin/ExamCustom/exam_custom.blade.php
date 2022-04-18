@@ -441,6 +441,20 @@ $userData = Session::get('user_data');
     focusOnSelect: false,
     infinite: false,
     slidesToShow: 3.2,
+    responsive: [
+    {
+      breakpoint: 1199,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ],
     variableWidth: false,
     prevArrow: '<button class="slick-prev"> < </button>',
     nextArrow: '<button class="slick-next"> > </button>',
@@ -488,6 +502,20 @@ $userData = Session::get('user_data');
       focusOnSelect: false,
       infinite: false,
       slidesToShow: 3.2,
+      responsive: [
+    {
+      breakpoint: 1199,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ],
       variableWidth: false,
       prevArrow: '<button class="slick-prev"> < </button>',
       nextArrow: '<button class="slick-next"> > </button>',

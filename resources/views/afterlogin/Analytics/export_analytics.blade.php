@@ -121,10 +121,10 @@ $userData = Session::get('user_data');
                                 @if(!empty($subProf))
                                 @foreach($subProf as $key=>$sub)
                                 <div class="d-flex align-items-center mt-3 pb-1">
-                                    <div class="  col-6">
+                                    <div class="  col-6 col-lg-7 col-md-6">
                                         <div class="row d-flex  align-items-center py-2 dashboard-listing-details  w-100 ">
-                                            <span class="col-md-6 mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
-                                            <div class="col-md-6 pe-5">
+                                            <span class="col-md-5 mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
+                                            <div class="col-md-7 pe-5">
                                                 <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                                     <div class="star-ratings-css">
@@ -144,7 +144,7 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
+                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
                                         @if($sub->correct_ans > 0)
                                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>

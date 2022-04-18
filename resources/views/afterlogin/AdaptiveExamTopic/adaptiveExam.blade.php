@@ -300,7 +300,7 @@ $questtype='radio';
                         </form>
 
 
-                        <div style=" min-height:300px">
+                        <div style=" min-height:300px" class="setTabExamhight">
                             <p class="rightSectH" style="display:none;">Question</p>
                             <div class="number-block1" style="display:none;">
                                 @if(isset($keys) && !empty($keys))
@@ -348,7 +348,7 @@ $questtype='radio';
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-lg-12 col-xl-8">
                         <h3 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{$test_name}} </h3>
                         <div class="scroll">
                             <div class="test-info">
@@ -382,15 +382,15 @@ $questtype='radio';
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 ps-lg-5 d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
 
                         <h1 class="my-auto text-center">
 
                             <span class="d-block mt-3 fw-bold">All the Best {{$userData->user_name}}!</span>
 
                         </h1>
-                        <div class="text-left">
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
+                        <div class="row justify-content-center">
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn col-lg-12 col-sm-6 mt-lg-0 mt-3" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
 
                         </div>
                     </div>

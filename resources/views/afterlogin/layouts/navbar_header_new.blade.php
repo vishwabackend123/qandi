@@ -356,7 +356,7 @@
                         @csrf
 
                         <div class="row  mb-4">
-                            <div class="col-md-6">
+                            <div class="col-xl-6">
                                 <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
                                 <div class="d-flex align-items-center row">
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -370,9 +370,9 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-xl-6">
                                 <p class="fw-bold text-uppercase mt-3">Exams per week</p>
-                                <div class="position-relative exam-week-bar">
+                                <div class="position-relative exam-week-bar exam-week-tabe">
 
                                     <input type="range" name="weekrange" class="input-range" min="0" max="7" value="0" step="1" id='customRange' style="width:92%;" />
 
@@ -382,12 +382,12 @@
                             <span id="limit_error_1" class="text-danger"></span>
                         </div>
 
-                        <div class=" row mt-4 sub_box">
+                        <div class=" row mt-4 sub_box planersecdualsub">
                             <span id="limit_error" class="text-danger"></span>
                             @if(isset($aSubjects) && !empty($aSubjects))
                             @foreach($aSubjects as $skey=>$sVal)
 
-                            <div class="col-xl-4 col-lg-4 col-md-6 mb-4 col_max col_min">
+                            <div class="col-xl-4 col-md-6 mb-4 col_max col_min">
                                 <div class="d-flex align-items-center text-uppercase"><i id="added_subject_{{$sVal->id}}" class="subject_tik me-2 fa fa-check-circle text-light" aria-hidden="true"></i> {{$sVal->subject_name}} <span class="count_spam_div" id="count_spam_{{$sVal->id}}"></span></div>
                                 <div class="slimScrollDiv">
                                     <div class="subject_chapter">
@@ -411,8 +411,8 @@
 
 
                         </div>
-                        <div class="text-center">
-                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 w-31 tickicon" title="Save Planner" id="saveplannerbutton">
+                        <div class="row justify-content-center planersavebtn">
+                            <button class="btn greenBtnH rounded-0 text-uppercase px-5 text-white col-xl-3 col-lg-4 col-md-6 tickicon" title="Save Planner" id="saveplannerbutton">
                                 <!-- <img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}" >  -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="17.299" height="12.989" viewBox="0 0 20.299 15.989">
                                     <path data-name="Path 2641" d="m5 13.388 6.04 6.388L23.119 7" transform="translate(-3.91 -5.969)" style="fill:none;stroke:#fff;stroke-width:3px" />
@@ -897,13 +897,13 @@
                     <p class="text-end text-danger mt-1">*Subscription has already expired on {{!empty($expirydate)?date("jS F, Y", strtotime($expirydate)):''}}</p>
                     @endif
                 </h6>
-                <div class="form-btns mt-lg-3">
+                <div class="form-btns mt-lg-3 res_flex d-flex">
                     <!--  <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a> -->
                     @if(($suscription_status != 0) && ($subscription_type == 'T'))
-                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="save-btn">Upgrade</button></a>
+                    <a  draggable="false" href="{{route('subscriptions')}}"><button  type="button" class="w-100 save-btn">Upgrade</button></a>
                     @elseif($suscription_status != 0 && $subscription_type == 'P')
-                    <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn-see">see details</button></a>
-                    <a draggable="false" href="{{route('refund_form')}}"><button type="button" class="save-btn">Refund</button></a>
+                    <a class="savebtnmargin" draggable="false" href="{{route('subscriptions')}}"><button type="button" class="w-100 cancel-btn-see">see details</button></a>
+                    <a draggable="false" href="{{route('refund_form')}}"><button type="button" class=" w-100 save-btn">Refund</button></a>
                     @endif
                 </div>
             </div>

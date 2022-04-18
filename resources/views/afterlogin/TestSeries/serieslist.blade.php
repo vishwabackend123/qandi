@@ -13,7 +13,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
 
     <div class="content-wrapper">
-        <div class="container-fluid list-series">
+        <div class="container-fluid list-series practice-series-lists">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
 

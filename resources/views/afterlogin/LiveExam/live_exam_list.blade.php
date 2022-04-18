@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
     <!-- End top-navbar Section -->
 
     <div class="content-wrapper">
-        <div class="container-fluid list-series">
+        <div class="container-fluid list-series live-exam-list-wrapper">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
 

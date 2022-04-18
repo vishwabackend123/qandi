@@ -21,8 +21,9 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     <div class="clearfix"></div>
     @endif
     <!-- End top-navbar Section -->
+    <div class="container">
     <div class="row">
-        <div class="col-md-10 mx-auto">
+        <div class="col-md-12 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
                 <!-- @if(!empty($user_id) && $suscription_status!=0)
                 <a href="{{ url('/dashboard') }}" class="close-btn-subs"><img src="{{URL::asset('public/after_login/images/close.png')}}"></a>
