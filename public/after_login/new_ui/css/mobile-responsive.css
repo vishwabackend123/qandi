@@ -72,8 +72,10 @@
             padding: 0px 10px 0px 5px;
         }
         div#marKs-trends .bg-white p {height: auto;}
-        .fw-bold {font-size: 14px;}
-        .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {right: -4px;top: 14px;}
+        .fw-bold , .bg-white.shadow-lg .progress_text {font-size: 14px;}
+        .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {right: -10px;top: 0px;}
+        #marKs-trends .bg-white, #time-Avg-quest .bg-white{padding: 0!important;}
+        #overall button.btn, #home button.btn, .Ex-anal{width: auto!important;}
 
 }
 
