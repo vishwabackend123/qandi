@@ -9,8 +9,8 @@
 }
 @media(max-width:500px){
     .topics-box { width: calc(50% - 11px); margin: 15px 0px 0px 8px;}
-    
+    .dashboard-cards-block .progress-journey-card.bg-white>small p { min-width: 290px;} 
 }
 @media(max-width:420px){
-    .dashboard-cards-block .bg-white>small p { min-width: 227px; padding: 15px 25px 15px 10px; }  
+    .dashboard-cards-block .bg-white>small p ,.dashboard-cards-block .progress-journey-card.bg-white>small p{ min-width: 227px; padding: 15px 25px 15px 10px; }  
 }
