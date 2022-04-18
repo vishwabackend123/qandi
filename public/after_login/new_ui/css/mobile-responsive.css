@@ -1,6 +1,21 @@
 @media(max-width:767px){
     .sublinks a{font-size:14px;}
-
+    .subscription .form-btns {
+    margin-top: 20px;
+}
+.subscrived {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subscription .p-text h3 {
+    font-size: 14px;
+    line-height: inherit;
+    margin: 0;
+}  
+.subscrived svg {
+    margin-right: 0;
+}
 }
 @media(max-width:576px){
     .dash-sidebar .submenu-L1{left:60px;}
