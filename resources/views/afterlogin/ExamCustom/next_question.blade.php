@@ -245,7 +245,14 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
-            $('input[type=radio]', this).prop("checked", true);
+            if (template_type == 2) {
+                $('input[type=radio]', this).prop("checked", true);
+            } else {
+                var $checks = $(this).find('input[type=checkbox]');
+
+                $checks.prop("checked", !$checks.is(":checked"));
+
+            }
         });
     });
 </script>
