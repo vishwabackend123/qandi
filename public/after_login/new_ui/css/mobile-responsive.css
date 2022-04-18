@@ -43,6 +43,15 @@
             margin: 0 auto;
             padding: 10px 30px;
         }
+        .dashboard .star-ratings-css-top span ,.pe-1 .star-ratings-css-bottom span{
+            font-size: 16px;
+        }
+        .topics-box span b {
+            font-size: 25px;
+            line-height: 30px;
+        }
+        .topics-box{justify-content:left;}
+        .topics-box:first-child{margin-left:0px;}
 }
 
 @media(max-width:500px){
