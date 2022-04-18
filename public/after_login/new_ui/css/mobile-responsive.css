@@ -57,12 +57,12 @@
 @media(max-width:500px){
     .topics-box { width: calc(50% - 11px); margin: 15px 0px 0px 8px;}
     .dashboard-cards-block .progress-journey-card.bg-white>small p { min-width: 290px;} 
-    .dash-sidebar .submenu-L1{left:60px;}
+    .dash-sidebar .submenu-L1{left:58px;}
     .dash-nav-link a:first-child svg {width: 63px;}
     .dash-nav-link a:nth-child(2) svg {width: 90px;}
-    .sublinks a{font-size:14px;}
+    .sublinks a{font-size:14px;padding: 0.5rem 0.5rem;}
     .text-start.sublinks a svg {width: 20px;height: 20px;}
-    .dash-sidebar .submenu-L2{left:180px;}
+    .dash-sidebar .submenu-L2{left:165px;}
 }
 
 @media(max-width:420px){
