@@ -5,6 +5,7 @@
 @media(max-width:576px){
     .dash-sidebar .submenu-L1{left:60px;}
     .dash-nav-link a:first-child svg {width: 63px;}
+    .dash-nav-link a:nth-child(2) svg {width: 90px;}
 
 }
 @media(max-width:500px){
