@@ -113,16 +113,16 @@ $userData = Session::get('user_data');
                                                         </button>
                                                     </div>
                                                     {{-- <div>--}}
-                                                        {{-- <h5 class="text-uppercase fw-bold">Achievements</h5>--}}
-                                                        {{-- <div class="scroll-achiv  pe-3">--}}
-                                                            {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
-                                                                {{-- </p>--}}
-                                                            {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
-                                                                {{-- </p>--}}
-                                                            {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
-                                                                {{-- </p>--}}
-                                                            {{-- </div>--}}
-                                                        {{-- </div>--}}
+                                                    {{-- <h5 class="text-uppercase fw-bold">Achievements</h5>--}}
+                                                    {{-- <div class="scroll-achiv  pe-3">--}}
+                                                    {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+                                                    {{-- </p>--}}
+                                                    {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+                                                    {{-- </p>--}}
+                                                    {{-- <p class="d-flex align-items-center text-light mt-4 "><span class="achive-txt">You attempted 5 consecutive exams on time!</span><a href="javascript:void(0);" class="text-light ms-auto fs-3"><img src="{{URL::asset('public/after_login/images/shareGray_ic.png')}}" /></a>--}}
+                                                    {{-- </p>--}}
+                                                    {{-- </div>--}}
+                                                    {{-- </div>--}}
                                                 </div>
                                                 <div class="profile-form-block profilescrollblock pe-3 pb-2" id="profile-form">
                                                     <form id="editProfile_form" action="{{route('editProfile')}}" method="POST" autocomplete="off">
@@ -355,149 +355,152 @@ $userData = Session::get('user_data');
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
-$(document).ready(function() {
-    jQuery("#notification-tog").click(function() {
-        jQuery("#collapseExample").hide();
-        jQuery("#notification").show();
-    });
-
-    jQuery("#collapseExample-tog").click(function() {
-        jQuery("#collapseExample").show();
-        jQuery("#notification").hide();
-    });
-});
-
-document.getElementById("customRange").oninput = function() {
-    $('#slide-input').html(this.value);
-    var value = (this.value - this.min) / (this.max - this.min) * 100
-    this.style.background = 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + value + '%, #fff ' + value + '%, white 100%)'
-};
-
-$(document).ready(function() {
-
-    var today = new Date().toISOString().split('T')[0];
-
-    var dateW = new Date(today);
-    var firstW = dateW.getDate() - dateW.getDay() + 1;
-    var firstdayW = new Date(dateW.setDate(firstW)).toUTCString();
-    var firstDateW = formatDate(firstdayW);
-
-    document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
-
-    var range_val = $('#customRange').val();
-    if (range_val > 0) {
-        /* set range for */
-        var rvalue = (range_val - 0) / (7 - 0) * 100;
-        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
-
-        var curr = new Date;
-        var date = new Date(curr);
-        var first = date.getDate() - date.getDay() + 1;
-
-        var last = first + 6; // last day is the first day + 6
-
-        var firstday = new Date(date.setDate(first)).toUTCString();
-        var lastday = new Date(date.setDate(last)).toUTCString();
-        var firstDate = formatDate(firstday);
-        var lastDate = formatDate(lastday);
-        $('#StartDate').val(firstDate);
-
-        $('#EndDate').val(lastDate);
-
-        var planned = <?php echo json_encode($current_week_plan); ?>;
-        console.log(planned);
-        planned.forEach(function(item) {
-
-            var subject_id = item.subject_id;
-            var chapter_id = item.chapter_id;
-            var chapter_name = item.chapter_name;
-            var status = item.test_completed_yn;
-            $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+    $(document).ready(function() {
+        jQuery("#notification-tog").click(function() {
+            jQuery("#collapseExample").hide();
+            jQuery("#notification").show();
         });
 
-    }
+        jQuery("#collapseExample-tog").click(function() {
+            jQuery("#collapseExample").show();
+            jQuery("#notification").hide();
+        });
+    });
 
+    document.getElementById("customRange").oninput = function() {
+        $('#slide-input').html(this.value);
+        var value = (this.value - this.min) / (this.max - this.min) * 100
+        this.style.background = 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + value + '%, #fff ' + value + '%, white 100%)'
+    };
 
-    $('#StartDate').change(function(event) {
-        var start_date = this.value;
+    $(document).ready(function() {
 
-        $.ajax({
-            url: "{{ 'getWeeklyPlanSchedule' }}",
-            type: "GET",
-            cache: false,
-            data: {
-                'start_date': start_date
-            },
-            success: function(response_data) {
-                var response = jQuery.parseJSON(response_data);
-                if (response.range > 0) {
-                    $("div").remove(".add-removeblock");
-                    $('#customRange').val(response.range);
-                    $('#slide-input').html(response.range);
+                var today = new Date().toISOString().split('T')[0];
 
-                    var ran_value = (response.range - 0) / (7 - 0) * 100;
-                    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+                var dateW = new Date(today);
+                var firstW = dateW.getDate() - dateW.getDay() + 1;
+                var firstdayW = new Date(dateW.setDate(firstW)).toUTCString();
+                var firstDateW = formatDate(firstdayW);
 
+                document.getElementsByName("start_date")[0].setAttribute('min', firstDateW);
 
-                    var planned_edit = response.planner;
-                    var result = Object.values(planned_edit);
+                var range_val = $('#customRange').val();
+                if (range_val > 0) {
+                    /* set range for */
+                    var rvalue = (range_val - 0) / (7 - 0) * 100;
+                    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue + '%, #fff ' + rvalue + '%, white 100%)');
 
+                    var curr = new Date;
+                    var date = new Date(curr);
+                    var first = date.getDate() - date.getDay() + 1;
 
-                    result.forEach(function(item) {
-                        console.log(item);
+                    var last = first + 6; // last day is the first day + 6
+
+                    var firstday = new Date(date.setDate(first)).toUTCString();
+                    var lastday = new Date(date.setDate(last)).toUTCString();
+                    var firstDate = formatDate(firstday);
+                    var lastDate = formatDate(lastday);
+                    $('#StartDate').val(firstDate);
+
+                    $('#EndDate').val(lastDate);
+
+                    var planned = <?php echo json_encode($current_week_plan); ?>;
+                    console.log(planned);
+                    planned.forEach(function(item) {
+
                         var subject_id = item.subject_id;
                         var chapter_id = item.chapter_id;
                         var chapter_name = item.chapter_name;
                         var status = item.test_completed_yn;
                         $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
-                            '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" >
-                            <img class="mx-2" src="./public/after_login/images/refersh_ic.png">
-                            
-                            
-                            </a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
+                            '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" ><img class="mx-2" src="./public/after_login/images/refersh_ic.png"></a></span><span class=""><a href="javasceript:void(0)" class="chapter_remove"><img src="./public/after_login/images/remove_ic.png"></a></span></div>');
                     });
 
-                } else {
-                    $("div").remove(".add-removeblock");
-                    $('#customRange').val(response.range);
-                    $('#slide-input').html(response.range);
-                    var ran_value = (response.range - 0) / (7 - 0) * 100;
-                    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
-
                 }
-            }
-        });
-    });
 
-    $('#search_results').hide();
-    $('#search_field').keyup(function(event) {
-        var val = event.target.value;
 
-        if (val != '') {
-            $('#leaderboard_box_div').hide();
-            $('#search_results').show();
+                $('#StartDate').change(function(event) {
+                        var start_date = this.value;
 
-            $.ajax({
-                url: "{{ 'searchFreind' }}",
-                type: "GET",
-                cache: false,
-                data: {
-                    'search_text': event.target.value
-                },
-                success: function(response_data) {
+                        $.ajax({
+                                url: "{{ 'getWeeklyPlanSchedule' }}",
+                                type: "GET",
+                                cache: false,
+                                data: {
+                                    'start_date': start_date
+                                },
+                                success: function(response_data) {
+                                    var response = jQuery.parseJSON(response_data);
+                                    if (response.range > 0) {
+                                        $("div").remove(".add-removeblock");
+                                        $('#customRange').val(response.range);
+                                        $('#slide-input').html(response.range);
 
-                    let html = '';
-                    var data = jQuery.parseJSON(response_data);
-                    if (data.success === true) {
+                                        var ran_value = (response.range - 0) / (7 - 0) * 100;
+                                        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
 
-                        $.each(data.response, (ele, val) => {
-                            if (val.user_profile_img) {
-                                var img_url = val.user_profile_img;
-                            } else {
-                                var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
-                            }
-                            html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
+
+                                        var planned_edit = response.planner;
+                                        var result = Object.values(planned_edit);
+
+
+                                        result.forEach(function(item) {
+                                                console.log(item);
+                                                var subject_id = item.subject_id;
+                                                var chapter_id = item.chapter_id;
+                                                var chapter_name = item.chapter_name;
+                                                var status = item.test_completed_yn;
+                                                $('#planner_sub_' + subject_id).append('<div class="add-removeblock p-2 mb-2 d-flex align-items-center" id="chapter_' + chapter_id + '"><input type="hidden" id="select_chapt_id' + chapter_id + '" name="chapters[]" value="' + chapter_id + '"><span id="select_chapt_name' + chapter_id + '" class="topic_name">' + chapter_name + '</span>' +
+                                                    '<span class="ms-auto"><a href="javascript:void(0)" onclick="Shuffle_Chapter(' + chapter_id + ',' + subject_id + ')" > <
+                                                    img class = "mx-2"
+                                                    src = "./public/after_login/images/refersh_ic.png" >
+
+
+                                                    <
+                                                    /a></span > < span class = "" > < a href = "javasceript:void(0)"
+                                                    class = "chapter_remove" > < img src = "./public/after_login/images/remove_ic.png" > < /a></span > < /div>');
+                                                });
+
+                                        }
+                                        else {
+                                            $("div").remove(".add-removeblock");
+                                            $('#customRange').val(response.range);
+                                            $('#slide-input').html(response.range);
+                                            var ran_value = (response.range - 0) / (7 - 0) * 100;
+                                            $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + ran_value + '%, #fff ' + ran_value + '%, white 100%)');
+
+                                        }
+                                    }
+                                });
+                        });
+
+                    $('#search_results').hide(); $('#search_field').keyup(function(event) {
+                        var val = event.target.value;
+
+                        if (val != '') {
+                            $('#leaderboard_box_div').hide();
+                            $('#search_results').show();
+
+                            $.ajax({
+                                url: "{{ 'searchFreind' }}",
+                                type: "GET",
+                                cache: false,
+                                data: {
+                                    'search_text': event.target.value
+                                },
+                                success: function(response_data) {
+
+                                    let html = '';
+                                    var data = jQuery.parseJSON(response_data);
+                                    if (data.success === true) {
+
+                                        $.each(data.response, (ele, val) => {
+                                            if (val.user_profile_img) {
+                                                var img_url = val.user_profile_img;
+                                            } else {
+                                                var img_url = "{{URL::asset('public/after_login/images/profile.png')}}";
+                                            }
+                                            html += `<li><div class="d-flex align-items-center"><span class="sno me-3">${val.user_rank}.</span>
                                                                 <span><img src="${img_url}" class="leader-pic"/></span>
                                                                 <div class="leader-txt">
                                                                     <p>${val.user_name}</p>
@@ -505,44 +508,42 @@ $(document).ready(function() {
                                                                 </div>
                                                             </div>
                                                         </li>`;
-                        });
+                                        });
 
-                    } else {
-                        html += `<p>Data not available!</p>`;
-                    }
-                    $('#search_results .leaderNameBlock-search').html(html);
-                }
-            });
-        } else {
-            $('#search_results').hide();
-            $('#leaderboard_box_div').show();
-        }
-    });
-});
-
+                                    } else {
+                                        html += `<p>Data not available!</p>`;
+                                    }
+                                    $('#search_results .leaderNameBlock-search').html(html);
+                                }
+                            });
+                        } else {
+                            $('#search_results').hide();
+                            $('#leaderboard_box_div').show();
+                        }
+                    });
+                });
 </script>
 <script type="text/javascript">
-$(document).ready(function() {
-    $('.close').click(function() {
-        $('#collapseExample').hide();
+    $(document).ready(function() {
+        $('.close').click(function() {
+            $('#collapseExample').hide();
 
-        calendari(document.getElementById('calendari'), new Date());
+            calendari(document.getElementById('calendari'), new Date());
+        });
+        /*edit planner*/
+        var chapters = $('input[name="chapters[]"]').length;
+        var limit = $('#customRange').val();
+        $('#slide-input').html(chapters);
+        $('input[name="weekrange').val(chapters);
+        var rvalue1 = (chapters - 0) / (7 - 0) * 100;
+        $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
+
+        /*edit planner*/
+
+        /*Refer Firend*/
+        $('.btn-close').click(function() {
+            $('#referEmails').val('');
+        });
+        /*Refer Firend*/
     });
-    /*edit planner*/
-    var chapters = $('input[name="chapters[]"]').length;
-    var limit = $('#customRange').val();
-    $('#slide-input').html(chapters);
-    $('input[name="weekrange').val(chapters);
-    var rvalue1 = (chapters - 0) / (7 - 0) * 100;
-    $('#customRange').css("background", 'linear-gradient(to right, #AFF3D0 0%, #AFF3D0 ' + rvalue1 + '%, #fff ' + rvalue1 + '%, white 100%)');
-
-    /*edit planner*/
-
-    /*Refer Firend*/
-    $('.btn-close').click(function() {
-        $('#referEmails').val('');
-    });
-    /*Refer Firend*/
-});
-
 </script>
