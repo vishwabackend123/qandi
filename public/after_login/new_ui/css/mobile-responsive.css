@@ -69,6 +69,9 @@
         .progressChartExpend{min-width:900px;}
         #graphExpand .modal-body {overflow-x: auto;}
         #graphExpand .modal-body::-webkit-scrollbar{height:5px;}
+        .content-wrapper .container-fluid.pt-0 {
+            padding: 0px 10px 0px 5px;
+        }
 
 }
 
