@@ -748,7 +748,7 @@
             var val = event.target.value;
             var country = $('#country').val();
 
-
+            $('.loader-block').show();
 
             $.ajax({
                 url: "{{ url('/getState',) }}",
@@ -760,6 +760,7 @@
                     'country': country,
                 },
                 success: function(response_data) {
+                    $('.loader-block').hide();
                     let html = '';
                     var data = jQuery.parseJSON(response_data);
 
@@ -789,7 +790,7 @@
             $('#state_list').hide();
             var val = event.target.value;
             var state = $('#select-state').val();
-
+            $('.loader-block').show();
 
 
             $.ajax({
@@ -802,6 +803,7 @@
                     'state': state,
                 },
                 success: function(response_data) {
+                    $('.loader-block').hide();
                     let html = '';
                     var data = jQuery.parseJSON(response_data);
 

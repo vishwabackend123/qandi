@@ -97,6 +97,9 @@
         </div>
     </div>
     <!-- Address block -->
+    <div class="loader-block" style="display:none;">
+        <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+    </div>
 </section>
 <script type="text/javascript">
 $('#resendOtp_link').hide();
@@ -433,7 +436,7 @@ $(function() {
         $('#city_remark').hide()
         var val = event.target.value;
         var country = $('#country').val();
-
+        $('.loader-block').show();
         $.ajax({
             url: "{{ url('/getState',) }}",
             type: "GET",
@@ -444,6 +447,7 @@ $(function() {
                 'country': country,
             },
             success: function(response_data) {
+                 $('.loader-block').hide();
                 let html = '';
                 var data = jQuery.parseJSON(response_data);
 
@@ -474,7 +478,7 @@ $(function() {
         var val = event.target.value;
         var state = $('#select-state').val();
 
-
+        $('.loader-block').show();
 
         $.ajax({
             url: "{{ url('/getCity',) }}",
@@ -486,6 +490,7 @@ $(function() {
                 'state': state,
             },
             success: function(response_data) {
+                $('.loader-block').hide();
                 let html = '';
                 var data = jQuery.parseJSON(response_data);
 
