@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+
 class ReferralController extends Controller
 {
     //
@@ -24,9 +25,17 @@ class ReferralController extends Controller
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
+            $user_mail = $userData->email;
             $exam_id = $userData->grade_id;
             $referrals = (isset($request->refer_emails) && !empty($request->refer_emails)) ? $request->refer_emails : '';
             $referrals_code = (isset($request->refer_code) && !empty($request->refer_code)) ? $request->refer_code : '';
+
+            $refer_mails = explode(',', preg_replace('/\s+/', '', $referrals));
+            if (in_array($user_mail, $refer_mails)) {
+                return json_encode(array('success' => false, 'message' => 'You cannot refer to yourself.'));
+            }
+
+
             $inputjson = [
                 "student_id" => $user_id,
                 "exam_id" => $exam_id,
@@ -62,11 +71,9 @@ class ReferralController extends Controller
             if ($httpcode == 200 || $httpcode == 201) {
                 return $response_json;
             } else {
-                return json_encode(array('success' => false, 'message' => 'Email already referred'));
+                return json_encode(array('success' => false, 'message' => 'Email already referred.'));
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -95,13 +102,11 @@ class ReferralController extends Controller
             $refDecode =  json_decode($response);
             $referral_email = isset($refDecode[0]->email) ? $refDecode[0]->email : '';
             if (isset($referral_email) && !empty($referral_email)) {
-                return view('auth.register', compact('referral_email','referral_code'));
+                return view('auth.register', compact('referral_email', 'referral_code'));
             } else {
                 return abort(404);
             }
-         }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

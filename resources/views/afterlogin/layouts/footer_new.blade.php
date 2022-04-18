@@ -983,19 +983,19 @@
             $('#submenupreparation2').collapse('toggle');
         }
     });
-    $('.menu2').click(function(){
+    $('.menu2').click(function() {
         var menu_opened = $('#submenu3').hasClass('show');
 
         if (menu_opened === true) {
             $('#submenu3').collapse('toggle');
-        }        
+        }
     });
-    $('.menu3').click(function(){
+    $('.menu3').click(function() {
         var menu_opened = $('#submenu2').hasClass('show');
 
         if (menu_opened === true) {
             $('#submenu2').collapse('toggle');
-        }        
+        }
     });
 
     window.addEventListener('click', function(e) {
@@ -1591,7 +1591,7 @@
 
                     } else {
                         var errormsg = $("#errRef_auth").show();
-                        errormsg[0].textContent = "Email already referred";
+                        errormsg[0].textContent = response.message;
                         setTimeout(function() {
                             $('.errRef').fadeOut('fast');
                         }, 5000);
@@ -1759,34 +1759,30 @@
         $("#collapsePlanner").show();
     });
 
-    $(".user-pic-block.UserPro").on('click',function(){
+    $(".user-pic-block.UserPro").on('click', function() {
         $("#LeaDer , .profile-show").addClass("animateAccountCard");
         $(".profile-section ul li:first-child").addClass("active");
         $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").removeClass("active");
-        if( $(".profile-section ul li:first-child").hasClass("active") ){
+        if ($(".profile-section ul li:first-child").hasClass("active")) {
             $("#LeaDer , .profile-show").addClass("showCard");
             $(".log-out-screen , .subscription-box").removeClass("showCard");
         }
     });
 
-    $(".profile-section ul").on('click',function(){
+    $(".profile-section ul").on('click', function() {
         $("#LeaDer , .profile-show").removeClass("animateAccountCard");
-        if( $(".profile-section ul li:nth-child(2)").hasClass("active") ){
+        if ($(".profile-section ul li:nth-child(2)").hasClass("active")) {
             $(".subscription-box").addClass("showCard");
             $("#LeaDer , .profile-show , .log-out-screen").removeClass("showCard");
-        }
-        else if( $(".profile-section ul li:nth-child(3)").hasClass("active") ){
+        } else if ($(".profile-section ul li:nth-child(3)").hasClass("active")) {
             $(".log-out-screen").addClass("showCard");
             $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
-        } 
-        else if( $(".profile-section ul li:first-child").hasClass("active") ){
+        } else if ($(".profile-section ul li:first-child").hasClass("active")) {
             $("#LeaDer , .profile-show").addClass("showCard");
             $(".log-out-screen , .subscription-box").removeClass("showCard");
         }
     });
-    $(".profile-picture-txt #EdiTbtnnn").click(function(){
+    $(".profile-picture-txt #EdiTbtnnn").click(function() {
         $("#LeaDer , .profile-show").removeClass("showCard");
     });
-
 </script>
-
