@@ -921,10 +921,6 @@
         position: relative;
     }
 
-    .subscrived {
-        width: 95% !important;
-    }
-
 
     .profile-section li a svg {
         width: 100%;
@@ -1447,8 +1443,8 @@
         right: 1% !important;
         width: 87% !important;
         padding: 15px 20px 15px 25px !important;
-        top: 16% !important;
-        height: 100%;
+        top: 17% !important;
+        height: auto;
     }
 
     .profile-picture-txt .p-text {
@@ -1458,8 +1454,6 @@
     .profile-picture-txt {
         padding: 15px;
         display: inline-block;
-        overflow: scroll;
-        height: 70%;
     }
 
     .subscription .profile-picture-txt .p-picture {
@@ -1992,7 +1986,7 @@
     }
 
     .subscription .profile-picture-txt {
-        padding: 20px 0px;
+        padding: 20px 0px 0;
     }
 
     .subscription .profile-picture-txt .p-text {
@@ -3289,7 +3283,7 @@
         }
 
         .subscription .form-btns button {
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
 
         .log-out-screen {
