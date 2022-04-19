@@ -98,6 +98,10 @@
 
 }
 
+@media(max-width:576px){
+#sharefrnd .modal-dialog{padding: 0 40px;}
+}
+
 @media(max-width:500px){
     .trialbox .btn-danger{line-height: 38px;    height: auto;
     }
@@ -131,7 +135,8 @@
             top: 0px;
             margin-top: 50px;
             padding-top: 0px;width: 86%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-        }   
+        
+        }
 }
 @media (max-width:480px) {
     .main-wrapper { padding-left: 55px;}
