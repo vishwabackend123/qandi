@@ -126,6 +126,7 @@ $questtype='radio';
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
+                            <input type="hidden" id="current_question_no" value="1" />
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet">
                                 <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
@@ -211,7 +212,7 @@ $questtype='radio';
 
                                         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview " title="Questions can be reviewed after submission.">Save & Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission.">Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission." onclick="markforreview('{{$active_q_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
 
@@ -868,6 +869,10 @@ $questtype='radio';
 
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
+        var cur_quest_no = $('#current_question_no').val();
+
+        clearResponse(quest_id, subject_id, cur_quest_no);
+
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',

@@ -103,6 +103,7 @@ $questtype='radio';
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                                 <input type="hidden" id="current_question_type" value="{{$template_type}}" />
+                                <input type="hidden" id="current_question_no" value="1" />
                                 <div id="question_section" class="">
                                     <div class="d-flex " id="pause-start">
                                         <div id="counter_{{$activeq_id}}" class="counter  d-flex">
@@ -832,6 +833,9 @@ $questtype='radio';
 
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
+        var cur_quest_no = $('#current_question_no').val();
+        clearResponse(quest_id, subject_id, cur_quest_no);
+
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',

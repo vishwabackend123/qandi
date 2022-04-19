@@ -165,6 +165,8 @@ $questtype='radio';
 <script>
     var question_id = '{{$activeq_id}}';
     var template_type = '{{$template_type}}';
+    var curr_ques_no = '{{$qNo}}';
+
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
 
@@ -172,6 +174,7 @@ $questtype='radio';
 
     $("#current_question").val(question_id);
     $("#current_question_type").val(template_type);
+    $("#current_question_no").val(curr_ques_no);
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");

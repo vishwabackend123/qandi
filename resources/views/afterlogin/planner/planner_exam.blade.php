@@ -127,6 +127,7 @@ $questtype='radio';
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                                 <input type="hidden" id="current_question_type" value="{{$template_type}}" />
+                                <input type="hidden" id="current_question_no" value="1" />
                                 <div id="question_section" class="">
                                     <div class="d-flex " id="pause-start">
                                         <div id="counter_{{$activeq_id}}" class="counter  d-flex">
@@ -385,17 +386,17 @@ $questtype='radio';
                             <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
                         <div class="row justify-content-center mt-lg-0 mt-3">
-                        <button class="btn  text-uppercase rounded-0 px-5 col-lg-12 col-sm-6 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
+                            <button class="btn  text-uppercase rounded-0 px-5 col-lg-12 col-sm-6 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-        </div>    
+        </div>
     </div>
 </div>
- 
+
 
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
@@ -859,6 +860,9 @@ $questtype='radio';
 
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
+        var cur_quest_no = $('#current_question_no').val();
+        clearResponse(quest_id, subject_id, cur_quest_no);
+
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
