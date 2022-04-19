@@ -133,7 +133,10 @@
             padding-top: 0px;width: 86%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
         }   
 }
-
+@media (max-width:480px) {
+    .main-wrapper { padding-left: 55px;}
+    
+}
 @media(max-width:420px){
     .dashboard-cards-block .bg-white>small p ,.dashboard-cards-block .progress-journey-card.bg-white>small p{ min-width: 227px; padding: 15px 25px 15px 10px; }  
     .swiper-button-next, .swiper-rtl .swiper-button-prev{right: 0px;}
