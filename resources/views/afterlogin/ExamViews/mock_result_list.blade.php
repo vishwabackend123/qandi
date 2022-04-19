@@ -21,7 +21,7 @@ $userData = Session::get('user_data');
             <div class="row">
             @if(count($errors) > 0 )
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 <ul class="p-0 m-0" style="list-style: none;">

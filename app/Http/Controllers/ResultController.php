@@ -364,6 +364,51 @@ class ResultController extends Controller
     }
     public function getExamResultAnalytics($result_id)
     {
-        return view('afterlogin.ExamCustom.exam_result_analytics');
+        try {
+            $userData = Session::get('user_data');
+
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+            $curl_url = "";
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+
+            $curl_url = $api_URL . 'api/result-analytics/' . $user_id . '/' . $exam_id . '/' . $result_id;
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 120,
+                CURLOPT_TIMEOUT => 120,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                    "content-type: application/json"
+                ),
+            ));
+
+            $response_json = curl_exec($curl);
+
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($httpcode == 200 || $httpcode == 201) {
+                $response_data = (json_decode($response_json));
+                $response = isset($response_data) ? $response_data : [];
+
+                return view('afterlogin.LiveExam.live_result_analysis', compact('response'));
+            } else {
+
+                //return redirect()->back();
+                return Redirect::back()->withErrors(['There is some error  for this result id.']);
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
     }
 }
