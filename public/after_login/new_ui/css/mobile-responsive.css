@@ -95,10 +95,13 @@
 
         .account-wrapper{margin-top: 0px;}
         .main-wrapper{    padding-left: 70px; }
+    div#contentHtml .report-block2{padding:30px 20px;}
+
 
 }
 
 @media(max-width:500px){
+    div#contentHtml .report-block2{padding:30px 10px;}
     .trialbox .btn-danger{line-height: 38px;    height: auto;
     }
     .trialbox p{font-size:20px;    padding-bottom: 20px!important;}
