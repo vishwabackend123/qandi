@@ -22,9 +22,9 @@ $userData = Session::get('user_data');
 </header>
 <section class="d-flex flex-column align-items-center justify-content-center h-100 p-sm-5 p-3">
     <div class="steps-links d-flex ">
-        <div class="px-5 border-bg-right pt-3"><span class="red-dots1 active-dot"></span>Orders</div>
-        <div class="px-5  pt-3 border-bg-left border-bg-right"><span class="red-dots1"></span>Shipping</div>
-        <div class="px-5  pt-3 border-bg-left"><span class="red-dots1"></span>Payments</div>
+        <div class="px-sm-5 px-3 border-bg-right pt-3"><span class="red-dots1 active-dot"></span>Orders</div>
+        <div class="px-sm-5 px-3 pt-3 border-bg-left border-bg-right"><span class="red-dots1"></span>Shipping</div>
+        <div class="px-sm-5 px-3 pt-3 border-bg-left"><span class="red-dots1"></span>Payments</div>
     </div>
     <div class="Fullsub-amt-subN subs-box p-4 col-6 mt-5 totalpaymentbox">
         <div class="d-flex align-items-center justify-content-between">

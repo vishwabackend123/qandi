@@ -97,7 +97,7 @@
             top: 64px;
             left: 12px;}
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
-        .overllanaly .cust-tab-content{padding-top: 50px!important;}
+        .overllanaly .cust-tab-content{padding-top: 65px!important;}
         .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
 
         .account-wrapper{margin-top: 0px;}
@@ -124,24 +124,42 @@
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
+        .sub-title h3 {flex: 5;}
 }
-@media(max-width:550px){
-    .backbtn {
-    width: 100%;
-    margin-bottom: 10px;
-}
-.PayBttn {
-    width: 100%;
-}
-}
+
 
 @media(max-width:576px){
 #sharefrnd .modal-dialog{padding: 0 40px;}
 .overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
 
 }
+@media(max-width:550px){
+    .backbtn {
+    width: 100%;
+    margin-bottom: 10px;}
+.PayBttn {width: 100%;}
 
+}
 @media(max-width:500px){
+    .topics_breadcum{margin-right:0px;padding: 12px 6px;}
+    .breadcrumb-item+.breadcrumb-item {
+        padding-left: 0.2rem;
+    }
+    .back_page {
+        width: 30px;
+        height: 30px;
+        margin-right: 9px;
+        border-radius: 8px;
+        font-size: 18px !important;
+        line-height: 17px;
+    }
+    .topics_breadcum a{font-size:13px;}
+    .tab-wrapper .topic-details  .sub-details .d-flex.justify-content-between{    flex: none;flex-wrap: wrap;
+    }
+    .topic-details{padding:20px 0px;}
+    .sub-title h3 {
+        flex: none;
+    }
     div#contentHtml .report-block2{padding:30px 10px;}
     .trialbox .btn-danger{line-height: 38px;    height: auto;
     }
