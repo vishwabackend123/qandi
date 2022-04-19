@@ -94,16 +94,14 @@
         .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
 
         .account-wrapper{margin-top: 0px;}
-    
-      
-
-
-        .main-wrapper{    padding-left: 70px;
-        }
+        .main-wrapper{    padding-left: 70px; }
 
 }
 
 @media(max-width:500px){
+    .trialbox .btn-danger{line-height: 38px;    height: auto;
+    }
+    .trialbox p{font-size:20px;    padding-bottom: 20px!important;}
     .bg-white.shadow-lg.py-5{padding-bottom:30px!important;} 
     .subjectIcon img {
         width: 48px!important;
