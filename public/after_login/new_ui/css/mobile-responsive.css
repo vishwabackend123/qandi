@@ -97,7 +97,7 @@
             top: 64px;
             left: 12px;}
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
-        .overllanaly .cust-tab-content{padding-top: 50px!important;}
+        .overllanaly .cust-tab-content{padding-top: 65px!important;}
         .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
 
         .account-wrapper{margin-top: 0px;}
@@ -124,7 +124,7 @@
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
-
+        .sub-title h3 {flex: 5;}
 }
 
 
@@ -141,6 +141,12 @@
 
 }
 @media(max-width:500px){
+    .tab-wrapper .topic-details  .sub-details .d-flex.justify-content-between{    flex: none;flex-wrap: wrap;
+    }
+    .topic-details{padding:20px 0px;}
+    .sub-title h3 {
+        flex: none;
+    }
     div#contentHtml .report-block2{padding:30px 10px;}
     .trialbox .btn-danger{line-height: 38px;    height: auto;
     }
