@@ -94,7 +94,15 @@
         .main-wrapper{    padding-left: 70px;
         }
 }
-
+@media(max-width:550px){
+    .backbtn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.PayBttn {
+    width: 100%;
+}
+}
 @media(max-width:500px){
     .bg-white.shadow-lg.py-5{padding-bottom:30px!important;} 
     .subjectIcon img {
