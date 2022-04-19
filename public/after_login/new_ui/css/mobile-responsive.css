@@ -5,14 +5,13 @@
         display: flex;
         margin-bottom: 0px;
         justify-content: center;
-        padding-left: 2rem; 
     
     }
     .profile-section {
         width: 100%;
     }
     .profile-section ul li {
-        width: 100%;
+        width: 100%; margin: 0px; padding: 5px;
     }
     .profile-section ul li svg {
         margin-right: 0px;
@@ -34,7 +33,9 @@
         margin-right: 0;
     }
     #profileAcc{
-        top: -3px;
+        top: 0px;
+        margin-top: 50px;
+        padding-top: 0px;width: 86%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
     }
     .dashbaordmargin {
         margin-left: 0px;
@@ -93,6 +94,9 @@
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
         .overllanaly .cust-tab-content{padding-top: 50px!important;}
         .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
+        .account-wrapper{margin-top: 0px;}
+    
+      
 
 }
 
@@ -121,7 +125,12 @@
         .cust-tab-content{    padding: 0px 7px !important;}
         div#back2Dsh button a {font-size: 13px;display: inline-block;
             padding: 2px 0px;}  
-        div#marKs-trends, div#time-Avg-quest {padding: 5px 7px 25px;}     
+        div#marKs-trends, div#time-Avg-quest {padding: 5px 7px 25px;}  
+        #profileAcc{
+            top: 0px;
+            margin-top: 50px;
+            padding-top: 0px;width: 86%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        }   
 }
 
 @media(max-width:420px){
