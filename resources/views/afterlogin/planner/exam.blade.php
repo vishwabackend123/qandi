@@ -171,14 +171,14 @@ $questtype='radio';
 
                 </div>
 
-            </div> 
+            </div>
 
         </div>
-    </div>  
+    </div>
 </div>
 
 
- 
+
 <script>
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
@@ -195,6 +195,7 @@ $questtype='radio';
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
+                            <input type="hidden" id="current_question_no" value="1" />
                             <!-- Exam subject Tabs  -->
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @if(!empty($filtered_subject))
@@ -793,6 +794,9 @@ $questtype='radio';
 
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
+        var cur_quest_no = $('#current_question_no').val();
+        clearResponse(quest_id, subject_id, cur_quest_no);
+
         $.ajax({
             url: "{{ route('markforreview') }}",
             type: 'POST',
