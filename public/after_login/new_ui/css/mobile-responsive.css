@@ -102,7 +102,7 @@
 
         .account-wrapper{margin-top: 0px;}
         .main-wrapper{    padding-left: 70px; }
-    div#contentHtml .report-block2{padding:30px 20px;}
+    div#contentHtml .report-block2{padding:30px 20px;margin-top:20px;}
 
         .notification svg {
             left: -10px;
@@ -125,6 +125,8 @@
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
         .sub-title h3 {flex: 5;}
+        .rankholder{background-position: center right;}
+        
 }
 
 
@@ -194,6 +196,7 @@
 }
 @media (max-width:480px) {
     /* .main-wrapper { padding-left: 55px;} */
+    .rankholder{height: 300px}
     
 }
 @media(max-width:420px){
