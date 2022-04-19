@@ -77,9 +77,9 @@
         .fw-bold , .bg-white.shadow-lg .progress_text {font-size: 14px;}
         .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {top: 0px;}
         #marKs-trends .bg-white, #time-Avg-quest .bg-white{padding: 0!important;}
-        #overall #back2Dsh button.btn{  padding: 5px 12px !important;margin-right: 10px!important;width: 50%!important;font-size:12px;
+        #overall #back2Dsh button.btn{  padding: 5px 10px !important;margin-right: 10px!important;width: 50%!important;font-size:11px;
         }
-        div#back2Dsh button a{font-size:12px;}
+        div#back2Dsh button a{font-size:11px;}
         #overall #back2Dsh button.btn.btn-outline-danger{margin:10px 0 0 0!important;}
         #back2Dsh>.d-flex{justify-content: center;}
         .tab-wrapper{position: relative;}

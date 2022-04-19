@@ -3501,9 +3501,7 @@
     .Ex-anal {
         border-radius: 20px !important;
         box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
-        color: #fff;
         width: 38% !important;
         margin-right: 15px;
         font-size: 10px !important;
