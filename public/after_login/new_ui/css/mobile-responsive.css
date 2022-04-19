@@ -77,11 +77,7 @@
         .fw-bold , .bg-white.shadow-lg .progress_text {font-size: 14px;}
         .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {top: 0px;}
         #marKs-trends .bg-white, #time-Avg-quest .bg-white{padding: 0!important;}
-        #overall #back2Dsh button.btn{
-            width: auto!important;
-            padding: 5px 12px !important;
-            margin-right: 10px!important;
-            width: 50%!important;font-size:12px;
+        #overall #back2Dsh button.btn{  padding: 5px 12px !important;margin-right: 10px!important;width: 50%!important;font-size:12px;
         }
         div#back2Dsh button a{font-size:12px;}
         #overall #back2Dsh button.btn.btn-outline-danger{margin:10px 0 0 0!important;}
@@ -95,7 +91,8 @@
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
         .overllanaly .cust-tab-content{padding-top: 50px!important;}
         .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
-
+        .main-wrapper{    padding-left: 70px;
+        }
 }
 
 @media(max-width:500px){
