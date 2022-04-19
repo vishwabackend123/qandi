@@ -141,6 +141,18 @@
 
 }
 @media(max-width:500px){
+    .breadcrumb-item+.breadcrumb-item {
+        padding-left: 0.2rem;
+    }
+    .back_page {
+        width: 30px;
+        height: 30px;
+        margin-right: 9px;
+        border-radius: 8px;
+        font-size: 18px !important;
+        line-height: 17px;
+    }
+    .topics_breadcum a{font-size:13px;}
     .tab-wrapper .topic-details  .sub-details .d-flex.justify-content-between{    flex: none;flex-wrap: wrap;
     }
     .topic-details{padding:20px 0px;}
