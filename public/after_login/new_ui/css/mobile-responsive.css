@@ -124,23 +124,22 @@
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
+
 }
-@media(max-width:550px){
-    .backbtn {
-    width: 100%;
-    margin-bottom: 10px;
-}
-.PayBttn {
-    width: 100%;
-}
-}
+
 
 @media(max-width:576px){
 #sharefrnd .modal-dialog{padding: 0 40px;}
 .overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
 
 }
+@media(max-width:550px){
+    .backbtn {
+    width: 100%;
+    margin-bottom: 10px;}
+.PayBttn {width: 100%;}
 
+}
 @media(max-width:500px){
     div#contentHtml .report-block2{padding:30px 10px;}
     .trialbox .btn-danger{line-height: 38px;    height: auto;
