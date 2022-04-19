@@ -137,7 +137,11 @@
         }
         span.EXPAND_btn{display:block;}
         span.EXPAND_btn .customgray{margin-right:0px!important;font-size: 14px; height: 40px !important;}
-}
+        .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
+            height: 228px !important;
+        }
+        .overllanaly .shadow-lg#f-Numbr-sectin{margin-bottom:0px;}
+    }
 
 
 @media(max-width:576px){
