@@ -142,6 +142,7 @@
 @media(max-width:576px){
 #sharefrnd .modal-dialog{padding: 0 40px;}
 .overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
+#prof_scroll .d-flex.align-items-center.px-3{padding: 0px!important;}
 
 }
 @media(max-width:550px){
