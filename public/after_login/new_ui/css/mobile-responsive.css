@@ -32,10 +32,17 @@
     .subscrived svg {
         margin-right: 0;
     }
+   
     #profileAcc{
         top: 0px;
-        margin-top: 50px;
-        padding-top: 0px;width: 86%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        margin-top: 32px;
+        padding-top: 0px;width: 100%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); 
+    }   
+    .account-wrapper{
+        width: 823%;
+        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); 
+        max-width: 82%;
+        float: right; 
     }
     .dashbaordmargin {
         margin-left: 0px;
@@ -97,7 +104,24 @@
         .main-wrapper{    padding-left: 70px; }
     div#contentHtml .report-block2{padding:30px 20px;}
 
-
+        .notification svg {
+            left: -10px;
+            top: -23px;
+            width: 50px;
+        }
+        .user-name-block span.notification.ms-4 {
+            margin-left: 10px !important;
+            width: 30px;
+            height: 30px;
+        }
+        .notification a {
+            border-radius: 8px !important;
+            width: 30px;
+            height: 30px;
+        }
+        .user-name-block {
+            font-size: 11px;
+        }
 }
 
 @media(max-width:500px){
@@ -130,11 +154,8 @@
         div#back2Dsh button a {font-size: 13px;display: inline-block;
             padding: 2px 0px;}  
         div#marKs-trends, div#time-Avg-quest {padding: 5px 7px 25px;}  
-        #profileAcc{
-            top: 0px;
-            margin-top: 50px;
-            padding-top: 0px;width: 86%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-        }   
+        #profileAcc{margin-top:50px;}  
+       
 }
 @media (max-width:480px) {
     .main-wrapper { padding-left: 55px;}
