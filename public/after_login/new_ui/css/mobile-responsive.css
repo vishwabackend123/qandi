@@ -141,6 +141,7 @@
 
 }
 @media(max-width:500px){
+    .topics_breadcum{margin-right:0px;padding: 12px 6px;}
     .breadcrumb-item+.breadcrumb-item {
         padding-left: 0.2rem;
     }
