@@ -34,7 +34,7 @@
     }
    
     #profileAcc{
-        top: 0px;
+        top: 25px;
         margin-top: 32px;
         padding-top: 0px;width: 100%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); 
     }   
@@ -120,7 +120,9 @@
             height: 35px;
         }
         .user-name-block {
-            font-size: 13px;
+            font-size: 16px;
+            margin-bottom: 25px;
+            margin-top: 9px;
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
@@ -170,7 +172,7 @@
         .profile-show .profile-picture-txt .p-text {
             margin-top: 10px;
         }
-        .profile-show{padding-top: 0px !important;margin-top: 20px;}
+        .profile-show{padding-top: 0px !important;margin-top: 7px;}
         .leader-board h4 {
             text-align: left;
             padding-right: 0px;
