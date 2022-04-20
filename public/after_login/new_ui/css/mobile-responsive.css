@@ -105,22 +105,22 @@
     div#contentHtml .report-block2{padding:30px 20px;margin-top:20px;}
 
         .notification svg {
-            left: -10px;
-            top: -23px;
-            width: 50px;
+            left: -13px;
+            top: -22px;
+            width: 60px;
         }
         .user-name-block span.notification.ms-4 {
             margin-left: 10px !important;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
         }
         .notification a {
             border-radius: 8px !important;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
         }
         .user-name-block {
-            font-size: 11px;
+            font-size: 13px;
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
@@ -143,13 +143,20 @@
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-bottom:0px;}
         .btm-form-flds .form-flds input { padding: 7px;}
         .profile-show {top: 9% !important;right: 9px !important;left: initial !important;}
-        .edit-form{top: 9% !important;min-width: 290px;right: 9px !important;left: initial;}
+        .edit-form{top: 9% !important;min-width: 290px;right: 9px !important;left: initial;    height: 500px !important;}
         .profile-show{position: initial; }
-        .leader-board{position: initial;   margin-top: 63px;}
+        .leader-board{position: initial;   margin-top: 63px;    border-radius: 56px;}
         .svg_icon_input svg{ width: 20px;height: 20px; }
         .svg_icon_input {top: 5px;}
         .edit-form .edit-img .p-picture { width: 50px;height: 52px;}
         .edit-pic{width: 25px;}
+        .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: 50px;}
+        .active_user {max-width: 325px; }
+        .profile-detail { height: 115px; margin-top: 20px; overflow-y: auto;}
+        .leader-board {height: 350px; min-height: 350px; width: max-content;padding-left: 0px;}
+        #editProfile_form .form-flds input {font-size: 14px;}
+        #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
+        #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
     }
 
 
