@@ -34,7 +34,7 @@
     }
    
     #profileAcc{
-        top: 0px;
+        top: 25px;
         margin-top: 32px;
         padding-top: 0px;width: 100%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); 
     }   
@@ -120,7 +120,9 @@
             height: 35px;
         }
         .user-name-block {
-            font-size: 13px;
+            font-size: 16px;
+            margin-bottom: 25px;
+            margin-top: 9px;
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
         span.EXPAND_btn {margin-top: 10px;display: inline-block;}
@@ -142,46 +144,57 @@
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-bottom:0px;}
         .btm-form-flds .form-flds input { padding: 7px;}
-        .profile-show {top: 9% !important;right: 9px !important;left: initial !important;    float: inherit;
-        
-            height: 200px;
-            min-height: 250px !important;
-            border-radius: 56px !important;
-            margin-top: 20px;
-          
+        .leader-board {
+            right: 3%;
+            height: 450px;
         }
+        .profile-show {left:25px !important;}
 
 
         .edit-form{top: 10% !important;min-width: 290px;right: 9px !important;left: initial;  }
 
-        .leader-board{margin-top: 63px;    border-radius: 56px;}
+        .leader-board{margin-top: 63px;  }
         .svg_icon_input svg{ width: 20px;height: 20px; }
         .svg_icon_input {top: 5px;}
         .edit-form .edit-img .p-picture { width: 50px;height: 52px;}
         .edit-pic{width: 25px;}
         .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: 50px;}
         .active_user {max-width: 325px; }
-        .profile-detail { height: 115px; margin-top: 20px; overflow-y: auto;}
-        .leader-board {height: 350px; min-height: 350px; padding-left: 0px;float: inherit;}
+        .profile-detail {   margin-top: 20px; overflow-y: auto;}
+        .leader-board {height: 465px; min-height: 350px; padding-left: 0px;float: inherit; }
         #editProfile_form .form-flds input {font-size: 14px;}
         #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
         #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
         .search-frnd input{margin-left: 10px}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
-        .exportAnaylisis .exportUsertxt{margin-left:0;}
+        .exportAnaylisis .exportUsertxt{margin-left:0;} 
+
+        .profile-show .profile-picture-txt .p-text {
+            margin-top: 10px;
+        }
+        .profile-show{padding-top: 0px !important;margin-top: 7px;}
+        .leader-board h4 {
+            text-align: left;
+            padding-right: 0px;
+            padding-left: 16px;
+        }
+        .leader-board{padding: 20px 15px;}
+        .leader-board ul li{padding-left: 0px;}
+
         .col-md-12.border-bottom.pt-2 .px-4{padding-right: 0!important;}
         .exportAnaylisis .justify-content-center{justify-content: start!important;}
         .exportAnaylisis .export-block p {font-size: 14px;}
 
 
 
+
         .log-out-screen{max-width: 267px;}
-        .leader-board, .profile-show{width:240px !important;} 
+        .leader-board, .profile-show{width:47% !important;} 
         .edit-form{min-width: 240px;}
         .f_l_name_box .form-flds { width: 100% !important;     margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
         #editProfile_form .form-flds p {font-size: 10px;}
-        .leader-board{  right: 10px !important;top: 36%;}
+      
         .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
         .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
         .exportAnaylisis .export-block h2 {font-size: 26px;}
