@@ -165,7 +165,8 @@
         #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
         .search-frnd input{margin-left: 10px}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
-        .exportAnaylisis .exportUsertxt{margin-left:0;}
+        .exportAnaylisis .exportUsertxt{margin-left:0;} 
+
         .profile-show .profile-picture-txt .p-text {
             margin-top: 10px;
         }
@@ -178,6 +179,11 @@
         .leader-board{padding: 20px 15px;}
         .leader-board ul li{padding-left: 0px;}
 
+        .col-md-12.border-bottom.pt-2 .px-4{padding-right: 0!important;}
+        .exportAnaylisis .justify-content-center{justify-content: start!important;}
+        .exportAnaylisis .export-block p {font-size: 14px;}
+
+
 
 
         .log-out-screen{max-width: 267px;}
@@ -188,6 +194,9 @@
         #editProfile_form .form-flds p {font-size: 10px;}
       
         .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
+        .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
+        .exportAnaylisis .export-block h2 {font-size: 26px;}
+
     }
 
 
