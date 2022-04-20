@@ -164,6 +164,8 @@
 #sharefrnd .modal-dialog{padding: 0 40px;}
 .overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
 #prof_scroll .d-flex.align-items-center.px-3{padding: 0px!important;}
+.exportAnaylisis .d-flex.align-items-center.mt-3.pb-1{display: block!important;}
+.exportAnaylisis .d-flex.align-items-center.mt-3.pb-1 .progress.ms-auto{margin: 0!important;;}
 
 }
 @media(max-width:550px){
