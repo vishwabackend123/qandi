@@ -185,6 +185,9 @@
         .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
         .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
         .exportAnaylisis .export-block h2 {font-size: 26px;}
+        .reportHeading {font-size: 18px;}
+        .exportAnaylisis .report-block2.p-6 .row.py-5{padding: 20px 0 0!important;}
+        .anaylticslogo img {width: 50px;}
 
     }
 
