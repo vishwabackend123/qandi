@@ -152,9 +152,9 @@
         }
 
 
-        .edit-form{top: 9% !important;min-width: 290px;right: 9px !important;left: initial;  }
-        .profile-show{position: initial; }
-        .leader-board{position: initial;   margin-top: 63px;    border-radius: 56px;}
+        .edit-form{top: 10% !important;min-width: 290px;right: 9px !important;left: initial;  }
+
+        .leader-board{margin-top: 63px;    border-radius: 56px;}
         .svg_icon_input svg{ width: 20px;height: 20px; }
         .svg_icon_input {top: 5px;}
         .edit-form .edit-img .p-picture { width: 50px;height: 52px;}
@@ -169,6 +169,17 @@
         .search-frnd input{margin-left: 10px}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
         .exportAnaylisis .exportUsertxt{margin-left:0;}
+
+
+
+        .log-out-screen{max-width: 267px;}
+        .leader-board, .profile-show{width:240px !important;}
+        .edit-form{min-width: 240px;}
+        .f_l_name_box .form-flds { width: 100% !important;     margin-bottom: 10px;}
+        .f_l_name_box { display: block !important;}
+        #editProfile_form .form-flds p {font-size: 10px;}
+        .leader-board{  right: 10px !important;top: 36%;}
+        .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
     }
 
 
@@ -254,11 +265,12 @@
         .cust-gallery.dashGallery .swiper-button-next:after, .cust-gallery.dashGallery .swiper-button-prev:after {
             font-size: 16px;
         }
-        .log-out-screen{max-width: 267px;}
-        .leader-board, .profile-show{width:240px;}
+        .log-out-screen{max-width: 240px;    width: 100%;}
+        .leader-board, .profile-show{width:240px !important;}
         .edit-form{min-width: 240px;}
-        .f_l_name_box .form-flds { width: 100% !important;     margin-bottom: 10px;}
+        .f_l_name_box .form-flds { width: 100% !important; margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
         #editProfile_form .form-flds p {font-size: 10px;}
+        .leader-board{  right: 10px !important;top: 36%;}
         
 }
