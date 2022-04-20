@@ -141,6 +141,15 @@
             height: 228px !important;
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-bottom:0px;}
+        .btm-form-flds .form-flds input { padding: 7px;}
+        .profile-show {top: 9% !important;right: 9px !important;left: initial !important;}
+        .edit-form{top: 9% !important;min-width: 290px;right: 9px !important;left: initial;}
+        .profile-show{position: initial; }
+        .leader-board{position: initial;   margin-top: 63px;}
+        .svg_icon_input svg{ width: 20px;height: 20px; }
+        .svg_icon_input {top: 5px;}
+        .edit-form .edit-img .p-picture { width: 50px;height: 52px;}
+        .edit-pic{width: 25px;}
     }
 
 
