@@ -142,8 +142,17 @@
         }
         .overllanaly .shadow-lg#f-Numbr-sectin{margin-bottom:0px;}
         .btm-form-flds .form-flds input { padding: 7px;}
-        .profile-show {top: 9% !important;right: 9px !important;left: initial !important;}
-        .edit-form{top: 9% !important;min-width: 290px;right: 9px !important;left: initial;    height: 500px !important;}
+        .profile-show {top: 9% !important;right: 9px !important;left: initial !important;    float: inherit;
+        
+            height: 200px;
+            min-height: 250px !important;
+            border-radius: 56px !important;
+            margin-top: 20px;
+          
+        }
+
+
+        .edit-form{top: 9% !important;min-width: 290px;right: 9px !important;left: initial;  }
         .profile-show{position: initial; }
         .leader-board{position: initial;   margin-top: 63px;    border-radius: 56px;}
         .svg_icon_input svg{ width: 20px;height: 20px; }
@@ -153,10 +162,11 @@
         .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: 50px;}
         .active_user {max-width: 325px; }
         .profile-detail { height: 115px; margin-top: 20px; overflow-y: auto;}
-        .leader-board {height: 350px; min-height: 350px; width: max-content;padding-left: 0px;}
+        .leader-board {height: 350px; min-height: 350px; padding-left: 0px;float: inherit;}
         #editProfile_form .form-flds input {font-size: 14px;}
         #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
         #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
+        .search-frnd input{margin-left: 10px}
     }
 
 
@@ -241,5 +251,10 @@
             font-size: 16px;
         }
         .log-out-screen{max-width: 267px;}
+        .leader-board, .profile-show{width:240px;}
+        .edit-form{min-width: 240px;}
+        .f_l_name_box .form-flds { width: 100% !important;     margin-bottom: 10px;}
+        .f_l_name_box { display: block !important;}
+        #editProfile_form .form-flds p {font-size: 10px;}
         
 }
