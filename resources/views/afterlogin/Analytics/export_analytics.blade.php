@@ -121,10 +121,10 @@ $userData = Session::get('user_data');
                                 @if(!empty($subProf))
                                 @foreach($subProf as $key=>$sub)
                                 <div class="d-flex align-items-center mt-3 pb-1">
-                                    <div class="  col-6 col-lg-7 col-md-6">
+                                    <div class="col-lg-7 col-md-6 col-sm-7 col-12">
                                         <div class="row d-flex  align-items-center py-2 dashboard-listing-details  w-100 ">
-                                            <span class="col-md-5 mr-3 dashboard-name-txt">{{$sub->subject_name}}</span>
-                                            <div class="col-md-7 pe-5">
+                                            <span class="col-md-5 mr-3 dashboard-name-txt col-5">{{$sub->subject_name}}</span>
+                                            <div class="col-md-7 pe-5 col-7">
                                                 <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
                                                     <div class="star-ratings-css">
@@ -144,7 +144,7 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 progress  ms-auto" style="overflow: visible;">
+                                    <div class="col-xl-5 col-lg-5 col-md-6  progress  ms-auto col-sm-5 col-12" style="overflow: visible;">
                                         @if($sub->correct_ans > 0)
                                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
                                             <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
@@ -177,10 +177,10 @@ $userData = Session::get('user_data');
                                         <div class="px-4">
                                             @if(isset($unit->unit_score))
                                             @foreach($unit->unit_score as $unit)
-                                            <div class="d-flex align-items-center  ">
+                                            <div class="d-flex align-items-center">
                                                 <div class="row d-flex  align-items-center py-1 dashboard-listing-details  w-100 col-6">
-                                                    <span class="col-md-8 mr-3 dashboard-name-txt">{{$unit->uni_name}}</span>
-                                                    <div class="col-md-4">
+                                                    <span class="col-sm-8 mr-3 dashboard-name-txt">{{$unit->uni_name}}</span>
+                                                    <div class="col-sm-4">
                                                         <div class="status-id-disable  m-0  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
                                                             <div class="star-ratings-css m-0">
                                                                 <div class="star-ratings-css-top" style="width:{{round($unit->score)}}%">

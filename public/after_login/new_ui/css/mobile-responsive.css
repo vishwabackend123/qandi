@@ -159,6 +159,9 @@
         #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
         .exportAnaylisis .exportUsertxt{margin-left:0;}
+        .col-md-12.border-bottom.pt-2 .px-4{padding-right: 0!important;}
+        .exportAnaylisis .justify-content-center{justify-content: start!important;}
+        .exportAnaylisis .export-block p {font-size: 14px;}
 
     }
 
