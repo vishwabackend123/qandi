@@ -183,6 +183,9 @@
         #editProfile_form .form-flds p {font-size: 10px;}
         .leader-board{  right: 10px !important;top: 36%;}
         .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
+        .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
+        .exportAnaylisis .export-block h2 {font-size: 26px;}
+
     }
 
 
