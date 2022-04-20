@@ -1045,7 +1045,7 @@
 
     #myTabContent .progress {
         border-radius: 15rem !important;
-        width: 90% !important;
+      
     }
 
     /* 01-01-22*/
@@ -1411,11 +1411,6 @@
     }
 
     /** profile page css **/
-    .profile-picture-txt .p-picture {
-        width: 55px !important;
-        height: 55px !important;
-    }
-
     .profile-section {
         width: 85%;
         top: 10%;
@@ -1459,7 +1454,7 @@
 
     .subscription .profile-picture-txt .p-picture {
         height: 55px !important;
-        width: 55px;
+        width: 65px;
     }
 
     .profile-section ul {

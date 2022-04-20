@@ -277,7 +277,7 @@ class LiveExamController extends Controller
 
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (json_decode($response_json));
-                $response = isset($response_data->response) ? $response_data->response : [];
+                $response = isset($response_data) ? $response_data : [];
 
                 return view('afterlogin.LiveExam.live_result_analysis', compact('response'));
             } else {
