@@ -173,7 +173,7 @@
 
 
         .log-out-screen{max-width: 267px;}
-        .leader-board, .profile-show{width:240px !important;}
+        .leader-board, .profile-show{width:240px !important;} 
         .edit-form{min-width: 240px;}
         .f_l_name_box .form-flds { width: 100% !important;     margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
