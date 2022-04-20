@@ -164,7 +164,9 @@
     width: 100%;
     margin-bottom: 20px;}
 .PayBttn {width: 100%;}
-
+  .subscription .profile-picture-txt .p-picture {
+        width: 75px;
+    }
 }
 @media(max-width:500px){
     .topics_breadcum{margin-right:0px;padding: 12px 6px;}

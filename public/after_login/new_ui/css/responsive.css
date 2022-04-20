@@ -690,7 +690,7 @@
 	}
 
     a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-        padding: 22px !important;
+        padding: 20px 0!important;
     }
 
     span.Ex--an {
@@ -1050,8 +1050,9 @@
 
     /* 01-01-22*/
     a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-        padding: 22px !important;
-        width: 75% !important;
+        padding: 20px 20px!important;
+        min-width: 180px;
+        font-size: 13px;
     }
 
     span.Ex--an {
@@ -1410,11 +1411,6 @@
     }
 
     /** profile page css **/
-    .profile-picture-txt .p-picture {
-        width: 55px !important;
-        height: 55px !important;
-    }
-
     .profile-section {
         width: 85%;
         top: 10%;
@@ -1458,7 +1454,7 @@
 
     .subscription .profile-picture-txt .p-picture {
         height: 55px !important;
-        width: 55px;
+        width: 65px;
     }
 
     .profile-section ul {
