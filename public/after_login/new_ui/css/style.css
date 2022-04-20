@@ -3503,9 +3503,13 @@ span.notification.ms-4 {
     margin-left: -3px;
     z-index: 99;
 }
-
+/*
 .outer-logo img {
     width: 110px;
+}
+*/
+.rownot .outer-logo {
+    margin-top: 30px;
 }
 
 .PayBttn:active:focus {
