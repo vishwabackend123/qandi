@@ -64,7 +64,7 @@ $userData = Session::get('user_data');
                                             <div class="d-flex align-items-center border-bottom pb-4">
                                                 <div>
                                                     <h1 class="reportHeading">
-                                                        Report <span>Analysis</span>
+                                                         Report Analysis
                                                     </h1>
                                                 </div>
                                                 <div class="ms-auto d-flex align-items-center">
