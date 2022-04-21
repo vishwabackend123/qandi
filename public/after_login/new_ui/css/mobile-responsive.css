@@ -191,7 +191,7 @@
         .log-out-screen{max-width: 267px;}
         .leader-board, .profile-show{width:47% !important;} 
         .edit-form{min-width: 240px;}
-        .f_l_name_box .form-flds { width: 100% !important;     margin-bottom: 10px;}
+        .f_l_name_box .form-flds { width: 100% !important;margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
         #editProfile_form .form-flds p {font-size: 10px;}
       
@@ -201,6 +201,7 @@
         .reportHeading {font-size: 18px;}
         .exportAnaylisis .report-block2.p-6 .row.py-5{padding: 20px 0 0!important;}
         .anaylticslogo img {width: 50px;}
+        .exportAnaylisis .bg-white.shadow-lg .dashboard-title{font-size:16px;}
 
     }
 
