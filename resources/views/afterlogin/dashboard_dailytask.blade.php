@@ -64,7 +64,7 @@ $userData = Session::get('user_data');
                         
                         <div class="row mt-3 dtrow-left">
                             <div class="col-md-6">
-                                <p><b>Task 1 - Evalutions Skills</b></p>
+                                <p><b>Task 1 - Evaluation Skills</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
                                 <p><span class="text-danger">10</span> Questions | Duration :
                                  <span class="text-danger">15mins</span></p>
