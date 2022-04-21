@@ -9132,3 +9132,10 @@ div#resume-test {transition: none !important;}
 div#exportAnalytics {transition: none !important;}
 /***********Ended-by-sachin-13-04-2022**************/
 .rview-quses li p span  {padding-right: 0px;padding-left: 0px;}
+
+
+.headingset{
+    font-size: 18px;
+    font-weight: 400 !important;
+    color: #231f20;
+}
