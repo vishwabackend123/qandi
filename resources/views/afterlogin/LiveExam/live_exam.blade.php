@@ -247,7 +247,7 @@ $questtype='radio';
                                     <div class="col-md-5 col-lg-5">
                                         <div class="me-2"></div>
                                         <div>
-                                            <small>No. Of Questions</small>
+                                            <small>No. of Questions</small>
                                             <span class="d-block inst-text"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>

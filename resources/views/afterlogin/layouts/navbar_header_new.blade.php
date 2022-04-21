@@ -357,7 +357,7 @@
 
                         <div class="row  mb-4">
                             <div class="col-xl-6">
-                                <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
+                                <p class="fw-bold text-uppercase mt-3">Schedule week's tests</p>
                                 <div class="d-flex align-items-center row">
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">Start Date</label>

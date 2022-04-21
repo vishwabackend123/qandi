@@ -30,7 +30,7 @@ $userData = Session::get('user_data');
                                 <div class="rankholder">
                                     <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
                                     <p class="text-center">
-                                        No. Of students participated for the exam.
+                                        No. of students appeared in the exam.
                                     </p>
                                     <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
                                 </div>
