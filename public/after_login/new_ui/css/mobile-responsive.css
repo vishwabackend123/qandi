@@ -181,7 +181,10 @@
         .leader-board{padding: 20px 15px;}
         .leader-board ul li{padding-left: 0px;}
 
-        .col-md-12.border-bottom.pt-2 .px-4{padding-right: 0!important;}
+        .exportAnaylisis .col-md-12.border-bottom.pt-2 .px-4 {
+            padding-left: 13px!important;
+            padding-right: 0px!important;
+        }
         .exportAnaylisis .justify-content-center{justify-content: start!important;}
         .exportAnaylisis .export-block p {font-size: 14px;}
 
