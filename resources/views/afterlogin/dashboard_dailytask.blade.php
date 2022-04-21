@@ -64,9 +64,9 @@ $userData = Session::get('user_data');
                         
                         <div class="row mt-3 dtrow-left">
                             <div class="col-md-6">
-                                <p><b>Task 1 - Evalution Skills</b></p>
+                                <p><b>Task 1 - Evalutions Skills</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
-                                <p><span class="text-danger">10</span> Question | Duration :
+                                <p><span class="text-danger">10</span> Questions | Duration :
                                  <span class="text-danger">15mins</span></p>
                             </div>
                             <div class="col-md-6"><a class="btn btntheme" href="#">TAKE TEST</a></div>
@@ -76,7 +76,7 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <p><b>Task 2 - Time Management</b></p>
                                 <p>Work on your time management skills with this test</p>
-                                <p><span class="text-danger">10</span> Question | Duration :
+                                <p><span class="text-danger">10</span> Questions | Duration :
                                  <span class="text-danger">15mins</span></p>
                             </div>
                             <div class="col-md-6"><a class="btn btntheme" href="#">TAKE TEST</a></div>
@@ -92,7 +92,7 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <p><b>Task 3 - Accuracy Test</b></p>
                                 <p>Work on your accuracy with test</p>
-                                <p><span class="text-danger">10</span> Question | Duration :
+                                <p><span class="text-danger">10</span> Questions | Duration :
                                  <span class="text-danger">15mins</span></p>
                             </div>
                             <div class="col-md-6"><a class="btn btntheme" href="#">TAKE TEST</a></div>
@@ -102,8 +102,8 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <div class="dtrow-right">
                                 <p><b>Task 2 - Weak Topic Test</b></p>
-                                <p>Work on your weal topics of <span class="text-danger"> Chemistry (Q4-MyQ Matrix)</span> with this test</p>
-                                <p><span class="text-danger">25</span> Question | Duration :
+                                <p>Work on your weak topics of <span class="text-danger"> Chemistry (Q4-MyQ Matrix)</span> with this test</p>
+                                <p><span class="text-danger">25</span> Questions | Duration :
                                  <span class="text-danger">60mins</span></p>
                                  <a class="btn btntheme" href="#">TAKE TEST</a>
                                 </div>
@@ -112,7 +112,7 @@ $userData = Session::get('user_data');
                             <div class="dtrow-right">
                                 <p><b>Task 2 - Benchmark Test</b></p>
                                 <p>Take this benchmark in <span class="text-danger"> Quadratic Equations</span></p>
-                                <p><span class="text-danger">25</span> Question | Duration :
+                                <p><span class="text-danger">25</span> Questions | Duration :
                                  <span class="text-danger">60mins</span></p>
                                  <a class="btn btntheme" href="#">TAKE TEST</a>
                                 </div>
