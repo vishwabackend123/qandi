@@ -202,7 +202,12 @@ $userData = Session::get('user_data');
                                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
 
                                         <div class="d-flex align-items-center mt-4 mb-2 pb-1 pe-3">
-                                            <span class="subj-name  col-4">{{!empty($topic->topic_name)?$topic->topic_name:''}}</span>
+                                            <span class="subj-name  col-4">
+                                                @if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
+                                                   @else
+                                                   ""
+                                                   @endif
+                                            </span>
                                             <div class="progress col-8 ms-auto " style="overflow: visible;">
                                                 @if($tcorrect_per > 0)
                                                 <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
