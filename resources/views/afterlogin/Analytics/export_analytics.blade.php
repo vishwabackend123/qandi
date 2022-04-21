@@ -339,7 +339,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
         exporting: {
@@ -400,7 +400,7 @@ $userData = Session::get('user_data');
         },
         yAxis: {
             title: {
-                text: 'Average Time Spent (Sec)'
+                text: 'Average Time Spent (s)'
             }
         },
         exporting: {

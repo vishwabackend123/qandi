@@ -382,7 +382,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
 
@@ -442,7 +442,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
 
@@ -502,7 +502,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
 
@@ -822,7 +822,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
         },
         yAxis: {
             title: {
-                text: 'Average Time Spent (Sec)'
+                text: 'Average Time Spent (s)'
             }
         },
 
