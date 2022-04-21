@@ -3714,13 +3714,9 @@ button#button-addon2 {
 
 #FullTest_Exam_Panel_Interface_A button#bt-modal-confirm {
     border-radius: 15px !important;
-<<<<<<< HEAD
+
     box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background: #21ccff;
-=======
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    background: #00baff;
->>>>>>> 2ead56ef52c1927288e1c63c15f1838bf613e4fe
     border: none;
     color: #fff;
     padding: 12px 25px;
