@@ -18,7 +18,11 @@
                 </div>
 
                 <div class="ms-1 score score-rating js-score">
-                    {{isset($topic->topic_score)?$topic->topic_score:0}}%
+                     @if(isset($topic->topic_score))
+                            {{round($topic->topic_score)}}%
+                            @else
+                            0%
+                            @endif
                 </div>
             </div>
         </div>
