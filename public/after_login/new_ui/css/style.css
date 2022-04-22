@@ -550,10 +550,6 @@ div#myTabContent.reviewPanel .tab-pane .question-block {
     background-color: transparent;
 }
 
-.planner-scheduar-block .planner-edit-mode {
-    box-shadow: none;
-}
-
 .planner-scheduar-block.show .planner-edit-mode {
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
 }
@@ -6304,7 +6300,7 @@ p.success-img {
 }
 
 header {
-    padding: 24px 0;
+    padding: 15px 0;
     position: relative;
     z-index: 99;
 }

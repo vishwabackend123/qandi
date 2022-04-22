@@ -1603,14 +1603,16 @@
     }
 
     .open-sub-planner {
-        width: 85% !important;
+        width: 92% !important;
         height: auto !important;
         position: absolute;
-        top: 55px;
+        top: 15px;
         z-index: 999;
         right: 0px !important;
     }
-
+    .planner-scheduar-block .slimScrollDiv {
+    padding: 15px 15px 35px;
+}
     .w-25 {
         width: 100% !important;
     }
@@ -1938,7 +1940,6 @@
             width: 100% !important;
         }
 
-
     }
 
     /*Planner screen */
@@ -1949,9 +1950,9 @@
         }
 
         .open-sub-planner {
-            width: 75% !important;
+            width: 90% !important;
         }
-
+       
     }
 
 
