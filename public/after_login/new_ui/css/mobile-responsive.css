@@ -244,6 +244,14 @@
   .subscription .profile-picture-txt .p-picture {
         width: 75px;
     }
+    .leader-board{
+        height: 350px;
+    }
+    .profile-detail {
+        margin-top: 20px;
+        overflow-y: auto;
+        height: 120px;
+    }
 }
 @media(max-width:500px){
     .topics_breadcum{margin-right:0px;padding: 12px 6px;}
@@ -314,6 +322,7 @@
     right: 9px !important;
     left: auto !important;
 }
+    
 }
 @media(max-width:420px){
     .dashboard-cards-block .bg-white>small p ,.dashboard-cards-block .progress-journey-card.bg-white>small p{ min-width: 227px; padding: 15px 25px 15px 10px; }  
