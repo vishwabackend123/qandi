@@ -9139,3 +9139,7 @@ div#exportAnalytics {transition: none !important;}
     font-weight: 400 !important;
     color: #231f20;
 }
+.upgrade-btn {
+    max-width: 260px;
+   
+}
