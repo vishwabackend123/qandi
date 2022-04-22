@@ -173,7 +173,7 @@
         #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
         .search-frnd input{margin-left: 10px}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
-        .exportAnaylisis .exportUsertxt{margin-left:0;} 
+        .exportAnaylisis .exportUsertxt{margin-left:0;}  
 
         .profile-show .profile-picture-txt .p-text {
             margin-top: 10px;
