@@ -232,8 +232,15 @@
         top: 70px !important;
     }
     .leader-board{
-        top: 290px !important;
+        top: 287px !important;
         border-radius: 20px !important;
+        height: 290px;
+        min-height:290px;
+    }
+    .profile-detail {
+        margin-top: 20px;
+        overflow-y: auto;
+        height: 110px;
     }
 
 }
@@ -245,9 +252,7 @@
   .subscription .profile-picture-txt .p-picture {
         width: 75px;
     }
-    .leader-board{
-        height: 350px;
-    }
+   
     .profile-detail {
         margin-top: 20px;
         overflow-y: auto;
@@ -345,10 +350,7 @@
         right: 9px !important;
         left: auto !important;
     }
-    .profile-show{
-        background: #fff;
-        min-height: 200px !important;
-    }
+   
     .leader-board{
         top: 233px;
         border-radius: 20px !important;
