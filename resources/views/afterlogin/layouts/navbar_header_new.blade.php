@@ -900,7 +900,7 @@
                 <div class="form-btns mt-lg-3 res_flex d-flex">
                     <!--  <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a> -->
                     @if(($suscription_status != 0) && ($subscription_type == 'T'))
-                    <a  draggable="false" href="{{route('subscriptions')}}"><button  type="button" class="w-100 save-btn">Upgrade</button></a>
+                    <a  draggable="false" href="{{route('subscriptions')}}"><button  type="button" class="w-100 save-btn upgrade-btn">Upgrade</button></a>
                     @elseif($suscription_status != 0 && $subscription_type == 'P')
                     <a class="savebtnmargin" draggable="false" href="{{route('subscriptions')}}"><button type="button" class="w-100 cancel-btn-see">see details</button></a>
                     <a draggable="false" href="{{route('refund_form')}}"><button type="button" class=" w-100 save-btn">Refund</button></a>
