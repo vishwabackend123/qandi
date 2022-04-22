@@ -34,11 +34,11 @@ $userData = Session::get('user_data');
                                     </p>
                                     <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
                                 </div>
-                            
+
 
                                 <div class="row">
                                     <div class="mx-auto col-md-10">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -52,62 +52,62 @@ $userData = Session::get('user_data');
                                 </span>
                             </div>
                             <div class="bg-white mt-5 shadow-lg p-5 report-analysis-block">
-                                            <small>
-                                                <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                                                <p>
-                                                    <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                    <!-- <label>About MyQ Today</label> -->
-                                                    A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
-                                                </p>
-                                            </small>
-                                            <div class="d-flex align-items-center border-bottom pb-4">
-                                                <div>
-                                                    <h1 class="reportHeading">
-                                                         Report Analysis
-                                                    </h1>
-                                                </div>
-                                                <div class="ms-auto d-flex align-items-center">
-                                                    <div>
-                                                        <img id="imageid" src="{{$imgPath}}" class="exportUserpic" alt="image" />
-                                                    </div>
-                                                    <div class="exportUsertxt">
-                                                        <p>{{ucwords($userData->user_name)}}</p>
-                                                        <small><strong>Class - {{$user_stage}}</strong>, Preparing
-                                                            for
-                                                            {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row py-5">
-                                                <div class="col-md-12 text-center">
-                                                    <div class="prgress-i-txt px-3">
-                                                        <span class="progress_text">Progress</span>
-                                                    </div>
-                                                    <!--div id="scorecontainer"></div-->
-                                                    <div id="comparegraph"></div>
-                                                    <div class="status-id-disable     d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-                                                        <div class="star-ratings-css m-0 me-3">
-                                                            <div class="star-ratings-css-top" style="width: {{round($overall_prof_perc)}}%">
-                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                            </div>
-                                                            <div class="star-ratings-css-bottom">
-                                                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ms-1 score score-rating js-score">
-                                                            {{round($overall_prof_perc)}}%
-                                                        </div>
-
-                                                    </div>
-                                                    <p class="text-center text-light mt-3">
-                                                        Overall Subjects Proficiency
-                                                    </p>
-                                                </div>
-
-                                            </div>
+                                <small>
+                                    <!-- <i class="fa  fa-info"></i> -->
+                                    <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                    <p>
+                                        <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
+                                        <!-- <label>About MyQ Today</label> -->
+                                        A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                                    </p>
+                                </small>
+                                <div class="d-flex align-items-center border-bottom pb-4">
+                                    <div>
+                                        <h1 class="reportHeading">
+                                            Report <span>Analysis</span>
+                                        </h1>
+                                    </div>
+                                    <div class="ms-auto d-flex align-items-center">
+                                        <div>
+                                            <img id="imageid" src="{{$imgPath}}" class="exportUserpic" alt="image" />
                                         </div>
+                                        <div class="exportUsertxt">
+                                            <p>{{ucwords($userData->user_name)}}</p>
+                                            <small><strong>Class - {{$user_stage}}</strong>, Preparing
+                                                for
+                                                {{isset($subscription_details->subscription_name)?$subscription_details->subscription_name:''}}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row py-5">
+                                    <div class="col-md-12 text-center">
+                                        <div class="prgress-i-txt px-3">
+                                            <span class="progress_text">Progress</span>
+                                        </div>
+                                        <!-- <div id="scorecontainer"></div> -->
+                                        <div id="comparegraph"></div>
+                                        <div class="status-id-disable     d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
+                                            <div class="star-ratings-css m-0 me-3">
+                                                <div class="star-ratings-css-top" style="width: {{round($overall_prof_perc)}}%">
+                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                </div>
+                                                <div class="star-ratings-css-bottom">
+                                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                </div>
+                                            </div>
+                                            <div class="ms-1 score score-rating js-score">
+                                                {{round($overall_prof_perc)}}%
+                                            </div>
+
+                                        </div>
+                                        <p class="text-center text-light mt-3">
+                                            Overall Subjects Proficiency
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
@@ -271,11 +271,11 @@ $userData = Session::get('user_data');
  -->
 
 <a style="box-shadow: none;padding: 0;" href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print">
-<!-- <img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/export-download-icon.png')}}"> -->
-<img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/Icon_Download.png')}}">
+    <!-- <img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/export-download-icon.png')}}"> -->
+    <img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/Icon_Download.png')}}">
 
 
- 
+
 
 
 
@@ -486,7 +486,7 @@ $userData = Session::get('user_data');
         },
         yAxis: [{
             min: 0,
-            max:100,
+            max: 100,
             title: {
                 text: 'Score %'
             }
@@ -501,7 +501,7 @@ $userData = Session::get('user_data');
         },
         tooltip: {
             shared: true,
-            enabled :false
+            enabled: false
         },
         plotOptions: {
             column: {
@@ -556,6 +556,83 @@ $userData = Session::get('user_data');
         }]
     });
     /* score comparison graph */
+
+
+    /* Score Pie Chart */
+    /* Highcharts.chart('scorecontainer', {
+        chart: {
+            height: 160,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingTop: 0,
+            spacingBottom: 0,
+            spacingRight: 0,
+        },
+        title: {
+            text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$myqScore}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 60
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: false,
+                    distance: 0,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
+                point: {
+                    events: {
+                        legendItemClick: function() {
+                            this.slice(null);
+                            return false;
+                        }
+                    }
+                },
+                startAngle: -140,
+                endAngle: 140,
+                center: ['50%', '50%'],
+                size: '100%'
+            }
+        },
+        series: [{
+            type: 'pie',
+
+            innerSize: '85%',
+            data: [{
+                    name: 'Score',
+                    y: <?php // echo $myqScore; 
+                        ?>,
+                    color: '#21ccff'
+                },
+                {
+                    name: '',
+                    y: <?php // echo $myqOther; 
+                        ?>,
+                    color: '#d0f3ff'
+                }
+            ]
+
+        }]
+    }); */
 </script>
 
 @endsection

@@ -119,125 +119,127 @@ $questtype='radio';
                                             </div>
                                         </div>
                                         <div class="answer-section">
-                                            <div class="answer-btn-txt"><span class="anstitle text-uppercase">Answer:</span>
-                                                <span> @php $mn=0; @endphp
-                                                    @foreach($correct_ans as $akey=>$ans_value)
-                                                    @php
-                                                    $ans_dom = new DOMDocument();
-                                                    @$ans_dom->loadHTML($ans_value);
-                                                    $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
-                                                    $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
-                                                    $alatex = "https://math.now.sh?from=".$atext;
-                                                    $view_ans='<img src="'.$alatex.'" />' ;
-                                                    @endphp
-                                                    {!! !empty($atext)?$view_ans:$ans_value; !!}
-                                                    @php $mn++; @endphp
-                                                    @endforeach</span>
-                                                <!-- <button class="percentage-digit">21 %</button> -->
-                                            </div>
-                                            <div class="ans-txt">
-                                                @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
-                                                <sapn>Explanation :</sapn>
-                                                <p>{!! $question_data->explanation !!}</p>
-                                                @endif
-                                                @if(isset($question_data->reference_text ) && !empty($question_data->reference_text ))
+                                            <div class="ans_inner">
+                                                <div class="answer-btn-txt"><span class="anstitle text-uppercase">Answer:</span>
+                                                    <span> @php $mn=0; @endphp
+                                                        @foreach($correct_ans as $akey=>$ans_value)
+                                                        @php
+                                                        $ans_dom = new DOMDocument();
+                                                        @$ans_dom->loadHTML($ans_value);
+                                                        $ans_anchor = $ans_dom->getElementsByTagName('img')->item(0);
+                                                        $atext = isset($ans_anchor)? $ans_anchor->getAttribute('alt') : '';
+                                                        $alatex = "https://math.now.sh?from=".$atext;
+                                                        $view_ans='<img src="'.$alatex.'" />' ;
+                                                        @endphp
+                                                        {!! !empty($atext)?$view_ans:$ans_value; !!}
+                                                        @php $mn++; @endphp
+                                                        @endforeach</span>
+                                                    <!-- <button class="percentage-digit">21 %</button> -->
+                                                </div>
+                                                <div class="ans-txt">
+                                                    @if(isset($question_data->explanation ) && !empty($question_data->explanation ))
+                                                    <sapn>Explanation :</sapn>
+                                                    <p>{!! $question_data->explanation !!}</p>
+                                                    @endif
+                                                    @if(isset($question_data->reference_text ) && !empty($question_data->reference_text ))
 
-                                                <span>Reference :</span>
+                                                    <span>Reference :</span>
 
-                                                <p>{!! $question_data->reference_text !!}</p>
-                                                @endif
-                                            </div>
-
-
-                                            <div class="expand_button">
-                                                <div class="expandbtn">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
-                                                        <defs>
-                                                            <style>
-                                                                .cls-1,
-                                                                .cls-2 {
-                                                                    fill: none;
-                                                                }
-
-                                                                .cls-2 {
-                                                                    stroke: #000;
-                                                                    stroke-linecap: round;
-                                                                    stroke-linejoin: round;
-                                                                    stroke-width: 1.5px;
-                                                                }
-                                                            </style>
-                                                        </defs>
-                                                        <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
-                                                        <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
-                                                            <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z" />
-                                                            <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8" />
-                                                            <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)" />
-                                                            <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16" />
-                                                            <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)" />
-                                                            <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16" />
-                                                            <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)" />
-                                                            <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8" />
-                                                            <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)" />
-                                                        </g>
-                                                    </svg>
+                                                    <p>{!! $question_data->reference_text !!}</p>
+                                                    @endif
                                                 </div>
 
-                                                <div class="collapsebtn" style="display: none;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_6" data-name="Component 226 – 6" width="48" height="48" viewBox="0 0 48 48">
-                                                        <defs>
-                                                            <style>
-                                                                .cls-1,
-                                                                .cls-2 {
-                                                                    fill: none;
-                                                                }
 
-                                                                .cls-2 {
-                                                                    stroke: #000;
-                                                                    stroke-linecap: round;
-                                                                    stroke-linejoin: round;
-                                                                    stroke-width: 1.5px;
-                                                                }
+                                                <div class="expand_button">
+                                                    <div class="expandbtn">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
+                                                            <defs>
+                                                                <style>
+                                                                    .cls-1,
+                                                                    .cls-2 {
+                                                                        fill: none;
+                                                                    }
 
-                                                                .cls-1,
-                                                                .cls-2,
-                                                                .cls-5 {
-                                                                    opacity: 1;
-                                                                }
-                                                            </style>
-                                                        </defs>
-                                                        <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
-                                                        <g id="Group_5112" data-name="Group 5112" transform="translate(12 12)">
-                                                            <path id="Path_11585" data-name="Path 11585" class="cls-1" d="M0,0H24V24H0Z" />
-                                                            <path id="Path_11586" data-name="Path 11586" class="cls-2" d="M5,9H9V5" />
-                                                            <line id="Line_617" data-name="Line 617" class="cls-2" x2="6" y2="6" transform="translate(3 3)" />
-                                                            <path id="Path_11587" data-name="Path 11587" class="cls-2" d="M5,15H9v4" />
-                                                            <line id="Line_618" data-name="Line 618" class="cls-2" y1="6" x2="6" transform="translate(3 15)" />
-                                                            <path id="Path_11588" data-name="Path 11588" class="cls-2" d="M19,9H15V5" />
-                                                            <line id="Line_619" data-name="Line 619" class="cls-2" y1="6" x2="6" transform="translate(15 3)" />
-                                                            <path id="Path_11589" data-name="Path 11589" class="cls-2" d="M19,15H15v4" />
-                                                            <line id="Line_620" data-name="Line 620" class="cls-2" x2="6" y2="6" transform="translate(15 15)" />
-                                                        </g>
-                                                    </svg>
+                                                                    .cls-2 {
+                                                                        stroke: #000;
+                                                                        stroke-linecap: round;
+                                                                        stroke-linejoin: round;
+                                                                        stroke-width: 1.5px;
+                                                                    }
+                                                                </style>
+                                                            </defs>
+                                                            <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
+                                                            <g id="Group_5111" data-name="Group 5111" transform="translate(12 12)">
+                                                                <path id="Path_11580" data-name="Path 11580" class="cls-1" d="M0,0H24V24H0Z" />
+                                                                <path id="Path_11581" data-name="Path 11581" class="cls-2" d="M16,4h4V8" />
+                                                                <line id="Line_613" data-name="Line 613" class="cls-2" y1="6" x2="6" transform="translate(14 4.022)" />
+                                                                <path id="Path_11582" data-name="Path 11582" class="cls-2" d="M8,20H4V16" />
+                                                                <line id="Line_614" data-name="Line 614" class="cls-2" y1="6" x2="6" transform="translate(4 14.022)" />
+                                                                <path id="Path_11583" data-name="Path 11583" class="cls-2" d="M16,20h4V16" />
+                                                                <line id="Line_615" data-name="Line 615" class="cls-2" x2="6" y2="6" transform="translate(14 14.022)" />
+                                                                <path id="Path_11584" data-name="Path 11584" class="cls-2" d="M8,4H4V8" />
+                                                                <line id="Line_616" data-name="Line 616" class="cls-2" x2="6" y2="6" transform="translate(4 4.022)" />
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+
+                                                    <div class="collapsebtn" style="display: none;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_6" data-name="Component 226 – 6" width="48" height="48" viewBox="0 0 48 48">
+                                                            <defs>
+                                                                <style>
+                                                                    .cls-1,
+                                                                    .cls-2 {
+                                                                        fill: none;
+                                                                    }
+
+                                                                    .cls-2 {
+                                                                        stroke: #000;
+                                                                        stroke-linecap: round;
+                                                                        stroke-linejoin: round;
+                                                                        stroke-width: 1.5px;
+                                                                    }
+
+                                                                    .cls-1,
+                                                                    .cls-2,
+                                                                    .cls-5 {
+                                                                        opacity: 1;
+                                                                    }
+                                                                </style>
+                                                            </defs>
+                                                            <rect id="Rectangle_4849" data-name="Rectangle 4849" class="cls-1" width="48" height="48" rx="14" />
+                                                            <g id="Group_5112" data-name="Group 5112" transform="translate(12 12)">
+                                                                <path id="Path_11585" data-name="Path 11585" class="cls-1" d="M0,0H24V24H0Z" />
+                                                                <path id="Path_11586" data-name="Path 11586" class="cls-2" d="M5,9H9V5" />
+                                                                <line id="Line_617" data-name="Line 617" class="cls-2" x2="6" y2="6" transform="translate(3 3)" />
+                                                                <path id="Path_11587" data-name="Path 11587" class="cls-2" d="M5,15H9v4" />
+                                                                <line id="Line_618" data-name="Line 618" class="cls-2" y1="6" x2="6" transform="translate(3 15)" />
+                                                                <path id="Path_11588" data-name="Path 11588" class="cls-2" d="M19,9H15V5" />
+                                                                <line id="Line_619" data-name="Line 619" class="cls-2" y1="6" x2="6" transform="translate(15 3)" />
+                                                                <path id="Path_11589" data-name="Path 11589" class="cls-2" d="M19,15H15v4" />
+                                                                <line id="Line_620" data-name="Line 620" class="cls-2" x2="6" y2="6" transform="translate(15 15)" />
+                                                            </g>
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="review_expand">
-                                                <div class='percent_btn'>{{(isset($question_data->accuracy) && !empty($question_data->accuracy))? $question_data->accuracy. '%':'View Details'}}</div>
-                                                <div class='expand_block'>
-                                                    <div class="first_screen">
-                                                        @if(isset($question_data->accuracy) && !empty($question_data->accuracy))
-                                                        <div class="persent_std">
-                                                            <span class="no-of-persent">{{$question_data->accuracy}}%</span><span class="attend">of the people got this question right</span>
-                                                        </div>
-                                                        @endif
-                                                        <div class="propt_text">To answer this you need to have</div>
-                                                        <div class="attemp_box row mt-0">
-                                                            <div class="sub_att_1 col-md-6">
-                                                                <p>Knowledge, Application of</p>
-                                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
+                                                <div class="review_expand">
+                                                    <div class='percent_btn'>{{(isset($question_data->accuracy) && !empty($question_data->accuracy))? $question_data->accuracy. '%':'View Details'}}</div>
+                                                    <div class='expand_block'>
+                                                        <div class="first_screen">
+                                                            @if(isset($question_data->accuracy) && !empty($question_data->accuracy))
+                                                            <div class="persent_std">
+                                                                <span class="no-of-persent">{{$question_data->accuracy}}%</span><span class="attend">of the people got this question right</span>
                                                             </div>
-                                                            <div class="sub_att_1 col-md-6">
-                                                                <p>Knowledge of</p>
-                                                                <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                                                            @endif
+                                                            <div class="propt_text">To answer this you need to have</div>
+                                                            <div class="attemp_box row mt-0">
+                                                                <div class="sub_att_1 col-md-6">
+                                                                    <p>Knowledge, Application of</p>
+                                                                    <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
+                                                                </div>
+                                                                <div class="sub_att_1 col-md-6">
+                                                                    <p>Knowledge of</p>
+                                                                    <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -689,17 +691,6 @@ $questtype='radio';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     });
 </script>
 
@@ -843,10 +834,14 @@ $questtype='radio';
         $('.question-block').css('height', div_height);
         var question_block_width = $("#review_rques_blk .question-block").outerWidth();
         $('.question-block').css('width', question_block_width);
-        $('.answer-section').css('width', question_block_width);
+        // $('.answer-section').css('width', question_block_width);
         var question_block_height = $(".question-block").outerHeight();
         var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
+
+        var ans_section = $(".answer-section").outerHeight();
+        var ans_inner = ans_section - 60 + "px";
+        $('.ans_inner').css('height', ans_inner);
 
 
     });
@@ -863,6 +858,10 @@ $questtype='radio';
             var customheight = review_rques_blk_height - review_qus_height;
             var finalheight = customheight - 30 + "px";
             $('.answer-section').css('height', finalheight);
+
+            var ans_section = $(".answer-section").outerHeight();
+            var ans_inner = ans_section - 60 + "px";
+            $('.ans_inner').css('height', ans_inner);
         });
 
     });
@@ -876,6 +875,10 @@ $questtype='radio';
         var question_block_height = $(".question-block").outerHeight();
         var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
+
+        var ans_section = $(".answer-section").outerHeight();
+        var ans_inner = ans_section - 60 + "px";
+        $('.ans_inner').css('height', ans_inner);
 
     });
 </script>
@@ -925,9 +928,10 @@ $questtype='radio';
     #review_rques_blk .answer-section {
         margin-top: 0px !important;
         position: absolute;
-        overflow-x: hidden;
+        overflow: initial !important;
         bottom: 0px;
-        width: 98%;
+        width: 98.66%;
+        padding-right: 6px;
         border-radius: 40px;
     }
 
@@ -1004,6 +1008,9 @@ $questtype='radio';
     .review_heading1 .heading {
         display: flex;
         align-items: center;
+    }
+    .ans_inner{
+        overflow-y: scroll;
     }
 </style>
 
