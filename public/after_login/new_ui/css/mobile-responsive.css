@@ -198,7 +198,7 @@
 
 
         .log-out-screen{max-width: 267px;}
-        .leader-board, .profile-show{width:47% !important;} 
+        .leader-board, .profile-show{width:47% !important;    top: 70px !important;} 
         .edit-form{min-width: 240px;}
         .f_l_name_box .form-flds { width: 100% !important;margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
@@ -229,6 +229,7 @@
     .profile-show{
         background: #fff;
         min-height: 200px !important;
+        top: 70px !important;
     }
     .leader-board{
         top: 290px !important;
