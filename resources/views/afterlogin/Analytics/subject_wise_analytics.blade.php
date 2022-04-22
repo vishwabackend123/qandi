@@ -258,7 +258,7 @@
                             It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
+                    <p class="fw-bold text-start">Accuracy Percentage (Last Week)</p>
                     <div id="accPerSubjectWise"></div>
                     <!--p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
                 </div>
