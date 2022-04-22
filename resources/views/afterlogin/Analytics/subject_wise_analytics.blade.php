@@ -185,7 +185,7 @@
                             In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Time Management</p>
+                    <p class="fw-bold text-start">Time Management</p>
                     <div id="day" style="display:block"></div>
                     <div id="week" style="display:none"></div>
                     <div id="month" style="display:none"></div>

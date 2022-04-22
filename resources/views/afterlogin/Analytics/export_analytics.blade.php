@@ -215,7 +215,7 @@ $userData = Session::get('user_data');
                                         In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
                                     </p>
                                 </small>
-                                <p class="text-uppercase fw-bold text-start garphheading">
+                                <p class="fw-bold text-start garphheading">
                                     Time Management
                                 </p>
                                 <div id="time_management"></div>
@@ -230,7 +230,7 @@ $userData = Session::get('user_data');
                                         Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
                                     </p>
                                 </small>
-                                <p class="text-uppercase fw-bold text-start garphheading">
+                                <p class="fw-bold text-start garphheading">
                                     Average Time Spent on each Question (Last Week)
                                 </p>
                                 <div id="accPer1"></div>
@@ -245,7 +245,7 @@ $userData = Session::get('user_data');
                                         It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
                                     </p>
                                 </small>
-                                <p class="text-uppercase fw-bold text-start garphheading">
+                                <p class="fw-bold text-start garphheading">
                                     Accuracy Percentage (Last Week)
                                 </p>
                                 <div id="accPer"></div>
