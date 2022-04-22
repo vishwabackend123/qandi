@@ -99,7 +99,7 @@ $userData = Session::get('user_data');
                                             </ul>
                                             <span class="filtericon"><i class="fa fa-filter"></i></span>
                                         </div>
-                                        <button class="btn btntheme mb-4">POLISH STRENGHTS</button>
+                                        <button class="btn btntheme mb-4">POLISH STRENGTHS</button>
                                     </div>
                                     <div class="chapter-topic-block">
                                         <ul class="chapter-topic-lists ulStyle">
