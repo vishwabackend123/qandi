@@ -930,7 +930,7 @@ $questtype='radio';
         position: absolute;
         overflow: initial !important;
         bottom: 0px;
-        width: 98.7%;
+        width: 98.66%;
         padding-right: 6px;
         border-radius: 40px;
     }
