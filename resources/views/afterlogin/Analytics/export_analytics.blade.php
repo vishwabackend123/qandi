@@ -30,7 +30,7 @@ $userData = Session::get('user_data');
                                 <div class="rankholder">
                                     <h2 class="fw-light text-center mt-5 h1">{{$overallAnalytics->total_participants}}</h2>
                                     <p class="text-center">
-                                        No. Of students participated for the exam.
+                                        No. of students appeared in the exam.
                                     </p>
                                     <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
                                 </div>
@@ -339,7 +339,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
         exporting: {
@@ -400,7 +400,7 @@ $userData = Session::get('user_data');
         },
         yAxis: {
             title: {
-                text: 'Average Time Spent (Sec)'
+                text: 'Average Time Spent (s)'
             }
         },
         exporting: {
@@ -619,12 +619,14 @@ $userData = Session::get('user_data');
             innerSize: '85%',
             data: [{
                     name: 'Score',
-                    y: <?php echo $myqScore; ?>,
+                    y: <?php // echo $myqScore; 
+                        ?>,
                     color: '#21ccff'
                 },
                 {
                     name: '',
-                    y: <?php echo $myqOther; ?>,
+                    y: <?php // echo $myqOther; 
+                        ?>,
                     color: '#d0f3ff'
                 }
             ]

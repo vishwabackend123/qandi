@@ -212,7 +212,7 @@ $questtype='radio';
 
                                         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview " title="Questions can be reviewed after submission.">Save & Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission." onclick="markforreview('{{$active_q_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission." onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
 
@@ -266,7 +266,7 @@ $questtype='radio';
                                         <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
                                     </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
-                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
+                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTICS</a> -->
                         </form>
 
                         <p class="rightSectH">Question</p>
@@ -326,13 +326,13 @@ $questtype='radio';
                                 <div class="row justify-content-md-center">
                                     <div class="col col-lg-4">
                                         <div>
-                                            <small>No. Of Questions</small>
+                                            <small>No. of Questions</small>
                                             <span class="d-block"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>
                                     <div class="col col-lg-4">
                                         <div>
-                                            <small>Target</small>
+                                            <small>Subjects</small>
                                             <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
                                         </div>
                                     </div>

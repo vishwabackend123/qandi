@@ -60,7 +60,7 @@ $userData = Session::get('user_data');
                             </div>
                         </div>
                         <ul class=" mt-5 mb-0 matrixLists" style="padding-left: 10px;">
-                            <li><b>Q1</b> Your strength topics. Keep revising to stay on top.</li>
+                            <li><b>Q1</b> Your topics of strength. Keep revising to stay on top.</li>
                             <li><b>Q2</b> Convert into strengths with focussed practice </li>
                             <li><b>Q3</b> Weakness which can be converted to strength with consistent efforts</li>
                             <li class="m-0"><b>Q4</b> Your weakness. Need considerable efforts to convert to strengths </li>
@@ -99,7 +99,7 @@ $userData = Session::get('user_data');
                                             </ul>
                                             <span class="filtericon"><i class="fa fa-filter"></i></span>
                                         </div>
-                                        <button class="btn btntheme mb-4">POLISH STRENGHTS</button>
+                                        <button class="btn btntheme mb-4">POLISH STRENGTHS</button>
                                     </div>
                                     <div class="chapter-topic-block">
                                         <ul class="chapter-topic-lists ulStyle">

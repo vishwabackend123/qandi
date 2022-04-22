@@ -21,7 +21,7 @@ $userData = Session::get('user_data');
             <div class="row">
             @if(count($errors) > 0 )
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 <ul class="p-0 m-0" style="list-style: none;">
@@ -53,6 +53,8 @@ $userData = Session::get('user_data');
                                                   {{$sche->test_series_name}}
                                                   @elseif($sche->live_exam_name)
                                                   {{$sche->live_exam_name}}
+                                                  @elseif($sche->test_type == 'Mocktest')
+                                                  Mock Test
                                                   @else
                                                   {{$sche->test_type}}
                                                   @endif
@@ -93,7 +95,7 @@ $userData = Session::get('user_data');
                                             <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
                                                 <div class="score-show text-center">
                                                     <p class="p-0 mb-3">Score:<span>{{$sche->marks_gain}}</span>/{{$sche->no_of_question * 4}}</p>
-                                                    <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analyics</a>
+                                                    <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
                                                     <div class="paper-sub">

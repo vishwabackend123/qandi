@@ -205,7 +205,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="col-md-6">
                                 <ul class="p-0 m-0 matrixLists">
-                                    <li><b>Q1</b> Your strength topics. Keep revising to stay on top.</li>
+                                    <li><b>Q1</b> Your topics of strength. Keep revising to stay on top.</li>
                                     <li><b>Q2</b> Convert into strengths with focussed practice </li>
                                     <li><b>Q3</b> Weakness which can be converted to strength with consistent efforts</li>
                                     <li class="m-0"><b>Q4</b> Your weakness. Need considerable efforts to convert to strengths </li>
@@ -337,7 +337,7 @@ $userData = Session::get('user_data');
                             <div class="test-attend text-center pt-2 pb-2">
                                 <div class="text-center" style="font-size: 14px;max-width: 180px;margin: 0 auto;">
                                     <b>Plan Tests</b> <br />
-                                    Plan upto seven tests on topics of your choice
+                                    Plan upto seven tests on chapters of your choice
                                 </div>
                                 <button class="custom-btn-gray mt-4 goto-planner-btn" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{URL::asset('public/after_login/new_ui/images/clock-icon.png')}}" alt="icon not find" style="width:15px;margin-top: -1px;">Go To
                                     Planner</button>

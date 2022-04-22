@@ -163,7 +163,11 @@ $userData = Session::get('user_data');
                           </div>
 
                           <div class="ms-1 score score-rating js-score">
-                            {{isset($chapters->chapter_score)?$chapters->chapter_score:0}}%
+                            @if(isset($chapters->chapter_score))
+                            {{round($chapters->chapter_score)}}%
+                            @else
+                            0%
+                            @endif
                           </div>
                         </div>
                       </div>

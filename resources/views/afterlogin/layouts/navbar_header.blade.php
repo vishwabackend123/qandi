@@ -278,7 +278,7 @@ $userData = Session::get('user_data');
                         </div>
                         <span id="limit_error_1" class="text-danger"></span>
                     </div>
-                    <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
+                    <p class="fw-bold text-uppercase mt-3">Schedule week's tests</p>
                     <div class="d-flex align-items-center row">
                         <div class="col-3 me-2">
                             <label class="d-block">Start Date</label>
