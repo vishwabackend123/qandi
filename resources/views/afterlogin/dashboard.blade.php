@@ -511,7 +511,13 @@ $userData = Session::get('user_data');
                         @foreach($user_subjects as $sKey=>$sVal)
                         @if(!in_array($sVal->id,$planner_subject))
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
-                            <img src="{{$sVal->subject_thumbnail_image_path}}">
+                            @if(isset($sVal->subject_thumbnail_image_path) && !empty($sVal->subject_thumbnail_image_path))
+                            <img src="{{isset($sVal->subject_thumbnail_image_path)?$sVal->subject_thumbnail_image_path:''}}">
+                            @else
+                            <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                            <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            @endif
+
                             <div>
                                 <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">

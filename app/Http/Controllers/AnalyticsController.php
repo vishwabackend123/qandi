@@ -469,6 +469,30 @@ class AnalyticsController extends Controller
             $subProf_collection = collect($subProf);
             $overall_prof_perc = $subProf_collection->sum('score') / $sub_count;
 
+
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
+            curl_setopt_array($curl, array(
+
+                CURLOPT_URL => $curl_myq_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+            ));
+
+            $response_myq_json = curl_exec($curl);
+            $response_myq = json_decode($response_myq_json, true);
+
+            $corrent_score_per = isset($response_myq['MyQToday Score']) && !empty($response_myq['MyQToday Score']) ? $response_myq['MyQToday Score'] : 0;
+            $corrent_score_per = (int) $corrent_score_per;
+            $myqScore = isset($corrent_score_per) ? $corrent_score_per : 0;
+            $myqOther = 100 - ($myqScore);
+
             return view('afterlogin.Analytics.export_analytics', compact(
                 'overallAnalytics',
                 'days',
@@ -498,7 +522,9 @@ class AnalyticsController extends Controller
                 'mockTestScoreCurr',
                 'mockTestScorePre',
                 'user_subjects',
-                'otherScorePre'
+                'otherScorePre',
+                'myqScore',
+                'myqOther'
             ));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
