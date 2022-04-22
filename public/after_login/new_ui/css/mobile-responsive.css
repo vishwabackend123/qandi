@@ -242,6 +242,9 @@
         overflow-y: auto;
         height: 110px;
     }
+    .active_user {
+        margin-bottom: 0px !important;
+    }
 
 }
 @media(max-width:550px){
