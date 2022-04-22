@@ -114,9 +114,8 @@
 
                         .dd {
                             stroke: #4cb9f9;
-                            <!-- stroke: #38d430; -->
-                            
-                            stroke-linecap: round;
+                            < !-- stroke: #38d430;
+                            -->stroke-linecap: round;
                             stroke-linejoin: round;
                             stroke-width: 1.5px;
                         }
@@ -239,9 +238,10 @@
                         .aaaa {
                             fill: #fff;
                         }
+
                         .bbbb {
                             stroke: #4cb9f9;
-                            <!-- stroke:#38d430 -->
+                            < !-- stroke: #38d430 -->
                         }
                     </style>
                 </defs>
@@ -290,6 +290,7 @@
                     <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
                 </svg>
                 Mock Test</a>
+
             <a href="{{route('live_exam_list')}}" class="nav-link">
                 <svg id="Icon_Live_Exam" data-name="Icon / Live Exam" xmlns="http://www.w3.org/2000/svg" width="21.475" height="24" viewBox="0 0 21.475 24">
                     <defs>
@@ -345,7 +346,7 @@
                     <path id="Line_367" data-name="Line 367" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(12 6)" />
                     <path id="Line_368" data-name="Line 368" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(21 6)" />
                 </svg> Test Series</a>
-                <a href="{{ url('/exam_result_list/Assessment') }}" class="nav-link">
+            <a href="{{ url('/exam_result_list/Assessment') }}" class="nav-link">
                 <svg id="Icon_Custom_Exam" data-name="Icon / Custom Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
@@ -365,7 +366,7 @@
                     <path id="Line_99" data-name="Line 99" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(18 4)" />
                     <path id="Line_100" data-name="Line 100" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(18 11)" />
                 </svg> Custom Attempted</a>
-                <a href="{{ url('/exam_result_list/Test-Series') }}" class="nav-link"><svg id="Preset_Exam" data-name="Preset Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <a href="{{ url('/exam_result_list/Test-Series') }}" class="nav-link"><svg id="Preset_Exam" data-name="Preset Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
                             .cls-1 {
@@ -385,8 +386,9 @@
     <div class="submenu-L2 collapse width" id="submenu3">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
+
             <a href="{{route('adaptive_mock_exam')}}" class="nav-link">
-               <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
                             .cls-1 {
@@ -401,7 +403,7 @@
                 </svg>
                 Mock Test</a>
             <a href="{{ url('/exam_result_list/Mocktest') }}" class="nav-link">
-            <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
                             .cls-1 {
@@ -498,7 +500,10 @@
                                                 width: 42px !important;
                                                 height: 42px ! !important;
                                             }
-                                            #Path_2326{    stroke: transparent!important;}
+
+                                            #Path_2326 {
+                                                stroke: transparent !important;
+                                            }
                                         </style>
                                     </defs>
                                     <rect id="Rectangle_4409" data-name="Rectangle 4409" class="cls-1" width="40" height="40" rx="14" />
@@ -531,50 +536,47 @@
     </div>
 </div>
 <script>
-let input = document.querySelector(".emaillink");
-let button = document.querySelector(".remove-stuff");
-//button.disabled = true;
-input.addEventListener("change", stateHandle);
+    let input = document.querySelector(".emaillink");
+    let button = document.querySelector(".remove-stuff");
+    //button.disabled = true;
+    input.addEventListener("change", stateHandle);
 
-function stateHandle() {
-    if (document.querySelector(".emaillink").value === "") {
-        button.disabled = true;
-    } else {
-        button.disabled = false;
+    function stateHandle() {
+        if (document.querySelector(".emaillink").value === "") {
+            button.disabled = true;
+        } else {
+            button.disabled = false;
+        }
     }
-}
-
 </script>
 <script>
-function copylinkfunction() {
-    /* Get the text field */
-    var copyText = document.getElementById("linkInput");
+    function copylinkfunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("linkInput");
 
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-    /* Copy the text inside the text field */
-    navigator.clipboard.writeText(copyText.value);
-    $(".successRef_copy").text("Copied!");
-    $(".successRef_copy").addClass('showmessage');
-    setTimeout(function() {
-        // $('.successRef_copy').fadeOut('fast');
-        $(".successRef_copy").removeClass('showmessage');
-    }, 4000);
-}
-
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+        $(".successRef_copy").text("Copied!");
+        $(".successRef_copy").addClass('showmessage');
+        setTimeout(function() {
+            // $('.successRef_copy').fadeOut('fast');
+            $(".successRef_copy").removeClass('showmessage');
+        }, 4000);
+    }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-$(".remove-stuff").click(function() {
-    //$(".emaillinkholder").hide();
-    //$(".onsendshow").show();
-});
+    $(".remove-stuff").click(function() {
+        //$(".emaillinkholder").hide();
+        //$(".onsendshow").show();
+    });
 
-$(".backtobtn").click(function() {
-    $(".emaillinkholder").show();
-    $(".onsendshow").hide();
-});
-
+    $(".backtobtn").click(function() {
+        $(".emaillinkholder").show();
+        $(".onsendshow").hide();
+    });
 </script>
