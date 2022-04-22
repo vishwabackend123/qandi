@@ -920,7 +920,7 @@
             <p>Are you Sure?</p>
             <div class="form-btns">
                 <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                 sessionStorage.clear();  document.getElementById('logout-form').submit();" ">
+                                 sessionStorage.clear();  document.getElementById('logout-form').submit();">
                                  <button type=" button" class="save-btn logout_btn_new">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
                                         position: absolute;
