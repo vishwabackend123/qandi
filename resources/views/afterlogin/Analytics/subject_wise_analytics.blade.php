@@ -213,7 +213,7 @@
                             Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
+                    <p class="fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
                     <div id="accPerSubjectWise1"></div>
                     <!--p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p-->
                 </div>
@@ -230,7 +230,7 @@
                             This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+                    <p class="fw-bold text-start">Marks Trend</p>
                     <div id="day1" style="display:block"></div>
                     <div id="week1" style="display:none"></div>
                     <div id="month1" style="display:none"></div>

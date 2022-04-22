@@ -188,7 +188,7 @@ $userData = Session::get('user_data');
                                                     Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
                                                 </p>
                                             </small>
-                                            <p class="text-uppercase fw-bold text-start headingset">Average Time Spent on each Question (Last Week)</p>
+                                            <p class="fw-bold text-start headingset">Average Time Spent on each Question (Last Week)</p>
                                             <div id="accPer1"></div>
                                             <!--p class="text-center text-danger mt-3 "><small>Lowering this average will add miles to your success journey</small></p-->
                                         </div>
