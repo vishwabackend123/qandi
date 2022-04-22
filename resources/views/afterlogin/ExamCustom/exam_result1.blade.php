@@ -41,7 +41,7 @@
                     <path class="circle-bg" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path class="circle" stroke-dasharray="{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}, 100" d="M18 2.0845
+                    <path class="circle" id="mark_circle" stroke-dasharray="{{isset($response->result_percentage)?number_format($response->result_percentage,1):0}}, 100" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831
                                         a 15.9155 15.9155 0 0 1 0 -31.831" />
                     <text x="18" y="22.35" class="percentage">{{isset($response->result_percentage)?number_format($response->result_percentage,2):0}}%</text>
@@ -54,9 +54,7 @@
                         <!-- <img src="images/right-graph.jpg"> -->
                     </div>
                     <div class="mt-auto btn-block">
-                        <!-- <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button> -->
-                        <div class="row mt-4">
-                            @if(isset($response->subject_graph) && !empty($response->subject_graph))
+                        @if(isset($response->subject_graph) && !empty($response->subject_graph))
                             @php $count_sub=count($response->subject_graph);
                             if($count_sub==1){
                             $disable_class="disabled" ;
@@ -64,6 +62,11 @@
                             $disable_class="";
                             }
                             @endphp
+                          @if(empty($disable_class))  
+                        <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button>
+                        @endif
+                        <div class="row mt-4">
+                            
                             @foreach($response->subject_graph as $subject)
                             @php $subject=(object)$subject; @endphp
                             <div class="col"><button id="{{$subject->subject_name}}" {{$disable_class }} class="btn btn-outline-secondary w-100 top-btn-pop text-white" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button></div>
@@ -238,25 +241,57 @@ $clsAvg_json=json_encode($clsAvg_arr);
 
 
     function resetData(subject_id) {
-        if (subject_id == 'all') {
+    var subject_data_json = JSON.parse($('#subject_data').val());
 
-            chart.series[0].setData(<?php echo $stuscore_json; ?>);
-            chart.series[1].setData(<?php echo $clsAvg_json; ?>);
-        } else {
-            var graphArr = <?php echo json_encode($subject_graph); ?>;
-            var studet_score = [];
-            var class_score = [];
-            const iterator = graphArr.values();
-            for (const value of iterator) {
-                if (value.subject_id == subject_id) {
-                    studet_score.push(value.student_score)
-                    class_score.push(value.class_score)
+    if (subject_id == 'all') {
 
-                }
+        chart.series[0].setData(<?php echo $stuscore_json; ?>);
+        chart.series[1].setData(<?php echo $clsAvg_json; ?>);
+        let overall_percent = '<?php echo number_format($response->result_percentage,2); ?>';
+        $('.percentage').text(overall_percent + '%');
+        var path = $('#mark_circle').get(0);
+        var pathLen = path.getTotalLength();
+        var adjustedLen = overall_percent * pathLen / 100;
+        path.setAttribute('stroke-dasharray', adjustedLen+' '+pathLen);
+
+    } else {
+        var graphArr = <?php echo json_encode($subject_graph); ?>;
+        var studet_score = [];
+        var class_score = [];
+        const iterator = graphArr.values();
+        for (const value of iterator) {
+            if (value.subject_id == subject_id) {
+                studet_score.push(value.student_score)
+                class_score.push(value.class_score)
+
             }
-
-            chart.series[0].setData(studet_score);
-            chart.series[1].setData(class_score);
         }
+
+        chart.series[0].setData(studet_score);
+        chart.series[1].setData(class_score);
+
+        for (const data_js of subject_data_json) {
+            if (data_js.subject_id == subject_id) {
+                let total_questions_mark = data_js.total_questions * 4;
+                let correct_count_mark = data_js.correct_count * 4;
+                let incorrect_count_mark = data_js.incorrect_count;
+                let total_mark_op = correct_count_mark - incorrect_count_mark;
+                let overall_percent = (total_mark_op / total_questions_mark) * 100;
+                if (overall_percent < 0) {
+                    overall_percent = 0;
+                    overall_percent = overall_percent.toFixed(2);
+                } else {
+                    overall_percent = overall_percent.toFixed(2);
+                }
+                $('.percentage').text(overall_percent + '%');
+                var path = $('#mark_circle').get(0);
+                var pathLen = path.getTotalLength();
+                var adjustedLen = overall_percent * pathLen / 100;
+                path.setAttribute('stroke-dasharray', adjustedLen+' '+pathLen);
+
+            }
+        }
+
     }
+}
 </script>
