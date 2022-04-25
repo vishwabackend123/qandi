@@ -951,7 +951,7 @@
 
     #contentHtml {
         transition: 0.2s;
-        z-index: 99999;
+        /* z-index: 99999; */
         position: relative;
         margin-top: 20px;
     }
