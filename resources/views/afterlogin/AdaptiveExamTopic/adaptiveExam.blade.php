@@ -1,4 +1,10 @@
 @extends('afterlogin.layouts.app_new')
+<script type = "text/javascript" >  
+    function preventBack() { window.history.forward(); }  
+    setTimeout("preventBack()", 0);  
+    window.onunload = function () { null }; 
+     
+</script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -14,6 +20,10 @@
             backdrop: "static",
             keyboard: false
         });
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
     });
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
