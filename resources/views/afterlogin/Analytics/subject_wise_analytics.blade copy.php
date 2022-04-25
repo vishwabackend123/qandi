@@ -150,7 +150,7 @@
     <div class="row">
         <div class="col-lg-5 mt-3">
             <div class="bg-white shadow-lg p-3 h-100 px-3 text-center">
-                <p class="text-uppercase fw-bold text-start">Time Management</p>
+                <p class="fw-bold text-start">Time Management</p>
                 <div id="day" style="display:block"></div>
                 <div id="week" style="display:none"></div>
                 <div id="month" style="display:none"></div>
@@ -176,7 +176,7 @@
         </div>
         <div class="col-lg-5 mt-3">
             <div class="bg-white shadow-lg p-3 h-100 px-3 text-center">
-                <p class="text-uppercase fw-bold text-start"> Marks Trend</p>
+                <p class="fw-bold text-start"> Marks Trend</p>
                 <div id="day1" style="display:block"></div>
                 <div id="week1" style="display:none"></div>
                 <div id="month1" style="display:none"></div>
@@ -196,7 +196,7 @@
 
         <div class="col-lg-7  mt-3">
             <div class="bg-white shadow-lg p-3  px-3">
-                <p class="text-uppercase fw-bold text-start">Accuracy Percentage</p>
+                <p class="fw-bold text-start">Accuracy Percentage</p>
                 <div id="accPerSubjectWise"></div>
             </div>
             <div class="bg-white shadow-lg p-3 mt-3 px-5">
