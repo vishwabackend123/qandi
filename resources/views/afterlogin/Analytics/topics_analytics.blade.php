@@ -41,7 +41,7 @@
                                                 <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
                                                 @endif
                         </ul>
-                        <span>{{round($list['topic_score'], 2)}}%</span>
+                        <span>{{round($list['topic_score'])}}%</span>
                     </div>
                 </div>
                 <div class="colorfull-bars">
