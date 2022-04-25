@@ -15,7 +15,7 @@ $userData = Session::get('user_data');
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
         <div class="container-fluid custom-page">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-xl-3 col-lg-4 col-md-12">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
@@ -67,7 +67,7 @@ $userData = Session::get('user_data');
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-xl-9 col-lg-8 col-md-12">
                     <div class="tab-wrapper">
                         <div>
                             <div class="position-relative">

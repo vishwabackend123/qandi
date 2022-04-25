@@ -60,7 +60,7 @@
             padding: 10px 30px;
         }
         .dashboard .star-ratings-css-top span ,.pe-1 .star-ratings-css-bottom span{
-            font-size: 16px;
+            font-size: 13px;
         }
         .topics-box span b {
             font-size: 25px;
@@ -219,6 +219,15 @@
 
 
 @media(max-width:576px){
+    ul.chapter-topic-menu li a{font-size: 14px;}
+    .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
+    .matrixpage-wrapper .topics-box {
+        width: calc(50% - 3px);margin-left: 0px;
+    }
+    .matrixpage-wrapper  .topics-box:first-child{margin-left:0px;}
+    .cus-radio-btn .checkmark{    height: 20px;
+        width: 20px;}
+        .cus-radio-btn label{padding-left: 27px;}
 #sharefrnd .modal-dialog{padding: 0 40px;}
 .overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
 #prof_scroll .d-flex.align-items-center.px-3{padding: 0px!important;}
