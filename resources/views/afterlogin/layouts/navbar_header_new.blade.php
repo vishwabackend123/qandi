@@ -345,7 +345,7 @@
     <div class="planner-wrapper">
         <div class="planner-edit-mode open-sub-planner" id="sub-planner">
             <div class="card-common-topheading">
-                <span>SCHEDULAR</span>
+                <span>SCHEDULER</span>
             </div>
             <div class="slimScrollDiv">
                 <div class="planner-scroll">
@@ -357,7 +357,7 @@
 
                         <div class="row  mb-4">
                             <div class="col-xl-6">
-                                <p class="fw-bold text-uppercase mt-3">Schedule test weeks</p>
+                                <p class="fw-bold text-uppercase mt-3">Schedule week's tests</p>
                                 <div class="d-flex align-items-center row">
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                         <label class="d-block">Start Date</label>
@@ -844,7 +844,7 @@
                         </div>
                     </div>
                     <span class="text-danger" role="alert" id="errlog_edit" style="color:#dc3545 !important"> </span>
-                    <div class="form-btns mt-lg-3">
+                    <div class="form-btns m-0">
                         <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
                         <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
                     </div>
@@ -900,7 +900,7 @@
                 <div class="form-btns mt-lg-3 res_flex d-flex">
                     <!--  <a draggable="false" href="{{route('subscriptions')}}"><button type="button" class="cancel-btn">see details</button></a> -->
                     @if(($suscription_status != 0) && ($subscription_type == 'T'))
-                    <a  draggable="false" href="{{route('subscriptions')}}"><button  type="button" class="w-100 save-btn">Upgrade</button></a>
+                    <a  draggable="false" href="{{route('subscriptions')}}"><button  type="button" class="w-100 save-btn upgrade-btn">Upgrade</button></a>
                     @elseif($suscription_status != 0 && $subscription_type == 'P')
                     <a class="savebtnmargin" draggable="false" href="{{route('subscriptions')}}"><button type="button" class="w-100 cancel-btn-see">see details</button></a>
                     <a draggable="false" href="{{route('refund_form')}}"><button type="button" class=" w-100 save-btn">Refund</button></a>

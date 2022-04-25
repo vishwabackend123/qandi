@@ -1,9 +1,4 @@
-@extends('afterlogin.layouts.app_new')
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!-- Have fun using Bootstrap JS -->
-<script type="text/javascript">
+@extends('afterlogin.layouts.app_new')<script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
@@ -13,13 +8,14 @@
             backdrop: "static",
             keyboard: false
         });
+
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
     });
 </script>
-
 @section('content')
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-
-
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -27,9 +23,10 @@ $userData = Session::get('user_data');
 $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
+$topic_id = isset($question_data->topic_id)?$question_data->topic_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
-
+$section_id = isset($question_data->section_id)?$question_data->section_id:'';
 
 if($template_type==1){
 $type_class='checkboxans';
@@ -40,6 +37,11 @@ $questtype='radio';
 }
 @endphp
 <style>
+    .mjx-chtml {
+        line-height: 0.5 !important;
+    }
+
+
     .time_taken_css {
         border-left: 3px Solid #ff6060;
         width: 200px;
@@ -91,21 +93,25 @@ $questtype='radio';
         text-indent: 9999px;
         overflow: hidden;
         background-color: #44CD7F;
-        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+    }
+
+    /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
         background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
         background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
         background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
  */
-
-
+    #home a.sectionBtn {
+        padding: 0.25rem 0.5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: 20px !important;
     }
 </style>
 <div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
-
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 mb-lg-0 mb-4">
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
@@ -113,7 +119,7 @@ $questtype='radio';
                             <input type="hidden" id="current_question_no" value="1" />
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet">
-                                <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                                <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                     @if(!empty($filtered_subject))
                                     @foreach($filtered_subject as $key=>$sub)
                                     <li class="nav-item" role="presentation">
@@ -126,78 +132,75 @@ $questtype='radio';
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
-                                    <div class="d-flex" id="pause-start">
-                                        <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
-                                            <span id="avg_text">Average Time :</span>
-                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
-                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
-                                                <div id="percentBar_{{$activeq_id}}"></div>
-                                            </div>
-                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
-                                                <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
-                                    </div>
-
-                                    <div class="question-block">
-                                        <!-- Next and previous button -->
-                                        <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}" {{empty($prev_qid)?'disabled':''}}><i class="fa fa-angle-left" title="Previous Question"></i></button>
-                                        <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
-                                        <!-- Next and previous button -->
-
-                                        <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
-
-                                        <div class="ans-block row my-3">
-
-                                            @if($template_type==1 || $template_type==2)
-                                            @if(isset($option_data) && !empty($option_data))
-                                            @php $no=0; @endphp
-                                            @foreach($option_data as $key=>$opt_value)
-                                            @php
-                                            $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                            /* $dom = new DOMDocument();
-                                            @$dom->loadHTML($opt_value);
-                                            $anchor = $dom->getElementsByTagName('img')->item(0);
-                                            $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                            $latex = "https://math.now.sh?from=".$text;
-                                            $view_opt='<img src="'.$latex.'" />' ; */
-                                            @endphp
-                                            <div class="col-md-6 mb-4 markerDiv">
-                                                <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
-                                                <div class="border ps-3 ans">
-                                                    <!-- <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label> -->
-                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! $opt_value !!}</label>
-                                                </div>
-                                            </div>
-                                            @php $no++; @endphp
+                                    <div>
+                                        <div class="d-flex" id="pause-start">
+                                            @if(isset($aSections) && !empty($aSections))
+                                            @foreach($aSections as $section)
+                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}">{{$section->section_name}}</a>
                                             @endforeach
                                             @endif
-                                            @elseif($template_type==11)
-                                            <div class="col-md-6 mb-4">
-                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
-
+                                            <div id="counter_{{$activeq_id}}" class="counter  d-flex">
+                                                <span id="avg_text">Average Time :</span>
+                                                <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                    <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                    <div id="percentBar_{{$activeq_id}}"></div>
+                                                </div>
+                                                <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
+                                                    <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                                </div>
                                             </div>
-                                            @endif
-
+                                            <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                         </div>
+                                        <div class="question-block">
+                                            <!-- Next and previous button -->
+                                            <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
+                                            <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
+                                            <!-- Next and previous button -->
+                                            <div class="question py-3"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
+                                            <div class="ans-block row my-3">
+                                                @if($template_type==1 || $template_type==2)
+                                                @if(isset($option_data) && !empty($option_data))
+                                                @php $no=0; @endphp
+                                                @foreach($option_data as $key=>$opt_value)
+                                                @php
+                                                $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+                                                /* $dom = new DOMDocument();
+                                                @$dom->loadHTML($opt_value);
+                                                $anchor = $dom->getElementsByTagName('img')->item(0);
+                                                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
+                                                $latex = "https://math.now.sh?from=".$text;
+                                                $view_opt='<img src="'.$latex.'" />' ;
+                                                */
+                                                @endphp
+                                                <div class="col-md-6 mb-4 markerDiv">
+                                                    <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
+                                                    <div class="border ps-3 ans">
+                                                        <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                    </div>
+                                                </div>
+                                                @php $no++; @endphp
+                                                @endforeach
+                                                @endif
+                                                @elseif($template_type==11)
+                                                <div class="col-md-6 mb-4">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
 
-                                    </div>
-                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
-                                    <div class="tab-btn-box  d-flex mt-3">
-                                        @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
-                                        @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
-                                        </button>
-                                        @endif
-
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
-
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
-
-                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
-
+                                                </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+                                        <div class="tab-btn-box  d-flex mt-3">
+                                            @if(!empty($next_qid))
+                                            <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
+                                            @else
+                                            <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
+                                            </button>
+                                            @endif
+                                            <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
+                                            <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
+                                            <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -205,9 +208,8 @@ $questtype='radio';
                     </div>
                 </div>
                 <!-- Right Side Area -->
-
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
-                    <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                    <div class="bg-white d-flex flex-column justify-content-center mb-4 p-5">
                         <div class="d-flex align-items-center">
                             <div class="" id="app">
                                 <div class="base-timer">
@@ -236,41 +238,50 @@ $questtype='radio';
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-                            <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
                             <div class="pull-right">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                                <span class="btnSubic">
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');"><span class="btnSubic">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                         <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
                                     </svg>
                                 </span>&nbsp;&nbsp;&nbsp;Submit</button>
-                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTICS</a> -->
+                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTIS</a> -->
                         </form>
-
                         <p class="rightSectH">Question</p>
                         <div class="number-block">
                             @if(isset($keys) && !empty($keys))
+                            @php $i = 1; @endphp
                             @foreach($keys as $ke=>$val)
-
-                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$ke+1}}</button>
+                            <button type="button" class="next_button btn btn-light rounded-0 mb-4 @php if($activeq_id==$val){echo ' activequestion';} @endphp" id="btn_{{$val}}" onclick="qnext('{{$val}}')">{{$i}}</button>
+                            @php $i++; @endphp
                             @endforeach
                             @endif
-
-
+                            <!-- <button class="btn btn-secondary  mb-4 rounded-0">2</button>
+                            <button class="btn btn-secondary  mb-4 rounded-0">3</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">4</button>
+                            <button class="btn btn-light rounded-0 mb-4">5</button>
+                            <button class="btn btn-light mb-4 rounded-0">6</button>
+                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
+                            <button class="btn btn-secondary  mb-4 rounded-0"><i class="fa fa-check text-light"></i></button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">9</button>
+                            <button class="btn btn-outline-warning text-dark rounded-0 mb-4">10</button>
+                            <button class="btn btn-light mb-4 rounded-0">11</button>
+                            <button class="btn btn-light mb-4 rounded-0">12</button>
+                            <button class="btn btn-light mb-4 rounded-0">13</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">14</button>
+                            <button class="btn btn-light-green  mb-4 rounded-0">15</button> -->
                         </div>
-
-                        <!-- <p class="rightSectH">Legends</p> -->
+                        <!--  <p class="rightSectH">Legends</p> -->
                         <div class="row mt-4">
                             <div class="col-md-6 legends">
                                 <button class="btn btn-light p-0 rounded-0"> </button>
                                 <p>Unread</p>
                             </div>
-                            <div class="col-md-6 legends">
+                            <div class="col-md-6 legends ">
                                 <button class="btn btn-light-green p-0 rounded-0"> </button>
                                 <p>Answered </p>
                             </div>
@@ -285,108 +296,13 @@ $questtype='radio';
                                 <p>Answered & <br>Marked for Review</p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Modal Test_Instruction-->
-<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close"></a>
-            </div>
-            <div class="modal-body pt-3 p-5">
-                <div class="row">
-                    <div class="col-lg-12 col-xl-8">
-                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
-                        <div class="scroll">
-                            <div class="test-info">
-                                <div class="row justify-content-md-center">
-                                    <div class="col-md-5 col-lg-5">
-                                        <div class="me-2"></div>
-                                        <div>
-                                            <small>No. of Questions</small>
-                                            <span class="d-block inst-text"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-lg-4">
-                                        <div>
-                                            <small>Target</small>
-                                            <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-lg-3">
-                                        <div class="me-2 ms-auto"></div>
-                                        <div>
-                                            <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
-                            <div class="instructions pe-3">
-                                <h3 class="text-uppercase">Instructions</h3>
-                                <p>This will give you multiple opportunities to improve your scores in the
-                                    examination if you are not able to give your best in one attempt.</p>
-                                <p>In first attempt, you will get a first-hand experience of taking an
-                                    examination and you will know your mistakes which you can improve while attempting
-                                    for the next time.</p>
-                                <p>This will reduce your chance of dropping a year due to inadequate preparation.</p>
-                                <p>You will not have to yet again lose another year.</p>
-                                <p>If you missed the examination due to reasons beyond control (such as Board examination), then you will not have to wait for one full year and you need not appear in all the four sessions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
-
-                        <h1 class="my-auto text-center">
-
-                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
-
-                        </h1>
-                        <div class="row justify-content-center">
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn col-lg-12 col-sm-6" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp;<img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-</div>
-
-
-<!-- Modal END Exam -->
-<div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0 ">
-
-            <div class="modal-body p-5 text-center">
-                <div class="text-center py-4">
-                    <h2 class="mb-3">Time Over!</h2>
-
-                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                        Submit TEST
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -421,12 +337,88 @@ $questtype='radio';
                     <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
                         Continue
                     </button>
-                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 textsubmit">
                         <span class="btnSubic">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                 <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
                             </svg>
-                        </span>&nbsp;&nbsp;&nbsp;
+                        </span> &nbsp;&nbsp;&nbsp;Submit TEST
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}" title="Close"></a>
+            </div>
+            <div class="modal-body pt-3 p-5">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-8">
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
+                        <div class="scroll">
+                            <div class="test-info">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-5 col-lg-5">
+                                        <div class="me-2"></div>
+                                        <div>
+                                            <small>No. Of Questions</small>
+                                            <span class="d-block"><span class="inst-text">{{$questions_count}} </span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div>
+                                            <small>Target</small>
+                                            <span class="d-block inst-text"><span>{{$tagrets}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3">
+                                        <div class="me-2 ms-auto"></div>
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span>{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
+                            <div class="instructions pe-3 uniform-scroll">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give you multiple opportunities to improve your scores in the
+                                    examination if you are not able to give your best in one attempt.</p>
+                                <p>In first attempt, you will get a first-hand experience of taking an
+                                    examination and you will know your mistakes which you can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce your chance of dropping a year due to inadequate preparation.</p>
+                                <p>You will not have to yet again lose another year.</p>
+                                <p>If you missed the examination due to reasons beyond control (such as Board examination), then you will not have to wait for one full year and you need not appear in all the four sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-xl-4 ps-xl-5 ps-lg-2 d-flex align-items-lg-center justify-content-center flex-column">
+                        <h1 class="my-auto text-center">
+                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
+                        </h1>
+                        <div class="row justify-content-center mt-lg-0 mt-3">
+                            <button class="btn  text-uppercase rounded-0 px-5 col-lg-12 col-sm-6 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal END Exam -->
+<div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 ">
+            <div class="modal-body p-5 text-center">
+                <div class="text-center py-4">
+                    <h2 class="mb-3">Time Over!</h2>
+                    <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
                     </button>
                 </div>
@@ -434,7 +426,7 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-body text-center pt-2 pb-5">
@@ -447,13 +439,40 @@ $questtype='radio';
         </div>
     </div>
 </div>
-
+<div class="loader-block" style="display:none;">
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 @include('afterlogin.layouts.footer_new')
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Have fun using Bootstrap JS -->
 
-<!-- page referesh disabled -->
 <script>
     /* Allow only numeric with decimal */
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
+                event.preventDefault();
+                return;
+            }
 
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
+                event.preventDefault();
+                return;
+            }
+
+        }
+    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -461,10 +480,10 @@ $questtype='radio';
 
     }
     /*  setboxHeight();
-    $("window").load(function() {
-        setboxHeight();
-    });
- */
+     $("window").load(function() {
+         setboxHeight();
+     }); */
+
     $(window).resize(function() {
         setboxHeight();
     });
@@ -473,7 +492,7 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
+        /* document.oncontextmenu = function() {
             return false;
         };
 
@@ -483,7 +502,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        });
+        }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -524,9 +543,6 @@ $questtype='radio';
         }
     });
 </script>
-<!-- /page referesh disabled -->
-<!-- browser back disable -->
-
 <script type="text/javascript">
     $(document).ready(function() {
         window.history.pushState(null, "", window.location.href);
@@ -536,16 +552,20 @@ $questtype='radio';
     });
 </script>
 <!-- browser back disable -->
-
 <script type="text/javascript">
-    $('.number-block').slimscroll({
+    /*$('.number-block').slimscroll({
         height: '20vh'
     });
+
     $('.answer-block').slimscroll({
         height: '30vh'
-    });
+    });*/
 
     $(window).on('load', function() {
+        $("#test_instruction").modal({
+            backdrop: "static",
+            keyboard: false
+        });
         $('#test_instruction').modal('show');
 
     });
@@ -560,32 +580,7 @@ $questtype='radio';
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
-    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
 
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
-        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-            event.preventDefault();
-        }
-        var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-            event.preventDefault();
-        }
-        if (event.charCode === 46) {
-            // if dot is the first symbol
-            if (event.target.value.length === 0) {
-                event.preventDefault();
-                return;
-            }
-
-            // if there are dots already 
-            if (event.target.value.indexOf('.') !== -1) {
-                event.preventDefault();
-                return;
-            }
-
-        }
-    });
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
             if (template_type == 2) {
@@ -597,18 +592,19 @@ $questtype='radio';
 
             }
         });
-
-
     });
+
     $(document).on('keydown', function(e) {
         if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
             e.preventDefault();
     });
-    /*  $('.instructions').slimscroll({
-         height: '33vh',
-         color: '#ff9999',
+    /*$('.instructions').slimscroll({
+        height: '33vh',
+        color: '#ff9999',
+        railVisible: true,
+         alwaysVisible: true 
+    });*/
 
-     }); */
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -658,6 +654,8 @@ $questtype='radio';
             $("#resume-test").modal("show");
         }
     }
+
+
 
     function startTimer() {
         timerInterval = setInterval(() => {
@@ -712,7 +710,7 @@ $questtype='radio';
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        //console.log(timePassed, timeLeft);
+        // console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -735,9 +733,9 @@ $questtype='radio';
 
     function setCircleDasharray() {
         const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
-        //console.log("setCircleDashArray: ", circleDasharray);
+                calculateTimeFraction() * FULL_DASH_ARRAY
+            ).toFixed(0)} 283`;
+        // console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -783,7 +781,6 @@ $questtype='radio';
     }
 
 
-
     function progressBar(percent, $element) {
         var progressBarWidth = percent * $element.width() / (time_allowed * 60);
         $element.find('div').animate({
@@ -823,6 +820,7 @@ $questtype='radio';
             return valString;
         }
     }
+
     /* per question timer end */
     /* per question timer end */
 
@@ -834,7 +832,7 @@ $questtype='radio';
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_question/') }}/" + question_id;
+        url = "{{ url('mock_next_question/') }}/" + question_id;
         $.ajax({
             url: url,
             data: {
@@ -857,6 +855,7 @@ $questtype='radio';
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
         var cur_quest_no = $('#current_question_no').val();
+
         clearResponse(quest_id, subject_id, cur_quest_no);
 
         $.ajax({
@@ -877,8 +876,6 @@ $questtype='radio';
                 } else {
 
                 }
-
-
                 if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
                     $("#submitExam").click();
@@ -886,6 +883,7 @@ $questtype='radio';
                     $("#quesnext" + quest_id).click();
 
                 }
+
             },
         });
     }
@@ -894,7 +892,6 @@ $questtype='radio';
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
-
         var current_question_type = $("#current_question_type").val();
 
         if (current_question_type == 11) {
@@ -908,8 +905,6 @@ $questtype='radio';
                 option_id.push($(this).val());
             });
         }
-
-
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -919,7 +914,6 @@ $questtype='radio';
             }, 8000);
             return false;
         }
-
 
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
@@ -931,11 +925,14 @@ $questtype='radio';
                 option_id: option_id,
                 q_submit_time: q_submit_time
             },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
             success: function(response_data) {
+                //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
 
                 if (response.status == 200) {
-                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                     $("#btn_" + question_id).find('i').remove();
                     $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
@@ -952,7 +949,6 @@ $questtype='radio';
         }
     }
 
-    /* Saved question response */
     function saveAnswerAjax(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
@@ -979,9 +975,12 @@ $questtype='radio';
                 option_id: option_id,
                 q_submit_time: q_submit_time
             },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
             success: function(response_data) {
+                //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
-
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                     return true;
@@ -990,6 +989,7 @@ $questtype='radio';
         });
 
     }
+
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
@@ -1023,6 +1023,7 @@ $questtype='radio';
                 $("#quesnext" + quest_id).click();
 
             }
+            return true;
         }
     }
 
@@ -1039,7 +1040,6 @@ $questtype='radio';
             $('#qoption_err_' + quest_id).fadeIn('fast');
             return false;
         }
-
 
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-light-green");
@@ -1071,7 +1071,7 @@ $questtype='radio';
 
         saveQuestionTime(act_question, q_submit_time);
 
-        url = "{{ url('next_subject_question/') }}/" + subject_id;
+        url = "{{ url('mock_next_subject_question/') }}/" + subject_id;
         $.ajax({
             url: url,
             data: {
@@ -1082,7 +1082,7 @@ $questtype='radio';
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
 
-                $("#myTabContent #question_section div").html(result);
+                $("#myTabContent #question_section div").remove();
                 $("#myTabContent #question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
@@ -1101,7 +1101,11 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 'q_time': time
             },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
             success: function(response_data) {
+                // $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 
@@ -1122,8 +1126,10 @@ $questtype='radio';
                     let lefttime_exam_h = document.getElementById("lefttime_pop_h");
                     let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-                    const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
-
+                    const circleDasharray = `${(
+                            calculateTimeFraction() * FULL_DASH_ARRAY
+                        ).toFixed(0)} 283`;
+                    // console.log("setCircleDashArray: ", circleDasharray);
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);
@@ -1134,7 +1140,6 @@ $questtype='radio';
                 } else {
                     form.submit();
                 }
-
 
 
             }
@@ -1151,5 +1156,4 @@ $questtype='radio';
         });
     });
 </script>
-
 @endsection

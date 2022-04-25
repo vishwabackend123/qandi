@@ -1,6 +1,7 @@
 <div class="col-lg-5 mb-lg-0 mb-4">
     <div class="bg-white shadow box-shadow p-3 d-flex flex-column position-relative h-100 custom-box-shadow">
         <h5 class="dashboard-title mb-3">Subject Score</h5>
+        <input type="hidden" name="subject_data" id="subject_data" value="{{json_encode($response->subject_wise_result)}}">
 
         @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
         @foreach($response->subject_wise_result as $subject)

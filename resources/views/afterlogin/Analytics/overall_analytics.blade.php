@@ -125,18 +125,18 @@ $userData = Session::get('user_data');
                                                     </div>
                                                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto px-0" style="overflow: visible;">
                                                         @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
-                                                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
-                                                            <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($sub->correct_ans)}}</span>
+                                                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;" title="Correct({{round($sub->correct_ans)}})">
+                                                            
                                                         </div>
                                                         @endif
                                                         @if(isset($sub->incorrect_ans) && $sub->incorrect_ans > 0)
-                                                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;">
-                                                            <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($sub->incorrect_ans)}}</span>
+                                                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;" title="Incorrect({{round($sub->incorrect_ans)}})">
+                                                            
                                                         </div>
                                                         @endif
                                                         @if(isset($sub->unanswered) && $sub->unanswered > 0)
-                                                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;">
-                                                            <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($sub->unanswered)}}</span>
+                                                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;" title="Unanswered({{round($sub->unanswered)}})">
+                                                            
                                                         </div>
                                                         @endif
                                                     </div>
@@ -159,7 +159,7 @@ $userData = Session::get('user_data');
                                                     In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
                                                 </p>
                                             </small>
-                                            <p class="text-uppercase fw-bold text-start">Time Management</p>
+                                            <p class="fw-bold text-start headingset">Time Management</p>
                                             <div id="day" style="display:block"></div>
                                             <div id="week" style="display:none"></div>
                                             <div id="month" style="display:none"></div>
@@ -188,7 +188,7 @@ $userData = Session::get('user_data');
                                                     Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
                                                 </p>
                                             </small>
-                                            <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
+                                            <p class="fw-bold text-start headingset">Average Time Spent on each Question (Last Week)</p>
                                             <div id="accPer1"></div>
                                             <!--p class="text-center text-danger mt-3 "><small>Lowering this average will add miles to your success journey</small></p-->
                                         </div>
@@ -205,7 +205,7 @@ $userData = Session::get('user_data');
                                                     This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                                                 </p>
                                             </small>
-                                            <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+                                            <p class="fw-bold text-start headingset">Marks Trend</p>
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
@@ -235,7 +235,7 @@ $userData = Session::get('user_data');
                                                     It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
                                                 </p>
                                             </small>
-                                            <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
+                                            <p class="fw-bold text-start headingset">Accuracy Percentage (Last Week)</p>
                                             <div id="accPer"></div>
                                             <!--p class="text-center text-danger mt-3 mb-0"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
                                         </div>
@@ -630,7 +630,7 @@ $userData = Session::get('user_data');
         },
         yAxis: {
             title: {
-                text: 'Time Spent (Sec)'
+                text: 'Time Spent (s)'
             }
         },
         xAxis: {
@@ -683,7 +683,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
         credits: {
@@ -740,7 +740,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
         credits: {
@@ -796,7 +796,7 @@ $userData = Session::get('user_data');
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
         credits: {

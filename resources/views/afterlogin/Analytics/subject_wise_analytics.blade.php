@@ -48,7 +48,7 @@
                             <div class="alpha-extended-view">
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[0]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[0]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skills. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skill. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a>
@@ -70,7 +70,7 @@
                                 <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                     performance in the test.</p> 
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skills. {{$skillPer[1]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skill. {{$skillPer[1]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a>
@@ -89,7 +89,7 @@
                             <div class="alpha-extended-view">
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[2]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skills. {{$skillPer[2]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skill. {{$skillPer[2]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a>
@@ -108,7 +108,7 @@
                             <div class="alpha-extended-view">
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;"> {{$skillPer[3]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skills. {{$skillPer[3]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skill. {{$skillPer[3]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a>
@@ -152,19 +152,18 @@
                     </div>
                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto sub" style="overflow: visible;">
                         @if($val->correct_ans > 0)
-                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
-                            <span class="prog-box green" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-green" data-bs-placement="top" title="Correct">{{round($val->correct_ans)}}</span>
+                        <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;" title="Correct({{round($val->correct_ans)}})">
+                            
                         </div>
                         @endif
                         @if($val->incorrect_ans > 0)
-                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;">
-                            <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="tooltip-red" title="Incorrect">{{round($val->incorrect_ans)}}</span>
+                        <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;" title="Incorrect({{round($val->incorrect_ans)}})">
+                           
                         </div>
                         @endif
                         @if($val->unanswered > 0)
-                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;">
-                            <span class="prog-box secondary" data-bs-custom-class="tooltip-gray" data-bs-toggle="tooltip" data-bs-placement="top" title="Unanswered">{{round($val->unanswered)}}
-                            </span>
+                        <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;" title="Unanswered({{round($val->unanswered)}})">
+                            
                         </div>
                         @endif
                     </div>
@@ -186,7 +185,7 @@
                             In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Time Management</p>
+                    <p class="fw-bold text-start">Time Management</p>
                     <div id="day" style="display:block"></div>
                     <div id="week" style="display:none"></div>
                     <div id="month" style="display:none"></div>
@@ -214,7 +213,7 @@
                             Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
+                    <p class="fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
                     <div id="accPerSubjectWise1"></div>
                     <!--p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p-->
                 </div>
@@ -231,7 +230,7 @@
                             This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Marks Trend</p>
+                    <p class="fw-bold text-start">Marks Trend</p>
                     <div id="day1" style="display:block"></div>
                     <div id="week1" style="display:none"></div>
                     <div id="month1" style="display:none"></div>
@@ -259,7 +258,7 @@
                             It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
                         </p>
                     </small>
-                    <p class="text-uppercase fw-bold text-start">Accuracy Percentage (Last Week)</p>
+                    <p class="fw-bold text-start">Accuracy Percentage (Last Week)</p>
                     <div id="accPerSubjectWise"></div>
                     <!--p class="text-center text-danger mt-3"><small>Its not just about how much and how fast, how accurate you are will also add to your success</small></p-->
                 </div>
@@ -382,7 +381,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
 
@@ -442,7 +441,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
 
@@ -502,7 +501,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             allowDecimals: false,
             min: 0,
             title: {
-                text: 'Average Time Taken (sec)'
+                text: 'Average Time Taken (s)'
             }
         },
 
@@ -822,7 +821,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
         },
         yAxis: {
             title: {
-                text: 'Average Time Spent (Sec)'
+                text: 'Average Time Spent (s)'
             }
         },
 
