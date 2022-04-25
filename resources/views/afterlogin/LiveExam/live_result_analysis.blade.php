@@ -211,17 +211,17 @@ $userData = Session::get('user_data');
                                             <div class="progress col-8 ms-auto " style="overflow: visible;">
                                                 @if($tcorrect_per > 0)
                                                 <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{$tcorrect_per}}%;overflow: visible;">
-                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">{{$topic->correct_count}}</span>
+                                                    <span class="prog-box green" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tcorrect_per}}%">{{$topic->correct_count}}</span>
                                                 </div>
                                                 @endif
                                                 @if($tincorrect_per > 0)
                                                 <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{$tincorrect_per}}%;overflow: visible;">
-                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}">{{$topic->incorrect_count}}</span>
+                                                    <span class="prog-box red" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tincorrect_per}}%">{{$topic->incorrect_count}}</span>
                                                 </div>
                                                 @endif
                                                 @if($tnot_attempt_per > 0)
                                                 <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{$tnot_attempt_per}}%;overflow: visible;">
-                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}">{{$topic->unanswered_count}}</span>
+                                                    <span class="prog-box secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="{{$tnot_attempt_per}}%">{{$topic->unanswered_count}}</span>
                                                 </div>
                                                 @endif
 
@@ -303,7 +303,7 @@ $total_question = $response->no_of_question;
 $total_makrs=isset($response->total_exam_marks)?$response->total_exam_marks:0;
 $correct_score=isset($response->correct_score)?$response->correct_score:0;
 $incorrect_score=isset($response->incorrect_score)?$response->incorrect_score:0;
-$get_score=(isset($response->total_get_marks) && ($response->total_get_marks)>=0)?$response->total_get_marks:0;
+$get_score=(isset($response->total_get_marks) && !empty($response->total_get_marks))?$response->total_get_marks:0;
 $get_score_json=json_encode($get_score);
 $class_average=(isset($response->class_average) && ($response->class_average)>=0)?$response->class_average:0;
 $class_average_json=json_encode($class_average);
