@@ -268,3 +268,5 @@ Route::any('/mock_exam', [App\Http\Controllers\MockExamController::class, 'mockE
 Route::any('/mock_next_question/{ques_id}', [App\Http\Controllers\MockExamController::class, 'mockNextQuestion'])->name('mockNextQuestion')->middleware('auth', 'menu');
 Route::any('/mock_next_subject_question/{subject_id}', [App\Http\Controllers\MockExamController::class, 'mockNextSubjectQuestion'])->name('mockNextSubjectQuestion')->middleware('auth', 'menu');
 Route::any('/mock_next_sub_sec_question/{sub_id}/{sec_id}', [App\Http\Controllers\MockExamController::class, 'adaptive_next_subject_question'])->name('adaptive_next_subject_question')->middleware('auth', 'menu');
+
+Route::any('/exam_result_analytics/{result_id}', [App\Http\Controllers\ResultController::class, 'examResultAnalytics'])->name('exam_result_analytics')->middleware('auth', 'menu');

@@ -89,7 +89,7 @@
                         @if($topic->subject_id==$subject_id && !empty($topic->topic_name))
 
                         <div class="d-flex align-items-center mt-4 mb-2 pb-1 pe-3">
-                            <span class="subj-name  col-4" title="{{!empty($topic->topic_name)?$topic->topic_name:''}}"> @if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
+                            <span class="subj-name  col-4" title="{{Str::ucfirst(Str::lower($topic->topic_name))}}"> @if(!empty($topic->topic_name)) {{Str::ucfirst(Str::lower($topic->topic_name))}}
                                @else
                                ""
                                @endif

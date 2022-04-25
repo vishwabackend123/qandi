@@ -126,7 +126,7 @@ class ResultController extends Controller
 
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
-                return Redirect::route('get_exam_result_analytics', [$result_id]);
+                return Redirect::route('exam_result_analytics', [$result_id]);
 
                 //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
@@ -411,5 +411,9 @@ class ResultController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function examResultAnalytics($result_id)
+    {
+        return view('afterlogin.ExamCustom.exam_result_analytics');        
     }
 }
