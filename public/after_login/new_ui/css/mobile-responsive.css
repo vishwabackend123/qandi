@@ -211,6 +211,9 @@
         .exportAnaylisis .report-block2.p-6 .row.py-5{padding: 20px 0 0!important;}
         .anaylticslogo img {width: 50px;}
         .exportAnaylisis .bg-white.shadow-lg .dashboard-title{font-size:16px;}
+        .profile-picture-txt {
+            overflow: initial;
+        }
 
     }
 
