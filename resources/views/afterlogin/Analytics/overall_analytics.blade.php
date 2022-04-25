@@ -241,7 +241,7 @@ $userData = Session::get('user_data');
                                         </div>
                                         <div class="bg-white  px-5" id="back2Dsh">
                                             <div class="d-flex">
-                                                <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
+                                                <button class="btn btn-outline-secondary rounded-0 w-50 me-4" onClick="backRedirect()">Back to Dashboard</button>
                                                 <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
                                                     <!-- <img src="{{URL::asset('public/after_login/new_ui/images/download-icn-blk.png')}}"> 
                                                     &nbsp;Export Analytics</button> -->
@@ -1077,6 +1077,11 @@ $userData = Session::get('user_data');
         $(".topics_analytics").hide();
         $("#overall").show();
 
+    }
+    function backRedirect()
+    {
+        var url = "{{ route('dashboard') }}";
+        window.location.href=url;
     }
 </script>
 
