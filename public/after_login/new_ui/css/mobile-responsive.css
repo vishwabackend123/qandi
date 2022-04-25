@@ -370,7 +370,9 @@
         top: 233px;
         border-radius: 20px !important;
     }
-        
+        .subscription {
+    width: 94%!important;
+}    
 }
 @media(max-width:385px){
    .planner-wrapper .card-common-topheading:after {
@@ -379,5 +381,5 @@
     .leader-board, .profile-show {
         width: 280px !important;
     }
-    
+
 }
