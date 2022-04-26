@@ -283,6 +283,10 @@
         .expand_block {
             right: -2px !important;
         }
+        .answer-section .ans-txt {
+            padding-left: 0%;
+            margin-top: 0px;
+        }
 
     }
 
