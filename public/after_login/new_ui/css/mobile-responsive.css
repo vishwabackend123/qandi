@@ -225,6 +225,7 @@
         .profile-picture-txt {
             overflow: initial;
         }
+        .tab-wrapper.h-100 {height: auto !important}
 
     }
 
