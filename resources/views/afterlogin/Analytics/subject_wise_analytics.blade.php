@@ -51,7 +51,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skill. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matirix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -73,7 +73,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skill. {{$skillPer[1]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -92,7 +92,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skill. {{$skillPer[2]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -111,7 +111,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skill. {{$skillPer[3]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
