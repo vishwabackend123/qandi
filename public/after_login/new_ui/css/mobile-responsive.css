@@ -1,11 +1,13 @@
 @media(max-width:767px){
+    .question-block{height:250px;}
     .tab-btn-box{padding:0px}
     .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
-    .tiny-green{width:170px;}
+    .tiny-green{width:138px!important;}
     .counter{margin-bottom: 10px;margin-right: -4px!important;}
     .examSect div#myTabContent .tab-pane .question-block {
         padding: 15px 1rem;
     }
+    #FullTest_Exam_Panel_Interface_A h3,.lefttime{font-size:18px;}
     .planner-content {
     display: none;
 }
