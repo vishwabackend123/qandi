@@ -239,7 +239,7 @@
             font-size: 13px;
         }
         .review_heading {
-            font-size: 16px;
+            font-size: 16px !important;
             margin: 0px;
         }
         #review_rques_blk .question p {
@@ -265,9 +265,16 @@
             width: 245px;
         }
         .review_expand {
-            right: 10%;
+            right: 13%;
         }
-     
+        .rview-quses{   font-size: 12px !important;}
+        .cust-tabs.nav.nav-tabs .nav-link {
+            font-size: 13px !important;
+        }
+        #review_rques_blk .question.question-height {
+            padding-left: 37px !important;
+            padding-right: 10px !important;
+        }
 
     }
 
