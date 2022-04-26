@@ -228,6 +228,23 @@
         .tab-wrapper.h-100 {height: auto !important}
         #review_rques_blk .answer-section { margin-bottom: 0px;width: 95.67%;}
         div#myTabContent.reviewPanel .tab-pane .question-block { padding: 15px 0rem;}
+        .rightSectH {
+            font-size: 16px;
+        }
+        .rightSect .number-block .btn {
+            min-width: 25px;
+            height: 25px;
+            width: 25px;
+            margin-bottom: 10px !important;
+            font-size: 13px;
+        }
+        .review_heading {
+            font-size: 16px;
+            margin: 0px;
+        }
+        #review_rques_blk .question p {
+            font-size: 12px;
+        }
 
     }
 
