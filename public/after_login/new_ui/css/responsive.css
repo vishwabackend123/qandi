@@ -1647,7 +1647,7 @@
     }
 
     .nav.nav-tabs.cust-tabs {
-        width: 700px;
+        /* width: 700px; */
         float: none;
         overflow-y: hidden;
         box-shadow: none;
@@ -1847,7 +1847,7 @@
             padding: 0px !important;
         }
 
-        .nav.nav-tabs.cust-tabs {
+       #scroll-mobile .nav.nav-tabs.cust-tabs {
             width: 700px;
         }
 
