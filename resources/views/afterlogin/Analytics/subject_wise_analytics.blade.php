@@ -264,7 +264,7 @@
                 </div>
                 <div class="bg-white pt-3  px-5" id="back2Dsh">
                     <div class="d-flex">
-                        <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
+                        <button class="btn btn-outline-secondary rounded-0 w-50 me-4" onClick="backRedirect()">Back to Dashboard</button>
                         <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
                                 <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
@@ -1009,4 +1009,9 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             $(this).parent("p").hide();
         });
     });
+     function backRedirect()
+     {
+        var url = "{{ route('dashboard') }}";
+        window.location.href=url;
+     }
 </script>

@@ -1099,6 +1099,7 @@
 
                 $('#select_chapt_id' + chapt_id).val(res_chpter_id);
                 $('#select_chapt_name' + chapt_id).html(res_chpter_name);
+                $('#select_chapt_name' + chapt_id).attr('title', res_chpter_name);
 
             },
 
