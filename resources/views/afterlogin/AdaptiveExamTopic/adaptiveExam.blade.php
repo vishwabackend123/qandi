@@ -420,7 +420,7 @@ $questtype='radio';
 
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
-                    <p class="mb-3">No more questions are available for this topic, Kindly submit your exam!</p>
+                    <p class="mb-3">You have practiced enough questions in this topic. It's time to move to another topic.</p>
 
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3  goto-exam-btn">
                         Submit TEST
