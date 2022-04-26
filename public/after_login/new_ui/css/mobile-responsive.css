@@ -262,7 +262,9 @@
         }
 
         .first_screen {
-            width: 245px;
+            width: 217px;
+            max-height: 182px;
+            overflow: scroll;
         }
         .review_expand {
             right: 13%;
