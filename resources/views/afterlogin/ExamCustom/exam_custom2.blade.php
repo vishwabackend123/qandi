@@ -28,7 +28,7 @@ $userData = Session::get('user_data');
         <div class="col-lg-12  p-lg-5 pt-none">
 
           <div class="tab-wrapper">
-            <div id="scroll-mobile">
+            <div id="scroll-mobile" class="tabintablet">
               <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                 @isset($subject_list)
                 @foreach($subject_list as $key=>$subject)

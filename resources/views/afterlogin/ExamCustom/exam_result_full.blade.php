@@ -140,6 +140,7 @@
             <div class="col-7">
                 <div class="bg-white shadow position-relative">
                     <div class="tab-wrapper h-100">
+                        <div  id="scroll-mobile">
                         <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                             @php $subx=1; @endphp
                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
@@ -152,7 +153,7 @@
                             @endforeach
                             @endif
                         </ul>
-
+                        </div>
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             @php $topx=1; @endphp
                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
