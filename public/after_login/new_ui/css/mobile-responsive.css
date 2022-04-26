@@ -275,6 +275,14 @@
             padding-left: 37px !important;
             padding-right: 10px !important;
         }
+        #review_rques_blk .percent_btn {
+            width: 100px;
+            padding: 5px 5px;
+            font-size: 12px;
+        }
+        .expand_block {
+            right: -2px !important;
+        }
 
     }
 
