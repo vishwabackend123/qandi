@@ -226,6 +226,7 @@
             overflow: initial;
         }
         .tab-wrapper.h-100 {height: auto !important}
+        #review_rques_blk .answer-section { margin-bottom: 0px;width: 95.67%;}
 
     }
 
