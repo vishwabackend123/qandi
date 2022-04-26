@@ -125,9 +125,10 @@ class ResultController extends Controller
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
+                $result_id = $response_data->result_id;
+                return Redirect::route('exam_result_analytics', [$result_id]);
 
-
-                return view('afterlogin.ExamCustom.exam_result_analytics');
+                //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
                 return redirect()->route('dashboard');
                 /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
@@ -410,5 +411,9 @@ class ResultController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function examResultAnalytics($result_id)
+    {
+        return view('afterlogin.ExamCustom.exam_result_analytics');        
     }
 }

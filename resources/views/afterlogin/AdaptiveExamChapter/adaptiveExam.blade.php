@@ -3,6 +3,12 @@
 @php
 $userData = Session::get('user_data');
 @endphp
+<script type = "text/javascript" >  
+    function preventBack() { window.history.forward(); }  
+    setTimeout("preventBack()", 0);  
+    window.onunload = function () { null }; 
+     
+</script>
 <style>
     .time_taken_css {
         border-left: 3px Solid #ff6060;
@@ -434,7 +440,10 @@ $questtype='radio';
             backdrop: "static",
             keyboard: false
         });
-
+         history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
     });
 </script>
 <!-- page referesh disabled -->

@@ -4529,7 +4529,7 @@ button.save-btn {
     top: 0%;
     box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
     display: none;
-    max-width: 672px;
+    max-width: 640px;
 }
 
 /* .subscription .profile-picture-txt .p-picture {
@@ -9138,4 +9138,8 @@ div#exportAnalytics {transition: none !important;}
     font-size: 18px;
     font-weight: 400 !important;
     color: #231f20;
+}
+.upgrade-btn {
+    max-width: 260px;
+   
 }

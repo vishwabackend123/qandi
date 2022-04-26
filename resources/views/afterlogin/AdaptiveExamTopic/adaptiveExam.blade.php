@@ -1,4 +1,10 @@
 @extends('afterlogin.layouts.app_new')
+<script type = "text/javascript" >  
+    function preventBack() { window.history.forward(); }  
+    setTimeout("preventBack()", 0);  
+    window.onunload = function () { null }; 
+     
+</script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -14,6 +20,10 @@
             backdrop: "static",
             keyboard: false
         });
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
     });
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
@@ -410,7 +420,7 @@ $questtype='radio';
 
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
-                    <p class="mb-3">No more questions are available for this topic, Kindly submit your exam!</p>
+                    <p class="mb-3">You have practiced enough questions in this topic. It's time to move to another topic.</p>
 
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3  goto-exam-btn">
                         Submit TEST

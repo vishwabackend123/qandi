@@ -70,7 +70,7 @@
                                 <!--<p class="arrow-box-content">Evaluation measures the Lorems and Ipsum for your
                                     performance in the test.</p> 
                             <p class="arrow-box-content">Ideal Application score should be in the range 85%</p> -->
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skill. {{$skillPer[1]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skill. {{$skillPer[1]->skill_name}} tells you your skills of understanding a problem.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matirix</a>
@@ -89,7 +89,7 @@
                             <div class="alpha-extended-view">
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;">{{$skillPer[2]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[2]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skill. {{$skillPer[2]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skill. {{$skillPer[2]->skill_name}} tells you your skill of applying concepts to problem solving .</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matirix</a>
@@ -108,7 +108,7 @@
                             <div class="alpha-extended-view">
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold" style="padding-top:0!important;"> {{$skillPer[3]->skill_name}}</h4>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[3]->percentage, 2, '.', '')}}%</h4>
-                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skill. {{$skillPer[3]->skill_name}} tells you your problem-solving skills.</p>
+                                <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skill. {{$skillPer[3]->skill_name}} tells you whether you know the concepts.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matirix</a>
@@ -264,7 +264,7 @@
                 </div>
                 <div class="bg-white pt-3  px-5" id="back2Dsh">
                     <div class="d-flex">
-                        <button class="btn btn-outline-secondary rounded-0 w-50 me-4"><a href="{{url('/dashboard')}}">Back to Dashboard</a></button>
+                        <button class="btn btn-outline-secondary rounded-0 w-50 me-4" onClick="backRedirect()">Back to Dashboard</button>
                         <button class="btn btn-outline-danger rounded-0 w-50 ms-4 ms-auto" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
                             <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
                                 <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none"></path>
@@ -1009,4 +1009,9 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             $(this).parent("p").hide();
         });
     });
+     function backRedirect()
+     {
+        var url = "{{ route('dashboard') }}";
+        window.location.href=url;
+     }
 </script>
