@@ -254,6 +254,11 @@
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    .dashboard-cards-block.matrixpage-wrapper .bg-white>small p{right:0px;}
+    .matrixpage-wrapper  .course-star li strong,.matrixpage-wrapper .star-img {
+        width: auto!important;
+    }
+    .matrixpage-wrapper .topics-box{width: calc(24% - 22px);justify-content: center;}
     .live-exam .speci-text li:last-child a button{width:100%;}
     div#scorecontainer {padding: 0 5px; }
     #marks_trend_graph{    padding-top: 18px;}

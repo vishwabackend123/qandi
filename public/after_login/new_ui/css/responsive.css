@@ -93,7 +93,7 @@
     height: 10px;}
     .compLeteS .name-txt-sml{width: 57%;
         padding-right: 10px;font-size:14px;}
-        .custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:20px;} 
+        .custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:13px;} 
         
        
 }
@@ -271,7 +271,7 @@
         padding: 18px 11px;
     }
 
-    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span {
+    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,  .pe-1 .star-ratings-css-bottom span {
         padding: 0 2px !important;
         font-size: 13px;
     }
@@ -324,6 +324,7 @@
     #collapsePlanner .d-flex.align-items-center.text-uppercase {
         font-size: 13px;
     }
+    .cus-radio-btn label{font-size: 14px;}
 }
 @media(min-width:992px) and (max-width:1280px) {
 
