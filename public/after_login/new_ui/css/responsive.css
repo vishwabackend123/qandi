@@ -952,7 +952,7 @@
 
     #contentHtml {
         transition: 0.2s;
-        /* z-index: 99999; */
+        z-index: 99999;
         position: relative;
         margin-top: 20px;
     }
@@ -1098,7 +1098,7 @@
 
     .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
         height: auto !important;
-        margin-top: 85px !important;
+        margin-top: 15px !important;
     }
 
     .question-block {
@@ -1571,7 +1571,7 @@
     }
 
     .examSect .question {
-        padding: 12px 30px !important;
+        padding: 12px 15px !important;
         font-family: Manrope;
         font-size: 14px;
         line-height: 20px;
