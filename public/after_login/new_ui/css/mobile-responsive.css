@@ -28,7 +28,7 @@
     
     }
     .profile-section {
-        width: 100%;
+        width: 100%; 
     }
     .profile-section ul li {
         width: 100%; margin: 0px; padding: 5px;
@@ -265,7 +265,9 @@
         }
 
         .first_screen {
-            width: 245px;
+            width: 217px;
+            max-height: 182px;
+            overflow: scroll;
         }
         .review_expand {
             right: 13%;
