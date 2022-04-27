@@ -13,7 +13,11 @@
         <div class="col-lg-4" style="margin-bottom: 20px;">
             <div class="bg-white sub-details w-100">
                 <div class="d-flex align-items-center justify-content-between sub-title">
-                    <h3 class="m-0 p-0" title="{{$list['topic_name']}}"> {{ Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...') }} </h3>
+                    @php
+                    $topicname = Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...');
+                    $topicnametitle = $list['topic_name'];
+                    @endphp
+                    <h3 class="m-0 p-0" style="text-transform: none;" title="{{Str::ucfirst(Str::lower($topicnametitle))}}"> {{Str::ucfirst(Str::lower($topicname))}} </h3>
                     <div class="all-star d-flex align-items-center justify-content-between">
                         <ul class="m-0 p-0">
                             @if($list['topic_score'] >0 && $list['topic_score'] <= 20 || $list['topic_score']> 20)
