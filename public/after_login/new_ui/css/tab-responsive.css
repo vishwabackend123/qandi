@@ -366,7 +366,7 @@
         font-size: 12px;}
     .leader-board ul li span h3 {font-size: 12px;}
     span.profile-digit {font-size: 16px; }
-    .profile-section ul li {margin: 10px 0px;padding: 15px;}
+    .profile-section ul li {margin: 10px 0px;}
    
     
     .edit-form {
@@ -500,7 +500,7 @@
    .profile-show {right: 418px;width:261px;}
    span.profile-digit{margin-right:10px;}
    .profile-section {width: 150px;}
-   .profile-section ul li a{font-size: 14px;}
+   .profile-section ul li a{font-size: 14px; padding:8px 5px;}
    .leader-board{right: 22%; height: 450px;} 
    span.profile-img-user {width: 35px;height: 35px;}
    .subscription .profile-picture-txt .p-text {width: 100%;}

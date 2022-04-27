@@ -457,30 +457,62 @@ class ExamCustomController extends Controller
             $question_id = isset($data['question_id']) ? $data['question_id'] : '';
             $option_id = isset($data['option_id']) ? $data['option_id'] : '';
             $q_submit_time = isset($data['q_submit_time']) ? $data['q_submit_time'] : '';
+            $subject_id = isset($data['current_subject_id']) ? $data['current_subject_id'] : '';
+            $section_id = isset($data['current_section_id']) ? $data['current_section_id'] : '';
 
             $redis_result = Redis::get('custom_answer_time_' . $user_id);
 
             if (!empty($redis_result)) {
                 $redisArray = json_decode($redis_result, true);
+
                 $retrive_array = $redisArray['given_ans'];
                 $retrive_time_array = $redisArray['taken_time'];
                 $answer_swap_cnt = $redisArray['answer_swap_cnt'];
                 $retrive_time_sec = $redisArray['taken_time_sec'];
+
+                $sectionData = isset($redisArray['section_data']) ? $redisArray['section_data'] : [];
+                $sectionData = collect($sectionData);
+                $limit_data = $sectionData->where("id", $section_id)->first();
+                $max_attempt_limit = isset($limit_data['num_of_ques_tobeattempted']) ? $limit_data['num_of_ques_tobeattempted'] : 0;
+
+                $attempt_sub_section_cnt = isset($redisArray['attempt_count']) ? $redisArray['attempt_count'] : [];
+
+                if (isset($attempt_sub_section_cnt[$question_id])) {
+                    unset($attempt_sub_section_cnt[$question_id]);
+                }
+
+                $attempts = collect($attempt_sub_section_cnt);
+                $attempts_cnt = $attempts->where('sub_id', $subject_id)->where("section_id", $section_id);
+                $sec_q_attmpt_count = $attempts_cnt->count();
+
+                if (($sec_q_attmpt_count >= $max_attempt_limit) && $max_attempt_limit > 0) {
+                    $response['status'] = 400;
+                    /*   $response['sec_q_attmpt_count'] = $sec_q_attmpt_count; */
+
+                    $response['message'] = "Max attempt limit for this section is " . $max_attempt_limit;
+                    return json_encode($response);
+                }
 
                 $retrive_time_sec[$question_id] = (int)$q_submit_time;
                 //$time_taken = $redisArray['time_taken'] ?? array();
                 if (isset($option_id) && $option_id != '') {
                     $retrive_array[$question_id] = $option_id;
                     $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
+
+
+                    $attempt_sub_section_cnt[$question_id] = array("sub_id" => $subject_id, "section_id" => $section_id);
                 }
             } else {
-                $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = [];
+
+                $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = $attempt_sub_section_cnt =  [];
                 if (isset($option_id) && $option_id != '') {
                     $retrive_array[$question_id] = $option_id;
                     $retrive_time_array[$question_id] = gmdate('H:i:s', (int)$q_submit_time);
+                    $attempt_sub_section_cnt[$question_id] = array("sub_id" => $subject_id, "section_id" => $section_id);
                 }
                 $retrive_time_sec[$question_id] = (int)$q_submit_time;
             }
+
             if (isset($answer_swap_cnt[$question_id])) {
                 $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;
             } else {
@@ -491,17 +523,21 @@ class ExamCustomController extends Controller
             $redisArray['taken_time'] = $retrive_time_array;
             $redisArray['answer_swap_cnt'] = $answer_swap_cnt;
             $redisArray['taken_time_sec'] = $retrive_time_sec;
+            $redisArray['attempt_count'] = $attempt_sub_section_cnt;
 
 
             // Push Value in Redis
             Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
 
             $response['status'] = 200;
+            /*  $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
+            $response['max_attempt_limit'] = $max_attempt_limit; */
             $response['message'] = "save response successfully";
 
 
             return json_encode($response);
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
@@ -524,9 +560,11 @@ class ExamCustomController extends Controller
                 $retrive_array = $redisArray['given_ans'];
                 $retrive_time_array = $redisArray['taken_time'];
                 $answer_swap_cnt = $redisArray['answer_swap_cnt'] ?? array();
+                $answer_attempt_cnt = $redisArray['attempt_count'] ?? array();
 
                 //clearing response of question
                 unset($retrive_array[$question_id]);
+                unset($answer_attempt_cnt[$question_id]);
             }
             if (isset($answer_swap_cnt[$question_id])) {
                 $answer_swap_cnt[$question_id] = $answer_swap_cnt[$question_id] + 1;

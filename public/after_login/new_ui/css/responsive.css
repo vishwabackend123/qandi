@@ -1216,9 +1216,9 @@
         height: 275px;
     }
 
-    .list-series .live-exam .speci-text li {
+    /* .list-series .live-exam .speci-text li {
         width: 100% !important;
-    }
+    } */
 
     .live-exam .speci-text li:last-child {
         margin-right: 0px !important;
@@ -1403,10 +1403,10 @@
     /** exam analytics page css End 14-12-2021**/
     /** Listing series page css on 16-12-2021 **/
 
-    .list-series .live-exam .speci-text li {
+    /* .list-series .live-exam .speci-text li {
         width: 100% !important;
         margin-right: 0px;
-    }
+    } */
 
     /** Listing series page css END on 16-12-2021 **/
 
@@ -1468,7 +1468,7 @@
     }
 
     .profile-section ul li {
-        padding: 15px 10px;
+        /* padding: 15px 10px; */
         margin: 0px;
         text-align: center;
         width: 120px;
@@ -1718,11 +1718,11 @@
         display: inline-block;
     }
 
-    .cust-tab-content .custom-btn-gray {
+    /* .cust-tab-content .custom-btn-gray {
         width: auto !important;
         float: left;
         font-size: 14px;
-    }
+    } */
 
     .cust-tabs .nav-link {
         position: relative;
@@ -1796,7 +1796,7 @@
     /** Listing series page css on 16-12-2021 **/
 
     .list-series .cust-tab-content .custom-btn-gray {
-        width: 100% !important;
+       
         float: left;
         font-size: 14px;
     }
@@ -3321,7 +3321,7 @@
         }
 
         .profile-section ul li {
-            padding: 15px 10px;
+            /* padding: 15px 10px; */
             margin: 0px;
             text-align: center;
             width: 120px;
