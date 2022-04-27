@@ -15,8 +15,8 @@ button {
     outline: none;
     text-decoration: none;
 }
-
 .report-block2.p-6>p.text-center.mt-5.pt-5{word-break: break-word;}
+ul.leaderNameBlock-search p:first-child{margin-left: 30px;}
 .profile-section ul li a{display: block;padding: 15px;}
 .practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
 #attempted .result-list-btns a{line-height: 34px;}
