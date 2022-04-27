@@ -7,6 +7,8 @@ $template_type = isset($question_data->template_type)?$question_data->template_t
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 $section_id = isset($question_data->section_id)?$question_data->section_id:'';
 
+
+
 if($template_type==1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -98,8 +100,11 @@ $questtype='radio';
 <div>
     <div class="d-flex ">
         @if(isset($aSections) && !empty($aSections))
-        @foreach($aSections as $section)
-        <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}">{{$section->section_name}}</a>
+        @foreach($aSections as $Vsec)
+        @php $secId=$Vsec->id;@endphp
+        @if(isset($aSubSecCount->$subject_id->$secId) && $aSubSecCount->$subject_id->$secId>0)
+        <a class="btn {{($secId==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$secId}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$secId}}')">{{$Vsec->section_name}}({{$aSubSecCount->$subject_id->$secId}}) | {{$Vsec->question_type_name}}</a>
+        @endif
         @endforeach
         @endif
         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-2 d-flex">
@@ -108,7 +113,7 @@ $questtype='radio';
                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                 <div id="percentBar1_{{$activeq_id}}"></div>
             </div>
-            <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$activeq_id}}"></span>:<span id="up_seconds_{{$activeq_id}}"></span>mins</div>
+            <div class="time_taken_css" id="q_time_taken_{{$activeq_id}}" onclick="" style="display:none;"><span>Time taken : </span><span id="up_minutes_{{$activeq_id}}"></span>:<span id="up_seconds_{{$activeq_id}}"></span>mins</div>
         </div>
     </div>
     <input type="hidden" name="question_spendtime" id="timespend_{{$activeq_id}}" value="" />
@@ -149,7 +154,7 @@ $questtype='radio';
             @endif
             @elseif($template_type==11)
             <div class="col-md-6 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}">
 
             </div>
             @endif
@@ -172,6 +177,8 @@ $questtype='radio';
     var question_id = '{{$activeq_id}}';
     var template_type = '{{$template_type}}';
     var curr_ques_no = '{{$qNo}}';
+    var curr_subject_id = '{{$subject_id}}';
+    var curr_section_id = '{{$section_id}}';
 
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
@@ -181,6 +188,8 @@ $questtype='radio';
     $("#current_question").val(question_id);
     $("#current_question_type").val(template_type);
     $("#current_question_no").val(curr_ques_no);
+    $("#current_subject_id").val(curr_subject_id);
+    $("#current_section_id").val(curr_section_id);
 
     var subject_id = '{{$subject_id}}';
     $("#myTab .all_div").removeClass("active");

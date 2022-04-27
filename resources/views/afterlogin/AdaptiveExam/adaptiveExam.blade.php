@@ -1,10 +1,13 @@
 @extends('afterlogin.layouts.app_new')
-<script type = "text/javascript" >  
-    function preventBack() { window.history.forward(); }  
-    setTimeout("preventBack()", 0);  
-    window.onunload = function () { null }; 
-     
-</script> 
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
+</script>
 @section('content')
 @php
 $userData = Session::get('user_data');
@@ -438,7 +441,7 @@ $questtype='radio';
         window.onpopstate = function() {
             history.go(1);
         };
-        
+
     });
 </script>
 <script>
