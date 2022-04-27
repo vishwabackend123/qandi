@@ -27,7 +27,7 @@ li.a3TS {
     width: 15% !important;
 }
 .btn-topic:hover {
-    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
+    box-shadow: 0 3px 10px 0 rgba(255,255,255,0.8) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
     height: 310px !important;
