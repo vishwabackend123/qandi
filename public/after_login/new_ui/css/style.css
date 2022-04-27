@@ -16,7 +16,7 @@ button {
     text-decoration: none;
 }
 
-
+.profile-section ul li a{display: block;padding: 15px;}
 .practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
 #attempted .result-list-btns a{line-height: 34px;}
 .padd-right-0{padding-right:0!important;}
@@ -313,7 +313,7 @@ a.Ex-anal {
 
 div#f-Numbr-sectin .arrow-right-btm-content {
     padding: 0px !important;
-    margin: 24px 20px;
+    margin: 20px 20px;
     border-radius: 0 !important;
 }
 
@@ -1886,7 +1886,7 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
 }
 
 .arrow-right-btm-content .fw-bold {
-    padding-top: 9px !important;
+    padding-top: 5px !important;
 }
 
 .arrow-right-btm-content .pt-2 {
@@ -5202,7 +5202,7 @@ span.bell-noti {
 .profile-section ul li {
     list-style: none;
     margin: 20px 0px;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 .profile-section ul li.active {
