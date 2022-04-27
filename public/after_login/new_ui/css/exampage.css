@@ -33,6 +33,7 @@ li.a3TS {
     /* height: 310px !important; */
     overflow-y: auto !important;
 	overflow-x: hidden;
+    
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
