@@ -17,7 +17,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
-        <div class="container-fluid custom-page">
+        <div class="container-fluid custom-page previousyear-exam-page">
             <div class="row">
                 @if(count($errors) > 0 )
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -50,15 +50,8 @@ $userData = Session::get('user_data');
                                         <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
                                             <div class="d-flex align-items-start justify-content-between result-list-head">
                                                 <h4 class="m-lg-0 p-0">{{$sche->paper_name}} </h4>
-                                                <p class="m-0 p-0"></p>
-                                            </div>
-                                            <div class="d-flex align-items-start justify-content-between result-list-head">
-                                                <h4 class="m-lg-0 p-0">{{$sche->paper_year}}</h4>
-                                                <p class="m-0 p-0"></p>
-                                            </div>
-                                            <div class="d-flex align-items-start justify-content-between result-list-head">
-                                                <h4 class="m-lg-0 p-0">{{$sche->paper_code}}</h4>
-                                                <p class="m-0 p-0"></p>
+                                                <h4 class="m-lg-0 p-0 text-center">{{$sche->paper_year}}</h4>
+                                                <h4 class="m-lg-0 p-0" style="color: #21ccff;">{{$sche->paper_code}}</h4>
                                             </div>
                                         </div>
                                     </div>
