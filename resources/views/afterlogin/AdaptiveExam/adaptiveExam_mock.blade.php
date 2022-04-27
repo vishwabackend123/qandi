@@ -117,6 +117,8 @@ $questtype='radio';
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <input type="hidden" id="current_question_no" value="1" />
+                            <input type="hidden" id="current_subject_id" value="{{$subject_id}}" />
+                            <input type="hidden" id="current_section_id" value="{{$section_id}}" />
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet">
                                 <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
@@ -136,7 +138,9 @@ $questtype='radio';
                                         <div class="d-flex" id="pause-start">
                                             @if(isset($aSections) && !empty($aSections))
                                             @foreach($aSections as $section)
-                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}">{{$section->section_name}}</a>
+                                            @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
+                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}}({{$aSubSecCount[$subject_id][$section->id]}}) | {{$section->question_type_name}}</a>
+                                            @endif
                                             @endforeach
                                             @endif
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
@@ -891,8 +895,11 @@ $questtype='radio';
     /* Saved question response */
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
+
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
+        var current_subject_id = $("#current_subject_id").val();
+        var current_section_id = $("#current_section_id").val();
 
         if (current_question_type == 11) {
             var res_value = $("#quest_option_" + question_id).val();
@@ -915,6 +922,7 @@ $questtype='radio';
             return false;
         }
 
+        var err_sts = true;
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
             url: "{{ route('saveAnswer') }}",
@@ -923,7 +931,9 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                current_subject_id: current_subject_id,
+                current_section_id: current_section_id,
             },
             beforeSend: function() {
                 //$('.loader-block').show();
@@ -937,24 +947,42 @@ $questtype='radio';
                     $("#btn_" + question_id).html(qNo);
                     $("#btn_" + question_id).removeClass("btn-light");
                     $("#btn_" + question_id).addClass("btn-light-green");
+
+                    if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                        $("#submitExam").click();
+                    } else {
+
+                        $("#quesnext" + question_id).click();
+
+                    }
+                } else if (response.status == 400) {
+                    alert(response.message);
+                    err_sts = false;
                 }
             },
         });
-        if ($("#quesnext" + question_id).is(":disabled") == true) {
 
-            $("#submitExam").click();
-        } else {
-            $("#quesnext" + question_id).click();
-
-        }
     }
 
     function saveAnswerAjax(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+        var current_subject_id = $("#current_subject_id").val();
+        var current_section_id = $("#current_section_id").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -1030,16 +1058,36 @@ $questtype='radio';
     function clearResponse(quest_id, subject_id, qNo) {
 
         var response = [];
-        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            response = $(this).prop('checked', false);
-        });
+        var current_question_type = $("#current_question_type").val();
+        var current_subject_id = $("#current_subject_id").val();
+        var current_section_id = $("#current_section_id").val();
 
-        if (response.length == 0) {
-            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
-            $('#qoption_err_' + quest_id).addClass('text-danger');
-            $('#qoption_err_' + quest_id).fadeIn('fast');
-            return false;
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value === '') {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+                return false;
+            } else {
+                $("#quest_option_" + quest_id).val('');
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                response = $(this).prop('checked', false);
+            });
+
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+                return false;
+            }
         }
+
+
+
 
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-light-green");
@@ -1072,6 +1120,32 @@ $questtype='radio';
         saveQuestionTime(act_question, q_submit_time);
 
         url = "{{ url('mock_next_subject_question/') }}/" + subject_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+            },
+            success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
+
+                $("#myTabContent #question_section div").remove();
+                $("#myTabContent #question_section").html(result);
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+            }
+        });
+
+
+    }
+
+    function get_subject_Sec_question(subject_id, section_id) {
+        var act_question = $("#current_question").val();
+        var q_submit_time = $("#timespend_" + act_question).val();
+
+        saveQuestionTime(act_question, q_submit_time);
+
+        url = "{{ url('mock_next_subject_question/') }}/" + subject_id + "/" + section_id;
         $.ajax({
             url: url,
             data: {
