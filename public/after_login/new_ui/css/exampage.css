@@ -30,7 +30,7 @@ li.a3TS {
     box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
-    height: 310px !important;
+    /* height: 310px !important; */
     overflow-y: auto !important;
 	overflow-x: hidden;
 }
@@ -967,3 +967,6 @@ a.clearRes:hover {
 
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
+
+.custom-page .cust-tab-content .scroll-div {
+    height: calc(100vh - 323px) !important;}
