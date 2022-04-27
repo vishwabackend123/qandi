@@ -967,6 +967,7 @@ $questtype='radio';
 
     function saveAnswerAjax(question_id, qNo) {
         var question_id = question_id;
+        var isValid = 1;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
         var current_subject_id = $("#current_subject_id").val();
@@ -994,6 +995,7 @@ $questtype='radio';
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1013,20 +1015,41 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                    return true;
+
+                    if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                        $("#submitExam").click();
+                    } else {
+                        $("#quesnext" + question_id).click();
+
+                    }
+                    isValid = 1;
+
                 } else if (response.status == 400) {
                     alert(response.message);
-                    err_sts = false;
+                    isValid = 0;
+
                 }
             },
+            async: false
         });
 
+        if (isValid == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswerAjax(quest_id, '') != false) {
+        var current_question_no = $("#current_question_no").val();
+        var response = saveAnswerAjax(quest_id, current_question_no);
+
+
+        if (response != false) {
+
 
             // marking for review
             $.ajax({
@@ -1049,13 +1072,7 @@ $questtype='radio';
 
                 },
             });
-            if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
-                $("#submitExam").click();
-            } else {
-                $("#quesnext" + quest_id).click();
-
-            }
             return true;
         }
     }
