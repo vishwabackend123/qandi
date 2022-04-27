@@ -1001,7 +1001,9 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                current_subject_id: current_subject_id,
+                current_section_id: current_section_id,
             },
             beforeSend: function() {
                 //$('.loader-block').show();
@@ -1012,6 +1014,9 @@ $questtype='radio';
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                     return true;
+                } else if (response.status == 400) {
+                    alert(response.message);
+                    err_sts = false;
                 }
             },
         });
