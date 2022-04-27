@@ -349,7 +349,7 @@ $questtype='radio';
                                     <div class="col col-lg-4">
                                         <div>
                                             <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
+                                            <span class="d-block"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
                                         </div>
                                     </div>
                                 </div>
