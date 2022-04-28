@@ -515,13 +515,9 @@ $userData = Session::get('user_data');
                             <img src="{{isset($sVal->subject_thumbnail_image_path)?$sVal->subject_thumbnail_image_path:''}}">
                             @else
                             <span>
-                            <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                            <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
-<<<<<<< HEAD
-                         </span>
-=======
+                               <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                               <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
->>>>>>> 736c632539eddc908cb03b5bea1b0864215a681a
                             @endif
 
                             <div>
