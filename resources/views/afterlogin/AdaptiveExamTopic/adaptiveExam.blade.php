@@ -41,6 +41,11 @@
 $userData = Session::get('user_data');
 @endphp
 <style>
+    .mjx-chtml {
+        line-height: 0.5 !important;
+    }
+
+
     .time_taken_css {
         border-left: 3px Solid #ff6060;
         width: 200px;
@@ -92,11 +97,6 @@ $userData = Session::get('user_data');
         text-indent: 9999px;
         overflow: hidden;
         background-color: #44CD7F;
-        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
-        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
- */
 
 
     }

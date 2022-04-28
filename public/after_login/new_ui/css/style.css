@@ -2756,10 +2756,10 @@ span.p-icons span:active {
 
 .chaptbox {
     height: auto;
-    max-height: 100px;
+    max-height: 117px;
     overflow-y: auto;
     overflow-x: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
     padding-right: 5px;
 }
 
@@ -4166,7 +4166,7 @@ div#select-planner-chapter button#add_chapter {
 
     border-radius: 15px;
     color: #000;
-
+    margin-top: 10px;
     background-color: rgba(33,204,255,0.18);
 
 }
@@ -9149,7 +9149,6 @@ div#exportAnalytics {transition: none !important;}
     max-width: 260px;
    
 }
-
 .col_min{
     max-width: 25%;
     min-width: 25%; 

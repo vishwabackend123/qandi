@@ -40,6 +40,10 @@ $questtype='radio';
 }
 @endphp
 <style>
+    .mjx-chtml {
+        line-height: 0.5 !important;
+    }
+
     .time_taken_css {
         border-left: 3px Solid #ff6060;
         width: 200px;
