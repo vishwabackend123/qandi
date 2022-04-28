@@ -17,7 +17,7 @@ button {
 }
 .report-block2.p-6>p.text-center.mt-5.pt-5{word-break: break-word;}
 ul.leaderNameBlock-search p:first-child{margin-left: 30px;}
-.profile-section ul li a{display: block;padding: 15px;}
+.profile-section ul li a{display: block;padding:18px 15px;}
 .practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
 #attempted .result-list-btns a{line-height: 34px;}
 .padd-right-0{padding-right:0!important;}
@@ -5195,11 +5195,12 @@ span.bell-noti {
 
 .profile-section ul {
     padding-left: 0px;
+    margin-top: 18px
 }
 
 .profile-section ul li {
     list-style: none;
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
     /* padding: 15px; */
 }
 
@@ -7712,7 +7713,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 99;
+    z-index: 999;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     /* backdrop-filter: blur(4px); */

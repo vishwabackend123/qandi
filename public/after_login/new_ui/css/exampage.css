@@ -33,7 +33,7 @@ li.a3TS {
     /* height: 310px !important; */
     overflow-y: auto !important;
 	overflow-x: hidden;
-    
+
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
@@ -969,6 +969,13 @@ a.clearRes:hover {
 
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
-
 .custom-page .cust-tab-content .scroll-div {
    max-height: calc(100vh - 323px) !important;}
+.question p {
+    padding-left: 13px;
+}
+.ans .question p {
+    padding: 0;
+}
+
+
