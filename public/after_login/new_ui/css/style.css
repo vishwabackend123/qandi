@@ -9145,3 +9145,8 @@ div#exportAnalytics {transition: none !important;}
     max-width: 260px;
    
 }
+
+.col_min{
+    max-width: 25%;
+    min-width: 25%;
+}
