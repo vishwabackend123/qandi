@@ -670,7 +670,7 @@ $questtype='radio';
 
 
         var number_block_holder_height = $(".number_block_holder").outerHeight();
-        var numberblockHeight = number_block_holder_height - 30 + "px";
+        var numberblockHeight = number_block_holder_height - 170 + "px";
 
         // var height_divided = number_block_holder_height - numberblockHeight;
         $('.number_block_holder .number-block').css('height', numberblockHeight);
@@ -707,7 +707,7 @@ $questtype='radio';
 
             var onclickreviewbox = review_box_q_height12 + number_block_holder_height;
 
-            var review_box_holder_total = onclickreviewbox + 35 + "px";
+            var review_box_holder_total = onclickreviewbox - 80 + "px";
 
 
             $('.review_box_holder').css('height', review_box_holder_total);
@@ -754,7 +754,7 @@ $questtype='radio';
 
             var onclickreviewbox = review_box_q_height12 - number_block_holder_height;
 
-            var review_box_holder_total = onclickreviewbox - 35 + "px";
+            var review_box_holder_total = onclickreviewbox + 80 + "px";
 
 
             $('.review_box_holder').css('height', review_box_holder_total);
