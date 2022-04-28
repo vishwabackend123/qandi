@@ -1,9 +1,12 @@
 @extends('afterlogin.layouts.app_new')
-<script type = "text/javascript" >  
-    function preventBack() { window.history.forward(); }  
-    setTimeout("preventBack()", 0);  
-    window.onunload = function () { null }; 
-     
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
 </script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
@@ -647,6 +650,7 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
             if (template_type == 2) {
                 $('input[type=radio]', this).prop("checked", true);
             } else {

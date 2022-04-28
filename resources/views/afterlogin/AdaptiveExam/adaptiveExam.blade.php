@@ -581,8 +581,10 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
             if (template_type == 2) {
                 $('input[type=radio]', this).prop("checked", true);
+
             } else {
                 var $checks = $(this).find('input[type=checkbox]');
 

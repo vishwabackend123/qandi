@@ -3,11 +3,14 @@
 @php
 $userData = Session::get('user_data');
 @endphp
-<script type = "text/javascript" >  
-    function preventBack() { window.history.forward(); }  
-    setTimeout("preventBack()", 0);  
-    window.onunload = function () { null }; 
-     
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
 </script>
 <style>
     .time_taken_css {
@@ -440,7 +443,7 @@ $questtype='radio';
             backdrop: "static",
             keyboard: false
         });
-         history.pushState(null, null, location.href);
+        history.pushState(null, null, location.href);
         window.onpopstate = function() {
             history.go(1);
         };
@@ -580,6 +583,7 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
             if (template_type == 2) {
                 $('input[type=radio]', this).prop("checked", true);
             } else {
