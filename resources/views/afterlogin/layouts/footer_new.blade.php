@@ -1692,6 +1692,15 @@
         $(".dash-nav-link a:last-child").removeClass("active-navlink");
         $(".dash-nav-link a:first-child").addClass("active-navlink");
     });
+    $('.refereModel').click(function(event) {
+        event.stopPropagation();
+        $(".dash-nav-link a:last-child").addClass("active-navlink");
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+    });
+    $('.openSharefrnd').click(function(event) {
+        var validator = $( "#referalStudent_form" ).validate();
+        validator.resetForm();
+    });
 
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
         setTimeout(function() {

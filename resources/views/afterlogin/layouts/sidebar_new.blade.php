@@ -231,7 +231,7 @@
             </svg>
             <span class="hoverlink">Prepare</span>
         </a>
-        <a href="#" class="mt-auto" data-bs-toggle="modal" data-bs-target="#sharefrnd">
+        <a href="#" class="mt-auto openSharefrnd" data-bs-toggle="modal" data-bs-target="#sharefrnd">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
                 <defs>
                     <style>
@@ -436,7 +436,7 @@
                     <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}">
                 </button>
             </div>
-            <div class="modal-body pt-0 px-5 ">
+            <div class="modal-body pt-0 px-5 refereModel ">
                 <form id="referalStudent_form" action="{{route('store_referral')}}" method="POST">
                     @csrf
                     <div class="text-center">
