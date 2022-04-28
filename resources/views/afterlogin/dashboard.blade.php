@@ -517,7 +517,11 @@ $userData = Session::get('user_data');
                             <span>
                             <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+<<<<<<< HEAD
                          </span>
+=======
+                            </span>
+>>>>>>> 736c632539eddc908cb03b5bea1b0864215a681a
                             @endif
 
                             <div>
