@@ -48,6 +48,10 @@ $questtype='radio';
 }
 @endphp
 <style>
+    .mjx-chtml {
+        line-height: 0.5 !important;
+    }
+
     .qiestionTimer {
         display: none !important;
     }
