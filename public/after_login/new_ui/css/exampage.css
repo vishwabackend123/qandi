@@ -560,7 +560,7 @@ a.clearRes:hover {
 }
 
 .rightSect .number-block {
-    height: 165px;
+    /* height: 165px; */
     overflow-y: auto;
     padding: 5px;
 }
