@@ -135,7 +135,7 @@ $questtype='radio';
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
                                     <div>
-                                        <div class="d-flex" id="pause-start">
+                                        <div class="d-flex align-items-center" id="pause-start">
                                             @if(isset($aSections) && !empty($aSections))
                                             @foreach($aSections as $section)
                                             @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
