@@ -16,9 +16,9 @@ button {
     text-decoration: none;
 }
 
-#home a.btn.btn-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px rgba(18, 195, 255, 0.6);background-color: rgba(76, 185, 249, 0.1);color: #12c3ff;font-size: 14px;padding: 6px 12px 6px 24px;text-transform: capitalize;min-width: 260px;text-align: left;position: relative;}
+#home a.btn.btn-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px rgba(18, 195, 255, 0.6);background-color: rgba(76, 185, 249, 0.1);color: #12c3ff;font-size: 14px;padding: 6px 15px 6px 24px;text-transform: capitalize;text-align: left;position: relative;}
 #home a.btn.btn-primary.btn-sm.sectionBtn:before {content: '';position: absolute;height: 8px;width: 8px;border-radius: 100%;background-color: #12c3ff;top: 12px;left: 10px;}
-#home a.btn.btn-outline-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px #f6f9fd;background-color: #f6f9fd;color: #6b707f;font-size: 14px;padding: 6px 12px;text-transform: capitalize;min-width: 260px;text-align: left;}
+#home a.btn.btn-outline-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px #f6f9fd;background-color: #f6f9fd;color: #6b707f;font-size: 14px;padding: 6px 15px;text-transform: capitalize;text-align: left;}
 
 ul.leaderNameBlock-search p:first-child{margin-left: 30px;}
 .profile-section ul li a{display: block;padding:18px 15px;}
@@ -1338,7 +1338,7 @@ a#open-tab {
 }
 
 .profile-section ul li:hover {
-    background: #d0f3ff;
+    background: #e9e9e9;
 }
 
 .live-exam i.fa.fa-circle.text-danger.me-3 {
@@ -9148,4 +9148,9 @@ div#exportAnalytics {transition: none !important;}
 .upgrade-btn {
     max-width: 260px;
    
+}
+
+.col_min{
+    max-width: 25%;
+    min-width: 25%; 
 }
