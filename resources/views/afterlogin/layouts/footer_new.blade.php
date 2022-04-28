@@ -933,11 +933,6 @@
 
         /*edit planner*/
 
-        /*Refer Friend*/
-        $('.btn-close').click(function() {
-            $('#referEmails').val('');
-        });
-        /*Refer Friend*/
 
     });
 </script>
@@ -1511,7 +1506,7 @@
     });
 
     /* refer a friends */
-    $("#referalStudent_form").validate({
+    var validator = $("#referalStudent_form").validate({
         rules: {
             refer_emails: {
                 required: true,
@@ -1606,6 +1601,12 @@
         }
 
     });
+    /*Refer Friend*/
+        $('.btn-close').click(function() {
+            $('#referEmails').val('');
+             validator.resetForm();
+        });
+        /*Refer Friend*/
 </script>
 <!-- end planner section move from dashboard -->
 <script>
