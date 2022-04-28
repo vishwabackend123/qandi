@@ -967,3 +967,10 @@ a.clearRes:hover {
 
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
+
+.question p {
+    padding-left: 13px;
+}
+.ans .question p {
+    padding: 0;
+}
