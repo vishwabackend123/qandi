@@ -112,7 +112,6 @@ class ResultController extends Controller
 
             $response_json = curl_exec($curl);
 
-
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
@@ -414,6 +413,6 @@ class ResultController extends Controller
     }
     public function examResultAnalytics($result_id)
     {
-        return view('afterlogin.ExamCustom.exam_result_analytics');        
+        return view('afterlogin.ExamCustom.exam_result_analytics');
     }
 }

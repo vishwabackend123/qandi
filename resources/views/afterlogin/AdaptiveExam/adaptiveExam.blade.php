@@ -490,7 +490,7 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
+        /* document.oncontextmenu = function() {
             return false;
         };
 
@@ -500,7 +500,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        });
+        }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -951,10 +951,23 @@ $questtype='radio';
 
     function saveAnswerAjax(question_id, qNo) {
         var question_id = question_id;
+        var isValid = 0;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+        var current_subject_id = $("#current_subject_id").val();
+        var current_section_id = $("#current_section_id").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -964,7 +977,6 @@ $questtype='radio';
             }, 8000);
             return false;
         }
-
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
             url: "{{ route('saveAnswer') }}",
@@ -983,17 +995,28 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+
+                    isValid = 1;
                     return true;
+                } else {
+                    isValid = 0;
                 }
             },
+            async: false
         });
-
+        if (isValid == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswerAjax(quest_id, '') != false) {
+        var current_question_no = $("#current_question_no").val();
+        var response = saveAnswerAjax(quest_id, current_question_no);
+        if (response != false) {
 
             // marking for review
             $.ajax({
