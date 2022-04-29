@@ -5113,7 +5113,8 @@ button#goto-exam-btn {
     font-weight: normal;
     padding-left: 15px;
     display: inline-block;
-    width: 90%
+    width: 90%;
+    word-break: break-all;
 }
 
 .notification-right a {
@@ -9153,3 +9154,7 @@ div#exportAnalytics {transition: none !important;}
     max-width: 25%;
     min-width: 25%; 
 }
+
+div#trialbox {
+    z-index: 9999;
+}  
