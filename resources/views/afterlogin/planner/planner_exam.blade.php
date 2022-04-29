@@ -26,6 +26,10 @@
 $userData = Session::get('user_data');
 @endphp
 <style>
+    .mjx-chtml {
+        line-height: 0.5 !important;
+    }
+
     .time_taken_css {
         border-left: 3px Solid #ff6060;
         width: 200px;
@@ -598,6 +602,7 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
             if (template_type == 2) {
                 $('input[type=radio]', this).prop("checked", true);
             } else {

@@ -102,6 +102,10 @@
     html {
         user-select: none;
     }
+
+    p:empty {
+        display: none;
+    }
 </style>
 
 <body class="login-body-bg" id="main-body">

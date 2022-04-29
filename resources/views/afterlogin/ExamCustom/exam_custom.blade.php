@@ -592,14 +592,25 @@ $userData = Session::get('user_data');
       },
       success: function(result) {
 
-        $("#topic_section_" + chapt_id + " div").remove();
+        /*$("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
-        /* $("#topic_section_" + chapt_id).html(result); */
-        //$('#myTabContent .slick-slider').slick('refresh');
         $("#chapter_" + chapt_id + ' .slick-slider').slick('refresh');
 
         $('#overlay').fadeOut();
-        $('#topic_form').show();
+        $('#topic_form').show(); */
+
+          var slick_id = "#topic_section_" + chapt_id;
+          destroyCarousel(slick_id); // destroy slick slider first
+
+          $("#topic_section_" + chapt_id + " div").remove();
+          $("#topic_section_" + chapt_id).html(result);
+
+          applySlider(slick_id); // apply slick slider again
+
+          $('#overlay').fadeOut();
+          $('#topic_form').show();
+          // scroll_topic(chapt_id, sub_id);
+          $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
 
       }
     });
