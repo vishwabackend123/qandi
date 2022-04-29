@@ -144,7 +144,7 @@ $questtype='radio';
                                             @endforeach
                                             @endif
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
-                                                <span id="avg_text">Average Time :</span>
+                                                <span id="avg_text" class="avg-time">Average Time :</span>
                                                 <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                     <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                                                     <div id="percentBar_{{$activeq_id}}"></div>

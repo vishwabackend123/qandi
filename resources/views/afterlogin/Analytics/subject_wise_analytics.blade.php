@@ -1016,7 +1016,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
      }
 
     $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").click(function(){
-       $(this).css("pointer-events","none");
+       $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","none");
     });
     
     $(".arrowClose").click(function(){
