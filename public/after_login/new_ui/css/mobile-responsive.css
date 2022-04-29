@@ -388,6 +388,9 @@
 .live-exam .cust-tab-content {
     padding: 10px !important;
 }
+.list-series .live-exam .speci-text li a button {
+    width: 100% !important;
+}
 }
 @media(max-width:550px){
     .backbtn {
