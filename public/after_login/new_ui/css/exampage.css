@@ -308,6 +308,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     border-radius: 56px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     padding-bottom: 10px !important;
+    margin-bottom: 0xp !important;;
+    height: calc(100vh - 60px);
+}
+#exam_content_sec .justify-content-center{
+    justify-content: initial !important;
 }
 
 .examSect .rightSectH {
@@ -581,9 +586,10 @@ a.clearRes:hover {
     /*height: 310px;
     overflow: auto;
     overflow-x: hidden;*/
-    height: 290px;
+    /* height: 290px; */
     overflow-y: auto;
     overflow-x: hidden;
+    height: calc(90vh - 200px);
 }
 
 .question-block::-webkit-scrollbar {
