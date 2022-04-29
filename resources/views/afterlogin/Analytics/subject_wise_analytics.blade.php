@@ -53,7 +53,7 @@
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matrix</a>
                             </div>
-                            <a class="inner-arrow-right-btm" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <a class="inner-arrow-right-btm arrowClose" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="col-6 mb-2 px-2">
@@ -75,7 +75,7 @@
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matrix</a>
                             </div>
-                            <a class="inner-arrow-left-btm" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <a class="inner-arrow-left-btm arrowClose" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="col-6 px-2">
@@ -94,7 +94,7 @@
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matrix</a>
                             </div>
-                            <a class="inner-arrow-right-top" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <a class="inner-arrow-right-top arrowClose" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="col-6 px-2">
@@ -113,7 +113,7 @@
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
                                 <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matrix</a>
                             </div>
-                            <a class="inner-arrow-left-top" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <a class="inner-arrow-left-top arrowClose" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     @endif
@@ -1014,4 +1014,13 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
         var url = "{{ route('dashboard') }}";
         window.location.href=url;
      }
+
+    $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").click(function(){
+       $(this).css("pointer-events","none");
+    });
+    
+    $(".arrowClose").click(function(){
+       $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","auto");
+    });
+    
 </script>
