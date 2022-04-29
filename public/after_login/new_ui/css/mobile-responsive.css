@@ -365,7 +365,29 @@
     .active_user {
         margin-bottom: 0px !important;
     }
-
+    .live-exam .speci-text {
+    display: grid;
+}
+.live-exam-list-wrapper.list-series .live-exam #home .speci-text li, .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li {
+    width: 100%!important;
+}
+.list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4) {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+.list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child {
+    width: 90% !important;
+}
+.live-exam .speci-text li {
+    line-height: 35px;
+}
+#home h4.py-3 {
+    padding: 15px 0px 15px !important;
+    margin: 0;
+}
+.live-exam .cust-tab-content {
+    padding: 10px !important;
+}
 }
 @media(max-width:550px){
     .backbtn {

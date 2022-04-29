@@ -4,7 +4,19 @@
     }
 }
 @media screen and (max-width:1199px){
-
+    .live-exam #home .speci-text li:last-child {
+    margin: 0;
+}
+    .live-exam .speci-text {
+    display: flex;
+}
+.list-series .live-exam #home .speci-text li {
+    width: auto;
+    flex: 1;
+}
+    .live-exam .sub-details {
+    padding: 0;
+}
     #test_instruction .col-lg-4.flex-column.justify-content-center{
         width: 90%;
         margin-top: 10px;
@@ -254,6 +266,9 @@
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    .live-exam .speci-text {
+    display: inline-block;
+}
     .dashboard-cards-block.matrixpage-wrapper .bg-white>small p{right:0px;}
     .matrixpage-wrapper  .course-star li strong,.matrixpage-wrapper .star-img {
         width: auto!important;
