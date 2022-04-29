@@ -1123,6 +1123,18 @@ $userData = Session::get('user_data');
             var exporting = {
                 enabled: false
             };
+            var plotOptions= {
+                
+                series: {
+                    events: {
+                        legendItemClick: function() {
+                            return false;
+                        }
+                    }
+
+                }
+
+            };
             var json = {};
             json.title = title;
             json.subtitle = subtitle;
@@ -1133,6 +1145,7 @@ $userData = Session::get('user_data');
             json.series = series;
             json.credits = credits;
             json.exporting = exporting;
+            json.plotOptions = plotOptions;
             $('.progressChart').highcharts(json);
             $('.progressChartExpend').highcharts(json);
         });
