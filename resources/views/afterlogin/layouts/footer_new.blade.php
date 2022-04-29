@@ -945,8 +945,6 @@
             !$(e.target).is('#submenu') &&
             menu_opened === true) {
             $('#submenu').collapse('toggle');
-            $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
-            $(".dash-nav-link a:first-child").addClass("active-navlink");
         }
         var menu_opened = $('#submenu2').hasClass('show');
 
@@ -1702,39 +1700,6 @@
     $('.openSharefrnd').click(function(event) {
         var validator = $( "#referalStudent_form" ).validate();
         validator.resetForm();
-         $('#referEmails').val("");
-         $('#errRef_auth').css('display','none');
-         if($(this).hasClass('popupopen'))
-         {
-            $(this).removeClass('popupopen');
-            $(".dash-nav-link a:last-child").removeClass("active-navlink");
-            $(".dash-nav-link a:first-child").addClass("active-navlink");
-         }else
-         {
-            $(this).addClass('popupopen');
-         }
-
-    });
-    $('.refereModel').on('click', '.btn-close', function(event){
-        event.stopPropagation();
-        $(".dash-nav-link a:last-child").removeClass("active-navlink");
-        $(".dash-nav-link a:first-child").addClass("active-navlink");
-    });
-    $('.practiceClass').click(function(){
-        var url = window.location.pathname.split("/");
-        var pathurl = url[2];
-        if (pathurl=='dashboard') {
-             if($(this).hasClass('practiceopen'))
-             {
-                $(this).removeClass('practiceopen');
-                $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
-                $(".dash-nav-link a:first-child").addClass("active-navlink");
-             }else
-             {
-                $(this).addClass('practiceopen');
-             }
-        }
-       
     });
 
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
