@@ -846,6 +846,8 @@
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").toggle();
+
+
         });
 
     });
@@ -888,6 +890,7 @@
 
             $(".subscription").toggle();
             $(".leader-board").hide();
+            $("#search_field").val('');
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").hide();
@@ -903,6 +906,7 @@
             $(".log-out-screen").toggle();
             $(".subscription").hide();
             $(".leader-board").hide();
+            $("#search_field").val('');
             $(".edit-form").hide();
             $(".profile-show").hide();
         });
@@ -1481,6 +1485,7 @@
     $(document).ready(function() {
         $('#EdiTbtnnn').click(function() {
             $('#LeaDer').hide();
+            $("#search_field").val('');
         });
     });
 </script>
@@ -1602,11 +1607,11 @@
 
     });
     /*Refer Friend*/
-        $('.btn-close').click(function() {
-            $('#referEmails').val('');
-             validator.resetForm();
-        });
-        /*Refer Friend*/
+    $('.btn-close').click(function() {
+        $('#referEmails').val('');
+        validator.resetForm();
+    });
+    /*Refer Friend*/
 </script>
 <!-- end planner section move from dashboard -->
 <script>
@@ -1698,7 +1703,7 @@
         $(".dash-nav-link a:first-child").removeClass("active-navlink");
     });
     $('.openSharefrnd').click(function(event) {
-        var validator = $( "#referalStudent_form" ).validate();
+        var validator = $("#referalStudent_form").validate();
         validator.resetForm();
     });
 
