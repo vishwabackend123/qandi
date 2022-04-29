@@ -1200,7 +1200,7 @@
 
     .live-exam #home .speci-text li:last-child button {
         float: left !important;
-        width: 55% !important;
+        width: 100% !important;
     }
 
     .list-series .live-exam .speci-text li a button {
