@@ -9153,3 +9153,7 @@ div#exportAnalytics {transition: none !important;}
     max-width: 25%;
     min-width: 25%; 
 }
+
+div#trialbox {
+    z-index: 9999;
+}
