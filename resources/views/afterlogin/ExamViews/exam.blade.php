@@ -132,7 +132,7 @@ $questtype='radio';
                                 <div id="question_section" class="">
                                     <div class="d-flex" id="pause-start">
                                         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
-                                            <span id="avg_text">Average Time :</span>
+                                            <span id="avg_text" class="avg-time">Average Time :</span>
                                             <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                                                 <div id="percentBar_{{$activeq_id}}"></div>
@@ -862,7 +862,23 @@ $questtype='radio';
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
         var cur_quest_no = $('#current_question_no').val();
-        clearResponse(quest_id, subject_id, cur_quest_no);
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + quest_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
+        if (option_id.length > 0) {
+            clearResponse(quest_id, subject_id, cur_quest_no);
+        }
 
         $.ajax({
             url: "{{ route('markforreview') }}",

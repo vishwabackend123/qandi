@@ -122,7 +122,7 @@ $questtype='radio';
                                     <div>
                                         <div class="d-flex" id="pause-start">
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
-                                                <span id="avg_text">Average Time :</span>
+                                                <span id="avg_text" class="avg-time">Average Time :</span>
                                                 <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                     <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                                                     <div id="percentBar_{{$activeq_id}}"></div>
@@ -490,7 +490,7 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
+        /* document.oncontextmenu = function() {
             return false;
         };
 
@@ -500,7 +500,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        });
+        }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -739,18 +739,7 @@ $questtype='radio';
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
-    /* per question timer */
-    /*  var setEachQuestionTimeNext_countdown;
-     var totalSeconds = -1;
 
-     function setEachQuestionTime() {
-         setEachQuestionTimeNext_countdown = setInterval(function() {
-             ++totalSeconds;
-             $('.timespend_first').val(totalSeconds);
-
-
-         }, 1000);
-     } */
     /* per question timer */
     var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
     var fsec = time_allowed * 60;
@@ -855,8 +844,23 @@ $questtype='radio';
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
         var cur_quest_no = $('#current_question_no').val();
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
 
-        clearResponse(quest_id, subject_id, cur_quest_no);
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + quest_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
+        if (option_id.length > 0) {
+            clearResponse(quest_id, subject_id, cur_quest_no);
+        }
 
         $.ajax({
             url: "{{ route('markforreview') }}",
@@ -951,10 +955,23 @@ $questtype='radio';
 
     function saveAnswerAjax(question_id, qNo) {
         var question_id = question_id;
+        var isValid = 0;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+        var current_subject_id = $("#current_subject_id").val();
+        var current_section_id = $("#current_section_id").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html("Please select your response.");
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -964,7 +981,6 @@ $questtype='radio';
             }, 8000);
             return false;
         }
-
         var q_submit_time = $("#timespend_" + question_id).val();
         $.ajax({
             url: "{{ route('saveAnswer') }}",
@@ -983,17 +999,28 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
+
+                    isValid = 1;
                     return true;
+                } else {
+                    isValid = 0;
                 }
             },
+            async: false
         });
-
+        if (isValid == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswerAjax(quest_id, '') != false) {
+        var current_question_no = $("#current_question_no").val();
+        var response = saveAnswerAjax(quest_id, current_question_no);
+        if (response != false) {
 
             // marking for review
             $.ajax({
@@ -1028,11 +1055,24 @@ $questtype='radio';
     }
 
     function clearResponse(quest_id, subject_id, qNo) {
-
         var response = [];
-        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            response = $(this).prop('checked', false);
-        });
+        var current_question_type = $("#current_question_type").val();
+        var current_subject_id = $("#current_subject_id").val();
+        var current_section_id = $("#current_section_id").val();
+
+        if (current_question_type == 11) {
+            var response = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                response.push($("#quest_option_" + question_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                response = $(this).prop('checked', false);
+            });
+        }
+
+
 
         if (response.length == 0) {
             $('#qoption_err_' + quest_id).html("No option has been selected to clear.");

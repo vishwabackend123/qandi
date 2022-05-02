@@ -94,7 +94,7 @@
             </svg>
             <span class="hoverlink">Dashboard</span>
         </a>
-        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample" class="practiceClass">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
                 <defs>
                     <style>
@@ -430,13 +430,13 @@
 <!-- Modal -->
 <div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0 bg-light">
+        <div class="modal-content rounded-0 bg-light refereModel">
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close">
                     <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}">
                 </button>
             </div>
-            <div class="modal-body pt-0 px-5 refereModel ">
+            <div class="modal-body pt-0 px-5 ">
                 <form id="referalStudent_form" action="{{route('store_referral')}}" method="POST">
                     @csrf
                     <div class="text-center">

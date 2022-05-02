@@ -1083,6 +1083,11 @@ $userData = Session::get('user_data');
         var url = "{{ route('dashboard') }}";
         window.location.href=url;
     }
+
+    $(window).load(function(){
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+    });
+
 </script>
 
 @endsection

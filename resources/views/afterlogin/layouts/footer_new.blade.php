@@ -846,6 +846,8 @@
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").toggle();
+
+
         });
 
     });
@@ -888,6 +890,7 @@
 
             $(".subscription").toggle();
             $(".leader-board").hide();
+            $("#search_field").val('');
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").hide();
@@ -903,6 +906,7 @@
             $(".log-out-screen").toggle();
             $(".subscription").hide();
             $(".leader-board").hide();
+            $("#search_field").val('');
             $(".edit-form").hide();
             $(".profile-show").hide();
         });
@@ -944,6 +948,18 @@
         if (!$(e.target).closest('#submenu').length &&
             !$(e.target).is('#submenu') &&
             menu_opened === true) {
+            var url = window.location.pathname.split("/");
+            var pathurl = url[2];
+            if (pathurl=='overall_analytics') {
+              $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+              $(".dash-nav-link a:first-child").removeClass("active-navlink");
+              $('.practiceClass').removeClass('practiceopen');
+            }else{
+              $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+              $(".dash-nav-link a:first-child").addClass("active-navlink");
+              $('.practiceClass').removeClass('practiceopen');
+            }
+            
             $('#submenu').collapse('toggle');
         }
         var menu_opened = $('#submenu2').hasClass('show');
@@ -1481,6 +1497,7 @@
     $(document).ready(function() {
         $('#EdiTbtnnn').click(function() {
             $('#LeaDer').hide();
+            $("#search_field").val('');
         });
     });
 </script>
@@ -1602,11 +1619,11 @@
 
     });
     /*Refer Friend*/
-        $('.btn-close').click(function() {
-            $('#referEmails').val('');
-             validator.resetForm();
-        });
-        /*Refer Friend*/
+    $('.btn-close').click(function() {
+        $('#referEmails').val('');
+        validator.resetForm();
+    });
+    /*Refer Friend*/
 </script>
 <!-- end planner section move from dashboard -->
 <script>
@@ -1689,17 +1706,95 @@
     });
     $('#sharefrnd').click(function(event) {
         event.stopPropagation();
-        $(".dash-nav-link a:last-child").removeClass("active-navlink");
-        $(".dash-nav-link a:first-child").addClass("active-navlink");
+        var url = window.location.pathname.split("/");
+        var pathurl = url[2];
+        if (pathurl=='overall_analytics') {
+            $(".dash-nav-link a:last-child").removeClass("active-navlink");
+            $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        }else
+        {
+            $(".dash-nav-link a:last-child").removeClass("active-navlink");
+            $(".dash-nav-link a:first-child").addClass("active-navlink");    
+        }
+        
     });
     $('.refereModel').click(function(event) {
         event.stopPropagation();
-        $(".dash-nav-link a:last-child").addClass("active-navlink");
-        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        var url = window.location.pathname.split("/");
+        var pathurl = url[2];
+        if (pathurl=='overall_analytics') {
+            $(".dash-nav-link a:last-child").removeClass("active-navlink");
+            $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        }else
+        {
+            $(".dash-nav-link a:last-child").addClass("active-navlink");
+            $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        }
+        
     });
-    $('.openSharefrnd').click(function(event) {
+     $('.openSharefrnd').click(function(event) {
         var validator = $( "#referalStudent_form" ).validate();
         validator.resetForm();
+         $('#referEmails').val("");
+         $('#errRef_auth').css('display','none');
+         if($(this).hasClass('popupopen'))
+         {
+            $(this).removeClass('popupopen');
+            var url = window.location.pathname.split("/");
+            var pathurl = url[2];
+            if (pathurl=='overall_analytics') {
+                $(".dash-nav-link a:last-child").removeClass("active-navlink");
+                $(".dash-nav-link a:first-child").removeClass("active-navlink");
+            }else
+            {
+              $(".dash-nav-link a:last-child").removeClass("active-navlink");
+              $(".dash-nav-link a:first-child").addClass("active-navlink");
+            }
+            
+         }else
+         {
+            $(this).addClass('popupopen');
+         }
+    });
+    $('.refereModel').on('click', '.btn-close', function(event){
+        event.stopPropagation();
+        var url = window.location.pathname.split("/");
+        var pathurl = url[2];
+        if (pathurl=='overall_analytics') {
+            $(".dash-nav-link a:last-child").removeClass("active-navlink");
+            $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        }else
+        {
+          $(".dash-nav-link a:last-child").removeClass("active-navlink");
+          $(".dash-nav-link a:first-child").addClass("active-navlink");  
+        }
+        
+    });
+    $('.practiceClass').click(function(){
+        var url = window.location.pathname.split("/");
+        var pathurl = url[2];
+        if (pathurl=='dashboard') {
+             if($(this).hasClass('practiceopen'))
+             {
+                $(this).removeClass('practiceopen');
+                $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+                $(".dash-nav-link a:first-child").addClass("active-navlink");
+             }else
+             {
+                $(this).addClass('practiceopen');
+             }
+        }else if (pathurl=='overall_analytics') {
+            if($(this).hasClass('practiceopen'))
+             {
+                $(this).removeClass('practiceopen');
+                $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+                $(".dash-nav-link a:first-child").removeClass("active-navlink");
+             }else
+             {
+                $(this).addClass('practiceopen');
+             }
+        }
+       
     });
 
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
