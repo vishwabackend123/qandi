@@ -9168,4 +9168,4 @@ div#trialbox {
     border-radius: 56px;
     margin: 10px;
 }
-.matrixpage-wrapper  .course-star li span.w-auto.star-img{width:80px!important;}
+.matrixpage-wrapper  .course-star li span.w-auto.star-img{min-width:80px!important;}
