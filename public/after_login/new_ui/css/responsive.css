@@ -275,6 +275,10 @@
     }
 
     .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span {
+<<<<<<< HEAD
+=======
+
+>>>>>>> c156d2e0259e35bdaf0d7cb982918ab788b80559
         padding: 0 2px !important;
         font-size: 13px;
     }
@@ -1040,9 +1044,9 @@
         border-top-right-radius: 56px !important;
     }
 
-    .list-series .scroll-div-live-exm {
+    /* .list-series .scroll-div-live-exm {
         height: 400px !important;
-    }
+    } */
 
     span.px-3 img {
         width: 35px;
@@ -1204,7 +1208,7 @@
 
     .live-exam #home .speci-text li:last-child button {
         float: left !important;
-        width: 55% !important;
+        width: 100% !important;
     }
 
     .list-series .live-exam .speci-text li a button {
@@ -1941,9 +1945,9 @@
             display: none;
         }
 
-        .list-series .scroll-div-live-exm {
+        /* .list-series .scroll-div-live-exm {
             height: 320px !important;
-        }
+        } */
 
         .live-exam #home .speci-text li:last-child button {
             width: 100% !important;

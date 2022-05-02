@@ -1,4 +1,6 @@
 @media(max-width:767px){
+    .custom-page .cust-tab-content{padding-bottom: 30px!important;}
+
     .question-block{height:250px;}
     .tab-btn-box{padding:0px}
     .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
@@ -267,7 +269,7 @@
         .first_screen {
             width: 217px;
             max-height: 182px;
-            overflow: scroll;
+            overflow-y: scroll;
         }
         .review_expand {
             right: 13%;
@@ -305,12 +307,61 @@
         li.a2TS {width: 20%!important;}
         li.a3TS {width: 15% !important;}
         .practice-series-lists.list-series .live-exam .speci-text li.a4TS{width:100%;}
-        
+        .no-of-persent {
+            font-size: 13px;
+        }
+        .persent_std {
+            display: block;
+            text-align: center;
+        }
+        .no-of-persent {
+            font-size: 16px;
+            display: block;
+        }
 
+        .attend {
+            font-size: 11px;
+            padding-left: 0px;
+        }
+        .result-list .d-flex.justify-content-between {
+            padding: 10px !important;
+        }
+      .result-list  .result-review {
+            font-size: 12px !important;
+        }
+        .result-list  #scroll-mobile {
+            overflow-x: auto;
+        }
     }
 
-
+@media(max-width:700px){
+   .result-list .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+.morning-slot {
+    display: block !important;
+}
+.slbs-link.ms-5 {
+    margin-left: 0.5rem!important;
+}
+#attempted .score-show {
+    max-width: 100%;
+    border: 0;
+}
+.result-list-btns {
+    margin-top: 10px;
+}
+}
 @media(max-width:576px){
+    .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        font-size: 12px;
+    }
+    .compLeteS .star-ratings-css{margin-left:0px;}
+    .scroll-div .compLeteS div.d-flex.px-4{padding-left:5px!important;}
+    .d-flex.px-4.py-2.align-items-center.justify-content-between form{width: 62%;margin-top:6px;}
     ul.chapter-topic-menu li a{font-size: 14px;}
     .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
     .matrixpage-wrapper .topics-box {
@@ -349,7 +400,32 @@
     .active_user {
         margin-bottom: 0px !important;
     }
-
+    .live-exam .speci-text {
+    display: grid;
+}
+.live-exam-list-wrapper.list-series .live-exam #home .speci-text li, .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li {
+    width: 100%!important;
+}
+.list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4) {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+.list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child {
+    width: 90% !important;
+}
+.live-exam .speci-text li {
+    line-height: 35px;
+}
+#home h4.py-3 {
+    padding: 15px 0px 15px !important;
+    margin: 0;
+}
+.live-exam .cust-tab-content {
+    padding: 10px !important;
+}
+.list-series .live-exam .speci-text li a button {
+    width: 100% !important;
+}
 }
 @media(max-width:550px){
     .backbtn {

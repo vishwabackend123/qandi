@@ -27,12 +27,13 @@ li.a3TS {
     width: 15% !important;
 }
 .btn-topic:hover {
-    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
+    box-shadow: 0 3px 10px 0 rgba(255,255,255,0.8) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
-    height: 310px !important;
+    /* height: 310px !important; */
     overflow-y: auto !important;
 	overflow-x: hidden;
+    padding-right: 5px;
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
@@ -307,6 +308,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     border-radius: 56px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     padding-bottom: 10px !important;
+    margin-bottom: 0xp !important;;
+    height: calc(100vh - 60px);
+}
+#exam_content_sec .justify-content-center{
+    justify-content: initial !important;
 }
 
 .examSect .rightSectH {
@@ -433,8 +439,6 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 .cust-tab-content .custom-btn-gray {
     border: none;
     outline: none;
-    /* width: 216px; */
-    /* height: 60px; */
     color: #2c3348;
     font-size: 18px;
     border-radius: 20px !important;
@@ -491,6 +495,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .test-review-right .bg-white.d-flex.flex-column.mb-4 {
     padding:0px !important;
+   height: calc(100vh - 141px) !important;
 }
 .padding_26{
     padding: 26px !important;
@@ -579,9 +584,10 @@ a.clearRes:hover {
     /*height: 310px;
     overflow: auto;
     overflow-x: hidden;*/
-    height: 290px;
+    /* height: 290px; */
     overflow-y: auto;
     overflow-x: hidden;
+    height: calc(90vh - 200px);
 }
 
 .question-block::-webkit-scrollbar {
@@ -843,7 +849,7 @@ a.clearRes:hover {
  
  @media (min-width: 1200px) and (max-width: 1300px){
 .custom-page .cust-tab-content .scroll-div {
-    height: 275px !important;
+    /* height: 275px !important; */
     overflow-y: auto !important;
     overflow-x: hidden;
 }
@@ -967,10 +973,25 @@ a.clearRes:hover {
 
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
-
+.custom-page .cust-tab-content .scroll-div {
+   max-height: calc(100vh - 323px) !important;}
 .question p {
     padding-left: 13px;
 }
 .ans .question p {
     padding: 0;
 }
+
+
+.examSect  button.arrow.prev-arow{left: 30px;
+    top: 100px;  position: absolute;
+}
+
+.examSect  button.arrow.next-arow {
+    right: -6px;
+    position: absolute;
+    top: 100px;
+  
+} 
+
+
