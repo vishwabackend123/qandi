@@ -949,7 +949,7 @@
             !$(e.target).is('#submenu') &&
             menu_opened === true) {
             var url = window.location.pathname.split("/");
-            var pathurl = url[2];
+            var pathurl = url[1];
             if (pathurl=='overall_analytics') {
               $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
               $(".dash-nav-link a:first-child").removeClass("active-navlink");
@@ -1707,7 +1707,7 @@
     $('#sharefrnd').click(function(event) {
         event.stopPropagation();
         var url = window.location.pathname.split("/");
-        var pathurl = url[2];
+        var pathurl = url[1];
         if (pathurl=='overall_analytics') {
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
             $(".dash-nav-link a:first-child").removeClass("active-navlink");
@@ -1720,16 +1720,8 @@
     });
     $('.refereModel').click(function(event) {
         event.stopPropagation();
-        var url = window.location.pathname.split("/");
-        var pathurl = url[2];
-        if (pathurl=='overall_analytics') {
-            $(".dash-nav-link a:last-child").removeClass("active-navlink");
-            $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        }else
-        {
-            $(".dash-nav-link a:last-child").addClass("active-navlink");
-            $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        }
+        $(".dash-nav-link a:last-child").addClass("active-navlink");
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
         
     });
      $('.openSharefrnd').click(function(event) {
@@ -1741,7 +1733,7 @@
          {
             $(this).removeClass('popupopen');
             var url = window.location.pathname.split("/");
-            var pathurl = url[2];
+            var pathurl = url[1];
             if (pathurl=='overall_analytics') {
                 $(".dash-nav-link a:last-child").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").removeClass("active-navlink");
@@ -1759,7 +1751,7 @@
     $('.refereModel').on('click', '.btn-close', function(event){
         event.stopPropagation();
         var url = window.location.pathname.split("/");
-        var pathurl = url[2];
+        var pathurl = url[1];
         if (pathurl=='overall_analytics') {
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
             $(".dash-nav-link a:first-child").removeClass("active-navlink");
@@ -1772,7 +1764,7 @@
     });
     $('.practiceClass').click(function(){
         var url = window.location.pathname.split("/");
-        var pathurl = url[2];
+        var pathurl = url[1];
         if (pathurl=='dashboard') {
              if($(this).hasClass('practiceopen'))
              {
