@@ -1016,11 +1016,17 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
      }
 
     $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").click(function(){
-       $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","none");
+        $(this).siblings(".arrow-right-btm-content").addClass("openTopicPara");
+        if( $(".arrow-right-btm-content").hasClass("openTopicPara") ){
+            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","none");
+        }
     });
     
     $(".arrowClose").click(function(){
-       $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","auto");
+        $(".arrow-right-btm-content").removeClass("openTopicPara");
+        if( !$(".arrow-right-btm-content").hasClass("openTopicPara") ){
+            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","auto");
+        }
     });
     
 </script>
