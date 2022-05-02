@@ -1734,6 +1734,7 @@ ul.matrixLists li b {
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
+    z-index: 9999;
 }
 
 /******* New dashboard Amit-End ******/
@@ -9169,4 +9170,4 @@ div#trialbox {
     border-radius: 56px;
     margin: 10px;
 }
-.matrixpage-wrapper  .course-star li span.w-auto.star-img{width:80px!important;}
+.matrixpage-wrapper  .course-star li span.w-auto.star-img{min-width:80px!important;}
