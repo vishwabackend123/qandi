@@ -93,7 +93,10 @@
     height: 10px;}
     .compLeteS .name-txt-sml{width: 57%;
         padding-right: 10px;font-size:14px;}
-        .custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:13px;} 
+        .custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:20px;} 
+        div.custom-page .star-ratings-css-top span {
+            font-size: 13px;
+        }
         
        
 }
@@ -101,7 +104,7 @@
 @media(min-width:1316px) and (max-width:1440px) {
   .garphlistincom+.garphlistincom{margin-left:8px;}
   .exam-analytics .abrv-graph{padding-right:2px;}
-    .pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span{
+    .pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span{
        
         font-size: 13px;
     }
@@ -271,10 +274,11 @@
         padding: 18px 11px;
     }
 
-    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,  .pe-1 .star-ratings-css-bottom span {
+    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span {
         padding: 0 2px !important;
         font-size: 13px;
     }
+    .course-star li span{font-size:13px;}
     .subscription .form-btns button {
         width: 230px;
        
@@ -1874,6 +1878,10 @@
         .slbs-link a {
             font-size: 15px;
         }
+        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head:first-child h4.text-center{text-align:left!important;}
+        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head{display: block!important;}
+        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head h4:nth-child(2){width:49%;display: inline-block;}
+        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head h4:last-child{width:50%;display: inline-block;}
     }
 
     @media (max-width:525px) {

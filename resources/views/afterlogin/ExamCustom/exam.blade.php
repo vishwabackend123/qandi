@@ -1,9 +1,12 @@
 @extends('afterlogin.layouts.app_new')
-<script type = "text/javascript" >  
-    function preventBack() { window.history.forward(); }  
-    setTimeout("preventBack()", 0);  
-    window.onunload = function () { null }; 
-     
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
 </script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
@@ -154,7 +157,7 @@ $questtype='radio';
                                 <div id="question_section" class="">
                                     <div class="d-flex" id="pause-start">
                                         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
-                                            <span id="avg_text">Average Time :</span>
+                                            <span id="avg_text" class="avg-time">Average Time :</span>
                                             <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                                                 <div id="percentBar_{{$activeq_id}}"></div>
@@ -204,7 +207,7 @@ $questtype='radio';
                                             @endif
                                             @elseif($template_type==11)
                                             <div class="col-md-6 mb-4">
-                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
 
                                             </div>
                                             @endif
@@ -337,7 +340,7 @@ $questtype='radio';
                                     <div class="col col-lg-4">
                                         <div>
                                             <small>No. of Questions</small>
-                                            <span class="d-block"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
+                                            <span class="d-block inst-text"><span>{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>
                                     <div class="col col-lg-4">
@@ -349,7 +352,7 @@ $questtype='radio';
                                     <div class="col col-lg-4">
                                         <div>
                                             <small>Duration</small>
-                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
+                                            <span class="d-block inst-text"><span>{{$exam_fulltime}}</span> Minutes</span>
                                         </div>
                                     </div>
                                 </div>
@@ -503,6 +506,7 @@ $questtype='radio';
     });
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
             if (template_type == 2) {
                 $('input[type=radio]', this).prop("checked", true);
             } else {
@@ -880,8 +884,23 @@ $questtype='radio';
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
         var cur_quest_no = $('#current_question_no').val();
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
 
-        clearResponse(quest_id, subject_id, cur_quest_no);
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + quest_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
+        if (option_id.length > 0) {
+            clearResponse(quest_id, subject_id, cur_quest_no);
+        }
 
         $.ajax({
             url: "{{ route('markforreview') }}",

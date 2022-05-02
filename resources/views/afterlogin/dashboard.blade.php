@@ -514,8 +514,10 @@ $userData = Session::get('user_data');
                             @if(isset($sVal->subject_thumbnail_image_path) && !empty($sVal->subject_thumbnail_image_path))
                             <img src="{{isset($sVal->subject_thumbnail_image_path)?$sVal->subject_thumbnail_image_path:''}}">
                             @else
+                            <span>
                             <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                            </span>
                             @endif
 
                             <div>
@@ -1121,6 +1123,18 @@ $userData = Session::get('user_data');
             var exporting = {
                 enabled: false
             };
+            var plotOptions= {
+                
+                series: {
+                    events: {
+                        legendItemClick: function() {
+                            return false;
+                        }
+                    }
+
+                }
+
+            };
             var json = {};
             json.title = title;
             json.subtitle = subtitle;
@@ -1131,6 +1145,7 @@ $userData = Session::get('user_data');
             json.series = series;
             json.credits = credits;
             json.exporting = exporting;
+            json.plotOptions = plotOptions;
             $('.progressChart').highcharts(json);
             $('.progressChartExpend').highcharts(json);
         });

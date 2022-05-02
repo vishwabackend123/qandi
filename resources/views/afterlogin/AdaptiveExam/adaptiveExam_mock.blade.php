@@ -135,7 +135,7 @@ $questtype='radio';
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
                                     <div>
-                                        <div class="d-flex" id="pause-start">
+                                        <div class="d-flex align-items-center" id="pause-start">
                                             @if(isset($aSections) && !empty($aSections))
                                             @foreach($aSections as $section)
                                             @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
@@ -144,7 +144,7 @@ $questtype='radio';
                                             @endforeach
                                             @endif
                                             <div id="counter_{{$activeq_id}}" class="counter  d-flex">
-                                                <span id="avg_text">Average Time :</span>
+                                                <span id="avg_text" class="avg-time">Average Time :</span>
                                                 <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
                                                     <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                                                     <div id="percentBar_{{$activeq_id}}"></div>
@@ -187,7 +187,7 @@ $questtype='radio';
                                                 @endif
                                                 @elseif($template_type==11)
                                                 <div class="col-md-6 mb-4">
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
 
                                                 </div>
                                                 @endif
@@ -587,7 +587,9 @@ $questtype='radio';
 
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
+            var template_type = $("#current_question_type").val();
             if (template_type == 2) {
+
                 $('input[type=radio]', this).prop("checked", true);
             } else {
                 var $checks = $(this).find('input[type=checkbox]');
@@ -859,8 +861,23 @@ $questtype='radio';
     /* mark or review */
     function markforreview(quest_id, subject_id, chapt_id) {
         var cur_quest_no = $('#current_question_no').val();
+        var option_id = [];
+        var current_question_type = $("#current_question_type").val();
 
-        clearResponse(quest_id, subject_id, cur_quest_no);
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + quest_id).val());
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+        }
+        if (option_id.length > 0) {
+            clearResponse(quest_id, subject_id, cur_quest_no);
+        }
 
         $.ajax({
             url: "{{ route('markforreview') }}",
@@ -967,6 +984,7 @@ $questtype='radio';
 
     function saveAnswerAjax(question_id, qNo) {
         var question_id = question_id;
+        var isValid = 1;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
         var current_subject_id = $("#current_subject_id").val();
@@ -994,6 +1012,7 @@ $questtype='radio';
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1001,7 +1020,9 @@ $questtype='radio';
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
-                q_submit_time: q_submit_time
+                q_submit_time: q_submit_time,
+                current_subject_id: current_subject_id,
+                current_section_id: current_section_id,
             },
             beforeSend: function() {
                 //$('.loader-block').show();
@@ -1011,17 +1032,41 @@ $questtype='radio';
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
-                    return true;
+
+                    if ($("#quesnext" + question_id).is(":disabled") == true) {
+
+                        $("#submitExam").click();
+                    } else {
+                        $("#quesnext" + question_id).click();
+
+                    }
+                    isValid = 1;
+
+                } else if (response.status == 400) {
+                    alert(response.message);
+                    isValid = 0;
+
                 }
             },
+            async: false
         });
 
+        if (isValid == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
-        if (saveAnswerAjax(quest_id, '') != false) {
+        var current_question_no = $("#current_question_no").val();
+        var response = saveAnswerAjax(quest_id, current_question_no);
+
+
+        if (response != false) {
+
 
             // marking for review
             $.ajax({
@@ -1044,13 +1089,7 @@ $questtype='radio';
 
                 },
             });
-            if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
-                $("#submitExam").click();
-            } else {
-                $("#quesnext" + quest_id).click();
-
-            }
             return true;
         }
     }

@@ -530,8 +530,8 @@ class ExamCustomController extends Controller
             Redis::set('custom_answer_time_' . $user_id, json_encode($redisArray));
 
             $response['status'] = 200;
-            /*  $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
-            $response['max_attempt_limit'] = $max_attempt_limit; */
+            $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
+            $response['max_attempt_limit'] = $max_attempt_limit;
             $response['message'] = "save response successfully";
 
 

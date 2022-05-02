@@ -17,7 +17,15 @@ button {
 }
 
 .report-block2.p-6>p.text-center.mt-5.pt-5{word-break: break-word;}
-.profile-section ul li a{display: block;padding: 15px;}
+.arrow-right-btm-content.collapse{display:none!important;}
+.arrow-right-btm-content.collapse.openTopicPara{display:block!important;}
+.avg-time{margin-top:-4px;}
+#home a.btn.btn-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px rgba(18, 195, 255, 0.6);background-color: rgba(76, 185, 249, 0.1);color: #12c3ff;font-size: 14px;padding: 6px 15px 6px 24px;text-transform: capitalize;text-align: left;position: relative;}
+#home a.btn.btn-primary.btn-sm.sectionBtn:before {content: '';position: absolute;height: 8px;width: 8px;border-radius: 100%;background-color: #12c3ff;top: 12px;left: 10px;}
+#home a.btn.btn-outline-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px #f6f9fd;background-color: #f6f9fd;color: #6b707f;font-size: 14px;padding: 6px 15px;text-transform: capitalize;text-align: left;}
+
+ul.leaderNameBlock-search p:first-child{margin-left: 30px;}
+.profile-section ul li a{display: block;padding:18px 15px;}
 .practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
 #attempted .result-list-btns a{line-height: 34px;}
 .padd-right-0{padding-right:0!important;}
@@ -1330,7 +1338,7 @@ a#open-tab {
 }
 
 .profile-section ul li:hover {
-    background: #d0f3ff;
+    background: #e9e9e9;
 }
 
 .live-exam i.fa.fa-circle.text-danger.me-3 {
@@ -2748,10 +2756,10 @@ span.p-icons span:active {
 
 .chaptbox {
     height: auto;
-    max-height: 100px;
+    max-height: 117px;
     overflow-y: auto;
     overflow-x: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
     padding-right: 5px;
 }
 
@@ -3711,9 +3719,19 @@ button#button-addon2 {
 
 #FullTest_Exam_Panel_Interface_A button#bt-modal-confirm {
     border-radius: 15px !important;
+<<<<<<< HEAD
 
     box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
     background: #21ccff;
+=======
+ 
+    box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+    background: #21ccff;
+ 
+    /* box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    background: #00baff; */
+ 
+>>>>>>> 199803f9a020a05858aea1b05f886cee7bc0b3c2
     border: none;
     color: #fff;
     padding: 12px 25px;
@@ -4158,7 +4176,7 @@ div#select-planner-chapter button#add_chapter {
 
     border-radius: 15px;
     color: #000;
-
+    margin-top: 10px;
     background-color: rgba(33,204,255,0.18);
 
 }
@@ -5105,7 +5123,8 @@ button#goto-exam-btn {
     font-weight: normal;
     padding-left: 15px;
     display: inline-block;
-    width: 90%
+    width: 90%;
+    word-break: break-all;
 }
 
 .notification-right a {
@@ -5194,11 +5213,12 @@ span.bell-noti {
 
 .profile-section ul {
     padding-left: 0px;
+    margin-top: 18px
 }
 
 .profile-section ul li {
     list-style: none;
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
     /* padding: 15px; */
 }
 
@@ -6143,7 +6163,7 @@ p.success-img {
     top: 0;
     bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .dash-nav-link {
@@ -7711,7 +7731,7 @@ tspan {
     position: fixed;
     right: 0px;
     width: 95.5%;
-    z-index: 99;
+    z-index: 999;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
     /* backdrop-filter: blur(4px); */
@@ -9141,3 +9161,18 @@ div#exportAnalytics {transition: none !important;}
     max-width: 260px;
    
 }
+.col_min{
+    max-width: 25%;
+    min-width: 25%; 
+}
+
+div#trialbox {
+    z-index: 9999;
+}  
+
+
+.notification-txt {
+    border-radius: 56px;
+    margin: 10px;
+}
+.matrixpage-wrapper  .course-star li span.w-auto.star-img{width:80px!important;}

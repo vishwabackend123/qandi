@@ -94,7 +94,7 @@
             </svg>
             <span class="hoverlink">Dashboard</span>
         </a>
-        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a data-bs-toggle="collapse" href="#submenu" role="button" aria-expanded="false" aria-controls="collapseExample" class="practiceClass">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="70" viewBox="0 0 97 70">
                 <defs>
                     <style>
@@ -231,7 +231,7 @@
             </svg>
             <span class="hoverlink">Prepare</span>
         </a>
-        <a href="#" class="mt-auto" data-bs-toggle="modal" data-bs-target="#sharefrnd">
+        <a href="#" class="mt-auto openSharefrnd" data-bs-toggle="modal" data-bs-target="#sharefrnd">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99" height="70" viewBox="0 0 99 70">
                 <defs>
                     <style>
@@ -430,7 +430,7 @@
 <!-- Modal -->
 <div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0 bg-light">
+        <div class="modal-content rounded-0 bg-light refereModel">
             <div class="modal-header pb-0 border-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close">
                     <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}">
@@ -526,7 +526,7 @@
                             <p class="invalid-feedback m-0 alert-success  p-1 mb-1 successRef_copy"> </p>
                         </div>
                         <div class="re_link">
-                            <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" />
+                            <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly/>
                             <a class="copylinkbtn" type="button" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
                         </div>
                     </div>
@@ -543,7 +543,8 @@
 
     function stateHandle() {
         if (document.querySelector(".emaillink").value === "") {
-            button.disabled = true;
+            //button.disabled = true;
+            button.disabled = false;
         } else {
             button.disabled = false;
         }

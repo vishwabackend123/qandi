@@ -108,7 +108,7 @@ $questtype='radio';
         @endforeach
         @endif
         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-2 d-flex">
-            <span id="avg_text_{{$activeq_id}}">Average Time :</span>
+            <span id="avg_text_{{$activeq_id}}" class="avg-time">Average Time :</span>
             <div id="progressBar_{{$activeq_id}}" class="progressBar tiny-green ms-2">
                 <span class="seconds" id="seconds_{{$activeq_id}}"></span>
                 <div id="percentBar1_{{$activeq_id}}"></div>
@@ -154,7 +154,7 @@ $questtype='radio';
             @endif
             @elseif($template_type==11)
             <div class="col-md-6 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
 
             </div>
             @endif
