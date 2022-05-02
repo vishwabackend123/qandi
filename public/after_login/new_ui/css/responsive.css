@@ -1041,9 +1041,9 @@
         border-top-right-radius: 56px !important;
     }
 
-    .list-series .scroll-div-live-exm {
+    /* .list-series .scroll-div-live-exm {
         height: 400px !important;
-    }
+    } */
 
     span.px-3 img {
         width: 35px;
@@ -1942,9 +1942,9 @@
             display: none;
         }
 
-        .list-series .scroll-div-live-exm {
+        /* .list-series .scroll-div-live-exm {
             height: 320px !important;
-        }
+        } */
 
         .live-exam #home .speci-text li:last-child button {
             width: 100% !important;
