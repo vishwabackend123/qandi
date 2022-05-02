@@ -274,6 +274,7 @@
         padding: 0 2px !important;
         font-size: 13px;
     }
+    .course-star li span{font-size:13px;}
     .subscription .form-btns button {
         width: 230px;
        
