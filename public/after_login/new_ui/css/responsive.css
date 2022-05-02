@@ -104,7 +104,7 @@
 @media(min-width:1316px) and (max-width:1440px) {
   .garphlistincom+.garphlistincom{margin-left:8px;}
   .exam-analytics .abrv-graph{padding-right:2px;}
-    .pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span{
+    .pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span{
        
         font-size: 13px;
     }
@@ -274,10 +274,12 @@
         padding: 18px 11px;
     }
 
-    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,  .pe-1 .star-ratings-css-bottom span {
+    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span {
+
         padding: 0 2px !important;
         font-size: 13px;
     }
+    .course-star li span{font-size:13px;}
     .subscription .form-btns button {
         width: 230px;
        
@@ -1039,9 +1041,9 @@
         border-top-right-radius: 56px !important;
     }
 
-    .list-series .scroll-div-live-exm {
+    /* .list-series .scroll-div-live-exm {
         height: 400px !important;
-    }
+    } */
 
     span.px-3 img {
         width: 35px;
@@ -1940,9 +1942,9 @@
             display: none;
         }
 
-        .list-series .scroll-div-live-exm {
+        /* .list-series .scroll-div-live-exm {
             height: 320px !important;
-        }
+        } */
 
         .live-exam #home .speci-text li:last-child button {
             width: 100% !important;

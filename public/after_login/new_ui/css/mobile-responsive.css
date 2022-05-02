@@ -1,4 +1,6 @@
 @media(max-width:767px){
+    .custom-page .cust-tab-content{padding-bottom: 30px!important;}
+
     .question-block{height:250px;}
     .tab-btn-box{padding:0px}
     .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
@@ -321,17 +323,17 @@
             font-size: 11px;
             padding-left: 0px;
         }
-    .result-list .d-flex.justify-content-between {
-    padding: 10px !important;
-}
+        .result-list .d-flex.justify-content-between {
+            padding: 10px !important;
+        }
       .result-list  .result-review {
-    font-size: 12px !important;
-}
-  .result-list  #scroll-mobile {
-    overflow-x: auto;
-}
-
+            font-size: 12px !important;
+        }
+        .result-list  #scroll-mobile {
+            overflow-x: auto;
+        }
     }
+
 @media(max-width:700px){
    .result-list .d-flex.justify-content-between {
     flex-direction: column;
@@ -352,6 +354,14 @@
 }
 }
 @media(max-width:576px){
+    .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        font-size: 12px;
+    }
+    .compLeteS .star-ratings-css{margin-left:0px;}
+    .scroll-div .compLeteS div.d-flex.px-4{padding-left:5px!important;}
+    .d-flex.px-4.py-2.align-items-center.justify-content-between form{width: 62%;margin-top:6px;}
     ul.chapter-topic-menu li a{font-size: 14px;}
     .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
     .matrixpage-wrapper .topics-box {
