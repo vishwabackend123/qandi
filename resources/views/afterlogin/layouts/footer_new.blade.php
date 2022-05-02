@@ -1876,10 +1876,14 @@
             $("#LeaDer , .profile-show , .subscription-box").removeClass("showCard");
         } else if ($(".profile-section ul li:first-child").hasClass("active")) {
             $("#LeaDer , .profile-show").addClass("showCard");
-            $(".log-out-screen , .subscription-box").removeClass("showCard");
+            $(".log-out-screen , .subscription-box ").removeClass("showCard");
+            $(".edit-form").hide();
         }
     });
     $(".profile-picture-txt #EdiTbtnnn").click(function() {
         $("#LeaDer , .profile-show").removeClass("showCard");
     });
+    $("#editProfile_form #cancelEdit").click(function(){
+        $("#LeaDer , .profile-show").addClass("showCard");
+    })
 </script>
