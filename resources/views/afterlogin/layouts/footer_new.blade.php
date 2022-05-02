@@ -414,45 +414,6 @@
         });
     });
 
-    $(document).ready(function() {
-        jQuery("#nodificbell").click(function() {
-            refresh_notification();
-            jQuery("#collapsePlanner").hide();
-            jQuery("#collapseNotification").show();
-            jQuery("#profileAcc").hide();
-            jQuery("#profileAcc").removeClass('show');
-
-        });
-
-
-        jQuery("#plannCal").click(function() {
-            jQuery("#collapsePlanner").show();
-            jQuery("#collapseNotification").hide();
-            jQuery("#profileAcc").hide();
-            jQuery("#profileAcc").removeClass('show');
-        });
-        jQuery(".UserPro").click(function() {
-            jQuery("#collapsePlanner").hide();
-            jQuery("#collapseNotification").hide();
-            jQuery("#profileAcc").toggleClass('show');
-        });
-
-
-        function refresh_notification() {
-            $.ajax({
-                url: "{{ url('/refresh-notifications',) }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                success: function(response_data) {
-                    $('#recent_notify').html(response_data);
-
-                },
-            });
-        }
-
-    });
 
     document.getElementById("customRange").oninput = function() {
         $('#slide-input').html(this.value);
@@ -462,6 +423,7 @@
     };
 
     $(document).ready(function() {
+
 
         var today = new Date().toISOString().split('T')[0];
 
@@ -537,10 +499,10 @@
 
                 $('#count_spam_' + subject_id).text("(" + selected_count + ")");
             });
-
-
-
         }
+
+
+
         $("#StartDate").change(function() {
             var start_date = this.value;
             var date = new Date(start_date);
@@ -725,6 +687,46 @@
                 $('#leaderboard_box_div').show();
             }
         });
+
+        jQuery("#nodificbell").click(function() {
+            refresh_notification();
+            jQuery("#collapsePlanner").hide();
+            jQuery("#collapseNotification").show();
+            jQuery("#profileAcc").hide();
+            jQuery("#profileAcc").removeClass('show');
+
+        });
+
+
+        jQuery("#plannCal").click(function() {
+
+            $("#StartDate").trigger('change');
+            jQuery("#collapsePlanner").show();
+            jQuery("#collapseNotification").hide();
+            jQuery("#profileAcc").hide();
+            jQuery("#profileAcc").removeClass('show');
+        });
+        jQuery(".UserPro").click(function() {
+            jQuery("#collapsePlanner").hide();
+            jQuery("#collapseNotification").hide();
+            jQuery("#profileAcc").toggleClass('show');
+        });
+
+
+        function refresh_notification() {
+            $.ajax({
+                url: "{{ url('/refresh-notifications',) }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(response_data) {
+                    $('#recent_notify').html(response_data);
+
+                },
+            });
+        }
+
     });
 
 
@@ -950,16 +952,16 @@
             menu_opened === true) {
             var url = window.location.pathname.split("/");
             var pathurl = url[1];
-            if (pathurl=='overall_analytics') {
-              $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
-              $(".dash-nav-link a:first-child").removeClass("active-navlink");
-              $('.practiceClass').removeClass('practiceopen');
-            }else{
-              $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
-              $(".dash-nav-link a:first-child").addClass("active-navlink");
-              $('.practiceClass').removeClass('practiceopen');
+            if (pathurl == 'overall_analytics') {
+                $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+                $(".dash-nav-link a:first-child").removeClass("active-navlink");
+                $('.practiceClass').removeClass('practiceopen');
+            } else {
+                $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+                $(".dash-nav-link a:first-child").addClass("active-navlink");
+                $('.practiceClass').removeClass('practiceopen');
             }
-            
+
             $('#submenu').collapse('toggle');
         }
         var menu_opened = $('#submenu2').hasClass('show');
@@ -1708,86 +1710,79 @@
         event.stopPropagation();
         var url = window.location.pathname.split("/");
         var pathurl = url[1];
-        if (pathurl=='overall_analytics') {
+        if (pathurl == 'overall_analytics') {
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
             $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        }else
-        {
+        } else {
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
-            $(".dash-nav-link a:first-child").addClass("active-navlink");    
+            $(".dash-nav-link a:first-child").addClass("active-navlink");
         }
-        
+
     });
     $('.refereModel').click(function(event) {
         event.stopPropagation();
         $(".dash-nav-link a:last-child").addClass("active-navlink");
         $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        
+
     });
-     $('.openSharefrnd').click(function(event) {
-        var validator = $( "#referalStudent_form" ).validate();
+    $('.openSharefrnd').click(function(event) {
+        var validator = $("#referalStudent_form").validate();
         validator.resetForm();
-         $('#referEmails').val("");
-         $('#errRef_auth').css('display','none');
-         if($(this).hasClass('popupopen'))
-         {
+        $('#referEmails').val("");
+        $('#errRef_auth').css('display', 'none');
+        if ($(this).hasClass('popupopen')) {
             $(this).removeClass('popupopen');
             var url = window.location.pathname.split("/");
             var pathurl = url[1];
-            if (pathurl=='overall_analytics') {
+            if (pathurl == 'overall_analytics') {
                 $(".dash-nav-link a:last-child").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").removeClass("active-navlink");
-            }else
-            {
-              $(".dash-nav-link a:last-child").removeClass("active-navlink");
-              $(".dash-nav-link a:first-child").addClass("active-navlink");
+            } else {
+                $(".dash-nav-link a:last-child").removeClass("active-navlink");
+                $(".dash-nav-link a:first-child").addClass("active-navlink");
             }
-            
-         }else
-         {
+
+        } else {
             $(this).addClass('popupopen');
-         }
+        }
     });
-    $('.refereModel').on('click', '.btn-close', function(event){
+    $('.refereModel').on('click', '.btn-close', function(event) {
         event.stopPropagation();
         var url = window.location.pathname.split("/");
         var pathurl = url[1];
-        if (pathurl=='overall_analytics') {
+        if (pathurl == 'overall_analytics') {
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
             $(".dash-nav-link a:first-child").removeClass("active-navlink");
-        }else
-        {
-          $(".dash-nav-link a:last-child").removeClass("active-navlink");
-          $(".dash-nav-link a:first-child").addClass("active-navlink");  
+        } else {
+            $(".dash-nav-link a:last-child").removeClass("active-navlink");
+            $(".dash-nav-link a:first-child").addClass("active-navlink");
         }
-        
+
     });
-    $('.practiceClass').click(function(){
+    $('.practiceClass').click(function() {
         var url = window.location.pathname.split("/");
         var pathurl = url[1];
-        if (pathurl=='dashboard') {
-             if($(this).hasClass('practiceopen'))
-             {
+        if (pathurl == 'dashboard') {
+            if ($(this).hasClass('practiceopen')) {
                 $(this).removeClass('practiceopen');
                 $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").addClass("active-navlink");
-             }else
-             {
+            } else {
                 $(this).addClass('practiceopen');
-             }
-        }else if (pathurl=='overall_analytics') {
-            if($(this).hasClass('practiceopen'))
-             {
+            }
+        } else if (pathurl == 'overall_analytics') {
+            if ($(this).hasClass('practiceopen')) {
                 $(this).removeClass('practiceopen');
                 $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").removeClass("active-navlink");
-             }else
-             {
+            } else {
                 $(this).addClass('practiceopen');
-             }
+            }
         }
-       
+
     });
+
+
 
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
         setTimeout(function() {
@@ -1883,7 +1878,7 @@
     $(".profile-picture-txt #EdiTbtnnn").click(function() {
         $("#LeaDer , .profile-show").removeClass("showCard");
     });
-    $("#editProfile_form #cancelEdit").click(function(){
+    $("#editProfile_form #cancelEdit").click(function() {
         $("#LeaDer , .profile-show").addClass("showCard");
     })
 </script>
