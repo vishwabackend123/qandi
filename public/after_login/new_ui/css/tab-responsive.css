@@ -520,6 +520,7 @@
    span.profile-img-user {width: 35px;height: 35px;}
    .subscription .profile-picture-txt .p-text {width: 100%;}
    .subscrived {margin: 20px 0px 0px;}
+   .custom-page .cust-tab-content {padding-bottom: 20px !important;}
 }
 
 @media(max-width:767px){
