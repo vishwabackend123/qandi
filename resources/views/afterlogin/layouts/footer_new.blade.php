@@ -1707,6 +1707,7 @@
         $("span.notification.ms-4").removeClass("notification-icons-active");
     });
     $('#sharefrnd').click(function(event) {
+
         event.stopPropagation();
         var url = window.location.pathname.split("/");
         var pathurl = url[1];
@@ -1717,6 +1718,9 @@
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
             $(".dash-nav-link a:first-child").addClass("active-navlink");
         }
+
+        $('.openSharefrnd').removeClass('popupopen');
+        $("#sharefrnd").modal('hide');
 
     });
     $('.refereModel').click(function(event) {
