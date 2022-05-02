@@ -439,8 +439,6 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 .cust-tab-content .custom-btn-gray {
     border: none;
     outline: none;
-    /* width: 216px; */
-    /* height: 60px; */
     color: #2c3348;
     font-size: 18px;
     border-radius: 20px !important;
@@ -851,7 +849,7 @@ a.clearRes:hover {
  
  @media (min-width: 1200px) and (max-width: 1300px){
 .custom-page .cust-tab-content .scroll-div {
-    height: 275px !important;
+    /* height: 275px !important; */
     overflow-y: auto !important;
     overflow-x: hidden;
 }
