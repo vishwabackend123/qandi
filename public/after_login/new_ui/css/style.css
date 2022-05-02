@@ -9159,3 +9159,10 @@ div#exportAnalytics {transition: none !important;}
 div#trialbox {
     z-index: 9999;
 }  
+
+
+.notification-txt {
+    border-radius: 56px;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+    margin-left: 10px;
+}
