@@ -9163,6 +9163,5 @@ div#trialbox {
 
 .notification-txt {
     border-radius: 56px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-    margin-left: 10px;
+    margin: 10px;
 }
