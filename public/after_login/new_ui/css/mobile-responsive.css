@@ -1,4 +1,6 @@
 @media(max-width:767px){
+    .custom-page .cust-tab-content{padding-bottom: 30px!important;}
+
     .question-block{height:250px;}
     .tab-btn-box{padding:0px}
     .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
@@ -322,11 +324,11 @@
             padding-left: 0px;
         }
         
-
     }
 
 
 @media(max-width:576px){
+    .d-flex.px-4.py-2.align-items-center.justify-content-between form{width: 62%;margin-top:6px;}
     ul.chapter-topic-menu li a{font-size: 14px;}
     .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
     .matrixpage-wrapper .topics-box {
