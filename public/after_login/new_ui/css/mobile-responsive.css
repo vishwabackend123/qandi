@@ -332,6 +332,17 @@
         .result-list  #scroll-mobile {
             overflow-x: auto;
         }
+        .sub-subject .btn.rounded-0.me-2 {
+            padding: 2px;
+            width: 27px;
+            height: 27px;
+            line-height: 20px;
+            margin-right: 4px!important;
+        }
+        .addremovetopic.topic_selected,.addremovetopic{margin-left:5px;width: auto;}
+        .custom-page button.slick-pre,.custom-page button.slick-next{width: 25px;height: 25px;font-size: 20px!important;line-height: 12px;}
+        .custom-page button.slick-pre{left:2px}
+        .custom-page button.slick-next{right: -1px;}
     }
 
 @media(max-width:700px){
