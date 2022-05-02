@@ -1716,6 +1716,7 @@
             $(".dash-nav-link a:last-child").removeClass("active-navlink");
             $(".dash-nav-link a:first-child").addClass("active-navlink");    
         }
+        $('.openSharefrnd').removeClass('popupopen');
         
     });
     $('.refereModel').click(function(event) {
