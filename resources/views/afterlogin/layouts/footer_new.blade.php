@@ -1521,6 +1521,13 @@
             $('#edit-planner-btn').removeClass('close-sub-planner');
 
         });
+        $('#referEmails').keyup('keyup',function(){
+            var inputdata=$(this).val();
+            if(inputdata == '')
+            {
+                $('#errRef_auth').hide();
+            }
+        });
 
     });
 
