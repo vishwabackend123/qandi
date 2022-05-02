@@ -328,6 +328,8 @@
 
 
 @media(max-width:576px){
+    .compLeteS .star-ratings-css{margin-left:0px;}
+    .scroll-div .compLeteS div.d-flex.px-4{margin-right:5px!important;}
     .d-flex.px-4.py-2.align-items-center.justify-content-between form{width: 62%;margin-top:6px;}
     ul.chapter-topic-menu li a{font-size: 14px;}
     .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
