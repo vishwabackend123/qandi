@@ -16,6 +16,14 @@ button {
     text-decoration: none;
 }
 
+input.allownumericwithdecimal {
+    border: solid 1px rgba(44, 51, 72, 0.5);
+    background-color: #fff;
+    color: #6b707f;
+    font-size: 14px;
+    padding: 8px 15px;
+    min-height: 70px;
+}
 .report-block2.p-6>p.text-center.mt-5.pt-5{word-break: break-word;}
 .arrow-right-btm-content.collapse{display:none!important;}
 .arrow-right-btm-content.collapse.openTopicPara{display:block!important;}
