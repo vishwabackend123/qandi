@@ -839,6 +839,10 @@ $questtype='radio';
         var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
 
+
+      var totalcal =  $('.answer-section').css('width', question_block_width);
+      var fixwidt = totalcal + 5 + "px";
+      $('.answer-section').css('width', fixwidt);
         var ans_section = $(".answer-section").outerHeight();
         var ans_inner = ans_section - 60 + "px";
         $('.ans_inner').css('height', ans_inner);
