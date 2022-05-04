@@ -577,6 +577,7 @@ $userData = Session::get('user_data');
 
   function topiclist_filter(chapt_id, filter_type) {
 
+
     url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
     $.ajax({
       url: url,
@@ -601,6 +602,20 @@ $userData = Session::get('user_data');
 
         $("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
+
+        var selected_topics = $('#selected_topic').val();
+
+        if (selected_topics != '' || selected_topics != null) {
+          var sArr = selected_topics.split(',');
+          $.each(sArr, function(index, value) {
+            if ($("#topic_section_" + chapt_id + ' #chpt_topic_' + value).length > 0) {
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).removeClass('btn-light');
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).addClass('topic_selected');
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).html('SELECTED');
+              $("#topic_section_" + chapt_id + ' #topic_box_' + value).addClass('bdr-success');
+            }
+          });
+        }
 
         applySlider(slick_id); // apply slick slider again
 
