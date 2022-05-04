@@ -4,7 +4,7 @@
 
     <div id="topic_box_{{$topic->id}}" class="bg-light shadow p-3 d-flex flex-column topicboxdin">
         <div class="d-flex align-items-center">
-            <span class="mr-3 name-txt-sml" title="{{$topic->topic_name}}">{{$topic->topic_name}}</span>
+            <span class="mr-3 name-txt-sml" title="{{$topic->topic_name}}" style="text-transform:none">{{$topic->topic_name}}</span>
 
             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 

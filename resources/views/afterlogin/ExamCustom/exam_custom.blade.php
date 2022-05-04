@@ -22,7 +22,7 @@ $userData = Session::get('user_data');
   <!-- End top-navbar Section -->
 
   <div class="content-wrapper">
-    <div class="container-fluid custom-page">
+    <div class="container-fluid custom-page practice_custom_page">
 
       <div class="row">
         <div class="col-lg-12  p-lg-5 pt-none">
@@ -147,7 +147,7 @@ $userData = Session::get('user_data');
                   @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                   <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
                     <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
-                      <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
+                      <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}" style="text-transform:none">{{$chapters->chapter_name}}</span>
 
                       <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
