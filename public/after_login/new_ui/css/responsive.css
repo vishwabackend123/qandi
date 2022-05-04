@@ -12,7 +12,7 @@
 
 @media screen and ( max-height:800px ) {
     .for-review-screen, .for-review-screen .bg-white {
-        /* height: 600px !important; */
+        /* height: 600px !important; */ 
     }
 }
 
@@ -3939,6 +3939,6 @@
         }
     }
   
-
+ 
    
  

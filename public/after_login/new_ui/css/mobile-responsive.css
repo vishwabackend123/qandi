@@ -343,6 +343,7 @@
         .custom-page button.slick-pre,.custom-page button.slick-next{width: 25px;height: 25px;font-size: 20px!important;line-height: 12px;}
         .custom-page button.slick-pre{left:2px}
         .custom-page button.slick-next{right: -1px;}
+        .custom_attempted_page .result-list .d-flex.justify-content-between.result-list-table{    flex-direction: row;}
     }
 
 @media(max-width:700px){

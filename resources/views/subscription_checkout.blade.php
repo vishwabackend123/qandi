@@ -116,7 +116,7 @@ $userData = Session::get('user_data');
                 <input type="hidden" name="exam_price" value="{{$price}}">
                 <div class="modal-body text-center p-0">
                     <p class="pb-4 mt-4 m-0">Apply Coupon</p>
-                    <input class="form-control bg-light mb-4" name="discount_code" id="inputcode" type="text" placeholder="Enter Coupon Code">
+                    <input class="form-control bg-light mb-4" name="discount_code" id="inputcode" type="text" placeholder="Enter Coupon Code" maxlength="30">
                     <span style="color: red;" class="error_msg"></span>
                     <div class="text-center mb-4">
                         <button type="submit" class="btn btn-danger px-5 col-lg-6 col-sm-12 validate_coupan" data-bs-dismiss="modal">Apply</button>

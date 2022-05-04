@@ -139,7 +139,7 @@ $questtype='radio';
                                             @if(isset($aSections) && !empty($aSections))
                                             @foreach($aSections as $section)
                                             @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
-                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}}({{$aSubSecCount[$subject_id][$section->id]}}) | {{$section->question_type_name}}</a>
+                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}}({{$aSubSecCount[$subject_id][$section->id]." Q"}}) | {{$section->question_type_name}}</a>
                                             @endif
                                             @endforeach
                                             @endif
