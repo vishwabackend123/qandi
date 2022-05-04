@@ -527,5 +527,7 @@
 @media(max-width:767px){
     
 .padd-right-0{padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
-
+.notification-txt span.text-notific {
+    font-size: 14px;
+}
 }
