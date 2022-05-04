@@ -715,6 +715,8 @@
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").hide();
             jQuery("#profileAcc").toggleClass('show');
+            $("#search_field").val('');
+            $('#search_field').keyup();
         });
 
 
@@ -898,6 +900,7 @@
             $(".subscription").toggle();
             $(".leader-board").hide();
             $("#search_field").val('');
+            $('#search_field').keyup();
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").hide();
@@ -914,6 +917,7 @@
             $(".subscription").hide();
             $(".leader-board").hide();
             $("#search_field").val('');
+            $('#search_field').keyup();
             $(".edit-form").hide();
             $(".profile-show").hide();
         });
@@ -1505,6 +1509,7 @@
         $('#EdiTbtnnn').click(function() {
             $('#LeaDer').hide();
             $("#search_field").val('');
+            $('#search_field').keyup();
         });
     });
 </script>
@@ -1526,10 +1531,9 @@
             $('#edit-planner-btn').removeClass('close-sub-planner');
 
         });
-        $('#referEmails').keyup('keyup',function(){
-            var inputdata=$(this).val();
-            if(inputdata == '')
-            {
+        $('#referEmails').keyup('keyup', function() {
+            var inputdata = $(this).val();
+            if (inputdata == '') {
                 $('#errRef_auth').hide();
             }
         });
