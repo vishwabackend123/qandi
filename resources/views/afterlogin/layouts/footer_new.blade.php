@@ -1863,10 +1863,25 @@
             $("div#collapseNotification.notification-block").addClass("notification-block-active");
         } else {
             $("div#collapseNotification.notification-block").removeClass("notification-block-active");
+                var url = window.location.pathname.split("/");
+                var pathurl = url[1];
+                if (pathurl == 'overall_analytics') {
+                    $(".analytics-icon").addClass("notification-icons-active");
+                }
         }
     });
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
+
+
+        if (!$('.planmner_icon').hasClass("notification-icons-active")) {
+            var url = window.location.pathname.split("/");
+                var pathurl = url[1];
+                if (pathurl == 'overall_analytics') {
+                    $(".analytics-icon").addClass("notification-icons-active");
+                }
+        } 
+
     });
     $(".goto-planner-btn").click(function() {
         $("html, body, .wrapper-dashboard").animate({
