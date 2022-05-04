@@ -8242,13 +8242,18 @@ tspan {
     transform: rotateZ(-46deg);
 }
 
-.box-block:after,
 .box-block span {
-    color: #00bdff !important;
-    opacity: .5;
+    color: #21ccff !important;
 }
-
-
+.box-block:hover span {
+    color: #4cb9f9 !important;
+}
+.box-block:after {
+    color: #d6f2fd !important;
+}
+.box-block:hover:after {
+    color: #4cb9f9 !important;
+}
 
 /*.arrow-box-content {
     font-size: 14px;
