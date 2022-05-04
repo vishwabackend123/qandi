@@ -17,7 +17,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
-        <div class="container-fluid custom-page">
+        <div class="container-fluid custom-page custom_attempted_page">
             <div class="row">
             @if(count($errors) > 0 )
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
