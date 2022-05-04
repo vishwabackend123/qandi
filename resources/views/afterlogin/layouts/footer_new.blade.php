@@ -705,6 +705,11 @@
             jQuery("#collapseNotification").hide();
             jQuery("#profileAcc").hide();
             jQuery("#profileAcc").removeClass('show');
+            var url = window.location.pathname.split("/");
+            var pathurl = url[1];
+            if (pathurl == 'overall_analytics') {
+                $(".analytics-icon").addClass("notification-icons-active");
+            }
         });
         jQuery(".UserPro").click(function() {
             jQuery("#collapsePlanner").hide();
@@ -1712,6 +1717,11 @@
     });
     $("#close-planner-btn , .close-bnt").click(function() {
         $("span.notification.ms-4").removeClass("notification-icons-active");
+        var url = window.location.pathname.split("/");
+        var pathurl = url[1];
+        if (pathurl == 'overall_analytics') {
+            $(".analytics-icon").addClass("notification-icons-active");
+        }
     });
     $('#sharefrnd').click(function(event) {
 
