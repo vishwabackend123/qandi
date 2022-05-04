@@ -354,7 +354,7 @@
     display: block !important;
 }
 .slbs-link.ms-5 {
-    margin-left: 0.5rem!important;
+    margin-left: 0rem!important;
 }
 #attempted .score-show {
     max-width: 100%;
@@ -362,6 +362,9 @@
 }
 .result-list-btns {
     margin-top: 10px;
+}
+.result-list .d-flex.justify-content-between.outerhead {
+    padding: 0 !important;
 }
 }
 @media(max-width:576px){
