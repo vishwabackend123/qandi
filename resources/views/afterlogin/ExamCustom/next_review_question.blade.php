@@ -270,7 +270,6 @@ $questtype='radio';
         var ans_inner = ans_section - 60 + "px";
         $('.ans_inner').css('height', ans_inner);
 
-
     });
 </script>
 <!-----End-for-review_height-click------->

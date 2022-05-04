@@ -344,6 +344,8 @@
         .custom-page button.slick-pre{left:2px}
         .custom-page button.slick-next{right: -1px;}
         .custom_attempted_page .result-list .d-flex.justify-content-between.result-list-table{    flex-direction: row;}
+        .custom_attempted_page .result-list-btns{margin-top:0;}
+        .custom_attempted_page #attempted .result-list-btns a{line-height: 25px;height: 38px;}
     }
 
 @media(max-width:700px){
