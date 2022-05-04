@@ -12,7 +12,7 @@
 
 @media screen and ( max-height:800px ) {
     .for-review-screen, .for-review-screen .bg-white {
-        height: 600px !important;
+        /* height: 600px !important; */
     }
 }
 
@@ -20,7 +20,7 @@
 
 @media screen and ( max-height: 767px ) {
     .for-review-screen, .for-review-screen .bg-white {
-        height: 500px !important;
+        /* height: 500px !important; */
     }
 	span#activeUserName {
     font-size: 14px !important;

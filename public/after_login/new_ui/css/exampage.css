@@ -496,6 +496,10 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 .test-review-right .bg-white.d-flex.flex-column.mb-4 {
     padding:0px !important;
    height: calc(100vh - 141px) !important;
+   
+}
+.test-review-right{
+    height: calc(100vh - 141px) !important;
 }
 .padding_26{
     padding: 26px !important;
