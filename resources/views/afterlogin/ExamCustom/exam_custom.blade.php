@@ -445,48 +445,46 @@ $userData = Session::get('user_data');
     focusOnSelect: false,
     infinite: false,
     slidesToShow: 3.2,
-    responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 2
+    responsive: [{
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1
+        }
       }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ],
+    ],
     variableWidth: false,
     prevArrow: '<button class="slick-prev"> < </button>',
     nextArrow: '<button class="slick-next"> > </button>',
 
-    responsive: [
-  {
-  breakpoint: 1024,
-  settings: {
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    infinite: true
-  }
-  },
-  {
-  breakpoint: 600,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-  }
-  },
-{
-  breakpoint: 480,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-  }
-}
- ]
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
 
   });
 
@@ -506,20 +504,19 @@ $userData = Session::get('user_data');
       focusOnSelect: false,
       infinite: false,
       slidesToShow: 3.2,
-      responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ],
+      responsive: [{
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ],
       variableWidth: false,
       prevArrow: '<button class="slick-prev"> < </button>',
       nextArrow: '<button class="slick-next"> > </button>',
@@ -541,7 +538,7 @@ $userData = Session::get('user_data');
 
     this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
 
-    var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
+    var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
 
     if (topic_length == 0) {
       url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
@@ -571,7 +568,7 @@ $userData = Session::get('user_data');
       });
     } else {
 
-      $("#expand_topic_" + chapt_id).text("Expand to Topics");
+      // $("#expand_topic_" + chapt_id).text("Expand to Topics");
       $("clicktopic_" + chapt_id).focus();
       $('#topic_form').toggle();
 
@@ -599,18 +596,18 @@ $userData = Session::get('user_data');
         $('#overlay').fadeOut();
         $('#topic_form').show(); */
 
-          var slick_id = "#topic_section_" + chapt_id;
-          destroyCarousel(slick_id); // destroy slick slider first
+        var slick_id = "#topic_section_" + chapt_id;
+        destroyCarousel(slick_id); // destroy slick slider first
 
-          $("#topic_section_" + chapt_id + " div").remove();
-          $("#topic_section_" + chapt_id).html(result);
+        $("#topic_section_" + chapt_id + " div").remove();
+        $("#topic_section_" + chapt_id).html(result);
 
-          applySlider(slick_id); // apply slick slider again
+        applySlider(slick_id); // apply slick slider again
 
-          $('#overlay').fadeOut();
-          $('#topic_form').show();
-          // scroll_topic(chapt_id, sub_id);
-          $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
+        $('#overlay').fadeOut();
+        $('#topic_form').show();
+        // scroll_topic(chapt_id, sub_id);
+        $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
 
       }
     });
