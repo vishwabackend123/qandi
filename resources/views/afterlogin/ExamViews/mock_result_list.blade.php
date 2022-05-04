@@ -43,13 +43,13 @@ $userData = Session::get('user_data');
                         <!--scroll-mobile-->
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
-                                <div class="scroll-div mt-4" id="chapter_list_1">
+                                <div class="scroll-div mt-md-4" id="chapter_list_1">
                                   @if(!empty($result_data))
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
                                         <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
-                                            <div class="d-flex align-items-start justify-content-between result-list-head">
-                                                <h4 class="m-lg-0 p-0">@if($sche->test_series_name)
+                                            <div class="d-flex align-items-start justify-content-between result-list-head outerhead">
+                                                <h4 class="m-0 p-0">@if($sche->test_series_name)
                                                   {{$sche->test_series_name}}
                                                   @elseif($sche->live_exam_name)
                                                   {{$sche->live_exam_name}}
