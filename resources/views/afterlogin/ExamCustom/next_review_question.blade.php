@@ -256,15 +256,19 @@ $questtype='radio';
         $('.question-block').css('height', div_height);
         var question_block_width = $("#review_rques_blk .question-block").outerWidth();
         $('.question-block').css('width', question_block_width);
-        // $('.answer-section').css('width', question_block_width);
+        $('.answer-section').css('width', question_block_width);
         var question_block_height = $(".question-block").outerHeight();
         var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
 
+        var extra_width = 5 ;
+        var ansblockwidth =  $('.answer-section').outerWidth();
+        var mixwidth = extra_width + ansblockwidth;
+        $('.answer-section').css('width', mixwidth);
+
         var ans_section = $(".answer-section").outerHeight();
         var ans_inner = ans_section - 60 + "px";
         $('.ans_inner').css('height', ans_inner);
-
 
     });
 </script>
