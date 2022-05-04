@@ -151,7 +151,7 @@ $questtype='radio';
             @endif
             @elseif($template_type==11)
             <div class="col-md-6 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" maxlength="20" value="">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" maxlength="20" value="">
 
             </div>
             @endif
