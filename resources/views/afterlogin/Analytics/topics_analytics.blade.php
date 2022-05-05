@@ -22,28 +22,59 @@
                     <div class="all-star d-flex align-items-center justify-content-between">
                         <ul class="m-0 p-0">
                             @if($list['topic_score'] >0 && $list['topic_score'] <= 20 || $list['topic_score']> 20)
-                                <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                <li>
+                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                    <span class="fill-star-color">★</span>
+                                </li>
                                 @else
-                                <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                <li>
+                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                    <span class="gray-star-color">★</span>
+                                </li>
                                 @endif
                                 @if($list['topic_score'] >20 && $list['topic_score'] <= 40 || $list['topic_score']> 40)
-                                    <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                    <li>
+                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                        <span class="fill-star-color">★</span>
+                                    </li>
                                     @else
-                                    <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                    <li>
+                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                        <span class="gray-star-color">★</span>
+                                    </li>
                                     @endif
                                     @if($list['topic_score'] >40 && $list['topic_score'] <= 60 || $list['topic_score']> 60)
-                                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                        <li>
+                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                            <span class="fill-star-color">★</span>
+                                        </li>
                                         @else
-                                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                        <li>
+                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                            <span class="gray-star-color">★</span>
+                                        </li>
                                         @endif
                                         @if($list['topic_score'] >60 && $list['topic_score'] <= 80 || $list['topic_score']> 80)
-                                            <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                            <li>
+                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                                <span class="fill-star-color">★</span>
+                                            </li>
                                             @else
-                                            <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                            <li>
+                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                                <span class="gray-star-color">★</span>
+                                            </li>
                                             @endif
-                                            @if($list['topic_score'] >80 && $list['topic_score'] <= 100) <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                            @if($list['topic_score'] >80 && $list['topic_score'] <= 100) 
+                                            <li>
+                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                                <span class="fill-star-color">★</span>
+                                            </li>
                                                 @else
-                                                <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                                <li>
+                                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                                    <span class="gray-star-color">★</span>
+                                                </li>
                                                 @endif
                         </ul>
                         <span>{{round($list['topic_score'])}}%</span>
@@ -68,3 +99,7 @@
         @endforeach
     </div>
 </div>
+<style>
+    .fill-star-color{color:#ffdc34 !important;}
+    .gray-star-color{color: #e9e9e9 !important;}
+</style>

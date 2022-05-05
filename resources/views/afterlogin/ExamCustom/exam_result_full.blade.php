@@ -248,7 +248,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white shadow p-5 d-flex flex-column position-relative">
+                <div class="bg-white shadow p-4 d-flex flex-column position-relative">
 
                     <span class="text-center w-100"><img src="{{URL::asset('public/after_login/new_ui/images/bottom-right.svg')}}" /></span>
                     <button class="btn w-100 mt-3 top-btn-pop text-white"><a href="{{route('exam_review', $response->result_id) }}">Review Questions</a></button>
