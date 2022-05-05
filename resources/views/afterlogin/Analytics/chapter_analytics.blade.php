@@ -56,15 +56,25 @@
                         <span class="skyblue_bar position-relative" style="width:{{$list['E_ques_attempted']}}% !important"></span>
                     </div>
                 </div>
+                <div class="d-flex align-items-center justify-content-between subject-box-expend">            
                 <ul class="d-flex align-items-center p-0 m-0 subject-name">
                     <li>K</li>
                     <li>C</li>
                     <li>A</li>
                     <li>E</li>
-                    <li><button  onclick="expandTopicAnalytics({{$sub_id}})" style="margin: 0 0 0 41px;">EXPAND</button></li>
                 </ul>
+                     <button class="customgray" onclick="expandChapterAnalytics(2)">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
+                            <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none"></path>
+                            <path data-name="Path 11547" d="M4 8V6a2 2 0 0 1 2-2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                            <path data-name="Path 11548" d="M4 16v2a2 2 0 0 0 2 2h2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                            <path data-name="Path 11549" d="M16 4h2a2 2 0 0 1 2 2v2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                            <path data-name="Path 11550" d="M16 20h2a2 2 0 0 0 2-2v-2" style="stroke:#2c3e50;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;fill:none"></path>
+                        </svg>
+                        EXPAND</button>
+                </div>    
             </div>
         </div>
         @endforeach
     </div>
-</div>
+</div>           
