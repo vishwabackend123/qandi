@@ -37,7 +37,7 @@
     </div>
 </div>
 <div class="col-md-3">
-    <div class="bg-white shadow p-5 d-flex flex-column position-relative box-shadow custom-box-shadow">
+    <div class="bg-white shadow p-4 d-flex flex-column position-relative box-shadow custom-box-shadow">
         <span class="text-center w-100"><img src="{{URL::asset('public/after_login/new_ui/images/bottom-right.svg')}}" /></span>
         <a class="btn w-100 mt-3 top-btn-pop text-white" href="{{route('exam_review', $response->result_id) }}">Review Questions</a>
         <a class="btn-outline-secondary btn rounded-0 w-100 mt-3 px-1 text-white" href="{{url('/dashboard')}}">Back to Dashboard</a>

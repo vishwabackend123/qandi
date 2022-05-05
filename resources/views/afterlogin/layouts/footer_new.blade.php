@@ -715,6 +715,9 @@
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").hide();
             jQuery("#profileAcc").toggleClass('show');
+            $("#search_field").val('');
+            $('#search_field').keyup();
+            $("#editProfile_form #cancelEdit").click();
         });
 
 
@@ -853,6 +856,7 @@
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").toggle();
+            $("#editProfile_form #cancelEdit").click();
 
 
         });
@@ -898,6 +902,8 @@
             $(".subscription").toggle();
             $(".leader-board").hide();
             $("#search_field").val('');
+            $('#search_field').keyup();
+            $("#editProfile_form #cancelEdit").click();
             $(".log-out-screen").hide();
             $(".edit-form").hide();
             $(".profile-show").hide();
@@ -914,6 +920,8 @@
             $(".subscription").hide();
             $(".leader-board").hide();
             $("#search_field").val('');
+            $('#search_field').keyup();
+            $("#editProfile_form #cancelEdit").click();
             $(".edit-form").hide();
             $(".profile-show").hide();
         });
@@ -1505,6 +1513,8 @@
         $('#EdiTbtnnn').click(function() {
             $('#LeaDer').hide();
             $("#search_field").val('');
+            $('#search_field').keyup();
+
         });
     });
 </script>
@@ -1526,10 +1536,9 @@
             $('#edit-planner-btn').removeClass('close-sub-planner');
 
         });
-        $('#referEmails').keyup('keyup',function(){
-            var inputdata=$(this).val();
-            if(inputdata == '')
-            {
+        $('#referEmails').keyup('keyup', function() {
+            var inputdata = $(this).val();
+            if (inputdata == '') {
                 $('#errRef_auth').hide();
             }
         });
@@ -1859,10 +1868,25 @@
             $("div#collapseNotification.notification-block").addClass("notification-block-active");
         } else {
             $("div#collapseNotification.notification-block").removeClass("notification-block-active");
+            var url = window.location.pathname.split("/");
+            var pathurl = url[1];
+            if (pathurl == 'overall_analytics') {
+                $(".analytics-icon").addClass("notification-icons-active");
+            }
         }
     });
     $("#collapseNotification .notification-right a , .notification.ms-4.planmner_icon , .user-pic-block.UserPro").click(function() {
         $("div#collapseNotification.notification-block").removeClass("notification-block-active");
+
+
+        if (!$('.planmner_icon').hasClass("notification-icons-active")) {
+            var url = window.location.pathname.split("/");
+            var pathurl = url[1];
+            if (pathurl == 'overall_analytics') {
+                $(".analytics-icon").addClass("notification-icons-active");
+            }
+        }
+
     });
     $(".goto-planner-btn").click(function() {
         $("html, body, .wrapper-dashboard").animate({
