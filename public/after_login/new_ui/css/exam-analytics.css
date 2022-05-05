@@ -901,3 +901,17 @@ padding-left: 45px !important;
 .exam-analytics a.top-btn-pop:hover {
     background: #00bdff;
 }
+.subject-box-expend .subject-name li {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 0;
+    line-height: 32px;
+}
+.subject-box-expend .customgray {
+    margin: 0;
+    font-size: 13px;
+    padding: 0 17px !important;
+    height: 37px !important;
+}
