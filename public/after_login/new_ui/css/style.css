@@ -9186,3 +9186,17 @@ div#trialbox {
     margin: 10px;
 }
 .matrixpage-wrapper  .course-star li span.w-auto.star-img{min-width:80px!important;}
+.ans_inner::-webkit-scrollbar {
+    height: 5px;
+}
+
+
+.ans_inner::-webkit-scrollbar-track {
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
+}
+
+
+.ans_inner::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+}
