@@ -1053,12 +1053,14 @@ $userData = Session::get('user_data');
         });
     });
 
-    function expandTopicAnalytics(sub_id) {
+    function expandTopicAnalytics(sub_id,subject_name,chapter_name) {
         url = "{{ url('topic-analytics') }}/" + sub_id;
         $.ajax({
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
+                "subject_name": subject_name,
+                "chapter_name": chapter_name
             },
             beforeSend: function() {
                 // $('.loader-block').show();

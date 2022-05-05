@@ -4,6 +4,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb p-0 m-0">
                 <li class="breadcrumb-item"><a href="#" class="text-uppercase">{{$subject}}</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-uppercase">Chapter : {{$chapter_name}}</a></li>
                 <li class="breadcrumb-item"><a href="#" class="text-uppercase">Topics</a></li>
             </ol>
         </nav>
