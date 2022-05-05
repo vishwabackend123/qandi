@@ -16,13 +16,23 @@ button {
     text-decoration: none;
 }
 
+.custom-page.practice_custom_page .star-ratings-css-top span {line-height: 42px;}
+.custom-page.practice_custom_page .star-ratings-css-bottom span {line-height: 40px;}
+input.allownumericwithdecimal {
+    border: solid 1px rgba(44, 51, 72, 0.5);
+    background-color: #fff;
+    color: #6b707f;
+    font-size: 14px;
+    padding: 8px 15px;
+    min-height: 70px;
+}
+.report-block2.p-6>p.text-center.mt-5.pt-5{word-break: break-word;}
 .arrow-right-btm-content.collapse{display:none!important;}
 .arrow-right-btm-content.collapse.openTopicPara{display:block!important;}
 .avg-time{margin-top:-4px;}
 #home a.btn.btn-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px rgba(18, 195, 255, 0.6);background-color: rgba(76, 185, 249, 0.1);color: #12c3ff;font-size: 14px;padding: 6px 15px 6px 24px;text-transform: capitalize;text-align: left;position: relative;}
 #home a.btn.btn-primary.btn-sm.sectionBtn:before {content: '';position: absolute;height: 8px;width: 8px;border-radius: 100%;background-color: #12c3ff;top: 12px;left: 10px;}
 #home a.btn.btn-outline-primary.btn-sm.sectionBtn {font-weight: 500;border-radius: 25px!important;border: solid 2px #f6f9fd;background-color: #f6f9fd;color: #6b707f;font-size: 14px;padding: 6px 15px;text-transform: capitalize;text-align: left;}
-
 ul.leaderNameBlock-search p:first-child{margin-left: 30px;}
 .profile-section ul li a{display: block;padding:18px 15px;}
 .practice-series-lists.list-series .live-exam .speci-text li {line-height: 30px;vertical-align: top;}
@@ -556,10 +566,6 @@ div#myTabContent.reviewPanel .tab-pane .question-block {
 
 .planner-scheduar-block {
     background-color: transparent;
-}
-
-.planner-scheduar-block .planner-edit-mode {
-    box-shadow: none;
 }
 
 .planner-scheduar-block.show .planner-edit-mode {
@@ -1915,7 +1921,7 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
 }
 
 .backbtn {
-    margin: 0 36px 0 0;
+    margin: 0 0px 20px 0;
     opacity: inherit;
     border-radius: 20px !important;
     box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
@@ -3512,9 +3518,13 @@ span.notification.ms-4 {
     margin-left: -3px;
     z-index: 99;
 }
-
+/*
 .outer-logo img {
     width: 110px;
+}
+*/
+.rownot .outer-logo {
+    margin-top: 30px;
 }
 
 .PayBttn:active:focus {
@@ -4599,7 +4609,7 @@ button.save-btn {
     border-radius: 42px;
     padding: 31px 20px;
     /* margin: 20px 0px 0px; */
-    margin: 50px 0px 0px;
+    margin: 25px 0px 0px;
 }
 
 /*Added by sachin 05-03-22*/
@@ -4753,8 +4763,9 @@ button.save-btn {
 }
 
 .list-series .scroll-div-live-exm {
-    height: 350px;
+    /* height: 350px; */
     overflow: overlay;
+    max-height: calc(100vh - 250px);
 }
 
 /** scrollbar css **/
@@ -5029,7 +5040,7 @@ button.save-btn {
     color: #fff;
 }
 
-#test_instruction .modal-body.pt-3.p-5 {
+#test_instruction .modal-body.pt-3{
     border-radius: 56px;
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.16);
     background: #ffffff;
@@ -5461,16 +5472,20 @@ p.tab-title {
 .btn-warning.disabled {
     opacity: 0.3;
     background: #13c5ff;
+/*
     border: none;
     outline: none;
     width: 270px;
+*/
     border-radius: 20px !important;
     box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+/*
     height: 50px;
     font-size: 18px;
     font-weight: 600;
     color: #fff;
     margin-right: 25px;
+*/
 }
 
 .active-btn {
@@ -6311,7 +6326,7 @@ p.success-img {
 }
 
 header {
-    padding: 24px 0;
+    padding: 15px 0;
     position: relative;
     z-index: 99;
 }
@@ -8242,13 +8257,18 @@ tspan {
     transform: rotateZ(-46deg);
 }
 
-.box-block:after,
 .box-block span {
-    color: #00bdff !important;
-    opacity: .5;
+    color: #21ccff !important;
 }
-
-
+.box-block:hover span {
+    color: #4cb9f9 !important;
+}
+.box-block:after {
+    color: #d6f2fd !important;
+}
+.box-block:hover:after {
+    color: #4cb9f9 !important;
+}
 
 /*.arrow-box-content {
     font-size: 14px;
@@ -9058,9 +9078,6 @@ input#linkInput {
     font-size: 16px;
 }
 
-.totalpaymentbox .text-success {
-    text-align: right;
-}
 
 .coupontext {
     font-size: 16px;

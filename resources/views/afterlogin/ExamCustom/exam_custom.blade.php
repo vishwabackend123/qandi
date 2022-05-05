@@ -22,7 +22,7 @@ $userData = Session::get('user_data');
   <!-- End top-navbar Section -->
 
   <div class="content-wrapper">
-    <div class="container-fluid custom-page">
+    <div class="container-fluid custom-page practice_custom_page">
 
       <div class="row">
         <div class="col-lg-12  p-lg-5 pt-none">
@@ -147,7 +147,7 @@ $userData = Session::get('user_data');
                   @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                   <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
                     <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
-                      <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}">{{$chapters->chapter_name}}</span>
+                      <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}" style="text-transform:none">{{$chapters->chapter_name}}</span>
 
                       <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
 
@@ -277,6 +277,9 @@ $userData = Session::get('user_data');
       </div>
     </div>
   </div>
+</div>
+<div class="loader-block" style="display:none;">
+        <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
 @include('afterlogin.layouts.footer_new')
 
@@ -445,48 +448,46 @@ $userData = Session::get('user_data');
     focusOnSelect: false,
     infinite: false,
     slidesToShow: 3.2,
-    responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 2
+    responsive: [{
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1
+        }
       }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ],
+    ],
     variableWidth: false,
     prevArrow: '<button class="slick-prev"> < </button>',
     nextArrow: '<button class="slick-next"> > </button>',
 
-    responsive: [
-  {
-  breakpoint: 1024,
-  settings: {
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    infinite: true
-  }
-  },
-  {
-  breakpoint: 600,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-  }
-  },
-{
-  breakpoint: 480,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-  }
-}
- ]
+    responsive: [{
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
 
   });
 
@@ -506,20 +507,19 @@ $userData = Session::get('user_data');
       focusOnSelect: false,
       infinite: false,
       slidesToShow: 3.2,
-      responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ],
+      responsive: [{
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ],
       variableWidth: false,
       prevArrow: '<button class="slick-prev"> < </button>',
       nextArrow: '<button class="slick-next"> > </button>',
@@ -538,12 +538,13 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-
+    var labelname=$('#expand_topic_'+chapt_id).text();
     this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
 
-    var topic_length = $('#topic_section_' + chapt_id + ' .topicList').length;
+    var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
 
-    if (topic_length == 0) {
+    //if (topic_length == 0) {
+      if (labelname == 'Collapse Topics') {
       url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
       $.ajax({
         url: url,
@@ -551,9 +552,11 @@ $userData = Session::get('user_data');
           "_token": "{{ csrf_token() }}",
         },
         beforeSend: function() {
+          $('.loader-block').show();
           $('#overlay').fadeIn();
         },
         success: function(result) {
+          $('.loader-block').hide();
           var slick_id = "#topic_section_" + chapt_id;
           destroyCarousel(slick_id); // destroy slick slider first
 
@@ -571,7 +574,7 @@ $userData = Session::get('user_data');
       });
     } else {
 
-      $("#expand_topic_" + chapt_id).text("Expand to Topics");
+      // $("#expand_topic_" + chapt_id).text("Expand to Topics");
       $("clicktopic_" + chapt_id).focus();
       $('#topic_form').toggle();
 
@@ -589,8 +592,10 @@ $userData = Session::get('user_data');
       },
       beforeSend: function() {
         $('#overlay').fadeIn();
+         $('.loader-block').show();
       },
       success: function(result) {
+         $('.loader-block').hide();
 
         /*$("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
@@ -599,18 +604,32 @@ $userData = Session::get('user_data');
         $('#overlay').fadeOut();
         $('#topic_form').show(); */
 
-          var slick_id = "#topic_section_" + chapt_id;
-          destroyCarousel(slick_id); // destroy slick slider first
+        var slick_id = "#topic_section_" + chapt_id;
+        destroyCarousel(slick_id); // destroy slick slider first
 
-          $("#topic_section_" + chapt_id + " div").remove();
-          $("#topic_section_" + chapt_id).html(result);
+        $("#topic_section_" + chapt_id + " div").remove();
+        $("#topic_section_" + chapt_id).html(result);
 
-          applySlider(slick_id); // apply slick slider again
+        var selected_topics = $('#selected_topic').val();
 
-          $('#overlay').fadeOut();
-          $('#topic_form').show();
-          // scroll_topic(chapt_id, sub_id);
-          $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
+        if (selected_topics != '' || selected_topics != null) {
+          var sArr = selected_topics.split(',');
+          $.each(sArr, function(index, value) {
+            if ($("#topic_section_" + chapt_id + ' #chpt_topic_' + value).length > 0) {
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).removeClass('btn-light');
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).addClass('topic_selected');
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).html('SELECTED');
+              $("#topic_section_" + chapt_id + ' #topic_box_' + value).addClass('bdr-success');
+            }
+          });
+        }
+
+        applySlider(slick_id); // apply slick slider again
+
+        $('#overlay').fadeOut();
+        $('#topic_form').show();
+        // scroll_topic(chapt_id, sub_id);
+        $("#myTabContent #chapter_box_" + chapt_id)[0].scrollIntoView();
 
       }
     });
