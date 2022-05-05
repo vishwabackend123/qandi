@@ -998,3 +998,6 @@ a.clearRes:hover {
 } 
 
 #prof_scroll .score-rating{ width: 45px} 
+.tab-wrapper.live-exam {
+    height: calc(100vh - 200PX);
+}

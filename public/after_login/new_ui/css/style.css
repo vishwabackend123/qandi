@@ -4763,7 +4763,7 @@ button.save-btn {
 .list-series .scroll-div-live-exm {
     /* height: 350px; */
     overflow: overlay;
-    max-height: calc(100vh - 250px);
+    max-height: calc(100vh - 280px);
 }
 
 /** scrollbar css **/
