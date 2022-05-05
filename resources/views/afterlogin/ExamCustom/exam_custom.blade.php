@@ -278,6 +278,9 @@ $userData = Session::get('user_data');
     </div>
   </div>
 </div>
+<div class="loader-block" style="display:none;">
+        <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 @include('afterlogin.layouts.footer_new')
 
 <script type="text/javascript">
@@ -535,12 +538,13 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-
+    var labelname=$('#expand_topic_'+chapt_id).text();
     this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
 
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
 
-    if (topic_length == 0) {
+    //if (topic_length == 0) {
+      if (labelname == 'Collapse Topics') {
       url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
       $.ajax({
         url: url,
@@ -548,9 +552,11 @@ $userData = Session::get('user_data');
           "_token": "{{ csrf_token() }}",
         },
         beforeSend: function() {
+          $('.loader-block').show();
           $('#overlay').fadeIn();
         },
         success: function(result) {
+          $('.loader-block').hide();
           var slick_id = "#topic_section_" + chapt_id;
           destroyCarousel(slick_id); // destroy slick slider first
 
@@ -586,8 +592,10 @@ $userData = Session::get('user_data');
       },
       beforeSend: function() {
         $('#overlay').fadeIn();
+         $('.loader-block').show();
       },
       success: function(result) {
+         $('.loader-block').hide();
 
         /*$("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
@@ -601,6 +609,20 @@ $userData = Session::get('user_data');
 
         $("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);
+
+        var selected_topics = $('#selected_topic').val();
+
+        if (selected_topics != '' || selected_topics != null) {
+          var sArr = selected_topics.split(',');
+          $.each(sArr, function(index, value) {
+            if ($("#topic_section_" + chapt_id + ' #chpt_topic_' + value).length > 0) {
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).removeClass('btn-light');
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).addClass('topic_selected');
+              $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).html('SELECTED');
+              $("#topic_section_" + chapt_id + ' #topic_box_' + value).addClass('bdr-success');
+            }
+          });
+        }
 
         applySlider(slick_id); // apply slick slider again
 
