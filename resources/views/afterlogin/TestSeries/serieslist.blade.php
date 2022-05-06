@@ -22,11 +22,11 @@ $userData = Session::get('user_data');
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
 
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Open Test Series</a>
+                                    <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Test series</a>
                                 </li>
 								
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true">Live Test Series</a>
+                                    <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
                                 </li>
 
                             </ul>
@@ -36,9 +36,13 @@ $userData = Session::get('user_data');
 
                             <div class="tab-pane fade show active" id="open" role="tabpanel" aria-labelledby="open-tab">
 
+                                <div class="d-flex  p-4 mb-4">
+                                    <a class="btn sectionBtn btn-primary me-2">OPEN TEST SERIES</a>
+                                    <a class="btn sectionBtn btn-outline-primary">LIVE TEST SERIES</a>
+                                </div>
 
                                 @if(!empty($open_series))
-                                <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3">
+                                <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                     @foreach($open_series as $open)
                                     <ul class="speci-text">
                                         <li class="a1TS"> <span class="sub-details">{{$open->test_series_name}}</span>
@@ -56,8 +60,7 @@ $userData = Session::get('user_data');
                                                 <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
                                                 <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
                                                 <input type="hidden" name="exam_mode" value="Live" />
-                                                <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempt
-                                                    Exam</button>
+                                                <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                             </form>
 
                                         </li>
@@ -75,7 +78,7 @@ $userData = Session::get('user_data');
 
                             <div class="tab-pane fade show " id="live" role="tabpanel" aria-labelledby="live-tab">
                                 @if(!empty($live_series))
-                                <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3">
+                                <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                     @foreach($live_series as $live)
                                     <ul class="speci-text">
                                         <li class="a1TS"> <span class="sub-details">{{$live->test_series_name}}</span>

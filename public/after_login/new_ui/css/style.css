@@ -16,6 +16,21 @@ button {
     text-decoration: none;
 }
 
+.practice-series-lists ul.speci-text {
+    border-radius: 30px;
+    background-color: rgba(243, 247, 255, 0.5);
+    padding:12px 0 12px 10px;
+}
+.practice-series-lists ul.speci-text li span, .practice-series-lists ul.speci-text li strong {
+    padding-top: 10px;
+    display: inline-block;
+}
+.practice-series-lists ul.speci-text {
+    border-radius: 30px;
+    background-color: rgba(243, 247, 255, 0.5);
+}
+.practice-series-lists .cust-tabs a.nav-link#live-tab{text-transform: none;}
+
 .custom-page.practice_custom_page .star-ratings-css-top span {
     line-height: 42px;
 }
@@ -60,7 +75,7 @@ input.allownumericwithdecimal {
     margin-top: -4px;
 }
 
-#home a.btn.btn-primary.btn-sm.sectionBtn {
+#home a.btn.btn-primary.btn-sm.sectionBtn , a.btn.btn-primary.sectionBtn {
     font-weight: 500;
     border-radius: 25px !important;
     border: solid 2px rgba(18, 195, 255, 0.6);
@@ -73,7 +88,7 @@ input.allownumericwithdecimal {
     position: relative;
 }
 
-#home a.btn.btn-primary.btn-sm.sectionBtn:before {
+#home a.btn.btn-primary.btn-sm.sectionBtn:before , a.btn.btn-primary.sectionBtn:before {
     content: '';
     position: absolute;
     height: 8px;
@@ -84,7 +99,7 @@ input.allownumericwithdecimal {
     left: 10px;
 }
 
-#home a.btn.btn-outline-primary.btn-sm.sectionBtn {
+#home a.btn.btn-outline-primary.btn-sm.sectionBtn , a.btn.btn-outline-primary.sectionBtn {
     font-weight: 500;
     border-radius: 25px !important;
     border: solid 2px #f6f9fd;
