@@ -3402,10 +3402,6 @@ button#saveEdit {
     width: 225px;
 }
 
-.btn:hover {
-    color: #fff;
-}
-
 .cust-tabs #overall-tab.active:nth-child(1):after {
     left: -25px;
     width: 35px;
@@ -9284,6 +9280,7 @@ div#trialbox {
     border-radius: 56px;
     margin: 10px;
 }
+
 
 .matrixpage-wrapper .course-star li span.w-auto.star-img {
     min-width: 80px !important;
