@@ -173,7 +173,10 @@
         .profile-show {left:25px !important;}
 
 
-        .edit-form{top: 10% !important;min-width: 290px;right: 9px !important;left: initial;  }
+        .edit-form{top: 12% !important;min-width: 290px;right: 9px !important;left: initial;  }
+        .edit-form .edit-img {
+            margin-bottom: 0.4rem !important;
+        }
 
         .leader-board{top: 7% !important; }
         .svg_icon_input svg{ width: 20px;height: 20px; }
@@ -598,6 +601,7 @@ li.a3TS {
     width: 94%!important;
 }    
 .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub{width:50%;}
+    #editProfile_form  .form-flds { margin-bottom: 10px !important;}
 }
 @media(max-width:385px){
 	#sharefrnd .py-5.copiedmshblock {
