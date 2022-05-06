@@ -9293,3 +9293,10 @@ div#trialbox {
 .matrixpage-wrapper .course-star li span.w-auto.star-img {
     min-width: 80px !important;
 }
+
+
+.subscriptionBox p.box-content {
+    overflow: overlay;
+    height: 150px;
+    padding-right: 10px;
+}
