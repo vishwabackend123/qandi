@@ -861,3 +861,13 @@ section.d-flex.flex-column.align-items-center.justify-content-center.h-100 {
     background: rgba(13, 193, 255, 0.4) !important;
 }
 }
+
+
+
+
+
+.subscriptionBox p.box-content {
+    overflow: overlay;
+    height: 150px;
+    padding-right: 10px;
+}
