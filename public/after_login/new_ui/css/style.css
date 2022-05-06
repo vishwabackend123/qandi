@@ -3402,10 +3402,6 @@ button#saveEdit {
     width: 225px;
 }
 
-.btn:hover {
-    color: #fff;
-}
-
 .cust-tabs #overall-tab.active:nth-child(1):after {
     left: -25px;
     width: 35px;
