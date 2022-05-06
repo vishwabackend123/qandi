@@ -218,6 +218,8 @@ class AnalyticsController extends Controller
             $stuAccuracy = json_encode($stuAccuracy);
             $subject = "";
             $topicList = [];
+            $chapterList = [];
+            $chapter_name = "";
             return view('afterlogin.Analytics.overall_analytics', compact(
                 'active_id',
                 'user_subjects',
@@ -249,7 +251,9 @@ class AnalyticsController extends Controller
                 'stuAcc',
                 'subject',
                 'topicList',
-                'otherScorePre'
+                'otherScorePre',
+                'chapterList',
+                'chapter_name'
             ));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -833,21 +837,16 @@ class AnalyticsController extends Controller
 
 
 
-    public function topicAnalyticsList($sub_id)
+    public function topicAnalyticsList($sub_id,Request $request)
     {
         try {
+            $input = $request->all();
             $userData = Session::get('user_data');
-
             $user_id = $userData->id;
-            $user_subjects = json_decode(json_encode($this->redis_subjects(), true));
-            $id = array_search($sub_id, array_column($user_subjects, 'id'));
-            if ($id >= 1) {
-                $subject = $user_subjects[$id]->subject_name;
-            } else {
-                $subject = $user_subjects[0]->subject_name;
-            }
+            $subject = $input['subject_name'];
+            $chapter_name = base64_decode($input['chapter_name']);
 
-            $api_url = env('API_URL') . 'api/topics-by-subject-id/' . $user_id . '/'  . $sub_id;
+            $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/'  . $sub_id;
 
             $curl = curl_init();
             curl_setopt_array($curl, array(
@@ -867,7 +866,7 @@ class AnalyticsController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response_json, true);
             $topicList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
-            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList'))->render();
+            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList','chapter_name'))->render();
 
             return response()->json([
                 'status' => true,
@@ -878,4 +877,51 @@ class AnalyticsController extends Controller
             Log::info($e->getMessage());
         }
     }
+    public function chapterAnalyticsList($sub_id)
+    {
+      try 
+      {
+            $userData = Session::get('user_data');
+
+            $user_id = $userData->id;
+            $user_subjects = json_decode(json_encode($this->redis_subjects(), true));
+            $id = array_search($sub_id, array_column($user_subjects, 'id'));
+            if ($id >= 1) {
+                $subject = $user_subjects[$id]->subject_name;
+            } else {
+                $subject = $user_subjects[0]->subject_name;
+            }
+
+            $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/'  . $sub_id;
+
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $api_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            $aResponse = json_decode($response_json, true);
+            $chapterList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
+            $html = view('afterlogin.Analytics.chapter_analytics', compact('sub_id', 'subject', 'chapterList'))->render();
+
+            return response()->json([
+                'status' => true,
+                'html' => $html,
+                'message' => 'Coupon code applied successfully.',
+            ]);
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }   
+    }
+
 }

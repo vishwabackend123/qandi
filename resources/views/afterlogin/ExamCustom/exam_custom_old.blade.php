@@ -60,7 +60,7 @@
 
                             <div class="tab-pane fade show {{($skey==0)?'active':''}}" id="{{$sub->subject_name}}" role="tabpanel" aria-labelledby="{{$sub->subject_name}}-tab">
                                 <div class="d-flex ps-4 my-3 py-2 align-items-center justify-content-between">
-                                    <span class="  mr-3 name-txt">{{$sub->subject_name}}</span>
+                                    <span class="  mr-3 name-txt" style="text-transform:none">{{$sub->subject_name}}</span>
                                     <p class="mb-0 text-danger ms-auto me-4 text-uppercase fw-500">You can pick chapters / topics or</p>
                                     <form method="post" action="{{route('custom_exam')}}">
                                         @csrf
@@ -85,7 +85,7 @@
                                     @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                                     {{-- {{dd($chapters)}}--}}
                                     <div class="d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-4 listing-details w-100 flex-wrap  ">
-                                        <span class="mr-3 name-txt col-4 text-break">{{$chapters->chapter_name}}</span>
+                                        <span class="mr-3 name-txt col-4 text-break" style="text-transform:none">{{$chapters->chapter_name}}</span>
 
                                         <div class="status-id d-flex align-items-center   ml-0 ml-md-3 rating col-3" data-vote="0">
                                             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">

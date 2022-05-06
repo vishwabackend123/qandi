@@ -268,6 +268,9 @@ $userData = Session::get('user_data');
                                 <p>Far from Goa (grey)l => {{100 -$mockTestScoreCurr}}%</p>
                             </div>--}}
                         </div>
+                        <div class="chapter_analytics">
+                            @include('afterlogin.Analytics.chapter_analytics')
+                        </div>
                         <div class="topics_analytics">
                             @include('afterlogin.Analytics.topics_analytics')
                         </div>
@@ -321,6 +324,7 @@ $userData = Session::get('user_data');
 </script>
 @endif
 <script type="text/javascript">
+    $(".chapter_analytics").hide();
     $(".topics_analytics").hide();
     /* $(".scroll-topic-ana").slimscroll({
         height: "20vh",
@@ -1049,34 +1053,57 @@ $userData = Session::get('user_data');
         });
     });
 
-    function expandAnalytics(sub_id) {
+    function expandTopicAnalytics(sub_id,subject_name,chapter_name) {
         url = "{{ url('topic-analytics') }}/" + sub_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "subject_name": subject_name,
+                "chapter_name": chapter_name
+            },
+            beforeSend: function() {
+                // $('.loader-block').show();
+            },
+            success: function(data) {
+                $('.chapter_analytics').hide();
+                $(".topics_analytics").show();
+                $('.topics_analytics').html(data.html);
+                $('#overall').hide();
+
+            },
+            error: function(data, errorThrown) {
+            }
+        });
+    }
+    function expandChapterAnalytics(sub_id) {
+        url = "{{ url('chapter-analytics') }}/" + sub_id;
         $.ajax({
             url: url,
             data: {
                 "_token": "{{ csrf_token() }}",
             },
             beforeSend: function() {
-                // $('.loader-block').show();
+                
             },
             success: function(data) {
-                $(".topics_analytics").show();
-                $('.topics_analytics').html(data.html);
-                //$(".overllanaly").hide();
-                //$('.loader-block').hide();
+                $(".chapter_analytics").show();
+                $('.chapter_analytics').html(data.html);
                 $('#overall').hide();
-
             },
             error: function(data, errorThrown) {
-                //$('.loader-block').hide();
             }
         });
     }
 
     function backPage() {
-        $(".topics_analytics").hide();
+        $(".chapter_analytics").hide();
         $("#overall").show();
 
+    }
+    function backChapterPage() {
+         $(".topics_analytics").hide();
+         $(".chapter_analytics").show();
     }
     function backRedirect()
     {

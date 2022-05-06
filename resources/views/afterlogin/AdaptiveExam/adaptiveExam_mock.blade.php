@@ -139,7 +139,7 @@ $questtype='radio';
                                             @if(isset($aSections) && !empty($aSections))
                                             @foreach($aSections as $section)
                                             @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
-                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}}({{$aSubSecCount[$subject_id][$section->id]}}) | {{$section->question_type_name}}</a>
+                                            <a class="btn {{($section->id==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$section->id}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$section->id}}')">{{$section->section_name}}({{$aSubSecCount[$subject_id][$section->id]." Q"}}) | {{$section->question_type_name}}</a>
                                             @endif
                                             @endforeach
                                             @endif
@@ -186,8 +186,8 @@ $questtype='radio';
                                                 @endforeach
                                                 @endif
                                                 @elseif($template_type==11)
-                                                <div class="col-md-6 mb-4">
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                <div class="col-md-5 mb-4">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
 
                                                 </div>
                                                 @endif

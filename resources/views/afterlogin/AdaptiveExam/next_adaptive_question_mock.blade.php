@@ -103,7 +103,7 @@ $questtype='radio';
         @foreach($aSections as $Vsec)
         @php $secId=$Vsec->id;@endphp
         @if(isset($aSubSecCount->$subject_id->$secId) && $aSubSecCount->$subject_id->$secId>0)
-        <a class="btn {{($secId==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$secId}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$secId}}')">{{$Vsec->section_name}}({{$aSubSecCount->$subject_id->$secId}}) | {{$Vsec->question_type_name}}</a>
+        <a class="btn {{($secId==$section_id)?'btn-primary':'btn-outline-primary'}} btn-sm me-2 sectionBtn section_{{$secId}}" onclick="get_subject_Sec_question('{{$subject_id}}','{{$secId}}')">{{$Vsec->section_name}}({{$aSubSecCount->$subject_id->$secId." Q"}}) | {{$Vsec->question_type_name}}</a>
         @endif
         @endforeach
         @endif
@@ -153,8 +153,8 @@ $questtype='radio';
             @endforeach
             @endif
             @elseif($template_type==11)
-            <div class="col-md-6 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Your answer" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+            <div class="col-md-5 mb-4">
+                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
 
             </div>
             @endif
