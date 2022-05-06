@@ -455,6 +455,10 @@
 .custom_attempted_page  .morning-slot{display:inline-block!important;width:50%;vertical-align: top;text-align: right;}
 .custom_attempted_page .result-list-btns{display:inline-block;margin-top:10px;}
 .custom_attempted_page .result-list .d-flex.justify-content-between.outerhead h4 , .custom_attempted_page .morning-slot p{margin-bottom:10px!important;}
+.profile-section ul {
+  
+    margin-top: 0px;
+}
 
 }
 @media(max-width:550px){
