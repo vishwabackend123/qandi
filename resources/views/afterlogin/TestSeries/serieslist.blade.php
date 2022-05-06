@@ -77,7 +77,104 @@ $userData = Session::get('user_data');
                             </div>
 
                             <div class="tab-pane fade show " id="live" role="tabpanel" aria-labelledby="live-tab">
-                                @if(!empty($live_series))
+
+                                <div class="d-flex  p-4 mb-4">
+                                    <a class="btn sectionBtn btn-primary me-2">ALL TEST SERIES</a>
+                                    <a class="btn sectionBtn btn-outline-primary me-2">OPEN TEST SERIES</a>
+                                    <a class="btn sectionBtn btn-outline-primary">LIVE TEST SERIES</a>
+                                </div>
+
+                                <div class="scroll-div mt-4">
+                                    <div class="compLeteS">
+                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
+                                            <div class="d-flex align-items-start justify-content-between result-list-head">
+                                                <h4 class="m-lg-0 p-0">                                                  Series B
+                                                  
+                                                </h4>
+                                                <p class="m-0 p-0">06 May 2022</p>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center morning-slot">
+                                                <p class="m-0 p-0">Morning Slots</p>
+                                                <span class="slbs-link ms-5 me-lg-0 me-2">
+                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_561" data-bs-toggle="collapse" href="#chapter_561" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_561"><span id="expand_topic_561">Show Details</span></a></span>
+                                            </div>
+                                            <div class="result-list-btns">
+                                                <a href="http://app.thomsondigital2021.com/exam_review/561/attempted" class="btn result-review w-100">Review Exam</a>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-0" id="chapter_561">
+                                            <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
+                                                <div class="score-show text-center">
+                                                    <p class="p-0 mb-3">Score:<span>-1</span>/20</p>
+                                                    <a href="http://app.thomsondigital2021.com/get_exam_result_analytics/561" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
+                                                    <div class="paper-sub">
+                                                        <small>No of Question</small>
+                                                        <span>5 MCQ</span>
+                                                    </div>
+                                                    <div class="paper-sub">
+                                                        <small>Duration</small>
+                                                        <span>10</span> Minutes
+                                                    </div>
+                                                    <div class="paper-sub">
+                                                        <small>Marks</small>
+                                                        <span>20</span>
+                                                    </div>
+                                                    <div class="paper-sub">
+                                                        <small>Subjects</small>
+                                                        <span>Physics</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compLeteS">
+                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
+                                            <div class="d-flex align-items-start justify-content-between result-list-head">
+                                                <h4 class="m-lg-0 p-0">                                                  Series B
+                                                  
+                                                </h4>
+                                                <p class="m-0 p-0">06 May 2022</p>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center morning-slot">
+                                                <p class="m-0 p-0">Morning Slots</p>
+                                                <span class="slbs-link ms-5 me-lg-0 me-2">
+                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_561" data-bs-toggle="collapse" href="#chapter_561" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_561"><span id="expand_topic_561">Show Details</span></a></span>
+                                            </div>
+                                            <div class="result-list-btns">
+                                                <a href="http://app.thomsondigital2021.com/exam_review/561/attempted" class="btn result-review w-100">Review Exam</a>
+                                            </div>
+                                        </div>
+                                        <div class="collapse mt-0" id="chapter_561">
+                                            <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
+                                                <div class="score-show text-center">
+                                                    <p class="p-0 mb-3">Score:<span>-1</span>/20</p>
+                                                    <a href="http://app.thomsondigital2021.com/get_exam_result_analytics/561" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
+                                                    <div class="paper-sub">
+                                                        <small>No of Question</small>
+                                                        <span>5 MCQ</span>
+                                                    </div>
+                                                    <div class="paper-sub">
+                                                        <small>Duration</small>
+                                                        <span>10</span> Minutes
+                                                    </div>
+                                                    <div class="paper-sub">
+                                                        <small>Marks</small>
+                                                        <span>20</span>
+                                                    </div>
+                                                    <div class="paper-sub">
+                                                        <small>Subjects</small>
+                                                        <span>Physics</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- @if(!empty($live_series))
                                 <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                     @foreach($live_series as $live)
                                     <ul class="speci-text">
@@ -111,7 +208,7 @@ $userData = Session::get('user_data');
                                 <div class="row text-center p-4">
                                     <h5>No series avialable.</h5>
                                 </div>
-                                @endif
+                                @endif -->
 
                             </div>
 
@@ -125,6 +222,156 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
+
+<style>
+    .result-list-table {
+    background: #f6f9fd;
+    border-radius: 15px;
+}
+
+.result-list-table .result-list-head {
+    flex: 2;
+}
+
+.result-list-head h4 {
+    color: #231f20;
+    font-size: 16px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.result-list-head p {
+    color: #231f20;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.morning-slot {
+    flex: 2;
+}
+
+.morning-slot p {
+    color: #231f20;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-list-btns {
+    flex: 1;
+}
+
+.result-list-btns a {
+    line-height: 37px;
+    height: 48px;
+    text-align: center;
+    display: block;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+.result-list-btns a .fa {
+    font-size: 17px;
+    line-height: 48px;
+}
+
+.result-review {
+    height: 48px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    color: #515151 !important;
+    font-size: 16px;
+    width: 75%;
+}
+
+.score-show {
+    flex: 3;
+    border-right: 1px solid #b9b9b9;
+}
+
+.score-show p {
+    color: #231f20;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.score-show p span {
+    color: #00baff;
+}
+
+.result-analysis {
+    background: #13c5ff;
+    background-color: #13c5ff;
+    border-color: #13c5ff;
+    -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 32px;
+    border-radius: 20px;
+    height: 45px;
+    width: 208px;
+    border: 0;
+}
+
+.paper-summery {
+    flex: 5;
+}
+
+.paper-sub {
+    font-size: 13px;
+    flex: 1;
+    word-break: break-all;
+}
+
+.paper-sub span {
+    color: #00baff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.paper-sub small {
+    display: block;
+    color: #231f20;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.result-list-table .slbs-link a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1199px) {
+    .result-list-head h4 {
+        font-size: 14px;
+    }
+
+    .result-list-head p {
+        font-size: 14px;
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .result-list .d-flex.justify-content-between {
+        display: flex !important;
+    }
+
+    .result-review {
+        font-size: 13px;
+    }
+
+    .paper-sub small {
+        font-size: 12px;
+    }
+
+    .paper-sub span {
+        font-size: 13px;
+    }
+}
+
+</style>
 
 <script>
     $(window).on('load', function() {

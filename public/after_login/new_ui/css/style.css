@@ -16,6 +16,21 @@ button {
     text-decoration: none;
 }
 
+.practice-series-lists .compLeteS .result-list-table {
+    border-radius: 0;
+    background: none!important;
+    padding-bottom: 15px;
+}
+.practice-series-lists .compLeteS {
+    border-radius: 30px;
+    background: rgba(243, 247, 255, 0.5);
+    padding: 15px 20px 15px;
+    margin-bottom: 20px;
+}
+.practice-series-lists .compLeteS .collapse {
+    background-color: #fff;
+    border-radius: 30px;
+}
 .practice-series-lists ul.speci-text {
     border-radius: 30px;
     background-color: rgba(243, 247, 255, 0.5);
