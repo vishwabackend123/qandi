@@ -189,7 +189,7 @@
         .leader-board {height: 465px; min-height: 350px; padding-left: 0px;float: inherit; }
         #editProfile_form .form-flds input {font-size: 14px;}
         #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
-        #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
+        #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;padding: 10px 30px;}
         .search-frnd input{margin-left: 10px}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
         .exportAnaylisis .exportUsertxt{margin-left:0;}  
