@@ -352,6 +352,10 @@
         .custom_attempted_page .result-list .d-flex.justify-content-between.full-syllabus {display: block!important;}
         .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery{flex-direction: row;flex-wrap: wrap;}
         .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub {flex: auto;    margin-top: 8px;}
+        .test-review {
+            margin-top: 0px;
+            
+        }
 
     }
 
