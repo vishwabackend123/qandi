@@ -94,63 +94,20 @@ $userData = Session::get('user_data');
                                                 <p class="m-0 p-0">06 May 2022</p>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-center morning-slot">
-                                                <p class="m-0 p-0">Morning Slots</p>
-                                                <span class="slbs-link ms-5 me-lg-0 me-2">
-                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_561" data-bs-toggle="collapse" href="#chapter_561" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_561"><span id="expand_topic_561">Show Details</span></a></span>
+                                                <span class="slbs-link me-5">
+                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_561" data-bs-toggle="collapse" href="#chapter_561" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_561"><span id="expand_topic_561"><i class="fa fa-arrow-down me-1"></i> Show Details</span></a>
+                                                </span>
+                                                <a href="http://app.thomsondigital2021.com/get_exam_result_analytics/561" class="btn result-analysis"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;View Analytics</a>
                                             </div>
                                             <div class="result-list-btns">
                                                 <a href="http://app.thomsondigital2021.com/exam_review/561/attempted" class="btn result-review w-100">Review Exam</a>
                                             </div>
                                         </div>
-                                        <div class="collapse mt-0" id="chapter_561">
+                                        <div class="collapse" id="chapter_561">
                                             <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
                                                 <div class="score-show text-center">
                                                     <p class="p-0 mb-3">Score:<span>-1</span>/20</p>
-                                                    <a href="http://app.thomsondigital2021.com/get_exam_result_analytics/561" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
-                                                    <div class="paper-sub">
-                                                        <small>No of Question</small>
-                                                        <span>5 MCQ</span>
-                                                    </div>
-                                                    <div class="paper-sub">
-                                                        <small>Duration</small>
-                                                        <span>10</span> Minutes
-                                                    </div>
-                                                    <div class="paper-sub">
-                                                        <small>Marks</small>
-                                                        <span>20</span>
-                                                    </div>
-                                                    <div class="paper-sub">
-                                                        <small>Subjects</small>
-                                                        <span>Physics</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="compLeteS">
-                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
-                                            <div class="d-flex align-items-start justify-content-between result-list-head">
-                                                <h4 class="m-lg-0 p-0">                                                  Series B
-                                                  
-                                                </h4>
-                                                <p class="m-0 p-0">06 May 2022</p>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-center morning-slot">
-                                                <p class="m-0 p-0">Morning Slots</p>
-                                                <span class="slbs-link ms-5 me-lg-0 me-2">
-                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_561" data-bs-toggle="collapse" href="#chapter_561" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_561"><span id="expand_topic_561">Show Details</span></a></span>
-                                            </div>
-                                            <div class="result-list-btns">
-                                                <a href="http://app.thomsondigital2021.com/exam_review/561/attempted" class="btn result-review w-100">Review Exam</a>
-                                            </div>
-                                        </div>
-                                        <div class="collapse mt-0" id="chapter_561">
-                                            <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
-                                                <div class="score-show text-center">
-                                                    <p class="p-0 mb-3">Score:<span>-1</span>/20</p>
-                                                    <a href="http://app.thomsondigital2021.com/get_exam_result_analytics/561" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
+                                                    
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
                                                     <div class="paper-sub">
