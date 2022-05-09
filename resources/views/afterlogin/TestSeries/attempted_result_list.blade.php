@@ -96,7 +96,8 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-center morning-slot">
                         <span class="slbs-link me-5">
-                            <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Show Details</span></a>
+                            <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}"><i class="fa fa-arrow-down"></i> 
+                            Show Details</span></a>
                         </span>
                         <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;View Analytics</a>
                     </div>
@@ -109,11 +110,11 @@
                         <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                             <div class="paper-sub">
                                 <small>No of Question</small>
-                                <span>{{$sche->no_of_question}} MCQ <small style="font-weight:normal;">Questions</small></span>
+                                <span>{{$sche->no_of_question}} MCQ <b style="font-weight:normal;">Questions</b></span>
                             </div>
                             <div class="paper-sub">
                                 <small>Duration</small>
-                                <span>{{$sche->test_time/60}} <small style="font-weight:normal;">Mins</small></span>
+                                <span>{{$sche->test_time/60}} <b style="font-weight:normal;">Mins</b></span>
                             </div>
                             <div class="paper-sub">
                                 <small>Marks</small>
