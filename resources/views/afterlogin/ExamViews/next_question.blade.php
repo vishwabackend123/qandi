@@ -213,6 +213,7 @@ $questtype='radio';
 
             }
         }
+        $('#quest_option_' + question_id).focus();
     });
 
     /* Allow only numeric with decimal */

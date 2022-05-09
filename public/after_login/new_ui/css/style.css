@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+.chapter-topic-lists.ulStyle{max-height: calc(100vh - 160px);overflow-y: auto;overflow-x: hidden;}
+#graphExpand.modal{z-index: 10600;}
 .custom-page.practice_custom_page .star-ratings-css-top span {
     line-height: 40px;
 }
