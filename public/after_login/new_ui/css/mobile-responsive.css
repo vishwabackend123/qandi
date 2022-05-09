@@ -82,7 +82,7 @@
             font-size: 25px;
             line-height: 30px;
         }
-        .topics-box{justify-content:left;}
+        .topics-box{justify-content:center;-webkit-justify-content:center;}
         .topics-box:first-child{margin-left:0px;}
         .progressChartExpend{min-width:1600px;}
         .log-out-screen{
