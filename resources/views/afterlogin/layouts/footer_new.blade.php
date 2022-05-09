@@ -1,3 +1,12 @@
+<style type="text/css">
+    .leader-board ul li span p {
+    font-size: 12px;
+    opacity: 0.5;
+    color: #2c3348;
+    font-weight: normal;
+    text-transform: none;
+}
+</style>
 <div class="modal fade" id="exportAnalytics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light">
