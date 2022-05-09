@@ -96,8 +96,12 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-center morning-slot">
                         <span class="slbs-link me-5">
-                            <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}"><i class="fa fa-arrow-down"></i> 
-                            Show Details</span></a>
+                            <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}">
+                                <span id="expand_topic_{{$sche->id}}">
+                                    <i class="fa fa-arrow-down"></i>
+                                Show Details
+                                </span>
+                            </a>
                         </span>
                         <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;View Analytics</a>
                     </div>
@@ -143,6 +147,23 @@
         @endif
     </div>
 </div>
+<script type="text/javascript">
+    $('a.expandTopicCollapse span').click(function() {
+    var spanId = this.id;
+    var curr_text = $("#" + spanId).text();
+    curr_text = curr_text.replace(/\s+/g, "");
+    var updatetext = ((curr_text == 'HideDetails') ? 'Show Details' : 'Hide Details');
+    var htmlData='';
+    if(curr_text=='HideDetails')
+    {
+        $("#" + spanId).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> '+ updatetext);
+    }else
+    {
+        $("#" + spanId).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> '+ updatetext);
+    }
+    
+});
+</script>
 <style>
 .newelement {
     background: white !important;
