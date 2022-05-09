@@ -617,7 +617,7 @@ li.a3TS {
     #editProfile_form  .form-flds { margin-bottom: 10px !important;}
 }
 @media(max-width:385px){
-    star-img {
+    .star-img {
         width: 72% !important;}
     .course-star li strong {
         width: 100% !important;
