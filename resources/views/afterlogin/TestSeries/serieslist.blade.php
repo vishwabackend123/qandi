@@ -105,18 +105,15 @@ $userData = Session::get('user_data');
                                         </div>
                                         <div class="collapse" id="chapter_561">
                                             <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
-                                                <div class="score-show text-center">
-                                                    <p class="p-0 mb-3">Score:<span>-1</span>/20</p>
-                                                    
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
+                                                
+                                                <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                                                     <div class="paper-sub">
                                                         <small>No of Question</small>
-                                                        <span>5 MCQ</span>
+                                                        <span>90 MCQ <small style="font-weight:normal;">Questions</small></span>
                                                     </div>
                                                     <div class="paper-sub">
                                                         <small>Duration</small>
-                                                        <span>10</span> Minutes
+                                                        <span>60 <small style="font-weight:normal;">Mins</small></span> 
                                                     </div>
                                                     <div class="paper-sub">
                                                         <small>Marks</small>
@@ -125,6 +122,12 @@ $userData = Session::get('user_data');
                                                     <div class="paper-sub">
                                                         <small>Subjects</small>
                                                         <span>Physics</span>
+                                                    </div>
+                                                </div>
+                                                <div class="score-show text-center">
+                                                    <div class="paper-sub">
+                                                        <small>Score</small>
+                                                        <span><b style="color:rgba(12, 193, 255, 0.9);">102</b> / 300</span>
                                                     </div>
                                                 </div>
                                             </div>
