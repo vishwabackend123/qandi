@@ -620,6 +620,11 @@ li.a3TS {
     #editProfile_form  .form-flds { margin-bottom: 10px !important;}
 }
 @media(max-width:385px){
+    .star-img {
+        width: 72% !important;}
+    .course-star li strong {
+        width: 100% !important;
+    }
 	#sharefrnd .py-5.copiedmshblock {
 		padding-top: 15px !important;
 		padding-bottom: 15px !important;
