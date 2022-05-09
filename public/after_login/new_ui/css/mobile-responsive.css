@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .live-test {
+    margin: 0;
+}
     .course-star{width: 100%;}
     .custom-page .cust-tab-content{padding-bottom: 30px!important;}
 
