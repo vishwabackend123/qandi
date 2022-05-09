@@ -1,3 +1,8 @@
+<div class="d-flex  p-4 mb-4">
+                                    <a class="btn sectionBtn btn-primary me-2">ALL TEST SERIES</a>
+                                    <a class="btn sectionBtn btn-outline-primary me-2">OPEN TEST SERIES</a>
+                                    <a class="btn sectionBtn btn-outline-primary">LIVE TEST SERIES</a>
+                                </div>
 <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
     <div class="scroll-div mt-4" id="chapter_list_1">
                                   @if(!empty($result_data))

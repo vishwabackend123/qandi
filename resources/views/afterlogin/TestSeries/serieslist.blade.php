@@ -101,6 +101,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="tab-pane fade show " id="live" role="tabpanel" aria-labelledby="live-tab">
                                @include('afterlogin.TestSeries.attempted_result_list')
+
                             </div>
                         </div>
                     </div>
@@ -112,6 +113,156 @@ $userData = Session::get('user_data');
 <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
+
+<style>
+    .result-list-table {
+    background: #f6f9fd;
+    border-radius: 15px;
+}
+
+.result-list-table .result-list-head {
+    flex: 2;
+}
+
+.result-list-head h4 {
+    color: #231f20;
+    font-size: 16px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.result-list-head p {
+    color: #231f20;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.morning-slot {
+    flex: 2;
+}
+
+.morning-slot p {
+    color: #231f20;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.result-list-btns {
+    flex: 1;
+}
+
+.result-list-btns a {
+    line-height: 37px;
+    height: 48px;
+    text-align: center;
+    display: block;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+.result-list-btns a .fa {
+    font-size: 17px;
+    line-height: 48px;
+}
+
+.result-review {
+    height: 48px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    color: #515151 !important;
+    font-size: 16px;
+    width: 75%;
+}
+
+.score-show {
+    flex: 3;
+    border-right: 1px solid #b9b9b9;
+}
+
+.score-show p {
+    color: #231f20;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.score-show p span {
+    color: #00baff;
+}
+
+.result-analysis {
+    background: #13c5ff;
+    background-color: #13c5ff;
+    border-color: #13c5ff;
+    -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 32px;
+    border-radius: 20px;
+    height: 45px;
+    width: 208px;
+    border: 0;
+}
+
+.paper-summery {
+    flex: 5;
+}
+
+.paper-sub {
+    font-size: 13px;
+    flex: 1;
+    word-break: break-all;
+}
+
+.paper-sub span {
+    color: #00baff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.paper-sub small {
+    display: block;
+    color: #231f20;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.result-list-table .slbs-link a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 1199px) {
+    .result-list-head h4 {
+        font-size: 14px;
+    }
+
+    .result-list-head p {
+        font-size: 14px;
+        flex: 1;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .result-list .d-flex.justify-content-between {
+        display: flex !important;
+    }
+
+    .result-review {
+        font-size: 13px;
+    }
+
+    .paper-sub small {
+        font-size: 12px;
+    }
+
+    .paper-sub span {
+        font-size: 13px;
+    }
+}
+
+</style>
 <script>
 $(window).on('load', function() {
     $(".dash-nav-link a:first-child").removeClass("active-navlink");
@@ -153,6 +304,7 @@ $(document).ready(function() {
 
             },
             error: function(data, errorThrown) {
+                $('.loader-block').hide();
             }
         });
     });
