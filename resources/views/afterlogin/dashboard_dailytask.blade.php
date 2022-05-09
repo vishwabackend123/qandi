@@ -59,7 +59,7 @@ $userData = Session::get('user_data');
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
                 <div class="col-md-5">
-                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 dt_sec-1">
+                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"> Task for the Day</span>
                         
                         <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
@@ -85,7 +85,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-md-7">
-                <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 dt_sec-1">
+                <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"> Task for the Day</span>
                         
                         <div class="row mt-3 dtrow-left">
