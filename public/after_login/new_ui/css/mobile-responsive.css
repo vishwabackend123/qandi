@@ -1,4 +1,5 @@
 @media(max-width:767px){
+    .course-star{width: 100%;}
     .custom-page .cust-tab-content{padding-bottom: 30px!important;}
 
     .question-block{height:250px;}
