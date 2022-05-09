@@ -15,6 +15,9 @@ button {
     outline: none;
     text-decoration: none;
 }
+.py-5.myqMatrix-card {
+    padding-bottom: 30px!important;
+}
 .practice-series-lists .paper-sub small{color: #2c3348;font-weight: normal;font-size: 15px;}
 .practice-series-lists .paper-sub span{color: #231f20;font-size: 16px;font-weight: bold;}
 .practice-series-lists .score-show{border-left: 1px solid #b9b9b9;border-right: 0;flex: 1;}
@@ -2156,7 +2159,8 @@ a.disabled-btn {
 }
 
 #editProfile_form {
-    height: 445px;
+    /* height: 445px; */
+    height: 385px;
     overflow: overlay;
     padding-right: 10px;
 }
@@ -9354,9 +9358,15 @@ div#trialbox {
     min-width: 80px !important;
 }
 
-
 .subscriptionBox p.box-content {
     overflow: overlay;
     height: 150px;
     padding-right: 10px;
+}
+label#lastname-error, label#firstname-error,label#username-error {
+    font-size: 14px;
+}
+#editProfile_form  .form-flds {
+    margin-bottom: 15px; 
+
 }

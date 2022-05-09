@@ -337,9 +337,6 @@
     .active_user {
        max-width: 259px;
    }
-    .refund-money{
-       width: 80%;
-   }
     .leader-board {
        right: 225px;
        height: auto;
@@ -373,7 +370,7 @@
     .profile-show .profile-picture-txt h4 {text-align: center;font-size: 14px;}
     .active_user { max-width: 274px;}
     .profile-img-user {width: 35px;height: 35px;}
-    .refund-money{width: 80%;}
+    .refund-money{width: 95%;}
     .leader-board {right: 200px;height: auto;     width: 325px;}
     .profile-show {right: 463px;top: 0px; WIDTH: 283PX;}
     .log-out-screen {right: 200px;    top: 0%; padding: 20px;}
