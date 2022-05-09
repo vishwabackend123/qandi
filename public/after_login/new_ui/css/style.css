@@ -9304,6 +9304,6 @@ div#trialbox {
 label#lastname-error, label#firstname-error,label#username-error {
     font-size: 14px;
 }
-#editProfile_form .btm-form-flds .form-flds {
+#editProfile_form  .form-flds {
     margin-bottom: 10px; 
 }
