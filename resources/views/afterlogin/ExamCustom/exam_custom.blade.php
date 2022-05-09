@@ -279,7 +279,7 @@ $userData = Session::get('user_data');
   </div>
 </div>
 <div class="loader-block" style="display:none;">
-        <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+  <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
 @include('afterlogin.layouts.footer_new')
 
@@ -538,13 +538,13 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-    var labelname=$('#expand_topic_'+chapt_id).text();
+    var labelname = $('#expand_topic_' + chapt_id).text();
     this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
 
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
 
-    //if (topic_length == 0) {
-      if (labelname == 'Collapse Topics') {
+    if (topic_length == 0) {
+      //if (labelname == 'Collapse Topics') {
       url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
       $.ajax({
         url: url,
@@ -576,7 +576,7 @@ $userData = Session::get('user_data');
 
       // $("#expand_topic_" + chapt_id).text("Expand to Topics");
       $("clicktopic_" + chapt_id).focus();
-      $('#topic_form').toggle();
+      //$('#topic_form').toggle();
 
     }
   }
@@ -592,10 +592,10 @@ $userData = Session::get('user_data');
       },
       beforeSend: function() {
         $('#overlay').fadeIn();
-         $('.loader-block').show();
+        $('.loader-block').show();
       },
       success: function(result) {
-         $('.loader-block').hide();
+        $('.loader-block').hide();
 
         /*$("#topic_section_" + chapt_id + " div").remove();
         $("#topic_section_" + chapt_id).html(result);

@@ -417,6 +417,7 @@ class AdpativeExamController extends Controller
             ));
             $response_json = curl_exec($curl);
 
+
             $response_json = str_replace('NaN', '""', $response_json);
 
             $err = curl_error($curl);
@@ -424,6 +425,7 @@ class AdpativeExamController extends Controller
             curl_close($curl);
 
             $responsedata = json_decode($response_json);
+
             $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
             $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
             $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
@@ -777,15 +779,13 @@ class AdpativeExamController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
-            //dd($response_json, $request, $curl_url);
-
             $response_data = (json_decode($response_json));
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
-               // return view('afterlogin.ExamCustom.exam_result_analytics');
+                // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
                 return redirect()->route('dashboard');
             }

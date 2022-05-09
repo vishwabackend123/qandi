@@ -17,20 +17,31 @@ button {
 }
 
 .custom-page.practice_custom_page .star-ratings-css-top span {
-    line-height: 42px;
+    line-height: 40px;
 }
 
 .custom-page.practice_custom_page .star-ratings-css-bottom span {
     line-height: 40px;
 }
-
-input.allownumericwithdecimal {
+.numeric-input-box {
     border: solid 1px rgba(44, 51, 72, 0.5);
+    border-radius: 8px;
+    min-height: 80px;
+    padding: 10px 8px;
+}
+input.allownumericwithdecimal {
+    border: 0;
     background-color: #fff;
     color: #6b707f;
     font-size: 14px;
-    padding: 8px 15px;
-    min-height: 70px;
+    padding: 0 15px;
+}
+.numeric-input-box span {
+    color: #6b707f;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 5px;
+    padding-left: 15px;
 }
 
 .report-block2.p-6>p.text-center.mt-5.pt-5 {

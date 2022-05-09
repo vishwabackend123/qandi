@@ -128,14 +128,12 @@ $questtype='radio';
 
                             <!-- Exam subject Tabs  -->
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
-                                @if(!empty($filtered_subject))
-                                @foreach($filtered_subject as $key=>$sub)
+
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}}</a>
+                                    <a class="nav-link all_div  active  " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
                                 </li>
 
-                                @endforeach
-                                @endif
+
                             </ul>
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
