@@ -16,6 +16,8 @@ button {
     text-decoration: none;
 }
 
+.chapter-topic-lists.ulStyle{max-height: calc(100vh - 160px);overflow-y: auto;overflow-x: hidden;}
+#graphExpand.modal{z-index: 10600;}
 .custom-page.practice_custom_page .star-ratings-css-top span {
     line-height: 40px;
 }
@@ -9303,5 +9305,5 @@ label#lastname-error, label#firstname-error,label#username-error {
     font-size: 14px;
 }
 #editProfile_form .btm-form-flds .form-flds {
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
