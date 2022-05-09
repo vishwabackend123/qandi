@@ -156,7 +156,7 @@ $questtype='radio';
             <div class="col-md-5 mb-4">
                 <div class="numeric-input-box">
                     <span>Answer here</span>
-                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}"  value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20" autofocus>
                 </div>
             </div>
             @endif
@@ -185,7 +185,7 @@ $questtype='radio';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
 
-    //$("#exam_content_sec  #btn_" + question_id).focus();
+
 
     $("#current_question").val(question_id);
     $("#current_question_type").val(template_type);
@@ -215,6 +215,7 @@ $questtype='radio';
 
             }
         }
+        $('#quest_option_' + question_id).focus();
     });
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
