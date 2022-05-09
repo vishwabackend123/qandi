@@ -95,13 +95,13 @@ class MockExamController extends Controller
             $sort = array();
 
 
-            foreach ($aQuestions_list as $k => $v) {
+            /*  foreach ($aQuestions_list as $k => $v) {
                 $sort['subject_id'][$k] = $v->subject_id;
                 $sort['section_id'][$k] = $v->section_id;
             }
 
             # sort by subject_id desc and then title asc
-            array_multisort($sort['subject_id'], SORT_ASC, $sort['section_id'], SORT_ASC, $aQuestions_list);
+            array_multisort($sort['subject_id'], SORT_ASC, $sort['section_id'], SORT_ASC, $aQuestions_list); */
 
 
 
@@ -145,8 +145,6 @@ class MockExamController extends Controller
             $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
 
             $keys = $allQuestions->keys('question_id')->all();
-
-
 
             $question_data = current($aQuestions_list);
             $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
