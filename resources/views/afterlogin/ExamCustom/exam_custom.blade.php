@@ -176,7 +176,7 @@ $userData = Session::get('user_data');
                         <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to Topics</span></a></span>
 
                       <div class="d-flex px-4">
-                        <button class="btn btn-light ms-auto text-danger rounded-0" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
+                        <button class="btn btn-light ms-auto text-danger rounded-0 expand_filter_{{$chapters->chapter_id}} disabled" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
                           <!-- <i class="fa fa-sliders" aria-hidden="true"></i> -->
                           <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsowl">
                           <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsowl"> -->
@@ -532,6 +532,7 @@ $userData = Session::get('user_data');
     var curr_text = $("#" + spanId).text();
     var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
     $("#" + spanId).text(updatetext);
+    
   })
 
 
@@ -539,10 +540,16 @@ $userData = Session::get('user_data');
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
     var labelname = $('#expand_topic_' + chapt_id).text();
+    if(labelname == 'Collapse Topics')
+    {
+      $('.expand_filter_'+chapt_id).removeClass('disabled');
+    }else
+    {
+      $('.expand_filter_'+chapt_id).addClass('disabled');
+      
+    }
     this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
-
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
-
     if (topic_length == 0) {
       //if (labelname == 'Collapse Topics') {
       url = "{{ url('ajax_custom_topic/') }}/" + chapt_id;
