@@ -2107,7 +2107,8 @@ a.disabled-btn {
 }
 
 #editProfile_form {
-    height: 445px;
+    /* height: 445px; */
+    height: 385px;
     overflow: overlay;
     padding-right: 10px;
 }
@@ -9295,4 +9296,12 @@ div#trialbox {
 
 .matrixpage-wrapper .course-star li span.w-auto.star-img {
     min-width: 80px !important;
+}
+
+
+label#lastname-error, label#firstname-error,label#username-error {
+    font-size: 14px;
+}
+#editProfile_form .btm-form-flds .form-flds {
+    margin-bottom: 10px;
 }
