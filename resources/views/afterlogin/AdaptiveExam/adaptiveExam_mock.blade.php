@@ -448,11 +448,14 @@ $questtype='radio';
 <!-- Modal END Exam -->
 <div class="modal hide fade in" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0 ">
+        <div class="modal-header pb-0 border-0">
+              
+            </div>
+        <div class="modal-content rounded-0 custom_model">
+              <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
-
-                    <h3 id="attempt-alert-text" class="text-danger"></h3>
+                    <h3 id="attempt-alert-text" class="text-danger m-0"></h3>
                 </div>
             </div>
         </div>

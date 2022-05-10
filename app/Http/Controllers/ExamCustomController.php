@@ -489,7 +489,7 @@ class ExamCustomController extends Controller
                     $response['status'] = 400;
                     /*   $response['sec_q_attmpt_count'] = $sec_q_attmpt_count; */
 
-                    $response['message'] = "Max attempt limit for this section is " . $max_attempt_limit;
+                    $response['message'] = "This section allows a maximum of " . $max_attempt_limit . " question attempts.";
                     return json_encode($response);
                 }
 
