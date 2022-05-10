@@ -1,4 +1,7 @@
 @media(max-width:767px){
+        .qoption_error{
+    bottom: 0;
+    }
     .live-test {
     margin: 0;
 }

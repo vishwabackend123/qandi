@@ -267,6 +267,11 @@
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    .qoption_error{
+  position: relative;
+    bottom: 65px;
+    font-size: 14px;
+    }
     .live-exam .speci-text {
     display: inline-block;
 }
