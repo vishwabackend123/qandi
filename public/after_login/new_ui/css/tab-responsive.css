@@ -267,6 +267,8 @@
     .topics_breadcum.bg-white {
         top: 16px;
     }
+    .topics_breadcum a {
+        font-size: 14px;}
     .live-exam .speci-text li:last-child a button{width:100%;}
     div#scorecontainer {padding: 0 5px; }
     #marks_trend_graph{    padding-top: 18px;}
