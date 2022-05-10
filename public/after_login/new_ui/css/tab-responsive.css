@@ -188,7 +188,9 @@
     font-size: 12px;
 }
 
-
+.custom-page .cust-tab-content .scroll-div {
+    max-height: calc(100vh - 400px)!important;
+}
 
 }
 
