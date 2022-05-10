@@ -2,19 +2,21 @@
     .status-id.rating {
         width: auto;
     }
-    .topic-details{padding:30px 20px;}
-    .subject-box-expend .subject-name li {
-        width: 30px;
-        height: 30px;
-        margin-right: 7px;
-        line-height: 28px;
-    }
 }
 @media screen and (max-width:1199px){
-    .chapter_analytics .topic-details.row .col-lg-4{width:50%;}
-    .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
-        height: 156px!important;
-    }
+    .live-exam #home .speci-text li:last-child {
+    margin: 0;
+}
+    .live-exam .speci-text {
+    display: flex;
+}
+.list-series .live-exam #home .speci-text li {
+    width: auto;
+    flex: 1;
+}
+    .live-exam .sub-details {
+    padding: 0;
+}
     #test_instruction .col-lg-4.flex-column.justify-content-center{
         width: 90%;
         margin-top: 10px;
@@ -68,6 +70,7 @@
        font-size: 14px;
        padding-left:17px!important;
        padding-right:17px!important;
+       line-height: 35px;
    }
  
     .subscrived svg{
@@ -178,6 +181,9 @@
 .exam-analytics a.top-btn-pop, #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
     font-size: 12px;
 }
+.overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
+    height: 156px!important;
+}
 
 
 
@@ -264,11 +270,19 @@
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
-    .topics_breadcum.bg-white {
-        top: 16px;
+    .qoption_error{
+     position: relative;
+    bottom: 65px;
+    font-size: 14px;
     }
-    .topics_breadcum a {
-        font-size: 14px;}
+    .live-exam .speci-text {
+    display: inline-block;
+}
+    .dashboard-cards-block.matrixpage-wrapper .bg-white>small p{right:0px;}
+    .matrixpage-wrapper  .course-star li strong,.matrixpage-wrapper .star-img {
+        width: auto!important;
+    }
+    .matrixpage-wrapper .topics-box{width: calc(24% - 22px);justify-content: center;}
     .live-exam .speci-text li:last-child a button{width:100%;}
     div#scorecontainer {padding: 0 5px; }
     #marks_trend_graph{    padding-top: 18px;}
@@ -450,8 +464,6 @@
     .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after {
     width: 47px;
 }
-.chapter_analytics .topic-details.row .col-lg-4{width:100%;}
-
 }
 @media(max-width:768px){
     .subscription .form-btns button {
@@ -509,11 +521,12 @@
    .profile-show {right: 418px;width:261px;}
    span.profile-digit{margin-right:10px;}
    .profile-section {width: 150px;}
-   .profile-section ul li a{font-size: 14px;}
+   .profile-section ul li a{font-size: 14px; padding:8px 5px;}
    .leader-board{right: 22%; height: 450px;} 
    span.profile-img-user {width: 35px;height: 35px;}
    .subscription .profile-picture-txt .p-text {width: 100%;}
    .subscrived {margin: 20px 0px 0px;}
+   .custom-page .cust-tab-content {padding-bottom: 20px !important;}
 }
 
 @media(max-width:767px){
