@@ -279,7 +279,7 @@
 }
 @media(max-width:991px){
     .qoption_error{
-  position: relative;
+     position: relative;
     bottom: 65px;
     font-size: 14px;
     }
