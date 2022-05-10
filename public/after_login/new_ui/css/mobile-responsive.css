@@ -389,6 +389,9 @@
 .result-list .d-flex.justify-content-between.outerhead {
     padding: 0 !important;
 }
+#review_rques_blk .answer-section {
+    width: 97.7%!important;
+}
 }
 @media(max-width:576px){
     .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
@@ -470,6 +473,9 @@
 .custom_attempted_page .result-list .d-flex.justify-content-between.outerhead h4 , .custom_attempted_page .morning-slot p{margin-bottom:10px!important;}
 .profile-section ul {
     margin-top: 0px;
+}
+#review_rques_blk .answer-section {
+    width: 97%!important;
 }
 
 }
