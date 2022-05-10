@@ -68,8 +68,8 @@
     .cust-tabs.nav.nav-tabs .nav-link{
        min-width:auto;
        font-size: 14px;
-       padding-left:15px!important;
-       padding-right:15px!important;
+       padding-left:17px!important;
+       padding-right:17px!important;
        line-height: 35px;
    }
  
@@ -180,6 +180,9 @@
 }
 .exam-analytics a.top-btn-pop, #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
     font-size: 12px;
+}
+.overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
+    height: 156px!important;
 }
 
 
