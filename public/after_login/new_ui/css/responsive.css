@@ -1285,12 +1285,13 @@
     }
 
     .course-star li strong {
-        width: 100% !important;
+        width: 43% !important;
         display: block;
+        float: left;
     }
 
     .star-img {
-        width: 70% !important;
+        width: 43% !important;
         display: block;
         float: left;
     }
@@ -1917,9 +1918,9 @@
 
     @media (max-width: 420px) {
         .course-star li strong {
-            width: 100% !important;
+            width: 44% !important;
         }
-
+        .star-img{width: 34% !important;}
         .course-star li {
             padding-bottom: 5px !important;
         }

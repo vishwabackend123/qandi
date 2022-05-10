@@ -445,6 +445,19 @@ $questtype='radio';
         </div>
     </div>
 </div>
+<!-- Modal END Exam -->
+<div class="modal hide fade in" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-0 ">
+            <div class="modal-body p-5 text-center">
+                <div class="text-center py-4">
+
+                    <h3 id="attempt-alert-text" class="text-danger"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
@@ -976,7 +989,10 @@ $questtype='radio';
 
                     }
                 } else if (response.status == 400) {
-                    alert(response.message);
+                    $('#attempt-alert-text').text(response.message);
+                    $('#attemptlimit').modal('show');
+
+                    //alert(response.message);
                     err_sts = false;
                 }
             },
@@ -1045,7 +1061,10 @@ $questtype='radio';
                     isValid = 1;
 
                 } else if (response.status == 400) {
-                    alert(response.message);
+                    $('#attempt-alert-text').text(response.message);
+                    $('#attemptlimit').modal('show');
+
+                    //alert(response.message);
                     isValid = 0;
 
                 }

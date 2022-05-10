@@ -13,10 +13,11 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
-        <div class="container-fluid custom-page">
+        <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-12">
-                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto">
+
+                <div class="col-md-3">
+                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-100">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
@@ -67,8 +68,8 @@ $userData = Session::get('user_data');
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-8 col-md-12">
-                    <div class="tab-wrapper">
+                <div class="col-md-9">
+                    <div class="tab-wrapper h-100">
                         <div>
                             <div class="position-relative">
                                 <ul class="nav nav-tabs cust-tabs w-100" id="myTabs" role="tablist">

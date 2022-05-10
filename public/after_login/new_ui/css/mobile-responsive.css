@@ -1,4 +1,8 @@
 @media(max-width:767px){
+    .live-test {
+    margin: 0;
+}
+    .course-star{width: 100%;}
     .custom-page .cust-tab-content{padding-bottom: 30px!important;}
 
     .question-block{height:250px;}
@@ -82,7 +86,7 @@
             font-size: 25px;
             line-height: 30px;
         }
-        .topics-box{justify-content:left;}
+        .topics-box{justify-content:center;-webkit-justify-content:center;}
         .topics-box:first-child{margin-left:0px;}
         .progressChartExpend{min-width:1600px;}
         .log-out-screen{
@@ -234,7 +238,7 @@
             overflow: initial;
         }
         .tab-wrapper.h-100 {height: auto !important}
-        #review_rques_blk .answer-section { margin-bottom: 0px;width: 97.20% !important;}
+        #review_rques_blk .answer-section { margin-bottom: 0px;width: 97.20% !important; }
         div#myTabContent.reviewPanel .tab-pane .question-block { padding: 15px 0.5rem;}
         .rightSectH {
             font-size: 16px;
@@ -616,6 +620,11 @@ li.a3TS {
     #editProfile_form  .form-flds { margin-bottom: 10px !important;}
 }
 @media(max-width:385px){
+    .star-img {
+        width: 72% !important;}
+    .course-star li strong {
+        width: 100% !important;
+    }
 	#sharefrnd .py-5.copiedmshblock {
 		padding-top: 15px !important;
 		padding-bottom: 15px !important;
