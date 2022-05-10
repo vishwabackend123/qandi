@@ -56,13 +56,13 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
-        <div class="container-fluid custom-page">
+        <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
                 <div class="col-md-5">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"> Task for the Day</span>
                         
-                        <div class="row mt-3 dtrow-left">
+                        <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 1 - Evaluation Skills</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
@@ -72,7 +72,7 @@ $userData = Session::get('user_data');
                             <div class="col-md-6"><a class="btn btntheme" href="#">TAKE TEST</a></div>
                         </div>
 
-                        <div class="row mt-3 dtrow-left">
+                        <div class="row mt-3 dtrow-left"  style="padding: 20px 20px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 2 - Time Management</b></p>
                                 <p>Work on your time management skills with this test</p>

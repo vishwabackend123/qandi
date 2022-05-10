@@ -15,7 +15,59 @@ button {
     outline: none;
     text-decoration: none;
 }
+.py-5.myqMatrix-card {
+    padding-bottom: 30px!important;
+}
+.practice-series-lists .paper-sub small{color: #2c3348;font-weight: normal;font-size: 15px;}
+.practice-series-lists .paper-sub span{color: #231f20;font-size: 16px;font-weight: bold;}
+.practice-series-lists .score-show{border-left: 1px solid #b9b9b9;border-right: 0;flex: 1;}
+.practice-series-lists .result-list-btns a {
+    background: #e9e9e9;
+    border-radius: 20px;
+    color: #2c3348!important;
+    box-shadow: none!important;
+}
+.practice-series-lists .result-analysis {
+    border-radius: 8px;
+    border: solid 1px #21ccff;
+    background: rgba(33, 204, 255, 0.04);
+    color: #21ccff;
+    box-shadow: none;
+    text-transform: none;
+    width: 160px;
+}
+.practice-series-lists .compLeteS .result-list-table {
+    border-radius: 0;
+    background: none!important;
+}
+.practice-series-lists .compLeteS {
+    border-radius: 30px;
+    background: rgba(243, 247, 255, 0.5);
+    padding: 15px 20px 15px;
+    margin-bottom: 20px;
+}
+.practice-series-lists .compLeteS .collapse {
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 15px;
+}
+.practice-series-lists ul.speci-text {
+    border-radius: 30px;
+    background-color: rgba(243, 247, 255, 0.5);
+    padding:12px 0 12px 10px;
+}
+.practice-series-lists ul.speci-text li span, .practice-series-lists ul.speci-text li strong {
+    padding-top: 10px;
+    display: inline-block;
+}
+.practice-series-lists ul.speci-text {
+    border-radius: 30px;
+    background-color: rgba(243, 247, 255, 0.5);
+}
+.practice-series-lists .cust-tabs a.nav-link#live-tab{text-transform: none;}
 
+.chapter-topic-lists.ulStyle{max-height: calc(100vh - 160px);overflow-y: auto;overflow-x: hidden;}
+#graphExpand.modal{z-index: 10600;}
 .custom-page.practice_custom_page .star-ratings-css-top span {
     line-height: 40px;
 }
@@ -60,7 +112,7 @@ input.allownumericwithdecimal {
     margin-top: -4px;
 }
 
-#home a.btn.btn-primary.btn-sm.sectionBtn {
+#home a.btn.btn-primary.btn-sm.sectionBtn , a.btn.btn-primary.sectionBtn {
     font-weight: 500;
     border-radius: 25px !important;
     border: solid 2px rgba(18, 195, 255, 0.6);
@@ -73,7 +125,7 @@ input.allownumericwithdecimal {
     position: relative;
 }
 
-#home a.btn.btn-primary.btn-sm.sectionBtn:before {
+#home a.btn.btn-primary.btn-sm.sectionBtn:before , a.btn.btn-primary.sectionBtn:before {
     content: '';
     position: absolute;
     height: 8px;
@@ -84,7 +136,7 @@ input.allownumericwithdecimal {
     left: 10px;
 }
 
-#home a.btn.btn-outline-primary.btn-sm.sectionBtn {
+#home a.btn.btn-outline-primary.btn-sm.sectionBtn , a.btn.btn-outline-primary.sectionBtn {
     font-weight: 500;
     border-radius: 25px !important;
     border: solid 2px #f6f9fd;
@@ -2107,7 +2159,8 @@ a.disabled-btn {
 }
 
 #editProfile_form {
-    height: 445px;
+    /* height: 445px; */
+    height: 385px;
     overflow: overlay;
     padding-right: 10px;
 }
@@ -9295,4 +9348,11 @@ div#trialbox {
 
 .matrixpage-wrapper .course-star li span.w-auto.star-img {
     min-width: 80px !important;
+}
+
+label#lastname-error, label#firstname-error,label#username-error {
+    font-size: 14px;
+}
+#editProfile_form  .form-flds {
+    margin-bottom: 15px; 
 }
