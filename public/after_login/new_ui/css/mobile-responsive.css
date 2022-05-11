@@ -485,6 +485,9 @@ div#LeaDer {
     top: 287px!important;
     border-radius: 20px!important;
 }
+.profile-section ul {
+    margin-top: 0;
+}
 
 }
 @media(max-width:550px){

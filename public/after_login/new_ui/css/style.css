@@ -538,6 +538,7 @@ div#arrow-left-btm .inner-arrow-left-btm {
 
 .cust-tabs.nav.nav-tabs .nav-link {
     min-width: 150px;
+    line-height: 30px;
 }
 
 .subscription .profile-picture-txt .p-text p {
@@ -8702,8 +8703,8 @@ span#slide-input {
 /* Test screen css 30-Nov */
 #exam_result_analysis .cust-tabs a#Physics_tab_subject.active:nth-child(1):after {
     left: -60px;
-    width: 60px;
-    background: url(/public/after_login/new_ui/images/after-img.png);
+    width: 63px;
+    background: url(../images/after-img.png);;
     background-color: transparent;
     border-top-left-radius: 56px;
 }
@@ -8957,6 +8958,8 @@ input#linkInput {
     border-radius: 50px;
     border: none;
     width: 40px;
+    max-width: 40px;
+    padding:0px;
     height: 40px;
     left: 25px;
     font-size: 25px !important;
@@ -8971,9 +8974,12 @@ input#linkInput {
     border-radius: 50px;
     border: none;
     width: 40px;
+    max-width:40px;
+    padding: 0px;
     height: 40px;
     right: 25px;
     font-size: 25px !important;
+    
 }
 
 .custom-page button.slick-arrow.slick-arrow.slick-disabled {

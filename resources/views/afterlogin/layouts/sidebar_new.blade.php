@@ -387,7 +387,8 @@
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
 
-            <a href="{{route('adaptive_mock_exam')}}" class="nav-link">
+            <!-- <a href="{{route('adaptive_mock_exam')}}" class="nav-link"> -->
+            <a href="{{route('mockExam')}}" class="nav-link">
                 <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
@@ -526,7 +527,7 @@
                             <p class="invalid-feedback m-0 alert-success  p-1 mb-1 successRef_copy"> </p>
                         </div>
                         <div class="re_link">
-                            <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly/>
+                            <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly />
                             <a class="copylinkbtn" type="button" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
                         </div>
                     </div>
