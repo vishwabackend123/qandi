@@ -8701,8 +8701,8 @@ span#slide-input {
 /* Test screen css 30-Nov */
 #exam_result_analysis .cust-tabs a#Physics_tab_subject.active:nth-child(1):after {
     left: -60px;
-    width: 60px;
-    background: url(/public/after_login/new_ui/images/after-img.png);
+    width: 63px;
+    background: url(../images/after-img.png);;
     background-color: transparent;
     border-top-left-radius: 56px;
 }
