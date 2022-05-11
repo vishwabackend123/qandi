@@ -38,7 +38,7 @@ $userData = Session::get('user_data');
                                     <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
                                         <h2 class="mt-4 mb-4">{{$schedule_list[0]->exam_name}}</h2>
                                          @if($start_date_top<=$today_top && $end_date_top>=$today_top)
-                                            <a class="custom-btn-gray" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>       
+                                            <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>       
                                          @endif
                                     </div>
                                     <div class="d-flex justify-content-between flex-wrap">
@@ -59,7 +59,7 @@ $userData = Session::get('user_data');
                                 </div>
                                  @endif
                                 <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
-                                <div class="scroll-div-live-exm pb-0 mb-3">
+                                <div class="scroll-div-live-exm">
                                     @if(!empty($schedule_list))
                                     @foreach($schedule_list as $key=>$sche)
                                     @php
