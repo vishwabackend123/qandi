@@ -187,6 +187,8 @@
 .exam-analytics a.top-btn-pop, #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
     font-size: 12px;
 }
+#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1{ font-size: 12px;}
+
 .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
     height: 156px!important;
 }
@@ -426,6 +428,9 @@
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
     .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 33.33%!important;}
     /* .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width:55%;} */
+    .exam-analytics span.text-center.w-100 img {
+        width: 60%;
+    }
     
 }
 @media (min-width: 769px) and (max-width: 990px){
@@ -542,5 +547,8 @@
 .padd-right-0{padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
 .notification-txt span.text-notific {
     font-size: 14px;
+}
+.exam-analytics span.text-center.w-100 img {
+    width: 65%;
 }
 }

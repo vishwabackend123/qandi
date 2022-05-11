@@ -177,10 +177,10 @@
             right: 3%;
             height: 450px;
         }
-        .profile-show {left:25px !important;}
+        .profile-show {left: 34px !important;}
 
 
-        .edit-form{top: 12% !important;min-width: 290px;right: 9px !important;left: initial;  }
+        .edit-form{top: 90px !important;min-width: 290px;right: 9px !important;left: initial;  }
         .edit-form .edit-img {
             margin-bottom: 0.4rem !important;
         }
@@ -204,7 +204,7 @@
         .profile-show .profile-picture-txt .p-text {
             margin-top: 10px;
         }
-        .profile-show{padding-top: 0px !important;margin-top: 7px;}
+        .profile-show{padding-top: 0px !important;margin-top:0px;}
         .leader-board h4 {
             text-align: left;
             padding-right: 0px;
@@ -220,17 +220,20 @@
         .exportAnaylisis .justify-content-center{justify-content: start!important;}
         .exportAnaylisis .export-block p {font-size: 14px;}
 
-
+        div#LeaDer {
+            top: 90px !important;
+            border-top-left-radius: 0px !important;
+        }
 
 
         .log-out-screen{max-width: 267px;}
-        .leader-board, .profile-show{width:47% !important;    top: 70px !important;} 
+        .leader-board, .profile-show{width:47% !important;    top: 90px !important;} 
         .edit-form{min-width: 240px;}
         .f_l_name_box .form-flds { width: 100% !important;margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
         #editProfile_form .form-flds p {font-size: 10px;}
       
-        .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
+        .log-out-screen,.subscription {top:90px !important;right: 10px !important; }
         .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
         .exportAnaylisis .export-block h2 {font-size: 26px;}
         .reportHeading {font-size: 18px;}
@@ -480,6 +483,10 @@
 #review_rques_blk .answer-section {
     width: 97%!important;
 }
+div#LeaDer {
+    top: 287px!important;
+    border-radius: 20px!important;
+}
 
 }
 @media(max-width:550px){
@@ -635,6 +642,9 @@ li.a3TS {
     #editProfile_form  .form-flds { margin-bottom: 10px !important;}
     #review_rques_blk .answer-section {
         width: 95%!important;
+    }
+    .subscription .form-btns button {
+        font-size: 10px;
     }
 }
 @media(max-width:385px){
