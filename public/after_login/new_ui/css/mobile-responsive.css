@@ -483,6 +483,10 @@
 #review_rques_blk .answer-section {
     width: 97%!important;
 }
+div#LeaDer {
+    top: 287px!important;
+    border-radius: 20px!important;
+}
 
 }
 @media(max-width:550px){
