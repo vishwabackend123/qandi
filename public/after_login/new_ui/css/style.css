@@ -73,11 +73,8 @@ button {
     padding: 15px 20px 15px;
     margin-bottom: 20px;
 }
-<<<<<<< HEAD
 .practice-series-lists .compLeteS .collapse , .mocktest-attempted-wrapper .compLeteS .collapse {
-=======
-.exam_attempted_common_page .compLeteS .collapse {
->>>>>>> cad3919844e001a1c3b79bff5b9c5e1c74bbc0eb
+
     background-color: #fff;
     border-radius: 30px;
     margin-top: 15px;
