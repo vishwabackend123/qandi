@@ -431,7 +431,9 @@
     .exam-analytics span.text-center.w-100 img {
         width: 60%;
     }
-    
+    .custom-page .cust-tab-content .scroll-div {
+        max-height: calc(100vh - 437px)!important;
+    }  
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
