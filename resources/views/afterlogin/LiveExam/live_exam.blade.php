@@ -39,12 +39,18 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
-if($template_type==1){
+
+$question_type = '';
+if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}elseif($template_type==2){
+$question_type = "Multi Choice";
+}elseif($template_type == 2){
 $type_class='radioans';
 $questtype='radio';
+$question_type = "Single Choice";
+}elseif ($template_type == 11) {
+$question_type = "Numerical";
 }
 @endphp
 <style>
@@ -85,6 +91,9 @@ $questtype='radio';
 
                                 <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                 <div id="question_section" class="">
+                                    <!-- question Type Tag -->
+                                    <span class="fw-bold text-uppercase">{{$question_type}}</span>
+                                    <!-- question Type Tag -->
                                     <div class="question-block">
                                         <!-- Next and previous button -->
                                         <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
@@ -442,17 +451,17 @@ $questtype='radio';
     $(document).ready(function() {
 
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {

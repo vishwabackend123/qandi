@@ -15,12 +15,17 @@ $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 
-if($template_type==1){
+$question_type = '';
+if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}elseif($template_type==2){
+$question_type = "Multi Choice";
+}elseif($template_type == 2){
 $type_class='radioans';
 $questtype='radio';
+$question_type = "Single Choice";
+}elseif ($template_type == 11) {
+$question_type = "Numerical";
 }
 @endphp
 <!-- Side bar menu -->
@@ -1009,7 +1014,8 @@ $questtype='radio';
         display: flex;
         align-items: center;
     }
-    .ans_inner{
+
+    .ans_inner {
         overflow-y: scroll;
     }
 </style>

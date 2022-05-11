@@ -9,12 +9,17 @@ $template_type = isset($question_data->template_type)?$question_data->template_t
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 $correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
 
-if($template_type==1){
+$question_type = '';
+if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}elseif($template_type==2){
+$question_type = "Multi Choice";
+}elseif($template_type == 2){
 $type_class='radioans';
 $questtype='radio';
+$question_type = "Single Choice";
+}elseif ($template_type == 11) {
+$question_type = "Numerical";
 }
 @endphp
 <script>
@@ -97,7 +102,9 @@ $questtype='radio';
 </script>
 <div>
     <div class="d-flex ">
-
+        <!-- question Type Tag -->
+        <span class="fw-bold text-uppercase">{{$question_type}}</span>
+        <!-- question Type Tag -->
         <div id="counter_{{$active_q_id}}" class="ms-auto counter mb-4 d-flex">
             <span id="avg_text_{{$active_q_id}}" class="avg-time">Average Time :</span>
             <div id="progressBar_{{$active_q_id}}" class="progressBar tiny-green ms-2">
