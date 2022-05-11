@@ -43,10 +43,23 @@ $userData = Session::get('user_data');
                         <!--scroll-mobile-->
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
+                                <div class="year_filter mb-2 p-3 mt-2">
+                                    <label style="font-weight: 600;color: #6b707f;font-size: 15px;">Year Filter:</label>
+                                    @php
+                                    $latest_year = date('Y');
+                                    @endphp
+                                    <select class="form-control" id="filter_year">
+                                        <option value="">Select Year</option>
+                                        <option value="{{$latest_year - 3}}">{{$latest_year - 3}}</option>
+                                        <option value="{{$latest_year - 2}}">{{$latest_year -2}}</option>
+                                        <option value="{{$latest_year - 1}}">{{$latest_year -1}}</option>
+                                        <option value="{{$latest_year}}">{{$latest_year}}</option>
+                                    </select>
+                                </div>
                                 <div class="scroll-div mt-4" id="chapter_list_1">
                                     @if(!empty($result_data))
                                     @foreach($result_data as $sche)
-                                    <div class="compLeteS">
+                                    <div class="compLeteS filter_data_{{$sche->paper_year}}" >
                                         <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
                                             <div class="d-flex align-items-start justify-content-between result-list-head">
                                                 <h4 class="m-lg-0 p-0">{{$sche->paper_name}} </h4>
@@ -71,6 +84,22 @@ $userData = Session::get('user_data');
     </div>
 </div>
 @include('afterlogin.layouts.footer_new')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#filter_year').change(function(){
+
+            var selected_val=$(this).val();
+            if(selected_val)
+            {
+                $('.compLeteS').hide();
+                $('.filter_data_' + selected_val).show();
+            }else
+            {
+               $('.compLeteS').show(); 
+            }
+        });
+    });
+</script>
 <style>
 .newelement {
     background: white !important;
