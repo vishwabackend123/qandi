@@ -110,12 +110,17 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
 
-if($template_type==1){
+$question_type = '';
+if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}elseif($template_type==2){
+$question_type = "Multi Choice";
+}elseif($template_type == 2){
 $type_class='radioans';
 $questtype='radio';
+$question_type = "Single Choice";
+}elseif ($template_type == 11) {
+$question_type = "Numerical";
 }
 @endphp
 <div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
@@ -142,6 +147,9 @@ $questtype='radio';
                                 <input type="hidden" id="current_question_no" value="1" />
                                 <div id="question_section" class="">
                                     <div class="d-flex ">
+                                        <!-- question Type Tag -->
+                                        <span class="fw-bold text-uppercase">{{$question_type}}</span>
+                                        <!-- question Type Tag -->
                                         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
                                             <span id="avg_text" class="avg-time">Average Time :</span>
                                             <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
@@ -239,7 +247,7 @@ $questtype='radio';
                                             <div class="col-md-5 mb-4">
                                                 <div class="numeric-input-box">
                                                     <span>Answer here</span>
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
                                                 </div>
 
                                             </div>
@@ -502,6 +510,7 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    var activeques_id = '{{$activeq_id}}';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -596,6 +605,7 @@ $questtype='radio';
                 return false;
             }
         }
+        $('#quest_option_' + activeques_id).focus();
     });
 </script>
 <!-- /page referesh disabled -->
@@ -644,6 +654,9 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
