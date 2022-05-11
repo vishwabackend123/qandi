@@ -181,7 +181,7 @@ $questtype='radio';
                                             <div class="col-md-5 mb-4">
                                                 <div class="numeric-input-box">
                                                     <span>Answer here</span>
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20" autofocus>
                                                 </div>
 
                                             </div>
@@ -480,17 +480,17 @@ $questtype='radio';
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -529,6 +529,7 @@ $questtype='radio';
                 return false;
             }
         }
+
     });
 </script>
 <!-- /page referesh disabled -->
@@ -545,6 +546,8 @@ $questtype='radio';
 <!-- browser back disable -->
 
 <script type="text/javascript">
+    var activeques_id = '{{$activeq_id}}';
+
     $('.number-block').slimscroll({
         height: '20vh'
     });
@@ -563,6 +566,10 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
+
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -1173,6 +1180,9 @@ $questtype='radio';
 
             $('#form_exam_submit')[0].submit();
         });
+
+
+
     });
 </script>
 

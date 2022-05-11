@@ -189,7 +189,7 @@ $questtype='radio';
                                                 <div class="col-md-5 mb-4">
                                                     <div class="numeric-input-box">
                                                         <span>Answer here</span>
-                                                        <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                        <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
                                                     </div>
                                                 </div>
                                                 @endif
@@ -449,10 +449,10 @@ $questtype='radio';
 <div class="modal hide fade in" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-header pb-0 border-0">
-              
-            </div>
+
+        </div>
         <div class="modal-content rounded-0 custom_model">
-              <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
+            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h3 id="attempt-alert-text" class="text-danger m-0"></h3>
@@ -469,6 +469,7 @@ $questtype='radio';
 <!-- Have fun using Bootstrap JS -->
 
 <script>
+    var activeques_id = '{{$activeq_id}}';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -513,8 +514,9 @@ $questtype='radio';
 
     /* page referesh disabled */
     $(document).ready(function() {
+
         /* mouse rightclick */
-        /* document.oncontextmenu = function() {
+        document.oncontextmenu = function() {
             return false;
         };
 
@@ -524,7 +526,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        }); */
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -563,6 +565,7 @@ $questtype='radio';
                 return false;
             }
         }
+        $('#quest_option_' + activeques_id).focus();
     });
 </script>
 <script type="text/javascript">
@@ -598,6 +601,9 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
