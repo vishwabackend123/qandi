@@ -71,7 +71,6 @@ class MockExamController extends Controller
 
             $responsedata = json_decode($response_json);
 
-
             $response_status = isset($responsedata->success) ? $responsedata->success : false;
 
             if ($response_status == true) {
@@ -95,19 +94,17 @@ class MockExamController extends Controller
             $sort = array();
 
 
-            /*  foreach ($aQuestions_list as $k => $v) {
+            foreach ($aQuestions_list as $k => $v) {
                 $sort['subject_id'][$k] = $v->subject_id;
                 $sort['section_id'][$k] = $v->section_id;
             }
 
             # sort by subject_id desc and then title asc
-            array_multisort($sort['subject_id'], SORT_ASC, $sort['section_id'], SORT_ASC, $aQuestions_list); */
+            array_multisort($sort['subject_id'], SORT_ASC, $sort['section_id'], SORT_ASC, $aQuestions_list);
 
 
 
             $collection = collect($aQuestions_list);
-
-            //dd($aQuestions_list, $collection->duplicates('question_id'));
 
 
             /*  $aQuestionslist = $collection->sortBy('subject_id'); */
@@ -321,11 +318,13 @@ class MockExamController extends Controller
                 $filtered = $collection->where('subject_id', $subject_id);
             }
 
+
             $filtered_questions = $filtered->values()->all();
 
             $allQuestionsArr = (array)$allQuestions; //object convert to array
 
             $allkeys = array_keys((array)$allQuestions); //Array of all keys
+
 
             //$question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
             $question_data = current($filtered_questions);
@@ -444,7 +443,7 @@ class MockExamController extends Controller
                     $response['status'] = 400;
                     $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
 
-                    $response['message'] = "Max attempt limit for this section is " . $max_attempt_limit;
+                    $response['message'] = "This section allows a maximum of " . $max_attempt_limit . "question attempts.";
                     return json_encode($response);
                 }
 

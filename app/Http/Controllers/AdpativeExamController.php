@@ -426,10 +426,12 @@ class AdpativeExamController extends Controller
 
             $responsedata = json_decode($response_json);
 
+
             $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
             $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
             $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
             $test_name = isset($responsedata->test_name) ? $responsedata->test_name : [];
+            $subjects_list = isset($responsedata->subjects_list) ? $responsedata->subjects_list : [];
 
             if ($httpcode_response == true) {
                 if (!empty($aQuestionslist)) {
@@ -449,16 +451,16 @@ class AdpativeExamController extends Controller
 
             $collection = collect($aQuestionslist)->sortBy('subject_id');
             $grouped = $collection->groupBy('subject_id');
-            $subject_ids = $collection->pluck('subject_id');
+            // $subject_ids = $collection->pluck('subject_id');
             $question_ids = $collection->pluck('question_id')->values()->all();
 
-            $subject_list = $subject_ids->unique()->values()->all();
+            // $subject_list = $subject_ids->unique()->values()->all();
 
 
             $redis_subjects = $this->redis_subjects();
             $cSubjects = collect($redis_subjects);
             $aTargets = [];
-            $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+            $filtered_subject = $cSubjects->whereIn('id', $subjects_list)->all();
             foreach ($filtered_subject as $sub) {
                 $count_arr = $collection->where('subject_id', $sub->id)->all();
                 $sub->count = count($count_arr);
