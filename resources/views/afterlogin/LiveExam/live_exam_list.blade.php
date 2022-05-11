@@ -22,10 +22,10 @@ $userData = Session::get('user_data');
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-3" aria-hidden="true"></i> LIVE EXAM</a>
+                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true"><i class="fa fa-circle text-danger me-3" aria-hidden="true"></i> LIVE EXAM RESULTS</a>
+                                    <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true"> Attempted</a>
                                 </li>
 
 
@@ -33,9 +33,29 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="tab-content cust-tab-content  bg-white" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="exam_card">
+                                    <span><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
+                                    <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
+                                        <h2 class="mt-4 mb-4">JEE Main - Full Syllabus- 2022</h2>
+                                        <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
+                                    </div>
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
+                                            <label style=" font-weight: 600;color: #231f20;">10 Questions</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Start Date</span>
+                                            <label style=" font-weight: 600;color: #231f20;">1st Apr 2022</label>
+                                        </div>
+                                        <div class="mb-2">
+                                        <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">End Date</span>
+                                            <label style=" font-weight: 600;color: #231f20;">4th Apr 2022</label>
+                                        </div>
+                                    </div>
+                                </div>
 
-
-                                <h4 class="py-3">Upcoming Live Exams</h4>
+                                <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
                                 <div class="scroll-div-live-exm pb-0 mb-3">
                                     @if(!empty($schedule_list))
 
@@ -58,15 +78,15 @@ $userData = Session::get('user_data');
                                         <li><strong>End Date: {{$end_date}}</strong>
                                         </li>
 
-                                        <li>{{$sche->questions_count}} Questions</a>
+                                        <li style="font-weight:600;">{{$sche->questions_count}} Questions</a>
                                         </li>
-                                        <li>
+                                        <!-- <li>
                                             @if($start_date<=$today && $end_date>=$today)
                                                 <a href="{{route('live_exam',$sche->schedule_id)}}">
                                                     <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempt Exam</button>
                                                 </a>
                                                 @endif
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     @else
                                     <ul class="speci-text">
@@ -77,12 +97,12 @@ $userData = Session::get('user_data');
                                         <li><strong>End Date: {{$end_date}}</strong>
                                         </li>
 
-                                        <li>{{$sche->questions_count}} Questions</a>
+                                        <li style="font-weight:600;">{{$sche->questions_count}} Questions</a>
                                         </li>
-                                        <li><button disabled class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempted
+                                        <!-- <li><button disabled class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempted
                                             </button>
 
-                                        </li>
+                                        </li> -->
                                     </ul>
                                     @endif
 

@@ -15,19 +15,38 @@ button {
     outline: none;
     text-decoration: none;
 }
-.py-5.myqMatrix-card {
-    padding-bottom: 30px!important;
+.exam_card h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #231f20;
+}
+.cust-tab-content .exam_card .custom-btn-gray {
+    max-width: 230px;
+    background-image: linear-gradient(to bottom, #21ccff 0%, #00baff 100%);
+    color: #fff;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+}
+.exam_card{padding:25px 30px 20px;border-radius: 30px;background-color: rgba(243, 247, 255, 0.5);margin-top:70px;}
+.live-exam-list-wrapper.list-series .live-exam #home .speci-text li:nth-child(2n){width: 25%;}
+.live-exam-list-wrapper.list-series .live-exam #home .speci-text li {width: 22%;}
+.live-exam-list-wrapper .sub-details{font-size: 16px;}
+.live-exam-list-wrapper .live-exam .speci-text li strong{font-size: 16px;}
+.live-exam-list-wrapper .live-exam .speci-text{border-radius: 30px;background-color: rgba(243, 247, 255, 0.5);padding:8px 15px;}
+.live-exam-list-wrapper  .cust-tab-content{padding: 0px 40px !important;}
+.mocktest-attempted-wrapper  .cust-tab-content{padding: 0px 40px 40px!important;}
+.live-exam-list-wrapper .live-exam i.fa.fa-circle.text-danger.me-2{
+    color: #f74645 !important;    font-size: 14px;
 }
 .practice-series-lists .paper-sub small{color: #2c3348;font-weight: normal;font-size: 15px;}
 .practice-series-lists .paper-sub span{color: #231f20;font-size: 16px;font-weight: bold;}
 .practice-series-lists .score-show{border-left: 1px solid #b9b9b9;border-right: 0;flex: 1;}
-.practice-series-lists .result-list-btns a {
+.practice-series-lists .result-list-btns a , .mocktest-attempted-wrapper .result-list-btns a {
     background: #e9e9e9;
     border-radius: 20px;
     color: #2c3348!important;
     box-shadow: none!important;
 }
-.practice-series-lists .result-analysis {
+.practice-series-lists .result-analysis , .mocktest-attempted-wrapper .result-analysis {
     border-radius: 8px;
     border: solid 1px #21ccff;
     background: rgba(33, 204, 255, 0.04);
@@ -36,22 +55,22 @@ button {
     text-transform: none;
     width: 160px;
 }
-.practice-series-lists .compLeteS .result-list-table {
+.practice-series-lists .compLeteS .result-list-table , .mocktest-attempted-wrapper .compLeteS .result-list-table {
     border-radius: 0;
     background: none!important;
 }
-.practice-series-lists .compLeteS {
+.practice-series-lists .compLeteS , .mocktest-attempted-wrapper .compLeteS {
     border-radius: 30px;
     background: rgba(243, 247, 255, 0.5);
     padding: 15px 20px 15px;
     margin-bottom: 20px;
 }
-.practice-series-lists .compLeteS .collapse {
+.practice-series-lists .compLeteS .collapse , .mocktest-attempted-wrapper .compLeteS .collapse {
     background-color: #fff;
     border-radius: 30px;
     margin-top: 15px;
 }
-.practice-series-lists ul.speci-text {
+.practice-series-lists ul.speci-text , .mocktest-attempted-wrapper ul.speci-text {
     border-radius: 30px;
     background-color: rgba(243, 247, 255, 0.5);
     padding:12px 0 12px 10px;
@@ -64,7 +83,7 @@ button {
     border-radius: 30px;
     background-color: rgba(243, 247, 255, 0.5);
 }
-.practice-series-lists .cust-tabs a.nav-link#live-tab{text-transform: none;}
+.practice-series-lists .cust-tabs a.nav-link#live-tab , .live-exam-list-wrapper .cust-tabs a.nav-link#over-tab{text-transform: none;}
 
 .chapter-topic-lists.ulStyle{max-height: calc(100vh - 160px);overflow-y: auto;overflow-x: hidden;}
 #graphExpand.modal{z-index: 10600;}

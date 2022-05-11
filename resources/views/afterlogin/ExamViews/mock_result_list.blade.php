@@ -17,7 +17,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
-        <div class="container-fluid custom-page">
+        <div class="container-fluid custom-page mocktest-attempted-wrapper">
             <div class="row">
             @if(count($errors) > 0 )
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -36,13 +36,43 @@ $userData = Session::get('user_data');
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div active" id="Mathematics-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted</a>
+                                    <a class="nav-link all_div active" id="mocktest-tab" data-bs-toggle="tab" href="#mocktest" role="tab" aria-controls="mocktest" aria-selected="true">MOCK TEST</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link all_div" id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted</a>
                                 </li>
                             </ul>
                         </div>
                         <!--scroll-mobile-->
                         <div class="tab-content cust-tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
+                            <div class="tab-pane fade show active" id="mocktest" role="tabpanel" aria-labelledby="mocktest-tab">
+                                <div class="exam_card">
+                                    <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
+                                        <h2 class="mb-4">JEE Main - Full Syllabus- 2022</h2>
+                                        <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
+                                    </div>
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
+                                            <label style=" font-weight: 600;color: #231f20;">10 Questions</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Marks</span>
+                                            <label style=" font-weight: 600;color: #231f20;">300 Marks</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Duration</span>
+                                            <label style=" font-weight: 600;color: #231f20;">180 Minutes</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Subject</span>
+                                            <label style=" font-weight: 600;color: #231f20;">Physics, Chemistry & Mathematics</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
                                 <div class="scroll-div mt-4" id="chapter_list_1">
                                   @if(!empty($result_data))
                                   @foreach($result_data as $sche)
@@ -83,9 +113,11 @@ $userData = Session::get('user_data');
                                           }
                                           ?>
                                             <div class="d-flex align-items-center justify-content-center morning-slot">
-                                                <p class="m-0 p-0">{{$slot}} Slots</p>
-                                                <span class="slbs-link ms-5 me-lg-0 me-2">
-                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Show Details</span></a></span>
+                                                <!-- <p class="m-0 p-0">{{$slot}} Slots</p> -->
+                                                <span class="slbs-link me-5">
+                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}"><i class="fa fa-arrow-down"></i> Show Details</span></a>
+                                                </span>
+                                                <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;View Analytics</a>
                                             </div>
                                             <div class="result-list-btns">
                                                 <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn result-review w-100">Review Exam</a>
@@ -125,7 +157,6 @@ $userData = Session::get('user_data');
                                     </div>
                                     @endif
                                 </div>
-
                             </div>
                         </div>
                     </div>
