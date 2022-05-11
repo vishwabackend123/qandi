@@ -41,13 +41,13 @@ $userData = Session::get('user_data');
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
-                <div class="d-flex  p-4">
+                <div class="d-flex  pt-4 pb-4">
                       <a class="btn sectionBtn open_test btn-primary me-2">Mathematics</a>
                       <a class="btn sectionBtn live_tes btn-outline-primary me-2">Physics</a>
                       <a class="btn sectionBtn live_tes btn-outline-primary">Chemistry</a>
                 </div>
               <div class="Flat-left">
-                <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
+                <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right mt-0">
                   @csrf
                   <input type="hidden" id="selected_topic" name="topics">
                   <input type="hidden" id="selected_tab" name="selected_tab">
@@ -76,14 +76,14 @@ $userData = Session::get('user_data');
                       <input type="hidden" name="subject_id" value="{{$sub->id}}">
                       <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                       <input type="hidden" name="question_count" value="30">
-                      <button type="submit" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 active-btn"><i class=" fa fa-pencil-square-o" aria-hidden="true"></i> take FULL test</button>
+                      <button type="submit" class="btn btn-warning rounded-0 px-5 ml-0 ml-md-3 active-btn mt-0"><i class=" fa fa-pencil-square-o" aria-hidden="true"></i> take FULL test</button>
 
                     </form>
                   </div>
 
-                  <div class="dropdown">
+                  <div class="dropdown" style="margin-top:-18px;">
 
-                    <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Chapters Filter">
+                    <button class="btn btn-light ms-2 text-danger rounded-0" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" title="Chapters Filter" style="border-radius: 18px !important;">
                       <!-- <i class="fa fa-sliders" aria-hidden="true" title="Chapters Filter"></i>-->
                       <!-- <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860.png')}}" class="dsow">
                       <img src="{{URL::asset('public/after_login/new_ui/images/Group-4860-white.png')}}" class="hsow"> -->
@@ -178,7 +178,7 @@ $userData = Session::get('user_data');
                       </div>
 
                       <span class="slbs-link mx-3">
-                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
+                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Show Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
 
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0 expand_filter_{{$chapters->chapter_id}} disabled" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -246,14 +246,14 @@ $userData = Session::get('user_data');
                       </div>
 
 
-                      <form method="post" action="{{route('custom_exam_chapter')}}">
+                      <form method="post" action="{{route('custom_exam_chapter')}}" class="mb-0">
                         @csrf
                         <input type="hidden" name="subject_id" value="">
                         <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                         <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                         <input type="hidden" name="question_count" value="30">
 
-                        <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                        <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take This Test</button>
                       </form>
 
                     </div>
@@ -535,7 +535,7 @@ $userData = Session::get('user_data');
   $('a.expandTopicCollapse span').click(function() {
     var spanId = this.id;
     var curr_text = $("#" + spanId).text();
-    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
+    var updatetext = ((curr_text == 'Show Topics') ? 'Hide Topics' : 'Show Topics');
     $("#" + spanId).text(updatetext);
     
   })
@@ -545,7 +545,7 @@ $userData = Session::get('user_data');
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
     var labelname = $('#expand_topic_' + chapt_id).text();
-    if(labelname == 'Collapse Topics')
+    if(labelname == 'Hide Topics')
     {
       $('.expand_filter_'+chapt_id).removeClass('disabled');
     }else
@@ -553,7 +553,7 @@ $userData = Session::get('user_data');
       $('.expand_filter_'+chapt_id).addClass('disabled');
       
     }
-    this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
+    this.value = (this.value == 'Show Topics' ? 'Hide Topics' : 'Show Topics');
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
     if (topic_length == 0) {
       //if (labelname == 'Collapse Topics') {
