@@ -1,7 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
-
+$prof_asst_test='N';
 @endphp
 @section('content')
 <!-- Modal -->
@@ -515,8 +515,8 @@ $userData = Session::get('user_data');
                             <img src="{{isset($sVal->subject_thumbnail_image_path)?$sVal->subject_thumbnail_image_path:''}}">
                             @else
                             <span>
-                            <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                            <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
+                                <img style="z-index: 1;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
+                                <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             @endif
 
@@ -1123,8 +1123,8 @@ $userData = Session::get('user_data');
             var exporting = {
                 enabled: false
             };
-            var plotOptions= {
-                
+            var plotOptions = {
+
                 series: {
                     events: {
                         legendItemClick: function() {
