@@ -488,6 +488,10 @@ div#LeaDer {
 .profile-section ul {
     margin-top: 0;
 }
+.log-out-screen, .subscription ,.edit-form {
+    top: 70px!important;
+  
+}
 
 }
 @media(max-width:550px){
