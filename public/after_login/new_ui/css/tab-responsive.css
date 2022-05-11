@@ -428,6 +428,9 @@
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
     .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 33.33%!important;}
     /* .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width:55%;} */
+    .exam-analytics span.text-center.w-100 img {
+        width: 60%;
+    }
     
 }
 @media (min-width: 769px) and (max-width: 990px){
@@ -544,5 +547,8 @@
 .padd-right-0{padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
 .notification-txt span.text-notific {
     font-size: 14px;
+}
+.exam-analytics span.text-center.w-100 img {
+    width: 65%;
 }
 }
