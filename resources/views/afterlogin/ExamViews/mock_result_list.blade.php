@@ -77,7 +77,7 @@ $userData = Session::get('user_data');
                                   @if(!empty($result_data))
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
-                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
+                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                                             <div class="d-flex align-items-start justify-content-between result-list-head">
                                                 <h4 class="m-lg-0 p-0">@if($sche->test_series_name)
                                                   {{$sche->test_series_name}}
@@ -123,13 +123,9 @@ $userData = Session::get('user_data');
                                                 <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn result-review w-100">Review Exam</a>
                                             </div>
                                         </div>
-                                        <div class="mb-4 collapse" id="chapter_{{$sche->id}}">
-                                            <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
-                                                <div class="score-show text-center">
-                                                    <p class="p-0 mb-3">Score:<span>{{$sche->marks_gain}}</span>/{{$sche->no_of_question * 4}}</p>
-                                                    <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
+                                        <div class="collapse" id="chapter_{{$sche->id}}">
+                                            <div class="p-4 pb-4 d-flex justify-content-between full-syllabus">
+                                                <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                                                     <div class="paper-sub">
                                                         <small>No of Question</small>
                                                         <span>{{$sche->no_of_question}} MCQ</span>
@@ -146,6 +142,12 @@ $userData = Session::get('user_data');
                                                         <small>Subjects</small>
                                                         <span>{{$sche->subject_name}}</span>
                                                     </div>
+                                                </div>
+                                                <div class="score-show text-center">
+                                                <div class="paper-sub">
+                                                    <small>Score</small>
+                                                    <span><b style="color:rgba(12, 193, 255, 0.9);">{{$sche->marks_gain}}</b> /{{$sche->no_of_question * 4}} </span>
+                                                    <!-- <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a> -->
                                                 </div>
                                             </div>
                                         </div>

@@ -41,6 +41,11 @@ $userData = Session::get('user_data');
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
+                <div class="d-flex  p-4">
+                      <a class="btn sectionBtn open_test btn-primary me-2">Mathematics</a>
+                      <a class="btn sectionBtn live_tes btn-outline-primary me-2">Physics</a>
+                      <a class="btn sectionBtn live_tes btn-outline-primary">Chemistry</a>
+                </div>
               <div class="Flat-left">
                 <form id="topic_form" method="post" action="{{route('custom_exam_topic')}}" class="topic_list_form text-right">
                   @csrf
@@ -48,7 +53,7 @@ $userData = Session::get('user_data');
                   <input type="hidden" id="selected_tab" name="selected_tab">
                   <input type="hidden" name="question_count" value="30">
                   <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                  <div id="topic_custom_footer" class="text-right d-none align-items-center mt-3">
+                  <div id="topic_custom_footer" class="text-right d-none align-items-center">
 
                     <a href="javascript:void(0);" onclick="clearTopics();" class="btn px-4 ms-auto me-2 rounded-0 btn-clear-sel">Clear Selection</a>
                     <button type="submit" class="btn rounded-0 px-5 ml-0 ml-md-3 btn-topic"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take test for selected topics</button>
@@ -146,7 +151,7 @@ $userData = Session::get('user_data');
                   @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                   @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                   <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
-                    <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
+                    <div class=" ClickBack d-flex align-items-center justify-content-between bg-white  listing-details w-100 flex-wrap ">
                       <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}" style="text-transform:none">{{$chapters->chapter_name}}</span>
 
                       <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
@@ -173,7 +178,7 @@ $userData = Session::get('user_data');
                       </div>
 
                       <span class="slbs-link mx-3">
-                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to Topics</span></a></span>
+                        <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
 
                       <div class="d-flex px-4">
                         <button class="btn btn-light ms-auto text-danger rounded-0 expand_filter_{{$chapters->chapter_id}} disabled" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">

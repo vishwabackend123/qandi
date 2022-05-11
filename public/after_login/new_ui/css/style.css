@@ -37,9 +37,9 @@ button {
 .live-exam-list-wrapper .live-exam i.fa.fa-circle.text-danger.me-2{
     color: #f74645 !important;    font-size: 14px;
 }
-.practice-series-lists .paper-sub small{color: #2c3348;font-weight: normal;font-size: 15px;}
-.practice-series-lists .paper-sub span{color: #231f20;font-size: 16px;font-weight: bold;}
-.practice-series-lists .score-show{border-left: 1px solid #b9b9b9;border-right: 0;flex: 1;}
+.practice-series-lists .paper-sub small , .mocktest-attempted-wrapper .paper-sub small{color: #2c3348;font-weight: normal;font-size: 15px;}
+.practice-series-lists .paper-sub span , .mocktest-attempted-wrapper .paper-sub span{color: #231f20;font-size: 16px;font-weight: bold;}
+.practice-series-lists .score-show , .mocktest-attempted-wrapper .score-show{border-left: 1px solid #b9b9b9;border-right: 0;flex: 1;}
 .practice-series-lists .result-list-btns a , .mocktest-attempted-wrapper .result-list-btns a {
     background: #e9e9e9;
     border-radius: 20px;
@@ -55,17 +55,24 @@ button {
     text-transform: none;
     width: 160px;
 }
-.practice-series-lists .compLeteS .result-list-table , .mocktest-attempted-wrapper .compLeteS .result-list-table {
+.practice_custom_page .slbs-link a {font-size: 14px;font-weight: 600;}
+.practice-series-lists .compLeteS .result-list-table , .mocktest-attempted-wrapper .compLeteS .result-list-table ,
+.practice_custom_page .compLeteS .listing-details{
     border-radius: 0;
     background: none!important;
+    border:0;
+    margin:0;
 }
-.practice-series-lists .compLeteS , .mocktest-attempted-wrapper .compLeteS {
+.practice-series-lists .compLeteS.active-accordian, .mocktest-attempted-wrapper .compLeteS.active-accordian , 
+.practice_custom_page .compLeteS.active-accordian{ background: #e7f8ff;}
+.practice-series-lists .compLeteS , .mocktest-attempted-wrapper .compLeteS , .practice_custom_page .compLeteS {
     border-radius: 30px;
     background: rgba(243, 247, 255, 0.5);
     padding: 15px 20px 15px;
     margin-bottom: 20px;
 }
-.practice-series-lists .compLeteS .collapse , .mocktest-attempted-wrapper .compLeteS .collapse {
+.practice-series-lists .compLeteS .collapse , .mocktest-attempted-wrapper .compLeteS .collapse , 
+.practice_custom_page .compLeteS .collapse {
     background-color: #fff;
     border-radius: 30px;
     margin-top: 15px;
@@ -140,8 +147,9 @@ input.allownumericwithdecimal {
     font-size: 14px;
     padding: 6px 15px 6px 24px;
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
     position: relative;
+    min-width: 130px;
 }
 
 #home a.btn.btn-primary.btn-sm.sectionBtn:before , a.btn.btn-primary.sectionBtn:before {
@@ -164,7 +172,8 @@ input.allownumericwithdecimal {
     font-size: 14px;
     padding: 6px 15px;
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
+    min-width: 130px;
 }
 
 ul.leaderNameBlock-search p:first-child {

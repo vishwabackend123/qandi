@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="collapse" id="chapter_{{$sche->id}}">
-                    <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
+                    <div class="p-4 pb-4 d-flex justify-content-between full-syllabus">
                         <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                             <div class="paper-sub">
                                 <small>No of Question</small>
