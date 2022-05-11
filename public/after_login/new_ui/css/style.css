@@ -8957,6 +8957,7 @@ input#linkInput {
     border: none;
     width: 40px;
     max-width: 40px;
+    padding:0px;
     height: 40px;
     left: 25px;
     font-size: 25px !important;
@@ -8971,9 +8972,12 @@ input#linkInput {
     border-radius: 50px;
     border: none;
     width: 40px;
+    max-width:40px;
+    padding: 0px;
     height: 40px;
     right: 25px;
     font-size: 25px !important;
+    
 }
 
 .custom-page button.slick-arrow.slick-arrow.slick-disabled {
