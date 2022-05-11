@@ -43,6 +43,15 @@ $userData = Session::get('user_data');
                         <!--scroll-mobile-->
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
+                                <div class="year_filter mb-2 p-3 mt-2">
+                                    <label style="font-weight: 600;color: #6b707f;font-size: 15px;">Year Filter:</label>
+                                    <select class="form-control">
+                                        <option>2019</option>
+                                        <option>2020</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                    </select>
+                                </div>
                                 <div class="scroll-div mt-4" id="chapter_list_1">
                                     @if(!empty($result_data))
                                     @foreach($result_data as $sche)
