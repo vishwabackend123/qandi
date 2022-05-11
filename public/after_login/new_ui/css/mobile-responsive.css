@@ -643,6 +643,9 @@ li.a3TS {
     #review_rques_blk .answer-section {
         width: 95%!important;
     }
+    .subscription .form-btns button {
+        font-size: 10px;
+    }
 }
 @media(max-width:385px){
     .star-img {
