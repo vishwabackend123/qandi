@@ -59,7 +59,7 @@ $userData = Session::get('user_data');
                                 </div>
                                  @endif
                                 <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
-                                <div class="scroll-div-live-exm pb-0 mb-3">
+                                <div class="scroll-div-live-exm">
                                     @if(!empty($schedule_list))
                                     @foreach($schedule_list as $key=>$sche)
                                     @php
