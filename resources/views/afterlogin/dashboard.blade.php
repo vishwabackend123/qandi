@@ -1,7 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
-$prof_asst_test='N';
+
 @endphp
 @section('content')
 <!-- Modal -->
