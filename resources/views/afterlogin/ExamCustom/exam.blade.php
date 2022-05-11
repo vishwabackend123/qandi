@@ -209,7 +209,7 @@ $questtype='radio';
                                             <div class="col-md-5 mb-4">
                                                 <div class="numeric-input-box">
                                                     <span>Answer here</span>
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
                                                 </div>
 
                                             </div>
@@ -481,6 +481,7 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    var activeques_id = '{{$activeq_id}}';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -594,6 +595,7 @@ $questtype='radio';
                 return false;
             }
         }
+        $('#quest_option_' + activeques_id).focus();
     });
 </script>
 <!-- /page referesh disabled -->
@@ -634,6 +636,9 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
