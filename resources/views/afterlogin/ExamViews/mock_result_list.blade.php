@@ -17,7 +17,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper">
-        <div class="container-fluid custom-page custom_attempted_page">
+        <div class="container-fluid custom-page mocktest-attempted-wrapper">
             <div class="row">
             @if(count($errors) > 0 )
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -36,20 +36,50 @@ $userData = Session::get('user_data');
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div active" id="Mathematics-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted</a>
+                                    <a class="nav-link all_div active" id="mocktest-tab" data-bs-toggle="tab" href="#mocktest" role="tab" aria-controls="mocktest" aria-selected="true">MOCK TEST</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link all_div" id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted</a>
                                 </li>
                             </ul>
                         </div>
                         <!--scroll-mobile-->
                         <div class="tab-content cust-tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
-                                <div class="scroll-div mt-md-4" id="chapter_list_1">
+                            <div class="tab-pane fade show active" id="mocktest" role="tabpanel" aria-labelledby="mocktest-tab">
+                                <div class="exam_card">
+                                    <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
+                                        <h2 class="mb-4">JEE Main - Full Syllabus- 2022</h2>
+                                        <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
+                                    </div>
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
+                                            <label style=" font-weight: 600;color: #231f20;">10 Questions</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Marks</span>
+                                            <label style=" font-weight: 600;color: #231f20;">300 Marks</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Duration</span>
+                                            <label style=" font-weight: 600;color: #231f20;">180 Minutes</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Subject</span>
+                                            <label style=" font-weight: 600;color: #231f20;">Physics, Chemistry & Mathematics</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
+                                <div class="scroll-div mt-4" id="chapter_list_1">
                                   @if(!empty($result_data))
                                   @foreach($result_data as $sche)
                                     <div class="compLeteS" id="chapter_box_{{$sche->id}}">
-                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white  px-3 py-2 mb-2 listing-details w-100 flex-wrap result-list-table">
-                                            <div class="d-flex align-items-start justify-content-between result-list-head outerhead">
-                                                <h4 class="m-0 p-0">@if($sche->test_series_name)
+                                        <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
+                                            <div class="d-flex align-items-start justify-content-between result-list-head">
+                                                <h4 class="m-lg-0 p-0">@if($sche->test_series_name)
                                                   {{$sche->test_series_name}}
                                                   @elseif($sche->live_exam_name)
                                                   {{$sche->live_exam_name}}
@@ -83,21 +113,19 @@ $userData = Session::get('user_data');
                                           }
                                           ?>
                                             <div class="d-flex align-items-center justify-content-center morning-slot">
-                                                <p class="m-0 p-0">{{$slot}} Slots</p>
-                                                <span class="slbs-link ms-5 me-lg-0 me-2">
-                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}">Show Details</span></a></span>
+                                                <!-- <p class="m-0 p-0">{{$slot}} Slots</p> -->
+                                                <span class="slbs-link me-5">
+                                                    <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics"  id="clicktopic_{{$sche->id}}"><span id="expand_topic_{{$sche->id}}"><i class="fa fa-arrow-down"></i> Show Details</span></a>
+                                                </span>
+                                                <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;View Analytics</a>
                                             </div>
                                             <div class="result-list-btns">
                                                 <a href="{{route('exam_review',[$sche->id,'attempted'])}}" class="btn result-review w-100">Review Exam</a>
                                             </div>
                                         </div>
-                                        <div class="mb-4 collapse" id="chapter_{{$sche->id}}">
-                                            <div class="p-3 pb-4 d-flex justify-content-between full-syllabus">
-                                                <div class="score-show text-center">
-                                                    <p class="p-0 mb-3">Score:<span>{{$sche->marks_gain}}</span>/{{$sche->no_of_question * 4}}</p>
-                                                    <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center paper-summery ps-lg-5 ps-2 pe-2">
+                                        <div class="collapse" id="chapter_{{$sche->id}}">
+                                            <div class="p-4 pb-4 d-flex justify-content-between full-syllabus">
+                                                <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                                                     <div class="paper-sub">
                                                         <small>No of Question</small>
                                                         <span>{{$sche->no_of_question}} MCQ</span>
@@ -115,6 +143,12 @@ $userData = Session::get('user_data');
                                                         <span>{{$sche->subject_name}}</span>
                                                     </div>
                                                 </div>
+                                                <div class="score-show text-center">
+                                                <div class="paper-sub">
+                                                    <small>Score</small>
+                                                    <span><b style="color:rgba(12, 193, 255, 0.9);">{{$sche->marks_gain}}</b> /{{$sche->no_of_question * 4}} </span>
+                                                    <!-- <a href="{{route('get_exam_result_analytics',$sche->id)}}" class="btn result-analysis text-uppercase boder-0 text-white"><i class="fa fa-line-chart" aria-hidden="true"></i> &nbsp;See Analytics</a> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +159,6 @@ $userData = Session::get('user_data');
                                     </div>
                                     @endif
                                 </div>
-
                             </div>
                         </div>
                     </div>
