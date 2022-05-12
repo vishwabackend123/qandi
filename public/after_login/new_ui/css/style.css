@@ -15,6 +15,20 @@ button {
     outline: none;
     text-decoration: none;
 }
+.year_filter select.form-control {
+    background: url(../images/down-arrow-blue.png) no-repeat;
+    border: 0;
+    height: 45px;
+    border-radius: 12px;
+    background-color: #e7f8ff;
+    background-size: 12px;
+    background-position: calc(100% - 18px) center;
+    max-width: 120px;
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 15px;
+    box-shadow: none!important;
+}
 .py-5.myqMatrix-card {
     padding-bottom: 30px!important;
 }
