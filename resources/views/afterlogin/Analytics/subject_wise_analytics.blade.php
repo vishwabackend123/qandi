@@ -132,7 +132,7 @@
                 </p>
             </small>
             <div class="d-flex align-items-center px-3 flex-box1">
-                <h5 class="dashboard-title ">Topic Performance </h5>
+                <h5 class="dashboard-title ">Chapter Performance </h5>
                 <span class="EXPAND_btn"><button style="margin-right: 40px;" class="customgray" onclick="expandChapterAnalytics({{$sub_id}})">
                         <svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4932" width="24" height="24" viewBox="0 0 24 24">
                             <path data-name="Path 11546" d="M0 0h24v24H0z" style="fill:none" />
@@ -148,7 +148,7 @@
                 @foreach($subProf as $val)
                 <div class="d-flex align-items-center mt-3 px-3">
                     <div class="d-flex align-items-center py-2 dashboard-listing-details w-100 sub">
-                        <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->topic_name}}">{{$val->topic_name}}</span>
+                        <span class="mr-3 dashboard-name-txt SubjName" title="{{$val->chapter_name}}">{{$val->chapter_name}}</span>
                     </div>
                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto sub" style="overflow: visible;">
                         @if($val->correct_ans > 0)
@@ -295,7 +295,7 @@
         <div class="col-md-6 col-lg-4 mb-4 ">
             <div class="bg-white shadow-lg p-3 sub-topic-box active-box">
                 <div class="d-flex align-items-center py-2 listing-details ">
-                    <span class="mr-3 topics-name">{{$val->topic_name}}</span>
+                    <span class="mr-3 topics-name">{{$val->chapter_name}}</span>
                     <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
                         <div class="star-ratings-css">
                             <div class="star-ratings-css-top" style="width: 0%">
