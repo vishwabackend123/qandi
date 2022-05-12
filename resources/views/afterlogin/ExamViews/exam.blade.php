@@ -252,6 +252,7 @@ $question_type = "Numerical";
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                             <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
+                            <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
                             <div class="pull-right">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
