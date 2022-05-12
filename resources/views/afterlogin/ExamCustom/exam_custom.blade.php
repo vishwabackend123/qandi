@@ -49,7 +49,7 @@ $userData = Session::get('user_data');
                 <div class="d-flex  p-3  ">
                   @isset($subject_list)
                   @foreach($subject_list as $key=>$subject)
-                  <a class="btn sectionBtn SubActBtn {{($key==0)?'open_test btn-primary me-2':'live_tes btn-outline-primary'}}" onclick="showSubChapters('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_btn">{{$subject->subject_name}}</a>
+                  <a class="btn sectionBtn SubActBtn me-2 {{($key==0)?'open_test btn-primary ':'live_tes btn-outline-primary'}}" onclick="showSubChapters('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_btn">{{$subject->subject_name}}</a>
 
                   @endforeach
                   @endisset
@@ -360,16 +360,31 @@ $userData = Session::get('user_data');
   }
 
   function showSubChapters(subject) {
-    $('.SubActBtn').removeClass('open_test btn-primary me-2');
+    $('.SubActBtn').removeClass('open_test btn-primary');
     $('.SubActBtn').addClass('live_tes btn-outline-primary');
     $('#' + subject + '_btn').removeClass('live_tes btn-outline-primary');
-    $('#' + subject + '_btn').addClass('open_test btn-primary me-2');
+    $('#' + subject + '_btn').addClass('open_test btn-primary');
 
 
     $('.subjectlist').removeClass('d-block');
     $('.subjectlist').addClass('d-none');
     $('#' + subject + '_list').removeClass('d-none');
     $('#' + subject + '_list').addClass('d-block');
+
+  }
+
+  function showSubfilter(subject) {
+    $('.SubattemptActBtn').removeClass('btn-primary');
+    $('.SubattemptActBtn').addClass('btn-outline-primary');
+    $('#' + subject + '_flt').removeClass('btn-outline-primary');
+    $('#' + subject + '_flt').addClass('btn-primary');
+
+    if (subject != "all_subject") {
+      $('.compLeteS').attr("style", "display: none !important");
+      $('.' + subject + '-rlt').attr("style", "display: block !important");
+    } else {
+      $('.compLeteS').attr("style", "display: block !important");
+    }
 
   }
 
@@ -555,7 +570,7 @@ $userData = Session::get('user_data');
   $('a.expandTopicCollapse span').click(function() {
     var spanId = this.id;
     var curr_text = $("#" + spanId).text();
-    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
+    var updatetext = ((curr_text == 'Show Topics') ? 'Hide Topics' : 'Show Topics');
     $("#" + spanId).text(updatetext);
 
   })
@@ -571,7 +586,7 @@ $userData = Session::get('user_data');
       $('.expand_filter_' + chapt_id).addClass('disabled');
 
     }
-    this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics');
+    this.value = (this.value == 'Show Topics' ? 'Hide Topics' : 'Show Topics');
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
     if (topic_length == 0) {
       //if (labelname == 'Collapse Topics') {
@@ -757,6 +772,31 @@ $userData = Session::get('user_data');
       };
     }
   }
+
+  $('#attempted-tab').click(function() {
+    $('.loader-block').show();
+    url = "{{ url('ajax_exam_result_list') }}/Assessment";
+    $.ajax({
+      url: url,
+      data: {
+        "_token": "{{ csrf_token() }}",
+      },
+      beforeSend: function() {
+
+      },
+      success: function(data) {
+        $('.loader-block').hide();
+        $("#attempted").show();
+        $('#attempted').html(data.html);
+        $('#testTypeDiv').attr("style", "display: none !important");
+        $('#AssessmentTypeDiv').attr("style", "display: block !important");
+
+      },
+      error: function(data, errorThrown) {
+        $('.loader-block').hide();
+      }
+    });
+  });
 </script>
 
 

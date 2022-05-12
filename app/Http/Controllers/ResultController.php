@@ -455,7 +455,9 @@ class ResultController extends Controller
                 $result_data[$key]->subject_name = "";
             }
         }
-        $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data'))->render();
+
+
+        $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();
 
         return response()->json([
             'status' => true,

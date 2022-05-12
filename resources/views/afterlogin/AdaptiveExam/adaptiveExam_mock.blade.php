@@ -355,7 +355,7 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<!--div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
@@ -416,7 +416,7 @@ $questtype='radio';
             </div>
         </div>
     </div>
-</div>
+</div-->
 <!-- Modal END Exam -->
 <div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
@@ -586,12 +586,21 @@ $questtype='radio';
         height: '30vh'
     });*/
 
-    $(window).on('load', function() {
-        $("#test_instruction").modal({
+    $(document).ready(function() {
+        /*$("#test_instruction").modal({
             backdrop: "static",
             keyboard: false
         });
-        $('#test_instruction').modal('show');
+        $('#test_instruction').modal('show');*/
+        $('#mainDiv').show();
+        $('#exam_content_sec').show();
+        setboxHeight();
+        startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
 
     });
     $('#goto-exam-btn').click(function() {

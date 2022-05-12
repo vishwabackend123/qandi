@@ -275,7 +275,7 @@
                     <path id="Line_32" data-name="Line 32" d="M4,4.75a.748.748,0,0,1-.53-.22l-4-4A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l4,4A.75.75,0,0,1,4,4.75Z" transform="translate(13.5 6.5)" />
                 </svg>
                 Practice</a>
-            <a class="nav-link menu3" data-bs-toggle="collapse" href="#submenu3" aria-expanded="false" aria-controls="collapseExample">
+            <a class="nav-link menu3" href="{{route('mockExamTest')}}">
                 <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <defs>
                         <style>
@@ -346,80 +346,29 @@
                     <path id="Line_367" data-name="Line 367" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(12 6)" />
                     <path id="Line_368" data-name="Line 368" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(21 6)" />
                 </svg> Test Series</a>
-            <a href="{{ url('/exam_result_list/Assessment') }}" class="nav-link">
-                <svg id="Icon_Custom_Exam" data-name="Icon / Custom Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                        </style>
-                    </defs>
-                    <path id="Path_194" data-name="Path 194" class="cls-1" d="M0,0H24V24H0Z" />
-                    <path id="Rectangle_15" data-name="Rectangle 15" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(4 6)" />
-                    <path id="Line_95" data-name="Line 95" d="M0,2.75A.75.75,0,0,1-.75,2V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V2A.75.75,0,0,1,0,2.75Z" transform="translate(6 4)" />
-                    <path id="Line_96" data-name="Line 96" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(6 11)" />
-                    <path id="Rectangle_16" data-name="Rectangle 16" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(10 14)" />
-                    <path id="Line_97" data-name="Line 97" d="M0,10.75A.75.75,0,0,1-.75,10V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V10A.75.75,0,0,1,0,10.75Z" transform="translate(12 4)" />
-                    <path id="Line_98" data-name="Line 98" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(12 19)" />
-                    <path id="Rectangle_17" data-name="Rectangle 17" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V5A1.752,1.752,0,0,1,3,6.75H1A1.752,1.752,0,0,1-.75,5V1A1.752,1.752,0,0,1,1-.75Zm2,6A.25.25,0,0,0,3.25,5V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V5A.25.25,0,0,0,1,5.25Z" transform="translate(16 5)" />
-                    <path id="Line_99" data-name="Line 99" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(18 4)" />
-                    <path id="Line_100" data-name="Line 100" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(18 11)" />
-                </svg> Custom Attempted</a>
-            <a href="{{ url('/exam_result_list/Test-Series') }}" class="nav-link"><svg id="Preset_Exam" data-name="Preset Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                        </style>
-                    </defs>
-                    <path id="Path_2339" data-name="Path 2339" class="cls-1" d="M0,0H24V24H0Z" />
-                    <path id="Path_2340" data-name="Path 2340" d="M21,19.75a.746.746,0,0,1-.374-.1,8.273,8.273,0,0,0-8.25,0,.75.75,0,0,1-.75,0,8.273,8.273,0,0,0-8.25,0,.75.75,0,1,1-.75-1.3A9.78,9.78,0,0,1,12,18.145a9.78,9.78,0,0,1,9.375.206A.75.75,0,0,1,21,19.75Z" />
-                    <path id="Path_2341" data-name="Path 2341" d="M21,6.75a.746.746,0,0,1-.374-.1,8.273,8.273,0,0,0-8.25,0,.75.75,0,0,1-.75,0,8.273,8.273,0,0,0-8.25,0,.75.75,0,0,1-.75-1.3A9.78,9.78,0,0,1,12,5.145a9.78,9.78,0,0,1,9.375.206A.75.75,0,0,1,21,6.75Z" />
-                    <path id="Line_366" data-name="Line 366" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(3 6)" />
-                    <path id="Line_367" data-name="Line 367" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(12 6)" />
-                    <path id="Line_368" data-name="Line 368" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(21 6)" />
-                </svg> Test Series Attempted</a>
+            {{-- <a href="{{ url('/exam_result_list/Assessment') }}" class="nav-link">
+            <svg id="Icon_Custom_Exam" data-name="Icon / Custom Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <defs>
+                    <style>
+                        .cls-1 {
+                            fill: none;
+                        }
+                    </style>
+                </defs>
+                <path id="Path_194" data-name="Path 194" class="cls-1" d="M0,0H24V24H0Z" />
+                <path id="Rectangle_15" data-name="Rectangle 15" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(4 6)" />
+                <path id="Line_95" data-name="Line 95" d="M0,2.75A.75.75,0,0,1-.75,2V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V2A.75.75,0,0,1,0,2.75Z" transform="translate(6 4)" />
+                <path id="Line_96" data-name="Line 96" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(6 11)" />
+                <path id="Rectangle_16" data-name="Rectangle 16" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(10 14)" />
+                <path id="Line_97" data-name="Line 97" d="M0,10.75A.75.75,0,0,1-.75,10V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V10A.75.75,0,0,1,0,10.75Z" transform="translate(12 4)" />
+                <path id="Line_98" data-name="Line 98" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(12 19)" />
+                <path id="Rectangle_17" data-name="Rectangle 17" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V5A1.752,1.752,0,0,1,3,6.75H1A1.752,1.752,0,0,1-.75,5V1A1.752,1.752,0,0,1,1-.75Zm2,6A.25.25,0,0,0,3.25,5V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V5A.25.25,0,0,0,1,5.25Z" transform="translate(16 5)" />
+                <path id="Line_99" data-name="Line 99" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(18 4)" />
+                <path id="Line_100" data-name="Line 100" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(18 11)" />
+            </svg> Custom Attempted</a> --}}
         </div>
     </div>
-    <div class="submenu-L2 collapse width" id="submenu3">
-        <div class="mt-5 mb-5 pb-5 pt-5"></div>
-        <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
 
-            <!-- <a href="{{route('adaptive_mock_exam')}}" class="nav-link"> -->
-            <a href="{{route('mockExam')}}" class="nav-link">
-                <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                        </style>
-                    </defs>
-                    <path id="Path_17" data-name="Path 17" class="cls-1" d="M0,0H24V24H0Z" />
-                    <path id="Path_18" data-name="Path 18" d="M15,20.75H6A2.753,2.753,0,0,1,3.25,18V9A2.753,2.753,0,0,1,6,6.25H9a.75.75,0,0,1,0,1.5H6A1.251,1.251,0,0,0,4.75,9v9A1.251,1.251,0,0,0,6,19.25h9A1.251,1.251,0,0,0,16.25,18V15a.75.75,0,0,1,1.5,0v3A2.753,2.753,0,0,1,15,20.75Z" />
-                    <path id="Path_19" data-name="Path 19" d="M12,15.75H9A.75.75,0,0,1,8.25,15V12a.75.75,0,0,1,.22-.53l8.5-8.5A2.871,2.871,0,0,1,21.03,7.03l-8.5,8.5A.75.75,0,0,1,12,15.75Zm-2.25-1.5h1.939l8.28-8.28A1.371,1.371,0,0,0,18.03,4.03l-8.28,8.28Z" />
-                    <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
-                </svg>
-                Mock Test</a>
-            <a href="{{ url('/exam_result_list/Mocktest') }}" class="nav-link">
-                <svg id="Icon_Exams" data-name="Icon / Exams" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                        </style>
-                    </defs>
-                    <path id="Path_17" data-name="Path 17" class="cls-1" d="M0,0H24V24H0Z" />
-                    <path id="Path_18" data-name="Path 18" d="M15,20.75H6A2.753,2.753,0,0,1,3.25,18V9A2.753,2.753,0,0,1,6,6.25H9a.75.75,0,0,1,0,1.5H6A1.251,1.251,0,0,0,4.75,9v9A1.251,1.251,0,0,0,6,19.25h9A1.251,1.251,0,0,0,16.25,18V15a.75.75,0,0,1,1.5,0v3A2.753,2.753,0,0,1,15,20.75Z" />
-                    <path id="Path_19" data-name="Path 19" d="M12,15.75H9A.75.75,0,0,1,8.25,15V12a.75.75,0,0,1,.22-.53l8.5-8.5A2.871,2.871,0,0,1,21.03,7.03l-8.5,8.5A.75.75,0,0,1,12,15.75Zm-2.25-1.5h1.939l8.28-8.28A1.371,1.371,0,0,0,18.03,4.03l-8.28,8.28Z" />
-                    <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
-                </svg>
-                Attempted</a>
-        </div>
-    </div>
     <div class="submenu-L1 collapse width" id="submenupreparation">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
