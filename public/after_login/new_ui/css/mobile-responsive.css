@@ -1,4 +1,10 @@
 @media(max-width:767px){
+    .instructions {
+    height: 125px;
+}
+    .instructions h3 {
+    font-size: 18px;
+}
         .qoption_error{
     bottom: 0;
     }
