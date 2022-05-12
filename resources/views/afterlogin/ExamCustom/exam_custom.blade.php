@@ -154,7 +154,7 @@ $userData = Session::get('user_data');
                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                     @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                     <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
-                      <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
+                      <div class=" ClickBack d-flex align-items-center justify-content-between bg-white  listing-details w-100 flex-wrap ">
                         <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}" style="text-transform:none">{{$chapters->chapter_name}}</span>
 
                         <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
@@ -249,14 +249,14 @@ $userData = Session::get('user_data');
                         </div>
 
 
-                        <form method="post" action="{{route('custom_exam_chapter')}}">
+                        <form method="post" action="{{route('custom_exam_chapter')}}" class="mb-0">
                           @csrf
                           <input type="hidden" name="subject_id" value="">
                           <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                           <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                           <input type="hidden" name="question_count" value="30">
 
-                          <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                          <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take This Test</button>
                         </form>
 
                       </div>
