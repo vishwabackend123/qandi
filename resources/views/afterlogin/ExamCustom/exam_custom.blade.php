@@ -28,8 +28,6 @@ $userData = Session::get('user_data');
         <div class="col-lg-12  p-lg-5 pt-none">
 
           <div class="tab-wrapper">
-            <div id="scroll-mobile" class="tabintablet">
-              <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                 <div id="scroll-mobile">
                   <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -39,9 +37,6 @@ $userData = Session::get('user_data');
                       <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
                     </li>
                   </ul>
-                </div>
-
-              </ul>
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
