@@ -49,7 +49,7 @@ $userData = Session::get('user_data');
                                                     <input type="hidden" name="series_type" value="{{$open->series_type}}" />
                                                     <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
                                                     <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
-                                                    <input type="hidden" name="exam_mode" value="Live" />
+                                                    <input type="hidden" name="exam_mode" value="Open" />
                                                     <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                                 </form>
                                             </li>

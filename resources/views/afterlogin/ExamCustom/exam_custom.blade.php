@@ -28,8 +28,6 @@ $userData = Session::get('user_data');
         <div class="col-lg-12  p-lg-5 pt-none">
 
           <div class="tab-wrapper">
-            <div id="scroll-mobile" class="tabintablet">
-              <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                 <div id="scroll-mobile">
                   <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -39,14 +37,11 @@ $userData = Session::get('user_data');
                       <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
                     </li>
                   </ul>
-                </div>
-
-              </ul>
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="custom" role="tabpanel" aria-labelledby="custom-tab">
-                <div class="d-flex  p-3  ">
+                <div class="d-flex  pt-4  pb-4">
                   @isset($subject_list)
                   @foreach($subject_list as $key=>$subject)
                   <a class="btn sectionBtn SubActBtn me-2 {{($key==0)?'open_test btn-primary ':'live_tes btn-outline-primary'}}" onclick="showSubChapters('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_btn">{{$subject->subject_name}}</a>
@@ -154,7 +149,7 @@ $userData = Session::get('user_data');
                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
                     @foreach($subject_chapter_list[$sub->id] as $tKey=>$chapters)
                     <div class="compLeteS" id="chapter_box_{{$chapters->chapter_id}}">
-                      <div class=" ClickBack d-flex align-items-center justify-content-between bg-white px-4 py-2 mb-2 listing-details w-100 flex-wrap ">
+                      <div class=" ClickBack d-flex align-items-center justify-content-between bg-white  listing-details w-100 flex-wrap ">
                         <span class=" mr-3 name-txt" title="{{$chapters->chapter_name}}" style="text-transform:none">{{$chapters->chapter_name}}</span>
 
                         <div class="status-id d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
@@ -181,7 +176,7 @@ $userData = Session::get('user_data');
                         </div>
 
                         <span class="slbs-link mx-3">
-                          <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Expand to Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}">Expand to Topics</span></a></span>
+                          <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Show Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
 
                         <div class="d-flex px-4">
                           <button class="btn btn-light ms-auto text-danger rounded-0 expand_filter_{{$chapters->chapter_id}} disabled" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -249,14 +244,14 @@ $userData = Session::get('user_data');
                         </div>
 
 
-                        <form method="post" action="{{route('custom_exam_chapter')}}">
+                        <form method="post" action="{{route('custom_exam_chapter')}}" class="mb-0">
                           @csrf
                           <input type="hidden" name="subject_id" value="">
                           <input type="hidden" name="subject_name" value="{{$sub->subject_name}}">
                           <input type="hidden" name="chapter_id" value="{{$chapters->chapter_id}}">
                           <input type="hidden" name="question_count" value="30">
 
-                          <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take Test</button>
+                          <button class="btn rounded-0 btn-lg ml-0 ml-md-3 custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Take This Test</button>
                         </form>
 
                       </div>
