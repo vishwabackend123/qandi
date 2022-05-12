@@ -361,7 +361,7 @@ $questtype='radio';
             <div class="modal-header pb-0 border-0">
                 <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}" title="Close"></a>
             </div>
-            <div class="modal-body pt-3 p-5">
+            <div class="modal-body pt-3 p-md-5 p-4">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
                         <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
