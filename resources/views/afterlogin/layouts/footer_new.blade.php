@@ -1765,6 +1765,7 @@
 
     });
     $('.openSharefrnd').click(function(event) {
+        if (isDoubleClicked($(this))) return;
         var validator = $("#referalStudent_form").validate();
         validator.resetForm();
         $('#referEmails').val("");
@@ -1798,7 +1799,9 @@
         }
 
     });
-    $('.practiceClass').click(function() {
+    $('.practiceClass').click(function(e) {
+        $('#sharefrnd').modal('hide');
+        if (isDoubleClicked($(this))) return;
         var url = window.location.pathname.split("/");
         var pathurl = url[1];
         if (pathurl == 'dashboard') {
@@ -1934,5 +1937,18 @@
     });
     $("#editProfile_form #cancelEdit").click(function() {
         $("#LeaDer , .profile-show").addClass("showCard");
-    })
+    });
+    function isDoubleClicked(element) {
+        //if already clicked return TRUE to indicate this click is not allowed
+        if (element.data("isclicked")) return true;
+
+        //mark as clicked for 1 second
+        element.data("isclicked", true);
+        setTimeout(function () {
+            element.removeData("isclicked");
+        }, 1000);
+
+        //return FALSE to indicate this click was allowed
+        return false;
+        }
 </script>
