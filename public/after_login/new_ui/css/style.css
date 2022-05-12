@@ -53,8 +53,8 @@ button {
 .live-exam-list-wrapper .sub-details{font-size: 16px;}
 .live-exam-list-wrapper .live-exam .speci-text li strong{font-size: 16px;}
 .live-exam-list-wrapper .live-exam .speci-text{border-radius: 30px;background-color: rgba(243, 247, 255, 0.5);padding:8px 15px;}
-.live-exam-list-wrapper  .cust-tab-content{padding: 0px 40px 60px!important;}
-.mocktest-attempted-wrapper  .cust-tab-content{padding: 0px 40px 40px!important;}
+.live-exam-list-wrapper  .cust-tab-content{padding: 0px 40px !important;}
+.mocktest-attempted-wrapper  .cust-tab-content , .practice_custom_page  .cust-tab-content{padding: 0px 40px 40px!important;}
 .live-exam-list-wrapper .live-exam i.fa.fa-circle.text-danger.me-2{
     color: #f74645 !important;    font-size: 14px;
 }
@@ -90,7 +90,8 @@ button {
     padding: 15px 20px 15px;
     margin-bottom: 20px;
 }
-.exam_attempted_common_page .compLeteS .collapse {
+.practice-series-lists .compLeteS .collapse , .mocktest-attempted-wrapper .compLeteS .collapse {
+
     background-color: #fff;
     border-radius: 30px;
     margin-top: 15px;
