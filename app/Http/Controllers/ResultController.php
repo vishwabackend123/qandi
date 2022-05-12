@@ -322,6 +322,31 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
+
+    public function customResultList($exam_type)
+    {
+        try {
+
+            $result_data = [];
+
+            $redis_subjects = $this->redis_subjects();
+            $cSubjects = collect($redis_subjects);
+            $result_data = $this->getAllResult($exam_type);
+            foreach ($result_data as $key => $value) {
+                $id = explode(',', $value->subject_id_list);
+                if ($id) {
+                    $filtered_subject = $cSubjects->whereIn('id', $id)->all();
+                    $result_data[$key]->subject_name = implode(',', array_column($filtered_subject, 'subject_name'));
+                } else {
+                    $result_data[$key]->subject_name = "";
+                }
+            }
+            return view('afterlogin.ExamViews.custom_result_list', compact('result_data'));
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+
     public function getAllResult($exam_type)
     {
         $limit = 10;
@@ -430,12 +455,14 @@ class ResultController extends Controller
                 $result_data[$key]->subject_name = "";
             }
         }
-        $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data'))->render();
 
-            return response()->json([
-                'status' => true,
-                'html' => $html,
-                'message' => 'result list  successfully.',
-            ]);
+
+        $html = view('afterlogin.TestSeries.attempted_result_list', compact('result_data', 'cSubjects'))->render();
+
+        return response()->json([
+            'status' => true,
+            'html' => $html,
+            'message' => 'result list  successfully.',
+        ]);
     }
 }
