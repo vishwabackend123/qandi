@@ -280,7 +280,7 @@ $userData = Session::get('user_data');
                 @endisset
               </div>
               <div class="tab-pane fade show" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
-                @include('afterlogin/ExamCustom/custom_attempt_list')
+                
               </div>
             </div>
           </div>
