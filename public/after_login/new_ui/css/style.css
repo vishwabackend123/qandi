@@ -9449,3 +9449,13 @@ label#lastname-error, label#firstname-error,label#username-error {
 .custom_model h3 {
     font-size: 22px;
 }
+.planner-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+.planner-scroll::-webkit-scrollbar-track {
+    background: rgba(13, 193, 255, 0.1) !important;
+    border-radius: 10px;
+}
+.planner-scroll::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+}
