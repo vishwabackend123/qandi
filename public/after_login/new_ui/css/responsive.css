@@ -19,7 +19,7 @@
 
 @media screen and ( max-height:925px ){
     .scrollnone body {
-        width: calc(100% + 5px);
+        width: calc(100% + -5px);
     }
 }
 
