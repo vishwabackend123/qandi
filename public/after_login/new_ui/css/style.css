@@ -9461,3 +9461,12 @@ label#lastname-error, label#firstname-error,label#username-error {
 .planner-scroll::-webkit-scrollbar-thumb {
     background: rgba(13, 193, 255, 0.4) !important;
 }
+
+.live-exam .tab-content .tab-pane  {
+    max-height: calc(100vh - 308px)!important;
+    overflow: overlay;
+}
+.live-exam-list-wrapper .cust-tab-content {
+    padding-right: 10px !important;
+   
+}
