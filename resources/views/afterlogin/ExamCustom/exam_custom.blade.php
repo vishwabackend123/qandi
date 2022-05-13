@@ -574,16 +574,22 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-
+    
     var curr_text = $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text();
-
-    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
+        curr_text = curr_text.replace(/\s+/g, "");
+    var updatetext = ((curr_text == 'HideTopics') ? 'Show Topics' : 'Hide Topics');
     $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text(updatetext);
 
-    if (updatetext == 'Collapse Topics') {
-      $('.expand_filter_' + chapt_id).removeClass('disabled');
-    } else {
+    if (curr_text == 'HideTopics') {
+            $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
+        } else {
+            $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
+        }
+    
+    if (curr_text == 'HideTopics') {
       $('.expand_filter_' + chapt_id).addClass('disabled');
+    } else {
+      $('.expand_filter_' + chapt_id).removeClass('disabled');
 
     }
 
