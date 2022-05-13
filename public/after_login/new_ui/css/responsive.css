@@ -391,7 +391,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 2rem;
+        padding: 28px 2rem 15px;
         margin-right: 40px;
     }
 
@@ -803,7 +803,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 1rem;
+        padding: 28px 1rem 15px;
     }
 
     .examSect ul#myTab li a {
