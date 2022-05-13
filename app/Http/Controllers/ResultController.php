@@ -349,7 +349,7 @@ class ResultController extends Controller
 
     public function getAllResult($exam_type)
     {
-        $limit = 10;
+        $limit = 100;
         $offset = 0;
         $userData = Session::get('user_data');
         $user_id = $userData->id;
