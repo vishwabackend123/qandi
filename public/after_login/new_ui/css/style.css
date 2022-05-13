@@ -9465,6 +9465,6 @@ label#lastname-error, label#firstname-error,label#username-error {
     overflow: overlay;
 }
 .live-exam-list-wrapper .cust-tab-content  {
-    padding-right: 10px !important;
+    padding-right: 10px !important; 
    
 }
