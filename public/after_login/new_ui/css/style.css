@@ -919,7 +919,6 @@ div#collapseNotification {
 html.scrollnone,
 html.scrollnone .wrapper-dashboard {
     overflow: hidden;
-    padding-right: 10px;
 }
 .scrollnone body {
     width: calc(100% + 0px);
