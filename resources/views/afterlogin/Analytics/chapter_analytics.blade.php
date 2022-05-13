@@ -21,28 +21,58 @@
                     <div class="all-star d-flex align-items-center justify-content-between">
                         <ul class="m-0 p-0">
                             @if($list['chapter_score'] >0 && $list['chapter_score'] <= 20 || $list['chapter_score']> 20)
-                                <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                <li>
+                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                    <span class="fill-star-color">★</span>
+                                </li>
                                 @else
-                                <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                <li>
+                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                    <span class="gray-star-color">★</span>
+                                </li>
                                 @endif
                                 @if($list['chapter_score'] >20 && $list['chapter_score'] <= 40 || $list['chapter_score']> 40)
-                                    <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                    <li>
+                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                        <span class="fill-star-color">★</span>
+                                    </li>
                                     @else
-                                    <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                    <li>
+                                        <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                        <span class="gray-star-color">★</span>
+                                    </li>
                                     @endif
                                     @if($list['chapter_score'] >40 && $list['chapter_score'] <= 60 || $list['chapter_score']> 60)
-                                        <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                        <li>
+                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                            <span class="fill-star-color">★</span>
+                                        </li>
                                         @else
-                                        <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                        <li>
+                                            <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                            <span class="gray-star-color">★</span>
+                                        </li>
                                         @endif
                                         @if($list['chapter_score'] >60 && $list['chapter_score'] <= 80 || $list['chapter_score']> 80)
-                                            <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                            <li>
+                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                                <span class="fill-star-color">★</span>
+                                            </li>
                                             @else
-                                            <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                            <li>
+                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                                <span class="gray-star-color">★</span>
+                                            </li>
                                             @endif
-                                            @if($list['chapter_score'] >80 && $list['chapter_score'] <= 100) <li><img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"></li>
+                                            @if($list['chapter_score'] >80 && $list['chapter_score'] <= 100) <li>
+                                                <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
+                                                <span class="fill-star-color">★</span>
+                                            </li>
                                                 @else
-                                                <li><img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"></li>
+                                                <li>
+                                                    <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
+                                                    <span class="gray-star-color">★</span>
+                                                </li>
                                                 @endif
                         </ul>
                         <span>{{round($list['chapter_score'])}}%</span>

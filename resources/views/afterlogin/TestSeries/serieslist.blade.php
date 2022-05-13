@@ -49,7 +49,7 @@ $userData = Session::get('user_data');
                                                     <input type="hidden" name="series_type" value="{{$open->series_type}}" />
                                                     <input type="hidden" name="time_allowed" value="{{$open->time_allowed}}" />
                                                     <input type="hidden" name="questions_count" value="{{$open->questions_count}}" />
-                                                    <input type="hidden" name="exam_mode" value="Live" />
+                                                    <input type="hidden" name="exam_mode" value="Open" />
                                                     <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                                 </form>
                                             </li>
@@ -307,6 +307,36 @@ $(document).ready(function() {
                 $('.loader-block').hide();
             }
         });
+    });
+    $(document).on('click', '.all_attemp', function() {
+        $(this).addClass('btn-primary');
+        $(this).removeClass('btn-outline-primary');
+        $('.open_attemp').removeClass('btn-primary');
+        $('.open_attemp').addClass('btn-outline-primary');
+        $('.live_attemp').removeClass('btn-primary');
+        $('.live_attemp').addClass('btn-outline-primary');
+        $('.compLeteS').show();
+        
+    });
+    $(document).on('click', '.open_attemp', function() {
+        $(this).addClass('btn-primary');
+        $(this).removeClass('btn-outline-primary');
+        $('.all_attemp').removeClass('btn-primary');
+        $('.all_attemp').addClass('btn-outline-primary');
+        $('.live_attemp').removeClass('btn-primary');
+        $('.live_attemp').addClass('btn-outline-primary');
+        $('.compLeteS').hide();
+        $('.exam_mode_Open').show();
+    });
+    $(document).on('click', '.live_attemp', function() {
+        $(this).addClass('btn-primary');
+        $(this).removeClass('btn-outline-primary');
+        $('.all_attemp').removeClass('btn-primary');
+        $('.all_attemp').addClass('btn-outline-primary');
+        $('.open_attemp').removeClass('btn-primary');
+        $('.open_attemp').addClass('btn-outline-primary');
+        $('.compLeteS').hide();
+        $('.exam_mode_Live').show();
     });
 });
 
