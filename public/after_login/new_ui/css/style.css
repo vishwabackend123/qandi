@@ -922,7 +922,7 @@ html.scrollnone .wrapper-dashboard {
     padding-right: 10px;
 }
 .scrollnone body {
-    width: calc(100% + 10px);
+    width: calc(100% + 0px);
     overflow-x: hidden;
 }
 /* shubham-end(09-03-2022) */
