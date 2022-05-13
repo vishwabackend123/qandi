@@ -577,10 +577,10 @@ $userData = Session::get('user_data');
 
     var curr_text = $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text();
 
-    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Expand to Topics');
+    var updatetext = ((curr_text == 'Show Topics') ? 'Hide Details' : 'Show Topics');
     $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text(updatetext);
 
-    if (updatetext == 'Collapse Topics') {
+    if (updatetext == 'Hide Details') {
       $('.expand_filter_' + chapt_id).removeClass('disabled');
     } else {
       $('.expand_filter_' + chapt_id).addClass('disabled');
