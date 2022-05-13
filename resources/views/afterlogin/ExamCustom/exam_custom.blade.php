@@ -275,7 +275,7 @@ $userData = Session::get('user_data');
                 @endisset
               </div>
               <div class="tab-pane fade show" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
-                
+
               </div>
             </div>
           </div>
@@ -561,27 +561,33 @@ $userData = Session::get('user_data');
     });
   }
 
+  /* 
+    $('a.expandTopicCollapse span').click(function() {
+      var spanId = this.id;
+      var curr_text = $("#" + spanId).text();
+      var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Show Topics');
+      $("#" + spanId).text(updatetext);
 
-  $('a.expandTopicCollapse span').click(function() {
-    var spanId = this.id;
-    var curr_text = $("#" + spanId).text();
-    var updatetext = ((curr_text == 'Show Topics') ? 'Hide Topics' : 'Show Topics');
-    $("#" + spanId).text(updatetext);
-
-  })
+    }) */
 
 
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-    var labelname = $('#expand_topic_' + chapt_id).text();
-    if (labelname == 'Collapse Topics') {
+
+    var curr_text = $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text();
+
+    var updatetext = ((curr_text == 'Show Topics') ? 'Hide Details' : 'Show Topics');
+    $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text(updatetext);
+
+    if (updatetext == 'Hide Details') {
       $('.expand_filter_' + chapt_id).removeClass('disabled');
     } else {
       $('.expand_filter_' + chapt_id).addClass('disabled');
 
     }
-    this.value = (this.value == 'Show Topics' ? 'Hide Topics' : 'Show Topics');
+
+    /*  this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics'); */
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
     if (topic_length == 0) {
       //if (labelname == 'Collapse Topics') {
@@ -691,13 +697,25 @@ $userData = Session::get('user_data');
         $("#chapter_list_" + sub_id).html('');
         $("#chapter_list_" + sub_id).html(result);
 
+
+        var selected_topics = $('#selected_topic').val();
+
+        if (selected_topics != '' || selected_topics != null) {
+          var sArr = selected_topics.split(',');
+          $.each(sArr, function(index, value) {
+            if ($(".slick-slider #chpt_topic_" + value).length > 0) {
+              $(".slick-slider #chpt_topic_" + value).removeClass('btn-light');
+              $(".slick-slider #chpt_topic_" + value).addClass('topic_selected');
+              $(".slick-slider #chpt_topic_" + value).html('SELECTED');
+              $(".slick-slider #topic_box_" + value).addClass('bdr-success');
+            }
+          });
+        }
+
         $('#overlay').fadeOut();
         $('.clear-filter').show();
-
-
       }
     });
-
   };
 
   function clear_chapter_filter(sub_id, filter_type) {
