@@ -98,7 +98,7 @@ $questtype='radio';
     });
 </script>
 <div>
-    <div class="d-flex ">
+    <div class="d-flex exam_section_button">
         @if(isset($aSections) && !empty($aSections))
         @foreach($aSections as $Vsec)
         @php $secId=$Vsec->id;@endphp

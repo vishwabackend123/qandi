@@ -16,7 +16,7 @@ button {
     text-decoration: none;
 }
 .practice_custom_page #myTabContent .btn.btn-warning{background: linear-gradient(232deg, #21ccff 95%, #00baff -5%);}
-.practice_custom_page #myTabContent .btn.btn-warning:hover{    background: #00baff;}
+.practice_custom_page #myTabContent .btn.btn-warning:hover{    background: #00baff; transition: none;}
 .exam_card h2 {
     font-size: 26px;
     font-weight: 600;
