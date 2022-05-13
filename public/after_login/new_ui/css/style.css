@@ -918,10 +918,12 @@ div#collapseNotification {
 /* shubham-start(09-03-2022) */
 html.scrollnone,
 html.scrollnone .wrapper-dashboard {
-    overflow-y: hidden;
-    padding-right: 10px;
+    overflow: hidden;
 }
-
+.scrollnone body {
+    width: calc(100% + 0px);
+    overflow-x: hidden;
+}
 /* shubham-end(09-03-2022) */
 
 /* shubham-start(10-03-2022) */

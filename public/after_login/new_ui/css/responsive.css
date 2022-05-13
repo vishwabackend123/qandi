@@ -6,6 +6,7 @@
         margin: auto 0px;
 
     }
+   
 }
 
 
@@ -16,7 +17,11 @@
     }
 }
 
- 
+@media screen and ( max-height:925px ){
+    .scrollnone body {
+        width: calc(100% + -5px);
+    }
+}
 
 @media screen and ( max-height: 767px ) {
     .for-review-screen, .for-review-screen .bg-white {
@@ -609,9 +614,9 @@
         height: 182px;
     }
 
-    .custom-page .p-3.slick-slide {
+    /*.custom-page .p-3.slick-slide {
         width: auto !important;
-    }
+    }*/
 
     .container-fluid .row .col-md-6.ms-auto.text-end {
         width: 100%;
@@ -1313,9 +1318,9 @@
 
     /** custom page css on 16-12-2021 **/
 
-    .custom-page .p-3.slick-slide {
+    /*.custom-page .p-3.slick-slide {
         width: auto !important;
-    }
+    }*/
 
     .custom-page .slick-list {
         height: 182px;
