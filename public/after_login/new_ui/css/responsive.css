@@ -6,6 +6,9 @@
         margin: auto 0px;
 
     }
+    .scrollnone body {
+        width: calc(100% + 5px);
+    }
 }
 
 
