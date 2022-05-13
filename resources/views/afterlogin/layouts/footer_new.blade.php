@@ -978,11 +978,12 @@
                 $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").removeClass("active-navlink");
                 $('.practiceClass').removeClass('practiceopen');
-            } else {
+            } 
+            /*else {
                 $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").addClass("active-navlink");
                 $('.practiceClass').removeClass('practiceopen');
-            }
+            } */
 
             $('#submenu').collapse('toggle');
         }
@@ -1016,6 +1017,12 @@
             menu_opened === true) {
             $('#submenupreparation2').collapse('toggle');
         }
+    });
+    $('.wrapper-dashboard').click(function(){
+        $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
+        $(".dash-nav-link a:first-child").addClass("active-navlink");
+        $('.practiceClass').removeClass('practiceopen');
+
     });
     $('.menu2').click(function() {
         var menu_opened = $('#submenu3').hasClass('show');
@@ -1765,6 +1772,7 @@
 
     });
     $('.openSharefrnd').click(function(event) {
+        $('.practiceClass').removeClass('practiceopen');
         if (isDoubleClicked($(this))) return;
         var validator = $("#referalStudent_form").validate();
         validator.resetForm();
@@ -1802,6 +1810,7 @@
     $('.practiceClass').click(function(e) {
         $('#sharefrnd').modal('hide');
         if (isDoubleClicked($(this))) return;
+        $('.openSharefrnd').removeClass('popupopen');
         var url = window.location.pathname.split("/");
         var pathurl = url[1];
         if (pathurl == 'dashboard') {
