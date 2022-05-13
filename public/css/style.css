@@ -725,6 +725,11 @@ button#goto-otp-btn:hover {
 		width: 85% !important;
 	}
 }
+@media only screen and (max-width: 1024px) {
+.login_screen {
+    margin: 200px auto 0;
+}    
+}
 @media(min-width:768px) and (max-width:1023px) {
 .login_screen {
     transform: translate(0px, 25%) !important;
