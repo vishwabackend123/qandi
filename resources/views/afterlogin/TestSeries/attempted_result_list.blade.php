@@ -1,8 +1,8 @@
 <div class="exam_attempted_common_page">
     <div class="d-flex  p-4" id="testTypeDiv">
-        <a class="btn sectionBtn btn-primary me-2">ALL TEST SERIES</a>
-        <a class="btn sectionBtn btn-outline-primary me-2">OPEN TEST SERIES</a>
-        <a class="btn sectionBtn btn-outline-primary me-2">LIVE TEST SERIES</a>
+        <a class="btn sectionBtn btn-primary me-2 all_attemp">ALL TEST SERIES</a>
+        <a class="btn sectionBtn btn-outline-primary me-2 open_attemp">OPEN TEST SERIES</a>
+        <a class="btn sectionBtn btn-outline-primary me-2 live_attemp">LIVE TEST SERIES</a>
     </div>
     <div class="d-flex  p-4" id="AssessmentTypeDiv" style="display:none !important">
         <a class="btn sectionBtn SubattemptActBtn btn-primary me-2" id="all_subject_flt" onclick="showSubfilter('all_subject');">ALL SUBJECTS</a>
@@ -88,7 +88,7 @@
                 </div>
             </div-->
 
-            <div class="compLeteS {{$sche->subject_name}}-rlt">
+            <div class="compLeteS {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
                 <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                     <div class="d-flex align-items-start justify-content-between result-list-head">
                         <h4 class="m-lg-0 p-0"> @if($sche->test_series_name)
