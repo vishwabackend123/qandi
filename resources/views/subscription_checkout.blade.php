@@ -20,7 +20,7 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </header>
-<section class="d-flex flex-column align-items-center justify-content-center h-100 p-sm-5 p-3">
+<section class="d-flex flex-column align-items-center justify-content-center h-100 checkoutpayment">
     <div class="steps-links d-flex ">
         <div class="px-sm-5 px-3 border-bg-right pt-3"><span class="red-dots1 active-dot"></span>Orders</div>
         <div class="px-sm-5 px-3 pt-3 border-bg-left border-bg-right"><span class="red-dots1"></span>Shipping</div>

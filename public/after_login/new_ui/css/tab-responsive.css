@@ -173,8 +173,8 @@
 .addremovetopic {width: 110px;font-size: 14px;}
 .examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 3%!important;right: -20px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 3%!important;left: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
 .examSect .rightSect button.btn.btn-secondary i{    font-size: 12px;}
 .base-timer {width: 48px; height: 48px;}
@@ -192,11 +192,21 @@
 .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
     height: 156px!important;
 }
+<<<<<<< HEAD
 
 .custom-page .cust-tab-content .scroll-div {
     max-height: calc(100vh - 400px)!important;
 }
 .examSect .rightSect .bg-white{height: calc(100vh - 110px);}
+=======
+.exam_section_button {
+    display: block!important;
+}
+.sectionBtn{margin-bottom:20px!important;}
+div.counter{right:0;}
+
+
+>>>>>>> e56ae804d162aa247fa9f92ee6311d415ba9ddc9
 }
 
 @media(max-width:1024px){
