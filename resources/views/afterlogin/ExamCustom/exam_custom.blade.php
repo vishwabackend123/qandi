@@ -28,15 +28,15 @@ $userData = Session::get('user_data');
         <div class="col-lg-12  p-lg-5 pt-none">
 
           <div class="tab-wrapper">
-                <div id="scroll-mobile">
-                  <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
-                    </li>
-                  </ul>
+            <div id="scroll-mobile">
+              <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
+                </li>
+              </ul>
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
@@ -574,18 +574,18 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-    
+
     var curr_text = $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text();
-        curr_text = curr_text.replace(/\s+/g, "");
+    curr_text = curr_text.replace(/\s+/g, "");
     var updatetext = ((curr_text == 'HideTopics') ? 'Show Topics' : 'Hide Topics');
     $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text(updatetext);
 
     if (curr_text == 'HideTopics') {
-            $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
-        } else {
-            $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
-        }
-    
+      $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
+    } else {
+      $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
+    }
+
     if (curr_text == 'HideTopics') {
       $('.expand_filter_' + chapt_id).addClass('disabled');
     } else {
@@ -614,6 +614,20 @@ $userData = Session::get('user_data');
 
           $("#topic_section_" + chapt_id + " div").remove();
           $("#topic_section_" + chapt_id).html(result);
+
+          var selected_topics = $('#selected_topic').val();
+
+          if (selected_topics != '' || selected_topics != null) {
+            var sArr = selected_topics.split(',');
+            $.each(sArr, function(index, value) {
+              if ($("#topic_section_" + chapt_id + ' #chpt_topic_' + value).length > 0) {
+                $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).removeClass('btn-light');
+                $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).addClass('topic_selected');
+                $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).html('SELECTED');
+                $("#topic_section_" + chapt_id + ' #topic_box_' + value).addClass('bdr-success');
+              }
+            });
+          }
 
           applySlider(slick_id); // apply slick slider again
 
@@ -702,21 +716,6 @@ $userData = Session::get('user_data');
       success: function(result) {
         $("#chapter_list_" + sub_id).html('');
         $("#chapter_list_" + sub_id).html(result);
-
-
-        var selected_topics = $('#selected_topic').val();
-
-        if (selected_topics != '' || selected_topics != null) {
-          var sArr = selected_topics.split(',');
-          $.each(sArr, function(index, value) {
-            if ($(".slick-slider #chpt_topic_" + value).length > 0) {
-              $(".slick-slider #chpt_topic_" + value).removeClass('btn-light');
-              $(".slick-slider #chpt_topic_" + value).addClass('topic_selected');
-              $(".slick-slider #chpt_topic_" + value).html('SELECTED');
-              $(".slick-slider #topic_box_" + value).addClass('bdr-success');
-            }
-          });
-        }
 
         $('#overlay').fadeOut();
         $('.clear-filter').show();
