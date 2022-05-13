@@ -9464,7 +9464,7 @@ label#lastname-error, label#firstname-error,label#username-error {
 }
 
 .live-exam .tab-content .tab-pane ,   div#custom {
-    max-height: calc(100vh - 220px)!important;
+    max-height: calc(100vh - 200px)!important;
     overflow: overlay;
 }
 .live-exam-list-wrapper .cust-tab-content  {
