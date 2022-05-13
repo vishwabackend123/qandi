@@ -308,6 +308,36 @@ $(document).ready(function() {
             }
         });
     });
+    $(document).on('click', '.all_attemp', function() {
+        $(this).addClass('btn-primary');
+        $(this).removeClass('btn-outline-primary');
+        $('.open_attemp').removeClass('btn-primary');
+        $('.open_attemp').addClass('btn-outline-primary');
+        $('.live_attemp').removeClass('btn-primary');
+        $('.live_attemp').addClass('btn-outline-primary');
+        $('.compLeteS').show();
+        
+    });
+    $(document).on('click', '.open_attemp', function() {
+        $(this).addClass('btn-primary');
+        $(this).removeClass('btn-outline-primary');
+        $('.all_attemp').removeClass('btn-primary');
+        $('.all_attemp').addClass('btn-outline-primary');
+        $('.live_attemp').removeClass('btn-primary');
+        $('.live_attemp').addClass('btn-outline-primary');
+        $('.compLeteS').hide();
+        $('.exam_mode_Open').show();
+    });
+    $(document).on('click', '.live_attemp', function() {
+        $(this).addClass('btn-primary');
+        $(this).removeClass('btn-outline-primary');
+        $('.all_attemp').removeClass('btn-primary');
+        $('.all_attemp').addClass('btn-outline-primary');
+        $('.open_attemp').removeClass('btn-primary');
+        $('.open_attemp').addClass('btn-outline-primary');
+        $('.compLeteS').hide();
+        $('.exam_mode_Live').show();
+    });
 });
 
 </script>
