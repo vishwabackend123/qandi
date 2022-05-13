@@ -80,12 +80,14 @@ class MockExamController extends Controller
 
                 $aSections = isset($responsedata->sections) ? $responsedata->sections : [];
                 $exam_fulltime = $responsedata->time_allowed ?? '';
-
-                $exam_ques_count = $questions_count = count($aQuestions_list);
+                //$exam_ques_count = $questions_count = count($aQuestions_list);
+                $exam_ques_count = $questions_count = isset($responsedata->total_ques) ? $responsedata->total_ques : 0;
+                $total_marks  = isset($responsedata->total_marks) ? $responsedata->total_marks : 0;
             } else {
                 $aQuestions_list = $aSections = [];
                 $questions_count = 0;
                 $exam_fulltime = 0;
+                $total_marks = 0;
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
             $exam_ques_count = $questions_count;
@@ -206,14 +208,11 @@ class MockExamController extends Controller
             Session::put('exam_name', $exam_name);
 
             $url_name = Route::current()->getName();
-            if($url_name == 'mockExamTest')
-            {
-                return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount')); 
-            }else
-            {
-                 return view('afterlogin.AdaptiveExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            if ($url_name == 'mockExamTest') {
+                return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks'));
+            } else {
+                return view('afterlogin.AdaptiveExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks'));
             }
-           
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -553,5 +552,4 @@ class MockExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-   
 }
