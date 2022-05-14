@@ -327,7 +327,7 @@
         font-weight: 600;
     }
 
-    @media only screen and (max-width: 1199px) {
+    /* @media only screen and (max-width: 1199px) {
         .result-list-head h4 {
             font-size: 14px;
         }
@@ -354,5 +354,5 @@
         .paper-sub span {
             font-size: 13px;
         }
-    }
+    } */
 </style>

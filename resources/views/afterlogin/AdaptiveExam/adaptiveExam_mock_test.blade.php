@@ -282,7 +282,7 @@ $userData = Session::get('user_data');
             font-weight: 600;
         }
 
-        @media only screen and (max-width: 1199px) {
+        /* @media only screen and (max-width: 1199px) {
             .result-list-head h4 {
                 font-size: 14px;
             }
@@ -309,7 +309,7 @@ $userData = Session::get('user_data');
             .paper-sub span {
                 font-size: 13px;
             }
-        }
+        } */
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     @endsection
