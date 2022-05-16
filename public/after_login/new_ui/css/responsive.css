@@ -100,7 +100,16 @@
         
        
 }
-
+@media(max-width:1340px){
+    .sub-subject .btn.rounded-0.me-2 {
+        padding: 2px;
+        width: 35px;
+        height: 30px;
+        line-height: 20px;
+        margin-right: 5px!important;
+    }
+    .sub-subject strong{font-size: 16px;}
+}
 @media(min-width:1316px) and (max-width:1440px) {
   .garphlistincom+.garphlistincom{margin-left:8px;}
   .exam-analytics .abrv-graph{padding-right:2px;}
@@ -1285,12 +1294,13 @@
     }
 
     .course-star li strong {
-        width: 100% !important;
+        width: 43% !important;
         display: block;
+        float: left;
     }
 
     .star-img {
-        width: 70% !important;
+        width: 43% !important;
         display: block;
         float: left;
     }
@@ -1917,9 +1927,9 @@
 
     @media (max-width: 420px) {
         .course-star li strong {
-            width: 100% !important;
+            width: 44% !important;
         }
-
+        .star-img{width: 34% !important;}
         .course-star li {
             padding-bottom: 5px !important;
         }

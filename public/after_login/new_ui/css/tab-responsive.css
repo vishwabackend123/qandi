@@ -17,6 +17,11 @@
     .live-exam .sub-details {
     padding: 0;
 }
+    .chapter_analytics .topic-details.row .col-lg-4{width:50%;}
+    .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
+        height: 156px!important;
+    }
+
     #test_instruction .col-lg-4.flex-column.justify-content-center{
         width: 90%;
         margin-top: 10px;
@@ -68,9 +73,10 @@
     .cust-tabs.nav.nav-tabs .nav-link{
        min-width:auto;
        font-size: 14px;
-       padding-left:15px!important;
-       padding-right:15px!important;
+       padding-left:17px!important;
+       padding-right:17px!important;
        line-height: 35px;
+
    }
  
     .subscrived svg{
@@ -167,8 +173,8 @@
 .addremovetopic {width: 110px;font-size: 14px;}
 .examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 3%!important;right: -20px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 3%!important;left: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
 .examSect .rightSect button.btn.btn-secondary i{    font-size: 12px;}
 .base-timer {width: 48px; height: 48px;}
@@ -181,9 +187,26 @@
 .exam-analytics a.top-btn-pop, #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
     font-size: 12px;
 }
+#exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1{ font-size: 12px;}
+
+.overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
+    height: 156px!important;
+}
+<<<<<<< HEAD
+
+.custom-page .cust-tab-content .scroll-div {
+    max-height: calc(100vh - 400px)!important;
+}
+.examSect .rightSect .bg-white{height: calc(100vh - 110px);}
+=======
+.exam_section_button {
+    display: block!important;
+}
+.sectionBtn{margin-bottom:20px!important;}
+div.counter{right:0;}
 
 
-
+>>>>>>> e56ae804d162aa247fa9f92ee6311d415ba9ddc9
 }
 
 @media(max-width:1024px){
@@ -208,6 +231,10 @@
             height: 22px;line-height: 21px;}
         .examSect .rightSect .number-block .btn { min-width: 25px;height: 25px;width: 25px; margin-bottom: 10px !important; font-size: 13px;margin-right: 3px; }
         #review_rques_blk .q-no{left: 0px;}
+        .col_min {
+            max-width: 100%;
+            min-width: 100%;
+        }
 }
 
 
@@ -267,6 +294,11 @@
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    .qoption_error{
+     position: relative;
+    bottom: 65px;
+    font-size: 14px;
+    }
     .live-exam .speci-text {
     display: inline-block;
 }
@@ -337,9 +369,6 @@
     .active_user {
        max-width: 259px;
    }
-    .refund-money{
-       width: 80%;
-   }
     .leader-board {
        right: 225px;
        height: auto;
@@ -373,7 +402,7 @@
     .profile-show .profile-picture-txt h4 {text-align: center;font-size: 14px;}
     .active_user { max-width: 274px;}
     .profile-img-user {width: 35px;height: 35px;}
-    .refund-money{width: 80%;}
+    .refund-money{width: 95%;}
     .leader-board {right: 200px;height: auto;     width: 325px;}
     .profile-show {right: 463px;top: 0px; WIDTH: 283PX;}
     .log-out-screen {right: 200px;    top: 0%; padding: 20px;}
@@ -413,7 +442,12 @@
     .list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), 
     .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4){width: 33.33%!important;}
     /* .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child{width:55%;} */
-    
+    .exam-analytics span.text-center.w-100 img {
+        width: 60%;
+    }
+    .custom-page .cust-tab-content .scroll-div {
+        max-height: calc(100vh - 437px)!important;
+    }  
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
@@ -529,5 +563,8 @@
 .padd-right-0{padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
 .notification-txt span.text-notific {
     font-size: 14px;
+}
+.exam-analytics span.text-center.w-100 img {
+    width: 65%;
 }
 }

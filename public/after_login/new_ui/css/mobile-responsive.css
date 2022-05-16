@@ -1,4 +1,17 @@
 @media(max-width:767px){
+    .instructions {
+    height: 125px;
+}
+    .instructions h3 {
+    font-size: 18px;
+}
+        .qoption_error{
+    bottom: 0;
+    }
+    .live-test {
+    margin: 0;
+}
+    .course-star{width: 100%;}
     .custom-page .cust-tab-content{padding-bottom: 30px!important;}
 
     .question-block{height:250px;}
@@ -82,7 +95,7 @@
             font-size: 25px;
             line-height: 30px;
         }
-        .topics-box{justify-content:left;}
+        .topics-box{justify-content:center;-webkit-justify-content:center;}
         .topics-box:first-child{margin-left:0px;}
         .progressChartExpend{min-width:1600px;}
         .log-out-screen{
@@ -170,10 +183,13 @@
             right: 3%;
             height: 450px;
         }
-        .profile-show {left:25px !important;}
+        .profile-show {left: 34px !important;}
 
 
-        .edit-form{top: 10% !important;min-width: 290px;right: 9px !important;left: initial;  }
+        .edit-form{top: 90px !important;min-width: 290px;right: 9px !important;left: initial;  }
+        .edit-form .edit-img {
+            margin-bottom: 0.4rem !important;
+        }
 
         .leader-board{top: 7% !important; }
         .svg_icon_input svg{ width: 20px;height: 20px; }
@@ -186,7 +202,7 @@
         .leader-board {height: 465px; min-height: 350px; padding-left: 0px;float: inherit; }
         #editProfile_form .form-flds input {font-size: 14px;}
         #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
-        #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;}
+        #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;padding: 10px 30px;}
         .search-frnd input{margin-left: 10px}
         .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
         .exportAnaylisis .exportUsertxt{margin-left:0;}  
@@ -194,7 +210,7 @@
         .profile-show .profile-picture-txt .p-text {
             margin-top: 10px;
         }
-        .profile-show{padding-top: 0px !important;margin-top: 7px;}
+        .profile-show{padding-top: 0px !important;margin-top:0px;}
         .leader-board h4 {
             text-align: left;
             padding-right: 0px;
@@ -210,17 +226,20 @@
         .exportAnaylisis .justify-content-center{justify-content: start!important;}
         .exportAnaylisis .export-block p {font-size: 14px;}
 
-
+        div#LeaDer {
+            top: 90px !important;
+            border-top-left-radius: 0px !important;
+        }
 
 
         .log-out-screen{max-width: 267px;}
-        .leader-board, .profile-show{width:47% !important;    top: 70px !important;} 
+        .leader-board, .profile-show{width:47% !important;    top: 90px !important;} 
         .edit-form{min-width: 240px;}
         .f_l_name_box .form-flds { width: 100% !important;margin-bottom: 10px;}
         .f_l_name_box { display: block !important;}
         #editProfile_form .form-flds p {font-size: 10px;}
       
-        .log-out-screen,.subscription {top:10% !important;right: 10px !important;}
+        .log-out-screen,.subscription {top:90px !important;right: 10px !important; }
         .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
         .exportAnaylisis .export-block h2 {font-size: 26px;}
         .reportHeading {font-size: 18px;}
@@ -231,7 +250,7 @@
             overflow: initial;
         }
         .tab-wrapper.h-100 {height: auto !important}
-        #review_rques_blk .answer-section { margin-bottom: 0px;width: 95.67% !important;}
+        #review_rques_blk .answer-section { margin-bottom: 0px;width: 97.20% !important; }
         div#myTabContent.reviewPanel .tab-pane .question-block { padding: 15px 0.5rem;}
         .rightSectH {
             font-size: 16px;
@@ -349,6 +368,15 @@
         .custom_attempted_page .result-list .d-flex.justify-content-between.full-syllabus {display: block!important;}
         .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery{flex-direction: row;flex-wrap: wrap;}
         .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub {flex: auto;    margin-top: 8px;}
+        .test-review {
+            margin-top: 0px;
+            
+        }
+
+        .subscriptionBox p.box-content {
+            overflow: overlay;
+            height: 150px;
+        }
 
     }
 
@@ -372,6 +400,9 @@
 }
 .result-list .d-flex.justify-content-between.outerhead {
     padding: 0 !important;
+}
+#review_rques_blk .answer-section {
+    width: 97.7%!important;
 }
 }
 @media(max-width:576px){
@@ -452,6 +483,25 @@
 .custom_attempted_page  .morning-slot{display:inline-block!important;width:50%;vertical-align: top;text-align: right;}
 .custom_attempted_page .result-list-btns{display:inline-block;margin-top:10px;}
 .custom_attempted_page .result-list .d-flex.justify-content-between.outerhead h4 , .custom_attempted_page .morning-slot p{margin-bottom:10px!important;}
+ 
+#review_rques_blk .answer-section {
+    width: 97%!important;
+}
+div#LeaDer {
+    top: 287px!important;
+    border-radius: 20px!important;
+}
+.profile-section ul {
+    margin-top: 0;
+}
+.log-out-screen, .subscription ,.edit-form {
+    top: 70px!important;
+  
+}
+.col_min {
+    max-width: 100%;
+    min-width: 100%;
+}
 
 }
 @media(max-width:550px){
@@ -544,6 +594,9 @@
         .custom-page .px-4.py-2.clear_div {
             padding: 0 7px!important;
         }
+        #review_rques_blk .answer-section {
+            width: 96%!important;
+        }
         
 }
 @media (max-width:480px) {
@@ -567,6 +620,9 @@ li.a3TS {
     padding-right: 7px;
 }
 .practice-series-lists.list-series .live-exam .speci-text li.a4TS{width: 100%;    margin-top: 7px;}
+#review_rques_blk .answer-section {
+    width: 96%!important;
+}
     
 }
 @media(max-width:420px){
@@ -598,8 +654,20 @@ li.a3TS {
     width: 94%!important;
 }    
 .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub{width:50%;}
+    #editProfile_form  .form-flds { margin-bottom: 10px !important;}
+    #review_rques_blk .answer-section {
+        width: 95%!important;
+    }
+    .subscription .form-btns button {
+        font-size: 10px;
+    }
 }
 @media(max-width:385px){
+    .star-img {
+        width: 72% !important;}
+    .course-star li strong {
+        width: 100% !important;
+    }
 	#sharefrnd .py-5.copiedmshblock {
 		padding-top: 15px !important;
 		padding-bottom: 15px !important;
@@ -610,6 +678,9 @@ li.a3TS {
 }
     .leader-board, .profile-show {
         width: 280px !important;
+    }
+    #review_rques_blk .answer-section {
+        width: 94%!important;
     }
 
 }

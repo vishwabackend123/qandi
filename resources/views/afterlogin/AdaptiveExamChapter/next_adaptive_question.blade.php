@@ -9,12 +9,17 @@ $template_type = isset($question_data->template_type)?$question_data->template_t
 $difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 $correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
 
-if($template_type==1){
+$question_type = '';
+if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}elseif($template_type==2){
+$question_type = "Multi Choice";
+}elseif($template_type == 2){
 $type_class='radioans';
 $questtype='radio';
+$question_type = "Single Choice";
+}elseif ($template_type == 11) {
+$question_type = "Numerical";
 }
 @endphp
 <script>
@@ -96,7 +101,9 @@ $questtype='radio';
 </script>
 <div>
     <div class="d-flex ">
-
+        <!-- question Type Tag -->
+        <span class="fw-bold text-uppercase">{{$question_type}}</span>
+        <!-- question Type Tag -->
         <div id="counter_{{$active_q_id}}" class="ms-auto counter mb-4 d-flex">
             <span id="avg_text_{{$active_q_id}}" class="avg-time">Average Time :</span>
             <div id="progressBar_{{$active_q_id}}" class="progressBar tiny-green ms-2">
@@ -197,8 +204,10 @@ $questtype='radio';
             <!-- --------- correct answer for demo---------- -->
             @elseif($template_type==11)
             <div class="col-md-5 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
-
+                <div class="numeric-input-box">
+                    <span>Answer here</span>
+                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                </div>
             </div>
             @endif
 
@@ -258,6 +267,7 @@ $questtype='radio';
 
             }
         }
+        $('#quest_option_' + question_id).focus();
     });
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {

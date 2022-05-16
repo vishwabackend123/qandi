@@ -110,12 +110,17 @@ $difficulty_level = isset($question_data->difficulty_level)?$question_data->diff
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
 $correct_answers = isset($question_data->answers)?json_decode($question_data->answers):"";
 
-if($template_type==1){
+$question_type = '';
+if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
-}elseif($template_type==2){
+$question_type = "Multi Choice";
+}elseif($template_type == 2){
 $type_class='radioans';
 $questtype='radio';
+$question_type = "Single Choice";
+}elseif ($template_type == 11) {
+$question_type = "Numerical";
 }
 @endphp
 <div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
@@ -128,14 +133,12 @@ $questtype='radio';
 
                             <!-- Exam subject Tabs  -->
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
-                                @if(!empty($filtered_subject))
-                                @foreach($filtered_subject as $key=>$sub)
+
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}}</a>
+                                    <a class="nav-link all_div  active  " id="adaptive-tab" data-bs-toggle="tab" href="#adaptive_exam" role="tab" aria-controls="adaptive" aria-selected="true">Adaptive Exam</a>
                                 </li>
 
-                                @endforeach
-                                @endif
+
                             </ul>
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -144,6 +147,9 @@ $questtype='radio';
                                 <input type="hidden" id="current_question_no" value="1" />
                                 <div id="question_section" class="">
                                     <div class="d-flex ">
+                                        <!-- question Type Tag -->
+                                        <span class="fw-bold text-uppercase">{{$question_type}}</span>
+                                        <!-- question Type Tag -->
                                         <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
                                             <span id="avg_text" class="avg-time">Average Time :</span>
                                             <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
@@ -239,7 +245,10 @@ $questtype='radio';
                                             <!-- --------- correct answer for demo---------- -->
                                             @elseif($template_type==11)
                                             <div class="col-md-5 mb-4">
-                                                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                <div class="numeric-input-box">
+                                                    <span>Answer here</span>
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                </div>
 
                                             </div>
                                             @endif
@@ -501,6 +510,7 @@ $questtype='radio';
 @include('afterlogin.layouts.footer_new')
 <!-- page referesh disabled -->
 <script>
+    var activeques_id = '{{$activeq_id}}';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -595,6 +605,7 @@ $questtype='radio';
                 return false;
             }
         }
+        $('#quest_option_' + activeques_id).focus();
     });
 </script>
 <!-- /page referesh disabled -->
@@ -643,6 +654,9 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();

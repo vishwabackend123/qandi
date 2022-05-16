@@ -135,7 +135,7 @@ $questtype='radio';
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div id="question_section" class="">
                                     <div>
-                                        <div class="d-flex align-items-center" id="pause-start">
+                                        <div class="d-flex align-items-center exam_section_button" id="pause-start">
                                             @if(isset($aSections) && !empty($aSections))
                                             @foreach($aSections as $section)
                                             @if(isset($aSubSecCount[$subject_id][$section->id]) && $aSubSecCount[$subject_id][$section->id] > 0)
@@ -187,8 +187,10 @@ $questtype='radio';
                                                 @endif
                                                 @elseif($template_type==11)
                                                 <div class="col-md-5 mb-4">
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
-
+                                                    <div class="numeric-input-box">
+                                                        <span>Answer here</span>
+                                                        <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                    </div>
                                                 </div>
                                                 @endif
                                             </div>
@@ -353,13 +355,13 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+<!--div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
                 <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}" title="Close"></a>
             </div>
-            <div class="modal-body pt-3 p-5">
+            <div class="modal-body pt-3 p-md-5 p-4">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
                         <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
@@ -414,7 +416,7 @@ $questtype='radio';
             </div>
         </div>
     </div>
-</div>
+</div-->
 <!-- Modal END Exam -->
 <div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
@@ -443,6 +445,22 @@ $questtype='radio';
         </div>
     </div>
 </div>
+<!-- Modal END Exam -->
+<div class="modal hide fade in" id="attemptlimit" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-header pb-0 border-0">
+
+        </div>
+        <div class="modal-content rounded-0 custom_model">
+            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
+            <div class="modal-body p-5 text-center">
+                <div class="text-center py-4">
+                    <h3 id="attempt-alert-text" class="text-danger m-0"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
@@ -451,6 +469,7 @@ $questtype='radio';
 <!-- Have fun using Bootstrap JS -->
 
 <script>
+    var activeques_id = '{{$activeq_id}}';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
@@ -495,8 +514,9 @@ $questtype='radio';
 
     /* page referesh disabled */
     $(document).ready(function() {
+
         /* mouse rightclick */
-        /* document.oncontextmenu = function() {
+        document.oncontextmenu = function() {
             return false;
         };
 
@@ -506,7 +526,7 @@ $questtype='radio';
                 return false;
             }
             return true;
-        }); */
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -545,6 +565,7 @@ $questtype='radio';
                 return false;
             }
         }
+        $('#quest_option_' + activeques_id).focus();
     });
 </script>
 <script type="text/javascript">
@@ -565,12 +586,21 @@ $questtype='radio';
         height: '30vh'
     });*/
 
-    $(window).on('load', function() {
-        $("#test_instruction").modal({
+    $(document).ready(function() {
+        /*$("#test_instruction").modal({
             backdrop: "static",
             keyboard: false
         });
-        $('#test_instruction').modal('show');
+        $('#test_instruction').modal('show');*/
+        $('#mainDiv').show();
+        $('#exam_content_sec').show();
+        setboxHeight();
+        startTimer();
+        questionstartTimer();
+        setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
 
     });
     $('#goto-exam-btn').click(function() {
@@ -580,6 +610,9 @@ $questtype='radio';
         startTimer();
         questionstartTimer();
         setEachQuestionTime();
+        if ($('#quest_option_' + activeques_id).length > 0) {
+            $('#quest_option_' + activeques_id).focus();
+        }
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
@@ -974,7 +1007,10 @@ $questtype='radio';
 
                     }
                 } else if (response.status == 400) {
-                    alert(response.message);
+                    $('#attempt-alert-text').text(response.message);
+                    $('#attemptlimit').modal('show');
+
+                    //alert(response.message);
                     err_sts = false;
                 }
             },
@@ -1043,7 +1079,10 @@ $questtype='radio';
                     isValid = 1;
 
                 } else if (response.status == 400) {
-                    alert(response.message);
+                    $('#attempt-alert-text').text(response.message);
+                    $('#attemptlimit').modal('show');
+
+                    //alert(response.message);
                     isValid = 0;
 
                 }

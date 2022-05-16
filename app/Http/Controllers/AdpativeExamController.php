@@ -417,6 +417,7 @@ class AdpativeExamController extends Controller
             ));
             $response_json = curl_exec($curl);
 
+
             $response_json = str_replace('NaN', '""', $response_json);
 
             $err = curl_error($curl);
@@ -424,10 +425,13 @@ class AdpativeExamController extends Controller
             curl_close($curl);
 
             $responsedata = json_decode($response_json);
+
+
             $httpcode_response = isset($responsedata->success) ? $responsedata->success : false;
             $aQuestionslist = isset($responsedata->questions) ? $responsedata->questions : [];
             $session_id = isset($responsedata->session_id) ? $responsedata->session_id : [];
             $test_name = isset($responsedata->test_name) ? $responsedata->test_name : [];
+
 
             if ($httpcode_response == true) {
                 if (!empty($aQuestionslist)) {
@@ -447,16 +451,21 @@ class AdpativeExamController extends Controller
 
             $collection = collect($aQuestionslist)->sortBy('subject_id');
             $grouped = $collection->groupBy('subject_id');
-            $subject_ids = $collection->pluck('subject_id');
+            // $subject_ids = $collection->pluck('subject_id');
             $question_ids = $collection->pluck('question_id')->values()->all();
 
-            $subject_list = $subject_ids->unique()->values()->all();
-
+            // $subject_list = $subject_ids->unique()->values()->all();
+            if (count($select_topic) > 1) {
+                $subjects_list = isset($responsedata->subjects_list) ? $responsedata->subjects_list : [];
+            } else {
+                $subject_ids = $collection->pluck('subject_id');
+                $subjects_list = $subject_ids->unique()->values()->all();
+            }
 
             $redis_subjects = $this->redis_subjects();
             $cSubjects = collect($redis_subjects);
             $aTargets = [];
-            $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+            $filtered_subject = $cSubjects->whereIn('id', $subjects_list)->all();
             foreach ($filtered_subject as $sub) {
                 $count_arr = $collection->where('subject_id', $sub->id)->all();
                 $sub->count = count($count_arr);
@@ -777,15 +786,13 @@ class AdpativeExamController extends Controller
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
-            //dd($response_json, $request, $curl_url);
-
             $response_data = (json_decode($response_json));
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
-               // return view('afterlogin.ExamCustom.exam_result_analytics');
+                // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
                 return redirect()->route('dashboard');
             }

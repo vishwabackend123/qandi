@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 
 class MockExamController extends Controller
 {
@@ -23,6 +24,7 @@ class MockExamController extends Controller
     public function mockExam(Request $request)
     {
         try {
+
             $filtered_subject = [];
             $userData = Session::get('user_data');
 
@@ -71,7 +73,6 @@ class MockExamController extends Controller
 
             $responsedata = json_decode($response_json);
 
-
             $response_status = isset($responsedata->success) ? $responsedata->success : false;
 
             if ($response_status == true) {
@@ -79,12 +80,14 @@ class MockExamController extends Controller
 
                 $aSections = isset($responsedata->sections) ? $responsedata->sections : [];
                 $exam_fulltime = $responsedata->time_allowed ?? '';
-
-                $exam_ques_count = $questions_count = count($aQuestions_list);
+                //$exam_ques_count = $questions_count = count($aQuestions_list);
+                $exam_ques_count = $questions_count = isset($responsedata->total_ques) ? $responsedata->total_ques : 0;
+                $total_marks  = isset($responsedata->total_marks) ? $responsedata->total_marks : 0;
             } else {
                 $aQuestions_list = $aSections = [];
                 $questions_count = 0;
                 $exam_fulltime = 0;
+                $total_marks = 0;
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
             $exam_ques_count = $questions_count;
@@ -106,8 +109,6 @@ class MockExamController extends Controller
 
 
             $collection = collect($aQuestions_list);
-
-            //dd($aQuestions_list, $collection->duplicates('question_id'));
 
 
             /*  $aQuestionslist = $collection->sortBy('subject_id'); */
@@ -145,8 +146,6 @@ class MockExamController extends Controller
             $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
 
             $keys = $allQuestions->keys('question_id')->all();
-
-
 
             $question_data = current($aQuestions_list);
             $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
@@ -208,7 +207,12 @@ class MockExamController extends Controller
 
             Session::put('exam_name', $exam_name);
 
-            return view('afterlogin.AdaptiveExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount'));
+            $url_name = Route::current()->getName();
+            if ($url_name == 'mockExamTest') {
+                return view('afterlogin.AdaptiveExam.adaptiveExam_mock_test', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks'));
+            } else {
+                return view('afterlogin.AdaptiveExam.adaptiveExam_mock', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks'));
+            }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -323,11 +327,13 @@ class MockExamController extends Controller
                 $filtered = $collection->where('subject_id', $subject_id);
             }
 
+
             $filtered_questions = $filtered->values()->all();
 
             $allQuestionsArr = (array)$allQuestions; //object convert to array
 
             $allkeys = array_keys((array)$allQuestions); //Array of all keys
+
 
             //$question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
             $question_data = current($filtered_questions);
@@ -446,7 +452,7 @@ class MockExamController extends Controller
                     $response['status'] = 400;
                     $response['sec_q_attmpt_count'] = $sec_q_attmpt_count;
 
-                    $response['message'] = "Max attempt limit for this section is " . $max_attempt_limit;
+                    $response['message'] = "This section allows a maximum of " . $max_attempt_limit . "question attempts.";
                     return json_encode($response);
                 }
 

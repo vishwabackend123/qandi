@@ -98,7 +98,7 @@ $questtype='radio';
     });
 </script>
 <div>
-    <div class="d-flex ">
+    <div class="d-flex exam_section_button">
         @if(isset($aSections) && !empty($aSections))
         @foreach($aSections as $Vsec)
         @php $secId=$Vsec->id;@endphp
@@ -154,8 +154,10 @@ $questtype='radio';
             @endif
             @elseif($template_type==11)
             <div class="col-md-5 mb-4">
-                <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" placeholder="Answer here" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
-
+                <div class="numeric-input-box">
+                    <span>Answer here</span>
+                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20" autofocus>
+                </div>
             </div>
             @endif
         </div>
@@ -183,7 +185,7 @@ $questtype='radio';
     $(".next_button").removeClass("activequestion");
     $("#btn_" + question_id).addClass("activequestion");
 
-    //$("#exam_content_sec  #btn_" + question_id).focus();
+
 
     $("#current_question").val(question_id);
     $("#current_question_type").val(template_type);
@@ -213,6 +215,7 @@ $questtype='radio';
 
             }
         }
+        $('#quest_option_' + question_id).focus();
     });
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
