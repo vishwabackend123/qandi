@@ -99,7 +99,7 @@ $userData = Session::get('user_data');
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
                                     <div class="chapter-topic-block">
-                                        @if($myq_matrix_topic['Q1'])
+                                        @if(isset($myq_matrix_topic['Q1']) && $myq_matrix_topic['Q1'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q1'] as $matrix_one)
                                             <li class="mt-4">
@@ -155,9 +155,9 @@ $userData = Session::get('user_data');
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
                                     <div class="chapter-topic-block">
-                                        @if($myq_matrix_topic['Q1'])
+                                        @if(isset($myq_matrix_topic['Q2']) && $myq_matrix_topic['Q2'])
                                         <ul class="chapter-topic-lists ulStyle">
-                                            @foreach($myq_matrix_topic['Q1'] as $matrix_one)
+                                            @foreach($myq_matrix_topic['Q2'] as $matrix_one)
                                             <li class="mt-4">
                                                 <div class="row">
                                                     <div class="col-md-5">
@@ -211,7 +211,7 @@ $userData = Session::get('user_data');
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
                                     <div class="chapter-topic-block">
-                                        @if($myq_matrix_topic['Q3'])
+                                        @if(isset($myq_matrix_topic['Q3']) && $myq_matrix_topic['Q3'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q3'] as $matrix_one)
                                             <li class="mt-4">
@@ -267,7 +267,7 @@ $userData = Session::get('user_data');
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
                                     <div class="chapter-topic-block">
-                                        @if($myq_matrix_topic['Q4'])
+                                        @if(isset($myq_matrix_topic['Q4']) && $myq_matrix_topic['Q4'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q4'] as $matrix_one)
                                             <li class="mt-4">
@@ -335,9 +335,7 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 <script>
-$(window).on('load', function() {
-    $('#matrix').modal('show');
-});
+
 $(document).ready(function() {
     $(".dashboard-cards-block .bg-white>small>img").click(function() {
         $(".dashboard-cards-block .bg-white>small p>span").each(function() {
@@ -348,6 +346,16 @@ $(document).ready(function() {
     $(".dashboard-cards-block .bg-white>small p>span").click(function() {
         $(this).parent("p").hide();
     });
+    var topic_data= '<?php echo json_encode($myq_matrix_topic); ?>';
+    topic_data =JSON.parse(topic_data);
+    if(jQuery.isEmptyObject(topic_data))
+    {
+        setInterval(function () {
+        $('#matrix').modal('show');
+    }, 1000);
+    }
+    
+    
 });
 
 </script>

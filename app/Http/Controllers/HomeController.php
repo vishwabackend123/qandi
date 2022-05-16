@@ -763,6 +763,9 @@ class HomeController extends Controller
             $myq_matrix_topic = [];
             if ($response_myq_topic['success']) {
                 $myq_matrix_topic = $response_myq_topic['data'];
+                if (isset($myq_matrix_topic['Q1']) && empty($myq_matrix_topic['Q1']) && isset($myq_matrix_topic['Q2']) && empty($myq_matrix_topic['Q2']) && isset($myq_matrix_topic['Q3']) && empty($myq_matrix_topic['Q3']) && isset($myq_matrix_topic['Q4']) && empty($myq_matrix_topic['Q4'])) {
+                    $myq_matrix_topic = [];
+                }
             }
             
         return view('afterlogin.dashboard_myqmatrix',compact('myq_matrix','myq_matrix_topic'));
