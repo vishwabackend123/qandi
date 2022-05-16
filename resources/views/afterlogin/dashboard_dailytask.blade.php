@@ -56,7 +56,7 @@ $userData = Session::get('user_data');
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
-        <div class="container-fluid custom-page" style="padding-bottom: 30px;">
+        <div class="container-fluid custom-page">
             <div class="row">
                 <div class="col-md-5">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto dt_sec-1">

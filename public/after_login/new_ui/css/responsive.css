@@ -396,7 +396,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 2rem;
+        padding: 28px 2rem 15px;
         margin-right: 40px;
     }
 
@@ -614,9 +614,9 @@
         height: 182px;
     }
 
-    .custom-page .p-3.slick-slide {
+    /*.custom-page .p-3.slick-slide {
         width: auto !important;
-    }
+    }*/
 
     .container-fluid .row .col-md-6.ms-auto.text-end {
         width: 100%;
@@ -808,7 +808,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 1rem;
+        padding: 28px 1rem 15px;
     }
 
     .examSect ul#myTab li a {
@@ -1318,9 +1318,9 @@
 
     /** custom page css on 16-12-2021 **/
 
-    .custom-page .p-3.slick-slide {
+    /*.custom-page .p-3.slick-slide {
         width: auto !important;
-    }
+    }*/
 
     .custom-page .slick-list {
         height: 182px;

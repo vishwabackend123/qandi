@@ -339,6 +339,7 @@ trait CommonTrait
         $curl = curl_init();
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/get-leadershipBoard/' . $user_id . '/' . $grade_id;
+        // $curl_url = $api_URL . 'api/get-leadershipBoard/73/1';
 
 
 
@@ -355,6 +356,7 @@ trait CommonTrait
         ));
 
         $response_json = curl_exec($curl);
+
         $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         $aResponse = json_decode($response_json);
