@@ -108,6 +108,7 @@ $question_type = "Numerical";
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <input type="hidden" id="current_question_no" value="1" />
+
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet">
                                 <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
@@ -974,8 +975,6 @@ $question_type = "Numerical";
         var isValid = 0;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
-        var current_subject_id = $("#current_subject_id").val();
-        var current_section_id = $("#current_section_id").val();
 
         if (current_question_type == 11) {
             var res_value = $("#quest_option_" + question_id).val();
@@ -1073,19 +1072,29 @@ $question_type = "Numerical";
     function clearResponse(quest_id, subject_id, qNo) {
         var response = [];
         var current_question_type = $("#current_question_type").val();
-        var current_subject_id = $("#current_subject_id").val();
-        var current_section_id = $("#current_section_id").val();
 
         if (current_question_type == 11) {
-            var response = $("#quest_option_" + question_id).val();
+            var res_value = $("#quest_option_" + quest_id).val();
 
-            if (res_value != '') {
-                response.push($("#quest_option_" + question_id).val());
+            if (res_value === '') {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            } else {
+                $("#quest_option_" + quest_id).val('');
             }
         } else {
             $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
                 response = $(this).prop('checked', false);
             });
+
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            }
         }
 
 
