@@ -32,8 +32,8 @@ class ResultController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
+            $total_marks = isset($request->total_marks) ? $request->total_marks : '';
             $submit_time = isset($request->submit_time) ? (string)gmdate('H:i:s', $request->submit_time) : '00:00:00';
-            //$submit_time = isset($request->submit_time) ? $request->submit_time : '00:00:00';
             $exam_type = isset($request->exam_type) ? $request->exam_type : '';
             $test_type = isset($request->test_type) ? $request->test_type : '';
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : 'Practice';
@@ -71,7 +71,7 @@ class ResultController extends Controller
             $inputjson = [];
             $inputjson['answerList'] = $answersArr;
             $inputjson['test_time'] = (string)$exam_full_time;
-            $inputjson['total_marks'] = 30;
+            $inputjson['total_marks'] = !empty($total_marks) ? $total_marks : ($questions_count * 4);
             $inputjson['user_id'] = (string)$user_id;
             $inputjson['no_of_question'] = $questions_count;
             $inputjson['questions_list'] = $questions_list;
@@ -109,6 +109,7 @@ class ResultController extends Controller
                     "content-type: application/json"
                 ),
             ));
+
 
             $response_json = curl_exec($curl);
 
@@ -171,7 +172,6 @@ class ResultController extends Controller
             ));
 
             $response_json = curl_exec($curl);
-
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

@@ -241,6 +241,7 @@ $questtype='radio';
                             @csrf
                             <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
                             <input type="hidden" name="submit_time" id="final_submit_time" value="">
+                            <input type="hidden" name="total_marks" id="total_marks" value="{{$total_marks}}">
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
