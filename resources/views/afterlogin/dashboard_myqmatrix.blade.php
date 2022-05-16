@@ -30,9 +30,9 @@ $userData = Session::get('user_data');
                                 <b>Q2</b>
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[1]))
-                                            <b>{{$myq_matrix[1]}}</b>
+                                            <b>{{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
-                                            <b>0</b>
+                                            <b>00</b>
                                             @endif
                                         <small>Topic</small>
                                     </span>
@@ -41,9 +41,9 @@ $userData = Session::get('user_data');
                             <div class="topics-box">
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[0]))
-                                            <b>{{$myq_matrix[0]}}</b>
+                                            <b>{{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
-                                            <b>0</b>
+                                            <b>00</b>
                                             @endif
                                         <small>Topic</small>
                                     </span></a>
@@ -53,9 +53,9 @@ $userData = Session::get('user_data');
                                 <b>Q3</b>
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[2]))
-                                            <b>{{$myq_matrix[2]}}</b>
+                                            <b>{{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
-                                            <b>0</b>
+                                            <b>00</b>
                                             @endif
                                         <small>Topic</small>
                                     </span></a>
@@ -63,9 +63,9 @@ $userData = Session::get('user_data');
                             <div class="topics-box">
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[3]))
-                                            <b>{{$myq_matrix[3]}}</b>
+                                            <b>{{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
-                                            <b>0</b>
+                                            <b>00</b>
                                             @endif
                                         <small>Topic</small>
                                     </span></a>
@@ -353,6 +353,7 @@ $userData = Session::get('user_data');
 <script>
 
 $(document).ready(function() {
+    $('.filtericon').hide();
     $(".dashboard-cards-block .bg-white>small>img").click(function() {
         $(".dashboard-cards-block .bg-white>small p>span").each(function() {
             $(this).parent("p").hide();
