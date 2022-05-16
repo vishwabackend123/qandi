@@ -48,10 +48,12 @@ class ResultController extends Controller
 
             $given_ans = $answerList = $answersArr = [];
             $given_ans = isset($redisArray->given_ans) ? $redisArray->given_ans : [];
+            $attempt_count = isset($redisArray->attempt_count) ? $redisArray->attempt_count : [];
             $taken_time = isset($redisArray->taken_time) ? $redisArray->taken_time : [];
             $answer_swap_cnt = isset($redisArray->answer_swap_cnt) ? $redisArray->answer_swap_cnt : [];
             $questions_count = isset($redisArray->questions_count) ? $redisArray->questions_count : 0;
             $questions_list = isset($redisArray->all_questions_id) ? $redisArray->all_questions_id : [];
+
 
 
 
@@ -63,6 +65,7 @@ class ResultController extends Controller
                     $answerList['timetaken'] = isset($taken_time->$key) ? (string)$taken_time->$key : '';
                     $answerList['attemptCount'] = isset($answer_swap_cnt->$key) ? (int)$answer_swap_cnt->$key : '';
                     $answerList['question_id'] = (int)$key;
+                    $answerList['section_id'] = isset($attempt_count->$key->section_id) ? (int)$attempt_count->$key->section_id : '';
 
                     $answersArr[] = $answerList;
                 }
