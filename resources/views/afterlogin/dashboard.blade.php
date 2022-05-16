@@ -176,14 +176,14 @@ $userData = Session::get('user_data');
                                 <div class="topics-box">
                                     <b>Q2</b>
                                     <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                            <b>00</b>
+                                            <b>{{$myq_matrix[1]}}</b>
                                             <small>Topic</small>
                                         </span>
                                     </a>
                                 </div>
                                 <div class="topics-box">
                                     <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                            <b>00</b>
+                                            <b>{{$myq_matrix[0]}}</b>
                                             <small>Topic</small>
                                         </span></a>
                                     <b style="margin:0 0 0 6px">Q1</b>
@@ -191,13 +191,13 @@ $userData = Session::get('user_data');
                                 <div class="topics-box">
                                     <b>Q3</b>
                                     <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                            <b>00</b>
+                                            <b>{{$myq_matrix[2]}}</b>
                                             <small>Topic</small>
                                         </span></a>
                                 </div>
                                 <div class="topics-box">
                                     <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                            <b>00</b>
+                                            <b>{{$myq_matrix[3]}}</b>
                                             <small>Topic</small>
                                         </span></a>
                                     <b style="margin:0 0 0 6px">Q4</b>

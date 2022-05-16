@@ -1,5 +1,4 @@
 @extends('afterlogin.layouts.app_new')
-
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -8,7 +7,6 @@ $userData = Session::get('user_data');
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
 <div class="main-wrapper dashboard">
-
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
@@ -30,30 +28,29 @@ $userData = Session::get('user_data');
                         <div class="topicBlocks mt-3">
                             <div class="topics-box">
                                 <b>Q2</b>
-                                <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                        <b>00</b>
+                                <a href="javascript:void(0);"><span>
+                                        <b>{{$myq_matrix[1]}}</b>
                                         <small>Topic</small>
                                     </span>
                                 </a>
                             </div>
                             <div class="topics-box">
-
-                                <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                        <b>00</b>
+                                <a href="javascript:void(0);"><span>
+                                        <b>{{$myq_matrix[0]}}</b>
                                         <small>Topic</small>
                                     </span></a>
                                 <b style="margin:0 0 0 6px">Q1</b>
                             </div>
                             <div class="topics-box">
                                 <b>Q3</b>
-                                <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                        <b>00</b>
+                                <a href="javascript:void(0);"><span>
+                                        <b>{{$myq_matrix[2]}}</b>
                                         <small>Topic</small>
                                     </span></a>
                             </div>
                             <div class="topics-box">
-                                <a href="{{route('dashboard-MyQMatrix')}}"><span>
-                                        <b>00</b>
+                                <a href="javascript:void(0);"><span>
+                                        <b>{{$myq_matrix[3]}}</b>
                                         <small>Topic</small>
                                     </span></a>
                                 <b style="margin:0 0 0 6px">Q4</b>
@@ -94,22 +91,24 @@ $userData = Session::get('user_data');
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="mb-4">
                                             <ul class="chapter-topic-menu ulStyle d-inline-flex">
-                                                <li><a href="javascript:void(0)" class="active">CHAPTERS</a></li>
-                                                <li><a href="javascript:void(0)">TOPICS</a></li>
+                                                <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
+                                                <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
                                             </ul>
                                             <span class="filtericon"><i class="fa fa-filter"></i></span>
                                         </div>
-                                        <button class="btn btntheme mb-4">POLISH STRENGTHS</button>
+                                        <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
                                     <div class="chapter-topic-block">
+                                        @if($myq_matrix_topic['Q1'])
                                         <ul class="chapter-topic-lists ulStyle">
+                                            @foreach($myq_matrix_topic['Q1'] as $matrix_one)
                                             <li class="mt-4">
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="cus-radio-btn">
-                                                            <label>Chemistry Equilibrium
+                                                            <label>{{$matrix_one['topic_name']}}
                                                                 <input type="radio" name="radio">
-                                                                <span class="checkmark"></span>
+                                                                <!--span class="checkmark"></span-->
                                                             </label>
                                                         </div>
                                                     </div>
@@ -119,157 +118,197 @@ $userData = Session::get('user_data');
                                                                 <strong>Proficiency</strong>
                                                                 <span class="star-img w-auto">
                                                                     <div class="star-ratings-css ">
-                                                                        <div class="star-ratings-css-top">
+                                                                        <div class="star-ratings-css-top" style="width:{{$matrix_one['proficiency']}}%">
                                                                             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                                         </div>
                                                                         <div class="star-ratings-css-bottom">
                                                                             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                                         </div>
                                                                     </div>
-
                                                                 </span>
-                                                                <span>90%</span>
+                                                                <span>{{$matrix_one['proficiency']}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="mt-4">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <div class="cus-radio-btn">
-                                                            <label>Complex Numbers
-                                                                <input type="radio" name="radio">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
-                                                            <li class="m-0">
-                                                                <strong>Proficiency</strong>
-                                                                <span class="star-img w-auto">
-                                                                    <div class="star-ratings-css ">
-                                                                        <div class="star-ratings-css-top">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                        <div class="star-ratings-css-bottom">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </span>
-                                                                <span>80%</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="mt-4">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <div class="cus-radio-btn">
-                                                            <label>Electromagnetic Inductions
-                                                                <input type="radio" name="radio">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
-                                                            <li class="m-0">
-                                                                <strong>Proficiency</strong>
-                                                                <span class="star-img w-auto">
-                                                                    <div class="star-ratings-css ">
-                                                                        <div class="star-ratings-css-top">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                        <div class="star-ratings-css-bottom">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </span>
-                                                                <span>60%</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="mt-4">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <div class="cus-radio-btn">
-                                                            <label>Chemistry in Everyday life
-                                                                <input type="radio" name="radio">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
-                                                            <li class="m-0">
-                                                                <strong>Proficiency</strong>
-                                                                <span class="star-img w-auto">
-                                                                    <div class="star-ratings-css ">
-                                                                        <div class="star-ratings-css-top">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                        <div class="star-ratings-css-bottom">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </span>
-                                                                <span>80%</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="mt-4">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <div class="cus-radio-btn">
-                                                            <label>Biomolecules
-                                                                <input type="radio" name="radio">
-                                                                <span class="checkmark"></span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
-                                                            <li class="m-0">
-                                                                <strong>Proficiency</strong>
-                                                                <span class="star-img w-auto">
-                                                                    <div class="star-ratings-css ">
-                                                                        <div class="star-ratings-css-top">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                        <div class="star-ratings-css-bottom">
-                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </span>
-                                                                <span>40%</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                         </ul>
+                                        @else
+                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                            <strong>No record found</strong>
+                                        </p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="matrix-questwo" role="tabpanel" aria-labelledby="matrix-questwo-tab">
-
+                                <div class="tabcontent-wrapper">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mb-4">
+                                            <ul class="chapter-topic-menu ulStyle d-inline-flex">
+                                                <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
+                                                <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
+                                            </ul>
+                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                        </div>
+                                        <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
+                                    </div>
+                                    <div class="chapter-topic-block">
+                                        @if($myq_matrix_topic['Q1'])
+                                        <ul class="chapter-topic-lists ulStyle">
+                                            @foreach($myq_matrix_topic['Q1'] as $matrix_one)
+                                            <li class="mt-4">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="cus-radio-btn">
+                                                            <label>{{$matrix_one['topic_name']}}
+                                                                <input type="radio" name="radio">
+                                                                <!--span class="checkmark"></span-->
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
+                                                            <li class="m-0">
+                                                                <strong>Proficiency</strong>
+                                                                <span class="star-img w-auto">
+                                                                    <div class="star-ratings-css ">
+                                                                        <div class="star-ratings-css-top" style="width:{{$matrix_one['proficiency']}}%">
+                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                        </div>
+                                                                        <div class="star-ratings-css-bottom">
+                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        @else
+                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                            <strong>No record found</strong>
+                                        </p>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane" id="matrix-questhree" role="tabpanel" aria-labelledby="matrix-questhree-tab">
-
+                                <div class="tabcontent-wrapper">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mb-4">
+                                            <ul class="chapter-topic-menu ulStyle d-inline-flex">
+                                                <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
+                                                <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
+                                            </ul>
+                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                        </div>
+                                        <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
+                                    </div>
+                                    <div class="chapter-topic-block">
+                                        @if($myq_matrix_topic['Q3'])
+                                        <ul class="chapter-topic-lists ulStyle">
+                                            @foreach($myq_matrix_topic['Q3'] as $matrix_one)
+                                            <li class="mt-4">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="cus-radio-btn">
+                                                            <label>{{$matrix_one['topic_name']}}
+                                                                <input type="radio" name="radio">
+                                                                <!--span class="checkmark"></span-->
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
+                                                            <li class="m-0">
+                                                                <strong>Proficiency</strong>
+                                                                <span class="star-img w-auto">
+                                                                    <div class="star-ratings-css ">
+                                                                        <div class="star-ratings-css-top" style="width:{{$matrix_one['proficiency']}}%">
+                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                        </div>
+                                                                        <div class="star-ratings-css-bottom">
+                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        @else
+                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                            <strong>No record found</strong>
+                                        </p>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane" id="matrix-quesfour" role="tabpanel" aria-labelledby="matrix-quesfour-tab">
-
+                                <div class="tabcontent-wrapper">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="mb-4">
+                                            <ul class="chapter-topic-menu ulStyle d-inline-flex">
+                                                <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
+                                                <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
+                                            </ul>
+                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                        </div>
+                                        <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
+                                    </div>
+                                    <div class="chapter-topic-block">
+                                        @if($myq_matrix_topic['Q4'])
+                                        <ul class="chapter-topic-lists ulStyle">
+                                            @foreach($myq_matrix_topic['Q4'] as $matrix_one)
+                                            <li class="mt-4">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="cus-radio-btn">
+                                                            <label>{{$matrix_one['topic_name']}}
+                                                                <input type="radio" name="radio">
+                                                                <!--span class="checkmark"></span-->
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <ul class="course-star pe-2 d-block" style="text-align: right;">
+                                                            <li class="m-0">
+                                                                <strong>Proficiency</strong>
+                                                                <span class="star-img w-auto">
+                                                                    <div class="star-ratings-css ">
+                                                                        <div class="star-ratings-css-top" style="width:{{$matrix_one['proficiency']}}%">
+                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                        </div>
+                                                                        <div class="star-ratings-css-bottom">
+                                                                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                        @else
+                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                            <strong>No record found</strong>
+                                        </p>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -278,7 +317,6 @@ $userData = Session::get('user_data');
         </div>
     </div>
 </div>
-
 <!--------- Modal ------>
 <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
@@ -296,27 +334,24 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-------------------->
-
 <script>
-    $(window).on('load', function() {
-        $('#matrix').modal('show');
-    });
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function(){
-                $(this).parent("p").hide();
-            })
-            $(this).siblings("p").show();
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+$(window).on('load', function() {
+    $('#matrix').modal('show');
+});
+$(document).ready(function() {
+    $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        $(".dashboard-cards-block .bg-white>small p>span").each(function() {
             $(this).parent("p").hide();
-        });
+        })
+        $(this).siblings("p").show();
     });
+    $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+        $(this).parent("p").hide();
+    });
+});
+
 </script>
-
-
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
 <!-- footer Section end  -->
-
 @endsection
