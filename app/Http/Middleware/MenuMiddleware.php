@@ -66,8 +66,6 @@ class MenuMiddleware
 
             $leaderboard_list = $this->leaderBoard();
 
-
-
             if ($userData->user_profile_img) {
                 $imgPath = $userData->user_profile_img;
             } else {
