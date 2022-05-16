@@ -1,4 +1,10 @@
 @media(max-width:767px){
+    .exam_card {
+    padding: 15px 15px 15px;
+}
+.result-list .cust-tab-content {
+    height: auto !important;
+}
     .instructions {
     height: 125px;
 }
@@ -344,6 +350,9 @@
         }
         .result-list .d-flex.justify-content-between {
             padding: 10px !important;
+        }
+        .exam_card .d-flex.justify-content-between {
+           padding: 10px 0 !important;
         }
       .result-list  .result-review {
             font-size: 12px !important;
