@@ -1014,6 +1014,17 @@ a.clearRes:hover {
 
  
 .custom-page .cust-tab-content {
-    height: calc(100vh - 280px) !important;
+    height: calc(100vh - 200px) !important;
+}
+
+.exam_attempted_common_page .tab-pane .scroll-div{
+    max-height: calc(100vh - 310px)!important;
+    overflow: overlay;
+}
+.mocktest-attempted-wrapper{
+    height: calc(100vh - 260px) !important;
+}
+.mocktest-attempted-wrapper .cust-tab-content{
+    height: calc(100vh - 260px) !important;
 }
  
