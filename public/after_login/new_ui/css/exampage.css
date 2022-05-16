@@ -710,7 +710,7 @@ a.clearRes:hover {
 }
   
   .right_box ul li a {
-    color: #605f5f;
+    color: #605f5f; 
 }
   
   .fa.fa-bookmark-o {
@@ -1031,10 +1031,10 @@ a.clearRes:hover {
     height: calc(100vh - 260px) !important; 
 }
 
-.live-exam .exam_attempted_common_page .tab-pane .scroll-div{
+/* .live-exam .exam_attempted_common_page .tab-pane .scroll-div{
     max-height: calc(100vh - 400px)!important; 
     overflow: overlay;
-}
+} */
 .live-exam   .tab-pane{
     max-height: calc(100vh - 220px)!important;overflow: overlay;
     
