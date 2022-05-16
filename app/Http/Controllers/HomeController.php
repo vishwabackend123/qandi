@@ -271,8 +271,11 @@ class HomeController extends Controller
                 $subjectPlanner_miss = false;
             }
 
+            // myq matrix
+            $myq_matrix = $this->getMyqmatrix($user_id,$exam_id);
 
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects'));
+            
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects','myq_matrix'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -736,6 +739,70 @@ class HomeController extends Controller
 
     public function myQMatrix()
     {
-        return view('afterlogin.dashboard_myqmatrix');
+        
+        try {
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+            $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-topics-quadrant-wise-breakup/' . $user_id . '/' . $exam_id;
+                curl_setopt_array($curl, array(
+
+                    CURLOPT_URL => $curl_myq_matrix_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                ));
+
+                $response_myq_topic_json = curl_exec($curl);
+                $response_myq_topic = json_decode($response_myq_topic_json, true);
+                $myq_matrix_topic = [];
+                if (isset($response_myq_topic['success']) && !empty($response_myq_topic['success'])) {
+                    $myq_matrix_topic = $response_myq_topic['data'];
+                    if (isset($myq_matrix_topic['Q1']) && empty($myq_matrix_topic['Q1']) && isset($myq_matrix_topic['Q2']) && empty($myq_matrix_topic['Q2']) && isset($myq_matrix_topic['Q3']) && empty($myq_matrix_topic['Q3']) && isset($myq_matrix_topic['Q4']) && empty($myq_matrix_topic['Q4'])) {
+                        $myq_matrix_topic = [];
+                    }
+                }
+                $myq_matrix = $this->getMyqmatrix($user_id,$exam_id);
+                
+            return view('afterlogin.dashboard_myqmatrix',compact('myq_matrix','myq_matrix_topic'));
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        } 
+    }
+    public function getMyqmatrix($user_id,$exam_id)
+    {
+        try {
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-dashboard-values/' . $user_id . '/' . $exam_id;
+            curl_setopt_array($curl, array(
+
+                CURLOPT_URL => $curl_myq_matrix_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_myq_matrix_json = curl_exec($curl);
+            $response_myq_matrix = json_decode($response_myq_matrix_json, true);
+            $myq_matrix = [];
+            if($response_myq_matrix['success'])
+            {
+                $myq_matrix = $response_myq_matrix['data'];
+            }
+            return $myq_matrix;
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
     }
 }
