@@ -2,6 +2,9 @@
     .exam_card {
     padding: 15px 15px 15px;
 }
+.exam_card {
+    margin-top: 30px;
+}
 .result-list .cust-tab-content {
     height: auto !important;
 }
