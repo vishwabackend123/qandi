@@ -517,17 +517,17 @@ $questtype='radio';
     $(document).ready(function() {
 
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
@@ -992,7 +992,7 @@ $questtype='radio';
             success: function(response_data) {
                 //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
-
+                console.log(response_data);
                 if (response.status == 200) {
                     $("#btn_" + question_id).find('i').remove();
                     $("#btn_" + question_id).html(qNo);
@@ -1148,7 +1148,7 @@ $questtype='radio';
                 $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
                 $('#qoption_err_' + quest_id).addClass('text-danger');
                 $('#qoption_err_' + quest_id).fadeIn('fast');
-                return false;
+
             } else {
                 $("#quest_option_" + quest_id).val('');
             }
@@ -1161,12 +1161,9 @@ $questtype='radio';
                 $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
                 $('#qoption_err_' + quest_id).addClass('text-danger');
                 $('#qoption_err_' + quest_id).fadeIn('fast');
-                return false;
+
             }
         }
-
-
-
 
         $("#btn_" + quest_id).addClass("btn-light");
         $("#btn_" + quest_id).removeClass("btn-light-green");
