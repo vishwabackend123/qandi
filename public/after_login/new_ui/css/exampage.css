@@ -976,8 +976,14 @@ a.clearRes:hover {
 
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
-.custom-page .cust-tab-content .scroll-div {
-   max-height: calc(100vh - 400px) !important;}
+.custom-page .cust-tab-content .scroll-div  {
+    max-height: calc(100vh - 400px) !important;
+    overflow: overlay;
+}
+  .scroll-div-live-exm{
+    max-height: calc(100vh - 360px) !important;
+    overflow: overlay;
+}
 .question p {
     padding-left: 13px;
 }
@@ -999,5 +1005,10 @@ a.clearRes:hover {
 
 #prof_scroll .score-rating{ width: 45px} 
 .tab-wrapper.live-exam , .result-list.bg-white.tab-wrapper {
-    height: calc(100vh - 200PX);
+    height: calc(100vh - 125PX);
+}
+
+
+.custom-page .cust-tab-content {
+    height: calc(100vh - 200px) !important;
 }
