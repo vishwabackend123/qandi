@@ -192,21 +192,42 @@
 .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
     height: 156px!important;
 }
-<<<<<<< HEAD
 
 .custom-page .cust-tab-content .scroll-div {
     max-height: calc(100vh - 400px)!important;
 }
 .examSect .rightSect .bg-white{height: calc(100vh - 110px);}
-=======
 .exam_section_button {
     display: block!important;
 }
-.sectionBtn{margin-bottom:20px!important;}
+#exam_content_sec .sectionBtn{margin-bottom:20px!important;}
 div.counter{right:0;}
+.mocktest-attempted-wrapper  .cust-tab-content , .practice_custom_page  .cust-tab-content , .practice-series-lists .cust-tab-content{padding: 0px 20px 40px!important;}
+#home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,
+#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{min-width: 105px;}
+.exam_attempted_common_page .scroll-div{margin-top: 30px;}
+.exam_attempted_common_page .ClickBack.d-flex {
+    display: block!important;
+}
+.exam_attempted_common_page .justify-content-center.morning-slot {
+    justify-content: space-between!important;
+    margin: 10px 0 20px;
+}
+/* .exam_attempted_common_page .result-list-btns{margin-left: 20px;} */
+.exam_attempted_common_page .slbs-link.me-5 {margin-right: 1.5rem!important;}
+.exam_attempted_common_page .result-list-table .result-list-head p{text-align:right;}
+.exam_attempted_common_page .result-list-btns {
+    max-width: 210px;
+    margin: 0 auto;
+}
+.exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus {
+    padding: 20px 10px!important;
+}
+.exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus .paper-summery.pe-5{padding-right: 1rem!important;}
+.exam_attempted_common_page .paper-sub span{font-size:15px;}
+.exam_attempted_common_page .paper-sub small{font-size: 14px;}
+.cust-tab-content .exam_card .custom-btn-gray{max-width: 200px;}
 
-
->>>>>>> e56ae804d162aa247fa9f92ee6311d415ba9ddc9
 }
 
 @media(max-width:1024px){
@@ -448,6 +469,24 @@ div.counter{right:0;}
     .custom-page .cust-tab-content .scroll-div {
         max-height: calc(100vh - 437px)!important;
     }  
+    .exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus , 
+    .exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus .paper-summery{align-items: start!important;}
+    
+}
+@media (min-width: 880px){
+.exam_attempted_common_page .result-list-head.d-flex{ 
+    display: inline-flex!important;
+    width: 50%;
+    vertical-align: top;
+    margin-top: 12px;
+    margin-right: 30px;
+}
+.exam_attempted_common_page .justify-content-center.morning-slot{
+    display: inline-flex!important;
+    width: 45%;
+    vertical-align: top;
+    margin-top: 0;
+}
 }
 @media (min-width: 769px) and (max-width: 990px){
     .subscription {
@@ -480,7 +519,7 @@ div.counter{right:0;}
         width: 100%;
     }
     .subscription {padding:20px;}
-    .practice-series-lists li.a1TS {width: 38% !important;}
+    .practice-series-lists li.a1TS {width: 36% !important;}
     .practice-series-lists li.a2TS {margin-right: 10px!important;}
 
 }
