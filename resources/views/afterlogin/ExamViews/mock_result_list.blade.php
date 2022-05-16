@@ -48,7 +48,7 @@ $userData = Session::get('user_data');
                             <div class="tab-pane fade show active" id="mocktest" role="tabpanel" aria-labelledby="mocktest-tab">
                                 <div class="exam_card">
                                     <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
-                                        <h2 class="mb-4">JEE Main - Full Syllabus- 2022</h2>
+                                        <h2 class="mb-0">JEE Main - Full Syllabus- 2022</h2>
                                         <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                     </div>
                                     <div class="d-flex justify-content-between flex-wrap">
@@ -340,7 +340,7 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
     font-weight: 600;
 }
 
-@media only screen and (max-width: 1199px) {
+/* @media only screen and (max-width: 1199px) {
     .result-list-head h4 {
         font-size: 14px;
     }
@@ -365,7 +365,7 @@ $("body").on("click", ".expandTopicCollapse", function(event) {
 .paper-sub span {
     font-size: 13px;
 }
-}
+} */
 
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
