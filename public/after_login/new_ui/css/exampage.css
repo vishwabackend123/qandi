@@ -977,7 +977,7 @@ a.clearRes:hover {
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
 .custom-page .cust-tab-content .scroll-div {
-   max-height: calc(100vh - 323px) !important;}
+   max-height: calc(100vh - 400px) !important;}
 .question p {
     padding-left: 13px;
 }

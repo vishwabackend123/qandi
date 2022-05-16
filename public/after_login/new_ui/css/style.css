@@ -9467,7 +9467,7 @@ label#lastname-error, label#firstname-error,label#username-error {
     background: rgba(13, 193, 255, 0.4) !important;
 }
 
-.live-exam .tab-content .tab-pane ,   div#custom {
+.live-exam .tab-content .tab-pane  {
     max-height: calc(100vh - 200px)!important;
     overflow: overlay;
 }
