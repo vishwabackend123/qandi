@@ -1035,4 +1035,7 @@ a.clearRes:hover {
     max-height: calc(100vh - 300px)!important; 
     overflow: overlay;
 }
- 
+.live-exam   .tab-pane{
+    max-height: calc(100vh - 250px)!important;
+    overflow: overlay;
+}
