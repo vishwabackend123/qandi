@@ -166,8 +166,9 @@ $question_type = "Numerical";
             </div>
             @endif
         </div>
+        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
     </div>
-    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+
     <div class="tab-btn-box  d-flex mt-3">
         @if(isset($last_qid) && ($last_qid==$active_q_id))
         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$active_q_id}}','{{$qNo}}');" id="save_submit">Save & Submit</a>
