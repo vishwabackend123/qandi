@@ -925,3 +925,5 @@ padding-left: 45px !important;
  #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
     font-size: 1rem;
 }
+
+.overllanaly .cust-tabs.nav.nav-tabs .nav-link{border-top-left-radius: 11%;}
