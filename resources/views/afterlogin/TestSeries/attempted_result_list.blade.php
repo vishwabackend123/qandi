@@ -135,7 +135,7 @@
                             </div>
                             <div class="paper-sub">
                                 <small>Subjects</small>
-                                <span>{{$sche->subject_name}}</span>
+                                <span style="word-break: keep-all;">{{$sche->subject_name}}</span>
                             </div>
                         </div>
                         <div class="score-show text-center">
