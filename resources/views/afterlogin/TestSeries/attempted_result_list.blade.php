@@ -1,10 +1,10 @@
 <div class="exam_attempted_common_page">
-    <div class="d-flex  pt-4 pb-4" id="testTypeDiv">
+    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="testTypeDiv">
         <a class="btn sectionBtn btn-primary me-2 all_attemp">ALL TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 open_attemp">OPEN TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 live_attemp">LIVE TEST SERIES</a>
     </div>
-    <div class="d-flex  pt-4 pb-4" id="AssessmentTypeDiv" style="display:none !important">
+    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="AssessmentTypeDiv" style="display:none !important">
         <a class="btn sectionBtn SubattemptActBtn btn-primary me-2" id="all_subject_flt" onclick="showSubfilter('all_subject');">ALL SUBJECTS</a>
         @isset($cSubjects)
         @foreach($cSubjects as $key=>$subject)
@@ -104,7 +104,7 @@
                         <p class="m-0 p-0">{{date('d F Y', strtotime($sche->created_at));}}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-center morning-slot">
-                        <span class="slbs-link me-5">
+                        <span class="slbs-link me-lg-5 me-2">
                             <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}">
                                 <span id="expand_topic_{{$sche->id}}">
                                     <i class="fa fa-arrow-down"></i>

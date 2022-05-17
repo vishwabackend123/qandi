@@ -13,7 +13,7 @@
 
 @media screen and ( max-height:800px ) {
     .for-review-screen, .for-review-screen .bg-white {
-        height: 600px !important;
+        /* height: 600px !important; */ 
     }
 }
 
@@ -25,8 +25,12 @@
 
 @media screen and ( max-height: 767px ) {
     .for-review-screen, .for-review-screen .bg-white {
-        height: 500px !important;
+        /* height: 500px !important; */
     }
+	span#activeUserName {
+    font-size: 14px !important;
+    line-height: 16px !important;
+}
     
 }
 
@@ -338,6 +342,7 @@
     #collapsePlanner .d-flex.align-items-center.text-uppercase {
         font-size: 13px;
     }
+    .cus-radio-btn label{font-size: 14px;}
 }
 @media(min-width:992px) and (max-width:1280px) {
 
@@ -708,7 +713,7 @@
 	}
 
     a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-        padding: 22px !important;
+        padding: 20px 0!important;
     }
 
     span.Ex--an {
@@ -939,10 +944,6 @@
         position: relative;
     }
 
-    .subscrived {
-        width: 95% !important;
-    }
-
 
     .profile-section li a svg {
         width: 100%;
@@ -1053,9 +1054,9 @@
         border-top-right-radius: 56px !important;
     }
 
-    .list-series .scroll-div-live-exm {
+    /* .list-series .scroll-div-live-exm {
         height: 400px !important;
-    }
+    } */
 
     span.px-3 img {
         width: 35px;
@@ -1067,13 +1068,14 @@
 
     #myTabContent .progress {
         border-radius: 15rem !important;
-        width: 90% !important;
+      
     }
 
     /* 01-01-22*/
     a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-        padding: 22px !important;
-        width: 75% !important;
+        padding: 20px 20px!important;
+        min-width: 180px;
+        font-size: 13px;
     }
 
     span.Ex--an {
@@ -1088,7 +1090,7 @@
     #home button.btn {
         font-size: 12px;
         padding: 5px 20px !important;
-        width: 40% !important;
+        width: 28% !important;
     }
 
     #overall button.btn.active,
@@ -1114,7 +1116,7 @@
 
     .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
         height: auto !important;
-        margin-top: 85px !important;
+        margin-top: 15px !important;
     }
 
     .question-block {
@@ -1216,7 +1218,7 @@
 
     .live-exam #home .speci-text li:last-child button {
         float: left !important;
-        width: 55% !important;
+        width: 100% !important;
     }
 
     .list-series .live-exam .speci-text li a button {
@@ -1232,9 +1234,9 @@
         height: 275px;
     }
 
-    .list-series .live-exam .speci-text li {
+    /* .list-series .live-exam .speci-text li {
         width: 100% !important;
-    }
+    } */
 
     .live-exam .speci-text li:last-child {
         margin-right: 0px !important;
@@ -1297,12 +1299,13 @@
     }
 
     .course-star li strong {
-        width: 100% !important;
+        width: 43% !important;
         display: block;
+        float: left;
     }
 
     .star-img {
-        width: 70% !important;
+        width: 43% !important;
         display: block;
         float: left;
     }
@@ -1419,10 +1422,10 @@
     /** exam analytics page css End 14-12-2021**/
     /** Listing series page css on 16-12-2021 **/
 
-    .list-series .live-exam .speci-text li {
+    /* .list-series .live-exam .speci-text li {
         width: 100% !important;
         margin-right: 0px;
-    }
+    } */
 
     /** Listing series page css END on 16-12-2021 **/
 
@@ -1432,11 +1435,6 @@
     }
 
     /** profile page css **/
-    .profile-picture-txt .p-picture {
-        width: 55px !important;
-        height: 55px !important;
-    }
-
     .profile-section {
         width: 85%;
         top: 10%;
@@ -1465,8 +1463,8 @@
         right: 1% !important;
         width: 87% !important;
         padding: 15px 20px 15px 25px !important;
-        top: 16% !important;
-        height: 100%;
+        top: 17% !important;
+        height: auto;
     }
 
     .profile-picture-txt .p-text {
@@ -1476,13 +1474,11 @@
     .profile-picture-txt {
         padding: 15px;
         display: inline-block;
-        overflow: scroll;
-        height: 70%;
     }
 
     .subscription .profile-picture-txt .p-picture {
         height: 55px !important;
-        width: 55px;
+        width: 65px;
     }
 
     .profile-section ul {
@@ -1491,7 +1487,7 @@
     }
 
     .profile-section ul li {
-        padding: 15px 10px;
+        /* padding: 15px 10px; */
         margin: 0px;
         text-align: center;
         width: 120px;
@@ -1585,7 +1581,7 @@
     }
 
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 2rem;
+        padding: 15px 1rem;
     }
 
     .examSect ul#myTab li a {
@@ -1594,7 +1590,7 @@
     }
 
     .examSect .question {
-        padding: 12px 30px !important;
+        padding: 12px 15px !important;
         font-family: Manrope;
         font-size: 14px;
         line-height: 20px;
@@ -1627,14 +1623,16 @@
     }
 
     .open-sub-planner {
-        width: 85% !important;
+        width: 92% !important;
         height: auto !important;
         position: absolute;
-        top: 55px;
+        top: 15px;
         z-index: 999;
         right: 0px !important;
     }
-
+    .planner-scheduar-block .slimScrollDiv {
+    padding: 15px 15px 35px;
+}
     .w-25 {
         width: 100% !important;
     }
@@ -1668,7 +1666,7 @@
     }
 
     .nav.nav-tabs.cust-tabs {
-        width: 700px;
+        /* width: 700px; */
         float: none;
         overflow-y: hidden;
         box-shadow: none;
@@ -1739,11 +1737,11 @@
         display: inline-block;
     }
 
-    .cust-tab-content .custom-btn-gray {
+    /* .cust-tab-content .custom-btn-gray {
         width: auto !important;
         float: left;
         font-size: 14px;
-    }
+    } */
 
     .cust-tabs .nav-link {
         position: relative;
@@ -1817,7 +1815,7 @@
     /** Listing series page css on 16-12-2021 **/
 
     .list-series .cust-tab-content .custom-btn-gray {
-        width: 100% !important;
+       
         float: left;
         font-size: 14px;
     }
@@ -1868,7 +1866,7 @@
             padding: 0px !important;
         }
 
-        .nav.nav-tabs.cust-tabs {
+       #scroll-mobile .nav.nav-tabs.cust-tabs {
             width: 700px;
         }
 
@@ -1934,9 +1932,9 @@
 
     @media (max-width: 420px) {
         .course-star li strong {
-            width: 100% !important;
+            width: 44% !important;
         }
-
+        .star-img{width: 34% !important;}
         .course-star li {
             padding-bottom: 5px !important;
         }
@@ -1958,14 +1956,13 @@
             display: none;
         }
 
-        .list-series .scroll-div-live-exm {
+        /* .list-series .scroll-div-live-exm {
             height: 320px !important;
-        }
+        } */
 
         .live-exam #home .speci-text li:last-child button {
             width: 100% !important;
         }
-
 
     }
 
@@ -1977,9 +1974,9 @@
         }
 
         .open-sub-planner {
-            width: 75% !important;
+            width: 90% !important;
         }
-
+       
     }
 
 
@@ -2014,7 +2011,7 @@
     }
 
     .subscription .profile-picture-txt {
-        padding: 20px 0px;
+        padding: 20px 0px 0;
     }
 
     .subscription .profile-picture-txt .p-text {
@@ -3311,7 +3308,7 @@
         }
 
         .subscription .form-btns button {
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
 
         .log-out-screen {
@@ -3347,7 +3344,7 @@
         }
 
         .profile-section ul li {
-            padding: 15px 10px;
+            /* padding: 15px 10px; */
             margin: 0px;
             text-align: center;
             width: 120px;
@@ -3529,9 +3526,7 @@
     .Ex-anal {
         border-radius: 20px !important;
         box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(to bottom, #21ccff, #21ccff);
         border: none;
-        color: #fff;
         width: 38% !important;
         margin-right: 15px;
         font-size: 10px !important;
@@ -3574,6 +3569,7 @@
         color: #231f20;
         border-radius: 5px;
         box-shadow: 0 3px 10px 0 rgba(0,0,0 ,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
+        font-size: 13px;
     }
 
     #myTabContent .bg-light-red {
@@ -3958,5 +3954,6 @@
         }
     }
   
-
+ 
    
+ 

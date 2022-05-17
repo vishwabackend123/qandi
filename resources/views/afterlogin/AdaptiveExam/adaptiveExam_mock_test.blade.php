@@ -47,11 +47,11 @@ $userData = Session::get('user_data');
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="mocktest" role="tabpanel" aria-labelledby="mocktest-tab">
                                 <div class="exam_card">
-                                    <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
-                                        <h2 class="mb-4">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h2>
+                                    <div class="d-flex align-items-center justify-content-between mb-md-4 mb-2 flex-wrap">
+                                        <h2 class="mb-md-4 mb-3">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h2>
                                         <button class="custom-btn-gray" id="take_test"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                     </div>
-                                    <div class="d-flex justify-content-between flex-wrap">
+                                    <div class="d-md-flex justify-content-between flex-wrap">
                                         <div class="mb-2">
                                             <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
                                             <label style=" font-weight: 600;color: #231f20;">{{$questions_count}} Questions</label>
