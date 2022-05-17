@@ -206,19 +206,15 @@ div.counter{right:0;}
 #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,
 #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{min-width: 105px;}
 .exam_attempted_common_page .scroll-div{margin-top: 30px;}
-.exam_attempted_common_page .ClickBack.d-flex {
-    display: block!important;
-}
 .exam_attempted_common_page .justify-content-center.morning-slot {
     justify-content: space-between!important;
-    margin: 10px 0 20px;
 }
 /* .exam_attempted_common_page .result-list-btns{margin-left: 20px;} */
 .exam_attempted_common_page .slbs-link.me-5 {margin-right: 1.5rem!important;}
 .exam_attempted_common_page .result-list-table .result-list-head p{text-align:right;}
 .exam_attempted_common_page .result-list-btns {
     max-width: 210px;
-    margin: 0 auto;
+    margin-left: 10px;
 }
 .exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus {
     padding: 20px 10px!important;
@@ -478,7 +474,6 @@ div.counter{right:0;}
     display: inline-flex!important;
     width: 50%;
     vertical-align: top;
-    margin-top: 12px;
     margin-right: 30px;
 }
 .exam_attempted_common_page .justify-content-center.morning-slot{
