@@ -24,6 +24,7 @@
 @section('content')
 @php
 $userData = Session::get('user_data');
+$alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
 @endphp
 <style>
     .mjx-chtml {
