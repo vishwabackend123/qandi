@@ -1036,6 +1036,6 @@ a.clearRes:hover {
     overflow: overlay;
 } */
 .live-exam   .tab-pane{
-    max-height: calc(100vh - 220px)!important;overflow: overlay;
+    max-height: calc(100vh - 250px)!important;overflow: overlay;
     
 }
