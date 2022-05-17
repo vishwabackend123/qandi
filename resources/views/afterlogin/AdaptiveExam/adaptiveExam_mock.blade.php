@@ -454,7 +454,7 @@ $questtype='radio';
 
         </div>
         <div class="modal-content rounded-0 custom_model">
-            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
+            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
                     <h3 id="attempt-alert-text" class="text-danger m-0"></h3>
