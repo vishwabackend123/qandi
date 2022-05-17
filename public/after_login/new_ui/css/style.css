@@ -9440,3 +9440,5 @@ label#lastname-error, label#firstname-error,label#username-error {
     font-size: 22px;
 }
 #attempt_count_block .col-lg-5  .custom-box-shadow div.d-flex.align-items-center{padding-right:10px;}
+.exam-analytics .col-5 .position-relative .d-flex.align-items-center.mt-4.mb-2.pb-1 {padding-right:20px;}
+.modal .btn-close:focus{    box-shadow: none;}
