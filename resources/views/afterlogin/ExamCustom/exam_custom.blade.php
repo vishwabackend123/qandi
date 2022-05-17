@@ -375,10 +375,10 @@ $userData = Session::get('user_data');
     $('#' + subject + '_flt').addClass('btn-primary');
 
     if (subject != "all_subject") {
-      $('.compLeteS').attr("style", "display: none !important");
+      $('.all-rlt').attr("style", "display: none !important");
       $('.' + subject + '-rlt').attr("style", "display: block !important");
     } else {
-      $('.compLeteS').attr("style", "display: block !important");
+      $('.all-rlt').attr("style", "display: block !important");
     }
 
   }

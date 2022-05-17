@@ -535,6 +535,8 @@ $userData = Session::get('user_data');
 
 <script>
     function nxtTab(sub_id) {
+        $('.chapter_analytics').hide();
+        $(".topics_analytics").hide();
         if (sub_id === null) {
             window.location.reload();
         } else {
