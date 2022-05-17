@@ -389,8 +389,8 @@
             overflow: overlay;
             height: 150px;
         }
-        .custom-exam-subjects.pt-4.pb-4{
-            overflow: auto;
+        div.custom-exam-subjects{
+            overflow-x: auto;
             padding-bottom: 10px!important;
         }
         .custom-exam-subjects::-webkit-scrollbar {
@@ -402,7 +402,11 @@
         .practice_custom_page .slbs-link.mx-3 {margin: 0 20px !important;}
         div.scroll-div .compLeteS div.d-flex.px-4{padding-left:0!important;padding-right: 20px!important;}
         .practice_custom_page .Flat-left form#topic_form{margin-top:12px;}
-
+        .practice_custom_page .btn-clear-sel , .practice_custom_page .btn-topic{width: auto!important;    margin-top: 0;}
+        #home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn, 
+        #home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn {
+            min-width: 138px;
+        }
     }
 
 @media(max-width:700px){
@@ -527,6 +531,8 @@ div#LeaDer {
     max-width: 100%;
     min-width: 100%;
 }
+.practice_custom_page .btn-clear-sel, .practice_custom_page .btn-topic{display:block;}
+.practice_custom_page .btn-clear-sel{width: 165px!important;padding: 0.375rem 15px!important;margin-bottom: 15px!important;}
 
 }
 @media(max-width:550px){

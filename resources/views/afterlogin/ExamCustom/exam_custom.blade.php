@@ -807,7 +807,7 @@ $userData = Session::get('user_data');
         $("#attempted").show();
         $('#attempted').html(data.html);
         $('#testTypeDiv').attr("style", "display: none !important");
-        $('#AssessmentTypeDiv').attr("style", "display: block !important");
+        $('#AssessmentTypeDiv').attr("style", "display: flex !important");
 
       },
       error: function(data, errorThrown) {

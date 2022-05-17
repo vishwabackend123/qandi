@@ -1,10 +1,10 @@
 <div class="exam_attempted_common_page">
-    <div class="d-flex  pt-4 pb-4" id="testTypeDiv">
+    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="testTypeDiv">
         <a class="btn sectionBtn btn-primary me-2 all_attemp">ALL TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 open_attemp">OPEN TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 live_attemp">LIVE TEST SERIES</a>
     </div>
-    <div class="d-flex  pt-4 pb-4" id="AssessmentTypeDiv" style="display:none !important">
+    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="AssessmentTypeDiv" style="display:none !important">
         <a class="btn sectionBtn SubattemptActBtn btn-primary me-2" id="all_subject_flt" onclick="showSubfilter('all_subject');">ALL SUBJECTS</a>
         @isset($cSubjects)
         @foreach($cSubjects as $key=>$subject)
