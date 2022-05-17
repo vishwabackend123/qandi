@@ -30,10 +30,10 @@ $userData = Session::get('user_data');
                                 <b>Q2</b>
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[1]))
-                                            <b>{{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}</b>
-                                            @else
-                                            <b>00</b>
-                                            @endif
+                                        <b>{{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}</b>
+                                        @else
+                                        <b>00</b>
+                                        @endif
                                         <small>Topic</small>
                                     </span>
                                 </a>
@@ -41,10 +41,10 @@ $userData = Session::get('user_data');
                             <div class="topics-box">
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[0]))
-                                            <b>{{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}</b>
-                                            @else
-                                            <b>00</b>
-                                            @endif
+                                        <b>{{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}</b>
+                                        @else
+                                        <b>00</b>
+                                        @endif
                                         <small>Topic</small>
                                     </span></a>
                                 <b style="margin:0 0 0 6px">Q1</b>
@@ -53,20 +53,20 @@ $userData = Session::get('user_data');
                                 <b>Q3</b>
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[2]))
-                                            <b>{{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}</b>
-                                            @else
-                                            <b>00</b>
-                                            @endif
+                                        <b>{{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}</b>
+                                        @else
+                                        <b>00</b>
+                                        @endif
                                         <small>Topic</small>
                                     </span></a>
                             </div>
                             <div class="topics-box">
                                 <a href="javascript:void(0);"><span>
                                         @if(isset($myq_matrix[3]))
-                                            <b>{{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}</b>
-                                            @else
-                                            <b>00</b>
-                                            @endif
+                                        <b>{{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}</b>
+                                        @else
+                                        <b>00</b>
+                                        @endif
                                         <small>Topic</small>
                                     </span></a>
                                 <b style="margin:0 0 0 6px">Q4</b>
@@ -142,7 +142,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                                <span> {{number_format($matrix_one['proficiency'], 2)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -198,7 +198,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                                <span>{{number_format($matrix_one['proficiency'], 2)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -254,7 +254,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                                <span>{{number_format($matrix_one['proficiency'], 2)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -310,7 +310,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{$matrix_one['proficiency']}}%</span>
+                                                                <span>{{number_format($matrix_one['proficiency'], 2)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -351,30 +351,27 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 <script>
-
-$(document).ready(function() {
-    $('.filtericon').hide();
-    $(".dashboard-cards-block .bg-white>small>img").click(function() {
-        $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+    $(document).ready(function() {
+        $('.filtericon').hide();
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                $(this).parent("p").hide();
+            })
+            $(this).siblings("p").show();
+        });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
             $(this).parent("p").hide();
-        })
-        $(this).siblings("p").show();
-    });
-    $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-        $(this).parent("p").hide();
-    });
-    var topic_data= '<?php echo json_encode($myq_matrix_topic); ?>';
-    topic_data =JSON.parse(topic_data);
-    if(jQuery.isEmptyObject(topic_data))
-    {
-        setInterval(function () {
-        $('#matrix').modal('show');
-    }, 1000);
-    }
-    
-    
-});
+        });
+        var topic_data = '<?php echo json_encode($myq_matrix_topic); ?>';
+        topic_data = JSON.parse(topic_data);
+        if (jQuery.isEmptyObject(topic_data)) {
+            setInterval(function() {
+                $('#matrix').modal('show');
+            }, 1000);
+        }
 
+
+    });
 </script>
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')
