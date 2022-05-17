@@ -958,13 +958,15 @@ $questtype='radio';
             if (res_value != '') {
                 option_id.push($("#quest_option_" + question_id).val());
             }
+            var vld_msg = "Please fill your response.";
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
@@ -1033,13 +1035,15 @@ $questtype='radio';
             if (res_value != '') {
                 option_id.push($("#quest_option_" + question_id).val());
             }
+            var vld_msg = "Please fill your response.";
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
