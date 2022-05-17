@@ -63,7 +63,7 @@
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
                     <span class="user-pic-block UserPro"><img src="{{$imgPath}}" class="user-pic profileimage" title="Profile Pic"></span>
-                    <span class="user-name-block ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
+                    <span class="user-name-block m-0  ps-3">Welcome, <span id="activeUserName">{{ucwords($userData->user_name)}}</span></span>
 
                     <span class="notification me-5 ms-4">
 
@@ -920,7 +920,7 @@
             <p>Are you Sure?</p>
             <div class="form-btns">
                 <a draggable="false" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                 sessionStorage.clear();  document.getElementById('logout-form').submit();" ">
+                                 sessionStorage.clear();  document.getElementById('logout-form').submit();">
                                  <button type=" button" class="save-btn logout_btn_new">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" style="
                                         position: absolute;

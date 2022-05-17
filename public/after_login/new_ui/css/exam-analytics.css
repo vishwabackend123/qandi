@@ -717,7 +717,7 @@ border-radius:30px;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    font-size: 17px;
+    font-size: 15px;
 }
 .sub-title h3{
   font-size: 15px;
@@ -926,4 +926,4 @@ padding-left: 45px !important;
     font-size: 1rem;
 }
 
-.overllanaly .cust-tabs.nav.nav-tabs .nav-link{border-top-left-radius: 11%;}
+.overllanaly .cust-tabs .nav-link.active{border-top-left-radius: 11%;}

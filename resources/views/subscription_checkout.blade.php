@@ -11,8 +11,8 @@ $userData = Session::get('user_data');
 <!-- update-->
 <header>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 outer-logo">
+        <div class="rownot">
+            <div class="outer-logo">
                 <a href="{{ env('LANDING_URL') }}" title="Home" target="_blank">
                     <img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" />
                 </a>
@@ -22,17 +22,17 @@ $userData = Session::get('user_data');
 </header>
 <section class="d-flex flex-column align-items-center justify-content-center h-100 checkoutpayment">
     <div class="steps-links d-flex ">
-        <div class="px-5 border-bg-right pt-3"><span class="red-dots1 active-dot"></span>Orders</div>
-        <div class="px-5  pt-3 border-bg-left border-bg-right"><span class="red-dots1"></span>Shipping</div>
-        <div class="px-5  pt-3 border-bg-left"><span class="red-dots1"></span>Payments</div>
+        <div class="px-sm-5 px-3 border-bg-right pt-3"><span class="red-dots1 active-dot"></span>Orders</div>
+        <div class="px-sm-5 px-3 pt-3 border-bg-left border-bg-right"><span class="red-dots1"></span>Shipping</div>
+        <div class="px-sm-5 px-3 pt-3 border-bg-left"><span class="red-dots1"></span>Payments</div>
     </div>
     <div class="Fullsub-amt-subN subs-box p-4 col-6 mt-5 totalpaymentbox">
         <div class="d-flex align-items-center justify-content-between">
-            <div class="col-4">
+            <div class="col-sm-4">
                 <h3>{{$subscriptions_data->subscription_name}}</h3>
                 <!-- <span class="d-block">Entrance Prep2022</span> -->
             </div>
-            <div class=" col-4 text-center">
+            <div class=" col-sm-4 text-sm-center">
                 <sapn>Full Subscription</sapn>
                 <!-- <select class="form-select border-0 border-bottom  rounded-0">
                     <option>Full Subscription</option>
@@ -45,16 +45,16 @@ $userData = Session::get('user_data');
                 </select>
             </div>
 -->
-            <div class="col-4">
+            <div class="col-sm-4">
                 @if($discount_code)
-                <h4 class="text-success fs-5 m-0 text-right">₹ {{$price + $discounted_price}}</h4>
+                <h4 class="text-success fs-5 m-0 text-sm-right">₹ {{$price + $discounted_price}}</h4>
                 @else
-                <h4 class="text-success fs-5 m-0 text-right">₹ {{$price}}</h4>
+                <h4 class="text-success fs-5 m-0 text-sm-end">₹ {{$price}}</h4>
                 @endif
             </div>
         </div>
         <div class="d-flex align-items-center justify-content-between mt-3">
-            <p class="p-0 m-0 coupontext">Apply Coupon</p>
+            <p class="p-0 mb-sm-0 mb-2 coupontext">Apply Coupon</p>
             @if($discount_code)
             <form action="{{route('checkout')}}" if="checkout_{{$subscript_id}}" method="post">
                 @csrf

@@ -41,7 +41,7 @@ $userData = Session::get('user_data');
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="custom" role="tabpanel" aria-labelledby="custom-tab">
-                <div class="d-flex  pt-4  pb-4">
+                <div class="d-flex  pt-4  pb-4 custom-exam-subjects">
                   @isset($subject_list)
                   @foreach($subject_list as $key=>$subject)
                   <a class="btn sectionBtn SubActBtn me-2 {{($key==0)?'open_test btn-primary ':'live_tes btn-outline-primary'}}" onclick="showSubChapters('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_btn">{{$subject->subject_name}}</a>
@@ -807,7 +807,7 @@ $userData = Session::get('user_data');
         $("#attempted").show();
         $('#attempted').html(data.html);
         $('#testTypeDiv').attr("style", "display: none !important");
-        $('#AssessmentTypeDiv').attr("style", "display: block !important");
+        $('#AssessmentTypeDiv').attr("style", "display: flex !important");
 
       },
       error: function(data, errorThrown) {
