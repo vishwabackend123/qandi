@@ -13,6 +13,7 @@ $userData = Session::get('user_data');
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
+
                 <div class="col-md-3">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-100">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>

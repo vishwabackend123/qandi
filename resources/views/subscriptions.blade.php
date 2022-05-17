@@ -21,7 +21,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
     <div class="clearfix"></div>
     @endif
     <!-- End top-navbar Section -->
-    <div class="container">
+    <div class="container ps-md-0 ps-5 pe-md-0 pe-0">
     <div class="row">
         <div class="col-md-12 mx-auto">
             <h1 class="main-heading position-relative">WHAT's your game ?
@@ -66,7 +66,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 $dateTimeToday = strtotime($todaydate);
                 @endphp
                 @if($subscription_type=="P")
-                <div class="col-xl-4 col-lg-6 col-sm-9 col-12 p-4 text-center">
+                <div class="col-xl-4 col-lg-6 col-sm-9 col-12 p-sm-4 p-3 text-center">
                     <div class="bg-white white-box-small subscriptionBox ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -85,7 +85,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                     </div>
                 </div>
                 @elseif($subscription_type!="P")
-                <div class="col-md-4 p-4 text-center ">
+                <div class="col-xl-4 col-md-6 p-sm-4 p-3 text-center ">
                     <div class="bg-white white-box-small subscriptionBox">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
@@ -108,8 +108,8 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                 </div>
                 @endif
                 @elseif((count($purchasedid)>0) && !empty($userData->id))
-                <div class="col-md-4 p-4 text-center " style="display:none">
-                    <div class="bg-white white-box-small subscriptionBox  ">
+                <div class="col-xl-4 col-md-6 p-sm-4 p-3 text-center " style="display:none">
+                    <div class="bg-white white-box-small subscriptionBox">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
                         <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
@@ -138,7 +138,7 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                     </div>
                 </div>
                 @else
-                <div class="col-md-4 p-4 text-center ">
+                <div class="col-xl-4 col-md-6 p-4 text-center ">
                     <div class="bg-white white-box-small subscriptionBox  ">
                         <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                         <p class="price">Rs. {{$subsprice}}</p>
