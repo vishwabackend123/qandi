@@ -88,7 +88,7 @@
                 </div>
             </div-->
 
-            <div class="compLeteS {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
+            <div class="compLeteS all-rlt {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
                 <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                     <div class="d-flex align-items-start justify-content-between result-list-head">
                         <h4 class="m-lg-0 p-0"> @if($sche->test_series_name)
