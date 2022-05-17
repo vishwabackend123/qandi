@@ -104,7 +104,7 @@
                         <p class="m-0 p-0">{{date('d F Y', strtotime($sche->created_at));}}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-center morning-slot">
-                        <span class="slbs-link me-5">
+                        <span class="slbs-link me-lg-5 me-2">
                             <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}">
                                 <span id="expand_topic_{{$sche->id}}">
                                     <i class="fa fa-arrow-down"></i>
