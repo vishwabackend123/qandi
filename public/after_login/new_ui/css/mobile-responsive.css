@@ -676,7 +676,9 @@ li.a3TS {
 #review_rques_blk .answer-section {
     width: 96%!important;
 }
-
+.practice_custom_page .listing-details .name-txt {
+    width: 100% !important;
+}
     
 }
 @media(max-width:420px){
