@@ -1,4 +1,19 @@
 @media(max-width:767px){
+    .exam_attempted_common_page .compLeteS, .practice_custom_page .compLeteS {
+    padding: 15px 15px 15px;
+}
+    .exam_attempted_common_page .result-list-btns {
+    margin-left: 0;
+}
+.exam_attempted_common_page .score-show {
+    border-left: 0;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.exam_attempted_common_page .paper-sub span {
+    word-break: break-all !important;
+}
     .exam_card {
     padding: 15px 15px 15px;
 }
@@ -413,6 +428,9 @@
    .result-list .d-flex.justify-content-between {
     flex-direction: column;
     align-items: flex-start !important;
+}
+.slbs-link{
+display: block;
 }
 .morning-slot {
     display: block !important;

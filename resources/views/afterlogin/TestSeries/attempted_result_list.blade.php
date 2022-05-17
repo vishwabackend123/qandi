@@ -89,7 +89,7 @@
             </div-->
 
             <div class="compLeteS all-rlt {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
-                <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
+                <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                     <div class="d-flex align-items-start justify-content-between result-list-head">
                         <h4 class="m-lg-0 p-0"> @if($sche->test_series_name)
                             {{$sche->test_series_name}}
@@ -119,8 +119,8 @@
                     </div>
                 </div>
                 <div class="collapse" id="chapter_{{$sche->id}}">
-                    <div class="p-4 pb-4 d-flex justify-content-between full-syllabus align-items-center">
-                        <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
+                    <div class="p-4 pb-4 d-md-flex justify-content-between full-syllabus align-items-center">
+                        <div class="d-md-flex justify-content-between align-items-center paper-summery pe-5">
                             <div class="paper-sub">
                                 <small>No of Question</small>
                                 <span>{{$sche->no_of_question}} MCQ <b style="font-weight:normal;">Questions</b></span>
@@ -138,7 +138,7 @@
                                 <span style="word-break: keep-all;">{{$sche->subject_name}}</span>
                             </div>
                         </div>
-                        <div class="score-show text-center">
+                        <div class="score-show text-md-center">
                             <div class="paper-sub">
                                 <small>Score</small>
                                 <span><b style="color:rgba(12, 193, 255, 0.9);">{{$sche->marks_gain}}</b> / {{$sche->no_of_question * 4}}</span>
