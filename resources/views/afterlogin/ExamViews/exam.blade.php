@@ -119,6 +119,7 @@ $question_type = "Numerical";
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <input type="hidden" id="current_question_no" value="1" />
+
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet">
                                 <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
@@ -1069,15 +1070,29 @@ $question_type = "Numerical";
     function clearResponse(quest_id, subject_id, qNo) {
 
         var response = [];
-        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            response = $(this).prop('checked', false);
-        });
+        var current_question_type = $("#current_question_type").val();
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
 
-        if (response.length == 0) {
-            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
-            $('#qoption_err_' + quest_id).addClass('text-danger');
-            $('#qoption_err_' + quest_id).fadeIn('fast');
-            return false;
+            if (res_value === '') {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            } else {
+                $("#quest_option_" + quest_id).val('');
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                response = $(this).prop('checked', false);
+            });
+
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            }
         }
 
 
