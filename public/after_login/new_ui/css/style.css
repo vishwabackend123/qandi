@@ -9439,3 +9439,4 @@ label#lastname-error, label#firstname-error,label#username-error {
 .custom_model h3 {
     font-size: 22px;
 }
+#attempt_count_block .col-lg-5  .custom-box-shadow div.d-flex.align-items-center{padding-right:10px;}
