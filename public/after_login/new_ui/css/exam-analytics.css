@@ -922,3 +922,6 @@ padding-left: 45px !important;
 #exam_result_analysis .btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 ,.exam-analytics a.top-btn-pop{
     font-size: 1rem;
  }
+ #exam_result_analysis button.btn-outline-secondary.btn.rounded-0.w-100.mt-3.px-1 a {
+    font-size: 1rem;
+}
