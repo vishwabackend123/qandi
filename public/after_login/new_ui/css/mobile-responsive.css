@@ -389,6 +389,19 @@
             overflow: overlay;
             height: 150px;
         }
+        .custom-exam-subjects.pt-4.pb-4{
+            overflow: auto;
+            padding-bottom: 10px!important;
+        }
+        .custom-exam-subjects::-webkit-scrollbar {
+            height:4px;
+        }
+        .practice_custom_page button#dropdownMenuLink-topic{margin-top: 0;}
+        .practice_custom_page .listing-details .name-txt{    width: 34% !important;}
+        .practice_custom_page .tab-wrapper .d-flex.justify-content-between{    justify-content: start!important;}
+        .practice_custom_page .slbs-link.mx-3 {margin: 0 20px !important;}
+        div.scroll-div .compLeteS div.d-flex.px-4{padding-left:0!important;padding-right: 20px!important;}
+        .practice_custom_page .Flat-left form#topic_form{margin-top:12px;}
 
     }
 
@@ -635,6 +648,9 @@ li.a3TS {
 #review_rques_blk .answer-section {
     width: 96%!important;
 }
+.practice_custom_page .listing-details .name-txt {
+    width: 100% !important;
+}
     
 }
 @media(max-width:420px){
@@ -673,6 +689,13 @@ li.a3TS {
     .subscription .form-btns button {
         font-size: 10px;
     }
+    .subjectlist  .clear_div .dropdown {
+        margin-left: 5px;
+    }
+    .practice_custom_page.custom-page #dropdownMenuLink{width: 42px;padding: 2px;}
+    .practice_custom_page.custom-page #dropdownMenuLink svg{width: 22px;}
+    .practice_custom_page .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn{width: 156px !important;}
+    #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 13px;}
 }
 @media(max-width:385px){
     .star-img {
