@@ -1044,3 +1044,8 @@ a.clearRes:hover {
     overflow: initial !important;
     
 }
+.live-exam-custom .tab-pane .scroll-div{
+    max-height: calc(100vh - 400px)!important;
+    overflow: overlay;
+    
+}
