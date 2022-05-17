@@ -1481,8 +1481,9 @@
                     if (response.success == true) {
 
                         var user_name = response.user_info.user_name;
+                        var city =response.user_info.city;
                         $('.activeUserName').html(user_name);
-
+                        $('#select-city').attr('value', city);
                         $(".profile-show").show();
                         $(".edit-form").hide();
                         $("#LeaDer").show();
