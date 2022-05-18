@@ -6004,8 +6004,16 @@ p.tab-title {
     list-style: none;
     width: 100%;
     padding-bottom: 10px;
+    
 }
-
+.chapter-topic-block .course-star li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chapter-topic-block .star-img {
+    margin: 0;
+}
 .course-star li strong {
     width: 45%;
     display: inline-block;
@@ -9487,4 +9495,16 @@ label#lastname-error, label#firstname-error,label#username-error {
 
 .country-code-name::-webkit-scrollbar {
     height: 5px;
+}
+
+div#endExam {
+    backdrop-filter: blur(15px);
+    background: #ffffffe3
+}
+div#endExam  .modal-content.rounded-0 {
+    background-color: #fff!important;
+    border-radius: 56px!important;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
 }
