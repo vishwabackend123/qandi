@@ -1377,7 +1377,7 @@ span a#close-edit-planner-btn img {
 .cus-radio-btn label {
     display: block;
     position: relative;
-    padding-left: 40px;
+    padding-left: 0;
     margin-bottom: 20px;
     cursor: pointer;
     font-size: 16px;
