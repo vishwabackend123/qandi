@@ -1377,7 +1377,7 @@ span a#close-edit-planner-btn img {
 .cus-radio-btn label {
     display: block;
     position: relative;
-    padding-left: 40px;
+    padding-left: 0;
     margin-bottom: 20px;
     cursor: pointer;
     font-size: 16px;
@@ -3836,7 +3836,7 @@ span.notification.ms-4 {
 }
 
 .cust-tabs .nav-link.active:after {
-    left: 0;
+    left: -60px;
     /* transform: skew(
 332deg, 
 0deg); */
@@ -6004,8 +6004,16 @@ p.tab-title {
     list-style: none;
     width: 100%;
     padding-bottom: 10px;
+    
 }
-
+.chapter-topic-block .course-star li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chapter-topic-block .star-img {
+    margin: 0;
+}
 .course-star li strong {
     width: 45%;
     display: inline-block;
@@ -9481,3 +9489,27 @@ label#lastname-error, label#firstname-error,label#username-error {
 
 
 .overllanaly .cust-tabs .nav-link.active{border-top-left-radius: 11%;}
+ 
+
+ 
+
+.country-code-name::-webkit-scrollbar {
+    height: 5px;
+}
+ 
+/* #endExam {
+    backdrop-filter: blur(15px);
+    background: #ffffffe3
+}
+#endExam  .modal-content.rounded-0 {
+    background-color: #fff!important;
+    border-radius: 56px!important;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
+} */
+.exam-analytics .bg-white.shadow{
+    -webkit-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+    -moz-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+    box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+}

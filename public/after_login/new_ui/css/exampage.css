@@ -1049,3 +1049,18 @@ a.clearRes:hover {
     overflow: overlay;
     
 }
+.live-exam-list-wrapper .scroll-div-live-exm {
+    max-height: initial !important;
+}
+
+/* #endExam {
+    backdrop-filter: blur(15px);
+    background: #ffffffe3
+}
+#endExam  .modal-content.rounded-0 {
+    background-color: #fff!important;
+    border-radius: 56px!important;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
+}  */
