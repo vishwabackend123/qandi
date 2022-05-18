@@ -1053,11 +1053,11 @@ a.clearRes:hover {
     max-height: initial !important;
 }
 
-div#endExam {
+#endExam {
     backdrop-filter: blur(15px);
     background: #ffffffe3
 }
-div#endExam  .modal-content.rounded-0 {
+#endExam  .modal-content.rounded-0 {
     background-color: #fff!important;
     border-radius: 56px!important;
     padding: 20px;
