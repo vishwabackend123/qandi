@@ -1049,3 +1049,6 @@ a.clearRes:hover {
     overflow: overlay;
     
 }
+.live-exam-list-wrapper .scroll-div-live-exm {
+    max-height: initial !important;
+}
