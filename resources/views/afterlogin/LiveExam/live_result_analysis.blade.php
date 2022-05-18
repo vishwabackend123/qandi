@@ -88,7 +88,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="mt-auto btn-block">
                                         <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button>
-                                        <div class="row mt-2">
+                                        <div class="row mt-4">
                                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                             @foreach($response->subject_wise_result as $subject)
                                             @php $subject=(object)$subject; @endphp
