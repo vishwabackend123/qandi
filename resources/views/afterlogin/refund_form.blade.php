@@ -160,6 +160,7 @@ $userData = Session::get('user_data');
                             $("#refund_response").addClass("text-success");
                             $("#refund_response").fadeIn('slow');
                             $("#refund_response").fadeOut(10000);
+                            $('.saveEdit').addClass('disabled');
 
 
                         } else {
