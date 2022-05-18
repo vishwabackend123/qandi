@@ -176,7 +176,7 @@ $userData = Session::get('user_data');
                         </div>
 
                         <span class="slbs-link mx-3">
-                          <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Show Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
+                          <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Show Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expandTopic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
 
                         <div class="d-flex px-4">
                           <button class="btn btn-light ms-auto text-danger rounded-0 expand_filter_{{$chapters->chapter_id}} disabled" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -575,15 +575,16 @@ $userData = Session::get('user_data');
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
 
-    var curr_text = $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text();
+    var curr_text = $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).text();
     curr_text = curr_text.replace(/\s+/g, "");
+
     var updatetext = ((curr_text == 'HideTopics') ? 'Show Topics' : 'Hide Topics');
-    $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text(updatetext);
+    $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).text(updatetext);
 
     if (curr_text == 'HideTopics') {
-      $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
+      $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
     } else {
-      $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
+      $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
     }
 
     if (curr_text == 'HideTopics') {
