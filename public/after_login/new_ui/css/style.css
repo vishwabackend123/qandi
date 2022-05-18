@@ -9481,3 +9481,10 @@ label#lastname-error, label#firstname-error,label#username-error {
 
 
 .overllanaly .cust-tabs .nav-link.active{border-top-left-radius: 11%;}
+ 
+
+ 
+
+.country-code-name::-webkit-scrollbar {
+    height: 5px;
+}
