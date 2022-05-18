@@ -1053,7 +1053,7 @@ a.clearRes:hover {
     max-height: initial !important;
 }
 
-#endExam {
+/* #endExam {
     backdrop-filter: blur(15px);
     background: #ffffffe3
 }
@@ -1063,4 +1063,4 @@ a.clearRes:hover {
     padding: 20px;
     border: none;
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
-} 
+}  */

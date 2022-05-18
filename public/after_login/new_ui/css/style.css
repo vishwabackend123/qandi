@@ -9497,7 +9497,7 @@ label#lastname-error, label#firstname-error,label#username-error {
     height: 5px;
 }
  
-#endExam {
+/* #endExam {
     backdrop-filter: blur(15px);
     background: #ffffffe3
 }
@@ -9507,4 +9507,4 @@ label#lastname-error, label#firstname-error,label#username-error {
     padding: 20px;
     border: none;
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
-}
+} */
