@@ -222,14 +222,14 @@ $question_type = "Numerical";
 
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qKey))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
+                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer quesBtn" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
                                         @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer quesBtn" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
                                         </button>
                                         @endif
                                         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview disabled" disabled title="Questions can be reviewed after submission." style="color: #515151 !important; opacity: .65 !important;">Save & Mark for Review</a>
                                         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 disabled" disabled title="Questions can be reviewed after submission." style="background-color: #eeeeee !important; color: #515151 !important; opacity: .65 !important;">Mark for Review</a>
-                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes quesBtn" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
                                     </div>
                                 </div>
                             </div>
@@ -945,6 +945,9 @@ $question_type = "Numerical";
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+        s
         $.ajax({
             url: "{{ route('saveAdaptiveAnswer') }}",
             type: 'POST',
