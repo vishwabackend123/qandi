@@ -1055,7 +1055,7 @@ a.clearRes:hover {
 
 div#endExam {
     backdrop-filter: blur(15px);
-    background: #ffffff;
+    background: #ffffffe3
 }
 div#endExam  .modal-content.rounded-0 {
     background-color: #fff!important;
