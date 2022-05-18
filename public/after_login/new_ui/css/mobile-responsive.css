@@ -8,8 +8,7 @@
 .exam_attempted_common_page .score-show {
     border-left: 0;
     max-width: 100%;
-    padding-left: 15px;
-    padding-top: 10px;
+   
 }
 .exam_attempted_common_page .paper-sub span {
     word-break: break-all !important;
@@ -345,11 +344,11 @@
         }
         .practice-series-lists .cust-tab-content .custom-btn-gray{width: auto;height: 46px;font-size: 13px;padding: 0 18px;}
         #myTabContent button.custom-btn-gray i{margin-right: 2px;}
-        .practice-series-lists li.a1TS {width: 60% !important;}
+        .practice-series-lists li.a1TS {width: 50% !important;}
         li.a2TS {min-width: auto;}
         li.a2TS {width: 20%!important;}
         li.a3TS {width: 15% !important;}
-        .practice-series-lists.list-series .live-exam .speci-text li.a4TS{width:100%;}
+        .practice-series-lists.list-series .live-exam .speci-text li.a4TS{width:100%;margin-top:10px;}
         .no-of-persent {
             font-size: 13px;
         }
@@ -414,7 +413,7 @@
         .practice_custom_page button#dropdownMenuLink-topic{margin-top: 0;}
         .practice_custom_page .listing-details .name-txt{    width: 34% !important;}
         .practice_custom_page .tab-wrapper .d-flex.justify-content-between{    justify-content: start!important;}
-        .practice_custom_page .slbs-link.mx-3 {margin: 0 20px !important;}
+        .practice_custom_page .slbs-link.mx-3 {margin: 0 20px 0 0!important;}
         div.scroll-div .compLeteS div.d-flex.px-4{padding-left:0!important;padding-right: 20px!important;}
         .practice_custom_page .Flat-left form#topic_form{margin-top:12px;}
         .practice_custom_page .btn-clear-sel , .practice_custom_page .btn-topic{width: auto!important;    margin-top: 0;}
@@ -422,6 +421,11 @@
         #home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn {
             min-width: 138px;
         }
+        .practice-series-lists .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn,
+        .practice-series-lists .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn{min-width: 160px;}
+        .practice_custom_page .status-id.rating {margin-right: 15px;}
+        div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .paper-summery.pe-5{padding: 0 !important;}
+        .exam_attempted_common_page .paper-summery .paper-sub{margin-bottom:15px;}
     }
 
 @media(max-width:700px){
@@ -429,12 +433,7 @@
     flex-direction: column;
     align-items: flex-start !important;
 }
-.slbs-link{
-display: block;
-}
-.morning-slot {
-    display: block !important;
-}
+
 .slbs-link.ms-5 {
     margin-left: 0rem!important;
 }
@@ -452,6 +451,17 @@ display: block;
     width: 97.7%!important;
 }
 }
+
+@media(max-width:640px){
+    .exam_attempted_common_page .paper-summery .paper-sub {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .exam_attempted_common_page .compLeteS .collapse .full-syllabus .d-flex.paper-summery{display: block!important;}
+    .live-exam-list-wrapper .exam_card .d-flex.align-items-center.justify-content-between.mb-4{display: block!important;}
+}
+
 @media(max-width:576px){
     .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
         padding-left: 8px !important;
@@ -551,6 +561,9 @@ div#LeaDer {
 }
 .practice_custom_page .btn-clear-sel, .practice_custom_page .btn-topic{display:block;}
 .practice_custom_page .btn-clear-sel{width: 165px!important;padding: 0.375rem 15px!important;margin-bottom: 15px!important;}
+.practice_custom_page .listing-details .name-txt {width: 100% !important;}
+.practice_custom_page .cust-tab-content .custom-btn-gray{margin: 10px 0;}
+.practice-series-lists .live-exam .speci-text{display:inline-block;}
 
 }
 @media(max-width:550px){
@@ -580,6 +593,7 @@ div#LeaDer {
     .practice-series-lists.list-series .live-exam .speci-text li.a4TS {
         width: 50%;    text-align: right;
         padding-right: 15px;
+        margin-top:0;
     }
     .practice-series-lists li.a1TS span.sub-details {
         padding-left: 0;
@@ -646,7 +660,13 @@ div#LeaDer {
         #review_rques_blk .answer-section {
             width: 96%!important;
         }
-        
+        .exam_attempted_common_page .ClickBack .d-flex , .exam_attempted_common_page .ClickBack .slbs-link{
+            display: block!important;    margin-bottom: 15px;
+        }
+        .exam_attempted_common_page .ClickBack .result-list-head h4{margin-bottom: 15px;}
+        .exam_attempted_common_page .result-list-table .result-list-head p{text-align:left;}
+        .practice-series-lists  a.btn.btn-outline-primary.sectionBtn, .practice-series-lists a.btn.btn-primary.sectionBtn{min-width: 180px;}
+        .practice-series-lists.list-series .cust-tab-content .custom-btn-gray {float: none;}
 }
 @media (max-width:480px) {
     /* .main-wrapper { padding-left: 55px;} */
@@ -675,6 +695,7 @@ li.a3TS {
 .practice_custom_page .listing-details .name-txt {
     width: 100% !important;
 }
+.exam_attempted_common_page .paper-summery .paper-sub {width: 100%;display:block;}
     
 }
 @media(max-width:420px){
