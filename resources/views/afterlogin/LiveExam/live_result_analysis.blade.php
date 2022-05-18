@@ -445,7 +445,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
         series: [{
             name: "Your Score",
             data: <?php echo $stuscore_json; ?>,
-            color: '#AFF3D0'
+            color: '#5cc129'
         }, {
             name: "Class Average",
             data: <?php echo $clsAvg_json; ?>,
