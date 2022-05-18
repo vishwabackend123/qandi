@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
         <div class="container-fluid list-series live-exam-list-wrapper">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
-                    <div class="tab-wrapper live-exam">
+                    <div class="tab-wrapper live-exam ">
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -33,31 +33,35 @@ $userData = Session::get('user_data');
                                         $start_date_top = $schedule_list[0]->start_date;
                                         $end_date_top =$schedule_list[0]->end_date;
                                         @endphp
-                                <div class="exam_card">
-                                    <span class="mb-4 d-block"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h2 class="mt-0">{{$schedule_list[0]->exam_name}}</h2>
-                                         @if($start_date_top<=$today_top && $end_date_top>=$today_top)
-                                            <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>       
-                                         @endif
-                                    </div>
-                                    <div class="d-flex justify-content-between flex-wrap">
-                                        <div class="mb-2">
-                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
-                                            <label style=" font-weight: 600;color: #231f20;">{{$schedule_list[0]->questions_count}} Questions</label>
+                                <div class="live-exam-test-wrapp">
+                                    <div class="exam_card">
+                                        <span class="mb-4 d-block"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <h2 class="mt-0">{{$schedule_list[0]->exam_name}}</h2>
+                                            @if($start_date_top<=$today_top && $end_date_top>=$today_top)
+                                                <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>       
+                                            @endif
                                         </div>
-                                       
-                                        <div class="mb-2">
-                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Start Date</span>
-                                            <label style=" font-weight: 600;color: #231f20;">{{$start_date_top}}</label>
-                                        </div>
-                                        <div class="mb-2">
-                                            <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">End Date</span>
-                                            <label style=" font-weight: 600;color: #231f20;">{{$end_date_top}}</label>
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="mb-2">
+                                                <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">No. Of Questions</span>
+                                                <label style=" font-weight: 600;color: #231f20;">{{$schedule_list[0]->questions_count}} Questions</label>
+                                            </div>
+                                        
+                                            <div class="mb-2">
+                                                <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Start Date</span>
+                                                <label style=" font-weight: 600;color: #231f20;">{{$start_date_top}}</label>
+                                            </div>
+                                            <div class="mb-2">
+                                                <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">End Date</span>
+                                                <label style=" font-weight: 600;color: #231f20;">{{$end_date_top}}</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                                  @endif
+                                <div class="Upcoming-Live-Exams-wrapp">
                                 <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
                                 <div class="scroll-div-live-exm">
                                     @if(!empty($schedule_list))
@@ -114,6 +118,8 @@ $userData = Session::get('user_data');
                                     </div>
                                     @endif
                                 </div>
+                                </div>
+
                                 <!-- <div class="active-bg-gray">
                                     <ul class="speci-text">
                                         <li> <span class="sub-details">Q&I Advance Level Exam - Series 4</span>
