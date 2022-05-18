@@ -34,9 +34,9 @@ $userData = Session::get('user_data');
                                         $end_date_top =$schedule_list[0]->end_date;
                                         @endphp
                                 <div class="exam_card">
-                                    <span><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
-                                    <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap">
-                                        <h2 class="mt-4 mb-0">{{$schedule_list[0]->exam_name}}</h2>
+                                    <span class="mb-4 d-block"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h2 class="mt-0">{{$schedule_list[0]->exam_name}}</h2>
                                          @if($start_date_top<=$today_top && $end_date_top>=$today_top)
                                             <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>       
                                          @endif
