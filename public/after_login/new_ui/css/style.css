@@ -3836,7 +3836,7 @@ span.notification.ms-4 {
 }
 
 .cust-tabs .nav-link.active:after {
-    left: 0;
+    left: -60px;
     /* transform: skew(
 332deg, 
 0deg); */
