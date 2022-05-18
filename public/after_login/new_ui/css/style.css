@@ -6004,8 +6004,16 @@ p.tab-title {
     list-style: none;
     width: 100%;
     padding-bottom: 10px;
+    
 }
-
+.chapter-topic-block .course-star li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chapter-topic-block .star-img {
+    margin: 0;
+}
 .course-star li strong {
     width: 45%;
     display: inline-block;
