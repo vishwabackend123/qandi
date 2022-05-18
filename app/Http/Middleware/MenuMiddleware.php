@@ -31,7 +31,9 @@ class MenuMiddleware
         if (Auth::check()) {
             $user_Data = Auth::user();
 
-            Session::put('user_data', $user_Data);
+            if (!Session::has('user_data')) {
+                Session::put('user_data', $user_Data);
+            }
             $userData = Session::get('user_data');
 
 
@@ -65,8 +67,6 @@ class MenuMiddleware
             $user_subjects = $this->redis_subjects();
 
             $leaderboard_list = $this->leaderBoard();
-
-
 
             if ($userData->user_profile_img) {
                 $imgPath = $userData->user_profile_img;

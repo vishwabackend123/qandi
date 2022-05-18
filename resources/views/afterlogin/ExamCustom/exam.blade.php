@@ -223,9 +223,9 @@ $question_type = "Numerical";
                                             </div>
                                             @endif
                                         </div>
-
+                                        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
-                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
                                         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
@@ -234,7 +234,7 @@ $question_type = "Numerical";
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview " title="Questions can be reviewed after submission.">Save & Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview " onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')" title="Questions can be reviewed after submission.">Save & Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0  " title="Questions can be reviewed after submission." onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
@@ -962,13 +962,15 @@ $question_type = "Numerical";
             if (res_value != '') {
                 option_id.push($("#quest_option_" + question_id).val());
             }
+            var vld_msg = "Please fill your response.";
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
@@ -1015,11 +1017,22 @@ $question_type = "Numerical";
         var question_id = question_id;
         var nextquestId = '{{$next_qid}}';
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+            var vld_msg = "Please fill your response.";
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+            var vld_msg = "Please select your response.";
+        }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
@@ -1096,15 +1109,29 @@ $question_type = "Numerical";
     function clearResponse(quest_id, subject_id, qNo) {
 
         var response = [];
-        $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
-            response = $(this).prop('checked', false);
-        });
+        var current_question_type = $("#current_question_type").val();
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + quest_id).val();
 
-        if (response.length == 0) {
-            $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
-            $('#qoption_err_' + quest_id).addClass('text-danger');
-            $('#qoption_err_' + quest_id).fadeIn('fast');
-            return false;
+            if (res_value === '') {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            } else {
+                $("#quest_option_" + quest_id).val('');
+            }
+        } else {
+            $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
+                response = $(this).prop('checked', false);
+            });
+
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            }
         }
         $("#btn_" + quest_id).removeClass("btn-light-green");
         $("#btn_" + quest_id).addClass("btn-light");

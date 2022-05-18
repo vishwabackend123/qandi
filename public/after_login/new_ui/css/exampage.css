@@ -27,12 +27,13 @@ li.a3TS {
     width: 15% !important;
 }
 .btn-topic:hover {
-    box-shadow: 0 3px 10px 0 rgb(255 255 255 / 80%) !important;
+    box-shadow: 0 3px 10px 0 rgba(255,255,255,0.8) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
-    height: 310px !important;
+    /* height: 310px !important; */
     overflow-y: auto !important;
 	overflow-x: hidden;
+    padding-right: 5px;
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
@@ -307,6 +308,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     border-radius: 56px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     padding-bottom: 10px !important;
+    margin-bottom: 0xp !important;;
+    height: calc(100vh - 60px);
+}
+#exam_content_sec .justify-content-center{
+    justify-content: initial !important;
 }
 
 .examSect .rightSectH {
@@ -433,8 +439,6 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 .cust-tab-content .custom-btn-gray {
     border: none;
     outline: none;
-    /* width: 216px; */
-    /* height: 60px; */
     color: #2c3348;
     font-size: 18px;
     border-radius: 20px !important;
@@ -491,6 +495,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 
 .test-review-right .bg-white.d-flex.flex-column.mb-4 {
     padding:0px !important;
+   height: calc(100vh - 141px) !important;
+   
+}
+.test-review-right{
+    height: calc(100vh - 141px) !important;
 }
 .padding_26{
     padding: 26px !important;
@@ -579,9 +588,10 @@ a.clearRes:hover {
     /*height: 310px;
     overflow: auto;
     overflow-x: hidden;*/
-    height: 290px;
+    /* height: 290px; */
     overflow-y: auto;
     overflow-x: hidden;
+    height: calc(90vh - 200px);
 }
 
 .question-block::-webkit-scrollbar {
@@ -649,7 +659,6 @@ a.clearRes:hover {
 
 
 
-
 /* Added by sachin-22-02*/
 
 .other_screen {
@@ -701,7 +710,7 @@ a.clearRes:hover {
 }
   
   .right_box ul li a {
-    color: #605f5f;
+    color: #605f5f; 
 }
   
   .fa.fa-bookmark-o {
@@ -843,7 +852,7 @@ a.clearRes:hover {
  
  @media (min-width: 1200px) and (max-width: 1300px){
 .custom-page .cust-tab-content .scroll-div {
-    height: 275px !important;
+    /* height: 275px !important; */
     overflow-y: auto !important;
     overflow-x: hidden;
 }
@@ -967,7 +976,14 @@ a.clearRes:hover {
 
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
-
+.custom-page .cust-tab-content .scroll-div  {
+    max-height: calc(100vh - 400px) !important;
+    overflow: overlay;
+}
+  .scroll-div-live-exm{
+    max-height: calc(100vh - 360px) !important;
+    overflow: overlay;
+}
 .question p {
     padding-left: 13px;
 }
@@ -975,4 +991,76 @@ a.clearRes:hover {
     padding: 0;
 }
 
-#prof_scroll .score-rating{ width:45px}
+
+.examSect  button.arrow.prev-arow{left: 30px;
+    top: 100px;  position: absolute;
+}
+
+.examSect  button.arrow.next-arow {
+    right: -6px;
+    position: absolute;
+    top: 100px;
+  
+} 
+
+#prof_scroll .score-rating{ width: 45px} 
+.tab-wrapper.live-exam  {
+    height: calc(100vh - 150PX);
+}
+
+  .result-list.bg-white.tab-wrapper {
+    height: calc(100vh - 200PX);
+}
+
+ 
+.custom-page .cust-tab-content {
+    height: calc(100vh - 210px) !important; 
+}
+.practice_custom_page .exam_attempted_common_page .tab-pane .scroll-div{
+    max-height: calc(100vh - 400px)!important; 
+    overflow: overlay;
+}
+.mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div{
+    max-height: calc(100vh - 300px)!important; 
+    overflow: overlay;
+}
+.mocktest-attempted-wrapper{
+    height: calc(100vh - 260px) !important;
+}
+.mocktest-attempted-wrapper .cust-tab-content{
+    height: calc(100vh - 260px) !important; 
+}
+
+/* .live-exam .exam_attempted_common_page .tab-pane .scroll-div{
+    max-height: calc(100vh - 400px)!important; 
+    overflow: overlay;
+} */
+.live-exam   .tab-pane{
+    max-height: calc(100vh - 250px)!important;overflow: overlay;
+    
+}
+.live-exam-custom .tab-pane{
+    max-height: calc(100vh - 250px)!important; 
+    overflow: initial !important;
+    
+}
+.live-exam-custom .tab-pane .scroll-div{
+    max-height: calc(100vh - 400px)!important;
+    overflow: overlay;
+    
+}
+.live-exam-list-wrapper .scroll-div-live-exm {
+    max-height: initial !important;
+}
+
+/* #endExam {
+    backdrop-filter: blur(15px);
+    background: #ffffffe3
+}
+#endExam  .modal-content.rounded-0 {
+    background-color: #fff!important;
+    border-radius: 56px!important;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
+}  */

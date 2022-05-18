@@ -28,20 +28,20 @@ $userData = Session::get('user_data');
         <div class="col-lg-12  p-lg-5 pt-none">
 
           <div class="tab-wrapper">
-                <div id="scroll-mobile">
-                  <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
-                    </li>
-                  </ul>
+            <div id="scroll-mobile">
+              <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
+                </li>
+              </ul>
             </div>
             <!--scroll-mobile-->
             <div class="tab-content cust-tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="custom" role="tabpanel" aria-labelledby="custom-tab">
-                <div class="d-flex  pt-4  pb-4">
+                <div class="d-flex  pt-4  pb-4 custom-exam-subjects">
                   @isset($subject_list)
                   @foreach($subject_list as $key=>$subject)
                   <a class="btn sectionBtn SubActBtn me-2 {{($key==0)?'open_test btn-primary ':'live_tes btn-outline-primary'}}" onclick="showSubChapters('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_btn">{{$subject->subject_name}}</a>
@@ -176,7 +176,7 @@ $userData = Session::get('user_data');
                         </div>
 
                         <span class="slbs-link mx-3">
-                          <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Show Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expand_topic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
+                          <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$chapters->chapter_id}}" data-bs-toggle="collapse" href="#chapter_{{$chapters->chapter_id}}" role="button" aria-expanded="false" value="Show Topics" onclick="show_topic('{{$chapters->chapter_id}}','{{$sub->id}}')" id="clicktopic_{{$chapters->chapter_id}}"><span id="expandTopic_{{$chapters->chapter_id}}"><i class="fa fa-arrow-down"></i> Show Topics</span></a></span>
 
                         <div class="d-flex px-4">
                           <button class="btn btn-light ms-auto text-danger rounded-0 expand_filter_{{$chapters->chapter_id}} disabled" id="dropdownMenuLink-topic" data-bs-toggle="dropdown" aria-expanded="false" title="Topics Filter">
@@ -375,10 +375,10 @@ $userData = Session::get('user_data');
     $('#' + subject + '_flt').addClass('btn-primary');
 
     if (subject != "all_subject") {
-      $('.compLeteS').attr("style", "display: none !important");
+      $('.all-rlt').attr("style", "display: none !important");
       $('.' + subject + '-rlt').attr("style", "display: block !important");
     } else {
-      $('.compLeteS').attr("style", "display: block !important");
+      $('.all-rlt').attr("style", "display: block !important");
     }
 
   }
@@ -574,18 +574,19 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-    
-    var curr_text = $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text();
-        curr_text = curr_text.replace(/\s+/g, "");
+
+    var curr_text = $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).text();
+    curr_text = curr_text.replace(/\s+/g, "");
+
     var updatetext = ((curr_text == 'HideTopics') ? 'Show Topics' : 'Hide Topics');
-    $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).text(updatetext);
+    $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).text(updatetext);
 
     if (curr_text == 'HideTopics') {
-            $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
-        } else {
-            $("#chapter_list_" + sub_id + " #expand_topic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
-        }
-    
+      $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
+    } else {
+      $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
+    }
+
     if (curr_text == 'HideTopics') {
       $('.expand_filter_' + chapt_id).addClass('disabled');
     } else {
@@ -614,6 +615,20 @@ $userData = Session::get('user_data');
 
           $("#topic_section_" + chapt_id + " div").remove();
           $("#topic_section_" + chapt_id).html(result);
+
+          var selected_topics = $('#selected_topic').val();
+
+          if (selected_topics != '' || selected_topics != null) {
+            var sArr = selected_topics.split(',');
+            $.each(sArr, function(index, value) {
+              if ($("#topic_section_" + chapt_id + ' #chpt_topic_' + value).length > 0) {
+                $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).removeClass('btn-light');
+                $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).addClass('topic_selected');
+                $("#topic_section_" + chapt_id + ' #chpt_topic_' + value).html('SELECTED');
+                $("#topic_section_" + chapt_id + ' #topic_box_' + value).addClass('bdr-success');
+              }
+            });
+          }
 
           applySlider(slick_id); // apply slick slider again
 
@@ -702,21 +717,6 @@ $userData = Session::get('user_data');
       success: function(result) {
         $("#chapter_list_" + sub_id).html('');
         $("#chapter_list_" + sub_id).html(result);
-
-
-        var selected_topics = $('#selected_topic').val();
-
-        if (selected_topics != '' || selected_topics != null) {
-          var sArr = selected_topics.split(',');
-          $.each(sArr, function(index, value) {
-            if ($(".slick-slider #chpt_topic_" + value).length > 0) {
-              $(".slick-slider #chpt_topic_" + value).removeClass('btn-light');
-              $(".slick-slider #chpt_topic_" + value).addClass('topic_selected');
-              $(".slick-slider #chpt_topic_" + value).html('SELECTED');
-              $(".slick-slider #topic_box_" + value).addClass('bdr-success');
-            }
-          });
-        }
 
         $('#overlay').fadeOut();
         $('.clear-filter').show();
@@ -808,7 +808,7 @@ $userData = Session::get('user_data');
         $("#attempted").show();
         $('#attempted').html(data.html);
         $('#testTypeDiv').attr("style", "display: none !important");
-        $('#AssessmentTypeDiv').attr("style", "display: block !important");
+        $('#AssessmentTypeDiv').attr("style", "display: flex !important");
 
       },
       error: function(data, errorThrown) {

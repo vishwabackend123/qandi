@@ -32,8 +32,8 @@ class ResultController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $exam_full_time = isset($request->fulltime) ? $request->fulltime : '';
+            $total_marks = isset($request->total_marks) ? $request->total_marks : '';
             $submit_time = isset($request->submit_time) ? (string)gmdate('H:i:s', $request->submit_time) : '00:00:00';
-            //$submit_time = isset($request->submit_time) ? $request->submit_time : '00:00:00';
             $exam_type = isset($request->exam_type) ? $request->exam_type : '';
             $test_type = isset($request->test_type) ? $request->test_type : '';
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : 'Practice';
@@ -48,10 +48,12 @@ class ResultController extends Controller
 
             $given_ans = $answerList = $answersArr = [];
             $given_ans = isset($redisArray->given_ans) ? $redisArray->given_ans : [];
+            $attempt_count = isset($redisArray->attempt_count) ? $redisArray->attempt_count : [];
             $taken_time = isset($redisArray->taken_time) ? $redisArray->taken_time : [];
             $answer_swap_cnt = isset($redisArray->answer_swap_cnt) ? $redisArray->answer_swap_cnt : [];
             $questions_count = isset($redisArray->questions_count) ? $redisArray->questions_count : 0;
             $questions_list = isset($redisArray->all_questions_id) ? $redisArray->all_questions_id : [];
+
 
 
 
@@ -63,7 +65,8 @@ class ResultController extends Controller
                     $answerList['timetaken'] = isset($taken_time->$key) ? (string)$taken_time->$key : '';
                     $answerList['attemptCount'] = isset($answer_swap_cnt->$key) ? (int)$answer_swap_cnt->$key : '';
                     $answerList['question_id'] = (int)$key;
-
+                    /* $answerList['section_id'] = isset($attempt_count->$key->section_id) ? (int)$attempt_count->$key->section_id : '';
+ */
                     $answersArr[] = $answerList;
                 }
             }
@@ -71,7 +74,7 @@ class ResultController extends Controller
             $inputjson = [];
             $inputjson['answerList'] = $answersArr;
             $inputjson['test_time'] = (string)$exam_full_time;
-            $inputjson['total_marks'] = 30;
+            $inputjson['total_marks'] = !empty($total_marks) ? $total_marks : ($questions_count * 4);
             $inputjson['user_id'] = (string)$user_id;
             $inputjson['no_of_question'] = $questions_count;
             $inputjson['questions_list'] = $questions_list;
@@ -171,7 +174,6 @@ class ResultController extends Controller
             ));
 
             $response_json = curl_exec($curl);
-
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);

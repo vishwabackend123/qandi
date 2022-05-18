@@ -108,6 +108,7 @@ $question_type = "Numerical";
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
                             <input type="hidden" id="current_question_type" value="{{$template_type}}" />
                             <input type="hidden" id="current_question_no" value="1" />
+
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet">
                                 <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
@@ -181,8 +182,9 @@ $question_type = "Numerical";
                                                 </div>
                                                 @endif
                                             </div>
+                                            <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                         </div>
-                                        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+
                                         <div class="tab-btn-box  d-flex mt-3">
                                             @if(!empty($next_qid))
                                             <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
@@ -348,7 +350,7 @@ $question_type = "Numerical";
             <div class="modal-header pb-0 border-0">
                 <a type="button" class="btn-close" aria-label="Close" href="{{ url('dashboard') }}" title="Close"></a>
             </div>
-            <div class="modal-body pt-3 p-5">
+            <div class="modal-body pt-3 p-md-5 p-4">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
                         <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
@@ -395,7 +397,7 @@ $question_type = "Numerical";
                         <h1 class="my-auto text-center">
                             <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
                         </h1>
-                        <div class="row justify-content-center mt-lg-0 mt-3">
+                        <div class="row justify-content-center mt-xl-0 mt-3">
                             <button class="btn  text-uppercase rounded-0 px-5 col-lg-12 col-sm-6 goto-exam-btn" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp; <img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
                         </div>
                     </div>
@@ -920,13 +922,15 @@ $question_type = "Numerical";
             if (res_value != '') {
                 option_id.push($("#quest_option_" + question_id).val());
             }
+            var vld_msg = "Please fill your response.";
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
@@ -974,8 +978,6 @@ $question_type = "Numerical";
         var isValid = 0;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
-        var current_subject_id = $("#current_subject_id").val();
-        var current_section_id = $("#current_section_id").val();
 
         if (current_question_type == 11) {
             var res_value = $("#quest_option_" + question_id).val();
@@ -983,13 +985,15 @@ $question_type = "Numerical";
             if (res_value != '') {
                 option_id.push($("#quest_option_" + question_id).val());
             }
+            var vld_msg = "Please fill your response.";
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
@@ -1073,19 +1077,29 @@ $question_type = "Numerical";
     function clearResponse(quest_id, subject_id, qNo) {
         var response = [];
         var current_question_type = $("#current_question_type").val();
-        var current_subject_id = $("#current_subject_id").val();
-        var current_section_id = $("#current_section_id").val();
 
         if (current_question_type == 11) {
-            var response = $("#quest_option_" + question_id).val();
+            var res_value = $("#quest_option_" + quest_id).val();
 
-            if (res_value != '') {
-                response.push($("#quest_option_" + question_id).val());
+            if (res_value === '') {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            } else {
+                $("#quest_option_" + quest_id).val('');
             }
         } else {
             $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
                 response = $(this).prop('checked', false);
             });
+
+            if (response.length == 0) {
+                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).addClass('text-danger');
+                $('#qoption_err_' + quest_id).fadeIn('fast');
+
+            }
         }
 
 

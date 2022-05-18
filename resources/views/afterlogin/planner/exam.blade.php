@@ -263,9 +263,9 @@ $questtype='radio';
                                             </div>
                                             @endif
                                         </div>
-
+                                        <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
-                                    <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
+
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
                                         <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
@@ -858,13 +858,15 @@ $questtype='radio';
             if (res_value != '') {
                 option_id.push($("#quest_option_" + question_id).val());
             }
+            var vld_msg = "Please fill your response.";
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {
@@ -909,11 +911,23 @@ $questtype='radio';
         var question_id = question_id;
         var nextquestId = '{{$next_qid}}';
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+            var vld_msg = "Please fill your response.";
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+            var vld_msg = "Please select your response.";
+        }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select your response.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
             setTimeout(function() {

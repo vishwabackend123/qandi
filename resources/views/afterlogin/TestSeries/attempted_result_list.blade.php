@@ -1,10 +1,10 @@
 <div class="exam_attempted_common_page">
-    <div class="d-flex  p-4" id="testTypeDiv">
+    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="testTypeDiv">
         <a class="btn sectionBtn btn-primary me-2 all_attemp">ALL TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 open_attemp">OPEN TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 live_attemp">LIVE TEST SERIES</a>
     </div>
-    <div class="d-flex  p-4" id="AssessmentTypeDiv" style="display:none !important">
+    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="AssessmentTypeDiv" style="display:none !important">
         <a class="btn sectionBtn SubattemptActBtn btn-primary me-2" id="all_subject_flt" onclick="showSubfilter('all_subject');">ALL SUBJECTS</a>
         @isset($cSubjects)
         @foreach($cSubjects as $key=>$subject)
@@ -88,8 +88,8 @@
                 </div>
             </div-->
 
-            <div class="compLeteS {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
-                <div class="ClickBack d-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
+            <div class="compLeteS all-rlt {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
+                <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                     <div class="d-flex align-items-start justify-content-between result-list-head">
                         <h4 class="m-lg-0 p-0"> @if($sche->test_series_name)
                             {{$sche->test_series_name}}
@@ -104,7 +104,7 @@
                         <p class="m-0 p-0">{{date('d F Y', strtotime($sche->created_at));}}</p>
                     </div>
                     <div class="d-flex align-items-center justify-content-center morning-slot">
-                        <span class="slbs-link me-5">
+                        <span class="slbs-link me-lg-5 me-2">
                             <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}">
                                 <span id="expand_topic_{{$sche->id}}">
                                     <i class="fa fa-arrow-down"></i>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="collapse" id="chapter_{{$sche->id}}">
-                    <div class="p-4 pb-4 d-flex justify-content-between full-syllabus">
+                    <div class="p-4 pb-4 d-md-flex justify-content-between full-syllabus align-items-center">
                         <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                             <div class="paper-sub">
                                 <small>No of Question</small>
@@ -135,10 +135,10 @@
                             </div>
                             <div class="paper-sub">
                                 <small>Subjects</small>
-                                <span>{{$sche->subject_name}}</span>
+                                <span style="word-break: keep-all;">{{$sche->subject_name}}</span>
                             </div>
                         </div>
-                        <div class="score-show text-center">
+                        <div class="score-show text-md-center">
                             <div class="paper-sub">
                                 <small>Score</small>
                                 <span><b style="color:rgba(12, 193, 255, 0.9);">{{$sche->marks_gain}}</b> / {{$sche->no_of_question * 4}}</span>
@@ -327,7 +327,7 @@
         font-weight: 600;
     }
 
-    @media only screen and (max-width: 1199px) {
+    /* @media only screen and (max-width: 1199px) {
         .result-list-head h4 {
             font-size: 14px;
         }
@@ -354,5 +354,5 @@
         .paper-sub span {
             font-size: 13px;
         }
-    }
+    } */
 </style>
