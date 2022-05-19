@@ -111,7 +111,7 @@ $userData = Session::get('user_data');
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
                                                 <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
                                             </ul>
-                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                            <span class="filtericon d-none"><i class="fa fa-filter"></i></span>
                                         </div>
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
