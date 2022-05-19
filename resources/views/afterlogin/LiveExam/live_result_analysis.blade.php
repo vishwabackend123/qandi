@@ -39,7 +39,7 @@ $userData = Session::get('user_data');
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class=" col-lg-4 mb-lg-0 mb-4">
                     <div class="bg-white shadow-lg p-3 position-relative mb-0">
 
                         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
@@ -109,7 +109,7 @@ $userData = Session::get('user_data');
 
             </div>
             <div class="row mt-5 mb-3">
-                <div class="col-5">
+                <div class="col-lg-5 mb-lg-0 mb-4 ">
                     <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
 
                         <h5 class="dashboard-title mb-3">Subject Score</h5>
@@ -162,8 +162,8 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="bg-white shadow position-relative">
+                <div class="col-lg-7">
+                    <div class="position-relative h-100">
                         <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
                         <div id="scroll-mobile" class="tabintablet">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
@@ -241,7 +241,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <div class="row mb-4">
+            <div class="row mb-4 pb-4">
                 <div class="col-md-9">
                     <div class="bg-white shadow p-5 position-relative">
 

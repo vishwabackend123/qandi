@@ -136,7 +136,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 }
 .practice-series-lists .cust-tabs a.nav-link#live-tab , .live-exam-list-wrapper .cust-tabs a.nav-link#over-tab{text-transform: none;}
 
-.chapter-topic-lists.ulStyle{max-height: calc(100vh - 160px);overflow-y: auto;overflow-x: hidden;}
+.chapter-topic-lists.ulStyle{max-height: calc(100vh - 299px);overflow-y: auto;overflow-x: hidden;}
 #graphExpand.modal{z-index: 10600;}
 .custom-page.practice_custom_page .star-ratings-css-top span {
     line-height: 40px;
@@ -1605,7 +1605,7 @@ div#marKs-trends .bg-white p {
 }
 
 #myTabContent .slimScrollDiv {
-    height: 240px !important;
+    height: 290px !important;
 }
 
 #myTabContent button i {
@@ -9493,7 +9493,7 @@ label#lastname-error, label#firstname-error,label#username-error {
    
 }
 #attempt_count_block .col-lg-5  .custom-box-shadow div.d-flex.align-items-center{padding-right:10px;}
-.exam-analytics .col-5 .position-relative .d-flex.align-items-center.mt-4.mb-2.pb-1 {padding-right:20px;}
+.exam-analytics .col-lg-5 .position-relative .d-flex.align-items-center.mt-4.mb-2.pb-1 {padding-right:20px;}
 .modal .btn-close:focus{    box-shadow: none;}
 
 
@@ -9521,4 +9521,9 @@ label#lastname-error, label#firstname-error,label#username-error {
     -webkit-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
     -moz-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
     box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
+}
+
+
+div#welcomeModal , div#favSubResponse ,div#fullTest_Dashboard {
+    z-index: 99999999;
 }

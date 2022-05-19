@@ -2,6 +2,7 @@
     .status-id.rating {
         width: auto;
     }
+    .graphdotlisting{flex-wrap: wrap;}
 }
 @media screen and (max-width:1199px){
         .exam_attempted_common_page .result-list-head.d-flex{ 
