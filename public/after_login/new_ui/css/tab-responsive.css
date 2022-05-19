@@ -3,6 +3,7 @@
         width: auto;
     }
     .graphdotlisting{flex-wrap: wrap;}
+    .garphlistincom{margin-left:10px;}
 }
 @media screen and (max-width:1199px){
         .exam_attempted_common_page .result-list-head.d-flex{ 
