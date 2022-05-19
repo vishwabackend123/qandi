@@ -39,7 +39,7 @@ $userData = Session::get('user_data');
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class=" col-lg-4 mb-lg-0 mb-4">
                     <div class="bg-white shadow-lg p-3 position-relative mb-0">
 
                         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
