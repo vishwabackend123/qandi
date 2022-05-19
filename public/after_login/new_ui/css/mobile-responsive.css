@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
+    min-width: auto;
+}
     .exam_attempted_common_page .compLeteS, .practice_custom_page .compLeteS {
     padding: 15px 15px 15px;
 }
