@@ -152,7 +152,7 @@ $userData = Session::get('user_data');
                                             @endforeach
                                         </ul>
                                         @else
-                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                        <p class="text-center">
                                             <strong>No record found</strong>
                                         </p>
                                         @endif
@@ -167,7 +167,7 @@ $userData = Session::get('user_data');
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
                                                 <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
                                             </ul>
-                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                            <span class="filtericon d-none"><i class="fa fa-filter"></i></span>
                                         </div>
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
@@ -208,7 +208,7 @@ $userData = Session::get('user_data');
                                             @endforeach
                                         </ul>
                                         @else
-                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                        <p class="text-center">
                                             <strong>No record found</strong>
                                         </p>
                                         @endif
@@ -223,7 +223,7 @@ $userData = Session::get('user_data');
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
                                                 <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
                                             </ul>
-                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                            <span class="filtericon d-none"><i class="fa fa-filter"></i></span>
                                         </div>
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
@@ -264,7 +264,7 @@ $userData = Session::get('user_data');
                                             @endforeach
                                         </ul>
                                         @else
-                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                        <p class="text-center">
                                             <strong>No record found</strong>
                                         </p>
                                         @endif
@@ -279,7 +279,7 @@ $userData = Session::get('user_data');
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
                                                 <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
                                             </ul>
-                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                            <span class="filtericon d-none"><i class="fa fa-filter"></i></span>
                                         </div>
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>
@@ -320,7 +320,7 @@ $userData = Session::get('user_data');
                                             @endforeach
                                         </ul>
                                         @else
-                                        <p style="margin-left: 38%;margin-top: 5%;font-size: 20px;">
+                                        <p class="text-center">
                                             <strong>No record found</strong>
                                         </p>
                                         @endif
