@@ -202,17 +202,17 @@ $question_type = "Numerical";
 
                                     <div class="tab-btn-box  d-flex mt-3">
                                         @if(!empty($next_qid))
-                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
+                                        <a href="javascript:void(0);" class="btn px-5   btn-light-green rounded-0 saveanswer quesBtn" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Next</a>
                                         @else
-                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
+                                        <button class="btn px-5   btn-light-green rounded-0 saveanswer quesBtn" onclick="saveAnswer('{{$activeq_id}}',1)">Save & Submit
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview quesBtn" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 " onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 quesBtn" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
-                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
+                                        <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes quesBtn" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}',1)">Clear Response</a>
 
                                     </div>
                                 </div>
@@ -966,6 +966,8 @@ $question_type = "Numerical";
 
 
         var q_submit_time = $("#timespend_" + question_id).val();
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -986,6 +988,10 @@ $question_type = "Numerical";
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
             },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
+            }
         });
         if ($("#quesnext" + question_id).is(":disabled") == true) {
 
@@ -1025,6 +1031,8 @@ $question_type = "Numerical";
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1042,6 +1050,11 @@ $question_type = "Numerical";
                     return true;
                 }
             },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
+            },
+            async: false
         });
 
     }

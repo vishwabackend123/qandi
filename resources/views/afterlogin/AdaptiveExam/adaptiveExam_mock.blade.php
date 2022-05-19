@@ -1020,6 +1020,10 @@ $questtype='radio';
                     err_sts = false;
                 }
             },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
+            }
         });
 
     }
@@ -1056,7 +1060,8 @@ $questtype='radio';
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
-
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1094,6 +1099,10 @@ $questtype='radio';
                     isValid = 0;
 
                 }
+            },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
             },
             async: false
         });

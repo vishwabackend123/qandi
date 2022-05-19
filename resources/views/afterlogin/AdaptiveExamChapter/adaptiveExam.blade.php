@@ -968,6 +968,10 @@ $question_type = "Numerical";
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
             },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
+            }
         });
 
 

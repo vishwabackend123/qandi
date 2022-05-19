@@ -940,6 +940,8 @@ $question_type = "Numerical";
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -963,6 +965,10 @@ $question_type = "Numerical";
                     $("#btn_" + question_id).addClass("btn-light-green");
                 }
             },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
+            }
         });
         if ($("#quesnext" + question_id).is(":disabled") == true) {
 
@@ -1002,6 +1008,8 @@ $question_type = "Numerical";
             return false;
         }
         var q_submit_time = $("#timespend_" + question_id).val();
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1025,6 +1033,10 @@ $question_type = "Numerical";
                 } else {
                     isValid = 0;
                 }
+            },
+            complete: function() { // Set our complete callback, removed disabled 
+                $('#question_section .quesBtn').attr("disabled", false);
+                $('#question_section .quesBtn').removeClass("disabled");
             },
             async: false
         });
