@@ -483,6 +483,7 @@
     .cus-radio-btn .checkmark{    height: 20px;
         width: 20px;}
         .cus-radio-btn label{padding-left: 27px;}
+        .matrixpage-wrapper  .cus-radio-btn label{padding-left: 0;}
 #sharefrnd .modal-dialog{padding: 0 12px;}
 .overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
 #prof_scroll .d-flex.align-items-center.px-3{padding: 0px!important;}
@@ -705,6 +706,10 @@ li.a3TS {
     
 }
 @media(max-width:420px){
+    .tab-wrapper .nav-tabs {
+    padding-left: 18px !important;
+
+}
     .dashboard-cards-block .bg-white>small p ,.dashboard-cards-block .progress-journey-card.bg-white>small p{ min-width: 227px; padding: 15px 25px 15px 10px; }  
     .swiper-button-next, .swiper-rtl .swiper-button-prev{right: 0px;}
     .cust-gallery.dashGallery .swiper-button-prev, .cust-gallery.dashGallery .swiper-button-next{    width: 30px;
@@ -749,6 +754,9 @@ li.a3TS {
     #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 13px;}
 }
 @media(max-width:385px){
+    .tab-wrapper .nav-tabs {
+    padding-left: 3px !important;
+}
     .star-img {
         width: 72% !important;}
     .course-star li strong {
