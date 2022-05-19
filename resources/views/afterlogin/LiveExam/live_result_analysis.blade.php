@@ -40,7 +40,7 @@ $userData = Session::get('user_data');
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="bg-white shadow-lg p-3 position-relative">
+                    <div class="bg-white shadow-lg p-3 position-relative mb-0">
 
                         <h5 class="dashboard-title mb-3 text-center">Total Score</h5>
                         <div class="text-center">
@@ -64,7 +64,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="bg-white shadow-lg p-3  position-relative">
+                    <div class="bg-white shadow-lg p-3  position-relative mb-0">
 
 
                         <div class="row">
@@ -334,7 +334,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
     });
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 224,
+            height: 250,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false
@@ -391,12 +391,12 @@ $clsAvg_json=json_encode($clsAvg_arr);
             data: [{
                     name: 'Correct Attempts',
                     y: <?php echo $correct_per_pie; ?>,
-                    color: '#AFF3D0' // Jane's color
+                    color: '#5cc129' // Jane's color
                 },
                 {
                     name: 'Wrong Attempts',
                     y: <?php echo $incorrect_per_pie; ?>,
-                    color: '#ff9999' // Jane's color
+                    color: '#eb5347' // Jane's color
                 },
                 {
                     name: 'Not Answered',
