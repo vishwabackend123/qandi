@@ -136,7 +136,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 }
 .practice-series-lists .cust-tabs a.nav-link#live-tab , .live-exam-list-wrapper .cust-tabs a.nav-link#over-tab{text-transform: none;}
 
-.chapter-topic-lists.ulStyle{max-height: calc(100vh - 160px);overflow-y: auto;overflow-x: hidden;}
+.chapter-topic-lists.ulStyle{max-height: calc(100vh - 299px);overflow-y: auto;overflow-x: hidden;}
 #graphExpand.modal{z-index: 10600;}
 .custom-page.practice_custom_page .star-ratings-css-top span {
     line-height: 40px;
