@@ -125,7 +125,8 @@ div#topicclose,
 }
 
 .exam-analytics div#myTabContent .tab-pane .hScroll {
-    height: 90% !important;
+    height: 290px!important;
+    margin-top: 20px;
     padding-right: 13px; overflow-y:auto;
 } 
 
