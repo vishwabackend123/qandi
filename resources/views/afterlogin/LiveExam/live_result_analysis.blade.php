@@ -246,13 +246,13 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow p-5 position-relative">
 
                         <div class="row">
-                            <div class="col-md-4 text-center">
+                            <div class="col-lg-4 text-center">
                                 <h5 class="dashboard-title mb-3 text-center">Rank Analysis</h5>
                                 <div id="rank"></div>
 
                                 <!-- <img src="images/bottom-left.jpg" /> -->
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-lg-8">
                                 <div class="blue-block d-flex flex-column">
                                     <span>Your Current Rank</span>
                                     <span class="text-success fs-1">{{$response->user_rank}}</span>
