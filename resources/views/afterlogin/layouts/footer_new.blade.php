@@ -1490,6 +1490,11 @@
                         $("#sucessAcc_edit").html("Profile updated successfully.");
                         $("#sucessAcc_edit").fadeIn('slow');
                         $("#sucessAcc_edit").fadeOut(10000);
+                        $('#firstname').attr('value', response.user_info.first_name);
+                        $('#lastname').attr('value', response.user_info.last_name);
+                        $('#select-state').attr('value', response.user_info.state);
+                        $('#useremail').attr('value', response.user_info.email);
+                        $('#user_mobile').attr('value', response.user_info.mobile);
                     } else {
                         $("#errlog_edit").html(response.message);
                         $("#errlog_edit").fadeIn('slow');

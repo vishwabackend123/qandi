@@ -15,6 +15,12 @@ button {
     outline: none;
     text-decoration: none;
 }
+.matrixpage-wrapper .custom-page .cust-tab-content {
+    height: auto!important;
+}
+ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
+    margin-bottom: 0!important;
+}
 .topics-box a {
     width: 100%;
 }

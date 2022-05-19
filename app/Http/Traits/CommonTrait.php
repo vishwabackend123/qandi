@@ -60,8 +60,9 @@ trait CommonTrait
 
     public function redis_subjects()
     {
-        $userData = Session::get('user_data');
+        //$userData = Session::get('user_data');
 
+        $userData = Auth::user();
         $user_id = $userData->id;
 
         $exam_id = $userData->grade_id;
