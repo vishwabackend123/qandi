@@ -670,7 +670,7 @@ div#LeaDer {
         .exam_attempted_common_page .result-list-table .result-list-head p{text-align:left;}
         .practice-series-lists  a.btn.btn-outline-primary.sectionBtn, .practice-series-lists a.btn.btn-primary.sectionBtn{min-width: 180px;}
         .practice-series-lists.list-series .cust-tab-content .custom-btn-gray {float: none;}
-        .graphdotlisting{flex-wrap: wrap;}
+        
         .garphlistincom{margin-bottom: 5px;}
 }
 @media (max-width:480px) {
