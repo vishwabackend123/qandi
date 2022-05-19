@@ -286,7 +286,7 @@ ul.leaderNameBlock-search p:first-child {
     right: -58px;
 }
 
-#attempt_count_block .cust-tabs.nav.nav-tabs .nav-link {
+#attempt_count_block .cust-tabs.nav.nav-tabs .nav-link ,.exam-analytics .cust-tabs.nav.nav-tabs .nav-link {
     min-width: 130px;
     padding: 18px 30px !important;
 }
