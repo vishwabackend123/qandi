@@ -164,7 +164,8 @@ $userData = Session::get('user_data');
                 </div>
                 <div class="col-7">
                     <div class="bg-white shadow position-relative">
-                        <div class="tab-wrapper h-100">
+                        <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
+                        <div id="scroll-mobile" class="tabintablet">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
                                 @php $subx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
@@ -179,8 +180,8 @@ $userData = Session::get('user_data');
 
 
                             </ul>
-
-                            <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
+                         </div> 
+                            <div class=" tab-content position-relative cust-tab-content bg-white sub-padding" id="myTabContent">
                                 @php $topx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
