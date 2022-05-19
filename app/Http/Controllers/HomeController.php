@@ -734,7 +734,38 @@ class HomeController extends Controller
      */
     public function dailytask()
     {
-        return view('afterlogin.dashboard_dailytask');
+          
+        try {
+            $userData = Session::get('user_data');
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+            $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
+                curl_setopt_array($curl, array(
+
+                    CURLOPT_URL => $curl_check_task_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                ));
+
+                $response_task_json = curl_exec($curl);
+                $response_task = json_decode($response_task_json, true);
+                $data_task = [];
+                if (isset($response_task['success']) && !empty($response_task['success'])) {
+                    $data_task = $response_task['allowed_details'];
+                }
+
+            return view('afterlogin.dashboard_dailytask',compact('data_task'));
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        } 
+
     }
 
     public function myQMatrix()

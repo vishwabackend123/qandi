@@ -14,8 +14,8 @@ $userData = Session::get('user_data');
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
 
-                <div class="col-md-3">
-                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-100">
+                <div class="col-lg-3">
+                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 mb-lg-0 mb-4">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
@@ -81,7 +81,7 @@ $userData = Session::get('user_data');
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-lg-9">
                     <div class="tab-wrapper h-100">
                         <div>
                             <div class="position-relative">
@@ -105,7 +105,7 @@ $userData = Session::get('user_data');
                         <div class="tab-content cust-tab-content" id="myTabContents">
                             <div class="tab-pane  active" id="matrix-quesone" role="tabpanel" aria-labelledby="matrix-quesone-tab">
                                 <div class="tabcontent-wrapper">
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div class="mb-4">
                                             <ul class="chapter-topic-menu ulStyle d-inline-flex">
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
@@ -119,7 +119,7 @@ $userData = Session::get('user_data');
                                         @if(isset($myq_matrix_topic['Q1']) && $myq_matrix_topic['Q1'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q1'] as $matrix_one)
-                                            <li class="mt-4">
+                                            <li class="mb-4">
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="cus-radio-btn">
@@ -161,7 +161,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="tab-pane" id="matrix-questwo" role="tabpanel" aria-labelledby="matrix-questwo-tab">
                                 <div class="tabcontent-wrapper">
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div class="mb-4">
                                             <ul class="chapter-topic-menu ulStyle d-inline-flex">
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
@@ -175,7 +175,7 @@ $userData = Session::get('user_data');
                                         @if(isset($myq_matrix_topic['Q2']) && $myq_matrix_topic['Q2'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q2'] as $matrix_one)
-                                            <li class="mt-4">
+                                            <li class="mb-4">
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="cus-radio-btn">
@@ -217,7 +217,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="tab-pane" id="matrix-questhree" role="tabpanel" aria-labelledby="matrix-questhree-tab">
                                 <div class="tabcontent-wrapper">
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div class="mb-4">
                                             <ul class="chapter-topic-menu ulStyle d-inline-flex">
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
@@ -231,7 +231,7 @@ $userData = Session::get('user_data');
                                         @if(isset($myq_matrix_topic['Q3']) && $myq_matrix_topic['Q3'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q3'] as $matrix_one)
-                                            <li class="mt-4">
+                                            <li class="mb-4">
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="cus-radio-btn">
@@ -273,7 +273,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="tab-pane" id="matrix-quesfour" role="tabpanel" aria-labelledby="matrix-quesfour-tab">
                                 <div class="tabcontent-wrapper">
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div class="mb-4">
                                             <ul class="chapter-topic-menu ulStyle d-inline-flex">
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
@@ -287,7 +287,7 @@ $userData = Session::get('user_data');
                                         @if(isset($myq_matrix_topic['Q4']) && $myq_matrix_topic['Q4'])
                                         <ul class="chapter-topic-lists ulStyle">
                                             @foreach($myq_matrix_topic['Q4'] as $matrix_one)
-                                            <li class="mt-4">
+                                            <li class="mb-4">
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="cus-radio-btn">

@@ -15,6 +15,15 @@ button {
     outline: none;
     text-decoration: none;
 }
+.matrixpage-wrapper .custom-page .cust-tab-content {
+    height: auto!important;
+}
+ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
+    margin-bottom: 0!important;
+}
+.topics-box a {
+    width: 100%;
+}
 .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {min-width: 130px;}
 .exam_attempted_common_page .paper-summery .paper-sub:first-child{flex: 2;}
 .practice_custom_page #myTabContent .btn.btn-warning{background: linear-gradient(232deg, #21ccff 95%, #00baff -5%);}
@@ -283,7 +292,7 @@ ul.leaderNameBlock-search p:first-child {
     right: -58px;
 }
 
-#attempt_count_block .cust-tabs.nav.nav-tabs .nav-link {
+#attempt_count_block .cust-tabs.nav.nav-tabs .nav-link ,.exam-analytics .cust-tabs.nav.nav-tabs .nav-link {
     min-width: 130px;
     padding: 18px 30px !important;
 }
@@ -1659,14 +1668,14 @@ span.text-secondary.chapter_name.mb-2.d-block {
 }
 
 .topics-box {
-    width: calc(50% - 22px);
-    margin: 16px 10px 0px;
+    width: calc(50% - 6px);
+    margin: 16px 4px 0 0;
     display: inline-flex;
     align-items: end;
     vertical-align: top;
     cursor: pointer;
 }
-
+.col-md-6 .topics-box:nth-child(2), .col-md-6 .topics-box:nth-child(4){margin: 16px 0px 0 4px;}
 .topics-box>b {
     color: #21ccff;
     font-size: 15px;
@@ -1749,7 +1758,7 @@ span.text-secondary.chapter_name.mb-2.d-block {
 }
 
 .topics-box span b {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: normal;
     line-height: 40px;
     display: block;
@@ -3847,7 +3856,7 @@ span.notification.ms-4 {
     position: absolute;
     top: 0px;
     /* height: 100%; */
-    width: 70px;
+    width: 0;
     background: url(../images/after-img1.png);
     transition: all 250ms ease;
     bottom: -1px;
@@ -9508,7 +9517,7 @@ label#lastname-error, label#firstname-error,label#username-error {
     border: none;
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
 } */
-.exam-analytics .bg-white.shadow{
+.exam-analytics .bg-white.shadow,.exam-analytics .shadow-lg{
     -webkit-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
     -moz-box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
     box-shadow: 0 0 18px 0 rgba(0,0,0,0.1),inset 0 0 0 0 rgba(0,0,0,0.51)!important;
