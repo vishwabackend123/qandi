@@ -46,11 +46,18 @@ class RazorpayController extends Controller
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
-            $exam_id = $userData->grade_id;
+
+
+            /* $exam_id = $userData->grade_id; */
 
             $payment_id = isset($request->razorpay_payment_id) ? $request->razorpay_payment_id : '';
             $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
             $razorpay_signature = isset($request->razorpay_signature) ? $request->razorpay_signature : '';
+
+
+            $exam_id = isset($request->exam_id) ? $request->exam_id : '';
+
+
 
             $verify_request =
                 [
@@ -94,15 +101,17 @@ class RazorpayController extends Controller
 
 
             if ($success_status == true) {
+                $sessionData = Session::get('user_data');
+                $sessionData->grade_id = $exam_id;
+
+                Session::put('user_data', $sessionData);
 
                 return redirect()->route('dashboard');
             } else {
 
                 return redirect()->route('subscriptions');
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -179,9 +188,7 @@ class RazorpayController extends Controller
 
             Session::put('success', 'Payment successful');
             return redirect()->route('dashboard');
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
