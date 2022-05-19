@@ -14,8 +14,8 @@ $userData = Session::get('user_data');
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
 
-                <div class="col-md-3">
-                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-100">
+                <div class="col-lg-3">
+                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 mb-lg-0 mb-4">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
@@ -81,7 +81,7 @@ $userData = Session::get('user_data');
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-lg-9">
                     <div class="tab-wrapper h-100">
                         <div>
                             <div class="position-relative">
@@ -111,7 +111,7 @@ $userData = Session::get('user_data');
                                                 <!--li><a href="javascript:void(0)" >CHAPTERS</a></li-->
                                                 <li><a href="javascript:void(0)" class="active">TOPICS</a></li>
                                             </ul>
-                                            <span class="filtericon"><i class="fa fa-filter"></i></span>
+                                            <span class="filtericon d-none"><i class="fa fa-filter"></i></span>
                                         </div>
                                         <!--button class="btn btntheme mb-4">POLISH STRENGTHS</button-->
                                     </div>

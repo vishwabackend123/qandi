@@ -1,5 +1,15 @@
 version: 0.0
 os: linux
-files:
-  - source: /
-    destination: /home/ec2-user/uniq-new
+
+files: 
+  - 
+    source: /
+    destination: /var/www/html/uniq_web
+
+file_exists_behavior: OVERWRITE
+
+hooks: 
+  AfterInstall: 
+    - 
+      location: script.sh
+      runas: root

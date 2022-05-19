@@ -2,6 +2,7 @@
     .status-id.rating {
         width: auto;
     }
+    .graphdotlisting{flex-wrap: wrap;}
 }
 @media screen and (max-width:1199px){
         .exam_attempted_common_page .result-list-head.d-flex{ 
@@ -176,8 +177,8 @@
 .addremovetopic {width: 110px;font-size: 14px;}
 .examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 3%!important;right: -20px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 3%!important;left: 10px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
 .examSect .rightSect button.btn.btn-secondary i{    font-size: 12px;}
 .base-timer {width: 48px; height: 48px;}
@@ -314,6 +315,12 @@ div.counter{right:0;}
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+.matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
+    min-width: 100px;
+}
+    .myqMatrix-card{
+        height: auto !important;
+    }
 #attempted .result-list-btns a {
     font-size: 13px;
 }

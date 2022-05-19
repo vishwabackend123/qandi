@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
+    min-width: auto;
+}
     .exam_attempted_common_page .compLeteS, .practice_custom_page .compLeteS {
     padding: 15px 15px 15px;
 }
@@ -667,6 +670,8 @@ div#LeaDer {
         .exam_attempted_common_page .result-list-table .result-list-head p{text-align:left;}
         .practice-series-lists  a.btn.btn-outline-primary.sectionBtn, .practice-series-lists a.btn.btn-primary.sectionBtn{min-width: 180px;}
         .practice-series-lists.list-series .cust-tab-content .custom-btn-gray {float: none;}
+        
+        .garphlistincom{margin-bottom: 5px;}
 }
 @media (max-width:480px) {
     /* .main-wrapper { padding-left: 55px;} */

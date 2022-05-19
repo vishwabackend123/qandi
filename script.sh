@@ -1,0 +1,1 @@
+cd /var/www/html/uniq_web && composer install && composer dump-autoload && php artisan optimize:clear && php artisan view:clear
