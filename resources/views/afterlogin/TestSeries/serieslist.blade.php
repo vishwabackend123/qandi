@@ -316,6 +316,7 @@ $(document).ready(function() {
         $('.live_attemp').removeClass('btn-primary');
         $('.live_attemp').addClass('btn-outline-primary');
         $('.compLeteS').show();
+        hideExpend();
         
     });
     $(document).on('click', '.open_attemp', function() {
@@ -327,6 +328,7 @@ $(document).ready(function() {
         $('.live_attemp').addClass('btn-outline-primary');
         $('.compLeteS').hide();
         $('.exam_mode_Open').show();
+        hideExpend();
     });
     $(document).on('click', '.live_attemp', function() {
         $(this).addClass('btn-primary');
@@ -337,8 +339,20 @@ $(document).ready(function() {
         $('.open_attemp').addClass('btn-outline-primary');
         $('.compLeteS').hide();
         $('.exam_mode_Live').show();
+        hideExpend();
     });
 });
+
+function hideExpend(){
+     $('.hideallexpend').each(function () {
+
+     var current_id = this.id;
+     var current_div_id=$(this).attr('data-id');
+     if($('#'+current_div_id).hasClass('show')){
+      $('#'+current_id).trigger('click') 
+     }
+    });
+}
 
 </script>
 @include('afterlogin.layouts.footer_new')
