@@ -22,7 +22,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
     margin-bottom: 0!important;
 }
 .topics-box a {
-    width: 100%;
+    min-width: calc(100% - 22px);
 }
 .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {min-width: 100px;}
 .exam_attempted_common_page .paper-summery .paper-sub:first-child{flex: 2;}
@@ -1668,20 +1668,24 @@ span.text-secondary.chapter_name.mb-2.d-block {
 }
 
 .topics-box {
-    width: calc(50% - 6px);
-    margin: 16px 4px 0 0;
+    width: calc(50% - 8px);
+    margin: 16px 6px 0 0;
     display: inline-flex;
     align-items: end;
     vertical-align: top;
     cursor: pointer;
 }
-.col-md-6 .topics-box:nth-child(2), .col-md-6 .topics-box:nth-child(4){margin: 16px 0px 0 4px;}
+.col-md-6 .topics-box:nth-child(2), .col-md-6 .topics-box:nth-child(4) {margin: 16px 0px 0 6px;}
+.topicBlocks .topics-box:nth-child(2), .topicBlocks .topics-box:nth-child(4){margin: 16px 0px 0 8px;}
+.topicBlocks .topics-box {
+    width: calc(50% - 10px);
+    margin: 16px 8px 0 0;}
 .topics-box>b {
     color: #21ccff;
     font-size: 15px;
     font-weight: normal;
     margin-right: 6px;
-}
+}``
 
 .topics-box:hover>b {
     color: #3de2f8;

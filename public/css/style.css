@@ -870,3 +870,8 @@ button#goto-otp-btn:hover {
     height: 150px;
     padding-right: 10px;
 }
+.outer-logo {top:20px}
+
+.country-code-name::-webkit-scrollbar {
+    height: 5px;
+}

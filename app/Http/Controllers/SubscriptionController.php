@@ -170,9 +170,7 @@ class SubscriptionController extends Controller
 
 
             return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -183,13 +181,13 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function trial_subscription($sub_id, $exam_year, Request $request)
+    public function trial_subscription($sub_id, $exam_year, $exam_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
-            $exam_id = $userData->grade_id;
+            $exam_id = $exam_id;
             $subscription_id = $sub_id;
 
             $trail_purchase_data = [
@@ -230,19 +228,21 @@ class SubscriptionController extends Controller
             $response_status = isset($aResponse->success) ? $aResponse->success : false;
 
             if ($response_status == true) {
-                Session::forget('user_data');
+                /*  Session::forget('user_data');
                 $user_Data = Auth::user();
                 Session::put('user_data', $user_Data);
-                $userData = Session::get('user_data');
+                $userData = Session::get('user_data');      
+ */
+                $sessionData = Session::get('user_data');
+                $sessionData->grade_id = $exam_id;
+                Session::put('user_data', $sessionData);
 
                 return redirect()->route('dashboard');
             } else {
 
                 return redirect()->back()->withErrors(['Something wrong! Plase try after some time.']);
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -264,18 +264,16 @@ class SubscriptionController extends Controller
             $exam_id = isset($request->exam_id) ? $request->exam_id : 0;
             $exam_period = isset($request->exam_period) ? $request->exam_period : 0;
             $period_unit = isset($request->period_unit) ? $request->period_unit : 0;
-            $discount_code = isset($request->discount_code) ? $request->discount_code : ""; 
+            $discount_code = isset($request->discount_code) ? $request->discount_code : "";
             $coupon_discount = 0;
             $discounted_price = 0;
             if (isset($postdata['discount_code'])) {
                 $discount_data = $this->ajaxValidateCouponCode($postdata['discount_code']);
-                if($discount_data)
-                {
+                if ($discount_data) {
                     $coupon_discount = $discount_data->coupon_discount;
                     $discounted_price = ($price * $coupon_discount) / 100;
                     $price = $price - $discounted_price;
                 }
-                
             }
             $amount = $price * 100;
 
@@ -353,11 +351,9 @@ class SubscriptionController extends Controller
             } else {
                 $subscriptions_data = [];
             }
-            
-            return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price','subscript_id','exam_id','subscript_id','coupon_discount','discount_code','discounted_price'));
-        }
-        catch(\Exception $e)
-        {
+
+            return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -420,29 +416,26 @@ class SubscriptionController extends Controller
 
                 echo $err;
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
     public function validatDiscountCode(Request $request)
     {
         $rquestData = $request->all();
-        $couponCode = $rquestData['couponCode']; 
+        $couponCode = $rquestData['couponCode'];
         $response_status = $this->ajaxValidateCouponCode($couponCode);
-         if ($response_status) {
-                 return response()->json([
-                    'status' => true,
-                    'message' => 'Coupon code applied successfully.',
-                    ]);
-            }else
-            {
-                return response()->json([
-                    'status' => false,
-                    'message' => 'No coupon found.',
-                    ]);
-            } 
+        if ($response_status) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Coupon code applied successfully.',
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'No coupon found.',
+            ]);
+        }
     }
     public function ajaxValidateCouponCode($couponCode)
     {
@@ -472,13 +465,12 @@ class SubscriptionController extends Controller
             $aResponse = json_decode($response_json);
             $response_status = isset($aResponse->success) && !empty($aResponse->success) ? $aResponse->success : false;
             if ($response_status) {
-                 return $aResponse->response;
-            }else
-            {
+                return $aResponse->response;
+            } else {
                 return false;
-            }      
-        } catch(\Exception $e) {
-            Log::info($e->getMessage()); 
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
         }
     }
 }
