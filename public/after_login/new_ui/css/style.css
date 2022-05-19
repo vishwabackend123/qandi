@@ -3850,7 +3850,7 @@ span.notification.ms-4 {
     position: absolute;
     top: 0px;
     /* height: 100%; */
-    width: 70px;
+    width: 0;
     background: url(../images/after-img1.png);
     transition: all 250ms ease;
     bottom: -1px;
