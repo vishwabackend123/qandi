@@ -241,7 +241,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <div class="row mb-4">
+            <div class="row mb-4 pb-4">
                 <div class="col-md-9">
                     <div class="bg-white shadow p-5 position-relative">
 
