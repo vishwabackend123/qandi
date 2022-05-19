@@ -109,7 +109,7 @@ $userData = Session::get('user_data');
 
             </div>
             <div class="row mt-5 mb-3">
-                <div class="col-5">
+                <div class="col-lg-5">
                     <div class="bg-white shadow p-3 d-flex flex-column position-relative h-100">
 
                         <h5 class="dashboard-title mb-3">Subject Score</h5>
@@ -162,7 +162,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="col-lg-7">
                     <div class="bg-white shadow position-relative">
                         <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
                         <div id="scroll-mobile" class="tabintablet">
