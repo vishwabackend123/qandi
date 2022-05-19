@@ -24,7 +24,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 .topics-box a {
     width: 100%;
 }
-.matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {min-width: 130px;}
+.matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {min-width: 100px;}
 .exam_attempted_common_page .paper-summery .paper-sub:first-child{flex: 2;}
 .practice_custom_page #myTabContent .btn.btn-warning{background: linear-gradient(232deg, #21ccff 95%, #00baff -5%);}
 .practice_custom_page #myTabContent .btn.btn-warning:hover{    background: #00baff; transition: none;}

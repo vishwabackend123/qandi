@@ -314,9 +314,9 @@ div.counter{right:0;}
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
-.matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
-    min-width: 100px;
-}
+     .topics-box:nth-child(even){
+         flex-direction: row-reverse;
+    }
     .myqMatrix-card{
         height: auto !important;
     }

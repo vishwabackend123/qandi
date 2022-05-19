@@ -1530,7 +1530,6 @@
 
     /******* MyQMatrix Amit-Start ******/
     .matrixpage-wrapper .cust-tabs .nav-link {margin-right: 4px;}
-    a.backto-dash {position: static;margin: 10px;float: right;}
     .tabcontent-wrapper {padding: 50px 10px 0px;}
     span.filtericon{margin-left: 5px}
     .chapter-topic-lists  .course-star li strong{width: auto!important;display: inline-block!important;}
@@ -1555,7 +1554,6 @@
     ul.p-0.m-0.matrixLists {margin-top: 25px!important;padding-left: 20px!important;}
     .topics-box {width: calc(25% - 18px);margin: 15px 0px 0px 15px;}
     .topics-box>b{margin: 0 5px 0 0!important;}
-    .topics-box:nth-child(even){flex-direction: row-reverse;}
     /******* New dashboard Amit-End ******/
 
     /*test screen*/

@@ -601,6 +601,7 @@ div#LeaDer {
     .practice-series-lists li.a1TS span.sub-details {
         padding-left: 0;
     }
+     a.backto-dash {position: static;margin: 10px;float: right;}
 }
 @media(max-width:500px){
     .topics_breadcum{margin-right:0px;padding: 12px 6px;}
