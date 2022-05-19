@@ -380,6 +380,15 @@ $userData = Session::get('user_data');
     } else {
       $('.all-rlt').attr("style", "display: block !important");
     }
+    $('.hideallexpend').each(function () {
+
+     var current_id = this.id;
+     var current_div_id=$(this).attr('data-id');
+     if($('#'+current_div_id).hasClass('show')){
+      $('#'+current_id).trigger('click') 
+     }
+     
+    });
 
   }
 
