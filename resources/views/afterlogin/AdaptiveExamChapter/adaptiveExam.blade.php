@@ -947,7 +947,7 @@ $question_type = "Numerical";
         var q_submit_time = $("#timespend_" + question_id).val();
         $('#question_section .quesBtn').attr("disabled", true);
         $('#question_section .quesBtn').addClass("disabled");
-        s
+
         $.ajax({
             url: "{{ route('saveAdaptiveAnswer') }}",
             type: 'POST',

@@ -176,8 +176,8 @@
 .addremovetopic {width: 110px;font-size: 14px;}
 .examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 3%!important;right: -20px!important;}
-.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 3%!important;left: 10px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
+.content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow{position: absolute;}
 .examSect .rightSect button.btn.btn-secondary i{    font-size: 12px;}
 .base-timer {width: 48px; height: 48px;}
