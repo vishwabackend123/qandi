@@ -477,7 +477,7 @@
     ul.chapter-topic-menu li a{font-size: 14px;}
     .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
     .matrixpage-wrapper .topics-box {
-        width: calc(50% - 3px);margin-left: 0px;
+        width: calc(50% - 15px);margin-left: 0px;
     }
     .matrixpage-wrapper  .topics-box:first-child{margin-left:0px;}
     .cus-radio-btn .checkmark{    height: 20px;
