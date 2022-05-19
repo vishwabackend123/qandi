@@ -277,3 +277,8 @@ Route::any('/chapter-analytics/{sub_id}', [App\Http\Controllers\AnalyticsControl
 Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultController::class, 'ajaxExamResultList'])->middleware('auth', 'menu');
 
 Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mockExam'])->name('mockExamTest')->middleware('auth', 'menu');
+
+
+
+/* dashboard dailytask exam new routes */
+Route::get('/DailyTask-exam/{type}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');

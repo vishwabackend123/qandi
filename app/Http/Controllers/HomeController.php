@@ -16,6 +16,9 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
+
 
 use Illuminate\Support\Facades\Validator;
 use AWS;
@@ -272,10 +275,10 @@ class HomeController extends Controller
             }
 
             // myq matrix
-            $myq_matrix = $this->getMyqmatrix($user_id,$exam_id);
+            $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
-            
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects','myq_matrix'));
+
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -734,79 +737,78 @@ class HomeController extends Controller
      */
     public function dailytask()
     {
-          
+
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $curl = curl_init();
-                $api_URL = env('API_URL');
-                $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
-                curl_setopt_array($curl, array(
+            $api_URL = env('API_URL');
+            $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
+            curl_setopt_array($curl, array(
 
-                    CURLOPT_URL => $curl_check_task_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "GET",
-                ));
+                CURLOPT_URL => $curl_check_task_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
 
-                $response_task_json = curl_exec($curl);
-                $response_task = json_decode($response_task_json, true);
-                $data_task = [];
-                if (isset($response_task['success']) && !empty($response_task['success'])) {
-                    $data_task = $response_task['allowed_details'];
-                }
+            $response_task_json = curl_exec($curl);
+            $response_task = json_decode($response_task_json, true);
+            $data_task = [];
+            if (isset($response_task['success']) && !empty($response_task['success'])) {
+                $data_task = $response_task['allowed_details'];
+            }
 
-            return view('afterlogin.dashboard_dailytask',compact('data_task'));
+            return view('afterlogin.dashboard_dailytask', compact('data_task'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-        } 
-
+        }
     }
 
     public function myQMatrix()
     {
-        
+
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $curl = curl_init();
-                $api_URL = env('API_URL');
-                $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-topics-quadrant-wise-breakup/' . $user_id . '/' . $exam_id;
-                curl_setopt_array($curl, array(
+            $api_URL = env('API_URL');
+            $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-topics-quadrant-wise-breakup/' . $user_id . '/' . $exam_id;
+            curl_setopt_array($curl, array(
 
-                    CURLOPT_URL => $curl_myq_matrix_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => "",
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => "GET",
-                ));
+                CURLOPT_URL => $curl_myq_matrix_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
 
-                $response_myq_topic_json = curl_exec($curl);
-                $response_myq_topic = json_decode($response_myq_topic_json, true);
-                $myq_matrix_topic = [];
-                if (isset($response_myq_topic['success']) && !empty($response_myq_topic['success'])) {
-                    $myq_matrix_topic = $response_myq_topic['data'];
-                    if (isset($myq_matrix_topic['Q1']) && empty($myq_matrix_topic['Q1']) && isset($myq_matrix_topic['Q2']) && empty($myq_matrix_topic['Q2']) && isset($myq_matrix_topic['Q3']) && empty($myq_matrix_topic['Q3']) && isset($myq_matrix_topic['Q4']) && empty($myq_matrix_topic['Q4'])) {
-                        $myq_matrix_topic = [];
-                    }
+            $response_myq_topic_json = curl_exec($curl);
+            $response_myq_topic = json_decode($response_myq_topic_json, true);
+            $myq_matrix_topic = [];
+            if (isset($response_myq_topic['success']) && !empty($response_myq_topic['success'])) {
+                $myq_matrix_topic = $response_myq_topic['data'];
+                if (isset($myq_matrix_topic['Q1']) && empty($myq_matrix_topic['Q1']) && isset($myq_matrix_topic['Q2']) && empty($myq_matrix_topic['Q2']) && isset($myq_matrix_topic['Q3']) && empty($myq_matrix_topic['Q3']) && isset($myq_matrix_topic['Q4']) && empty($myq_matrix_topic['Q4'])) {
+                    $myq_matrix_topic = [];
                 }
-                $myq_matrix = $this->getMyqmatrix($user_id,$exam_id);
-                
-            return view('afterlogin.dashboard_myqmatrix',compact('myq_matrix','myq_matrix_topic'));
+            }
+            $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
+
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-        } 
+        }
     }
-    public function getMyqmatrix($user_id,$exam_id)
+    public function getMyqmatrix($user_id, $exam_id)
     {
         try {
             $curl = curl_init();
@@ -827,11 +829,182 @@ class HomeController extends Controller
             $response_myq_matrix_json = curl_exec($curl);
             $response_myq_matrix = json_decode($response_myq_matrix_json, true);
             $myq_matrix = [];
-            if($response_myq_matrix['success'])
-            {
+            if ($response_myq_matrix['success']) {
                 $myq_matrix = $response_myq_matrix['data'];
             }
             return $myq_matrix;
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+
+
+    /**
+     * gettins selected series details and start exam function
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function dailyTaskExam($type, Request $request)
+    {
+        try {
+            $userData = Session::get('user_data');
+
+            $user_id = $userData->id;
+            $exam_id = $userData->grade_id;
+            $filtered_subject = [];
+
+            if (Redis::exists('custom_answer_time_' . $user_id)) {
+                Redis::del(Redis::keys('custom_answer_time_' . $user_id));
+            }
+
+            $series_id = isset($request->series_id) ? $request->series_id : '';
+            $series_type = isset($request->series_type) ? $request->series_type : '';
+
+
+            $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
+
+            if (!empty($type)) {
+
+                /* static set */
+                $type = "accuracy";
+
+                $curl_url = "";
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+
+                $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $type;
+
+                curl_setopt_array($curl, array(
+
+                    CURLOPT_URL => $curl_url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+
+                    CURLOPT_HTTPHEADER => array(
+                        "cache-control: no-cache",
+                        "content-type: application/json"
+                    ),
+                ));
+
+                $response_json = curl_exec($curl);
+
+                // $response_json = str_replace('NaN', '""', $response_json);
+                // $response_json = stripslashes(html_entity_decode($response_json));
+
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
+                $response_data = (object)json_decode($response_json, true);
+
+                $status = isset($response_data->success) ? $response_data->success : false;
+
+                if ($status == true) {
+                    $responsedata = $response_data->data;
+
+                    $aQuestions_list = isset($responsedata['questions']) ? $responsedata['questions'] : [];
+
+                    $exam_fulltime = isset($responsedata['time_allowed']) ? $responsedata['time_allowed'] : 0;
+                    $questions_count = isset($responsedata['total_questions']) ? $responsedata['total_questions'] : 0;
+                    $exam_name = isset($responsedata['exam_type_name']) ? $responsedata['exam_type_name'] : "";
+                } else {
+                    $aQuestions_list = [];
+
+                    return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                }
+                //dd($responsedata, $curl_url);
+
+                if (!empty($aQuestions_list)) {
+                    $redis_set = 'True';
+
+
+                    $collection = collect($aQuestions_list)->sortBy('subt_id');
+
+                    $subject_ids = $collection->pluck('subt_id');
+                    $subject_list = $subject_ids->unique()->values()->all();
+
+
+                    $redis_subjects = $this->redis_subjects();
+                    $cSubjects = collect($redis_subjects);
+                    $aTargets = [];
+                    $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
+                    foreach ($filtered_subject as $sub) {
+                        $count_arr = $collection->where('subt_id', $sub->id)->all();
+                        $sub->count = count($count_arr);
+                        $aTargets[] = $sub->subject_name;
+                    }
+
+
+                    $allQuestions = $collection->keyBy('question_id');
+                    $aQuestions_list =  $allQuestions->all();
+
+                    $allQuestionDetails = $this->allCustomQlist($user_id, $allQuestions->all(), $redis_set);
+                    $keys = $allQuestions->keys('question_id')->all();
+
+                    $question_data = (object)current($allQuestions->all());
+                    $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
+                    $activesub_id = isset($question_data->subt_id) ? $question_data->subt_id : '';
+                    $nextquestion_data = (object)next($aQuestions_list);
+
+                    $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
+                    $prev_qid = '';
+
+
+
+                    if (isset($question_data) && !empty($question_data)) {
+                        //$publicPath = url('/') . '/public/images/questions/';
+                        // $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
+                        // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
+                        // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+                        $qs_id = $question_data->question_id;
+                        //$option_ques = str_replace("'", '"', $question_data->question_options);
+                        $option_ques = $question_data->question_options;
+
+                        $tempdata = json_decode($option_ques, true);
+                        $opArr = [];
+                        if (isset($tempdata) && is_array($tempdata)) {
+                            foreach ($tempdata as $key => $option) {
+                                // $option = str_replace('/public/images/questions/', $publicPath, $option);
+                                $opArr[$key] = $option;
+                            }
+                        }
+                        //$optionArray = $this->shuffle_assoc($opArr);
+                        $optionArray = $opArr;
+                        $option_data = $optionArray;
+                    } else {
+                        $option_data[] = '';
+                    }
+
+                    /* set redis for save exam question response */
+                    $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
+                    $redis_data = [
+                        'given_ans' => $retrive_array,
+                        'taken_time' => $retrive_time_array,
+                        'taken_time_sec' => $retrive_time_sec,
+                        'answer_swap_cnt' => $answer_swap_cnt,
+                        'questions_count' => $questions_count,
+                        'all_questions_id' => $keys,
+                        'full_time' => $exam_fulltime
+                    ];
+                    // Push Value in Redis
+                    Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
+                    $tagrets = implode(', ', $aTargets);
+                    $test_type = 'Skill-test';
+                    $exam_type = 'TS';
+                    Session::put('exam_name', $exam_name);
+
+                    return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
+                } else {
+                    return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                }
+            } else {
+                return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+            }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
