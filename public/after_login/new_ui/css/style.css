@@ -3711,7 +3711,13 @@ span.notification.ms-4 {
 
 .TotalAmount.bg-danger {
     background: #00baff !important;
-    border-radius: 25px;
+    /* border-radius: 25px; */
+    border-radius: 15px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+.TotalAmount.bg-danger .d-flex.align-items-center.justify-content-between.pt-2 {
+    padding-top: 0px !important;
 }
 
 .Fullsub-amt-subN {
@@ -7793,7 +7799,7 @@ tspan {
 }
 
 .circular-chart text {
-    font-size: 8px;
+    font-size: 7px;
 }
 
 .blue-block {
@@ -8281,7 +8287,8 @@ tspan {
 }
 
 .steps-links>div {
-    position: relative
+    position: relative;
+    text-transform: uppercase;
 }
 
 .red-dots {
@@ -9530,4 +9537,7 @@ label#lastname-error, label#firstname-error,label#username-error {
 
 div#welcomeModal , div#favSubResponse ,div#fullTest_Dashboard {
     z-index: 99999999;
+}
+button.PayBttn.btn.px-5.rounded-0.fs-4 {
+    margin-left: 20px;
 }

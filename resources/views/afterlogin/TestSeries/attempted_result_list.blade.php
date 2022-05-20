@@ -106,7 +106,7 @@
                     <div class="d-flex align-items-center justify-content-center morning-slot">
                         <span class="slbs-link me-lg-5 me-2">
                             <a class="expand-custom expandTopicCollapse" aria-controls="chapter_{{$sche->id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->id}}">
-                                <span id="expand_topic_{{$sche->id}}">
+                                <span class="hideallexpend" id="expand_topic_{{$sche->id}}" data-id="chapter_{{$sche->id}}">
                                     <i class="fa fa-arrow-down"></i>
                                     Show Details
                                 </span>

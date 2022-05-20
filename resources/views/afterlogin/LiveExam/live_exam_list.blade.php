@@ -65,6 +65,9 @@ $userData = Session::get('user_data');
                                 <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
                                 <div class="scroll-div-live-exm">
                                     @if(!empty($schedule_list))
+                                    @php 
+                                    $dataAvail = 0;
+                                    @endphp
                                     @foreach($schedule_list as $key=>$sche)
                                     @php
                                     $today = date("d-m-y", time());
@@ -75,6 +78,7 @@ $userData = Session::get('user_data');
                                     {
                                         continue;
                                     }
+                                    $dataAvail=1;
                                     @endphp
 
                                     @if($test_completed_yn == "N")
@@ -105,13 +109,15 @@ $userData = Session::get('user_data');
                                         </li>
                                         <li style="font-weight:600;">{{$sche->questions_count}} Questions</a>
                                         </li>
-                                        <!-- <li><button disabled class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Attempted
-                                            </button>
-
-                                        </li> -->
+                                        
                                     </ul>
                                     @endif
                                     @endforeach
+                                    @if(empty($dataAvail))
+                                    <div class="text-center">
+                                        <span class="sub-details">No upcoming live exams available</span>
+                                    </div>
+                                    @endif
                                     @else
                                     <div class="text-center">
                                         <span class="sub-details">No live exam available right now.</span>
@@ -120,52 +126,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 </div>
 
-                                <!-- <div class="active-bg-gray">
-                                    <ul class="speci-text">
-                                        <li> <span class="sub-details">Q&I Advance Level Exam - Series 4</span>
-                                        </li>
-                                        <li><strong>20-21 NOV 2021</strong>
-                                        </li>
-                                        <li>
-                                            <p>Opens in next 5 days</p>
-                                        </li>
-                                        <li><a href="#" class="">
-                                                <span class="show-detail">Show Details</span>
-                                                <span class="hide-detail">Hide Detailwws</span>
-                                            </a>
-                                        </li>
-                                        <li><button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                Register</button>
-
-                                        </li>
-                                    </ul>
-                                    <div class="details-exam">
-                                        <ul>
-                                            <li>
-                                                <span>Details about the exam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
-                                                <p>Time Slots: 9 am - 12 pm ; 12:30 pm - 3:30 pm </p>
-                                            </li>
-                                            <li>
-                                                <p>No Of Questions</p>
-                                                <p><strong>90 MCQ</strong> Questions</p>
-                                            </li>
-                                            <li>
-                                                <p>Duration</p>
-                                                <p><strong>180 </strong> minutes</p>
-                                            </li>
-                                            <li>
-                                                <p>Marks</p>
-                                                <p><strong>300</strong> Marks</p>
-                                            </li>
-                                            <li>
-                                                <p>Subjects</p>
-                                                <p><strong>Physics,Chemistry,&amp; Mathematics</strong></p>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div> -->
+                               
                             </div>
                             <div class="tab-pane fade show" id="completed" role="tabpanel" aria-labelledby="over-tab">
                                 

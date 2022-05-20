@@ -1495,6 +1495,7 @@
                         $('#select-state').attr('value', response.user_info.state);
                         $('#useremail').attr('value', response.user_info.email);
                         $('#user_mobile').attr('value', response.user_info.mobile);
+                        $('#username').attr('value', user_name);
                     } else {
                         $("#errlog_edit").html(response.message);
                         $("#errlog_edit").fadeIn('slow');
