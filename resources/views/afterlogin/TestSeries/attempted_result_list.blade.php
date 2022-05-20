@@ -122,7 +122,7 @@
                     <div class="p-4 pb-4 d-md-flex justify-content-between full-syllabus align-items-center">
                         <div class="d-flex justify-content-between align-items-center paper-summery pe-5">
                             <div class="paper-sub">
-                                <small>No of Question</small>
+                                <small>No. Of Questions</small>
                                 <span>{{$sche->no_of_question}} MCQ <b style="font-weight:normal;">Questions</b></span>
                             </div>
                             <div class="paper-sub">

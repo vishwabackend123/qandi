@@ -4683,7 +4683,9 @@ div#sub-planner {
 }
 
 .edit-form .edit-img .p-picture img {
-    width: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 
@@ -4958,7 +4960,9 @@ button.save-btn {
 }
 
 .log-out-screen .p-picture img {
-    width: 100%;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
 }
 
 .profile-picture-txt .p-picture img {
@@ -9545,3 +9549,4 @@ div#welcomeModal , div#favSubResponse ,div#fullTest_Dashboard {
 button.PayBttn.btn.px-5.rounded-0.fs-4 {
     margin-left: 20px;
 }
+.cust-pd-rt{padding-right:135px;}

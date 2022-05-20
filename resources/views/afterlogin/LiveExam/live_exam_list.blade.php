@@ -52,7 +52,7 @@ $userData = Session::get('user_data');
                                                 <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Start Date</span>
                                                 <label style=" font-weight: 600;color: #231f20;">{{$start_date_top}}</label>
                                             </div>
-                                            <div class="mb-2">
+                                            <div class="mb-2  cust-pd-rt">
                                                 <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">End Date</span>
                                                 <label style=" font-weight: 600;color: #231f20;">{{$end_date_top}}</label>
                                             </div>
