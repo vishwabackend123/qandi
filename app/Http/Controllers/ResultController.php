@@ -41,6 +41,12 @@ class ResultController extends Controller
             $live_exam_id = isset($request->live_exam_id) ? $request->live_exam_id : 0;
             $test_series_id = isset($request->series_id) ? $request->series_id : 0;
 
+            /* below parameter for dailyTaskExam result */
+            $tasktype = isset($request->tasktype) ? $request->tasktype : "";
+            $category = isset($request->category) ? $request->category : "";
+            /* end parameter for dailyTaskExam result */
+
+
             $redis_json = Redis::get('custom_answer_time_' . $user_id);
 
             $redisArray = (isset($redis_json) && !empty($redis_json)) ? json_decode($redis_json) : [];
@@ -89,7 +95,6 @@ class ResultController extends Controller
 
             $request = json_encode($inputjson);
 
-
             $curl_url = "";
             $curl = curl_init();
             $api_URL = env('API_URL');
@@ -127,6 +132,10 @@ class ResultController extends Controller
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
+
+                if (!empty($category) && !empty($tasktype)) {
+                    $saveDailyTaskRecord = $this->saveRecordToTaskCenterHistory($user_id, $tasktype, $category);
+                }
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
 
@@ -466,5 +475,40 @@ class ResultController extends Controller
             'html' => $html,
             'message' => 'result list  successfully.',
         ]);
+    }
+
+
+
+    public function saveRecordToTaskCenterHistory($user_id, $tasktype, $category)
+    {
+        try {
+            $curl = curl_init();
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/save-record-to-task-center-history/' . $user_id . '/' . $tasktype . '/' . $category;
+            curl_setopt_array($curl, array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            ));
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            if ($httpcode == 200 || $httpcode == 201) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
     }
 }

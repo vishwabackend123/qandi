@@ -366,7 +366,7 @@ $question_type = "Numerical";
                                     </div>
                                     <div class="col-md-4 col-lg-4">
                                         <div>
-                                            <small>Target</small>
+                                            <small>Subject</small>
                                             <span class="d-block inst-text"><span>{{$tagrets}}</span></span>
                                         </div>
                                     </div>

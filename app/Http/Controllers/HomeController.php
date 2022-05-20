@@ -845,7 +845,7 @@ class HomeController extends Controller
      * @param Request $request
      * @return void
      */
-    public function dailyTaskExam($type, Request $request)
+    public function dailyTaskExam($category, $tasktype, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -858,22 +858,16 @@ class HomeController extends Controller
                 Redis::del(Redis::keys('custom_answer_time_' . $user_id));
             }
 
-            $series_id = isset($request->series_id) ? $request->series_id : '';
-            $series_type = isset($request->series_type) ? $request->series_type : '';
-
-
-            $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
-
-            if (!empty($type)) {
+            if (!empty($category)) {
 
                 /* static set */
-                $type = "accuracy";
+                //$category = "accuracy";
 
                 $curl_url = "";
                 $curl = curl_init();
                 $api_URL = env('API_URL');
 
-                $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $type;
+                $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $category . '/' . $user_id;
 
                 curl_setopt_array($curl, array(
 
@@ -911,33 +905,32 @@ class HomeController extends Controller
 
                     $exam_fulltime = isset($responsedata['time_allowed']) ? $responsedata['time_allowed'] : 0;
                     $questions_count = isset($responsedata['total_questions']) ? $responsedata['total_questions'] : 0;
+                    $total_marks = isset($responsedata['total_marks']) ? $responsedata['total_marks'] : 0;
                     $exam_name = isset($responsedata['exam_type_name']) ? $responsedata['exam_type_name'] : "";
                 } else {
                     $aQuestions_list = [];
 
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
-                //dd($responsedata, $curl_url);
+
 
                 if (!empty($aQuestions_list)) {
                     $redis_set = 'True';
 
-
-                    $collection = collect($aQuestions_list)->sortBy('subt_id');
-
-                    $subject_ids = $collection->pluck('subt_id');
+                    $collection = collect($aQuestions_list)->sortBy('subject_id');
+                    $subject_ids = $collection->pluck('subject_id');
                     $subject_list = $subject_ids->unique()->values()->all();
-
 
                     $redis_subjects = $this->redis_subjects();
                     $cSubjects = collect($redis_subjects);
                     $aTargets = [];
                     $filtered_subject = $cSubjects->whereIn('id', $subject_list)->all();
                     foreach ($filtered_subject as $sub) {
-                        $count_arr = $collection->where('subt_id', $sub->id)->all();
+                        $count_arr = $collection->where('subject_id', $sub->id)->all();
                         $sub->count = count($count_arr);
                         $aTargets[] = $sub->subject_name;
                     }
+
 
 
                     $allQuestions = $collection->keyBy('question_id');
@@ -948,7 +941,7 @@ class HomeController extends Controller
 
                     $question_data = (object)current($allQuestions->all());
                     $activeq_id = isset($question_data->question_id) ? $question_data->question_id : '';
-                    $activesub_id = isset($question_data->subt_id) ? $question_data->subt_id : '';
+                    $activesub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
                     $nextquestion_data = (object)next($aQuestions_list);
 
                     $next_qid = isset($nextquestion_data->question_id) ? $nextquestion_data->question_id : '';
@@ -994,18 +987,29 @@ class HomeController extends Controller
                     // Push Value in Redis
                     Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                     $tagrets = implode(', ', $aTargets);
-                    $test_type = 'Skill-test';
-                    $exam_type = 'TS';
+
+                    $category1 = str_replace('_', ' ', $category);
+                    $category2 = ucwords($category1);
+                    $category_final = str_replace(' ', '-', $category2);
+
+                    $test_type = 'Task-Center-' . $category_final;
+                    $exam_type = 'PT';
+                    $exam_mode = "Practice";
                     Session::put('exam_name', $exam_name);
 
-                    return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
+
+
+                    return view('afterlogin.DailyTaskExam.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'category', 'tasktype', 'total_marks'));
                 } else {
+
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
             } else {
+
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
