@@ -47,7 +47,7 @@
 
 <script>
     Highcharts.setOptions({
-        colors: ['#eb5347bf', '#ffdc34bf', '#69d05dbf']
+        colors: ['#ff9999', '#fde98d', '#aff3d0']
     });
     Highcharts.chart('rank', {
         chart: {
