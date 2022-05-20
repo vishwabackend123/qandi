@@ -2154,7 +2154,7 @@ div#select-planner-chapter button#add_chapter.btn.btn-green:hover {
 }
 
 .backbtn :hover {
-    opacity: 0.5;
+    opacity:1;
     color: #2c3348;
 }
 
