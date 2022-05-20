@@ -363,9 +363,8 @@ $userData = Session::get('user_data');
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {
             $(this).parent("p").hide();
         });
-        var topic_data = '<?php echo json_encode($myq_matrix_topic); ?>';
-        topic_data = JSON.parse(topic_data);
-        if (jQuery.isEmptyObject(topic_data)) {
+        var topic_data = '<?php echo $myq_bool; ?>';
+        if (topic_data) {
             setInterval(function() {
                 $('#matrix').modal('show');
             }, 1000);

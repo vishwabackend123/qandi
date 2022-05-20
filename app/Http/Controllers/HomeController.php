@@ -801,9 +801,13 @@ class HomeController extends Controller
                     $myq_matrix_topic = [];
                 }
             }
+            $myq_bool=true;
+            if ($myq_matrix_topic) {
+                $myq_bool = false;
+            }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic'));
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic','myq_bool'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
