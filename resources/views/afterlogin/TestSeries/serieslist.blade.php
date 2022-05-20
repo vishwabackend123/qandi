@@ -344,6 +344,7 @@ $(document).ready(function() {
 });
 
 function hideExpend(){
+    $('.loader-block').show();
      $('.hideallexpend').each(function () {
 
      var current_id = this.id;
@@ -352,6 +353,9 @@ function hideExpend(){
       $('#'+current_id).trigger('click') 
      }
     });
+     setTimeout(function(){
+        $('.loader-block').hide();
+    }, 500);
 }
 
 </script>
