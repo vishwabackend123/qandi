@@ -801,13 +801,13 @@ class HomeController extends Controller
                     $myq_matrix_topic = [];
                 }
             }
-            $myq_bool=true;
+            $myq_bool = true;
             if ($myq_matrix_topic) {
                 $myq_bool = false;
             }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic','myq_bool'));
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1001,8 +1001,6 @@ class HomeController extends Controller
                     $exam_mode = "Practice";
                     Session::put('exam_name', $exam_name);
 
-
-
                     return view('afterlogin.DailyTaskExam.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'category', 'tasktype', 'total_marks'));
                 } else {
 
@@ -1013,7 +1011,7 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
-
+            dd("hi");
             Log::info($e->getMessage());
         }
     }
