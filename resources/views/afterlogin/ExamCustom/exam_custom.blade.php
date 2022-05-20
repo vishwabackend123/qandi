@@ -369,6 +369,7 @@ $userData = Session::get('user_data');
   }
 
   function showSubfilter(subject) {
+    $('.loader-block').show();
     $('.SubattemptActBtn').removeClass('btn-primary');
     $('.SubattemptActBtn').addClass('btn-outline-primary');
     $('#' + subject + '_flt').removeClass('btn-outline-primary');
@@ -387,8 +388,10 @@ $userData = Session::get('user_data');
      if($('#'+current_div_id).hasClass('show')){
       $('#'+current_id).trigger('click') 
      }
-     
     });
+      setTimeout(function(){
+        $('.loader-block').hide();
+    }, 500);
 
   }
 
