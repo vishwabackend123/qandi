@@ -96,16 +96,37 @@ $userData = Session::get('user_data');
                         @foreach($data_task as $data)
 
                         @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
+                        @php
+                        $current_date=date("d");
+                        $current_date=21;
+                        if($current_date % 4 == 0){
+                        $skill_task = 'Evaluation Skills';
+                        $skill_category = 'evaluation';
+                        }
+                        else if($current_date % 4 == 1){
+                        $skill_task = 'Knowledge Skills';
+                        $skill_category = 'knowledge';
+                        }
+                        elseif($current_date % 4 == 2){
+                        $skill_task = 'Application Skills';
+                        $skill_category = 'application';
+                        }
+                        else{
+                        $skill_task = 'Comprehension Skills';
+                        $skill_category = 'comprehension';
+                        }
+
+                        @endphp
                         <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
                             <div class="col-md-6">
-                                <p><b>Task 1 - Evaluation Skills</b></p>
+                                <p><b>Task 1 - {{$skill_task}}</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
                                 <p><span class="text-danger">10</span> Questions | Duration :
                                     <span class="text-danger">15mins</span>
                                 </p>
                             </div>
-                            @if($data['allowed'] == '1')
-                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}">TAKE TEST</a></div>
+                            @if($data['allowed'] != '1')
+                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],$skill_category])}}">TAKE TEST</a></div>
                             @else
                             <div class="col-md-6"><a class="btn btntheme disabled" href="#">ALREADY ATTEMPTED</a></div>
                             @endif

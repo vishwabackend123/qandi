@@ -482,6 +482,8 @@ class ResultController extends Controller
     public function saveRecordToTaskCenterHistory($user_id, $tasktype, $category)
     {
         try {
+
+
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/save-record-to-task-center-history/' . $user_id . '/' . $tasktype . '/' . $category;
@@ -501,6 +503,7 @@ class ResultController extends Controller
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
+
 
             if ($httpcode == 200 || $httpcode == 201) {
                 return true;
