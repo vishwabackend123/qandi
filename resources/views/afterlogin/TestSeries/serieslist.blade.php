@@ -26,7 +26,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="open" role="tabpanel" aria-labelledby="open-tab">
-                                <div class="d-flex  p-4 mb-4 custom-exam-subjects">
+                                <div class="d-flex  p-4 pb-4 custom-exam-subjects">
                                     <a class="btn sectionBtn open_test btn-primary me-2">OPEN TEST SERIES</a>
                                     <a class="btn sectionBtn live_tes btn-outline-primary">LIVE TEST SERIES</a>
                                 </div>
