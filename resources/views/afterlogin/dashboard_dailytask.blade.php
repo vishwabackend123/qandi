@@ -98,7 +98,6 @@ $userData = Session::get('user_data');
                         @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
                         @php
                         $current_date=date("d");
-                        $current_date=21;
                         if($current_date % 4 == 0){
                         $skill_task = 'Evaluation Skills';
                         $skill_category = 'evaluation';
@@ -125,7 +124,7 @@ $userData = Session::get('user_data');
                                     <span class="text-danger">15mins</span>
                                 </p>
                             </div>
-                            @if($data['allowed'] != '1')
+                            @if($data['allowed'] == '1')
                             <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type'],$skill_category])}}">TAKE TEST</a></div>
                             @else
                             <div class="col-md-6"><a class="btn btntheme disabled" href="#">ALREADY ATTEMPTED</a></div>
