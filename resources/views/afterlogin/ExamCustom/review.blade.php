@@ -467,19 +467,19 @@ $question_type = "Numerical";
                                     @endphp
                                     @if ($value->attempt_status == 'Correct')
                                     <li class="correctans">
-                                        <span class="qus-no">Q.{{$quKee}}</span>
+                                        <span class="qus-no">Q.{!! $value->quest_id !!}</span>
                                         <span class="qus-txt">{!! $value->question !!}
                                         </span>
                                     </li>
                                     @elseif ($value->attempt_status == 'Incorrect')
                                     <li class="incorrectans">
-                                        <span class="qus-no">Q.{{$quKee}}</span>
+                                        <span class="qus-no">Q.{!! $value->quest_id !!}</span>
                                         <span class="qus-txt">{!! $value->question !!}
                                         </span>
                                     </li>
                                     @else
                                     <li class="notans">
-                                        <span class="qus-no">Q.{{$quKee}}</span>
+                                        <span class="qus-no">Q.{!! $value->quest_id !!}</span>
                                         <span class="qus-txt">{!! $value->question !!}
                                         </span>
                                     </li>
