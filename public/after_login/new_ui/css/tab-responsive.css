@@ -3,12 +3,13 @@
         width: auto;
     }
     .graphdotlisting{flex-wrap: wrap;}
-    .garphlistincom{margin-left:10px;}
+    
 }
 @media screen and (max-width:1199px){
         .exam_attempted_common_page .result-list-head.d-flex{ 
     margin-right: 30px;
 }
+.garphlistincom{margin-left:10px;}
     .live-exam #home .speci-text li:last-child {
     margin: 0;
 }
