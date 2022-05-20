@@ -129,8 +129,13 @@ class ReviewController extends Controller
                 $word1 = "/public/images/questions/";
                 $word2 = "public/images/questions/";
 
-
-
+                if (isset($result_response->all_question)) {
+                    $i = 1;
+                    foreach ($result_response->all_question as $key => $value) {
+                        $result_response->all_question[$key]->quest_id=$i;
+                        $i++;
+                    }
+                }
 
                 Redis::set($cacheKey, json_encode($result_response));
 

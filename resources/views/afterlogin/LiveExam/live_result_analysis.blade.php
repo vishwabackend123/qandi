@@ -330,9 +330,10 @@ $clsAvg_json=json_encode($clsAvg_arr);
 @endphp
 
 <script>
-    $(".topicdiv-scroll").slimscroll({
-        height: "50vh",
-    });
+    // $(".topicdiv-scroll").slimscroll({
+    //     height: "50vh",
+    // });
+    
     Highcharts.chart('scorecontainer', {
         chart: {
             height: 250,

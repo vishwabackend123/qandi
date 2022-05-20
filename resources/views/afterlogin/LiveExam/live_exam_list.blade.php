@@ -18,7 +18,7 @@ $userData = Session::get('user_data');
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</a>
+                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> Live Exam</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true"> Attempted</a>
@@ -52,7 +52,7 @@ $userData = Session::get('user_data');
                                                 <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Start Date</span>
                                                 <label style=" font-weight: 600;color: #231f20;">{{$start_date_top}}</label>
                                             </div>
-                                            <div class="mb-2">
+                                            <div class="mb-2  cust-pd-rt">
                                                 <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">End Date</span>
                                                 <label style=" font-weight: 600;color: #231f20;">{{$end_date_top}}</label>
                                             </div>

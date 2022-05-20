@@ -463,6 +463,7 @@
     }
     .exam_attempted_common_page .compLeteS .collapse .full-syllabus .d-flex.paper-summery{display: block!important;}
     .live-exam-list-wrapper .exam_card .d-flex.align-items-center.justify-content-between.mb-4{display: block!important;}
+    .cust-pd-rt {padding-right:0px;}
 }
 
 @media(max-width:576px){

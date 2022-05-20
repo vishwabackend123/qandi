@@ -15,6 +15,10 @@ button {
     outline: none;
     text-decoration: none;
 }
+.practice_custom_page .cust-tabs .nav-link , .practice-series-lists .cust-tabs .nav-link , 
+.live-exam-list-wrapper .cust-tabs .nav-link , .mocktest-attempted-wrapper .cust-tabs .nav-link{text-transform: none;}
+.practice_custom_page .cust-tabs .nav-link.active, .practice-series-lists .cust-tabs .nav-link.active , 
+.live-exam-list-wrapper .cust-tabs .nav-link.active , .mocktest-attempted-wrapper .cust-tabs .nav-link.active{text-transform: uppercase;}
 .matrixpage-wrapper .custom-page .cust-tab-content {
     height: auto!important;
 }
@@ -134,7 +138,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
     border-radius: 30px;
     background-color: rgba(243, 247, 255, 0.5);
 }
-.practice-series-lists .cust-tabs a.nav-link#live-tab , .live-exam-list-wrapper .cust-tabs a.nav-link#over-tab{text-transform: none;}
+
 
 .chapter-topic-lists.ulStyle{max-height: calc(100vh - 299px);overflow-y: auto;overflow-x: hidden;}
 #graphExpand.modal{z-index: 10600;}
@@ -3866,8 +3870,8 @@ span.notification.ms-4 {
     position: absolute;
     top: 0px;
     /* height: 100%; */
-    width: 0;
-    background: url(../images/after-img1.png);
+    width: 70px;
+    background: url(../images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
@@ -4679,7 +4683,9 @@ div#sub-planner {
 }
 
 .edit-form .edit-img .p-picture img {
-    width: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 
@@ -4954,7 +4960,9 @@ button.save-btn {
 }
 
 .log-out-screen .p-picture img {
-    width: 100%;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
 }
 
 .profile-picture-txt .p-picture img {
@@ -9541,4 +9549,4 @@ div#welcomeModal , div#favSubResponse ,div#fullTest_Dashboard {
 button.PayBttn.btn.px-5.rounded-0.fs-4 {
     margin-left: 20px;
 }
-.exam-analytics .top-btn-pop  .svg{position: relative;bottom: 2px;}
+.cust-pd-rt{padding-right:135px;}
