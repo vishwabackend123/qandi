@@ -105,7 +105,7 @@ $userData = Session::get('user_data');
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
-                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category']])}}">TAKE TEST</a></div>
+                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}">TAKE TEST</a></div>
                             @else
                             <div class="col-md-6"><a class="btn btntheme disabled" href="#">ALREADY ATTEMPTED</a></div>
                             @endif
@@ -121,7 +121,7 @@ $userData = Session::get('user_data');
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
-                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category']])}}">TAKE TEST</a></div>
+                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}">TAKE TEST</a></div>
                             @else
                             <div class="col-md-6"><a class="btn btntheme disabled" href="#">ALREADY ATTEMPTED</a></div>
                             @endif
@@ -145,7 +145,7 @@ $userData = Session::get('user_data');
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
-                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category']])}}">TAKE TEST</a></div>
+                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}">TAKE TEST</a></div>
                             @else
                             <div class="col-md-6"><a class="btn btntheme disabled" href="#">ALREADY ATTEMPTED</a></div>
                             @endif
@@ -161,7 +161,7 @@ $userData = Session::get('user_data');
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
-                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category']])}}">TAKE TEST</a></div>
+                            <div class="col-md-6"><a class="btn btntheme" href="{{route('dailyTaskExam',[$data['category'],$data['task_type']])}}">TAKE TEST</a></div>
                             @else
                             <div class="col-md-6"><a class="btn btntheme disabled" href="#">ALREADY ATTEMPTED</a></div>
                             @endif

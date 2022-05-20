@@ -1,5 +1,4 @@
 @extends('afterlogin.layouts.app_new')
-
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- BS JavaScript -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -17,20 +16,10 @@
     });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
-      "HTML-CSS": {
-        linebreaks: { automatic: true, width: "container" }
-      }
-   });
-</script>
-
-
 @section('content')
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+
+
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -39,8 +28,9 @@ $question_text = isset($question_data->question)?$question_data->question:'';
 $subject_id = isset($question_data->subject_id)?$question_data->subject_id:0;
 $chapter_id = isset($question_data->chapter_id)?$question_data->chapter_id:0;
 $template_type = isset($question_data->template_type)?$question_data->template_type:'';
-
+$difficulty_level = isset($question_data->difficulty_level)?$question_data->difficulty_level:1;
 $question_type = '';
+
 if($template_type == 1){
 $type_class='checkboxans';
 $questtype='checkbox';
@@ -58,18 +48,72 @@ $question_type = "Numerical";
         line-height: 0.5 !important;
     }
 
-    .qiestionTimer {
-        display: none !important;
+    .time_taken_css {
+        border-left: 3px Solid #ff6060;
+        width: 200px;
+        font: 14px;
+        color: #2C3348;
+        font-weight: 500;
+        background-color: #e4e4e4;
+        text-align: center;
+    }
+
+    .time_taken_css span:first-child {
+
+        font-weight: 200;
+
+    }
+
+    .counter {
+        position: relative;
+        right: 25px;
+        margin-left: auto;
+        margin-right: -50px;
+    }
+
+    .counter .progressBar .seconds {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: #FFF;
+        font-weight: 600;
+        top: -2px;
+
+    }
+
+    .tiny-green {
+        position: relative;
+        padding: 0px;
+        width: 180px;
+        background-color: #E4E4E4;
+        height: 18px;
+    }
+
+    .tiny-green div {
+        font-family: arial;
+        font-size: 3px;
+        height: inherit;
+        color: white;
+        text-align: right;
+        text-shadow: 0px 0px 2px #000;
+        text-indent: 9999px;
+        overflow: hidden;
+        background-color: #44CD7F;
+        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+ */
+
+
     }
 </style>
-
 <div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
 
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
-
                     <div class="tab-wrapper h-100">
                         <div class="tab-content position-relative cust-tab-content bg-white" id="myTabContent">
                             <input type="hidden" id="current_question" value="{{$activeq_id}}" />
@@ -77,53 +121,66 @@ $question_type = "Numerical";
                             <input type="hidden" id="current_question_no" value="1" />
 
                             <!-- Exam subject Tabs  -->
-                            <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
-                                @if(!empty($filtered_subject))
-                                @foreach($filtered_subject as $key=>$sub)
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true" onclick="get_subject_question('{{$sub->id}}')">{{$sub->subject_name}} ({{$sub->count}})</a>
-                                </li>
-                                @endforeach
-                                @endif
-                            </ul>
+                            <div id="scroll-mobile" class="tabintablet">
+                                <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                                    @if(!empty($filtered_subject))
+                                    @foreach($filtered_subject as $key=>$sub)
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}({{$sub->count}})</a>
+                                    </li>
+                                    @endforeach
+                                    @endif
+                                </ul>
+                            </div>
                             <!-- End Exam subject Tabs -->
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-
-                                <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
                                 <div id="question_section" class="">
-                                    <!-- question Type Tag -->
-                                    <span class="fw-bold text-uppercase">{{$question_type}}</span>
-                                    <!-- question Type Tag -->
+
+                                    <div class="d-flex" id="pause-start">
+                                        <!-- question Type Tag -->
+                                        <span class="fw-bold text-uppercase">{{$question_type}}</span>
+                                        <!-- question Type Tag -->
+                                        <div id="counter_{{$activeq_id}}" class="ms-auto counter mb-4 d-flex">
+                                            <span id="avg_text" class="avg-time">Average Time :</span>
+                                            <div id="progressBar_{{$activeq_id}}" class="progressBar_first tiny-green ms-2">
+                                                <span class="seconds" id="seconds_{{$activeq_id}}"></span>
+                                                <div id="percentBar_{{$activeq_id}}"></div>
+                                            </div>
+                                            <div class="time_taken_css" id="q_time_taken_first" style="display:none;">
+                                                <span>Time taken : </span><span id="up_minutes"></span>:<span id="up_seconds"></span>mins
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="question_spendtime" class="timespend_first" id="timespend_{{ $activeq_id }}" value=" " />
+                                    </div>
+
                                     <div class="question-block">
                                         <!-- Next and previous button -->
-                                        <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}"><i class="fa fa-angle-left" title="Previous Question"></i></button>
-
-                                        <button href="javascript:void(0);" class="arrow next-arow" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
+                                        <button href="javascript:void(0);" id="quesprev{{ $activeq_id }}" onclick="qnext('{{$prev_qid}}')" class="arrow prev-arow {{empty($prev_qid)?'d-none':''}}" {{empty($prev_qid)?'disabled':''}}><i class="fa fa-angle-left" title="Previous Question"></i></button>
+                                        <button href="javascript:void(0);" class="arrow next-arow {{empty($next_qid)?'disabled':''}}" {{empty($next_qid)?'disabled':''}} id="quesnext{{ $activeq_id }}" onclick="qnext('{{$next_qid}}')"><i class="fa fa-angle-right" title="Next Question"></i></button>
                                         <!-- Next and previous button -->
 
                                         <div class="question py-3 d-flex"><span class="q-no">Q1.</span>{!! $question_text !!}</div>
 
                                         <div class="ans-block row my-3">
+
                                             @if($template_type==1 || $template_type==2)
                                             @if(isset($option_data) && !empty($option_data))
                                             @php $no=0; @endphp
                                             @foreach($option_data as $key=>$opt_value)
                                             @php
                                             $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                            /*
-                                            $dom = new DOMDocument();
+                                            /* $dom = new DOMDocument();
                                             @$dom->loadHTML($opt_value);
                                             $anchor = $dom->getElementsByTagName('img')->item(0);
                                             $text = isset($anchor)? $anchor->getAttribute('alt') : '';
                                             $latex = "https://math.now.sh?from=".$text;
-                                            $view_opt='<img src="'.$latex.'" />' ;
-                                            */
+                                            $view_opt='<img src="'.$latex.'" />' ; */
                                             @endphp
                                             <div class="col-md-6 mb-4 markerDiv">
                                                 <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
                                                 <div class="border ps-3 ans">
-                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label>
+                                                    <!-- <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! !empty($text)?$view_opt:$opt_value; !!}</label> -->
+                                                    <label class="question m-0 py-3 d-block " for="option_{{$activeq_id}}_{{$key}}"><span class="q-no">{{$alpha[$no]}}.</span>{!! $opt_value !!}</label>
                                                 </div>
                                             </div>
                                             @php $no++; @endphp
@@ -133,10 +190,12 @@ $question_type = "Numerical";
                                             <div class="col-md-5 mb-4">
                                                 <div class="numeric-input-box">
                                                     <span>Answer here</span>
-                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" autofocus value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20">
+                                                    <input class="form-input allownumericwithdecimal" type="text" id="quest_option_{{$activeq_id}}" name="quest_option_{{$activeq_id}}" value="{{isset($aGivenAns[0])?$aGivenAns[0]:''}}" maxlength="20" autofocus>
                                                 </div>
+
                                             </div>
                                             @endif
+
                                         </div>
                                         <span class="qoption_error text-danger" id="qoption_err_{{$activeq_id}}"></span>
                                     </div>
@@ -149,7 +208,7 @@ $question_type = "Numerical";
                                         </button>
                                         @endif
 
-                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview quesBtn" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for Review</a>
+                                        <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview quesBtn" onclick="savemarkreview('{{$activeq_id}}','{{$subject_id}}')">Save & Mark for Review</a>
 
                                         <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 quesBtn" onclick="markforreview('{{$activeq_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
@@ -190,18 +249,28 @@ $question_type = "Numerical";
                             @csrf
                             <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
                             <input type="hidden" name="submit_time" id="final_submit_time" value="">
-                            <input type="hidden" name="test_type" value="Live">
-                            <input type="hidden" name="exam_type" value="L">
-                            <input type="hidden" name="exam_mode" value="Live">
-                            <input type="hidden" name="planner_id" value="0">
-                            <input type="hidden" name="live_exam_id" value="{{isset($live_exam_id)?$live_exam_id:0}}">
-                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                    <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
-                                </svg>
-                                </span>&nbsp;&nbsp;&nbsp;Submit
-                            </button>
+                            <input type="hidden" name="total_marks" id="total_marks" value="{{$total_marks}}">
+                            <input type="hidden" name="test_type" value="{{$test_type}}">
+                            <input type="hidden" name="exam_type" value="{{$exam_type}}">
+                            <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
+                            <input type="hidden" name="series_id" value="{{isset($series_id)?$series_id:0}}">
+                            <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
+                            <input type="hidden" name="tasktype" value="{{isset($tasktype)?$tasktype:''}}">
+                            <input type="hidden" name="category" value="{{isset($category)?$category:''}}">
 
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
+                                </button>
+                            </div>
+                            <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3" onclick="stop('submit');">
+                                <span class="btnSubic">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                        <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
+                                    </svg>
+                                </span>&nbsp;&nbsp;&nbsp;Submit</button>
+                            <!--  <a href="{{route('examresult')}}" class="btn btn-danger rounded-0 px-5 my-5">SEE ANALYTICS</a> -->
                         </form>
 
                         <p class="rightSectH">Question</p>
@@ -219,7 +288,7 @@ $question_type = "Numerical";
                         <!-- <p class="rightSectH">Legends</p> -->
                         <div class="row mt-4">
                             <div class="col-md-6 legends">
-                                <button class="btn btn-light p-0  rounded-0"> </button>
+                                <button class="btn btn-light p-0 rounded-0"> </button>
                                 <p>Unread</p>
                             </div>
                             <div class="col-md-6 legends">
@@ -229,7 +298,7 @@ $question_type = "Numerical";
                         </div>
                         <div class="row">
                             <div class="col-md-6 legends">
-                                <button class="btn btn-secondary  p-0 rounded-0"> </button>
+                                <button class="btn btn-secondary p-0  rounded-0"> </button>
                                 <p>Marked for Review</p>
                             </div>
                             <div class="col-md-6 legends">
@@ -251,12 +320,12 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{route('live_exam_list')}}"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close"></a>
             </div>
-            <div class="modal-body pt-3 p-md-5 p-4">
+            <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
-                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">Live Exam</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Full Body Scan Test'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -270,10 +339,10 @@ $question_type = "Numerical";
                                     <div class="col-md-4 col-lg-4">
                                         <div>
                                             <small>Subjects</small>
-                                            <span class="d-block"><span class="inst-text d-block">{{$tagrets}}</span></span>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-lg-3 d-flex">
+                                    <div class="col-md-3 col-lg-3">
                                         <div class="me-2 ms-auto"></div>
                                         <div>
                                             <small>Duration</small>
@@ -297,7 +366,7 @@ $question_type = "Numerical";
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5  d-flex align-items-center justify-content-center flex-column">
+                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
 
                         <h1 class="my-auto text-center">
 
@@ -305,8 +374,7 @@ $question_type = "Numerical";
 
                         </h1>
                         <div class="row justify-content-center">
-
-                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn col-lg-12 col-sm-6 mt-lg-0 mt-3" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp;<img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn col-lg-12 col-sm-6" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp;<img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
 
                         </div>
                     </div>
@@ -318,20 +386,8 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-lg ">
-        <div class="modal-content rounded-0">
-            <div class="modal-body text-center pt-2 pb-5">
-                <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
-                        Resume Test
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
+
 
 <!-- Modal END Exam -->
 <div class="modal hide fade in" id="endExam" tabindex="-1" aria-labelledby="exampleModalLabel" data-keyboard="false" data-backdrop="static">
@@ -356,7 +412,7 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
             </div>
             <div class="modal-body text-center pt-2 pb-5">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
@@ -383,7 +439,7 @@ $question_type = "Numerical";
                     You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
                 </p>
                 <div>
-                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
                         Continue
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
@@ -399,39 +455,26 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-
-
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content rounded-0">
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                        Resume Test
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @include('afterlogin.layouts.footer_new')
+
 <!-- page referesh disabled -->
 <script>
-    var activeques_id = '{{$activeq_id}}';
     /* Allow only numeric with decimal */
-    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
-        //this.value = this.value.replace(/[^0-9\.]/g,'');
-        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
-        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
-            event.preventDefault();
-        }
-        var text = $(this).val();
-        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
-            event.preventDefault();
-        }
-        if (event.charCode === 46) {
-            // if dot is the first symbol
-            if (event.target.value.length === 0) {
-                event.preventDefault();
-                return;
-            }
 
-            // if there are dots already 
-            if (event.target.value.indexOf('.') !== -1) {
-                event.preventDefault();
-                return;
-            }
-
-        }
-    });
     /* Sachin screen changes */
     function setboxHeight() {
         var height = $(".rightSect .flex-column").outerHeight();
@@ -450,7 +493,6 @@ $question_type = "Numerical";
 
     /* page referesh disabled */
     $(document).ready(function() {
-
         /* mouse rightclick */
         /*  document.oncontextmenu = function() {
              return false;
@@ -501,7 +543,7 @@ $question_type = "Numerical";
                 return false;
             }
         }
-        $('#quest_option_' + activeques_id).focus();
+
     });
 </script>
 <!-- /page referesh disabled -->
@@ -516,13 +558,16 @@ $question_type = "Numerical";
     });
 </script>
 <!-- browser back disable -->
+
 <script type="text/javascript">
-    /*$('.number-block').slimscroll({
+    var activeques_id = '{{$activeq_id}}';
+
+    $('.number-block').slimscroll({
         height: '20vh'
     });
     $('.answer-block').slimscroll({
         height: '30vh'
-    });*/
+    });
 
     $(window).on('load', function() {
         $('#test_instruction').modal('show');
@@ -533,16 +578,42 @@ $question_type = "Numerical";
         $('#exam_content_sec').show();
         setboxHeight();
         startTimer();
-        /*  questionstartTimer();
-         setEachQuestionTime(); */
+        questionstartTimer();
+        setEachQuestionTime();
         if ($('#quest_option_' + activeques_id).length > 0) {
             $('#quest_option_' + activeques_id).focus();
         }
+
     });
     $('.selctbtn').click(function() {
         $('.qoption_error').hide();
     });
+    $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
 
+        //this.value = this.value.replace(/[^0-9\.]/g,'');
+        $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
+        if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
+            event.preventDefault();
+        }
+        var text = $(this).val();
+        if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
+            event.preventDefault();
+        }
+        if (event.charCode === 46) {
+            // if dot is the first symbol
+            if (event.target.value.length === 0) {
+                event.preventDefault();
+                return;
+            }
+
+            // if there are dots already 
+            if (event.target.value.indexOf('.') !== -1) {
+                event.preventDefault();
+                return;
+            }
+
+        }
+    });
     jQuery(function() {
         jQuery(".markerDiv").click(function() {
             var template_type = $("#current_question_type").val();
@@ -562,12 +633,11 @@ $question_type = "Numerical";
         if ($(document.activeElement).is('button') && (e.keyCode === 13 || e.keyCode === 32))
             e.preventDefault();
     });
-    /*$('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
-    });*/
+    /*  $('.instructions').slimscroll({
+         height: '33vh',
+         color: '#ff9999',
 
-
+     }); */
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
@@ -596,25 +666,21 @@ $question_type = "Numerical";
     }
 
     function start(withReset = false) {
-        /*  setDisabled(startBtn); */
-        /* removeDisabled(stopBtn); */
+        setDisabled(startBtn);
+        removeDisabled(stopBtn);
+        $(".stop").show();
+        $(".start").hide();
         if (withReset) {
             resetVars();
         }
         startTimer();
     }
 
-    // function stop() {
-    //     setDisabled(stopBtn);
-    //     removeDisabled(startBtn);
-    //     startBtn.innerHTML = "Continue";
-    //     clearInterval(timerInterval);
-    // }
     function stop(type = '') {
-        /* setDisabled(stopBtn);
-        removeDisabled(startBtn); */
-        /*  $(".stop").hide();
-         $(".start").show(); */
+        setDisabled(stopBtn);
+        removeDisabled(startBtn);
+        $(".stop").hide();
+        $(".start").show();
         // startBtn.innerHTML = "Continue";
         clearInterval(timerInterval);
         if (type !== 'submit') {
@@ -640,14 +706,14 @@ $question_type = "Numerical";
     window.addEventListener("load", () => {
         // startTimer();
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
-        setDisabled(stopBtn);
+        // setDisabled(stopBtn);
     });
 
     //---------------------------------------------
     //HELPER METHODS
     //---------------------------------------------
     function setDisabled(button) {
-        button.setAttribute("disabled", "disabled");
+        button.setAttribute("disabled", true);
     }
 
     function removeDisabled(button) {
@@ -671,11 +737,11 @@ $question_type = "Numerical";
     }
 
     function resetVars() {
-        removeDisabled(startBtn);
-        setDisabled(stopBtn);
+        // removeDisabled(startBtn);
+        // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        console.log(timePassed, timeLeft);
+        //console.log(timePassed, timeLeft);
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -700,23 +766,95 @@ $question_type = "Numerical";
         const circleDasharray = `${(
     calculateTimeFraction() * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
-        console.log("setCircleDashArray: ", circleDasharray);
+        //console.log("setCircleDashArray: ", circleDasharray);
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
     /* per question timer */
+    /*  var setEachQuestionTimeNext_countdown;
+     var totalSeconds = -1;
+
+     function setEachQuestionTime() {
+         setEachQuestionTimeNext_countdown = setInterval(function() {
+             ++totalSeconds;
+             $('.timespend_first').val(totalSeconds);
+
+
+         }, 1000);
+     } */
+    /* per question timer */
+    var time_allowed = '{{(isset($question_data->time_allowed) && $question_data->time_allowed>0)?$question_data->time_allowed:1}}';
+    var fsec = time_allowed * 60;
+    var up_timer = 0;
+    var countdown_txt = " Seconds";
+    var upcounter_txt = " Mins";
+    var ctimer;
     var setEachQuestionTimeNext_countdown;
+    var timer_countdown;
+
+    function questionstartTimer() {
+
+        timer_countdown = setInterval(function() {
+            fsec--;
+            //$('#counter_{{$activeq_id}} span.seconds').text(fsec-- + countdown_txt);
+            progressBar(fsec, $('.progressBar_first'));
+            if (fsec == -1) {
+                clearInterval(timer_countdown);
+                $('.progressBar_first').css('background-color', '#E4E4E4');
+                $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+                $('#q_time_taken_first').show();
+                $('#avg_text').hide();
+                $('.progressBar_first').hide();
+            }
+
+        }, 1000);
+
+    }
+
+
+
+    function progressBar(percent, $element) {
+        var progressBarWidth = percent * $element.width() / (time_allowed * 60);
+        $element.find('div').animate({
+            width: progressBarWidth
+        }, 500).html(percent + "%&nbsp;");
+        if (percent <= 20) {
+            $('#percentBar_{{$activeq_id}}').css('background-color', '#FFDC34');
+        }
+        if (percent <= 0) {
+            $('.progressBar_first').css('background-color', '#E4E4E4');
+            $('.progressBar_first').css('border-left', 'solid 4px #ff6060');
+        }
+    }
+
+    var minutesLabel = document.getElementById("up_minutes");
+    var secondsLabel = document.getElementById("up_seconds");
+    //var totalSec = document.getElementById("tsec");
     var totalSeconds = -1;
+
 
     function setEachQuestionTime() {
         setEachQuestionTimeNext_countdown = setInterval(function() {
             ++totalSeconds;
             $('.timespend_first').val(totalSeconds);
+            secondsLabel.innerHTML = pad(totalSeconds % 60);
 
-
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+            //totalSec.innerHTML = pad(totalSeconds);
         }, 1000);
     }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+    }
     /* per question timer end */
+    /* per question timer end */
+
 
     /* getting Next Question Data */
     function qnext(question_id) {
@@ -732,6 +870,8 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
 
                 $("#question_section div").remove();
@@ -782,6 +922,8 @@ $question_type = "Numerical";
                 } else {
 
                 }
+
+
                 if ($("#quesnext" + quest_id).is(":disabled") == true) {
 
                     $("#submitExam").click();
@@ -797,6 +939,7 @@ $question_type = "Numerical";
     function saveAnswer(question_id, qNo) {
         var question_id = question_id;
         var option_id = [];
+
         var current_question_type = $("#current_question_type").val();
 
         if (current_question_type == 11) {
@@ -810,8 +953,11 @@ $question_type = "Numerical";
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+
             var vld_msg = "Please select your response.";
         }
+
+
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
@@ -822,9 +968,10 @@ $question_type = "Numerical";
             return false;
         }
 
+
+        var q_submit_time = $("#timespend_" + question_id).val();
         $('#question_section .quesBtn').attr("disabled", true);
         $('#question_section .quesBtn').addClass("disabled");
-
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -832,6 +979,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
+                q_submit_time: q_submit_time
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -849,12 +997,10 @@ $question_type = "Numerical";
                 $('#question_section .quesBtn').removeClass("disabled");
             }
         });
-
         if ($("#quesnext" + question_id).is(":disabled") == true) {
+
             $("#submitExam").click();
-
         } else {
-
             $("#quesnext" + question_id).click();
 
         }
@@ -865,7 +1011,6 @@ $question_type = "Numerical";
         var question_id = question_id;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
-
         if (current_question_type == 11) {
             var res_value = $("#quest_option_" + question_id).val();
 
@@ -889,6 +1034,7 @@ $question_type = "Numerical";
             return false;
         }
 
+        var q_submit_time = $("#timespend_" + question_id).val();
         $('#question_section .quesBtn').attr("disabled", true);
         $('#question_section .quesBtn').addClass("disabled");
         $.ajax({
@@ -898,6 +1044,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 question_id: question_id,
                 option_id: option_id,
+                q_submit_time: q_submit_time
             },
             success: function(response_data) {
                 var response = jQuery.parseJSON(response_data);
@@ -914,9 +1061,7 @@ $question_type = "Numerical";
             async: false
         });
 
-
     }
-
 
     function savemarkreview(quest_id, subject_id, chapt_id) {
         /* saving response */
@@ -944,9 +1089,11 @@ $question_type = "Numerical";
                 },
             });
             if ($("#quesnext" + quest_id).is(":disabled") == true) {
+
                 $("#submitExam").click();
             } else {
                 $("#quesnext" + quest_id).click();
+
             }
         }
     }
@@ -1017,9 +1164,12 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                clearInterval(ctimer);
+                clearInterval(timer_countdown);
+                clearInterval(setEachQuestionTimeNext_countdown);
 
-                $("#question_section div").html(result);
-                $("#question_section").html(result);
+                $("#myTabContent #question_section div").html(result);
+                $("#myTabContent #question_section").html(result);
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
             }
         });
@@ -1044,32 +1194,26 @@ $question_type = "Numerical";
                 }
             }
         });
-    }
-    /* $('#submitExam').click(function() {
 
-        $('#endExam').modal('show');
-    }); */
+
+    }
 
 
     $(document).ready(function() {
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {
-
                 if (timeLeft >= 1) {
                     let timer_left = document.querySelector("#base-timer-path-remaining_alt");
                     let lefttime_exam_h = document.getElementById("lefttime_pop_h");
                     let lefttime_exam_s = document.getElementById("lefttime_pop_s");
 
-                    const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
+                    const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
 
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);
                     lefttime_exam_s.innerHTML = formatTime(timeLeft);
-
 
                     $('#FullTest_Exam_Panel_Interface_A').modal('show');
 
@@ -1091,6 +1235,9 @@ $question_type = "Numerical";
 
             $('#form_exam_submit')[0].submit();
         });
+
+
+
     });
 </script>
 

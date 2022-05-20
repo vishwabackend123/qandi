@@ -281,4 +281,4 @@ Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mo
 
 
 /* dashboard dailytask exam new routes */
-Route::get('/DailyTask-exam/{type}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
+Route::get('/DailyTask-exam/{type}/{task_type}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
