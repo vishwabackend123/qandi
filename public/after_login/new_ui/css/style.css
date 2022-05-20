@@ -3866,8 +3866,8 @@ span.notification.ms-4 {
     position: absolute;
     top: 0px;
     /* height: 100%; */
-    width: 0;
-    background: url(../images/after-img1.png);
+    width: 70px;
+    background: url(../images/after-img.png);
     transition: all 250ms ease;
     bottom: -1px;
     /* border-right: 1px solid transparent; */
@@ -9541,4 +9541,3 @@ div#welcomeModal , div#favSubResponse ,div#fullTest_Dashboard {
 button.PayBttn.btn.px-5.rounded-0.fs-4 {
     margin-left: 20px;
 }
-.exam-analytics .top-btn-pop  svg{position: relative;bottom: 2px;}
