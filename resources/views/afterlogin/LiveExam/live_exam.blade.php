@@ -795,6 +795,9 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+
         var question_id = question_id;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
@@ -816,14 +819,15 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
             return false;
         }
 
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
 
         $.ajax({
             url: "{{ route('saveAnswer') }}",
@@ -862,6 +866,9 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswerAjax(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+
         var question_id = question_id;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
@@ -883,14 +890,15 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
             return false;
         }
 
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',

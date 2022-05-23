@@ -87,17 +87,27 @@ $userData = Session::get('user_data');
                                         <!-- <img src="images/right-graph.jpg"> -->
                                     </div>
                                     <div class="mt-auto btn-block">
+                                        @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
+                                        @php $count_sub=count($response->subject_wise_result);
+                                        if($count_sub==1){
+                                        $disable_class="disabled" ;
+                                        }else{
+                                        $disable_class="";
+                                        }
+                                        @endphp
+                                      @if(empty($disable_class))  
                                         <button class="btn w-100 mt-2 top-btn-pop text-white" onclick='resetData("all")'>Overall</button>
+                                      @endif
                                         <div class="row mt-4">
                                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                             @foreach($response->subject_wise_result as $subject)
                                             @php $subject=(object)$subject; @endphp
-                                            <div class="col"><button id="{{$subject->subject_name}}" class="btn btn-outline-secondary w-100 top-btn-pop text-white" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button></div>
+                                            <div class="col"><button id="{{$subject->subject_name}}" {{$disable_class }} class="btn btn-outline-secondary w-100 top-btn-pop text-white" onclick='resetData("{{$subject->subject_id}}")'>{{$subject->subject_name}}</button></div>
                                             @endforeach
                                             @endif
                                         </div>
 
-
+                                        @endif
 
                                     </div>
                                 </div>

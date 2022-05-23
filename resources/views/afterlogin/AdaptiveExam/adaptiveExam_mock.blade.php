@@ -946,6 +946,8 @@ $questtype='radio';
 
     /* Saved question response */
     function saveAnswer(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
         var question_id = question_id;
 
         var option_id = [];
@@ -970,6 +972,8 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -978,8 +982,7 @@ $questtype='radio';
 
         var err_sts = true;
         var q_submit_time = $("#timespend_" + question_id).val();
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1029,6 +1032,9 @@ $questtype='radio';
     }
 
     function saveAnswerAjax(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+
         var question_id = question_id;
         var isValid = 1;
         var option_id = [];
@@ -1053,6 +1059,8 @@ $questtype='radio';
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1060,8 +1068,7 @@ $questtype='radio';
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',

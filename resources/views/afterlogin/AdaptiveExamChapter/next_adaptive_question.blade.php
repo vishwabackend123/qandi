@@ -226,6 +226,8 @@ $question_type = "Numerical";
         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes quesBtn" onclick="clearResponse('{{$activeq_id}}','{{$subject_id}}','{{$qNo}}')">Clear Response</a>
     </div>
 </div>
+<!-- exam footer -->
+<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
 <script>
     var question_id = '{{$active_q_id}}';
     var template_type = '{{$template_type}}';

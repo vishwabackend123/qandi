@@ -229,6 +229,9 @@ div.counter{right:0;}
 .exam_attempted_common_page .paper-sub span{font-size:15px;}
 .exam_attempted_common_page .paper-sub small{font-size: 14px;}
 .cust-tab-content .exam_card .custom-btn-gray{max-width: 200px;}
+.test-review-right .bg-white.d-flex.flex-column.mb-4 {
+    height: calc(100vh - 170px)!important; 
+}
 
 }
 
