@@ -1,11 +1,11 @@
 <style type="text/css">
     .leader-board ul li span p {
-    font-size: 12px;
-    opacity: 0.5;
-    color: #2c3348;
-    font-weight: normal;
-    text-transform: none;
-}
+        font-size: 12px;
+        opacity: 0.5;
+        color: #2c3348;
+        font-weight: normal;
+        text-transform: none;
+    }
 </style>
 <div class="modal fade" id="exportAnalytics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -47,6 +47,7 @@
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
 </script>
@@ -978,7 +979,7 @@
                 $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").removeClass("active-navlink");
                 $('.practiceClass').removeClass('practiceopen');
-            } 
+            }
             /*else {
                 $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
                 $(".dash-nav-link a:first-child").addClass("active-navlink");
@@ -1018,7 +1019,7 @@
             $('#submenupreparation2').collapse('toggle');
         }
     });
-    $('.wrapper-dashboard').click(function(){
+    $('.wrapper-dashboard').click(function() {
         $(".dash-nav-link a:nth-child(2)").removeClass("active-navlink");
         $(".dash-nav-link a:first-child").addClass("active-navlink");
         $('.practiceClass').removeClass('practiceopen');
@@ -1481,7 +1482,7 @@
                     if (response.success == true) {
 
                         var user_name = response.user_info.user_name;
-                        var city =response.user_info.city;
+                        var city = response.user_info.city;
                         $('.activeUserName').html(user_name);
                         $('#activeUserName').text(user_name);
                         $('#select-city').attr('value', city);
@@ -1955,17 +1956,18 @@
     $("#editProfile_form #cancelEdit").click(function() {
         $("#LeaDer , .profile-show").addClass("showCard");
     });
+
     function isDoubleClicked(element) {
         //if already clicked return TRUE to indicate this click is not allowed
         if (element.data("isclicked")) return true;
 
         //mark as clicked for 1 second
         element.data("isclicked", true);
-        setTimeout(function () {
+        setTimeout(function() {
             element.removeData("isclicked");
         }, 1000);
 
         //return FALSE to indicate this click was allowed
         return false;
-        }
+    }
 </script>

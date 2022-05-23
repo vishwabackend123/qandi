@@ -951,6 +951,9 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+
         var question_id = question_id;
         var nextquestId = '{{$next_qid}}';
         var option_id = [];
@@ -973,6 +976,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -980,8 +985,7 @@ $question_type = "Numerical";
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',
@@ -1020,6 +1024,9 @@ $question_type = "Numerical";
 
     /* Save answer for mark review */
     function saveAnswerAjax(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+
         var question_id = question_id;
         var nextquestId = '{{$next_qid}}';
         var option_id = [];
@@ -1041,6 +1048,9 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
+
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);
@@ -1048,8 +1058,7 @@ $question_type = "Numerical";
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
         $.ajax({
             url: "{{ route('saveAnswer') }}",
             type: 'POST',

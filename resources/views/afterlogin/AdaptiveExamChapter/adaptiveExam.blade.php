@@ -3,6 +3,12 @@
 @php
 $userData = Session::get('user_data');
 @endphp
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
     function preventBack() {
         window.history.forward();
@@ -445,7 +451,9 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-@include('afterlogin.layouts.footer_new')
+<!-- @ include('afterlogin.layouts.footer_new') -->
+@include('afterlogin.layouts.exam_footer')
+
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
@@ -941,6 +949,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);

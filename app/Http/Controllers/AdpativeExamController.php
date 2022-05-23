@@ -522,6 +522,7 @@ class AdpativeExamController extends Controller
                 'all_questions_id' => $question_ids,
                 'full_time' => $exam_fulltime,
                 'adaptive_api_url' => $curl_url,
+                'selected_topics' => $select_topic,
             ];
 
             // Push Value in Redis
@@ -642,12 +643,20 @@ class AdpativeExamController extends Controller
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
             $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? $sessionResult->adaptive_api_url : '';
+            $selected_topics = isset($sessionResult->selected_topics) ? $sessionResult->selected_topics : [];
+
 
 
 
             $inputjson['student_id'] = (int)$user_id;
             $inputjson['exam_id'] = (int)$exam_id;
-            $inputjson['topic_id'] = (int)$topic_id;
+            if (count($selected_topics) > 1) {
+                $inputjson['topic_id'] = $selected_topics;
+            } else {
+                $inputjson['topic_id'] = (int)$topic_id;
+            }
+
+
             $inputjson['session_id'] = (int)$session_id;
             $inputjson['end_test'] = "no";
             $inputjson['questions_list'] = array_values($questionList);
@@ -683,6 +692,8 @@ class AdpativeExamController extends Controller
 
 
 
+
+
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
@@ -708,7 +719,8 @@ class AdpativeExamController extends Controller
                         'answer_swap_cnt' => $answer_swap_cnt,
                         'questions_count' => $questions_count,
                         'all_questions_id' => $question_ids,
-
+                        'adaptive_api_url' => $curl_url,
+                        'selected_topics' => $selected_topics,
                     ];
 
                     // Push Value in Redis
@@ -744,14 +756,21 @@ class AdpativeExamController extends Controller
 
             $session_result = Redis::get('adaptive_session:' . $user_id);
             $sessionResult = json_decode($session_result);
+
             $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
             $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? $sessionResult->adaptive_api_url : '';
+            $selected_topics = isset($sessionResult->selected_topics) ? $sessionResult->selected_topics : [];
+
 
 
             $inputjson['student_id'] = (int)$user_id;
             $inputjson['exam_id'] = (int)$exam_id;
-            $inputjson['topic_id'] = (int)$topic_id;
+            if (count($selected_topics) > 1) {
+                $inputjson['topic_id'] = $selected_topics;
+            } else {
+                $inputjson['topic_id'] = (int)$topic_id;
+            }
             $inputjson['session_id'] = (int)$session_id;
             $inputjson['end_test'] = "yes";
             $inputjson['questions_list'] = array_values($questionList);
@@ -763,8 +782,8 @@ class AdpativeExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            // $curl_url = !empty($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
-            $curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
+            $curl_url = !empty($adaptive_api_url) ? $adaptive_api_url : $api_URL . 'api/adaptive-assessment-topic-practice';
+            //$curl_url = $api_URL . 'api/adaptive-assessment-topic-practice';
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
