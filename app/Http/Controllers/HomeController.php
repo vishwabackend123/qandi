@@ -849,7 +849,7 @@ class HomeController extends Controller
      * @param Request $request
      * @return void
      */
-    public function dailyTaskExam($category, $tasktype, Request $request)
+    public function dailyTaskExam($category, $tasktype, $skill_category = null, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -858,20 +858,30 @@ class HomeController extends Controller
             $exam_id = $userData->grade_id;
             $filtered_subject = [];
 
+
             if (Redis::exists('custom_answer_time_' . $user_id)) {
                 Redis::del(Redis::keys('custom_answer_time_' . $user_id));
             }
 
             if (!empty($category)) {
 
-                /* static set */
-                //$category = "accuracy";
+                if ($category == 'skill') {
+                    $category_url = 'skill_' . $skill_category;
+                    $test_type = 'Task-Center-' . ucwords($skill_category);
+                } elseif ($category == 'weak_topic') {
+                    $category_url = 'weak_topic';
+                    $test_type = 'Task-Center-Weak-Topic';
+                } else {
+                    $category_url = $category;
+                    $test_type = 'Task-Center-' . ucwords($category);
+                }
+
 
                 $curl_url = "";
                 $curl = curl_init();
                 $api_URL = env('API_URL');
 
-                $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $category . '/' . $user_id;
+                $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $category_url . '/' . $user_id;
 
                 curl_setopt_array($curl, array(
 
@@ -992,11 +1002,6 @@ class HomeController extends Controller
                     Redis::set('custom_answer_time_' . $user_id, json_encode($redis_data));
                     $tagrets = implode(', ', $aTargets);
 
-                    $category1 = str_replace('_', ' ', $category);
-                    $category2 = ucwords($category1);
-                    $category_final = str_replace(' ', '-', $category2);
-
-                    $test_type = 'Task-Center-' . $category_final;
                     $exam_type = 'PT';
                     $exam_mode = "Practice";
                     Session::put('exam_name', $exam_name);
