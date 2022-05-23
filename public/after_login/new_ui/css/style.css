@@ -15,6 +15,9 @@ button {
     outline: none;
     text-decoration: none;
 }
+a.btn.sectionBtn {
+    text-transform: uppercase!important;
+}
 .practice_custom_page .cust-tabs .nav-link , .practice-series-lists .cust-tabs .nav-link , 
 .live-exam-list-wrapper .cust-tabs .nav-link , .mocktest-attempted-wrapper .cust-tabs .nav-link{text-transform: none;}
 .practice_custom_page .cust-tabs .nav-link.active, .practice-series-lists .cust-tabs .nav-link.active , 
