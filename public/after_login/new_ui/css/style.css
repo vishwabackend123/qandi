@@ -15,6 +15,9 @@ button {
     outline: none;
     text-decoration: none;
 }
+.matrixpage-wrapper .cus-radio-btn label {
+    padding-top: 10px;
+}
 a.btn.sectionBtn {
     text-transform: uppercase!important;
 }
