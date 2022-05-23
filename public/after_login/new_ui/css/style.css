@@ -1392,7 +1392,7 @@ span a#close-edit-planner-btn img {
     position: relative;
     padding-left: 0;
     margin-bottom: 20px;
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 16px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -1455,6 +1455,7 @@ ul.chapter-topic-menu li a {
     font-size: 16px;
     display: inline-block;
     margin-right: 20px;
+    cursor: default;
 }
 
 ul.chapter-topic-menu li a.active {
@@ -1513,12 +1514,19 @@ input#search_field::-ms-input-placeholder {
 
 
 #review_rques_blk .question p {
-    font-size: 17px;
+    /* font-size: 17px;
+    line-height: 20px;
+    font-feature-settings: "liga"0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-right: 6px; */
+    font-size: 14px;
     line-height: 20px;
     font-feature-settings: "liga"0;
     overflow-x: auto;
     overflow-y: hidden;
     padding-right: 6px;
+    margin: 5px 0px;
 }
 
 #review_rques_blk .question p::-webkit-scrollbar {

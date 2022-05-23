@@ -29,11 +29,11 @@
                             </div>
                         </div>
                     </div>
-                    <form id="stand-form" method="post" action="{{route('standupstore')}}" novalidate="novalidate">
+                    <form class="m-0" id="stand-form" method="post" action="{{route('standupstore')}}" novalidate="novalidate">
                         @csrf
                         <input type="hidden" name="user_stand_value" id="user_stand_value" value="" />
                         <span class="invalid-feedback m-0" role="alert" id="errlog_alert"> </span>
-                        <div class="text-end mt-5">
+                        <div class="text-end mt-4">
                             <button class="btn btn-danger text-uppercase disbaled-btn rounded-0 px-5" id="goto-next-btn">Go Next &gt;</button>
                         </div>
                     </form>
