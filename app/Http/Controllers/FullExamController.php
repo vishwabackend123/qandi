@@ -198,6 +198,7 @@ class FullExamController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
 
+
             $cacheKey = 'CustomQuestion:all:' . $user_id;
             $redis_result = Redis::get($cacheKey);
 
@@ -205,12 +206,15 @@ class FullExamController extends Controller
                 $response = json_decode($redis_result);
             endif;
 
+
             $allQuestions = isset($response) ? $response : []; // redis response as object
             $allQuestionsArr = (array)$allQuestions; //object convert to array
 
             $allkeys = array_keys((array)$allQuestions); //Array of all keys
 
+
             $question_data = isset($allQuestions->$quest_id) ? $allQuestions->$quest_id : []; // required question all data
+
 
             $activeq_id = isset($question_data->question_id) ? $question_data->question_id : ''; //ccurrent question id
             $que_sub_id = isset($question_data->subject_id) ? $question_data->subject_id : '';
@@ -220,7 +224,6 @@ class FullExamController extends Controller
                 $que_sub_id = (isset($question_data->subt_id)) ? $question_data->subt_id : '';
             }
             /* this extra code for test series */
-
 
 
             $key = array_search($quest_id, array_column($allQuestionsArr, 'question_id'));
@@ -276,8 +279,10 @@ class FullExamController extends Controller
             $aGivenAns = (isset($sessionResult->given_ans->$quest_id) && !empty($sessionResult->given_ans->$quest_id)) ? $sessionResult->given_ans->$quest_id : [];
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
 
+
             return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }

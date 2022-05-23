@@ -917,6 +917,9 @@ $question_type = "Numerical";
 
     /* Saved question response */
     function saveAnswer(question_id, qNo) {
+        $('#question_section .quesBtn').attr("disabled", true);
+        $('#question_section .quesBtn').addClass("disabled");
+
         var question_id = question_id;
         var option_id = [];
         var current_question_type = $("#current_question_type").val();
@@ -945,8 +948,7 @@ $question_type = "Numerical";
         }
 
         var q_submit_time = $("#timespend_" + question_id).val();
-        $('#question_section .quesBtn').attr("disabled", true);
-        $('#question_section .quesBtn').addClass("disabled");
+
 
         $.ajax({
             url: "{{ route('saveAdaptiveAnswer') }}",
@@ -969,8 +971,7 @@ $question_type = "Numerical";
                 }
             },
             complete: function() { // Set our complete callback, removed disabled 
-                $('#question_section .quesBtn').attr("disabled", false);
-                $('#question_section .quesBtn').removeClass("disabled");
+
             }
         });
 

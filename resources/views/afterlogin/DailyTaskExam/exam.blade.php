@@ -870,6 +870,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
+                console.log(result);
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);

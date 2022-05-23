@@ -438,9 +438,11 @@ class AdpativeExamController extends Controller
                     $exam_fulltime = $responsedata->time_allowed;
                     $questions_count = count($aQuestionslist);
                 } else {
+
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
             } else {
+
                 $aQuestionslist = [];
                 $questions_count = 0;
                 $exam_fulltime = 0;
