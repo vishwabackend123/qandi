@@ -258,6 +258,9 @@ div.counter{right:0;}
             max-width: 100%;
             min-width: 100%;
         }
+        .rightSect.test-review-right .bg-white {
+            height: calc(100vh - 200px)!important;
+        }
 }
 
 
