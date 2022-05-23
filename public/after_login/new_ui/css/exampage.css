@@ -1064,3 +1064,18 @@ a.clearRes:hover {
     border: none;
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
 }  */
+
+
+.Assessment_page .cust-tab-content {
+    height: calc(100vh - 260px) !important;
+    margin-top: 70px;
+}
+.Assessment_page .cust-tab-content .scroll-div {
+    max-height: calc(100vh - 300px) !important;
+    overflow: overlay;
+}
+
+.Assessment_page #mocktest {
+    max-height: calc(100vh - 300px) !important;
+    overflow: overlay; 
+}
