@@ -755,6 +755,12 @@ li.a3TS {
     #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 13px;}
 }
 @media(max-width:385px){
+    .user-name-block {
+    padding-right: 4px;
+}
+.user-name-block span.notification.ms-4 {
+    margin-left: 4px !important;
+}
     .tab-wrapper .nav-tabs {
     padding-left: 3px !important;
 }
