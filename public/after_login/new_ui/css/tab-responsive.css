@@ -317,6 +317,9 @@ div.counter{right:0;}
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    .exam_card label {
+    font-size: 14px;
+}
      .topics-box:nth-child(even){
          flex-direction: row-reverse;
     }
