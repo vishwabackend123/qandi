@@ -13,7 +13,7 @@
         @endisset
     </div>
     <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
-        <div class="scroll-div" id="chapter_list_1">
+        <div class="scroll-div scroll_top" id="chapter_list_1">
             @if(!empty($result_data))
             @foreach($result_data as $sche)
             <!--div class="compLeteS" id="chapter_box_{{$sche->id}}">

@@ -355,6 +355,7 @@ function hideExpend(){
     });
      setTimeout(function(){
         $('.loader-block').hide();
+        $('.scroll_top').scrollTop(0);
     }, 500);
 }
 

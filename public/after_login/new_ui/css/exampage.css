@@ -1077,5 +1077,5 @@ a.clearRes:hover {
 
 .Assessment_page #mocktest {
     max-height: calc(100vh - 300px) !important;
-    overflow: overlay;
+    overflow: overlay; 
 }
