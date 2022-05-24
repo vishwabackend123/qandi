@@ -264,7 +264,8 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     padding: 13px 20px;
     line-height: 20px;
 }
-
+.examSect div#myTabContent .tab-pane .tab-btn-box   a.btn.rounded-0:hover {
+    background: #00baff !important;}
 .examSect .checkboxans:checked+.ans {
     border: solid 1px #37c027 !important;
     background: #e3f0fe;

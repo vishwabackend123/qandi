@@ -21,6 +21,22 @@ $userData = Session::get('user_data');
         null
     };
 </script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $("#endExam").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        $("#FullTest_Exam_Panel_Interface_A").modal({
+            backdrop: "static",
+            keyboard: false
+        });
+        history.pushState(null, null, location.href);
+        window.onpopstate = function() {
+            history.go(1);
+        };
+    });
+</script>
 <style>
     .mjx-chtml {
         line-height: 0.5 !important;
@@ -458,22 +474,7 @@ $question_type = "Numerical";
 @include('afterlogin.layouts.exam_footer')
 
 <!-- Have fun using Bootstrap JS -->
-<script type="text/javascript">
-    $(window).load(function() {
-        $("#endExam").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $("#FullTest_Exam_Panel_Interface_A").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-            history.go(1);
-        };
-    });
-</script>
+
 <!-- page referesh disabled -->
 <script>
     var activeques_id = '{{$activeq_id}}';
