@@ -103,7 +103,7 @@
             font-size: 13px;
         }
         .only_prog  g.highcharts-label.highcharts-tooltip.highcharts-color-undefined {
-            transform: translate(90px, 47px);
+            transform: translate(70px, 47px);
         }
         #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn, #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{
             font-size: 12px;
