@@ -1,5 +1,5 @@
 <div class="row" id="topicclose">
-    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
+    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 only_prog">
         <div class="row">
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
                 <div class="bg-white shadow-lg py-3 px-3">
