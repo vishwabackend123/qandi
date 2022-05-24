@@ -278,4 +278,5 @@ Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mo
 
 
 /* dashboard dailytask exam new routes */
-Route::get('/DailyTask-exam/{type}/{task_type}/{skill?}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
+Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
+Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
