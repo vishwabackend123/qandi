@@ -1,5 +1,10 @@
 @extends('afterlogin.layouts.app_new')
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <!-- BS JavaScript -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <!-- Have fun using Bootstrap JS -->
@@ -15,11 +20,6 @@
         });
     });
 </script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 @section('content')
 @php
@@ -1001,13 +1001,27 @@ $question_type = "Numerical";
     function submitsaveAnswer(question_id) {
         var question_id = question_id;
         var option_id = [];
-        $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
-            option_id.push($(this).val());
-        });
+        var current_question_type = $("#current_question_type").val();
+
+        if (current_question_type == 11) {
+            var res_value = $("#quest_option_" + question_id).val();
+
+            if (res_value != '') {
+                option_id.push($("#quest_option_" + question_id).val());
+            }
+            var vld_msg = "Please fill your response.";
+        } else {
+            $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
+                option_id.push($(this).val());
+            });
+            var vld_msg = "Please select your response.";
+        }
         if (option_id.length === 0) {
-            $('#qoption_err_' + question_id).html("Please select one response or provide an answer before submitting.");
+            $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#question_section .quesBtn').attr("disabled", false);
+            $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
                 $('#qoption_err_' + question_id).fadeOut("fast");
             }, 8000);

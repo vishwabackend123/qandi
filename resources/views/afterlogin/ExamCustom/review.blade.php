@@ -937,7 +937,7 @@ $question_type = "Numerical";
     #review_rques_blk .answer-section {
         margin-top: 0px !important;
         position: absolute;
-        overflow: initial !important;
+        /* overflow: initial !important; */
         bottom: 0px;
         width: 98.66%;
         padding-right: 6px;

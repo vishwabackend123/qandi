@@ -416,7 +416,7 @@
                     <div class="emaillinkholder">
                         <div class="mb-3 ">
                             <div class="formerror">
-                                <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
+                                <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter email id" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
                                 <input type="hidden" name="refer_code" id="refer_code" value="{{ session()->get('referal_code') }}">
                                 <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                                 <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
@@ -477,7 +477,10 @@
                         </div>
                         <div class="re_link">
                             <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly />
-                            <a class="copylinkbtn" type="button" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
+                            <a class="copylinkbtn" type="button" onclick="copylinkfunction()">
+                            <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                            <img src="{{URL::asset('public/after_login/new_ui/images/copyicon.png')}}" style="width: 12px;margin-right: 8px;">
+                             Copy </a>
                         </div>
                     </div>
                 </form>

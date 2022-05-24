@@ -469,7 +469,8 @@ $question_type = "Numerical";
     </div>
 </div>
 
-@include('afterlogin.layouts.footer_new')
+<!-- @ include('afterlogin.layouts.footer_new') -->
+@include('afterlogin.layouts.exam_footer')
 
 <!-- page referesh disabled -->
 <script>
