@@ -6,6 +6,8 @@
     
 }
 @media screen and (max-width:1199px){
+.overllanaly {margin-bottom:40px;}
+
         .exam_attempted_common_page .result-list-head.d-flex{ 
     margin-right: 30px;
 }
@@ -625,4 +627,8 @@ div.counter{right:0;}
 .exam-analytics span.text-center.w-100 img {
     width: 65%;
 }
+.overllanaly {margin-bottom:30px;}
+.overllanaly .cust-tab-content{padding-bottom:30px!important;}
+
+
 }
