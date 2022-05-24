@@ -169,6 +169,38 @@
             $("#" + spanId).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
         } else {
             $("#" + spanId).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
+            var chapter_id = spanId.replace('expand_topic_','');
+            var scrollpas = $('.scroll_top').scrollTop();
+            var blockpos = $('#clicktopic_' + chapter_id).offset().top;
+            var scrollblock = $($('#clicktopic_' + chapter_id).attr('href')).offset().top;
+             if (scrollpas > 0) {
+
+              if (blockpos > 400) {
+                $('.scroll_top').animate({
+                  scrollTop: scrollblock + scrollpas - blockpos + 150
+                }, 500);
+              } else {
+                 $('.scroll_top').animate({
+                  scrollTop: scrollblock + scrollpas - blockpos
+                }, 500);
+              };
+
+            } else {
+              if (scrollpas <= 0 && blockpos < 300) {
+                 $('.scroll_top').animate({
+                  scrollTop: scrollblock - blockpos
+                }, 500);
+              } else if (scrollpas <= 0 && blockpos > 350) {
+                 $('.scroll_top').animate({
+                  scrollTop: scrollblock - blockpos + 50
+                }, 500);
+              } else {
+                $('.scroll_top').animate({
+                  scrollTop: scrollblock - blockpos + scrollpas
+                }, 500);
+              };
+            }
+            $('.scroll_top').scrollTop(100);
         }
 
     });
@@ -326,33 +358,4 @@
         font-size: 14px;
         font-weight: 600;
     }
-
-    /* @media only screen and (max-width: 1199px) {
-        .result-list-head h4 {
-            font-size: 14px;
-        }
-
-        .result-list-head p {
-            font-size: 14px;
-            flex: 1;
-        }
-    }
-
-    @media only screen and (max-width: 991px) {
-        .result-list .d-flex.justify-content-between {
-            display: flex !important;
-        }
-
-        .result-review {
-            font-size: 13px;
-        }
-
-        .paper-sub small {
-            font-size: 12px;
-        }
-
-        .paper-sub span {
-            font-size: 13px;
-        }
-    } */
 </style>
