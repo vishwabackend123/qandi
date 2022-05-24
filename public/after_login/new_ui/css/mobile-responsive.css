@@ -228,7 +228,7 @@
         .svg_icon_input {top: 5px;}
         .edit-form .edit-img .p-picture { width: 50px;height: 52px;}
         .edit-pic{width: 25px;}
-        .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: 50px;}
+        .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: auto;}
         .active_user {max-width: 325px; }
         .profile-detail {   margin-top: 20px; overflow-y: auto;}
         .leader-board {height: 450px; min-height: 350px; padding-left: 0px;float: inherit; }

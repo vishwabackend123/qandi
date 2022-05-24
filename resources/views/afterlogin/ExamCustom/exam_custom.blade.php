@@ -381,17 +381,17 @@ $userData = Session::get('user_data');
     } else {
       $('.all-rlt').attr("style", "display: block !important");
     }
-    $('.hideallexpend').each(function () {
+    $('.hideallexpend').each(function() {
 
-     var current_id = this.id;
-     var current_div_id=$(this).attr('data-id');
-     if($('#'+current_div_id).hasClass('show')){
-      $('#'+current_id).trigger('click') 
-     }
+      var current_id = this.id;
+      var current_div_id = $(this).attr('data-id');
+      if ($('#' + current_div_id).hasClass('show')) {
+        $('#' + current_id).trigger('click')
+      }
     });
-      setTimeout(function(){
-        $('.loader-block').hide();
-        $('.scroll_top').scrollTop(0);
+    setTimeout(function() {
+      $('.loader-block').hide();
+      $('.scroll_top').scrollTop(0);
     }, 500);
 
   }
@@ -574,14 +574,14 @@ $userData = Session::get('user_data');
     });
   }
 
-  /* 
-    $('a.expandTopicCollapse span').click(function() {
-      var spanId = this.id;
-      var curr_text = $("#" + spanId).text();
-      var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Show Topics');
-      $("#" + spanId).text(updatetext);
 
-    }) */
+  /* $('a.expandTopicCollapse span').click(function() {
+    var spanId = this.id;
+    var curr_text = $("#" + spanId).text();
+    var updatetext = ((curr_text == 'Expand to Topics') ? 'Collapse Topics' : 'Show Topics');
+    $("#" + spanId).text(updatetext);
+
+  }) */
 
 
 
@@ -596,16 +596,13 @@ $userData = Session::get('user_data');
 
     if (curr_text == 'HideTopics') {
       $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
+      $("#chapter_list_" + sub_id + " .expand_filter_" + chapt_id).addClass('disabled');
     } else {
       $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
+      $("#chapter_list_" + sub_id + " .expand_filter_" + chapt_id).removeClass('disabled');
     }
 
-    if (curr_text == 'HideTopics') {
-      $('.expand_filter_' + chapt_id).addClass('disabled');
-    } else {
-      $('.expand_filter_' + chapt_id).removeClass('disabled');
 
-    }
 
     /*  this.value = (this.value == 'Expand to Topics' ? 'Collapse Topics' : 'Expand to Topics'); */
     var topic_length = $('#topic_section_' + chapt_id + ' .topicboxdin').length;
@@ -654,9 +651,9 @@ $userData = Session::get('user_data');
       });
     } else {
 
-      // $("#expand_topic_" + chapt_id).text("Expand to Topics");
-      $("clicktopic_" + chapt_id).focus();
-      //$('#topic_form').toggle();
+      //$("#expandTopic_" + chapt_id).text("Show Topics");
+      $("#clicktopic_" + chapt_id).focus();
+      $('#topic_form').toggle();
 
     }
   }
@@ -768,7 +765,7 @@ $userData = Session::get('user_data');
 
 <script>
   $("body").on("click", ".expandTopicCollapse", function(event) {
-    $(this).parents('.ClickBack').toggleClass('newelement');
+    //$(this).parents('.ClickBack').toggleClass('newelement');
   });
 
   function scroll_topic(chapter_id, sub_id) {

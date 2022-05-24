@@ -2977,6 +2977,9 @@ span.p-icons span:active {
 .subscription .p-text h3 {
     font-size: 20px;
     line-height: 48px;
+    margin-left: 18px;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .custom-page .slick-slide .status-id .star-ratings-css {
@@ -4852,11 +4855,11 @@ button.save-btn {
 
 .subscrived {
     width: 100%;
-    display: inline-block;
+    display: flex;
     background: #f2f2f2;
     border-radius: 42px;
     padding: 31px 20px;
-    /* margin: 20px 0px 0px; */
+    align-content: center;
     margin: 25px 0px 0px;
 }
 
@@ -9572,3 +9575,10 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
     margin-left: 20px;
 }
 .cust-pd-rt{padding-right:135px;}
+.overllanaly {margin-bottom:60px;}
+.overllanaly .cust-tab-content{border-bottom-left-radius: 56px;border-bottom-right-radius: 56px;padding-bottom:50px!important;}
+.overllanaly .colorfull-bars .yellow_bar{background: #fba81d66;}
+.overllanaly .colorfull-bars .red_bar{background: #f7464566;}
+.overllanaly .colorfull-bars .skyblue_bar{background:#00baff66;}
+.overllanaly .colorfull-bars .green_bar{background:#5f4fdd66;}
+.overllanaly  .colorfull-bars{background-color:#fff;}

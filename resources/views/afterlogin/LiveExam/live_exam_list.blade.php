@@ -50,11 +50,25 @@ $userData = Session::get('user_data');
                                         
                                             <div class="mb-2">
                                                 <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">Start Date</span>
-                                                <label style=" font-weight: 600;color: #231f20;">{{$start_date_top}}</label>
+                                                @php
+                                                    list( $day,$month, $year) =explode("-",$start_date_top);
+                                                    $year=2000+$year;
+                                                    $update_date=$day.'-'.$month.'-'.$year;
+                                                    $newDate = date("d M Y", strtotime($update_date));
+                                                    $start_date_new = date('dS F Y', strtotime($newDate));
+                                                @endphp
+                                                <label style=" font-weight: 600;color: #231f20;">{{$start_date_new}}</label>
                                             </div>
                                             <div class="mb-2  cust-pd-rt">
                                                 <span class="d-block" style=" font-weight: normal;color: #2c3348;font-size: 14px;">End Date</span>
-                                                <label style=" font-weight: 600;color: #231f20;">{{$end_date_top}}</label>
+                                                @php
+                                                    list( $day,$month, $year) =explode("-",$end_date_top);
+                                                    $year=2000+$year;
+                                                    $update_date=$day.'-'.$month.'-'.$year;
+                                                    $newDate = date("d M Y", strtotime($update_date));
+                                                    $end_date_new = date('dS F Y', strtotime($newDate));
+                                                @endphp
+                                                <label style=" font-weight: 600;color: #231f20;">{{$end_date_new}}</label>
                                             </div>
                                         </div>
                                     </div>
@@ -85,9 +99,23 @@ $userData = Session::get('user_data');
                                     <ul class="speci-text">
                                         <li> <span class="sub-details">{{$sche->exam_name}}</span>
                                         </li>
-                                        <li><strong>Start Date: {{$start_date}}</strong>
+                                         @php
+                                                    list( $day,$month, $year) =explode("-",$start_date);
+                                                    $year=2000+$year;
+                                                    $update_date=$day.'-'.$month.'-'.$year;
+                                                    $newDate = date("d M Y", strtotime($update_date));
+                                                    $start_date_new = date('dS F Y', strtotime($newDate));
+                                                @endphp
+                                        <li><strong>Start Date: {{$start_date_new}}</strong>
                                         </li>
-                                        <li><strong>End Date: {{$end_date}}</strong>
+                                         @php
+                                                    list( $day,$month, $year) =explode("-",$end_date);
+                                                    $year=2000+$year;
+                                                    $update_date=$day.'-'.$month.'-'.$year;
+                                                    $newDate = date("d M Y", strtotime($update_date));
+                                                    $end_date_new = date('dS F Y', strtotime($newDate));
+                                                @endphp
+                                        <li><strong>End Date: {{$end_date_new}}</strong>
                                         </li>
                                         <li style="font-weight:600;">{{$sche->questions_count}} Questions</a>
                                         </li>

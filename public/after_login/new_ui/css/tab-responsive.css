@@ -6,6 +6,8 @@
     
 }
 @media screen and (max-width:1199px){
+.overllanaly {margin-bottom:40px;}
+
         .exam_attempted_common_page .result-list-head.d-flex{ 
     margin-right: 30px;
 }
@@ -305,7 +307,7 @@ div.counter{right:0;}
    .leader-board{right: 23%; height: auto;}
    .exportAnaylisis .status-id.rating{width: 50%;}
    .subscription .p-text h3 {font-size: 14px;
-    padding-left: 30px;}
+    padding-left: 14px;}
    .log-out-screen {right:235px;    top: 0%; }
    .subscription {
     width:50%;
@@ -425,8 +427,10 @@ div.counter{right:0;}
         top: 0%;
    }
     .subscription .p-text h3 {
-        font-size: 16px;
-        line-height: 48px;
+            padding-left: 5px;
+    font-size: 16px;
+    line-height: 48px;
+    margin: 0;
    }
     .subscrived svg {
         width: 37px;
@@ -625,4 +629,8 @@ div.counter{right:0;}
 .exam-analytics span.text-center.w-100 img {
     width: 65%;
 }
+.overllanaly {margin-bottom:30px;}
+.overllanaly .cust-tab-content{padding-bottom:30px!important;}
+
+
 }

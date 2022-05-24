@@ -1861,7 +1861,7 @@
             } else {
                 $('html').removeClass("scrollnone")
             }
-        }, 500);
+        }, 0);
 
         // $("html").toggleClass("scrollnone");
     });
