@@ -1001,7 +1001,7 @@ $question_type = "Numerical";
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
-            var vld_msg = "Please fill your response.";
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html(vld_msg);
@@ -1061,7 +1061,7 @@ $question_type = "Numerical";
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
-            var vld_msg = "Please fill your response.";
+            var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {
             $('#qoption_err_' + question_id).html(vld_msg);
