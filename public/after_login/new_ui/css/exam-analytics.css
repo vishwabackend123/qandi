@@ -297,8 +297,7 @@ div#contentHtml .report-block2 .bg-white {
 
 
 div#contentHtml .report-block1 {
-    background: #fff;
-    border-radius: 56px;
+    background: #fff;border-top-left-radius:56px;border-top-right-radius: 56px;
 }
 
 .greentxt {

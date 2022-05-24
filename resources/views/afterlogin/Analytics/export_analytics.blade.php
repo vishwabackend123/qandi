@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
             <div class="row">
                 <div class="col-lg-9 mx-auto">
 
-                    <div class="bg-white dashboard-cards-block">
+                    <div class=" dashboard-cards-block">
                         <div class="report-block1 pb-0 p-6">
                             <div class="
                       d-flex
