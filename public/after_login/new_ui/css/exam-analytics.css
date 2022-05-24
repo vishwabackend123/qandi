@@ -285,7 +285,7 @@ div#contentHtml .bg-white.shadow-lg {
 }
 
 div#contentHtml .report-block2 {
-    background: #d0f3ff;
+    background: #d0f3ff;border-bottom-left-radius:56px;border-bottom-right-radius: 56px;
 }
 
 div#contentHtml .report-block2 .bg-white {
