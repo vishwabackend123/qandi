@@ -1,4 +1,10 @@
 @media(max-width:767px){
+    .edit-form {
+    height: 440px !important;
+}
+#editProfile_form {
+    height: 325px;
+    }
     .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
     min-width: auto;
 }
@@ -225,7 +231,7 @@
         .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: 50px;}
         .active_user {max-width: 325px; }
         .profile-detail {   margin-top: 20px; overflow-y: auto;}
-        .leader-board {height: 465px; min-height: 350px; padding-left: 0px;float: inherit; }
+        .leader-board {height: 450px; min-height: 350px; padding-left: 0px;float: inherit; }
         #editProfile_form .form-flds input {font-size: 14px;}
         #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
         #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;padding: 10px 30px;}

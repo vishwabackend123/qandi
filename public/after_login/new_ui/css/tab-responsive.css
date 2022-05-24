@@ -160,8 +160,6 @@
    }
    .log-out-screen {width: 50%;}
    .subscription .p-text h3 {font-size: 14px; }
-   #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {
-    margin-bottom: 15px;}
     .sub-details{padding: 20px 10px;}
     .dashboard-cards-block .bg-white>small p{
         min-width: 290px;
