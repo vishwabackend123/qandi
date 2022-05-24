@@ -477,7 +477,10 @@
                         </div>
                         <div class="re_link">
                             <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly />
-                            <a class="copylinkbtn" type="button" onclick="copylinkfunction()"><i class="fa fa-files-o" aria-hidden="true"></i> Copy </a>
+                            <a class="copylinkbtn" type="button" onclick="copylinkfunction()">
+                            <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                            <img src="{{URL::asset('public/after_login/new_ui/images/copyicon.png')}}" style="width: 12px;margin-right: 8px;">
+                             Copy </a>
                         </div>
                     </div>
                 </form>

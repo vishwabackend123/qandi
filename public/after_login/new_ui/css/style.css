@@ -1066,6 +1066,8 @@ html.scrollnone .wrapper-dashboard {
 .subscriptionBox .price {
     text-align: center;
     font-size: 15px;
+    font-weight: 600;
+    color: #231f20;
 }
 
 .subscriptionBox p.box-content {
@@ -4671,12 +4673,12 @@ div#sub-planner {
 /** end here**/
 /** Edit form css **/
 .edit-form {
-    width: 420px;
+    width: 440px;
     position: absolute;
     top: 0;
     right: 220px;
     background: #fff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
     display: none;
