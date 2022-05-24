@@ -15,6 +15,7 @@ button {
     outline: none;
     text-decoration: none;
 }
+#time-Avg-quest .bg-white p.fw-bold.text-start , #marKs-trends .bg-white p.fw-bold.text-start{font-size: 16px;}
 .edit-btn-show#EdiTbtnnn {
     padding: 12px 20px;
 }
