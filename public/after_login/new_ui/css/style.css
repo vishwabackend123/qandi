@@ -15,6 +15,7 @@ button {
     outline: none;
     text-decoration: none;
 }
+div#test_instruction a.btn-close {right: 50px;top: 50px;}
 #time-Avg-quest .bg-white p.fw-bold.text-start , #marKs-trends .bg-white p.fw-bold.text-start{font-size: 16px;}
 .edit-btn-show#EdiTbtnnn {
     padding: 12px 20px;
@@ -9582,4 +9583,4 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 .overllanaly .colorfull-bars .red_bar{background: #f7464566;}
 .overllanaly .colorfull-bars .skyblue_bar{background:#00baff66;}
 .overllanaly .colorfull-bars .green_bar{background:#5f4fdd66;}
-.overllanaly  .colorfull-bars{background-color:#fff;}
+/* .overllanaly  .colorfull-bars{background-color:#fff;} */
