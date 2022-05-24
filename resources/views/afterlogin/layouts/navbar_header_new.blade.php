@@ -773,7 +773,7 @@
             </div>
             <span id="image-upload-response" class=""></span>
 
-            <div class="btm-form-flds  pe-3 pb-5">
+            <div class="btm-form-flds  pe-3 pb-md-5">
                 <form id="editProfile_form" action="{{url('/editProfile')}}" method="POST" autocomplete="off">
                     @csrf
                     <div class="d-flex f_l_name_box">
@@ -845,8 +845,8 @@
                     </div>
                     <span class="text-danger" role="alert" id="errlog_edit" style="color:#dc3545 !important"> </span>
                     <div class="form-btns m-0">
-                        <button type="button" id="cancelEdit" class="cancel-btn">cancel</button>
-                        <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled>save</button>
+                        <button type="button" id="cancelEdit" class="cancel-btn m-0">cancel</button>
+                    <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled mb-0>save</button>
                     </div>
                 </form>
             </div>

@@ -1,4 +1,10 @@
 @media(max-width:767px){
+    .edit-form {
+    height: 440px !important;
+}
+#editProfile_form {
+    height: 325px;
+    }
     .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
     min-width: auto;
 }
