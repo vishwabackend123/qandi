@@ -849,7 +849,7 @@ class HomeController extends Controller
      * @param Request $request
      * @return void
      */
-    public function dailyTaskExam($category, $tasktype, $skill_category = null, Request $request)
+    public function dailyTaskExam($category, $tasktype, $skill_category = "", Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -1010,7 +1010,6 @@ class HomeController extends Controller
 
                     return view('afterlogin.DailyTaskExam.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'category', 'tasktype', 'total_marks'));
                 } else {
-
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
             } else {
