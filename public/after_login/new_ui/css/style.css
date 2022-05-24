@@ -2974,6 +2974,9 @@ span.p-icons span:active {
 .subscription .p-text h3 {
     font-size: 20px;
     line-height: 48px;
+    margin-left: 18px;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .custom-page .slick-slide .status-id .star-ratings-css {
@@ -4849,11 +4852,11 @@ button.save-btn {
 
 .subscrived {
     width: 100%;
-    display: inline-block;
+    display: flex;
     background: #f2f2f2;
     border-radius: 42px;
     padding: 31px 20px;
-    /* margin: 20px 0px 0px; */
+    align-content: center;
     margin: 25px 0px 0px;
 }
 
