@@ -416,7 +416,7 @@
                     <div class="emaillinkholder">
                         <div class="mb-3 ">
                             <div class="formerror">
-                                <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter emails" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
+                                <input type="text" class="refer_email_input form-control emaillink border-0 rounded-0" placeholder="Enter email id" aria-describedby="emailHelp" id="referEmails" name="refer_emails" autocomplete="off" required>
                                 <input type="hidden" name="refer_code" id="refer_code" value="{{ session()->get('referal_code') }}">
                                 <p class="invalid-feedback m-0 alert-success errRef p-1 mb-1" id="successRef_auth"> </p>
                                 <p class="invalid-feedback m-0 alert-danger errRef p-1" id="errRef_auth"> </p>
