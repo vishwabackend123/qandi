@@ -2982,8 +2982,11 @@ span.p-icons span:active {
     /* background-color: #08beff !important; */
     background-color: #5ddaff !important;
     color: #ffffff !important;
+    text-transform: lowercase;
 }
-
+.addremovetopic.topic_selected::first-letter {
+    text-transform: capitalize;
+}
 .addremovetopic {
     background: #e4e4e4 !important;
     border-color: #e4e4e4;
