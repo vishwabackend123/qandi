@@ -47,7 +47,7 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="overall" role="tabpanel" aria-labelledby="overall-tab">
-                                <div class="row padingTT">
+                                <div class="row padingTT only_prog">
                                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                                         <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
