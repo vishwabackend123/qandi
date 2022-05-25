@@ -15,6 +15,18 @@ button {
     outline: none;
     text-decoration: none;
 }
+.btn-close.dwnlod_pdf_btn {
+    background: none;
+    padding-right: 0.5rem!important;
+    margin-top: -15px;
+    opacity: 1;
+}
+.btn-close.dwnlod_pdf_btn img {
+    width: 32px;
+    position: relative;
+    left: -8px;
+    top: -6px;
+}
 div#test_instruction a.btn-close {right: 50px;top: 50px;}
 #time-Avg-quest .bg-white p.fw-bold.text-start , #marKs-trends .bg-white p.fw-bold.text-start{font-size: 16px;}
 .edit-btn-show#EdiTbtnnn {
