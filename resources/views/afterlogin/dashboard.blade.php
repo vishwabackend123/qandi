@@ -289,8 +289,8 @@ $userData = Session::get('user_data');
                         </figure> -->
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 Task_Center12">
-                    <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview">
+                <div class="col-xl-3 col-md-6">
+                    <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview Task_Center12">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
