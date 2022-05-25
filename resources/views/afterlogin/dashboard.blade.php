@@ -289,7 +289,7 @@ $userData = Session::get('user_data');
                         </figure> -->
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-3 col-md-6 Task_Center12">
                     <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
