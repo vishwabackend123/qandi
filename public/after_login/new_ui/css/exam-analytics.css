@@ -149,6 +149,8 @@ div#topicclose,
     border-radius: 15px;
     padding-left: 5%;
 }
+.exam-analytics .bg-white.shadow .bg-light-red {
+    background: #ee6a5f;}
 /********************Added-by-sachin************/
 
 #myTabContent .arrow:hover {
