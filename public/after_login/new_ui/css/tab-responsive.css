@@ -1,3 +1,10 @@
+
+@media screen and (max-width:1380px){
+    .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
+    .exam-analytics .position-relative  .tab-wrapper {overflow: hidden;}
+}
+
+
 @media screen and (max-width:1300px){
     #test_instruction h1.text-danger.text-uppercase,
     #test_instruction h3.text-danger.text-uppercase {
