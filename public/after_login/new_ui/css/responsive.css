@@ -109,6 +109,13 @@
             font-size: 12px;
         }
         .Subject_box12>small p{ min-width: 230px !important;}
+        .Task_Center12>small p {
+            border-top-left-radius: 56px;
+            border-bottom-left-radius: 56px;
+            min-width: 258px !important;
+
+        }
+
         
        
 }
