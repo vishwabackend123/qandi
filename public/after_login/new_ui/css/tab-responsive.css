@@ -1,4 +1,10 @@
 @media screen and (max-width:1300px){
+    #test_instruction h1.text-danger.text-uppercase,
+    #test_instruction h3.text-danger.text-uppercase {
+    font-weight: 600;
+    font-size: 17px;
+    padding-right: 28px;
+    }
     .status-id.rating {
         width: auto;
     }
@@ -180,7 +186,6 @@
    .sub-subject .btn.rounded-0.me-2{    border-radius: 9px !important; padding: 5px;width: 35px; height: 35px;}
 .sub-subject strong { font-size: 14px;}
 .addremovetopic {width: 110px;font-size: 14px;}
-.examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
@@ -330,6 +335,9 @@ div.counter{right:0;margin-right: -35px;}
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    #test_instruction a.btn-close {
+    right: 35px !important;
+}
     .exam_card label {
     font-size: 14px;
 }

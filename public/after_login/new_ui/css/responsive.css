@@ -363,12 +363,6 @@
         font-size: 12px;
     }
 
-    #test_instruction h1.text-danger.text-uppercase,
-    #test_instruction h3.text-danger.text-uppercase {
-        font-weight: 600;
-        font-size: 18px;
-    }
-
     .tab-btn-box {
         /* position:relative; */
     }
