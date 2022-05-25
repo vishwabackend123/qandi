@@ -175,32 +175,35 @@
             var scrollblock = $($('#clicktopic_' + chapter_id).attr('href')).offset().top;
              if (scrollpas > 0) {
 
-              if (blockpos > 400) {
-                $('.scroll_top').animate({
-                  scrollTop: scrollblock + scrollpas - blockpos + 150
-                }, 500);
-              } else {
-                 $('.scroll_top').animate({
-                  scrollTop: scrollblock + scrollpas - blockpos
-                }, 500);
-              };
+                  if (blockpos > 400) {
+                    $('.scroll_top').animate({
+                      scrollTop: scrollblock + scrollpas - blockpos + 50
+                    }, 500);
+                  } else {
+                    if(scrollblock <=0 && blockpos <=0 && scrollpas < 550)
+                    {
+                        $('.scroll_top').animate({
+                      scrollTop: scrollblock + scrollpas - blockpos +150
+                    }, 500);
+                    }
+                    
+                  };
 
-            } else {
-              if (scrollpas <= 0 && blockpos < 300) {
-                 $('.scroll_top').animate({
-                  scrollTop: scrollblock - blockpos
-                }, 500);
-              } else if (scrollpas <= 0 && blockpos > 350) {
-                 $('.scroll_top').animate({
-                  scrollTop: scrollblock - blockpos + 50
-                }, 500);
-              } else {
-                $('.scroll_top').animate({
-                  scrollTop: scrollblock - blockpos + scrollpas
-                }, 500);
-              };
-            }
-            $('.scroll_top').scrollTop(100);
+                } else {
+                  if (scrollpas <= 0 && blockpos < 300) {
+                    $('.scroll_top').animate({
+                      scrollTop: scrollblock - blockpos
+                    }, 500);
+                  } else if (scrollpas <= 0 && blockpos > 350) {
+                    $('.scroll_top').animate({
+                      scrollTop: scrollblock - blockpos + 50
+                    }, 500);
+                  } else {
+                    $('.scroll_top').animate({
+                      scrollTop: scrollblock - blockpos + scrollpas
+                    }, 500);
+                  };
+                }
         }
 
     });
