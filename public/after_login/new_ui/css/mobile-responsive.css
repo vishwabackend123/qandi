@@ -1,4 +1,5 @@
 @media(max-width:767px){
+    .exam-analytics .exam-panel.cust-tabs .nav-item {width:auto;}
     .edit-form {
     height: 440px !important;
 }
