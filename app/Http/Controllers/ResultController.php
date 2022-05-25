@@ -71,8 +71,8 @@ class ResultController extends Controller
                     $answerList['timetaken'] = isset($taken_time->$key) ? (string)$taken_time->$key : '';
                     $answerList['attemptCount'] = isset($answer_swap_cnt->$key) ? (int)$answer_swap_cnt->$key : '';
                     $answerList['question_id'] = (int)$key;
-                    /* $answerList['section_id'] = isset($attempt_count->$key->section_id) ? (int)$attempt_count->$key->section_id : '';
- */
+                    $answerList['section_id'] = isset($attempt_count->$key->section_id) ? (int)$attempt_count->$key->section_id : 0;
+
                     $answersArr[] = $answerList;
                 }
             }
@@ -310,9 +310,9 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
-    
 
-   
+
+
 
     public function getAllResult($exam_type)
     {
