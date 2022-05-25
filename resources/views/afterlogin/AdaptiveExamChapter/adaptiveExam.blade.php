@@ -411,7 +411,7 @@ $question_type = "Numerical";
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
                 <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close">
-                <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
+                    <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
                 </a>
             </div>
             <div class="modal-body pt-3 p-5">
@@ -959,6 +959,8 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
+
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
@@ -1022,6 +1024,7 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {

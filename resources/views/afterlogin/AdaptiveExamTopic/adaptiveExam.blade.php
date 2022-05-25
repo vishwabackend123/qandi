@@ -283,35 +283,35 @@ $question_type = "Numerical";
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
                         <div class="d-md-block d-flex justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <div class="" id="app">
-                                <div class="base-timer">
-                                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                        <g class="base-timer__circle">
-                                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                                            <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                            <div class="d-flex align-items-center">
+                                <div class="" id="app">
+                                    <div class="base-timer">
+                                        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                            <g class="base-timer__circle">
+                                                <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                                <path id="base-timer-path-remaining" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
                                      M 50, 50
                                      m -45, 0
                                      a 45,45 0 1,0 90,0
                                      a 45,45 0 1,0 -90,0
                                      "></path>
-                                        </g>
-                                    </svg>
-                                    <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                                            </g>
+                                        </svg>
+                                        <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                                    </div>
                                 </div>
+                                <span class="timing">
+                                    <span id="base-timer-label" class="base-timer__label"></span> Time left
+                                </span>
                             </div>
-                            <span class="timing">
-                                <span id="base-timer-label" class="base-timer__label"></span> Time left
-                            </span>
-                        </div>
-                        <!----this div position change------>
-                                <div class="d-md-flex justify-content-md-end">
+                            <!----this div position change------>
+                            <div class="d-md-flex justify-content-md-end">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
-                            </div>
+                        </div>
                         <form id="form_exam_submit" action="{{route('adaptive_topic_exam_result')}}" method="post">
                             @csrf
                             <input type="hidden" name="session_id" value="{{$session_id}}">
@@ -370,7 +370,7 @@ $question_type = "Numerical";
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
                 <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close">
-                <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
+                    <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
                 </a>
             </div>
             <div class="modal-body pt-3 p-5">
@@ -1012,6 +1012,7 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
@@ -1072,6 +1073,7 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {

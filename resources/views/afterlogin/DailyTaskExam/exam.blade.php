@@ -967,6 +967,7 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
@@ -1037,6 +1038,7 @@ $question_type = "Numerical";
             $('#qoption_err_' + question_id).html(vld_msg);
             $('#qoption_err_' + question_id).addClass('text-danger');
             $('#qoption_err_' + question_id).fadeIn('fast');
+            $('#qoption_err_' + question_id)[0].scrollIntoView();
             $('#question_section .quesBtn').attr("disabled", false);
             $('#question_section .quesBtn').removeClass("disabled");
             setTimeout(function() {
