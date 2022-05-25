@@ -1,6 +1,7 @@
 
 @media screen and (max-width:1380px){
     .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
+    .exam-analytics .position-relative  .tab-wrapper {overflow: hidden;}
 }
 
 
