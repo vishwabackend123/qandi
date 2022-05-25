@@ -1,4 +1,8 @@
 @media(max-width:767px){
+    #test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
+    font-size: 15px;
+    padding-right: 15px;
+}
     .edit-form {
     height: 440px !important;
 }
@@ -50,7 +54,7 @@
     .tab-btn-box{padding:0px}
     .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
     .tiny-green{width:138px!important;}
-    .counter{margin-bottom: 10px;margin-right: -4px!important;}
+    .counter{margin-bottom: 10px;margin-right: -28px!important;}
     .examSect div#myTabContent .tab-pane .question-block {
         padding: 15px 1rem;
     }

@@ -19,7 +19,7 @@ $userData = Session::get('user_data');
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <label>About MyQ Matrix</label>
