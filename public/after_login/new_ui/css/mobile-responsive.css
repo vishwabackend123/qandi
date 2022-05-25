@@ -1,4 +1,5 @@
 @media(max-width:767px){
+    .exam-analytics .exam-panel.cust-tabs .nav-item {width:auto;}
     #test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
     font-size: 15px;
     padding-right: 15px;

@@ -83,6 +83,13 @@ $userData = Session::get('user_data');
 
     /*kanchan css*/
 </style>
+@if($errors->any())
+<script>
+    $(window).on('load', function() {
+        $('#matrix').modal('show');
+    });
+</script>
+@endif
 <div class="main-wrapper dashboard">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
@@ -120,8 +127,8 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <p><b>Task 1 - {{$skill_task}}</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
-                                <p><span class="text-danger">10</span> Questions | Duration :
-                                    <span class="text-danger">15mins</span>
+                                <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
+                                    <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
@@ -136,8 +143,8 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <p><b>Task 2 - Time Management</b></p>
                                 <p>Work on your time management skills with this test</p>
-                                <p><span class="text-danger">10</span> Questions | Duration :
-                                    <span class="text-danger">15mins</span>
+                                <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
+                                    <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
@@ -160,8 +167,8 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <p><b>Task 1 - Accuracy Test</b></p>
                                 <p>Work on your accuracy with <br>test</p>
-                                <p><span class="text-danger">10</span> Questions | Duration :
-                                    <span class="text-danger">15mins</span>
+                                <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
+                                    <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
@@ -176,8 +183,8 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <p><b>Task 2 - Weak Topic Test</b></p>
                                 <p>Work on your weak topics of <span class="text-danger"> Chemistry (Q4-MyQ Matrix)</span> with this test</p>
-                                <p><span class="text-danger">10</span> Questions | Duration :
-                                    <span class="text-danger">15mins</span>
+                                <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
+                                    <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
                                 </p>
                             </div>
                             @if($data['allowed'] == '1')
@@ -228,12 +235,12 @@ $userData = Session::get('user_data');
         </div>
     </div>
     <!--------- Modal ------>
-    <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
+    <!-- <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-0 bg-light">
-                <!-- <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
-            </div> -->
+                <div class="modal-header pb-0 border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+                </div>
                 <div class="modal-body text-center">
                     <p>Give more tests for this <br /> section to be populated</p>
                     <div class="text-center mb-4">
@@ -242,8 +249,23 @@ $userData = Session::get('user_data');
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-------------------->
+    <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-0 bg-light">
+                <div class="modal-header pb-0 border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Please practice more questions on our platform to enable this test.</p>
+                    <div class="text-center mb-4">
+                        <a href="javascript:void(0);" class="btn btn-danger px-5" data-bs-dismiss="modal" aria-label="Close" title="Close"> Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         $(window).on('load', function() {
             //$('#matrix').modal('show');

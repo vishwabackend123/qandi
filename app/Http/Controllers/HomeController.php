@@ -741,6 +741,7 @@ class HomeController extends Controller
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
+            $user_id = 64;
             $exam_id = $userData->grade_id;
             $curl = curl_init();
             $api_URL = env('API_URL');
@@ -857,7 +858,7 @@ class HomeController extends Controller
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $filtered_subject = [];
-
+            $user_id = 64;
 
             if (Redis::exists('custom_answer_time_' . $user_id)) {
                 Redis::del(Redis::keys('custom_answer_time_' . $user_id));
@@ -923,8 +924,12 @@ class HomeController extends Controller
                     $exam_name = isset($responsedata['exam_type_name']) ? $responsedata['exam_type_name'] : "";
                 } else {
                     $aQuestions_list = [];
-
-                    return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                    $test_available = isset($response_data->test_available) ? $response_data->test_available : true;
+                    if ($test_available == false) {
+                        return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
+                    } else {
+                        return redirect()->route('dashboard');
+                    }
                 }
 
 
