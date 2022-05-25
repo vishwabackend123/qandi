@@ -108,6 +108,7 @@
         #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn, #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{
             font-size: 12px;
         }
+        .Subject_box12>small p{ min-width: 230px !important;}
         
        
 }
@@ -2569,7 +2570,6 @@
         border: none;
         padding: 15px 65px;
         color: #fff;
-        margin-top: 12px;
     }
 
     /* end welcome instructions exam popup */
