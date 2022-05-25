@@ -282,6 +282,7 @@ $question_type = "Numerical";
 
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 rightSect">
                     <div class="bg-white d-flex flex-column justify-content-center mb-4   p-5">
+                        <div class="d-md-block d-flex justify-content-between">
                         <div class="d-flex align-items-center">
                             <div class="" id="app">
                                 <div class="base-timer">
@@ -303,16 +304,18 @@ $question_type = "Numerical";
                                 <span id="base-timer-label" class="base-timer__label"></span> Time left
                             </span>
                         </div>
-                        <form id="form_exam_submit" action="{{route('adaptive_topic_exam_result')}}" method="post">
-                            @csrf
-                            <input type="hidden" name="session_id" value="{{$session_id}}">
-                            <input type="hidden" name="topic_id" value="{{$topic_id}}">
-                            <div class="pull-right">
+                        <!----this div position change------>
+                                <div class="d-md-flex justify-content-md-end">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
                                 </button>
                             </div>
+                            </div>
+                        <form id="form_exam_submit" action="{{route('adaptive_topic_exam_result')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="session_id" value="{{$session_id}}">
+                            <input type="hidden" name="topic_id" value="{{$topic_id}}">
                             <button type="submit" id="submitExam" class="btn btn-light-green w-100 rounded-0 mt-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
                                     <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff" />
