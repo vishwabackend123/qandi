@@ -503,7 +503,7 @@ $userData = Session::get('user_data');
                                         <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
                                         <img style="width:55px;" src="{{URL::asset('public/after_login/new_ui/images/tickmark.png')}}">
                                     </span>
-                                    <h3 class="mb-0">{{$val->chapter_name}}</h3>
+                                    <h3 class="mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
                                     <ul class="course-star mt-3 mb-0">
                                         <li style="float:none;">
                                             <strong style="width:auto;" class="d-block">Proficiency</strong>

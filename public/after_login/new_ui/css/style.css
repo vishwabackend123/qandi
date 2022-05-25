@@ -959,7 +959,7 @@ div#collapseNotification {
 /* shubham(05-03-2022)-end */
 /* shubham-start(09-03-2022) */
 html.scrollnone,
-html.scrollnone .wrapper-dashboard {
+html.scrollnone .wrapper-dashboard,html.scrollnone .main-wrapper {
     overflow: hidden;
 }
 .scrollnone body {

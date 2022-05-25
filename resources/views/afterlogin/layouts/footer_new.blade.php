@@ -1541,6 +1541,8 @@
             $('#LeaDer').hide();
             $("#search_field").val('');
             $('#search_field').keyup();
+            $('#saveEdit').attr('disabled', 'disabled');
+            $('#saveEdit').addClass("disabled-btn");
 
         });
     });
