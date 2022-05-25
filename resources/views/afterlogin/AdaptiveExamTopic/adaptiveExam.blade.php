@@ -366,7 +366,9 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close">
+                <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
+                </a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
@@ -495,9 +497,9 @@ $question_type = "Numerical";
 <div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
-            <div class="modal-body text-center pt-2 pb-5">
+            <div class="modal-body text-center pt-3 pb-3">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0" data-bs-dismiss="modal">
                         Resume Test
                     </button>
                 </div>
