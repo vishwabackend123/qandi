@@ -114,7 +114,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-5 col-sm-12">
-                    <div class="bg-white shadow-lg py-5 ps-3 pe-1">
+                    <div class="bg-white shadow-lg py-5 ps-3 pe-1 Subject_box12">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
