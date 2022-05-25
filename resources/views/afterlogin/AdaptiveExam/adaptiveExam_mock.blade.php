@@ -437,9 +437,9 @@ $questtype='radio';
 <div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
-            <div class="modal-body text-center pt-2 pb-5">
+            <div class="modal-body text-center pt-3 pb-3">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0" data-bs-dismiss="modal">
                         Resume Test
                     </button>
                 </div>

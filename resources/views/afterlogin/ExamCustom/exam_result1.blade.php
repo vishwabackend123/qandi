@@ -36,7 +36,7 @@
     <div class="bg-white shadow-lg box-shadow p-3  position-relative m-0 custom-box-shadow">
         <div class="row">
             <div class="col-md-4">
-                <h5 class="dashboard-title mb-3 text-center">Marks %</h5>
+                <h5 class="dashboard-title mb-3 text-center">Marks Percentage</h5>
                 <svg viewBox="0 0 36 36" class="circular-chart green">
                     <path class="circle-bg" d="M18 2.0845
                                         a 15.9155 15.9155 0 0 1 0 31.831

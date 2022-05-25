@@ -850,12 +850,13 @@ class AdpativeExamController extends Controller
             $inputjson['end_test'] = "yes";
             $inputjson['questions_list'] = array_values($questionList);
             $inputjson['answerList'] = array_values($answerList);
-            $inputjson['answerList'] = array_values($answerList);
             $inputjson['planner_id'] = $planner_id;
             /* $inputjson['questions_list'] = [];
             $inputjson['answerList'] = []; */
 
+
             $request = json_encode($inputjson);
+
 
             $curl_url = "";
             $curl = curl_init();

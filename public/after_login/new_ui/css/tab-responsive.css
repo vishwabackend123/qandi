@@ -5,6 +5,12 @@
 
 
 @media screen and (max-width:1300px){
+    #test_instruction h1.text-danger.text-uppercase,
+    #test_instruction h3.text-danger.text-uppercase {
+    font-weight: 600;
+    font-size: 17px;
+    padding-right: 28px;
+    }
     .status-id.rating {
         width: auto;
     }
@@ -12,8 +18,8 @@
     
 }
 @media screen and (max-width:1199px){
-   #test_instruction button#goto-exam-btn {
-        margin-top: 12px;
+   .goto-exam-btn {
+    margin-top: 12px !important;
     }
 .overllanaly {margin-bottom:40px;}
 
@@ -186,7 +192,6 @@
    .sub-subject .btn.rounded-0.me-2{    border-radius: 9px !important; padding: 5px;width: 35px; height: 35px;}
 .sub-subject strong { font-size: 14px;}
 .addremovetopic {width: 110px;font-size: 14px;}
-.examhead{font-size:22px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow{top: 1%!important;right: -20px!important;}
 .content-wrapper.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow{top: 1%!important;left: 10px!important;}
@@ -216,7 +221,7 @@
     display: block!important;
 }
 #exam_content_sec .sectionBtn{margin-bottom:20px!important;}
-div.counter{right:0;}
+div.counter{right:0;margin-right: -35px;}
 .mocktest-attempted-wrapper  .cust-tab-content , .practice_custom_page  .cust-tab-content , .practice-series-lists .cust-tab-content{padding: 0px 20px 40px!important;}
 #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,
 #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{min-width: 105px;}
@@ -336,6 +341,9 @@ div.counter{right:0;}
 .rating .lbl-text{font-size:20px;}
 }
 @media(max-width:991px){
+    #test_instruction a.btn-close {
+    right: 35px !important;
+}
     .exam_card label {
     font-size: 14px;
 }
@@ -389,7 +397,6 @@ div.counter{right:0;}
     }
     .slbs-link.ms-5 {margin-left:1.5rem!important;}
     .list-series .scroll-div-live-exm{padding: 0.2rem!important;}
-    .counter{margin-right:-24px!important}
    #test_instruction .col-xl-4.ps-xl-5.ps-lg-2 .justify-content-center{width:100%;}
    #scroll-mobile::-webkit-scrollbar {
     width: 0px;

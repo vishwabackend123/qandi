@@ -109,6 +109,12 @@
             font-size: 12px;
         }
         .Subject_box12>small p{ min-width: 230px !important;}
+        .Task_Center12>small p {
+            border-top-left-radius: 56px;
+            border-bottom-left-radius: 56px;
+            min-width: 258px !important;
+        }
+
         
        
 }
@@ -361,12 +367,6 @@
 
     button#goto-exam-btn {
         font-size: 12px;
-    }
-
-    #test_instruction h1.text-danger.text-uppercase,
-    #test_instruction h3.text-danger.text-uppercase {
-        font-weight: 600;
-        font-size: 18px;
     }
 
     .tab-btn-box {

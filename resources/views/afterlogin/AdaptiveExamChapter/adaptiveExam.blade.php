@@ -21,6 +21,8 @@ $userData = Session::get('user_data');
         null
     };
 </script>
+
+<!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -37,6 +39,7 @@ $userData = Session::get('user_data');
         };
     });
 </script>
+
 <style>
     .mjx-chtml {
         line-height: 0.5 !important;
@@ -121,6 +124,52 @@ $question_type = "Single Choice";
 $question_type = "Numerical";
 }
 @endphp
+<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
+            </div>
+            <div class="modal-body text-center pt-2 pb-5">
+                <div class="d-flex align-items-center w-100 justify-content-center my-3">
+                    <div id="app">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
+                                     M 50, 50
+                                     m -45, 0
+                                     a 45,45 0 1,0 90,0
+                                     a 45,45 0 1,0 -90,0
+                                     "></path>
+                                </g>
+                            </svg>
+                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
+                        </div>
+                    </div>
+                    <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
+                </div>
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
+                <p>
+                    You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
+                </p>
+                <div>
+                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
+                        Continue
+                    </button>
+                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
+                        <span class="btnSubic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
+                                <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
+                            </svg>
+                        </span>&nbsp;&nbsp;&nbsp;Submit TEST
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="main-wrapper" id="mainDiv" style="padding-left:0px; display:none;">
     <div class="content-wrapper examSect" id="exam_content_sec">
         <div class="container-fluid">
@@ -361,7 +410,9 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close">
+                <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
+                </a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">
@@ -411,58 +462,13 @@ $question_type = "Numerical";
         </div>
     </div>
 </div>
-<div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+
+<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="resume-test" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
-            </div>
-            <div class="modal-body text-center pt-2 pb-5">
+            <div class="modal-body text-center pt-3 pb-3">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <div id="app">
-                        <div class="base-timer">
-                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                <g class="base-timer__circle">
-                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-                                    <path id="base-timer-path-remaining_alt" stroke-dasharray="283" class="base-timer__path-remaining arc" d="
-                                     M 50, 50
-                                     m -45, 0
-                                     a 45,45 0 1,0 90,0
-                                     a 45,45 0 1,0 -90,0
-                                     "></path>
-                                </g>
-                            </svg>
-                            <img class="watch-icon" src="{{URL::asset('public/after_login/images/timer_Exam_page_ic.png')}}" />
-                        </div>
-                    </div>
-                    <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
-                </div>
-                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
-                <p>
-                    You haven’t attempted all of the questions.<br>Do you want to have a quick review before you Submit?
-                </p>
-                <div>
-                    <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
-                        Continue
-                    </button>
-                    <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
-                        <span class="btnSubic">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 18">
-                                <path data-name="Path 2331" d="M13 3v7h6l-8 11v-7H5l8-11" transform="translate(-5 -3)" style="fill:#fff"></path>
-                            </svg>
-                        </span>&nbsp;&nbsp;&nbsp;Submit TEST
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="resume-test" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered modal-lg ">
-        <div class="modal-content rounded-0">
-            <div class="modal-body text-center pt-2 pb-5">
-                <div class="d-flex align-items-center w-100 justify-content-center my-3">
-                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0 mt-3" data-bs-dismiss="modal">
+                    <button id="bt-modal-cancel" onclick="start();" type="button" class="btn btn-green-custom px-5 rounded-0" data-bs-dismiss="modal">
                         Resume Test
                     </button>
                 </div>
@@ -1170,6 +1176,7 @@ $question_type = "Numerical";
         $("#form_exam_submit").validate({
 
             submitHandler: function(form) {
+
                 if (timeLeft >= 1) {
                     let timer_left = document.querySelector("#base-timer-path-remaining_alt");
                     let lefttime_exam_h = document.getElementById("lefttime_pop_h");
@@ -1191,13 +1198,13 @@ $question_type = "Numerical";
                     if (response_ans == false) {
                         return false;
                     } else {
-                        stop('submit');
-
                         $('#FullTest_Exam_Panel_Interface_A').modal('show');
+
+                        stop('submit');
+                        return false;
                     }
 
                 } else {
-
 
                     form.submit();
                 }

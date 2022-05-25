@@ -227,7 +227,6 @@ $question_type = "Numerical";
     </div>
 </div>
 <!-- exam footer -->
-<script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
 <script>
     var question_id = '{{$active_q_id}}';
     var template_type = '{{$template_type}}';
