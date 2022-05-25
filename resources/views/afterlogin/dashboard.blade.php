@@ -79,7 +79,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
@@ -117,7 +117,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
@@ -165,7 +165,7 @@ $userData = Session::get('user_data');
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
@@ -237,7 +237,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 progress-journey-card m-0">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
@@ -274,7 +274,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 m-0 newtabview">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
@@ -293,7 +293,7 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview">
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
-                            <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                            <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p>
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
@@ -345,7 +345,7 @@ $userData = Session::get('user_data');
                         <div class="swiper-slide bg-white go2Planner weekylplan-block weekly-plan-test">
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
-                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -365,7 +365,7 @@ $userData = Session::get('user_data');
                         <div class="swiper-slide bg-white go2Planner weekylplan-block">
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
-                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
@@ -402,7 +402,7 @@ $userData = Session::get('user_data');
                             <!----- Weekly tests ---->
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
-                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p>
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
