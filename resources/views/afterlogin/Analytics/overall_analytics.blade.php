@@ -52,7 +52,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
@@ -91,7 +91,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white box-shadow shadow-lg py-5 px-3">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
@@ -153,7 +153,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white p-3 h-100 px-5 text-center">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
@@ -182,7 +182,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white p-3 h-100 px-5">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
@@ -199,7 +199,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white p-3 h-100 px-5 text-center">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
@@ -229,7 +229,7 @@ $userData = Session::get('user_data');
                                         <div class="bg-white pt-3  px-5">
                                             <small>
                                                 <!-- <i class="fa  fa-info"></i> -->
-                                                <img style="width:16px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
+                                                <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p>
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
