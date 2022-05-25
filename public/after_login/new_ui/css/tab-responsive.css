@@ -6,6 +6,9 @@
     
 }
 @media screen and (max-width:1199px){
+   #test_instruction button#goto-exam-btn {
+        margin-top: 12px;
+    }
 .overllanaly {margin-bottom:40px;}
 
         .exam_attempted_common_page .result-list-head.d-flex{ 
