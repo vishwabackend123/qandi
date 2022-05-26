@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use App\Http\Traits\CommonTrait;
 
-
 class ResultController extends Controller
 {
     use CommonTrait;
@@ -25,7 +24,6 @@ class ResultController extends Controller
     //
     public function exam_result(Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -132,14 +130,13 @@ class ResultController extends Controller
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
-
                 if (!empty($category) && !empty($tasktype)) {
                     $saveDailyTaskRecord = $this->saveRecordToTaskCenterHistory($user_id, $tasktype, $category);
                 }
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
 
-                //return view('afterlogin.ExamCustom.exam_result_analytics');
+            //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
                 return redirect()->route('dashboard');
                 /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
@@ -152,7 +149,6 @@ class ResultController extends Controller
 
     public function exam_post_analysis_score(Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -195,7 +191,6 @@ class ResultController extends Controller
 
                 return view('afterlogin.ExamCustom.exam_result1', compact('response'));
             } else {
-
                 return false;
             }
         } catch (\Exception $e) {
@@ -206,7 +201,6 @@ class ResultController extends Controller
 
     public function exam_post_analysis_attempt(Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -249,7 +243,6 @@ class ResultController extends Controller
 
                 return view('afterlogin.ExamCustom.exam_result2', compact('response'));
             } else {
-
                 return false;
             }
         } catch (\Exception $e) {
@@ -260,7 +253,6 @@ class ResultController extends Controller
 
     public function exam_post_analysis_rank(Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -300,10 +292,8 @@ class ResultController extends Controller
             $check_response = isset($response->success) ? $response->success : false;
 
             if ($check_response == true) {
-
                 return view('afterlogin.ExamCustom.exam_result3', compact('response'));
             } else {
-
                 return false;
             }
         } catch (\Exception $e) {
@@ -350,7 +340,6 @@ class ResultController extends Controller
             $result_data = isset($response_data->response) ? $response_data->response : [];
             return $result_data;
         } else {
-
             return false;
         }
     }
@@ -438,8 +427,6 @@ class ResultController extends Controller
     public function saveRecordToTaskCenterHistory($user_id, $tasktype, $category)
     {
         try {
-
-
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/save-record-to-task-center-history/' . $user_id . '/' . $tasktype . '/' . $category;

@@ -58,9 +58,7 @@ class PreparationController extends Controller
 
             $aPreparation = $preparation_list;
             return view('afterlogin.Preparation.preparation_center', compact('subject_list', 'aPreparation'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -77,8 +75,8 @@ class PreparationController extends Controller
             $responsePdf = '';
             if (isset($data) && !empty($data)) :
                 $api_url = env('API_URL') . 'api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
-                $curl = curl_init();
-                curl_setopt_array($curl, array(
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
                     CURLOPT_URL => $api_url,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => '',
@@ -88,35 +86,33 @@ class PreparationController extends Controller
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => 'GET',
                 ));
-                $response = curl_exec($curl);
-                curl_close($curl);
-                $responseData = json_decode($response);
-                $status = isset($responseData->success) ? $responseData->success : false;
+            $response = curl_exec($curl);
+            curl_close($curl);
+            $responseData = json_decode($response);
+            $status = isset($responseData->success) ? $responseData->success : false;
 
-                $return_response = [];
-                if ($status == true) {
-                    foreach ($responseData->response as $value) {
-                        $responsePdf = $value->paper_file_name;
-                    }
-                    $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
-
-                    $return_response['status'] = 'success';
-                    $return_response['message'] = "Result found successfully";
-                    $return_response['imgUrl'] = $imgUrl;
-
-                    return json_encode($return_response);
-                } else {
-                    $return_response['status'] = 'failed';
-                    $return_response['message'] = "No file found to download.";
-                    return json_encode($return_response);
+            $return_response = [];
+            if ($status == true) {
+                foreach ($responseData->response as $value) {
+                    $responsePdf = $value->paper_file_name;
                 }
+                $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
+
+                $return_response['status'] = 'success';
+                $return_response['message'] = "Result found successfully";
+                $return_response['imgUrl'] = $imgUrl;
+
+                return json_encode($return_response);
+            } else {
+                $return_response['status'] = 'failed';
+                $return_response['message'] = "No file found to download.";
+                return json_encode($return_response);
+            }
             endif;
 
             $subject_list = $this->redis_subjects();
             return view('afterlogin.Preparation.exam_papers', compact('subject_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -178,9 +174,7 @@ class PreparationController extends Controller
                 $preparation_list = isset($aResponse->bookmark_questions) ? $aResponse->bookmark_questions : '';
             }
             return view('afterlogin.Preparation.subject_ajax_prepration_data', compact('preType', 'values', 'preparation_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -227,9 +221,7 @@ class PreparationController extends Controller
             }
 
             return view('afterlogin.Preparation.preparation_center_ajax', compact('values', 'preparation_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -276,9 +268,7 @@ class PreparationController extends Controller
                 $preparation_list = [];
             }
             return view('afterlogin.Preparation.video_ajax', compact('values', 'preparation_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -326,9 +316,7 @@ class PreparationController extends Controller
             }
 
             return view('afterlogin.Preparation.notes_ajax', compact('values', 'preparation_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -344,7 +332,8 @@ class PreparationController extends Controller
             $chapter_id = $request->chapter_id;
             $values = isset($request->values) ? json_decode($request->values) : [];
 
-            $api_url = env('API_URL') . 'api/subjectResources/bookmarks/' . $user_id . '/' . $exam_id . '/' . $chapter_id;;
+            $api_url = env('API_URL') . 'api/subjectResources/bookmarks/' . $user_id . '/' . $exam_id . '/' . $chapter_id;
+            ;
 
             $curl = curl_init();
             curl_setopt_array($curl, array(
@@ -369,9 +358,7 @@ class PreparationController extends Controller
 
             $preparation_list = $aResponse->bookmark_questions;
             return view('afterlogin.Preparation.bookmarks_ajax', compact('values', 'preparation_list'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -429,7 +416,6 @@ class PreparationController extends Controller
             $attempt_opt = [];
 
             if (isset($result_response->response) && !empty($result_response->response)) {
-
                 $collection = collect($result_response->response);
                 $aQuestionslist = $collection->sortBy('subject_id');
                 $grouped = $collection->groupBy('subject_id');
@@ -547,9 +533,7 @@ class PreparationController extends Controller
             } else {
                 return redirect()->route('dashboard');
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -557,7 +541,6 @@ class PreparationController extends Controller
 
     public function next_review_questionbookmark($question_id)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -600,8 +583,6 @@ class PreparationController extends Controller
             $word2 = "public/images/questions/";
             //echo "<pre>"; print_r($result_response); die;
             if (isset($result_response->response) && !empty($result_response->response)) {
-
-
                 $all_data = collect($result_response->response)->sortBy('subject_id');
 
                 $allQuestions = $all_data->keyBy('question_id');
@@ -698,9 +679,7 @@ class PreparationController extends Controller
 
 
             return view('afterlogin.ExamCustom.next_review_questionbookmark', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -750,8 +729,6 @@ class PreparationController extends Controller
             $word2 = "public/images/questions/";
 
             if (isset($result_response->response) && !empty($result_response->response)) {
-
-
                 $all_data = collect($result_response->response);
                 $all_data = $all_data->sortBy('subt_id');
 
@@ -843,9 +820,7 @@ class PreparationController extends Controller
 
             // echo "<pre>"; print_r($question_data); die;
             return view('afterlogin.ExamCustom.next_review_questionbookmark', compact('question_data', 'attempt_opt', 'qNo', 'correct_ans', 'answerKeys', 'activeq_id', 'next_qid', 'prev_qid'));
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
@@ -895,9 +870,7 @@ class PreparationController extends Controller
                 default:
                     return view('afterlogin.Preparation.bookmarks_ajax', compact('type', 'preparation_list'));
             }
-        }
-        catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Log;
 
 class PreviousYearExamController extends Controller
 {
+    use CommonTrait;
     /**
      * Create a new controller instance.
      *
@@ -24,7 +26,6 @@ class PreviousYearExamController extends Controller
     {
         $this->middleware('auth');
     }
-    use CommonTrait;
     public function index()
     {
         try {
@@ -63,13 +64,12 @@ class PreviousYearExamController extends Controller
                 $response_data = (json_decode($response_json));
                 $result_data = isset($response_data) ? $response_data : [];
 
-                return view('afterlogin.PreviousYearExam.index',compact('result_data'));
+                return view('afterlogin.PreviousYearExam.index', compact('result_data'));
             } else {
                 return Redirect::back()->withErrors(['There is some error  for this result id.']);
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
-
     }
 }

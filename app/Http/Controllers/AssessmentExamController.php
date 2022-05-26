@@ -73,7 +73,7 @@ class AssessmentExamController extends Controller
                 $exam_fulltime = $responsedata->time_allowed ?? '';
 
                 $exam_ques_count = $questions_count = count($aQuestions_list);
-                //$exam_fulltime = $questions_count;
+            //$exam_fulltime = $questions_count;
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;

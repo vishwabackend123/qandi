@@ -24,7 +24,6 @@ class MockExamController extends Controller
     public function mockExam(Request $request)
     {
         try {
-
             $filtered_subject = [];
             $userData = Session::get('user_data');
 
@@ -295,7 +294,7 @@ class MockExamController extends Controller
             $aquestionTakenTime = isset($sessionResult->taken_time_sec->$quest_id) ? $sessionResult->taken_time_sec->$quest_id : 0;
             $aSections = isset($sessionResult->section_data) ? $sessionResult->section_data : [];
             $aSectionSub = isset($sessionResult->aSectionSub) ? $sessionResult->aSectionSub : [];
-            $aSubSecCount = isset($sessionResult->aSubSecCount) ? $sessionResult->aSubSecCount  : [];
+            $aSubSecCount = isset($sessionResult->aSubSecCount) ? $sessionResult->aSubSecCount : [];
 
 
             return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
@@ -398,7 +397,7 @@ class MockExamController extends Controller
             $aSubSecCount = isset($sessionResult->aSubSecCount) ? $sessionResult->aSubSecCount : [];
 
 
-            return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime',  'aSections', 'aSectionSub', 'aSubSecCount'));
+            return view('afterlogin.AdaptiveExam.next_adaptive_question_mock', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime', 'aSections', 'aSectionSub', 'aSubSecCount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -466,7 +465,6 @@ class MockExamController extends Controller
                     $attempt_sub_section_cnt[$question_id] = array("sub_id" => $subject_id, "section_id" => $section_id);
                 }
             } else {
-
                 $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = $attempt_sub_section_cnt =  [];
                 if (isset($option_id) && $option_id != '') {
                     $retrive_array[$question_id] = $option_id;
@@ -500,7 +498,6 @@ class MockExamController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-
             Log::info($e->getMessage());
         }
     }

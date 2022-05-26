@@ -89,7 +89,6 @@ class HomeController extends Controller
             }
 
             if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
-
                 return redirect()->route('subscriptions');
             }
 
@@ -301,7 +300,6 @@ class HomeController extends Controller
             $stand_value = $request->input('user_stand_value');
 
             if ($stand_value) {
-
                 $request = ['student_id' => (int)$user_id, 'student_stage_at_sgnup' => (int)$stand_value,];
                 $request_json = json_encode($request);
 
@@ -333,14 +331,12 @@ class HomeController extends Controller
                 if ($httpcode != 200 && $httpcode != 201) {
                     $status = false;
                 } else {
-
                     $aResponse = json_decode($response_json);
                     $status = isset($aResponse->success) ? $aResponse->success : '';
                 }
                 if ($status == true) {
                     return redirect()->route('dashboard');
                 } else {
-
                     return redirect()
                         ->back();
                 }
@@ -457,7 +453,7 @@ class HomeController extends Controller
                 $response['error'] = "";
                 $response['message'] = "email id or mobile number already exist";
                 return json_encode($response);
-            } else if ($mobileexists == 1) {
+            } elseif ($mobileexists == 1) {
                 $response['success'] = false;
                 $response['error'] = "";
                 $response['message'] = "email id or mobile number already exist";
@@ -492,7 +488,6 @@ class HomeController extends Controller
     public function editProfileImage(Request $request)
     {
         try {
-
             $postData = $request->only('file-input');
             $file = $postData['file-input'];
 
@@ -549,13 +544,11 @@ class HomeController extends Controller
                     $aResponse = json_decode($response);
 
                     if (isset($aResponse->success) && $aResponse->success == true) {
-
                         $sessionData = Session::get('user_data');
                         $sessionData->user_profile_img = $aResponse->filename;
                         Session::put('user_data', $sessionData);
                         echo $response;
                     } else {
-
                         echo $response;
                     }
                 }
@@ -568,7 +561,6 @@ class HomeController extends Controller
     public function saveFcmToken(Request $request)
     {
         try {
-
             $data = $request->all();
             $userData = Session::get('user_data');
 
@@ -614,7 +606,6 @@ class HomeController extends Controller
     public function searchFriendWithKeyWord(Request $request)
     {
         try {
-
             $userData = Session::get('user_data');
             $user_id = $userData->id;
             $class_id = $userData->grade_id;
@@ -642,12 +633,10 @@ class HomeController extends Controller
             $status = isset($aResponse->success) ? $aResponse->success : false;
 
             if ($status != false) {
-
                 $resp_list = isset($aResponse->response) ? $aResponse->response : [];
                 $collection = collect($resp_list);
 
                 $sorted = $collection->sortBy(function ($value, $key) {
-
                     return $value->user_rank;
                 });
                 $search_list = $sorted->values();
@@ -737,7 +726,6 @@ class HomeController extends Controller
      */
     public function dailytask()
     {
-
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
@@ -773,7 +761,6 @@ class HomeController extends Controller
 
     public function myQMatrix()
     {
-
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
@@ -865,7 +852,6 @@ class HomeController extends Controller
             }
 
             if (!empty($category)) {
-
                 if ($category == 'skill') {
                     $category_url = 'skill_' . $skill_category;
                     $test_type = 'Task-Center-' . ucwords($skill_category);
@@ -1018,11 +1004,9 @@ class HomeController extends Controller
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
             } else {
-
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
-
             Log::info($e->getMessage());
         }
     }

@@ -74,7 +74,6 @@ class SubscriptionController extends Controller
             $aResponse = json_decode($response_json);
             $response_status = isset($aResponse->success) ? $aResponse->success : false;
             if ($response_status == true) {
-
                 $subscriptions = isset($aResponse->all_packages) ? $aResponse->all_packages : [];
                 $purchased_packages = isset($aResponse->purchased_packages) ? $aResponse->purchased_packages : [];
             } else {
@@ -118,7 +117,6 @@ class SubscriptionController extends Controller
 
             $response_status1 = isset($aResponse1->success) ? $aResponse1->success : false;
             if ($response_status1 == true) {
-
                 $purchased_packages1 = isset($aResponse1->order_details) ? $aResponse1->order_details : [];
             } else {
                 $purchased_packages1 = [];
@@ -231,7 +229,7 @@ class SubscriptionController extends Controller
                 /*  Session::forget('user_data');
                 $user_Data = Auth::user();
                 Session::put('user_data', $user_Data);
-                $userData = Session::get('user_data');      
+                $userData = Session::get('user_data');
  */
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
@@ -239,7 +237,6 @@ class SubscriptionController extends Controller
 
                 return redirect()->route('dashboard');
             } else {
-
                 return redirect()->back()->withErrors(['Something wrong! Plase try after some time.']);
             }
         } catch (\Exception $e) {
@@ -255,7 +252,6 @@ class SubscriptionController extends Controller
      */
     public function checkout(Request $request)
     {
-
         try {
             $postdata = $request->all();
 
@@ -413,7 +409,6 @@ class SubscriptionController extends Controller
             if (isset($aResponse->success) && $aResponse->success == true) {
                 echo $response_json;
             } else {
-
                 echo $err;
             }
         } catch (\Exception $e) {
