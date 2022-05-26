@@ -15,6 +15,19 @@ button {
     outline: none;
     text-decoration: none;
 }
+.dailytask-wrapper .dtrow-left .col-md-6 p:first-child b {
+    font-size: 17px;
+}
+.dailytask-wrapper  .dtrow-left .btntheme{
+    font-weight: 600;
+    max-width: 210px;
+}
+.dailytask-wrapper .dtrow-left .col-md-6 p {
+    font-size: 16px;
+}
+.dailytask-wrapper .bg-white.shadow-lg .progress_text{
+    font-size: 20px;
+}
 a.Try14 {
     font-size: 17px;
 }

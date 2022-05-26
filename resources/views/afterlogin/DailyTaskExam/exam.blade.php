@@ -320,7 +320,9 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close"></a>
+                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close">
+                <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
+                </a>
             </div>
             <div class="modal-body pt-3 p-5">
                 <div class="row">

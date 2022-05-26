@@ -94,7 +94,7 @@ $userData = Session::get('user_data');
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
-    <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
+    <div class="content-wrapper matrixpage-wrapper dashboard-cards-block dailytask-wrapper">
         <div class="container-fluid custom-page">
             <div class="row">
                 <div class="col-md-6">
