@@ -355,7 +355,7 @@ div.counter{right:0;margin-right: -35px;}
         height: auto !important;
     }
 #attempted .result-list-btns a {
-    font-size: 13px;
+    font-size: 12px;
 }
     .qoption_error{
      position: relative;
@@ -495,7 +495,7 @@ div.counter{right:0;margin-right: -35px;}
     .review_expand {
         right: 9%;
     }
-    #attempted .result-analysis{width: 161px;font-size: 12px;}
+    #attempted .result-analysis{width: 161px;font-size: 11px;}
     #attempted .paper-summery{padding-left: 15px!important;}
     #attempted .score-show{max-width: 180px;}
     #attempted .paper-sub{padding: 0 10px 0 0;}
