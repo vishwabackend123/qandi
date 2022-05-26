@@ -12,9 +12,9 @@
 
 
 @media screen and ( max-height:800px ) {
-    .for-review-screen, .for-review-screen .bg-white {
-        /* height: 600px !important; */ 
-    }
+    /* .for-review-screen, .for-review-screen .bg-white {
+        height: 600px !important; 
+    } */
 }
 
 @media screen and ( max-height:925px ){
@@ -24,9 +24,9 @@
 }
 
 @media screen and ( max-height: 767px ) {
-    .for-review-screen, .for-review-screen .bg-white {
-        /* height: 500px !important; */
-    }
+    /* .for-review-screen, .for-review-screen .bg-white {
+        height: 500px !important;
+    } */
 	span#activeUserName {
     /* font-size: 14px !important; */
     line-height: 16px !important;
@@ -1825,6 +1825,7 @@
     .examSect .ans-block.row.mt-5 .mb-4 {
         margin-bottom: 10px !important;
     }
+    */
 	
 }
 
@@ -2594,7 +2595,6 @@
     /* end end exam popup */
 
     /*** Rahul Exam analytics page css 13-12-2021 **/
-    .exam-analytics {}
 
     .exam-analytics span.text-center.w-100 img {
         width: 100%;
@@ -3058,7 +3058,7 @@
         }
 
         .profile-show {
-            height: auto%;
+            height: auto;
             padding: 10px 0px;
         }
 
@@ -3953,7 +3953,3 @@
             max-width: 90% !important;
         }
     }
-  
- 
-   
- 
