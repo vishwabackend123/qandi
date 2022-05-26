@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
-
 class LiveExamController extends Controller
 {
     //
@@ -28,7 +27,6 @@ class LiveExamController extends Controller
      */
     public function exam_login(Request $request)
     {
-
         return view('afterlogin.LiveExam.exam_login');
     }
 
@@ -281,7 +279,6 @@ class LiveExamController extends Controller
 
                 return view('afterlogin.LiveExam.live_result_analysis', compact('response'));
             } else {
-
                 return redirect()->back();
             }
         } catch (\Exception $e) {

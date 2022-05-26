@@ -75,7 +75,6 @@ class PlannerController extends Controller
             curl_close($curl);
 
             if ($httpcode == 200 || $httpcode == 201) {
-
                 return $response_json;
             } else {
                 return $err;
@@ -125,7 +124,6 @@ class PlannerController extends Controller
 
                 return view('afterlogin.weekly_planner', compact('planner'));
             } else {
-
                 return false;
             }
         } catch (\Exception $e) {
@@ -183,7 +181,6 @@ class PlannerController extends Controller
 
                 return json_encode(array('range' => $range, 'planner' => $planner, 'status' => 'success'));
             } else {
-
                 return json_encode(array('range' => $range, 'status' => 'failed'));
             }
         } catch (\Exception $e) {
@@ -254,7 +251,6 @@ class PlannerController extends Controller
                 $aQuestionslist = isset($responsedata->questions_list[0]) ? $responsedata->questions_list[0] : $responsedata->questions_list;
 
                 if (!empty($aQuestionslist)) {
-
                     $aQuestions_lists = !empty($aQuestionslist) ? $aQuestionslist->Questions : [];
 
                     $subject_id = !empty($aQuestionslist) ? $aQuestionslist->subject_id : '';
@@ -335,7 +331,6 @@ class PlannerController extends Controller
             $aTargets = [];
 
             foreach ($filtered_subject as $sub) {
-
                 $aTargets[] = $sub->subject_name;
             }
             $tagrets = implode(', ', $aTargets);
@@ -377,7 +372,6 @@ class PlannerController extends Controller
 
     public function plannerAdaptiveExam($planner_id = null, Request $request)
     {
-
         try {
             $filtered_subject = [];
 
@@ -453,11 +447,9 @@ class PlannerController extends Controller
                     $exam_fulltime = $responsedata->time_allowed;
                     $questions_count = count($aQuestionslist);
                 } else {
-
                     return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
                 }
             } else {
-
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
             $exam_fulltime = 60; //60min set for cahpter adaptive exam

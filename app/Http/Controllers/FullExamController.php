@@ -21,7 +21,6 @@ class FullExamController extends Controller
 
     public function exam(Request $request, $exam_name)
     {
-
         try {
             $filtered_subject = [];
             $userData = Session::get('user_data');
@@ -80,7 +79,7 @@ class FullExamController extends Controller
                 //$exam_fulltime = $responsedata->time_allowed;
                 $exam_fulltime = 180;
                 $questions_count = count($aQuestions_list);
-                //$exam_fulltime = $questions_count;
+            //$exam_fulltime = $questions_count;
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;
@@ -178,13 +177,12 @@ class FullExamController extends Controller
         }
     }
 
-    function exam_result()
+    public function exam_result()
     {
-
         return view('afterlogin.ExamViews.resultview');
     }
 
-    function exam_review()
+    public function exam_review()
     {
         return view('afterlogin.ExamViews.review');
     }
@@ -192,7 +190,6 @@ class FullExamController extends Controller
 
     public function next_question($quest_id, Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
@@ -282,7 +279,6 @@ class FullExamController extends Controller
 
             return view('afterlogin.ExamViews.next_question', compact('qNo', 'question_data', 'option_data', 'activeq_id', 'next_qid', 'prev_qid', 'last_qid', 'que_sub_id', 'aGivenAns', 'aquestionTakenTime'));
         } catch (\Exception $e) {
-
             Log::info($e->getMessage());
         }
     }
@@ -290,7 +286,6 @@ class FullExamController extends Controller
     public function next_subject_question($subject_id, Request $request)
     {
         try {
-
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -309,7 +304,6 @@ class FullExamController extends Controller
             $filtered_questions = $filtered->values()->all();
             /* this extra code for test series */
             if (empty($filtered_questions)) {
-
                 $filtered = $collection->where('subt_id', $subject_id);
                 $filtered_questions = $filtered->values()->all();
             }

@@ -503,7 +503,6 @@ class ExamCustomController extends Controller
                     $attempt_sub_section_cnt[$question_id] = array("sub_id" => $subject_id, "section_id" => $section_id);
                 }
             } else {
-
                 $retrive_array = $retrive_time_array = $answer_swap_cnt = $retrive_time_sec = $attempt_sub_section_cnt =  [];
                 if (isset($option_id) && $option_id != '') {
                     $retrive_array[$question_id] = $option_id;
@@ -537,7 +536,6 @@ class ExamCustomController extends Controller
 
             return json_encode($response);
         } catch (\Exception $e) {
-
             Log::info($e->getMessage());
         }
     }

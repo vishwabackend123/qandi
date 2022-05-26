@@ -65,7 +65,6 @@ class TestSeriesController extends Controller
 
                 return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
             } else {
-
                 return view('afterlogin.TestSeries.serieslist', compact('live_series', 'open_series'));
             }
         } catch (\Exception $e) {
@@ -93,7 +92,7 @@ class TestSeriesController extends Controller
             }
 
             $exam_name = isset($request->series_name) ? $request->series_name : '';
-            $exam_name = isset($request->series_name) ? $exam_name  : '';
+            $exam_name = isset($request->series_name) ? $exam_name : '';
             $series_id = isset($request->series_id) ? $request->series_id : '';
             $series_type = isset($request->series_type) ? $request->series_type : '';
             $exam_fulltime = isset($request->time_allowed) ? $request->time_allowed : '';
@@ -101,8 +100,6 @@ class TestSeriesController extends Controller
             $exam_mode = isset($request->exam_mode) ? $request->exam_mode : '';
 
             if (!empty($series_id)) {
-
-
                 $curl_url = "";
                 $curl = curl_init();
                 $api_URL = env('API_URL');
@@ -139,7 +136,6 @@ class TestSeriesController extends Controller
                 $status = isset($responsedata->success) ? $responsedata->success : false;
 
                 if ($status == true) {
-
                     $aQuestions_list = isset($responsedata->questions) ? $responsedata->questions : [];
                 } else {
                     $aQuestions_list = [];
@@ -239,7 +235,7 @@ class TestSeriesController extends Controller
         }
     }
 
-    function shuffle_assoc($list)
+    public function shuffle_assoc($list)
     {
         if (!is_array($list)) {
             return $list;

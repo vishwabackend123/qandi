@@ -26,9 +26,8 @@ class ReviewController extends Controller
 
     /* creating review with api */
 
-    public function getReview($result_id,$pageName = "")
+    public function getReview($result_id, $pageName = "")
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -80,8 +79,6 @@ class ReviewController extends Controller
             $attempt_opt = [];
 
             if (isset($result_response->all_question) && !empty($result_response->all_question)) {
-
-
                 $collection = collect($result_response->all_question);
 
 
@@ -204,7 +201,6 @@ class ReviewController extends Controller
 
                     if (isset($correct_ans)) {
                         foreach ($correct_ans as $ankey => $anoption) {
-
                             $correct_ans->$ankey = $anoption;
                         }
                     }
@@ -228,11 +224,9 @@ class ReviewController extends Controller
             } else {
                 if ($pageName == 'attempted') {
                     return Redirect::back()->withErrors(['Data does not exist for this result id.']);
-                }else
-                {
-                    return redirect()->route('dashboard');    
+                } else {
+                    return redirect()->route('dashboard');
                 }
-                
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -243,7 +237,6 @@ class ReviewController extends Controller
 
     public function next_review_question($question_id)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -263,8 +256,6 @@ class ReviewController extends Controller
             $word2 = "public/images/questions/";
 
             if (isset($result_response->all_question) && !empty($result_response->all_question)) {
-
-
                 $collection = collect($result_response->all_question);
 
                 $aDefault_seq = collect($result_response->all_question);
@@ -314,7 +305,6 @@ class ReviewController extends Controller
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
-
                         $opArr[$key] = $option;
                     }
                 }
@@ -329,7 +319,6 @@ class ReviewController extends Controller
 
                 if (isset($correct_ans)) {
                     foreach ($correct_ans as $ankey => $anoption) {
-
                         $correct_ans->$ankey = $anoption;
                     }
                 }
@@ -351,7 +340,6 @@ class ReviewController extends Controller
 
     public function ajax_review_next_subject_question($subject_id, Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
 
@@ -375,7 +363,6 @@ class ReviewController extends Controller
             $word2 = "public/images/questions/";
 
             if (isset($result_response->all_question) && !empty($result_response->all_question)) {
-
                 $aDefault_seq = collect($result_response->all_question);
                 $all_data = collect($result_response->all_question);
                 // $all_data = $all_data->sortBy('subject_id');
@@ -458,7 +445,6 @@ class ReviewController extends Controller
 
                 if (isset($correct_ans)) {
                     foreach ($correct_ans as $ankey => $anoption) {
-
                         $correct_ans->$ankey = $anoption;
                     }
                 }
@@ -498,8 +484,6 @@ class ReviewController extends Controller
             $result_response = $response;
             $all_question_list = [];
             if (isset($result_response->all_question) && !empty($result_response->all_question)) {
-
-
                 $collection = collect($result_response->all_question);
                 $grouped = $collection->groupBy('subject_id');
 
@@ -529,20 +513,19 @@ class ReviewController extends Controller
                     });
 
                     $all_question_list = $filtered->sortBy('seq')->all();
-                    /* if ($filter_by == "Correct") {
-                        $statusPriorities = ["Correct", "Incorrect", "Unanswered", ""];
-                    } elseif ($filter_by == "Incorrect") {
-                        $statusPriorities = ["Incorrect", "Correct", "Unanswered", ""];
-                    } elseif ($filter_by == "Unanswered") {
-                        $statusPriorities = ["Unanswered", "Incorrect", "Correct",  ""];
-                    }
+                /* if ($filter_by == "Correct") {
+                    $statusPriorities = ["Correct", "Incorrect", "Unanswered", ""];
+                } elseif ($filter_by == "Incorrect") {
+                    $statusPriorities = ["Incorrect", "Correct", "Unanswered", ""];
+                } elseif ($filter_by == "Unanswered") {
+                    $statusPriorities = ["Unanswered", "Incorrect", "Correct",  ""];
+                }
 
-                    $all_question_list =  $aQuestionslist->sortBy(function ($order) use ($statusPriorities) {
+                $all_question_list =  $aQuestionslist->sortBy(function ($order) use ($statusPriorities) {
 
-                        return array_search($order->attempt_status, $statusPriorities);
-                    })->values()->all(); */
+                    return array_search($order->attempt_status, $statusPriorities);
+                })->values()->all(); */
                 } else {
-
                     $all_question_list = $aQuestionslist->sortBy('seq')->all();
                 }
             }
