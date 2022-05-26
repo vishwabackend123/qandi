@@ -315,11 +315,11 @@
 
 @media(min-width:1199px) and (max-width:1315px) {
 
-    .leader-board,
+    /* .leader-board,
     .subscription,
     .log-out-screen {
-        /* right: 320px; */
-    }
+        right: 320px;
+    } */
     .subscription {
         width: 50%;
     }
