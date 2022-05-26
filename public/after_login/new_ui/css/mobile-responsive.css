@@ -1,124 +1,95 @@
-@media (max-width: 767px) {
-    .exam-analytics .exam-panel.cust-tabs .nav-item {
-        width: auto;
-    }
-    #test_instruction h1.text-danger.text-uppercase,
-    #test_instruction h3.text-danger.text-uppercase {
-        font-size: 15px;
-        padding-right: 15px;
-    }
+@media(max-width:767px){
+    .exam-analytics .exam-panel.cust-tabs .nav-item {width:auto;}
+    #test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
+    font-size: 15px;
+    padding-right: 15px;
+}
     .edit-form {
-        height: 440px !important;
-    }
-    #editProfile_form {
-        height: 325px;
+    height: 440px !important;
+}
+#editProfile_form {
+    height: 325px;
     }
     .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
-        min-width: auto;
-    }
-    .exam_attempted_common_page .compLeteS,
-    .practice_custom_page .compLeteS {
-        padding: 15px 15px 15px;
-    }
+    min-width: auto;
+}
+    .exam_attempted_common_page .compLeteS, .practice_custom_page .compLeteS {
+    padding: 15px 15px 15px;
+}
     .exam_attempted_common_page .result-list-btns {
-        margin-left: 0;
-    }
-    .exam_attempted_common_page .score-show {
-        border-left: 0;
-        max-width: 100%;
-    }
-    .exam_attempted_common_page .paper-sub span {
-        word-break: break-all !important;
-    }
+    margin-left: 0;
+}
+.exam_attempted_common_page .score-show {
+    border-left: 0;
+    max-width: 100%;
+   
+}
+.exam_attempted_common_page .paper-sub span {
+    word-break: break-all !important;
+}
     .exam_card {
-        padding: 15px 15px 15px;
-    }
-    .exam_card {
-        margin-top: 30px;
-    }
-    .result-list .cust-tab-content {
-        height: auto !important;
-    }
+    padding: 15px 15px 15px;
+}
+.exam_card {
+    margin-top: 30px;
+}
+.result-list .cust-tab-content {
+    height: auto !important;
+}
     .instructions {
-        height: 125px;
-    }
+    height: 125px;
+}
     .instructions h3 {
-        font-size: 18px;
-    }
-    .qoption_error {
-        bottom: 0;
+    font-size: 18px;
+}
+        .qoption_error{
+    bottom: 0;
     }
     .live-test {
-        margin: 0;
-    }
-    .course-star {
-        width: 100%;
-    }
-    .custom-page .cust-tab-content {
-        padding-bottom: 30px !important;
-    }
+    margin: 0;
+}
+    .course-star{width: 100%;}
+    .custom-page .cust-tab-content{padding-bottom: 30px!important;}
 
-    .question-block {
-        height: 250px;
-    }
-    .tab-btn-box {
-        padding: 0px;
-    }
-    .examSect div#myTabContent .tab-pane {
-        padding: 15px 10px;
-    }
-    .tiny-green {
-        width: 138px !important;
-    }
-    .counter {
-        margin-bottom: 10px;
-        margin-right: -28px !important;
-    }
+    .question-block{height:250px;}
+    .tab-btn-box{padding:0px}
+    .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
+    .tiny-green{width:138px!important;}
+    .counter{margin-bottom: 10px;margin-right: -28px!important;}
     .examSect div#myTabContent .tab-pane .question-block {
         padding: 15px 1rem;
     }
-    #sharefrnd .modal-content.rounded-0.bg-light {
-        left: 0px !important;
-    }
-    #FullTest_Exam_Panel_Interface_A h3,
-    .lefttime {
-        font-size: 18px;
-    }
+	#sharefrnd .modal-content.rounded-0.bg-light{
+		left:0px !important;
+	}
+    #FullTest_Exam_Panel_Interface_A h3,.lefttime{font-size:18px;}
     .planner-content {
-        display: none;
-    }
-    .examSect .rightSect .number-block .btn {
-        margin-right: 2px;
-    }
-    #exam_content_sec #question_section .tab-btn-box a {
-        width: 46.5%;
-    }
+    display: none;
+}
+.examSect .rightSect .number-block .btn{margin-right: 2px;}
+#exam_content_sec #question_section .tab-btn-box a{    width: 46.5%;}
     .planersavebtn {
-        margin-bottom: 10px;
-    }
-    .bg-white.shadow-lg {
-        height: auto !important;
-    }
-    p.text-uppercase.fw-bold {
-        padding-right: 45px;
-    }
+    margin-bottom: 10px;
+}
+    .bg-white.shadow-lg {height: auto!important;}
+    p.text-uppercase.fw-bold {padding-right: 45px;}  
     .profile-section ul {
         display: flex;
         margin-bottom: 0px;
         justify-content: center;
+    
     }
     .profile-section {
-        width: 100%;
+        width: 100%; 
     }
     .profile-section ul li {
-        width: 100%;
-        margin: 0px;
+        width: 100%; margin: 0px;
     }
     .profile-section ul li svg {
         margin-right: 0px;
     }
     .subscription .form-btns {
-        margin-top: 20px;
+    margin-top: 20px;
     }
     .subscrived {
         display: flex;
@@ -129,768 +100,422 @@
         font-size: 14px;
         line-height: inherit;
         margin: 0;
-    }
+    }  
     .subscrived svg {
         margin-right: 0;
     }
-
-    #profileAcc {
+   
+    #profileAcc{
         top: 25px;
         margin-top: 32px;
-        padding-top: 0px;
-        width: 100%;
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-    }
-    .account-wrapper {
+        padding-top: 0px;width: 100%;box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); 
+    }   
+    .account-wrapper{
         width: 823%;
-        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+        box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%); 
         max-width: 82%;
-        float: right;
+        float: right; 
     }
     .dashbaordmargin {
         margin-left: 0px;
     }
-    .seeAnico .button-sec.mt-3 {
-        padding: 0px 0px 0px 17px;
-        margin-right: 0px;
-    }
-    .button-sec.mt-3 a {
-        width: auto;
-        margin: 0 auto;
-        padding: 10px 30px;
-    }
-    .dashboard .star-ratings-css-top span,
-    .pe-1 .star-ratings-css-bottom span {
-        font-size: 13px;
-    }
-    .topics-box span b {
-        font-size: 25px;
-        line-height: 30px;
-    }
-    .topics-box {
-        justify-content: center;
-        -webkit-justify-content: center;
-    }
-    .topics-box:first-child {
-        margin-left: 0px;
-    }
-    .progressChartExpend {
-        min-width: 1600px;
-    }
-    .log-out-screen {
-        max-width: 300px;
-        position: absolute;
-        margin-left: auto;
-        left: 0;
-        right: 0;
-        text-align: center;
-    }
-    .log-out-screen .p-picture {
-        width: 50px;
-        height: 50px;
-    }
-    /* button.save-btn{padding: 9px 18px;} */
-    .logout_btn_new svg {
-        position: absolute;
-        left: 27px !important;
-        top: 15px !important;
-    }
-    .log-out-screen button.save-btn {
-        width: 189px;
-        font-size: 12px;
-    }
-    #graphExpand .modal-body {
-        overflow-x: auto;
-    }
-    #graphExpand .modal-body::-webkit-scrollbar {
-        height: 5px;
-    }
-    .content-wrapper .container-fluid.pt-0 {
-        padding: 0px 10px 0px 5px;
-    }
-    div#marKs-trends .bg-white p {
-        height: auto;
-    }
-    .fw-bold,
-    .bg-white.shadow-lg .progress_text {
-        font-size: 14px;
-    }
-    .dashboard-cards-block #time-Avg-quest .bg-white > small,
-    .dashboard-cards-block #marKs-trends .bg-white > small {
-        top: 0px;
-    }
-    #marKs-trends .bg-white,
-    #time-Avg-quest .bg-white {
-        padding: 0 !important;
-    }
-    #overall #back2Dsh button.btn {
-        padding: 5px 10px !important;
-        margin-right: 10px !important;
-        width: 50% !important;
-        font-size: 11px;
-    }
-    div#back2Dsh button a {
-        font-size: 11px;
-    }
-    #overall #back2Dsh button.btn.btn-outline-danger {
-        margin: 10px 0 0 0 !important;
-    }
-    #back2Dsh > .d-flex {
-        justify-content: center;
-    }
-    .tab-wrapper {
-        position: relative;
-    }
-    .overllanaly .tab-wrapper #scroll-mobile {
-        padding-bottom: 0px;
-    }
-    .overllanaly
-        .tab-wrapper
-        #scroll-mobile
-        .nav.nav-tabs.cust-tabs
-        li.ms-auto {
-        position: absolute;
-        top: 64px;
-        left: 12px;
-    }
-    .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs {
-        position: initial;
-    }
-    .overllanaly .cust-tab-content {
-        padding-top: 65px !important;
-        padding-bottom: 30px !important;
-    }
-    .overllanaly .tab-wrapper .nav-tabs,
-    .overllanaly .cust-tabs .nav-link.active,
-    .overllanaly .cust-tabs .nav-link.active:after {
-        height: 53px;
+    .seeAnico .button-sec.mt-3{    padding: 0px 0px 0px 17px;
+        margin-right: 0px;}
+        .button-sec.mt-3 a {    width: auto;
+            margin: 0 auto;
+            padding: 10px 30px;
+        }
+        .dashboard .star-ratings-css-top span ,.pe-1 .star-ratings-css-bottom span{
+            font-size: 13px;
+        }
+        .topics-box span b {
+            font-size: 25px;
+            line-height: 30px;
+        }
+        .topics-box{justify-content:center;-webkit-justify-content:center;}
+        .topics-box:first-child{margin-left:0px;}
+        .progressChartExpend{min-width:1600px;}
+        .log-out-screen{
+            max-width: 300px;
+            position: absolute;
+            margin-left: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+        }
+        .log-out-screen .p-picture{width:50px;height: 50px;}
+        /* button.save-btn{padding: 9px 18px;} */
+        .logout_btn_new svg{position: absolute; left: 27px !important; top: 15px !important;}
+        .log-out-screen button.save-btn {width: 189px;font-size: 12px;}
+        #graphExpand .modal-body {overflow-x: auto;}
+        #graphExpand .modal-body::-webkit-scrollbar{height:5px;}
+        .content-wrapper .container-fluid.pt-0 {
+            padding: 0px 10px 0px 5px;
+        }
+        div#marKs-trends .bg-white p {height: auto;}
+        .fw-bold , .bg-white.shadow-lg .progress_text {font-size: 14px;}
+        .dashboard-cards-block #time-Avg-quest .bg-white>small, .dashboard-cards-block #marKs-trends .bg-white>small {top: 0px;}
+        #marKs-trends .bg-white, #time-Avg-quest .bg-white{padding: 0!important;}
+        #overall #back2Dsh button.btn{  padding: 5px 10px !important;margin-right: 10px!important;width: 50%!important;font-size:11px;
+        }
+        div#back2Dsh button a{font-size:11px;}
+        #overall #back2Dsh button.btn.btn-outline-danger{margin:10px 0 0 0!important;}
+        #back2Dsh>.d-flex{justify-content: center;}
+        .tab-wrapper{position: relative;}
+        .overllanaly .tab-wrapper #scroll-mobile{padding-bottom:0px;}
+        .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs li.ms-auto{  
+            position: absolute;
+            top: 64px;
+            left: 12px;}
+        .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
+        .overllanaly .cust-tab-content{padding-top: 65px!important;padding-bottom: 30px!important;}
+        .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
+
+        .account-wrapper{margin-top: 0px;}
+        .main-wrapper{    padding-left: 70px; }
+    div#contentHtml .report-block2{padding:30px 20px;margin-top:20px;}
+
+        .notification svg {
+            left: -13px;
+            top: -22px;
+            width: 60px;
+        }
+        .user-name-block span.notification.ms-4 {
+            margin-left: 10px !important;
+            width: 35px;
+            height: 35px;
+        }
+        .notification a {
+            border-radius: 8px !important;
+            width: 35px;
+            height: 35px;
+        }
+        .user-name-block {
+            font-size: 14px;
+            margin-bottom: 25px;
+            margin-top: 20px;
+        }
+        .overllanaly .shadow-lg#f-Numbr-sectin{margin-top:0px;}
+        span.EXPAND_btn {margin-top: 10px;display: inline-block;}
+        .sub-title h3 {flex: 5;}
+        .rankholder{background-position: center right;}
+        #topIIC .ms-auto{margin-left: initial!important;}
+        .cust-tab-content .dashboard-name-txt {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+        }
+        span.EXPAND_btn{display:block;text-align: right;} 
+        span.EXPAND_btn .customgray{margin-right:0px!important;font-size: 14px; height: 40px !important;}
+        .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
+            height: 228px !important;
+        }
+        .overllanaly .shadow-lg#f-Numbr-sectin{margin-bottom:0px;}
+        .btm-form-flds .form-flds input { padding: 7px;}
+        .leader-board {
+            right: 3%;
+            height: 450px;
+        }
+        .profile-show {left: 34px !important;}
+
+
+        .edit-form{top: 90px !important;min-width: 290px;right: 9px !important;left: initial;  }
+        .edit-form .edit-img {
+            margin-bottom: 0.4rem !important;
+        }
+
+        .leader-board{top: 7% !important; }
+        .svg_icon_input svg{ width: 20px;height: 20px; }
+        .svg_icon_input {top: 5px;}
+        .edit-form .edit-img .p-picture { width: 50px;height: 52px;}
+        .edit-pic{width: 25px;}
+        .profile-show .profile-picture-txt .p-picture, .profile-picture-txt .p-text {width: 50px; height: auto;}
+        .active_user {max-width: 325px; }
+        .profile-detail {   margin-top: 20px; overflow-y: auto;}
+        .leader-board {height: 450px; min-height: 350px; padding-left: 0px;float: inherit; }
+        #editProfile_form .form-flds input {font-size: 14px;}
+        #editProfile_form .country-code-name { max-height: 127px;max-width:200px;}
+        #editProfile_form .form-btns button#cancelEdit, #editProfile_form .form-btns button#saveEdit {font-size: 14px;padding: 10px 30px;}
+        .search-frnd input{margin-left: 10px}
+        .exportAnaylisis .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4{display:flex!important;}
+        .exportAnaylisis .exportUsertxt{margin-left:0;}  
+
+        .profile-show .profile-picture-txt .p-text {
+            margin-top: 10px;
+        }
+        .profile-show{padding-top: 0px !important;margin-top:0px;}
+        .leader-board h4 {
+            text-align: left;
+            padding-right: 0px;
+            padding-left: 16px;
+        }
+        .leader-board{padding: 20px 15px;}
+        .leader-board ul li{padding-left: 0px;}
+
+        .exportAnaylisis .col-md-12.border-bottom.pt-2 .px-4 {
+            padding-left: 13px!important;
+            padding-right: 0px!important;
+        }
+        .exportAnaylisis .justify-content-center{justify-content: start!important;}
+        .exportAnaylisis .export-block p {font-size: 14px;}
+
+        div#LeaDer {
+            top: 90px !important;
+            border-top-left-radius: 0px !important;
+        }
+
+
+        .log-out-screen{max-width: 267px;}
+        .leader-board, .profile-show{width:47% !important;    top: 90px !important;} 
+        .edit-form{min-width: 240px;}
+        .f_l_name_box .form-flds { width: 100% !important;margin-bottom: 10px;}
+        .f_l_name_box { display: block !important;}
+        #editProfile_form .form-flds p {font-size: 10px;}
+      
+        .log-out-screen,.subscription {top:90px !important;right: 10px !important; }
+        .exportAnaylisis .headeranaylsismain {padding-bottom: 0px;}
+        .exportAnaylisis .export-block h2 {font-size: 26px;}
+        .reportHeading {font-size: 18px;}
+        .exportAnaylisis .report-block2.p-6 .row.py-5{padding: 20px 0 0!important;}
+        .anaylticslogo img {width: 50px;}
+        .exportAnaylisis .bg-white.shadow-lg .dashboard-title{font-size:16px;}
+        .profile-picture-txt {
+            overflow: initial;
+        }
+        .tab-wrapper.h-100 {height: auto !important}
+        #review_rques_blk .answer-section { margin-bottom: 0px;width: 97.20% !important; }
+        div#myTabContent.reviewPanel .tab-pane .question-block { padding: 15px 0.5rem;}
+        .rightSectH {
+            font-size: 16px;
+        }
+        .rightSect .number-block .btn {
+            min-width: 25px;
+            height: 25px;
+            width: 25px;
+            margin-bottom: 10px !important;
+            font-size: 13px;
+        }
+        .review_heading {
+            font-size: 16px !important;
+            margin: 0px;
+        }
+        #review_rques_blk .question p {
+            font-size: 12px;
+        }
+        .answer-btn-txt span.anstitle {
+            font-size: 12px;
+        }
+        div#review_rques_blk p {
+            font-size: 12px;
+    
+        }
+        #review_rques_blk .ans-block {
+            padding: 0 3px;
+        }
+        .attemp_box a {
+          
+            width: auto !important;
+            
+        }
+
+        .first_screen {
+            width: 217px;
+            max-height: 182px;
+            overflow-y: scroll;
+        }
+        .review_expand {
+            right: 13%;
+        }
+        .rview-quses{   font-size: 12px !important;}
+        .cust-tabs.nav.nav-tabs .nav-link {
+            font-size: 13px !important;
+        }
+        #review_rques_blk .question.question-height {
+            padding-left: 37px !important;
+            padding-right: 10px !important;
+        }
+        #review_rques_blk .percent_btn {
+            width: 100px;
+            padding: 5px 5px;
+            font-size: 12px;
+        }
+        .expand_block {
+            right: -2px !important;
+        }
+        .answer-section .ans-txt {
+            padding-left: 0%;
+            margin-top: 0px;
+        }
+        .custom-page .px-4.py-2.clear_div{padding:0 15px!important;}
+        .scroll-div .compLeteS div.d-flex.px-4{padding-right: 4px!important;}
+        .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn{height: 44px;width:165px !important;font-size: 13px;}
+        .ClickBack.bg-white.px-4.listing-details.newelement {
+            padding-left: 10px!important;
+        }
+        .practice-series-lists .cust-tab-content .custom-btn-gray{width: auto;height: 46px;font-size: 13px;padding: 0 18px;}
+        #myTabContent button.custom-btn-gray i{margin-right: 2px;}
+        .practice-series-lists li.a1TS {width: 50% !important;}
+        li.a2TS {min-width: auto;}
+        li.a2TS {width: 20%!important;}
+        li.a3TS {width: 15% !important;}
+        .practice-series-lists.list-series .live-exam .speci-text li.a4TS{width:100%;margin-top:10px;}
+        .no-of-persent {
+            font-size: 13px;
+        }
+        .persent_std {
+            display: block;
+            text-align: center;
+        }
+        .no-of-persent {
+            font-size: 16px;
+            display: block;
+        }
+
+        .attend {
+            font-size: 11px;
+            padding-left: 0px;
+        }
+        .result-list .d-flex.justify-content-between {
+            padding: 10px !important;
+        }
+        .exam_card .d-flex.justify-content-between {
+           padding: 10px 0 !important;
+        }
+      .result-list  .result-review {
+            font-size: 12px !important;
+        }
+        .result-list  #scroll-mobile {
+            overflow-x: auto;
+        }
+        .sub-subject .btn.rounded-0.me-2 {
+            padding: 2px;
+            width: 27px;
+            height: 27px;
+            line-height: 20px;
+            margin-right: 4px!important;
+        }
+        .addremovetopic.topic_selected,.addremovetopic{margin-left:5px;width: auto;}
+        .custom-page button.slick-pre,.custom-page button.slick-next{width: 25px;height: 25px;font-size: 20px!important;line-height: 12px;}
+        .custom-page button.slick-pre{left:2px}
+        .custom-page button.slick-next{right: -1px;}
+        .custom_attempted_page .result-list .d-flex.justify-content-between.result-list-table{    flex-direction: row;}
+        .custom_attempted_page .result-list-btns{margin-top:0;min-width: 120px;}
+        .custom_attempted_page #attempted .result-list-btns a{line-height: 25px;height: 38px;}
+        .custom_attempted_page .result-list .d-flex.justify-content-between.full-syllabus {display: block!important;}
+        .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery{flex-direction: row;flex-wrap: wrap;}
+        .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub {flex: auto;    margin-top: 8px;}
+        .test-review {
+            margin-top: 0px;
+            
+        }
+
+        .subscriptionBox p.box-content {
+            overflow: overlay;
+            height: 150px;
+        }
+        div.custom-exam-subjects{
+            overflow-x: auto;
+            padding-bottom: 10px!important;
+        }
+        .custom-exam-subjects::-webkit-scrollbar {
+            height:4px;
+        }
+        .practice_custom_page button#dropdownMenuLink-topic{margin-top: 0;}
+        .practice_custom_page .listing-details .name-txt{    width: 34% !important;}
+        .practice_custom_page .tab-wrapper .d-flex.justify-content-between{    justify-content: start!important;}
+        .practice_custom_page .slbs-link.mx-3 {margin: 0 20px 0 0!important;}
+        div.scroll-div .compLeteS div.d-flex.px-4{padding-left:0!important;padding-right: 20px!important;}
+        .practice_custom_page .Flat-left form#topic_form{margin-top:12px;}
+        .practice_custom_page .btn-clear-sel , .practice_custom_page .btn-topic{width: auto!important;    margin-top: 0;}
+        #home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn, 
+        #home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn {
+            min-width: 138px;
+        }
+        .practice-series-lists .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn,
+        .practice-series-lists .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn{min-width: 160px;}
+        .practice_custom_page .status-id.rating {margin-right: 15px;}
+        div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .paper-summery.pe-5{padding: 0 !important;}
+        .exam_attempted_common_page .paper-summery .paper-sub{margin-bottom:15px;}
     }
 
-    .account-wrapper {
-        margin-top: 0px;
-    }
-    .main-wrapper {
-        padding-left: 70px;
-    }
-    div#contentHtml .report-block2 {
-        padding: 30px 20px;
-        margin-top: 20px;
-    }
-
-    .notification svg {
-        left: -13px;
-        top: -22px;
-        width: 60px;
-    }
-    .user-name-block span.notification.ms-4 {
-        margin-left: 10px !important;
-        width: 35px;
-        height: 35px;
-    }
-    .notification a {
-        border-radius: 8px !important;
-        width: 35px;
-        height: 35px;
-    }
-    .user-name-block {
-        font-size: 14px;
-        margin-bottom: 25px;
-        margin-top: 20px;
-    }
-    .overllanaly .shadow-lg#f-Numbr-sectin {
-        margin-top: 0px;
-    }
-    span.EXPAND_btn {
-        margin-top: 10px;
-        display: inline-block;
-    }
-    .sub-title h3 {
-        flex: 5;
-    }
-    .rankholder {
-        background-position: center right;
-    }
-    #topIIC .ms-auto {
-        margin-left: initial !important;
-    }
-    .cust-tab-content .dashboard-name-txt {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: block;
-        width: 100%;
-        max-width: 100%;
-    }
-    span.EXPAND_btn {
-        display: block;
-        text-align: right;
-    }
-    span.EXPAND_btn .customgray {
-        margin-right: 0px !important;
-        font-size: 14px;
-        height: 40px !important;
-    }
-    .overllanaly .cust-tab-content #topicclose .scroll-topic-ana {
-        height: 228px !important;
-    }
-    .overllanaly .shadow-lg#f-Numbr-sectin {
-        margin-bottom: 0px;
-    }
-    .btm-form-flds .form-flds input {
-        padding: 7px;
-    }
-    .leader-board {
-        right: 3%;
-        height: 450px;
-    }
-    .profile-show {
-        left: 34px !important;
-    }
-
-    .edit-form {
-        top: 90px !important;
-        min-width: 290px;
-        right: 9px !important;
-        left: initial;
-    }
-    .edit-form .edit-img {
-        margin-bottom: 0.4rem !important;
-    }
-
-    .leader-board {
-        top: 7% !important;
-    }
-    .svg_icon_input svg {
-        width: 20px;
-        height: 20px;
-    }
-    .svg_icon_input {
-        top: 5px;
-    }
-    .edit-form .edit-img .p-picture {
-        width: 50px;
-        height: 52px;
-    }
-    .edit-pic {
-        width: 25px;
-    }
-    .profile-show .profile-picture-txt .p-picture,
-    .profile-picture-txt .p-text {
-        width: 50px;
-        height: auto;
-    }
-    .active_user {
-        max-width: 325px;
-    }
-    .profile-detail {
-        margin-top: 20px;
-        overflow-y: auto;
-    }
-    .leader-board {
-        height: 450px;
-        min-height: 350px;
-        padding-left: 0px;
-        float: inherit;
-    }
-    #editProfile_form .form-flds input {
-        font-size: 14px;
-    }
-    #editProfile_form .country-code-name {
-        max-height: 127px;
-        max-width: 200px;
-    }
-    #editProfile_form .form-btns button#cancelEdit,
-    #editProfile_form .form-btns button#saveEdit {
-        font-size: 14px;
-        padding: 10px 30px;
-    }
-    .search-frnd input {
-        margin-left: 10px;
-    }
-    .exportAnaylisis
-        .bg-white.shadow-lg.p-5.report-analysis-block
-        div.d-flex.align-items-center.border-bottom.pb-4 {
-        display: flex !important;
-    }
-    .exportAnaylisis .exportUsertxt {
-        margin-left: 0;
-    }
-
-    .profile-show .profile-picture-txt .p-text {
-        margin-top: 10px;
-    }
-    .profile-show {
-        padding-top: 0px !important;
-        margin-top: 0px;
-    }
-    .leader-board h4 {
-        text-align: left;
-        padding-right: 0px;
-        padding-left: 16px;
-    }
-    .leader-board {
-        padding: 20px 15px;
-    }
-    .leader-board ul li {
-        padding-left: 0px;
-    }
-
-    .exportAnaylisis .col-md-12.border-bottom.pt-2 .px-4 {
-        padding-left: 13px !important;
-        padding-right: 0px !important;
-    }
-    .exportAnaylisis .justify-content-center {
-        justify-content: start !important;
-    }
-    .exportAnaylisis .export-block p {
-        font-size: 14px;
-    }
-
-    div#LeaDer {
-        top: 90px !important;
-        border-top-left-radius: 0px !important;
-    }
-
-    .log-out-screen {
-        max-width: 267px;
-    }
-    .leader-board,
-    .profile-show {
-        width: 47% !important;
-        top: 90px !important;
-    }
-    .edit-form {
-        min-width: 240px;
-    }
-    .f_l_name_box .form-flds {
-        width: 100% !important;
-        margin-bottom: 10px;
-    }
-    .f_l_name_box {
-        display: block !important;
-    }
-    #editProfile_form .form-flds p {
-        font-size: 10px;
-    }
-
-    .log-out-screen,
-    .subscription {
-        top: 90px !important;
-        right: 10px !important;
-    }
-    .exportAnaylisis .headeranaylsismain {
-        padding-bottom: 0px;
-    }
-    .exportAnaylisis .export-block h2 {
-        font-size: 26px;
-    }
-    .reportHeading {
-        font-size: 18px;
-    }
-    .exportAnaylisis .report-block2.p-6 .row.py-5 {
-        padding: 20px 0 0 !important;
-    }
-    .anaylticslogo img {
-        width: 50px;
-    }
-    .exportAnaylisis .bg-white.shadow-lg .dashboard-title {
-        font-size: 16px;
-    }
-    .profile-picture-txt {
-        overflow: initial;
-    }
-    .tab-wrapper.h-100 {
-        height: auto !important;
-    }
-    #review_rques_blk .answer-section {
-        margin-bottom: 0px;
-        width: 97.2% !important;
-    }
-    div#myTabContent.reviewPanel .tab-pane .question-block {
-        padding: 15px 0.5rem;
-    }
-    .rightSectH {
-        font-size: 16px;
-    }
-    .rightSect .number-block .btn {
-        min-width: 25px;
-        height: 25px;
-        width: 25px;
-        margin-bottom: 10px !important;
-        font-size: 13px;
-    }
-    .review_heading {
-        font-size: 16px !important;
-        margin: 0px;
-    }
-    #review_rques_blk .question p {
-        font-size: 12px;
-    }
-    .answer-btn-txt span.anstitle {
-        font-size: 12px;
-    }
-    div#review_rques_blk p {
-        font-size: 12px;
-    }
-    #review_rques_blk .ans-block {
-        padding: 0 3px;
-    }
-    .attemp_box a {
-        width: auto !important;
-    }
-
-    .first_screen {
-        width: 217px;
-        max-height: 182px;
-        overflow-y: scroll;
-    }
-    .review_expand {
-        right: 13%;
-    }
-    .rview-quses {
-        font-size: 12px !important;
-    }
-    .cust-tabs.nav.nav-tabs .nav-link {
-        font-size: 13px !important;
-    }
-    #review_rques_blk .question.question-height {
-        padding-left: 37px !important;
-        padding-right: 10px !important;
-    }
-    #review_rques_blk .percent_btn {
-        width: 100px;
-        padding: 5px 5px;
-        font-size: 12px;
-    }
-    .expand_block {
-        right: -2px !important;
-    }
-    .answer-section .ans-txt {
-        padding-left: 0%;
-        margin-top: 0px;
-    }
-    .custom-page .px-4.py-2.clear_div {
-        padding: 0 15px !important;
-    }
-    .scroll-div .compLeteS div.d-flex.px-4 {
-        padding-right: 4px !important;
-    }
-    .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn {
-        height: 44px;
-        width: 165px !important;
-        font-size: 13px;
-    }
-    .ClickBack.bg-white.px-4.listing-details.newelement {
-        padding-left: 10px !important;
-    }
-    .practice-series-lists .cust-tab-content .custom-btn-gray {
-        width: auto;
-        height: 46px;
-        font-size: 13px;
-        padding: 0 18px;
-    }
-    #myTabContent button.custom-btn-gray i {
-        margin-right: 2px;
-    }
-    .practice-series-lists li.a1TS {
-        width: 50% !important;
-    }
-    li.a2TS {
-        min-width: auto;
-    }
-    li.a2TS {
-        width: 20% !important;
-    }
-    li.a3TS {
-        width: 15% !important;
-    }
-    .practice-series-lists.list-series .live-exam .speci-text li.a4TS {
-        width: 100%;
-        margin-top: 10px;
-    }
-    .no-of-persent {
-        font-size: 13px;
-    }
-    .persent_std {
-        display: block;
-        text-align: center;
-    }
-    .no-of-persent {
-        font-size: 16px;
-        display: block;
-    }
-
-    .attend {
-        font-size: 11px;
-        padding-left: 0px;
-    }
-    .result-list .d-flex.justify-content-between {
-        padding: 10px !important;
-    }
-    .exam_card .d-flex.justify-content-between {
-        padding: 10px 0 !important;
-    }
-    .result-list .result-review {
-        font-size: 12px !important;
-    }
-    .result-list #scroll-mobile {
-        overflow-x: auto;
-    }
-    .sub-subject .btn.rounded-0.me-2 {
-        padding: 2px;
-        width: 27px;
-        height: 27px;
-        line-height: 20px;
-        margin-right: 4px !important;
-    }
-    .addremovetopic.topic_selected,
-    .addremovetopic {
-        margin-left: 5px;
-        width: auto;
-    }
-    .custom-page button.slick-pre,
-    .custom-page button.slick-next {
-        width: 25px;
-        height: 25px;
-        font-size: 20px !important;
-        line-height: 12px;
-    }
-    .custom-page button.slick-pre {
-        left: 2px;
-    }
-    .custom-page button.slick-next {
-        right: -1px;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.result-list-table {
-        flex-direction: row;
-    }
-    .custom_attempted_page .result-list-btns {
-        margin-top: 0;
-        min-width: 120px;
-    }
-    .custom_attempted_page #attempted .result-list-btns a {
-        line-height: 25px;
-        height: 38px;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.full-syllabus {
-        display: block !important;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.paper-summery {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.paper-summery
-        .paper-sub {
-        flex: auto;
-        margin-top: 8px;
-    }
-    .test-review {
-        margin-top: 0px;
-    }
-
-    .subscriptionBox p.box-content {
-        overflow: overlay;
-        height: 150px;
-    }
-    div.custom-exam-subjects {
-        overflow-x: auto;
-        padding-bottom: 10px !important;
-    }
-    .custom-exam-subjects::-webkit-scrollbar {
-        height: 4px;
-    }
-    .practice_custom_page button#dropdownMenuLink-topic {
-        margin-top: 0;
-    }
-    .practice_custom_page .listing-details .name-txt {
-        width: 34% !important;
-    }
-    .practice_custom_page .tab-wrapper .d-flex.justify-content-between {
-        justify-content: start !important;
-    }
-    .practice_custom_page .slbs-link.mx-3 {
-        margin: 0 20px 0 0 !important;
-    }
-    div.scroll-div .compLeteS div.d-flex.px-4 {
-        padding-left: 0 !important;
-        padding-right: 20px !important;
-    }
-    .practice_custom_page .Flat-left form#topic_form {
-        margin-top: 12px;
-    }
-    .practice_custom_page .btn-clear-sel,
-    .practice_custom_page .btn-topic {
-        width: auto !important;
-        margin-top: 0;
-    }
-    #home
-        .exam_attempted_common_page
-        .custom-exam-subjects
-        a.btn.btn-primary.btn-sm.sectionBtn,
-    .exam_attempted_common_page
-        .custom-exam-subjects
-        a.btn.btn-primary.sectionBtn,
-    #home
-        .exam_attempted_common_page
-        .custom-exam-subjects
-        a.btn.btn-outline-primary.btn-sm.sectionBtn,
-    .exam_attempted_common_page
-        .custom-exam-subjects
-        a.btn.btn-outline-primary.sectionBtn {
-        min-width: 138px;
-    }
-    .practice-series-lists
-        .exam_attempted_common_page
-        .custom-exam-subjects
-        a.btn.btn-primary.sectionBtn,
-    .practice-series-lists
-        .exam_attempted_common_page
-        .custom-exam-subjects
-        a.btn.btn-outline-primary.sectionBtn {
-        min-width: 160px;
-    }
-    .practice_custom_page .status-id.rating {
-        margin-right: 15px;
-    }
-    div.exam_attempted_common_page
-        #attempted
-        .compLeteS
-        .collapse
-        .full-syllabus
-        .paper-summery.pe-5 {
-        padding: 0 !important;
-    }
-    .exam_attempted_common_page .paper-summery .paper-sub {
-        margin-bottom: 15px;
-    }
+@media(max-width:700px){
+   .result-list .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start !important;
 }
 
-@media (max-width: 700px) {
-    .result-list .d-flex.justify-content-between {
-        flex-direction: column;
-        align-items: flex-start !important;
-    }
-
-    .slbs-link.ms-5 {
-        margin-left: 0rem !important;
-    }
-    #attempted .score-show {
-        max-width: 100%;
-        border: 0;
-    }
-    .result-list-btns {
-        margin-top: 10px;
-    }
-    .result-list .d-flex.justify-content-between.outerhead {
-        padding: 0 !important;
-    }
-    #review_rques_blk .answer-section {
-        width: 97.7% !important;
-    }
+.slbs-link.ms-5 {
+    margin-left: 0rem!important;
+}
+#attempted .score-show {
+    max-width: 100%;
+    border: 0;
+}
+.result-list-btns {
+    margin-top: 10px;
+}
+.result-list .d-flex.justify-content-between.outerhead {
+    padding: 0 !important;
+}
+#review_rques_blk .answer-section {
+    width: 97.7%!important;
+}
 }
 
-@media (max-width: 640px) {
+@media(max-width:640px){
     .exam_attempted_common_page .paper-summery .paper-sub {
         width: 49%;
         display: inline-block;
         vertical-align: top;
     }
-    .exam_attempted_common_page
-        .compLeteS
-        .collapse
-        .full-syllabus
-        .d-flex.paper-summery {
-        display: block !important;
-    }
-    .live-exam-list-wrapper
-        .exam_card
-        .d-flex.align-items-center.justify-content-between.mb-4 {
-        display: block !important;
-    }
-    .cust-pd-rt {
-        padding-right: 0px;
-    }
+    .exam_attempted_common_page .compLeteS .collapse .full-syllabus .d-flex.paper-summery{display: block!important;}
+    .live-exam-list-wrapper .exam_card .d-flex.align-items-center.justify-content-between.mb-4{display: block!important;}
+    .cust-pd-rt {padding-right:0px;}
 }
 
-@media (max-width: 576px) {
+@media(max-width:576px){
     .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
         padding-left: 8px !important;
         padding-right: 8px !important;
         font-size: 12px;
     }
-    .compLeteS .star-ratings-css {
-        margin-left: 0px;
-    }
-    .scroll-div .compLeteS div.d-flex.px-4 {
-        padding-left: 5px !important;
-    }
-    .d-flex.px-4.py-2.align-items-center.justify-content-between form {
-        width: 62%;
-        margin-top: 6px;
-    }
-    ul.chapter-topic-menu li a {
-        font-size: 14px;
-    }
-    .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between {
-        flex-wrap: wrap;
-    }
+    .compLeteS .star-ratings-css{margin-left:0px;}
+    .scroll-div .compLeteS div.d-flex.px-4{padding-left:5px!important;}
+    .d-flex.px-4.py-2.align-items-center.justify-content-between form{width: 62%;margin-top:6px;}
+    ul.chapter-topic-menu li a{font-size: 14px;}
+    .matrixpage-wrapper .tab-wrapper .d-flex.justify-content-between{flex-wrap:wrap;}
     .matrixpage-wrapper .topics-box {
-        width: calc(50% - 15px);
-        margin-left: 0px;
+        width: calc(50% - 15px);margin-left: 0px;
     }
-    .matrixpage-wrapper .topics-box:first-child {
-        margin-left: 0px;
-    }
-    .cus-radio-btn .checkmark {
-        height: 20px;
-        width: 20px;
-    }
-    .cus-radio-btn label {
-        padding-left: 27px;
-    }
-    .matrixpage-wrapper .cus-radio-btn label {
-        padding-left: 0;
-    }
-    #sharefrnd .modal-dialog {
-        padding: 0 12px;
-    }
-    .overllanaly .shadow-lg#f-Numbr-sectin {
-        margin-left: 3px;
-        margin-right: 3px;
-    }
-    #prof_scroll .d-flex.align-items-center.px-3 {
-        padding: 0px !important;
-    }
-    .exportAnaylisis .d-flex.align-items-center.mt-3.pb-1 {
-        display: block !important;
-    }
-    .exportAnaylisis .d-flex.align-items-center.mt-3.pb-1 .progress.ms-auto {
-        margin: 0 !important;
-    }
-    .leader-board,
-    .profile-show {
+    .matrixpage-wrapper  .topics-box:first-child{margin-left:0px;}
+    .cus-radio-btn .checkmark{    height: 20px;
+        width: 20px;}
+        .cus-radio-btn label{padding-left: 27px;}
+        .matrixpage-wrapper  .cus-radio-btn label{padding-left: 0;}
+#sharefrnd .modal-dialog{padding: 0 12px;}
+.overllanaly .shadow-lg#f-Numbr-sectin{margin-left: 3px;margin-right: 3px;}
+#prof_scroll .d-flex.align-items-center.px-3{padding: 0px!important;}
+.exportAnaylisis .d-flex.align-items-center.mt-3.pb-1{display: block!important;}
+.exportAnaylisis .d-flex.align-items-center.mt-3.pb-1 .progress.ms-auto{margin: 0!important;}
+.leader-board, .profile-show {
         width: 370px !important;
         right: 9px !important;
         left: auto !important;
     }
-    .profile-show {
+    .profile-show{
         background: #fff;
         min-height: 200px !important;
         top: 70px !important;
     }
-    .leader-board {
+    .leader-board{
         top: 287px !important;
         border-radius: 20px !important;
         height: 290px;
-        min-height: 290px;
+        min-height:290px;
     }
     .profile-detail {
         margin-top: 20px;
@@ -901,130 +526,71 @@
         margin-bottom: 0px !important;
     }
     .live-exam .speci-text {
-        display: grid;
-    }
-    .live-exam-list-wrapper.list-series .live-exam #home .speci-text li,
-    .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li {
-        width: 100% !important;
-    }
-    .list-series.live-exam-list-wrapper
-        .live-exam
-        #home
-        .speci-text
-        li:nth-child(4),
-    .list-series.live-exam-list-wrapper
-        .live-exam
-        #completed
-        .speci-text
-        li:nth-child(4) {
-        width: 100% !important;
-        margin-bottom: 10px;
-    }
-    .list-series.live-exam-list-wrapper
-        .live-exam
-        #home
-        .speci-text
-        li:last-child,
-    .list-series.live-exam-list-wrapper
-        .live-exam
-        #completed
-        .speci-text
-        li:last-child {
-        width: 90% !important;
-    }
-    .live-exam .speci-text li {
-        line-height: 35px;
-    }
-    #home h4.py-3 {
-        padding: 15px 0px 15px !important;
-        margin: 0;
-    }
-    .live-exam .cust-tab-content {
-        padding: 10px !important;
-    }
-    .list-series .live-exam .speci-text li a button {
-        width: 100% !important;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.result-list-table {
-        display: block !important;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.outerhead {
-        display: inline-block !important;
-        width: 48%;
-        vertical-align: top;
-    }
-    .custom_attempted_page .morning-slot {
-        display: inline-block !important;
-        width: 50%;
-        vertical-align: top;
-        text-align: right;
-    }
-    .custom_attempted_page .result-list-btns {
-        display: inline-block;
-        margin-top: 10px;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.outerhead
-        h4,
-    .custom_attempted_page .morning-slot p {
-        margin-bottom: 10px !important;
-    }
-
-    #review_rques_blk .answer-section {
-        width: 97% !important;
-    }
-    div#LeaDer {
-        top: 287px !important;
-        border-radius: 20px !important;
-    }
-    .profile-section ul {
-        margin-top: 0;
-    }
-    .log-out-screen,
-    .subscription,
-    .edit-form {
-        top: 70px !important;
-    }
-    .col_min {
-        max-width: 100%;
-        min-width: 100%;
-    }
-    .practice_custom_page .btn-clear-sel,
-    .practice_custom_page .btn-topic {
-        display: block;
-    }
-    .practice_custom_page .btn-clear-sel {
-        width: 165px !important;
-        padding: 0.375rem 15px !important;
-        margin-bottom: 15px !important;
-    }
-    .practice_custom_page .listing-details .name-txt {
-        width: 100% !important;
-    }
-    .practice_custom_page .cust-tab-content .custom-btn-gray {
-        margin: 10px 0;
-    }
-    .practice-series-lists .live-exam .speci-text {
-        display: inline-block;
-    }
+    display: grid;
 }
-@media (max-width: 550px) {
+.live-exam-list-wrapper.list-series .live-exam #home .speci-text li, .live-exam-list-wrapper.list-series .live-exam #completed .speci-text li {
+    width: 100%!important;
+}
+.list-series.live-exam-list-wrapper .live-exam #home .speci-text li:nth-child(4), .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:nth-child(4) {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+.list-series.live-exam-list-wrapper .live-exam #home .speci-text li:last-child, .list-series.live-exam-list-wrapper .live-exam #completed .speci-text li:last-child {
+    width: 90% !important;
+}
+.live-exam .speci-text li {
+    line-height: 35px;
+}
+#home h4.py-3 {
+    padding: 15px 0px 15px !important;
+    margin: 0;
+}
+.live-exam .cust-tab-content {
+    padding: 10px !important;
+}
+.list-series .live-exam .speci-text li a button {
+    width: 100% !important;
+}
+.custom_attempted_page .result-list .d-flex.justify-content-between.result-list-table{display: block!important;}
+.custom_attempted_page .result-list .d-flex.justify-content-between.outerhead{display:inline-block!important;width:48%;vertical-align: top;}
+.custom_attempted_page  .morning-slot{display:inline-block!important;width:50%;vertical-align: top;text-align: right;}
+.custom_attempted_page .result-list-btns{display:inline-block;margin-top:10px;}
+.custom_attempted_page .result-list .d-flex.justify-content-between.outerhead h4 , .custom_attempted_page .morning-slot p{margin-bottom:10px!important;}
+ 
+#review_rques_blk .answer-section {
+    width: 97%!important;
+}
+div#LeaDer {
+    top: 287px!important;
+    border-radius: 20px!important;
+}
+.profile-section ul {
+    margin-top: 0;
+}
+.log-out-screen, .subscription ,.edit-form {
+    top: 70px!important;
+  
+}
+.col_min {
+    max-width: 100%;
+    min-width: 100%;
+}
+.practice_custom_page .btn-clear-sel, .practice_custom_page .btn-topic{display:block;}
+.practice_custom_page .btn-clear-sel{width: 165px!important;padding: 0.375rem 15px!important;margin-bottom: 15px!important;}
+.practice_custom_page .listing-details .name-txt {width: 100% !important;}
+.practice_custom_page .cust-tab-content .custom-btn-gray{margin: 10px 0;}
+.practice-series-lists .live-exam .speci-text{display:inline-block;}
+
+}
+@media(max-width:550px){
     .backbtn {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .PayBttn {
-        width: 100%;
-    }
-    .subscription .profile-picture-txt .p-picture {
+    width: 100%;
+    margin-bottom: 20px;}
+.PayBttn {width: 100%;}
+  .subscription .profile-picture-txt .p-picture {
         width: 75px;
     }
-
+   
     .profile-detail {
         margin-top: 20px;
         overflow-y: auto;
@@ -1035,32 +601,24 @@
         margin-bottom: 10px;
     }
     li.a2TS {
-        width: 27% !important;
+        width: 27%!important;
     }
     li.a3TS {
         width: 50% !important;
     }
     .practice-series-lists.list-series .live-exam .speci-text li.a4TS {
-        width: 50%;
-        text-align: right;
+        width: 50%;    text-align: right;
         padding-right: 15px;
-        margin-top: 0;
+        margin-top:0;
     }
     .practice-series-lists li.a1TS span.sub-details {
         padding-left: 0;
     }
-    a.backto-dash {
-        position: static;
-        margin: 10px;
-        float: right;
-    }
+     a.backto-dash {position: static;margin: 10px;float: right;}
 }
-@media (max-width: 500px) {
-    .topics_breadcum {
-        margin-right: 0px;
-        padding: 12px 6px;
-    }
-    .breadcrumb-item + .breadcrumb-item {
+@media(max-width:500px){
+    .topics_breadcum{margin-right:0px;padding: 12px 6px;}
+    .breadcrumb-item+.breadcrumb-item {
         padding-left: 0.2rem;
     }
     .back_page {
@@ -1071,309 +629,170 @@
         font-size: 18px !important;
         line-height: 17px;
     }
-    .topics_breadcum a {
-        font-size: 13px;
+    .topics_breadcum a{font-size:13px;}
+    .tab-wrapper .topic-details  .sub-details .d-flex.justify-content-between{    flex: none;flex-wrap: wrap;
     }
-    .tab-wrapper .topic-details .sub-details .d-flex.justify-content-between {
-        flex: none;
-        flex-wrap: wrap;
-    }
-    .topic-details {
-        padding: 20px 0px;
-    }
+    .topic-details{padding:20px 0px;}
     .sub-title h3 {
         flex: none;
     }
-    div#contentHtml .report-block2 {
-        padding: 30px 10px;
+    div#contentHtml .report-block2{padding:30px 10px;}
+    .trialbox .btn-danger{line-height: 38px;    height: auto;
     }
-    .trialbox .btn-danger {
-        line-height: 38px;
-        height: auto;
-    }
-    .trialbox p {
-        font-size: 20px;
-        padding-bottom: 20px !important;
-    }
-    .bg-white.shadow-lg.py-5 {
-        padding-bottom: 30px !important;
-    }
+    .trialbox p{font-size:20px;    padding-bottom: 20px!important;}
+    .bg-white.shadow-lg.py-5{padding-bottom:30px!important;} 
     .subjectIcon img {
-        width: 48px !important;
+        width: 48px!important;
     }
-    .topics-box {
-        width: calc(50% - 11px);
-        margin: 15px 0px 0px 8px;
-    }
-    .topics-box:first-child {
-        margin-left: 8px;
-    }
-    .dashboard-cards-block .progress-journey-card.bg-white > small p {
-        min-width: 290px;
-    }
-    .dash-sidebar .submenu-L1 {
-        left: 58px;
-    }
-    .dash-nav-link a:first-child svg {
-        width: 63px;
-    }
-    .dash-nav-link a:nth-child(2) svg {
-        width: 90px;
-    }
-    .sublinks a {
-        font-size: 14px;
-        padding: 0.5rem 0.5rem;
-    }
-    .text-start.sublinks a svg {
-        width: 20px;
-        height: 20px;
-    }
-    .dash-sidebar .submenu-L2 {
-        left: 165px;
-    }
-    .sidbar-block {
-        padding: 30px 18px 30px 10px;
-    }
+    .topics-box { width: calc(50% - 11px); margin: 15px 0px 0px 8px;}
+    .topics-box:first-child{margin-left:8px;}
+    .dashboard-cards-block .progress-journey-card.bg-white>small p { min-width: 290px;} 
+    .dash-sidebar .submenu-L1{left:58px;}
+    .dash-nav-link a:first-child svg {width: 63px;}
+    .dash-nav-link a:nth-child(2) svg {width: 90px;}
+    .sublinks a{font-size:14px;padding: 0.5rem 0.5rem;}
+    .text-start.sublinks a svg {width: 20px;height: 20px;}
+    .dash-sidebar .submenu-L2{left:165px;}
+    .sidbar-block {padding: 30px 18px 30px 10px;}
     .subject-placeholder-block img {
-        width: 80px;
-    }
-    #overall button.btn.active,
-    #home button.btn.active,
-    .Ex-anal,
-    #overall button.btn,
-    #home button.btn,
-    .Ex-anal {
-        height: 36px !important;
-    }
-    #marKs-trends #back2Dsh .d-flex {
-        flex-wrap: wrap;
-    }
-    #marKs-trends #back2Dsh .d-flex {
-        flex-wrap: wrap;
-    }
-    #overall #marKs-trends #back2Dsh button.btn {
-        width: 100% !important;
-        margin-right: 0px !important;
-        font-size: 13px !important;
-        height: auto !important;
-        padding: 7px 10px !important;
-    }
-    .cust-tab-content {
-        padding: 0px 7px !important;
-    }
-    div#back2Dsh button a {
-        font-size: 13px;
-        display: inline-block;
-        padding: 2px 0px;
-    }
-    div#marKs-trends,
-    div#time-Avg-quest {
-        padding: 5px 7px 25px;
-    }
-    #profileAcc {
-        margin-top: 50px;
-    }
-    .leader-board,
-    .profile-show {
-        width: 345px !important;
-        right: 9px !important;
-        left: auto !important;
-    }
-    .custom-page .px-4.py-2.clear_div {
-        padding: 0 7px !important;
-    }
-    #review_rques_blk .answer-section {
-        width: 96% !important;
-    }
-    .exam_attempted_common_page .ClickBack .d-flex,
-    .exam_attempted_common_page .ClickBack .slbs-link {
-        display: block !important;
-        margin-bottom: 15px;
-    }
-    .exam_attempted_common_page .ClickBack .result-list-head h4 {
-        margin-bottom: 15px;
-    }
-    .exam_attempted_common_page .result-list-table .result-list-head p {
-        text-align: left;
-    }
-    .practice-series-lists a.btn.btn-outline-primary.sectionBtn,
-    .practice-series-lists a.btn.btn-primary.sectionBtn {
-        min-width: 180px;
-    }
-    .practice-series-lists.list-series .cust-tab-content .custom-btn-gray {
-        float: none;
-    }
-
-    .garphlistincom {
-        margin-bottom: 5px;
-    }
+        width: 80px;}
+        #overall button.btn.active, #home button.btn.active, .Ex-anal,#overall button.btn, #home button.btn, .Ex-anal{height:36px!important;}
+        #marKs-trends #back2Dsh .d-flex{    flex-wrap: wrap;}
+        #marKs-trends #back2Dsh .d-flex{    flex-wrap: wrap;}
+        #overall #marKs-trends #back2Dsh  button.btn{    width: 100%!important;
+            margin-right: 0px!important; font-size: 13px!important;height: auto!important;padding: 7px 10px!important;}
+        .cust-tab-content{    padding: 0px 7px !important;}
+        div#back2Dsh button a {font-size: 13px;display: inline-block;
+            padding: 2px 0px;}  
+        div#marKs-trends, div#time-Avg-quest {padding: 5px 7px 25px;}  
+        #profileAcc{margin-top:50px;}  
+        .leader-board, .profile-show {
+            width: 345px !important;
+            right: 9px !important;
+            left: auto !important;
+        }
+        .custom-page .px-4.py-2.clear_div {
+            padding: 0 7px!important;
+        }
+        #review_rques_blk .answer-section {
+            width: 96%!important;
+        }
+        .exam_attempted_common_page .ClickBack .d-flex , .exam_attempted_common_page .ClickBack .slbs-link{
+            display: block!important;    margin-bottom: 15px;
+        }
+        .exam_attempted_common_page .ClickBack .result-list-head h4{margin-bottom: 15px;}
+        .exam_attempted_common_page .result-list-table .result-list-head p{text-align:left;}
+        .practice-series-lists  a.btn.btn-outline-primary.sectionBtn, .practice-series-lists a.btn.btn-primary.sectionBtn{min-width: 180px;}
+        .practice-series-lists.list-series .cust-tab-content .custom-btn-gray {float: none;}
+        
+        .garphlistincom{margin-bottom: 5px;}
 }
-@media (max-width: 480px) {
+@media (max-width:480px) {
     /* .main-wrapper { padding-left: 55px;} */
-    .rankholder {
-        height: 300px;
-    }
-    .tickicon {
-        width: 90%;
-    }
-
-    .leader-board,
-    .profile-show {
-        width: 325px !important;
-        right: 9px !important;
-        left: auto !important;
-    }
-    .practice-series-lists li.a1TS {
-        width: 100% !important;
-        padding-right: 7px;
-        margin-bottom: 0;
-    }
-    li.a2TS {
-        width: 46% !important;
-    }
-    li.a3TS {
-        width: 49% !important;
-        padding-right: 7px;
-    }
-    .practice-series-lists.list-series .live-exam .speci-text li.a4TS {
-        width: 100%;
-        margin-top: 7px;
-    }
-    #review_rques_blk .answer-section {
-        width: 96% !important;
-    }
-    .practice_custom_page .listing-details .name-txt {
-        width: 100% !important;
-    }
-    .exam_attempted_common_page .paper-summery .paper-sub {
-        width: 100%;
-        display: block;
-    }
+    .rankholder{height: 300px}
+           .tickicon {
+    width: 90%;
 }
-@media (max-width: 420px) {
-    .tab-wrapper .nav-tabs {
-        padding-left: 18px !important;
-    }
-    .dashboard-cards-block .bg-white > small p,
-    .dashboard-cards-block .progress-journey-card.bg-white > small p {
-        min-width: 227px;
-        padding: 15px 25px 15px 10px;
-    }
-    .swiper-button-next,
-    .swiper-rtl .swiper-button-prev {
-        right: 0px;
-    }
-    .cust-gallery.dashGallery .swiper-button-prev,
-    .cust-gallery.dashGallery .swiper-button-next {
-        width: 30px;
-        height: 30px;
-    }
-    .cust-gallery.dashGallery .swiper-button-next:after,
-    .cust-gallery.dashGallery .swiper-button-prev:after {
-        font-size: 16px;
-    }
-    .log-out-screen {
-        max-width: 240px;
-        width: 100%;
-    }
-    .edit-form {
-        min-width: 94%;
-    }
-    .f_l_name_box .form-flds {
-        width: 100% !important;
-        margin-bottom: 10px;
-    }
-    .f_l_name_box {
-        display: block !important;
-    }
-    #editProfile_form .form-flds p {
-        font-size: 10px;
-    }
-    .leader-board {
-        right: 10px !important;
-        top: 36%;
-    }
 
-    .leader-board,
-    .profile-show {
+.leader-board, .profile-show {
+    width: 325px !important;
+    right: 9px !important;
+    left: auto !important;
+}
+.practice-series-lists li.a1TS {width: 100% !important;padding-right: 7px;margin-bottom: 0;}
+li.a2TS {
+    width: 46%!important;
+}
+li.a3TS {
+    width: 49% !important;
+    padding-right: 7px;
+}
+.practice-series-lists.list-series .live-exam .speci-text li.a4TS{width: 100%;    margin-top: 7px;}
+#review_rques_blk .answer-section {
+    width: 96%!important;
+}
+.practice_custom_page .listing-details .name-txt {
+    width: 100% !important;
+}
+.exam_attempted_common_page .paper-summery .paper-sub {width: 100%;display:block;}
+    
+}
+@media(max-width:420px){
+    .tab-wrapper .nav-tabs {
+    padding-left: 18px !important;
+
+}
+    .dashboard-cards-block .bg-white>small p ,.dashboard-cards-block .progress-journey-card.bg-white>small p{ min-width: 227px; padding: 15px 25px 15px 10px; }  
+    .swiper-button-next, .swiper-rtl .swiper-button-prev{right: 0px;}
+    .cust-gallery.dashGallery .swiper-button-prev, .cust-gallery.dashGallery .swiper-button-next{    width: 30px;
+        height: 30px;}
+        .cust-gallery.dashGallery .swiper-button-next:after, .cust-gallery.dashGallery .swiper-button-prev:after {
+            font-size: 16px;
+        }
+        .log-out-screen{max-width: 240px;    width: 100%;}
+        .edit-form{min-width: 94%;}
+        .f_l_name_box .form-flds { width: 100% !important; margin-bottom: 10px;}
+        .f_l_name_box { display: block !important;}
+        #editProfile_form .form-flds p {font-size: 10px;}
+        .leader-board{  right: 10px !important;top: 36%;}
+
+    .leader-board, .profile-show {
         width: 315px !important;
         right: 9px !important;
         left: auto !important;
     }
-
-    .leader-board {
+   
+    .leader-board{
         top: 233px;
         border-radius: 20px !important;
     }
-    .subscription {
-        width: 94% !important;
-    }
-    .custom_attempted_page
-        .result-list
-        .d-flex.justify-content-between.paper-summery
-        .paper-sub {
-        width: 50%;
-    }
-    #editProfile_form .form-flds {
-        margin-bottom: 10px !important;
-    }
+        .subscription {
+    width: 94%!important;
+}    
+.custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub{width:50%;}
+    #editProfile_form  .form-flds { margin-bottom: 10px !important;}
     #review_rques_blk .answer-section {
-        width: 95% !important;
+        width: 95%!important;
     }
     .subscription .form-btns button {
         font-size: 10px;
     }
-    .subjectlist .clear_div .dropdown {
+    .subjectlist  .clear_div .dropdown {
         margin-left: 5px;
     }
-    .practice_custom_page.custom-page #dropdownMenuLink {
-        width: 42px;
-        padding: 2px;
-    }
-    .practice_custom_page.custom-page #dropdownMenuLink svg {
-        width: 22px;
-    }
-    .practice_custom_page
-        .Flat-right
-        button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn {
-        width: 156px !important;
-    }
-    #home a.btn.btn-primary.btn-sm.sectionBtn,
-    a.btn.btn-primary.sectionBtn,
-    #home a.btn.btn-outline-primary.btn-sm.sectionBtn,
-    a.btn.btn-outline-primary.sectionBtn {
-        font-size: 13px;
-    }
+    .practice_custom_page.custom-page #dropdownMenuLink{width: 42px;padding: 2px;}
+    .practice_custom_page.custom-page #dropdownMenuLink svg{width: 22px;}
+    .practice_custom_page .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn{width: 156px !important;}
+    #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 13px;}
 }
-@media (max-width: 385px) {
+@media(max-width:385px){
     .user-name-block {
-        padding-right: 4px;
-    }
-    .user-name-block span.notification.ms-4 {
-        margin-left: 4px !important;
-    }
+    padding-right: 4px;
+}
+.user-name-block span.notification.ms-4 {
+    margin-left: 4px !important;
+}
     .tab-wrapper .nav-tabs {
-        padding-left: 3px !important;
-    }
+    padding-left: 3px !important;
+}
     .star-img {
-        width: 72% !important;
-    }
+        width: 72% !important;}
     .course-star li strong {
         width: 100% !important;
     }
-    #sharefrnd .py-5.copiedmshblock {
-        padding-top: 15px !important;
-        padding-bottom: 15px !important;
-    }
+	#sharefrnd .py-5.copiedmshblock {
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+	}
 
-    .planner-wrapper .card-common-topheading:after {
-        width: 50px;
-    }
-    .leader-board,
-    .profile-show {
+   .planner-wrapper .card-common-topheading:after {
+    width: 50px;
+}
+    .leader-board, .profile-show {
         width: 280px !important;
     }
     #review_rques_blk .answer-section {
-        width: 94% !important;
+        width: 94%!important;
     }
+
 }

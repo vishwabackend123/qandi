@@ -21,7 +21,6 @@ class ReferralController extends Controller
 
     public function store_referral_friend(Request $request)
     {
-
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;

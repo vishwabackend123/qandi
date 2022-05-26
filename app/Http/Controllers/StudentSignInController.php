@@ -32,7 +32,6 @@ class StudentSignInController extends Controller
     public function index()
     {
         //return view('home');
-
     }
 
     /**
@@ -108,7 +107,6 @@ class StudentSignInController extends Controller
     public function verifyotplogin(Request $request)
     {
         try {
-
             $data = $request->all();
 
             $enteredOtp = (int)$request->input('login_otp');
@@ -244,7 +242,6 @@ class StudentSignInController extends Controller
                 return json_encode($response);
 
                 //return $response_json;
-
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -254,7 +251,6 @@ class StudentSignInController extends Controller
     public function verifyOtpRegister(Request $request)
     {
         try {
-
             $data = $request->all();
 
             $reg_otp = $request->input('reg_otp');
@@ -314,7 +310,6 @@ class StudentSignInController extends Controller
                         ];
                         return json_encode($response);
                     } else {
-
                         $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
                         $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
 
@@ -441,7 +436,6 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-
                 $sOption .= '<ul>';
 
                 foreach ($state_list as $keyaState => $oState) {
@@ -509,7 +503,6 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-
                 $sOption .= '<ul>';
 
                 foreach ($city_list as $kCity => $oCity) {
@@ -526,7 +519,7 @@ class StudentSignInController extends Controller
     }
 
     /* function search value in array */
-    function Search($search, $array)
+    public function Search($search, $array)
     {
         try {
             $search = strtolower($search);
@@ -538,7 +531,6 @@ class StudentSignInController extends Controller
                 array_push($r_array, $aVal);
                 } */
                 if (strpos($val, $search) !== false) {
-
                     array_push($r_array, $aVal);
                 }
             }
@@ -593,7 +585,6 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
             $success = isset($aResponse->success) ? $aResponse->success : false;
             if (isset($data['refer_code']) && !empty(isset($data['refer_code']))) {
-
                 $exam_id = 1;
                 $inputjson = ["student_id" => $student_id, "exam_id" => $exam_id, "email" => $data['refer_email'], "student_refer_by" => $data['refer_code'],];
                 $request = json_encode($inputjson);

@@ -61,11 +61,11 @@ class AnalyticsController extends Controller
             $subProf = [];
             if (isset($response->success) && $response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-                $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
-                $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
-                $subProf = json_decode($response->subject_proficiency);
-                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+            $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
+            $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
+            $subProf = json_decode($response->subject_proficiency);
+            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -297,9 +297,9 @@ class AnalyticsController extends Controller
             $otherScorePre = 100;
             if ($response->success === true) :
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-                $subProf = json_decode($response->subject_proficiency);
-                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+            $subProf = json_decode($response->subject_proficiency);
+            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
             endif;
 
             $curl = curl_init();
@@ -838,7 +838,7 @@ class AnalyticsController extends Controller
 
 
 
-    public function topicAnalyticsList($sub_id,Request $request)
+    public function topicAnalyticsList($sub_id, Request $request)
     {
         try {
             $input = $request->all();
@@ -867,7 +867,7 @@ class AnalyticsController extends Controller
             curl_close($curl);
             $aResponse = json_decode($response_json, true);
             $topicList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
-            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList','chapter_name'))->render();
+            $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList', 'chapter_name'))->render();
 
             return response()->json([
                 'status' => true,
@@ -880,8 +880,7 @@ class AnalyticsController extends Controller
     }
     public function chapterAnalyticsList($sub_id)
     {
-      try 
-      {
+        try {
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
@@ -922,7 +921,6 @@ class AnalyticsController extends Controller
             ]);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-        }   
+        }
     }
-
 }

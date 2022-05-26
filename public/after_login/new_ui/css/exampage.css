@@ -27,17 +27,16 @@ li.a3TS {
     width: 15% !important;
 }
 .btn-topic:hover {
-    box-shadow: 0 3px 10px 0 rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 3px 10px 0 rgba(255,255,255,0.8) !important;
 }
 .custom-page .cust-tab-content .scroll-div {
     /* height: 310px !important; */
     overflow-y: auto !important;
-    overflow-x: hidden;
+	overflow-x: hidden;
     padding-right: 5px;
 }
 
-.dropdown-item:focus,
-.dropdown-item:hover {
+.dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;
     background-color: #f2f2f2 !important;
 }
@@ -51,22 +50,19 @@ ul.dropdown-menu.cust-dropdown.show li a img {
 ul.dropdown-menu.cust-dropdown.show {
     border-radius: 32px;
     border: none;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
-    padding: 22px 0px 22px 0px;
-}
-.custom-page #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show {
-    top: calc(100% - 35px) !important;
-}
+	box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%), inset 0 0 0 0 rgb(0 0 0 / 51%);
+    padding: 22px 0px 22px 0px; 
+} 
+ .custom-page #myTabContent .dropdown ul.dropdown-menu.cust-dropdown.show{top: calc(100% - 35px)!important;}
 button.btn.btn-light.ms-2.text-danger.rounded-0.show {
     background: #00baff !important;
-    box-shadow: none;
+	box-shadow:none;	
 }
-button.btn.btn-light.ms-auto.text-danger.rounded-0.show {
-    background: #00baff !important;
-    box-shadow: none;
+button.btn.btn-light.ms-auto.text-danger.rounded-0.show{
+	background: #00baff !important;
+	box-shadow:none;
 }
-button.btn.btn-light.ms-2.text-danger.rounded-0,
-button.btn.btn-light.ms-auto.text-danger.rounded-0 {
+button.btn.btn-light.ms-2.text-danger.rounded-0, button.btn.btn-light.ms-auto.text-danger.rounded-0  {
     box-shadow: none !important;
 }
 
@@ -87,36 +83,16 @@ button.btn.btn-light.ms-auto.text-danger.rounded-0 {
 }
 
 /***12-03-22-Added_by_Sachin***/
-.examSect .fade,
-.examSect,
-#endExam,
-#FullTest_Exam_Panel_Interface_A,
-#sharefrnd {
-    transition: initial;
-}
+.examSect .fade , .examSect, #endExam, #FullTest_Exam_Panel_Interface_A,#sharefrnd{ transition: initial;}
 /***12-03-22-Ended_by_Sachin***/
 
 /***Added_by-kanchan***/
-#exam_content_sec #question_section .tab-btn-box a {
-    color: #2c3348;
-    font-weight: normal;
-    font-family: "Poppins", sans-serif;
-}
-#exam_content_sec .btn-light {
-    color: #2c3348 !important;
-}
-#exam_content_sec .btn-light:hover {
-    color: #fff !important;
-}
-#exam_content_sec #question_section .tab-btn-box a :hover {
-    color: #fff;
-}
-#exam_content_sec #question_section .tab-btn-box .a :hover {
-    color: #fff;
-}
-#exam_content_sec .rightSect .number-block .btn:hover {
-    color: #2c3348 !important;
-}
+#exam_content_sec #question_section .tab-btn-box a{color: #2c3348;font-weight: normal;font-family: 'Poppins', sans-serif;}
+#exam_content_sec .btn-light{color: #2c3348 !important;}
+#exam_content_sec .btn-light:hover{color: #fff !important;}
+#exam_content_sec #question_section .tab-btn-box a :hover{color: #fff;}
+#exam_content_sec #question_section .tab-btn-box .a :hover{color: #fff;}
+#exam_content_sec .rightSect .number-block .btn:hover{color: #2c3348 !important;}
 /***Added_by-kanchan***/
 #exam_content_sec #myTabContent #scroll-mobile #myTab li.nav-item {
     margin-right: 5px;
@@ -134,8 +110,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 #exam_content_sec .question-block .question p {
     font-size: 14px;
     line-height: 20px;
-    margin: 0px;
-    font-feature-settings: "liga" 0;
+    margin: 0px;font-feature-settings: "liga" 0;
 }
 
 #exam_content_sec .cust-tab-content {
@@ -148,10 +123,11 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     bottom: 20px;
 }
 
-.examSect .checkboxans:checked + .ans {
+.examSect .checkboxans:checked+.ans {
     border: solid 1px #37c027 !important;
     background: transparent;
 }
+
 
 .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0:hover {
     background: #4cb9f9 !important;
@@ -250,8 +226,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     padding-bottom: 15px !important;
 }
 
-.examSect .ans-block .col-md-6.mb-4 {
-}
+.examSect .ans-block .col-md-6.mb-4 {}
 
 .examSect .border.ps-3.ans {
     border-radius: 16px;
@@ -278,41 +253,31 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 }
 
 .examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
-.examSect
-    div#myTabContent
-    .tab-pane
-    a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
+.examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
 .examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
     border-radius: 20px !important;
     box-shadow: inset 0 3px 30px 0 rgb(255 255 255 / 80%);
-    background: #e9e9e9 !important;
+    background: #e9e9e9!important;
     border: none;
     text-transform: none;
     color: #000;
     padding: 13px 20px;
     line-height: 20px;
 }
-.examSect div#myTabContent .tab-pane .tab-btn-box a.btn.rounded-0:hover,
-.examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0:hover,
-.examSect
-    div#myTabContent
-    .tab-pane
-    a.btn.px-4.ms-auto.me-2.btn-light.rounded-0:hover,
-.examSect
-    div#myTabContent
-    .tab-pane
-    a.btn.px-4.me-2.btn-secondary.rounded-0:hover {
-    background: #00baff !important;
-}
-.examSect .checkboxans:checked + .ans {
+.examSect div#myTabContent .tab-pane .tab-btn-box  a.btn.rounded-0:hover,
+.examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0:hover, 
+.examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0:hover, 
+.examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0:hover {
+    background: #00baff !important;}
+.examSect .checkboxans:checked+.ans {
     border: solid 1px #37c027 !important;
     background: #e3f0fe;
 }
 
-/****SACHIN****/
+ /****SACHIN****/
 /********************SACHIN_14_02_22_Start*************/
 
-.examSect .checkboxans:checked + .ans span.q-no {
+.examSect .checkboxans:checked+.ans span.q-no {
     background: #37c027;
     border-radius: 50px;
     width: 25px;
@@ -325,6 +290,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     padding-left: 3px;
     font-size: 14px;
     text-align: center;
+
 }
 /********************SACHIN_14_02_22_end*************/
 /* .examSect {
@@ -346,10 +312,10 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     border-radius: 56px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     padding-bottom: 10px !important;
-    margin-bottom: 0px!important;
+    margin-bottom: 0xp !important;;
     height: calc(100vh - 60px);
 }
-#exam_content_sec .justify-content-center {
+#exam_content_sec .justify-content-center{
     justify-content: initial !important;
 }
 
@@ -405,10 +371,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     font-size: 12px;
     width: 65%;
 }
-.examSect
-    div#myTabContent
-    .tab-pane
-    a.btn.px-4.me-2.btn-secondary.rounded-0.clearRes:hover,
+.examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0.clearRes:hover,
 .examSect a.clearRes:hover {
     background: #eb4344 !important;
     opacity: 1;
@@ -499,6 +462,7 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     margin-bottom: 0px !important;
 }
 
+
 .rightSect .number-block::-webkit-scrollbar {
     width: 5px;
 }
@@ -534,19 +498,20 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
 }
 
 .test-review-right .bg-white.d-flex.flex-column.mb-4 {
-    padding: 0px !important;
+    padding:0px !important;
+   height: calc(100vh - 141px) !important;
+   
+}
+.test-review-right{
     height: calc(100vh - 141px) !important;
 }
-.test-review-right {
-    height: calc(100vh - 141px) !important;
-}
-.padding_26 {
+.padding_26{
     padding: 26px !important;
     padding-bottom: 0px !important  ;
 }
 
 .rightSectH {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-size: 18px;
     font-weight: 600;
 }
@@ -652,10 +617,12 @@ a.clearRes:hover {
     background: #d0f3ff;
 }
 
+
+
 /**********************hide_by_sachin************/
-/* .question-block label.question p {
-    margin-bottom: 2px;
-} */
+.question-block label.question p {
+    /* margin-bottom: 2px; */
+}
 
 /**********************hide_by_sachin************/
 .question-block {
@@ -669,12 +636,12 @@ a.clearRes:hover {
 
 /* Added by kanchan */
 
-.star-ratings-css-bottom span {
-    padding: 0 2px;
+.star-ratings-css-bottom span{
+    padding:0 2px;
     color: #e9e9e9;
 }
-.star-ratings-css-top span {
-    padding: 0 2px;
+.star-ratings-css-top span{
+ padding:0 2px;
 }
 
 .question-block i.fa {
@@ -690,9 +657,11 @@ a.clearRes:hover {
 
 /* Added by kanchan */
 
-#review_rques_blk .question-block i.fa {
+#review_rques_blk .question-block i.fa{
     padding: 10px;
 }
+
+
 
 /* Added by sachin-22-02*/
 
@@ -703,8 +672,8 @@ a.clearRes:hover {
     background-color: #ffffff;
     max-height: 193px;
     width: 100%;
-    min-width: 400px;
-    max-width: 400px;
+	min-width: 400px;
+	max-width: 400px;
 }
 .detail_text-heading {
     display: flex;
@@ -712,7 +681,7 @@ a.clearRes:hover {
     align-items: self-start;
 }
 
-.review_expand .detail_h {
+ .review_expand .detail_h {
     color: #00baff;
     font-size: 12px;
     font-weight: bold;
@@ -728,7 +697,7 @@ a.clearRes:hover {
 .main-catgy {
     font-size: 14px;
     color: #2c3348;
-    opacity: 0.99;
+    opacity: .99;
 }
 .detail_text-heading p {
     font-size: 13px;
@@ -743,32 +712,34 @@ a.clearRes:hover {
     padding: 0px 6px;
     color: red;
 }
-
-.right_box ul li a {
-    color: #605f5f;
+  
+  .right_box ul li a {
+    color: #605f5f; 
 }
-
-.fa.fa-bookmark-o {
+  
+  .fa.fa-bookmark-o {
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
 }
 .detail_text_content {
     font-size: 14px;
     color: #2c3348;
-    opacity: 0.99;
+    opacity: .99;
     max-height: 90px;
     overflow-y: scroll;
 }
-
+  
+  
 .first_screen {
-    padding: 14px !important;
+	padding: 14px !important;
     border-radius: 16px;
-    box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
-    background-color: #ffffff;
-    width: 315px;
+	box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+	background-color: #ffffff;
+	width: 315px;
     z-index: 999;
+	  
 }
-.persent_std {
+	.persent_std {
     display: flex;
     align-items: center;
     border-bottom: 2px solid #86878b9e;
@@ -779,29 +750,29 @@ a.clearRes:hover {
     color: #37c027;
 }
 .attend {
-    width: 178px;
+        width: 178px;
     object-fit: contain;
     font-size: 16px;
-    opacity: 0.99;
+    opacity: .99;
     color: #231f20;
     padding-left: 14px;
 }
 .propt_text {
-    padding: 20px 0px;
-    text-align: left;
-    font-size: 14px;
-    color: #2c3348;
-    opacity: 0.99;
+	padding: 20px 0px;
+	text-align: left;
+	font-size: 14px;
+	color: #2c3348;
+	opacity: .99;
 }
 .attemp_box {
     display: flex;
 }
 .sub_att_1 p {
-    font-size: 11px;
-    margin-bottom: 0px;
-    color: #2c3348;
-    text-align: left;
-    opacity: 0.99;
+	font-size: 11px;
+	margin-bottom: 0px;
+	color: #2c3348;
+	text-align: left;
+	opacity: .99;
 }
 
 .attemp_box a {
@@ -817,28 +788,29 @@ a.clearRes:hover {
     word-break: break-word;
 }
 
-.right_box span {
-    padding-left: 5px;
-}
+.right_box span {padding-left: 5px;}
 .review_expand {
     position: absolute;
     top: 5%;
     right: 6%;
 }
 .percent_btn {
-    color: #ffffff;
-    background-color: #00bdff;
-    border-radius: 17px;
-    padding: 10px 60px;
-    border: navajowhite;
-    font-size: 14px;
-    display: initial;
-    position: absolute;
+	color: #ffffff;
+	background-color: #00bdff;
+	border-radius: 17px;
+	padding: 10px 60px;
+	border: navajowhite;
+	font-size: 14px;
+	display: initial;
+	position: absolute;
     right: 0px;
     cursor: pointer;
+ 
+	 
+ 
 }
 
-.review_expand .popup {
+.review_expand .popup{
     padding: 14px !important;
     border-radius: 18px;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
@@ -846,15 +818,16 @@ a.clearRes:hover {
     position: absolute;
     top: 0px;
     right: 312px;
+    
 }
-
+  
 .expand_block {
-    display: none;
-    position: absolute;
+    display:none;position: absolute;
     right: 0px;
+   
 }
 
-#review_rques_blk {
+#review_rques_blk{
     position: relative;
 }
 .expand_button {
@@ -863,52 +836,53 @@ a.clearRes:hover {
     right: 1%;
 }
 
-.expandbtn {
+.expandbtn{
     display: none;
 }
 
-#review_rques_blk .answer-section {
+#review_rques_blk .answer-section{
     margin-top: 50px;
+   
 }
 /*added by sachin-22-02*/
 
 /******28-03****/
-.number-block .btn-check:focus + .btn-light,
-.number-block .btn-light:focus {
+.number-block .btn-check:focus+.btn-light, .number-block .btn-light:focus {
     border-color: #12c3ff;
     box-shadow: none;
     border-width: 2px;
 }
-/******28-03****/
-
-@media (min-width: 1200px) and (max-width: 1300px) {
-    .custom-page .cust-tab-content .scroll-div {
-        /* height: 275px !important; */
-        overflow-y: auto !important;
-        overflow-x: hidden;
-    }
+/******28-03****/ 
+ 
+ @media (min-width: 1200px) and (max-width: 1300px){
+.custom-page .cust-tab-content .scroll-div {
+    /* height: 275px !important; */
+    overflow-y: auto !important;
+    overflow-x: hidden;
 }
+}
+
+
 
 /******04-04-22-Added by sachin-for-exam-result-list****/
-.result-list-filter-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.result-list-filter-row{
+    display:flex;
+    justify-content: space-between;align-items: center;
+} 
 
-.showBioBtn {
+ .showBioBtn{
     background-color: #337ab7;
-    padding: 5px 10px;
+    padding: 5px 10px; 
     color: #fff;
     font-size: 12px;
 }
 
-#page_navigation {
+  #page_navigation {
     justify-content: center;
     margin: 20px 0;
 }
 
-#page_navigation a {
+ #page_navigation a {
     padding: 3px 6px;
     border: 1px solid #00bdff;
     margin: 2px;
@@ -921,70 +895,70 @@ a.clearRes:hover {
     box-shadow: 0px 17px 10px -10px rgb(206 206 206 / 40%);
 }
 
-.pagination {
+ .pagination {
     display: flex;
     padding-left: 0;
     list-style: none;
     justify-content: center;
 }
 
-.active_page {
-    background: #00bdff;
-    color: white !important;
-    box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+ .active_page{
+	background:#00bdff;
+	color:white !important;  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4)
 }
 
-.result-list-filter-row .sub-filter form {
+.result-list-filter-row .sub-filter form{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.result-list-filter-row .sub-filter {
+.result-list-filter-row .sub-filter{
     padding: 0px 21px;
 }
 
-.result-list-filter-row .select {
+.result-list-filter-row .select{
     padding: 8px 12px;
-    color: #333333;
-    background-color: #eeeeee;
+    color:#333333;
+    background-color:#eeeeee;
     border: 1px solid #e4e4e4;
-    cursor: pointer;
+    cursor:pointer;
     background: #f2f2f2;
     border: 1px solid #e4e4e4;
     border-radius: 5px;
+    
 }
 .result-list-filter-row .select:focus,
-.result-list-filter-row .select:hover {
-    outline: none;
-    border: 1px solid #dddddd;
+.result-list-filter-row .select:hover{
+    outline:none;
+    border:1px solid #dddddd;
 }
-
-.result-list-filter-row .select option {
-    background: #ffffff;
-    padding: 20px;
+ 
+.result-list-filter-row .select option{
+    background:#ffffff;
+    padding: 20px;;
 }
 
 .result-list-filter-row .form-control:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .result-list-filter-row.form-control-underlined {
-    border-width: 0;
-    border-bottom-width: 1px;
-    border-radius: 0;
-    padding-left: 0;
-    background-color: red;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+  background-color:red;
 }
 
 .result-list-filter-row .form-control::placeholder {
-    font-size: 0.95rem;
-    color: #aaa;
-    font-style: italic;
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
 }
-
+ 
+ 
 .result-list-filter-row input.form-control {
-    background: #ededed !important;
-    height: 42px !important;
+    background: #ededed !important;   height: 42px !important;
 }
 
 .result-list-filter-row button#button-addon1 {
@@ -995,22 +969,22 @@ a.clearRes:hover {
     border: none;
     margin: 0px !important;
 }
-
+ 
 .result-list-filter-row .sub-search {
     background: #f2f2f2;
     border: 1px solid #e4e4e4;
-    border-radius: 5px;
-    height: 42px;
+    border-radius: 5px;height: 42px;
 }
-.result-list-filter-row .sub-filter-type {
-    margin-right: 20px;
+.result-list-filter-row .sub-filter-type{
+    margin-right:20px;
+
 }
 /******04-04-22-Ended by sachin-for-exam-result-list****/
-.custom-page .cust-tab-content .scroll-div {
+.custom-page .cust-tab-content .scroll-div  {
     max-height: calc(100vh - 400px) !important;
     overflow: overlay;
 }
-.scroll-div-live-exm {
+  .scroll-div-live-exm{
     max-height: calc(100vh - 360px) !important;
     overflow: overlay;
 }
@@ -1021,62 +995,63 @@ a.clearRes:hover {
     padding: 0;
 }
 
-.examSect button.arrow.prev-arow {
-    left: 30px;
-    top: 100px;
-    position: absolute;
+
+.examSect  button.arrow.prev-arow{left: 30px;
+    top: 100px;  position: absolute;
 }
 
-.examSect button.arrow.next-arow {
+.examSect  button.arrow.next-arow {
     right: -6px;
     position: absolute;
     top: 100px;
+  
+} 
+
+#prof_scroll .score-rating{ width: 45px} 
+.tab-wrapper.live-exam  {
+    height: calc(100vh - 150PX);
 }
 
-#prof_scroll .score-rating {
-    width: 45px;
-}
-.tab-wrapper.live-exam {
-    height: calc(100vh - 150px);
+  .result-list.bg-white.tab-wrapper {
+    height: calc(100vh - 200PX);
 }
 
-.result-list.bg-white.tab-wrapper {
-    height: calc(100vh - 200px);
-}
-
+ 
 .custom-page .cust-tab-content {
-    height: calc(100vh - 210px) !important;
+    height: calc(100vh - 210px) !important; 
 }
-.practice_custom_page .exam_attempted_common_page .tab-pane .scroll-div {
-    max-height: calc(100vh - 400px) !important;
+.practice_custom_page .exam_attempted_common_page .tab-pane .scroll-div{
+    max-height: calc(100vh - 400px)!important; 
     overflow: overlay;
 }
-.mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div {
-    max-height: calc(100vh - 300px) !important;
+.mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div{
+    max-height: calc(100vh - 300px)!important; 
     overflow: overlay;
 }
-.mocktest-attempted-wrapper {
+.mocktest-attempted-wrapper{
     height: calc(100vh - 260px) !important;
 }
-.mocktest-attempted-wrapper .cust-tab-content {
-    height: calc(100vh - 260px) !important;
+.mocktest-attempted-wrapper .cust-tab-content{
+    height: calc(100vh - 260px) !important; 
 }
 
 /* .live-exam .exam_attempted_common_page .tab-pane .scroll-div{
     max-height: calc(100vh - 400px)!important; 
     overflow: overlay;
 } */
-.live-exam .tab-pane {
-    max-height: calc(100vh - 250px) !important;
-    overflow: overlay;
+.live-exam   .tab-pane{
+    max-height: calc(100vh - 250px)!important;overflow: overlay;
+    
 }
-.live-exam-custom .tab-pane {
-    max-height: calc(100vh - 250px) !important;
+.live-exam-custom .tab-pane{
+    max-height: calc(100vh - 250px)!important; 
     overflow: initial !important;
+    
 }
-.live-exam-custom .tab-pane .scroll-div {
-    max-height: calc(100vh - 400px) !important;
+.live-exam-custom .tab-pane .scroll-div{
+    max-height: calc(100vh - 400px)!important;
     overflow: overlay;
+    
 }
 .live-exam-list-wrapper .scroll-div-live-exm {
     max-height: initial !important;
@@ -1094,6 +1069,7 @@ a.clearRes:hover {
     box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
 }  */
 
+
 .Assessment_page .cust-tab-content {
     height: calc(100vh - 260px) !important;
     margin-top: 70px;
@@ -1105,5 +1081,5 @@ a.clearRes:hover {
 
 .Assessment_page #mocktest {
     max-height: calc(100vh - 300px) !important;
-    overflow: overlay;
+    overflow: overlay; 
 }
