@@ -1096,7 +1096,7 @@ html.scrollnone .main-wrapper {
 }
 .scrollnone body {
     width: calc(100% + 0px);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 /* shubham-end(09-03-2022) */
 
