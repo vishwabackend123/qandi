@@ -1,7 +1,7 @@
 
 @media screen and (max-width:1380px){
     .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
-    .exam-analytics .position-relative  .tab-wrapper {overflow: hidden;}
+   
 }
 
 
@@ -340,6 +340,8 @@ div.counter{right:0;margin-right: -35px;}
 .practice-series-lists .sub-details{font-size:15px;}
 #favSubResponse p{font-size:24px;}
 .rating .lbl-text{font-size:20px;}
+#attempted .result-analysis{font-size: 12px;}
+#attempted .result-list-btns a {font-size: 12px;}
 }
 @media(max-width:991px){
     #test_instruction a.btn-close {
@@ -355,7 +357,7 @@ div.counter{right:0;margin-right: -35px;}
         height: auto !important;
     }
 #attempted .result-list-btns a {
-    font-size: 13px;
+    font-size: 12px;
 }
     .qoption_error{
      position: relative;
@@ -495,7 +497,7 @@ div.counter{right:0;margin-right: -35px;}
     .review_expand {
         right: 9%;
     }
-    #attempted .result-analysis{width: 161px;font-size: 12px;}
+    #attempted .result-analysis{width: 161px;font-size: 11px;}
     #attempted .paper-summery{padding-left: 15px!important;}
     #attempted .score-show{max-width: 180px;}
     #attempted .paper-sub{padding: 0 10px 0 0;}

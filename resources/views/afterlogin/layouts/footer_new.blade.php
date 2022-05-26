@@ -1851,16 +1851,10 @@
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
         setTimeout(function() {
             if ($('.notification-block').hasClass('notification-block-active')) {
-                // $('.main-profile-section').removeClass("show");
-                // $('.planmner-block').removeClass("show");
                 $('html').addClass("scrollnone")
             } else if ($('.main-profile-section').hasClass('show')) {
-                // $('.notification-block').removeClass("show");
-                // $('.planmner-block').removeClass("show");
                 $('html').addClass("scrollnone")
             } else if ($('.planmner-block').css('display') == 'block') {
-                // $('.notification-block').removeClass("show");
-                // $('.main-profile-section').removeClass("show");
                 $('html').addClass("scrollnone")
             } else {
                 $('html').removeClass("scrollnone")
