@@ -5057,11 +5057,11 @@ button.save-btn {
     width: 19%;
 }
 
-.list-series .scroll-div-live-exm {
-    /* height: 350px; */
-    /* overflow: overlay;
-    max-height: calc(100vh - 280px); */
-}
+/*.list-series .scroll-div-live-exm {
+    height: 350px; 
+     overflow: overlay;
+    max-height: calc(100vh - 280px);
+} */
 
 /** scrollbar css **/
 /* width */

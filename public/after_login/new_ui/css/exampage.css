@@ -226,7 +226,6 @@ div#exam_content_sec .cust-tabs .nav-link.active:before {
     padding-bottom: 15px !important;
 }
 
-.examSect .ans-block .col-md-6.mb-4 {}
 
 .examSect .border.ps-3.ans {
     border-radius: 16px;
@@ -620,9 +619,9 @@ a.clearRes:hover {
 
 
 /**********************hide_by_sachin************/
-.question-block label.question p {
-    /* margin-bottom: 2px; */
-}
+/* .question-block label.question p {
+    margin-bottom: 2px;
+} */
 
 /**********************hide_by_sachin************/
 .question-block {
