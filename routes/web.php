@@ -149,8 +149,8 @@ Route::any('/get_chapter_wise_data', [App\Http\Controllers\PreparationController
 
 /* about Exam Controller Routes */
 
-Route::any('/about_exam', [App\Http\Controllers\AboutExamController::class, 'about_exam'])->name('about_exam')->middleware('auth', 'menu');
-Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::class, 'eligibility_criteria'])->name('eligibility_criteria')->middleware('auth', 'menu');
+Route::any('/about_exam', [App\Http\Controllers\AboutExamController::class, 'aboutExam'])->name('about_exam')->middleware('auth', 'menu');
+Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::class, 'eligibilityCriteria'])->name('eligibility_criteria')->middleware('auth', 'menu');
 
 
 /* preLoginController */
