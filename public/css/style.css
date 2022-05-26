@@ -256,11 +256,13 @@ input:-moz-placeholder {
 /** 15-12-2021**/
 .login-bg-img .login_screen p.mb-0 {
     color: #00baff;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     padding-bottom: 10px;
 }
-
+.login-bg-img .login_screen p.mb-0+p {
+    font-size: 17px;
+}
 .login-bg-img .login_screen .sign-btn button:focus {
     outline: none;
     box-shadow: none;

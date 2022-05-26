@@ -15,6 +15,28 @@ button {
     outline: none;
     text-decoration: none;
 }
+a.Try14 {
+    font-size: 17px;
+}
+.subScrip h1.main-heading.position-relative {
+    font-size: 36px;
+}
+div#welcomeModal p.wl-user-title {
+    font-size: 26px;
+}
+#fullTest_Dashboard .modal-body a#full-txtBlock {
+    width: 55%;
+    border-radius: 30px;
+}
+#fullTest_Dashboard .modal-body p.h1-p+p {
+    font-size: 18px;
+}
+#fullTest_Dashboard a.skip-dashboard {
+    font-size: 18px;
+}
+#fullTest_Dashboard .modal-body p.h1-p {
+    font-size: 28px;
+}
 #attempt_count_block h5.dashboard-title {
     color: #2c3348;
     font-size: 18px;
