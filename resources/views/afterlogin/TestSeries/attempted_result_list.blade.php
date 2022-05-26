@@ -174,10 +174,9 @@
             var blockpos = $('#clicktopic_' + chapter_id).offset().top;
             var scrollblock = $($('#clicktopic_' + chapter_id).attr('href')).offset().top;
              if (scrollpas > 0) {
-
-                  if (blockpos > 400) {
+                  if (blockpos > 500) {
                     $('.scroll_top').animate({
-                      scrollTop: scrollblock + scrollpas - blockpos + 50
+                      scrollTop: scrollblock + scrollpas - blockpos + 100
                     }, 500);
                   } else {
                     if(scrollblock <=0 && blockpos <=0 && scrollpas < 550)
