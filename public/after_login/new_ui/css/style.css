@@ -1860,7 +1860,7 @@ span.text-secondary.chapter_name.mb-2.d-block {
     font-weight: normal;
     margin-right: 6px;
 }
-`` .topics-box:hover > b {
+.topics-box:hover > b {
     color: #3de2f8;
 }
 
