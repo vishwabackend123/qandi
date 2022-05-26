@@ -37,17 +37,11 @@
                     $slot = 0;
                     if ($time < "12") {
                         $slot = "Morning";
-                    } else
-                                            
-                                            if ($time >= "12" && $time < "17") {
+                    } elseif ($time >= "12" && $time < "17") {
                         $slot = "Afternoon";
-                    } else
-                                            
-                                            if ($time >= "17" && $time < "19") {
+                    } elseif ($time >= "17" && $time < "19") {
                         $slot = "Evening";
-                    } else
-                                            
-                                            if ($time >= "19") {
+                    } elseif ($time >= "19") {
                         $slot = "Night";
                     }
                     ?>
@@ -88,7 +82,7 @@
                 </div>
             </div-->
 
-            <div class="compLeteS all-rlt {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}">
+            <div class="compLeteS all-rlt {{$sche->subject_name}}-rlt exam_mode_{{$sche->exam_mode}}" id="active_click_{{$sche->id}}">
                 <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                     <div class="d-flex align-items-start justify-content-between result-list-head">
                         <h4 class="m-lg-0 p-0"> @if($sche->test_series_name)
@@ -165,11 +159,13 @@
         curr_text = curr_text.replace(/\s+/g, "");
         var updatetext = ((curr_text == 'HideDetails') ? 'Show Details' : 'Hide Details');
         var htmlData = '';
+        var chapter_id = spanId.replace('expand_topic_','');
         if (curr_text == 'HideDetails') {
             $("#" + spanId).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
+            $('#active_click_'+chapter_id).removeClass('active-accordian');
         } else {
             $("#" + spanId).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
-            var chapter_id = spanId.replace('expand_topic_','');
+            $('#active_click_'+chapter_id).addClass('active-accordian');
             var scrollpas = $('.scroll_top').scrollTop();
             var blockpos = $('#clicktopic_' + chapter_id).offset().top;
             var scrollblock = $($('#clicktopic_' + chapter_id).attr('href')).offset().top;
