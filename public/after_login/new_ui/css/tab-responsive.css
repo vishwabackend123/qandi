@@ -340,6 +340,8 @@ div.counter{right:0;margin-right: -35px;}
 .practice-series-lists .sub-details{font-size:15px;}
 #favSubResponse p{font-size:24px;}
 .rating .lbl-text{font-size:20px;}
+#attempted .result-analysis{font-size: 12px;}
+#attempted .result-list-btns a {font-size: 12px;}
 }
 @media(max-width:991px){
     #test_instruction a.btn-close {
@@ -639,6 +641,9 @@ div.counter{right:0;margin-right: -35px;}
    .subscription .profile-picture-txt .p-text {width: 100%;}
    .subscrived {margin: 20px 0px 0px;}
    .custom-page .cust-tab-content {padding-bottom: 20px !important;}
+   .custom-page .cust-tab-content {
+    height: calc(100vh - 250px)!important;
+    }
 }
 
 @media(max-width:767px){
