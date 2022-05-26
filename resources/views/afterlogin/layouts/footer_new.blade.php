@@ -1849,6 +1849,7 @@
 
 
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
+        $('html').addClass("scrollnone")
         setTimeout(function() {
             if ($('.notification-block').hasClass('notification-block-active')) {
                 $('html').addClass("scrollnone")
