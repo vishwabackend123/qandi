@@ -2409,6 +2409,7 @@ a.disabled-btn {
 .edit-form .error {
     color: #d71921;
     font-size: inherit;
+    font-size: 14px;line-height:20px;
 }
 
 #editProfile_form {
