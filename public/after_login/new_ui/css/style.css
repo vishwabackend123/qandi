@@ -9600,6 +9600,6 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 .exam-analytics .bg-white.shadow .progress {
     border-radius: 15px;
 }
-.exam-analytics .position-relative .tab-wrapper,.overllanaly .tab-wrapper{
+.exam-analytics .position-relative .tab-wrapper,.overllanaly .tab-wrapper,.practice_custom_page .tab-wrapper{
     overflow: hidden;
 }
