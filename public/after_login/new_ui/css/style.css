@@ -3,12 +3,10 @@ body {
     padding: 0;
     font-family: "Manrope", sans-serif !important;
 }
-
 a {
     color: #355cec;
     text-decoration: none;
 }
-
 a,
 input,
 button {
@@ -328,19 +326,15 @@ input.allownumericwithdecimal {
     margin-bottom: 5px;
     padding-left: 15px;
 }
-
 .report-block2.p-6 > p.text-center.mt-5.pt-5 {
     word-break: break-word;
 }
-
 .arrow-right-btm-content.collapse {
     display: none !important;
 }
-
 .arrow-right-btm-content.collapse.openTopicPara {
     display: block !important;
 }
-
 .avg-time {
     margin-top: -4px;
 }
@@ -9602,3 +9596,4 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 }
 .exam-analytics .position-relative .tab-wrapper,.overllanaly .tab-wrapper,.practice_custom_page .tab-wrapper,
 .list-series .tab-wrapper,.examSect .tab-wrapper,.result-list.bg-white.tab-wrapper,.reviewPanel{ overflow: hidden;}
+
