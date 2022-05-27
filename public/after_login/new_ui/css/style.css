@@ -4743,7 +4743,7 @@ div#sub-planner {
     display: none;
     height: 480px !important;
     overflow: hidden;
-    /* padding-right: 10px !important; */
+    padding-right: 20px;
 }
 
 .edit-img {
@@ -9596,4 +9596,4 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 }
 .exam-analytics .position-relative .tab-wrapper,.overllanaly .tab-wrapper,.practice_custom_page .tab-wrapper,
 .list-series .tab-wrapper,.examSect .tab-wrapper,.result-list.bg-white.tab-wrapper,.reviewPanel,.custom-page .tab-wrapper{ overflow: hidden;}
-
+.edit-form .btm-form-flds{padding-right:10px;}
