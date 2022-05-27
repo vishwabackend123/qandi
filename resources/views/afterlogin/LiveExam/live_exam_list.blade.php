@@ -128,12 +128,25 @@ $userData = Session::get('user_data');
                                         </li> -->
                                     </ul>
                                     @else
+                                    @php
+                                        list( $day,$month, $year) =explode("-",$start_date);
+                                        $year=2000+$year;
+                                        $update_date=$day.'-'.$month.'-'.$year;
+                                        $newDate = date("d M Y", strtotime($update_date));
+                                        $start_date_new = date('dS F Y', strtotime($newDate));
+
+                                        list( $day,$month, $year) =explode("-",$end_date);
+                                        $year=2000+$year;
+                                        $update_date=$day.'-'.$month.'-'.$year;
+                                        $newDate = date("d M Y", strtotime($update_date));
+                                        $end_date_new = date('dS F Y', strtotime($newDate));
+                                    @endphp
                                     <ul class="speci-text">
                                         <li> <span class="sub-details">{{$sche->exam_name}}</span>
                                         </li>
-                                        <li><strong>Start Date: {{$start_date}}</strong>
+                                        <li><strong>Start Date: {{$start_date_new}}</strong>
                                         </li>
-                                        <li><strong>End Date: {{$end_date}}</strong>
+                                        <li><strong>End Date: {{$end_date_new}}</strong>
                                         </li>
                                         <li style="font-weight:600;">{{$sche->questions_count}} Questions</a>
                                         </li>
