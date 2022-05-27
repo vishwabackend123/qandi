@@ -13,12 +13,22 @@ button {
     outline: none;
     text-decoration: none;
 }
+.backtobox .backtobtn a:hover{
+    background: #4cb9f9;
+}
+.backtobox .backtobtn a:hover i, .backtobox .backtobtn a:hover span{
+    color: #fff;
+}
+.back_to_ref a:hover{
+    background: #00baff;
+}
 .dailytask-wrapper .dtrow-left .col-md-6 p:first-child b {
     font-size: 17px;
 }
 .dailytask-wrapper  .dtrow-left .btntheme{
     font-weight: 600;
     max-width: 210px;
+    /* background-image: linear-gradient(238deg, #21ccff 91%, #00baff -1%); */
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p {
     font-size: 16px;
