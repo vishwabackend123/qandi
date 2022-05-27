@@ -13,8 +13,9 @@ button {
     outline: none;
     text-decoration: none;
 }
-.backtobox .backtobtn a:hover{
-    background: #4cb9f9;
+.backtobox .backtobtn a:hover , .cancel-btn-see:hover{
+    background: #00baff;
+    color: #fff;
 }
 .backtobox .backtobtn a:hover i, .backtobox .backtobtn a:hover span{
     color: #fff;
