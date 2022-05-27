@@ -73,14 +73,17 @@ class LiveExamController extends Controller
                 $schedule_list = [];
                 $completed_list = [];
             }
-
-
-
+            usort($schedule_list, function($a, $b)
+            {
+                return strcmp($a->end_date, $b->end_date);
+            });
+            
             return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
+
 
 
     public function live_exam(Request $request, $schedule_id)
