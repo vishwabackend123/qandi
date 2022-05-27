@@ -134,12 +134,13 @@
     .topic-details{
        padding:20px 10px;
    }
-    .subject-name li{
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-       line-height: 13px;
+    .subject-name li,.subject-box-expend .subject-name li{
+        width: 30px!important;
+        height: 30px!important;
+        font-size: 14px!important;
+       line-height: 13px!important;
    }
+
     .fw-bold{
        font-size:18px;
    }
