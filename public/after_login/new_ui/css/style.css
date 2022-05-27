@@ -13,7 +13,15 @@ button {
     outline: none;
     text-decoration: none;
 }
-.backtobox .backtobtn a:hover , .cancel-btn-see:hover{
+.practice_custom_page #dropdownMenuLink-topic.btn-light:hover svg path~path ,
+.practice_custom_page #dropdownMenuLink.btn-light:hover svg path~path{
+    stroke: #fff!important;
+}
+.practice_custom_page #dropdownMenuLink-topic.btn-light:hover ,
+.practice_custom_page #dropdownMenuLink.btn-light:hover {
+    background: #00baff!important;
+}
+.backtobox .backtobtn a:hover , .cancel-btn-see:hover , button.cancel-btn:hover{
     background: #00baff;
     color: #fff;
 }
@@ -22,6 +30,9 @@ button {
 }
 .back_to_ref a:hover{
     background: #00baff;
+}
+button#saveEdit:hover{
+    background: #21ccff!important;
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p:first-child b {
     font-size: 17px;
