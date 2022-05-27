@@ -3398,7 +3398,7 @@ body#main-body .seeAnico span img {
 button#dropdownMenuLink-topic {
     width: 48px;
     height: 48px;
-    margin-top: -12px;
+    margin-top: 0;
     box-shadow: none;
 }
 

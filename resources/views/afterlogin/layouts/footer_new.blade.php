@@ -1543,6 +1543,9 @@
             $('#search_field').keyup();
             $('#saveEdit').attr('disabled', 'disabled');
             $('#saveEdit').addClass("disabled-btn");
+            $('#editProfile_form').trigger("reset");
+            var validator = $("#editProfile_form").validate();
+            validator.resetForm();
 
         });
     });
