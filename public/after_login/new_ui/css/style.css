@@ -9595,5 +9595,5 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
     border-radius: 15px;
 }
 .exam-analytics .position-relative .tab-wrapper,.overllanaly .tab-wrapper,.practice_custom_page .tab-wrapper,
-.list-series .tab-wrapper,.examSect .tab-wrapper,.result-list.bg-white.tab-wrapper,.reviewPanel{ overflow: hidden;}
+.list-series .tab-wrapper,.examSect .tab-wrapper,.result-list.bg-white.tab-wrapper,.reviewPanel,.custom-page .tab-wrapper{ overflow: hidden;}
 
