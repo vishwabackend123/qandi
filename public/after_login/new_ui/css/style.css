@@ -13,12 +13,23 @@ button {
     outline: none;
     text-decoration: none;
 }
+.backtobox .backtobtn a:hover , .cancel-btn-see:hover{
+    background: #00baff;
+    color: #fff;
+}
+.backtobox .backtobtn a:hover i, .backtobox .backtobtn a:hover span{
+    color: #fff;
+}
+.back_to_ref a:hover{
+    background: #00baff;
+}
 .dailytask-wrapper .dtrow-left .col-md-6 p:first-child b {
     font-size: 17px;
 }
 .dailytask-wrapper  .dtrow-left .btntheme{
     font-weight: 600;
     max-width: 210px;
+    /* background-image: linear-gradient(238deg, #21ccff 91%, #00baff -1%); */
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p {
     font-size: 16px;
@@ -675,12 +686,10 @@ a.Ex-anal {
     width: 65%;
     float: left;
 }
-
 .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
     padding-left: 30px !important;
     padding-right: 30px !important;
 }
-
 .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn {
     width: 220px !important;
     padding-left: 10px !important;
