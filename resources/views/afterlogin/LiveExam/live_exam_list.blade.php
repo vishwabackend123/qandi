@@ -77,7 +77,7 @@ $userData = Session::get('user_data');
                                  @endif
                                 <div class="Upcoming-Live-Exams-wrapp">
                                 <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
-                                <div class="scroll-div-live-exm">
+                                <div class="scroll-div-live-exm ps-0 pe-4">
                                     @if(!empty($schedule_list))
                                     @php 
                                     $dataAvail = 0;

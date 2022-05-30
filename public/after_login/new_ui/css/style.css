@@ -13,6 +13,25 @@ button {
     outline: none;
     text-decoration: none;
 }
+
+.live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
+    max-height: calc(100vh - 413px) !important;
+    overflow: overlay;
+}
+.live-exam-list-wrapper .scroll-div{
+    max-height: calc(100vh - 325px)!important;
+    overflow: overlay;  
+}
+.live-exam-list-wrapper .live-exam .tab-pane {
+    max-height:100%!important;
+    overflow: auto;
+}
+.Upcoming-Live-Exams-wrapp {
+    padding-bottom: 45px;
+}
+.live-exam-list-wrapper .live-exam .tab-pane#attempted {
+    padding-bottom: 45px;
+}
 .practice_custom_page #dropdownMenuLink-topic.btn-light:hover svg path~path ,
 .practice_custom_page #dropdownMenuLink.btn-light:hover svg path~path{
     stroke: #fff!important;
@@ -674,7 +693,6 @@ a.Ex-anal {
 #back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto svg path + path {
     stroke: #000 !important;
 }
-
 #back2Dsh
     .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto:hover
     svg
@@ -682,20 +700,16 @@ a.Ex-anal {
     + path {
     stroke: #fff !important;
 }
-
 #time-Avg-quest .s_timeClass,
 #marKs-trends .s_classMark {
     width: 130px;
 }
-
 /******* 10-03-2022 Amit-End ******/
 
 /* bhim css -09mar*/
-
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
     margin-left: 0px !important;
 }
-
 .Flat-left {
     width: 65%;
     float: left;
@@ -2437,9 +2451,9 @@ a.disabled-btn {
 
 #editProfile_form {
     /* height: 445px; */
-    height: 360px;
+    height: 415px;
     overflow: overlay;
-    /* padding-right: 10px; */
+    padding-bottom: 43px;
 }
 
 #editProfile_form::-webkit-scrollbar {
@@ -2486,7 +2500,8 @@ a.disabled-btn {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;position: absolute;
+    bottom: 0px;padding-right:10px;
 }
 
 #editProfile_form .form-btns button#cancelEdit,
@@ -2639,7 +2654,9 @@ input#country {
 
 #editProfile_form .form-flds input {
     color: #2c3348;
+    
 }
+#citybx input{text-transform:capitalize;}
 
 /*End 2 feb */
 
@@ -4765,11 +4782,12 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
     display: none;
-    height: 480px !important;
+    height: 541px !important;
     overflow: hidden;
     padding-right: 20px;
 }
-
+.edit-form .btm-form-flds{    padding-bottom: 0px!important;    position: relative;
+}
 .edit-img {
     text-align: center;
     position: relative;
@@ -9537,9 +9555,6 @@ label#username-error {
     background: rgba(13, 193, 255, 0.4) !important;
 }
 
-.live-exam-list-wrapper .cust-tab-content {
-    padding-right: 10px !important;
-}
 #attempt_count_block
     .col-lg-5
     .custom-box-shadow

@@ -1,5 +1,5 @@
 <div class="exam_attempted_common_page">
-    <div class="d-flex  pt-4 pb-4 custom-exam-subjects" id="testTypeDiv">
+    <div class="d-flex  p-4 custom-exam-subjects" id="testTypeDiv">
         <a class="btn sectionBtn btn-primary me-2 all_attemp">ALL TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 open_attemp">OPEN TEST SERIES</a>
         <a class="btn sectionBtn btn-outline-primary me-2 live_attemp">LIVE TEST SERIES</a>
@@ -13,7 +13,7 @@
         @endisset
     </div>
     <div class="tab-pane fade show active" id="attempted" role="tabpanel" aria-labelledby="attempted-tab">
-        <div class="scroll-div scroll_top" id="chapter_list_1">
+        <div class="scroll-div scroll_top p-4 pt-0 pb-0" id="chapter_list_1">
             @if(!empty($result_data))
             @foreach($result_data as $sche)
             <!--div class="compLeteS" id="chapter_box_{{$sche->id}}">
