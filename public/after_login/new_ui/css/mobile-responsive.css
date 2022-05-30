@@ -78,6 +78,7 @@
     .profile-section ul {
         display: flex;
         margin-bottom: 0px;
+        margin-top: 0px;
         justify-content: center;
     
     }
