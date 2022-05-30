@@ -143,7 +143,7 @@ $userData = Session::get('user_data');
 
                       </ul>
                     </div>
-                    <a class="clear-filter" href="javascript:void(0);" onclick="clear_chapter_filter('{{$sub->id}}','clear')" style="display:none">Clear</a>
+                    <a class="clear-filter" id="clear-filter-{{$sub->id}}" href="javascript:void(0);" onclick="clear_chapter_filter('{{$sub->id}}','clear')" style="display:none">Clear</a>
                   </div>
                   <div class="scroll-div" id="chapter_list_{{$sub->id}}">
                     @if(@isset($subject_chapter_list[$sub->id]) && !empty($subject_chapter_list[$sub->id]))
@@ -729,13 +729,14 @@ $userData = Session::get('user_data');
         $("#chapter_list_" + sub_id).html(result);
 
         $('#overlay').fadeOut();
-        $('.clear-filter').show();
+        $('#clear-filter-' + sub_id).show();
       }
     });
   };
 
   function clear_chapter_filter(sub_id, filter_type) {
     url = "{{ url('filter_subject_chapter/') }}/" + sub_id;
+
     $.ajax({
       url: url,
       data: {
@@ -750,7 +751,7 @@ $userData = Session::get('user_data');
         $("#chapter_list_" + sub_id).html(result);
 
         $('#overlay').fadeOut();
-        $('.clear-filter').hide();
+        $('#clear-filter-' + sub_id).hide();
 
 
       }
