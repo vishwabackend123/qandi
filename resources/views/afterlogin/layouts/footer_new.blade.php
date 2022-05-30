@@ -633,6 +633,10 @@
                         $('.count_spam_div').text("");
                         $('.subject_tik').removeClass('text-success');
                         $('.subject_tik').addClass('text-light');
+                        var chapters = $('input[name="chapters[]"]').length;
+                        if (chapters == '0') {
+                          $('#saveplannerbutton').addClass('disabled');
+                        }
                     }
 
 

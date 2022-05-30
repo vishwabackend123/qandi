@@ -409,7 +409,7 @@ $not_attempt_per=100-($correct_per+$incorrect_per);
             text: '<span style="font-size:80px">{{$get_score}}</span> <span style="font-size:24px"> / {{$total_makrs}} </span>',
             align: 'center',
             verticalAlign: 'middle',
-            y: 70
+            y: 75
         },
         credits: {
             enabled: false

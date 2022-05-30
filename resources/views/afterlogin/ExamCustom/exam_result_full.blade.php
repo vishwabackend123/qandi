@@ -343,7 +343,7 @@ $clsAvg_json=json_encode($clsAvg_arr);
 
     Highcharts.chart('scorecontainer', {
         chart: {
-            height: 224,
+            height: 250,
             plotBackgroundColor: null,
             plotBorderWidth: 0,
             plotShadow: false
