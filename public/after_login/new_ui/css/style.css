@@ -37,10 +37,13 @@ button#saveEdit:hover{
 .dailytask-wrapper .dtrow-left .col-md-6 p:first-child b {
     font-size: 17px;
 }
-.dailytask-wrapper  .dtrow-left .btntheme{
+.dailytask-wrapper  .dtrow-left .btn.btntheme{
     font-weight: 600;
     max-width: 210px;
-    /* background-image: linear-gradient(238deg, #21ccff 91%, #00baff -1%); */
+    background: #00bdff;
+}
+.dailytask-wrapper  .dtrow-left .btn.btntheme:hover{
+    background: #21ccff;
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p {
     font-size: 16px;
