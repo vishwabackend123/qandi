@@ -146,6 +146,7 @@
 
         }
         .log-out-screen .p-picture{width:50px;height: 50px;}
+        .log-out-screen .p-picture img{width:50px;height: 50px;}
         /* button.save-btn{padding: 9px 18px;} */
         .logout_btn_new svg{position: absolute; left: 27px !important; top: 15px !important;}
         .log-out-screen button.save-btn {width: 189px;font-size: 12px;}
