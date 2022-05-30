@@ -13,6 +13,18 @@ button {
     outline: none;
     text-decoration: none;
 }
+.live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
+    max-height: calc(100vh - 410px) !important;
+    overflow: overlay;
+}
+.live-exam-list-wrapper .scroll-div{
+    max-height: calc(100vh - 325px)!important;
+    overflow: overlay;  
+}
+.live-exam-list-wrapper .live-exam .tab-pane {
+    max-height:100%!important;
+    overflow: auto;
+}
 .practice_custom_page #dropdownMenuLink-topic.btn-light:hover svg path~path ,
 .practice_custom_page #dropdownMenuLink.btn-light:hover svg path~path{
     stroke: #fff!important;

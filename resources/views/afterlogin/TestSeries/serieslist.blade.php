@@ -30,7 +30,7 @@ $userData = Session::get('user_data');
                                     <a class="btn sectionBtn open_test btn-primary me-2">OPEN TEST SERIES</a>
                                     <a class="btn sectionBtn live_tes btn-outline-primary">LIVE TEST SERIES</a>
                                 </div>
-                                <div class="open_test_div">
+                                <div class="open_test_div mt-5">
                                     @if(!empty($open_series))
                                     <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                         @foreach($open_series as $open)
@@ -62,7 +62,7 @@ $userData = Session::get('user_data');
                                     </div>
                                     @endif
                                 </div>
-                                <div class="live_test_div">
+                                <div class="live_test_div mt-5">
                                     @if(!empty($live_series))
                                     <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                         @foreach($live_series as $live)
