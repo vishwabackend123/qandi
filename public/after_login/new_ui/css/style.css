@@ -1983,7 +1983,6 @@ span.text-secondary.chapter_name.mb-2.d-block {
     line-height: 40px;
     display: block;
 }
-
 ul.matrixLists li {
     font-size: 13px;
     color: #2c3348;
@@ -1993,7 +1992,6 @@ ul.matrixLists li {
     position: relative;
     padding-left: 15px;
 }
-
 ul.matrixLists li:before {
     content: "";
     position: absolute;
@@ -2004,7 +2002,6 @@ ul.matrixLists li:before {
     height: 10px;
     border-radius: 100%;
 }
-
 ul.matrixLists li:nth-child(2):before {
     background-color: #00baff;
 }
