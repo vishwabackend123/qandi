@@ -14,17 +14,27 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * TestSeriesController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class TestSeriesController extends Controller
 {
-    //
     use CommonTrait;
+
     /**
-     * getting Testseries list function
+     * Getting Testseries list function
      *
-     * @param Request $request
+     * @param Request $request receive request type
+     *
      * @return void
      */
-    public function series_list(Request $request)
+    public function seriesList(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -37,9 +47,7 @@ class TestSeriesController extends Controller
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/testSeries-list/' . $exam_id . '/' . $user_id;
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
-
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -48,7 +56,8 @@ class TestSeriesController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -73,12 +82,13 @@ class TestSeriesController extends Controller
     }
 
     /**
-     * gettins selected series details and start exam function
+     * Gettins selected series details and start exam function
      *
-     * @param Request $request
+     * @param Request $request receive request type
+     *
      * @return void
      */
-    public function test_series_exam(Request $request)
+    public function testSeriesExam(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -105,8 +115,7 @@ class TestSeriesController extends Controller
                 $api_URL = env('API_URL');
 
                 $curl_url = $api_URL . 'api/testSeries-questions/' . $exam_id . '/' . $series_id;
-
-                curl_setopt_array($curl, array(
+                $curl_option = array(
 
                     CURLOPT_URL => $curl_url,
                     CURLOPT_RETURNTRANSFER => true,
@@ -121,7 +130,8 @@ class TestSeriesController extends Controller
                         "cache-control: no-cache",
                         "content-type: application/json"
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response_json = curl_exec($curl);
 
@@ -235,7 +245,14 @@ class TestSeriesController extends Controller
         }
     }
 
-    public function shuffle_assoc($list)
+    /**
+     * Shuffle_assoc function for suffle the data
+     *
+     * @param $list receive list  type
+     *
+     * @return array
+     */
+    public function shuffleAssoc($list)
     {
         if (!is_array($list)) {
             return $list;
@@ -249,25 +266,4 @@ class TestSeriesController extends Controller
         }
         return $random;
     }
-
-
-    /* public function allCustomQlist($user_id, $question_data, $redis_set)
-    {
-        if (!empty($user_id) &&  !empty($question_data)) {
-            $cacheKey = 'CustomQuestion:all:' . $user_id;
-            if (Redis::exists($cacheKey)) {
-                if ($redis_set == 'True') {
-                    Redis::del(Redis::keys($cacheKey));
-                    //Redis::del($cacheKey);
-                }
-            }
-            if ($data = Redis::get($cacheKey)) {
-                return json_decode($data);
-            }
-            $data = collect($question_data);
-            Redis::set($cacheKey, $data);
-            return $data->all();
-        }
-        return [];
-    } */
 }

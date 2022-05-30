@@ -173,8 +173,8 @@ Route::any('/tutorials_session', [App\Http\Controllers\AnalyticsController::clas
 Route::any('/tutorials_signup/{t_id}', [App\Http\Controllers\AnalyticsController::class, 'tutorials_signup'])->name('tutorials_signup')->middleware('auth', 'menu');
 
 /* TestSeries Routes */
-Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'series_list'])->name('series_list')->middleware('auth', 'menu');
-Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 'test_series_exam'])->name('test_series')->middleware('auth', 'menu');
+Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'seriesList'])->name('series_list')->middleware('auth', 'menu');
+Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 'testSeriesExam'])->name('test_series')->middleware('auth', 'menu');
 
 /* Referal Controller Routes */
 Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'store_referral_friend'])->name('store_referral')->middleware('auth', 'menu');
