@@ -951,6 +951,9 @@
         });
         /*edit planner*/
         var chapters = $('input[name="chapters[]"]').length;
+        if (chapters == '0') {
+            $('#saveplannerbutton').addClass('disabled');
+        }
         var limit = $('#customRange').val();
         $('#slide-input').html(chapters);
 
