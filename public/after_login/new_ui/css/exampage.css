@@ -983,9 +983,15 @@ a.clearRes:hover {
     max-height: calc(100vh - 400px) !important;
     overflow: overlay;
 }
+.custom-page.practice_custom_page .cust-tab-content .scroll-div  {
+    max-height: calc(100vh - 430px) !important;
+}
   .scroll-div-live-exm{
     max-height: calc(100vh - 360px) !important;
     overflow: overlay;
+}
+.practice-series-lists .scroll-div-live-exm{
+    max-height: calc(100vh - 380px) !important;
 }
 .question p {
     padding-left: 13px;
