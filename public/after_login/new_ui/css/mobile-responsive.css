@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    #time-Avg-quest .bg-white p.fw-bold.text-start, #marKs-trends .bg-white p.fw-bold.text-start{padding-right:24px;}
+    div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
+    }
     .chapter_analytics .topic-details.row .col-lg-4{width:100%;}
     .exam-analytics .exam-panel.cust-tabs .nav-item {width:auto;}
     #test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
@@ -77,6 +80,7 @@
     .profile-section ul {
         display: flex;
         margin-bottom: 0px;
+        margin-top: 0px;
         justify-content: center;
     
     }
@@ -171,7 +175,7 @@
             top: 64px;
             left: 12px;}
         .overllanaly .tab-wrapper #scroll-mobile .nav.nav-tabs.cust-tabs{position:initial;}
-        .overllanaly .cust-tab-content{padding-top: 65px!important;padding-bottom: 30px!important;}
+        .overllanaly .cust-tab-content{padding-top: 65px!important;padding-bottom: 15px!important;}
         .overllanaly .tab-wrapper .nav-tabs, .overllanaly .cust-tabs .nav-link.active, .overllanaly .cust-tabs .nav-link.active:after{height:53px;}
 
         .account-wrapper{margin-top: 0px;}

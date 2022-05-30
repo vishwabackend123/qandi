@@ -693,7 +693,6 @@ a.Ex-anal {
 #back2Dsh .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto svg path + path {
     stroke: #000 !important;
 }
-
 #back2Dsh
     .btn.btn-outline-danger.rounded-0.w-50.ms-4.ms-auto:hover
     svg
@@ -701,20 +700,16 @@ a.Ex-anal {
     + path {
     stroke: #fff !important;
 }
-
 #time-Avg-quest .s_timeClass,
 #marKs-trends .s_classMark {
     width: 130px;
 }
-
 /******* 10-03-2022 Amit-End ******/
 
 /* bhim css -09mar*/
-
 .Flat-left a.btn.px-4.ms-auto.me-2.rounded-0.btn-clear-sel {
     margin-left: 0px !important;
 }
-
 .Flat-left {
     width: 65%;
     float: left;
