@@ -5463,14 +5463,14 @@ button#goto-exam-btn {
 }
 
 .notification-txt span.text-notific {
-    line-height: 16px;
+    line-height: 20px;
     font-size: 16px;
     color: #231f20;
     font-weight: normal;
     padding-left: 15px;
     display: inline-block;
     width: 90%;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .notification-right a {
