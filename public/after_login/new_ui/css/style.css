@@ -2451,9 +2451,9 @@ a.disabled-btn {
 
 #editProfile_form {
     /* height: 445px; */
-    height: 360px;
+    height: 415px;
     overflow: overlay;
-    /* padding-right: 10px; */
+    padding-bottom: 43px;
 }
 
 #editProfile_form::-webkit-scrollbar {
@@ -2500,7 +2500,8 @@ a.disabled-btn {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;position: absolute;
+    bottom: 0px;padding-right:10px;
 }
 
 #editProfile_form .form-btns button#cancelEdit,
@@ -2653,7 +2654,9 @@ input#country {
 
 #editProfile_form .form-flds input {
     color: #2c3348;
+    
 }
+#citybx input{text-transform:capitalize;}
 
 /*End 2 feb */
 
@@ -4779,11 +4782,12 @@ div#sub-planner {
     border-radius: 56px;
     box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
     display: none;
-    height: 480px !important;
+    height: 541px !important;
     overflow: hidden;
     padding-right: 20px;
 }
-
+.edit-form .btm-form-flds{    padding-bottom: 0px!important;    position: relative;
+}
 .edit-img {
     text-align: center;
     position: relative;
