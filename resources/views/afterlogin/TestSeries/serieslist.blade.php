@@ -100,8 +100,7 @@ $userData = Session::get('user_data');
                                 </div>
                             </div>
                             <div class="tab-pane fade show " id="live" role="tabpanel" aria-labelledby="live-tab">
-                               @include('afterlogin.TestSeries.attempted_result_list')
-
+                                @include('afterlogin.TestSeries.attempted_result_list')
                             </div>
                         </div>
                     </div>
@@ -111,11 +110,10 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <div class="loader-block" style="display:none;">
-        <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
-    </div>
-
+    <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 <style>
-    .result-list-table {
+.result-list-table {
     background: #f6f9fd;
     border-radius: 15px;
 }
@@ -286,7 +284,7 @@ $(document).ready(function() {
         $('.live_test_div').show();
         $('.open_test_div').hide();
     });
-    $('#live-tab').click(function(){
+    $('#live-tab').click(function() {
         $('.loader-block').show();
         url = "{{ url('ajax_exam_result_list') }}/Test-Series";
         $.ajax({
@@ -295,7 +293,7 @@ $(document).ready(function() {
                 "_token": "{{ csrf_token() }}",
             },
             beforeSend: function() {
-                
+
             },
             success: function(data) {
                 $('.loader-block').hide();
@@ -317,7 +315,7 @@ $(document).ready(function() {
         $('.live_attemp').addClass('btn-outline-primary');
         $('.compLeteS').show();
         hideExpend();
-        
+
     });
     $(document).on('click', '.open_attemp', function() {
         $(this).addClass('btn-primary');
@@ -343,17 +341,17 @@ $(document).ready(function() {
     });
 });
 
-function hideExpend(){
+function hideExpend() {
     $('.loader-block').show();
-     $('.hideallexpend').each(function () {
+    $('.hideallexpend').each(function() {
 
-     var current_id = this.id;
-     var current_div_id=$(this).attr('data-id');
-     if($('#'+current_div_id).hasClass('show')){
-      $('#'+current_id).trigger('click') 
-     }
+        var current_id = this.id;
+        var current_div_id = $(this).attr('data-id');
+        if ($('#' + current_div_id).hasClass('show')) {
+            $('#' + current_id).trigger('click')
+        }
     });
-     setTimeout(function(){
+    setTimeout(function() {
         $('.loader-block').hide();
         $('.scroll_top').scrollTop(0);
     }, 500);
