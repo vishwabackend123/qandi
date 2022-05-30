@@ -92,7 +92,7 @@ div#welcomeModal p.wl-user-title {
 #fullTest_Dashboard .modal-body p.h1-p {
     font-size: 28px;
 }
-#attempt_count_block h5.dashboard-title {
+#attempt_count_block h5.dashboard-title,.exam-analytics  h5.dashboard-title{
     color: #2c3348;
     font-size: 18px;
     font-weight: 600;
