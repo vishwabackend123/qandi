@@ -711,6 +711,11 @@
 
 
         jQuery("#plannCal").click(function() {
+            var curr = new Date;
+            var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 1));
+            var firstDate = formatDate(firstday);
+
+            $('#StartDate').val(firstDate);
 
             $("#StartDate").trigger('change');
             jQuery("#collapsePlanner").show();
