@@ -20,6 +20,9 @@
         min-width: 122px;
     }
     .graphdotlisting{flex-wrap: wrap;}
+    .custom-page .slick-slide .status-id .star-ratings-css {
+        margin-left: 0;
+    }
     
 }
 @media screen and (max-width:1199px){
