@@ -1,4 +1,8 @@
 @media(max-width:767px){
+    .swiper-slide .course-star li {
+    display: flex;
+    align-items: center;
+}
     #time-Avg-quest .bg-white p.fw-bold.text-start, #marKs-trends .bg-white p.fw-bold.text-start{padding-right:24px;}
     div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
     }
@@ -484,6 +488,10 @@
 }
 
 @media(max-width:576px){
+    .cust-gallery .swiper-slide {
+    padding: 20px;
+    height: 235px;
+}
     .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic {
         padding-left: 8px !important;
         padding-right: 8px !important;
@@ -694,6 +702,7 @@ div#LeaDer {
         .garphlistincom{margin-bottom: 5px;}
 }
 @media (max-width:480px) {
+
     /* .main-wrapper { padding-left: 55px;} */
     .rankholder{height: 300px}
            .tickicon {

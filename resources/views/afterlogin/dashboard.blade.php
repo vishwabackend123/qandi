@@ -457,7 +457,7 @@ $userData = Session::get('user_data');
                         <div class="swiper-slide bg-white">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="d-flex">
+                                    <div class="d-sm-flex">
                                         <span class="subjectIcon" style="margin-right: 20px;"><img style="width:80px;" src="{{$val->url}}"></span>
                                         <div>
                                             <p>Level up in</p>
