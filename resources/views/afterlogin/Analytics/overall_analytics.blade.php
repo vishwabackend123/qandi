@@ -1,5 +1,4 @@
 @extends('afterlogin.layouts.app_new')
-
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -26,7 +25,6 @@ $userData = Session::get('user_data');
                                     <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
                                 </li>
                                 @endforeach
-
                                 <!--   <li class="ms-auto">
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
@@ -42,7 +40,6 @@ $userData = Session::get('user_data');
                                         &nbsp;<span class="Ex--an">Export Analytics</span>
                                     </a>
                                 </li>
-
                             </ul>
                         </div>
                         <div class="tab-content cust-tab-content" id="myTabContent">
@@ -66,9 +63,7 @@ $userData = Session::get('user_data');
                                                     <div class="d-flex justify-content-center flex-column h-100 ">
                                                         <span class="text-center">
                                                             <!--  <div id="scorecontainer"></div> -->
-
                                                             <div id="comparegraph"></div>
-
                                                         </span>
                                                         <!--  <ul class="live-test mb-0">
                                                             <li>
@@ -80,11 +75,8 @@ $userData = Session::get('user_data');
                                                         </ul> -->
                                                         <!--  <p class="text-center text-danger px-4"><small>Reach your target score with a steady progress over each test</small></p> -->
                                                     </div>
-
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
@@ -106,9 +98,7 @@ $userData = Session::get('user_data');
                                                 <div class="d-flex align-items-center px-3 row">
                                                     <div class="d-flex align-items-center py-2 dashboard-listing-details col-md-6 col-sm-12">
                                                         <span class="mr-3 dashboard-name-txt SubjName">{{$sub->subject_name}}</span>
-
                                                         <div class="status-id   d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
                                                             <div class="star-ratings-css">
                                                                 <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
                                                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -117,7 +107,6 @@ $userData = Session::get('user_data');
                                                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                                 </div>
                                                             </div>
-
                                                             <div class="ms-1 score score-rating js-score">
                                                                 {{round($sub->score)}}%
                                                             </div>
@@ -126,17 +115,14 @@ $userData = Session::get('user_data');
                                                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto px-0" style="overflow: visible;">
                                                         @if(isset($sub->correct_ans) && $sub->correct_ans > 0)
                                                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->correct_ans * 100)/$sub->total_questions):0}}%;overflow: visible;" title="Correct({{round($sub->correct_ans)}})">
-                                                            
                                                         </div>
                                                         @endif
                                                         @if(isset($sub->incorrect_ans) && $sub->incorrect_ans > 0)
                                                         <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->incorrect_ans * 100)/$sub->total_questions):0}}%;overflow: visible;" title="Incorrect({{round($sub->incorrect_ans)}})">
-                                                            
                                                         </div>
                                                         @endif
                                                         @if(isset($sub->unanswered) && $sub->unanswered > 0)
                                                         <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($sub->total_questions>0)?round(($sub->unanswered * 100)/$sub->total_questions):0}}%;overflow: visible;" title="Unanswered({{round($sub->unanswered)}})">
-                                                            
                                                         </div>
                                                         @endif
                                                     </div>
@@ -175,7 +161,6 @@ $userData = Session::get('user_data');
                                                     Month
                                                 </button>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="col-lg-6  mt-3">
@@ -209,7 +194,6 @@ $userData = Session::get('user_data');
                                             <div id="day1" style="display:block"></div>
                                             <div id="week1" style="display:none"></div>
                                             <div id="month1" style="display:none"></div>
-
                                             <!--p class="text-center text-danger mt-3"><small>Keep an upward trend to reach the success summit</small></p-->
                                             <div class="btn-block mt-2">
                                                 <button class="btn btn-outline-secondary btn-light-green text-uppercase rounded-0 px-5 classMark active" id="day_mark" onclick="replace1('day1','week1','month1')">
@@ -222,7 +206,6 @@ $userData = Session::get('user_data');
                                                     Month
                                                 </button>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="col-lg-6  mt-3">
@@ -255,33 +238,28 @@ $userData = Session::get('user_data');
                                                 </button>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
-
                                 {{--<div class="row">
-
                                     <p>Total Score => 100%</p>
                                     <p>Latest Test Score => {{$mockTestScoreCurr}}%</p>
-                                <p>Previous Test Score => {{$mockTestScorePre}}%</p>
-                                <p>Progress from previous score => {{$mockTestScoreCurr-$mockTestScorePre}}%</p>
-                                <p>Far from Goa (grey)l => {{100 -$mockTestScoreCurr}}%</p>
-                            </div>--}}
+                                    <p>Previous Test Score => {{$mockTestScorePre}}%</p>
+                                    <p>Progress from previous score => {{$mockTestScoreCurr-$mockTestScorePre}}%</p>
+                                    <p>Far from Goa (grey)l => {{100 -$mockTestScoreCurr}}%</p>
+                                </div>--}}
+                            </div>
+                            <div class="chapter_analytics">
+                                @include('afterlogin.Analytics.chapter_analytics')
+                            </div>
+                            <div class="topics_analytics">
+                                @include('afterlogin.Analytics.topics_analytics')
+                            </div>
                         </div>
-                        <div class="chapter_analytics">
-                            @include('afterlogin.Analytics.chapter_analytics')
-                        </div>
-                        <div class="topics_analytics">
-                            @include('afterlogin.Analytics.topics_analytics')
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 </div>
 <div class="modal fade" id="upcoming-tutorials" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -294,11 +272,9 @@ $userData = Session::get('user_data');
                     <img src="{{URL::asset('public/images/main-logo-red.png')}} " class="me-2 " />Presents
                 </p>
                 <div id="tutorials_content">
-
                 </div>
                 <p id="tutorial_response" class="mt-4 w-100"></p>
             </div>
-
         </div>
     </div>
 </div>
@@ -306,157 +282,158 @@ $userData = Session::get('user_data');
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
 <style type="text/css">
-    #button_export:focus {
-        box-shadow: none;
-    }
+#button_export:focus {
+    box-shadow: none;
+}
+
 </style>
-
-
 @include('afterlogin.layouts.footer_new')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 @if(isset($active_id) && !empty($active_id))
 <script type="text/javascript">
-    $(document).ready(function() {
-        var tab_id = '{{$active_id}}';
-        $("#home-tab-" + tab_id).click();
-    });
+$(document).ready(function() {
+    var tab_id = '{{$active_id}}';
+    $("#home-tab-" + tab_id).click();
+});
+
 </script>
 @endif
 <script type="text/javascript">
-    $(".chapter_analytics").hide();
-    $(".topics_analytics").hide();
-    /* $(".scroll-topic-ana").slimscroll({
-        height: "20vh",
-    }); */
-    $('.scroll-div-live-exm').slimscroll({
-        height: '60vh'
+$(".chapter_analytics").hide();
+$(".topics_analytics").hide();
+/* $(".scroll-topic-ana").slimscroll({
+    height: "20vh",
+}); */
+$('.scroll-div-live-exm').slimscroll({
+    height: '60vh'
+});
+$(document).ready(function() {
+    $('#topic-open-btn').click(function() {
+        $('#topicclose').addClass('close-block');
+        $('#topicopen').addClass('open-block');
+        $('#topicopen').removeClass('close-block');
     });
-    $(document).ready(function() {
-        $('#topic-open-btn').click(function() {
-            $('#topicclose').addClass('close-block');
-            $('#topicopen').addClass('open-block');
-            $('#topicopen').removeClass('close-block');
-        });
-        $('#topic-btn').click(function() {
-            $('#topicclose').removeClass('close-block');
-            $('#topicopen').removeClass('open-block');
-            $('#topicopen').addClass('close-block');
-        });
+    $('#topic-btn').click(function() {
+        $('#topicclose').removeClass('close-block');
+        $('#topicopen').removeClass('open-block');
+        $('#topicopen').addClass('close-block');
     });
+});
 
-    function get_upcomming_tutorials() {
+function get_upcomming_tutorials() {
 
-        url = "{{ route('tutorials_session') }}";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
+    url = "{{ route('tutorials_session') }}";
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
 
-            success: function(result) {
-                $("#tutorials_content").html(result);
-                $('#upcoming-tutorials').modal('show');
+        success: function(result) {
+            $("#tutorials_content").html(result);
+            $('#upcoming-tutorials').modal('show');
+        }
+    });
+}
+
+function upcomming_tutorials_signup(tutorial_id) {
+
+    url = "{{ url('tutorials_signup') }}/" + tutorial_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+
+        success: function(result) {
+            var response_data = jQuery.parseJSON(result);
+            if (response_data.success == true) {
+                $('#tutorial_response').html('<span class="alert alert-success" role="alert">' + response_data.response + '</span>');
+            } else {
+                $('#tutorial_response').html('<span class="alert alert-danger" role="alert">' + response_data.response + '</span>');
             }
-        });
-    }
+            $("#tutorial_response").show();
+            $("#tutorial_response").fadeOut(8000);
+        }
+    });
+}
 
-    function upcomming_tutorials_signup(tutorial_id) {
-
-        url = "{{ url('tutorials_signup') }}/" + tutorial_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-
-            success: function(result) {
-                var response_data = jQuery.parseJSON(result);
-                if (response_data.success == true) {
-                    $('#tutorial_response').html('<span class="alert alert-success" role="alert">' + response_data.response + '</span>');
-                } else {
-                    $('#tutorial_response').html('<span class="alert alert-danger" role="alert">' + response_data.response + '</span>');
-                }
-                $("#tutorial_response").show();
-                $("#tutorial_response").fadeOut(8000);
-            }
-        });
-    }
 </script>
 <script>
-    /* score comparison graph */
-    Highcharts.chart('comparegraph', {
-        chart: {
-            type: 'column',
-            height: 185,
-        },
+/* score comparison graph */
+Highcharts.chart('comparegraph', {
+    chart: {
+        type: 'column',
+        height: 185,
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['']
+    },
+    yAxis: [{
+        min: 0,
+        title: {
+            text: 'Score %'
+        }
+    }, {
         title: {
             text: ''
         },
-        xAxis: {
-            categories: ['']
+        opposite: true
+    }],
+    legend: {
+        shadow: false
+    },
+    tooltip: {
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            grouping: false,
+            shadow: false,
+            borderWidth: 0
         },
-        yAxis: [{
-            min: 0,
-            title: {
-                text: 'Score %'
-            }
-        }, {
-            title: {
-                text: ''
-            },
-            opposite: true
-        }],
-        legend: {
-            shadow: false
-        },
-        tooltip: {
-            shared: true
-        },
-        plotOptions: {
-            column: {
-                grouping: false,
-                shadow: false,
-                borderWidth: 0
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
                 }
             }
-        },
+        }
+    },
 
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        series: [{
-            name: 'Previous score',
-            color: '#d0f3ff',
-            data: [<?php echo $mockTestScorePre; ?>],
-            pointPadding: 0.3,
-            pointPlacement: 0
-        }, {
-            name: 'Latest score',
-            color: '#21ccff',
-            data: [<?php echo $mockTestScoreCurr; ?>],
-            pointPadding: 0.3,
-            pointPlacement: 0.1
-        }]
-    });
-    /* score comparison graph */
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    series: [{
+        name: 'Previous score',
+        color: '#d0f3ff',
+        data: [<?php echo $mockTestScorePre; ?>],
+        pointPadding: 0.3,
+        pointPlacement: 0
+    }, {
+        name: 'Latest score',
+        color: '#21ccff',
+        data: [<?php echo $mockTestScoreCurr; ?>],
+        pointPadding: 0.3,
+        pointPlacement: 0.1
+    }]
+});
+/* score comparison graph */
+
 </script>
 <script>
-    /* Highcharts.chart('scorecontainer', {
+/* Highcharts.chart('scorecontainer', {
         chart: {
             height: 160,
             plotBackgroundColor: null,
@@ -534,594 +511,592 @@ $userData = Session::get('user_data');
             ]
         }]
     }); */
+
 </script>
-
-
-
 <script>
-    function nxtTab(sub_id) {
-        $('.chapter_analytics').hide();
+function nxtTab(sub_id) {
+    $('.chapter_analytics').hide();
+    $(".topics_analytics").hide();
+    if (sub_id === null) {
+        window.location.reload();
+    } else {
         $(".topics_analytics").hide();
-        if (sub_id === null) {
-            window.location.reload();
-        } else {
-            $(".topics_analytics").hide();
-            $("#overall").show();
-            url = "{{ url('next_tab/') }}/" + sub_id;
-            $.ajax({
-                url: url,
-                data: {
-                    "_token": "{{ csrf_token() }}",
-
-                },
-                beforeSend: function() {
-                    $('#overlay').fadeIn();
-                    //$('.loader-block').show();
-                },
-                success: function(result) {
-                    $("#overall").html(result);
-                    $('#overlay').fadeOut();
-                    //$('.loader-block').hide();
-                },
-                error: function(data, errorThrown) {
-                    //$('.loader-block').hide();
-                }
-            });
-        }
-    }
-</script>
-
-<script>
-    Highcharts.chart('accPer', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Accuracy Percentage'
-            }
-        },
-        xAxis: {
-            categories: <?php print_r($day); ?>
-        },
-        plotOptions: {
-
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($classAcc); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($stuAcc);  ?>,
-            color: '#6ec986',
-
-        }]
-    });
-</script>
-
-<script>
-    Highcharts.chart('accPer1', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Time Spent (s)'
-            }
-        },
-        xAxis: {
-            categories: <?php print_r($days); ?>
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($classAccuracy); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($stuAccuracy); ?>,
-            color: '#6ec986',
-
-
-        }]
-    });
-</script>
-
-<script>
-    Highcharts.chart('day', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-
-            categories: <?php print_r($date1); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (s)'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal',
-                label: false,
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime1); ?>,
-            color: '#ff9999'
-        }]
-    });
-    Highcharts.chart('week', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: <?php print_r($date2); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (s)'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime2); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime2); ?>,
-            color: '#ff9999'
-        }]
-    });
-    Highcharts.chart('month', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: <?php print_r($date3); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (s)'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime3); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime3); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    function replace(show, hide1, hide2) {
-        if (show == 'day') {
-            $(".timeClass").removeClass("active");
-            $("#day_time").addClass("active");
-        } else if (show == 'week') {
-            $(".timeClass").removeClass("active");
-            $("#week_time").addClass("active");
-        } else {
-            $(".timeClass").removeClass("active");
-            $("#month_time").addClass("active");
-        }
-        document.getElementById(hide1).style.display = "none";
-        document.getElementById(hide2).style.display = "none";
-        document.getElementById(show).style.display = "block";
-    }
-</script>
-<script>
-    Highcharts.chart('day1', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: <?php print_r($date1); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns1); ?>,
-            color: '#ff9999'
-        }]
-    });
-    Highcharts.chart('week1', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: <?php print_r($date2); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns2); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns2); ?>,
-            color: '#ff9999'
-        }]
-    });
-    Highcharts.chart('month1', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'line',
-            height: 270
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: <?php print_r($date3); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Marks'
-            }
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>';
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                label: false,
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Correct Answer',
-            data: <?php print_r($correctAns3); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer',
-            data: <?php print_r($incorrectAns3); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    function replace1(show, hide1, hide2) {
-        if (show == 'day1') {
-            $(".classMark").removeClass("active");
-            $("#day_mark").addClass("active");
-        } else if (show == 'week1') {
-            $(".classMark").removeClass("active");
-            $("#week_mark").addClass("active");
-        } else {
-            $(".classMark").removeClass("active");
-            $("#month_mark").addClass("active");
-        }
-        document.getElementById(hide1).style.display = "none";
-        document.getElementById(hide2).style.display = "none";
-        document.getElementById(show).style.display = "block";
-    }
-    $(window).on('load', function() {
-        $(".analytics-icon").addClass("notification-icons-active");
-    });
-
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                $(this).parent("p").hide();
-            })
-            $(this).siblings("p").show();
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-            $(this).parent("p").hide();
-        });
-    });
-
-    function expandTopicAnalytics(sub_id,subject_name,chapter_name) {
-        url = "{{ url('topic-analytics') }}/" + sub_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-                "subject_name": subject_name,
-                "chapter_name": chapter_name
-            },
-            beforeSend: function() {
-                // $('.loader-block').show();
-            },
-            success: function(data) {
-                $('.chapter_analytics').hide();
-                $(".topics_analytics").show();
-                $('.topics_analytics').html(data.html);
-                $('#overall').hide();
-
-            },
-            error: function(data, errorThrown) {
-            }
-        });
-    }
-    function expandChapterAnalytics(sub_id) {
-        url = "{{ url('chapter-analytics') }}/" + sub_id;
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
-                
-            },
-            success: function(data) {
-                $(".chapter_analytics").show();
-                $('.chapter_analytics').html(data.html);
-                $('#overall').hide();
-            },
-            error: function(data, errorThrown) {
-            }
-        });
-    }
-
-    function backPage() {
-        $(".chapter_analytics").hide();
         $("#overall").show();
+        url = "{{ url('next_tab/') }}/" + sub_id;
+        $.ajax({
+            url: url,
+            data: {
+                "_token": "{{ csrf_token() }}",
 
+            },
+            beforeSend: function() {
+                $('#overlay').fadeIn();
+                //$('.loader-block').show();
+            },
+            success: function(result) {
+                $("#overall").html(result);
+                $('#overlay').fadeOut();
+                //$('.loader-block').hide();
+            },
+            error: function(data, errorThrown) {
+                //$('.loader-block').hide();
+            }
+        });
     }
-    function backChapterPage() {
-         $(".topics_analytics").hide();
-         $(".chapter_analytics").show();
-    }
-    function backRedirect()
-    {
-        var url = "{{ route('dashboard') }}";
-        window.location.href=url;
-    }
-
-    $(window).load(function(){
-        $(".dash-nav-link a:first-child").removeClass("active-navlink");
-    });
+}
 
 </script>
+<script>
+Highcharts.chart('accPer', {
+    chart: {
+        type: 'spline',
+        height: 270
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    legend: {
+        symbolWidth: 40
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
+        title: {
+            text: 'Accuracy Percentage'
+        }
+    },
+    xAxis: {
+        categories: <?php print_r($day); ?>
+    },
+    plotOptions: {
 
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Class Average',
+        data: <?php print_r($classAcc); ?>,
+        color: '#ff9999',
+        dashStyle: 'ShortDash'
+    }, {
+        name: 'Student Average',
+        data: <?php print_r($stuAcc);  ?>,
+        color: '#6ec986',
+
+    }]
+});
+
+</script>
+<script>
+Highcharts.chart('accPer1', {
+    chart: {
+        type: 'spline',
+        height: 270
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    legend: {
+        symbolWidth: 40
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
+        title: {
+            text: 'Time Spent (s)'
+        }
+    },
+    xAxis: {
+        categories: <?php print_r($days); ?>
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Class Average',
+        data: <?php print_r($classAccuracy); ?>,
+        color: '#ff9999',
+        dashStyle: 'ShortDash'
+    }, {
+        name: 'Student Average',
+        data: <?php print_r($stuAccuracy); ?>,
+        color: '#6ec986',
+
+
+    }]
+});
+
+</script>
+<script>
+Highcharts.chart('day', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+
+        categories: <?php print_r($date1); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Time Taken (s)'
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            label: false,
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime1); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime1); ?>,
+        color: '#ff9999'
+    }]
+});
+Highcharts.chart('week', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: <?php print_r($date2); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Time Taken (s)'
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime2); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime2); ?>,
+        color: '#ff9999'
+    }]
+});
+Highcharts.chart('month', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: <?php print_r($date3); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Time Taken (s)'
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime3); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime3); ?>,
+        color: '#ff9999'
+    }]
+});
+
+function replace(show, hide1, hide2) {
+    if (show == 'day') {
+        $(".timeClass").removeClass("active");
+        $("#day_time").addClass("active");
+    } else if (show == 'week') {
+        $(".timeClass").removeClass("active");
+        $("#week_time").addClass("active");
+    } else {
+        $(".timeClass").removeClass("active");
+        $("#month_time").addClass("active");
+    }
+    document.getElementById(hide1).style.display = "none";
+    document.getElementById(hide2).style.display = "none";
+    document.getElementById(show).style.display = "block";
+}
+
+</script>
+<script>
+Highcharts.chart('day1', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'line',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: <?php print_r($date1); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Marks'
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>';
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            label: false,
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Correct Answer',
+        data: <?php print_r($correctAns1); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer',
+        data: <?php print_r($incorrectAns1); ?>,
+        color: '#ff9999'
+    }]
+});
+Highcharts.chart('week1', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'line',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: <?php print_r($date2); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Marks'
+        }
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>';
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            label: false,
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Correct Answer',
+        data: <?php print_r($correctAns2); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer',
+        data: <?php print_r($incorrectAns2); ?>,
+        color: '#ff9999'
+    }]
+});
+Highcharts.chart('month1', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'line',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: <?php print_r($date3); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
+        title: {
+            text: 'Average Marks'
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>';
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
+        },
+        series: {
+            label: false,
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Correct Answer',
+        data: <?php print_r($correctAns3); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer',
+        data: <?php print_r($incorrectAns3); ?>,
+        color: '#ff9999'
+    }]
+});
+
+function replace1(show, hide1, hide2) {
+    if (show == 'day1') {
+        $(".classMark").removeClass("active");
+        $("#day_mark").addClass("active");
+    } else if (show == 'week1') {
+        $(".classMark").removeClass("active");
+        $("#week_mark").addClass("active");
+    } else {
+        $(".classMark").removeClass("active");
+        $("#month_mark").addClass("active");
+    }
+    document.getElementById(hide1).style.display = "none";
+    document.getElementById(hide2).style.display = "none";
+    document.getElementById(show).style.display = "block";
+}
+$(window).on('load', function() {
+    $(".analytics-icon").addClass("notification-icons-active");
+});
+
+$(document).ready(function() {
+    $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+            $(this).parent("p").hide();
+        })
+        $(this).siblings("p").show();
+    });
+    $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+        $(this).parent("p").hide();
+    });
+});
+
+function expandTopicAnalytics(sub_id, subject_name, chapter_name) {
+    url = "{{ url('topic-analytics') }}/" + sub_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "subject_name": subject_name,
+            "chapter_name": chapter_name
+        },
+        beforeSend: function() {
+            // $('.loader-block').show();
+        },
+        success: function(data) {
+            $('.chapter_analytics').hide();
+            $(".topics_analytics").show();
+            $('.topics_analytics').html(data.html);
+            $('#overall').hide();
+
+        },
+        error: function(data, errorThrown) {}
+    });
+}
+
+function expandChapterAnalytics(sub_id) {
+    url = "{{ url('chapter-analytics') }}/" + sub_id;
+    $.ajax({
+        url: url,
+        data: {
+            "_token": "{{ csrf_token() }}",
+        },
+        beforeSend: function() {
+
+        },
+        success: function(data) {
+            $(".chapter_analytics").show();
+            $('.chapter_analytics').html(data.html);
+            $('#overall').hide();
+        },
+        error: function(data, errorThrown) {}
+    });
+}
+
+function backPage() {
+    $(".chapter_analytics").hide();
+    $("#overall").show();
+
+}
+
+function backChapterPage() {
+    $(".topics_analytics").hide();
+    $(".chapter_analytics").show();
+}
+
+function backRedirect() {
+    var url = "{{ route('dashboard') }}";
+    window.location.href = url;
+}
+
+$(window).load(function() {
+    $(".dash-nav-link a:first-child").removeClass("active-navlink");
+});
+
+</script>
 @endsection

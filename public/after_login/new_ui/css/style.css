@@ -361,8 +361,8 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 input.allownumericwithdecimal {
     border: 0;
     background-color: #fff;
-    color: #6b707f;
-    font-size: 14px;
+    color: #212529;
+    font-size: 16px;
     padding: 0 15px;
 }
 .numeric-input-box span {
@@ -2765,6 +2765,7 @@ div.form-group.flds span.currect-email {
     color: #2c3348;
     font-size: 14px;
     padding: 3px 20px 5px;
+    text-transform: capitalize;
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
@@ -9640,8 +9641,11 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 
 
 #time-Avg-quest small , .dashboard-cards-block #time-Avg-quest .bg-white > small , .dashboard-cards-block #marKs-trends .bg-white > small{
-    top:15px;
+    top:15.5px;
 }
 #comparegraph .highcharts-container{
     height: 175px !important;
 }
+#topIIC .dashboard-title{margin-top: 0px;}
+#topIIC small {    top: 27px;}
+.procress_inner small{top: 18px;}
