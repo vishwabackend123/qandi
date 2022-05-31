@@ -56,7 +56,7 @@ button#saveEdit:hover{
     background: #21ccff!important;
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p:first-child b {
-    font-size: 17px;
+    font-size: 15px;
 }
 .dailytask-wrapper  .dtrow-left .btn.btntheme{
     font-weight: 600;
@@ -67,10 +67,10 @@ button#saveEdit:hover{
     background: #21ccff;
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p {
-    font-size: 16px;
+    font-size: 14px;
 }
 .dailytask-wrapper .bg-white.shadow-lg .progress_text{
-    font-size: 20px;
+    font-size: 19px;
 }
 a.Try14 {
     font-size: 17px;

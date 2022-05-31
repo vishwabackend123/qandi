@@ -123,7 +123,7 @@ $userData = Session::get('user_data');
                         }
 
                         @endphp
-                        <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
+                        <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 1 - {{$skill_task}}</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
@@ -139,7 +139,7 @@ $userData = Session::get('user_data');
                         </div>
                         @endif
                         @if($data['category'] == 'time' && $data['task_type'] == 'daily')
-                        <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
+                        <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 2 - Time Management</b></p>
                                 <p>Work on your time management skills with this test</p>
@@ -163,7 +163,7 @@ $userData = Session::get('user_data');
                         @foreach($data_task as $data)
 
                         @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
-                        <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
+                        <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 1 - Accuracy Test</b></p>
                                 <p>Work on your accuracy with this test</p>
@@ -179,7 +179,7 @@ $userData = Session::get('user_data');
                         </div>
                         @endif
                         @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
-                        <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
+                        <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 2 - Weak Topic Test</b></p>
                                 <p>Work on your weak topics with this test.</p>
