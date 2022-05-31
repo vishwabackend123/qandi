@@ -2738,7 +2738,7 @@ div.form-group.flds span.currect-email {
     max-height: 135px;
 }
 .countryscroll{ height: auto;
-    overflow: overlay;    max-height: 122px;}
+    overflow: overlay;max-height: 122px;}
 .country-code-name {
     height: auto;
     overflow: hidden;
@@ -2770,6 +2770,7 @@ div.form-group.flds span.currect-email {
 
 .country-code-name::-webkit-scrollbar-thumb {
     background: rgba(13, 193, 255, 0.4) !important;
+    border-radius: 10px;
 }
 
 .country-code-name::-webkit-scrollbar-track {
@@ -9657,4 +9658,6 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.btn-light.ms-auto.text-danger.rounded-0.show svg path~path {
     stroke: #fff!important;
 }
- 
+.border.ps-3.ans.correctAnswer {
+    border: solid 2px #37c027!important; 
+}
