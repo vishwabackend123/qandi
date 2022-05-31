@@ -167,10 +167,10 @@ Route::any('/live_exam_result/{result_id}', [App\Http\Controllers\LiveExamContro
 
 /* AnalyticsController Routes */
 
-Route::any('/overall_analytics/{activeid?}', [App\Http\Controllers\AnalyticsController::class, 'overall_analytics'])->name('overall_analytics')->middleware('auth', 'menu');
-Route::any('/export_analytics', [App\Http\Controllers\AnalyticsController::class, 'export_analytics'])->name('export_analytics')->middleware('auth', 'menu');
-Route::any('/tutorials_session', [App\Http\Controllers\AnalyticsController::class, 'tutorials_session'])->name('tutorials_session')->middleware('auth', 'menu');
-Route::any('/tutorials_signup/{t_id}', [App\Http\Controllers\AnalyticsController::class, 'tutorials_signup'])->name('tutorials_signup')->middleware('auth', 'menu');
+Route::any('/overall_analytics/{activeid?}', [App\Http\Controllers\AnalyticsController::class, 'overallAnalytics'])->name('overall_analytics')->middleware('auth', 'menu');
+Route::any('/export_analytics', [App\Http\Controllers\AnalyticsController::class, 'exportAnalytics'])->name('export_analytics')->middleware('auth', 'menu');
+Route::any('/tutorials_session', [App\Http\Controllers\AnalyticsController::class, 'tutorialsSession'])->name('tutorials_session')->middleware('auth', 'menu');
+Route::any('/tutorials_signup/{t_id}', [App\Http\Controllers\AnalyticsController::class, 'tutorialsSignup'])->name('tutorials_signup')->middleware('auth', 'menu');
 
 /* TestSeries Routes */
 Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 'seriesList'])->name('series_list')->middleware('auth', 'menu');

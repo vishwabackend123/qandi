@@ -65,11 +65,10 @@
                                                 <span class="gray-star-color">★</span>
                                             </li>
                                             @endif
-                                            @if($list['topic_score'] >80 && $list['topic_score'] <= 100) 
-                                            <li>
+                                            @if($list['topic_score'] >80 && $list['topic_score'] <= 100) <li>
                                                 <!-- <img src="{{URL::asset('public/after_login/new_ui/images/fill-star.png')}}" alt="fill-star"> -->
                                                 <span class="fill-star-color">★</span>
-                                            </li>
+                                                </li>
                                                 @else
                                                 <li>
                                                     <!-- <img src="{{URL::asset('public/after_login/new_ui/images/gray-star.png')}}" alt="gray-star"> -->
@@ -100,6 +99,12 @@
     </div>
 </div>
 <style>
-    .fill-star-color{color:#ffdc34 !important;}
-    .gray-star-color{color: #e9e9e9 !important;}
+.fill-star-color {
+    color: #ffdc34 !important;
+}
+
+.gray-star-color {
+    color: #e9e9e9 !important;
+}
+
 </style>

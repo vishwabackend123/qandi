@@ -1,7 +1,6 @@
 @extends('afterlogin.layouts.app_new')
 @php
 $userData = Session::get('user_data');
-
 @endphp
 @section('content')
 <!-- Modal -->
@@ -130,7 +129,6 @@ $userData = Session::get('user_data');
                             <ul class="course-star">
                                 @if(!empty($subjectData))
                                 @foreach($subjectData as $key=>$sub)
-
                                 <li>
                                     <strong>{{$sub['subject_name']}}</strong>
                                     <span class="star-img">
@@ -377,7 +375,6 @@ $userData = Session::get('user_data');
                                     <b> Tests Attempted</b>
                                     <div class="ms-auto">
                                         @foreach($planner as $key=>$val)
-
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
                                             <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
@@ -537,7 +534,6 @@ $userData = Session::get('user_data');
                                 <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             @endif
-
                             <div>
                                 <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
@@ -654,16 +650,11 @@ $userData = Session::get('user_data');
     $i = 1;
     if (!empty($trendResponse)) {
     foreach ($trendResponse as $key => $trend) {
-
     $week = "W" . $i;
     array_push($aWeeks, $week);
-
     $timestamp = strtotime( $trend['date']);
-
     $last_date=date("j M", $timestamp);
-
     $first_date = date('j M', strtotime('-6 days', $timestamp));
-
     array_push($weekdates, $first_date."-".$last_date);
     array_push($trend_stu_scroe, $trend['student_score']);
     array_push($trend_avg_scroe, $trend['average_score']);
@@ -685,487 +676,493 @@ $userData = Session::get('user_data');
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     @endphp
     <script type="text/javascript">
-        $(".rating-input").click(function() {
-            $("#nxt-btn").removeClass("disabled");
-        });
-        /* $('.subject_scroll').slimscroll({
-            height: '25vh'
-        }); */
+    $(".rating-input").click(function() {
+        $("#nxt-btn").removeClass("disabled");
+    });
+    /* $('.subject_scroll').slimscroll({
+        height: '25vh'
+    }); */
 
-        $(window).on('load', function() {
-            if (sessionStorage.getItem('firstVisit') != '1') {
-                $('#trialbox').modal('show');
-            }
-            sessionStorage.setItem('firstVisit', '1');
-        });
-
-
-
-        function welcome_back() {
-            $('#welcomeModal').modal('hide');
-            if ($("#favSubResponse").length > 0) {
-                $("#favSubResponse").modal("show");
-            } else if ($("#fullTest_Dashboard").length > 0) {
-                $("#fullTest_Dashboard").modal("show");
-            }
+    $(window).on('load', function() {
+        if (sessionStorage.getItem('firstVisit') != '1') {
+            $('#trialbox').modal('show');
         }
-
-        function store_rating() {
-            /* getting subject rating for new user */
-            let subjects_rating = {};
-            $('input[type=radio]:checked').each(function() {
+        sessionStorage.setItem('firstVisit', '1');
+    });
 
 
-                var name = $(this).attr('name');
-                var value = $(this).val();
 
-                subjects_rating[name] = value;
-            });
+    function welcome_back() {
+        $('#welcomeModal').modal('hide');
+        if ($("#favSubResponse").length > 0) {
+            $("#favSubResponse").modal("show");
+        } else if ($("#fullTest_Dashboard").length > 0) {
+            $("#fullTest_Dashboard").modal("show");
+        }
+    }
 
-            $.ajax({
-                url: "{{ url('/dailyWelcomeUpdates') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    storeddata: subjects_rating,
-                },
-                beforeSend: function() {},
-                success: function(response_data) { //debugger;
+    function store_rating() {
+        /* getting subject rating for new user */
+        let subjects_rating = {};
+        $('input[type=radio]:checked').each(function() {
 
-                    if (response_data == 'success') {
-                        if ($("#favSubResponse").length > 0) {
-                            $("#favSubResponse").modal("hide");
-                        }
 
-                        /*  $("#feelresponseModal").modal("hide"); */
-                        if ($("#fullTest_Dashboard").length > 0) {
-                            $("#fullTest_Dashboard").modal("show");
-                        }
+            var name = $(this).attr('name');
+            var value = $(this).val();
+
+            subjects_rating[name] = value;
+        });
+
+        $.ajax({
+            url: "{{ url('/dailyWelcomeUpdates') }}",
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                storeddata: subjects_rating,
+            },
+            beforeSend: function() {},
+            success: function(response_data) { //debugger;
+
+                if (response_data == 'success') {
+                    if ($("#favSubResponse").length > 0) {
+                        $("#favSubResponse").modal("hide");
                     }
 
-                },
-                error: function(xhr, b, c) {
-                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                    /*  $("#feelresponseModal").modal("hide"); */
+                    if ($("#fullTest_Dashboard").length > 0) {
+                        $("#fullTest_Dashboard").modal("show");
+                    }
                 }
-            });
-        }
 
-        $('.instructions').slimscroll({
-            height: '33vh'
+            },
+            error: function(xhr, b, c) {
+                console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+            }
         });
+    }
 
-        $(".rating-input").click(function() {
-            $("#nxt-btn").removeClass("disabled");
-        });
+    $('.instructions').slimscroll({
+        height: '33vh'
+    });
+
+    $(".rating-input").click(function() {
+        $("#nxt-btn").removeClass("disabled");
+    });
+
     </script>
     <script type="text/javascript">
-        $('.scroll-div').slimscroll({
-            height: '40vh'
-        });
+    $('.scroll-div').slimscroll({
+        height: '40vh'
+    });
 
-        var starClicked = false;
+    var starClicked = false;
 
-        $(function() {
+    $(function() {
 
-            $('.star').click(function() {
+        $('.star').click(function() {
 
-                $(this).children('.selected').addClass('is-animated');
-                $(this).children('.selected').addClass('pulse');
+            $(this).children('.selected').addClass('is-animated');
+            $(this).children('.selected').addClass('pulse');
 
-                var target = this;
+            var target = this;
 
-                setTimeout(function() {
-                    $(target).children('.selected').removeClass('is-animated');
-                    $(target).children('.selected').removeClass('pulse');
-                }, 1000);
+            setTimeout(function() {
+                $(target).children('.selected').removeClass('is-animated');
+                $(target).children('.selected').removeClass('pulse');
+            }, 1000);
 
-                starClicked = true;
-            })
+            starClicked = true;
+        })
 
-            $('.half').click(function() {
-                if (starClicked == true) {
-                    setHalfStarState(this)
-                }
-                $(this).closest('.rating').find('.js-score').text($(this).data('value'));
+        $('.half').click(function() {
+            if (starClicked == true) {
+                setHalfStarState(this)
+            }
+            $(this).closest('.rating').find('.js-score').text($(this).data('value'));
 
-                $(this).closest('.rating').data('vote', $(this).data('value'));
-                calculateAverage()
-                // console.log(parseInt($(this).data('value')));
-
-            })
-
-            $('.full').click(function() {
-                if (starClicked == true) {
-                    setFullStarState(this)
-                }
-                $(this).closest('.rating').find('.js-score').text($(this).data('value'));
-
-                $(this).find('js-average').text(parseInt($(this).data('value')));
-
-                $(this).closest('.rating').data('vote', $(this).data('value'));
-                calculateAverage()
-
-                // console.log(parseInt($(this).data('value')));
-            })
-
-            $('.half').hover(function() {
-                if (starClicked == false) {
-                    setHalfStarState(this)
-                }
-
-            })
-
-            $('.full').hover(function() {
-                if (starClicked == false) {
-                    setFullStarState(this)
-                }
-            })
+            $(this).closest('.rating').data('vote', $(this).data('value'));
+            calculateAverage()
+            // console.log(parseInt($(this).data('value')));
 
         })
 
-        function updateStarState(target) {
-            $(target).parent().prevAll().addClass('animate');
-            $(target).parent().prevAll().children().addClass('star-colour');
+        $('.full').click(function() {
+            if (starClicked == true) {
+                setFullStarState(this)
+            }
+            $(this).closest('.rating').find('.js-score').text($(this).data('value'));
 
-            $(target).parent().nextAll().removeClass('animate');
-            $(target).parent().nextAll().children().removeClass('star-colour');
-        }
+            $(this).find('js-average').text(parseInt($(this).data('value')));
 
-        function setHalfStarState(target) {
-            $(target).addClass('star-colour');
-            $(target).siblings('.full').removeClass('star-colour');
-            updateStarState(target)
-        }
+            $(this).closest('.rating').data('vote', $(this).data('value'));
+            calculateAverage()
 
-        function setFullStarState(target) {
-            $(target).addClass('star-colour');
-            $(target).parent().addClass('animate');
-            $(target).siblings('.half').addClass('star-colour');
+            // console.log(parseInt($(this).data('value')));
+        })
 
-            updateStarState(target)
-        }
+        $('.half').hover(function() {
+            if (starClicked == false) {
+                setHalfStarState(this)
+            }
 
-        function calculateAverage() {
-            var average = 0
+        })
 
-            $('.rating').each(function() {
-                average += $(this).data('vote')
-            })
+        $('.full').hover(function() {
+            if (starClicked == false) {
+                setFullStarState(this)
+            }
+        })
 
-            $('.js-average').text((average / $('.rating').length).toFixed(3))
-        }
+    })
+
+    function updateStarState(target) {
+        $(target).parent().prevAll().addClass('animate');
+        $(target).parent().prevAll().children().addClass('star-colour');
+
+        $(target).parent().nextAll().removeClass('animate');
+        $(target).parent().nextAll().children().removeClass('star-colour');
+    }
+
+    function setHalfStarState(target) {
+        $(target).addClass('star-colour');
+        $(target).siblings('.full').removeClass('star-colour');
+        updateStarState(target)
+    }
+
+    function setFullStarState(target) {
+        $(target).addClass('star-colour');
+        $(target).parent().addClass('animate');
+        $(target).siblings('.half').addClass('star-colour');
+
+        updateStarState(target)
+    }
+
+    function calculateAverage() {
+        var average = 0
+
+        $('.rating').each(function() {
+            average += $(this).data('vote')
+        })
+
+        $('.js-average').text((average / $('.rating').length).toFixed(3))
+    }
+
     </script>
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 'auto',
-            spaceBetween: 30,
-            freeMode: true,
-            slideToClickedSlide: false,
-            focusableElements: false,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: false,
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        freeMode: true,
+        slideToClickedSlide: false,
+        focusableElements: false,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: false,
+
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            1920: {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
 
             },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+            1028: { // this is all desktop view of my laptop
+                slidesPerView: 'auto',
+                spaceBetween: 30,
             },
-            breakpoints: {
-                1920: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-
-                },
-                1028: { // this is all desktop view of my laptop
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-                },
-                300: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30
-                }
+            300: {
+                slidesPerView: 'auto',
+                spaceBetween: 30
             }
-        });
+        }
+    });
+
     </script>
     <script>
-        /* Score Pie Chart */
-        Highcharts.chart('scorecontainer', {
-            chart: {
-                height: 160,
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false,
-                spacingTop: 0,
-                spacingBottom: 0,
-                spacingRight: 0,
-            },
-            title: {
-                text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
-                align: 'center',
-                verticalAlign: 'middle',
-                y: 60
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            tooltip: {
-                pointFormat: '<b>{point.percentage:.1f}%</b>'
-            },
-            accessibility: {
+    /* Score Pie Chart */
+    Highcharts.chart('scorecontainer', {
+        chart: {
+            height: 160,
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingTop: 0,
+            spacingBottom: 0,
+            spacingRight: 0,
+        },
+        title: {
+            text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: 60
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '<b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: false,
+                    distance: 0,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
                 point: {
-                    valueSuffix: '%'
-                }
-            },
-            plotOptions: {
-                pie: {
-                    dataLabels: {
-                        enabled: false,
-                        distance: 0,
-                        style: {
-                            fontWeight: 'bold',
-                            color: 'white'
-                        }
-                    },
-                    point: {
-                        events: {
-                            legendItemClick: function() {
-                                this.slice(null);
-                                return false;
-                            }
-                        }
-                    },
-                    startAngle: -140,
-                    endAngle: 140,
-                    center: ['50%', '50%'],
-                    size: '100%'
-                }
-            },
-            series: [{
-                type: 'pie',
-
-                innerSize: '85%',
-                data: [{
-                        name: 'Score',
-                        y: <?php echo $score; ?>,
-                        color: '#21ccff'
-                    },
-                    {
-                        name: 'Inprogress',
-                        y: <?php echo $inprogress; ?>,
-                        color: '#d0f3ff'
-                    },
-                    {
-                        name: 'Progress',
-                        y: <?php echo $progress; ?>,
-                        color: '#d0f3ff'
-                    },
-                    {
-                        name: '',
-                        y: <?php echo $others; ?>,
-                        color: '#d0f3ff'
-                    }
-
-
-                ]
-
-            }]
-        });
-
-        /* Mrks trend Graph */
-        Highcharts.chart('marks_trend_graph', {
-            chart: {
-                type: 'areaspline',
-                height: 165,
-                plotBackgroundColor: null,
-                zoomType: 'x',
-
-            },
-            title: {
-                text: ''
-            },
-
-            legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom',
-                bottom: '-20px',
-                floating: false,
-                borderWidth: 0,
-
-            },
-            xAxis: {
-                label: true,
-                accessibility: {
-                    rangeDescription: 'Range: start to current week'
-                },
-                categories: <?php echo $weekdates_json; ?>,
-
-            },
-            yAxis: {
-                title: {
-                    text: null
-                },
-                labels: {
-                    enabled: true
-                },
-
-                min: 0
-            },
-            tooltip: {
-                formatter: function(tooltip) {
-                    if (this.x == 'W5') {
-                        var header = `<span style="color: Black;">${this.x}(Current Week)</span><br/>`;
-                    } else {
-                        var header = `<span style="color: Black;">${this.x}</span><br/>`;
-                    }
-
-                    return header + (tooltip.bodyFormatter(this.points).join(''))
-                },
-                shared: true,
-                valueSuffix: ' marks'
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            plotOptions: {
-                areaspline: {
-                    fillOpacity: 0.4
-                },
-                series: {
-                    pointPadding: 0,
-                    groupPadding: 0,
-                    marker: {
-                        enabled: true
-                    },
                     events: {
                         legendItemClick: function() {
+                            this.slice(null);
                             return false;
                         }
                     }
-
-                }
-
-            },
-            series: [{
-                name: 'Student Score',
-                data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
-                color: '#007aff' // Jane's color
-            }, {
-                name: 'Class Avg',
-                data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
-                color: '#dfe835'
-            }, {
-                name: 'Top Marks',
-                data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
-                color: '#eb4034'
-            }],
-
-
-        });
-        /* Mrks trend Graph */
-    </script>
-    <script>
-        $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function() {
-                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                    $(this).parent("p").hide();
-                });
-                $(this).siblings("p").show();
-            });
-            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-                $(this).parent("p").hide();
-            });
-        });
-    </script>
-    <script language="JavaScript">
-        $(document).ready(function() {
-            var title = {
-                text: ''
-            };
-            var subtitle = {
-                text: ''
-            };
-            var xAxis = {
-                title: {
-                    text: 'Weeks'
                 },
-                categories: <?php echo $progress_cat; ?>,
-                labels: {
-                    useHTML: true,
-                    rotation: 0,
-                }
-            };
-            var yAxis = {
-                title: {
-                    text: 'No of Chapters'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            };
-            var tooltip = {
-                valueSuffix: ''
+                startAngle: -140,
+                endAngle: 140,
+                center: ['50%', '50%'],
+                size: '100%'
             }
-            var legend = {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom',
-                bottom: '-20px',
-                floating: false,
-                borderWidth: 0,
-            };
-            var series = [{
-                    name: 'Ideal Pace',
-                    data: <?php echo $ideal; ?>, //[0.0, 5.0, 10.0],
-                    color: '#db2f36'
+        },
+        series: [{
+            type: 'pie',
+
+            innerSize: '85%',
+            data: [{
+                    name: 'Score',
+                    y: <?php echo $score; ?>,
+                    color: '#21ccff'
                 },
                 {
-                    name: 'Your Pace',
-                    data: <?php echo $your_place; ?>, //[0, 2, 5.7],
-                    color: '#21ccff'
+                    name: 'Inprogress',
+                    y: <?php echo $inprogress; ?>,
+                    color: '#d0f3ff'
+                },
+                {
+                    name: 'Progress',
+                    y: <?php echo $progress; ?>,
+                    color: '#d0f3ff'
+                },
+                {
+                    name: '',
+                    y: <?php echo $others; ?>,
+                    color: '#d0f3ff'
                 }
-            ];
-            var credits = {
-                enabled: false
-            };
-            var exporting = {
-                enabled: false
-            };
-            var plotOptions = {
 
-                series: {
-                    events: {
-                        legendItemClick: function() {
-                            return false;
-                        }
+
+            ]
+
+        }]
+    });
+
+    /* Mrks trend Graph */
+    Highcharts.chart('marks_trend_graph', {
+        chart: {
+            type: 'areaspline',
+            height: 165,
+            plotBackgroundColor: null,
+            zoomType: 'x',
+
+        },
+        title: {
+            text: ''
+        },
+
+        legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            bottom: '-20px',
+            floating: false,
+            borderWidth: 0,
+
+        },
+        xAxis: {
+            label: true,
+            accessibility: {
+                rangeDescription: 'Range: start to current week'
+            },
+            categories: <?php echo $weekdates_json; ?>,
+
+        },
+        yAxis: {
+            title: {
+                text: null
+            },
+            labels: {
+                enabled: true
+            },
+
+            min: 0
+        },
+        tooltip: {
+            formatter: function(tooltip) {
+                if (this.x == 'W5') {
+                    var header = `<span style="color: Black;">${this.x}(Current Week)</span><br/>`;
+                } else {
+                    var header = `<span style="color: Black;">${this.x}</span><br/>`;
+                }
+
+                return header + (tooltip.bodyFormatter(this.points).join(''))
+            },
+            shared: true,
+            valueSuffix: ' marks'
+        },
+        credits: {
+            enabled: false
+        },
+        exporting: {
+            enabled: false
+        },
+        plotOptions: {
+            areaspline: {
+                fillOpacity: 0.4
+            },
+            series: {
+                pointPadding: 0,
+                groupPadding: 0,
+                marker: {
+                    enabled: true
+                },
+                events: {
+                    legendItemClick: function() {
+                        return false;
                     }
-
                 }
 
-            };
-            var json = {};
-            json.title = title;
-            json.subtitle = subtitle;
-            json.xAxis = xAxis;
-            json.yAxis = yAxis;
-            json.tooltip = tooltip;
-            json.legend = legend;
-            json.series = series;
-            json.credits = credits;
-            json.exporting = exporting;
-            json.plotOptions = plotOptions;
-            $('.progressChart').highcharts(json);
-            $('.progressChartExpend').highcharts(json);
+            }
+
+        },
+        series: [{
+            name: 'Student Score',
+            data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
+            color: '#007aff' // Jane's color
+        }, {
+            name: 'Class Avg',
+            data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
+            color: '#dfe835'
+        }, {
+            name: 'Top Marks',
+            data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
+            color: '#eb4034'
+        }],
+
+
+    });
+    /* Mrks trend Graph */
+
+    </script>
+    <script>
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                $(this).parent("p").hide();
+            });
+            $(this).siblings("p").show();
         });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+            $(this).parent("p").hide();
+        });
+    });
+
+    </script>
+    <script language="JavaScript">
+    $(document).ready(function() {
+        var title = {
+            text: ''
+        };
+        var subtitle = {
+            text: ''
+        };
+        var xAxis = {
+            title: {
+                text: 'Weeks'
+            },
+            categories: <?php echo $progress_cat; ?>,
+            labels: {
+                useHTML: true,
+                rotation: 0,
+            }
+        };
+        var yAxis = {
+            title: {
+                text: 'No of Chapters'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        };
+        var tooltip = {
+            valueSuffix: ''
+        }
+        var legend = {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            bottom: '-20px',
+            floating: false,
+            borderWidth: 0,
+        };
+        var series = [{
+                name: 'Ideal Pace',
+                data: <?php echo $ideal; ?>, //[0.0, 5.0, 10.0],
+                color: '#db2f36'
+            },
+            {
+                name: 'Your Pace',
+                data: <?php echo $your_place; ?>, //[0, 2, 5.7],
+                color: '#21ccff'
+            }
+        ];
+        var credits = {
+            enabled: false
+        };
+        var exporting = {
+            enabled: false
+        };
+        var plotOptions = {
+
+            series: {
+                events: {
+                    legendItemClick: function() {
+                        return false;
+                    }
+                }
+
+            }
+
+        };
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+        json.credits = credits;
+        json.exporting = exporting;
+        json.plotOptions = plotOptions;
+        $('.progressChart').highcharts(json);
+        $('.progressChartExpend').highcharts(json);
+    });
+
     </script>
     @endsection

@@ -101,7 +101,6 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"> Task for the Day</span>
                         @foreach($data_task as $data)
-
                         @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
                         @php
                         $current_date=date("d");
@@ -121,7 +120,6 @@ $userData = Session::get('user_data');
                         $skill_task = 'Comprehension Skills';
                         $skill_category = 'comprehension';
                         }
-
                         @endphp
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
@@ -161,7 +159,6 @@ $userData = Session::get('user_data');
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"> Task for the Week</span>
                         @foreach($data_task as $data)
-
                         @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
@@ -267,20 +264,21 @@ $userData = Session::get('user_data');
         </div>
     </div>
     <script>
-        $(window).on('load', function() {
-            //$('#matrix').modal('show');
-        });
-        $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function() {
-                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                    $(this).parent("p").hide();
-                });
-                $(this).siblings("p").show();
-            });
-            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+    $(window).on('load', function() {
+        //$('#matrix').modal('show');
+    });
+    $(document).ready(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
             });
+            $(this).siblings("p").show();
         });
+        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+            $(this).parent("p").hide();
+        });
+    });
+
     </script>
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
