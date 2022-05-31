@@ -132,7 +132,7 @@ div.form-group.flds span.currect-email {
 
 
 .country-code-name::-webkit-scrollbar-track,.countryscroll::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
+    background: #f1f1f1 !important;border-radius: 10px;
 }
 
 
