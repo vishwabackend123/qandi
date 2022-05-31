@@ -361,8 +361,8 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 input.allownumericwithdecimal {
     border: 0;
     background-color: #fff;
-    color: #6b707f;
-    font-size: 14px;
+    color: #212529;
+    font-size: 16px;
     padding: 0 15px;
 }
 .numeric-input-box span {
