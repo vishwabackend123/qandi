@@ -300,6 +300,9 @@
         font-size: 15px;
         padding: 18px 11px;
     }
+    .tabintablet .cust-tabs .nav-link {
+        font-size: 18px;
+    }
 
     .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span {
         padding: 0 2px !important;
