@@ -9640,7 +9640,7 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 
 
 #time-Avg-quest small , .dashboard-cards-block #time-Avg-quest .bg-white > small , .dashboard-cards-block #marKs-trends .bg-white > small{
-    top:15px;
+    top:15.5px;
 }
 #comparegraph .highcharts-container{
     height: 175px !important;
