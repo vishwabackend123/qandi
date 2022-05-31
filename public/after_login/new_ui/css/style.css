@@ -2764,6 +2764,7 @@ div.form-group.flds span.currect-email {
     color: #2c3348;
     font-size: 14px;
     padding: 3px 20px 5px;
+    text-transform: capitalize;
 }
 
 .country-code-name::-webkit-scrollbar-thumb {
