@@ -166,7 +166,7 @@ $userData = Session::get('user_data');
                         <div class="row mt-3 dtrow-left" style="padding: 20px 20px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task 1 - Accuracy Test</b></p>
-                                <p>Work on your accuracy with <br>test</p>
+                                <p>Work on your accuracy with this test</p>
                                 <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
                                     <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
                                 </p>
