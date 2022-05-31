@@ -220,17 +220,17 @@ Route::any('/saveAdaptiveAnswer', [App\Http\Controllers\ExamCustomController::cl
 
 /* routes for adptive chapter_exam */
 Route::any('/custom_exam_topic', [App\Http\Controllers\AdpativeExamController::class, 'topicAdaptiveExam'])->name('custom_exam_topic')->middleware('auth', 'menu');
-Route::any('/ajax_adaptive_question_topic/{nkey}', [App\Http\Controllers\AdpativeExamController::class, 'ajax_adaptive_question_topic'])->name('ajax_adaptive_question_topic')->middleware('auth', 'menu');
-Route::any('/adaptive_topic_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_topic_exam_result'])->name('adaptive_topic_exam_result')->middleware('auth', 'menu');
-Route::any('/adaptive_chapter_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_chapter_exam_result'])->name('adaptive_chapter_exam_result')->middleware('auth', 'menu');
+Route::any('/ajax_adaptive_question_topic/{nkey}', [App\Http\Controllers\AdpativeExamController::class, 'ajaxAdaptiveQuestionTopic'])->name('ajax_adaptive_question_topic')->middleware('auth', 'menu');
+Route::any('/adaptive_topic_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveTopicExamResult'])->name('adaptive_topic_exam_result')->middleware('auth', 'menu');
+Route::any('/adaptive_chapter_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveChapterExamResult'])->name('adaptive_chapter_exam_result')->middleware('auth', 'menu');
 
 Route::any('/clear-all-notifications', [App\Http\Controllers\HomeController::class, 'clearAllNotifications'])->name('clearAllNotifications')->middleware('auth', 'menu');
 Route::any('/refresh-notifications', [App\Http\Controllers\HomeController::class, 'refreshNotification'])->name('refresh-notifications')->middleware('auth');
 
 
-Route::any('/adaptive_exam', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_mock_exam'])->name('adaptive_mock_exam')->middleware('auth', 'menu');
-Route::any('/adaptive_next_question/{ques_id}', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_next_question'])->name('adaptive_next_question')->middleware('auth', 'menu');
-Route::any('/adaptive_next_subject_question/{subject_id}', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_next_subject_question'])->name('adaptive_next_subject_question')->middleware('auth', 'menu');
+Route::any('/adaptive_exam', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveMockExam'])->name('adaptive_mock_exam')->middleware('auth', 'menu');
+Route::any('/adaptive_next_question/{ques_id}', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveNextQuestion'])->name('adaptive_next_question')->middleware('auth', 'menu');
+Route::any('/adaptive_next_subject_question/{subject_id}', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveNextSubjectQuestion'])->name('adaptive_next_subject_question')->middleware('auth', 'menu');
 
 Route::any('/refund_form', [App\Http\Controllers\SubscriptionController::class, 'refundForm'])->name('refund_form')->middleware('auth', 'menu');
 Route::any('/refund_form_submit', [App\Http\Controllers\SubscriptionController::class, 'refundFormSubmit'])->name('refund_form_submit')->middleware('auth', 'menu');
