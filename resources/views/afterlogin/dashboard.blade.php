@@ -360,7 +360,7 @@ $userData = Session::get('user_data');
                             </div>
                         </div>
                         @elseif(isset($planner) && !empty($planner))
-                        <div class="swiper-slide bg-white go2Planner weekylplan-block">
+                        <div class="swiper-slide bg-white go2Planner weekylplan-block" style="padding: 18px 35px 35px;">
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -371,7 +371,7 @@ $userData = Session::get('user_data');
                             </small>
                             <span style="color: #2c3348;">Weekly Plan</span>
                             <div class="test-attend text-center pt-2 pb-2">
-                                <div class="text-center" style="font-size: 14px;max-width: 180px;margin: 0 auto;">
+                                <div class="text-center" style="font-size: 14px;max-width: 180px;margin: 15px auto;">
                                     <b> Tests Attempted</b>
                                     <div class="ms-auto">
                                         @foreach($planner as $key=>$val)
