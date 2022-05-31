@@ -76,10 +76,14 @@ div.form-group.flds span.currect-email {
     top: 8px;
 }
 
+.countryscroll{ height: auto;
+    overflow: overlay;max-height: 195px;}
+
+
 .country-code-name {
     height: auto;
     max-height: 210px;
-    overflow: overlay;
+    overflow: hidden;
     padding-top: 10px;
     position: absolute;
     background: #fff;
@@ -89,6 +93,7 @@ div.form-group.flds span.currect-email {
     top: 0px;
     right: 0%;
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.16);
+    padding: 10px
 }
 
 .country-code-name ul {
@@ -103,15 +108,15 @@ div.form-group.flds span.currect-email {
     padding: 3px 20px 5px;
 }
 
-.country-code-name::-webkit-scrollbar-thumb {
+.country-code-name::-webkit-scrollbar-thumb,.countryscroll::-webkit-scrollbar-thumb {
     background: rgba(13, 193, 255, 0.4) !important;
 }
 
-.country-code-name::-webkit-scrollbar-track {
+.country-code-name::-webkit-scrollbar-track,.countryscroll::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
-.country-code-name::-webkit-scrollbar {
+.country-code-name::-webkit-scrollbar,.countryscroll::-webkit-scrollbar {
     width: 5px;
 }
 
@@ -121,17 +126,17 @@ div.form-group.flds span.currect-email {
 }
 
 /* shubham-css */
-.country-code-name::-webkit-scrollbar {
+.country-code-name::-webkit-scrollbar,.countryscroll::-webkit-scrollbar {
     width: 5px;
 }
 
 
-.country-code-name::-webkit-scrollbar-track {
+.country-code-name::-webkit-scrollbar-track,.countryscroll::-webkit-scrollbar-track {
     background: #f1f1f1 !important;
 }
 
 
-.country-code-name::-webkit-scrollbar-thumb {
+.country-code-name::-webkit-scrollbar-thumb,.countryscroll::-webkit-scrollbar-thumb {
     background: rgba(13, 193, 255, 0.4) !important;
 }
 

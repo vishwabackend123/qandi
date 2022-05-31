@@ -13,7 +13,6 @@ $userData = Session::get('user_data');
     <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
-
                 <div class="col-lg-3">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 mb-lg-0 mb-4">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
@@ -352,26 +351,27 @@ $userData = Session::get('user_data');
 </div>
 <!-------------------->
 <script>
-    $(document).ready(function() {
-        $('.filtericon').hide();
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                $(this).parent("p").hide();
-            })
-            $(this).siblings("p").show();
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+$(document).ready(function() {
+    $('.filtericon').hide();
+    $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        $(".dashboard-cards-block .bg-white>small p>span").each(function() {
             $(this).parent("p").hide();
-        });
-        var topic_data = '<?php echo $myq_bool; ?>';
-        if (topic_data) {
-            setInterval(function() {
-                $('#matrix').modal('show');
-            }, 1000);
-        }
-
-
+        })
+        $(this).siblings("p").show();
     });
+    $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+        $(this).parent("p").hide();
+    });
+    var topic_data = '<?php echo $myq_bool; ?>';
+    if (topic_data) {
+        setInterval(function() {
+            $('#matrix').modal('show');
+        }, 1000);
+    }
+
+
+});
+
 </script>
 <!-- Footer Section -->
 @include('afterlogin.layouts.footer_new')

@@ -436,13 +436,13 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-                $sOption .= '<ul>';
+                $sOption .= '<div class="countryscroll"><ul>';
 
                 foreach ($state_list as $keyaState => $oState) {
                     $sOption .= '<li onClick="selectState(`' . $oState . '`)">' . $oState . '</li>';
                 }
                 //return json_encode($country_list);
-                $sOption .= '</ul>';
+                $sOption .= '</ul></div>';
                 $response = ["success" => true, "response" => $sOption,];
                 return json_encode($response);
             }
@@ -503,13 +503,13 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-                $sOption .= '<ul>';
+                $sOption .= '<div class="countryscroll"><ul>';
 
                 foreach ($city_list as $kCity => $oCity) {
                     $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
                 }
                 //return json_encode($country_list);
-                $sOption .= '</ul>';
+                $sOption .= '</ul></div>';
                 $response = ["success" => true, "response" => $sOption,];
                 return json_encode($response);
             }
