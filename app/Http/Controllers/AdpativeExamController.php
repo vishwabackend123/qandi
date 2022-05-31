@@ -14,13 +14,27 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * AdpativeExamController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class AdpativeExamController extends Controller
 {
-    //
     use CommonTrait;
 
-    /* Adaptive Exam Methods */
-    public function adaptive_mock_exam(Request $request)
+    /**
+     * Adaptive_mock_exam
+     *
+     * @param Request $request Illuminate\Http\Request
+     *
+     * @return void
+     */
+    public function adaptiveMockExam(Request $request)
     {
         try {
             $filtered_subject = [];
@@ -178,8 +192,15 @@ class AdpativeExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function adaptive_next_question($quest_id, Request $request)
+    /**
+     * Adaptive_next_question
+     *
+     * @param mixed   $quest_id quest id
+     * @param Request $request  Illuminate\Http\Request
+     *
+     * @return void
+     */
+    public function adaptiveNextQuestion($quest_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -260,8 +281,15 @@ class AdpativeExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function adaptive_next_subject_question($subject_id, Request $request)
+    /**
+     * Adaptive_next_subject_question
+     *
+     * @param mixed   $subject_id subject id
+     * @param Request $request    Illuminate\Http\Request
+     *
+     * @return void
+     */
+    public function adaptiveNextSubjectQuestion($subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -350,7 +378,13 @@ class AdpativeExamController extends Controller
 
     /* ENd Adaptive Exam Methods */
 
-
+    /**
+     * TopicAdaptiveExam
+     *
+     * @param Request $request Illuminate\Http\Request
+     *
+     * @return void
+     */
     public function topicAdaptiveExam(Request $request)
     {
         try {
@@ -536,9 +570,15 @@ class AdpativeExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function ajax_adaptive_question_topic($key, Request $request)
+    /**
+     * Ajax_adaptive_question_topic
+     *
+     * @param mixed   $key     key type request
+     * @param Request $request Illuminate\Http\Request
+     *
+     * @return void
+     */
+    public function ajaxAdaptiveQuestionTopic($key, Request $request)
     {
         try {
             $qNo = $key + 1;
@@ -623,8 +663,15 @@ class AdpativeExamController extends Controller
         }
     }
 
-
-
+    /**
+     * GetNextAdpativeQues
+     *
+     * @param mixed $session_id session id
+     * @param mixed $nextkey    nextkey
+     * @param mixed $topic_id   topic id
+     *
+     * @return void
+     */
     public function getNextAdpativeQues($session_id, $nextkey, $topic_id)
     {
         try {
@@ -738,7 +785,15 @@ class AdpativeExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-    public function adaptive_topic_exam_result(Request $request)
+
+    /**
+     * Adaptive_topic_exam_result
+     *
+     * @param Request $request Illuminate\Http\Request
+     *
+     * @return void
+     */
+    public function adaptiveTopicExamResult(Request $request)
     {
         try {
             $session_id = isset($request->session_id) ? $request->session_id : 0;
@@ -819,10 +874,14 @@ class AdpativeExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
-    public function adaptive_chapter_exam_result(Request $request)
+    /**
+     * Adaptive_chapter_exam_result
+     *
+     * @param Request $request Illuminate\Http\Request
+     *
+     * @return void
+     */
+    public function adaptiveChapterExamResult(Request $request)
     {
         try {
             $session_id = isset($request->session_id) ? $request->session_id : 0;
