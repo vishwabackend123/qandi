@@ -9645,3 +9645,5 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 #comparegraph .highcharts-container{
     height: 175px !important;
 }
+#topIIC .dashboard-title{margin-top: 0px;}
+#topIIC small {    top: 27px;}
