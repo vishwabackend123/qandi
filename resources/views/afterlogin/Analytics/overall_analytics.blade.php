@@ -31,7 +31,7 @@ $userData = Session::get('user_data');
                                 <a onclick="get_upcomming_tutorials()" class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="#">Upcoming Tutorial</a>
                             </li> -->
                                 <li class="ms-auto">
-                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics">
+                                    <a class="Ex-anal btn rounded-0 py-2 px-5 h-100 d-flex justify-content-center align-items-center" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exportAnalytics" id="button_export">
                                         <!--<img src="{{URL::asset('public/after_login/new_ui/images/download-icn.png')}}">-->
                                         <div class="arrow_icon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Group 4887" width="20" height="24" viewBox="0 0 24 24">
                                                 <path data-name="Path 82" d="M0 0h24v24H0z" style="fill:none" />
@@ -305,6 +305,11 @@ $userData = Session::get('user_data');
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
+<style type="text/css">
+    #button_export:focus {
+        box-shadow: none;
+    }
+</style>
 
 
 @include('afterlogin.layouts.footer_new')
