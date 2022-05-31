@@ -845,8 +845,10 @@
                     </div>
                     <span class="text-danger" role="alert" id="errlog_edit" style="color:#dc3545 !important"> </span>
                     <div class="form-btns m-0">
-                        <button type="button" id="cancelEdit" class="cancel-btn m-0">cancel</button>
-                    <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled mb-0>save</button>
+                        <div class="formbtninner">
+                           <button type="button" id="cancelEdit" class="cancel-btn m-0">cancel</button>
+                          <button type="submit" id="saveEdit" class="save-btn disabled-btn" disabled mb-0>save</button>
+                      </div>
                     </div>
                 </form>
             </div>
