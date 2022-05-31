@@ -20,7 +20,7 @@
                 <div id="input-otp-box" style="display:none">
                     <div class="form-group flds">
                         <input type="text" class="form-control pass disable-value" name="login_otp" id="otp_num" placeholder="Enter OTP" minlength="5" maxlength="5" onkeypress="return isNumber(event)" autocomplete="off">
-                        <span class="error-sms enter-otp" id="errlog_otp">Please, enter OTP</span>
+                        <span class="error-sms enter-otp" id="errlog_otp"></span>
                         <span class="error-sms wrong-otp" id="errlog_auth">You have entered a wrong OTP. Please try again
                         </span>
                     </div>
