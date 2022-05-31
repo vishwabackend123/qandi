@@ -61,7 +61,7 @@
     .tiny-green{width:138px!important;}
     .counter{margin-bottom: 10px;margin-right: -28px!important;}
     .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 1rem;
+        padding: 15px 1rem;padding-top:30px;
     }
 	#sharefrnd .modal-content.rounded-0.bg-light{
 		left:0px !important;
