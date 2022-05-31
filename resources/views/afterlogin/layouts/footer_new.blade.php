@@ -1985,3 +1985,11 @@
         return false;
     }
 </script>
+<script>
+ $(".dropdown-menu.cust-dropdown li").click(function(){
+        $(this).parent().prev().parent().addClass("category_selct");
+    });
+    $("a.clear-filter").click(function(){
+        $(this).prev().removeClass(" category_selct");
+    });
+</script>
