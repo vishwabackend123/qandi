@@ -947,9 +947,15 @@ $question_type = "Numerical";
             var res_value = $("#quest_option_" + question_id).val();
 
             if (res_value != '') {
-                option_id.push($("#quest_option_" + question_id).val());
+                if (res_value == '-') {
+                    var vld_msg = "enter valid value.";
+                } else {
+                    option_id.push($("#quest_option_" + question_id).val());
+                }
+            } else {
+                var vld_msg = "Please fill your response.";
             }
-            var vld_msg = "Please fill your response.";
+
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());

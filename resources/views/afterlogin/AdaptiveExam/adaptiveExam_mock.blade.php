@@ -475,6 +475,7 @@ $questtype='radio';
     /* Allow only numeric with decimal */
     $(".allownumericwithdecimal").on("keypress keyup blur", function(event) {
         //this.value = this.value.replace(/[^0-9\.]/g,'');
+
         $(this).val($(this).val().replace(/(?!^-)[^0-9.]/g, ''));
         if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 45 || event.which > 57 || event.which == 47)) {
             event.preventDefault();
@@ -483,6 +484,7 @@ $questtype='radio';
         if ((text.indexOf('.') != -1) && (text.substring(text.indexOf('.')).length > 2) && (event.which != 0 && event.which != 8) && ($(this)[0].selectionStart >= text.length - 2)) {
             event.preventDefault();
         }
+
         if (event.charCode === 46) {
             // if dot is the first symbol
             if (event.target.value.length === 0) {
@@ -905,6 +907,7 @@ $questtype='radio';
             if (res_value != '') {
                 option_id.push($("#quest_option_" + quest_id).val());
             }
+
         } else {
             $.each($("input[name='quest_option_" + quest_id + "']:checked"), function() {
                 option_id.push($(this).val());
@@ -959,9 +962,15 @@ $questtype='radio';
             var res_value = $("#quest_option_" + question_id).val();
 
             if (res_value != '') {
-                option_id.push($("#quest_option_" + question_id).val());
+                if (res_value == '-') {
+                    var vld_msg = "enter valid value.";
+                } else {
+                    option_id.push($("#quest_option_" + question_id).val());
+                }
+            } else {
+                var vld_msg = "Please fill your response.";
             }
-            var vld_msg = "Please fill your response.";
+
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
@@ -1048,9 +1057,15 @@ $questtype='radio';
             var res_value = $("#quest_option_" + question_id).val();
 
             if (res_value != '') {
-                option_id.push($("#quest_option_" + question_id).val());
+                if (res_value == '-') {
+                    var vld_msg = "enter valid value.";
+                } else {
+                    option_id.push($("#quest_option_" + question_id).val());
+                }
+            } else {
+                var vld_msg = "Please fill your response.";
             }
-            var vld_msg = "Please fill your response.";
+
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
