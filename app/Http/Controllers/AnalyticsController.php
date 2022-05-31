@@ -14,19 +14,29 @@ use Illuminate\Support\Facades\Log;
 
 use App\Http\Traits\CommonTrait;
 
+/**
+ * AnalyticsController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class AnalyticsController extends Controller
 {
-    //
     use CommonTrait;
 
 
     /**
      * Undocumented function
      *
-     * @param Request $request
+     * @param  Request $request   recieve the body request data
+     * @param $active_id get active input id
+     *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function overall_analytics($active_id = '', Request $request)
+    public function overallAnalytics($active_id = '', Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -38,8 +48,7 @@ class AnalyticsController extends Controller
             $api_URL = env('API_URL');
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -48,7 +57,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -59,18 +69,17 @@ class AnalyticsController extends Controller
             $lastscore = $progress = 0;
             $otherScorePre = 100;
             $subProf = [];
-            if (isset($response->success) && $response->success === true) :
+            if (isset($response->success) && $response->success === true) {
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-            $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
-            $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
-            $subProf = json_decode($response->subject_proficiency);
-            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
-            endif;
+                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+                $lastscore = ($mockTestScoreCurr >= $mockTestScorePre) ? $mockTestScorePre : $mockTestScoreCurr;
+                $progress = ($mockTestScoreCurr >= $mockTestScorePre) ? ($mockTestScoreCurr - $mockTestScorePre) : 0;
+                $subProf = json_decode($response->subject_proficiency);
+                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+            }
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-graph/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -79,7 +88,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -175,8 +185,7 @@ class AnalyticsController extends Controller
             $incorrectAns3 = json_encode($incorrectAns3);
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-accuracy-timetaken/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -185,7 +194,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -220,47 +230,20 @@ class AnalyticsController extends Controller
             $topicList = [];
             $chapterList = [];
             $chapter_name = "";
-            return view('afterlogin.Analytics.overall_analytics', compact(
-                'active_id',
-                'user_subjects',
-                'mockTestScoreCurr',
-                'mockTestScorePre',
-                'lastscore',
-                'progress',
-                'subProf',
-                'date1',
-                'date2',
-                'date3',
-                'days',
-                'correctTime1',
-                'incorrectTime1',
-                'correctTime2',
-                'incorrectTime2',
-                'correctTime3',
-                'incorrectTime3',
-                'correctAns1',
-                'incorrectAns1',
-                'correctAns2',
-                'incorrectAns2',
-                'correctAns3',
-                'incorrectAns3',
-                'classAccuracy',
-                'stuAccuracy',
-                'day',
-                'classAcc',
-                'stuAcc',
-                'subject',
-                'topicList',
-                'otherScorePre',
-                'chapterList',
-                'chapter_name'
-            ));
+            return view('afterlogin.Analytics.overall_analytics', compact('active_id', 'user_subjects', 'mockTestScoreCurr', 'mockTestScorePre', 'lastscore', 'progress', 'subProf', 'date1', 'date2', 'date3', 'days', 'correctTime1', 'incorrectTime1', 'correctTime2', 'incorrectTime2', 'correctTime3', 'incorrectTime3', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3', 'classAccuracy', 'stuAccuracy', 'day', 'classAcc', 'stuAcc', 'subject', 'topicList', 'otherScorePre', 'chapterList', 'chapter_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
 
-    public function export_analytics(Request $request)
+    /**
+     * Getting exportAnalytics data from this function
+     *
+     * @param Request $request receive request type
+     *
+     * @return void
+     */
+    public function exportAnalytics(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -275,8 +258,7 @@ class AnalyticsController extends Controller
             $api_URL = env('API_URL');
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -285,7 +267,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -295,16 +278,14 @@ class AnalyticsController extends Controller
             $mockTestScorePre = 0;
             $subProf = [];
             $otherScorePre = 100;
-            if ($response->success === true) :
+            if ($response->success === true) {
                 $mockTestScoreCurr = $response->test_score[0]->result_percentage ?? 0;
-            $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
-            $subProf = json_decode($response->subject_proficiency);
-            $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
-            endif;
-
+                $mockTestScorePre = $response->test_score[1]->result_percentage ?? 0;
+                $subProf = json_decode($response->subject_proficiency);
+                $otherScorePre = $otherScorePre - ($mockTestScoreCurr + $mockTestScorePre);
+            }
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-graph/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -313,7 +294,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -409,8 +391,7 @@ class AnalyticsController extends Controller
             $incorrectAns3 = json_encode($incorrectAns3);
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-accuracy-timetaken/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -419,7 +400,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -452,8 +434,7 @@ class AnalyticsController extends Controller
             $stuAccuracy = json_encode($stuAccuracy);
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/export-analytics-extra/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -462,7 +443,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -477,7 +459,7 @@ class AnalyticsController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_myq_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -487,7 +469,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "POST",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_myq_json = curl_exec($curl);
             $response_myq = json_decode($response_myq_json, true);
@@ -497,44 +480,19 @@ class AnalyticsController extends Controller
             $myqScore = isset($corrent_score_per) ? $corrent_score_per : 0;
             $myqOther = 100 - ($myqScore);
 
-            return view('afterlogin.Analytics.export_analytics', compact(
-                'overallAnalytics',
-                'days',
-                'classAccuracy',
-                'stuAccuracy',
-                'day',
-                'classAcc',
-                'stuAcc',
-                'subProf',
-                'unitProf',
-                'overall_prof_perc',
-                'correctAns1',
-                'incorrectAns1',
-                'correctAns2',
-                'incorrectAns2',
-                'correctAns3',
-                'incorrectAns3',
-                'date1',
-                'correctTime1',
-                'incorrectTime1',
-                'date2',
-                'correctTime2',
-                'incorrectTime2',
-                'date3',
-                'correctTime3',
-                'incorrectTime3',
-                'mockTestScoreCurr',
-                'mockTestScorePre',
-                'user_subjects',
-                'otherScorePre',
-                'myqScore',
-                'myqOther'
-            ));
+            return view('afterlogin.Analytics.export_analytics', compact('overallAnalytics', 'days', 'classAccuracy', 'stuAccuracy', 'day', 'classAcc', 'stuAcc', 'subProf', 'unitProf', 'overall_prof_perc', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3', 'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3', 'mockTestScoreCurr', 'mockTestScorePre', 'user_subjects', 'otherScorePre', 'myqScore', 'myqOther'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * This function use for net subject wise data
+     *
+     * @param Request $request receive request type
+     * @param $sub_id  subject id
+     *
+     * @return void
+     */
     public function nextTab(Request $request, $sub_id)
     {
         try {
@@ -542,8 +500,7 @@ class AnalyticsController extends Controller
             $user_id = $userData->id;
             $api_URL = env('API_URL');
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-score/' . $user_id . '/' . $sub_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -552,7 +509,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -565,8 +523,7 @@ class AnalyticsController extends Controller
             $subScore = isset($subAnalytics->subject_score) ? $subAnalytics->subject_score : [];
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-graph/' . $user_id . '/' . $sub_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -575,7 +532,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -586,8 +544,7 @@ class AnalyticsController extends Controller
             $monthlyReport = $subAnalytics->monthlyReport;
 
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-accuracy/' . $user_id . '/' . $sub_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -596,7 +553,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -712,40 +670,17 @@ class AnalyticsController extends Controller
             $stuAccuracy = json_encode($stuAccuracy);
 
 
-            return view('afterlogin.Analytics.subject_wise_analytics', compact(
-                'subScore',
-                'day',
-                'classAcc',
-                'stuAcc',
-                'days',
-                'classAccuracy',
-                'stuAccuracy',
-                'skillPer',
-                'subProf',
-                'correctAns1',
-                'incorrectAns1',
-                'correctAns2',
-                'incorrectAns2',
-                'correctAns3',
-                'incorrectAns3',
-                'date1',
-                'correctTime1',
-                'incorrectTime1',
-                'date2',
-                'correctTime2',
-                'incorrectTime2',
-                'date3',
-                'correctTime3',
-                'incorrectTime3',
-                'sub_id'
-            ));
+            return view('afterlogin.Analytics.subject_wise_analytics', compact('subScore', 'day', 'classAcc', 'stuAcc', 'days', 'classAccuracy', 'stuAccuracy', 'skillPer', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3', 'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3', 'sub_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
-
-
-    public function tutorials_session()
+    /**
+     * This function use for net subject wise data
+     *
+     * @return void
+     */
+    public function tutorialsSession()
     {
         try {
             $userData = Session::get('user_data');
@@ -755,7 +690,7 @@ class AnalyticsController extends Controller
             $api_url = env('API_URL') . 'api/upcoming-tutorial/' . $exam_id . '/' . $user_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -764,7 +699,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -786,12 +722,14 @@ class AnalyticsController extends Controller
         }
     }
 
-    /***
-     * tutorial signup
+    /**
+     * This function use for net subject wise data
      *
-     *  */
-
-    public function tutorials_signup($tutorial_id)
+     * @param $tutorial_id this is tutorial id
+     *
+     * @return void
+     */
+    public function tutorialsSignup($tutorial_id)
     {
         try {
             $userData = Session::get('user_data');
@@ -808,7 +746,7 @@ class AnalyticsController extends Controller
             $api_url = env('API_URL') . 'api/student-register-tutorial';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -822,7 +760,8 @@ class AnalyticsController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -836,8 +775,14 @@ class AnalyticsController extends Controller
         }
     }
 
-
-
+    /**
+     * Get topic analytics list
+     *
+     * @param $sub_id  this is subjet  id
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function topicAnalyticsList($sub_id, Request $request)
     {
         try {
@@ -850,7 +795,7 @@ class AnalyticsController extends Controller
             $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/'  . $sub_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -859,7 +804,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -869,15 +815,18 @@ class AnalyticsController extends Controller
             $topicList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
             $html = view('afterlogin.Analytics.topics_analytics', compact('sub_id', 'subject', 'topicList', 'chapter_name'))->render();
 
-            return response()->json([
-                'status' => true,
-                'html' => $html,
-                'message' => 'Coupon code applied successfully.',
-            ]);
+            return response()->json(['status' => true, 'html' => $html, 'message' => 'Coupon code applied successfully.']);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
+    /**
+     * This function use for get chapter level data
+     *
+     * @param $sub_id this is subjet  id
+     *
+     * @return void
+     */
     public function chapterAnalyticsList($sub_id)
     {
         try {
@@ -895,7 +844,7 @@ class AnalyticsController extends Controller
             $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/'  . $sub_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -904,7 +853,8 @@ class AnalyticsController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -914,11 +864,7 @@ class AnalyticsController extends Controller
             $chapterList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
             $html = view('afterlogin.Analytics.chapter_analytics', compact('sub_id', 'subject', 'chapterList'))->render();
 
-            return response()->json([
-                'status' => true,
-                'html' => $html,
-                'message' => 'Coupon code applied successfully.',
-            ]);
+            return response()->json(['status' => true,'html' => $html,'message' => 'Coupon code applied successfully.']);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

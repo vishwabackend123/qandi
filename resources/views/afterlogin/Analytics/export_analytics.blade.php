@@ -1,27 +1,19 @@
 @extends('afterlogin.layouts.app_new')
-
 @section('content')
 @php
 $userData = Session::get('user_data');
 @endphp
 <!-- Side bar menu -->
-
 <div class="h-100" id="dialog-pdf" title="pdf">
     <!-- top navbar -->
-
     <div id="contentHtml" class="content-wrapper py-5 exportAnaylisis">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-9 mx-auto">
-
                     <div class=" dashboard-cards-block">
                         <div class="report-block1 pb-0 p-6">
-                            <div class="
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                      border-bottom headeranaylsismain
-                    ">
+                            <div class="d-flex justify-content-between    align-items-center
+                      border-bottom headeranaylsismain">
                                 <span><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}" style="padding-bottom:20px;" /></span>
                                 <span class="text-light">{{date("F j, Y")}}</span>
                                 <span class="text-light-danger">Analytics</span>
@@ -34,11 +26,8 @@ $userData = Session::get('user_data');
                                     </p>
                                     <h1 class="greentxt">{{$overallAnalytics->user_rank}}</h1>
                                 </div>
-
-
                                 <div class="row">
                                     <div class="mx-auto col-md-10">
-
                                     </div>
                                 </div>
                             </div>
@@ -99,13 +88,11 @@ $userData = Session::get('user_data');
                                             <div class="ms-1 score score-rating js-score">
                                                 {{round($overall_prof_perc)}}%
                                             </div>
-
                                         </div>
                                         <p class="text-center text-light mt-3">
                                             Overall Subjects Proficiency
                                         </p>
                                     </div>
-
                                 </div>
                             </div>
                             <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
@@ -126,7 +113,6 @@ $userData = Session::get('user_data');
                                             <span class="col-md-5 mr-3 dashboard-name-txt col-5">{{$sub->subject_name}}</span>
                                             <div class="col-md-7 pe-5 col-7">
                                                 <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">
-
                                                     <div class="star-ratings-css">
                                                         <div class="star-ratings-css-top" style="width: {{round($sub->score)}}%">
                                                             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -139,8 +125,6 @@ $userData = Session::get('user_data');
                                                         {{round($sub->score)}}%
                                                     </div>
                                                 </div>
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +189,6 @@ $userData = Session::get('user_data');
                                     @endif
                                 </div>
                             </div>
-
                             <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
@@ -260,7 +243,6 @@ $userData = Session::get('user_data');
                                 </h4> -->
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -269,372 +251,358 @@ $userData = Session::get('user_data');
 <div id="editor"></div>
 <!-- <a id="cmd" href="javascript:void(0);" class="export-btn" onclick="CreatePDFfromHTML()"><img src="{{URL::asset('public/after_login/new_ui/images/download-iccon.png')}}"></a>
  -->
-
 <a style="box-shadow: none;padding: 0;" href="javascript:void(0);" class="export-btn" onclick="window.print()" title="Download Print">
     <!-- <img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/export-download-icon.png')}}"> -->
     <img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/Icon_Download.png')}}">
-
-
-
-
-
-
 </a>
-
-
 <a style="box-shadow: none;padding: 0;" href="{{ url('/dashboard') }}" class="close-btn"><img style="width: 65px;" src="{{URL::asset('public/after_login/new_ui/images/export-cross-icon.png')}}" title="Close" style="width: 30px;"></a>
-
-
-
-
 @include('afterlogin.layouts.footer_new')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-
-
-
 <script type="text/javascript">
-    //Create PDf from HTML...
-    function CreatePDFfromHTML() {
-        // set attributes and src
-        var HTML_Width = $("#contentHtml").width();
-        var HTML_Height = $("#contentHtml").height();
-        var top_left_margin = 15;
-        var PDF_Width = HTML_Width + (top_left_margin * 2);
-        var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
-        var canvas_image_width = HTML_Width;
-        var canvas_image_height = HTML_Height;
-        var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+//Create PDf from HTML...
+function CreatePDFfromHTML() {
+    // set attributes and src
+    var HTML_Width = $("#contentHtml").width();
+    var HTML_Height = $("#contentHtml").height();
+    var top_left_margin = 15;
+    var PDF_Width = HTML_Width + (top_left_margin * 2);
+    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
-        html2canvas($("#contentHtml")[0]).then(function(canvas) {
-            var imgData = canvas.toDataURL("image/jpg", 1.0);
-            var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-            pdf.addImage(imgData, 'jpg', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-            for (var i = 1; i <= totalPDFPages; i++) {
-                pdf.addPage(PDF_Width, PDF_Height);
-                pdf.addImage(imgData, 'jpg', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
-            }
-            pdf.save("Analytics.pdf");
-        });
-    }
+    html2canvas($("#contentHtml")[0]).then(function(canvas) {
+        var imgData = canvas.toDataURL("image/jpg", 1.0);
+        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+        pdf.addImage(imgData, 'jpg', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+        for (var i = 1; i <= totalPDFPages; i++) {
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'jpg', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+        }
+        pdf.save("Analytics.pdf");
+    });
+}
+
 </script>
 <script>
-    /* time management */
-    Highcharts.chart('time_management', {
-        credits: {
-            enabled: false
-        },
-        chart: {
-            type: 'column',
-            height: 270
-        },
+/* time management */
+Highcharts.chart('time_management', {
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'column',
+        height: 270
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: <?php print_r($date1); ?>
+    },
+    yAxis: {
+        allowDecimals: false,
+        min: 0,
         title: {
-            text: ''
+            text: 'Average Time Taken (s)'
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        formatter: function() {
+            return '<b>' + this.x + '</b><br/>' +
+                this.series.name + ': ' + this.y + '<br/>' +
+                'Total: ' + this.point.stackTotal;
+        }
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal'
         },
-        xAxis: {
-            categories: <?php print_r($date1); ?>
-        },
-        yAxis: {
-            allowDecimals: false,
-            min: 0,
-            title: {
-                text: 'Average Time Taken (s)'
-            }
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.x + '</b><br/>' +
-                    this.series.name + ': ' + this.y + '<br/>' +
-                    'Total: ' + this.point.stackTotal;
-            }
-        },
-        plotOptions: {
-            column: {
-                stacking: 'normal'
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
-                }
-            },
-            series: {
-                events: {
-                    legendItemClick: function() {
-                        return false;
-                    }
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
                 }
             }
         },
-        series: [{
-            name: 'Correct Answer Time',
-            data: <?php print_r($correctTime1); ?>,
-            color: '#6ec986'
-        }, {
-            name: 'Incorrect Answer Time',
-            data: <?php print_r($incorrectTime1); ?>,
-            color: '#ff9999'
-        }]
-    });
-
-    /* avegare time spend */
-
-    Highcharts.chart('accPer1', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
-        title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Average Time Spent (s)'
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
             }
-        },
-        exporting: {
-            enabled: false
-        },
-        xAxis: {
-            categories: <?php print_r($days); ?>
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($classAccuracy); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($stuAccuracy); ?>,
-            color: '#6ec986',
-        }]
-    });
+        }
+    },
+    series: [{
+        name: 'Correct Answer Time',
+        data: <?php print_r($correctTime1); ?>,
+        color: '#6ec986'
+    }, {
+        name: 'Incorrect Answer Time',
+        data: <?php print_r($incorrectTime1); ?>,
+        color: '#ff9999'
+    }]
+});
 
-    /* ACCURACY PERCENTAGE */
-    Highcharts.chart('accPer', {
-        chart: {
-            type: 'spline',
-            height: 270
-        },
-        credits: {
-            enabled: false
-        },
-        legend: {
-            symbolWidth: 40
-        },
+/* avegare time spend */
+
+Highcharts.chart('accPer1', {
+    chart: {
+        type: 'spline',
+        height: 270
+    },
+    credits: {
+        enabled: false
+    },
+    legend: {
+        symbolWidth: 40
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
         title: {
-            text: ''
-        },
-        yAxis: {
-            title: {
-                text: 'Accuracy Percentage'
-            }
-        },
-        exporting: {
-            enabled: false
-        },
-        xAxis: {
-            categories: <?php print_r($day); ?>
-        },
-        series: [{
-            name: 'Class Average',
-            data: <?php print_r($classAcc); ?>,
-            color: '#ff9999',
-            dashStyle: 'ShortDash'
-        }, {
-            name: 'Student Average',
-            data: <?php print_r($stuAcc); ?>,
-            color: '#6ec986',
-        }]
-    });
+            text: 'Average Time Spent (s)'
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    xAxis: {
+        categories: <?php print_r($days); ?>
+    },
+    series: [{
+        name: 'Class Average',
+        data: <?php print_r($classAccuracy); ?>,
+        color: '#ff9999',
+        dashStyle: 'ShortDash'
+    }, {
+        name: 'Student Average',
+        data: <?php print_r($stuAccuracy); ?>,
+        color: '#6ec986',
+    }]
+});
 
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                $(this).parent("p").hide();
-            });
-            $(this).siblings("p").show();
-        });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+/* ACCURACY PERCENTAGE */
+Highcharts.chart('accPer', {
+    chart: {
+        type: 'spline',
+        height: 270
+    },
+    credits: {
+        enabled: false
+    },
+    legend: {
+        symbolWidth: 40
+    },
+    title: {
+        text: ''
+    },
+    yAxis: {
+        title: {
+            text: 'Accuracy Percentage'
+        }
+    },
+    exporting: {
+        enabled: false
+    },
+    xAxis: {
+        categories: <?php print_r($day); ?>
+    },
+    series: [{
+        name: 'Class Average',
+        data: <?php print_r($classAcc); ?>,
+        color: '#ff9999',
+        dashStyle: 'ShortDash'
+    }, {
+        name: 'Student Average',
+        data: <?php print_r($stuAcc); ?>,
+        color: '#6ec986',
+    }]
+});
+
+$(document).ready(function() {
+    $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        $(".dashboard-cards-block .bg-white>small p>span").each(function() {
             $(this).parent("p").hide();
         });
+        $(this).siblings("p").show();
     });
+    $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+        $(this).parent("p").hide();
+    });
+});
+
 </script>
 <script>
-    /* score comparison graph */
-    /* Highcharts.chart('comparegraph', {
-        chart: {
-            type: 'column',
-            height: 185,
-        },
+/* score comparison graph */
+/* Highcharts.chart('comparegraph', {
+    chart: {
+        type: 'column',
+        height: 185,
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['']
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        title: {
+            text: 'Score %'
+        }
+    }, {
         title: {
             text: ''
         },
-        xAxis: {
-            categories: ['']
-        },
-        yAxis: [{
-            min: 0,
-            max: 100,
-            title: {
-                text: 'Score %'
+        opposite: true
+    }],
+    legend: {
+        shadow: false
+    },
+    tooltip: {
+        shared: true,
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            grouping: false,
+            shadow: false,
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
             }
-        }, {
-            title: {
-                text: ''
-            },
-            opposite: true
-        }],
-        legend: {
-            shadow: false
         },
-        tooltip: {
-            shared: true,
-            enabled: false
-        },
-        plotOptions: {
-            column: {
-                grouping: false,
-                shadow: false,
-                borderWidth: 0,
-                dataLabels: {
-                    enabled: true,
+        series: {
+            events: {
+                legendItemClick: function() {
+                    return false;
+                }
+            }
+        }
+    },
+
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    series: [{
+        name: 'Previous score',
+        color: '#d0f3ff',
+        data: [<?php // echo $mockTestScorePre; 
+                ?>],
+        pointPadding: 0.3,
+        pointPlacement: 0,
+        dataLabels: {
+            enabled: true,
+            align: 'left',
+            x: 0,
+            y: 0,
+            rotation: 0,
+        }
+    }, {
+        name: 'Latest score',
+        color: '#21ccff',
+        data: [<?php // echo $mockTestScoreCurr; 
+                ?>],
+        pointPadding: 0.3,
+        pointPlacement: 0.1,
+        dataLabels: {
+            enabled: true,
+            align: 'left',
+            x: 0,
+            y: 0,
+            rotation: 0,
+        }
+    }]
+}); */
+/* score comparison graph */
+
+
+/* Score Pie Chart */
+Highcharts.chart('scorecontainer', {
+    chart: {
+        height: 160,
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false,
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingRight: 0,
+    },
+    title: {
+        text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$myqScore}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 60
+    },
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: '<b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: false,
+                distance: 0,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
                 }
             },
-            series: {
+            point: {
                 events: {
                     legendItemClick: function() {
+                        this.slice(null);
                         return false;
                     }
                 }
-            }
-        },
+            },
+            startAngle: -140,
+            endAngle: 140,
+            center: ['50%', '50%'],
+            size: '100%'
+        }
+    },
+    series: [{
+        type: 'pie',
 
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        series: [{
-            name: 'Previous score',
-            color: '#d0f3ff',
-            data: [<?php // echo $mockTestScorePre; 
-                    ?>],
-            pointPadding: 0.3,
-            pointPlacement: 0,
-            dataLabels: {
-                enabled: true,
-                align: 'left',
-                x: 0,
-                y: 0,
-                rotation: 0,
-            }
-        }, {
-            name: 'Latest score',
-            color: '#21ccff',
-            data: [<?php // echo $mockTestScoreCurr; 
-                    ?>],
-            pointPadding: 0.3,
-            pointPlacement: 0.1,
-            dataLabels: {
-                enabled: true,
-                align: 'left',
-                x: 0,
-                y: 0,
-                rotation: 0,
-            }
-        }]
-    }); */
-    /* score comparison graph */
-
-
-    /* Score Pie Chart */
-    Highcharts.chart('scorecontainer', {
-        chart: {
-            height: 160,
-            plotBackgroundColor: null,
-            plotBorderWidth: 0,
-            plotShadow: false,
-            spacingTop: 0,
-            spacingBottom: 0,
-            spacingRight: 0,
-        },
-        title: {
-            text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$myqScore}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
-            align: 'center',
-            verticalAlign: 'middle',
-            y: 60
-        },
-        credits: {
-            enabled: false
-        },
-        exporting: {
-            enabled: false
-        },
-        tooltip: {
-            pointFormat: '<b>{point.percentage:.1f}%</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                dataLabels: {
-                    enabled: false,
-                    distance: 0,
-                    style: {
-                        fontWeight: 'bold',
-                        color: 'white'
-                    }
-                },
-                point: {
-                    events: {
-                        legendItemClick: function() {
-                            this.slice(null);
-                            return false;
-                        }
-                    }
-                },
-                startAngle: -140,
-                endAngle: 140,
-                center: ['50%', '50%'],
-                size: '100%'
-            }
-        },
-        series: [{
-            type: 'pie',
-
-            innerSize: '85%',
-            data: [{
-                    name: 'Score',
-                    y: <?php echo $myqScore;
+        innerSize: '85%',
+        data: [{
+                name: 'Score',
+                y: <?php echo $myqScore;
                         ?>,
-                    color: '#21ccff'
-                },
-                {
-                    name: '',
-                    y: <?php echo $myqOther;
+                color: '#21ccff'
+            },
+            {
+                name: '',
+                y: <?php echo $myqOther;
                         ?>,
-                    color: '#d0f3ff'
-                }
-            ]
+                color: '#d0f3ff'
+            }
+        ]
 
-        }]
-    });
+    }]
+});
+
 </script>
-
 @endsection
