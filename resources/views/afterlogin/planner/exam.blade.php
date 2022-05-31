@@ -1010,6 +1010,7 @@ $questtype='radio';
             $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
             $('#qoption_err_' + quest_id).addClass('text-danger');
             $('#qoption_err_' + quest_id).fadeIn('fast');
+            $('#qoption_err_' + quest_id)[0].scrollIntoView();
             return false;
         }
 

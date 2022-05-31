@@ -1114,9 +1114,10 @@ $question_type = "Numerical";
             var res_value = $("#quest_option_" + quest_id).val();
 
             if (res_value === '') {
-                $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
+                $('#qoption_err_' + quest_id).html("To be clear, nothing is filled.");
                 $('#qoption_err_' + quest_id).addClass('text-danger');
                 $('#qoption_err_' + quest_id).fadeIn('fast');
+                $('#qoption_err_' + quest_id)[0].scrollIntoView();
 
             } else {
                 $("#quest_option_" + quest_id).val('');
@@ -1130,7 +1131,7 @@ $question_type = "Numerical";
                 $('#qoption_err_' + quest_id).html("No option has been selected to clear.");
                 $('#qoption_err_' + quest_id).addClass('text-danger');
                 $('#qoption_err_' + quest_id).fadeIn('fast');
-
+                $('#qoption_err_' + quest_id)[0].scrollIntoView();
             }
         }
 
