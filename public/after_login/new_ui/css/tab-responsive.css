@@ -3,7 +3,7 @@
 }
 @media screen and (max-height:700px){
     .edit-form{height: 480px !important;}
-    #editProfile_form{height: 354px;}
+    #editProfile_form{height: 356px;}
 }
 
 @media screen and (max-width:1380px){
