@@ -1260,7 +1260,7 @@ html.scrollnone .main-wrapper {
 
 .subscriptionBox .price {
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #231f20;
 }
@@ -4714,12 +4714,13 @@ div#sub-planner {
 .profile-show button {
     width: 100%;
     border: none;
-    border-radius: 20px;
+    border-radius: 14px;
     background: #00c4ff;
     color: #fff;
-    font-weight: 500;
-    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
     padding: 15px 20px;
+    font-size: 15px;
 }
 
 .profile-show button:hover {
@@ -9649,3 +9650,11 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 #topIIC .dashboard-title{margin-top: 0px;}
 #topIIC small {    top: 27px;}
 .procress_inner small{top: 18px;}
+
+.category_selct #dropdownMenuLink.btn-light {background: #00baff!important;}
+.category_selct #dropdownMenuLink.btn-light svg path~path {stroke: #fff!important; }
+
+button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.btn-light.ms-auto.text-danger.rounded-0.show svg path~path {
+    stroke: #fff!important;
+}
+ 
