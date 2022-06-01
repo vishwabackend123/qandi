@@ -1030,7 +1030,7 @@ a.clearRes:hover {
     overflow: overlay;
 }
 .mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div{
-    max-height: calc(100vh - 300px)!important; 
+    max-height: calc(100vh - 350px)!important; 
     overflow: overlay;
 }
 .mocktest-attempted-wrapper{
