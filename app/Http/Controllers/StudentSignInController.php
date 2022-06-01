@@ -320,6 +320,9 @@ class StudentSignInController extends Controller
                             $response['mobile'] = $mobile_num;
                             $response['message'] = $succ_msg;
                             //  $response['redirect_url'] = url('dashboard');
+                            $user_Data = Auth::user();
+                            Session::put('user_data', $user_Data);
+
                             return json_encode($response);
                         } else {
                             $response['status'] = 400;
