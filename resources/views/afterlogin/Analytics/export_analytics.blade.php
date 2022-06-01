@@ -189,7 +189,7 @@ $userData = Session::get('user_data');
                                     @endif
                                 </div>
                             </div>
-                            <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center">
+                            <div class="bg-white shadow-lg p-3 h-100 px-5 mt-3 text-center export_class">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
                                     <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -204,7 +204,7 @@ $userData = Session::get('user_data');
                                 <div id="time_management"></div>
                                 <!--p class="text-center text-danger mt-3"><small>Investing your time in correctly answering questions is the key to success.</small></p-->
                             </div>
-                            <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5">
+                            <div class="bg-white shadow-lg p-3 h-100 mt-3 px-5 export_class">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
                                     <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -219,7 +219,7 @@ $userData = Session::get('user_data');
                                 <div id="accPer1"></div>
                                 <!--p class="text-center text-danger mt-3 px-5"><small>Lowering this average will add miles to your success journey</small></p-->
                             </div>
-                            <div class="bg-white shadow-lg p-3 px-5 mt-3">
+                            <div class="bg-white shadow-lg p-3 px-5 mt-3 export_class">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
                                     <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
