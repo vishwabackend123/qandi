@@ -29,12 +29,11 @@ $userData = Session::get('user_data');
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 @if(!empty($schedule_list))
                                 @php
-                                $currentDate = date('Y-m-d');
-                                $today_top=date('Y-m-d', strtotime($currentDate));
+                                $today_top = date('d-m-y');;
+
                                 $start_date_top = $schedule_list[0]->start_date;
                                 $end_date_top =$schedule_list[0]->end_date;
-                                $dateBegin = date('Y-m-d', strtotime($start_date_top));
-                                $dateEnd = date('Y-m-d', strtotime($end_date_top));
+
                                 $testCompleted_yn=$schedule_list[0]->test_completed_yn;
                                 @endphp
 
@@ -44,7 +43,7 @@ $userData = Session::get('user_data');
                                         <span class="mb-4 d-block"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <h2 class="mt-0">{{$schedule_list[0]->exam_name}}</h2>
-                                            @if(($today_top >= $dateBegin) && ($today_top <= $dateEnd)) <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>
+                                            @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>
                                                 @endif
                                         </div>
                                         <div class="d-flex justify-content-between flex-wrap">
@@ -89,11 +88,7 @@ $userData = Session::get('user_data');
                                         @endphp
                                         @foreach($schedule_list as $key=>$sche)
                                         @php
-
-                                        $start_date = $sche->start_date;
-                                        $end_date =$sche->end_date;
                                         $cDate = date('d-m-y');
-
                                         $start_date_up = $sche->start_date;
                                         $end_date_up =$sche->end_date;
 
@@ -102,7 +97,7 @@ $userData = Session::get('user_data');
                                             <li> <span class="sub-details">{{$sche->exam_name}}</span>
                                             </li>
                                             @php
-                                            list( $day,$month, $year) =explode("-",$start_date);
+                                            list( $day,$month, $year) =explode("-",$start_date_up);
                                             $year=2000+$year;
                                             $update_date=$day.'-'.$month.'-'.$year;
                                             $newDate = date("d M Y", strtotime($update_date));
@@ -111,7 +106,7 @@ $userData = Session::get('user_data');
                                             <li><strong>Start Date: {{$start_date_new}}</strong>
                                             </li>
                                             @php
-                                            list( $day,$month, $year) =explode("-",$end_date);
+                                            list( $day,$month, $year) =explode("-",$end_date_up);
                                             $year=2000+$year;
                                             $update_date=$day.'-'.$month.'-'.$year;
                                             $newDate = date("d M Y", strtotime($update_date));
@@ -121,24 +116,24 @@ $userData = Session::get('user_data');
                                             </li>
                                             <li style="font-weight:600;">{{$sche->questions_count}} Questions</a>
                                             </li>
-                                            <li>
+                                            <!--  <li>
 
 
                                                 @if(($cDate >= $start_date_up) && ($cDate <= $end_date_up)) <a href="{{route('live_exam',$sche->schedule_id)}}">
                                                     <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                                     </a>
                                                     @endif
-                                            </li>
+                                            </li> -->
                                             </ul>
                                             @else
                                             @php
-                                            list( $day,$month, $year) =explode("-",$start_date);
+                                            list( $day,$month, $year) =explode("-",$start_date_up);
                                             $year=2000+$year;
                                             $update_date=$day.'-'.$month.'-'.$year;
                                             $newDate = date("d M Y", strtotime($update_date));
                                             $start_date_new = date('jS F Y', strtotime($newDate));
 
-                                            list( $day,$month, $year) =explode("-",$end_date);
+                                            list( $day,$month, $year) =explode("-",$end_date_up);
                                             $year=2000+$year;
                                             $update_date=$day.'-'.$month.'-'.$year;
                                             $newDate = date("d M Y", strtotime($update_date));

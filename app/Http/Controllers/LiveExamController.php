@@ -67,17 +67,19 @@ class LiveExamController extends Controller
             $status = isset($aResponse['sucess']) ? $aResponse['sucess'] : false;
 
             if ($status == true) {
-                $schedule_list = isset($aResponse['upcomming-live-exam']) ? $aResponse['upcomming-live-exam'] : [];
+                $schedule_arr = isset($aResponse['upcomming-live-exam']) ? $aResponse['upcomming-live-exam'] : [];
+                $collection = collect($schedule_arr);
+                $schedule_list = $collection->where('test_completed_yn', 'N')->values()->All();
+
                 $completed_list = isset($aResponse['completed-live-exam']) ? $aResponse['completed-live-exam'] : [];
             } else {
                 $schedule_list = [];
                 $completed_list = [];
             }
-            usort($schedule_list, function($a, $b)
-            {
+            usort($schedule_list, function ($a, $b) {
                 return strcmp($a->end_date, $b->end_date);
             });
-            
+
             return view('afterlogin.LiveExam.live_exam_list', compact('schedule_list', 'completed_list'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
