@@ -14,8 +14,18 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * ExamCustomController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class ExamCustomController extends Controller
 {
+    use CommonTrait;
     /**
      * Create a new controller instance.
      *
@@ -25,9 +35,13 @@ class ExamCustomController extends Controller
     {
         $this->middleware('auth');
     }
-    //
-    use CommonTrait;
-
+    /**
+     * Index
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function index(Request $request)
     {
         try {
@@ -45,7 +59,7 @@ class ExamCustomController extends Controller
             $api_url = env('API_URL') . 'api/subjects/' . $exam_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -54,7 +68,8 @@ class ExamCustomController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -72,20 +87,14 @@ class ExamCustomController extends Controller
             if (!empty($subject_list)) {
                 Redis::set($cacheKey, json_encode($subject_list));
             }
-
-            /* $active_subject = !empty($subject_list) ? head($subject_list) : [];
-            $active_subject_id = isset($active_subject->sub_id) ? $active_subject->sub_id : '';
-     */
             $subject_chapter_list = [];
 
             if (!empty($subject_list)) {
                 foreach ($subject_list as $row) {
                     $subject_id = $row->id;
-                    $aSubject_chapters = $this->get_subject_chapter($subject_id);
+                    $aSubject_chapters = $this->getSubjectChapter($subject_id);
 
                     $subject_chapter_list[$subject_id] = $aSubject_chapters;
-
-                    //$subject_chapter_list[$subject_id] = !empty($topTen) ? $topTen : [];
                 }
             }
 
@@ -94,8 +103,14 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function get_subject_chapter($active_subject_id)
+    /**
+     * Get subject chapter
+     *
+     * @param mixed $active_subject_id current subject id
+     *
+     * @return void
+     */
+    public function getSubjectChapter($active_subject_id)
     {
         try {
             $userData = Session::get('user_data');
@@ -107,7 +122,7 @@ class ExamCustomController extends Controller
             $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -116,7 +131,8 @@ class ExamCustomController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -132,9 +148,7 @@ class ExamCustomController extends Controller
             }
             $collection = collect($chapter_list);
 
-            $sorted = $collection->sortBy([
-                ['chapter_name', 'asc']
-            ]);
+            $sorted = $collection->sortBy([['chapter_name', 'asc']]);
             $chapters = $sorted->values()->all();
 
             return $chapters;
@@ -142,8 +156,14 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function get_subject_topics($active_subject_id)
+    /**
+     * Get Subject topics
+     *
+     * @param mixed $active_subject_id active subject id
+     *
+     * @return void
+     */
+    public function getSubjectTopics($active_subject_id)
     {
         try {
             $cacheKey = 'exam_subjects_topics:' . $active_subject_id;
@@ -151,7 +171,7 @@ class ExamCustomController extends Controller
             $api_url = Config::get('constants.API_php_URL') . 'api/getTopics/' . $active_subject_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -160,7 +180,8 @@ class ExamCustomController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -180,9 +201,14 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function subject_exam(Request $request)
+    /**
+     * Subject exam
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function subjectExam(Request $request)
     {
         try {
             $filtered_subject = [];
@@ -219,8 +245,7 @@ class ExamCustomController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/custom-question-selection';
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -235,7 +260,8 @@ class ExamCustomController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $response_json = str_replace('NaN', '""', $response_json);
@@ -348,8 +374,14 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function shuffle_assoc($list)
+    /**
+     * Shuffle assoc
+     *
+     * @param mixed $list get list type input
+     *
+     * @return void
+     */
+    public function shuffleAssoc($list)
     {
         try {
             if (!is_array($list)) {
@@ -367,9 +399,15 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function ajax_next_question($quest_id, Request $request)
+    /**
+     * By Ajax get next question
+     *
+     * @param mixed   $quest_id question id
+     * @param Request $request  recieve the body request data
+     *
+     * @return void
+     */
+    public function ajaxNextQuestion($quest_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -445,7 +483,13 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * SaveAnswer
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function saveAnswer(Request $request)
     {
         try {
@@ -539,7 +583,13 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * ClearResponse
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function clearResponse(Request $request)
     {
         try {
@@ -589,9 +639,15 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function ajax_next_subject_question($subject_id, Request $request)
+    /**
+     * Ajax next subject question
+     *
+     * @param mixed   $subject_id subject id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
+    public function ajaxNextSubjectQuestion($subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -678,7 +734,14 @@ class ExamCustomController extends Controller
         }
     }
 
-
+    /**
+     * ChaptersTopic
+     *
+     * @param Request $request    recieve the body request data
+     * @param mixed   $chapter_id chapter id
+     *
+     * @return void
+     */
     public function chaptersTopic(Request $request, $chapter_id)
     {
         try {
@@ -688,12 +751,10 @@ class ExamCustomController extends Controller
             $exam_id = $userData->grade_id;
 
             $filter_by = isset($request->filter_type) ? $request->filter_type : '';
-            //$topics = DB::table('topics')->select('id as topic_id', 'topic_name')->where('chapter_id', $chapter_id)->get()->toArray();
-
             $api_url = env('API_URL') . 'api/topics-by-chapter-id/' . $user_id . '/' . $chapter_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -702,7 +763,8 @@ class ExamCustomController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -721,29 +783,19 @@ class ExamCustomController extends Controller
 
             $collect_topic = collect($topics_list);
             if ($filter_by == 'priority') {
-                $sorted = $collect_topic->sortBy([
-                    ['topic_priority', 'asc']
-                ]);
+                $sorted = $collect_topic->sortBy([['topic_priority', 'asc']]);
                 $topics = $sorted->values()->all();
             } elseif ($filter_by == 'sequence') {
-                $sorted = $collect_topic->sortBy([
-                    ['topic_sequence', 'asc']
-                ]);
+                $sorted = $collect_topic->sortBy([['topic_sequence', 'asc']]);
                 $topics = $sorted->values()->all();
             } elseif ($filter_by == 'prof_asc') {
-                $sorted = $collect_topic->sortBy([
-                    ['topic_score', 'asc']
-                ]);
+                $sorted = $collect_topic->sortBy([['topic_score', 'asc']]);
                 $topics = $sorted->values()->all();
             } elseif ($filter_by == 'prof_desc') {
-                $sorted = $collect_topic->sortBy([
-                    ['topic_score', 'desc']
-                ]);
+                $sorted = $collect_topic->sortBy([['topic_score', 'desc']]);
                 $topics = $sorted->values()->all();
             } else {
-                $sorted = $collect_topic->sortBy([
-                    ['topic_name', 'asc']
-                ]);
+                $sorted = $collect_topic->sortBy([['topic_name', 'asc']]);
                 $topics = $sorted->values()->all();
             }
 
@@ -752,9 +804,15 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function ajax_chapter_list($active_subject_id, Request $request)
+    /**
+     * Ajax chapter list
+     *
+     * @param mixed   $active_subject_id active subject id
+     * @param Request $request           recieve the body request data
+     *
+     * @return void
+     */
+    public function ajaxChapterList($active_subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -769,7 +827,7 @@ class ExamCustomController extends Controller
             $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -778,7 +836,8 @@ class ExamCustomController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -798,9 +857,15 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function filter_subject_chapter(Request $request, $active_subject_id)
+    /**
+     * Filter subject chapter
+     *
+     * @param Request $request           recieve the body request data
+     * @param mixed   $active_subject_id active subject id
+     *
+     * @return void
+     */
+    public function filterSubjectChapter(Request $request, $active_subject_id)
     {
         try {
             $userData = Session::get('user_data');
@@ -814,7 +879,7 @@ class ExamCustomController extends Controller
             $api_url = env('API_URL') . 'api/chapters/' . $user_id . '/' . $active_subject_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -823,7 +888,8 @@ class ExamCustomController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -840,29 +906,19 @@ class ExamCustomController extends Controller
 
             $collection = collect($chapter_list);
             if ($filter_by == 'asc') {
-                $sorted = $collection->sortBy([
-                    ['chapter_name', 'asc']
-                ]);
+                $sorted = $collection->sortBy([['chapter_name', 'asc']]);
                 $chapters = $sorted->values()->all();
             } elseif ($filter_by == 'desc') {
-                $sorted = $collection->sortBy([
-                    ['chapter_name', 'desc']
-                ]);
+                $sorted = $collection->sortBy([['chapter_name', 'desc']]);
                 $chapters = $sorted->values()->all();
             } elseif ($filter_by == 'prof_asc') {
-                $sorted = $collection->sortBy([
-                    ['chapter_score', 'asc']
-                ]);
+                $sorted = $collection->sortBy([['chapter_score', 'asc']]);
                 $chapters = $sorted->values()->all();
             } elseif ($filter_by == 'prof_desc') {
-                $sorted = $collection->sortBy([
-                    ['chapter_score', 'desc']
-                ]);
+                $sorted = $collection->sortBy([['chapter_score', 'desc']]);
                 $chapters = $sorted->values()->all();
             } else {
-                $sorted = $collection->sortBy([
-                    ['chapter_name', 'asc']
-                ]);
+                $sorted = $collection->sortBy([['chapter_name', 'asc']]);
                 $chapters = $sorted->values()->all();
             }
 
@@ -872,7 +928,14 @@ class ExamCustomController extends Controller
         }
     }
 
-
+    /**
+     * SaveQuestionTimeSession
+     *
+     * @param Request $request     recieve the body request data
+     * @param mixed   $question_id question id
+     *
+     * @return void
+     */
     public function saveQuestionTimeSession(Request $request, $question_id)
     {
         try {
@@ -918,9 +981,13 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    /* Chapter wise Adaptive api */
+    /**
+     * ChapterAdaptiveExam
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function chapterAdaptiveExam(Request $request)
     {
         try {
@@ -959,23 +1026,23 @@ class ExamCustomController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
+            $curl_option = array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json",
 
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => $request,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
-
-                ),
-            ));
+            ),
+        );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $response_json = str_replace('NaN', '""', $response_json);
@@ -1035,23 +1102,18 @@ class ExamCustomController extends Controller
             $prev_qKey = 0;
 
             if (isset($question_data) && !empty($question_data)) {
-                //$publicPath = url('/') . '/public/images/questions/';
-                // $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
-                // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                //$option_ques = str_replace("'", '"', $question_data->question_options);
+
                 $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
-                        // $option = str_replace('/public/images/questions/', $publicPath, $option);
                         $opArr[$key] = $option;
                     }
                 }
-                //$optionArray = $this->shuffle_assoc($opArr);
+
                 $optionArray = $opArr;
                 $option_data = $optionArray;
             } else {
@@ -1085,9 +1147,15 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function ajax_adaptive_question_chapter($key, Request $request)
+    /**
+     * Ajax adaptive question chapter
+     *
+     * @param mixed   $key     key
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function ajaxAdaptiveQuestionChapter($key, Request $request)
     {
         try {
             $qNo = $key + 1;
@@ -1169,8 +1237,14 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
+    /**
+     * SaveAdaptiveTimeSession
+     *
+     * @param Request $request     recieve the body request data
+     * @param mixed   $question_id question id
+     *
+     * @return void
+     */
     public function saveAdaptiveTimeSession(Request $request, $question_id)
     {
         try {
@@ -1218,7 +1292,13 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Adaptive Clear Response
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function adaptiveClearResponse(Request $request)
     {
         try {
@@ -1265,7 +1345,13 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * SaveAdaptiveAnswer
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function saveAdaptiveAnswer(Request $request)
     {
         try {
@@ -1328,7 +1414,15 @@ class ExamCustomController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Get Next Adpative Question
+     *
+     * @param mixed $session_id session_id
+     * @param mixed $nextkey    nextkey
+     * @param mixed $chapter_id chapter_id
+     *
+     * @return void
+     */
     public function getNextAdpativeQues($session_id, $nextkey, $chapter_id)
     {
         try {
@@ -1362,8 +1456,7 @@ class ExamCustomController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -1378,7 +1471,8 @@ class ExamCustomController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);

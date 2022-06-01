@@ -12,13 +12,24 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * BookmarkController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class BookmarkController extends Controller
 {
-    //
     /**
-     * method for call api and store question as bookmark
-     *  */
-
+     * Addbookmark
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function addbookmark(Request $request)
     {
         try {
@@ -37,16 +48,11 @@ class BookmarkController extends Controller
             $inputjson['chapter_id'] = (int)$chapter_id;
 
             $request = json_encode($inputjson);
-
-
-
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/bookmark-questions';
-
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
+            $curl_option=array(
+                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
                 CURLOPT_ENCODING => "",
@@ -56,10 +62,10 @@ class BookmarkController extends Controller
                 CURLOPT_CUSTOMREQUEST => "POST",
                 CURLOPT_POSTFIELDS => $request,
                 CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
-                ),
-            ));
+                "cache-control: no-cache",
+                "content-type: application/json"));
+            $curl = curl_init();
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);

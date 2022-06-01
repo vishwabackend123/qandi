@@ -13,12 +13,26 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use App\Http\Traits\CommonTrait;
 
+/**
+ * AssessmentExamController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class AssessmentExamController extends Controller
 {
-    //
     use CommonTrait;
-
-    public function assessment_exam(Request $request)
+    /**
+     * Assessment_exam
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function assessmentExam(Request $request)
     {
         try {
             $filtered_subject = [];
@@ -40,8 +54,7 @@ class AssessmentExamController extends Controller
 
             //$curl_url = $api_URL . 'api/assessment-question-selection';
             $curl_url = $api_URL . 'api/adaptive-assessment-mock-exam';
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -56,7 +69,8 @@ class AssessmentExamController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);
