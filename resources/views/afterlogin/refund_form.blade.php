@@ -79,7 +79,7 @@ $userData = Session::get('user_data');
                             <div class="mt-3 row">
                                 <div class="col-md-4 col-0"></div>
                                 <div class="col-md-8 col-12  text-md-start text-center">
-                                    <button type="submit" id="saveEdit" class="btn btn-danger m-0 rounded saveEdit">
+                                    <button type="submit" id="saveEdit" class="btn btn-danger m-0 rounded saveEdit disabled">
                                         Submit
                                     </button>
                                 </div>
