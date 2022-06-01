@@ -1,7 +1,6 @@
 @extends('afterlogin.layouts.app_new')
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
@@ -467,7 +466,8 @@ $question_type = "Numerical";
     </div>
 </div>
 
-@include('afterlogin.layouts.footer_new')
+<!-- @ include('afterlogin.layouts.footer_new') -->
+@include('afterlogin.layouts.exam_footer')
 
 <!-- page referesh disabled -->
 <script>
