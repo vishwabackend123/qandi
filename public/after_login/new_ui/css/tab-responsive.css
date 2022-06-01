@@ -1,10 +1,7 @@
 @media screen and (max-height:750px){
     .live-exam-list-wrapper .tab-wrapper.live-exam{height: auto;}
 }
-@media screen and (max-height:700px){
-    .edit-form{height: 480px !important;}
-    #editProfile_form{height: 356px;}
-}
+
 
 @media screen and (max-width:1380px){
     .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
@@ -693,4 +690,9 @@ div.counter{right:0;margin-right: -35px;}
 .overllanaly .cust-tab-content{padding-bottom:30px!important;}
 
 
+}
+
+@media screen and (max-height:700px){
+    .edit-form{height: 480px !important;}
+    #editProfile_form{height: 356px;}
 }
