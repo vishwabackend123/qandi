@@ -705,6 +705,10 @@
         });
 
         jQuery("#nodificbell").click(function() {
+            $("html, body, .wrapper-dashboard").animate({
+                scrollTop: 0
+            }, "100");
+        $('html').addClass("scrollnone")
             refresh_notification();
             jQuery("#collapsePlanner").hide();
             jQuery("#collapseNotification").show();
@@ -715,6 +719,10 @@
 
 
         jQuery("#plannCal").click(function() {
+            $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+            }, "100");
+            $('html').addClass("scrollnone")
             var curr = new Date;
             var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay() + 1));
             var firstDate = formatDate(firstday);
@@ -761,6 +769,10 @@
 
     $(document).ready(function() {
         $(".notification").click(function() {
+            $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+            }, "100");
+        $('html').addClass("scrollnone");
             $(".notification-right").show();
         });
         $(".close-bnt").click(function() {
@@ -856,6 +868,9 @@
     $(document).ready(function() {
 
         $(".user-pic-block").click(function() {
+            $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+        }, "100");
             $(".main-profile-section").addClass("blure-bg")
             $(".main-profile-section").toggle();
             $(".profile-show").hide();
@@ -1864,7 +1879,9 @@
 
 
     $('.UserPro,#plannCal,.notification,.close-bnt,.test-attend .custom-btn-gray').click(function() {
-        $('html').addClass("scrollnone")
+        $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+            }, "100");
         setTimeout(function() {
             if ($('.notification-block').hasClass('notification-block-active')) {
                 $('html').addClass("scrollnone")
@@ -1941,6 +1958,9 @@
     });
 
     $(".user-pic-block.UserPro").on('click', function() {
+        $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+        }, "100");
         $("#LeaDer , .profile-show").addClass("animateAccountCard");
         $(".profile-section ul li:first-child").addClass("active");
         $(".profile-section ul li:nth-child(2) , .profile-section ul li:nth-child(3)").removeClass("active");
