@@ -13,7 +13,9 @@ button {
     outline: none;
     text-decoration: none;
 }
-/* .live-exam-list-wrapper .tab-wrapper.live-exam{height: auto;} */
+.matrixpage-wrapper .course-star li span:last-child {
+    min-width: 58px;
+}
 .container-fluid.custom-page.mocktest-attempted-wrapper{height: auto!important;}
 .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {height: calc(100vh - 140px) !important;}
 .live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
