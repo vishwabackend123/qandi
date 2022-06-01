@@ -1992,4 +1992,11 @@
     $("a.clear-filter").click(function(){
         $(this).prev().removeClass(" category_selct");
     });
+
+    $('#plannCal,#nodificbell,.user-pic-block').click(function(){
+        $("html, body, .wrapper-dashboard").animate({
+            scrollTop: 0
+            }, "100");
+            $('html').addClass("scrollnone")
+    });
 </script>
