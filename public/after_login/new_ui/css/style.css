@@ -2740,7 +2740,7 @@ div.form-group.flds span.currect-email {
     max-height: 135px;
 }
 .countryscroll{ height: auto;
-    overflow: overlay;max-height: 122px;}
+    overflow: overlay;max-height: 122px;overflow-x: hidden;}
 .country-code-name {
     height: auto;
     overflow: hidden;
