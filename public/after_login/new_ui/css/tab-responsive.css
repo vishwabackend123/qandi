@@ -1,3 +1,8 @@
+@media screen and (min-height:751px){
+    .live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
+        max-height: calc(100vh - 665px)!important;
+    }
+}
 @media screen and (max-height:750px){
 .live-exam-list-wrapper .tab-wrapper.live-exam{height: auto;}
 }
