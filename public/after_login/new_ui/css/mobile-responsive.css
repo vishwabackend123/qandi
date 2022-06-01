@@ -750,6 +750,9 @@ margin-left: 5px;
 #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 13px;}
 }
 @media(max-width:385px){
+.subject-name {
+    margin-bottom: 10px !important;
+}
 .user-name-block {
 padding-right: 4px;
 }
