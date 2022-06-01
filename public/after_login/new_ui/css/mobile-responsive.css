@@ -1,4 +1,7 @@
 @media(max-width:767px){
+#plannerChapter .modal-dialog .modal-content.bg-light {
+    margin-left: 80px;
+}
 .swiper-slide .course-star li {
 display: flex;
 align-items: center;
@@ -601,6 +604,9 @@ padding-left: 0;
 a.backto-dash {position: static;margin: 10px;float: right;}
 }
 @media(max-width:500px){
+#plannerChapter .modal-dialog .modal-content.bg-light {
+    margin-left: 0;
+}
 .topics_breadcum{margin-right:0px;padding: 12px 6px;}
 .breadcrumb-item+.breadcrumb-item {
 padding-left: 0.2rem;
