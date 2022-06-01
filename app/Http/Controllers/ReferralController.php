@@ -31,9 +31,19 @@ class ReferralController extends Controller
 
             $refer_mails = explode(',', preg_replace('/\s+/', '', $referrals));
             if (in_array($user_mail, $refer_mails)) {
-                return json_encode(array('success' => false, 'message' => 'You cannot refer to yourself.'));
+                if (count($refer_mails) > 1) {
+                    return json_encode(array('success' => false, 'message' => 'You cannot refer to yourself. Please remove yourself email id.'));
+                } else {
+                    return json_encode(array('success' => false, 'message' => 'You cannot refer to yourself.'));
+                }
             }
+            if (count($refer_mails) > 1) {
+                $result = max(array_count_values($refer_mails));
 
+                if ($result > 1) {
+                    return json_encode(array('success' => false, 'message' => 'Please remove duplicate email.'));
+                }
+            }
 
             $inputjson = [
                 "student_id" => $user_id,
