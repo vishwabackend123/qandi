@@ -9663,3 +9663,7 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 .border.ps-3.ans.correctAnswer {
     border: solid 2px #37c027!important; 
 }
+
+ 
+.export_class > small{top: 39px;}
+.sub_export > small{top: 29px;}

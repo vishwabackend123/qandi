@@ -95,7 +95,7 @@ $userData = Session::get('user_data');
                                     </div>
                                 </div>
                             </div>
-                            <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5">
+                            <div id="myTabContent" class="bg-white shadow-lg p-3 mt-5 sub_export">
                                 <small>
                                     <!-- <i class="fa  fa-info"></i> -->
                                     <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
