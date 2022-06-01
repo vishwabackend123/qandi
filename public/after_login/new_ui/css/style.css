@@ -9665,5 +9665,5 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 }
 
  
-.export_class > small{top: 39px;}
-.sub_export > small{top: 29px;}
+.export_class > small{top: 28px !important;}
+.sub_export > small{top: 40px !important;}
