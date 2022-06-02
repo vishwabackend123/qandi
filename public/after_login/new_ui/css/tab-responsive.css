@@ -499,6 +499,9 @@ width: 60%;
 .custom-page .cust-tab-content .scroll-div {
 max-height: calc(100vh - 480px) !important;
 }
+.practice-series-lists .scroll-div-live-exm {
+    max-height: calc(100vh - 400px)!important;
+}
 .exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus,
 .exam_attempted_common_page
 .compLeteS
