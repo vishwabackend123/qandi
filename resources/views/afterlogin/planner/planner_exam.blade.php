@@ -948,8 +948,17 @@ $question_type = "Numerical";
             var res_value = $("#quest_option_" + question_id).val();
 
             if (res_value != '') {
-                if (res_value == '-') {
-                    var vld_msg = "enter valid value.";
+                const str = res_value;
+                const last = str.charAt(str.length - 1);
+
+                var decarr = res_value.split(".");
+
+                if (res_value == '-' || res_value == '-.') {
+                    var vld_msg = "Enter valid answer.";
+                } else if (last == '.') {
+                    var vld_msg = "Numeric values cannot end with a decimal.";
+                } else if (decarr[1].length > 2) {
+                    var vld_msg = "Numerical values were allowed up to two decimal places.";
                 } else {
                     option_id.push($("#quest_option_" + question_id).val());
                 }
@@ -1015,8 +1024,16 @@ $question_type = "Numerical";
         if (current_question_type == 11) {
             var res_value = $("#quest_option_" + question_id).val();
             if (res_value != '') {
-                if (res_value == '-') {
-                    var vld_msg = "enter valid value.";
+                const str = res_value;
+                const last = str.charAt(str.length - 1);
+                var decarr = res_value.split(".");
+
+                if (res_value == '-' || res_value == '-.') {
+                    var vld_msg = "Enter valid answer.";
+                } else if (last == '.') {
+                    var vld_msg = "Numeric values cannot end with a decimal.";
+                } else if (decarr[1].length > 2) {
+                    var vld_msg = "Numerical values were allowed up to two decimal places.";
                 } else {
                     option_id.push($("#quest_option_" + question_id).val());
                 }
