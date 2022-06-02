@@ -1,4 +1,5 @@
 @media(max-width:767px){
+    .custOmSld .bg-light{padding: 10px 7px!important;}
 #plannerChapter .modal-dialog .modal-content.bg-light {
     margin-left: 80px;
 }
