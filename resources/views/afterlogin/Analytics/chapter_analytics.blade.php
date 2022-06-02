@@ -1,4 +1,4 @@
-<div class="topics_breadcum bg-white">
+<div class="topics_breadcum">
     <div class="d-flex align-items-center mb-4">
         <a href="javascript:void(0);" onclick="backPage()" class="back_page"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
         <nav aria-label="breadcrumb">
