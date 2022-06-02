@@ -1,13 +1,11 @@
 @extends('afterlogin.layouts.app_new')
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
@@ -479,7 +477,8 @@ $question_type = "Numerical";
     </div>
 </div>
 
-@include('afterlogin.layouts.footer_new')
+<!-- @ include('afterlogin.layouts.footer_new') -->
+@include('afterlogin.layouts.exam_footer')
 <!-- page referesh disabled -->
 <script>
     var activeques_id = '{{$activeq_id}}';
