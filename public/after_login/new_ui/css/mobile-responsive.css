@@ -444,8 +444,6 @@ min-width: 138px;
 .practice_custom_page .status-id.rating {margin-right: 15px;}
 div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .paper-summery.pe-5{padding: 0 !important;}
 .exam_attempted_common_page .paper-summery .paper-sub{margin-bottom:15px;}
-.custom-page button.slick-prev{left: 0;}
-.custom-page button.slick-next.slick-arrow{right:0;}
 
 }
 @media(max-width:700px){

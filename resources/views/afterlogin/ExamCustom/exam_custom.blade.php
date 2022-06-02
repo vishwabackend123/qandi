@@ -592,7 +592,7 @@ $userData = Session::get('user_data');
     curr_text = curr_text.replace(/\s+/g, "");
 
     var updatetext = ((curr_text == 'HideTopics') ? 'Show Topics' : 'Hide Topics');
-    $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).text(updatetext);
+
 
     if (curr_text == 'HideTopics') {
       $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
@@ -765,10 +765,6 @@ $userData = Session::get('user_data');
 </script>
 
 <script>
-  $("body").on("click", ".expandTopicCollapse", function(event) {
-    //$(this).parents('.ClickBack').toggleClass('newelement');
-  });
-
   function scroll_topic(chapter_id, sub_id) {
     var scrollpas = $('#chapter_list_' + sub_id).scrollTop();
     var blockpos = $('#clicktopic_' + chapter_id).offset().top;
