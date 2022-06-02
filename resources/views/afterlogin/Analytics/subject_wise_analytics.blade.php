@@ -177,7 +177,7 @@
     <div class="col-sm-12">
         <div class="row" id="time-Avg-quest">
             <div class="col-lg-6 mt-3">
-                <div class="bg-white p-3 h-100 px-5 text-center">
+                <div class="bg-white p-3 h-100 px-5 text-center timeinner">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class="col-lg-6  mt-3">
-                <div class="bg-white p-3 h-100 px-5">
+                <div class="bg-white p-3 h-100 px-5 timeinner">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -222,7 +222,7 @@
         </div>
         <div class="row" id="marKs-trends">
             <div class="col-lg-6 mt-3">
-                <div class="bg-white p-3 h-100 px-5 text-center">
+                <div class="bg-white p-3 h-100 px-5 text-center timeinner">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
@@ -250,7 +250,7 @@
                 </div>
             </div>
             <div class="col-lg-6 mt-3">
-                <div class="bg-white pt-3  px-5">
+                <div class="bg-white pt-3  px-5 timeinner">
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">

@@ -9650,14 +9650,14 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 
 
 #time-Avg-quest small , .dashboard-cards-block #time-Avg-quest .bg-white > small , .dashboard-cards-block #marKs-trends .bg-white > small{
-    top:15.5px;
+    top:15px;
 }
 #comparegraph .highcharts-container{
     height: 175px !important;
 }
 #topIIC .dashboard-title{margin-top: 0px;}
 #topIIC small {    top: 27px;}
-.procress_inner small{top: 18px;}
+.procress_inner small{top: 18px !important;}
 
 .category_selct #dropdownMenuLink.btn-light {background: #00baff!important;}
 .category_selct #dropdownMenuLink.btn-light svg path~path {stroke: #fff!important; }
@@ -9672,3 +9672,4 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
  
 .export_class > small{top: 28px !important;}
 .sub_export > small{top: 40px !important;}
+.timeinner > small{ top:15px !important;}

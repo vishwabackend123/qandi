@@ -237,7 +237,7 @@ Route::any('/refund_form_submit', [App\Http\Controllers\SubscriptionController::
 
 /* Adaptive chapter wise planner route */
 Route::any('/plannerExam/{planner_id}', [App\Http\Controllers\PlannerController::class, 'plannerAdaptiveExam'])->name('plannerExam')->middleware('auth', 'menu');
-Route::any('/planner_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptive_chapter_exam_result'])->name('planner_exam_result')->middleware('auth', 'menu');
+Route::any('/planner_exam_result', [App\Http\Controllers\AdpativeExamController::class, 'adaptiveChapterExamResult'])->name('planner_exam_result')->middleware('auth', 'menu');
 
 
 
