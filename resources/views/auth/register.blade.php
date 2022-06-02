@@ -581,6 +581,38 @@ function resentOtp() {
 $('#user_name').bind("cut copy paste", function(e) {
     e.preventDefault();
 });
+function searchCity() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myMenu");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        txtValue = li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+}
+
+function searchState() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInputState");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myStateList");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        txtValue = li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
 
 </script>
 @endsection

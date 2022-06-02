@@ -439,7 +439,7 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-                $sOption .= '<div class="countryscroll"><ul>';
+                $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInputState" onkeyup="searchState()" /><ul id="myStateList">';
 
                 foreach ($state_list as $keyaState => $oState) {
                     $sOption .= '<li onClick="selectState(`' . $oState . '`)">' . $oState . '</li>';
