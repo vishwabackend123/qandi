@@ -497,7 +497,7 @@ right: 9%;
 width: 60%;
 }
 .custom-page .cust-tab-content .scroll-div {
-max-height: calc(100vh - 437px) !important;
+max-height: calc(100vh - 480px) !important;
 }
 .exam_attempted_common_page .compLeteS .collapse .p-4.full-syllabus,
 .exam_attempted_common_page
