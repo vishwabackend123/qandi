@@ -13,6 +13,8 @@ button {
     outline: none;
     text-decoration: none;
 }
+.practice-series-lists #scroll-mobile , .practice_custom_page #scroll-mobile , 
+.mocktest-attempted-wrapper #scroll-mobile, .live-exam-list-wrapper #scroll-mobile{overflow-x: hidden!important;}
 .matrixpage-wrapper .course-star li span:last-child {
     min-width: 58px;
 }
