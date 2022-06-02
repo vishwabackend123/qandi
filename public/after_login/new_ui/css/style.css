@@ -13,6 +13,8 @@ button {
     outline: none;
     text-decoration: none;
 }
+.practice-series-lists #scroll-mobile , .practice_custom_page #scroll-mobile , 
+.mocktest-attempted-wrapper #scroll-mobile, .live-exam-list-wrapper #scroll-mobile{overflow-x: hidden!important;}
 .matrixpage-wrapper .course-star li span:last-child {
     min-width: 58px;
 }
@@ -819,6 +821,7 @@ div#arrow-left-btm .inner-arrow-left-btm {
 .cust-tabs.nav.nav-tabs .nav-link {
     min-width: 150px;
     line-height: 30px;
+    cursor: pointer;
 }
 
 .subscription .profile-picture-txt .p-text p {
@@ -2502,7 +2505,7 @@ a.disabled-btn {
     width: 100%;
     justify-content: space-between;
     align-items: center;position: absolute;
-    bottom: 0px;padding-right:10px;
+    bottom: 6px;padding-right:10px;
 }
 
 #editProfile_form .form-btns button#cancelEdit,
@@ -5770,6 +5773,7 @@ span.profile-img-user {
     bottom: -1px;
     /* border-right: 1px solid transparent; */
     /* border-top: 1px solid transparent; */
+    cursor: initial !important;
 }
 
 .cust-tabs .nav-link.active:after {
@@ -5788,6 +5792,7 @@ span.profile-img-user {
     bottom: -1px;
     /* border-right: 1px solid transparent; */
     /* border-top: 1px solid transparent; */
+    cursor: initial !important;
 }
 
 .tab-wrapper .nav-tabs {
@@ -9645,14 +9650,14 @@ button.PayBttn.btn.px-5.rounded-0.fs-4 {
 
 
 #time-Avg-quest small , .dashboard-cards-block #time-Avg-quest .bg-white > small , .dashboard-cards-block #marKs-trends .bg-white > small{
-    top:15.5px;
+    top:15px;
 }
 #comparegraph .highcharts-container{
     height: 175px !important;
 }
 #topIIC .dashboard-title{margin-top: 0px;}
 #topIIC small {    top: 27px;}
-.procress_inner small{top: 18px;}
+.procress_inner small{top: 18px !important;}
 
 .category_selct #dropdownMenuLink.btn-light {background: #00baff!important;}
 .category_selct #dropdownMenuLink.btn-light svg path~path {stroke: #fff!important; }
@@ -9667,3 +9672,4 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
  
 .export_class > small{top: 28px !important;}
 .sub_export > small{top: 40px !important;}
+.timeinner > small{ top:15px !important;}
