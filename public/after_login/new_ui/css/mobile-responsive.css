@@ -26,7 +26,7 @@ height: 325px;
 min-width: auto;
 }
 .exam_attempted_common_page .compLeteS, .practice_custom_page .compLeteS {
-padding: 15px 15px 15px;
+padding: 15px 10px 15px;
 }
 .exam_attempted_common_page .result-list-btns {
 margin-left: 0;
@@ -423,8 +423,10 @@ height:4px;
 div.scroll-div .compLeteS div.d-flex.px-4{padding-left:0!important;padding-right: 20px!important;}
 .practice_custom_page .Flat-left form#topic_form{margin-top:12px;}
 .practice_custom_page .btn-clear-sel , .practice_custom_page .btn-topic{width: auto!important;    margin-top: 0;}
-#home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn, 
-#home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.btn-sm.sectionBtn, .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn {
+#home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.btn-sm.sectionBtn,
+ .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn, 
+#home .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.btn-sm.sectionBtn,
+ .exam_attempted_common_page .custom-exam-subjects a.btn.btn-outline-primary.sectionBtn {
 min-width: 138px;
 }
 .practice-series-lists .exam_attempted_common_page .custom-exam-subjects a.btn.btn-primary.sectionBtn,
