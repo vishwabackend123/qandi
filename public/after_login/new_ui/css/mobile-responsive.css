@@ -60,7 +60,7 @@ bottom: 0;
 margin: 0;
 }
 .course-star{width: 100%;}
-.custom-page .cust-tab-content{padding-bottom: 30px!important;}
+.custom-page .cust-tab-content{padding-bottom: 30px!important;padding-left:6px!important;}
 .question-block{height:250px;}
 .tab-btn-box{padding:0px}
 .examSect div#myTabContent .tab-pane{padding: 15px 10px;}
