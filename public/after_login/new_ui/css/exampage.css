@@ -984,7 +984,8 @@ a.clearRes:hover {
     overflow: overlay;
 }
 .custom-page.practice_custom_page .cust-tab-content .scroll-div  {
-    max-height: calc(100vh - 430px) !important;
+    /* max-height: calc(100vh - 430px) !important; */
+    max-height: calc(100vh - 430px) ;
 }
   .scroll-div-live-exm{
     max-height: calc(100vh - 360px) !important;
