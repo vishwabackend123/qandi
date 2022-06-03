@@ -21,7 +21,7 @@ button {
 .container-fluid.custom-page.mocktest-attempted-wrapper{height: auto!important;}
 .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {height: calc(100vh - 180px) !important;}
 .live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
-    max-height: calc(100vh - 413px) !important;
+    max-height: calc(100vh - 440px) !important;
     overflow: overlay;
 }
 .live-exam-list-wrapper .scroll-div{
@@ -204,7 +204,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
     font-size: 16px;
 }
 .exam_attempted_common_page .scroll-div {
-    margin-top: 70px;
+    margin-top: 50px;
     padding-bottom: 50px;
     /* max-height: calc(100vh - 400px)!important;
     overflow: overlay; */
