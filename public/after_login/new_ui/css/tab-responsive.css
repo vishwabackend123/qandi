@@ -24,6 +24,9 @@ min-width: 122px;
 .custom-page .slick-slide .status-id .star-ratings-css {
 margin-left: 0;
 }
+.examSect button.arrow.prev-arow{left:6px}
+.examSect button.arrow.next-arow {
+    right: -18px;}
 }
 @media screen and (max-width:1199px){
 .goto-exam-btn {
