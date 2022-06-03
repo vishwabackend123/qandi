@@ -626,7 +626,6 @@ a.backto-dash {position: static;margin: 10px;float: right;}
 }
 @media(max-width:500px){
     .clear-filter {
-       
         font-size: 12px;
         padding-left: 7px;
     }
