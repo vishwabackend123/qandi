@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {
+    height: auto !important;
+}
     .custom-page button.slick-prev{    width: 25px;
         max-width: 25px;
         height: 25px;

@@ -729,7 +729,7 @@ $question_type = "Numerical";
             $('#review_question_list').css('height', review_box_holder_final_height);
 
             var review_expand_scroll_height = $("#review_question_list").outerHeight();
-            var math_cal_height = review_expand_scroll_height - 50 + "px";
+            var math_cal_height = review_expand_scroll_height - 80 + "px";
             $('#review_question_list').css('height', math_cal_height);
 
 
@@ -766,7 +766,9 @@ $question_type = "Numerical";
 
             var scrollqheight = onclickreviewbox + reviewBox2height;
 
-            $('#review_question_list').css('height', scrollqheight);
+            var afterscrollqheight = scrollqheight - 20 + "px";
+
+            $('#review_question_list').css('height', afterscrollqheight);
 
 
 

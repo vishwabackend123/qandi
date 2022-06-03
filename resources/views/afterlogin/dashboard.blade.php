@@ -464,7 +464,7 @@ $userData = Session::get('user_data');
                                                     <strong style="width:auto;">Proficiency</strong>
                                                     <span class="star-img" style="width:auto;">
                                                         <div class="star-ratings-css ">
-                                                            <div class="star-ratings-css-top" style="width: {{round($val->chapter_score, 2)}}%">
+                                                            <div class="star-ratings-css-top" style="width: {{round($val->chapter_score, 0)}}%">
                                                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                                             </div>
                                                             <div class="star-ratings-css-bottom">
@@ -472,7 +472,7 @@ $userData = Session::get('user_data');
                                                             </div>
                                                         </div>
                                                     </span>
-                                                    <span> {{round($val->chapter_score, 2)}}%</span>
+                                                    <span> {{  round($val->chapter_score, 0)}}%</span>
                                                 </li>
                                             </ul>
                                         </div>

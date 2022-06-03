@@ -2747,7 +2747,7 @@ div.form-group.flds span.currect-email {
 .country-code-name {
     height: auto;
     overflow: hidden;
-    padding: 5px 10px 10px;
+    padding: 5px 5px 10px;
     position: absolute;
     background: #fff;
     width: 100%;
@@ -2769,7 +2769,7 @@ div.form-group.flds span.currect-email {
     list-style: none;
     color: #2c3348;
     font-size: 14px;
-    padding: 3px 20px 5px;
+    padding: 3px 15px 5px;
     text-transform: capitalize;
 }
 
@@ -2779,7 +2779,7 @@ div.form-group.flds span.currect-email {
 }
 
 .country-code-name::-webkit-scrollbar-track {
-    background: rgba(13, 193, 255, 0.1) !important;
+    background: rgba(13,193,255,0.1)!important;
     border-radius: 10px;
 }
 
@@ -9673,3 +9673,8 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 .export_class > small{top: 28px !important;}
 .sub_export > small{top: 40px !important;}
 .timeinner > small{ top:15px !important;}
+.btm-form-flds .form-flds  .countryscroll input{border: 0px;
+    background: #f7f3f3;
+    border-radius: 5px;width: 95%;margin-bottom: 4px;
+    box-shadow: 0 1px 3px #cfcdcd;height: 30px;} 
+
