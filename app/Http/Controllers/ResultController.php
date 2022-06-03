@@ -22,7 +22,7 @@ class ResultController extends Controller
     }
 
     //
-    public function exam_result(Request $request)
+    public function examResult(Request $request)
     {
         try {
             $userData = Session::get('user_data');
