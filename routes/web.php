@@ -70,8 +70,8 @@ Route::any('/editProfileImage', [App\Http\Controllers\HomeController::class, 'ed
 Route::any('/saveFcmToken', [App\Http\Controllers\HomeController::class, 'saveFcmToken'])->name('saveFcmToken');
 
 /* Home Controller Routes */
-Route::any('/studentstandfor', [App\Http\Controllers\HomeController::class, 'student_stand'])->name('studentstandfor')->middleware('auth', 'menu');
-Route::any('/standupstore', [App\Http\Controllers\HomeController::class, 'store_stand_value'])->name('standupstore')->middleware('auth', 'menu');
+Route::any('/studentstandfor', [App\Http\Controllers\HomeController::class, 'studentStand'])->name('studentstandfor')->middleware('auth', 'menu');
+Route::any('/standupstore', [App\Http\Controllers\HomeController::class, 'storeStandValue'])->name('standupstore')->middleware('auth', 'menu');
 
 /* login routes */
 Route::any('/sendotplogin', [App\Http\Controllers\StudentSignInController::class, 'sendotplogin'])->name('sendotplogin');
@@ -111,7 +111,7 @@ Route::any('/ajax_review_next_subject_question/{subject_id}', [App\Http\Controll
 Route::any('/filter_review_question/{filter}', [App\Http\Controllers\ReviewController::class, 'filter_review_question'])->name('filter_review_question')->middleware('auth', 'menu');
 
 /* Review Controller Routs */
-Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'exam_result'])->name('exam_result')->middleware('auth', 'menu');
+Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'examResult'])->name('exam_result')->middleware('auth', 'menu');
 /* Route::any('/exam_result_analysis', [App\Http\Controllers\ResultController::class, 'exam_post_analysis'])->name('exam_result_analysis')->middleware('auth', 'menu');
  */
 Route::any('/exam_result_analysis_score', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_score'])->name('exam_result_analysis_score')->middleware('auth', 'menu');
@@ -126,10 +126,10 @@ Route::any('/markforreview', [App\Http\Controllers\BookmarkController::class, 'a
 
 /* Full exam Controller Routes */
 Route::any('/exam/{full_exam}', [App\Http\Controllers\FullExamController::class, 'exam'])->name('exam')->middleware('auth', 'menu');
-Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'next_question'])->name('next_question')->middleware('auth', 'menu');
-Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'next_subject_question'])->name('next_subject_question')->middleware('auth', 'menu');
+Route::any('/next_question/{ques_id}', [App\Http\Controllers\FullExamController::class, 'nextQuestion'])->name('next_question')->middleware('auth', 'menu');
+Route::any('/next_subject_question/{subject_id}', [App\Http\Controllers\FullExamController::class, 'nextSubjectQuestion'])->name('next_subject_question')->middleware('auth', 'menu');
 Route::any('/examresult', [App\Http\Controllers\FullExamController::class, 'exam_result'])->name('examresult')->middleware('auth', 'menu');
-Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'exam_review'])->name('examreview')->middleware('auth', 'menu');
+Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'examReview'])->name('examreview')->middleware('auth', 'menu');
 
 
 /* Full exam Controller Routes */

@@ -1,4 +1,6 @@
-@extends('afterlogin.layouts.app_new')<script type="text/javascript">
+@extends('afterlogin.layouts.app_new')
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
@@ -16,6 +18,10 @@
     });
 </script>
 @section('content')
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+
+
+
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -466,7 +472,9 @@ $questtype='radio';
 <div class="loader-block" style="display:none;">
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
-@include('afterlogin.layouts.footer_new')
+<!-- @ include('afterlogin.layouts.footer_new') -->
+@include('afterlogin.layouts.exam_footer')
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <!-- Have fun using Bootstrap JS -->
 
@@ -753,7 +761,7 @@ $questtype='radio';
         // setDisabled(stopBtn);
         timePassed = -1;
         timeLeft = TIME_LIMIT;
-        // console.log(timePassed, timeLeft);
+
 
         timeLabel.innerHTML = formatTime(TIME_LIMIT);
     }
@@ -778,7 +786,7 @@ $questtype='radio';
         const circleDasharray = `${(
                 calculateTimeFraction() * FULL_DASH_ARRAY
             ).toFixed(0)} 283`;
-        // console.log("setCircleDashArray: ", circleDasharray);
+
         timer.setAttribute("stroke-dasharray", circleDasharray);
     }
 
@@ -968,9 +976,9 @@ $questtype='radio';
 
                 if (res_value == '-' || res_value == '-.') {
                     var vld_msg = "Enter valid answer.";
-                } else if (last == '.') {
+                } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
-                } else if (decarr[1].length > 2) {
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
                     var vld_msg = "Numerical values were allowed up to two decimal places.";
                 } else {
                     option_id.push($("#quest_option_" + question_id).val());
@@ -1019,7 +1027,7 @@ $questtype='radio';
             success: function(response_data) {
                 //$('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
-                console.log(response_data);
+
                 if (response.status == 200) {
                     $("#btn_" + question_id).find('i').remove();
                     $("#btn_" + question_id).html(qNo);
@@ -1071,9 +1079,9 @@ $questtype='radio';
 
                 if (res_value == '-' || res_value == '-.') {
                     var vld_msg = "Enter valid answer.";
-                } else if (last == '.') {
+                } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
-                } else if (decarr[1].length > 2) {
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
                     var vld_msg = "Numerical values were allowed up to two decimal places.";
                 } else {
                     option_id.push($("#quest_option_" + question_id).val());
@@ -1339,7 +1347,7 @@ $questtype='radio';
                     const circleDasharray = `${(
                             calculateTimeFraction() * FULL_DASH_ARRAY
                         ).toFixed(0)} 283`;
-                    // console.log("setCircleDashArray: ", circleDasharray);
+
                     timer_left.setAttribute("stroke-dasharray", circleDasharray);
 
                     lefttime_exam_h.innerHTML = formatTime(timeLeft);
