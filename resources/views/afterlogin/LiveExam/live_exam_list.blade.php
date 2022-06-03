@@ -40,7 +40,7 @@ $userData = Session::get('user_data');
                                 @if($testCompleted_yn=="N" )
                                 <div class="live-exam-test-wrapp">
                                     <div class="exam_card">
-                                        <span class="mb-4 d-block"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
+                                        <span class="mb-3 d-block"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> LIVE EXAM</span>
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <h2 class="mt-0">{{$schedule_list[0]->exam_name}}</h2>
                                             @if(($today_top >= $start_date_top) && ($today_top <= $end_date_top)) <a class="custom-btn-gray btn" href="{{route('live_exam',$schedule_list[0]->schedule_id)}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</a>
@@ -80,7 +80,7 @@ $userData = Session::get('user_data');
                                 @endif
                                 @endif
                                 <div class="Upcoming-Live-Exams-wrapp">
-                                    <h4 class="py-3 mb-4 mt-5" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
+                                    <h4 class="py-3 mb-3 mt-3" style="color: #2c3348;font-weight: 600;">Upcoming Live Exams</h4>
                                     <div class="scroll-div-live-exm ps-0 pe-4">
                                         @if(!empty($schedule_list))
                                         @php
