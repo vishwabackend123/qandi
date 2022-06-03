@@ -14,11 +14,26 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * FullExamController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class FullExamController extends Controller
 {
-    //
     use CommonTrait;
-
+    /**
+     * Exam
+     *
+     * @param Request $request   recieve the body request data
+     * @param mixed   $exam_name exam name
+     *
+     * @return void
+     */
     public function exam(Request $request, $exam_name)
     {
         try {
@@ -51,8 +66,7 @@ class FullExamController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/profiling-test-web/' . $exam_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -62,7 +76,8 @@ class FullExamController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $response_json = str_replace('NaN', '""', $response_json);
@@ -79,7 +94,6 @@ class FullExamController extends Controller
                 //$exam_fulltime = $responsedata->time_allowed;
                 $exam_fulltime = 180;
                 $questions_count = count($aQuestions_list);
-            //$exam_fulltime = $questions_count;
             } else {
                 $aQuestions_list = [];
                 $questions_count = 0;
@@ -88,9 +102,6 @@ class FullExamController extends Controller
             }
 
             $redis_set = 'True';
-
-            //$exam_fulltime = (isset($exam_fulltime) && !empty($exam_fulltime)) ? $exam_fulltime : $questions_count  * 60;
-
             $collection = collect($aQuestions_list);
 
             $aQuestionslist = $collection->sortBy('subject_id');
@@ -124,32 +135,21 @@ class FullExamController extends Controller
             $prev_qid = '';
 
             if (isset($question_data) && !empty($question_data)) {
-                //$publicPath = url('/') . '/public/images/questions/';
-                // $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
-                // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
                 $qs_id = $question_data->question_id;
-                //$option_ques = str_replace("'", '"', $question_data->question_options);
                 $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
-                        // $option = str_replace('/public/images/questions/', $publicPath, $option);
                         $opArr[$key] = $option;
                     }
                 }
-                //$optionArray = $this->shuffle_assoc($opArr);
                 $optionArray = $opArr;
                 $option_data = $optionArray;
             } else {
                 $option_data[] = '';
             }
-
-
-
-            /* set redis for save exam question response */
             $retrive_array = $retrive_time_array = $retrive_time_sec = $answer_swap_cnt = [];
             $redis_data = [
                 'given_ans' => $retrive_array,
@@ -176,19 +176,33 @@ class FullExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function exam_result()
+    /**
+     * Exam_result
+     *
+     * @return void
+     */
+    public function examResult()
     {
         return view('afterlogin.ExamViews.resultview');
     }
-
-    public function exam_review()
+    /**
+     * Exam_review
+     *
+     * @return void
+     */
+    public function examReview()
     {
         return view('afterlogin.ExamViews.review');
     }
-
-
-    public function next_question($quest_id, Request $request)
+    /**
+     * Next Question
+     *
+     * @param mixed   $quest_id question id
+     * @param Request $request  recieve the body request data
+     *
+     * @return void
+     */
+    public function nextQuestion($quest_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -282,8 +296,15 @@ class FullExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function next_subject_question($subject_id, Request $request)
+    /**
+     * Next subject question
+     *
+     * @param mixed   $subject_id subject id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
+    public function nextSubjectQuestion($subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
