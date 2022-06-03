@@ -23,6 +23,15 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use AWS;
 
+/**
+ * HomeController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class HomeController extends Controller
 {
     //
@@ -95,9 +104,7 @@ class HomeController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/studentDashboard/analytics/' . $user_id;
-
-            curl_setopt_array($curl, array(
-
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -106,7 +113,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $score_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -138,16 +146,11 @@ class HomeController extends Controller
                     $subjectData[$key] = (array)$sub;
                 }
             }
-
-
-
-
             $curl = curl_init();
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -157,7 +160,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -181,8 +185,7 @@ class HomeController extends Controller
                 $curl = curl_init();
                 $api_URL = env('API_URL');
                 $curl_ref_url = $api_URL . 'api/get-refer-link/' . $user_id;
-
-                curl_setopt_array($curl, array(
+                $curl_option = array(
 
                     CURLOPT_URL => $curl_ref_url,
                     CURLOPT_RETURNTRANSFER => true,
@@ -192,7 +195,8 @@ class HomeController extends Controller
                     CURLOPT_FOLLOWLOCATION => true,
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response_json = curl_exec($curl);
                 $ref_response = json_decode($response_json, true);
@@ -215,7 +219,7 @@ class HomeController extends Controller
                 $curl = curl_init();
                 $api_URL = env('API_URL');
                 $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
-                curl_setopt_array($curl, array(
+                $curl_option =array(
 
                     CURLOPT_URL => $curl_prog_url,
                     CURLOPT_RETURNTRANSFER => true,
@@ -225,7 +229,8 @@ class HomeController extends Controller
                     CURLOPT_FOLLOWLOCATION => true,
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response_preg_json = curl_exec($curl);
                 $response_prog = json_decode($response_preg_json, true);
@@ -246,7 +251,7 @@ class HomeController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_myq_url = $api_URL . 'api/myqtoday?student_id=' . $user_id . '&exam_id=' . $exam_id;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_myq_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -256,7 +261,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "POST",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_myq_json = curl_exec($curl);
             $response_myq = json_decode($response_myq_json, true);
@@ -282,13 +288,25 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function student_stand(Request $request)
+    /**
+     * Student_stand
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function studentStand(Request $request)
     {
         return view('signup_poststatus');
     }
-
-    public function store_stand_value(Request $request)
+    /**
+     * Store_stand_value
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function storeStandValue(Request $request)
     {
         try {
             $data = $request->all();
@@ -307,7 +325,7 @@ class HomeController extends Controller
                 $curl_url = $api_URL . 'api/stage-at-signUp';
 
                 $curl = curl_init();
-                curl_setopt_array($curl, array(
+                $curl_option = array(
                     CURLOPT_URL => $curl_url,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_FAILONERROR => true,
@@ -321,7 +339,8 @@ class HomeController extends Controller
                         "accept: application/json",
                         "content-type: application/json"
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
                 $response_json = curl_exec($curl);
 
                 $err = curl_error($curl);
@@ -348,7 +367,13 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * DailyWelcomeUpdates
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function dailyWelcomeUpdates(Request $request)
     {
         try {
@@ -371,7 +396,7 @@ class HomeController extends Controller
                 $curl_url = $api_URL . 'api/subject-rating';
 
                 $curl = curl_init();
-                curl_setopt_array($curl, array(
+                $curl_option = array(
                     CURLOPT_URL => $curl_url,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_FAILONERROR => true,
@@ -385,7 +410,8 @@ class HomeController extends Controller
                         "accept: application/json",
                         "content-type: application/json"
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
                 $response_json = curl_exec($curl);
 
                 $err = curl_error($curl);
@@ -400,9 +426,10 @@ class HomeController extends Controller
     }
 
     /**
-     * Undocumented function
+     * Edit Profile
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
     public function editProfile(Request $request)
@@ -428,7 +455,7 @@ class HomeController extends Controller
             $curl_url = $api_URL . 'api/update-users';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -442,7 +469,8 @@ class HomeController extends Controller
                     "accept: application/json",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);
@@ -484,7 +512,13 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Edit Profile Image
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function editProfileImage(Request $request)
     {
         try {
@@ -510,8 +544,7 @@ class HomeController extends Controller
             if ($validator->fails()) {
                 // Redirect or return json to frontend with a helpful message to inform the user
                 // that the provided file was not an adequate type
-                return response(json_encode(['error' => $validator->errors()
-                    ->getMessages(), 'success' => false]));
+                return response(json_encode(['error' => $validator->errors()->getMessages(), 'success' => false]));
             } else {
                 // Store the File Now
                 $userData = Session::get('user_data');
@@ -522,7 +555,7 @@ class HomeController extends Controller
                 $file_name = $file->getClientOriginalName();
                 if ($request->hasfile('file-input')) {
                     $curl = curl_init();
-                    curl_setopt_array($curl, array(
+                    $curl_option = array(
                         CURLOPT_URL => env('API_URL') . 'api/update-profile-picture',
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_ENCODING => '',
@@ -536,7 +569,8 @@ class HomeController extends Controller
                             'student_id' => $user_id,
                             'file_extension' => $file_name
                         ),
-                    ));
+                    );
+                    curl_setopt_array($curl, $curl_option);
 
                     $response = curl_exec($curl);
                     $err = curl_error($curl);
@@ -557,7 +591,13 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Save Fcm Token
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function saveFcmToken(Request $request)
     {
         try {
@@ -576,7 +616,7 @@ class HomeController extends Controller
             $curl_url = $api_URL . 'api/update_student_token';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -590,7 +630,8 @@ class HomeController extends Controller
                     "accept: application/json",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);
@@ -602,7 +643,13 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Search Friend With KeyWord
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function searchFriendWithKeyWord(Request $request)
     {
         try {
@@ -615,7 +662,7 @@ class HomeController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/search-friend/' . $class_id . '/' . $searchText;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -624,7 +671,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
             curl_close($curl);
@@ -653,7 +701,11 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Clear All Notifications
+     *
+     * @return void
+     */
     public function clearAllNotifications()
     {
         try {
@@ -664,7 +716,7 @@ class HomeController extends Controller
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/clear-notifications/' . $user_id;
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -673,7 +725,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'DELETE',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -683,7 +736,13 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Refresh Notification
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function refreshNotification(Request $request)
     {
         try {
@@ -695,7 +754,7 @@ class HomeController extends Controller
 
             $curl = curl_init();
             $curl_url = $api_URL . 'api/notification-history/' . $user_id;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -704,7 +763,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
             curl_close($curl);
@@ -722,7 +782,9 @@ class HomeController extends Controller
     }
 
     /**
+     * Daily task
      *
+     * @return void
      */
     public function dailytask()
     {
@@ -734,7 +796,7 @@ class HomeController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_check_task_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -744,7 +806,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_task_json = curl_exec($curl);
             $response_task = json_decode($response_task_json, true);
@@ -758,7 +821,11 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * MyQMatrix
+     *
+     * @return void
+     */
     public function myQMatrix()
     {
         try {
@@ -768,7 +835,7 @@ class HomeController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-topics-quadrant-wise-breakup/' . $user_id . '/' . $exam_id;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_myq_matrix_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -778,7 +845,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_myq_topic_json = curl_exec($curl);
             $response_myq_topic = json_decode($response_myq_topic_json, true);
@@ -800,13 +868,21 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
+    /**
+     * GetMyqmatrix
+     *
+     * @param mixed $user_id user id
+     * @param mixed $exam_id exam id
+     *
+     * @return void
+     */
     public function getMyqmatrix($user_id, $exam_id)
     {
         try {
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_myq_matrix_url = $api_URL . 'api/myqmatrix-dashboard-values/' . $user_id . '/' . $exam_id;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_myq_matrix_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -816,7 +892,8 @@ class HomeController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_myq_matrix_json = curl_exec($curl);
             $response_myq_matrix = json_decode($response_myq_matrix_json, true);
@@ -830,11 +907,14 @@ class HomeController extends Controller
         }
     }
 
-
     /**
-     * gettins selected series details and start exam function
+     * Gettins selected series details and start exam function
      *
-     * @param Request $request
+     * @param mixed   $category       category
+     * @param mixed   $tasktype       task type
+     * @param mixed   $skill_category skill category
+     * @param Request $request        recieve the body request data
+     *
      * @return void
      */
     public function dailyTaskExam($category, $tasktype, $skill_category = "", Request $request)
@@ -869,8 +949,7 @@ class HomeController extends Controller
                 $api_URL = env('API_URL');
 
                 $curl_url = $api_URL . 'api/create-test/' . $exam_id . '/' . $category_url . '/' . $user_id;
-
-                curl_setopt_array($curl, array(
+                $curl_option =  array(
 
                     CURLOPT_URL => $curl_url,
                     CURLOPT_RETURNTRANSFER => true,
@@ -885,7 +964,8 @@ class HomeController extends Controller
                         "cache-control: no-cache",
                         "content-type: application/json"
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response_json = curl_exec($curl);
 

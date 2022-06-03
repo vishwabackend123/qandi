@@ -344,7 +344,7 @@ $question_type = "Numerical";
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
-                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'Custom Exam'}} </h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-4 pt-2">{{isset($exam_name)?$exam_name:'Custom Exam'}} </h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -971,9 +971,9 @@ $question_type = "Numerical";
 
                 if (res_value == '-' || res_value == '-.') {
                     var vld_msg = "Enter valid answer.";
-                } else if (last == '.') {
+                } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
-                } else if (decarr[1].length > 2) {
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
                     var vld_msg = "Numerical values were allowed up to two decimal places.";
                 } else {
                     option_id.push($("#quest_option_" + question_id).val());
@@ -1059,9 +1059,9 @@ $question_type = "Numerical";
 
                 if (res_value == '-' || res_value == '-.') {
                     var vld_msg = "Enter valid answer.";
-                } else if (last == '.') {
+                } else if (last === '.') {
                     var vld_msg = "Numeric values cannot end with a decimal.";
-                } else if (decarr[1].length > 2) {
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
                     var vld_msg = "Numerical values were allowed up to two decimal places.";
                 } else {
                     option_id.push($("#quest_option_" + question_id).val());
