@@ -142,7 +142,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span> {{number_format($matrix_one['proficiency'], 2)}}%</span>
+                                                                <span> {{number_format($matrix_one['proficiency'], 0)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -198,7 +198,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{number_format($matrix_one['proficiency'], 2)}}%</span>
+                                                                <span>{{number_format($matrix_one['proficiency'], 0)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -254,7 +254,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{number_format($matrix_one['proficiency'], 2)}}%</span>
+                                                                <span>{{number_format($matrix_one['proficiency'], 0)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -310,7 +310,7 @@ $userData = Session::get('user_data');
                                                                         </div>
                                                                     </div>
                                                                 </span>
-                                                                <span>{{number_format($matrix_one['proficiency'], 2)}}%</span>
+                                                                <span>{{number_format($matrix_one['proficiency'], 0)}}%</span>
                                                             </li>
                                                         </ul>
                                                     </div>
