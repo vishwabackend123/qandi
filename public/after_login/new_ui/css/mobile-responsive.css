@@ -768,7 +768,7 @@ margin-left: 5px;
 .practice_custom_page.custom-page #dropdownMenuLink{width: 42px;padding: 2px;}
 .practice_custom_page.custom-page #dropdownMenuLink svg{width: 22px;}
 .practice_custom_page .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn{width: 156px !important;}
-#home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 13px;}
+#home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 10px;}
 #question_section .d-flex {display: block!important;}
 #question_section .d-flex .counter.d-flex{margin-top:15px;}
 }
