@@ -452,6 +452,8 @@ div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .p
 .exam_attempted_common_page .p-4.custom-exam-subjects {padding-left: 0!important;padding-right: 0!important;}
 .modal-dialog {margin: 0.5rem 0.8rem;}
 #question_section .d-flex .counter.d-flex{margin-right:0px!important;}
+.custom-page.practice_custom_page .cust-tab-content{padding-left: 20px!important;}
+
 }
 @media(max-width:700px){
 .result-list .d-flex.justify-content-between {
