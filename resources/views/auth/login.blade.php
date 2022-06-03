@@ -24,12 +24,17 @@
                         <span class="error-sms wrong-otp" id="errlog_auth">You have entered a wrong OTP. Please try again
                         </span>
                     </div>
+
                     <p class="text-right" id="wait_otp_div">Resend OTP in 180 sec</p>
                     <div class="clearfix"></div>
                     <p id="resendOtp_link" class="text-center mt-4 mb-0">Didn’t get OTP? <a href="javascript:void(0);" onclick="sentotplogin();">Resend</a></p>
                     <div class="sign-btn"><button type="submit" id="otp-verify-btn" disabled class="btn btn-primary disbaled-btn active-btn text-uppercase">Sign in</button></div>
                 </div>
                 <p>Don’t have an account? <a href="{{ route('register') }}">Sign up</a></p>
+
+                @if (env('STUDENT_ENV') != 'prod')
+                <span style="display:none" id="resp_opt"></span>
+                @endif
             </form>
         </div>
     </div>
@@ -113,6 +118,11 @@
                     $("#mobile-input-btn").hide();
                     $("#input-otp-box").show();
                     $('#resendOtp_link').hide();
+
+
+                    if ($("#resp_opt").length == 1) {
+                        $("#resp_opt").text(response.otp);
+                    }
                     //$("#input-otp-box").show();
 
                     resentOtpTime();
