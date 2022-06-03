@@ -1,3 +1,4 @@
+#form_exam_submit .slimScrollDiv{position: static!important;}
 /* 10-0202022 */
 .allownumericwithdecimal {
 width: 100%;
@@ -330,8 +331,8 @@ box-shadow: none !important;
 color: #fff !important;
 }
 .examSect .rightSect .number-block {
-height: 165px;
-overflow-y: auto;
+height: 165px!important;
+overflow-y: auto!important;
 padding: 5px;
 }
 .examSect #test_instruction .modal-body.pt-3.p-5 {
