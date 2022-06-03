@@ -851,38 +851,38 @@ div#arrow-left-btm .inner-arrow-left-btm {
 /** the following css for placeholder **/
 .edit-form input:-ms-input-placeholder {
     color: #2c3348;
-    opacity: 0.3;
+    opacity: 0.3;font-size:16px;
 }
 
 .edit-form input::placeholder {
     color: #2c3348;
-    opacity: 0.3;
+    opacity: 0.3;font-size:16px;
 }
 
 .edit-form input::-webkit-input-placeholder {
     color: #2c3348;
-    opacity: 0.3;
+    opacity: 0.3;font-size:16px;
 }
 
 .edit-form .form-group input:-moz-placeholder {
-    opacity: 1;
+    opacity: 1;font-size:16px;
 }
 
 .edit-form .form-group input:-ms-input-placeholder {
-    opacity: 1;
+    opacity: 1;font-size:16px;
 }
 
 .edit-form .form-group input::placeholder {
-    opacity: 1;
+    opacity: 1;font-size:16px;
 }
 
 .edit-form .form-group input::-webkit-input-placeholder {
-    opacity: 1;
+    opacity: 1;font-size:16px;
 }
 
 .edit-form input:-moz-placeholder {
     color: #2c3348;
-    opacity: 0.3;
+    opacity: 0.3;font-size:16px;
 }
 
 /** placeholder css end here **/
