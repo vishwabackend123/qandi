@@ -1337,7 +1337,7 @@
     }*/
 
     .custom-page .slick-list {
-        height: 182px;
+        height: 220px;
     }
 
     /** End custom page css on 16-12-2021 **/
@@ -1364,9 +1364,9 @@
         width: 100% !important;
     }
 
-    .slick-slide {
+    /* .slick-slide {
         width: 38% !important;
-    }
+    } */
 }
 
 @media(min-width:360px) and (max-width:767px) {

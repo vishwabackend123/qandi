@@ -3,7 +3,7 @@
 <div class="p-3 custOmSld">
 
     <div id="topic_box_{{$topic->id}}" class="bg-light shadow p-3 d-flex flex-column topicboxdin">
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center topic_name_ratings">
             <span class="mr-3 name-txt-sml" title="{{$topic->topic_name}}" style="text-transform:none">{{$topic->topic_name}}</span>
 
             <div class="status-id  ms-auto  d-flex align-items-center justify-content-center ml-0 ml-md-3 rating" data-vote="0">

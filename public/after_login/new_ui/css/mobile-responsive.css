@@ -453,6 +453,9 @@ div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .p
 .modal-dialog {margin: 0.5rem 0.8rem;}
 #question_section .d-flex .counter.d-flex{margin-right:0px!important;}
 .custom-page.practice_custom_page .cust-tab-content{padding-left: 20px!important;}
+.topic_name_ratings.d-flex{display:block!important;}
+.compLeteS .topic_name_ratings .name-txt-sml{width:100%;white-space:normal;}
+.practice_custom_page .topic_name_ratings .status-id.rating{margin: 0 !important;}
 
 }
 @media(max-width:700px){
@@ -777,6 +780,9 @@ margin-left: 5px;
 #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,#home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{font-size: 10px;}
 #question_section .d-flex {display: block!important;}
 #question_section .d-flex .counter.d-flex{margin-top:15px;}
+.topicboxdin .d-flex.sub-subject{display: block!important;}
+.topicboxdin .d-flex.sub-subject  a.addremovetopic{display: block!important;margin-top:8px;}
+
 }
 @media(max-width:385px){
 .subject-name {
