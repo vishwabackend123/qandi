@@ -497,7 +497,6 @@
                 type: "GET",
                 cache: false,
                 data: {
-                    "_token": "{{ csrf_token() }}",
                     'search_text': event.target.value,
                     'state': state,
                 },

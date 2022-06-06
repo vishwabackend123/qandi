@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
         '/logout',
         '/custom_exam_chapter',
         '/custom_exam',
-        '/exam_custom'
+        '/exam_custom',
+        '/getCity'
     ];
 }
