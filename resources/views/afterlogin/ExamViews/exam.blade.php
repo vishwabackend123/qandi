@@ -1036,13 +1036,29 @@ $question_type = "Numerical";
             var res_value = $("#quest_option_" + question_id).val();
 
             if (res_value != '') {
-                option_id.push($("#quest_option_" + question_id).val());
+                const str = res_value;
+                const last = str.charAt(str.length - 1);
+
+                var decarr = res_value.split(".");
+
+                if (res_value == '-' || res_value == '-.') {
+                    var vld_msg = "Enter valid answer.";
+                } else if (last === '.') {
+                    var vld_msg = "Numeric values cannot end with a decimal.";
+                } else if ((decarr.length > 1) && (decarr[1].length > 2)) {
+                    var vld_msg = "Numerical values were allowed up to two decimal places.";
+                } else {
+                    option_id.push($("#quest_option_" + question_id).val());
+                }
+            } else {
+                var vld_msg = "Please fill your response.";
             }
-            var vld_msg = "Please fill your response.";
+
         } else {
             $.each($("input[name='quest_option_" + question_id + "']:checked"), function() {
                 option_id.push($(this).val());
             });
+
             var vld_msg = "Please select your response.";
         }
         if (option_id.length === 0) {

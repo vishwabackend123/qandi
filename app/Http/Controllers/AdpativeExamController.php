@@ -866,8 +866,10 @@ class AdpativeExamController extends Controller
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
-            // return view('afterlogin.ExamCustom.exam_result_analytics');
+                // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
+
+                //dd($curl_url, $request);
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
@@ -949,7 +951,7 @@ class AdpativeExamController extends Controller
             if ($check_response == true) {
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
-            //return view('afterlogin.ExamCustom.exam_result_analytics');
+                //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
                 return redirect()->route('dashboard');
             }
