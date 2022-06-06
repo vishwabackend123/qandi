@@ -15,12 +15,25 @@ use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * MockExamController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class MockExamController extends Controller
 {
-    //
     use CommonTrait;
-
-    /* Adaptive Exam Methods */
+    /**
+     * MockExam
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function mockExam(Request $request)
     {
         try {
@@ -47,8 +60,7 @@ class MockExamController extends Controller
             //$curl_url = $api_URL . 'api/assessment-question-selection';
             //$curl_url = $api_URL . 'api/adaptive-assessment-mock-exam';
             $curl_url = $api_URL . 'api/mock-exam/' . $exam_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -63,7 +75,8 @@ class MockExamController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);
@@ -102,13 +115,10 @@ class MockExamController extends Controller
                 $sort['section_id'][$k] = $v->section_id;
             }
 
-            # sort by subject_id desc and then title asc
+            // sort by subject_id desc and then title asc
             array_multisort($sort['subject_id'], SORT_ASC, $sort['section_id'], SORT_ASC, $aQuestions_list);
 
-
-
             $collection = collect($aQuestions_list);
-
 
             /*  $aQuestionslist = $collection->sortBy('subject_id'); */
             $aQuestionslist = $collection;
@@ -216,7 +226,14 @@ class MockExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Mock Next Question
+     *
+     * @param mixed   $quest_id Question id
+     * @param Request $request  recieve the body request data
+     *
+     * @return void
+     */
     public function mockNextQuestion($quest_id, Request $request)
     {
         try {
@@ -302,7 +319,15 @@ class MockExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Mock Next Subject Question
+     *
+     * @param mixed   $subject_id subject id
+     * @param mixed   $section_id section id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
     public function mockNextSubjectQuestion($subject_id, $section_id = null, Request $request)
     {
         try {
@@ -402,12 +427,13 @@ class MockExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    /* ENd Adaptive Exam Methods */
-
-
-
-
+    /**
+     * Save Answer
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function saveAnswer(Request $request)
     {
         try {
@@ -501,7 +527,13 @@ class MockExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Clear Response
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function clearResponse(Request $request)
     {
         try {
