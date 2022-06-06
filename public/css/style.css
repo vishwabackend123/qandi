@@ -890,7 +890,8 @@ button#goto-otp-btn:hover {
     
 @media screen and ( max-height:800px ) {
     #address-box {
-        margin: 50px auto 0 !important;
+        margin: 90px auto 0 !important;
+        padding: 40px 47px 30px 47px;
         
     }
 }
