@@ -1,7 +1,6 @@
 @extends('afterlogin.layouts.app_new')
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- BS JavaScript -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     $(window).load(function() {
@@ -320,7 +319,7 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{ url()->previous() }}" title="Close">
+                <a type="button" class="btn-close" aria-label="Close" href="{{ route('dashboard-DailyTask') }}" title="Close">
                     <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
                 </a>
             </div>
@@ -873,7 +872,7 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
             },
             success: function(result) {
-                console.log(result);
+
                 clearInterval(ctimer);
                 clearInterval(timer_countdown);
                 clearInterval(setEachQuestionTimeNext_countdown);
