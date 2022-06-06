@@ -463,7 +463,7 @@ class StudentSignInController extends Controller
      */
     public function cityList(Request $request)
     {
-        try {
+        //try {
             $data = $request->all();
             $state = isset($data['state']) ? $data['state'] : '';
             $search = isset($data['search_text']) ? $data['search_text'] : '';
@@ -517,9 +517,9 @@ class StudentSignInController extends Controller
                 $response = ["success" => true, "response" => $sOption,];
                 return json_encode($response);
             }
-        } catch (\Exception $e) {
-            Log::info($e->getMessage());
-        }
+        //} catch (\Exception $e) {
+          //  Log::info($e->getMessage());
+        //}
     }
 
     /* function search value in array */

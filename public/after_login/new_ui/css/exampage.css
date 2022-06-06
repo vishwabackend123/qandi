@@ -331,7 +331,7 @@ box-shadow: none !important;
 color: #fff !important;
 }
 .examSect .rightSect .number-block {
-/* height: 165px!important; */
+/* height: 165px!important; */ 
 overflow-y: auto!important;
 padding: 5px;
 }
