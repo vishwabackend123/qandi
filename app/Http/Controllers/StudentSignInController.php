@@ -506,7 +506,8 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-                $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInput" onkeyup="searchCity()" /><ul id="myMenu">';
+                Session::put('city_list', $city_list);
+                $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInput" onkeyup="searchCity()" autocomplete="off" /><ul id="myMenu">';
 
                 foreach ($city_list as $kCity => $oCity) {
                     $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
@@ -629,6 +630,34 @@ class StudentSignInController extends Controller
                 $aResponse->redirect_url = url('dashboard');
                 return json_encode($aResponse);
             }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+    public function searchCity(Request $request)
+    {
+        try {
+            $data = $request->all();
+            $search = isset($data['search_text']) ? $data['search_text'] : '';
+            $city_list = Session::get('city_list');
+            if($search)
+            {
+                $result = array_filter($city_list, function ($item) use ($search) {
+                if (stripos($item, $search) !== false) {
+                return true;
+                }
+                return false;
+                });
+            }else
+            {
+              $result = $city_list;
+            }            
+            $sOption = '';
+                foreach ($result as $kCity => $oCity) {
+                    $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
+                }
+                $response = ["success" => true, "response" => $sOption,];
+                return json_encode($response);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

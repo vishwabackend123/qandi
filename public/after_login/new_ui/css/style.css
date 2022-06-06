@@ -13,13 +13,16 @@ button {
     outline: none;
     text-decoration: none;
 }
+.dailytask-wrapper .dtrow-left .col-md-6 p:nth-child(2) {
+    min-height: 42px;
+}
 .practice-series-lists #scroll-mobile , .practice_custom_page #scroll-mobile , 
 .mocktest-attempted-wrapper #scroll-mobile, .live-exam-list-wrapper #scroll-mobile{overflow-x: hidden!important;}
 .matrixpage-wrapper .course-star li span:last-child {
     min-width: 58px;
 }
 .container-fluid.custom-page.mocktest-attempted-wrapper{height: auto!important;}
-.mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {height: calc(100vh - 180px) !important;}
+.mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {height: calc(100vh - 144px) !important;}
 .live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
     max-height: calc(100vh - 440px) !important;
     overflow: overlay;
@@ -254,7 +257,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 .mocktest-attempted-wrapper .cust-tab-content,
 .practice_custom_page .cust-tab-content,
 .practice-series-lists .cust-tab-content {
-    padding: 0px 40px 40px !important;
+    padding-right:  15px !important;
 }
 .live-exam-list-wrapper .live-exam i.fa.fa-circle.text-danger.me-2 {
     color: #f74645 !important;
@@ -317,6 +320,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
     background: rgba(243, 247, 255, 0.5);
     padding: 15px 20px 15px;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 .practice-series-lists .compLeteS .collapse,
 .mocktest-attempted-wrapper .compLeteS .collapse,

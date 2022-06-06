@@ -168,7 +168,11 @@
 
         var empty = false;
         $('#addressfield input').each(function() {
-
+            var ids= this.id;
+            if(ids=='myInput' || ids=='myInputState')
+            {
+                return; 
+            }
             if ($(this).val() == '') {
                 empty = true;
             }
@@ -590,22 +594,32 @@
         e.preventDefault();
     });
 
-    function searchCity() {
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myMenu");
-        li = ul.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-            txtValue = li[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
-        }
+function searchCity() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+            $.ajax({
+                url: "{{ url('/searchCity',) }}",
+                type: "GET",
+                cache: false,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    'search_text': input.value
+                },
+                success: function(response_data) {
+                    let html = '';
+                    var data = jQuery.parseJSON(response_data);
 
-    }
+                    if (data.success === true) {
+
+                        html += data.response;
+
+                    } else {
+                        html += `<li>Cities</li>`;
+                    }
+                    $('#myMenu').html(html);
+                }
+            });     
+}
 
     function searchState() {
         var input, filter, ul, li, a, i, txtValue;

@@ -867,7 +867,7 @@ top: 100px;
 } 
 #prof_scroll .score-rating{ width: 45px} 
 .tab-wrapper.live-exam  {
-height: calc(100vh - 150PX);
+height: calc(100vh - 144PX);
 }
 .result-list.bg-white.tab-wrapper {
 height: calc(100vh - 200PX);
@@ -876,12 +876,13 @@ height: calc(100vh - 200PX);
 height: calc(100vh - 210px) !important; 
 }
 .practice_custom_page .exam_attempted_common_page .tab-pane .scroll-div{
-max-height: calc(100vh - 400px)!important; 
+height: calc(100vh - 400px)!important; 
 overflow: overlay;
 }
 .mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div{
-max-height: calc(100vh - 350px)!important; 
+ height: calc(100vh - 350px)!important; 
 overflow: overlay;
+    padding: 0 !important;
 }
 .mocktest-attempted-wrapper{
 height: calc(100vh - 260px) !important;
