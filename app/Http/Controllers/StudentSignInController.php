@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
 
 class StudentSignInController extends Controller
 {
@@ -506,7 +508,7 @@ class StudentSignInController extends Controller
                 $response = ["error" => $err, "success" => false,];
                 return json_encode($response);
             } else {
-                Session::put('city_list', $city_list);
+                Redis::set('city_list', json_encode($city_list));
                 $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInput" onkeyup="searchCity()" autocomplete="off" /><ul id="myMenu">';
 
                 foreach ($city_list as $kCity => $oCity) {
@@ -639,25 +641,23 @@ class StudentSignInController extends Controller
         try {
             $data = $request->all();
             $search = isset($data['search_text']) ? $data['search_text'] : '';
-            $city_list = Session::get('city_list');
-            if($search)
-            {
+            $city_list = json_decode(Redis::get('city_list'), true);
+            if ($search) {
                 $result = array_filter($city_list, function ($item) use ($search) {
-                if (stripos($item, $search) !== false) {
-                return true;
-                }
-                return false;
+                    if (stripos($item, $search) !== false) {
+                        return true;
+                    }
+                    return false;
                 });
-            }else
-            {
-              $result = $city_list;
-            }            
+            } else {
+                $result = $city_list;
+            }
             $sOption = '';
-                foreach ($result as $kCity => $oCity) {
-                    $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
-                }
-                $response = ["success" => true, "response" => $sOption,];
-                return json_encode($response);
+            foreach ($result as $kCity => $oCity) {
+                $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
+            }
+            $response = ["success" => true, "response" => $sOption,];
+            return json_encode($response);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
