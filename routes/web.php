@@ -206,7 +206,7 @@ Route::any('/getWeeklyPlanSchedule', [App\Http\Controllers\PlannerController::cl
  */
 
 Route::any('/assessment_exam', [App\Http\Controllers\AssessmentExamController::class, 'assessmentExam'])->name('assessment_exam')->middleware('auth', 'menu');
-Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\AssessmentExamController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
+/* Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\AssessmentExamController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu'); */
 Route::any('/searchFreind', [App\Http\Controllers\HomeController::class, 'searchFriendWithKeyWord'])->name('searchFriendWithKeyWord')->middleware('auth', 'menu');
 Route::any('/saveQuestionTimeSession/{qid}', [App\Http\Controllers\ExamCustomController::class, 'saveQuestionTimeSession'])->name('saveQuestionTimeSession')->middleware('auth', 'menu');
 
@@ -248,9 +248,6 @@ Route::any('/getCity', [App\Http\Controllers\StudentSignInController::class, 'ci
 Route::any('/signupAddress', [App\Http\Controllers\StudentSignInController::class, 'signupAddress'])->name('signupAddress');
 
 
-/* dashboard new routes */
-Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
-Route::get('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
 
 /* Topic analytics route  */
 Route::any('/topic-analytics/{sub_id}', [App\Http\Controllers\AnalyticsController::class, 'topicAnalyticsList'])->name('topic-analytics')->middleware('auth', 'menu');
@@ -278,5 +275,8 @@ Route::any('/mockExamTest', [App\Http\Controllers\MockExamController::class, 'mo
 
 
 /* dashboard dailytask exam new routes */
+
+Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
+Route::get('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
 Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');

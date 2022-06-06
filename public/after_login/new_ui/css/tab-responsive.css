@@ -3,9 +3,9 @@
         max-height: calc(100vh - 665px)!important;
     }
 }
-@media screen and (max-height:750px){
+/* @media screen and (max-height:750px){
 .live-exam-list-wrapper .tab-wrapper.live-exam{height: auto;}
-}
+} */
 @media screen and (max-width:1380px){
 .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
 }
