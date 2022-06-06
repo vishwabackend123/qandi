@@ -14,7 +14,7 @@ $userData = Session::get('user_data');
         <div class="container-fluid list-series live-exam-list-wrapper">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
-                    <div class="tab-wrapper live-exam ">
+                    <div class="tab-wrapper live-exam live-exam-tab-wrapper">
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
