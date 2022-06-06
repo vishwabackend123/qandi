@@ -22,7 +22,7 @@ button {
     min-width: 58px;
 }
 .container-fluid.custom-page.mocktest-attempted-wrapper{height: auto!important;}
-.mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {height: calc(100vh - 180px) !important;}
+.mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {height: calc(100vh - 144px) !important;}
 .live-exam-list-wrapper .Upcoming-Live-Exams-wrapp .scroll-div-live-exm {
     max-height: calc(100vh - 440px) !important;
     overflow: overlay;
