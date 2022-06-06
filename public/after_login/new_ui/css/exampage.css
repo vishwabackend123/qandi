@@ -331,7 +331,7 @@ box-shadow: none !important;
 color: #fff !important;
 }
 .examSect .rightSect .number-block {
-height: 165px!important;
+/* height: 165px!important; */ 
 overflow-y: auto!important;
 padding: 5px;
 }
@@ -882,6 +882,7 @@ overflow: overlay;
 .mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div{
  height: calc(100vh - 350px)!important; 
 overflow: overlay;
+    padding: 0 !important;
 }
 .mocktest-attempted-wrapper{
 height: calc(100vh - 260px) !important;
