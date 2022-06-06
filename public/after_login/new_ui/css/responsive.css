@@ -1,3966 +1,3103 @@
 @media screen and ( max-height: 700px ) {
-    .subscriptionBox p.box-content {
-        overflow: overlay;
-        height: 150px;
-        padding-right: 9px;
-        margin: auto 0px;
-
-    }
-   
+.subscriptionBox p.box-content {
+overflow: overlay;
+height: 150px;
+padding-right: 9px;
+margin: auto 0px;
 }
-
-
-
+}
 @media screen and ( max-height:800px ) {
-    /* .for-review-screen, .for-review-screen .bg-white {
-        height: 600px !important; 
-    } */
-    .login_screen {
-        
-        margin: 50px auto 0 !important;
-       
-    }
+/* .for-review-screen, .for-review-screen .bg-white {
+height: 600px !important; 
+} */
+.login_screen {
+margin: 50px auto 0 !important;
 }
-
+}
 @media screen and ( max-height:925px ){
-    .scrollnone body {
-        width: calc(100% + -5px);
-    }
+.scrollnone body {
+width: calc(100% + -5px);
 }
-
+}
 @media screen and ( max-height: 767px ) {
-    /* .for-review-screen, .for-review-screen .bg-white {
-        height: 500px !important;
-    } */
-	span#activeUserName {
-    /* font-size: 14px !important; */
-    line-height: 16px !important;
+/* .for-review-screen, .for-review-screen .bg-white {
+height: 500px !important;
+} */
+span#activeUserName {
+/* font-size: 14px !important; */
+line-height: 16px !important;
 }
-    
 }
-
-
 @media(max-width:1900px){
-    #review_rques_blk .question {
-        margin-top: 20px;
-    }
-
- 
-
+#review_rques_blk .question {
+margin-top: 20px;
 }
-
-
- 
- 
+}
 @media(min-width:1659px) and (max-width:1750px) {
-    
-    .reviewPanel .cust-tabs .nav-link{
-        padding-right: 30px!important;
-        padding-left: 30px!important;
-        min-width: 180px;
-      }
-      .live-test li+li{margin-left:8%;}
-    div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
-    
-   
-
+.reviewPanel .cust-tabs .nav-link{
+padding-right: 30px!important;
+padding-left: 30px!important;
+min-width: 180px;
 }
-
-
+.live-test li+li{margin-left:8%;}
+div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+}
 @media(min-width:1441px) and (max-width:1660px) {
-    
-    .slider-horizontal {
-        width: 85% !important;
-     
-    }
-    .reviewPanel .cust-tabs .nav-link{
-        padding-right: 30px!important;
-        padding-left: 30px!important;
-        min-width: auto;
-      }
-      div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
-      .live-test li+li{margin-left:5%;}
-   
+.slider-horizontal {
+width: 85% !important;
 }
-
+.reviewPanel .cust-tabs .nav-link{
+padding-right: 30px!important;
+padding-left: 30px!important;
+min-width: auto;
+}
+div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+.live-test li+li{margin-left:5%;}
+}
 @media(max-width:1440px){
-    #review_rques_blk .question.question-height {padding-left:50px;}       
-
-    .reviewPanel .cust-tabs .nav-link{
-    padding-right: 20px!important;
-     font-size:16px!important;
-    padding-left: 20px!important;
-    min-width: auto;
-  }
-  .exam-analytics .p-5 span.text-center.w-100 img{
-    width: 70% !important;
-    padding: 30px 10px 40px;
+#review_rques_blk .question.question-height {padding-left:50px;}       
+.reviewPanel .cust-tabs .nav-link{
+padding-right: 20px!important;
+font-size:16px!important;
+padding-left: 20px!important;
+min-width: auto;
 }
-  .live-test li+li{margin-left:3%;}
-  div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
-  .garphlistincom+.garphlistincom{margin-left:10px;}
-  .exam-analytics .abrv-graph{    width: 10px;
-    height: 10px;}
-    .compLeteS .name-txt-sml{width: 47%;
-        padding-right: 10px;font-size:14px;}
-        .custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:13px;} 
-        div.custom-page .star-ratings-css-top span {
-            font-size: 13px;
-        }
-        .only_prog  g.highcharts-label.highcharts-tooltip.highcharts-color-undefined {
-            transform: translate(70px, 47px);
-        }
-        #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn, #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{
-            font-size: 12px;
-        }
-        .Subject_box12>small p{ min-width: 230px !important;}
-        .Task_Center12>small p {
-            border-top-left-radius: 56px;
-            border-bottom-left-radius: 56px;
-            min-width: 258px !important;
-        }
-
-        
-       
+.exam-analytics .p-5 span.text-center.w-100 img{
+width: 70% !important;
+padding: 30px 10px 40px;
+}
+.live-test li+li{margin-left:3%;}
+div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 3rem;}
+.garphlistincom+.garphlistincom{margin-left:10px;}
+.exam-analytics .abrv-graph{    width: 10px;
+height: 10px;}
+.compLeteS .name-txt-sml{width: 47%;
+padding-right: 10px;font-size:14px;}
+.custom-page .star-ratings-css-bottom span,.custom-page .star-ratings-css-top span{font-size:13px;} 
+div.custom-page .star-ratings-css-top span {
+font-size: 13px;
+}
+.only_prog  g.highcharts-label.highcharts-tooltip.highcharts-color-undefined {
+transform: translate(70px, 47px);
+}
+#home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn, #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{
+font-size: 12px;
+}
+.Subject_box12>small p{ min-width: 230px !important;}
+.Task_Center12>small p {
+border-top-left-radius: 56px;
+border-bottom-left-radius: 56px;
+min-width: 258px !important;
+}
 }
 @media(max-width:1340px){
-    .sub-subject .btn.rounded-0.me-2 {
-        padding: 2px;
-        width: 35px;
-        height: 30px;
-        line-height: 20px;
-        margin-right: 5px!important;
-    }
-    .sub-subject strong{font-size: 16px;}
+.sub-subject .btn.rounded-0.me-2 {
+padding: 2px;
+width: 35px;
+height: 30px;
+line-height: 20px;
+margin-right: 5px!important;
+}
+.sub-subject strong{font-size: 16px;}
 }
 @media(min-width:1316px) and (max-width:1440px) {
-  .garphlistincom+.garphlistincom{margin-left:8px;}
-  .exam-analytics .abrv-graph{padding-right:2px;}
-    .pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span{
-       
-        font-size: 13px;
-    }
-    .slider-horizontal {
-        width: 85% !important;
-        height: 20px;
-    }
-
-    .subscription .form-btns button {
-        width: 250px;
-       
-    }
-
- 
-
+.garphlistincom+.garphlistincom{margin-left:8px;}
+.exam-analytics .abrv-graph{padding-right:2px;}
+.pe-1 .star-ratings-css-bottom span ,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span{
+font-size: 13px;
 }
-
-
+.slider-horizontal {
+width: 85% !important;
+height: 20px;
+}
+.subscription .form-btns button {
+width: 250px;
+}
+}
 @media(min-width:1281px) and (max-width:1320px) {
-    .bg-white.shadow-lg.py-5.px-3 {
-        padding-left: 5px !important;
-    }
-
-    .cust-gallery .swiper-slide.bg-white {
-        width: 33% !important;
-    }
-
-    /*planner screen */
-
-    .planner-content {
-        min-width: 30%;
-        max-width: 30%;
-    }
-
-    /****SACHIN****/
-
-    .planner-edit-mode {
-        right: 31.5% !important;
-    }
-
-    .open-sub-planner {
-        width: 64.2% !important;
-        height: auto !important;
-    }
-
-    .slider-horizontal {
-        width: 85% !important;
-      
-    }
-
-    /* end planner screen*/
-
+.bg-white.shadow-lg.py-5.px-3 {
+padding-left: 5px !important;
 }
-
+.cust-gallery .swiper-slide.bg-white {
+width: 33% !important;
+}
+/*planner screen */
+.planner-content {
+min-width: 30%;
+max-width: 30%;
+}
+/****SACHIN****/
+.planner-edit-mode {
+right: 31.5% !important;
+}
+.open-sub-planner {
+width: 64.2% !important;
+height: auto !important;
+}
+.slider-horizontal {
+width: 85% !important;
+}
+/* end planner screen*/
+}
 @media(min-width:1200px) and (max-width:1300px) {
-    div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 2.5rem;}
-
-    .slider-horizontal {
-        width: 85% !important;
-      
-    }
-    .back-to-dashbord a{font-size:16px;}
-    .subscriptionBox h5.cource-name { font-size: 22px;}
+div#myTabContent.reviewPanel .tab-pane .question-block{padding:15px 2.5rem;}
+.slider-horizontal {
+width: 85% !important;
 }
-
+.back-to-dashbord a{font-size:16px;}
+.subscriptionBox h5.cource-name { font-size: 22px;}
+}
 @media(min-width:1023px) and (max-width:1199px) {
-
-    .rightSect .legends {
-
-        width: 100%;
-    }
-
-    /** notification page css **/
-    .notification-right {
-        right: 0;
-    }
-    /** end here **/
-
-    .slider-horizontal {
-        width: 85% !important;
-        height: 20px;
-    }
+.rightSect .legends {
+width: 100%;
 }
-
+/** notification page css **/
+.notification-right {
+right: 0;
+}
+/** end here **/
+.slider-horizontal {
+width: 85% !important;
+height: 20px;
+}
+}
 @media(max-width:1024px) {
-    .list-series .live-exam .speci-text li {
-        /* width: 55%; */
-        margin-right: 0px;
-        float: left !important;
-    }
-
-    .list-series .live-exam #home .speci-text li,.list-series .live-exam #completed .speci-text li  {
-        width: 100%;
-    }
-
-    .live-exam #home .speci-text li:last-child {
-        width: 55% !important;
-    }
-
-
-    /** live exam css **/
-    .name-txt {
-        font-size: 13px;
-    }
-
-    p.tab-title {
-        font-size: 16px;
-    }
-
-    /** live exam css end here **/
-
+.list-series .live-exam .speci-text li {
+/* width: 55%; */
+margin-right: 0px;
+float: left !important;
 }
-
+.list-series .live-exam #home .speci-text li,.list-series .live-exam #completed .speci-text li  {
+width: 100%;
+}
+.live-exam #home .speci-text li:last-child {
+width: 55% !important;
+}
+/** live exam css **/
+.name-txt {
+font-size: 13px;
+}
+p.tab-title {
+font-size: 16px;
+}
+/** live exam css end here **/
+}
 @media(min-width:991px) and (max-width:1024px) {
-
-    .rightSect .legends {
-
-        width: 100%;
-    }
-
-    /** profile page css **/
-    /* .profile-section {
-        width: 220px;
-        top: 8%;
-        height: 650px;
-    } */
-
-    .leader-board {
-        /* width: 310px;
-        right: 20%; */
-        /* height: 100%; */
-        /* top: 8%; */
-    }
-
-    /* .profile-show {
-        height: 100%;
-        padding: 10px 0px;
-    } */
-
-    .subscription .form-btns button {
-        margin-bottom: 20px;
-    }
-
-    /* .log-out-screen {
-        width: 50%;
-        right: 20%;
-        top: 8%;
-    } */
-
-    button.cancel-btn {
-        margin-bottom: 15px;
-    }
-
-    /* .subscription {
-        right: 20%;
-        top: 8%;
-    } */
-
-    /** end here **/
+.rightSect .legends {
+width: 100%;
 }
-
-
+/** profile page css **/
+/* .profile-section {
+width: 220px;
+top: 8%;
+height: 650px;
+} */
+.leader-board {
+/* width: 310px;
+right: 20%; */
+/* height: 100%; */
+/* top: 8%; */
+}
+/* .profile-show {
+height: 100%;
+padding: 10px 0px;
+} */
+.subscription .form-btns button {
+margin-bottom: 20px;
+}
+/* .log-out-screen {
+width: 50%;
+right: 20%;
+top: 8%;
+} */
+button.cancel-btn {
+margin-bottom: 15px;
+}
+/* .subscription {
+right: 20%;
+top: 8%;
+} */
+/** end here **/
+}
 @media(min-width:1200px) and (max-width:1315px) {
-
-    .cust-tabs .nav-link {
-        font-size: 15px;
-        padding: 18px 11px;
-    }
-    .tabintablet .cust-tabs .nav-link {
-        font-size: 18px;
-    }
-
-    .pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span {
-        padding: 0 2px !important;
-        font-size: 13px;
-    }
-    .course-star li span{font-size:13px;}
-    .subscription .form-btns button {
-        width: 230px;
-       
-    }
-
+.cust-tabs .nav-link {
+font-size: 15px;
+padding: 18px 11px;
 }
-
+.tabintablet .cust-tabs .nav-link {
+font-size: 18px;
+}
+.pe-1 .star-ratings-css-bottom span,.dashboard .star-ratings-css-top span,.course-star li .star-ratings-css .star-ratings-css-bottom span {
+padding: 0 2px !important;
+font-size: 13px;
+}
+.course-star li span{font-size:13px;}
+.subscription .form-btns button {
+width: 230px;
+}
+}
 @media(min-width:1199px) and (max-width:1315px) {
-
-    /* .leader-board,
-    .subscription,
-    .log-out-screen {
-        right: 320px;
-    } */
-    .subscription {
-        width: 50%;
-    }
+/* .leader-board,
+.subscription,
+.log-out-screen {
+right: 320px;
+} */
+.subscription {
+width: 50%;
 }
-
+}
 @media(min-width:1024px) and (max-width:1198px) {
-
-    .leader-board,
-    .subscription,
-    .log-out-screen {
-        right: 220px;
-        
-        
-    }
-    .subscription {
-        width: 62%;
-    }
+.leader-board,
+.subscription,
+.log-out-screen {
+right: 220px;
 }
-
-
-
-
-
+.subscription {
+width: 62%;
+}
+}
 @media(min-width:1024px) and (max-width:1199px) {
-    .cust-tabs .nav-link {
-        font-size: 12px;
-        padding: 18px 10px;
-    }
+.cust-tabs .nav-link {
+font-size: 12px;
+padding: 18px 10px;
 }
-
-
+}
 @media(max-width:1300px){
-    #collapsePlanner .d-flex.align-items-center.text-uppercase {
-        font-size: 13px;
-    }
-    .cus-radio-btn label{font-size: 14px;}
+#collapsePlanner .d-flex.align-items-center.text-uppercase {
+font-size: 13px;
+}
+.cus-radio-btn label{font-size: 14px;}
 }
 @media(min-width:992px) and (max-width:1280px) {
-
-    /** Rahul css on 17-1-2022 **/
-
-    .button-sec.mt-3 a {
-        font-size: 12px;
-    }
-
-    button#goto-exam-btn {
-        font-size: 12px;
-    }
-
-    .tab-btn-box {
-        /* position:relative; */
-    }
-
-    #exam_content_sec .tab-btn-box {
-        bottom: 20px;
-    }
-
-    #exam_content_sec #question_section .tab-btn-box a.rounded-0 {
-        box-shadow: none;
-        font-size: 12px;
-    }
-
-    /** Rahul css end on 17-1-2022 **/
-
-
-
-    button.arrow.prev-arow {
-        left: 3%;
-    }
-
-    button.arrow.next-arow {
-        right: 27%;
-    }
-
-    .time_taken_css {
-        margin-right: 25px !important;
-    }
-
-    /*Test screen */
-    .examSect {
-        padding: 17px 10px;
-    }
-
-    .examSect div#myTabContent .tab-pane {
-        padding: 15px 20px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block {
-        padding: 28px 2rem 15px;
-        margin-right: 40px;
-    }
-
-    .examSect .question {
-        padding-left: 45px;
-        font-family: Manrope;
-        font-size: 14px;
-    }
-
-    /*.examSect .rightSect .number-block {
-        height: 100% !important;
-    }*/
-
-    /* test screen ed*/
-
-
-    .container-fluid.pt-0 .col-lg-3.p-0 {
-        width: 34%;
-    }
-
-    /*.cust-gallery .swiper-slide.bg-white {
-        width: 33% !important;
-    }*/
-
-    .bg-white.shadow-lg {
-        margin-bottom: 36px;
-    }
-
-    /*planner screen */
-    .planner-content {
-        min-width: 30%;
-        max-width: 30%;
-    }
-
-    .planner-edit-mode {
-        right: 31.5% !important;
-    }
-
-    .open-sub-planner {
-        width: 64.2% !important;
-        height: auto !important;
-    }
-
-    /* end planner screen*/
-
+/** Rahul css on 17-1-2022 **/
+.button-sec.mt-3 a {
+font-size: 12px;
 }
-
+button#goto-exam-btn {
+font-size: 12px;
+}
+.tab-btn-box {
+/* position:relative; */
+}
+#exam_content_sec .tab-btn-box {
+bottom: 20px;
+}
+#exam_content_sec #question_section .tab-btn-box a.rounded-0 {
+box-shadow: none;
+font-size: 12px;
+}
+/** Rahul css end on 17-1-2022 **/
+button.arrow.prev-arow {
+left: 3%;
+}
+button.arrow.next-arow {
+right: 27%;
+}
+.time_taken_css {
+margin-right: 25px !important;
+}
+/*Test screen */
+.examSect {
+padding: 17px 10px;
+}
+.examSect div#myTabContent .tab-pane {
+padding: 15px 20px;
+}
+.examSect div#myTabContent .tab-pane .question-block {
+padding: 28px 2rem 15px;
+margin-right: 40px;
+}
+.examSect .question {
+padding-left: 45px;
+font-family: Manrope;
+font-size: 14px;
+}
+/*.examSect .rightSect .number-block {
+height: 100% !important;
+}*/
+/* test screen ed*/
+.container-fluid.pt-0 .col-lg-3.p-0 {
+width: 34%;
+}
+/*.cust-gallery .swiper-slide.bg-white {
+width: 33% !important;
+}*/
+.bg-white.shadow-lg {
+margin-bottom: 36px;
+}
+/*planner screen */
+.planner-content {
+min-width: 30%;
+max-width: 30%;
+}
+.planner-edit-mode {
+right: 31.5% !important;
+}
+.open-sub-planner {
+width: 64.2% !important;
+height: auto !important;
+}
+/* end planner screen*/
+}
 @media(min-width:992px) and (max-width:998px) {
-
-    .bg-white.shadow-lg.py-5.px-3 {
-        padding-left: 10px !important;
-    }
-
-    .cust-gallery .swiper-slide.bg-white {
-        width: 33% !important;
-    }
-
-    .bg-white.shadow-lg {
-        margin-bottom: 36px;
-    }
-
-    /* Test screen*/
-
-    .examSect {
-        padding: 17px 10px;
-    }
-
-    .examSect div#myTabContent .tab-pane {
-        padding: 15px 20px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 2rem;
-    }
-
-    .examSect ul#myTab li a {
-        padding: 10px 15px;
-    }
-
-    .examSect .question {
-        padding-left: 30px;
-        font-family: Manrope;
-        font-size: 14px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 70px;
-    }
-
-    .examSect .rightSect .number-block {
-        height: 270px;
-    }
-
-    /* end test screen */
-    /* planner screen */
-    .planner-content {
-        min-width: 30%;
-        max-width: 30%;
-    }
-
-    .planner-edit-mode {
-        right: 31.5% !important;
-    }
-
-    .open-sub-planner {
-        width: 64.2% !important;
-        height: auto !important;
-    }
-
-    /* planner screen end */
+.bg-white.shadow-lg.py-5.px-3 {
+padding-left: 10px !important;
 }
-
+.cust-gallery .swiper-slide.bg-white {
+width: 33% !important;
+}
+.bg-white.shadow-lg {
+margin-bottom: 36px;
+}
+/* Test screen*/
+.examSect {
+padding: 17px 10px;
+}
+.examSect div#myTabContent .tab-pane {
+padding: 15px 20px;
+}
+.examSect div#myTabContent .tab-pane .question-block {
+padding: 15px 2rem;
+}
+.examSect ul#myTab li a {
+padding: 10px 15px;
+}
+.examSect .question {
+padding-left: 30px;
+font-family: Manrope;
+font-size: 14px;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow {
+top: 70px;
+}
+.examSect .rightSect .number-block {
+height: 270px;
+}
+/* end test screen */
+/* planner screen */
+.planner-content {
+min-width: 30%;
+max-width: 30%;
+}
+.planner-edit-mode {
+right: 31.5% !important;
+}
+.open-sub-planner {
+width: 64.2% !important;
+height: auto !important;
+}
+/* planner screen end */
+}
 @media(min-width:768px) and (max-width:990px) {
-	
-    .live-exam-list-wrapper .cust-tab-content .custom-btn-gray{ width: 216px;}
-	.edit-form {
-		right: 210px !important;
-	}
-	/* .form-btns {
-		margin-top: 0px !important;
-	} */
-
-    /** rahul css on 15-1-2022 **/
-
-    .bg-white.shadow-lg .progress_text {
-        font-size: 16px;
-    }
-
-
-    /** end here on 15-1-2022**/
-
-    /*28-12*/
-    .course-star li strong {
-        width: 100% !important;
-    }
-
-    .star-img {
-        width: 70% !important;
-        margin-left: 0px !important;
-    }
-
-    .live-exam .speci-text li:last-child a button {
-        width: 100%;
-    }
-
-    /* 28-12*/
-
-
-
-    .back-to-dashbord {
-        top: 39px;
-        right: 24px;
-    }
-
-    .back-to-dashbord a {
-        font-size: 14px;
-        background: #fff;
-        padding: 2px 5px;
-    }
-
-    /** test review page on 16-12-2021**/
-    .test-review .cust-tabs .nav-link {
-        margin-right: 10px;
-        font-size: 14px;
-    }
-
-    .test-review .prev-arow {
-        left: -18px;
-        top: 52px;
-    }
-
-    .test-review div#myTabContent .tab-pane .question-block {
-        padding: 15px 0rem;
-    }
-
-    .test-review .next-arow {
-        top: 52px;
-    }
-
-    .rightSect.test-review-right .bg-white {
-        padding: 10px !important;
-    }
-
-    .test-review .percentage-21 {
-        width: 310px;
-    }
-
-    .percentage-21.perntage2 {
-        right: 16%;
-    }
-
-    .people-qus strong {
-        font-size: 30px;
-    }
-
-    /** end here 16-12-2021 **/
-    /** exam analytics page css 16-12-2021**/
-
-    .exam-analytics .row.mb-4 .col-md-9 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-3 {
-        width: 100%;
-    }
-
-    .exam-analytics .cust-tabs .nav-link {
-        margin-right: 0px;
-        font-size: 12px;
-    }
-
-    /** exam analytics page css End 14-12-2021**/
-    .custom-page .slick-list {
-        height: 182px;
-    }
-
-    /*.custom-page .p-3.slick-slide {
-        width: auto !important;
-    }*/
-
-    .container-fluid .row .col-md-6.ms-auto.text-end {
-        width: 100%;
-    }
-
-    /** Listing series page css on 16-12-2021 **/
-    .cust-tab-content .custom-btn-gray {
-        font-size: 14px;
-        width: auto;
-    }
-
-    /** Listing series page css END on 16-12-2021 **/
-
-    /** profile page css **/
-    .profile-section {
-        width: 190px;
-        height: 650px;
-    }
-
-    /* .leader-board {
-        width: 329px;
-		right: 24%;
-		height: 550px;
-		padding-left: 70px;
-    } */
-
-    /* .profile-show {
-		position: absolute;
-		top: 0px;
-		right: 460px;
-		width: 284px;
-	} */
-    .subscription .form-btns button {
-        margin-bottom: 20px;
-    }
-
-    /* .log-out-screen {
-        width: 50%;
-        right: 24%;
-    } */
-
-    .subscription {
-        right: 24%;
-    }
-
-    .profile-picture-txt .p-text {
-        padding-right: 0px;
-    }
-
-    /* .profile-picture-txt {
-        padding: 15px;
-        display: inline-block;
-    } */
-
-    /* .subscription .profile-picture-txt .p-picture {
-        height: 68px;
-        width: 70px;
-    } */
-
-    /* .subscrived {
-        padding: 31px 0px;
-    } */
-
-    .subscription .p-text h3 {
-        font-size: 16px;
-        line-height: 55px;
-        padding-left: 10px;
-    }
-
-    .profile-picture-txt .p-picture {
-        width: 30%;
-        height: auto !important;
-    }
-
-    /** end here **/
+.live-exam-list-wrapper .cust-tab-content .custom-btn-gray{ width: 216px;}
+.edit-form {
+right: 210px !important;
 }
-
+/* .form-btns {
+margin-top: 0px !important;
+} */
+/** rahul css on 15-1-2022 **/
+.bg-white.shadow-lg .progress_text {
+font-size: 16px;
+}
+/** end here on 15-1-2022**/
+/*28-12*/
+.course-star li strong {
+width: 100% !important;
+}
+.star-img {
+width: 70% !important;
+margin-left: 0px !important;
+}
+.live-exam .speci-text li:last-child a button {
+width: 100%;
+}
+/* 28-12*/
+.back-to-dashbord {
+top: 39px;
+right: 24px;
+}
+.back-to-dashbord a {
+font-size: 14px;
+background: #fff;
+padding: 2px 5px;
+}
+/** test review page on 16-12-2021**/
+.test-review .cust-tabs .nav-link {
+margin-right: 10px;
+font-size: 14px;
+}
+.test-review .prev-arow {
+left: -18px;
+top: 52px;
+}
+.test-review div#myTabContent .tab-pane .question-block {
+padding: 15px 0rem;
+}
+.test-review .next-arow {
+top: 52px;
+}
+.rightSect.test-review-right .bg-white {
+padding: 10px !important;
+}
+.test-review .percentage-21 {
+width: 310px;
+}
+.percentage-21.perntage2 {
+right: 16%;
+}
+.people-qus strong {
+font-size: 30px;
+}
+/** end here 16-12-2021 **/
+/** exam analytics page css 16-12-2021**/
+.exam-analytics .row.mb-4 .col-md-9 {
+width: 100%;
+margin-bottom: 20px;
+}
+.exam-analytics .row.mb-4 .col-md-3 {
+width: 100%;
+}
+.exam-analytics .cust-tabs .nav-link {
+margin-right: 0px;
+font-size: 12px;
+}
+/** exam analytics page css End 14-12-2021**/
+.custom-page .slick-list {
+height: 182px;
+}
+/*.custom-page .p-3.slick-slide {
+width: auto !important;
+}*/
+.container-fluid .row .col-md-6.ms-auto.text-end {
+width: 100%;
+}
+/** Listing series page css on 16-12-2021 **/
+.cust-tab-content .custom-btn-gray {
+font-size: 14px;
+width: auto;
+}
+/** Listing series page css END on 16-12-2021 **/
+/** profile page css **/
+.profile-section {
+width: 190px;
+height: 650px;
+}
+/* .leader-board {
+width: 329px;
+right: 24%;
+height: 550px;
+padding-left: 70px;
+} */
+/* .profile-show {
+position: absolute;
+top: 0px;
+right: 460px;
+width: 284px;
+} */
+.subscription .form-btns button {
+margin-bottom: 20px;
+}
+/* .log-out-screen {
+width: 50%;
+right: 24%;
+} */
+.subscription {
+right: 24%;
+}
+.profile-picture-txt .p-text {
+padding-right: 0px;
+}
+/* .profile-picture-txt {
+padding: 15px;
+display: inline-block;
+} */
+/* .subscription .profile-picture-txt .p-picture {
+height: 68px;
+width: 70px;
+} */
+/* .subscrived {
+padding: 31px 0px;
+} */
+.subscription .p-text h3 {
+font-size: 16px;
+line-height: 55px;
+padding-left: 10px;
+}
+.profile-picture-txt .p-picture {
+width: 30%;
+height: auto !important;
+}
+/** end here **/
+}
 @media(min-width:768px) and (max-width:991px) {
-
-    .profile-picture-txt .p-picture {
-
-        width: 65px;
-        height: 65px;
-
-    }
-	.rankholder {
-		background-position: 20px -140px !important;
-		height: 345px !important;
-	}
-
-    a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-        padding: 20px 0!important;
-    }
-
-    span.Ex--an {
-        display: none;
-    }
-
-    .Ex-anal i.me-2.fa.fa-download {
-        margin-right: 0px !important;
-    }
-
-    /** rahul css on 31-12-2021**/
-
-    button#goto-exam-btn {
-        padding: 15px 5px !important;
-        font-size: 14px;
-    }
-
-    .fw-bold {
-        font-size: 18px;
-    }
-
-    #exam_content_sec.examSect ul#myTab li a {
-        padding: 10px 2px;
-        font-size: 14px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 17% !important;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow {
-        right: 38%;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow {
-        left: 5%;
-    }
-
-    .rightSect .col-md-6.legends {
-        width: 100%;
-    }
-
-    #resume-test .justify-content-center {
-        justify-content: center !important;
-    }
-
-    .subj-name {
-        font-size: 12px;
-    }
-
-    .graph-txt {
-        font-size: 16px;
-    }
-
-    #myTabContent .slimScrollDiv {
-        height: 28vh !important;
-    }
-
-    /** end here **/
-
-    /** analytics **/
-
-    #home .bg-white.shadow-lg {
-        height: auto;
-    }
-
-    /** end analytics */
-
-    /** dashboard-index page css popup on 16-12-2021 **/
-    /** popup css**/
-    #fullTest_Dashboard .full-txtblock span {
-        padding-left: 30%;
-    }
-
-    #fullTest_Dashboard .full-txtblock {
-        margin: 0px 12px !important;
-    }
-
-    /** end here**/
-    /** end here dashboard-index page css popup on 16-12-2021 **/
-    /*Test screen */
-    .examSect .tab-btn-box.d-flex.mt-3 a {
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        padding: 8px 10px !important;
-        font-size: 15px;
-    }
-
-    .examSect {
-        padding: 17px 10px;
-    }
-
-    .examSect div#myTabContent .tab-pane {
-        padding: 15px 20px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block {
-        padding: 28px 1rem 15px;
-    }
-
-    .examSect ul#myTab li a {
-        padding: 10px 15px;
-    }
-
-    .examSect .question {
-        padding-left: 30px;
-        font-family: Manrope;
-        font-size: 14px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 70px;
-    }
-
-    .examSect .rightSect .number-block {
-        height: 270px;
-    }
-
-    /*test screen end*/
-
-    /** live exam css **/
-
-    .name-txt {
-        font-size: 18px;
-        width: 100%;
-        display: inline-block;
-    }
-
-    p.tab-title {
-        font-size: 18px;
-        width: 100%;
-        display: initial;
-    }
-
-    .btn-danger.disabled,
-    .btn-warning.disabled {
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
-
-    .tab-wrapper .d-flex.justify-content-between {
-        /* display: inline-block !important; */
-        width: 100%;
-    }
-
-    .tab-wrapper .dropdown {
-        display: inline-block;
-    }
-
-
-    .justify-content-center {
-        justify-content: center !important;
-    }
-
-    .slbs-link a {
-        color: #21ccff;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    /** live exam css end here **/
-
-
-    .bg-white.shadow-lg {
-        margin-bottom: 36px;
-    }
-
-    .cust-gallery .swiper-slide.bg-white {
-        width: 55% !important;
-    }
-
-    .bg-white.shadow-lg {
-        height: 256px;
-    }
-
-    /* planner screen */
-    .planner-content {
-        min-width: 30%;
-        max-width: 30%;
-    }
-
-    .planner-edit-mode {
-        right: 31.5% !important;
-    }
-
-    .open-sub-planner {
-        width: 64.2% !important;
-        height: auto !important;
-    }
-
-    /* end planner screen*/
-
+.profile-picture-txt .p-picture {
+width: 65px;
+height: 65px;
 }
-
+.rankholder {
+background-position: 20px -140px !important;
+height: 345px !important;
+}
+a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
+padding: 20px 0!important;
+}
+span.Ex--an {
+display: none;
+}
+.Ex-anal i.me-2.fa.fa-download {
+margin-right: 0px !important;
+}
+/** rahul css on 31-12-2021**/
+button#goto-exam-btn {
+padding: 15px 5px !important;
+font-size: 14px;
+}
+.fw-bold {
+font-size: 18px;
+}
+#exam_content_sec.examSect ul#myTab li a {
+padding: 10px 2px;
+font-size: 14px;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow {
+top: 17% !important;
+}
+.examSect div#myTabContent .tab-pane .question-block button.arrow.next-arow {
+right: 38%;
+}
+.examSect div#myTabContent .tab-pane .question-block button.arrow.prev-arow {
+left: 5%;
+}
+.rightSect .col-md-6.legends {
+width: 100%;
+}
+#resume-test .justify-content-center {
+justify-content: center !important;
+}
+.subj-name {
+font-size: 12px;
+}
+.graph-txt {
+font-size: 16px;
+}
+#myTabContent .slimScrollDiv {
+height: 28vh !important;
+}
+/** end here **/
+/** analytics **/
+#home .bg-white.shadow-lg {
+height: auto;
+}
+/** end analytics */
+/** dashboard-index page css popup on 16-12-2021 **/
+/** popup css**/
+#fullTest_Dashboard .full-txtblock span {
+padding-left: 30%;
+}
+#fullTest_Dashboard .full-txtblock {
+margin: 0px 12px !important;
+}
+/** end here**/
+/** end here dashboard-index page css popup on 16-12-2021 **/
+/*Test screen */
+.examSect .tab-btn-box.d-flex.mt-3 a {
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+padding: 8px 10px !important;
+font-size: 15px;
+}
+.examSect {
+padding: 17px 10px;
+}
+.examSect div#myTabContent .tab-pane {
+padding: 15px 20px;
+}
+.examSect div#myTabContent .tab-pane .question-block {
+padding: 28px 1rem 15px;
+}
+.examSect ul#myTab li a {
+padding: 10px 15px;
+}
+.examSect .question {
+padding-left: 30px;
+font-family: Manrope;
+font-size: 14px;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow {
+top: 70px;
+}
+.examSect .rightSect .number-block {
+height: 270px;
+}
+/*test screen end*/
+/** live exam css **/
+.name-txt {
+font-size: 18px;
+width: 100%;
+display: inline-block;
+}
+p.tab-title {
+font-size: 18px;
+width: 100%;
+display: initial;
+}
+.btn-danger.disabled,
+.btn-warning.disabled {
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.tab-wrapper .d-flex.justify-content-between {
+/* display: inline-block !important; */
+width: 100%;
+}
+.tab-wrapper .dropdown {
+display: inline-block;
+}
+.justify-content-center {
+justify-content: center !important;
+}
+.slbs-link a {
+color: #21ccff;
+font-size: 20px;
+font-weight: bold;
+}
+/** live exam css end here **/
+.bg-white.shadow-lg {
+margin-bottom: 36px;
+}
+.cust-gallery .swiper-slide.bg-white {
+width: 55% !important;
+}
+.bg-white.shadow-lg {
+height: 256px;
+}
+/* planner screen */
+.planner-content {
+min-width: 30%;
+max-width: 30%;
+}
+.planner-edit-mode {
+right: 31.5% !important;
+}
+.open-sub-planner {
+width: 64.2% !important;
+height: auto !important;
+}
+/* end planner screen*/
+}
 @media only screen and (max-width: 767px) {
- /*kanchan css*/
- .dt_sec-1 span{font-weight: 600 !important;}
-    .dt_sec-1 span img{max-width: 60px;
-    padding-right: 5px;}
-   .dtrow-left {background: #f2f2f2c4;
-    border-radius: 30px;
-    padding: 25px;
-    margin: 10px;}
-    .dtrow-left .btntheme{width: 100%;
-    position: relative;
-    top: 0%;}
-    .dtrow-right {background: #f2f2f2c4;
-    border-radius: 30px;
-    padding: 25px;
-    margin: 10px;}
-    .dtrow-right .btntheme{width: 100%;
-    position: relative;
-    top: 2%;}
- /*kanchan css*/
-
-    button.arrow.prev-arow {
-        position: relative;
-    }
-	#sharefrnd .modal-body.pt-0.px-5 {
-    padding-left: 1px !important;
-    padding-right: 1px !important;
-    }
-
-
-    button.arrow.next-arow {
-        position: relative;
-    }
-
-
-    .profile-section li a svg {
-        width: 100%;
-    }
-
-    .border-bottom .px-4 {
-        padding-left: 0px !important;
-    }
-
-    .examSect .rightSect .bg-white {
-        padding: 55px !important;
-    }
-
-    div#PreparationCenter_modal_body .h-scroll-slim {
-        padding-right: 15px;
-    }
-
-    div#review_rques_blk p {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    /*05-01-22 rahul css*/
-
-    #contentHtml {
-        transition: 0.2s;
-        z-index: 99999;
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .greentxt {
-        font-size: 100px;
-    }
-
-    .reportHeading {
-        font-size: 18px;
-    }
-
-    .reportHeading span {
-        font-size: 18px;
-    }
-
-    .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4 {
-        display: inline-block !important;
-    }
-
-    .bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4 .ms-auto.d-flex.align-items-center {
-        display: inline-block !important;
-        text-align: center;
-    }
-
-
-    /*05-01-22*/
-
-
-    #exam_result_analysis .progress {
-        width: 56% !important;
-        max-width: 56%;
-    }
-
-    .exam-analytics div#myTabContent .tab-pane .hScroll {
-        height: 255px !important;
-    }
-
-    .chaptbox-add a {
-        text-align: center !important;
-        justify-content: center !important;
-    }
-
-    p.text-end.text-danger.mt-1 {
-        font-size: 12px !important;
-        text-align: left !important;
-    }
-
-    .edit-form button#cancelEdit,
-    .edit-form button#saveEdit {
-        width: 48% !important;
-
-    }
-
-    .name-txt-sml {
-        font-size: 16px !important;
-    }
-
-    .edit-form .btm-form-flds {
-        margin-top: 0px !important;
-		padding-right: 0px !important;
-    }
-
-    .edit-form .form-btns {
-        margin-top: 0px !important;
-    }
-
-    .cust-gallery .swiper-slide h3 {
-        width: auto !important;
-        font-size: 14px !important;
-        word-break: break-word;
-        white-space: break-spaces;
-    }
-
-    .leader-board {
-        border-top-left-radius: 56px !important;
-        border-top-right-radius: 56px !important;
-    }
-
-    /* .list-series .scroll-div-live-exm {
-        height: 400px !important;
-    } */
-
-    span.px-3 img {
-        width: 35px;
-    }
-
-    div#PreparationCenter_modal_body {
-        padding: 0px 10px !important;
-    }
-
-    #myTabContent .progress {
-        border-radius: 15rem !important;
-      
-    }
-
-    /* 01-01-22*/
-    a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
-        padding: 20px 20px!important;
-        min-width: 180px;
-        font-size: 13px;
-    }
-
-    span.Ex--an {
-        display: none;
-    }
-
-    .Ex-anal i.me-2.fa.fa-download {
-        margin-right: 0px !important;
-    }
-
-    #overall button.btn,
-    #home button.btn {
-        font-size: 12px;
-        padding: 5px 20px !important;
-        width: 28% !important;
-    }
-
-    #overall button.btn.active,
-    #home button.btn.active {
-        padding: 10px 0px !important;
-    }
-
-
-
-    /* 01-01-22 */
-
-
-    /** rahul css on 31-12-2021**/
-
-    #exam_content_sec .tab-wrapper.h-100 {
-        height: auto !important;
-        margin-bottom: 10px;
-    }
-
-    .examSect div#myTabContent {
-        height: auto !important;
-    }
-
-    .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
-        height: auto !important;
-        margin-top: 15px !important;
-    }
-
-    .question-block {
-        height: auto;
-    }
-
-    #exam_content_sec .tab-btn-box {
-        bottom: 10px;
-        text-align: center;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 35% !important;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {
-        right: 0px;
-        position: absolute;
-        top: 36px !important;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow {
-        left: 2%;
-        position: absolute;
-        top: 36px !important;
-    }
-
-    .q-no {
-        left: 0px;
-    }
-
-    #exam_content_sec .question-block .question p {
-        font-size: 12px;
-        padding-left: 23px;
-    }
-
-    #resume-test .justify-content-center {
-        justify-content: center !important;
-    }
-
-    .tab-btn-box {
-        position: relative;
-        display: inline-block !important;
-    }
-
-    .examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
-    .examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
-    .examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
-        line-height: 32px;
-        width: 80%;
-        display: inline-block;
-        margin-bottom: 10px;
-        height: 50px;
-        color: #000;
-    }
-
-    .examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0 {
-        display: inline-block;
-        width: 80%;
-        margin-bottom: 10px;
-        margin-left: 0px !important;
-    }
-
-    .counter {
-        top: 0px !important;
-    }
-
-    #FullTest_Exam_Panel_Interface_A button#bt-modal-cancel {
-        margin: 0px;
-        width: 200px;
-    }
-
-    #test_instruction .col-md-3.col-lg-3.d-flex.align-items-center {
-        display: inline-block !important;
-    }
-
-    button#goto-exam-btn {
-        padding: 15px 5px !important;
-        font-size: 14px;
-    }
-
-    button#goto-exam-btn {
-        padding: 15px 40px !important;
-        font-size: 14px;
-        color: #fff !important;
-        opacity: 1;
-    }
-
-    /** end here **/
-
-    /*new responsive code 27-12*/
-    .button-sec.mt-3 a {
-        width: 80%;
-    }
-
-    .live-exam #home .speci-text li:last-child {
-        width: 100% !important;
-    }
-
-    .live-exam #home .speci-text li:last-child button {
-        float: left !important;
-        width: 100% !important;
-    }
-
-    .list-series .live-exam .speci-text li a button {
-        width: 55% !important;
-        float: left;
-    }
-
-    .user-name-block {
-        font-size: 12px;
-    }
-
-    .bg-white.shadow-lg.py-5.ps-3.pe-1 {
-        height: 275px;
-    }
-
-    /* .list-series .live-exam .speci-text li {
-        width: 100% !important;
-    } */
-
-    .live-exam .speci-text li:last-child {
-        margin-right: 0px !important;
-    }
-
-    /* new responsive code 27-12*/
-
-
-    .counter {
-        margin-right: 0px !important;
-        top: 3px;
-        right: 0px !important;
-    }
-
-    /**analytics **/
-
-    div#topIIC {
-        margin-top: 40px;
-    }
-
-    #topIIC .d-flex,
-    #sub--proficiency .d-flex {
-        display: inline-block !important;
-        width: 100% !important;
-    }
-
-    #topIIC .bg-white.shadow-lg,
-    #sub--proficiency .bg-white.shadow-lg {
-        height: auto;
-    }
-
-
-
-    div#myTabContent .tab-pane .question-block {
-        padding: 15px 0px;
-    }
-
-    .question {
-        padding-left: 35px;
-        padding-right: 20px;
-    }
-
-    .test-review {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
-
-    .back-to-dashbord {
-        top: 6px;
-    }
-
-    .back-to-dashbord {
-        top: 39px;
-        right: 24px;
-        display: none;
-    }
-
-    .back-to-dashbord a {
-        font-size: 14px;
-    }
-
-    .course-star li strong {
-        width: 43% !important;
-        display: block;
-        float: left;
-    }
-
-    .star-img {
-        width: 43% !important;
-        display: block;
-        float: left;
-    }
-
-    /** dashboard-index page css popup on 16-12-2021 **/
-    /** popup css**/
-    #fullTest_Dashboard .full-txtblock span {
-        padding-left: 30%;
-    }
-
-    /** end here**/
-    /** end here dashboard-index page css popup on 16-12-2021 **/
-
-    /** custom page css on 16-12-2021 **/
-
-    /*.custom-page .p-3.slick-slide {
-        width: auto !important;
-    }*/
-
-    .custom-page .slick-list {
-        height: 220px;
-    }
-
-    /** End custom page css on 16-12-2021 **/
-    /* For mobile phones: */
-    div#collapseExample [class*="col-"] {
-        width: 100%;
-    }
-
-    .col-lg-12.p-lg-5.pt-none {
-        width: 100% !important;
-    }
-
-    button#dropdownMenuLink {
-        width: 40px;
-        height: 40px;
-    }
-
-    .d-flex.px-4.py-2.align-items-center.justify-content-between form {
-        width: 75%;
-        float: left;
-    }
-
-    .listing-details .name-txt {
-        width: 100% !important;
-    }
-
-    /* .slick-slide {
-        width: 38% !important;
-    } */
+/*kanchan css*/
+.dt_sec-1 span{font-weight: 600 !important;}
+.dt_sec-1 span img{max-width: 60px;
+padding-right: 5px;}
+.dtrow-left {background: #f2f2f2c4;
+border-radius: 30px;
+padding: 25px;
+margin: 10px;}
+.dtrow-left .btntheme{width: 100%;
+position: relative;
+top: 0%;}
+.dtrow-right {background: #f2f2f2c4;
+border-radius: 30px;
+padding: 25px;
+margin: 10px;}
+.dtrow-right .btntheme{width: 100%;
+position: relative;
+top: 2%;}
+/*kanchan css*/
+button.arrow.prev-arow {
+position: relative;
 }
-
+#sharefrnd .modal-body.pt-0.px-5 {
+padding-left: 1px !important;
+padding-right: 1px !important;
+}
+button.arrow.next-arow {
+position: relative;
+}
+.profile-section li a svg {
+width: 100%;
+}
+.border-bottom .px-4 {
+padding-left: 0px !important;
+}
+.examSect .rightSect .bg-white {
+padding: 55px !important;
+}
+div#PreparationCenter_modal_body .h-scroll-slim {
+padding-right: 15px;
+}
+div#review_rques_blk p {
+font-size: 16px;
+line-height: 20px;
+}
+/*05-01-22 rahul css*/
+#contentHtml {
+transition: 0.2s;
+z-index: 99999;
+position: relative;
+margin-top: 20px;
+}
+.greentxt {
+font-size: 100px;
+}
+.reportHeading {
+font-size: 18px;
+}
+.reportHeading span {
+font-size: 18px;
+}
+.bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4 {
+display: inline-block !important;
+}
+.bg-white.shadow-lg.p-5.report-analysis-block div.d-flex.align-items-center.border-bottom.pb-4 .ms-auto.d-flex.align-items-center {
+display: inline-block !important;
+text-align: center;
+}
+/*05-01-22*/
+#exam_result_analysis .progress {
+width: 56% !important;
+max-width: 56%;
+}
+.exam-analytics div#myTabContent .tab-pane .hScroll {
+height: 255px !important;
+}
+.chaptbox-add a {
+text-align: center !important;
+justify-content: center !important;
+}
+p.text-end.text-danger.mt-1 {
+font-size: 12px !important;
+text-align: left !important;
+}
+.edit-form button#cancelEdit,
+.edit-form button#saveEdit {
+width: 48% !important;
+}
+.name-txt-sml {
+font-size: 16px !important;
+}
+.edit-form .btm-form-flds {
+margin-top: 0px !important;
+padding-right: 0px !important;
+}
+.edit-form .form-btns {
+margin-top: 0px !important;
+}
+.cust-gallery .swiper-slide h3 {
+width: auto !important;
+font-size: 14px !important;
+word-break: break-word;
+white-space: break-spaces;
+}
+.leader-board {
+border-top-left-radius: 56px !important;
+border-top-right-radius: 56px !important;
+}
+/* .list-series .scroll-div-live-exm {
+height: 400px !important;
+} */
+span.px-3 img {
+width: 35px;
+}
+div#PreparationCenter_modal_body {
+padding: 0px 10px !important;
+}
+#myTabContent .progress {
+border-radius: 15rem !important;
+}
+/* 01-01-22*/
+a.Ex-anal.btn.rounded-0.py-2.px-5.h-100.d-flex.justify-content-center.align-items-center {
+padding: 20px 20px!important;
+min-width: 180px;
+font-size: 13px;
+}
+span.Ex--an {
+display: none;
+}
+.Ex-anal i.me-2.fa.fa-download {
+margin-right: 0px !important;
+}
+#overall button.btn,
+#home button.btn {
+font-size: 12px;
+padding: 5px 20px !important;
+width: 28% !important;
+}
+#overall button.btn.active,
+#home button.btn.active {
+padding: 10px 0px !important;
+}
+/* 01-01-22 */
+/** rahul css on 31-12-2021**/
+#exam_content_sec .tab-wrapper.h-100 {
+height: auto !important;
+margin-bottom: 10px;
+}
+.examSect div#myTabContent {
+height: auto !important;
+}
+.rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {
+height: auto !important;
+margin-top: 15px !important;
+}
+.question-block {
+height: auto;
+}
+#exam_content_sec .tab-btn-box {
+bottom: 10px;
+text-align: center;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow {
+top: 35% !important;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow.next-arow {
+right: 0px;
+position: absolute;
+top: 36px !important;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow.prev-arow {
+left: 2%;
+position: absolute;
+top: 36px !important;
+}
+.q-no {
+left: 0px;
+}
+#exam_content_sec .question-block .question p {
+font-size: 12px;
+padding-left: 23px;
+}
+#resume-test .justify-content-center {
+justify-content: center !important;
+}
+.tab-btn-box {
+position: relative;
+display: inline-block !important;
+}
+.examSect div#myTabContent .tab-pane a.btn.px-5.btn-light-green.rounded-0,
+.examSect div#myTabContent .tab-pane a.btn.px-4.ms-auto.me-2.btn-light.rounded-0,
+.examSect div#myTabContent .tab-pane a.btn.px-4.me-2.btn-secondary.rounded-0 {
+line-height: 32px;
+width: 80%;
+display: inline-block;
+margin-bottom: 10px;
+height: 50px;
+color: #000;
+}
+.examSect div#myTabContent .tab-pane a.btn.px-4.ms-2.btn-light.rounded-0 {
+display: inline-block;
+width: 80%;
+margin-bottom: 10px;
+margin-left: 0px !important;
+}
+.counter {
+top: 0px !important;
+}
+#FullTest_Exam_Panel_Interface_A button#bt-modal-cancel {
+margin: 0px;
+width: 200px;
+}
+#test_instruction .col-md-3.col-lg-3.d-flex.align-items-center {
+display: inline-block !important;
+}
+button#goto-exam-btn {
+padding: 15px 5px !important;
+font-size: 14px;
+}
+button#goto-exam-btn {
+padding: 15px 40px !important;
+font-size: 14px;
+color: #fff !important;
+opacity: 1;
+}
+/** end here **/
+/*new responsive code 27-12*/
+.button-sec.mt-3 a {
+width: 80%;
+}
+.live-exam #home .speci-text li:last-child {
+width: 100% !important;
+}
+.live-exam #home .speci-text li:last-child button {
+float: left !important;
+width: 100% !important;
+}
+.list-series .live-exam .speci-text li a button {
+width: 55% !important;
+float: left;
+}
+.user-name-block {
+font-size: 12px;
+}
+.bg-white.shadow-lg.py-5.ps-3.pe-1 {
+height: 275px;
+}
+/* .list-series .live-exam .speci-text li {
+width: 100% !important;
+} */
+.live-exam .speci-text li:last-child {
+margin-right: 0px !important;
+}
+/* new responsive code 27-12*/
+.counter {
+margin-right: 0px !important;
+top: 3px;
+right: 0px !important;
+}
+/**analytics **/
+div#topIIC {
+margin-top: 40px;
+}
+#topIIC .d-flex,
+#sub--proficiency .d-flex {
+display: inline-block !important;
+width: 100% !important;
+}
+#topIIC .bg-white.shadow-lg,
+#sub--proficiency .bg-white.shadow-lg {
+height: auto;
+}
+div#myTabContent .tab-pane .question-block {
+padding: 15px 0px;
+}
+.question {
+padding-left: 35px;
+padding-right: 20px;
+}
+.test-review {
+margin-top: 50px;
+margin-bottom: 20px;
+}
+.back-to-dashbord {
+top: 6px;
+}
+.back-to-dashbord {
+top: 39px;
+right: 24px;
+display: none;
+}
+.back-to-dashbord a {
+font-size: 14px;
+}
+.course-star li strong {
+width: 43% !important;
+display: block;
+float: left;
+}
+.star-img {
+width: 43% !important;
+display: block;
+float: left;
+}
+/** dashboard-index page css popup on 16-12-2021 **/
+/** popup css**/
+#fullTest_Dashboard .full-txtblock span {
+padding-left: 30%;
+}
+/** end here**/
+/** end here dashboard-index page css popup on 16-12-2021 **/
+/** custom page css on 16-12-2021 **/
+/*.custom-page .p-3.slick-slide {
+width: auto !important;
+}*/
+.custom-page .slick-list {
+height: 220px;
+}
+/** End custom page css on 16-12-2021 **/
+/* For mobile phones: */
+div#collapseExample [class*="col-"] {
+width: 100%;
+}
+.col-lg-12.p-lg-5.pt-none {
+width: 100% !important;
+}
+button#dropdownMenuLink {
+width: 40px;
+height: 40px;
+}
+.d-flex.px-4.py-2.align-items-center.justify-content-between form {
+width: 75%;
+float: left;
+}
+.listing-details .name-txt {
+width: 100% !important;
+}
+/* .slick-slide {
+width: 38% !important;
+} */
+}
 @media(min-width:360px) and (max-width:767px) {
-
-    /** exam analytics page css 14-12-2021**/
-    .exam-analytics .row.mt-5.mb-3 .col-5 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .row.mt-5.mb-3 .col-7 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .bg-white.shadow-lg {
-        height: auto;
-        padding-bottom: 20px;
-    }
-
-    .exam-analytics button.top-btn-pop {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .cust-tabs .nav-link {
-        margin-right: 0px;
-        font-size: 9px;
-    }
-
-    .exam-analytics .nav.nav-tabs.cust-tabs {
-        width: auto;
-    }
-
-    .exam-analytics .col-12.d-flex.mt-5.mb-3 {
-        display: inline-block !important;
-    }
-
-    .exam-analytics select.form-select.rounded-0.ms-3.w-25 {
-        margin-left: 0px !important;
-        margin-bottom: 20px;
-    }
-
-    .exam-analytics .row .col-md-4.text-center img {
-        width: 100%;
-    }
-
-    .exam-analytics .col-md-9 .p-5 {
-        padding: 1rem !important;
-    }
-
-    .exam-analytics .row.mt-5.mb-3 {
-        margin-top: 0px !important;
-    }
-
-    .exam-analytics .subj-name {
-        font-size: 12px;
-    }
-
-    /** exam analytics page css End 14-12-2021**/
-    /** Listing series page css on 16-12-2021 **/
-
-    /* .list-series .live-exam .speci-text li {
-        width: 100% !important;
-        margin-right: 0px;
-    } */
-
-    /** Listing series page css END on 16-12-2021 **/
-
-
-    header {
-        padding: 0px;
-    }
-
-    /** profile page css **/
-    .profile-section {
-        width: 85%;
-        top: 10%;
-        height: auto;
-        z-index: 999;
-    }
-
-    .leader-board {
-        width: 270px;
-        right: 20%;
-        height: 100%;
-        padding-left: 0px;
-    }
-
-    .subscription .form-btns button {
-        margin-bottom: 20px;
-    }
-
-    .log-out-screen {
-        right: 1% !important;
-        width: 87% !important;
-        top: 16% !important;
-    }
-
-    .subscription {
-        right: 1% !important;
-        width: 87% !important;
-        padding: 15px 20px 15px 25px !important;
-        top: 17% !important;
-        height: auto;
-    }
-
-    .profile-picture-txt .p-text {
-        padding-right: 0px;
-    }
-
-    .profile-picture-txt {
-        padding: 15px;
-        display: inline-block;
-    }
-
-    .subscription .profile-picture-txt .p-picture {
-        height: 55px !important;
-        width: 65px;
-    }
-
-    .profile-section ul {
-        display: flex;
-        margin-bottom: 0px;
-    }
-
-    .profile-section ul li {
-        /* padding: 15px 10px; */
-        margin: 0px;
-        text-align: center;
-        width: 120px;
-    }
-
-    .profile-section ul li span {
-        display: block;
-    }
-
-    .leader-board {
-        width: 87%;
-        right: 1%;
-        top: 58%;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0px;
-    }
-
-    .profile-show {
-        top: 7% !important;
-		left: 13% !important;
-		width: 85% !important;
-		padding: 30px 15px 12px !important;
-		z-index: 999;
-		min-height: 455px !important;
-		border-bottom-left-radius: 20px !important;
-		border-bottom-right-radius: 20px !important;
-    }
-
-    .edit-form {
-        top: -34%;
-        right: 0%;
-    }
-
-    /** end here **/
-
-
+/** exam analytics page css 14-12-2021**/
+.exam-analytics .row.mt-5.mb-3 .col-5 {
+width: 100%;
+margin-bottom: 20px;
 }
-
+.exam-analytics .row.mt-5.mb-3 .col-7 {
+width: 100%;
+margin-bottom: 20px;
+}
+.exam-analytics .bg-white.shadow-lg {
+height: auto;
+padding-bottom: 20px;
+}
+.exam-analytics button.top-btn-pop {
+margin-bottom: 20px;
+width: 100%;
+}
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+margin-bottom: 20px;
+}
+.exam-analytics .cust-tabs .nav-link {
+margin-right: 0px;
+font-size: 9px;
+}
+.exam-analytics .nav.nav-tabs.cust-tabs {
+width: auto;
+}
+.exam-analytics .col-12.d-flex.mt-5.mb-3 {
+display: inline-block !important;
+}
+.exam-analytics select.form-select.rounded-0.ms-3.w-25 {
+margin-left: 0px !important;
+margin-bottom: 20px;
+}
+.exam-analytics .row .col-md-4.text-center img {
+width: 100%;
+}
+.exam-analytics .col-md-9 .p-5 {
+padding: 1rem !important;
+}
+.exam-analytics .row.mt-5.mb-3 {
+margin-top: 0px !important;
+}
+.exam-analytics .subj-name {
+font-size: 12px;
+}
+/** exam analytics page css End 14-12-2021**/
+/** Listing series page css on 16-12-2021 **/
+/* .list-series .live-exam .speci-text li {
+width: 100% !important;
+margin-right: 0px;
+} */
+/** Listing series page css END on 16-12-2021 **/
+header {
+padding: 0px;
+}
+/** profile page css **/
+.profile-section {
+width: 85%;
+top: 10%;
+height: auto;
+z-index: 999;
+}
+.leader-board {
+width: 270px;
+right: 20%;
+height: 100%;
+padding-left: 0px;
+}
+.subscription .form-btns button {
+margin-bottom: 20px;
+}
+.log-out-screen {
+right: 1% !important;
+width: 87% !important;
+top: 16% !important;
+}
+.subscription {
+right: 1% !important;
+width: 87% !important;
+padding: 15px 20px 15px 25px !important;
+top: 17% !important;
+height: auto;
+}
+.profile-picture-txt .p-text {
+padding-right: 0px;
+}
+.profile-picture-txt {
+padding: 15px;
+display: inline-block;
+}
+.subscription .profile-picture-txt .p-picture {
+height: 55px !important;
+width: 65px;
+}
+.profile-section ul {
+display: flex;
+margin-bottom: 0px;
+}
+.profile-section ul li {
+/* padding: 15px 10px; */
+margin: 0px;
+text-align: center;
+width: 120px;
+}
+.profile-section ul li span {
+display: block;
+}
+.leader-board {
+width: 87%;
+right: 1%;
+top: 58%;
+border-top-left-radius: 0;
+border-top-right-radius: 0px;
+}
+.profile-show {
+top: 7% !important;
+left: 13% !important;
+width: 85% !important;
+padding: 30px 15px 12px !important;
+z-index: 999;
+min-height: 455px !important;
+border-bottom-left-radius: 20px !important;
+border-bottom-right-radius: 20px !important;
+}
+.edit-form {
+top: -34%;
+right: 0%;
+}
+/** end here **/
+}
 @media(max-width:767px) {
-
-    /******* MyQMatrix Amit-Start ******/
-    .matrixpage-wrapper .cust-tabs .nav-link {margin-right: 4px;}
-    .tabcontent-wrapper {padding: 50px 10px 0px;}
-    span.filtericon{margin-left: 5px}
-    .chapter-topic-lists  .course-star li strong{width: auto!important;display: inline-block!important;}
-    .chapter-topic-lists .course-star li span{width: auto!important;float: none!important;display: inline-block!important;}
-    .matrixpage-wrapper .chapter-topic-lists .course-star li span{display: inline!important;}
-    
-    /******* MyQMatrix Amit-End ******/
-
-    /******* New dashboard Amit-Start ******/
-    /**** 22-02-2022 ******/
-        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
-        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
-        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
-        {width:100%!important;}
-        .dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 100% !important;}
-        
-    /**********************/
-    .dashboard-cards-block .row.h-100>.col-lg-7.col-sm-12.col-md-8 .d-flex.justify-content-center.flex-column.h-100 {
-    padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
-    .analytics-thumbnail-bg{display: block;background-image:none;}
-    .myqMatrix-card.bg-white.shadow-lg{height:auto;padding-bottom: 2.5rem!important;}
-    ul.p-0.m-0.matrixLists {margin-top: 25px!important;padding-left: 20px!important;}
-    .topics-box {width: calc(25% - 18px);margin: 15px 0px 0px 15px;}
-    .topics-box>b{margin: 0 5px 0 0!important;}
-    /******* New dashboard Amit-End ******/
-
-    /*test screen*/
-    .examSect .tab-btn-box.d-flex.mt-3 a {
-        width: 50%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        padding: 8px 10px !important;
-        font-size: 12px;
-    }
-
-    .examSect {
-        padding: 17px 10px;
-    }
-
-    .examSect .h-100 {
-        height: 100vh !important;
-    }
-
-    .examSect div#myTabContent .tab-pane {
-        padding: 15px 20px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block {
-        padding: 15px 1rem;
-    }
-
-    .examSect ul#myTab li a {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .examSect .question {
-        padding: 12px 15px !important;
-        font-family: Manrope;
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block .arrow {
-        top: 70px;
-    }
-
-    .examSect .rightSect .number-block {
-        height: 270px;
-    }
-
-    .examSect div#myTabContent .tab-pane .question-block p.question.pb-5.pt-5 {
-        padding-top: 0px !important;
-        padding-bottom: 0px !important;
-    }
-
-    /*end test screen*/
-    /* Planner Screen */
-    .planner-content {
-        min-width: 85%;
-        max-width: 85%;
-        position: absolute;
-        top: 0px;
-    }
-
-    .planner-edit-mode {
-        right: 31.5% !important;
-    }
-
-    .open-sub-planner {
-        width: 92% !important;
-        height: auto !important;
-        position: absolute;
-        top: 15px;
-        z-index: 999;
-        right: 0px !important;
-    }
-    .planner-scheduar-block .slimScrollDiv {
-    padding: 15px 15px 35px;
+/******* MyQMatrix Amit-Start ******/
+.matrixpage-wrapper .cust-tabs .nav-link {margin-right: 4px;}
+.tabcontent-wrapper {padding: 50px 10px 0px;}
+span.filtericon{margin-left: 5px}
+.chapter-topic-lists  .course-star li strong{width: auto!important;display: inline-block!important;}
+.chapter-topic-lists .course-star li span{width: auto!important;float: none!important;display: inline-block!important;}
+.matrixpage-wrapper .chapter-topic-lists .course-star li span{display: inline!important;}
+/******* MyQMatrix Amit-End ******/
+/******* New dashboard Amit-Start ******/
+/**** 22-02-2022 ******/
+.dashboard-cards-block .cust-gallery .swiper-slide.bg-white.subject-placeholder-block,
+.dashboard-cards-block .cust-gallery .swiper-slide.bg-white.completed-test-block,
+.dashboard-cards-block .cust-gallery .swiper-slide.bg-white.weekylplan-block 
+{width:100%!important;}
+.dashboard-cards-block .cust-gallery .swiper-slide.bg-white {width: 100% !important;}
+/**********************/
+.dashboard-cards-block .row.h-100>.col-lg-7.col-sm-12.col-md-8 .d-flex.justify-content-center.flex-column.h-100 {
+padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
+.analytics-thumbnail-bg{display: block;background-image:none;}
+.myqMatrix-card.bg-white.shadow-lg{height:auto;padding-bottom: 2.5rem!important;}
+ul.p-0.m-0.matrixLists {margin-top: 25px!important;padding-left: 20px!important;}
+.topics-box {width: calc(25% - 18px);margin: 15px 0px 0px 15px;}
+.topics-box>b{margin: 0 5px 0 0!important;}
+/******* New dashboard Amit-End ******/
+/*test screen*/
+.examSect .tab-btn-box.d-flex.mt-3 a {
+width: 50%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+padding: 8px 10px !important;
+font-size: 12px;
 }
-    .w-25 {
-        width: 100% !important;
-    }
-
-    /*End Planner screen*/
-
-    /** live exam css **/
-    .details-exam ul {
-        display: inline-block;
-        overflow-y: hidden;
-    }
-
-    .details-exam ul li p {
-        font-size: 14px;
-        font-weight: bold;
-        color: #111;
-    }
-
-    /** live exam end **/
-    .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgba(0,0 0,0.1);
-        border-top-left-radius: 56px;
-        border-top-right-radius: 56px;
-
-    }
-
-    #scroll-mobile {
-        overflow-x: scroll;
-        border-top-left-radius: 56px;
-        border-top-right-radius: 56px;
-    }
-
-    .nav.nav-tabs.cust-tabs {
-        /* width: 700px; */
-        float: none;
-        overflow-y: hidden;
-        box-shadow: none;
-    }
-
-    .text-right.d-flex.align-items-center.mt-3 {
-        display: inline-block !important;
-    }
-
-    .btn-clear-sel {
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .btn-topic {
-        font-size: 10px;
-        padding: 10px 10px !important;
-        width: 100%;
-        margin-top: 13px;
-    }
-
-    /** live exam css **/
-
-    .name-txt {
-        font-size: 14px;
-        width: 100%;
-        display: inline-block;
-    }
-
-    p.tab-title {
-        font-size: 18px;
-        width: 100%;
-        display: block;
-    }
-
-    .slbs-link.mx-3 {
-        margin: 0px !important;
-        line-height: 40px;
-    }
-
-    .active-btn {
-        width: 80%;
-    }
-
-    .btn-danger.disabled,
-    .btn-warning.disabled {
-        margin: 10px 0px !important;
-        width: 80%;
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
-
-    .tab-wrapper .d-flex.justify-content-between {
-        /* display: inline-block !important; */
-        width: 100%;
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-    }
-
-    .tab-wrapper .dropdown {
-        display: inline-block;
-    }
-
-    .slbs-link a {
-        color: #21ccff;
-        font-size: 16px;
-        font-weight: bold;
-        display: inline-block;
-    }
-
-    /* .cust-tab-content .custom-btn-gray {
-        width: auto !important;
-        float: left;
-        font-size: 14px;
-    } */
-
-    .cust-tabs .nav-link {
-        position: relative;
-        margin-right: 14px;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-weight: 600;
-        color: #515151;
-    }
-
-    span.notification.ms-4 {
-        margin-left: 10px !important;
-    }
-
-    /** live exam css end here **/
-    .bg-white.shadow-lg {
-        margin-bottom: 36px;
-    }
-
-    .cust-gallery .swiper-slide.bg-white {
-        width: 100% !important;
-    }
-
-    .seeAnico img {
-        display: none;
-    }
-
-    .bg-white.shadow-lg {
-        height: 320px;
-    }
-
+.examSect {
+padding: 17px 10px;
 }
-
+.examSect .h-100 {
+height: 100vh !important;
+}
+.examSect div#myTabContent .tab-pane {
+padding: 15px 20px;
+}
+.examSect div#myTabContent .tab-pane .question-block {
+padding: 15px 1rem;
+}
+.examSect ul#myTab li a {
+padding: 10px;
+font-size: 14px;
+}
+.examSect .question {
+padding: 12px 15px !important;
+font-family: Manrope;
+font-size: 14px;
+line-height: 20px;
+}
+.examSect div#myTabContent .tab-pane .question-block .arrow {
+top: 70px;
+}
+.examSect .rightSect .number-block {
+height: 270px;
+}
+.examSect div#myTabContent .tab-pane .question-block p.question.pb-5.pt-5 {
+padding-top: 0px !important;
+padding-bottom: 0px !important;
+}
+/*end test screen*/
+/* Planner Screen */
+.planner-content {
+min-width: 85%;
+max-width: 85%;
+position: absolute;
+top: 0px;
+}
+.planner-edit-mode {
+right: 31.5% !important;
+}
+.open-sub-planner {
+width: 92% !important;
+height: auto !important;
+position: absolute;
+top: 15px;
+z-index: 999;
+right: 0px !important;
+}
+.planner-scheduar-block .slimScrollDiv {
+padding: 15px 15px 35px;
+}
+.w-25 {
+width: 100% !important;
+}
+/*End Planner screen*/
+/** live exam css **/
+.details-exam ul {
+display: inline-block;
+overflow-y: hidden;
+}
+.details-exam ul li p {
+font-size: 14px;
+font-weight: bold;
+color: #111;
+}
+/** live exam end **/
+.tab-wrapper {
+box-shadow: 0 0 20px 0 rgba(0,0 0,0.1);
+border-top-left-radius: 56px;
+border-top-right-radius: 56px;
+}
+#scroll-mobile {
+overflow-x: scroll;
+border-top-left-radius: 56px;
+border-top-right-radius: 56px;
+}
+.nav.nav-tabs.cust-tabs {
+/* width: 700px; */
+float: none;
+overflow-y: hidden;
+box-shadow: none;
+}
+.text-right.d-flex.align-items-center.mt-3 {
+display: inline-block !important;
+}
+.btn-clear-sel {
+font-size: 14px;
+width: 100%;
+}
+.btn-topic {
+font-size: 10px;
+padding: 10px 10px !important;
+width: 100%;
+margin-top: 13px;
+}
+/** live exam css **/
+.name-txt {
+font-size: 14px;
+width: 100%;
+display: inline-block;
+}
+p.tab-title {
+font-size: 18px;
+width: 100%;
+display: block;
+}
+.slbs-link.mx-3 {
+margin: 0px !important;
+line-height: 40px;
+}
+.active-btn {
+width: 80%;
+}
+.btn-danger.disabled,
+.btn-warning.disabled {
+margin: 10px 0px !important;
+width: 80%;
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.tab-wrapper .d-flex.justify-content-between {
+/* display: inline-block !important; */
+width: 100%;
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+.tab-wrapper .dropdown {
+display: inline-block;
+}
+.slbs-link a {
+color: #21ccff;
+font-size: 16px;
+font-weight: bold;
+display: inline-block;
+}
+/* .cust-tab-content .custom-btn-gray {
+width: auto !important;
+float: left;
+font-size: 14px;
+} */
+.cust-tabs .nav-link {
+position: relative;
+margin-right: 14px;
+text-transform: uppercase;
+font-size: 14px;
+font-weight: 600;
+color: #515151;
+}
+span.notification.ms-4 {
+margin-left: 10px !important;
+}
+/** live exam css end here **/
+.bg-white.shadow-lg {
+margin-bottom: 36px;
+}
+.cust-gallery .swiper-slide.bg-white {
+width: 100% !important;
+}
+.seeAnico img {
+display: none;
+}
+.bg-white.shadow-lg {
+height: 320px;
+}
+}
 /*test screen */
 @media (max-width: 767px) and (min-width:500px) {
-    .examSect .ans-block .col-md-6.mb-4 {
-        width: 50%;
-    }
-
+.examSect .ans-block .col-md-6.mb-4 {
+width: 50%;
 }
-
+}
 @media (max-width: 500px) {
-    .bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1 {
-        display: block !important;
-    }
-
-    .dashboard-name-txt {
-        font-size: 14px;
-    }
-
-    .bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1 .col-6 {
-        width: 84% !important;
-    }
-
-
-    #topicclose #topIIC .status-id.rating,
-    .padingTT .status-id.rating {
-        width: 100% !important;
-        font-size: 10px !important;
-    }
-
-    .star-ratings-css {
-        font-size: 16px !important;
-        line-height: 35px !important;
-    }
-
-    .cust-tab-content .dashboard-name-txt {
-        font-size: 12px !important;
-    }
-
-    /** Listing series page css on 16-12-2021 **/
-
-    .list-series .cust-tab-content .custom-btn-gray {
-       
-        float: left;
-        font-size: 14px;
-    }
-
-    /*
-    .examSect .ans-block.row.mt-5 .mb-4 {
-        margin-bottom: 10px !important;
-    }
-	
+.bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1 {
+display: block !important;
 }
-
+.dashboard-name-txt {
+font-size: 14px;
+}
+.bg-white .report-block2.p-5 .d-flex.align-items-center.mt-3.pb-1 .col-6 {
+width: 84% !important;
+}
+#topicclose #topIIC .status-id.rating,
+.padingTT .status-id.rating {
+width: 100% !important;
+font-size: 10px !important;
+}
+.star-ratings-css {
+font-size: 16px !important;
+line-height: 35px !important;
+}
+.cust-tab-content .dashboard-name-txt {
+font-size: 12px !important;
+}
+/** Listing series page css on 16-12-2021 **/
+.list-series .cust-tab-content .custom-btn-gray {
+float: left;
+font-size: 14px;
+}
+/*
+.examSect .ans-block.row.mt-5 .mb-4 {
+margin-bottom: 10px !important;
+}
+}
 /* end test screen*/
-    @media (max-width: 620px) {
-        .col-sm-12 {
-            width: 100% !important;
-        }
-
-        .bg-white.shadow-lg {
-            height: 345px;
-        }
-
-        .seeAnico img {
-            display: none;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .col-sm-12 {
-            width: 100% !important;
-        }
-
-        .bg-white.shadow-lg {
-            height: 345px;
-        }
-
-        .seeAnico img {
-            display: none;
-        }
-
-        .btn-danger.disabled,
-        .btn-warning.disabled {
-            width: 70%;
-        }
-
-        .active-btn {
-            width: 70%;
-            font-size: 12px;
-            padding: 0px !important;
-        }
-
-       #scroll-mobile .nav.nav-tabs.cust-tabs {
-            width: 700px;
-        }
-
-        .cust-tab-content {
-            padding: 20px 10px;
-        }
-
-        .main-wrapper {
-            padding-left: 64px;
-        }
-
-        .dash-sidebar {
-            width: 60px;
-        }
-
-        .user-name-block {
-            padding-left: 0px !important;
-        }
-
-        span.notification.me-5.ms-4 {
-            margin: 10px 0px 10px 10px !important;
-        }
-
-        .slbs-link a {
-            font-size: 15px;
-        }
-        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head:first-child h4.text-center{text-align:left!important;}
-        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head{display: block!important;}
-        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head h4:nth-child(2){width:49%;display: inline-block;}
-        .previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head h4:last-child{width:50%;display: inline-block;}
-    }
-
-    @media (max-width:525px) {
-
-        /** notification page css **/
-        .notification-right {
-            width: 83%;
-        }
-
-        .notification-txt {
-            padding: 15px;
-        }
-
-        .notification-txt span.text-notific {
-            width: 70%;
-        }
-
-        .primary-secondry-btn button.primary-btn1 {
-            margin-bottom: 10px;
-        }
-
-        /** end **/
-    }
-
-    @media (max-width:482px) {
-        /******* New dashboard Amit-Start ******/
-        .topics-box {width: calc(50% - 18px);}
-        /******* New dashboard Amit-End ******/
-        .notification-txt span.text-notific {
-            width: 70%;
-        }
-    }
-
-    @media (max-width: 420px) {
-        .course-star li strong {
-            width: 44% !important;
-        }
-        .star-img{width: 34% !important;}
-        .course-star li {
-            padding-bottom: 5px !important;
-        }
-
-        .star-img {
-            width: 80%;
-        }
-
-        .seeAnico img {
-            display: none;
-        }
-
-        .bg-white.shadow-lg {
-            height: 330px;
-        }
-
-
-        span.user-name-block.ps-3.pe-3 {
-            display: none;
-        }
-
-        /* .list-series .scroll-div-live-exm {
-            height: 320px !important;
-        } */
-
-        .live-exam #home .speci-text li:last-child button {
-            width: 100% !important;
-        }
-
-    }
-
-    /*Planner screen */
-    @media (max-width: 401px) {
-        .planner-content {
-            min-width: 75%;
-            max-width: 75%;
-        }
-
-        .open-sub-planner {
-            width: 90% !important;
-        }
-       
-    }
-
-
-
-    @media(max-width:767px) {
-        /* [class*="col-"] {
-            width: 100%;
-        } */
-
-        .Fullsub-amt-subN .d-flex {
-            display: block !important;
-        }
-    }
-
-    /*end signup-pay-subscription.html*/
-
-    /** subscription screen **/
-    .subscription {
-        width: 49%;
-        background: #fff;
-        border-radius: 56px;
-        padding: 15px 20px 15px 25px;
-        position: absolute;
-        right: 23%;
-        top: 0%;
-        box-shadow: 0 3px 30px 0 rgba(0, 0, 0,0.16);
-        display: none;
-    }
-
-    .subscription .profile-picture-txt .p-picture {
-        height: 100px;
-    }
-
-    .subscription .profile-picture-txt {
-        padding: 20px 0px 0;
-    }
-
-    .subscription .profile-picture-txt .p-text {
-        width: 77%;
-    }
-
-    .log-out-screen .p-picture {
-        width: 80px;
-        border: 1px solid #5ebbfe;
-        border-radius: 50%;
-        height: 80px;
-        text-align: center;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-
-    .subscription h4 {
-        text-align: left;
-        font-size: 18px;
-        color: #00baff;
-        text-transform: uppercase;
-        font-weight: 600;
-        padding-right: 25px;
-    }
-
-    .subscrived {
-        width: 100%;
-        display: inline-block;
-        background: #f2f2f2;
-        border-radius: 42px;
-        padding: 31px 20px;
-        margin: 20px 0px 0px;
-    }
-
-    .subscrived .p-pictures {
-        float: left;
-        margin-left: 0%;
-        margin-top: 9px;
-    }
-
-    .subscription h6 {
-        text-align: right;
-    }
-
-    .subscription .form-btns {
-        margin: 20px 0px;
-    }
-
-    .subscrived .p-pictures img {
-        width: 40px;
-    }
-
-    .subscription .form-btns button {
-        width: 264px;
-    }
-
-    /** end here**/
-    /** Log out screen **/
-    .log-out-screen {
-        width: 26.7%;
-        background: #fff;
-        border-radius: 56px;
-        padding: 40px 20px 40px 25px;
-        position: absolute;
-        right: 23%;
-        top: 0%;
-        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
-        display: none;
-
-    }
-
-    .profile-section ul li a span i {
-        font-size: 25px;
-        line-height: 30px;
-        margin-right: 5px;
-        width: 30px;
-        height: 30px;
-    }
-
-    .log-out-screen h4 {
-        color: #00baff;
-        font-size: 18px;
-        font-weight: normal;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 50px;
-    }
-
-    .log-out-screen p {
-        text-align: center;
-        color: #2c3348;
-        margin: 10px 0px;
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    .log-out-screen button.save-btn {
-        width: 84%;
-    }
-
-    /** end here **/
-    /*** profile-show **/
-    /*
+@media (max-width: 620px) {
+.col-sm-12 {
+width: 100% !important;
+}
+.bg-white.shadow-lg {
+height: 345px;
+}
+.seeAnico img {
+display: none;
+}
+}
+@media (max-width: 576px) {
+.col-sm-12 {
+width: 100% !important;
+}
+.bg-white.shadow-lg {
+height: 345px;
+}
+.seeAnico img {
+display: none;
+}
+.btn-danger.disabled,
+.btn-warning.disabled {
+width: 70%;
+}
+.active-btn {
+width: 70%;
+font-size: 12px;
+padding: 0px !important;
+}
+#scroll-mobile .nav.nav-tabs.cust-tabs {
+width: 700px;
+}
+.cust-tab-content {
+padding: 20px 10px;
+}
+.main-wrapper {
+padding-left: 64px;
+}
+.dash-sidebar {
+width: 60px;
+}
+.user-name-block {
+padding-left: 0px !important;
+}
+span.notification.me-5.ms-4 {
+margin: 10px 0px 10px 10px !important;
+}
+.slbs-link a {
+font-size: 15px;
+}
+.previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head:first-child h4.text-center{text-align:left!important;}
+.previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head{display: block!important;}
+.previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head h4:nth-child(2){width:49%;display: inline-block;}
+.previousyear-exam-page .result-list .d-flex.justify-content-between.result-list-head h4:last-child{width:50%;display: inline-block;}
+}
+@media (max-width:525px) {
+/** notification page css **/
+.notification-right {
+width: 83%;
+}
+.notification-txt {
+padding: 15px;
+}
+.notification-txt span.text-notific {
+width: 70%;
+}
+.primary-secondry-btn button.primary-btn1 {
+margin-bottom: 10px;
+}
+/** end **/
+}
+@media (max-width:482px) {
+/******* New dashboard Amit-Start ******/
+.topics-box {width: calc(50% - 18px);}
+/******* New dashboard Amit-End ******/
+.notification-txt span.text-notific {
+width: 70%;
+}
+}
+@media (max-width: 420px) {
+.course-star li strong {
+width: 44% !important;
+}
+.star-img{width: 34% !important;}
+.course-star li {
+padding-bottom: 5px !important;
+}
+.star-img {
+width: 80%;
+}
+.seeAnico img {
+display: none;
+}
+.bg-white.shadow-lg {
+height: 330px;
+}
+span.user-name-block.ps-3.pe-3 {
+display: none;
+}
+/* .list-series .scroll-div-live-exm {
+height: 320px !important;
+} */
+.live-exam #home .speci-text li:last-child button {
+width: 100% !important;
+}
+}
+/*Planner screen */
+@media (max-width: 401px) {
+.planner-content {
+min-width: 75%;
+max-width: 75%;
+}
+.open-sub-planner {
+width: 90% !important;
+}
+}
+@media(max-width:767px) {
+/* [class*="col-"] {
+width: 100%;
+} */
+.Fullsub-amt-subN .d-flex {
+display: block !important;
+}
+}
+/*end signup-pay-subscription.html*/
+/** subscription screen **/
+.subscription {
+width: 49%;
+background: #fff;
+border-radius: 56px;
+padding: 15px 20px 15px 25px;
+position: absolute;
+right: 23%;
+top: 0%;
+box-shadow: 0 3px 30px 0 rgba(0, 0, 0,0.16);
+display: none;
+}
+.subscription .profile-picture-txt .p-picture {
+height: 100px;
+}
+.subscription .profile-picture-txt {
+padding: 20px 0px 0;
+}
+.subscription .profile-picture-txt .p-text {
+width: 77%;
+}
+.log-out-screen .p-picture {
+width: 80px;
+border: 1px solid #5ebbfe;
+border-radius: 50%;
+height: 80px;
+text-align: center;
+overflow: hidden;
+margin: 0 auto;
+}
+.subscription h4 {
+text-align: left;
+font-size: 18px;
+color: #00baff;
+text-transform: uppercase;
+font-weight: 600;
+padding-right: 25px;
+}
+.subscrived {
+width: 100%;
+display: inline-block;
+background: #f2f2f2;
+border-radius: 42px;
+padding: 31px 20px;
+margin: 20px 0px 0px;
+}
+.subscrived .p-pictures {
+float: left;
+margin-left: 0%;
+margin-top: 9px;
+}
+.subscription h6 {
+text-align: right;
+}
+.subscription .form-btns {
+margin: 20px 0px;
+}
+.subscrived .p-pictures img {
+width: 40px;
+}
+.subscription .form-btns button {
+width: 264px;
+}
+/** end here**/
+/** Log out screen **/
+.log-out-screen {
+width: 26.7%;
+background: #fff;
+border-radius: 56px;
+padding: 40px 20px 40px 25px;
+position: absolute;
+right: 23%;
+top: 0%;
+box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
+display: none;
+}
+.profile-section ul li a span i {
+font-size: 25px;
+line-height: 30px;
+margin-right: 5px;
+width: 30px;
+height: 30px;
+}
+.log-out-screen h4 {
+color: #00baff;
+font-size: 18px;
+font-weight: normal;
+text-align: center;
+margin-top: 10px;
+margin-bottom: 50px;
+}
+.log-out-screen p {
+text-align: center;
+color: #2c3348;
+margin: 10px 0px;
+font-size: 16px;
+font-weight: 400;
+}
+.log-out-screen button.save-btn {
+width: 84%;
+}
+/** end here **/
+/*** profile-show **/
+/*
 .blure-bg {
-    content: "";
-    position: fixed;
-    right: 0px;
-    width: 95.5%;
-    z-index: 9;
-    background-color: rgba(255, 255, 255, 0.81);
-    background-blend-mode: hue;
-    backdrop-filter: blur(4px);
-    top: 0;
-    padding-top: 90px;
-    animation-name: reducetime;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+content: "";
+position: fixed;
+right: 0px;
+width: 95.5%;
+z-index: 9;
+background-color: rgba(255, 255, 255, 0.81);
+background-blend-mode: hue;
+backdrop-filter: blur(4px);
+top: 0;
+padding-top: 90px;
+animation-name: reducetime;
+animation-duration: 1s;
+animation-fill-mode: both;
 }
 */
-
-    .account-wrapper {
-        height: 100vh;
-
-        max-width: 100%;
-        position: relative;
-        /* right: 0; */
-
-    }
-
-    .col-xl-3 .slimScrollDiv .slimScrollBar {
-        height: 55% !important;
-    }
-
-    .profile-show {
-        position: absolute;
-        top: 0px;
-        left: -100%;
-        width: 100%;
-        background: #fff;
-        padding: 10px 15px;
-        border-radius: 56px;
-        box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
-    }
-
-    .profile-picture-txt .p-picture {
-        float: left;
-        width: 18%;
-        border: 1px solid #5ebbfe;
-        border-radius: 50%;
-        height: 60px;
-        text-align: center;
-        overflow: hidden;
-        /*     padding-top: 13px; commented by Dinesh */
-    }
-
-    .profile-picture-txt {
-        padding: 20px;
-    }
-
-    .profile-picture-txt .p-text {
-        float: right;
-        width: 70%;
-        padding-right: 20px;
-    }
-
-    .profile-show button span {
-        margin-right: 10px;
-    }
-
-    .profile-show button span img {
-        width: 20px;
-    }
-
-    .profile-show .profile-picture-txt h4 {
-        text-align: left;
-    }
-
-    .profile-show button {
-
-        width: 100%;
-        border: none;
-        border-radius: 20px;
-        background: #5ebbfe;
-        color: #fff;
-        font-weight: 500;
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        padding: 15px 20px;
-
-    }
-
-    .achievement {
-        display: inline-block;
-        width: 100%;
-        padding: 20px 0px;
-    }
-
-    .achievement ul {
-        padding-left: 0px;
-    }
-
-    .achievement ul li {
-        list-style: none;
-        position: relative;
-        padding-left: 25px;
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    .achievement ul li:before {
-        content: "";
-        position: absolute;
-        top: 1px;
-        left: -10px;
-        background: url(../images/right-icon.png) no-repeat;
-        width: 28px;
-        height: 25px;
-        background-size: 30px;
-
-    }
-
-    .achievement ul li:after {
-        content: "";
-        position: absolute;
-        top: 2px;
-        right: -14px;
-        background: url(../images/share.png) no-repeat;
-        width: 30px;
-        height: 25px;
-        background-size: 30px;
-    }
-
-
-    .leader-board .achievement ul {
-        overflow-x: initial;
-    }
-
-    /** end here**/
-    /** Edit form css **/
-    .edit-form {
-        width: 85%;
-        position: absolute;
-        top: 0;
-        right: 88%;
-        background: #fff;
-
-        padding: 20px;
-        border-radius: 56px;
-        box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
-        display: none;
-    }
-
-    .edit-img {
-        text-align: center;
-        position: relative;
-    }
-
-    .edit-form .edit-img .p-picture {
-        width: 80px;
-        display: inline-block;
-        overflow: hidden;
-        border: 1px solid #5ebbfe;
-        border-radius: 50%;
-        height: 80px;
-    }
-
-    .edit-form .edit-img .p-picture img {
-        width: 100%;
-    }
-
-    .edit-pic {
-        position: absolute;
-        bottom: 0px;
-		left: 45%;
-		width: 40px;
-		background: #fff;
-		border-radius: 50%;
-		padding: 0px;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
-    }
-
-    .btm-form-flds {
-        width: 100%;
-        display: inline-block;
-        margin-top: 30px;
-    }
-
-    .btm-form-flds .form-flds {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .btm-form-flds .form-flds input {
-        width: 100%;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        background: #f2f2f2;
-        color: #000;
-    }
-
-    .form-btns {
-        text-align: center;
-        display: inline-block;
-        width: 100%;
-    }
-
-    button.cancel-btn {
-        border-radius: 20px;
-        box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
-        background: #e9e9e9;
-        padding: 15px 30px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #2c3348;
-        text-transform: uppercase;
-        border: none;
-        width: 170px;
-    }
-
-    button.save-btn {
-        border-radius: 20px;
-        box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
-        background: #00baff;
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #fff;
-        padding: 15px 30px;
-        border: none;
-        width: 170px;
-    }
-
-    /** end here **/
-
-    /* dinesh added css */
-    label.error {
-        color: red;
-        font-size: 14px;
-    }
-
-    .leader-pic {
-        width: 60px;
-        height: 60px;
-        border-radius: 30px;
-    }
-
-    .slimScrollBar {
-        z-index: 89;
-    }
-
-    .topic_name {
-        min-width: 113px;
-        text-align: left;
-        letter-spacing: 0px;
-        text-transform: capitalize;
-        opacity: 1;
-        max-width: 170px;
-        white-space: nowrap;
-        overflow-x: hidden;
-        overflow-y: hi;
-        text-overflow: ellipsis;
-    }
-
-    .chapter_name {
-        min-width: 113px;
-        text-align: left;
-        letter-spacing: 0px;
-        text-transform: capitalize;
-        opacity: 1;
-        max-width: 300px;
-        white-space: nowrap;
-        overflow-x: unset !important;
-        overflow-y: unset !important;
-        text-overflow: unset !important;
-    }
-
-    .p-picture img {
-        width: 100%;
-        height: 100%;
-    }
-
-    /* dinesh added css end */
-
-
-    /* how much popup resonsive */
-
-    @media(max-width:991px) {
-        #favSubResponse .rating .lbl-text {
-            width: 35% !important;
-        }
-    }
-
-    @media(max-width:767px) {
-        #favSubResponse .rating .lbl-text {
-            width: 35% !important;
-        }
-    }
-
-    /* end how much like */
-
-
-    /* full scan test popup */
-    #fullTest_Dashboard .modal-content.rounded-0 {
-        border-radius: 56px !important;
-    }
-
-    #full-txtBlock {
-        border-radius: 42px;
-        box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(to bottom, #21ccff, #21ccff) !important;
-    }
-
-    #h1--P {
-        color: #2c3348 !important;
-        font-size: 25px;
-        line-height: 30px;
-        margin-bottom: 15px;
-    }
-
-    #fullTest_Dashboard button.btn-close {
-        right: 30px;
-        position: absolute;
-        top: 20px;
-        z-index: 9;
-    }
-
-    #fullTest_Dashboard .modal-body.pt-0.text-center {
-        padding-top: 35px !important;
-    }
-
-    #fullTest_Dashboard .skip-dashboard {
-        background: transparent !important;
-        border: none;
-        color: #00baff !important;
-    }
-
-    /* end full scan test popup */
-
-    /* responsive full scan test popup */
-    @media(max-width:767px) {
-        #fullTest_Dashboard .full-txtblock span {
-            font-size: 14px;
-            text-align: center;
-            margin-left: 0px !important;
-        }
-
-        #full-txtBlock {
-            margin-left: 0px !important;
-            margin-right: 12px !important;
-        }
-    }
-
-    /* end full scan test popup resonsive */
-
-
-
-    /** preparation page css on 9-12-2021***/
-
-    .preparation .slimScrollBar {
-        background: rgb(98, 194, 254) !important;
-    }
-
-    .preparation .cust-tab-content {
-        height: 400px !important;
-    }
-
-    .preparation .name-txt {
-        width: 35%;
-    }
-
-    /** end here on 9-12-2021 **/
-
-    /** preparation page css on 9-12-2021***/
-
-    .preparation .slimScrollBar {
-        background: rgb(98, 194, 254) !important;
-    }
-
-    .preparation .cust-tab-content {
-        height: 500px !important;
-    }
-
-    .preparation .name-txt {
-        width: 35%;
-    }
-
-    @media(min-width:360px) and (max-width:767px) {
-
-        /** preparation page css on 9-12-2021**/
-        .preparation .name-txt {
-            width: 100%;
-            display: block;
-            font-size: 14px;
-        }
-
-        .preparation .slbs-link a {
-            font-size: 12px;
-        }
-
-        .preparation .cust-tab-content {
-            height: auto !important;
-        }
-
-        /*** end here 9-12-2021**/
-
-    }
-
-    /** end here on 9-12-2021 **/
-    /** Bhim model popup css for preparation page 13-12-2021 desktop view only**/
-
-    .modal-dialog {
-        border-radius: 56px !important;
-    }
-
-    .modal-dialog .modal-content.bg-light {
-        background-color: #ffffff !important;
-        border-radius: 56px !important;
-        padding: 20px;
-    }
-
-    .h-scroll-slim .d-flex.bg-white {
-        border: 1px solid #eee;
-        border-radius: 20px;
-    }
-
-    .ms-auto span.me-1 .bg-light-red {
-        background: #00baff !important;
-        border-radius: 10px;
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-        margin-right: 15px;
-    }
-
-    /** End here 13-12-2021**/
-
-    /* 11-12 test screen */
-
-    #test_instruction .modal-content.rounded-0 {
-        border-radius: 56px !important;
-    }
-
-    #test_instruction .test-info {
-        padding: 20px 0;
-        margin: 25px 0;
-    }
-
-    #test_instruction .slimScrollBar {
-        background: #21ccff !important;
-    }
-
-    #test_instruction button#goto-exam-btn {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(241deg, #21ccff, #21ccff);
-        border: none;
-        padding: 15px 65px;
-        color: #fff;
-    }
-
-    /* end welcome instructions exam popup */
-    /** End exam popup */
-    #resume-test .modal-content.rounded-0,
-    #FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
-    #endExam .modal-content.rounded-0 {
-        border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
-        border: none;
-    }
-
-    #endExam #See-Ana {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0. 8);
-        background-image: linear-gradient(241deg, #21ccff, #21ccff);
-        border: none;
-        padding: 15px 65px;
-        color: #fff;
-    }
-
-    /* end end exam popup */
-
-    /*** Rahul Exam analytics page css 13-12-2021 **/
-
-    .exam-analytics span.text-center.w-100 img {
-        width: 100%;
-    }
-
-    .exam-analytics .bg-white.shadow-lg {
-        min-height: 430px;
-    }
-
-    .exam-analytics .map-right-graph img {
-        width: 100%;
-    }
-
-    .exam-analytics .bg-white.shadow.p-3 {
-        border-radius: 56px;
-    }
-
-    .exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
-        border-radius: 56px !important;
-        padding-bottom: 0px !important;
-    }
-
-    .exam-analytics .tab-wrapper {
-        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
-        border-top-left-radius: 56px;
-        border-top-right-radius: 56px;
-        border-radius: 56px;
-        padding-bottom: 33px;
-    }
-
-    #exam_result_analysis .row.mt-5.mb-3 {
-        margin-bottom: 0px !important;
-    }
-
-    .exam-analytics .abrv-graph.bg1 {
-        background: #5cc129;
-        border-radius: 50%;
-    }
-
-    .exam-analytics .abrv-graph.bg2,
-    .exam-analytics .abrv-graph.bg3 {
-        border-radius: 50%;
-    }
-
-    .exam-analytics .abrv-graph.bg2 {
-        background: #e62e2d;
-    }
-
-    .exam-analytics .row.my-4 .col {
-        text-align: center;
-    }
-
-    .exam-analytics button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(to bottom, #21ccff, #21ccff);
-        border: none;
-        border-radius: 20px;
-        padding: 15px 10px;
-    }
-
-    .exam-analytics .blue-block {
-        background: #eee;
-        padding: 20px 40px;
-        border-radius: 20px;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-        border-radius: 56px;
-    }
-
-    .exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
-        border-radius: 56px;
-    }
-
-    .exam-analytics .i-icon {
-        color: #62c2fe;
-    }
-
-    .exam-analytics .i-icon:hover {
-        color: #62c2fe;
-    }
-
-    .exam-analytics .bg-light-success {
-        background: #37c027;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-
-    .exam-analytics .bg-light-red {
-        background: red;
-    }
-
-    .exam-analytics .cust-tab-content {
-        padding: 0px 36px;
-        border-bottom-left-radius: 56px;
-        border-bottom-right-radius: 56px;
-    }
-
-    button.top-btn-pop {
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(to bottom, #21ccff, #21ccff);
-        border: none;
-        border-radius: 20px;
-        padding: 15px 10px;
-    }
-
-    /*** Exam analytics page css End 13-12-2021 **/
-
-    /** test review page css 7-11-2021 ***/
-    .people-qus {
-        display: flex;
-        color: #231f20;
-        font-size: 18px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        border-bottom: 2px solid #2c3348;
-        padding-bottom: 5px;
-    }
-
-    .pythagoras a {
-        color: #21ccff;
-    }
-
-    .pytha-arc {
-        display: flex;
-        margin-top: 15px;
-    }
-
-    .people-qus strong {
-        font-size: 48px;
-        color: #37c027;
-        padding-right: 22px;
-        line-height: 55px;
-    }
-
-    .percentage-21 {
-        border-radius: 20px;
-        box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
-        width: 380px;
-        background: #fff;
-        padding: 10px;
-        position: absolute;
-        top: 10px;
-        right: 26px;
-        display: none;
-    }
-
-    .arc-radius {
-        padding-left: 20px;
-    }
-
-    .perntage1 {
-        display: none;
-    }
-
-    .perntage2 {
-        display: none;
-    }
-
-    .percentage-21.perntage2 {
-        right: 46%;
-        width: 50%;
-    }
-
-    .percentage-21.perntage2 .people-qus strong {
-        font-size: 16px;
-        color: #21ccff;
-        line-height: 20px;
-    }
-
-    .percentage-21.perntage2 .people-qus {
-        display: inline-block;
-        width: 100%;
-    }
-
-    p.mb-0.line-height-18px {
-        line-height: 18px;
-    }
-
-    .pytha-arc h3 {
-        font-size: 16px;
-        font-weight: 600;
-        color: #21ccff;
-    }
-
-    .percentage-21.pythagoras-p2 {
-        display: none !important;
-    }
-
-    .percentage-21 button.close-btn-pr {
-        border: none;
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        background: none;
-        color: #000;
-        font-weight: bold;
-    }
-
-    .tab-wrapper .nav-tabs {
-        /*  z-index: 99999; commented by dinesh*/
-        z-index: 98;
-        position: relative;
-    }
-
-    span.p-icons span {
-        color: #000;
-    }
-
-    .answer-section {
-        width: 100%;
-        padding: 30px;
-        background: #eee;
-        border-radius: 56px;
-    }
-
-    button.percentage-digit {
-        float: right;
-        padding: 18px 86px;
-        border: none;
-        background: #00baff;
-        border-radius: 20px;
-        color: #fff;
-    }
-
-    .answer-btn-txt {
-        display: inline-block;
-        width: 100%;
-    }
-
-    .answer-btn-txt span {
-        color: #44cd7f;
-        font-family: Manrope;
-        margin-right: 20px;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: normal;
-    }
-
-    .ans-txt {
-        display: inline-block;
-        width: 100%;
-        margin-top: 30px;
-    }
-
-    .back-to-dashbord {
-        position: absolute;
-        top: 12px;
-        right: 50px;
-        z-index: 99999;
-    }
-
-    .test-review .tab-content {
-        border-radius: 56px;
-        padding-bottom: 10px;
-    }
-
-    .test-review-right span.timing {
-        margin-left: 0px;
-    }
-
-    .review-qus {
-        margin: 20px 0px;
-        overflow: auto;
-        height: 200px;
-        overflow-x: hidden;
-    }
-
-    .review-qus span a {
-        float: right;
-    }
-
-    .rview-quses {
-        padding-left: 0px;
-    }
-
-    .rview-quses li.correctans {
-        border-color: #37c027;
-    }
-
-    .rview-quses li.incorrectans {
-        border-color: #ee6a5f;
-    }
-
-    .rview-quses li.notans {
-        border-color: #e4e4e4;
-    }
-
-    .rview-quses li {
-        position: relative;
-        list-style: none;
-        margin: 10px 0px;
-        display: flex;
-        width: 100%;
-        border-left: 5px solid #eee;
-    }
-
-    .rview-quses li span {
-        padding-right: 5px;
-        padding-left: 5px;
-    }
-
-    /** custom scrollbar**/
-    /* width */
-    .question-block {
-        height: 250px;
-        overflow: auto;
-        overflow-x: hidden;
-    }
-
-    .question-block::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    /* Track */
-    .question-block::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    /* Handle */
-    .question-block::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
-    }
-
-    /* Handle on hover */
-    .question-block::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
-    }
-
-    .answer-section {
-        height: 200px;
-        overflow: auto;
-        margin: 20px 0px;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    .answer-section::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    /* Track */
-    .answer-section::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    /* Handle */
-    .answer-section::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
-    }
-
-    /* Handle on hover */
-    .answer-section::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
-    }
-
-
-    .review-qus::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    /* Track */
-    .review-qus::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    /* Handle */
-    .review-qus::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
-    }
-
-    /* Handle on hover */
-    .review-qus::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
-    }
-
-
-
-    .rightSect .number-block::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    /* Track */
-    .rightSect .number-block::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    /* Handle */
-    .rightSect .number-block::-webkit-scrollbar-thumb {
-        background: #d0f3ff;
-    }
-
-    /* Handle on hover */
-    .rightSect .number-block::-webkit-scrollbar-thumb:hover {
-        background: #d0f3ff;
-    }
-
-    /** scrollbar css end here**/
-    .back-to-dashbord a {
-        color: #00baff;
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    /*** End here ***/
-
-
-    @media(min-width:991px) and (max-width:1024px) {
-
-        /** rahul css on 15-1-2022**/
-
-        .form-btns {
-            margin-top: 5px;
-        }
-
-        .profile-section,
-        .profile-show,
-        .leader-board {
-            min-height: 650px;
-            height: 650px;
-        }
-
-        .leader-board,
-        .subscription,
-        .log-out-screen {
-            right: 220px;
-        }
-
-        /** end here on 15-1-2022**/
-
-        /** test review page on 16-12-2021**/
-        .test-review-right span.timing {
-            margin-left: 0px;
-        }
-
-        .timing {
-            font-size: 16px;
-        }
-
-        .rightSect .number-block .btn {
-            margin-right: 0px;
-        }
-
-        .percentage-21.perntage2 .people-qus strong {
-            font-size: 15px;
-        }
-
-        /** end here 16-12-2021**/
-        /** rahul merge css for profile section  on 16-12-2021**/
-        /** profile page css **/
-        .profile-section {
-            width: 220px;
-            top: 8%;
-        }
-
-        .leader-board {
-            width: 310px;
-            right: 20%;
-            height: 100%;
-            top: 8%;
-        }
-
-        .profile-show {
-            height: auto;
-            padding: 10px 0px;
-        }
-
-        .subscription .form-btns button {
-            margin-bottom: 20px;
-        }
-
-        .log-out-screen {
-            width: 50%;
-            right: 20%;
-            top: 8%;
-        }
-
-        button.cancel-btn {
-            margin-bottom: 15px;
-        }
-
-        .subscription {
-            right: 20%;
-            top: 8%;
-        }
-
-        /** end here **/
-
-        /*** end on 16-12-2021 */
-
-        /** test review page on 8-12-2021**/
-        .test-review-right span.timing {
-            margin-left: 0px;
-        }
-
-        .timing {
-            font-size: 16px;
-        }
-
-        .rightSect .number-block .btn {
-            margin-right: 0px;
-        }
-
-        .percentage-21.perntage2 .people-qus strong {
-            font-size: 15px;
-        }
-
-        /** end here 8-12-2021**/
-    }
-
-    @media(min-width:768px) and (max-width:990px) {
-
-        /** rhaul- css on 15-1-2022**/
-        .form-btns {
-            margin-top: 5px;
-        }
-
-        .profile-section {
-            height: 650px;
-        }
-
-        .subScrip .col-md-10.mx-auto {
-            margin-top: 115px;
-        }
-
-        .subScrip .row {
-            display: flex;
-        }
-
-        /** end here on 15-1-2022**/
-
-        .course-star li strong {
-            width: 100% !important;
-            display: block;
-        }
-
-        .star-img {
-            width: 100% !important;
-            display: block;
-        }
-
-        .container-fluid .row .col-md-6.ms-auto.text-end {
-            width: 100%;
-        }
-
-        /** rahul merge css for profile section  on 16-12-2021**/
-        .course-star li strong {
-            width: 100%;
-            display: block;
-        }
-
-        header .container-fluid .row .col-md-6.ms-auto.text-end {
-            width: 100%;
-        }
-
-        /** profile page css **/
-        .profile-section {
-            width: 190px;
-        }
-
-        .leader-board {
-            width: 270px;
-            right: 20%;
-            height: 100%;
-            padding-left: 0px;
-        }
-
-        .profile-show {
-            height: 100%;
-            padding: 10px 0px;
-        }
-
-        .subscription .form-btns button {
-            margin-bottom: 20px;
-        }
-
-        .log-out-screen {
-            width: 50%;
-            right: 20%;
-        }
-
-        .subscription {
-            right: 20%;
-        }
-
-        .profile-picture-txt .p-text {
-            padding-right: 0px;
-        }
-
-        .profile-picture-txt {
-            padding: 15px;
-            display: inline-block;
-        }
-
-        .subscription .profile-picture-txt .p-picture {
-            height: 60px;
-        }
-
-        /** end here **/
-        /*** end on 16-12-2021 */
-        /** test review page on 8-12-2021**/
-        .test-review .cust-tabs .nav-link {
-            margin-right: 10px;
-            font-size: 14px;
-        }
-
-        .test-review .prev-arow {
-            left: -18px;
-            top: 52px;
-        }
-
-        .test-review div#myTabContent .tab-pane .question-block {
-            padding: 15px 0rem;
-        }
-
-        .test-review .next-arow {
-            top: 52px;
-        }
-
-        .rightSect.test-review-right .bg-white {
-            padding: 10px !important;
-        }
-
-        .test-review .percentage-21 {
-            width: 310px;
-        }
-
-        .percentage-21.perntage2 {
-            right: 16%;
-        }
-
-        .people-qus strong {
-            font-size: 30px;
-        }
-
-        /** end here 8-12-2021 **/
-
-    }
-
-    @media(min-width:360px) and (max-width:767px) {
-
-        /** test review page on 16-12-2021**/
-
-        .answer-section {
-            height: auto;
-            overflow: unset;
-            overflow-x: unset;
-        }
-
-        .percentage-21 {
-            width: 100%;
-            right: 3px;
-        }
-
-        .percentage-21.perntage2 {
-            right: 2%;
-            width: 100%;
-        }
-
-        button.percentage-digit {
-            margin-top: 10px;
-            margin-right: 20px;
-            padding: 18px 70px;
-        }
-
-        .people-qus strong {
-            font-size: 30px;
-            padding-right: 14px;
-        }
-
-        .percentage-21 button.close-btn-pr {
-            right: 0px;
-        }
-
-        div#myTabContent .tab-pane .question-block {
-            padding: 15px 0rem;
-        }
-
-        .q-no {
-            left: 20px;
-        }
-
-        .cust-tab-content {
-            padding: 10px 10px !important;
-        }
-
-        /** end here 16-12-2021**/
-
-        /** rahul merge css for profile section  on 16-12-2021**/
-        button.cancel-btn {
-            margin-bottom: 20px;
-        }
-
-        .custom-page .slbs-link.mx-3 {
-            float: left;
-        }
-
-        /** profile page css **/
-        .profile-section {
-            width: 85%;
-            top: -6%;
-            height: auto;
-            z-index: 999;
-        }
-
-        .leader-board {
-            width: 270px;
-            right: 20%;
-            height: 100%;
-            padding-left: 0px;
-        }
-
-        .subscription .form-btns button {
-            margin-bottom: 0;
-        }
-
-        .log-out-screen {
-            right: 1%;
-            width: 87%;
-            top: 24%;
-        }
-
-        .subscription {
-            right: 1%;
-            width: 87%;
-            padding: 15px 20px 15px 25px;
-            top: 24%;
-            padding: 40px 20px 40px 25px;
-        }
-
-        .profile-picture-txt .p-text {
-            padding-right: 0px;
-        }
-
-        .profile-picture-txt {
-            padding: 15px;
-            display: inline-block;
-        }
-
-        .subscription .profile-picture-txt .p-picture {
-            height: 90px;
-        }
-
-        .profile-section ul {
-            display: flex;
-            margin-bottom: 0px;
-        }
-
-        .profile-section ul li {
-            /* padding: 15px 10px; */
-            margin: 0px;
-            text-align: center;
-            width: 120px;
-        }
-
-        .profile-section ul li span {
-            display: block;
-        }
-
-        .leader-board {
-            width: 87%;
-            right: 1%;
-            top: 12%;
-            border-top-left-radius: 56px;
-            border-top-right-radius: 56px;
-        }
-
-        .profile-show {
-            top: -34%;
-            left: 0%;
-            width: 100%;
-            padding: 30px 15px 40px;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 20px !important;
-            border-radius: 0;
-        }
-
-        .edit-form {
-            top: 8%;
-			left: 13%;
-        }
-
-        /** end here **/
-        /*** end on 16-12-2021 */
-        /** test review page on 8-12-2021**/
-
-        .answer-section {
-            height: 200px;
-            overflow: auto;
-            overflow-x: unset;
-        }
-
-        .percentage-21 {
-            width: 100%;
-            right: 3px;
-        }
-
-        .percentage-21.perntage2 {
-            right: 2%;
-            width: 100%;
-        }
-
-        button.percentage-digit {
-            margin-top: 10px;
-            margin-right: 20px;
-            padding: 18px 70px;
-        }
-
-        .people-qus strong {
-            font-size: 30px;
-            padding-right: 14px;
-        }
-
-        .percentage-21 button.close-btn-pr {
-            right: 0px;
-        }
-
-        div#myTabContent .tab-pane .question-block {
-            padding: 15px 0rem;
-        }
-
-        .q-no {
-            left: 0px;
-        }
-
-        .cust-tab-content {
-            padding: 10px 10px !important;
-        }
-
-        /** end here 8-12-2021**/
-
-    }
-
-
-    /* share friends */
-    #sharefrnd .modal-content.rounded-0.bg-light {
-        border-radius: 56px !important;
-        box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
-        background-color: #fff !important;
-    }
-
-    #referFrnd {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-        background-image: linear-gradient(237deg, #21ccff, #21ccff -1%) !important;
-        border: none;
-    }
-
-    #enterEPnmb {
-        background-color: #f2f2f2 !important;
-        border-radius: 8px !important
-    }
-
-    #enterEurl {
-        background-color: #f2f2f2 !important;
-        border-radius: 8px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    button#button-addon2 {
-        background: #21ccff;
-        border-radius: 8px !important;
-        border-top-left-radius: 0px !important;
-        border-bottom-left-radius: 0px !important;
-    }
-
-    #sharefrnd button.btn-close {
-        position: absolute;
-        right: 32px;
-        top: 20px;
-        z-index: 9;
-    }
-
-    /* end referFrnd */
-    /*Analytics Subject */
-    .SubjName {
-        width: 35%;
-    }
-
-    #back2Dsh {
-        height: unset;
-    }
-
-    div#marKs-trends {
-        background: #fff !important;
-        border-radius: 56px !important;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-        margin: 22px 0px;
-    }
-
-    div#time-Avg-quest {
-        background: #fff !important;
-        border-radius: 56px !important;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-        margin: 22px 0px;
-    }
-
-    #marKs-trends .bg-white,
-    #time-Avg-quest .bg-white {
-        background: transparent !important;
-    }
-
-    #f-Numbr-sectin {
-        background: #fff;
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-        border-radius: 56px;
-    }
-
-    #f-Numbr-sectin .noshadow {
-        background: transparent !important;
-        box-shadow: none !important;
-    }
-
-    #f-Numbr-sectin .arrow-right-btm-content {
-        left: 0px;
-        right: 0px;
-        border-radius: 56px;
-        padding: 15px 20px !important;
-    }
-
-    #f-Numbr-sectin .inner-arrow-right-btm {
-        right: 12px;
-        bottom: 0px;
-    }
-
-    #overall button.btn,
-    #home button.btn,
-    .Ex-anal {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        border: none;
-        width: 38% !important;
-        margin-right: 15px;
-        font-size: 10px !important;
-        margin-bottom: 10px;
-        padding: 10px !important;
-    }
-
-    #arrow-left-btm .inner-arrow-left-btm {
-        left: 14px !important;
-        bottom: 0px !important;
-    }
-
-    #arrow-right-top .inner-arrow-right-top {
-        right: 12px !important;
-        top: 0px !important;
-    }
-
-    #arrow-left-top .inner-arrow-left-top {
-        right: 12px !important;
-        bottom: 0px !important;
-        top: auto;
-        left: auto;
-    }
-
-    div#topicclose,
-    .padingTT {
-        padding-top: 30px;
-    }
-
-    #myTabContent .bg-light-success {
-        background: #37c027;
-        border-radius: 15px;
-    }
-
-    #myTabContent .prog-box.green,
-    #myTabContent .prog-box.red,
-    #myTabContent .prog-box.secondary {
-        border: none;
-        background: #f2f2f2;
-        color: #231f20;
-        border-radius: 5px;
-        box-shadow: 0 3px 10px 0 rgba(0,0,0 ,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        font-size: 13px;
-    }
-
-    #myTabContent .bg-light-red {
-        background: #ee6a5f;
-    }
-
-    #myTabContent .progress {
-        border-radius: 15rem !important;
-        width: 90% !important;
-    }
-
-    /* webinar */
-    #upcoming-tutorials img.me-2 {
-        width: 15%;
-    }
-
-    #upcoming-tutorials .modal-content.rounded-0 {
-        border-radius: 56px !important;
-    }
-
-    p.fs-5.profileN {
-        text-align: center;
-        font-size: 12px !important;
-    }
-
-    p.fs-5.profileN span.Colr {
-        color: #1aa4d7;
-    }
-
-    p.fs-5.profileN img {
-        width: 100px !important;
-        height: 100%;
-        border-radius: 50%;
-        margin-bottom: 20px;
-    }
-
-    /* end webinar */
-    /* Download anylatics */
-
-
-    div#exportAnalytics .modal-dialog .modal-content {
-        border-radius: 45px !important;
-    }
-
-    div#contentHtml .text-light-danger {
-        color: #19a4d7;
-    }
-
-    div#contentHtml .bg-white.shadow-lg {
-        height: 100%;
-    }
-
-    div#contentHtml .report-block2 {
-        background: #d0f3ff;
-    }
-
-    div#contentHtml .report-block2 .bg-white {
-        border-radius: 56px;
-        box-shadow: 0 0 20px 0 rgba(123,123,123 ,0.2);
-        background-color: #fff;
-        padding: 30px !important;
-    }
-
-
-    div#contentHtml .report-block1 {
-        background: #fff;
-        border-radius: 56px;
-    }
-
-    .greentxt {
-        font-size: 187px;
-        color: #44cd7f;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .exportUserpic {
-        width: 100px;
-        height: 100px;
-        border-radius: 80px;
-        border: 2px solid #d71921;
-    }
-
-    .exportUsertxt {
-        margin-left: 20px;
-    }
-
-    .exportUsertxt p {
-        margin-bottom: 5px;
-        font-size: 18px;
-    }
-
-    .exportUsertxt small {
-        font-size: 13px;
-    }
-
-    .report-analysis-block {
-        border-radius: 20px;
-    }
-
-    .reportHeading {
-        font-size: 40px;
-        font-weight: 400;
-        border-left: 4px solid #00baff;
-        padding: 10px 0 10px 20px;
-        position: relative;
-    }
-
-    .report-block1 .reportHeading {
-        border-left: solid 4px #aff3d0;
-    }
-
-    /* .reportHeading:after {
-    content: "";
-    width: 2px;
-    height: 40px;
-    background: #44cd7f;
-    position: absolute;
-    right: -15%;
-    top: 50%;
-    margin-top: -20px;
-    transform: rotate(17deg);
+.account-wrapper {
+height: 100vh;
+max-width: 100%;
+position: relative;
+/* right: 0; */
+}
+.col-xl-3 .slimScrollDiv .slimScrollBar {
+height: 55% !important;
+}
+.profile-show {
+position: absolute;
+top: 0px;
+left: -100%;
+width: 100%;
+background: #fff;
+padding: 10px 15px;
+border-radius: 56px;
+box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+}
+.profile-picture-txt .p-picture {
+float: left;
+width: 18%;
+border: 1px solid #5ebbfe;
+border-radius: 50%;
+height: 60px;
+text-align: center;
+overflow: hidden;
+/*     padding-top: 13px; commented by Dinesh */
+}
+.profile-picture-txt {
+padding: 20px;
+}
+.profile-picture-txt .p-text {
+float: right;
+width: 70%;
+padding-right: 20px;
+}
+.profile-show button span {
+margin-right: 10px;
+}
+.profile-show button span img {
+width: 20px;
+}
+.profile-show .profile-picture-txt h4 {
+text-align: left;
+}
+.profile-show button {
+width: 100%;
+border: none;
+border-radius: 20px;
+background: #5ebbfe;
+color: #fff;
+font-weight: 500;
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+padding: 15px 20px;
+}
+.achievement {
+display: inline-block;
+width: 100%;
+padding: 20px 0px;
+}
+.achievement ul {
+padding-left: 0px;
+}
+.achievement ul li {
+list-style: none;
+position: relative;
+padding-left: 25px;
+font-size: 16px;
+font-weight: 400;
+}
+.achievement ul li:before {
+content: "";
+position: absolute;
+top: 1px;
+left: -10px;
+background: url(../images/right-icon.png) no-repeat;
+width: 28px;
+height: 25px;
+background-size: 30px;
+}
+.achievement ul li:after {
+content: "";
+position: absolute;
+top: 2px;
+right: -14px;
+background: url(../images/share.png) no-repeat;
+width: 30px;
+height: 25px;
+background-size: 30px;
+}
+.leader-board .achievement ul {
+overflow-x: initial;
+}
+/** end here**/
+/** Edit form css **/
+.edit-form {
+width: 85%;
+position: absolute;
+top: 0;
+right: 88%;
+background: #fff;
+padding: 20px;
+border-radius: 56px;
+box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.16);
+display: none;
+}
+.edit-img {
+text-align: center;
+position: relative;
+}
+.edit-form .edit-img .p-picture {
+width: 80px;
+display: inline-block;
+overflow: hidden;
+border: 1px solid #5ebbfe;
+border-radius: 50%;
+height: 80px;
+}
+.edit-form .edit-img .p-picture img {
+width: 100%;
+}
+.edit-pic {
+position: absolute;
+bottom: 0px;
+left: 45%;
+width: 40px;
+background: #fff;
+border-radius: 50%;
+padding: 0px;
+box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
+}
+.btm-form-flds {
+width: 100%;
+display: inline-block;
+margin-top: 30px;
+}
+.btm-form-flds .form-flds {
+display: inline-block;
+width: 100%;
+margin-bottom: 20px;
+}
+.btm-form-flds .form-flds input {
+width: 100%;
+border: none;
+padding: 10px;
+border-radius: 8px;
+background: #f2f2f2;
+color: #000;
+}
+.form-btns {
+text-align: center;
+display: inline-block;
+width: 100%;
+}
+button.cancel-btn {
+border-radius: 20px;
+box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
+background: #e9e9e9;
+padding: 15px 30px;
+font-size: 18px;
+font-weight: 600;
+color: #2c3348;
+text-transform: uppercase;
+border: none;
+width: 170px;
+}
+button.save-btn {
+border-radius: 20px;
+box-shadow: inset 0 3px 30px 0 rgba(255, 255, 255, 0.8);
+background: #00baff;
+font-size: 18px;
+text-transform: uppercase;
+font-weight: 600;
+color: #fff;
+padding: 15px 30px;
+border: none;
+width: 170px;
+}
+/** end here **/
+/* dinesh added css */
+label.error {
+color: red;
+font-size: 14px;
+}
+.leader-pic {
+width: 60px;
+height: 60px;
+border-radius: 30px;
+}
+.slimScrollBar {
+z-index: 89;
+}
+.topic_name {
+min-width: 113px;
+text-align: left;
+letter-spacing: 0px;
+text-transform: capitalize;
+opacity: 1;
+max-width: 170px;
+white-space: nowrap;
+overflow-x: hidden;
+overflow-y: hi;
+text-overflow: ellipsis;
+}
+.chapter_name {
+min-width: 113px;
+text-align: left;
+letter-spacing: 0px;
+text-transform: capitalize;
+opacity: 1;
+max-width: 300px;
+white-space: nowrap;
+overflow-x: unset !important;
+overflow-y: unset !important;
+text-overflow: unset !important;
+}
+.p-picture img {
+width: 100%;
+height: 100%;
+}
+/* dinesh added css end */
+/* how much popup resonsive */
+@media(max-width:991px) {
+#favSubResponse .rating .lbl-text {
+width: 35% !important;
+}
+}
+@media(max-width:767px) {
+#favSubResponse .rating .lbl-text {
+width: 35% !important;
+}
+}
+/* end how much like */
+/* full scan test popup */
+#fullTest_Dashboard .modal-content.rounded-0 {
+border-radius: 56px !important;
+}
+#full-txtBlock {
+border-radius: 42px;
+box-shadow: inset 0 3px 30px 0 rgba(255,255,255,0.8);
+background-image: linear-gradient(to bottom, #21ccff, #21ccff) !important;
+}
+#h1--P {
+color: #2c3348 !important;
+font-size: 25px;
+line-height: 30px;
+margin-bottom: 15px;
+}
+#fullTest_Dashboard button.btn-close {
+right: 30px;
+position: absolute;
+top: 20px;
+z-index: 9;
+}
+#fullTest_Dashboard .modal-body.pt-0.text-center {
+padding-top: 35px !important;
+}
+#fullTest_Dashboard .skip-dashboard {
+background: transparent !important;
+border: none;
+color: #00baff !important;
+}
+/* end full scan test popup */
+/* responsive full scan test popup */
+@media(max-width:767px) {
+#fullTest_Dashboard .full-txtblock span {
+font-size: 14px;
+text-align: center;
+margin-left: 0px !important;
+}
+#full-txtBlock {
+margin-left: 0px !important;
+margin-right: 12px !important;
+}
+}
+/* end full scan test popup resonsive */
+/** preparation page css on 9-12-2021***/
+.preparation .slimScrollBar {
+background: rgb(98, 194, 254) !important;
+}
+.preparation .cust-tab-content {
+height: 400px !important;
+}
+.preparation .name-txt {
+width: 35%;
+}
+/** end here on 9-12-2021 **/
+/** preparation page css on 9-12-2021***/
+.preparation .slimScrollBar {
+background: rgb(98, 194, 254) !important;
+}
+.preparation .cust-tab-content {
+height: 500px !important;
+}
+.preparation .name-txt {
+width: 35%;
+}
+@media(min-width:360px) and (max-width:767px) {
+/** preparation page css on 9-12-2021**/
+.preparation .name-txt {
+width: 100%;
+display: block;
+font-size: 14px;
+}
+.preparation .slbs-link a {
+font-size: 12px;
+}
+.preparation .cust-tab-content {
+height: auto !important;
+}
+/*** end here 9-12-2021**/
+}
+/** end here on 9-12-2021 **/
+/** Bhim model popup css for preparation page 13-12-2021 desktop view only**/
+.modal-dialog {
+border-radius: 56px !important;
+}
+.modal-dialog .modal-content.bg-light {
+background-color: #ffffff !important;
+border-radius: 56px !important;
+padding: 20px;
+}
+.h-scroll-slim .d-flex.bg-white {
+border: 1px solid #eee;
+border-radius: 20px;
+}
+.ms-auto span.me-1 .bg-light-red {
+background: #00baff !important;
+border-radius: 10px;
+box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+margin-right: 15px;
+}
+/** End here 13-12-2021**/
+/* 11-12 test screen */
+#test_instruction .modal-content.rounded-0 {
+border-radius: 56px !important;
+}
+#test_instruction .test-info {
+padding: 20px 0;
+margin: 25px 0;
+}
+#test_instruction .slimScrollBar {
+background: #21ccff !important;
+}
+#test_instruction button#goto-exam-btn {
+border-radius: 20px !important;
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+background-image: linear-gradient(241deg, #21ccff, #21ccff);
+border: none;
+padding: 15px 65px;
+color: #fff;
+}
+/* end welcome instructions exam popup */
+/** End exam popup */
+#resume-test .modal-content.rounded-0,
+#FullTest_Exam_Panel_Interface_A .modal-content.rounded-0,
+#endExam .modal-content.rounded-0 {
+border-radius: 56px !important;
+box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
+border: none;
+}
+#endExam #See-Ana {
+border-radius: 20px !important;
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0. 8);
+background-image: linear-gradient(241deg, #21ccff, #21ccff);
+border: none;
+padding: 15px 65px;
+color: #fff;
+}
+/* end end exam popup */
+/*** Rahul Exam analytics page css 13-12-2021 **/
+.exam-analytics span.text-center.w-100 img {
+width: 100%;
+}
+.exam-analytics .bg-white.shadow-lg {
+min-height: 430px;
+}
+.exam-analytics .map-right-graph img {
+width: 100%;
+}
+.exam-analytics .bg-white.shadow.p-3 {
+border-radius: 56px;
+}
+.exam-analytics .row.mt-5.mb-3 .col-7 .bg-white.shadow.position-relative {
+border-radius: 56px !important;
+padding-bottom: 0px !important;
+}
+.exam-analytics .tab-wrapper {
+box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+border-top-left-radius: 56px;
+border-top-right-radius: 56px;
+border-radius: 56px;
+padding-bottom: 33px;
+}
+#exam_result_analysis .row.mt-5.mb-3 {
+margin-bottom: 0px !important;
+}
+.exam-analytics .abrv-graph.bg1 {
+background: #5cc129;
+border-radius: 50%;
+}
+.exam-analytics .abrv-graph.bg2,
+.exam-analytics .abrv-graph.bg3 {
+border-radius: 50%;
+}
+.exam-analytics .abrv-graph.bg2 {
+background: #e62e2d;
+}
+.exam-analytics .row.my-4 .col {
+text-align: center;
+}
+.exam-analytics button.top-btn-pop {
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+background-image: linear-gradient(to bottom, #21ccff, #21ccff);
+border: none;
+border-radius: 20px;
+padding: 15px 10px;
+}
+.exam-analytics .blue-block {
+background: #eee;
+padding: 20px 40px;
+border-radius: 20px;
+}
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+border-radius: 56px;
+}
+.exam-analytics .row.mb-4 .col-md-3 .bg-white.shadow {
+border-radius: 56px;
+}
+.exam-analytics .i-icon {
+color: #62c2fe;
+}
+.exam-analytics .i-icon:hover {
+color: #62c2fe;
+}
+.exam-analytics .bg-light-success {
+background: #37c027;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+.exam-analytics .bg-light-red {
+background: red;
+}
+.exam-analytics .cust-tab-content {
+padding: 0px 36px;
+border-bottom-left-radius: 56px;
+border-bottom-right-radius: 56px;
+}
+button.top-btn-pop {
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+background-image: linear-gradient(to bottom, #21ccff, #21ccff);
+border: none;
+border-radius: 20px;
+padding: 15px 10px;
+}
+/*** Exam analytics page css End 13-12-2021 **/
+/** test review page css 7-11-2021 ***/
+.people-qus {
+display: flex;
+color: #231f20;
+font-size: 18px;
+font-weight: 400;
+margin-bottom: 10px;
+border-bottom: 2px solid #2c3348;
+padding-bottom: 5px;
+}
+.pythagoras a {
+color: #21ccff;
+}
+.pytha-arc {
+display: flex;
+margin-top: 15px;
+}
+.people-qus strong {
+font-size: 48px;
+color: #37c027;
+padding-right: 22px;
+line-height: 55px;
+}
+.percentage-21 {
+border-radius: 20px;
+box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+width: 380px;
+background: #fff;
+padding: 10px;
+position: absolute;
+top: 10px;
+right: 26px;
+display: none;
+}
+.arc-radius {
+padding-left: 20px;
+}
+.perntage1 {
+display: none;
+}
+.perntage2 {
+display: none;
+}
+.percentage-21.perntage2 {
+right: 46%;
+width: 50%;
+}
+.percentage-21.perntage2 .people-qus strong {
+font-size: 16px;
+color: #21ccff;
+line-height: 20px;
+}
+.percentage-21.perntage2 .people-qus {
+display: inline-block;
+width: 100%;
+}
+p.mb-0.line-height-18px {
+line-height: 18px;
+}
+.pytha-arc h3 {
+font-size: 16px;
+font-weight: 600;
+color: #21ccff;
+}
+.percentage-21.pythagoras-p2 {
+display: none !important;
+}
+.percentage-21 button.close-btn-pr {
+border: none;
+position: absolute;
+right: 5px;
+top: 5px;
+background: none;
+color: #000;
+font-weight: bold;
+}
+.tab-wrapper .nav-tabs {
+/*  z-index: 99999; commented by dinesh*/
+z-index: 98;
+position: relative;
+}
+span.p-icons span {
+color: #000;
+}
+.answer-section {
+width: 100%;
+padding: 30px;
+background: #eee;
+border-radius: 56px;
+}
+button.percentage-digit {
+float: right;
+padding: 18px 86px;
+border: none;
+background: #00baff;
+border-radius: 20px;
+color: #fff;
+}
+.answer-btn-txt {
+display: inline-block;
+width: 100%;
+}
+.answer-btn-txt span {
+color: #44cd7f;
+font-family: Manrope;
+margin-right: 20px;
+text-transform: uppercase;
+font-size: 16px;
+font-weight: normal;
+}
+.ans-txt {
+display: inline-block;
+width: 100%;
+margin-top: 30px;
+}
+.back-to-dashbord {
+position: absolute;
+top: 12px;
+right: 50px;
+z-index: 99999;
+}
+.test-review .tab-content {
+border-radius: 56px;
+padding-bottom: 10px;
+}
+.test-review-right span.timing {
+margin-left: 0px;
+}
+.review-qus {
+margin: 20px 0px;
+overflow: auto;
+height: 200px;
+overflow-x: hidden;
+}
+.review-qus span a {
+float: right;
+}
+.rview-quses {
+padding-left: 0px;
+}
+.rview-quses li.correctans {
+border-color: #37c027;
+}
+.rview-quses li.incorrectans {
+border-color: #ee6a5f;
+}
+.rview-quses li.notans {
+border-color: #e4e4e4;
+}
+.rview-quses li {
+position: relative;
+list-style: none;
+margin: 10px 0px;
+display: flex;
+width: 100%;
+border-left: 5px solid #eee;
+}
+.rview-quses li span {
+padding-right: 5px;
+padding-left: 5px;
+}
+/** custom scrollbar**/
+/* width */
+.question-block {
+height: 250px;
+overflow: auto;
+overflow-x: hidden;
+}
+.question-block::-webkit-scrollbar {
+width: 5px;
+}
+/* Track */
+.question-block::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+/* Handle */
+.question-block::-webkit-scrollbar-thumb {
+background: #d0f3ff;
+}
+/* Handle on hover */
+.question-block::-webkit-scrollbar-thumb:hover {
+background: #d0f3ff;
+}
+.answer-section {
+height: 200px;
+overflow: auto;
+margin: 20px 0px;
+position: relative;
+overflow-x: hidden;
+}
+.answer-section::-webkit-scrollbar {
+width: 5px;
+}
+/* Track */
+.answer-section::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+/* Handle */
+.answer-section::-webkit-scrollbar-thumb {
+background: #d0f3ff;
+}
+/* Handle on hover */
+.answer-section::-webkit-scrollbar-thumb:hover {
+background: #d0f3ff;
+}
+.review-qus::-webkit-scrollbar {
+width: 5px;
+}
+/* Track */
+.review-qus::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+/* Handle */
+.review-qus::-webkit-scrollbar-thumb {
+background: #d0f3ff;
+}
+/* Handle on hover */
+.review-qus::-webkit-scrollbar-thumb:hover {
+background: #d0f3ff;
+}
+.rightSect .number-block::-webkit-scrollbar {
+width: 5px;
+}
+/* Track */
+.rightSect .number-block::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+/* Handle */
+.rightSect .number-block::-webkit-scrollbar-thumb {
+background: #d0f3ff;
+}
+/* Handle on hover */
+.rightSect .number-block::-webkit-scrollbar-thumb:hover {
+background: #d0f3ff;
+}
+/** scrollbar css end here**/
+.back-to-dashbord a {
+color: #00baff;
+font-size: 16px;
+font-weight: 500;
+}
+/*** End here ***/
+@media(min-width:991px) and (max-width:1024px) {
+/** rahul css on 15-1-2022**/
+.form-btns {
+margin-top: 5px;
+}
+.profile-section,
+.profile-show,
+.leader-board {
+min-height: 650px;
+height: 650px;
+}
+.leader-board,
+.subscription,
+.log-out-screen {
+right: 220px;
+}
+/** end here on 15-1-2022**/
+/** test review page on 16-12-2021**/
+.test-review-right span.timing {
+margin-left: 0px;
+}
+.timing {
+font-size: 16px;
+}
+.rightSect .number-block .btn {
+margin-right: 0px;
+}
+.percentage-21.perntage2 .people-qus strong {
+font-size: 15px;
+}
+/** end here 16-12-2021**/
+/** rahul merge css for profile section  on 16-12-2021**/
+/** profile page css **/
+.profile-section {
+width: 220px;
+top: 8%;
+}
+.leader-board {
+width: 310px;
+right: 20%;
+height: 100%;
+top: 8%;
+}
+.profile-show {
+height: auto;
+padding: 10px 0px;
+}
+.subscription .form-btns button {
+margin-bottom: 20px;
+}
+.log-out-screen {
+width: 50%;
+right: 20%;
+top: 8%;
+}
+button.cancel-btn {
+margin-bottom: 15px;
+}
+.subscription {
+right: 20%;
+top: 8%;
+}
+/** end here **/
+/*** end on 16-12-2021 */
+/** test review page on 8-12-2021**/
+.test-review-right span.timing {
+margin-left: 0px;
+}
+.timing {
+font-size: 16px;
+}
+.rightSect .number-block .btn {
+margin-right: 0px;
+}
+.percentage-21.perntage2 .people-qus strong {
+font-size: 15px;
+}
+/** end here 8-12-2021**/
+}
+@media(min-width:768px) and (max-width:990px) {
+/** rhaul- css on 15-1-2022**/
+.form-btns {
+margin-top: 5px;
+}
+.profile-section {
+height: 650px;
+}
+.subScrip .col-md-10.mx-auto {
+margin-top: 115px;
+}
+.subScrip .row {
+display: flex;
+}
+/** end here on 15-1-2022**/
+.course-star li strong {
+width: 100% !important;
+display: block;
+}
+.star-img {
+width: 100% !important;
+display: block;
+}
+.container-fluid .row .col-md-6.ms-auto.text-end {
+width: 100%;
+}
+/** rahul merge css for profile section  on 16-12-2021**/
+.course-star li strong {
+width: 100%;
+display: block;
+}
+header .container-fluid .row .col-md-6.ms-auto.text-end {
+width: 100%;
+}
+/** profile page css **/
+.profile-section {
+width: 190px;
+}
+.leader-board {
+width: 270px;
+right: 20%;
+height: 100%;
+padding-left: 0px;
+}
+.profile-show {
+height: 100%;
+padding: 10px 0px;
+}
+.subscription .form-btns button {
+margin-bottom: 20px;
+}
+.log-out-screen {
+width: 50%;
+right: 20%;
+}
+.subscription {
+right: 20%;
+}
+.profile-picture-txt .p-text {
+padding-right: 0px;
+}
+.profile-picture-txt {
+padding: 15px;
+display: inline-block;
+}
+.subscription .profile-picture-txt .p-picture {
+height: 60px;
+}
+/** end here **/
+/*** end on 16-12-2021 */
+/** test review page on 8-12-2021**/
+.test-review .cust-tabs .nav-link {
+margin-right: 10px;
+font-size: 14px;
+}
+.test-review .prev-arow {
+left: -18px;
+top: 52px;
+}
+.test-review div#myTabContent .tab-pane .question-block {
+padding: 15px 0rem;
+}
+.test-review .next-arow {
+top: 52px;
+}
+.rightSect.test-review-right .bg-white {
+padding: 10px !important;
+}
+.test-review .percentage-21 {
+width: 310px;
+}
+.percentage-21.perntage2 {
+right: 16%;
+}
+.people-qus strong {
+font-size: 30px;
+}
+/** end here 8-12-2021 **/
+}
+@media(min-width:360px) and (max-width:767px) {
+/** test review page on 16-12-2021**/
+.answer-section {
+height: auto;
+overflow: unset;
+overflow-x: unset;
+}
+.percentage-21 {
+width: 100%;
+right: 3px;
+}
+.percentage-21.perntage2 {
+right: 2%;
+width: 100%;
+}
+button.percentage-digit {
+margin-top: 10px;
+margin-right: 20px;
+padding: 18px 70px;
+}
+.people-qus strong {
+font-size: 30px;
+padding-right: 14px;
+}
+.percentage-21 button.close-btn-pr {
+right: 0px;
+}
+div#myTabContent .tab-pane .question-block {
+padding: 15px 0rem;
+}
+.q-no {
+left: 20px;
+}
+.cust-tab-content {
+padding: 10px 10px !important;
+}
+/** end here 16-12-2021**/
+/** rahul merge css for profile section  on 16-12-2021**/
+button.cancel-btn {
+margin-bottom: 20px;
+}
+.custom-page .slbs-link.mx-3 {
+float: left;
+}
+/** profile page css **/
+.profile-section {
+width: 85%;
+top: -6%;
+height: auto;
+z-index: 999;
+}
+.leader-board {
+width: 270px;
+right: 20%;
+height: 100%;
+padding-left: 0px;
+}
+.subscription .form-btns button {
+margin-bottom: 0;
+}
+.log-out-screen {
+right: 1%;
+width: 87%;
+top: 24%;
+}
+.subscription {
+right: 1%;
+width: 87%;
+padding: 15px 20px 15px 25px;
+top: 24%;
+padding: 40px 20px 40px 25px;
+}
+.profile-picture-txt .p-text {
+padding-right: 0px;
+}
+.profile-picture-txt {
+padding: 15px;
+display: inline-block;
+}
+.subscription .profile-picture-txt .p-picture {
+height: 90px;
+}
+.profile-section ul {
+display: flex;
+margin-bottom: 0px;
+}
+.profile-section ul li {
+/* padding: 15px 10px; */
+margin: 0px;
+text-align: center;
+width: 120px;
+}
+.profile-section ul li span {
+display: block;
+}
+.leader-board {
+width: 87%;
+right: 1%;
+top: 12%;
+border-top-left-radius: 56px;
+border-top-right-radius: 56px;
+}
+.profile-show {
+top: -34%;
+left: 0%;
+width: 100%;
+padding: 30px 15px 40px;
+border-top-left-radius: 20px !important;
+border-top-right-radius: 20px !important;
+border-radius: 0;
+}
+.edit-form {
+top: 8%;
+left: 13%;
+}
+/** end here **/
+/*** end on 16-12-2021 */
+/** test review page on 8-12-2021**/
+.answer-section {
+height: 200px;
+overflow: auto;
+overflow-x: unset;
+}
+.percentage-21 {
+width: 100%;
+right: 3px;
+}
+.percentage-21.perntage2 {
+right: 2%;
+width: 100%;
+}
+button.percentage-digit {
+margin-top: 10px;
+margin-right: 20px;
+padding: 18px 70px;
+}
+.people-qus strong {
+font-size: 30px;
+padding-right: 14px;
+}
+.percentage-21 button.close-btn-pr {
+right: 0px;
+}
+div#myTabContent .tab-pane .question-block {
+padding: 15px 0rem;
+}
+.q-no {
+left: 0px;
+}
+.cust-tab-content {
+padding: 10px 10px !important;
+}
+/** end here 8-12-2021**/
+}
+/* share friends */
+#sharefrnd .modal-content.rounded-0.bg-light {
+border-radius: 56px !important;
+box-shadow: 0 3px 30px 0 rgba(0,0,0,0.16);
+background-color: #fff !important;
+}
+#referFrnd {
+border-radius: 20px !important;
+box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+background-image: linear-gradient(237deg, #21ccff, #21ccff -1%) !important;
+border: none;
+}
+#enterEPnmb {
+background-color: #f2f2f2 !important;
+border-radius: 8px !important
+}
+#enterEurl {
+background-color: #f2f2f2 !important;
+border-radius: 8px !important;
+border-bottom-right-radius: 0px !important;
+border-top-right-radius: 0px !important;
+}
+button#button-addon2 {
+background: #21ccff;
+border-radius: 8px !important;
+border-top-left-radius: 0px !important;
+border-bottom-left-radius: 0px !important;
+}
+#sharefrnd button.btn-close {
+position: absolute;
+right: 32px;
+top: 20px;
+z-index: 9;
+}
+/* end referFrnd */
+/*Analytics Subject */
+.SubjName {
+width: 35%;
+}
+#back2Dsh {
+height: unset;
+}
+div#marKs-trends {
+background: #fff !important;
+border-radius: 56px !important;
+box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+margin: 22px 0px;
+}
+div#time-Avg-quest {
+background: #fff !important;
+border-radius: 56px !important;
+box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+margin: 22px 0px;
+}
+#marKs-trends .bg-white,
+#time-Avg-quest .bg-white {
+background: transparent !important;
+}
+#f-Numbr-sectin {
+background: #fff;
+box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+border-radius: 56px;
+}
+#f-Numbr-sectin .noshadow {
+background: transparent !important;
+box-shadow: none !important;
+}
+#f-Numbr-sectin .arrow-right-btm-content {
+left: 0px;
+right: 0px;
+border-radius: 56px;
+padding: 15px 20px !important;
+}
+#f-Numbr-sectin .inner-arrow-right-btm {
+right: 12px;
+bottom: 0px;
+}
+#overall button.btn,
+#home button.btn,
+.Ex-anal {
+border-radius: 20px !important;
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+border: none;
+width: 38% !important;
+margin-right: 15px;
+font-size: 10px !important;
+margin-bottom: 10px;
+padding: 10px !important;
+}
+#arrow-left-btm .inner-arrow-left-btm {
+left: 14px !important;
+bottom: 0px !important;
+}
+#arrow-right-top .inner-arrow-right-top {
+right: 12px !important;
+top: 0px !important;
+}
+#arrow-left-top .inner-arrow-left-top {
+right: 12px !important;
+bottom: 0px !important;
+top: auto;
+left: auto;
+}
+div#topicclose,
+.padingTT {
+padding-top: 30px;
+}
+#myTabContent .bg-light-success {
+background: #37c027;
+border-radius: 15px;
+}
+#myTabContent .prog-box.green,
+#myTabContent .prog-box.red,
+#myTabContent .prog-box.secondary {
+border: none;
+background: #f2f2f2;
+color: #231f20;
+border-radius: 5px;
+box-shadow: 0 3px 10px 0 rgba(0,0,0 ,0.2), inset 0 3px 10px 0 rgba(255,255,255,0.8);
+font-size: 13px;
+}
+#myTabContent .bg-light-red {
+background: #ee6a5f;
+}
+#myTabContent .progress {
+border-radius: 15rem !important;
+width: 90% !important;
+}
+/* webinar */
+#upcoming-tutorials img.me-2 {
+width: 15%;
+}
+#upcoming-tutorials .modal-content.rounded-0 {
+border-radius: 56px !important;
+}
+p.fs-5.profileN {
+text-align: center;
+font-size: 12px !important;
+}
+p.fs-5.profileN span.Colr {
+color: #1aa4d7;
+}
+p.fs-5.profileN img {
+width: 100px !important;
+height: 100%;
+border-radius: 50%;
+margin-bottom: 20px;
+}
+/* end webinar */
+/* Download anylatics */
+div#exportAnalytics .modal-dialog .modal-content {
+border-radius: 45px !important;
+}
+div#contentHtml .text-light-danger {
+color: #19a4d7;
+}
+div#contentHtml .bg-white.shadow-lg {
+height: 100%;
+}
+div#contentHtml .report-block2 {
+background: #d0f3ff;
+}
+div#contentHtml .report-block2 .bg-white {
+border-radius: 56px;
+box-shadow: 0 0 20px 0 rgba(123,123,123 ,0.2);
+background-color: #fff;
+padding: 30px !important;
+}
+div#contentHtml .report-block1 {
+background: #fff;
+border-radius: 56px;
+}
+.greentxt {
+font-size: 187px;
+color: #44cd7f;
+font-weight: bold;
+text-align: center;
+}
+.exportUserpic {
+width: 100px;
+height: 100px;
+border-radius: 80px;
+border: 2px solid #d71921;
+}
+.exportUsertxt {
+margin-left: 20px;
+}
+.exportUsertxt p {
+margin-bottom: 5px;
+font-size: 18px;
+}
+.exportUsertxt small {
+font-size: 13px;
+}
+.report-analysis-block {
+border-radius: 20px;
+}
+.reportHeading {
+font-size: 40px;
+font-weight: 400;
+border-left: 4px solid #00baff;
+padding: 10px 0 10px 20px;
+position: relative;
+}
+.report-block1 .reportHeading {
+border-left: solid 4px #aff3d0;
+}
+/* .reportHeading:after {
+content: "";
+width: 2px;
+height: 40px;
+background: #44cd7f;
+position: absolute;
+right: -15%;
+top: 50%;
+margin-top: -20px;
+transform: rotate(17deg);
 } */
-
-    .reportHeading span {
-        font-size: 30px;
-        font-weight: 300;
-    }
-
-    .report-block2 {
-        background: #fff4cf;
-    }
-
-    .w-34 {
-        width: 34%;
-    }
-
-    .export-btn {
-        position: fixed;
-        right: 75px;
-        top: 15px;
-        filter: unset;
-    }
-
-    .export-btn:hover {
-        filter: contrast(1);
-    }
-
-    .close-btn {
-        position: fixed;
-        right: 15px;
-        top: 15px;
-        filter: unset;
-    }
-
-    .close-btn:hover {
-        filter: contrast(1);
-    }
-
-    .star-ratings-css {
-        unicode-bidi: bidi-override;
-        color: #c5c5c5;
-        font-size: 25px;
-        height: 40px;
-        /* width: 100px; */
-        margin: 0 auto;
-        position: relative;
-        padding: 0;
-        /* text-shadow: 0px 1px 0 #a2a2a2; */
-    }
-
-    .star-ratings-css-top {
-        color: #ffdc34;
-        padding: 0;
-        position: absolute;
-        z-index: 1;
-        display: block;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-    }
-
-    .star-ratings-css-bottom {
-        padding: 0;
-        display: block;
-        z-index: 0;
-    }
-
-    .error {
-        color: #d71921;
-        font-size: 12px;
-    }
-
-    .Dwonload {
-        border-radius: 20px !important;
-        box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
-        background-image: linear-gradient(to bottom, #21ccff, #21ccff);
-        border: none;
-        color: #fff;
-        margin-right: 15px;
-    }
-
-    /* end Download anylatics */
-
-
-    @media(min-width:768px) and (max-width:990px) {
-
-        /** exam analytics page css 14-12-2021**/
-
-        .exam-analytics .row.mb-4 .col-md-9 {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .row.mb-4 .col-md-3 {
-            width: 100%;
-        }
-
-        .exam-analytics .cust-tabs .nav-link {
-            margin-right: 0px;
-            font-size: 12px;
-        }
-
-        /** exam analytics page css End 14-12-2021**/
-
-    }
-
-    @media(min-width:360px) and (max-width:767px) {
-
-        /** exam analytics page css 14-12-2021**/
-        .exam-analytics .row.mt-5.mb-3 .col-5 {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .row.mt-5.mb-3 .col-7 {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .bg-white.shadow-lg {
-            height: auto;
-            padding-bottom: 20px;
-        }
-
-        .exam-analytics button.top-btn-pop {
-            margin-bottom: 20px;
-            width: 100%;
-        }
-
-        .exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .cust-tabs .nav-link {
-            margin-right: 0px;
-            font-size: 9px;
-        }
-
-        .exam-analytics .nav.nav-tabs.cust-tabs {
-            width: auto;
-        }
-
-        .exam-analytics .col-12.d-flex.mt-5.mb-3 {
-            display: inline-block !important;
-        }
-
-        .exam-analytics select.form-select.rounded-0.ms-3.w-25 {
-            margin-left: 0px !important;
-            margin-bottom: 20px;
-        }
-
-        .exam-analytics .row .col-md-4.text-center img {
-            width: 100%;
-        }
-
-        .exam-analytics .col-md-9 .p-5 {
-            padding: 1rem !important;
-        }
-
-        .exam-analytics .row.mt-5.mb-3 {
-            margin-top: 0px !important;
-        }
-
-        .exam-analytics .subj-name {
-            font-size: 12px;
-        }
-
-        /** exam analytics page css End 14-12-2021**/
-
-    }
-
-
-
-    /* dinesh per question timer 13-11-2021*/
-    .tiny-green {
-        position: relative;
-        padding: 0px;
-        width: 180px;
-        background-color: #E4E4E4;
-        height: 18px;
-
-    }
-
-    .tiny-green div {
-
-        font-family: arial;
-        font-size: 3px;
-        height: inherit;
-        color: white;
-        text-align: right;
-        text-shadow: 0px 0px 2px #000;
-        text-indent: 9999px;
-        overflow: hidden;
-
-        background-color: #44CD7F;
-        /*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
-        background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
-        background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
- */
-
-
-    }
-
-    .counter {
-        position: absolute;
-        right: 25px;
-        top: 25px
-    }
-
-    .counter .progressBar .seconds {
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        color: #FFF;
-        font-weight: 600;
-        top: -2px;
-
-    }
-
-    .question-block p {
-        margin-bottom: 0px;
-    }
-
-    .activequestion {
-        border: 2px solid #5ddaff !important;
-        pointer-events: none;
-        cursor: pointer;
-    }
-
-    button a {
-        color: inherit !important;
-    }
-
-    button a:hover {
-        color: inherit !important;
-    }
-
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999999;
-        display: none;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        outline: 0;
-    }
-
-    .SubjName {
-        width: 180px;
-    }
-
-    /* dinesh per question timer */
-
-    @media (min-width: 576px) {
-        #test_instruction .modal-dialog {
-            width: 90% !important;
-            max-width: 90% !important;
-        }
-    }
-  
- 
-   
- 
+.reportHeading span {
+font-size: 30px;
+font-weight: 300;
+}
+.report-block2 {
+background: #fff4cf;
+}
+.w-34 {
+width: 34%;
+}
+.export-btn {
+position: fixed;
+right: 75px;
+top: 15px;
+filter: unset;
+}
+.export-btn:hover {
+filter: contrast(1);
+}
+.close-btn {
+position: fixed;
+right: 15px;
+top: 15px;
+filter: unset;
+}
+.close-btn:hover {
+filter: contrast(1);
+}
+.star-ratings-css {
+unicode-bidi: bidi-override;
+color: #c5c5c5;
+font-size: 25px;
+height: 40px;
+/* width: 100px; */
+margin: 0 auto;
+position: relative;
+padding: 0;
+/* text-shadow: 0px 1px 0 #a2a2a2; */
+}
+.star-ratings-css-top {
+color: #ffdc34;
+padding: 0;
+position: absolute;
+z-index: 1;
+display: block;
+top: 0;
+left: 0;
+overflow: hidden;
+}
+.star-ratings-css-bottom {
+padding: 0;
+display: block;
+z-index: 0;
+}
+.error {
+color: #d71921;
+font-size: 12px;
+}
+.Dwonload {
+border-radius: 20px !important;
+box-shadow: inset 0 3px 10px 0 rgba(255,255,255,0.8);
+background-image: linear-gradient(to bottom, #21ccff, #21ccff);
+border: none;
+color: #fff;
+margin-right: 15px;
+}
+/* end Download anylatics */
+@media(min-width:768px) and (max-width:990px) {
+/** exam analytics page css 14-12-2021**/
+.exam-analytics .row.mb-4 .col-md-9 {
+width: 100%;
+margin-bottom: 20px;
+}
+.exam-analytics .row.mb-4 .col-md-3 {
+width: 100%;
+}
+.exam-analytics .cust-tabs .nav-link {
+margin-right: 0px;
+font-size: 12px;
+}
+/** exam analytics page css End 14-12-2021**/
+}
+@media(min-width:360px) and (max-width:767px) {
+/** exam analytics page css 14-12-2021**/
+.exam-analytics .row.mt-5.mb-3 .col-5 {
+width: 100%;
+margin-bottom: 20px;
+}
+.exam-analytics .row.mt-5.mb-3 .col-7 {
+width: 100%;
+margin-bottom: 20px;
+}
+.exam-analytics .bg-white.shadow-lg {
+height: auto;
+padding-bottom: 20px;
+}
+.exam-analytics button.top-btn-pop {
+margin-bottom: 20px;
+width: 100%;
+}
+.exam-analytics .row.mb-4 .col-md-9 .bg-white.shadow {
+margin-bottom: 20px;
+}
+.exam-analytics .cust-tabs .nav-link {
+margin-right: 0px;
+font-size: 9px;
+}
+.exam-analytics .nav.nav-tabs.cust-tabs {
+width: auto;
+}
+.exam-analytics .col-12.d-flex.mt-5.mb-3 {
+display: inline-block !important;
+}
+.exam-analytics select.form-select.rounded-0.ms-3.w-25 {
+margin-left: 0px !important;
+margin-bottom: 20px;
+}
+.exam-analytics .row .col-md-4.text-center img {
+width: 100%;
+}
+.exam-analytics .col-md-9 .p-5 {
+padding: 1rem !important;
+}
+.exam-analytics .row.mt-5.mb-3 {
+margin-top: 0px !important;
+}
+.exam-analytics .subj-name {
+font-size: 12px;
+}
+/** exam analytics page css End 14-12-2021**/
+}
+/* dinesh per question timer 13-11-2021*/
+.tiny-green {
+position: relative;
+padding: 0px;
+width: 180px;
+background-color: #E4E4E4;
+height: 18px;
+}
+.tiny-green div {
+font-family: arial;
+font-size: 3px;
+height: inherit;
+color: white;
+text-align: right;
+text-shadow: 0px 0px 2px #000;
+text-indent: 9999px;
+overflow: hidden;
+background-color: #44CD7F;
+/*  background-image: -webkit-gradient(linear, 71% 25%, 71% 69%, color-stop(0, rgb(247, 7, 7)), color-stop(0.47, rgb(118, 177, 1)), color-stop(0.48, rgb(102, 153, 0)), color-stop(1, rgb(102, 153, 0)));
+background-image: -webkit-linear-gradient(-90deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+background-image: -moz-linear-gradient(71% 25% -180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+background-image: linear-gradient(-180deg, rgb(247, 7, 7) 0%, rgb(118, 177, 1) 47%, rgb(102, 153, 0) 48%, rgb(102, 153, 0) 100%);
+*/
+}
+.counter {
+position: absolute;
+right: 25px;
+top: 25px
+}
+.counter .progressBar .seconds {
+width: 100%;
+position: absolute;
+text-align: center;
+color: #FFF;
+font-weight: 600;
+top: -2px;
+}
+.question-block p {
+margin-bottom: 0px;
+}
+.activequestion {
+border: 2px solid #5ddaff !important;
+pointer-events: none;
+cursor: pointer;
+}
+button a {
+color: inherit !important;
+}
+button a:hover {
+color: inherit !important;
+}
+.modal {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 999999;
+display: none;
+width: 100%;
+height: 100%;
+overflow: hidden;
+outline: 0;
+}
+.SubjName {
+width: 180px;
+}
+/* dinesh per question timer */
+@media (min-width: 576px) {
+#test_instruction .modal-dialog {
+width: 90% !important;
+max-width: 90% !important;
+}
+}
