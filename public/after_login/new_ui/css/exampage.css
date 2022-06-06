@@ -882,6 +882,7 @@ overflow: overlay;
 .mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div{
  height: calc(100vh - 350px)!important; 
 overflow: overlay;
+    padding: 0 !important;
 }
 .mocktest-attempted-wrapper{
 height: calc(100vh - 260px) !important;

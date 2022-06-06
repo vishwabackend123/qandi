@@ -257,7 +257,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 .mocktest-attempted-wrapper .cust-tab-content,
 .practice_custom_page .cust-tab-content,
 .practice-series-lists .cust-tab-content {
-    padding: 0px 40px 40px !important;
+    padding-right:  15px !important;
 }
 .live-exam-list-wrapper .live-exam i.fa.fa-circle.text-danger.me-2 {
     color: #f74645 !important;
@@ -320,6 +320,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
     background: rgba(243, 247, 255, 0.5);
     padding: 15px 20px 15px;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 .practice-series-lists .compLeteS .collapse,
 .mocktest-attempted-wrapper .compLeteS .collapse,
