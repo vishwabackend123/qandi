@@ -2456,6 +2456,7 @@ a.disabled-btn {
     font-size: inherit;
     font-size: 14px;line-height:20px;
 }
+.edit-form input.error{font-size: 16px;}
 
 #editProfile_form {
     /* height: 445px; */
