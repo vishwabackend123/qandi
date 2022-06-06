@@ -282,7 +282,7 @@
                             $('#otp-box').addClass('open-box');
 
                             if ($("#resp_opt").length == 1) {
-                                $("#resp_opt").text(response.otp);
+                                $("#resp_opt").text(response.mobile_otp);
                             }
                             resentOtpTime();
                         } else {
