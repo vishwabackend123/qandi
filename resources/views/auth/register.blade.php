@@ -168,7 +168,11 @@
 
         var empty = false;
         $('#addressfield input').each(function() {
-
+            var ids= this.id;
+            if(ids=='myInput' || ids=='myInputState')
+            {
+                return; 
+            }
             if ($(this).val() == '') {
                 empty = true;
             }
