@@ -1138,13 +1138,10 @@ $question_type = "Numerical";
                     var response = jQuery.parseJSON(response_data);
                     if (response.success == true) {
 
-                        $("#btn_" + quest_id).removeClass("btn-light-green");
                         $("#btn_" + quest_id).removeClass("btn-light");
-                        //$("#btn_" + quest_id).removeClass("btn-light-green");
-                        /* $("#btn_" + quest_id).toggleClass('btn-light-green btn-secondary'); */
-
+                        $("#btn_" + quest_id).removeClass("btn-light-green");
                         $("#btn_" + quest_id).addClass("btn-secondary");
-                        $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
+                        $("#btn_" + quest_id).appendChild('<i class="fa fa-check text-light"></i>');
 
                     }
 
