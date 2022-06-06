@@ -1232,7 +1232,11 @@ $question_type = "Numerical";
                 "_token": "{{ csrf_token() }}",
                 'q_time': time
             },
+            beforeSend: function() {
+                //$('.loader-block').show();
+            },
             success: function(response_data) {
+                // $('.loader-block').hide();
                 var response = jQuery.parseJSON(response_data);
                 if (response.status == 200) {
 
