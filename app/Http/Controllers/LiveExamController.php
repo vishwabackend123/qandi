@@ -15,28 +15,38 @@ use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * LiveExamController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class LiveExamController extends Controller
 {
-    //
     use CommonTrait;
     /**
-     * Undocumented function
+     * Exam login
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
-    public function exam_login(Request $request)
+    public function examLogin(Request $request)
     {
         return view('afterlogin.LiveExam.exam_login');
     }
 
     /**
-     * Undocumented function
+     * Live exam list
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
-    public function live_exam_list(Request $request)
+    public function liveExamList(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -47,7 +57,7 @@ class LiveExamController extends Controller
             $api_url = env('API_URL') . 'api/live-exam/live-exam-schedule/' . $exam_id . '/' . $user_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -56,7 +66,8 @@ class LiveExamController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -85,10 +96,15 @@ class LiveExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
-    public function live_exam(Request $request, $schedule_id)
+    /**
+     * Live Exam
+     *
+     * @param Request $request     recieve the body request data
+     * @param mixed   $schedule_id schedule id
+     *
+     * @return void
+     */
+    public function liveExam(Request $request, $schedule_id)
     {
         try {
             $filtered_subject = [];
@@ -118,8 +134,7 @@ class LiveExamController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/live-exam/live-exam-web/' . $schedule_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -129,7 +144,8 @@ class LiveExamController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, curl_option);
 
             $response_json = curl_exec($curl);
             $response_json = str_replace('NaN', '""', $response_json);
@@ -239,11 +255,14 @@ class LiveExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
-    /* live exam result */
-    public function live_exam_result($result_id)
+    /**
+     * Live exam result
+     *
+     * @param mixed $result_id result id
+     *
+     * @return void
+     */
+    public function liveExamResult($result_id)
     {
         try {
             $userData = Session::get('user_data');
@@ -256,7 +275,7 @@ class LiveExamController extends Controller
 
             $curl_url = $api_URL . 'api/result-analytics/' . $user_id . '/' . $exam_id . '/' . $result_id;
 
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -269,7 +288,8 @@ class LiveExamController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
