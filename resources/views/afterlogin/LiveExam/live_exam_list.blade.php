@@ -195,6 +195,7 @@ $userData = Session::get('user_data');
         $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
     });
     $('#over-tab').click(function() {
+        $(".tab-wrapper.live-exam").removeClass("live-exam-tab-wrapper");
         $('.loader-block').show();
         url = "{{ url('ajax_exam_result_list') }}/Live";
         $.ajax({
@@ -216,6 +217,9 @@ $userData = Session::get('user_data');
                 $('.loader-block').hide();
             }
         });
+    });
+    $('#home-tab').click(function() {
+        $(".tab-wrapper.live-exam").addClass("live-exam-tab-wrapper");
     });
 </script>
 @endsection
