@@ -5466,7 +5466,7 @@ button#goto-exam-btn {
         inset 0 0 0 0 rgba(0, 0, 0, 0.51);
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1),
         inset 0 0 0 0 rgba(0, 0, 0, 0.51);
-    padding: 18px 24px;
+    padding: 12px 24px;
     display: flex;
     display: -webkit-box;
     display: -moz-box;
@@ -5476,13 +5476,10 @@ button#goto-exam-btn {
 
 .notification-txt span.text-notific {
     line-height: 20px;
-    font-size: 16px;
+    font-size: 15px;
     color: #231f20;
     font-weight: normal;
     padding-left: 15px;
-    display: inline-block;
-    width: 90%;
-    word-break: break-word;
 }
 
 .notification-right a {
@@ -5526,9 +5523,24 @@ div#collapseNotification {
 }
 
 span.bell-noti {
-    float: left;
+    color: #00baff;
+    font-size: 21px;
+    position: relative;
 }
-
+.red-dot{
+    position: absolute;
+    background: #eb5347;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    right: 1px;
+    top: 4px;
+}
+.noti-box-scroll{
+    display: flex;
+    overflow-y: auto;
+    height: 57px;    
+}
 .primary-secondry-btn {
     text-align: center;
     margin-top: 20px;
