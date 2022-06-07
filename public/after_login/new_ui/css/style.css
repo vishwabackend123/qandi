@@ -2528,6 +2528,7 @@ a.disabled-btn {
     justify-content: space-between;
     align-items: center;position: absolute;
     bottom: 6px;padding-right:10px;
+    background-color: #ffffff;
 }
 
 #editProfile_form .form-btns button#cancelEdit,
