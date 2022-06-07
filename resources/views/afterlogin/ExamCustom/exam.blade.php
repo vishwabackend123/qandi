@@ -654,11 +654,11 @@ $question_type = "Numerical";
     });
 
 
-    $('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
+    // $('.instructions').slimscroll({
+    //     height: '33vh',
+    //     color: '#ff9999',
 
-    });
+    // });
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
