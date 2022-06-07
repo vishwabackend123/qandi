@@ -14,9 +14,13 @@ height: 600px !important;
 margin: 50px auto 0 !important;
 }
     .mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div {
-        height: calc(100vh - 288px)!important;
+        /* height: calc(100vh - 288px)!important;
+        overflow: overlay;
+        padding: 0!important; */
+        max-height: calc(100vh - 288px)!important;
         overflow: overlay;
         padding: 0!important;
+        height: 100% !important;
     }
 }
 @media screen and ( max-height:925px ){
@@ -1472,9 +1476,6 @@ width: 83%;
 .notification-txt {
 padding: 15px;
 }
-.notification-txt span.text-notific {
-width: 70%;
-}
 .primary-secondry-btn button.primary-btn1 {
 margin-bottom: 10px;
 }
@@ -1484,9 +1485,6 @@ margin-bottom: 10px;
 /******* New dashboard Amit-Start ******/
 .topics-box {width: calc(50% - 18px);}
 /******* New dashboard Amit-End ******/
-.notification-txt span.text-notific {
-width: 70%;
-}
 }
 @media (max-width: 420px) {
 .course-star li strong {
