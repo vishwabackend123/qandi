@@ -452,7 +452,7 @@ $question_type = "Numerical";
     <div class="modal-dialog modal-dialog-centered modal-lg ">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"></button>
+                <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="start()" title="Close"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" /></a>
             </div>
             <div class="modal-body text-center pt-2 pb-5">
                 <div class="d-flex align-items-center w-100 justify-content-center my-3">
@@ -687,11 +687,11 @@ $question_type = "Numerical";
             }
         });
     });
-    $('.instructions').slimscroll({
-        height: '33vh',
-        color: '#ff9999',
+    // $('.instructions').slimscroll({
+    //     height: '33vh',
+    //     color: '#ff9999',
 
-    });
+    // });
 
     const FULL_DASH_ARRAY = 283;
     const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;

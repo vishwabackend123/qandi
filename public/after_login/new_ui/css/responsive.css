@@ -14,9 +14,13 @@ height: 600px !important;
 margin: 50px auto 0 !important;
 }
     .mocktest-attempted-wrapper .exam_attempted_common_page .tab-pane .scroll-div {
-        height: calc(100vh - 288px)!important;
+        /* height: calc(100vh - 288px)!important;
+        overflow: overlay;
+        padding: 0!important; */
+        max-height: calc(100vh - 288px)!important;
         overflow: overlay;
         padding: 0!important;
+        height: 100% !important;
     }
 }
 @media screen and ( max-height:925px ){
@@ -1271,7 +1275,7 @@ color: #111;
 }
 /** live exam end **/
 .tab-wrapper {
-box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+box-shadow: 0 0 20px 0 rgba(0,0 0,0.1);
 border-top-left-radius: 56px;
 border-top-right-radius: 56px;
 }

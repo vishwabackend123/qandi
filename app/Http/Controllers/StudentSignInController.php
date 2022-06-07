@@ -629,6 +629,10 @@ class StudentSignInController extends Controller
             if ($success == false) {
                 return json_encode($aResponse);
             } else {
+                $sessionData = Session::get('user_data');
+                $sessionData->city = $city;
+                $sessionData->state = $state;
+                Session::put('user_data', $sessionData);
                 $aResponse->redirect_url = url('dashboard');
                 return json_encode($aResponse);
             }
@@ -652,6 +656,7 @@ class StudentSignInController extends Controller
             } else {
                 $result = $city_list;
             }
+            sort($result);
             $sOption = '';
             foreach ($result as $kCity => $oCity) {
                 $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
