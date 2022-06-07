@@ -656,6 +656,7 @@ class StudentSignInController extends Controller
             } else {
                 $result = $city_list;
             }
+            sort($result);
             $sOption = '';
             foreach ($result as $kCity => $oCity) {
                 $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
