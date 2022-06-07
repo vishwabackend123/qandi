@@ -130,6 +130,19 @@ div#test_instruction a.btn-close img {
     top: -8px;
     left: -8px;
 }
+div#FullTest_Exam_Panel_Interface_A a.btn-close{
+    padding-right: 0.5rem !important;
+    right: 45px;
+    top: 30px;
+    background: none;
+    position: absolute;
+}
+div#FullTest_Exam_Panel_Interface_A a.btn-close img{
+    width: 32px;
+    position: relative;
+    top: -8px;
+    left: -8px
+}
 #time-Avg-quest .bg-white p.fw-bold.text-start,
 #marKs-trends .bg-white p.fw-bold.text-start {
     font-size: 16px;
@@ -5467,6 +5480,7 @@ button#goto-exam-btn {
     -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1),
         inset 0 0 0 0 rgba(0, 0, 0, 0.51);
     padding: 18px 24px;
+    align-items: center;
     display: flex;
     display: -webkit-box;
     display: -moz-box;
@@ -5504,14 +5518,16 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
+    /* backdrop-filter: blur(6px); */
     backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
+    /* -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px); */
 }
 
 .notification-right a img {
