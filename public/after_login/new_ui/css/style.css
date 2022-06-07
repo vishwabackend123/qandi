@@ -13,6 +13,9 @@ button {
     outline: none;
     text-decoration: none;
 }
+button.custom-btn-gray.mt-4.goto-planner-btn:hover {
+    font-weight: 600;
+}
 .dailytask-wrapper .dtrow-left .col-md-6 p:nth-child(2) {
     min-height: 42px;
 }
@@ -136,6 +139,7 @@ div#FullTest_Exam_Panel_Interface_A a.btn-close{
     top: 30px;
     background: none;
     position: absolute;
+    z-index: 9;
 }
 div#FullTest_Exam_Panel_Interface_A a.btn-close img{
     width: 32px;
