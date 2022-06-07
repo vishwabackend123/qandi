@@ -107,7 +107,7 @@ class PreviousYearExamController extends Controller
 
             $exam_name = isset($request->paper_name) ? $request->paper_name : '';
             $paper_id = isset($request->paper_id) ? $request->paper_id : '';
-            $paper_id = 24;
+
 
             $curl_url = "";
             $curl = curl_init();
