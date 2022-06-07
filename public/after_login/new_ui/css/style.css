@@ -13,7 +13,7 @@ button {
     outline: none;
     text-decoration: none;
 }
-button.custom-btn-gray.mt-4.goto-planner-btn:hover {
+button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
 .dailytask-wrapper .dtrow-left .col-md-6 p:nth-child(2) {
