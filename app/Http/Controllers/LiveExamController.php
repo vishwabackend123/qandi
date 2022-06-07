@@ -145,7 +145,7 @@ class LiveExamController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
             );
-            curl_setopt_array($curl, curl_option);
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $response_json = str_replace('NaN', '""', $response_json);

@@ -1476,9 +1476,6 @@ width: 83%;
 .notification-txt {
 padding: 15px;
 }
-.notification-txt span.text-notific {
-width: 70%;
-}
 .primary-secondry-btn button.primary-btn1 {
 margin-bottom: 10px;
 }
@@ -1488,9 +1485,6 @@ margin-bottom: 10px;
 /******* New dashboard Amit-Start ******/
 .topics-box {width: calc(50% - 18px);}
 /******* New dashboard Amit-End ******/
-.notification-txt span.text-notific {
-width: 70%;
-}
 }
 @media (max-width: 420px) {
 .course-star li strong {
