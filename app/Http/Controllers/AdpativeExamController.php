@@ -623,19 +623,16 @@ class AdpativeExamController extends Controller
             $last_qid = end($allkeys);
 
             if (isset($question_data) && !empty($question_data)) {
-                // $publicPath = url('/') . '/public/images/questions/';
-                // $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                // $question_data->question = str_replace('/public/images/questions/', $publicPath, $question_data->question);
-                // $question_data->passage_inst = str_replace('/public/images/questions/', $publicPath, $question_data->passage_inst);
+
                 $qs_id = $question_data->question_id;
-                //$option_ques = str_replace("'", '"', $question_data->question_options);
+
                 $option_ques = $question_data->question_options;
 
                 $tempdata = json_decode($option_ques, true);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
-                        // $option = str_replace('/public/images/questions/', $publicPath, $option);
+
                         $opArr[$key] = $option;
                     }
                 }
@@ -810,7 +807,10 @@ class AdpativeExamController extends Controller
             $session_result = Redis::get('adaptive_session:' . $user_id);
             $sessionResult = json_decode($session_result);
 
-            $questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
+
+
+            //$questionList = isset($sessionResult->all_questions_id) ? $sessionResult->all_questions_id : [];
+            $questionList = isset($sessionResult->given_ans) ? array_keys((array)$sessionResult->given_ans) : [];
             $answerList = isset($sessionResult->given_ans) ? (array)$sessionResult->given_ans : [];
             $adaptive_api_url = isset($sessionResult->adaptive_api_url) ? $sessionResult->adaptive_api_url : '';
             $selected_topics = isset($sessionResult->selected_topics) ? $sessionResult->selected_topics : [];
@@ -864,15 +864,17 @@ class AdpativeExamController extends Controller
             $check_response = isset($response_data->success) ? $response_data->success : false;
 
             if ($check_response == true) {
+
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
                 // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
 
-                //dd($curl_url, $request);
+
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
