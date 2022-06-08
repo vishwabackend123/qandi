@@ -182,7 +182,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
     min-width: calc(100% - 22px);
 }
 .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
-    min-width: 100px;
+    min-width: 85px;
 }
 .exam_attempted_common_page .paper-summery .paper-sub:first-child {
     flex: 2;
