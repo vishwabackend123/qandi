@@ -1,4 +1,5 @@
 @media(max-width:767px){
+    a.backto-dash {position: static;margin: 10px;float: right;}
     .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {
     height: auto !important;
 }
@@ -36,7 +37,7 @@ height: 440px !important;
 height: 325px;
 }
 .matrixpage-wrapper .cust-tabs.nav.nav-tabs .nav-link {
-min-width: auto;
+min-width: 62px;
 }
 .exam_attempted_common_page .compLeteS, .practice_custom_page .compLeteS {
 padding: 15px 10px 15px;
@@ -627,7 +628,6 @@ margin-top:0;
 .practice-series-lists li.a1TS span.sub-details {
 padding-left: 0;
 }
-a.backto-dash {position: static;margin: 10px;float: right;}
 }
 @media(max-width:500px){
     .clear-filter {
