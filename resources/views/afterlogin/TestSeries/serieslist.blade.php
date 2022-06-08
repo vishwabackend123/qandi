@@ -314,6 +314,7 @@ $(document).ready(function() {
         $('.live_attemp').removeClass('btn-primary');
         $('.live_attemp').addClass('btn-outline-primary');
         $('.compLeteS').show();
+        $('.no_data_found').hide();
         hideExpend();
 
     });
@@ -326,6 +327,14 @@ $(document).ready(function() {
         $('.live_attemp').addClass('btn-outline-primary');
         $('.compLeteS').hide();
         $('.exam_mode_Open').show();
+        var data_list =$('.exam_mode_Open').length;
+        if(data_list > 0)
+        {
+            $('.no_data_found').hide();
+        } else {
+            $('.no_data_found').show();
+            $('#error_data').text('No test series / Live series found');
+        }
         hideExpend();
     });
     $(document).on('click', '.live_attemp', function() {
@@ -337,6 +346,14 @@ $(document).ready(function() {
         $('.open_attemp').addClass('btn-outline-primary');
         $('.compLeteS').hide();
         $('.exam_mode_Live').show();
+        var data_list =$('.exam_mode_Live').length;
+        if(data_list > 0)
+        {
+            $('.no_data_found').hide();
+        } else {
+            $('.no_data_found').show();
+            $('#error_data').text('No test series / Live series found');
+        }
         hideExpend();
     });
 });
