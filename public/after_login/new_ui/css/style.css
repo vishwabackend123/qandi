@@ -13,8 +13,12 @@ button {
     outline: none;
     text-decoration: none;
 }
-.ans {
+/* .ans {
     height: auto!important;
+} */
+.ans-block.row{ 
+display: -webkit-flex;
+display: flex;
 }
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
