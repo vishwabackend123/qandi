@@ -13,9 +13,9 @@ button {
     outline: none;
     text-decoration: none;
 }
-/* .ans {
-    height: auto!important;
-} */
+.ans {
+    max-height: fit-content;
+}
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
