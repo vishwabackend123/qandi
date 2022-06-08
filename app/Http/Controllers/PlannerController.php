@@ -15,11 +15,26 @@ use Illuminate\Support\Facades\Config;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * PlannerController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class PlannerController extends Controller
 {
-    //
     use CommonTrait;
 
+    /**
+     * Add Planner
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function addPlanner(Request $request)
     {
         try {
@@ -50,8 +65,7 @@ class PlannerController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/student-planner';
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -66,10 +80,9 @@ class PlannerController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
-
-
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
@@ -83,8 +96,13 @@ class PlannerController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
+    /**
+     * Weekly Exams
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function weeklyExams(Request $request)
     {
         try {
@@ -98,8 +116,7 @@ class PlannerController extends Controller
 
             $curl_url = $api_URL . 'api/student-planner-current-week/' . $user_id;
 
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -109,7 +126,8 @@ class PlannerController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -130,7 +148,13 @@ class PlannerController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Get Weekly Plan Schedule
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function getWeeklyPlanSchedule(Request $request)
     {
         try {
@@ -148,8 +172,7 @@ class PlannerController extends Controller
 
             $curl_url = $api_URL . 'api/student-planner/' . $user_id;
 
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -159,7 +182,8 @@ class PlannerController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -187,9 +211,15 @@ class PlannerController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
+    /**
+     * Planner Exam
+     *
+     * @param mixed   $planner_id planner id
+     * @param mixed   $chapter_id chapter id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
     public function plannerExam($planner_id = null, $chapter_id = null, Request $request)
     {
         try {
@@ -219,23 +249,22 @@ class PlannerController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/planner-question-selection';
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => $curl_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FAILONERROR => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => $request,
-                CURLOPT_HTTPHEADER => array(
-                    "cache-control: no-cache",
-                    "content-type: application/json",
-
-                ),
-            ));
+            $curl_option =array(
+            CURLOPT_URL => $curl_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FAILONERROR => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => $request,
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                "content-type: application/json",
+            ),
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $response_json = str_replace('NaN', '""', $response_json);
@@ -346,8 +375,15 @@ class PlannerController extends Controller
         }
     }
 
-
-    public function shuffle_chapter($active_subject_id, Request $request)
+    /**
+     * Shuffle chapter
+     *
+     * @param mixed   $active_subject_id active subject id
+     * @param Request $request           recieve the body request data
+     *
+     * @return void
+     */
+    public function shuffleChapter($active_subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -368,8 +404,14 @@ class PlannerController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
+    /**
+     * Planner Adaptive Exam
+     *
+     * @param mixed   $planner_id planner id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
     public function plannerAdaptiveExam($planner_id = null, Request $request)
     {
         try {
@@ -409,8 +451,7 @@ class PlannerController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/adaptive-assessment-chapter-practice';
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -425,7 +466,8 @@ class PlannerController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
 
