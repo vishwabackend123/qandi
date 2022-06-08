@@ -9718,3 +9718,6 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     fill: transparent;
 }
 
+.mgq {
+    margin-left: 6px;
+}
