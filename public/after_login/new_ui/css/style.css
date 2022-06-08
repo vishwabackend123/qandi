@@ -9721,3 +9721,7 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 .mgq {
     margin-left: 6px;
 }
+
+.noti-box-scroll::-webkit-scrollbar {
+    height: 5px;
+}
