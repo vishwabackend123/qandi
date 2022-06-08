@@ -393,6 +393,14 @@ $userData = Session::get('user_data');
       $('.loader-block').hide();
       $('.scroll_top').scrollTop(0);
     }, 500);
+    var data_list =$('.'+ subject + '_cust').length;
+        if(data_list > 0)
+        {
+            $('.no_data_found').hide();
+        } else {
+            $('.no_data_found').show();
+            $('#error_data').text('No result history available right now.');
+        }
 
   }
 
