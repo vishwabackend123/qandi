@@ -368,7 +368,7 @@ display: inline-block;
 .matrixpage-wrapper  .course-star li strong,.matrixpage-wrapper .star-img {
 width: auto!important;
 }
-.matrixpage-wrapper .topics-box{width: calc(24% - 22px);justify-content: center;}
+.matrixpage-wrapper .topics-box{width: calc(50% - 11px);justify-content: center;}
 .live-exam .speci-text li:last-child a button{width:100%;}
 div#scorecontainer {padding: 0 5px; }
 #marks_trend_graph{    padding-top: 18px;}

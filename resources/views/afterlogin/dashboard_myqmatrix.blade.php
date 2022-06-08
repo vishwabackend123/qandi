@@ -47,7 +47,7 @@ $userData = Session::get('user_data');
                                         @endif
                                         <small>Topic</small>
                                     </span></a>
-                                <b style="margin:0 0 0 6px">Q1</b>
+                                <b class="mgq">Q1</b>
                             </div>
                             <div class="topics-box">
                                 <b>Q3</b>
@@ -69,7 +69,7 @@ $userData = Session::get('user_data');
                                         @endif
                                         <small>Topic</small>
                                     </span></a>
-                                <b style="margin:0 0 0 6px">Q4</b>
+                                <b class="mgq">Q4</b>
                             </div>
                         </div>
                         <ul class=" mt-5 mb-0 matrixLists" style="padding-left: 10px;">
