@@ -1443,7 +1443,7 @@ font-size: 12px;
 padding: 0px !important;
 }
 #scroll-mobile .nav.nav-tabs.cust-tabs {
-width: 700px;
+width: auto;
 }
 .cust-tab-content {
 padding: 20px 10px;
