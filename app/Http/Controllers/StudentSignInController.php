@@ -653,10 +653,12 @@ class StudentSignInController extends Controller
                     }
                     return false;
                 });
+             $result = $this->customeSort($result,$search);
             } else {
                 $result = $city_list;
+                sort($result);
             }
-            sort($result);
+            
             $sOption = '';
             foreach ($result as $kCity => $oCity) {
                 $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
@@ -666,5 +668,20 @@ class StudentSignInController extends Controller
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
+    }
+    public function customeSort($arrayData,$search)
+    {
+        $match_array = array();
+        $not_match = array();
+        foreach($arrayData as $key=>$value)
+        {
+            $char_len=strlen($search);
+            if(strtolower(substr($value, 0,$char_len)) === strtolower($search)) {
+                $match_array[] = $value;
+            }else {
+                $not_match[] = $value;
+            }
+        }
+        return array_merge($match_array,$not_match);
     }
 }

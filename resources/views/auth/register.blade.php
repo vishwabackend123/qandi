@@ -596,6 +596,8 @@
 function searchCity() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
+    if(input.value.length >= 3 || input.value == '')
+    {
             $.ajax({
                 url: "{{ url('/searchCity',) }}",
                 type: "GET",
@@ -617,7 +619,8 @@ function searchCity() {
                     }
                     $('#myMenu').html(html);
                 }
-            });     
+            });
+    }             
 }
 
     function searchState() {
