@@ -136,8 +136,10 @@ class ResultController extends Controller
                 $result_id = $response_data->result_id;
                 return Redirect::route('exam_result_analytics', [$result_id]);
 
-            //return view('afterlogin.ExamCustom.exam_result_analytics');
+                //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
+
+                dd($response_json, $curl_url, $request);
                 return redirect()->route('dashboard');
                 /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
             }
