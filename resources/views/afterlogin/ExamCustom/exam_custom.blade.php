@@ -27,7 +27,7 @@ $userData = Session::get('user_data');
       <div class="row">
         <div class="col-lg-12  p-lg-5 pt-none">
 
-          <div class="result-list bg-white tab-wrapper">
+          <div class="tab-wrapper">
             <div id="scroll-mobile">
               <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
