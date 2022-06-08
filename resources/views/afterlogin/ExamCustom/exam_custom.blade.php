@@ -369,7 +369,7 @@ $userData = Session::get('user_data');
   }
 
   function showSubfilter(subject) {
-    $('.loader-block').show();
+    //$('.loader-block').show();
     $('.SubattemptActBtn').removeClass('btn-primary');
     $('.SubattemptActBtn').addClass('btn-outline-primary');
     $('#' + subject + '_flt').removeClass('btn-outline-primary');
@@ -378,7 +378,16 @@ $userData = Session::get('user_data');
     if (subject != "all_subject") {
       $('.all-rlt').attr("style", "display: none !important");
       $('.' + subject + '-rlt').attr("style", "display: block !important");
+      var data_list =$('.' + subject + '-rlt').length;
+        if(data_list > 0)
+        {
+            $('.no_data_found').hide();
+        } else {
+            $('.no_data_found').show();
+            $('#error_data').text('No result history available right now.');
+        }
     } else {
+      $('.no_data_found').hide();
       $('.all-rlt').attr("style", "display: block !important");
     }
     $('.hideallexpend').each(function() {
@@ -393,14 +402,6 @@ $userData = Session::get('user_data');
       $('.loader-block').hide();
       $('.scroll_top').scrollTop(0);
     }, 500);
-    var data_list =$('.'+ subject + '_cust').length;
-        if(data_list > 0)
-        {
-            $('.no_data_found').hide();
-        } else {
-            $('.no_data_found').show();
-            $('#error_data').text('No result history available right now.');
-        }
 
   }
 

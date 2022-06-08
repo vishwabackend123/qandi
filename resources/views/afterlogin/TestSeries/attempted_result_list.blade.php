@@ -8,7 +8,7 @@
         <a class="btn sectionBtn SubattemptActBtn btn-primary me-2" id="all_subject_flt" onclick="showSubfilter('all_subject');">ALL SUBJECTS</a>
         @isset($cSubjects)
         @foreach($cSubjects as $key=>$subject)
-        <a class="btn sectionBtn SubattemptActBtn btn-outline-primary me-2 {{$subject->subject_name}}_cust" onclick="showSubfilter('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_flt">{{$subject->subject_name}}</a>
+        <a class="btn sectionBtn SubattemptActBtn btn-outline-primary me-2" onclick="showSubfilter('{{$subject->subject_name}}');" id="{{$subject->subject_name}}_flt">{{$subject->subject_name}}</a>
         @endforeach
         @endisset
     </div>
@@ -82,9 +82,11 @@
                 <span class="sub-details">No result history available right now.</span>
             </div>
             @endif
+             @if(!empty($result_data))
             <div class="no_data_found text-center">
                 <span class="sub-details" id="error_data">No result history available right now.</span>
             </div>
+             @endif
         </div>
     </div>
 </div>
