@@ -560,9 +560,9 @@ $question_type = "Numerical";
 <script type="text/javascript">
     var activeques_id = '{{$activeq_id}}';
 
-    $('.number-block').slimscroll({
-        height: '20vh'
-    });
+    // $('.number-block').slimscroll({
+    //     height: '20vh'
+    // });
     $('.answer-block').slimscroll({
         height: '30vh'
     });

@@ -627,9 +627,9 @@ $question_type = "Numerical";
             }
         });
     });
-    $('.number-block').slimscroll({
-        height: '20vh'
-    });
+    // $('.number-block').slimscroll({
+    //     height: '20vh'
+    // });
     $('.answer-block').slimscroll({
         height: '30vh'
     });
