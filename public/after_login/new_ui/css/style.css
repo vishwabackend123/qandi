@@ -5521,7 +5521,7 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    /* backdrop-filter: blur(6px); */
+    -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
     top: 5px;
     padding-top: 92px;
@@ -5529,8 +5529,7 @@ div#collapseNotification {
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-    /* -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px); */
+     
 }
 
 .notification-right a img {
@@ -5559,9 +5558,7 @@ span.bell-noti {
     top: 4px;
 }
 .noti-box-scroll{
-    display: flex;
-    overflow-y: auto;
-    height: 57px;    
+    display: flex;    
 }
 .primary-secondry-btn {
     text-align: center;
@@ -9716,5 +9713,3 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 .noti-box-scroll::-webkit-scrollbar {
     height: 5px;
 }
-
- 

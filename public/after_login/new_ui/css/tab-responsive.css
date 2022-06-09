@@ -659,7 +659,7 @@ span.profile-img-user {width: 35px;height: 35px;}
 height: calc(100vh - 250px)!important;
 }
 
-.widthAuto{width:auto !important;}
+.widthAuto{width:auto !important;} 
 }
 @media(max-width:767px){
 .padd-right-0{padding-right: calc(var(--bs-gutter-x)/ 2)!important;}
