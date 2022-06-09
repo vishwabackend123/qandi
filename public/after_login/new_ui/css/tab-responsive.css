@@ -10,6 +10,7 @@
 .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
 }
 @media screen and (max-width:1300px){
+    #exam_content_sec .tab-btn-box{bottom:2px}
 #test_instruction h1.text-danger.text-uppercase,
 #test_instruction h3.text-danger.text-uppercase {
 font-weight: 600;
