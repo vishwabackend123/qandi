@@ -13,6 +13,9 @@ button {
     outline: none;
     text-decoration: none;
 }
+.test_curve{
+    height: calc(100vh - 144px)!important;
+}
 .ans {
     max-height: fit-content;
 }
