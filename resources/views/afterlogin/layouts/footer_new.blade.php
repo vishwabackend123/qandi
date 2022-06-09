@@ -844,6 +844,7 @@
                     $('#city_list').html(html);
                     $('#city_list').show();
                     $('#city_remark').show();
+                    $("#myInput").focus();
 
                 }
             });
