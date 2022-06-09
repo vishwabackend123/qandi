@@ -19,8 +19,21 @@
 }
 .swiper-slide .course-star li {
 display: flex;
-align-items: center;
+align-items: flex-start;
+flex-direction: column;
 }
+.cust-gallery .swiper-slide.go2Planner {
+    height: auto !important;
+}
+.cust-gallery .swiper-slide {
+    height: auto !important;
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    .go2Planner span{
+    text-align: center;
+    }
 #time-Avg-quest .bg-white p.fw-bold.text-start, #marKs-trends .bg-white p.fw-bold.text-start{padding-right:24px;}
 div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
 }
