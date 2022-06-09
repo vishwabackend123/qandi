@@ -509,7 +509,7 @@ class StudentSignInController extends Controller
                 return json_encode($response);
             } else {
                 Redis::set('city_list', json_encode($city_list));
-                $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInput" onkeyup="searchCity()" autocomplete="off" /><ul id="myMenu">';
+                $sOption .= '<div class="countryscroll"><input type="input" name="search" id="myInput" onkeyup="searchCity()" autocomplete="off" autofocus/><ul id="myMenu">';
 
                 foreach ($city_list as $kCity => $oCity) {
                     $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
