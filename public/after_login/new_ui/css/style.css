@@ -6965,9 +6965,10 @@ header {
 .tab-btn-box {
     position: absolute;
     bottom: 28px;
-    width: 100%;
+    width: 95%;
     left: 0;
     padding: 0 20px;
+    background:#fff;
 }
 
 .test-min {
