@@ -13,9 +13,7 @@ button {
     outline: none;
     text-decoration: none;
 }
-.ans {
-    height: auto!important;
-}
+
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
