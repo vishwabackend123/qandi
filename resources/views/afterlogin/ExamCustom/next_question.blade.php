@@ -179,7 +179,7 @@ $question_type = "Numerical";
 
         <a href="javascript:void(0);" class="btn px-4   ms-2 btn-light rounded-0 savemarkreview quesBtn" onclick="savemarkreview('{{$active_q_id}}','{{$subject_id}}','{{$chapter_id}}')">Save & Mark for Review</a>
 
-        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 quesBtn" onclick="markforreview('{{$active_q_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for review</a>
+        <a href="javascript:void(0);" class="btn px-4 ms-auto me-2 btn-light rounded-0 quesBtn" onclick="markforreview('{{$active_q_id}}','{{$subject_id}}','{{$chapter_id}}')">Mark for Review</a>
 
         <a href="javascript:void(0);" class="btn px-4   me-2 btn-secondary rounded-0 clearRes quesBtn" onclick="clearResponse('{{$active_q_id}}','{{$subject_id}}','{{$qNo}}')">Clear Response</a>
 

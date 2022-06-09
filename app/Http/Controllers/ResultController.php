@@ -134,6 +134,8 @@ class ResultController extends Controller
                     $saveDailyTaskRecord = $this->saveRecordToTaskCenterHistory($user_id, $tasktype, $category);
                 }
                 $result_id = $response_data->result_id;
+
+
                 return Redirect::route('exam_result_analytics', [$result_id]);
 
                 //return view('afterlogin.ExamCustom.exam_result_analytics');
