@@ -13,12 +13,12 @@ button {
     outline: none;
     text-decoration: none;
 }
-.test_curve{
+/* .test_curve{
     height: calc(100vh - 144px)!important;
-}
-.ans {
+} */
+/* .ans {
     max-height: fit-content;
-}
+} */
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
