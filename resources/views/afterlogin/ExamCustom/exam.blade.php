@@ -348,19 +348,19 @@ $question_type = "Numerical";
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
-                                    <div class="col col-lg-4">
+                                    <div class="col-md-5 col-lg-5">
                                         <div>
                                             <small>No. of Questions</small>
                                             <span class="d-block inst-text"><span>{{$questions_count}} MCQ</span> </span>
                                         </div>
                                     </div>
-                                    <div class="col col-lg-4">
+                                    <div class="col-md-4 col-lg-4">
                                         <div>
                                             <small>Subjects</small>
                                             <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
                                         </div>
                                     </div>
-                                    <div class="col col-lg-4">
+                                    <div class="col-md-3 col-lg-3">
                                         <div>
                                             <small>Duration</small>
                                             <span class="d-block inst-text"><span>{{$exam_fulltime}}</span> Minutes</span>

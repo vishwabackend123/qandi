@@ -9628,17 +9628,6 @@ label#username-error {
     height: 5px;
 }
 
-/* #endExam {
-    backdrop-filter: blur(15px);
-    background: #ffffffe3
-}
-#endExam  .modal-content.rounded-0 {
-    background-color: #fff!important;
-    border-radius: 56px!important;
-    padding: 20px;
-    border: none;
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 10%);
-} */
 .exam-analytics .bg-white.shadow,
 .exam-analytics .shadow-lg {
     -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1),

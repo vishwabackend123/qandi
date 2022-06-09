@@ -596,7 +596,7 @@ $userData = Session::get('user_data');
 
   /* getting Next Question Data */
   function show_topic(chapt_id, sub_id) {
-
+    $('.loader-block').show();
     var curr_text = $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).text();
     curr_text = curr_text.replace(/\s+/g, "");
 
@@ -624,7 +624,6 @@ $userData = Session::get('user_data');
           "_token": "{{ csrf_token() }}",
         },
         beforeSend: function() {
-          $('.loader-block').show();
           $('#overlay').fadeIn();
         },
         success: function(result) {
@@ -659,10 +658,12 @@ $userData = Session::get('user_data');
         }
       });
     } else {
-
       //$("#expandTopic_" + chapt_id).text("Show Topics");
       $("#clicktopic_" + chapt_id).focus();
       $('#topic_form').toggle();
+      setTimeout(function(){
+       $('.loader-block').hide(); 
+      }, 500);
 
     }
   }
