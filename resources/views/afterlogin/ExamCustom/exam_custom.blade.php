@@ -34,7 +34,7 @@ $userData = Session::get('user_data');
                   <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
+                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
                 </li>
               </ul>
             </div>

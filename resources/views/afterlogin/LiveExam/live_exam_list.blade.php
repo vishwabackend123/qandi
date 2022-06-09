@@ -21,7 +21,7 @@ $userData = Session::get('user_data');
                                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> Live Exam</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true"> Attempted</a>
+                                    <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true" style="text-transform:uppercase;"> Attempted</a>
                                 </li>
                             </ul>
                         </div>
