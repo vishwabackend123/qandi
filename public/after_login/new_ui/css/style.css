@@ -7396,6 +7396,7 @@ header {
     padding-bottom: 12px !important;
     line-height: 20px;
     overflow: hidden;
+    padding-right: 12px;
     /* font-weight: 600; */
 }
 
