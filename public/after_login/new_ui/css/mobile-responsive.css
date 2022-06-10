@@ -475,6 +475,15 @@ div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .p
 .compLeteS .topic_name_ratings .name-txt-sml{width:100%;white-space:normal;}
 .practice_custom_page .topic_name_ratings .status-id.rating{margin: 0 !important;}
 
+.back-to-dashbord a {
+    font-size: 10px;
+ 
+}
+.back-to-dashbord {
+    top: 28px;
+    right: 20px;
+}
+
 }
 @media(max-width:700px){
 .result-list .d-flex.justify-content-between {
