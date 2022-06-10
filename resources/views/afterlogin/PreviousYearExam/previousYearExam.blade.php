@@ -251,7 +251,7 @@ $questtype='radio';
                             <input type="hidden" name="total_marks" id="total_marks" value="{{$total_marks}}">
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
-                            <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
+                            <input type="hidden" name="py_paperid" value="{{isset($paper_id)?$paper_id:0}}">
                             <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
                             <div class="pull-right">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
