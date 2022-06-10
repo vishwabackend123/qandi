@@ -29,12 +29,12 @@ $userData = Session::get('user_data');
 
           <div class="tab-wrapper">
             <div id="scroll-mobile">
-              <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+              <ul class="nav nav-tabs cust-tabs widthAuto" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
+                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
                 </li>
               </ul>
             </div>
@@ -663,7 +663,7 @@ $userData = Session::get('user_data');
       $('#topic_form').toggle();
       setTimeout(function(){
        $('.loader-block').hide(); 
-      }, 500);
+      }, 100);
 
     }
   }

@@ -20,7 +20,7 @@ $userData = Session::get('user_data');
                                     <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Test Series</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true">Attempted</a>
+                                    <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
                                 </li>
                             </ul>
                         </div>
@@ -333,7 +333,7 @@ $(document).ready(function() {
             $('.no_data_found').hide();
         } else {
             $('.no_data_found').show();
-            $('#error_data').text('No test series / Live series found');
+            $('#error_data').text('No result history available right now.');
         }
         hideExpend();
     });
@@ -352,7 +352,7 @@ $(document).ready(function() {
             $('.no_data_found').hide();
         } else {
             $('.no_data_found').show();
-            $('#error_data').text('No test series / Live series found');
+            $('#error_data').text('No result history available right now.');
         }
         hideExpend();
     });

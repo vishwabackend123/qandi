@@ -870,7 +870,7 @@ class AdpativeExamController extends Controller
                 // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
 
-                dd($response_json, $curl_url, $request);
+                dd($sessionResult, $response_json, $curl_url, $request);
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {

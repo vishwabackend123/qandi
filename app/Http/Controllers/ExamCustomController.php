@@ -1280,6 +1280,7 @@ class ExamCustomController extends Controller
             $redisArray['taken_time_sec'] = $retrive_time_sec;
 
 
+
             // Push Value in Redis
             Redis::set('adaptive_session:' . $user_id, json_encode($redisArray));
 

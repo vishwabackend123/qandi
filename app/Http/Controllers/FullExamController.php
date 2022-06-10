@@ -51,7 +51,7 @@ class FullExamController extends Controller
             } else {
                 $exam_name = 'Mock Test';
             }
-            $exam_mode = 'Practice';
+
 
             // $exam_fulltime = 5400;
             $exam_ques_count = 90;
@@ -168,6 +168,8 @@ class FullExamController extends Controller
 
             $test_type = 'Profiling';
             $exam_type = 'P';
+            $exam_mode = 'Practice';
+
             $series_id = "";
 
             Session::put('exam_name', $exam_name);
