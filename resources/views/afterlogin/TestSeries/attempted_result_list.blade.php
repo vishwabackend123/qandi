@@ -90,9 +90,13 @@
         </div>
     </div>
 </div>
+<div class="loader-block" style="display:none;">
+  <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
+</div>
 <script type="text/javascript">
     $('.no_data_found').hide();
     $('a.expandTopicCollapseAttempt span').click(function() {
+        $('.loader-block').show(); 
         var spanId = this.id;
         var curr_text = $("#" + spanId).text();
         curr_text = curr_text.replace(/\s+/g, "");
@@ -138,6 +142,9 @@
                 };
             }
         }
+         setTimeout(function(){
+            $('.loader-block').hide(); 
+      }, 100);
 
     });
 </script>

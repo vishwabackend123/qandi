@@ -333,7 +333,7 @@ $(document).ready(function() {
             $('.no_data_found').hide();
         } else {
             $('.no_data_found').show();
-            $('#error_data').text('No test series / Live series found');
+            $('#error_data').text('No result history available right now.');
         }
         hideExpend();
     });
@@ -352,7 +352,7 @@ $(document).ready(function() {
             $('.no_data_found').hide();
         } else {
             $('.no_data_found').show();
-            $('#error_data').text('No test series / Live series found');
+            $('#error_data').text('No result history available right now.');
         }
         hideExpend();
     });
