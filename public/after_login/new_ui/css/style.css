@@ -9597,7 +9597,7 @@ label#username-error {
     border-radius: 10px;
 }
 .planner-scroll::-webkit-scrollbar-thumb {
-    background: rgba(13, 193, 255, 0.4) !important;
+    background: #00baff !important;
 }
 
 #attempt_count_block
