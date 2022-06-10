@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .planner-wrapper {
+    height: 100vh;
+}
     #myTabContent button i{margin-right:15px;}
     a.backto-dash {position: static;margin: 10px;float: right;}
     .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {
