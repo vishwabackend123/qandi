@@ -663,7 +663,7 @@ $userData = Session::get('user_data');
       $('#topic_form').toggle();
       setTimeout(function(){
        $('.loader-block').hide(); 
-      }, 500);
+      }, 100);
 
     }
   }
