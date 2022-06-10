@@ -543,6 +543,14 @@ width: 45%;
 vertical-align: top;
 margin-top: 0;
 }
+.back-to-dashbord a {
+    font-size: 10px;
+ 
+}
+.back-to-dashbord {
+    top: 25px;
+    right: 20px;
+}
 }
 @media (min-width: 769px) and (max-width: 990px){
 .subscription {
