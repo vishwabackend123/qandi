@@ -6978,7 +6978,7 @@ header {
 .cust-tabs .nav-link {
     position: relative;
     margin-right: 15px;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
     font-size: 18px;
     font-weight: 400;
     /* color: #515151; */
