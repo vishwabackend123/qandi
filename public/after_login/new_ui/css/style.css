@@ -800,7 +800,7 @@ div#arrow-left-btm .inner-arrow-left-btm {
 
 .planmner-block.planner-scheduar-block .planner-scroll {
     overflow-y: auto;
-    max-height: calc(100vh - 240px);
+    max-height: calc(100vh - 260px);
 }
 
 .dashboard-cards-block #topicclose .bg-white > small p {
@@ -8129,8 +8129,7 @@ tspan {
 }
 
 .planner-wrapper {
-    height: 100vh;
-
+    height: 98vh;
     max-width: 100%;
     position: relative;
     /* right: 0; */

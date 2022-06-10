@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .planner-wrapper {
+    height: 100vh;
+}
     #myTabContent button i{margin-right:15px;}
     a.backto-dash {position: static;margin: 10px;float: right;}
     .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {
@@ -612,7 +615,7 @@ min-width: 100%;
 .practice-series-lists .live-exam .speci-text{display:inline-block;}
 }
 @media(max-width:550px){
-    .widthAuto{width:auto !important;}
+    .widthAuto{width:auto !important;} 
 .backbtn {
 width: 100%;
 margin-bottom: 20px;}
