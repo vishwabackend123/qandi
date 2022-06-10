@@ -226,7 +226,7 @@ height: 156px!important;
 .custom-page .cust-tab-content .scroll-div {
 max-height: calc(100vh - 400px)!important;
 }
-.examSect .rightSect .bg-white{height: calc(100vh - 110px);}
+/* .examSect .rightSect .bg-white{height: calc(100vh - 110px);} */
 .exam_section_button {
 display: block!important;
 }
