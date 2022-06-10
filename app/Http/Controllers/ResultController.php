@@ -38,6 +38,7 @@ class ResultController extends Controller
             $planner_id = isset($request->planner_id) ? $request->planner_id : 0;
             $live_exam_id = isset($request->live_exam_id) ? $request->live_exam_id : 0;
             $test_series_id = isset($request->series_id) ? $request->series_id : 0;
+            $py_paper_id = isset($request->py_paperid) ? $request->py_paperid : 0;
 
             /* below parameter for dailyTaskExam result */
             $tasktype = isset($request->tasktype) ? $request->tasktype : "";
@@ -90,6 +91,7 @@ class ResultController extends Controller
             $inputjson['planner_id'] = $planner_id;
             $inputjson['live_exam_id'] = $live_exam_id;
             $inputjson['test_series_id'] = $test_series_id;
+            $inputjson['py_paper_id'] = $py_paper_id;
 
             $request = json_encode($inputjson);
 

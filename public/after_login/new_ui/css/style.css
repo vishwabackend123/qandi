@@ -800,7 +800,7 @@ div#arrow-left-btm .inner-arrow-left-btm {
 
 .planmner-block.planner-scheduar-block .planner-scroll {
     overflow-y: auto;
-    max-height: calc(100vh - 240px);
+    max-height: calc(100vh - 260px);
 }
 
 .dashboard-cards-block #topicclose .bg-white > small p {
@@ -6978,7 +6978,7 @@ header {
 .cust-tabs .nav-link {
     position: relative;
     margin-right: 15px;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
     font-size: 18px;
     font-weight: 400;
     /* color: #515151; */
@@ -8129,8 +8129,7 @@ tspan {
 }
 
 .planner-wrapper {
-    height: 100vh;
-
+    height: 98vh;
     max-width: 100%;
     position: relative;
     /* right: 0; */
@@ -9598,7 +9597,7 @@ label#username-error {
     border-radius: 10px;
 }
 .planner-scroll::-webkit-scrollbar-thumb {
-    background: rgba(13, 193, 255, 0.4) !important;
+    background: #00baff !important;
 }
 
 #attempt_count_block

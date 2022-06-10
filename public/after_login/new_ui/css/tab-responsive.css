@@ -543,12 +543,14 @@ width: 45%;
 vertical-align: top;
 margin-top: 0;
 }
+
 }
 @media (min-width: 769px) and (max-width: 990px){
 .subscription {
 right: 204px;
 width: 60%;
 }
+
 }
 @media screen and (max-width:880px){
 #collapsePlanner {
@@ -575,6 +577,14 @@ width: 100%;
 .subscription {padding:20px;}
 .practice-series-lists li.a1TS {width: 36% !important;}
 .practice-series-lists li.a2TS {margin-right: 10px!important;}
+.back-to-dashbord a {
+    font-size: 10px;
+ 
+}
+.back-to-dashbord {
+    top: 25px;
+    right: 20px;
+}
 }
 @media(max-width:861px){
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after {
