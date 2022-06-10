@@ -15,7 +15,7 @@ $userData = Session::get('user_data');
                 <div class="col-lg-12  p-lg-5">
                     <div class="tab-wrapper live-exam live-exam-custom">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs widthAuto" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Test Series</a>
                                 </li>

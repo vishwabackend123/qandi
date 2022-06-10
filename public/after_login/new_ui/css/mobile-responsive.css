@@ -615,6 +615,7 @@ min-width: 100%;
 .practice-series-lists .live-exam .speci-text{display:inline-block;}
 }
 @media(max-width:550px){
+    .widthAuto{width:auto !important;} 
 .backbtn {
 width: 100%;
 margin-bottom: 20px;}
