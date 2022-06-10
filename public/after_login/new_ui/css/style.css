@@ -5500,6 +5500,7 @@ button#goto-exam-btn {
     color: #231f20;
     font-weight: normal;
     padding-left: 15px;
+    word-break: break-all;
 }
 
 .notification-right a {
