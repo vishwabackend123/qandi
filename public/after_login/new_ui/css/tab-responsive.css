@@ -585,6 +585,7 @@ width: 100%;
     top: 25px;
     right: 20px;
 }
+.widthAuto{width:auto !important;} 
 }
 @media(max-width:861px){
 .planner-scheduar-block .planner-content>.d-flex.align-items-center.justify-content-between:after {
