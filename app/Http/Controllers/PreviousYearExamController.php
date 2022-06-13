@@ -54,7 +54,7 @@ class PreviousYearExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            $curl_url = $api_URL . 'api/previous-year-papers/' . $exam_id;
+            $curl_url = $api_URL . 'api/previous-year-papers/' . $exam_id . '/' . $user_id;
 
             $curl_option =  array(
                 CURLOPT_URL => $curl_url,
@@ -85,6 +85,7 @@ class PreviousYearExamController extends Controller
 
 
                 $collection = collect($result_data);
+                $result_data = isset($collection['upcomming-live-exam']) && !empty($collection['upcomming-live-exam']) ? $collection['upcomming-live-exam'] : [];
 
                 $unique = $collection->unique('paper_year');
                 $years_list = $unique->pluck('paper_year');
