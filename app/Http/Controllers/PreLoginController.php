@@ -4,21 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * PreLoginController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class PreLoginController extends Controller
 {
-    //
     /**
-     * Undocumented function
+     * Pre about exam
      *
      * @return void
      */
-    public function pre_about_exam()
+    public function preAboutExam()
     {
         return view('about_exam');
     }
-
-
-    public function user_feedback()
+    /**
+     * User feedback
+     *
+     * @return void
+     */
+    public function userFeedback()
     {
         return view('faq');
     }

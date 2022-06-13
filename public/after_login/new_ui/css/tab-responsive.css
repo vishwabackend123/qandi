@@ -356,7 +356,7 @@ padding-bottom: 40px;
         width: 700px;
     }
     #scroll-mobile::-webkit-scrollbar {
-        height: 4px;
+        height: 4px; 
     }
 
 }
