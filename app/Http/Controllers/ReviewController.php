@@ -214,8 +214,11 @@ class ReviewController extends Controller
 
 
 
-                if (Session::has('exam_name')) {
-                    $exam_name = Session::get('exam_name');
+                //if (Session::has('exam_name')) {
+                if (Redis::exists('exam_name' . $user_id)) {
+                    //$exam_name = Session::get('exam_name');
+                    $cacheKey = 'exam_name' . $user_id;
+                    $exam_name = Redis::get($cacheKey);
                 } else {
                     $exam_name = '';
                 }
