@@ -114,9 +114,9 @@ Route::any('/filter_review_question/{filter}', [App\Http\Controllers\ReviewContr
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'examResult'])->name('exam_result')->middleware('auth', 'menu');
 /* Route::any('/exam_result_analysis', [App\Http\Controllers\ResultController::class, 'exam_post_analysis'])->name('exam_result_analysis')->middleware('auth', 'menu');
  */
-Route::any('/exam_result_analysis_score', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_score'])->name('exam_result_analysis_score')->middleware('auth', 'menu');
-Route::any('/exam_result_analysis_attempt', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_attempt'])->name('exam_result_analysis_attempt')->middleware('auth', 'menu');
-Route::any('/exam_result_analysis_rank', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_rank'])->name('exam_result_analysis_rank')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_score', [App\Http\Controllers\ResultController::class, 'examPostAnalysisScore'])->name('exam_result_analysis_score')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_attempt', [App\Http\Controllers\ResultController::class, 'examPostAnalysisAttempt'])->name('exam_result_analysis_attempt')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_rank', [App\Http\Controllers\ResultController::class, 'examPostAnalysisRank'])->name('exam_result_analysis_rank')->middleware('auth', 'menu');
 
 
 
@@ -177,8 +177,8 @@ Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 's
 Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 'testSeriesExam'])->name('test_series')->middleware('auth', 'menu');
 
 /* Referal Controller Routes */
-Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'store_referral_friend'])->name('store_referral')->middleware('auth', 'menu');
-Route::any('referral/{referral_code}', [App\Http\Controllers\ReferralController::class, 'referral_signup'])->name('referral_signup');
+Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'storeReferralFriend'])->name('store_referral')->middleware('auth', 'menu');
+Route::any('referral/{referral_code}', [App\Http\Controllers\ReferralController::class, 'referralSignup'])->name('referral_signup');
 
 //google login Start
 

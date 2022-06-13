@@ -13,15 +13,34 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Log;
 use App\Http\Traits\CommonTrait;
 
+/**
+ * ResultController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ * */
 class ResultController extends Controller
 {
     use CommonTrait;
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
-
-    //
+    /**
+     * Exam Result
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function examResult(Request $request)
     {
         try {
@@ -100,8 +119,7 @@ class ResultController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/save-result';
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -116,7 +134,8 @@ class ResultController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -139,21 +158,23 @@ class ResultController extends Controller
 
 
                 return Redirect::route('exam_result_analytics', [$result_id]);
-
-                //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
-
                 dd($response_json, $curl_url, $request);
                 return redirect()->route('dashboard');
-                /* return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']); */
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
     }
 
-
-    public function exam_post_analysis_score(Request $request)
+    /**
+     * Exam post analysis score
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function examPostAnalysisScore(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -164,12 +185,8 @@ class ResultController extends Controller
             $curl_url = "";
             $curl = curl_init();
             $api_URL = env('API_URL');
-
-            /* $curl_url = $api_URL . 'api/post-exam-analytics/' . $user_id . '/' . $exam_id;
-     */
             $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -182,7 +199,8 @@ class ResultController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -203,9 +221,14 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function exam_post_analysis_attempt(Request $request)
+    /**
+     * Exam post analysis attempt
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function examPostAnalysisAttempt(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -216,11 +239,8 @@ class ResultController extends Controller
             $curl_url = "";
             $curl = curl_init();
             $api_URL = env('API_URL');
-
-
             $curl_url = $api_URL . 'api/mini-post-exam-analytics2/' . $user_id . '/' . $exam_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -233,7 +253,8 @@ class ResultController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -256,8 +277,14 @@ class ResultController extends Controller
         }
     }
 
-
-    public function exam_post_analysis_rank(Request $request)
+    /**
+     * Exam post analysis rank
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function examPostAnalysisRank(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -271,8 +298,7 @@ class ResultController extends Controller
 
 
             $curl_url = $api_URL . 'api/mini-post-exam-analytics3/' . $user_id . '/' . $exam_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -285,7 +311,8 @@ class ResultController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -306,10 +333,13 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
-
+    /**
+     * Get All Result
+     *
+     * @param mixed $exam_type exam type
+     *
+     * @return void
+     */
     public function getAllResult($exam_type)
     {
         $limit = 100;
@@ -321,7 +351,7 @@ class ResultController extends Controller
         $curl = curl_init();
         $api_URL = env('API_URL');
         $curl_url = $api_URL . 'api/student-result-list/' . $user_id . '/?pagination_start=' . $offset . '&limit=' . $limit . '&test_type=' . $exam_type;
-        curl_setopt_array($curl, array(
+        $curl_option = array(
             CURLOPT_URL => $curl_url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FAILONERROR => true,
@@ -334,7 +364,8 @@ class ResultController extends Controller
                 "cache-control: no-cache",
                 "content-type: application/json"
             ),
-        ));
+        );
+        curl_setopt_array($curl, $curl_option);
 
         $response_json = curl_exec($curl);
 
@@ -349,6 +380,13 @@ class ResultController extends Controller
             return false;
         }
     }
+    /**
+     * Get Exam Result Analytics
+     *
+     * @param mixed $result_id result id
+     *
+     * @return void
+     */
     public function getExamResultAnalytics($result_id)
     {
         try {
@@ -362,7 +400,7 @@ class ResultController extends Controller
 
             $curl_url = $api_URL . 'api/result-analytics/' . $user_id . '/' . $exam_id . '/' . $result_id;
 
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -375,7 +413,8 @@ class ResultController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+             );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -398,10 +437,24 @@ class ResultController extends Controller
             Log::info($e->getMessage());
         }
     }
+    /**
+     * Exam Result Analytics
+     *
+     * @param mixed $result_id result id
+     *
+     * @return void
+     */
     public function examResultAnalytics($result_id)
     {
         return view('afterlogin.ExamCustom.exam_result_analytics');
     }
+    /**
+     * Ajax Exam Result List
+     *
+     * @param mixed $exam_type exam type
+     *
+     * @return void
+     */
     public function ajaxExamResultList($exam_type)
     {
         $result_data = [];
@@ -427,16 +480,22 @@ class ResultController extends Controller
             'message' => 'result list  successfully.',
         ]);
     }
-
-
-
+    /**
+     * Save Record To Task Center History
+     *
+     * @param mixed $user_id  user id
+     * @param mixed $tasktype task type
+     * @param mixed $category category
+     *
+     * @return void
+     */
     public function saveRecordToTaskCenterHistory($user_id, $tasktype, $category)
     {
         try {
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/save-record-to-task-center-history/' . $user_id . '/' . $tasktype . '/' . $category;
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -446,7 +505,8 @@ class ResultController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);

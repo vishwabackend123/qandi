@@ -14,12 +14,26 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * ReferralController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class ReferralController extends Controller
 {
-    //
     use CommonTrait;
-
-    public function store_referral_friend(Request $request)
+    /**
+     * Store Referral Friend
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function storeReferralFriend(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -57,7 +71,7 @@ class ReferralController extends Controller
             $curl_url = $api_URL . 'api/insert-referr-student';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -71,7 +85,8 @@ class ReferralController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json",
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -86,15 +101,20 @@ class ReferralController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function referral_signup($referral_code)
+    /**
+     * Referral signup
+     *
+     * @param mixed $referral_code refer code
+     *
+     * @return void
+     */
+    public function referralSignup($referral_code)
     {
         try {
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/get-referr-student/' . $referral_code;
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -103,7 +123,8 @@ class ReferralController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
