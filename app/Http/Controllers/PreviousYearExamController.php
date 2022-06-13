@@ -83,10 +83,9 @@ class PreviousYearExamController extends Controller
                 $result_data = isset($response_data) ? $response_data : [];
 
 
-
                 $collection = collect($result_data);
                 $result_data = isset($collection['upcomming-live-exam']) && !empty($collection['upcomming-live-exam']) ? $collection['upcomming-live-exam'] : [];
-
+                $collection = collect($result_data);
                 $unique = $collection->unique('paper_year');
                 $years_list = $unique->pluck('paper_year');
 
