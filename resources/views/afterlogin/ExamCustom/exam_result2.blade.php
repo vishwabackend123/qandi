@@ -55,7 +55,7 @@
     <div class="position-relative h-100">
         <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
           <div id="scroll-mobile" class="tabintablet">
-            <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+            <ul class="nav nav-tabs widthAuto cust-tabs exam-panel" id="myTab" role="tablist">
                 @php $subx=1; @endphp
                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                 @foreach($response->subject_wise_result as $subject)

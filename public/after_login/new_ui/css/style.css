@@ -800,7 +800,7 @@ div#arrow-left-btm .inner-arrow-left-btm {
 
 .planmner-block.planner-scheduar-block .planner-scroll {
     overflow-y: auto;
-    max-height: calc(100vh - 240px);
+    max-height: calc(100vh - 260px);
 }
 
 .dashboard-cards-block #topicclose .bg-white > small p {
@@ -5461,8 +5461,9 @@ button#goto-exam-btn {
 /** notification page **/
 .notification-scroll {
     overflow-y: auto;
-    height: 411px;
+    height: 360px;
     margin-top: 15px;
+    padding-right: 7px;
 }
 
 .notification-right {
@@ -5500,7 +5501,7 @@ button#goto-exam-btn {
     color: #231f20;
     font-weight: normal;
     padding-left: 15px;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .notification-right a {
@@ -5520,10 +5521,10 @@ div#collapseNotification {
     right: 0px;
     width: 95.5%;
     z-index: 99;
-    background-color: rgba(255, 255, 255, 0.81);
+/*    background-color: rgba(255, 255, 255, 0.81);*/
     background-blend-mode: hue;
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
@@ -6978,7 +6979,7 @@ header {
 .cust-tabs .nav-link {
     position: relative;
     margin-right: 15px;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
     font-size: 18px;
     font-weight: 400;
     /* color: #515151; */
@@ -8129,8 +8130,7 @@ tspan {
 }
 
 .planner-wrapper {
-    height: 100vh;
-
+    height: 98vh;
     max-width: 100%;
     position: relative;
     /* right: 0; */
@@ -9598,7 +9598,7 @@ label#username-error {
     border-radius: 10px;
 }
 .planner-scroll::-webkit-scrollbar-thumb {
-    background: rgba(13, 193, 255, 0.4) !important;
+    background: #00baff !important;
 }
 
 #attempt_count_block

@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .planner-wrapper {
+    height: 100vh;
+}
     #myTabContent button i{margin-right:15px;}
     a.backto-dash {position: static;margin: 10px;float: right;}
     .mocktest-attempted-wrapper .result-list.bg-white.tab-wrapper {
@@ -164,6 +167,9 @@ padding: 10px 30px;
 }
 .dashboard .star-ratings-css-top span ,.pe-1 .star-ratings-css-bottom span{
 font-size: 13px;
+padding: 0 2px 0 3px;
+position: relative;
+    left: -1px;
 }
 .topics-box span b {
 font-size: 25px;
@@ -355,7 +361,7 @@ right: 13%;
 }
 .rview-quses{   font-size: 12px !important;}
 .cust-tabs.nav.nav-tabs .nav-link {
-font-size: 13px !important;
+font-size: 10px !important;
 }
 #review_rques_blk .question.question-height {
 padding-left: 37px !important;
@@ -471,6 +477,15 @@ div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .p
 .topic_name_ratings.d-flex{display:block!important;}
 .compLeteS .topic_name_ratings .name-txt-sml{width:100%;white-space:normal;}
 .practice_custom_page .topic_name_ratings .status-id.rating{margin: 0 !important;}
+
+.back-to-dashbord a {
+    font-size: 10px;
+ 
+}
+.back-to-dashbord {
+    top: 25px;
+    right: 20px;
+}
 
 }
 @media(max-width:700px){
@@ -612,6 +627,7 @@ min-width: 100%;
 .practice-series-lists .live-exam .speci-text{display:inline-block;}
 }
 @media(max-width:550px){
+    .widthAuto{width:auto !important;} 
 .backbtn {
 width: 100%;
 margin-bottom: 20px;}

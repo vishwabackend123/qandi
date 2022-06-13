@@ -172,7 +172,8 @@ class FullExamController extends Controller
 
             $series_id = "";
 
-            Session::put('exam_name', $exam_name);
+            //Session::put('exam_name', $exam_name);
+            Redis::set('exam_name' . $user_id, $exam_name);
             return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
