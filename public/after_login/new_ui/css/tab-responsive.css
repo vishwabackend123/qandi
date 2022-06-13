@@ -369,6 +369,8 @@ padding-bottom: 40px;
 .align-items-center.morning-slot{align-items: flex-start!important;}
 .tab-wrapper.live-exam.live-exam-custom .d-flex.justify-content-between{width: 100%}
 .exam_attempted_common_page .result-list-btns {margin-left: 0;}
+.exam_attempted_common_page .score-show {border-left: 0;max-width: 100%; }
+.score-show.text-md-center{text-align: left!important;}
 .exam_attempted_common_page .justify-content-center.morning-slot {justify-content: space-between!important;width: 100%!important;}
 #test_instruction a.btn-close {
 right: 35px !important;
