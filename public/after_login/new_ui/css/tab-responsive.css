@@ -345,6 +345,21 @@ padding-bottom: 40px;
 #attempted .result-analysis{font-size: 12px;}
 #attempted .result-list-btns a {font-size: 12px;}
 }
+
+@media (min-width: 992px) and (max-width: 1131px){
+    #scroll-mobile {
+        overflow-x: scroll;
+        border-top-left-radius: 56px;
+        border-top-right-radius: 56px;
+    }
+    .tabintablet .nav.nav-tabs.cust-tabs {
+        width: 700px;
+    }
+    #scroll-mobile::-webkit-scrollbar {
+        height: 4px;
+    }
+
+}
 @media(max-width:991px){
 #test_instruction a.btn-close {
 right: 35px !important;
