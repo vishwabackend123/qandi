@@ -231,7 +231,8 @@ class TestSeriesController extends Controller
                     $tagrets = implode(', ', $aTargets);
                     $test_type = 'Test-Series';
                     $exam_type = 'TS';
-                    Session::put('exam_name', $exam_name);
+                    //Session::put('exam_name', $exam_name);
+                    Redis::set('exam_name' . $user_id, $exam_name);
 
                     return view('afterlogin.ExamViews.exam', compact('question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'exam_name', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
                 } else {
