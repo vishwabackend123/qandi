@@ -37,7 +37,7 @@ class PreviousYearExamController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
 
-            $curl_url = $api_URL . 'api/previous-year-papers/' . $exam_id;
+            $curl_url = $api_URL . 'api/previous-year-papers/' . $exam_id . '/' . $user_id;
 
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $curl_url,
@@ -60,21 +60,22 @@ class PreviousYearExamController extends Controller
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
+
             if ($httpcode == 200 || $httpcode == 201) {
-                $response_data = (json_decode($response_json));
-                $result_data = isset($response_data) ? $response_data : [];
+                $response_data = (array)(json_decode($response_json));
+                $upcomming_live_exam = isset($response_data['upcomming-live-exam']) ? $response_data['upcomming-live-exam'] : [];
+                $completed_live_exam = isset($response_data['completed-live-exam']) ? $response_data['completed-live-exam'] : [];
 
 
 
-                $collection = collect($result_data);
+                $collection = collect($upcomming_live_exam);
 
                 $unique = $collection->unique('paper_year');
                 $years_list = $unique->pluck('paper_year');
-
                 $years_list->all();
 
 
-                return view('afterlogin.PreviousYearExam.index', compact('result_data', 'years_list'));
+                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'completed_live_exam', 'years_list'));
             } else {
                 return Redirect::back()->withErrors(['There is some error  for this result id.']);
             }
@@ -264,8 +265,7 @@ class PreviousYearExamController extends Controller
             $exam_type = 'PT';
             $exam_mode = 'Practice';
 
-            //Session::put('exam_name', $exam_name);
-            Redis::set('exam_name' . $user_id, $exam_name);
+            Session::put('exam_name', $exam_name);
 
 
             return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id'));

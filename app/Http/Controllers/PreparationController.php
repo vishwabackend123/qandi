@@ -13,12 +13,26 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * PreparationController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class PreparationController extends Controller
 {
-    //
     use CommonTrait;
-
-    public function preparation_center(Request $request)
+    /**
+     * Preparation center
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function preparationCenter(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -31,7 +45,7 @@ class PreparationController extends Controller
             $api_url = env('API_URL') . 'api/subjectResources/chapterWiseSummary/' . $exam_id . '/' . $user_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -40,7 +54,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -63,8 +78,14 @@ class PreparationController extends Controller
         }
     }
 
-
-    public function download_exampaper(Request $request)
+    /**
+     * Download exampaper
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function downloadExampaper(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -73,42 +94,43 @@ class PreparationController extends Controller
             $exam_id = $userData->grade_id;
             $data = $request->all();
             $responsePdf = '';
-            if (isset($data) && !empty($data)) :
+            if (isset($data) && !empty($data)) {
                 $api_url = env('API_URL') . 'api/previous-year-question-paper/download/' . $data['exam_year'] . '/' . $exam_id . '/' . $data['subject_id'];
-            $curl = curl_init();
-            curl_setopt_array($curl, array(
-                    CURLOPT_URL => $api_url,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => '',
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => 'GET',
-                ));
-            $response = curl_exec($curl);
-            curl_close($curl);
-            $responseData = json_decode($response);
-            $status = isset($responseData->success) ? $responseData->success : false;
+                $curl = curl_init();
+                $curl_option =array(
+                        CURLOPT_URL => $api_url,
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => '',
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_FOLLOWLOCATION => true,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => 'GET',
+                    );
+                curl_setopt_array($curl, $curl_option);
+                $response = curl_exec($curl);
+                curl_close($curl);
+                $responseData = json_decode($response);
+                $status = isset($responseData->success) ? $responseData->success : false;
 
-            $return_response = [];
-            if ($status == true) {
-                foreach ($responseData->response as $value) {
-                    $responsePdf = $value->paper_file_name;
+                $return_response = [];
+                if ($status == true) {
+                    foreach ($responseData->response as $value) {
+                        $responsePdf = $value->paper_file_name;
+                    }
+                    $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
+
+                    $return_response['status'] = 'success';
+                    $return_response['message'] = "Result found successfully";
+                    $return_response['imgUrl'] = $imgUrl;
+
+                    return json_encode($return_response);
+                } else {
+                    $return_response['status'] = 'failed';
+                    $return_response['message'] = "No file found to download.";
+                    return json_encode($return_response);
                 }
-                $imgUrl = str_replace(' ', '+', 'https://pre-year-paper.s3.ap-south-1.amazonaws.com/' . $responsePdf);
-
-                $return_response['status'] = 'success';
-                $return_response['message'] = "Result found successfully";
-                $return_response['imgUrl'] = $imgUrl;
-
-                return json_encode($return_response);
-            } else {
-                $return_response['status'] = 'failed';
-                $return_response['message'] = "No file found to download.";
-                return json_encode($return_response);
             }
-            endif;
 
             $subject_list = $this->redis_subjects();
             return view('afterlogin.Preparation.exam_papers', compact('subject_list'));
@@ -116,9 +138,14 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function preparation_center_subject(Request $request)
+    /**
+     * Preparation center subject
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function preparationCenterSubject(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -133,7 +160,7 @@ class PreparationController extends Controller
             $api_url = env('API_URL') . $api_url_pre . '/' . $user_id . '/' . $exam_id . '/' . $subject_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -142,7 +169,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -178,8 +206,14 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function presentations_chapter(Request $request)
+    /**
+     * Presentations chapter
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function presentationsChapter(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -193,7 +227,7 @@ class PreparationController extends Controller
             $api_url = env('API_URL') . 'api/subjectResources/presentations/' . $chapter_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -202,7 +236,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -225,8 +260,14 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function videos_chapter(Request $request)
+    /**
+     * Videos chapter
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function videosChapter(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -240,7 +281,7 @@ class PreparationController extends Controller
             $api_url = env('API_URL') . 'api/subjectResources/videos/' . $chapter_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -249,7 +290,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -272,9 +314,14 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function notes_chapter(Request $request)
+    /**
+     * Notes chapter
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function notesChapter(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -288,7 +335,7 @@ class PreparationController extends Controller
             $api_url = env('API_URL') . 'api/subjectResources/notes/' . $chapter_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -297,7 +344,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -320,8 +368,14 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function bookmarks_chapter(Request $request)
+    /**
+     * Bookmarks chapter
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function bookmarksChapter(Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -336,7 +390,7 @@ class PreparationController extends Controller
             ;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -345,7 +399,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -363,7 +418,11 @@ class PreparationController extends Controller
         }
     }
 
-
+    /**
+     * Get Review Bookmarks
+     *
+     * @return void
+     */
     public function getReviewBookmarks()
     {
         try {
@@ -381,7 +440,7 @@ class PreparationController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
-            curl_setopt_array($curl, array(
+            $curl_option =array(
                 //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
                 CURLOPT_URL => $curl_url, //live
                 CURLOPT_RETURNTRANSFER => true,
@@ -397,7 +456,8 @@ class PreparationController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -514,14 +574,6 @@ class PreparationController extends Controller
 
                 if (isset($correct_ans)) {
                     foreach ($correct_ans as $ankey => $anoption) {
-
-
-                        /*   if ((strpos($anoption, $word1) !== false)) {
-                            $anoption = str_replace($word1, $publicPath, $anoption);
-                        } elseif ((strpos($anoption, $word2) !== false)) {
-                            $anoption = str_replace($word2, $publicPath, $anoption);
-                        }
-     */
                         $correct_ans->$ankey = $anoption;
                     }
                 }
@@ -537,9 +589,14 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function next_review_questionbookmark($question_id)
+    /**
+     * Next Rreview Qquestionbookmark
+     *
+     * @param mixed $question_id question id
+     *
+     * @return void
+     */
+    public function nextReviewQuestionbookmark($question_id)
     {
         try {
             $userData = Session::get('user_data');
@@ -550,8 +607,7 @@ class PreparationController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
-            curl_setopt_array($curl, array(
-                //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
+            $curl_option =array(
                 CURLOPT_URL => $curl_url, //live
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -566,7 +622,8 @@ class PreparationController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -626,23 +683,7 @@ class PreparationController extends Controller
                 $question_data->chapter_name = $chapter_name;
 
                 $question_id_array[] = $q_id;
-                //$publicPath = url('/') . '/public/images/questions/';
-                /* $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                if ((strpos($question, $word1) !== false)) {
-                    $question_data->question = str_replace($word1, $publicPath, $question_data->question);
-                } elseif ((strpos($question, $word2) !== false)) {
-                    $question_data->question = str_replace($word2, $publicPath, $question_data->question);
-                }
-                if ((strpos($reference_text, $word1) !== false)) {
-                    $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
-                } elseif ((strpos($reference_text, $word2) !== false)) {
-                    $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
-                }
-                if ((strpos($explanation, $word1) !== false)) {
-                    $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
-                } elseif ((strpos($explanation, $word2) !== false)) {
-                    $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-                } */
+
                 $tempdata = (array)json_decode($question_data->question_options);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
@@ -683,9 +724,15 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function ajax_review_next_subject_questionbookmark($subject_id, Request $request)
+    /**
+     * Ajax review next subject questionbookmark
+     *
+     * @param mixed   $subject_id subject id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
+    public function ajaxReviewNextSubjectQuestionbookmark($subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -696,8 +743,7 @@ class PreparationController extends Controller
             $api_URL = env('API_URL');
 
             $curl_url = $api_URL . 'api/bookmark-questions/' . $user_id . '/' . $exam_id;
-            curl_setopt_array($curl, array(
-                //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
+            $curl_option = array(
                 CURLOPT_URL => $curl_url, //live
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -712,7 +758,8 @@ class PreparationController extends Controller
                     "content-type: application/json",
 
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -734,14 +781,10 @@ class PreparationController extends Controller
 
                 $allQuestions = $all_data->keyBy('question_id');
                 $filtered = $all_data->where('subject_id', $subject_id);
-
-                // $first = $filtered->first();
-                //$question_id = $first->question_id;
                 $allQuestionsArr = $all_data->all();
                 $allkeys = $allQuestions->keys('question_id')->all();
 
                 $question_id = $result_response->response[0]->question_id;
-                //echo "<pre>"; print_r($first); die;
                 $key = array_search($question_id, array_column($allQuestionsArr, 'question_id'));
 
                 $qNo = $key + 1;
@@ -767,23 +810,7 @@ class PreparationController extends Controller
                 $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
 
                 $question_id_array[] = $q_id;
-                //$publicPath = url('/') . '/public/images/questions/';
-                /*  $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                if ((strpos($question, $word1) !== false)) {
-                    $question_data->question = str_replace($word1, $publicPath, $question_data->question);
-                } elseif ((strpos($question, $word2) !== false)) {
-                    $question_data->question = str_replace($word2, $publicPath, $question_data->question);
-                }
-                if ((strpos($reference_text, $word1) !== false)) {
-                    $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
-                } elseif ((strpos($reference_text, $word2) !== false)) {
-                    $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
-                }
-                if ((strpos($explanation, $word1) !== false)) {
-                    $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
-                } elseif ((strpos($explanation, $word2) !== false)) {
-                    $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-                } */
+
                 $tempdata = (array)json_decode($question_data->question_options);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
@@ -824,7 +851,13 @@ class PreparationController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Get ChapterWise Data
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function getChapterWiseData(Request $request)
     {
         try {
@@ -835,8 +868,7 @@ class PreparationController extends Controller
             $type = $request->type;
             $api_url = env('API_URL') . 'api/subjectResources/chapter-wise-resources/' . $user_id . '/' . $exam_id .  '/' . $chapter_id;
             $curl = curl_init();
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -845,7 +877,8 @@ class PreparationController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response = curl_exec($curl);
 
@@ -858,17 +891,17 @@ class PreparationController extends Controller
             }
 
             switch ($type) {
-                case 'presentations':
-                    return view('afterlogin.Preparation.preparation_center_ajax', compact('type', 'preparation_list'));
+            case 'presentations':
+                return view('afterlogin.Preparation.preparation_center_ajax', compact('type', 'preparation_list'));
                     break;
-                case 'notes':
-                    return view('afterlogin.Preparation.notes_ajax', compact('type', 'preparation_list'));
+            case 'notes':
+                return view('afterlogin.Preparation.notes_ajax', compact('type', 'preparation_list'));
                     break;
-                case 'videos':
-                    return view('afterlogin.Preparation.video_ajax', compact('type', 'preparation_list'));
+            case 'videos':
+                return view('afterlogin.Preparation.video_ajax', compact('type', 'preparation_list'));
                     break;
-                default:
-                    return view('afterlogin.Preparation.bookmarks_ajax', compact('type', 'preparation_list'));
+            default:
+                return view('afterlogin.Preparation.bookmarks_ajax', compact('type', 'preparation_list'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());

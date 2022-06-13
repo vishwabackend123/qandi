@@ -66,6 +66,7 @@ $userData = Session::get('user_data');
                                     @if(!empty($live_series))
                                     <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                         @foreach($live_series as $live)
+                                        @if($live->test_completed_yn === 'N')
                                         <ul class="speci-text">
                                             <li class="a1TS"> <span class="sub-details">{{$live->test_series_name}}</span>
                                             </li>
@@ -74,6 +75,7 @@ $userData = Session::get('user_data');
                                             <li class="a3TS"><strong>{{$live->time_allowed}} min</strong>
                                             </li>
                                             <li class="a4TS">
+
                                                 <form class="form-horizontal ms-auto " action="{{route('test_series')}}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="series_name" value="{{$live->test_series_name}}" />
@@ -82,14 +84,12 @@ $userData = Session::get('user_data');
                                                     <input type="hidden" name="time_allowed" value="{{$live->time_allowed}}" />
                                                     <input type="hidden" name="questions_count" value="{{$live->questions_count}}" />
                                                     <input type="hidden" name="exam_mode" value="Live" />
-                                                    @if($live->test_completed_yn === 'N')
                                                     <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Start</button>
-                                                    @else
-                                                    <button class="custom-btn-gray" disabled><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Start</button>
-                                                    @endif
                                                 </form>
+
                                             </li>
                                         </ul>
+                                        @endif
                                         @endforeach
                                     </div>
                                     @else
@@ -113,267 +113,263 @@ $userData = Session::get('user_data');
     <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
 </div>
 <style>
-.result-list-table {
-    background: #f6f9fd;
-    border-radius: 15px;
-}
+    .result-list-table {
+        background: #f6f9fd;
+        border-radius: 15px;
+    }
 
-.result-list-table .result-list-head {
-    flex: 2;
-}
+    .result-list-table .result-list-head {
+        flex: 2;
+    }
 
-.result-list-head h4 {
-    color: #231f20;
-    font-size: 16px;
-    font-weight: 600;
-    flex: 1;
-}
-
-.result-list-head p {
-    color: #231f20;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.morning-slot {
-    flex: 2;
-}
-
-.morning-slot p {
-    color: #231f20;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.result-list-btns {
-    flex: 1;
-}
-
-.result-list-btns a {
-    line-height: 37px;
-    height: 48px;
-    text-align: center;
-    display: block;
-    background: #f4f4f4;
-    border-radius: 10px;
-}
-
-.result-list-btns a .fa {
-    font-size: 17px;
-    line-height: 48px;
-}
-
-.result-review {
-    height: 48px;
-    background: #f4f4f4;
-    border-radius: 10px;
-    color: #515151 !important;
-    font-size: 16px;
-    width: 75%;
-}
-
-.score-show {
-    flex: 3;
-    border-right: 1px solid #b9b9b9;
-}
-
-.score-show p {
-    color: #231f20;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.score-show p span {
-    color: #00baff;
-}
-
-.result-analysis {
-    background: #13c5ff;
-    background-color: #13c5ff;
-    border-color: #13c5ff;
-    -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 32px;
-    border-radius: 20px;
-    height: 45px;
-    width: 208px;
-    border: 0;
-}
-
-.paper-summery {
-    flex: 5;
-}
-
-.paper-sub {
-    font-size: 13px;
-    flex: 1;
-    word-break: break-all;
-}
-
-.paper-sub span {
-    color: #00baff;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.paper-sub small {
-    display: block;
-    color: #231f20;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.result-list-table .slbs-link a {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-@media only screen and (max-width: 1199px) {
     .result-list-head h4 {
-        font-size: 14px;
+        color: #231f20;
+        font-size: 16px;
+        font-weight: 600;
+        flex: 1;
     }
 
     .result-list-head p {
+        color: #231f20;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .morning-slot {
+        flex: 2;
+    }
+
+    .morning-slot p {
+        color: #231f20;
         font-size: 14px;
+        font-weight: 600;
+    }
+
+    .result-list-btns {
         flex: 1;
     }
-}
 
-@media only screen and (max-width: 991px) {
-    .result-list .d-flex.justify-content-between {
-        display: flex !important;
+    .result-list-btns a {
+        line-height: 37px;
+        height: 48px;
+        text-align: center;
+        display: block;
+        background: #f4f4f4;
+        border-radius: 10px;
+    }
+
+    .result-list-btns a .fa {
+        font-size: 17px;
+        line-height: 48px;
     }
 
     .result-review {
-        font-size: 13px;
+        height: 48px;
+        background: #f4f4f4;
+        border-radius: 10px;
+        color: #515151 !important;
+        font-size: 16px;
+        width: 75%;
     }
 
-    .paper-sub small {
-        font-size: 12px;
+    .score-show {
+        flex: 3;
+        border-right: 1px solid #b9b9b9;
+    }
+
+    .score-show p {
+        color: #231f20;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .score-show p span {
+        color: #00baff;
+    }
+
+    .result-analysis {
+        background: #13c5ff;
+        background-color: #13c5ff;
+        border-color: #13c5ff;
+        -webkit-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        -moz-box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        box-shadow: inset 0 3px 10px 0 rgb(255 255 255 / 80%);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 32px;
+        border-radius: 20px;
+        height: 45px;
+        width: 208px;
+        border: 0;
+    }
+
+    .paper-summery {
+        flex: 5;
+    }
+
+    .paper-sub {
+        font-size: 13px;
+        flex: 1;
+        word-break: break-all;
     }
 
     .paper-sub span {
-        font-size: 13px;
+        color: #00baff;
+        font-size: 14px;
+        font-weight: 600;
     }
-}
 
+    .paper-sub small {
+        display: block;
+        color: #231f20;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .result-list-table .slbs-link a {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    @media only screen and (max-width: 1199px) {
+        .result-list-head h4 {
+            font-size: 14px;
+        }
+
+        .result-list-head p {
+            font-size: 14px;
+            flex: 1;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+        .result-list .d-flex.justify-content-between {
+            display: flex !important;
+        }
+
+        .result-review {
+            font-size: 13px;
+        }
+
+        .paper-sub small {
+            font-size: 12px;
+        }
+
+        .paper-sub span {
+            font-size: 13px;
+        }
+    }
 </style>
 <script>
-$(window).on('load', function() {
-    $(".dash-nav-link a:first-child").removeClass("active-navlink");
-    $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
-});
-$(document).ready(function() {
-    $('.live_test_div').hide();
-    $('.open_test').click(function() {
-        $(this).addClass('btn-primary');
-        $(this).removeClass('btn-outline-primary');
-        $('.live_tes').removeClass('btn-primary');
-        $('.live_tes').addClass('btn-outline-primary');
+    $(window).on('load', function() {
+        $(".dash-nav-link a:first-child").removeClass("active-navlink");
+        $(".dash-nav-link a:nth-child(2)").addClass("active-navlink");
+    });
+    $(document).ready(function() {
         $('.live_test_div').hide();
-        $('.open_test_div').show();
-    });
-    $('.live_tes').click(function() {
-        $(this).addClass('btn-primary');
-        $(this).removeClass('btn-outline-primary');
-        $('.open_test').removeClass('btn-primary');
-        $('.open_test').addClass('btn-outline-primary');
-        $('.live_test_div').show();
-        $('.open_test_div').hide();
-    });
-    $('#live-tab').click(function() {
-        $('.loader-block').show();
-        url = "{{ url('ajax_exam_result_list') }}/Test-Series";
-        $.ajax({
-            url: url,
-            data: {
-                "_token": "{{ csrf_token() }}",
-            },
-            beforeSend: function() {
+        $('.open_test').click(function() {
+            $(this).addClass('btn-primary');
+            $(this).removeClass('btn-outline-primary');
+            $('.live_tes').removeClass('btn-primary');
+            $('.live_tes').addClass('btn-outline-primary');
+            $('.live_test_div').hide();
+            $('.open_test_div').show();
+        });
+        $('.live_tes').click(function() {
+            $(this).addClass('btn-primary');
+            $(this).removeClass('btn-outline-primary');
+            $('.open_test').removeClass('btn-primary');
+            $('.open_test').addClass('btn-outline-primary');
+            $('.live_test_div').show();
+            $('.open_test_div').hide();
+        });
+        $('#live-tab').click(function() {
+            $('.loader-block').show();
+            url = "{{ url('ajax_exam_result_list') }}/Test-Series";
+            $.ajax({
+                url: url,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                beforeSend: function() {
 
-            },
-            success: function(data) {
-                $('.loader-block').hide();
-                $("#live").show();
-                $('#live').html(data.html);
+                },
+                success: function(data) {
+                    $('.loader-block').hide();
+                    $("#live").show();
+                    $('#live').html(data.html);
 
-            },
-            error: function(data, errorThrown) {
-                $('.loader-block').hide();
+                },
+                error: function(data, errorThrown) {
+                    $('.loader-block').hide();
+                }
+            });
+        });
+        $(document).on('click', '.all_attemp', function() {
+            $(this).addClass('btn-primary');
+            $(this).removeClass('btn-outline-primary');
+            $('.open_attemp').removeClass('btn-primary');
+            $('.open_attemp').addClass('btn-outline-primary');
+            $('.live_attemp').removeClass('btn-primary');
+            $('.live_attemp').addClass('btn-outline-primary');
+            $('.compLeteS').show();
+            $('.no_data_found').hide();
+            hideExpend();
+
+        });
+        $(document).on('click', '.open_attemp', function() {
+            $(this).addClass('btn-primary');
+            $(this).removeClass('btn-outline-primary');
+            $('.all_attemp').removeClass('btn-primary');
+            $('.all_attemp').addClass('btn-outline-primary');
+            $('.live_attemp').removeClass('btn-primary');
+            $('.live_attemp').addClass('btn-outline-primary');
+            $('.compLeteS').hide();
+            $('.exam_mode_Open').show();
+            var data_list = $('.exam_mode_Open').length;
+            if (data_list > 0) {
+                $('.no_data_found').hide();
+            } else {
+                $('.no_data_found').show();
+                $('#error_data').text('No result history available right now.');
             }
+            hideExpend();
+        });
+        $(document).on('click', '.live_attemp', function() {
+            $(this).addClass('btn-primary');
+            $(this).removeClass('btn-outline-primary');
+            $('.all_attemp').removeClass('btn-primary');
+            $('.all_attemp').addClass('btn-outline-primary');
+            $('.open_attemp').removeClass('btn-primary');
+            $('.open_attemp').addClass('btn-outline-primary');
+            $('.compLeteS').hide();
+            $('.exam_mode_Live').show();
+            var data_list = $('.exam_mode_Live').length;
+            if (data_list > 0) {
+                $('.no_data_found').hide();
+            } else {
+                $('.no_data_found').show();
+                $('#error_data').text('No result history available right now.');
+            }
+            hideExpend();
         });
     });
-    $(document).on('click', '.all_attemp', function() {
-        $(this).addClass('btn-primary');
-        $(this).removeClass('btn-outline-primary');
-        $('.open_attemp').removeClass('btn-primary');
-        $('.open_attemp').addClass('btn-outline-primary');
-        $('.live_attemp').removeClass('btn-primary');
-        $('.live_attemp').addClass('btn-outline-primary');
-        $('.compLeteS').show();
-        $('.no_data_found').hide();
-        hideExpend();
 
-    });
-    $(document).on('click', '.open_attemp', function() {
-        $(this).addClass('btn-primary');
-        $(this).removeClass('btn-outline-primary');
-        $('.all_attemp').removeClass('btn-primary');
-        $('.all_attemp').addClass('btn-outline-primary');
-        $('.live_attemp').removeClass('btn-primary');
-        $('.live_attemp').addClass('btn-outline-primary');
-        $('.compLeteS').hide();
-        $('.exam_mode_Open').show();
-        var data_list =$('.exam_mode_Open').length;
-        if(data_list > 0)
-        {
-            $('.no_data_found').hide();
-        } else {
-            $('.no_data_found').show();
-            $('#error_data').text('No result history available right now.');
-        }
-        hideExpend();
-    });
-    $(document).on('click', '.live_attemp', function() {
-        $(this).addClass('btn-primary');
-        $(this).removeClass('btn-outline-primary');
-        $('.all_attemp').removeClass('btn-primary');
-        $('.all_attemp').addClass('btn-outline-primary');
-        $('.open_attemp').removeClass('btn-primary');
-        $('.open_attemp').addClass('btn-outline-primary');
-        $('.compLeteS').hide();
-        $('.exam_mode_Live').show();
-        var data_list =$('.exam_mode_Live').length;
-        if(data_list > 0)
-        {
-            $('.no_data_found').hide();
-        } else {
-            $('.no_data_found').show();
-            $('#error_data').text('No result history available right now.');
-        }
-        hideExpend();
-    });
-});
+    function hideExpend() {
+        $('.loader-block').show();
+        $('.hideallexpend').each(function() {
 
-function hideExpend() {
-    $('.loader-block').show();
-    $('.hideallexpend').each(function() {
-
-        var current_id = this.id;
-        var current_div_id = $(this).attr('data-id');
-        if ($('#' + current_div_id).hasClass('show')) {
-            $('#' + current_id).trigger('click')
-        }
-    });
-    setTimeout(function() {
-        $('.loader-block').hide();
-        $('.scroll_top').scrollTop(0);
-    }, 500);
-}
-
+            var current_id = this.id;
+            var current_div_id = $(this).attr('data-id');
+            if ($('#' + current_div_id).hasClass('show')) {
+                $('#' + current_id).trigger('click')
+            }
+        });
+        setTimeout(function() {
+            $('.loader-block').hide();
+            $('.scroll_top').scrollTop(0);
+        }, 500);
+    }
 </script>
 @include('afterlogin.layouts.footer_new')
 @endsection
