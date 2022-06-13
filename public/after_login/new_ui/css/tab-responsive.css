@@ -365,7 +365,7 @@ padding-bottom: 40px;
 
 }
 @media(max-width:991px){
-.ClickBack.d-md-flex{display:block!important;}
+.ClickBack.d-md-flex , .full-syllabus.d-md-flex{display:block!important;}
 .align-items-center.morning-slot{align-items: flex-start!important;}
 .tab-wrapper.live-exam.live-exam-custom .d-flex.justify-content-between{width: 100%}
 .exam_attempted_common_page .result-list-btns {margin-left: 0;}
