@@ -133,17 +133,17 @@ Route::any('/examreview', [App\Http\Controllers\FullExamController::class, 'exam
 
 
 /* Full exam Controller Routes */
-Route::any('/preparation_center', [App\Http\Controllers\PreparationController::class, 'preparation_center'])->name('preparation_center')->middleware('auth', 'menu');
-Route::any('/download_exampaper', [App\Http\Controllers\PreparationController::class, 'download_exampaper'])->name('download_exampaper')->middleware('auth', 'menu');
-Route::any('/preparation_center_subject', [App\Http\Controllers\PreparationController::class, 'preparation_center_subject'])->name('preparation_center_subject')->middleware('auth', 'menu');
-Route::any('/presentations_chapter', [App\Http\Controllers\PreparationController::class, 'presentations_chapter'])->name('presentations_chapter')->middleware('auth', 'menu');
-Route::any('/videos_chapter', [App\Http\Controllers\PreparationController::class, 'videos_chapter'])->name('videos_chapter')->middleware('auth', 'menu');
-Route::any('/notes_chapter', [App\Http\Controllers\PreparationController::class, 'notes_chapter'])->name('notes_chapter')->middleware('auth', 'menu');
+Route::any('/preparation_center', [App\Http\Controllers\PreparationController::class, 'preparationCenter'])->name('preparation_center')->middleware('auth', 'menu');
+Route::any('/download_exampaper', [App\Http\Controllers\PreparationController::class, 'downloadExampaper'])->name('download_exampaper')->middleware('auth', 'menu');
+Route::any('/preparation_center_subject', [App\Http\Controllers\PreparationController::class, 'preparationCenterSubject'])->name('preparation_center_subject')->middleware('auth', 'menu');
+Route::any('/presentations_chapter', [App\Http\Controllers\PreparationController::class, 'presentationsChapter'])->name('presentations_chapter')->middleware('auth', 'menu');
+Route::any('/videos_chapter', [App\Http\Controllers\PreparationController::class, 'videosChapter'])->name('videos_chapter')->middleware('auth', 'menu');
+Route::any('/notes_chapter', [App\Http\Controllers\PreparationController::class, 'notesChapter'])->name('notes_chapter')->middleware('auth', 'menu');
 Route::any('/preparation_center_chapter', [App\Http\Controllers\PreparationController::class, 'preparation_center_chapter'])->name('preparation_center_chapter')->middleware('auth', 'menu');
-Route::any('/bookmarks_chapter', [App\Http\Controllers\PreparationController::class, 'bookmarks_chapter'])->name('bookmarks_chapter')->middleware('auth', 'menu');
+Route::any('/bookmarks_chapter', [App\Http\Controllers\PreparationController::class, 'bookmarksChapter'])->name('bookmarks_chapter')->middleware('auth', 'menu');
 Route::any('/review_bookmarks', [App\Http\Controllers\PreparationController::class, 'getReviewBookmarks'])->name('review_bookmarks')->middleware('auth', 'menu');
-Route::any('/next_review_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'next_review_questionbookmark'])->name('next_review_questionbookmark')->middleware('auth', 'menu');
-Route::any('/ajax_review_next_subject_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'ajax_review_next_subject_questionbookmark'])->name('ajax_review_next_subject_questionbookmark')->middleware('auth', 'menu');
+Route::any('/next_review_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'nextReviewQuestionbookmark'])->name('next_review_questionbookmark')->middleware('auth', 'menu');
+Route::any('/ajax_review_next_subject_questionbookmark/{question_id}', [App\Http\Controllers\PreparationController::class, 'ajaxReviewNextSubjectQuestionbookmark'])->name('ajax_review_next_subject_questionbookmark')->middleware('auth', 'menu');
 Route::any('/get_chapter_wise_data', [App\Http\Controllers\PreparationController::class, 'getChapterWiseData'])->name('get_chapter_wise_data')->middleware('auth', 'menu');
 
 
@@ -154,8 +154,8 @@ Route::any('/eligibility_criteria', [App\Http\Controllers\AboutExamController::c
 
 
 /* preLoginController */
-Route::any('/aboutexam', [App\Http\Controllers\PreLoginController::class, 'pre_about_exam'])->name('aboutexam');
-Route::any('/faq', [App\Http\Controllers\PreLoginController::class, 'user_feedback'])->name('faq');
+Route::any('/aboutexam', [App\Http\Controllers\PreLoginController::class, 'preAboutExam'])->name('aboutexam');
+Route::any('/faq', [App\Http\Controllers\PreLoginController::class, 'userFeedback'])->name('faq');
 
 /* Live Exam Controller Routes */
 
