@@ -30,6 +30,12 @@ margin-left: 0;
     right: -18px;}
 }
 @media screen and (max-width:1199px){
+    span.slbs-link {
+        min-width: 115px;
+        margin-right: 10px!important;
+    }
+
+    .exam_attempted_common_page .result-analysis{width:160px;}
     .ans {
         height: auto!important;
     }
@@ -237,9 +243,7 @@ div.counter{right:0;margin-right: -35px;}
 #home a.btn.btn-primary.btn-sm.sectionBtn, a.btn.btn-primary.sectionBtn,
 #home a.btn.btn-outline-primary.btn-sm.sectionBtn, a.btn.btn-outline-primary.sectionBtn{min-width: 105px;}
 .exam_attempted_common_page .scroll-div{margin-top: 30px;}
-.exam_attempted_common_page .justify-content-center.morning-slot {
-justify-content: space-between!important;
-}
+
 /* .exam_attempted_common_page .result-list-btns{margin-left: 20px;} */
 .exam_attempted_common_page .slbs-link.me-5 {margin-right: 1.5rem!important;}
 .exam_attempted_common_page .result-list-table .result-list-head p{text-align:right;}
@@ -361,6 +365,13 @@ padding-bottom: 40px;
 
 }
 @media(max-width:991px){
+.ClickBack.d-md-flex{display:block!important;}
+.align-items-center.morning-slot{align-items: flex-start!important;}
+.tab-wrapper.live-exam.live-exam-custom .d-flex.justify-content-between{width: 100%}
+.exam_attempted_common_page .result-list-btns {margin-left: 0;}
+.exam_attempted_common_page .justify-content-center.morning-slot {
+    justify-content: space-between!important;
+    }
 #test_instruction a.btn-close {
 right: 35px !important;
 }
