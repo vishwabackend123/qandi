@@ -21,9 +21,17 @@ use App\Http\Traits\CommonTrait;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * RazorpayController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class RazorpayController extends Controller
 {
-    //
     use CommonTrait;
     /**
      * Create a new controller instance.
@@ -35,9 +43,11 @@ class RazorpayController extends Controller
         $this->middleware('auth');
     }
     /**
-     * Write code on Method
+     * Store
      *
-     * @return response()
+     * @param Request $request recieve the body request data
+     *
+     * @return void
      */
     public function store(Request $request)
     {
@@ -46,21 +56,11 @@ class RazorpayController extends Controller
             $userData = Session::get('user_data');
 
             $user_id = $userData->id;
-
-
-            /* $exam_id = $userData->grade_id; */
-
             $payment_id = isset($request->razorpay_payment_id) ? $request->razorpay_payment_id : '';
             $order_id = isset($request->razorpay_order_id) ? $request->razorpay_order_id : '';
             $razorpay_signature = isset($request->razorpay_signature) ? $request->razorpay_signature : '';
-
-
             $exam_id = isset($request->exam_id) ? $request->exam_id : '';
-
-
-
-            $verify_request =
-                [
+            $verify_request = [
                     "payment_id" => $payment_id,
                     "order_id" => $order_id,
                     "signature" => $razorpay_signature,
@@ -72,9 +72,7 @@ class RazorpayController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/payment/verify-payment';
-
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -88,7 +86,8 @@ class RazorpayController extends Controller
                     "accept: application/json",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);
@@ -114,9 +113,13 @@ class RazorpayController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
+    /**
+     * Store old
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function store_old(Request $request)
     {
         try {
