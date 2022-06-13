@@ -14,11 +14,23 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * PreviousYearExamController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ */
 class PreviousYearExamController extends Controller
 {
     use CommonTrait;
+
+
+    use CommonTrait;
     /**
-     * Create a new controller instance.
+     * __construct
      *
      * @return void
      */
@@ -26,6 +38,11 @@ class PreviousYearExamController extends Controller
     {
         $this->middleware('auth');
     }
+    /**
+     * Index function
+     *
+     * @return void
+     */
     public function index()
     {
         try {
@@ -39,7 +56,7 @@ class PreviousYearExamController extends Controller
 
             $curl_url = $api_URL . 'api/previous-year-papers/' . $exam_id;
 
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -52,7 +69,8 @@ class PreviousYearExamController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -82,11 +100,8 @@ class PreviousYearExamController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    use CommonTrait;
     /**
-     * previousYearExam
+     * PreviousYearExam
      *
      * @param Request $request recieve the body request data
      *
@@ -218,7 +233,6 @@ class PreviousYearExamController extends Controller
             $prev_qid = '';
 
             if (isset($question_data) && !empty($question_data)) {
-
                 $qs_id = $question_data->question_id;
 
                 $option_ques = $question_data->question_options;
@@ -270,7 +284,6 @@ class PreviousYearExamController extends Controller
 
             return view('afterlogin.PreviousYearExam.previousYearExam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'aSections', 'aSectionSub', 'aSubSecCount', 'total_marks', 'exam_mode', 'paper_id'));
         } catch (\Exception $e) {
-
             Log::info($e->getMessage());
         }
     }
