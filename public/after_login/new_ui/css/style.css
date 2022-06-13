@@ -5461,8 +5461,9 @@ button#goto-exam-btn {
 /** notification page **/
 .notification-scroll {
     overflow-y: auto;
-    height: 411px;
+    height: 360px;
     margin-top: 15px;
+    padding-right: 7px;
 }
 
 .notification-right {
@@ -5520,10 +5521,10 @@ div#collapseNotification {
     right: 0px;
     width: 95.5%;
     z-index: 99;
-    background-color: rgba(255, 255, 255, 0.81);
+/*    background-color: rgba(255, 255, 255, 0.81);*/
     background-blend-mode: hue;
-    -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
