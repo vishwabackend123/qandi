@@ -737,6 +737,8 @@ display: block!important;    margin-bottom: 15px;
 .garphlistincom{margin-bottom: 5px;}
 }
 @media (max-width:480px) {
+#editProfile_form  .form-flds { margin-bottom: 10px !important;}
+#editProfile_form #citybx { margin-bottom: 28px !important;}
 /* .main-wrapper { padding-left: 55px;} */
 .rankholder{height: 300px}
 .tickicon {
@@ -794,7 +796,7 @@ border-radius: 20px !important;
 width: 94%!important;
 }    
 .custom_attempted_page .result-list .d-flex.justify-content-between.paper-summery .paper-sub{width:50%;}
-#editProfile_form  .form-flds { margin-bottom: 10px !important;}
+
 #review_rques_blk .answer-section {
 width: 95%!important;
 }
