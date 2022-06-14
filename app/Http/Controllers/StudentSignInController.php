@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Cache;
 
+/**
+ * StudentSignInController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ * */
 class StudentSignInController extends Controller
 {
     /**
@@ -25,11 +34,10 @@ class StudentSignInController extends Controller
     public function __construct()
     {
     }
-
     /**
-     * Show the application dashboard.
+     * Index
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return void
      */
     public function index()
     {
@@ -37,9 +45,10 @@ class StudentSignInController extends Controller
     }
 
     /**
-     * Undocumented function
+     * Send otp login
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
     public function sendotplogin(Request $request)
@@ -57,7 +66,7 @@ class StudentSignInController extends Controller
             $curl_url = $api_URL . 'api/Otp/' . $email_or_mobile;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -67,7 +76,8 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -101,9 +111,10 @@ class StudentSignInController extends Controller
     }
 
     /**
-     * Undocumented function
+     * Verify otp login
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
     public function verifyotplogin(Request $request)
@@ -128,7 +139,7 @@ class StudentSignInController extends Controller
                 $curl_url = $api_URL . 'api/studentlogin';
 
                 $curl = curl_init();
-                curl_setopt_array($curl, array(
+                $curl_option = array(
                     CURLOPT_URL => $curl_url,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_FAILONERROR => true,
@@ -142,7 +153,8 @@ class StudentSignInController extends Controller
                         "cache-control: no-cache",
                         "content-type: application/json"
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response_json = curl_exec($curl);
 
@@ -180,11 +192,11 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
-
     /**
-     * Undocumented function
+     * Send otp signup
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
     public function sendotpsignup(Request $request)
@@ -202,7 +214,7 @@ class StudentSignInController extends Controller
             $curl_url = $api_URL . 'api/register-otp';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -216,7 +228,8 @@ class StudentSignInController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -249,7 +262,13 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Verify Otp Register
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function verifyOtpRegister(Request $request)
     {
         try {
@@ -280,7 +299,7 @@ class StudentSignInController extends Controller
                     $curl_url = $api_URL . 'api/student-signup';
 
                     $curl = curl_init();
-                    curl_setopt_array($curl, array(
+                    $curl_option = array(
                         CURLOPT_URL => $curl_url,
                         CURLOPT_RETURNTRANSFER => true,
                         CURLOPT_FAILONERROR => true,
@@ -294,7 +313,8 @@ class StudentSignInController extends Controller
                             "cache-control: no-cache",
                             "content-type: application/json"
                         ),
-                    ));
+                    );
+                    curl_setopt_array($curl, $curl_option);
 
                     $response_json = curl_exec($curl);
 
@@ -349,6 +369,10 @@ class StudentSignInController extends Controller
 
     /**
      * Country List
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
      */
     public function countryList(Request $request)
     {
@@ -359,7 +383,7 @@ class StudentSignInController extends Controller
             $curl_url = $api_URL . 'api/get-country';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -369,7 +393,8 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -391,11 +416,11 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
-
     /**
-     * get State List with Country
+     * State List
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
     public function stateList(Request $request)
@@ -409,7 +434,7 @@ class StudentSignInController extends Controller
             $curl_url = $api_URL . 'api/get-state/' . $country;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -418,7 +443,8 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -457,10 +483,10 @@ class StudentSignInController extends Controller
     }
 
     /**
-     * Undocumented function
-     * get city List of selected state
+     * City List
      *
-     * @param Request $request
+     * @param Request $request recieve the body request data
+     *
      * @return void
      */
     public function cityList(Request $request)
@@ -476,7 +502,7 @@ class StudentSignInController extends Controller
             $curl_url = str_replace(" ", '%20', $curl_url);
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -486,7 +512,8 @@ class StudentSignInController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -497,10 +524,6 @@ class StudentSignInController extends Controller
             $aResponse = json_decode($response_json);
             $success = isset($aResponse->success) ? $aResponse->success : false;
             $city_list = isset($aResponse->response) ? $aResponse->response : false;
-
-            /* if (!empty($search)) {
-            $city_list = $this->Search($search, $city_list);
-            } */
 
             sort($city_list);
             $sOption = '';
@@ -523,9 +546,15 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    /* function search value in array */
-    public function Search($search, $array)
+    /**
+     * Search
+     *
+     * @param mixed $search search data
+     * @param mixed $array  filter array
+     *
+     * @return void
+     */
+    public function search($search, $array)
     {
         try {
             $search = strtolower($search);
@@ -546,8 +575,13 @@ class StudentSignInController extends Controller
         }
     }
 
-    /* signup user address data */
-
+    /**
+     * Signup Address
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function signupAddress(Request $request)
     {
         try {
@@ -566,7 +600,7 @@ class StudentSignInController extends Controller
             $curl_url = $api_URL . 'api/update-address';
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -580,7 +614,8 @@ class StudentSignInController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
 
@@ -599,7 +634,7 @@ class StudentSignInController extends Controller
                 $curl_url = $api_URL . 'api/insert-referr-student';
 
                 $curl = curl_init();
-                curl_setopt_array($curl, array(
+                $curl_option = array(
                     CURLOPT_URL => $curl_url,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_FAILONERROR => true,
@@ -613,17 +648,15 @@ class StudentSignInController extends Controller
                         "cache-control: no-cache",
                         "content-type: application/json",
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response_json = curl_exec($curl);
                 $err = curl_error($curl);
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);
                 if ($httpcode == 400 || $httpcode == 422) {
-                    return json_encode(array(
-                        'success' => false,
-                        'message' => $httpcode
-                    ));
+                    return json_encode(array('success' => false,'message' => $httpcode));
                 }
             }
             if ($success == false) {
@@ -640,6 +673,13 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
+    /**
+     * Search City
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function searchCity(Request $request)
     {
         try {
@@ -653,12 +693,12 @@ class StudentSignInController extends Controller
                     }
                     return false;
                 });
-             $result = $this->customeSort($result,$search);
+                $result = $this->customeSort($result, $search);
             } else {
                 $result = $city_list;
                 sort($result);
             }
-            
+
             $sOption = '';
             foreach ($result as $kCity => $oCity) {
                 $sOption .= '<li onClick="selectCity(`' . $oCity . '`)">' . $oCity . '</li>';
@@ -669,19 +709,26 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
-    public function customeSort($arrayData,$search)
+    /**
+     * Custome Sort
+     *
+     * @param mixed $arrayData array data for sort
+     * @param mixed $search    search value
+     *
+     * @return void
+     */
+    public function customeSort($arrayData, $search)
     {
         $match_array = array();
         $not_match = array();
-        foreach($arrayData as $key=>$value)
-        {
+        foreach ($arrayData as $key=>$value) {
             $char_len=strlen($search);
-            if(strtolower(substr($value, 0,$char_len)) === strtolower($search)) {
+            if (strtolower(substr($value, 0, $char_len)) === strtolower($search)) {
                 $match_array[] = $value;
-            }else {
+            } else {
                 $not_match[] = $value;
             }
         }
-        return array_merge($match_array,$not_match);
+        return array_merge($match_array, $not_match);
     }
 }
