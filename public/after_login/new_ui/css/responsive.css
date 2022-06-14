@@ -109,6 +109,22 @@ margin-right: 5px!important;
 }
 .sub-subject strong{font-size: 16px;}
 }
+
+@media screen and (max-width: 1366px), 
+       screen and (max-height: 768px) {
+        .col_min {
+           
+            margin-bottom: 0px !important;
+        }
+        .planmner-block.planner-scheduar-block .planner-scroll {
+            overflow-y: auto;
+            max-height: calc(100vh - 245px);
+        }
+   
+}
+
+
+
 @media(min-width:1316px) and (max-width:1440px) {
 .garphlistincom+.garphlistincom{margin-left:8px;}
 .exam-analytics .abrv-graph{padding-right:2px;}
