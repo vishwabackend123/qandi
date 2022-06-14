@@ -48,8 +48,8 @@ $userData = Session::get('user_data');
                                     @php
                                     $latest_year = date('Y');
                                     @endphp
-                                    <select class="form-control" id="filter_year">
-                                        <option value="">Select Year</option>
+                                    <select class="form-control form-select" id="filter_year">
+                                        <option value="">Select Year </option>
 
                                         @if(!empty($years_list))
                                         @foreach($years_list as $yr)
@@ -59,10 +59,10 @@ $userData = Session::get('user_data');
                                     </select>
                                 </div>
                                 <div class="">
-                                    @if(!empty($result_data))
+                                    @if(!empty($upcomming_live_exam))
 
                                     <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
-                                        @foreach($result_data as $sche)
+                                        @foreach($upcomming_live_exam as $sche)
                                         <ul class="speci-text compLeteS filter_data_{{$sche->paper_year}}">
                                             <li class="a1TS"> <span class="sub-details">{{$sche->paper_name}}</span>
                                             </li>

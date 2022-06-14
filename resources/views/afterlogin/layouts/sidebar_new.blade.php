@@ -290,7 +290,6 @@
                     <path id="Line_5" data-name="Line 5" d="M3,3.75a.748.748,0,0,1-.53-.22l-3-3A.75.75,0,0,1-.53-.53.75.75,0,0,1,.53-.53l3,3A.75.75,0,0,1,3,3.75Z" transform="translate(16.395 5)" />
                 </svg>
                 Mock Test</a>
-
             <a href="{{route('live_exam_list')}}" class="nav-link">
                 <svg id="Icon_Live_Exam" data-name="Icon / Live Exam" xmlns="http://www.w3.org/2000/svg" width="21.475" height="24" viewBox="0 0 21.475 24">
                     <defs>
@@ -305,6 +304,20 @@
                     <path id="Rectangle_12" data-name="Rectangle 12" d="M1-.75H6A1.752,1.752,0,0,1,7.75,1V4A1.752,1.752,0,0,1,6,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm5,5A.25.25,0,0,0,6.25,4V1A.25.25,0,0,0,6,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(12.263 14)" />
                 </svg>
                 Live</a>
+            <a href="{{route('previous_year_exam')}}" class="nav-link">
+                <svg id="Icon_Live_Exam" data-name="Icon / Live Exam" xmlns="http://www.w3.org/2000/svg" width="21.475" height="24" viewBox="0 0 21.475 24">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: none;
+                            }
+                        </style>
+                    </defs>
+                    <path id="Path_139" data-name="Path 139" class="cls-1" d="M0,0H21.474V24H0Z" />
+                    <path id="Path_140" data-name="Path 140" d="M10.158,19.75H4.789A2.654,2.654,0,0,1,2.25,17V7A2.654,2.654,0,0,1,4.789,4.25H17.316A2.654,2.654,0,0,1,19.855,7v4a.75.75,0,0,1-1.5,0V7a1.161,1.161,0,0,0-1.039-1.25H4.789A1.161,1.161,0,0,0,3.75,7V17a1.161,1.161,0,0,0,1.039,1.25h5.368a.75.75,0,1,1,0,1.5Z" transform="translate(-0.316)" />
+                    <path id="Rectangle_12" data-name="Rectangle 12" d="M1-.75H6A1.752,1.752,0,0,1,7.75,1V4A1.752,1.752,0,0,1,6,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm5,5A.25.25,0,0,0,6.25,4V1A.25.25,0,0,0,6,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(12.263 14)" />
+                </svg>
+                Previous Year Exam</a>
         </div>
     </div>
     <div class="submenu-L2 collapse width" id="submenu2">
@@ -347,28 +360,27 @@
                     <path id="Line_368" data-name="Line 368" d="M0,13.75A.75.75,0,0,1-.75,13V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V13A.75.75,0,0,1,0,13.75Z" transform="translate(21 6)" />
                 </svg> Test Series</a>
             {{-- <a href="{{ url('/exam_result_list/Assessment') }}" class="nav-link">
-            <svg id="Icon_Custom_Exam" data-name="Icon / Custom Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <defs>
-                    <style>
-                        .cls-1 {
+                <svg id="Icon_Custom_Exam" data-name="Icon / Custom Exam" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <defs>
+                        <style>
+                            .cls-1 {
                             fill: none;
                         }
                     </style>
-                </defs>
-                <path id="Path_194" data-name="Path 194" class="cls-1" d="M0,0H24V24H0Z" />
-                <path id="Rectangle_15" data-name="Rectangle 15" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(4 6)" />
-                <path id="Line_95" data-name="Line 95" d="M0,2.75A.75.75,0,0,1-.75,2V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V2A.75.75,0,0,1,0,2.75Z" transform="translate(6 4)" />
-                <path id="Line_96" data-name="Line 96" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(6 11)" />
-                <path id="Rectangle_16" data-name="Rectangle 16" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(10 14)" />
-                <path id="Line_97" data-name="Line 97" d="M0,10.75A.75.75,0,0,1-.75,10V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V10A.75.75,0,0,1,0,10.75Z" transform="translate(12 4)" />
-                <path id="Line_98" data-name="Line 98" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(12 19)" />
-                <path id="Rectangle_17" data-name="Rectangle 17" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V5A1.752,1.752,0,0,1,3,6.75H1A1.752,1.752,0,0,1-.75,5V1A1.752,1.752,0,0,1,1-.75Zm2,6A.25.25,0,0,0,3.25,5V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V5A.25.25,0,0,0,1,5.25Z" transform="translate(16 5)" />
-                <path id="Line_99" data-name="Line 99" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(18 4)" />
-                <path id="Line_100" data-name="Line 100" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(18 11)" />
-            </svg> Custom Attempted</a> --}}
+                    </defs>
+                    <path id="Path_194" data-name="Path 194" class="cls-1" d="M0,0H24V24H0Z" />
+                    <path id="Rectangle_15" data-name="Rectangle 15" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(4 6)" />
+                    <path id="Line_95" data-name="Line 95" d="M0,2.75A.75.75,0,0,1-.75,2V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V2A.75.75,0,0,1,0,2.75Z" transform="translate(6 4)" />
+                    <path id="Line_96" data-name="Line 96" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(6 11)" />
+                    <path id="Rectangle_16" data-name="Rectangle 16" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V4A1.752,1.752,0,0,1,3,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm2,5A.25.25,0,0,0,3.25,4V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(10 14)" />
+                    <path id="Line_97" data-name="Line 97" d="M0,10.75A.75.75,0,0,1-.75,10V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V10A.75.75,0,0,1,0,10.75Z" transform="translate(12 4)" />
+                    <path id="Line_98" data-name="Line 98" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(12 19)" />
+                    <path id="Rectangle_17" data-name="Rectangle 17" d="M1-.75H3A1.752,1.752,0,0,1,4.75,1V5A1.752,1.752,0,0,1,3,6.75H1A1.752,1.752,0,0,1-.75,5V1A1.752,1.752,0,0,1,1-.75Zm2,6A.25.25,0,0,0,3.25,5V1A.25.25,0,0,0,3,.75H1A.25.25,0,0,0,.75,1V5A.25.25,0,0,0,1,5.25Z" transform="translate(16 5)" />
+                    <path id="Line_99" data-name="Line 99" d="M0,1.75A.75.75,0,0,1-.75,1V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V1A.75.75,0,0,1,0,1.75Z" transform="translate(18 4)" />
+                    <path id="Line_100" data-name="Line 100" d="M0,9.75A.75.75,0,0,1-.75,9V0A.75.75,0,0,1,0-.75.75.75,0,0,1,.75,0V9A.75.75,0,0,1,0,9.75Z" transform="translate(18 11)" />
+                </svg> Custom Attempted</a> --}}
         </div>
     </div>
-
     <div class="submenu-L1 collapse width" id="submenupreparation">
         <div class="mt-5 mb-5 pb-5 pt-5"></div>
         <div class=" d-flex  flex-column h-100 mt-5 pt-4   text-start sublinks">
@@ -478,9 +490,9 @@
                         <div class="re_link">
                             <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly />
                             <a class="copylinkbtn" type="button" onclick="copylinkfunction()">
-                            <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
-                            <img src="{{URL::asset('public/after_login/new_ui/images/copyicon.png')}}" style="width: 12px;margin-right: 8px;">
-                             Copy </a>
+                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                <img src="{{URL::asset('public/after_login/new_ui/images/copyicon.png')}}" style="width: 12px;margin-right: 8px;">
+                                Copy </a>
                         </div>
                     </div>
                 </form>
@@ -489,48 +501,51 @@
     </div>
 </div>
 <script>
-    let input = document.querySelector(".emaillink");
-    let button = document.querySelector(".remove-stuff");
-    //button.disabled = true;
-    input.addEventListener("change", stateHandle);
+let input = document.querySelector(".emaillink");
+let button = document.querySelector(".remove-stuff");
+//button.disabled = true;
+input.addEventListener("change", stateHandle);
 
-    function stateHandle() {
-        if (document.querySelector(".emaillink").value === "") {
-            //button.disabled = true;
-            button.disabled = false;
-        } else {
-            button.disabled = false;
-        }
+function stateHandle() {
+    if (document.querySelector(".emaillink").value === "") {
+        //button.disabled = true;
+        button.disabled = false;
+    } else {
+        button.disabled = false;
     }
+}
+
 </script>
 <script>
-    function copylinkfunction() {
-        /* Get the text field */
-        var copyText = document.getElementById("linkInput");
+function copylinkfunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("linkInput");
 
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-        /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
-        $(".successRef_copy").text("Copied!");
-        $(".successRef_copy").addClass('showmessage');
-        setTimeout(function() {
-            // $('.successRef_copy').fadeOut('fast');
-            $(".successRef_copy").removeClass('showmessage');
-        }, 4000);
-    }
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+    $(".successRef_copy").text("Copied!");
+    $(".successRef_copy").addClass('showmessage');
+    setTimeout(function() {
+        // $('.successRef_copy').fadeOut('fast');
+        $(".successRef_copy").removeClass('showmessage');
+    }, 4000);
+}
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-    $(".remove-stuff").click(function() {
-        //$(".emaillinkholder").hide();
-        //$(".onsendshow").show();
-    });
+$(".remove-stuff").click(function() {
+    //$(".emaillinkholder").hide();
+    //$(".onsendshow").show();
+});
 
-    $(".backtobtn").click(function() {
-        $(".emaillinkholder").show();
-        $(".onsendshow").hide();
-    });
+$(".backtobtn").click(function() {
+    $(".emaillinkholder").show();
+    $(".onsendshow").hide();
+});
+
 </script>

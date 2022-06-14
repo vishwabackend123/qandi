@@ -80,15 +80,15 @@ class FullExamController extends Controller
             curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
-            $response_json = str_replace('NaN', '""', $response_json);
+
 
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
 
             if ($httpcode == 200) {
-                $responsedata = json_decode($response_json);
 
+                $responsedata = json_decode($response_json);
                 $aQuestions_list = $responsedata->questions_list;
 
                 //$exam_fulltime = $responsedata->time_allowed;
@@ -176,6 +176,7 @@ class FullExamController extends Controller
             Redis::set('exam_name' . $user_id, $exam_name);
             return view('afterlogin.ExamViews.exam', compact('filtered_subject', 'tagrets', 'question_data', 'option_data', 'keys', 'activeq_id', 'next_qid', 'prev_qid', 'questions_count', 'exam_fulltime', 'exam_ques_count', 'exam_name', 'activesub_id', 'test_type', 'exam_type', 'exam_mode', 'series_id'));
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
