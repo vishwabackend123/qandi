@@ -48,8 +48,8 @@ $userData = Session::get('user_data');
                                     @php
                                     $latest_year = date('Y');
                                     @endphp
-                                    <select class="form-control" id="filter_year">
-                                        <option value="">Select Year</option>
+                                    <select class="form-control form-select" id="filter_year">
+                                        <option value="">Select Year </option>
 
                                         @if(!empty($years_list))
                                         @foreach($years_list as $yr)
