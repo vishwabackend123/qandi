@@ -634,7 +634,7 @@ min-width: 100%;
 .practice_custom_page .cust-tab-content .custom-btn-gray{margin: 10px 0;}
 .practice-series-lists .live-exam .speci-text{display:inline-block;}
 #scroll-mobile .nav.nav-tabs.cust-tabs {
-    width: 500px;
+    width: 500px !important;
 }
 }
 @media(max-width:550px){
