@@ -60,6 +60,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 <div class="">
                                     @if(!empty($upcomming_live_exam))
+
                                     <div class="scroll-div-live-exm p-4 listing-details pb-0 mb-3 pt-0">
                                         @foreach($upcomming_live_exam as $sche)
                                         <ul class="speci-text compLeteS filter_data_{{$sche->paper_year}}">

@@ -489,6 +489,7 @@ div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .p
 
 }
 @media(max-width:700px){
+.mocktest-attempted-wrapper .result-list .d-flex.justify-content-between {flex-direction: initial;}
 .result-list .d-flex.justify-content-between {
 flex-direction: column;
 align-items: flex-start !important;
@@ -519,6 +520,13 @@ vertical-align: top;
 .exam_attempted_common_page .compLeteS .collapse .full-syllabus .d-flex.paper-summery{display: block!important;}
 .live-exam-list-wrapper .exam_card .d-flex.align-items-center.justify-content-between.mb-4{display: block!important;}
 .cust-pd-rt {padding-right:0px;}
+.dashboard-cards-block #score_block .col-lg-8 .col-md-8 .flex-column .btn-block .col{
+    padding-left: 2px;
+    padding-right: 2px;}
+.exam-analytics button.top-btn-pop{
+font-size:10px;
+}
+
 }
 @media(max-width:576px){
 .cust-gallery .swiper-slide {
