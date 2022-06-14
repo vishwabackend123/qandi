@@ -14,18 +14,37 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Traits\CommonTrait;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * ReviewController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ * */
 class ReviewController extends Controller
 {
-    //
     use CommonTrait;
-
+    /**
+     * Review
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function review(Request $request)
     {
         return view('afterlogin.ExamCustom.review');
     }
-
-    /* creating review with api */
-
+    /**
+     * Get Review
+     *
+     * @param mixed $result_id result id
+     * @param mixed $pageName  page name
+     *
+     * @return void
+     */
     public function getReview($result_id, $pageName = "")
     {
         try {
@@ -46,8 +65,7 @@ class ReviewController extends Controller
                 $api_URL = env('API_URL');
 
                 $curl_url = $api_URL . 'api/question-reviews/' . $result_id;
-                curl_setopt_array($curl, array(
-                    //CURLOPT_URL => config('constants.API_php_URL_local') . "get_review/" . $result_id, //local
+                $curl_option = array(
                     CURLOPT_URL =>  $curl_url, //live
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => "",
@@ -62,7 +80,8 @@ class ReviewController extends Controller
                         "content-type: application/json",
 
                     ),
-                ));
+                );
+                curl_setopt_array($curl, $curl_option);
 
                 $response = curl_exec($curl);
 
@@ -80,16 +99,8 @@ class ReviewController extends Controller
 
             if (isset($result_response->all_question) && !empty($result_response->all_question)) {
                 $collection = collect($result_response->all_question);
-
-
-                // $grouped = $collection->groupBy('subject_id');
                 $subject_ids = $collection->pluck('subject_id');
 
-                /* if (count($grouped) > 1) {
-                    $aQuestionslist = $collection->sortBy('subject_id');
-                } else {
-                    $aQuestionslist = $collection->sortBy('question_id');
-                } */
                 $aQuestionslist = $collection;
                 $subject_list = $subject_ids->unique()->values()->all();
 
@@ -100,16 +111,9 @@ class ReviewController extends Controller
                 $all_data = collect($result_response->all_question);
 
                 $all_question_list = $aQuestionslist->all();
-
-
-
-
                 $collection = collect($all_question_list);
-
                 $allQuestions = $aQuestionslist->keyBy('question_id');
                 $keys = $allQuestions->keys('question_id')->all();
-
-                //$first = $result_response->first;
                 $first = isset($keys[0]) ? $keys[0] : $result_response->first;
 
 
@@ -163,34 +167,11 @@ class ReviewController extends Controller
                 $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
 
                 $question_id_array[] = $q_id;
-                //$publicPath = url('/') . '/public/images/questions/';
-                /*  $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                if ((strpos($question, $word1) !== false)) {
-                    $question_data->question = str_replace($word1, $publicPath, $question_data->question);
-                } elseif ((strpos($question, $word2) !== false)) {
-                    $question_data->question = str_replace($word2, $publicPath, $question_data->question);
-                }
-                if ((strpos($reference_text, $word1) !== false)) {
-                    $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
-                } elseif ((strpos($reference_text, $word2) !== false)) {
-                    $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
-                }
-                if ((strpos($explanation, $word1) !== false)) {
-                    $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
-                } elseif ((strpos($explanation, $word2) !== false)) {
-                    $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-                } */
+
                 $tempdata = (array)json_decode($question_data->question_options);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
-
-                        /* if ((strpos($option, $word1) !== false)) {
-                            $option = str_replace($word1, $publicPath, $option);
-                        } elseif ((strpos($option, $word2) !== false)) {
-                            $option = str_replace($word2, $publicPath, $option);
-                        } */
-
                         $opArr[$key] = $option;
                     }
                 }
@@ -236,9 +217,14 @@ class ReviewController extends Controller
             return Redirect::back()->withErrors(['There is some error  for this result id.']);
         }
     }
-
-
-    public function next_review_question($question_id)
+    /**
+     * Next review question
+     *
+     * @param mixed $question_id question id
+     *
+     * @return void
+     */
+    public function nextReviewQuestion($question_id)
     {
         try {
             $userData = Session::get('user_data');
@@ -340,8 +326,15 @@ class ReviewController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-    public function ajax_review_next_subject_question($subject_id, Request $request)
+    /**
+     * Ajax review next subject question
+     *
+     * @param mixed   $subject_id subject id
+     * @param Request $request    recieve the body request data
+     *
+     * @return void
+     */
+    public function ajaxReviewNextSubjectQuestion($subject_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -406,41 +399,16 @@ class ReviewController extends Controller
                 $question_data->chapter_name = $chapter_name;
 
                 $question_id_array[] = $q_id;
-                //$publicPath = url('/') . '/public/images/questions/';
-                /* $publicPath = 'https://admin.uniqtoday.com' . '/public/images/questions/';
-                if ((strpos($question, $word1) !== false)) {
-                    $question_data->question = str_replace($word1, $publicPath, $question_data->question);
-                } elseif ((strpos($question, $word2) !== false)) {
-                    $question_data->question = str_replace($word2, $publicPath, $question_data->question);
-                }
-                if ((strpos($reference_text, $word1) !== false)) {
-                    $question_data->reference_text = str_replace($word1, $publicPath, $question_data->reference_text);
-                } elseif ((strpos($reference_text, $word2) !== false)) {
-                    $question_data->reference_text = str_replace($word2, $publicPath, $question_data->reference_text);
-                }
-                if ((strpos($explanation, $word1) !== false)) {
-                    $question_data->explanation = str_replace($word1, $publicPath, $question_data->explanation);
-                } elseif ((strpos($explanation, $word2) !== false)) {
-                    $question_data->explanation = str_replace($word2, $publicPath, $question_data->explanation);
-                } */
+
                 $tempdata = (array)json_decode($question_data->question_options);
                 $opArr = [];
                 if (isset($tempdata) && is_array($tempdata)) {
                     foreach ($tempdata as $key => $option) {
-
-                        /*  if ((strpos($option, $word1) !== false)) {
-                            $option = str_replace($word1, $publicPath, $option);
-                        } else if ((strpos($option, $word2) !== false)) {
-                            $option = str_replace($word2, $publicPath, $option);
-                        } */
                         $opArr[$key] = $option;
                     }
                 }
             }
             $question_data->question_options = json_encode($opArr);
-
-
-
 
             if ($template_type == 1 || $template_type == 2) {
                 $attempt_opt = isset($question_data->option_id) ? (array)json_decode($question_data->option_id) : [];
@@ -465,9 +433,14 @@ class ReviewController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-    public function filter_review_question($filter_by)
+    /**
+     * Filter review question
+     *
+     * @param mixed $filter_by filter by
+     *
+     * @return void
+     */
+    public function filterReviewQuestion($filter_by)
     {
         try {
             $userData = Session::get('user_data');
@@ -508,33 +481,16 @@ class ReviewController extends Controller
 
                 if ($filter_by != 'all') {
                     $aQuestionslist = $afterSort->where('attempt_status', $filter_by);
-                    $aQuestionslist = $aQuestionslist->sortBy([
-                        ['attempt_status', $filter_by]
-                    ]);
+                    $aQuestionslist = $aQuestionslist->sortBy([['attempt_status', $filter_by]]);
                     $filtered =   $aQuestionslist->filter(function ($value, $filter_by) {
                         return $value;
                     });
 
                     $all_question_list = $filtered->sortBy('seq')->all();
-                /* if ($filter_by == "Correct") {
-                    $statusPriorities = ["Correct", "Incorrect", "Unanswered", ""];
-                } elseif ($filter_by == "Incorrect") {
-                    $statusPriorities = ["Incorrect", "Correct", "Unanswered", ""];
-                } elseif ($filter_by == "Unanswered") {
-                    $statusPriorities = ["Unanswered", "Incorrect", "Correct",  ""];
-                }
-
-                $all_question_list =  $aQuestionslist->sortBy(function ($order) use ($statusPriorities) {
-
-                    return array_search($order->attempt_status, $statusPriorities);
-                })->values()->all(); */
                 } else {
                     $all_question_list = $aQuestionslist->sortBy('seq')->all();
                 }
             }
-
-
-
             return view('afterlogin.ExamCustom.review_question_filter', compact('all_question_list'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
