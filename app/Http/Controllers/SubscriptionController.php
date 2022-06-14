@@ -21,9 +21,17 @@ use Carbon\Carbon;
 use App\Models\UserPurchase;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * SubscriptionController
+ *
+ * @category MyClass
+ * @package  MyPackage
+ * @author   Vishwa <Vishvamitra.yadav@vlinkinfo.com>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     http://localhost
+ * */
 class SubscriptionController extends Controller
 {
-    //
     use CommonTrait;
 
     /**
@@ -35,11 +43,10 @@ class SubscriptionController extends Controller
     {
     }
 
-
     /**
-     * Show the subscription packages.
+     * Index
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return void
      */
     public function index()
     {
@@ -53,8 +60,7 @@ class SubscriptionController extends Controller
             $curl1 = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/subscription-packages/' . $user_id;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -64,7 +70,8 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -95,8 +102,7 @@ class SubscriptionController extends Controller
             /*trial link*/
 
             $curl_url1 = $api_URL . 'api/subscriptions/' . $user_id;
-
-            curl_setopt_array($curl1, array(
+            $curl_option =array(
 
                 CURLOPT_URL => $curl_url1,
                 CURLOPT_RETURNTRANSFER => true,
@@ -106,7 +112,8 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl1, $curl_option);
 
             $response_json1 = curl_exec($curl1);
             $err1 = curl_error($curl1);
@@ -173,13 +180,17 @@ class SubscriptionController extends Controller
         }
     }
 
-
     /**
-     * Show the subscription packages.
+     * Trial subscription
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param mixed   $sub_id    subject id
+     * @param mixed   $exam_year exam year
+     * @param mixed   $exam_id   exam id
+     * @param Request $request   recieve the body request data
+     *
+     * @return void
      */
-    public function trial_subscription($sub_id, $exam_year, $exam_id, Request $request)
+    public function trialSubscription($sub_id, $exam_year, $exam_id, Request $request)
     {
         try {
             $userData = Session::get('user_data');
@@ -199,8 +210,7 @@ class SubscriptionController extends Controller
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/save-trial-subscription';
 
-
-            curl_setopt_array($curl, array(
+            $curl_option =  array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -214,7 +224,8 @@ class SubscriptionController extends Controller
                     "accept: application/json",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $order_response_json = curl_exec($curl);
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -226,11 +237,6 @@ class SubscriptionController extends Controller
             $response_status = isset($aResponse->success) ? $aResponse->success : false;
 
             if ($response_status == true) {
-                /*  Session::forget('user_data');
-                $user_Data = Auth::user();
-                Session::put('user_data', $user_Data);
-                $userData = Session::get('user_data');
- */
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
                 Session::put('user_data', $sessionData);
@@ -243,12 +249,12 @@ class SubscriptionController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
     /**
-     * Show the subscription packages details for checkout.
+     * Check out
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param Request $request recieve the body request data
+     *
+     * @return void
      */
     public function checkout(Request $request)
     {
@@ -288,9 +294,7 @@ class SubscriptionController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/payment/order-id';
-
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -304,7 +308,8 @@ class SubscriptionController extends Controller
                     "accept: application/json",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $order_response_json = curl_exec($curl);
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -323,7 +328,7 @@ class SubscriptionController extends Controller
             $curl_url = $api_URL . 'api/subscription-package-detail/' . $subscript_id;
 
             $curl = curl_init();
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -333,7 +338,8 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $package_response_json = curl_exec($curl);
             $err = curl_error($curl);
@@ -353,11 +359,22 @@ class SubscriptionController extends Controller
             Log::info($e->getMessage());
         }
     }
-
+    /**
+     * Refund Form
+     *
+     * @return void
+     */
     public function refundForm()
     {
         return view('afterlogin.refund_form');
     }
+    /**
+     * Refund Form Submit
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function refundFormSubmit(Request $request)
     {
         try {
@@ -381,8 +398,7 @@ class SubscriptionController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/student-refund';
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -396,7 +412,8 @@ class SubscriptionController extends Controller
                     "accept: application/json",
                     "content-type: application/json"
                 ),
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
             $response_json = curl_exec($curl);
 
             $err = curl_error($curl);
@@ -415,6 +432,13 @@ class SubscriptionController extends Controller
             Log::info($e->getMessage());
         }
     }
+    /**
+     * Validat Discount Code
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
     public function validatDiscountCode(Request $request)
     {
         $rquestData = $request->all();
@@ -432,6 +456,13 @@ class SubscriptionController extends Controller
             ]);
         }
     }
+    /**
+     * Ajax Validate Coupon Code
+     *
+     * @param mixed $couponCode coupon code
+     *
+     * @return void
+     */
     public function ajaxValidateCouponCode($couponCode)
     {
         try {
@@ -439,8 +470,7 @@ class SubscriptionController extends Controller
             $curl1 = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/coupon/' . $couponCode;
-
-            curl_setopt_array($curl, array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -450,7 +480,8 @@ class SubscriptionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
-            ));
+            );
+            curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
             $err = curl_error($curl);
