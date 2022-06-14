@@ -114,11 +114,19 @@ margin-right: 5px!important;
        screen and (max-height: 768px) {
         .col_min {
            
-            margin-bottom: 0px !important;
+            margin-bottom: 15px !important;
         }
         .planmner-block.planner-scheduar-block .planner-scroll {
             overflow-y: auto;
             max-height: calc(100vh - 245px);
+        }
+        #collapsePlanner .add-removeblock {
+            
+            margin-top: 0px;
+          
+        }
+        .subject_chapter .chaptbox {
+            max-height: 100px;
         }
    
 }
