@@ -16,6 +16,10 @@ button {
 .previous_year_exam_page .exam_attempted_common_page .paper-summery .paper-sub:first-child {
     flex: 1;
 }
+.button-sec.mt-3 a:hover {
+    background: #00baff;
+    color: #fff;
+}
 .previous_year_exam_page .cust-tab-content {padding: 0px 30px !important;}
 .previous_year_exam_page .exam_attempted_common_page .score-show{flex: 2;}
 button.custom-btn-gray.goto-planner-btn:hover {
