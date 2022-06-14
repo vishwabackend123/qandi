@@ -106,17 +106,17 @@ Route::any('/filter_subject_chapter/{subject_id}', [App\Http\Controllers\ExamCus
 
 /* Review Controller Routs */
 Route::any('/exam_review/{result_id}/{pageName?}', [App\Http\Controllers\ReviewController::class, 'getReview'])->name('exam_review')->middleware('auth', 'menu');
-Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewController::class, 'next_review_question'])->name('next_review_question')->middleware('auth', 'menu');
-Route::any('/ajax_review_next_subject_question/{subject_id}', [App\Http\Controllers\ReviewController::class, 'ajax_review_next_subject_question'])->name('ajax_review_next_subject_question')->middleware('auth', 'menu');
-Route::any('/filter_review_question/{filter}', [App\Http\Controllers\ReviewController::class, 'filter_review_question'])->name('filter_review_question')->middleware('auth', 'menu');
+Route::any('/next_review_question/{question_id}', [App\Http\Controllers\ReviewController::class, 'nextReviewQuestion'])->name('next_review_question')->middleware('auth', 'menu');
+Route::any('/ajax_review_next_subject_question/{subject_id}', [App\Http\Controllers\ReviewController::class, 'ajaxReviewNextSubjectQuestion'])->name('ajax_review_next_subject_question')->middleware('auth', 'menu');
+Route::any('/filter_review_question/{filter}', [App\Http\Controllers\ReviewController::class, 'filterReviewQuestion'])->name('filter_review_question')->middleware('auth', 'menu');
 
 /* Review Controller Routs */
 Route::any('/exam_result', [App\Http\Controllers\ResultController::class, 'examResult'])->name('exam_result')->middleware('auth', 'menu');
 /* Route::any('/exam_result_analysis', [App\Http\Controllers\ResultController::class, 'exam_post_analysis'])->name('exam_result_analysis')->middleware('auth', 'menu');
  */
-Route::any('/exam_result_analysis_score', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_score'])->name('exam_result_analysis_score')->middleware('auth', 'menu');
-Route::any('/exam_result_analysis_attempt', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_attempt'])->name('exam_result_analysis_attempt')->middleware('auth', 'menu');
-Route::any('/exam_result_analysis_rank', [App\Http\Controllers\ResultController::class, 'exam_post_analysis_rank'])->name('exam_result_analysis_rank')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_score', [App\Http\Controllers\ResultController::class, 'examPostAnalysisScore'])->name('exam_result_analysis_score')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_attempt', [App\Http\Controllers\ResultController::class, 'examPostAnalysisAttempt'])->name('exam_result_analysis_attempt')->middleware('auth', 'menu');
+Route::any('/exam_result_analysis_rank', [App\Http\Controllers\ResultController::class, 'examPostAnalysisRank'])->name('exam_result_analysis_rank')->middleware('auth', 'menu');
 
 
 
@@ -177,8 +177,8 @@ Route::any('/series_list', [App\Http\Controllers\TestSeriesController::class, 's
 Route::any('/test_series', [App\Http\Controllers\TestSeriesController::class, 'testSeriesExam'])->name('test_series')->middleware('auth', 'menu');
 
 /* Referal Controller Routes */
-Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'store_referral_friend'])->name('store_referral')->middleware('auth', 'menu');
-Route::any('referral/{referral_code}', [App\Http\Controllers\ReferralController::class, 'referral_signup'])->name('referral_signup');
+Route::any('/store_referral', [App\Http\Controllers\ReferralController::class, 'storeReferralFriend'])->name('store_referral')->middleware('auth', 'menu');
+Route::any('referral/{referral_code}', [App\Http\Controllers\ReferralController::class, 'referralSignup'])->name('referral_signup');
 
 //google login Start
 
