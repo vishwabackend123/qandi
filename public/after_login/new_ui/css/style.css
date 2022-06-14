@@ -13,7 +13,11 @@ button {
     outline: none;
     text-decoration: none;
 }
-
+.previous_year_exam_page .exam_attempted_common_page .paper-summery .paper-sub:first-child {
+    flex: 1;
+}
+.previous_year_exam_page .cust-tab-content {padding: 0px 30px !important;}
+.previous_year_exam_page .exam_attempted_common_page .score-show{flex: 2;}
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
