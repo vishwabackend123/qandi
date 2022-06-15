@@ -1485,9 +1485,14 @@ a.export-btn {
 
 div.sublinks a[aria-expanded="true"] {
     background: #00bdff !important;
-    /* color: #fff !important; */
+    color: #fff !important;
 }
-
+div.sublinks a[aria-expanded="true"] svg{
+    opacity: 1;
+}
+div.sublinks a[aria-expanded="true"] svg path{
+   fill: #fff;
+}
 .dashboard-cards-block .bg-white > small p > span img {
     width: 22px !important;
 }
