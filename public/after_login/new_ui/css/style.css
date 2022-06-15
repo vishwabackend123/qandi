@@ -1920,7 +1920,7 @@ span.text-secondary.chapter_name.mb-2.d-block {
     width: calc(50% - 8px);
     margin: 16px 6px 0 0;
     display: inline-flex;
-    align-items: end;
+    align-items: flex-end;
     vertical-align: top;
     cursor: pointer;
 }
