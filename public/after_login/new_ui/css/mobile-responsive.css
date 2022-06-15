@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .topics-box:nth-child(even){
+        flex-direction: row-reverse;
+        }
     .planner-wrapper {
     height: 100vh;
 }
@@ -528,6 +531,10 @@ vertical-align: top;
 .exam-analytics button.top-btn-pop{
 font-size:10px;
 }
+.exam-analytics .col-lg-8 .col-md-8 .flex-column .btn-block .col {
+    padding-left: 2px;
+    padding-right: 2px;
+} 
 
 }
 @media(max-width:576px){
@@ -636,7 +643,7 @@ min-width: 100%;
 .practice_custom_page .cust-tab-content .custom-btn-gray{margin: 10px 0;}
 .practice-series-lists .live-exam .speci-text{display:inline-block;}
 #scroll-mobile .nav.nav-tabs.cust-tabs {
-    width: 500px !important;
+    width: 600px !important;
 }
 }
 @media(max-width:550px){

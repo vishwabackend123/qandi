@@ -72,6 +72,7 @@ class HomeController extends Controller
             $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
+            $prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
 
             if ($student_stage_at_sgnup == 0) {
                 return redirect()->route('studentstandfor');
@@ -219,7 +220,7 @@ class HomeController extends Controller
                 $curl = curl_init();
                 $api_URL = env('API_URL');
                 $curl_prog_url = $api_URL . 'api/studentDashboard/student_progress_journey/' . $user_id;
-                $curl_option =array(
+                $curl_option = array(
 
                     CURLOPT_URL => $curl_prog_url,
                     CURLOPT_RETURNTRANSFER => true,
@@ -283,7 +284,7 @@ class HomeController extends Controller
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
 
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix'));
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -616,7 +617,7 @@ class HomeController extends Controller
             $curl_url = $api_URL . 'api/update_student_token';
 
             $curl = curl_init();
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,

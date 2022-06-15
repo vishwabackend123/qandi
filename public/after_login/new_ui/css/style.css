@@ -1920,7 +1920,7 @@ span.text-secondary.chapter_name.mb-2.d-block {
     width: calc(50% - 8px);
     margin: 16px 6px 0 0;
     display: inline-flex;
-    align-items: end;
+    align-items: flex-end;
     vertical-align: top;
     cursor: pointer;
 }
@@ -5531,8 +5531,8 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
