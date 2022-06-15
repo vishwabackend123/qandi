@@ -570,7 +570,7 @@ $userData = Session::get('user_data');
     </div>
 </div>
 <!-- Full exam popup -->
-@if(isset($prof_asst_test) && $prof_asst_test=='Y')
+@if(isset($prof_asst_test) && $prof_asst_test=='N')
 <div class="modal fade" id="fullTest_Dashboard" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" data-bs-keyboard="false" aria-modal="true" role="dialog" style="display: none; padding-left: 0px;">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -684,7 +684,7 @@ $userData = Session::get('user_data');
         }); */
 
         $(window).on('load', function() {
-            $("#fullTest_Dashboard").modal("show");
+
             if (sessionStorage.getItem('firstVisit') != '1') {
                 $('#trialbox').modal('show');
             }
