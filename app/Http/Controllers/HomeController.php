@@ -324,7 +324,7 @@ class HomeController extends Controller
 
                 $api_URL = env('API_URL');
                 $curl_url = $api_URL . 'api/stage-at-signUp';
-
+                print_r($request_json);die;
                 $curl = curl_init();
                 $curl_option = array(
                     CURLOPT_URL => $curl_url,
