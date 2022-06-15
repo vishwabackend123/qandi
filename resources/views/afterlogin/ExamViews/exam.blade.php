@@ -1,8 +1,16 @@
 @extends('afterlogin.layouts.app_new')
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
 
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState == 'hidden') {
+            stop();
+        }
+    });
+
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
