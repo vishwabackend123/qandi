@@ -531,6 +531,10 @@ vertical-align: top;
 .exam-analytics button.top-btn-pop{
 font-size:10px;
 }
+.exam-analytics .col-lg-8 .col-md-8 .flex-column .btn-block .col {
+    padding-left: 2px;
+    padding-right: 2px;
+}
 
 }
 @media(max-width:576px){
