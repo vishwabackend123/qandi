@@ -6,6 +6,18 @@
     <div id="main" class="subject_screen">
         <div class="row">
             <div class="col-md-12 mx-auto  ">
+                 @if(count($errors) > 0 )
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <ul class="p-0 m-0" style="list-style: none;">
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="bg-white white-box-big" id="chooseSub">
                     <div class="welcome-heading">How far are you in your preparation journey?</div>
                     <p class="welcome-msg text-center">This will help us personalise the Q&I experience for you</p>

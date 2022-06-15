@@ -1780,6 +1780,9 @@ input#search_field::-ms-input-placeholder {
 
 .AttmnowSec button {
     margin-top: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cust-gallery .swiper-slide button.btn.btn-primary.active-btn.text-uppercase {
@@ -5544,7 +5547,7 @@ div#collapseNotification {
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-     
+     animation: none!important;
 }
 
 .notification-right a img {
@@ -9735,3 +9738,4 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     align-items: center;
     justify-content: center;
 }
+.rightSect #form_exam_submit .stop{height:38px}
