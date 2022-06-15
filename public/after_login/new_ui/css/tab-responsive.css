@@ -389,9 +389,7 @@ right: 35px !important;
 .exam_card label {
 font-size: 14px;
 }
-.topics-box:nth-child(even){
-flex-direction: row-reverse;
-}
+
 .myqMatrix-card{
 height: auto !important;
 }
