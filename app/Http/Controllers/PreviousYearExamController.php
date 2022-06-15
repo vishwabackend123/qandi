@@ -80,8 +80,8 @@ class PreviousYearExamController extends Controller
 
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (array)(json_decode($response_json));
-                $upcomming_live_exam = isset($response_data['upcomming-live-exam']) ? $response_data['upcomming-live-exam'] : [];
-                $completed_live_exam = isset($response_data['completed-live-exam']) ? $response_data['completed-live-exam'] : [];
+                $upcomming_live_exam = isset($response_data['paper-list']) ? $response_data['paper-list'] : [];
+                //$completed_live_exam = isset($response_data['completed-live-exam']) ? $response_data['completed-live-exam'] : [];
 
 
 
@@ -92,7 +92,7 @@ class PreviousYearExamController extends Controller
                 $years_list->all();
 
 
-                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'completed_live_exam', 'years_list'));
+                return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'years_list'));
             } else {
                 return Redirect::back()->withErrors(['There is some error  for this result id.']);
             }
