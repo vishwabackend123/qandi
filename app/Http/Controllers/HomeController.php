@@ -212,10 +212,10 @@ class HomeController extends Controller
             $ideal = [];
             $your_place = [];
             $progress_cat = [];
-            if (Session::has('ideal')) {
-                $ideal = Session::get('ideal');
-                $your_place = Session::get('your_place');
-                $progress_cat = Session::get('progress_cat');
+            if (Redis::exists('ideal' . $user_id)) {
+                    $ideal = json_decode(Redis::get('ideal' . $user_id),true);
+                    $your_place =json_decode(Redis::get('your_place' . $user_id),true);
+                    $progress_cat = json_decode(Redis::get('progress_cat' . $user_id),true);
             } else {
                 $curl = curl_init();
                 $api_URL = env('API_URL');
@@ -244,9 +244,12 @@ class HomeController extends Controller
                         array_push($progress_cat, $week);
                         $i++;
                     }
-                    Session::put('ideal', $ideal);
-                    Session::put('your_place', $your_place);
-                    Session::put('progress_cat', $progress_cat);
+                    //Session::put('ideal', $ideal);
+                    //Session::put('your_place', $your_place);
+                    //Session::put('progress_cat', $progress_cat);
+                    Redis::set('ideal' . $user_id, json_encode($ideal));
+                    Redis::set('your_place' . $user_id, json_encode($your_place));
+                    Redis::set('progress_cat' . $user_id, json_encode($progress_cat));
                 }
             }
             $curl = curl_init();
@@ -324,7 +327,6 @@ class HomeController extends Controller
 
                 $api_URL = env('API_URL');
                 $curl_url = $api_URL . 'api/stage-at-signUp';
-
                 $curl = curl_init();
                 $curl_option = array(
                     CURLOPT_URL => $curl_url,
@@ -358,11 +360,11 @@ class HomeController extends Controller
                     return redirect()->route('dashboard');
                 } else {
                     return redirect()
-                        ->back();
+                        ->back()->withErrors(['api issue']);;
                 }
             } else {
                 return redirect()
-                    ->back();
+                    ->back()->withErrors(['empty value']);;
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());

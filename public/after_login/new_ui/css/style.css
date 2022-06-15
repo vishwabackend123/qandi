@@ -1485,9 +1485,14 @@ a.export-btn {
 
 div.sublinks a[aria-expanded="true"] {
     background: #00bdff !important;
-    /* color: #fff !important; */
+    color: #fff !important;
 }
-
+div.sublinks a[aria-expanded="true"] svg{
+    opacity: 1;
+}
+div.sublinks a[aria-expanded="true"] svg path{
+   fill: #fff;
+}
 .dashboard-cards-block .bg-white > small p > span img {
     width: 22px !important;
 }
@@ -1775,6 +1780,9 @@ input#search_field::-ms-input-placeholder {
 
 .AttmnowSec button {
     margin-top: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cust-gallery .swiper-slide button.btn.btn-primary.active-btn.text-uppercase {
@@ -5539,7 +5547,7 @@ div#collapseNotification {
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-     
+     animation: none!important;
 }
 
 .notification-right a img {
@@ -7532,7 +7540,7 @@ label.question.m-0.py-3.d-block .MathJax {
 .dash-sidebar .submenu-L2 {
     position: fixed;
     top: 0;
-    left: 201px;
+    left: 270px;
     bottom: 0;
     height: 100%;
 
@@ -9730,3 +9738,4 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     align-items: center;
     justify-content: center;
 }
+.rightSect #form_exam_submit .stop{height:38px}

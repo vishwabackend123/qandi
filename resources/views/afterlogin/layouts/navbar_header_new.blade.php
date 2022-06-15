@@ -411,7 +411,7 @@
 
 
                         </div>
-                        <div class="row justify-content-center planersavebtn">
+                        <div class="row justify-content-center planersavebtn mb-xl-0 mb-2">
                             <button class="btn greenBtnH rounded-0 text-uppercase px-5 text-white col-xl-3 col-lg-4 col-md-6 tickicon" title="Save Planner" id="saveplannerbutton">
                                 <!-- <img src="{{URL::asset('public/after_login/new_ui/images/rightWhite_ic.png')}}" >  -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="17.299" height="12.989" viewBox="0 0 20.299 15.989">
