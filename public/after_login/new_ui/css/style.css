@@ -3204,7 +3204,7 @@ span.p-icons span:active {
     overflow-y: auto;
     overflow-x: hidden;
     margin-bottom: 10px;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 .chaptbox::-webkit-scrollbar {
