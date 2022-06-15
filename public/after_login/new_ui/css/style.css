@@ -5531,8 +5531,8 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    -webkit-backdrop-filter: blur(13px);
-    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
