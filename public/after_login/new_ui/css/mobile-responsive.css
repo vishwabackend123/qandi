@@ -39,8 +39,8 @@ flex-direction: column;
     text-align: center;
     }
 #time-Avg-quest .bg-white p.fw-bold.text-start, #marKs-trends .bg-white p.fw-bold.text-start{padding-right:24px;}
-div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
-}
+/* div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
+} */
 .chapter_analytics .topic-details.row .col-lg-4{width:100%;}
 .exam-analytics .exam-panel.cust-tabs .nav-item {width:auto;}
 #test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
