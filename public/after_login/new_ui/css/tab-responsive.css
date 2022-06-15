@@ -122,8 +122,6 @@ font-size:14px;
 .cust-tabs.nav.nav-tabs .nav-link{
 min-width:auto;
 font-size: 14px;
-padding-left:17px!important;
-padding-right:17px!important;
 line-height: 35px;
 }
 .subscrived svg{
@@ -160,8 +158,9 @@ padding:20px 10px;
 width: 28px!important;
 height: 28px!important;
 font-size: 13px!important;
-line-height: 24px!important;
+line-height: 24px!important; 
 margin-right: 5px;
+padding: 0px;
 }
 .fw-bold{
 font-size:18px;
@@ -214,7 +213,7 @@ min-width: 290px;
 .Flat-right button.btn.btn-warning.rounded-0.px-5.ml-0.ml-md-3.active-btn {    width: 190px !important;}
 .Flat-left button.btn.rounded-0.px-5.ml-0.ml-md-3.btn-topic { padding-left: 19px !important;padding-right: 19px !important;}
 .custom-page .slick-slide .status-id .star-ratings-css {margin-left: 0px}
-.sub-subject .btn.rounded-0.me-2{    border-radius: 9px !important; padding: 5px;width: 35px; height: 35px;}
+.sub-subject .btn.rounded-0.me-2{    border-radius: 9px !important; padding: 4px;width: 30px; height: 30px;}
 .sub-subject strong { font-size: 14px;}
 .addremovetopic {width: 110px;font-size: 14px;}
 .rightSect .bg-white.d-flex.flex-column.justify-content-center.mb-4.p-5 {  padding-left: 10px!important;padding-right: 10px!important;}
@@ -391,9 +390,7 @@ right: 35px !important;
 .exam_card label {
 font-size: 14px;
 }
-.topics-box:nth-child(even){
-flex-direction: row-reverse;
-}
+
 .myqMatrix-card{
 height: auto !important;
 }

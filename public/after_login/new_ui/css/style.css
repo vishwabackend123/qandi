@@ -3204,7 +3204,7 @@ span.p-icons span:active {
     overflow-y: auto;
     overflow-x: hidden;
     margin-bottom: 10px;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 .chaptbox::-webkit-scrollbar {
@@ -5531,8 +5531,8 @@ div#collapseNotification {
     z-index: 99;
     background-color: rgba(255, 255, 255, 0.81);
     background-blend-mode: hue;
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     top: 5px;
     padding-top: 92px;
     animation-name: reducetime;
@@ -9722,4 +9722,11 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 
 .noti-box-scroll::-webkit-scrollbar {
     height: 5px;
+}
+
+
+.wrapper-dashboard button.btn.btn-primary.active-btn.text-uppercase.mt-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

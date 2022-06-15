@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .topics-box:nth-child(even){
+        flex-direction: row-reverse;
+        }
     .planner-wrapper {
     height: 100vh;
 }
@@ -39,8 +42,8 @@ flex-direction: column;
     text-align: center;
     }
 #time-Avg-quest .bg-white p.fw-bold.text-start, #marKs-trends .bg-white p.fw-bold.text-start{padding-right:24px;}
-div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
-}
+/* div#marKs-trends, div#time-Avg-quest{    margin-bottom: 0px;
+} */
 .chapter_analytics .topic-details.row .col-lg-4{width:100%;}
 .exam-analytics .exam-panel.cust-tabs .nav-item {width:auto;}
 #test_instruction h1.text-danger.text-uppercase, #test_instruction h3.text-danger.text-uppercase {
@@ -362,6 +365,8 @@ right: 13%;
 .rview-quses{   font-size: 12px !important;}
 .cust-tabs.nav.nav-tabs .nav-link {
 font-size: 10px !important;
+padding-left:17px!important;
+padding-right:17px!important;
 }
 #review_rques_blk .question.question-height {
 padding-left: 37px !important;
@@ -634,7 +639,7 @@ min-width: 100%;
 .practice_custom_page .cust-tab-content .custom-btn-gray{margin: 10px 0;}
 .practice-series-lists .live-exam .speci-text{display:inline-block;}
 #scroll-mobile .nav.nav-tabs.cust-tabs {
-    width: 500px !important;
+    width: 600px !important;
 }
 }
 @media(max-width:550px){
