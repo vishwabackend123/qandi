@@ -117,7 +117,10 @@ $userData = Session::get('user_data');
                                                     </div>
                                                     <div class="paper-sub">
                                                         <small>Subjects</small>
-                                                        <span style="word-break: keep-all;">Physics, Chemistry & Maths</span>
+                                                        @php
+                                                        $subject_list = implode(',',array_column($sche->subjects, 'subject_name'));
+                                                        @endphp
+                                                        <span style="word-break: keep-all;">{{$subject_list}}</span>
                                                     </div>
                                                 </div>
                                                 <!--div class="score-show text-md-center ps-3">
