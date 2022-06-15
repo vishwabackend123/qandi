@@ -32,11 +32,11 @@ margin-left: 0;
 @media screen and (max-width:1199px){
     .custom-page button.slick-next.slick-arrow{     width: 36px;
         height: 36px;
-        top: 80px;
-        right: -22px;}
+        top: 62px;
+        right: -19px;}
         .custom-page button.slick-prev{    width: 36px;
             height: 36px;
-            top: 80px;
+            top: 62px;
             left: -17px;}
     .practice_custom_page .scroll-div.scroll_top.p-4 {
         padding-left: 0!important;
