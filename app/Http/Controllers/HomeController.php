@@ -357,11 +357,11 @@ class HomeController extends Controller
                     return redirect()->route('dashboard');
                 } else {
                     return redirect()
-                        ->back();
+                        ->back()->withErrors(['api issue']);;
                 }
             } else {
                 return redirect()
-                    ->back();
+                    ->back()->withErrors(['empty value']);;
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
