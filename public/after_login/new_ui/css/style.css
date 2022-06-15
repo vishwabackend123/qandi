@@ -5547,7 +5547,7 @@ div#collapseNotification {
     animation-duration: 1s;
     animation-fill-mode: both;
     margin-top: 70px;
-    animation: none!important;
+     animation: none!important;
 }
 
 .notification-right a img {
