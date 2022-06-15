@@ -441,7 +441,7 @@ $question_type = "Numerical";
                     </div>
                     <p class="m-0 ms-3 lefttime"><strong id="lefttime_pop_h"></strong> Left</p>
                 </div>
-                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span<!-- --------- correct answer for demo---------- -->> left!</h3>
+                <h3 class="testtimehead">You still have <span id="lefttime_pop_s"> </span> left!</h3>
                 <p>
                     You haven’t attempted all of the questions. <br>
                     Do you want to have a quick review before you Submit?
