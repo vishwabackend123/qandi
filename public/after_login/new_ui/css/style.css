@@ -1780,6 +1780,9 @@ input#search_field::-ms-input-placeholder {
 
 .AttmnowSec button {
     margin-top: 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cust-gallery .swiper-slide button.btn.btn-primary.active-btn.text-uppercase {
