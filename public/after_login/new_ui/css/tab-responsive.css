@@ -30,6 +30,12 @@ margin-left: 0;
     right: -18px;}
 }
 @media screen and (max-width:1199px){
+    .overllanaly .sub-title h3 {
+        text-overflow: unset;
+        overflow: visible;
+        white-space: normal;
+        flex: 4;
+    }
     .name-txt-sml{    text-transform: none;
         width: 70%;
         white-space: normal;
@@ -384,6 +390,14 @@ padding-bottom: 40px;
 
 }
 @media(max-width:991px){
+    .overllanaly .sub-title h3 {
+        text-overflow: unset;
+        overflow: visible;
+        white-space: normal;
+    }
+    .overllanaly .bg-white.sub-details .d-flex.sub-title {
+        display: block!important;
+    }
 .ClickBack.d-md-flex , .full-syllabus.d-md-flex{display:block!important;}
 .align-items-center.morning-slot{align-items: flex-start!important;}
 div.exam_attempted_common_page .result-list-head.d-flex{width: 100%}

@@ -13,6 +13,11 @@ button {
     outline: none;
     text-decoration: none;
 }
+.overllanaly .sub-title h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 .matrixpage-wrapper .matrixLists{max-height: calc(100vh - 437px);overflow-y: auto;}
 .previous_year_exam_page .exam_attempted_common_page .paper-summery .paper-sub:first-child {
     flex: 1;
