@@ -18,7 +18,7 @@ button {
     overflow: hidden;
     white-space: nowrap;
 }
-.matrixpage-page-wrapper .myqMatrix-card , .matrixpage-page-wrapper .tab-wrapper{height: calc(100vh - 110px)important;}
+div.matrixpage-page-wrapper .myqMatrix-card , div.matrixpage-page-wrapper .tab-wrapper{height: calc(100vh - 110px)important;}
  
 .matrixpage-wrapper .matrixLists{max-height: calc(100vh - 437px);overflow-y: auto;}
 .previous_year_exam_page .exam_attempted_common_page .paper-summery .paper-sub:first-child {
