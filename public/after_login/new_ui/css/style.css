@@ -13,6 +13,7 @@ button {
     outline: none;
     text-decoration: none;
 }
+.matrixpage-wrapper .matrixLists{max-height: calc(100vh - 437px);overflow-y: auto;}
 .previous_year_exam_page .exam_attempted_common_page .paper-summery .paper-sub:first-child {
     flex: 1;
 }
@@ -372,7 +373,7 @@ ul.chapter-topic-lists.ulStyle li.mb-4:last-child {
 }
 
 .chapter-topic-lists.ulStyle {
-    max-height: calc(100vh - 299px);
+    max-height: calc(100vh - 320px);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -9739,6 +9740,11 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     justify-content: center;
 }
 .rightSect #form_exam_submit .stop{height:38px}
-.custom-page .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,0.175)!important;
+.custom-page .shadow-lg {box-shadow: 0 1rem 3rem rgba(0,0,0,0.175)!important;}
+
+span#image-upload-response {
+    position: absolute;
+    z-index: 99;
+    top: 81px;
+    font-size: 14px;
 }
