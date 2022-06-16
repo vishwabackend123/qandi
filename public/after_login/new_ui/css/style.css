@@ -9740,8 +9740,7 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     justify-content: center;
 }
 .rightSect #form_exam_submit .stop{height:38px}
-.custom-page .shadow-lg {box-shadow: 0 1rem 3rem rgba(0,0,0,0.175)!important;}
-
+.custom-page .shadow-lg { box-shadow: 0 0 20px 0 rgba(0,0,0,0.1)!important;}
 span#image-upload-response {
     position: absolute;
     z-index: 99;
