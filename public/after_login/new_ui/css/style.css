@@ -9746,3 +9746,7 @@ span#image-upload-response {
     top: 81px;
     font-size: 14px;
 }
+
+#plannerAddform{
+    margin-bottom: 0px;
+}
