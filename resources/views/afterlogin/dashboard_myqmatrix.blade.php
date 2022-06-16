@@ -10,7 +10,7 @@ $userData = Session::get('user_data');
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
-    <div class="content-wrapper matrixpage-wrapper dashboard-cards-block">
+    <div class="content-wrapper matrixpage-wrapper dashboard-cards-block matrixpage-page-wrapper">
         <div class="container-fluid custom-page" style="padding-bottom: 30px;">
             <div class="row">
                 <div class="col-lg-3">
