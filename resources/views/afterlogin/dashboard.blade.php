@@ -317,7 +317,8 @@ $userData = Session::get('user_data');
             <div class="cust-gallery p-0 dashGallery">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        @if(isset($prof_asst_test) && $prof_asst_test=='N')
+                        @if(isset($prof_asst_test) && $prof_asst_test=='Y')
+                        <!-- chnaged by Dinesh for testing 16-062022 'N' to 'Y' -->
                         <div class="swiper-slide bg-white AttmnowSec">
                             <div class="row">
                                 <div class="col-lg-12">
