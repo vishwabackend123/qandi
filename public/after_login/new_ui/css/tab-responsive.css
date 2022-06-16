@@ -30,6 +30,11 @@ margin-left: 0;
     right: -18px;}
 }
 @media screen and (max-width:1199px){
+    .name-txt-sml{    text-transform: none;
+        width: 70%;
+        white-space: normal;
+        text-overflow: unset;
+        overflow: visible;}
     .custom-page button.slick-next.slick-arrow{     width: 36px;
         height: 36px;
         top: 62px;
@@ -407,7 +412,7 @@ font-size: 12px;
 }
 .qoption_error{
 position: relative;
-bottom: 65px;
+bottom: 20px;
 font-size: 14px;
 }
 .live-exam .speci-text {
