@@ -159,7 +159,7 @@ class ResultController extends Controller
 
                 return Redirect::route('exam_result_analytics', [$result_id]);
             } else {
-                dd($response_json, $curl_url, $request);
+
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
@@ -186,7 +186,7 @@ class ResultController extends Controller
             $curl = curl_init();
             $api_URL = env('API_URL');
             $curl_url = $api_URL . 'api/mini-post-exam-analytics1/' . $user_id . '/' . $exam_id;
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -413,7 +413,7 @@ class ResultController extends Controller
                     "cache-control: no-cache",
                     "content-type: application/json"
                 ),
-             );
+            );
             curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
