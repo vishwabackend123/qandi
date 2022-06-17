@@ -48,7 +48,7 @@ class AnalyticsController extends Controller
             $api_URL = env('API_URL');
 
             $curl = curl_init();
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/overall-analytics-score/' . $user_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -500,7 +500,7 @@ class AnalyticsController extends Controller
             $user_id = $userData->id;
             $api_URL = env('API_URL');
             $curl = curl_init();
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-score/' . $user_id . '/' . $sub_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -523,7 +523,7 @@ class AnalyticsController extends Controller
             $subScore = isset($subAnalytics->subject_score) ? $subAnalytics->subject_score : [];
 
             $curl = curl_init();
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-graph/' . $user_id . '/' . $sub_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -544,7 +544,7 @@ class AnalyticsController extends Controller
             $monthlyReport = $subAnalytics->monthlyReport;
 
             $curl = curl_init();
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $api_URL . 'api/analytics/subject-wise-analytics-accuracy/' . $user_id . '/' . $sub_id,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
@@ -690,7 +690,7 @@ class AnalyticsController extends Controller
             $api_url = env('API_URL') . 'api/upcoming-tutorial/' . $exam_id . '/' . $user_id;
 
             $curl = curl_init();
-            $curl_option =array(
+            $curl_option = array(
                 CURLOPT_URL => $api_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -864,7 +864,7 @@ class AnalyticsController extends Controller
             $chapterList = isset($aResponse['response']) && !empty($aResponse['response']) ? $aResponse['response'] : [];
             $html = view('afterlogin.Analytics.chapter_analytics', compact('sub_id', 'subject', 'chapterList'))->render();
 
-            return response()->json(['status' => true,'html' => $html,'message' => 'Coupon code applied successfully.']);
+            return response()->json(['status' => true, 'html' => $html, 'message' => 'Coupon code applied successfully.']);
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
