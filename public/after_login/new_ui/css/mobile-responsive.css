@@ -15,11 +15,13 @@
         height: 25px;
         left: -5px;
         font-size: 17px!important;}
-        .custom-page button.slick-next.slick-arrow {width: 25px;
+        .custom-page button.slick-next.slick-arrow {
+            width: 25px;
             max-width: 25px;
             height: 25px;
             right: -6px;
-            font-size: 17px!important;}
+            font-size: 17px!important;
+    }
     .custOmSld .bg-light{padding: 10px 7px!important;}
 #plannerChapter .modal-dialog .modal-content.bg-light {
     margin-left: 80px;
