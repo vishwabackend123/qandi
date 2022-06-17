@@ -1141,7 +1141,7 @@ $question_type = "Numerical";
                         $("#btn_" + quest_id).removeClass("btn-light");
                         $("#btn_" + quest_id).removeClass("btn-light-green");
                         $("#btn_" + quest_id).addClass("btn-secondary");
-                        $("#btn_" + quest_id).appendChild('<i class="fa fa-check text-light"></i>');
+                        $("#btn_" + quest_id).html('<i class="fa fa-check text-light"></i>');
 
                     }
 
