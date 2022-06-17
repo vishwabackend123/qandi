@@ -2049,4 +2049,12 @@ function searchState() {
         }
     }
 } 
+
+// $(document).on('click', function (e) {
+//     if ($(e.target).closest(".dashboard-cards-block .bg-white > small p").length === 0) {
+//         alert("hi");
+        
+//     }
+// });
+
 </script>

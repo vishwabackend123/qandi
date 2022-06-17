@@ -496,6 +496,9 @@ div.exam_attempted_common_page #attempted .compLeteS .collapse .full-syllabus .p
 
 }
 @media(max-width:700px){
+.result-list-head p {
+    padding: 0 !important;
+}    
 .mocktest-attempted-wrapper .result-list .d-flex.justify-content-between {flex-direction: initial;}
 .result-list .d-flex.justify-content-between {
 flex-direction: column;
