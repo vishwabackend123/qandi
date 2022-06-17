@@ -669,6 +669,12 @@ margin-right: 15px;
     line-height: 24px;
 }
 }
+@media(max-width:799px){
+.year_filter select.form-control {
+    margin-left: 0;
+    display: block;
+}    
+}
 @media(max-width:768px){
 .subscription .form-btns button {
 width: 140px;
