@@ -114,7 +114,7 @@ $question_type = "Numerical";
         <div class="expand_button">
             <!-- <img  class="expandbtn" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}"> -->
             <!-- <img  class="collapsebtn" style="display: none;" src="{{URL::asset('public/after_login/new_ui/images/Component1.png')}}"> -->
-            <div class="expandbtn">
+            <div class="expandbtn" title="Expand">
                 <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_4" data-name="Component 226 – 4" width="48" height="48" viewBox="0 0 48 48">
                     <defs>
                         <style>
@@ -146,7 +146,7 @@ $question_type = "Numerical";
                 </svg>
             </div>
 
-            <div class="collapsebtn" style="display: none;">
+            <div class="collapsebtn" title="Collapse" style="display: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" id="Component_226_6" data-name="Component 226 – 6" width="48" height="48" viewBox="0 0 48 48">
                     <defs>
                         <style>
