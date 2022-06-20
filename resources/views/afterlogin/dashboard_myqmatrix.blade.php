@@ -19,7 +19,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <label>About MyQ Matrix</label>
                                 A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
@@ -373,14 +373,33 @@ $userData = Session::get('user_data');
 <script>
 $(document).ready(function() {
     $('.filtericon').hide();
-    $(".dashboard-cards-block .bg-white>small>img").click(function() {
+    // $(".dashboard-cards-block .bg-white>small>img").click(function() {
+    //     $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+    //         $(this).parent("p").hide();
+    //     })
+    //     $(this).siblings("p").show();
+    // });
+    // $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+    //     $(this).parent("p").hide();
+    // });
+    $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
+        event.stopPropagation();
         $(".dashboard-cards-block .bg-white>small p>span").each(function() {
             $(this).parent("p").hide();
-        })
+            $(this).parent("p").removeClass('show');
+        });
         $(this).siblings("p").show();
+        $(this).siblings("p").addClass('show');
+
     });
     $(".dashboard-cards-block .bg-white>small p>span").click(function() {
         $(this).parent("p").hide();
+    });
+    $(document).on('click', function(e) {
+        var card_opened = $('.tooltipclass').hasClass('show');
+        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+            $('.tooltipclass').hide();
+        }
     });
     var topic_data = '<?php echo $myq_bool; ?>';
     if (topic_data) {
