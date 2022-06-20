@@ -1,4 +1,5 @@
 @extends('afterlogin.layouts.app_new')
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
     function preventBack() {
@@ -26,11 +27,8 @@
         };
     });
 </script>
+
 @section('content')
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-
-
-
 @php
 $userData = Session::get('user_data');
 @endphp
