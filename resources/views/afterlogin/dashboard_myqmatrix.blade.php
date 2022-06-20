@@ -464,7 +464,7 @@ $(document).ready(function() {
   z-index: 2;
   position: absolute;
   right: -21px;
-    bottom: 0px;
+    bottom: 0px; 
 }
 .cust-tabs .nav-link.active .squareL {
     background:#fff;
