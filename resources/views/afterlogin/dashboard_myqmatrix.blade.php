@@ -483,4 +483,11 @@ $(document).ready(function() {
     right: -11px;
     bottom: -1px;
 }
+
+.cust-tabs  .nav-item , .cust-tabs .nav-link{
+    z-index: 999999999;
+}
+ul#myTabs {
+    padding-left: 2px !important;
+}  
     </style>
