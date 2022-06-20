@@ -490,5 +490,5 @@ $(document).ready(function() {
 }
 ul#myTabs {
     padding-left: 2px !important;
-}   
+}    
     </style>
