@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .previous_year_exam_lists {
+    max-height: calc(100vh - 355px);
+}
     .topics-box:nth-child(even){
         flex-direction: row-reverse;
         }
@@ -366,7 +369,6 @@ right: 13%;
 }
 .rview-quses{   font-size: 12px !important;}
 .cust-tabs.nav.nav-tabs .nav-link {
-font-size: 10px !important;
 padding-left:17px!important;
 padding-right:17px!important;
 }

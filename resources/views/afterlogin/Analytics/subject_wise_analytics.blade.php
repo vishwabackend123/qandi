@@ -7,7 +7,7 @@
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p>
+                        <p class="tooltipclass">
                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                             A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
                         </p>
@@ -127,7 +127,7 @@
             <small>
                 <!-- <i class="fa  fa-info"></i> -->
                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                <p>
+                <p class="tooltipclass">
                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                     This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
                 </p>
@@ -181,7 +181,7 @@
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p>
+                        <p class="tooltipclass">
                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                             In a limited duration test, it is absolutely essential to manage your time and use it wisely to smartly choose the right questions to attempt. This will greatly increase your chances of achieving the magic score. Invest your time wisely!
                         </p>
@@ -209,7 +209,7 @@
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p>
+                        <p class="tooltipclass">
                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                             Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average and add miles to your success!
                         </p>
@@ -226,7 +226,7 @@
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p>
+                        <p class="tooltipclass">
                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                             This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                         </p>
@@ -254,7 +254,7 @@
                     <small>
                         <!-- <i class="fa  fa-info"></i> -->
                         <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                        <p>
+                        <p class="tooltipclass">
                             <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                             It is not always about how many and how fast but how accurate you are in answering within the limited time. Be informed about how you are making efficient use of your time on the right questions. Strategize better for your next test!
                         </p>
@@ -999,18 +999,39 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
     /* score pie graph */
 </script>
 <script>
+    // $(document).ready(function() {
+    //     $(".dashboard-cards-block .bg-white>small>img").click(function() {
+    //         $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+    //             $(this).parent("p").hide();
+    //         })
+    //         $(this).siblings("p").show();
+    //     });
+    //     $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+    //         $(this).parent("p").hide();
+    //     });
+    // });
     $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
+        $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
+            event.stopPropagation();
             $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                 $(this).parent("p").hide();
-            })
+                $(this).parent("p").removeClass('show');
+            });
             $(this).siblings("p").show();
+            $(this).siblings("p").addClass('show');
+
         });
         $(".dashboard-cards-block .bg-white>small p>span").click(function() {
             $(this).parent("p").hide();
         });
     });
-     function backRedirect()
+    $(document).on('click', function(e) {
+        var card_opened = $('.tooltipclass').hasClass('show');
+        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+            $('.tooltipclass').hide();
+        }
+    });
+        function backRedirect()
      {
         var url = "{{ route('dashboard') }}";
         window.location.href=url;

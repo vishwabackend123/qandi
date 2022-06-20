@@ -40,7 +40,7 @@ button {
     color: #fff;
 }
 .previous_year_exam_page .cust-tab-content {padding: 0px 30px !important;}
-.previous_year_exam_page .exam_attempted_common_page .score-show{flex: 2;}
+.previous_year_exam_page .exam_attempted_common_page .score-show{flex: 1;}
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
@@ -9756,7 +9756,10 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     align-items: center;
     justify-content: center;
 }
-.rightSect #form_exam_submit .stop{height:38px}
+.rightSect #form_exam_submit .stop,.rightSect .btn-outline-danger.stop,.btn-outline-success.start   {height:31px}
+.rightSect .btn-outline-danger.stop,.btn-outline-success.start{padding-top:3px;}
+.rightSect #form_exam_submit .pull-right .stop,.pull-right .btn-outline-success.start{padding-top: 4px;}
+.rightSect #form_exam_submit .stop{    padding-top: 3px;}
 .custom-page .shadow-lg ,.myqMatrix-card.shadow-lg{ box-shadow: 0 0 20px 0 rgba(0,0,0,0.1)!important;}
 span#image-upload-response {
     position: absolute;

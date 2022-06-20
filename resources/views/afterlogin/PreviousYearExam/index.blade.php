@@ -51,8 +51,8 @@ $userData = Session::get('user_data');
                         <div class="tab-content cust-tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="open" role="tabpanel" aria-labelledby="open-tab">
                                 <div class="exam_attempted_common_page">
-                                    <div class="year_filter  p-3 mt-1">
-                                        <label style="font-weight:600;font-size: 18px;">Test your preparedness with Past year exam papers </label>
+                                    <div class="year_filter  p-3 mt-1 mb-3">
+                                        <label style="font-weight:600;font-size: 20px;">Test your preparedness with Past year exam papers </label>
                                         @php
                                         $latest_year = date('Y');
                                         @endphp
@@ -68,7 +68,7 @@ $userData = Session::get('user_data');
                                     @if(!empty($upcomming_live_exam))
                                     <div class="previous_year_exam_lists">
                                         @foreach($upcomming_live_exam as $sche)
-                                        <div class="compLeteS filter_data_{{$sche->paper_year}}">
+                                        <div class="compLeteS filter_data_{{$sche->paper_year}}" id="pyp_{{$sche->paper_id}}">
                                             <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                                                 <div class="d-flex align-items-start justify-content-between result-list-head">
                                                     <h4 class="m-lg-0 p-0"> {{$sche->paper_name}}

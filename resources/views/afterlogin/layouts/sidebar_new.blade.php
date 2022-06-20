@@ -305,18 +305,7 @@
                 </svg>
                 Live</a>
             <a href="{{route('previous_year_exam')}}" class="nav-link">
-                <svg id="Icon_Live_Exam" data-name="Icon / Live Exam" xmlns="http://www.w3.org/2000/svg" width="21.475" height="24" viewBox="0 0 21.475 24">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: none;
-                            }
-                        </style>
-                    </defs>
-                    <path id="Path_139" data-name="Path 139" class="cls-1" d="M0,0H21.474V24H0Z" />
-                    <path id="Path_140" data-name="Path 140" d="M10.158,19.75H4.789A2.654,2.654,0,0,1,2.25,17V7A2.654,2.654,0,0,1,4.789,4.25H17.316A2.654,2.654,0,0,1,19.855,7v4a.75.75,0,0,1-1.5,0V7a1.161,1.161,0,0,0-1.039-1.25H4.789A1.161,1.161,0,0,0,3.75,7V17a1.161,1.161,0,0,0,1.039,1.25h5.368a.75.75,0,1,1,0,1.5Z" transform="translate(-0.316)" />
-                    <path id="Rectangle_12" data-name="Rectangle 12" d="M1-.75H6A1.752,1.752,0,0,1,7.75,1V4A1.752,1.752,0,0,1,6,5.75H1A1.752,1.752,0,0,1-.75,4V1A1.752,1.752,0,0,1,1-.75Zm5,5A.25.25,0,0,0,6.25,4V1A.25.25,0,0,0,6,.75H1A.25.25,0,0,0,.75,1V4A.25.25,0,0,0,1,4.25Z" transform="translate(12.263 14)" />
-                </svg>
+                <img src="{{URL::asset('public/after_login/new_ui/images/previous_year_icon.png')}}" style="width: 23px;vertical-align: sub;">
                 Previous Year Exam</a>
         </div>
     </div>

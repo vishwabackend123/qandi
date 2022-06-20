@@ -606,9 +606,11 @@ $userData = Session::get('user_data');
     if (curr_text == 'HideTopics') {
       $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
       $("#chapter_list_" + sub_id + " .expand_filter_" + chapt_id).addClass('disabled');
+      $('#chapter_box_' + chapt_id).removeClass('active-accordian');
     } else {
       $("#chapter_list_" + sub_id + " #expandTopic_" + chapt_id).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
       $("#chapter_list_" + sub_id + " .expand_filter_" + chapt_id).removeClass('disabled');
+      $('#chapter_box_' + chapt_id).addClass('active-accordian');
     }
 
 
