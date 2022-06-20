@@ -66,73 +66,75 @@ $userData = Session::get('user_data');
                                         </select>
                                     </div>
                                     @if(!empty($upcomming_live_exam))
-                                    @foreach($upcomming_live_exam as $sche)
-                                    <div class="compLeteS filter_data_{{$sche->paper_year}}">
-                                        <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
-                                            <div class="d-flex align-items-start justify-content-between result-list-head">
-                                                <h4 class="m-lg-0 p-0"> {{$sche->paper_name}}
-                                                </h4>
-                                                <p class="m-0 ps-4">{{$sche->paper_year}}</p>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-center morning-slot">
-                                                <!--span style="font-weight:500;">Evening Slot</span-->
-                                                <span class="slbs-link ms-lg-5 ms-2">
-                                                    <a class="expand-custom expandTopicCollapseAttempt" aria-controls="chapter_{{$sche->paper_id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->paper_id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->paper_id}}">
-                                                        <span class="hideallexpend" id="expand_topic_{{$sche->paper_id}}" data-id="chapter_{{$sche->paper_id}}">
-                                                            <i class="fa fa-arrow-down"></i>
-                                                            Show Details
-                                                        </span>
-                                                    </a>
-                                                </span>
-                                            </div>
-                                            @if($sche->test_completed_yn == 'N')
-                                            <div class="result-list-btns">
-                                                <form class="form-horizontal ms-auto mb-0" action="{{route('previousYearExam')}}" method="post">
-                                                    @csrf
-                                                    <input type="hidden" name="paper_name" value="{{$sche->paper_name}}" />
-                                                    <input type="hidden" name="paper_id" value="{{$sche->paper_id}}" />
-                                                    <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
-                                                </form>
-                                            </div>
-                                            @else
-                                            <div class="result-list-btns">
-                                                <button class="custom-btn-gray noHover disabled" disabled></i> Attempted</button>
-                                            </div>
-                                            @endif
-                                        </div>
-                                        <div class="collapse" id="chapter_{{$sche->paper_id}}">
-                                            <div class="p-4 pb-4 d-md-flex justify-content-between full-syllabus">
-                                                <div class="d-flex justify-content-between  paper-summery pe-3">
-                                                    <div class="paper-sub">
-                                                        <small>No. Of Questions</small>
-                                                        <span>{{$sche->total_ques}} MCQ <b style="font-weight:normal;">Questions</b></span>
-                                                    </div>
-                                                    <div class="paper-sub">
-                                                        <small>Duration</small>
-                                                        <span>{{$sche->test_duration}} <b style="font-weight:normal;">Mins</b></span>
-                                                    </div>
-                                                    <div class="paper-sub">
-                                                        <small>Marks</small>
-                                                        <span>{{$sche->total_marks}}</span>
-                                                    </div>
-                                                    <div class="paper-sub">
-                                                        <small>Subjects</small>
-                                                        @php
-                                                        $subject_list = implode(',',array_column($sche->subjects, 'subject_name'));
-                                                        @endphp
-                                                        <span style="word-break: keep-all;">{{$subject_list}}</span>
-                                                    </div>
+                                    <div class="previous_year_exam_lists">
+                                        @foreach($upcomming_live_exam as $sche)
+                                        <div class="compLeteS filter_data_{{$sche->paper_year}}">
+                                            <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
+                                                <div class="d-flex align-items-start justify-content-between result-list-head">
+                                                    <h4 class="m-lg-0 p-0"> {{$sche->paper_name}}
+                                                    </h4>
+                                                    <p class="m-0 ps-4">{{$sche->paper_year}}</p>
                                                 </div>
-                                                <!--div class="score-show text-md-center ps-3">
-                                                    <div class="paper-sub">
-                                                        <p style="font-size:14px;text-align:left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                                                            <br /><br /> <span style="font-size:14px;">Time Slots : Morning Slot</span></p>
+                                                <div class="d-flex align-items-center justify-content-center morning-slot">
+                                                    <!--span style="font-weight:500;">Evening Slot</span-->
+                                                    <span class="slbs-link ms-lg-5 ms-2">
+                                                        <a class="expand-custom expandTopicCollapseAttempt" aria-controls="chapter_{{$sche->paper_id}}" data-bs-toggle="collapse" href="#chapter_{{$sche->paper_id}}" role="button" aria-expanded="true" value="Expand to Topics" id="clicktopic_{{$sche->paper_id}}">
+                                                            <span class="hideallexpend" id="expand_topic_{{$sche->paper_id}}" data-id="chapter_{{$sche->paper_id}}">
+                                                                <i class="fa fa-arrow-down"></i>
+                                                                Show Details
+                                                            </span>
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                                @if($sche->test_completed_yn == 'N')
+                                                <div class="result-list-btns">
+                                                    <form class="form-horizontal ms-auto mb-0" action="{{route('previousYearExam')}}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="paper_name" value="{{$sche->paper_name}}" />
+                                                        <input type="hidden" name="paper_id" value="{{$sche->paper_id}}" />
+                                                        <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
+                                                    </form>
+                                                </div>
+                                                @else
+                                                <div class="result-list-btns">
+                                                    <button class="custom-btn-gray noHover disabled" disabled></i> Attempted</button>
+                                                </div>
+                                                @endif
+                                            </div>
+                                            <div class="collapse" id="chapter_{{$sche->paper_id}}">
+                                                <div class="p-4 pb-4 d-md-flex justify-content-between full-syllabus">
+                                                    <div class="d-flex justify-content-between  paper-summery pe-3">
+                                                        <div class="paper-sub">
+                                                            <small>No. Of Questions</small>
+                                                            <span>{{$sche->total_ques}} MCQ <b style="font-weight:normal;">Questions</b></span>
+                                                        </div>
+                                                        <div class="paper-sub">
+                                                            <small>Duration</small>
+                                                            <span>{{$sche->test_duration}} <b style="font-weight:normal;">Mins</b></span>
+                                                        </div>
+                                                        <div class="paper-sub">
+                                                            <small>Marks</small>
+                                                            <span>{{$sche->total_marks}}</span>
+                                                        </div>
+                                                        <div class="paper-sub">
+                                                            <small>Subjects</small>
+                                                            @php
+                                                            $subject_list = implode(',',array_column($sche->subjects, 'subject_name'));
+                                                            @endphp
+                                                            <span style="word-break: keep-all;">{{$subject_list}}</span>
+                                                        </div>
                                                     </div>
-                                                </div-->
+                                                    <!--div class="score-show text-md-center ps-3">
+                                                        <div class="paper-sub">
+                                                            <p style="font-size:14px;text-align:left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                                <br /><br /> <span style="font-size:14px;">Time Slots : Morning Slot</span></p>
+                                                        </div>
+                                                    </div-->
+                                                </div>
                                             </div>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                     @else
                                     <div class="row text-center p-4">
                                         <h5>No series available.</h5>

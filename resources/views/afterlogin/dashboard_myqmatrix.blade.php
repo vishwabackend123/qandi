@@ -425,7 +425,6 @@ $(document).ready(function() {
 .cust-tabs .nav-link.active .circleL{
     width: 20px; 
   height: 20px;
- 
   -webkit-border-radius: 10px;
   -moz-border-radius:    10px;
   border-radius:         10px;
