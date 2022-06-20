@@ -643,7 +643,6 @@ $userData = Session::get('user_data');
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
-    <input type="hidden" value="{{$mouseEvent}}" id="mouseEvent">
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
@@ -886,13 +885,6 @@ $userData = Session::get('user_data');
     </script>
     <script>
         /* Score Pie Chart */
-        var mouseval = $('#mouseEvent').val();
-        var boolval = '';
-        if (mouseval == '1') {
-            boolval = false;
-        } else if (mouseval == '2') {
-            boolval = true;
-        }
         Highcharts.chart('scorecontainer', {
             chart: {
                 height: 160,
@@ -947,7 +939,7 @@ $userData = Session::get('user_data');
                     size: '100%'
                 },
                 series: {
-                    enableMouseTracking: boolval
+                    enableMouseTracking: false
                 }
             },
             series: [{
