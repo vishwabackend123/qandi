@@ -9756,7 +9756,9 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
     align-items: center;
     justify-content: center;
 }
-.rightSect #form_exam_submit .stop{height:30px}
+.rightSect #form_exam_submit .stop,.rightSect .btn-outline-danger.stop{height:30px}
+.rightSect .btn-outline-danger.stop{padding-top:1px;}
+.rightSect #form_exam_submit .stop{    padding-top: 5px;}
 .custom-page .shadow-lg ,.myqMatrix-card.shadow-lg{ box-shadow: 0 0 20px 0 rgba(0,0,0,0.1)!important;}
 span#image-upload-response {
     position: absolute;
