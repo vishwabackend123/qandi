@@ -52,7 +52,7 @@ $userData = Session::get('user_data');
                             <div class="tab-pane fade show active" id="open" role="tabpanel" aria-labelledby="open-tab">
                                 <div class="exam_attempted_common_page">
                                     <div class="year_filter  p-3 mt-1 mb-3">
-                                        <label style="font-weight:600;font-size: 18px;">Test your preparedness with Past year exam papers </label>
+                                        <label style="font-weight:600;font-size: 20px;">Test your preparedness with Past year exam papers </label>
                                         @php
                                         $latest_year = date('Y');
                                         @endphp
