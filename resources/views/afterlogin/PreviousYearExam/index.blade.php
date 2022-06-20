@@ -68,6 +68,12 @@ $userData = Session::get('user_data');
                                     @if(!empty($upcomming_live_exam))
                                     <div class="previous_year_exam_lists">
                                         @foreach($upcomming_live_exam as $sche)
+                                        @php 
+                                        if($sche->test_completed_yn == 'Y'){
+                                            continue;
+                                        }
+
+                                        @endphp
                                         <div class="compLeteS filter_data_{{$sche->paper_year}}" id="pyp_{{$sche->paper_id}}">
                                             <div class="ClickBack d-md-flex align-items-center justify-content-between bg-white   listing-details w-100 flex-wrap result-list-table">
                                                 <div class="d-flex align-items-start justify-content-between result-list-head">
@@ -86,7 +92,6 @@ $userData = Session::get('user_data');
                                                         </a>
                                                     </span>
                                                 </div>
-                                                @if($sche->test_completed_yn == 'N')
                                                 <div class="result-list-btns">
                                                     <form class="form-horizontal ms-auto mb-0" action="{{route('previousYearExam')}}" method="post">
                                                         @csrf
@@ -95,11 +100,6 @@ $userData = Session::get('user_data');
                                                         <button class="custom-btn-gray"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> TAKE TEST</button>
                                                     </form>
                                                 </div>
-                                                @else
-                                                <div class="result-list-btns">
-                                                    <button class="custom-btn-gray noHover disabled" disabled></i> Attempted</button>
-                                                </div>
-                                                @endif
                                             </div>
                                             <div class="collapse" id="chapter_{{$sche->paper_id}}">
                                                 <div class="p-4 pb-4 d-md-flex justify-content-between full-syllabus">
