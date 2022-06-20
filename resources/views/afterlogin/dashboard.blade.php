@@ -79,7 +79,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
                                 A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
@@ -117,7 +117,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
                             </p>
@@ -164,7 +164,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A matrix created to analyse your attempts in various topics over time and sort them into your areas of strengths and weaknesses. <br /> This data will keep on changing as you progress and diligently work on your identified and analysed weaknesses and strengths. It will also make visible those topics that can become your strength with a little more effort on your part. Align your preparation now!
                             </p>
@@ -236,7 +236,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 Mapping your progress journey against an ideal path lets you draw valuable insights about the rate at which you are progressing with respect to the ideal path that will lead you to success. It will help you judge whether you are keeping pace or lagging behind, for you to take corrective action. Pick up your pace!
                             </p>
@@ -273,7 +273,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 This chart will give insights and a deep understanding of your ongoing preparation, and your improvement over time. An increasing trend is what you should ideally be maintaining. Go uptrend!
                             </p>
@@ -292,7 +292,7 @@ $userData = Session::get('user_data');
                         <small>
                             <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                            <p>
+                            <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 A list of customized tasks specially personalized for you based on the in-depth analysis of your completed tests. Strengthen your core learning and strategic skills through these quick customized tests. Build on your strengths and work on your weaker areas to progressively improve them. Improve on your proficiency!
                             </p>
@@ -345,7 +345,7 @@ $userData = Session::get('user_data');
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                                <p>
+                                <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
@@ -365,7 +365,7 @@ $userData = Session::get('user_data');
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                                <p>
+                                <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
@@ -401,7 +401,7 @@ $userData = Session::get('user_data');
                             <small>
                                 <!-- <i class="fa  fa-info"></i> -->
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
-                                <p>
+                                <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                     To reduce uncertainty and increase your efficiency and chances of success, it is absolutely essential that you plan your preparation with great care. With effective planning comes motivation, productivity, satisfaction, and ultimately success. Go ahead and plan your week!
                                 </p>
@@ -1079,16 +1079,26 @@ $userData = Session::get('user_data');
     </script>
     <script>
         $(document).ready(function() {
-            $(".dashboard-cards-block .bg-white>small>img").click(function() {
+            $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
+                event.stopPropagation();
                 $(".dashboard-cards-block .bg-white>small p>span").each(function() {
                     $(this).parent("p").hide();
+                    $(this).parent("p").removeClass('show');
                 });
                 $(this).siblings("p").show();
+                $(this).siblings("p").addClass('show');
+
             });
             $(".dashboard-cards-block .bg-white>small p>span").click(function() {
                 $(this).parent("p").hide();
             });
         });
+         $(document).on('click', function(e) {
+            var card_opened = $('.tooltipclass').hasClass('show');
+            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+               $('.tooltipclass').hide();
+            }
+         });
     </script>
     <script language="JavaScript">
         $(document).ready(function() {
