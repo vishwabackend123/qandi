@@ -40,7 +40,7 @@ button {
     color: #fff;
 }
 .previous_year_exam_page .cust-tab-content {padding: 0px 30px !important;}
-.previous_year_exam_page .exam_attempted_common_page .score-show{flex: 2;}
+.previous_year_exam_page .exam_attempted_common_page .score-show{flex: 1;}
 button.custom-btn-gray.goto-planner-btn:hover {
     font-weight: 600;
 }
