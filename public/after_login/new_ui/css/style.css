@@ -13,6 +13,8 @@ button {
     outline: none;
     text-decoration: none;
 }
+.previous_year_exam_page .exam_attempted_common_page .scroll-div{    max-height: calc(100vh - 300px);
+    overflow-y: auto;}
 .previous_year_exam_page .live-exam .tab-pane {
     max-height: 100%!important;
     overflow: auto;
