@@ -84,18 +84,38 @@ $userData = Session::get('user_data');
                     <div class="tab-wrapper">
                         <div>
                             <div class="position-relative">
-                                <ul class="nav nav-tabs cust-tabs w-100" id="myTabs" role="tablist">
+                                <ul class="nav nav-tabs cust-tabs w-100 mytab" id="myTabs" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="matrix-quesone-tab" data-bs-toggle="tab" href="#matrix-quesone" role="tab" aria-controls="matrix-quesone" aria-selected="true">Q1</a>
+                                        <a class="nav-link active" id="matrix-quesone-tab" data-bs-toggle="tab" href="#matrix-quesone" role="tab" aria-controls="matrix-quesone" aria-selected="true">Q1
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="matrix-questwo-tab" data-bs-toggle="tab" href="#matrix-questwo" role="tab" aria-controls="matrix-questwo" aria-selected="false">Q2</a>
+                                        <a class="nav-link" id="matrix-questwo-tab" data-bs-toggle="tab" href="#matrix-questwo" role="tab" aria-controls="matrix-questwo" aria-selected="false">Q2
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                        </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="matrix-questhree-tab" data-bs-toggle="tab" href="#matrix-questhree" role="tab" aria-controls="matrix-questhree" aria-selected="false">Q3</a>
+                                        <a class="nav-link" id="matrix-questhree-tab" data-bs-toggle="tab" href="#matrix-questhree" role="tab" aria-controls="matrix-questhree" aria-selected="false">Q3
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                        </a>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="matrix-quesfour-tab" data-bs-toggle="tab" href="#matrix-quesfour" role="tab" aria-controls="matrix-quesfour" aria-selected="false">Q4</a>
+                                        <a class="nav-link" id="matrix-quesfour-tab" data-bs-toggle="tab" href="#matrix-quesfour" role="tab" aria-controls="matrix-quesfour" aria-selected="false">Q4
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                        </a>
                                     </li>
                                 </ul>
                                 <a href="{{url('/dashboard')}}" class="backto-dash">BACK TO DASHBOARD</a>
@@ -377,3 +397,72 @@ $(document).ready(function() {
 @include('afterlogin.layouts.footer_new')
 <!-- footer Section end  -->
 @endsection
+
+<style>
+    .mytab .nav-link.active:before,  .mytab .nav-link.active:after{
+        display:none !important;
+    }
+    .mytab .nav-link{
+        padding-left:0px !important;
+    }
+    a#matrix-questwo-tab {
+        padding-left:0px !important;    padding-right: 0px !important;
+}
+.cust-tabs .nav-link.active {
+    /* color: #231f20; */
+    color: #2c3348;
+    background-color: #fff !important;
+    border-color: transparent;
+    border-radius: 0;
+    font-weight: 600;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-top-left-radius: 30px !important;
+    border-top-right-radius: 30px !important;
+    position: relative;
+}
+
+.cust-tabs .nav-link.active .circleL{
+    width: 20px; 
+  height: 20px;
+ 
+  -webkit-border-radius: 10px;
+  -moz-border-radius:    10px;
+  border-radius:         10px;
+  background: #f6f9fd;
+  z-index: 2;
+  position: absolute;
+  left: -21px;
+    bottom: 0px;
+}
+.cust-tabs .nav-link.active .circleR {
+    width: 20px; 
+  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius:    10px;
+  border-radius:         10px;
+  background: #f6f9fd;
+  z-index: 2;
+  position: absolute;
+  right: -21px;
+    bottom: 0px;
+}
+.cust-tabs .nav-link.active .squareL {
+    background:#fff;
+  width: 10px;
+  height: 10px;
+  z-index: 1;
+  position: absolute;
+  left: -11px;
+    bottom: -1px;
+}
+.cust-tabs .nav-link.active .squareR{
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    position: absolute;
+    right: -11px;
+    bottom: -1px;
+}
+    </style>
