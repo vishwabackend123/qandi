@@ -107,8 +107,51 @@
     </div>
 </section>
 <script type="text/javascript">
-    $('#resendOtp_link').hide();
+    var input = document.getElementById("user_name");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#goto-mobile-btn").trigger("click");
+        }
+    });
 
+    var input = document.getElementById("email_add");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#goto-otp-btn").trigger("click");
+        }
+    });
+    var input = document.getElementById("mobile_num");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#goto-otp-btn").trigger("click");
+        }
+    });
+    var input = document.getElementById("reg_otp");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#otp-verify-btn").trigger("click");
+        }
+    });
+    var input = document.getElementById("select-state");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#address-btn").trigger("click");
+        }
+    });
+     var input = document.getElementById("select-city");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            $("#address-btn").trigger("click");
+        }
+    });
+    
+    $('#resendOtp_link').hide();
     $('#user_name').keyup(function() {
         var value = this.value;
         var length = value.length;
