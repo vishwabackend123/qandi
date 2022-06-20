@@ -442,16 +442,17 @@ $(document).ready(function() {
 }
 
 .cust-tabs .nav-link.active .circleL{
-    width: 20px; 
-  height: 20px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius:    10px;
-  border-radius:         10px;
-  background: #f6f9fd;
-  z-index: 2;
-  position: absolute;
-  left: -21px;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius:    10px;
+    border-radius:         10px;
+    background: #f6f9fd;
+    z-index: 2;
+    position: absolute;
+    left: -21px;
     bottom: 0px;
+    cursor: default;
 }
 .cust-tabs .nav-link.active .circleR {
     width: 20px; 
@@ -489,5 +490,5 @@ $(document).ready(function() {
 }
 ul#myTabs {
     padding-left: 2px !important;
-}  
+}   
     </style>

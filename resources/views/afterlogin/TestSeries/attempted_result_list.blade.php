@@ -108,9 +108,11 @@
         if (curr_text == 'HideDetails') {
             $("#" + spanId).html('<i class="fa fa-arrow-down" aria-hidden="true"></i> ' + updatetext);
             $('#active_click_' + chapter_id).removeClass('active-accordian');
+            $('#pyp_' + chapter_id).removeClass('active-accordian');
         } else {
             $("#" + spanId).html('<i class="fa fa-arrow-up" aria-hidden="true"></i> ' + updatetext);
             $('#active_click_' + chapter_id).addClass('active-accordian');
+            $('#pyp_' + chapter_id).addClass('active-accordian');
             var scrollpas = $('.scroll_top').scrollTop();
             var blockpos = $('#clicktopic_' + chapter_id).offset().top;
             var scrollblock = $($('#clicktopic_' + chapter_id).attr('href')).offset().top;
