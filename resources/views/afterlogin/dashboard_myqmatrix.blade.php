@@ -436,8 +436,8 @@ $(document).ready(function() {
     font-weight: 600;
     padding-right: 20px;
     padding-left: 20px;
-    border-top-left-radius: 30px !important;
-    border-top-right-radius: 30px !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
     position: relative;
 }
 
@@ -464,7 +464,7 @@ $(document).ready(function() {
   z-index: 2;
   position: absolute;
   right: -21px;
-    bottom: 0px;
+    bottom: 0px; 
 }
 .cust-tabs .nav-link.active .squareL {
     background:#fff;
@@ -490,5 +490,12 @@ $(document).ready(function() {
 }
 ul#myTabs {
     padding-left: 2px !important;
-}   
+}
+#myTabs .nav-link{
+    padding:0px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}    
     </style>
