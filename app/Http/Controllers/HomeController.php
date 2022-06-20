@@ -276,11 +276,6 @@ class HomeController extends Controller
             $progress =  0;
             $inprogress = 0;
             $others = 100 - ($score);
-            $mouseEvent = 1;
-            if($score > 0)
-            {
-                $mouseEvent = 2;
-            }
 
             if (empty(array_diff($planner_subject, $uSubjects))) {
                 $subjectPlanner_miss = true;
@@ -292,7 +287,7 @@ class HomeController extends Controller
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
 
-            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount','mouseEvent'));
+            return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
