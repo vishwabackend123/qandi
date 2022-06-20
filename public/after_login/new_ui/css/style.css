@@ -13,6 +13,8 @@ button {
     outline: none;
     text-decoration: none;
 }
+.previous_year_exam_page .exam_attempted_common_page .scroll-div{    max-height: calc(100vh - 300px);
+    overflow-y: auto;}
 .previous_year_exam_page .live-exam .tab-pane {
     max-height: 100%!important;
     overflow: auto;
@@ -2239,7 +2241,7 @@ ul.matrixLists li b {
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
-    z-index: 9999;
+    z-index: 999999999;
 }
 
 /******* New dashboard Amit-End ******/
