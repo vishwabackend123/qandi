@@ -1,6 +1,15 @@
 @extends('afterlogin.layouts.app_new')
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    window.onunload = function() {
+        null
+    };
+</script>
+<script type="text/javascript">
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
