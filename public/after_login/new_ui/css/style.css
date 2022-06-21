@@ -664,7 +664,8 @@ span.swipe-arrow:hover {
 .overllanaly .tab-wrapper .nav-tabs,
 .overllanaly .cust-tabs .nav-link.active,
 .overllanaly .cust-tabs .nav-link.active:after {
-    height: 78px;
+    /* height: 78px; */
+    height: 65px;
 }
 div.planner-scheduar-block .planner-wrapper .planner-content {
     background: #f6f9fd;
