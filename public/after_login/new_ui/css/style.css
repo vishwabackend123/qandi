@@ -9762,7 +9762,7 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 .rightSect #form_exam_submit .stop,.rightSect .btn-outline-danger.stop,.btn-outline-success.start   {height:31px}
 .rightSect .btn-outline-danger.stop,.btn-outline-success.start{padding-top:3px;}
 .rightSect #form_exam_submit .pull-right .stop,.pull-right .btn-outline-success.start{padding-top: 3px;}
-.rightSect #form_exam_submit .pull-right.lowhight .stop,.pull-right.lowhight .btn-outline-success.start{padding-top: 5px;}
+.rightSect #form_exam_submit .pull-right.lowhight .stop,.pull-right.lowhight .btn-outline-success.start{padding-top: 6px;}
 
 .rightSect #form_exam_submit .stop{    padding-top: 3px;}
 .custom-page .shadow-lg ,.myqMatrix-card.shadow-lg{ box-shadow: 0 0 20px 0 rgba(0,0,0,0.1)!important;}
