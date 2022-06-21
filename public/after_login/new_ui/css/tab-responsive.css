@@ -148,6 +148,8 @@ font-size:14px;
 min-width:auto;
 font-size: 14px;
 line-height: 35px;
+padding-left: 17px!important;
+padding-right: 17px!important;
 }
 .subscrived svg{
 width:46px;
@@ -484,7 +486,7 @@ height: auto;
 .cust-tabs.nav.nav-tabs .nav-link{
 font-size: 13px;
 padding-left: 17px!important;
-padding-right: 17px!important;
+padding-right: 17px!important; 
 }
 .subscription .form-btns button {
 font-size: 12px;
