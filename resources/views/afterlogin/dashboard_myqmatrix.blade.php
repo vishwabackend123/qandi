@@ -497,5 +497,11 @@ ul#myTabs {
     align-items: center;
     justify-content: center;
 
-}    
+}  
+
+  .circleR ,.circleL {
+ 
+  background: #f6f9fd;
+ 
+}
     </style>
