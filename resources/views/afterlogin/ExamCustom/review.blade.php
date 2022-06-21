@@ -247,6 +247,7 @@ $question_type = "Numerical";
                                                                     @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
                                                                     <p>Knowledge of</p>
                                                                     <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
