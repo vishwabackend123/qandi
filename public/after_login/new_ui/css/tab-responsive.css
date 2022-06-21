@@ -40,7 +40,10 @@ margin-left: 0;
         text-overflow: unset;
         overflow: visible;
         white-space: normal;
-        flex: 4;
+        flex: 3;
+        min-height: 31px;
+        display: flex;
+        align-items: center;
     }
     .name-txt-sml{    text-transform: none;
         width: 70%;
