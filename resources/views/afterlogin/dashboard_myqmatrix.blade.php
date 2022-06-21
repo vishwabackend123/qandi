@@ -80,7 +80,7 @@ $userData = Session::get('user_data');
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9 fortab">
                     <div class="tab-wrapper">
                         <div>
                             <div class="position-relative">
@@ -418,17 +418,18 @@ $(document).ready(function() {
 @endsection
 
 <style>
-    .mytab .nav-link.active:before,  .mytab .nav-link.active:after{
+    /*
+  .fortab  .mytab .nav-link.active:before, .fortab  .mytab .nav-link.active:after{
         display:none !important;
     }
-    .mytab .nav-link{
+  .fortab  .mytab .nav-link{
         padding-left:0px !important;
     }
-    a#matrix-questwo-tab {
+  .fortab a#matrix-questwo-tab {
         padding-left:0px !important;    padding-right: 0px !important;
 }
-.cust-tabs .nav-link.active {
-    /* color: #231f20; */
+.fortab .cust-tabs .nav-link.active {
+  
     color: #2c3348;
     background-color: #fff !important;
     border-color: transparent;
@@ -441,7 +442,7 @@ $(document).ready(function() {
     position: relative;
 }
 
-.cust-tabs .nav-link.active .circleL{
+.fortab .cust-tabs .nav-link.active .circleL{
     width: 20px;
     height: 20px;
     -webkit-border-radius: 10px;
@@ -454,7 +455,7 @@ $(document).ready(function() {
     bottom: 0px;
     cursor: default;
 }
-.cust-tabs .nav-link.active .circleR {
+.fortab .cust-tabs .nav-link.active .circleR {
     width: 20px; 
   height: 20px;
   -webkit-border-radius: 10px;
@@ -466,7 +467,7 @@ $(document).ready(function() {
   right: -21px;
     bottom: 0px; 
 }
-.cust-tabs .nav-link.active .squareL {
+.fortab .cust-tabs .nav-link.active .squareL {
     background:#fff;
   width: 10px;
   height: 10px;
@@ -475,7 +476,7 @@ $(document).ready(function() {
   left: -11px;
     bottom: -1px;
 }
-.cust-tabs .nav-link.active .squareR{
+.fortab .cust-tabs .nav-link.active .squareR{
     background: #fff;
     width: 10px;
     height: 10px;
@@ -485,13 +486,13 @@ $(document).ready(function() {
     bottom: -1px;
 }
 
-.cust-tabs  .nav-item , .cust-tabs .nav-link{
+.fortab .cust-tabs  .nav-item , .fortab .cust-tabs .nav-link{
     z-index: 999999999;
 }
-ul#myTabs {
+.fortab ul#myTabs {
     padding-left: 2px !important;
 }
-#myTabs .nav-link{
+.fortab #myTabs .nav-link{
     padding:0px !important;
     display: flex;
     align-items: center;
@@ -499,9 +500,10 @@ ul#myTabs {
 
 }  
 
-  .circleR ,.circleL {
+ .fortab .circleR , .fortab .circleL {
  
   background: #f6f9fd;
  
 }
+*/
     </style>
