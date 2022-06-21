@@ -932,7 +932,6 @@ class HomeController extends Controller
             $exam_id = $userData->grade_id;
             $filtered_subject = [];
 
-
             if (Redis::exists('custom_answer_time_' . $user_id)) {
                 Redis::del(Redis::keys('custom_answer_time_' . $user_id));
             }
@@ -1093,6 +1092,7 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
+            dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }

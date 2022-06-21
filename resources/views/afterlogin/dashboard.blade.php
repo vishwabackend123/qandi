@@ -1085,12 +1085,12 @@ $userData = Session::get('user_data');
                 $(this).parent("p").hide();
             });
         });
-         $(document).on('click', function(e) {
+        $(document).on('click', function(e) {
             var card_opened = $('.tooltipclass').hasClass('show');
             if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-               $('.tooltipclass').hide();
+                $('.tooltipclass').hide();
             }
-         });
+        });
     </script>
     <script language="JavaScript">
         $(document).ready(function() {
