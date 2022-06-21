@@ -136,16 +136,9 @@
             $("#otp-verify-btn").trigger("click");
         }
     });
-    var input = document.getElementById("select-state");
-    input.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            $("#address-btn").trigger("click");
-        }
-    });
-     var input = document.getElementById("select-city");
-    input.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
+   $(document).on('keypress', function(e) {
+      var hasclass = $('#address-btn').hasClass('disbaled-btn');
+        if (e.which == 13 && e.which != true) {
             event.preventDefault();
             $("#address-btn").trigger("click");
         }
