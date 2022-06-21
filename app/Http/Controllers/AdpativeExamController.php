@@ -872,7 +872,7 @@ class AdpativeExamController extends Controller
                 // return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
 
-                dd($sessionResult, $response_json, $curl_url, $request);
+
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {
@@ -959,7 +959,7 @@ class AdpativeExamController extends Controller
                 return Redirect::route('exam_result_analytics', [$result_id]);
                 //return view('afterlogin.ExamCustom.exam_result_analytics');
             } else {
-
+                dd($sessionResult, $response_json, $curl_url, $request);
                 return redirect()->route('dashboard');
             }
         } catch (\Exception $e) {

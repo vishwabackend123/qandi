@@ -20,53 +20,61 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
     <link href='{{URL::asset("public/after_login/css/style-slider.css")}}' rel='stylesheet' />
     <script src="{{URL::asset('public/after_login/js/touchslider.js')}}"></script>
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+            null
+        };
+    </script>
     <style>
-    #overlay {
-        background: #ffffff;
-        color: #666666;
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: 5000;
-        top: 0;
-        left: 0;
-        float: left;
-        text-align: center;
-        padding-top: 25%;
-        opacity: .80;
-    }
-
-
-
-    .spinner {
-        margin: 0 auto;
-        height: 64px;
-        width: 64px;
-        animation: rotate 0.8s infinite linear;
-        border: 5px solid firebrick;
-        border-right-color: transparent;
-        border-radius: 50%;
-    }
-
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
+        #overlay {
+            background: #ffffff;
+            color: #666666;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 5000;
+            top: 0;
+            left: 0;
+            float: left;
+            text-align: center;
+            padding-top: 25%;
+            opacity: .80;
         }
 
-        100% {
-            transform: rotate(360deg);
+
+
+        .spinner {
+            margin: 0 auto;
+            height: 64px;
+            width: 64px;
+            animation: rotate 0.8s infinite linear;
+            border: 5px solid firebrick;
+            border-right-color: transparent;
+            border-radius: 50%;
         }
-    }
 
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-chtml,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-char,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .math,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
-    .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax_CHTML {
-        top: 4px;
-    }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
 
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-chtml,
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .mjx-char,
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .math,
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax,
+        .ans-block.row.mt-5.N_radioans .mb-4 .ans .MathJax_CHTML {
+            top: 4px;
+        }
     </style>
 </head>
 

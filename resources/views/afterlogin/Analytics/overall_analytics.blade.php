@@ -14,15 +14,25 @@ $userData = Session::get('user_data');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 ">
-                    <div class="tab-wrapper">
+                    <div class="tab-wrapper fortab">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL</a>
+                                    <a class="nav-link active" id="overall-tab" data-bs-toggle="tab" href="#overall" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab(null)">OVERALL
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                 </li>
                                 @foreach($user_subjects as $val)
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}</a>
+                                    <a class="nav-link " id="home-tab-{{$val->id}}" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" onclick="nxtTab('{{$val->id}}')">{{$val->subject_name}}
+                                    <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                </a>
                                 </li>
                                 @endforeach
                                 <!--   <li class="ms-auto">

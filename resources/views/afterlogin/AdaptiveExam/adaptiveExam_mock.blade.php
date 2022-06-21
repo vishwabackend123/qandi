@@ -1,4 +1,5 @@
 @extends('afterlogin.layouts.app_new')
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
     function preventBack() {
@@ -26,11 +27,8 @@
         };
     });
 </script>
+
 @section('content')
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-
-
-
 @php
 $userData = Session::get('user_data');
 @endphp
@@ -262,7 +260,7 @@ $questtype='radio';
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
                             <input type="hidden" name="exam_mode" value="{{isset($exam_mode)?$exam_mode:''}}">
-                            <div class="pull-right">
+                            <div class="pull-right lowhight">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>

@@ -664,7 +664,8 @@ span.swipe-arrow:hover {
 .overllanaly .tab-wrapper .nav-tabs,
 .overllanaly .cust-tabs .nav-link.active,
 .overllanaly .cust-tabs .nav-link.active:after {
-    height: 78px;
+    /* height: 78px; */
+    height: 65px;
 }
 div.planner-scheduar-block .planner-wrapper .planner-content {
     background: #f6f9fd;
@@ -1646,7 +1647,7 @@ span a#close-edit-planner-btn img {
 /******* MyQMatrix Amit-Start ******/
 .dashboard-cards-block.matrixpage-wrapper .bg-white > small p {
     z-index: 10;
-    right: -120px;
+    right: -22px;
 }
 
 .ulStyle {
@@ -9760,7 +9761,9 @@ button.btn.btn-light.ms-2.text-danger.rounded-0.show svg path~path ,button.btn.b
 }
 .rightSect #form_exam_submit .stop,.rightSect .btn-outline-danger.stop,.btn-outline-success.start   {height:31px}
 .rightSect .btn-outline-danger.stop,.btn-outline-success.start{padding-top:3px;}
-.rightSect #form_exam_submit .pull-right .stop,.pull-right .btn-outline-success.start{padding-top: 4px;}
+.rightSect #form_exam_submit .pull-right .stop,.pull-right .btn-outline-success.start{padding-top: 3px;}
+.rightSect #form_exam_submit .pull-right.lowhight .stop,.pull-right.lowhight .btn-outline-success.start{padding-top: 5px;}
+
 .rightSect #form_exam_submit .stop{    padding-top: 3px;}
 .custom-page .shadow-lg ,.myqMatrix-card.shadow-lg{ box-shadow: 0 0 20px 0 rgba(0,0,0,0.1)!important;}
 span#image-upload-response {
@@ -9773,3 +9776,98 @@ span#image-upload-response {
 #plannerAddform{
     margin-bottom: 0px;
 }
+
+
+
+.fortab  .mytab .nav-link.active:before, .fortab  .mytab .nav-link.active:after{
+    display:none !important;
+}
+.fortab  .mytab .nav-link{
+    padding-left:0px !important;
+}
+.fortab a#matrix-questwo-tab {
+    padding-left:0px !important;    padding-right: 0px !important;
+}
+.fortab .cust-tabs .nav-link.active {
+/* color: #231f20; */
+color: #2c3348;
+background-color: #fff !important;
+border-color: transparent;
+border-radius: 0;
+font-weight: 600;
+padding-right: 20px;
+padding-left: 20px;
+border-top-left-radius: 20px !important;
+border-top-right-radius: 20px !important;
+position: relative;
+}
+
+.fortab .cust-tabs .nav-link.active .circleL{
+width: 20px;
+height: 20px;
+-webkit-border-radius: 10px;
+-moz-border-radius:    10px;
+border-radius:         10px;
+background: #f6f9fd;
+z-index: 2;
+position: absolute;
+left: -21px;
+bottom: 0px;
+cursor: default;
+}
+.fortab .cust-tabs .nav-link.active .circleR {
+width: 20px; 
+height: 20px;
+-webkit-border-radius: 10px;
+-moz-border-radius:    10px;
+border-radius:         10px;
+background: #f6f9fd;
+z-index: 2;
+position: absolute;
+right: -21px;
+bottom: 0px; 
+}
+.fortab .cust-tabs .nav-link.active .squareL {
+background:#fff;
+width: 10px;
+height: 10px;
+z-index: 1;
+position: absolute;
+left: -11px;
+bottom: -1px;
+}
+.fortab .cust-tabs .nav-link.active .squareR{
+background: #fff;
+width: 10px;
+height: 10px;
+z-index: 1;
+position: absolute;
+right: -11px;
+bottom: -1px;
+}
+
+.fortab .cust-tabs  .nav-item , .fortab .cust-tabs .nav-link{
+z-index: 999999999;
+}
+.fortab ul#myTabs {
+padding-left: 2px !important;
+}
+.fortab .nav-link{
+padding:0px !important;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}  
+
+.fortab .circleR , .fortab .circleL {
+
+background: #f6f9fd;
+
+}
+
+.fortab #myTabs , .fortab #myTab {
+    padding-left: 2px!important;
+}
+ 
+

@@ -196,12 +196,16 @@ $question_type = "Numerical";
                     <div class="propt_text">To answer this you need to have</div>
                     <div class="attemp_box row mt-0">
                         <div class="sub_att_1 col-md-6">
+                            @if((isset($question_data->topic_name) && !empty($question_data->topic_name)))
                             <p>Knowledge, Application of</p>
                             <a href="javascript:void(0);" class="detail_btn" style="cursor:default"> {{(isset($question_data->topic_name) && !empty($question_data->topic_name))?$question_data->topic_name:''}}</a>
+                            @endif
                         </div>
                         <div class="sub_att_1 col-md-6">
+                            @if(isset($question_data->concept_name) && !empty($question_data->concept_name))
                             <p>Knowledge of</p>
                             <a href="javascript:void(0);" class="detail_btn" style="cursor:default">{{(isset($question_data->concept_name) && !empty($question_data->concept_name))?$question_data->concept_name:''}}</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -266,8 +270,8 @@ $question_type = "Numerical";
         var question_block_height_cal = question_block_height - 10 + "px";
         $('.question-block').css('height', question_block_height_cal);
 
-        var extra_width = 5 ;
-        var ansblockwidth =  $('.answer-section').outerWidth();
+        var extra_width = 5;
+        var ansblockwidth = $('.answer-section').outerWidth();
         var mixwidth = extra_width + ansblockwidth;
         $('.answer-section').css('width', mixwidth);
 

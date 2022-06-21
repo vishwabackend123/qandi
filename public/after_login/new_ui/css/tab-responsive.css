@@ -6,8 +6,13 @@
 @media screen and (max-height:750px){
 .live-exam-list-wrapper .tab-wrapper.live-exam.live-exam-tab-wrapper{height: auto;}
 }
+@media screen and (max-width:1640px){
+    .dashboard-cards-block.matrixpage-wrapper .bg-white > small p { min-width: 300px;}
+}
 @media screen and (max-width:1380px){
 .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
+.dashboard-cards-block.matrixpage-wrapper .bg-white > small p { min-width: 250px;}
+
 }
 @media screen and (max-width:1300px){
  
@@ -30,6 +35,7 @@ margin-left: 0;
     right: -18px;}
 }
 @media screen and (max-width:1199px){
+    .dashboard-cards-block.matrixpage-wrapper .bg-white > small p{min-width:202px;}
     .overllanaly .sub-title h3 {
         text-overflow: unset;
         overflow: visible;
@@ -142,6 +148,8 @@ font-size:14px;
 min-width:auto;
 font-size: 14px;
 line-height: 35px;
+padding-left: 17px!important;
+padding-right: 17px!important;
 }
 .subscrived svg{
 width:46px;
@@ -477,6 +485,8 @@ height: auto;
 }
 .cust-tabs.nav.nav-tabs .nav-link{
 font-size: 13px;
+padding-left: 17px!important;
+padding-right: 17px!important; 
 }
 .subscription .form-btns button {
 font-size: 12px;
