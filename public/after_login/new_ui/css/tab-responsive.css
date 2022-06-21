@@ -586,7 +586,7 @@ align-items: start !important;
 height: calc(100vh - 250px) !important;
 }
 .tab-wrapper.live-exam {
-height: calc(100vh - 180px);
+height: calc(100vh - 200px);
 }
 .mocktest-attempted-wrapper .cust-tab-content {
 height: calc(100vh - 340px)!important;
