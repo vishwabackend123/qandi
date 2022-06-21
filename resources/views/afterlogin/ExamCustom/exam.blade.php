@@ -276,7 +276,7 @@ $question_type = "Numerical";
                             <input type="hidden" name="test_type" value="{{$test_type}}">
                             <input type="hidden" name="exam_type" value="{{$exam_type}}">
                             <input type="hidden" name="planner_id" value="{{isset($planner_id)?$planner_id:0}}">
-                            <div class="pull-right">
+                            <div class="pull-right lowhight">
                                 <button type="button" class="btn btn-outline-danger stop" onclick="stop();"><i class="fa fa-pause" aria-hidden="true" title="Pause"></i>
                                 </button>
                                 <button type="button" class="btn btn-outline-success start" onclick="start();" style="display: none"><i class="fa fa-play" aria-hidden="true" title="Resume"></i>
