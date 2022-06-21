@@ -3,6 +3,8 @@
 $userData = Session::get('user_data');
 $user_id = isset($userData->id)?$userData->id:'';
 $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
+$lead_exam_id = isset($userData->lead_exam_id) && !empty($userData->lead_exam_id) ?$userData->lead_exam_id:'';
+$trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userData->trail_sub:'';
 @endphp
 @section('content')
 <!-- Side bar menu -->
@@ -138,12 +140,19 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                         </div>
                     </div>
                     @else
+                    @php
+                    if(isset($lead_exam_id) && !empty($lead_exam_id) && $sub->subscript_id != $lead_exam_id)
+                    {
+                        continue;
+                    } 
+                    @endphp
                     <div class="col-xl-4 col-md-6 p-4 text-center ">
                         <div class="bg-white white-box-small subscriptionBox  ">
                             <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
                             <p class="price">Rs. {{$subsprice}}</p>
                             <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
                             <div class="text-center mt-4">
+                                @if(empty($trail_sub) || $trail_sub==2)
                                 <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty($userData->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
                                     @csrf
                                     <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
@@ -153,11 +162,14 @@ $user_exam_id = isset($userData->grade_id)?$userData->grade_id:'';
                                     <input type="hidden" name="exam_price" value="{{$subsprice}}">
                                     <button type="submit" class="btn btn-danger text-uppercase rounded-0 px-5" id="goto-otp-btn">Subscribe Now <i class="fas fa-arrow-right"></i></button>
                                 </form>
+                                @endif
                             </div>
                             @if($sub->trial_subscription_duration>0)
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
+                                @if(empty($trail_sub) || $trail_sub==1)
                                 <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trial></a>
+                                @endif
                             </div>
                             @else
                             <div class="text-center mt-2">
