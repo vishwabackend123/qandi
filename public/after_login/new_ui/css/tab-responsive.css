@@ -9,9 +9,6 @@
 @media screen and (max-width:1640px){
     .dashboard-cards-block.matrixpage-wrapper .bg-white > small p { min-width: 300px;}
 }
-
-
-
 @media screen and (max-width:1380px){
 .exam-analytics .exam-panel.cust-tabs .nav-item {width:25%;}
 .dashboard-cards-block.matrixpage-wrapper .bg-white > small p { min-width: 250px;}
