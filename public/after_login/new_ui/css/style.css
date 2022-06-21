@@ -9849,7 +9849,7 @@ z-index: 999999999;
 .fortab ul#myTabs {
 padding-left: 2px !important;
 }
-.fortab #myTabs .nav-link{
+.fortab .nav-link{
 padding:0px !important;
 display: flex;
 align-items: center;
@@ -9862,3 +9862,9 @@ justify-content: center;
 background: #f6f9fd;
 
 }
+
+.fortab #myTabs , .fortab #myTab {
+    padding-left: 2px!important;
+}
+ 
+
