@@ -447,7 +447,7 @@ $(document).ready(function() {
     -webkit-border-radius: 10px;
     -moz-border-radius:    10px;
     border-radius:         10px;
-    background: #fafcfe;
+    background: #f6f9fd;
     z-index: 2;
     position: absolute;
     left: -21px;
@@ -460,7 +460,7 @@ $(document).ready(function() {
   -webkit-border-radius: 10px;
   -moz-border-radius:    10px;
   border-radius:         10px;
-  background: #fafcfe;
+  background: #f6f9fd;
   z-index: 2;
   position: absolute;
   right: -21px;
@@ -497,5 +497,11 @@ ul#myTabs {
     align-items: center;
     justify-content: center;
 
-}    
+}  
+
+  .circleR ,.circleL {
+ 
+  background: #f6f9fd;
+ 
+}
     </style>
