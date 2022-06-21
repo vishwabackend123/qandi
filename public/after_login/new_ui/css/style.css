@@ -9868,6 +9868,7 @@ background: #f6f9fd;
 
 .fortab #myTabs , .fortab #myTab {
     padding-left: 2px!important;
+    z-index: 9;
 }
  
 
