@@ -100,7 +100,7 @@ $userData = Session::get('user_data');
                 <div class="col-md-6">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"> Task for the Day</span>
-                        @foreach($data_task as $data)
+                        @foreach($dailyTask as $key=>$data)
                         @if($data['category'] == 'skill' && $data['task_type'] == 'daily')
                         @php
                         $current_date=date("d");
@@ -123,7 +123,7 @@ $userData = Session::get('user_data');
                         @endphp
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
-                                <p><b>Task 1 - {{$skill_task}}</b></p>
+                                <p><b>Task {{$key+1}} - {{$skill_task}}</b></p>
                                 <p>Sharpen your evaluation skills with this quick curated test</p>
                                 <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
                                     <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
@@ -139,7 +139,7 @@ $userData = Session::get('user_data');
                         @if($data['category'] == 'time' && $data['task_type'] == 'daily')
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
-                                <p><b>Task 2 - Time Management</b></p>
+                                <p><b>Task {{$key+1}} - Time Management</b></p>
                                 <p>Work on your time management skills with this test</p>
                                 <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
                                     <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
@@ -158,11 +158,11 @@ $userData = Session::get('user_data');
                 <div class="col-md-6">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card h-100 dt_sec-1">
                         <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"> Task for the Week</span>
-                        @foreach($data_task as $data)
+                        @foreach($weekTask as $wkey=>$data)
                         @if($data['category'] == 'accuracy' && $data['task_type'] == 'weekly')
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
-                                <p><b>Task 1 - Accuracy Test</b></p>
+                                <p><b>Task {{$wkey+1}} - Accuracy Test</b></p>
                                 <p>Work on your accuracy with this test</p>
                                 <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
                                     <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
@@ -178,7 +178,7 @@ $userData = Session::get('user_data');
                         @if($data['category'] == 'weak_topic' && $data['task_type'] == 'weekly')
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
-                                <p><b>Task 2 - Weak Topic Test</b></p>
+                                <p><b>Task {{$wkey+1}} - Weak Topic Test</b></p>
                                 <p>Work on your weak topics with this test.</p>
                                 <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
                                     <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
@@ -194,40 +194,7 @@ $userData = Session::get('user_data');
                         @endforeach
                     </div>
                 </div>
-                <!--div class="col-md-7">
-                    <div class="bg-white shadow-lg py-5 myqMatrix-card h-auto dt_sec-1">
-                        <span class="progress_text" style="padding-left: 15px;"><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"> Task for the Day</span>
-                        <div class="row mt-3 dtrow-left">
-                            <div class="col-md-6">
-                                <p><b>Task 3 - Accuracy Test</b></p>
-                                <p>Work on your accuracy with test</p>
-                                <p><span class="text-danger">10</span> Questions | Duration :
-                                    <span class="text-danger">15mins</span></p>
-                            </div>
-                            <div class="col-md-6"><a class="btn btntheme" href="#">TAKE TEST</a></div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <div class="dtrow-right">
-                                    <p><b>Task 2 - Weak Topic Test</b></p>
-                                    <p>Work on your weak topics of <span class="text-danger"> Chemistry (Q4-MyQ Matrix)</span> with this test</p>
-                                    <p><span class="text-danger">25</span> Questions | Duration :
-                                        <span class="text-danger">60mins</span></p>
-                                    <a class="btn btntheme" href="#">TAKE TEST</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="dtrow-right">
-                                    <p><b>Task 2 - Benchmark Test</b></p>
-                                    <p>Take this benchmark in <span class="text-danger"> Quadratic Equations</span></p>
-                                    <p><span class="text-danger">25</span> Questions | Duration :
-                                        <span class="text-danger">60mins</span></p>
-                                    <a class="btn btntheme" href="#">TAKE TEST</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div-->
+
             </div>
         </div>
     </div>
@@ -264,21 +231,20 @@ $userData = Session::get('user_data');
         </div>
     </div>
     <script>
-    $(window).on('load', function() {
-        //$('#matrix').modal('show');
-    });
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function() {
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+        $(window).on('load', function() {
+            //$('#matrix').modal('show');
+        });
+        $(document).ready(function() {
+            $(".dashboard-cards-block .bg-white>small>img").click(function() {
+                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                    $(this).parent("p").hide();
+                });
+                $(this).siblings("p").show();
+            });
+            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
                 $(this).parent("p").hide();
             });
-            $(this).siblings("p").show();
         });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-            $(this).parent("p").hide();
-        });
-    });
-
     </script>
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')

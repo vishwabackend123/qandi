@@ -13,11 +13,16 @@ $userData = Session::get('user_data');
         <div class="container-fluid list-series practice-series-lists">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
-                    <div class="tab-wrapper live-exam live-exam-custom">
+                    <div class="tab-wrapper live-exam live-exam-custom fortab">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs widthAuto" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs widthAuto mytab" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Test Series</a>
+                                    <a class="nav-link active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="home" aria-selected="true">Test Series
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link " id="live-tab" data-bs-toggle="tab" href="#live" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
