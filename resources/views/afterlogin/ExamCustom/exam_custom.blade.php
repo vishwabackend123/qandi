@@ -27,14 +27,24 @@ $userData = Session::get('user_data');
       <div class="row">
         <div class="col-lg-12  p-lg-5 pt-none">
 
-          <div class="tab-wrapper">
+          <div class="tab-wrapper fortab ">
             <div id="scroll-mobile">
-              <ul class="nav nav-tabs cust-tabs widthAuto" id="myTab" role="tablist">
+              <ul class="nav nav-tabs cust-tabs widthAuto mytab" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom</a>
+                  <a class="nav-link active" id="custom-tab" data-bs-toggle="tab" href="#custom" role="tab" aria-controls="home" aria-selected="true">Custom
+                    <span class="circleL"></span>
+                    <span class="circleR"></span>
+                    <span class="squareL"></span>
+                    <span class="squareR"></span>
+                  </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
+                  <a class="nav-link " id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="home" aria-selected="true" style="text-transform:uppercase;">Attempted
+                    <span class="circleL"></span>
+                    <span class="circleR"></span>
+                    <span class="squareL"></span>
+                    <span class="squareR"></span>
+                </a>
                 </li>
               </ul>
             </div>

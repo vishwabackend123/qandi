@@ -663,7 +663,7 @@ class StudentSignInController extends Controller
                 $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 curl_close($curl);
                 if ($httpcode == 400 || $httpcode == 422) {
-                    return json_encode(array('success' => false,'message' => $httpcode));
+                    return json_encode(array('success' => false, 'message' => $httpcode));
                 }
             }
             if ($success == false) {
@@ -730,8 +730,8 @@ class StudentSignInController extends Controller
     {
         $match_array = array();
         $not_match = array();
-        foreach ($arrayData as $key=>$value) {
-            $char_len=strlen($search);
+        foreach ($arrayData as $key => $value) {
+            $char_len = strlen($search);
             if (strtolower(substr($value, 0, $char_len)) === strtolower($search)) {
                 $match_array[] = $value;
             } else {

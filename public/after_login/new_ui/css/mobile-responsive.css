@@ -678,7 +678,7 @@ li.a3TS {
 width: 50% !important;
 }
 .practice-series-lists.list-series .live-exam .speci-text li.a4TS {
-width: 50%;    text-align: right;
+width: 50%;    text-align: left;
 padding-right: 15px;
 margin-top:0;
 }
