@@ -136,7 +136,7 @@ $userData = Session::get('user_data');
                                         @endforeach
                                     </div>
                                     @else
-                                    <div class="row text-center p-4">
+                                    <div class=" text-center p-4">
                                         <h5>No series available.</h5>
                                     </div>
                                     @endif
