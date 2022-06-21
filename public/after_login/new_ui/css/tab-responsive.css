@@ -38,6 +38,7 @@ margin-left: 0;
     right: -18px;}
 }
 @media screen and (max-width:1199px){
+    .dashboard-cards-block.matrixpage-wrapper .bg-white > small p{min-width:202px;}
     .overllanaly .sub-title h3 {
         text-overflow: unset;
         overflow: visible;
