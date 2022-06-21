@@ -213,9 +213,9 @@ class HomeController extends Controller
             $your_place = [];
             $progress_cat = [];
             if (Redis::exists('ideal' . $user_id)) {
-                    $ideal = json_decode(Redis::get('ideal' . $user_id),true);
-                    $your_place =json_decode(Redis::get('your_place' . $user_id),true);
-                    $progress_cat = json_decode(Redis::get('progress_cat' . $user_id),true);
+                $ideal = json_decode(Redis::get('ideal' . $user_id), true);
+                $your_place = json_decode(Redis::get('your_place' . $user_id), true);
+                $progress_cat = json_decode(Redis::get('progress_cat' . $user_id), true);
             } else {
                 $curl = curl_init();
                 $api_URL = env('API_URL');
@@ -817,9 +817,12 @@ class HomeController extends Controller
             $data_task = [];
             if (isset($response_task['success']) && !empty($response_task['success'])) {
                 $data_task = $response_task['allowed_details'];
+                $collection = collect($data_task);
+                $dailyTask = $collection->where('task_type', 'daily')->sortBy('category')->values()->all();
+                $weekTask = $collection->where('task_type', 'weekly')->sortBy('category')->values()->all();
             }
 
-            return view('afterlogin.dashboard_dailytask', compact('data_task'));
+            return view('afterlogin.dashboard_dailytask', compact('dailyTask', 'weekTask'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
