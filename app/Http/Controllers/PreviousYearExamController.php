@@ -81,21 +81,18 @@ class PreviousYearExamController extends Controller
             if ($httpcode == 200 || $httpcode == 201) {
                 $response_data = (array)(json_decode($response_json));
                 $upcomming_live_exam = isset($response_data['paper-list']) ? $response_data['paper-list'] : [];
-                //$completed_live_exam = isset($response_data['completed-live-exam']) ? $response_data['completed-live-exam'] : [];
-
-
-
-                $collection = collect($upcomming_live_exam);
-
-                $unique = $collection->unique('paper_year');
-                $years_list = $unique->pluck('paper_year');
-                $years_list->all();
                 foreach ($upcomming_live_exam as $key => $value) {
                     if($value->test_completed_yn =='Y')
                     {
                         unset($upcomming_live_exam[$key]);
                     }
                 }
+                $collection = collect($upcomming_live_exam);
+
+                $unique = $collection->unique('paper_year');
+                $years_list = $unique->pluck('paper_year');
+                $years_list->all();
+
                 return view('afterlogin.PreviousYearExam.index', compact('upcomming_live_exam', 'years_list'));
             } else {
                 return Redirect::back()->withErrors(['There is some error  for this result id.']);
