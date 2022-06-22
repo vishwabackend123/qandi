@@ -173,7 +173,7 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <div class="position-relative h-100">
+                    <div class="position-relative box-height-set">
                         <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
                         <div id="scroll-mobile" class="tabintablet">
                             <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
