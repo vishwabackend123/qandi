@@ -1,6 +1,9 @@
 @extends('afterlogin.layouts.app_new')
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+
 <script type="text/javascript">
     function preventBack() {
         window.history.forward();
@@ -21,10 +24,6 @@
             keyboard: false
         });
 
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-            history.go(1);
-        };
     });
 </script>
 
@@ -324,7 +323,80 @@ $questtype='radio';
         </div>
     </div>
 </div>
-<!-- Modal Test_Instruction-->
+<!-- test_instruction modal -->
+<div class="modal fade" id="test_instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-0">
+            <div class="modal-header pb-0 border-0">
+                <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}" title="Close">
+                    <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
+                </a>
+            </div>
+            <div class="modal-body pt-3 p-5">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-8">
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'MOCK TEST'}}</h1>
+                        <div class="scroll">
+                            <div class="test-info">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-5 col-lg-5">
+                                        <div class="me-2"></div>
+                                        <div>
+                                            <small>No. of Questions</small>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$questions_count}} MCQ</span> </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4">
+                                        <div>
+                                            <small>Subjects</small>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$tagrets}}</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-lg-3">
+                                        <div class="me-2 ms-auto"></div>
+                                        <div>
+                                            <small>Duration</small>
+                                            <span class="d-block inst-text"><span class="inst-text">{{$exam_fulltime}}</span> Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="inst mb-3">(Please Read the instructions carefully for any query before starting the test. Thank you.)</p>
+                            <div class="instructions pe-3">
+                                <h3 class="text-uppercase">Instructions</h3>
+                                <p>This will give you multiple opportunities to improve your scores in the
+                                    examination if you are not able to give your best in one attempt.</p>
+                                <p>In first attempt, you will get a first-hand experience of taking an
+                                    examination and you will know your mistakes which you can improve while attempting
+                                    for the next time.</p>
+                                <p>This will reduce your chance of dropping a year due to inadequate preparation.</p>
+                                <p>You will not have to yet again lose another year.</p>
+                                <p>If you missed the examination due to reasons beyond control (such as Board examination), then you will not have to wait for one full year and you need not appear in all the four sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-xl-4 ps-lg-2 ps-xl-5 d-flex align-items-center justify-content-center flex-column">
+
+                        <h1 class="my-auto text-center">
+
+                            <span class="d-block mt-3 fw-bold">All the Best </span><span class="unaaame fw-bold">{{$userData->user_name}}!</span>
+
+                        </h1>
+                        <div class="row justify-content-center">
+                            <button class="btn  text-uppercase rounded-0 px-5 goto-exam-btn col-lg-12 col-sm-6" id="goto-exam-btn" data-bs-dismiss="modal" aria-label="Close">GO FOR IT &nbsp;&nbsp;&nbsp;<img src="{{URL::asset('public/after_login/images/goforimgit.png')}}" /></button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal END Exam -->
 <div class="modal fade" id="FullTest_Exam_Panel_Interface_A" tabindex="-1" role="dialog" aria-labelledby="FullTest_Exam_Panel_Interface_A" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
@@ -539,31 +611,11 @@ $questtype='radio';
 </script>
 <!-- browser back disable -->
 <script type="text/javascript">
-    /*$('.number-block').slimscroll({
-        height: '20vh'
-    });
-
-    $('.answer-block').slimscroll({
-        height: '30vh'
-    });*/
-
-    $(document).ready(function() {
-        /*$("#test_instruction").modal({
-            backdrop: "static",
-            keyboard: false
-        });
-        $('#test_instruction').modal('show');*/
-        $('#mainDiv').show();
-        $('#exam_content_sec').show();
-        setboxHeight();
-        startTimer();
-        questionstartTimer();
-        setEachQuestionTime();
-        if ($('#quest_option_' + activeques_id).length > 0) {
-            $('#quest_option_' + activeques_id).focus();
-        }
+    $(window).on('load', function() {
+        $('#test_instruction').modal('show');
 
     });
+
     $('#goto-exam-btn').click(function() {
         $('#mainDiv').show();
         $('#exam_content_sec').show();
