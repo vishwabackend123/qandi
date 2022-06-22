@@ -127,8 +127,7 @@
     <form id="contact" action="" method="post">
         <div class="logo"> <img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}"></div>
         <input type="hidden" name="country" id="country" value="India">
-        <input type="hidden" name="state" id="state" value="Bihar">
-        <input type="hidden" name="city" id="city" value="{{$lead_user_data['mx_City']}}">
+        <input type="hidden" name="state" id="state" value="{{$lead_user_data['mx_State']}}">
         <input type="hidden" name="exam_id" id="exam_id" value="{{$lead_user_data['mx_Exam_id']}}">
         <input type="hidden" name="trail" id="trail" value="{{$trail}}">
         <h3>Update Your Information</h3>
@@ -145,7 +144,7 @@
             <input placeholder="Your Email Address" value="{{$lead_user_data['EmailAddress']}}" type="email" tabindex="2" required id="email_add">
         </fieldset>
         <fieldset>
-            <input placeholder="Your City" value="{{$lead_user_data['mx_City']}}" type="text" tabindex="2" required>
+            <input placeholder="Your City" id="city" value="{{$lead_user_data['mx_City']}}" type="text" tabindex="2" required>
         </fieldset>
         <fieldset>
             <input placeholder="Exam to prepare for" value="{{$lead_user_data['mx_Exam_to_prepare']}}" type="text" tabindex="2" required>
