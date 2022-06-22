@@ -32,7 +32,7 @@ $userData = Session::get('user_data');
                 </div>
                 @endif
                 <div class="col-lg-12  p-lg-5 pt-none">
-                    <div class="result-list bg-white tab-wrapper fortab ">
+                    <div class="result-list bg-white tab-wrapper fortab">
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
