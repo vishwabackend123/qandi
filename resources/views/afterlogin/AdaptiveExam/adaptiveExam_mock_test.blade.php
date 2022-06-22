@@ -32,25 +32,14 @@ $userData = Session::get('user_data');
                 </div>
                 @endif
                 <div class="col-lg-12  p-lg-5 pt-none">
-                    <div class="result-list bg-white tab-wrapper fortab">
+                    <div class="result-list bg-white tab-wrapper">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div active" id="mocktest-tab" data-bs-toggle="tab" href="#mocktest" role="tab" aria-controls="mocktest" aria-selected="true">Mock Test
-                                        <span class="circleL"></span>
-                                        <span class="circleR"></span>
-                                        <span class="squareL"></span>
-                                        <span class="squareR"></span>
-
-                                    </a>
+                                    <a class="nav-link all_div active" id="mocktest-tab" data-bs-toggle="tab" href="#mocktest" role="tab" aria-controls="mocktest" aria-selected="true">Mock Test</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div" id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true" style="text-transform:uppercase;">Attempted
-                                        <span class="circleL"></span>
-                                        <span class="circleR"></span>
-                                        <span class="squareL"></span>
-                                        <span class="squareR"></span>
-                                </a>
+                                    <a class="nav-link all_div" id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true" style="text-transform:uppercase;">Attempted</a>
                                 </li>
                             </ul>
                         </div>
