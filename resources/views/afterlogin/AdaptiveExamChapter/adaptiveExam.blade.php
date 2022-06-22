@@ -24,6 +24,11 @@ $userData = Session::get('user_data');
 
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState == 'hidden') {
+            stop();
+        }
+    });
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",

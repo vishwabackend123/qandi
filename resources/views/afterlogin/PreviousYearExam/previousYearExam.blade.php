@@ -10,6 +10,11 @@
     };
 </script>
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState == 'hidden') {
+            stop();
+        }
+    });
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",

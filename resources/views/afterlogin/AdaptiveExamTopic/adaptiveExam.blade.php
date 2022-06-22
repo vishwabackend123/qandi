@@ -25,6 +25,11 @@ $userData = Session::get('user_data');
 
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState == 'hidden') {
+            stop();
+        }
+    });
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
@@ -34,10 +39,7 @@ $userData = Session::get('user_data');
             backdrop: "static",
             keyboard: false
         });
-        history.pushState(null, null, location.href);
-        window.onpopstate = function() {
-            history.go(1);
-        };
+
     });
 </script>
 
