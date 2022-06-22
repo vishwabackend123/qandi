@@ -1,4 +1,7 @@
 @media(max-width:767px){
+    .box-height-set{
+height: auto;
+}
     .previous_year_exam_lists {
     max-height: calc(100vh - 355px);
 }
