@@ -9870,5 +9870,13 @@ background: #f6f9fd;
     padding-left: 2px!important;
     z-index: 9;
 }
+#preExam ul li:first-child a{
+    border-top-left-radius: 56px!important;
+}
+#preExam ul li:first-child a .circleL ,#preExam ul li:first-child a .squareL{
+    display:none;
+}
  
-
+.box-height-set{
+height: 100%;    
+}

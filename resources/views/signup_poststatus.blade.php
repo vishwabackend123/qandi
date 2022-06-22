@@ -86,6 +86,13 @@ $(document).ready(function() {
         }
 
     });
+    $(document).on('keypress', function(e) {
+      var hasclass = $('#goto-next-btn').hasClass('disbaled-btn');
+        if (e.which == 13 && e.which != true) {
+            event.preventDefault();
+            $("#goto-next-btn").trigger("click");
+        }
+    });
 });
 
 </script>

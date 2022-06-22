@@ -586,7 +586,14 @@ class StudentSignInController extends Controller
     {
         try {
             $data = $request->all();
-
+            $lead_exam_id = '';
+            $trail_sub = '';
+            if (isset($data['exam_id']) && !empty(isset($data['exam_id']))) {
+                $lead_exam_id = $data['exam_id'];
+            }
+            if (isset($data['trail']) && !empty(isset($data['trail']))) {
+                $trail_sub = $data['trail'];
+            }
             $student_id = $request->input('student_id');
             $city = $request->input('city');
             $state = $request->input('state');
@@ -665,6 +672,8 @@ class StudentSignInController extends Controller
                 $sessionData = Session::get('user_data');
                 $sessionData->city = $city;
                 $sessionData->state = $state;
+                $sessionData->lead_exam_id = $lead_exam_id;
+                $sessionData->trail_sub = $trail_sub;
                 Session::put('user_data', $sessionData);
                 $aResponse->redirect_url = url('dashboard');
                 return json_encode($aResponse);
