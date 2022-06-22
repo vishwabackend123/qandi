@@ -33,6 +33,7 @@ class LeadUserController extends Controller {
 			$response_data = json_decode($response_json, true);
 			if (isset($response_data['success']) && !empty($response_data['success'])) {
 				$lead_user_data = $response_data['data'];
+				$lead_user_data['Mobile'] = substr($lead_user_data['Mobile'],-10);
 				return view('lead_user', compact('lead_user_data', 'trail'));
 			} else {
 				die('Unauthorized action.');

@@ -28,7 +28,7 @@ $userData = Session::get('user_data');
                         <div class="topicBlocks mt-3">
                             <div class="topics-box">
                                 <b>Q2</b>
-                                <a href="javascript:void(0);"><span>
+                                <a href="javascript:void(0);" id="q2_box"><span>
                                         @if(isset($myq_matrix[1]))
                                         <b>{{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}</b>
                                         @else
@@ -39,7 +39,7 @@ $userData = Session::get('user_data');
                                 </a>
                             </div>
                             <div class="topics-box">
-                                <a href="javascript:void(0);"><span>
+                                <a href="javascript:void(0);" id="q1_box"><span>
                                         @if(isset($myq_matrix[0]))
                                         <b>{{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}</b>
                                         @else
@@ -51,7 +51,7 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="topics-box">
                                 <b>Q3</b>
-                                <a href="javascript:void(0);"><span>
+                                <a href="javascript:void(0);" id="q3_box"><span>
                                         @if(isset($myq_matrix[2]))
                                         <b>{{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}</b>
                                         @else
@@ -61,7 +61,7 @@ $userData = Session::get('user_data');
                                     </span></a>
                             </div>
                             <div class="topics-box">
-                                <a href="javascript:void(0);"><span>
+                                <a href="javascript:void(0);" id="q4_box"><span>
                                         @if(isset($myq_matrix[3]))
                                         <b>{{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}</b>
                                         @else
@@ -407,7 +407,46 @@ $(document).ready(function() {
             $('#matrix').modal('show');
         }, 1000);
     }
-
+    $('#q2_box').on('click',function() {
+        $('#matrix-questwo-tab').addClass('active');
+        $('#matrix-questwo').addClass('active');
+        $('#matrix-quesone-tab').removeClass('active');
+        $('#matrix-quesone').removeClass('active');
+        $('#matrix-questhree-tab').removeClass('active');
+        $('#matrix-questhree').removeClass('active');
+        $('#matrix-quesfour-tab').removeClass('active');
+        $('#matrix-quesfour').removeClass('active');
+    });
+    $('#q1_box').on('click',function() {
+        $('#matrix-quesone-tab').addClass('active');
+        $('#matrix-quesone').addClass('active');
+        $('#matrix-questwo-tab').removeClass('active');
+        $('#matrix-questwo').removeClass('active');
+        $('#matrix-questhree-tab').removeClass('active');
+        $('#matrix-questhree').removeClass('active');
+        $('#matrix-quesfour-tab').removeClass('active');
+        $('#matrix-quesfour').removeClass('active');
+    });
+    $('#q3_box').on('click',function() {
+        $('#matrix-questhree-tab').addClass('active');
+        $('#matrix-questhree').addClass('active');
+        $('#matrix-quesone-tab').removeClass('active');
+        $('#matrix-quesone').removeClass('active');
+        $('#matrix-questwo-tab').removeClass('active');
+        $('#matrix-questwo').removeClass('active');
+        $('#matrix-quesfour-tab').removeClass('active');
+        $('#matrix-quesfour').removeClass('active');
+    });
+    $('#q4_box').on('click',function() {
+        $('#matrix-quesfour-tab').addClass('active');
+        $('#matrix-quesfour').addClass('active');
+        $('#matrix-questwo-tab').removeClass('active');
+        $('#matrix-questwo').removeClass('active');
+        $('#matrix-questhree-tab').removeClass('active');
+        $('#matrix-questhree').removeClass('active');
+        $('#matrix-quesone-tab').removeClass('active');
+        $('#matrix-quesone').removeClass('active');
+    });
 
 });
 
