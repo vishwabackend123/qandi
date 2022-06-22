@@ -13,6 +13,16 @@
 </script>
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
+    document.addEventListener('visibilitychange', function() {
+        $insCheck = $('#test_instruction').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+            $("#time_out").hide();
+            $("#auto_submit").text('Due to illegal movement on the Live exam, the exam has been auto-submitted.');
+            $("#auto_submit").show();
+
+            $('#endExam').modal('show');
+        }
+    });
     $(window).load(function() {
         $("#endExam").modal({
             backdrop: "static",
@@ -196,6 +206,7 @@ $question_type = "Numerical";
                         </div>
                         <form id="form_exam_submit" action="{{route('exam_result')}}" method="post">
                             @csrf
+                            <input type="hidden" name="auto_submit" value="false">
                             <input type="hidden" name="fulltime" value="{{gmdate('H:i:s',$exam_fulltime*60)}}">
                             <input type="hidden" name="submit_time" id="final_submit_time" value="">
                             <input type="hidden" name="test_type" value="Live">
@@ -304,6 +315,7 @@ $question_type = "Numerical";
                                 <p>This will reduce your chance of dropping a year due to inadequate preparation.</p>
                                 <p>You will not have to yet again lose another year.</p>
                                 <p>If you missed the examination due to reasons beyond control (such as Board examination), then you will not have to wait for one full year and you need not appear in all the four sessions.</p>
+                                <p>During the exam, if you switch to another browser tab, the exam will be automatically submitted.</p>
                             </div>
                         </div>
                     </div>
@@ -350,7 +362,8 @@ $question_type = "Numerical";
 
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
-                    <h2 class="mb-3">Time Over!</h2>
+                    <h2 class="mb-3" id="time_out">Time Over!</h2>
+                    <h5 class="mb-3" id="auto_submit"></h5>
 
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         Submit TEST
@@ -669,6 +682,8 @@ $question_type = "Numerical";
         /*  setDisabled(startBtn);
          removeDisabled(stopBtn); */
         clearInterval(timerInterval);
+        $("#auto_submit").hide();
+        $("#time_out").show();
         $('#endExam').modal('show');
 
         /* let confirmReset = confirm("Time is UP! Wanna restart?");
