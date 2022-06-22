@@ -36,7 +36,7 @@ $userData = Session::get('user_data');
                 </div>
                 @endif
                 <div class="col-lg-12  p-lg-5 pt-none">
-                    <div class="result-list tab-wrapper live-exam fortab ">
+                    <div class="result-list tab-wrapper live-exam fortab " id="preExam">
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -385,6 +385,7 @@ $(document).ready(function() {
     font-size: 14px;
     font-weight: 600;
 }
+
 
 </style>
 @endsection
