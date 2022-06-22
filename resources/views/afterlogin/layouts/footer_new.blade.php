@@ -635,7 +635,7 @@
                         $('.subject_tik').addClass('text-light');
                         var chapters = $('input[name="chapters[]"]').length;
                         if (chapters == '0') {
-                          $('#saveplannerbutton').addClass('disabled');
+                            $('#saveplannerbutton').addClass('disabled');
                         }
                     }
 
@@ -1449,10 +1449,9 @@
         var empty = false;
 
         $('#editProfile_form input').each(function() {
-            var ids= this.id;
-            if(ids=='myInput' || ids=='myInputState')
-            {
-                return; 
+            var ids = this.id;
+            if (ids == 'myInput' || ids == 'myInputState') {
+                return;
             }
             if ($(this).val() == '') {
                 empty = true;
@@ -1991,24 +1990,24 @@
     }
 </script>
 <script>
- $(".dropdown-menu.cust-dropdown li").click(function(){
+    $(".dropdown-menu.cust-dropdown li").click(function() {
         $(this).parent().prev().parent().addClass("category_selct");
     });
-    $("a.clear-filter").click(function(){
+    $("a.clear-filter").click(function() {
         $(this).prev().removeClass(" category_selct");
     });
 
-    $('#plannCal,#nodificbell,.user-pic-block').click(function(){
+    $('#plannCal,#nodificbell,.user-pic-block').click(function() {
         $("html, body, .wrapper-dashboard").animate({
             scrollTop: 0
-            }, "100");
-            $('html').addClass("scrollnone")
+        }, "100");
+        $('html').addClass("scrollnone")
     });
-function searchCity() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    if(input.value.length >= 3 || input.value == '')
-    {
+
+    function searchCity() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        if (input.value.length >= 3 || input.value == '') {
 
             $.ajax({
                 url: "{{ url('/searchCity',) }}",
@@ -2030,31 +2029,23 @@ function searchCity() {
                     }
                     $('#myMenu').html(html);
                 }
-            });    
-    }        
-}
-
-function searchState() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInputState");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myStateList");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        txtValue = li[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+            });
         }
     }
-} 
 
-// $(document).on('click', function (e) {
-//     if ($(e.target).closest(".dashboard-cards-block .bg-white > small p").length === 0) {
-//         alert("hi");
-        
-//     }
-// });
-
+    function searchState() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInputState");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myStateList");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            txtValue = li[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
 </script>

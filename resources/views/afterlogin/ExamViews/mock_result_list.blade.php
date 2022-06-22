@@ -36,7 +36,7 @@ $userData = Session::get('user_data');
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div active" id="mocktest-tab" data-bs-toggle="tab" href="#mocktest" role="tab" aria-controls="mocktest" aria-selected="true">Mock Test</a>
+                                    <a class="nav-link all_div active" id="mocktest-tab" data-bs-toggle="tab" href="#mocktest" role="tab" aria-controls="mocktest" aria-selected="true">Mock Test </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link all_div" id="attempted-tab" data-bs-toggle="tab" href="#attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted</a>

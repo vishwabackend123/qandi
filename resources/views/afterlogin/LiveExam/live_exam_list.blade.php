@@ -14,14 +14,24 @@ $userData = Session::get('user_data');
         <div class="container-fluid list-series live-exam-list-wrapper">
             <div class="row">
                 <div class="col-lg-12  p-lg-5">
-                    <div class="tab-wrapper live-exam live-exam-tab-wrapper">
+                    <div class="tab-wrapper live-exam live-exam-tab-wrapper fortab ">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> Live Exam</a>
+                                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-circle text-danger me-2" aria-hidden="true"></i> Live Exam
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true" style="text-transform:uppercase;"> Attempted</a>
+                                    <a class="nav-link " id="over-tab" data-bs-toggle="tab" href="#completed" role="tab" aria-controls="completed" aria-selected="true" style="text-transform:uppercase;"> Attempted
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>

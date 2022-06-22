@@ -36,14 +36,24 @@ $userData = Session::get('user_data');
                 </div>
                 @endif
                 <div class="col-lg-12  p-lg-5 pt-none">
-                    <div class="result-list tab-wrapper live-exam">
+                    <div class="result-list tab-wrapper live-exam fortab ">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="open" aria-selected="true">Previous year exam</a>
+                                    <a class="nav-link all_div active" id="open-tab" data-bs-toggle="tab" href="#open" role="tab" aria-controls="open" aria-selected="true">Previous year exam
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link all_div" id="pre_attempted-tab" data-bs-toggle="tab" href="#pre_attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted</a>
+                                    <a class="nav-link all_div" id="pre_attempted-tab" data-bs-toggle="tab" href="#pre_attempted" role="tab" aria-controls="attempted" aria-selected="true">Attempted
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -136,7 +146,7 @@ $userData = Session::get('user_data');
                                         @endforeach
                                     </div>
                                     @else
-                                    <div class="row text-center p-4">
+                                    <div class=" text-center p-4">
                                         <h5>No series available.</h5>
                                     </div>
                                     @endif

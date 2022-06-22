@@ -9871,4 +9871,6 @@ background: #f6f9fd;
     z-index: 9;
 }
  
-
+.box-height-set{
+height: 100%;    
+}
