@@ -386,6 +386,5 @@ $(document).ready(function() {
     font-weight: 600;
 }
 
-
 </style>
 @endsection
