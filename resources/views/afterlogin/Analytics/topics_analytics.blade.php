@@ -18,7 +18,7 @@
                     $topicname = Illuminate\Support\Str::limit($list['topic_name'], 16, $end='...');
                     $topicnametitle = $list['topic_name'];
                     @endphp
-                    <h3 class="m-0 p-0" style="text-transform: none;" title="{{Str::ucfirst(Str::lower($topicnametitle))}}"> {{Str::ucfirst(Str::lower($topicname))}} </h3>
+                    <h3 class="m-0 p-0" style="text-transform: none;" title="{{Str::ucfirst(Str::lower($topicnametitle))}}"> {{Str::ucfirst(Str::lower($topicnametitle))}} </h3>
                     <div class="all-star d-flex align-items-center justify-content-between">
                         <ul class="m-0 p-0">
                             @if($list['topic_score'] >0 && $list['topic_score'] <= 20 || $list['topic_score']> 20)
@@ -99,12 +99,11 @@
     </div>
 </div>
 <style>
-.fill-star-color {
-    color: #ffdc34 !important;
-}
+    .fill-star-color {
+        color: #ffdc34 !important;
+    }
 
-.gray-star-color {
-    color: #e9e9e9 !important;
-}
-
+    .gray-star-color {
+        color: #e9e9e9 !important;
+    }
 </style>
