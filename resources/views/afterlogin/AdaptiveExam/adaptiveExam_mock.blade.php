@@ -138,7 +138,7 @@ $questtype='radio';
                             <input type="hidden" id="current_section_id" value="{{$section_id}}" />
                             <!-- Exam subject Tabs  -->
                             <div id="scroll-mobile" class="tabintablet fortab ">
-                                <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
+                                <ul class="nav nav-tabs cust-tabs mytab " id="myTab" role="tablist">
                                     @if(!empty($filtered_subject))
                                     @foreach($filtered_subject as $key=>$sub)
                                     <li class="nav-item" role="presentation">

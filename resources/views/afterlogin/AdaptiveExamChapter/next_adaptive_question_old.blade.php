@@ -182,7 +182,7 @@ $questtype='radio';
             $dom2 = new DOMDocument();
             @$dom2->loadHTML($ans_value);
             $anchorAns = $dom2->getElementsByTagName('img')->item(0);
-            $anstext = isset($anchorAns)? $anchor->getAttribute('alt') : '';
+            $anstext = isset($anchorAns)? $anchorAns->getAttribute('alt') : '';
             $anslatex = "https://math.now.sh?from=".$anstext;
             $view_ans='<img src="'.$anslatex.'" />' ;
             @endphp
