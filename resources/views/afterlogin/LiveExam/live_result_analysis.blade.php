@@ -175,8 +175,8 @@ $userData = Session::get('user_data');
                 <div class="col-lg-7">
                     <div class="position-relative box-height-set">
                         <div class="tab-wrapper h-100 box-shadow  custom-box-shadow">
-                        <div id="scroll-mobile" class="tabintablet">
-                            <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                        <div id="scroll-mobile" class="tabintablet fortab ">
+                            <ul class="nav nav-tabs cust-tabs exam-panel mytab" id="myTab" role="tablist">
                                 @php $subx=1; @endphp
                                 @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                                 @foreach($response->subject_wise_result as $subject)
