@@ -9880,3 +9880,8 @@ background: #f6f9fd;
 .box-height-set{
 height: 100%;    
 }
+ 
+#navpadd a{
+padding-left: 40px !important;
+}
+ 
