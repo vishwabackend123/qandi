@@ -139,15 +139,20 @@
             </div>
             <div class="col-7">
                 <div class="bg-white shadow position-relative">
-                    <div class="tab-wrapper h-100">
+                    <div class="tab-wrapper h-100 fortab ">
                         <div  id="scroll-mobile">
-                        <ul class="nav nav-tabs cust-tabs exam-panel" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs cust-tabs exam-panel mytab" id="myTab" role="tablist">
                             @php $subx=1; @endphp
                             @if(isset($response->subject_wise_result) && !empty($response->subject_wise_result))
                             @foreach($response->subject_wise_result as $subject)
                             @php $subject=(object)$subject; @endphp
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}_tab_subject" data-bs-toggle="tab" href="#{{$subject->subject_name}}_subject" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}</a>
+                                <a class="nav-link @if($subx==1) active @endif" id="{{$subject->subject_name}}_tab_subject" data-bs-toggle="tab" href="#{{$subject->subject_name}}_subject" role="tab" aria-controls="{{$subject->subject_name}}" aria-selected="true">{{$subject->subject_name}}
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                </a>
                             </li>
                             @php $subx++; @endphp
                             @endforeach
