@@ -832,7 +832,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function myQMatrix()
+    public function myQMatrix($quadrant_name)
     {
         try {
             $userData = Session::get('user_data');
@@ -869,7 +869,7 @@ class HomeController extends Controller
             }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool'));
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool','quadrant_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
