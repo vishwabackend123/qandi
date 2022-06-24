@@ -15,10 +15,13 @@
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
         $insCheck = $('#test_instruction').hasClass('show');
-        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+        $endExamCheck = $('#endExam').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false && $endExamCheck == false) {
 
-            $('.modal').modal('hide');
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
+
             stop();
+
         }
     });
     $(window).load(function() {
