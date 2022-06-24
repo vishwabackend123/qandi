@@ -338,14 +338,68 @@
 </style>
 
 
+<style>
+    .planmner-block  .card-common-topheading:before, 
+      .planmner-block .card-common-topheading:after,
+      .planner-scheduar-block .planner-content > .d-flex.align-items-center.justify-content-between:before,
+      .planner-scheduar-block .planner-content > .d-flex.align-items-center.justify-content-between:after {display:none}
+    .planmner-block    .card-common-topheading , .planner-scheduar-block .planner-content > .d-flex.align-items-center.justify-content-between { padding:0px !important;}
+    .plannerCurve{
+        background: white;
+    padding-left: 0px;
+    text-align: center;
+    width: 200px;
+    TEXT-ALIGN: CENTER;
+    line-height: 65px;
+    border-top-left-radius: 56px;
+    border-top-right-radius: 20px!important;
+    position: relative;
+    }
 
+   .circleplanner {
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #f6f9fd;
+    z-index: 2 !important;
+    position: absolute !IMPORTANT;
+    right: -20PX;
+    bottom: 0PX
+    }
+   .squareplanner {
+    background: #ffffff;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    position: absolute !IMPORTANT;
+    right: -10PX;
+    bottom: 0PX; 
+    }
+    .planner-content.p-3{
+        padding-top:0px !important;
+    }
+    div#calendari {
+        margin-top: 0px !important;
+    }
+
+    .planner-content.p-3 .plannerCurve {
+        border-top-left-radius: 45px;
+    }
+ 
+    </style>
 <!-- Planner Section -->
 <div class="planmner-block width collapse planner-scheduar-block" id="collapsePlanner">
 
     <div class="planner-wrapper">
         <div class="planner-edit-mode open-sub-planner" id="sub-planner">
-            <div class="card-common-topheading">
-                <span>SCHEDULER</span>
+            <div class="card-common-topheading ">
+                <div class="plannerCurve">
+                    <span>SCHEDULER</span>
+                    <span class="circleplanner"></span>
+                    <span class="squareplanner"></span>
+                </div>
             </div>
             <div class="slimScrollDiv">
                 <div class="planner-scroll">
@@ -431,7 +485,11 @@
         </div>
         <div class="planner-content p-3">
             <div class="d-flex align-items-center justify-content-between">
+            <div class="plannerCurve">
                 <span class="fs-5 text-danger text-uppercase">Planner</span>
+                    <span class="circleplanner"></span>
+                    <span class="squareplanner"></span>
+                </div>
                 <!--
                 <span>
                     <a draggable="false" href="javascript:void(0);" class="link-danger close-sub-planner" id="edit-planner-btn" title="Edit planner"><img src="{{URL::asset('public/after_login/new_ui/images/blue-pen-v1.png')}}"></a>
