@@ -15,7 +15,10 @@
 </script>
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState == 'hidden') {
+        $insCheck = $('#test_instruction').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+            $('.modal').modal('hide');
+
             stop();
         }
     });
@@ -340,7 +343,7 @@ $questtype='radio';
             <div class="modal-body pt-3 p-5">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
-                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">{{isset($exam_name)?$exam_name:'MOCK TEST'}}</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-4 pt-2">{{isset($exam_name)?$exam_name:'MOCK TEST'}}</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
@@ -1052,7 +1055,7 @@ $questtype='radio';
                     $('#attempt-alert-text').text(response.message);
                     $('#attemptlimit').modal('show');
 
-                    //alert(response.message);
+
                     err_sts = false;
                 }
             },

@@ -375,7 +375,7 @@
     z-index: 1;
     position: absolute !IMPORTANT;
     right: -10PX;
-    bottom: 0PX;
+    bottom: 0PX; 
     }
     .planner-content.p-3{
         padding-top:0px !important;

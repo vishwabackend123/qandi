@@ -14,7 +14,10 @@
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState == 'hidden') {
+        $insCheck = $('#test_instruction').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+
+            $('.modal').modal('hide');
             stop();
         }
     });
@@ -152,10 +155,10 @@ $question_type = "Numerical";
                                     @foreach($filtered_subject as $key=>$sub)
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link all_div class_{{$sub->id}} @if($activesub_id==$sub->id) active @endif " id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="false" @if(count($filtered_subject)>1) onclick="get_subject_question('{{$sub->id}}')" @endif>{{$sub->subject_name}}
-                                        <span class="circleL"></span>
-                                        <span class="circleR"></span>
-                                        <span class="squareL"></span>
-                                        <span class="squareR"></span>
+                                            <span class="circleL"></span>
+                                            <span class="circleR"></span>
+                                            <span class="squareL"></span>
+                                            <span class="squareR"></span>
                                         </a>
                                     </li>
                                     @endforeach

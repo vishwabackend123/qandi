@@ -24,6 +24,19 @@ $userData = Session::get('user_data');
         <div class="container-fluid previous_year_exam_page">
             <div class="row">
                 @if(count($errors) > 0 )
+               
+                                <div class="toastdata active">
+  <div class="toast-content">
+   <i class="fa fa-exclamation-triangle check" aria-hidden="true"></i>
+    <div class="message">
+      <span class="text text-2">Question not available With these <br>filters! Please try Again.</span>
+    </div>
+  </div>
+  <i class="fa fa-times close" aria-hidden="true"></i>
+  <div class="progress active"></div>
+</div>
+                
+<!--
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
                         <span aria-hidden="true">&times;</span>
@@ -34,8 +47,11 @@ $userData = Session::get('user_data');
                         @endforeach
                     </ul>
                 </div>
+-->
+                
+                
                 @endif
-                <div class="col-lg-12  p-lg-5 pt-none">
+                <div class="col-lg-12 pt-5">
                     <div class="result-list tab-wrapper live-exam fortab " id="preExam">
                         <div id="scroll-mobile">
                             <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
@@ -380,5 +396,101 @@ $(document).ready(function() {
     font-weight: 600;
 }
 
+    
+    
+.toastdata.active {
+display: block;
+}
+.toastdata {
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px 35px 20px 25px;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+  display: none;
+      position: absolute;
+    width: 33%;
+    z-index: 999;
+    top:12px;
+    right: 25px;
+}
+
+
+
+.toastdata .toast-content {
+  display: flex;
+  align-items: center;
+}
+
+.toast-content .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  min-width: 35px;
+  background-color: #4070f4;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.message .text {
+font-size: 16px;
+    font-weight: 600;
+    color: #00000091;
+}
+
+.message .text.text-1 {
+  font-weight: 600;
+  color: #333;
+}
+
+.toastdata .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  color: #000;
+}
+
+.toastdata .close:hover {
+  opacity: 1;
+}
+
+.toastdata .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+ border-radius: 12px;
+}
+
+.toastdata .progress:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #4070f4;
+}
+
+.progress.active:before {
+  animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}
+        
 </style>
 @endsection

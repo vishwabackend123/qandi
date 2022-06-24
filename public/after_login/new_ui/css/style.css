@@ -13,6 +13,7 @@ button {
     outline: none;
     text-decoration: none;
 }
+#test_instruction.modal h1.text-danger.text-uppercase, #test_instruction.modal h3.text-danger.text-uppercase{    font-size: 20px;}
 .previous_year_exam_page .exam_attempted_common_page .scroll-div{    max-height: calc(100vh - 300px);
     overflow-y: auto;}
 .previous_year_exam_page .live-exam .tab-pane {
