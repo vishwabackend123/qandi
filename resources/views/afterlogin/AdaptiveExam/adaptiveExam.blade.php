@@ -444,7 +444,9 @@ $question_type = "Numerical";
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState == 'hidden') {
+        $insCheck = $('#test_instruction').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+            $('.modal').modal('hide');
             stop();
         }
     });

@@ -15,7 +15,10 @@
 </script>
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState == 'hidden') {
+        $insCheck = $('#test_instruction').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+            $('.modal').modal('hide');
+            clearInterval(timer_countdown);
             stop();
         }
     });
@@ -1052,7 +1055,7 @@ $questtype='radio';
                     $('#attempt-alert-text').text(response.message);
                     $('#attemptlimit').modal('show');
 
-                    //alert(response.message);
+
                     err_sts = false;
                 }
             },

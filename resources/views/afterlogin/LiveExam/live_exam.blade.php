@@ -16,11 +16,18 @@
     document.addEventListener('visibilitychange', function() {
         $insCheck = $('#test_instruction').hasClass('show');
         if ((document.visibilityState == 'hidden') && $insCheck == false) {
-            $("#time_out").hide();
-            $("#auto_submit").text('Due to illegal movement on the Live exam, the exam has been auto-submitted.');
-            $("#auto_submit").show();
+            $("<input />").attr("type", "hidden")
+                .attr("name", "autosubmit")
+                .attr("value", "true")
+                .appendTo("#form_exam_submit");
 
-            $('#endExam').modal('show');
+            $('#form_exam_submit')[0].submit();
+
+            /*  $("#time_out").hide();
+             $("#auto_submit").text('Due to illegal movement on the Live exam, the exam has been auto-submitted.');
+             $("#auto_submit").show();
+
+             $('#endExam').modal('show'); */
         }
     });
     $(window).load(function() {
