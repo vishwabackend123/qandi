@@ -21,14 +21,19 @@ $userData = Session::get('user_data');
             <div class="row preparation">
                 <div class="col-lg-12  p-lg-5 pt-none">
 
-                    <div class="tab-wrapper">
+                    <div class="tab-wrapper fortab ">
                         <div id="scroll-mobile">
-                            <ul class="nav nav-tabs cust-tabs" id="myTab" role="tablist">
+                            <ul class="nav nav-tabs cust-tabs mytab" id="myTab" role="tablist">
                                 @php $subx=1; @endphp
                                 @if(isset($aPreparation) && !empty($aPreparation))
                                 @foreach($aPreparation as $sub)
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link @if($subx==1) active @endif" id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true">{{$sub->subject_name}}</a>
+                                    <a class="nav-link @if($subx==1) active @endif" id="{{$sub->subject_name}}-tab" data-bs-toggle="tab" href="#{{$sub->subject_name}}" role="tab" aria-controls="{{$sub->subject_name}}" aria-selected="true">{{$sub->subject_name}}
+                                        <span class="circleL"></span>
+                                        <span class="circleR"></span>
+                                        <span class="squareL"></span>
+                                        <span class="squareR"></span>
+                                    </a>
                                 </li>
 
                                 @php $subx++; @endphp

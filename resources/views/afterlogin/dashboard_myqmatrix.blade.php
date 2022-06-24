@@ -407,7 +407,38 @@ $(document).ready(function() {
             $('#matrix').modal('show');
         }, 1000);
     }
+    var quadrant_name = '<?php echo $quadrant_name ?>';
+    if(quadrant_name=='q_2')
+    {
+        questwo_tab();
+    }
+    if(quadrant_name=='q_1')
+    {
+        quesone_tab();
+    }
+    if(quadrant_name=='q_3')
+    {
+        questhree_tab();
+    }
+    if(quadrant_name=='q_4')
+    {
+        quesfour_tab();
+    }
     $('#q2_box').on('click',function() {
+        questwo_tab();
+    });
+    $('#q1_box').on('click',function() {
+        quesone_tab();
+    });
+    $('#q3_box').on('click',function() {
+        questhree_tab();
+    });
+    $('#q4_box').on('click',function() {
+        quesfour_tab();
+    });
+
+});
+function questwo_tab() {
         $('#matrix-questwo-tab').addClass('active');
         $('#matrix-questwo').addClass('active');
         $('#matrix-quesone-tab').removeClass('active');
@@ -416,9 +447,9 @@ $(document).ready(function() {
         $('#matrix-questhree').removeClass('active');
         $('#matrix-quesfour-tab').removeClass('active');
         $('#matrix-quesfour').removeClass('active');
-    });
-    $('#q1_box').on('click',function() {
-        $('#matrix-quesone-tab').addClass('active');
+}
+function quesone_tab() {
+    $('#matrix-quesone-tab').addClass('active');
         $('#matrix-quesone').addClass('active');
         $('#matrix-questwo-tab').removeClass('active');
         $('#matrix-questwo').removeClass('active');
@@ -426,9 +457,9 @@ $(document).ready(function() {
         $('#matrix-questhree').removeClass('active');
         $('#matrix-quesfour-tab').removeClass('active');
         $('#matrix-quesfour').removeClass('active');
-    });
-    $('#q3_box').on('click',function() {
-        $('#matrix-questhree-tab').addClass('active');
+}
+function questhree_tab() {
+    $('#matrix-questhree-tab').addClass('active');
         $('#matrix-questhree').addClass('active');
         $('#matrix-quesone-tab').removeClass('active');
         $('#matrix-quesone').removeClass('active');
@@ -436,9 +467,9 @@ $(document).ready(function() {
         $('#matrix-questwo').removeClass('active');
         $('#matrix-quesfour-tab').removeClass('active');
         $('#matrix-quesfour').removeClass('active');
-    });
-    $('#q4_box').on('click',function() {
-        $('#matrix-quesfour-tab').addClass('active');
+}
+function quesfour_tab() {
+    $('#matrix-quesfour-tab').addClass('active');
         $('#matrix-quesfour').addClass('active');
         $('#matrix-questwo-tab').removeClass('active');
         $('#matrix-questwo').removeClass('active');
@@ -446,9 +477,7 @@ $(document).ready(function() {
         $('#matrix-questhree').removeClass('active');
         $('#matrix-quesone-tab').removeClass('active');
         $('#matrix-quesone').removeClass('active');
-    });
-
-});
+}
 
 </script>
 <!-- Footer Section -->
