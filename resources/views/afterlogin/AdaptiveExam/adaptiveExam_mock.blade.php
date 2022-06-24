@@ -18,7 +18,7 @@
         $insCheck = $('#test_instruction').hasClass('show');
         if ((document.visibilityState == 'hidden') && $insCheck == false) {
             $('.modal').modal('hide');
-            clearInterval(timer_countdown);
+
             stop();
         }
     });
