@@ -274,10 +274,10 @@ $question_type = "Numerical";
                     <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
                 </a>
             </div>
-            <div class="modal-body pt-3 p-md-5 p-4">
+            <div class="modal-body pt-3  p-5">
                 <div class="row">
                     <div class="col-lg-12 col-xl-8">
-                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-2">Live Exam</h1>
+                        <h1 class="text-danger text-uppercase examhead mb-0 pb-0 mt-4 pt-2">Live Exam</h1>
                         <div class="scroll">
                             <div class="test-info">
                                 <div class="row justify-content-md-center">
