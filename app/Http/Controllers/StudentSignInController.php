@@ -598,6 +598,7 @@ class StudentSignInController extends Controller
             $city = $request->input('city');
             $state = $request->input('state');
             $country = $request->input('country');
+            $state =isset($state) && !empty($state) ? $state : "";
 
             $request = ['id' => $student_id, "city" => $city, "state" => $state, "country" => $country,];
 
