@@ -59,6 +59,10 @@ class ResultController extends Controller
             $test_series_id = isset($request->series_id) ? $request->series_id : 0;
             $py_paper_id = isset($request->py_paperid) ? $request->py_paperid : 0;
 
+            $autosubmit = isset($request->autosubmit) ? $request->autosubmit : false;
+
+
+
             /* below parameter for dailyTaskExam result */
             $tasktype = isset($request->tasktype) ? $request->tasktype : "";
             $category = isset($request->category) ? $request->category : "";
@@ -144,7 +148,7 @@ class ResultController extends Controller
             curl_close($curl);
 
             if ($test_type == 'Live') {
-                return view('afterlogin.LiveExam.live_result');
+                return view('afterlogin.LiveExam.live_result', compact('autosubmit'));
             }
 
             $response_data = (json_decode($response_json));
