@@ -222,4 +222,9 @@
         });
     });
 </script>!---->
+<section class="d-flex h-100 login-signup">
+<div class="left-sidepannel">
+  AIHILHLKHH  
+</div>
+</section>
 @endsection

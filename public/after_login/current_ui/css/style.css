@@ -31,7 +31,15 @@ a, input, button, a:focus, input:focus, button:focus {outline:none!important;}
 :focus {outline: -webkit-focus-ring-color auto 0px!important;}
 li{list-style-type:none;}
 /*********** Navdeep *************/
-
+.login-signup{
+    background: #f5faf6;
+}
+.left-sidepannel{
+background: #e0f6e3;
+padding: 40px 138px 80px 40px;
+max-width: 637px;
+width: 100%;
+}
 
 
 
