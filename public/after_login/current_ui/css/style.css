@@ -12,6 +12,7 @@ body {
     padding: 0;
     font-family: "Manrope", sans-serif !important;
     /* font-family: 'Inter', sans-serif; */
+    overflow-x: hidden;
 }
 a,
 input,
@@ -40,13 +41,12 @@ padding: 0;
 }
 .left-sidepannel{
 background: #e0f6e3;
-padding: 40px 138px 80px 40px;
+padding: 40px 40px 80px 40px;
 max-width: 637px;
 width: 100%;
 }
 .left-sidepannel .carousel-inner .carousel-item img{
-   height: 370px;
-    width: 450px !important;
+   height: 300px;
 }
 .left-sidepannel .carousel-indicators {
     bottom: 0;
@@ -79,9 +79,70 @@ font-weight: bold;
     left: 0;
 }
 .left-sidepannel .carousel-caption p {
-    color: #56b663;
-    font-size: 14px;
-    font-weight: 500;
+ color: #56b663;
+font-size: 14px;
+font-weight: normal;
+}
+.right-seidepannel{
+padding: 80px 90px 20px 90px;
+width: 100%;
+max-width: 800px;
+}
+.right-seidepannel h1{
+   font-size: 36px;
+   font-weight: bold;
+   color: #1f1f1f;
+}
+.right-seidepannel p{
+   font-size: 16px;
+   font-weight: bold;
+   color: #363c4f;
+   padding-bottom: 30px;
+}
+.right-seidepannel p a{
+ color:#56b663;  
+}
+.custom-input label{
+color: #363c4f;
+font-size: 14px;
+font-weight: 600;    
+}
+.custom-input .form-control{
+color: #363c4f;
+border: 1px solid #d0d5dd !important;
+background: #fff;
+padding: 10px 14px;
+border-radius: 8px;
+box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+font-size: 14px;
+font-weight: 500;    
+height: 44px;
+}
+.custom-input input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(54, 60, 79, 0.5);
+}
+.custom-input input::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(54, 60, 79, 0.5);
+}
+.custom-input input:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(54, 60, 79, 0.5);
+}
+.custom-input input:-moz-placeholder { /* Firefox 18- */
+  color: rgba(54, 60, 79, 0.5);
+}
+.getotp{
+padding: 0 14px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #56b663;
+height: 44px;
+font-size: 14px;
+font-weight: 800;
+}
+.copyright{
+font-size: 14px;
+color: #363c4f;
+font-weight: normal;
 }
 /********* Sachin **************/
 
