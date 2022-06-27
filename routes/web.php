@@ -288,3 +288,4 @@ Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeCo
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/select_plan_payment', [App\Http\Controllers\LeadUserController::class, 'selectPlanPayment']);
+Route::any('/performance_rating', [App\Http\Controllers\LeadUserController::class, 'performanceRating']);

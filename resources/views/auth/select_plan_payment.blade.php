@@ -11,16 +11,7 @@
     .fullbody_scan_test h3 {font-size: 24px;font-weight: 800;color: #fff;}
     .fullbody_scan_test p{font-size: 16px;font-weight: 600;color: #fff;max-width: 235px;margin: 0 auto;}
     .btn.btn-common-white {border-radius: 8px;background-color: #fff;font-size: 14px;font-weight: 800;color: #56b663;padding: 8px;min-width: 160px;}
-    .btn.btn-common-transparent {
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: solid 1px #56b663;
-    background-color: #f5faf6;
-    color: #56b663;
-    font-size: 14px;
-    font-weight: 800;
-    min-width: 260px;
-}
+    .btn.btn-common-transparent {padding: 8px 16px;border-radius: 8px;border: solid 1px #56b663;background-color: #f5faf6;color: #56b663;font-size: 14px;font-weight: 800;min-width: 250px;}
 </style>
 @extends('layouts.app')
 @section('content')
