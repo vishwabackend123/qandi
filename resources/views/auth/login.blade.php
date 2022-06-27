@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<section class="login-bg-img">
+<!--<section class="login-bg-img">
     <span class="outer-logo"><a href="{{ env('LANDING_URL') }}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <div class="login_screen">
         <p class="mb-0">Welcome to Q&I </p>
@@ -38,7 +38,6 @@
             </form>
         </div>
     </div>
-    <!--login_screen-->
 </section>
 <script>
     var input = document.getElementById("mobile_num");
@@ -90,18 +89,11 @@
             $("#errlog_mob").fadeOut(5000);
             return false;
         }
-        /*  if (mobile.length != 10) {
-             $("#errlog_mob").html('Please Enter valid mobile number');
-             $("#errlog_mob").fadeIn('fast');
-             $("#errlog_mob").fadeOut(5000);
-             return false;
-         } */
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        //$('.loader-block').show();
         $.ajax({
             url: "{{ route('sendotplogin') }}",
             type: 'POST',
@@ -110,7 +102,6 @@
                 mobile: mobile,
             },
             success: function(response_data) {
-                //$('.loader-block').hide();
 
                 var response = jQuery.parseJSON(response_data);
 
@@ -123,7 +114,6 @@
                     if ($("#resp_opt").length == 1) {
                         $("#resp_opt").text(response.otp);
                     }
-                    //$("#input-otp-box").show();
 
                     resentOtpTime();
 
@@ -153,7 +143,6 @@
                 /*  sentotplogin(); */
             } else {
                 $('#wait_otp_div').show();
-                //elem.innerHTML = 'Resend OTP in <a href="#" class="forgot ">' + timeLeft + ' sec </a>';
                 elem.innerHTML = 'Resend OTP in ' + timeLeft + ' sec ';
                 timeLeft--;
             }
@@ -199,8 +188,7 @@
                     },
                     beforeSend: function() {},
 
-                    success: function(response_data) { //debugger;
-                        //$('.loader-block').hide();
+                    success: function(response_data) { 
 
                         var response = jQuery.parseJSON(response_data);
                         if (response.status == 400) {
@@ -233,5 +221,5 @@
 
         });
     });
-</script>
+</script>!---->
 @endsection
