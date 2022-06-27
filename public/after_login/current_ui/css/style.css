@@ -30,11 +30,60 @@ textarea, button, input[type="password"], input[type="tel"], select {
 a, input, button, a:focus, input:focus, button:focus {outline:none!important;}
 :focus {outline: -webkit-focus-ring-color auto 0px!important;}
 li{list-style-type:none;}
+h1,h2,h3,h4,h5,h6,figure,ul,li{
+margin: 0;
+padding: 0;
+}
 /*********** Navdeep *************/
 
+.login-signup{
+    background: #f5faf6;
+}
+.left-sidepannel{
+background: #e0f6e3;
+padding: 40px 138px 80px 40px;
+max-width: 637px;
+width: 100%;
+}
+.left-sidepannel .carousel-inner .carousel-item img{
+   height: 370px;
+    width: 450px !important;
+}
+.left-sidepannel .carousel-indicators {
+    bottom: 0;
+}
+.left-sidepannel .carousel-indicators button {
+    width: 8px;
+    height: 4px;
+    border: 0;
+    background-color: #56b663;
+    opacity: 0.5;
+    margin: 2px;
+    border-radius: 2px;
+}
 
-
-
+.left-sidepannel .carousel-indicators button.active {
+    background-color: #56b663;
+    opacity: 1;
+}
+.left-sidepannel .carousel-caption h5{
+color: #56b663;
+font-size: 18px;
+font-weight: bold;
+}
+.left-sidepannel .carousel-caption {
+   bottom: 0;
+    padding: 0;
+    z-index: 10000;
+    position: relative;
+    right: 0;
+    left: 0;
+}
+.left-sidepannel .carousel-caption p {
+    color: #56b663;
+    font-size: 14px;
+    font-weight: 500;
+}
 /********* Sachin **************/
 
 
