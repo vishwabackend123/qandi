@@ -130,6 +130,7 @@
         <input type="hidden" name="state" id="state" value="{{$lead_user_data['mx_State']}}">
         <input type="hidden" name="exam_id" id="exam_id" value="{{$lead_user_data['mx_Exam_id']}}">
         <input type="hidden" name="trail" id="trail" value="{{$trail}}">
+        <input type="hidden" name="mx_Grade_id" id="mx_Grade_id" value="{{$lead_user_data['mx_Grade_id']}}">
         <h3>Update Your Information</h3>
         <span id="errormsg" style="color:red"></span>
         <fieldset>
@@ -235,6 +236,7 @@ function updateAddress(student_id) {
         var referEmail = '';
         var exam_id = $('#exam_id').val();
         var trail = $('#trail').val();
+        var mx_Grade_id = $('#mx_Grade_id').val();
                 $.ajax({
                     url: "{{ url('/signupAddress') }}",
                     type: 'POST',
@@ -248,6 +250,7 @@ function updateAddress(student_id) {
                         refer_email: referEmail,
                         exam_id: exam_id,
                         trail:trail,
+                        mx_Grade_id:mx_Grade_id,
                     },
                     success: function(response_data) { //debugger;
                         var response = jQuery.parseJSON(response_data);
