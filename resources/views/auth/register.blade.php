@@ -107,6 +107,19 @@
     </div>
 </section>
 <script type="text/javascript">
+    function getParameter(p)
+    {
+        var url = window.location.search.substring(1);
+        var varUrl = url.split('&');
+        for (var i = 0; i < varUrl.length; i++)
+        {
+            var parameter = varUrl[i].split('=');
+            if (parameter[0] == p)
+            {
+                return parameter[1];
+            }
+        }
+    }
     var input = document.getElementById("user_name");
     input.addEventListener("keyup", function(event) {
         if (event.keyCode === 13) {
@@ -450,6 +463,14 @@
                 var city = $("#select-city").val();
                 var referCode = $("#refer_code").val();
                 var referEmail = $("#email_add").val();
+                var exam_id = getParameter('exam_id');
+                var trial_id = getParameter('trial');
+                if (typeof(exam_id)  === "undefined") {
+                    exam_id="";
+                }
+                if (typeof(trial_id)  === "undefined") {
+                    trial_id ="";
+                }
 
                 $.ajax({
                     url: "{{ url('/signupAddress') }}",
@@ -462,6 +483,8 @@
                         city: city,
                         refer_code: referCode,
                         refer_email: referEmail,
+                        exam_id: exam_id,
+                        trail:trial_id,
                     },
                     success: function(response_data) { //debugger;
                         var response = jQuery.parseJSON(response_data);
