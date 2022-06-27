@@ -426,7 +426,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
     }
     .verificationBox p{
         text-align: center;
-    font-size: 14px;
+    font-size: 14px; 
     }
 .custom-container{
     width:100%;

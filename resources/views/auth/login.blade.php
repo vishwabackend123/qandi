@@ -224,7 +224,48 @@
 </script>!---->
 <section class="d-flex h-100 login-signup">
 <div class="left-sidepannel">
-  AIHILHLKHH  
+    <figure class="pb-4"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/current_ui/images/logo.svg')}}" alt="logo"></a> </figure>
+    
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{URL::asset('public/after_login/current_ui/images/Subject-performance.svg')}}" alt="performance" class="d-block">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="pb-2">MyQ Today</h5>
+        <p>See how you are doing and see the percentage of<br> subject you are doing good in</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <img src="{{URL::asset('public/after_login/current_ui/images/progress-jer.svg')}}" alt="performance" class="d-block">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="pb-2">Progress journey</h5>
+        <p>Visually track how your progress is going, graph that<br> shows you ideal pace and your pace</p>
+      </div>
+    </div>
+       <div class="carousel-item">
+     <img src="{{URL::asset('public/after_login/current_ui/images/weekly plan.svg')}}" alt="performance" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="pb-2">Weekly plan</h5>
+        <p>Plan your weekly tests for any chapters, check<br> proficiency of different subjects</p>
+      </div>
+    </div>
+     <div class="carousel-item">
+     <img src="{{URL::asset('public/after_login/current_ui/images/Task-center.svg')}}" alt="performance" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="pb-2">Task centre</h5>
+        <p>To assess your readiness, set daily or weekly tasks to<br> evaluate your skills </p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
 </div>
 </section>
 @endsection
