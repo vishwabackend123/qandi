@@ -3,7 +3,6 @@
 *, html{
     padding:0; margin:0;
     box-sizing:border-box;
-    -webkit-text-size-adjust: 100%;
     /* Font varient */
     font-variant-ligatures: none;
     -webkit-font-variant-ligatures: none;
@@ -33,7 +32,6 @@ textarea, button, input[type="password"], input[type="tel"], select {
     -moz-appearance: none!important;
     appearance: none!important;
     box-shadow: none!important;
-    border-radius: 2px;
 }
 a, input, button, a:focus, input:focus, button:focus {outline:none!important;}
 :focus {outline: -webkit-focus-ring-color auto 0px!important;}
