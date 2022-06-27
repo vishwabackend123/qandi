@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.min.css')}}">
+    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
     @else
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
@@ -36,6 +38,8 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.css')}}">
+    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
     @endif
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" />
@@ -44,6 +48,8 @@
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+    <!------   current js ------>
+    <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
 
     <script>
         $(window).on('load', function() {

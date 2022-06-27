@@ -14,8 +14,12 @@
     <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
     @if(env('MINIFY_STATIC_ASSETS') == 'true')
     <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}">
+    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
     @else
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
+    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
     @endif
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,6 +31,8 @@
     <script type="text/javascript" src="{{URL::asset('public/js/jquery.slimscroll.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!------   current js ------>
+    <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
