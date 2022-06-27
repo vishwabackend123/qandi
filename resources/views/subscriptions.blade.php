@@ -222,7 +222,7 @@
     border: none;
 } 
 .progress__item:after {
- 
+
     position: absolute;
     top: 0;
     left: 0px;
