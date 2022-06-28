@@ -379,7 +379,7 @@ padding: 20px 40px;
 border-radius: 20px;
 box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14), 0 8px 30px 0 rgba(172, 185, 176, 0.14);
 background-color:#ffffff;
-position: absolute;
+position: fixed;
 bottom: 30px;
 }
 .verificationBox a{
@@ -416,8 +416,9 @@ min-height:100%;
 }
 .selectPlan  {
     background-color: #f5faf6;
-     height:100%;
-     padding: 0px 40px;
+     height:100vh;
+     padding: 0px 40px 60px;
+     overflow-y: auto;
     
 }
 .SelectPlane_text{
