@@ -1,10 +1,9 @@
 
 @extends('layouts.app')
 @section('content')
-<section class="subscriptionsPage d-flex" style="height:auto;">
+<section class="subscriptionsPage d-flex">
     <div class="subscriptionsLeftpannel">
         <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
-
         <div class="progress-box">
             <ul class="progressorder">
                 <li class="progress__item  progress__item--active">
@@ -19,7 +18,6 @@
                     <p class="progress__title">You order is out for delivery</p>
                     <p class="progress__info">Delivery Executive is out for delivery</p>
                 </li>
-                
             </ul>
         </div>
         <div class="verificationBox">
