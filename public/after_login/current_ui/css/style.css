@@ -114,7 +114,9 @@ border: 1px solid #d0d5dd !important;
 background: #fff;
 padding: 10px 14px;
 border-radius: 8px;
-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05); 
+-webkit-box-shadow:  0 1px 2px 0 rgba(16, 24, 40, 0.05); 
+-moz-box-shadow:  0 1px 2px 0 rgba(16, 24, 40, 0.05); 
 font-size: 14px;
 font-weight: 500;    
 height: 44px;
@@ -131,15 +133,6 @@ height: 44px;
 .custom-input input:-moz-placeholder { /* Firefox 18- */
   color: rgba(54, 60, 79, 0.5);
 }
-.getotp{
-padding: 0 14px;
-  border-radius: 8px;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-  background-color: #56b663;
-height: 44px;
-font-size: 14px;
-font-weight: 800;
-}
 .copyright{
 font-size: 14px;
 color: #363c4f;
@@ -147,6 +140,38 @@ font-weight: normal;
 bottom: 30px;
 left: 0;
 right: 0;
+}
+.changeno .form-control{
+    background: #fafafa;
+}
+.changeno a{
+    position: absolute;
+    right: 1px;
+    height: 42px;
+    line-height: 41px;
+    top: 1px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: #56b663;
+    font-weight: 500;
+    padding: 0px 10px;
+    text-decoration: none;   
+}
+.enterotp{
+ color: #363c4f;
+border: 1px solid #d0d5dd;
+border-radius: 8px;
+box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05); 
+-webkit-box-shadow:  0 1px 2px 0 rgba(16, 24, 40, 0.05); 
+-moz-box-shadow:  0 1px 2px 0 rgba(16, 24, 40, 0.05); 
+}
+.enterotp .form-control{
+    border-left: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0;
+    background: transparent;
+    text-align: center;  
 }
 /*********** Navdeep End *************/
 
