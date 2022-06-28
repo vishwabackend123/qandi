@@ -7,13 +7,18 @@
 <style>
 .getDiscount{
     background: #f5faf6;
-    height: 100%; 
+    min-height: 100%; 
     padding: 86px 131px;
 }
 .planPayment .testType {
     display: block;
     width: 50%;
     border-right: 1px solid #e4e2e2;
+    display: block;
+    padding-left: 28px;
+    position: relative;
+    border-bottom: none;
+    padding-top:0px ; 
 }
 .applyCo{
     display: block;
@@ -44,11 +49,7 @@
     border-radius: 20px;
     box-shadow: 0 8px 30px 0 rgb(172 185 176 / 14%);
 }
-.planPayment .testType{
-    display: block;
-    padding-left: 28px;
-    position: relative;
-}
+ 
 .planPayment .testType h2{
   font-size: 24px;
   font-weight: 600;
@@ -133,7 +134,8 @@
     color: #363c4f;
 }
 .secured{
-    padding-top: 74px;
+    position: absolute;
+    bottom: 20px;
 }
 .secured p{
     font-size: 12px;
@@ -155,13 +157,40 @@
 .Paymentbtn{
     text-align:center;
 }
+.backBtn{
+
+}
+.backBtn a{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(54, 60, 79, 0.8);
+    display: flex;
+    align-items: center
+}
+.backBtn span{
+
+}
 
 
         </style>
 
 <section class="getDiscount">
     <div class="planPayment">
+        
         <div class="testType">
+            <div class="backBtn">
+                <a href="javascript:void(0)">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    Back
+                </a>
+            </div>
             <h2 class="SelectPlanName">NEET Annual Plan</h2>
             <ul>
                 <li>
@@ -250,7 +279,7 @@
                         <p><span class="planL">Total</span><span class="PlanR">₹15,000</span></p>
                     </div>
                     <div class="Paymentbtn">
-                        <a href="" class="btn btn-common-green">Make Payment</a>
+                        <a href="javascript:void(0)" class="btn btn-common-green">Make Payment</a>
                     </div>
                   </form>
                   <div class="inst">
