@@ -300,14 +300,15 @@
       </div>
    </div>
    <div class="right-seidepannel d-flex flex-column justify-content-center position-relative">
+     <div class="loginform m-auto">   
       <h1 class="pb-2 mb-1">Login</h1>
       <p>Don’t have an account? <a href="javascript:void(0);">Sign Up</a></p>
       <form>
-         <div class="custom-input pb-4 d-none">
+         <div class="custom-input pb-4">
             <label>Mobile</label>
             <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
          </div>
-         <div class="custom-input changeno pb-4">
+         <div class="custom-input changeno pb-4 d-none">
             <label>Mobile</label>
             <div class="d-flex position-relative">
                <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
@@ -319,16 +320,18 @@
                </a>
             </div>
          </div>
-         <div class="custom-input pb-5">
+         <div class="custom-input pb-5 d-none">
             <label>Enter OTP</label>
             <div class="d-flex enterotp bg-white">
                <input class="form-control"><input class="form-control"><input class="form-control"><input class="form-control">  <input class="form-control">    
             </div>
+            <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
          </div>
          <div class="Get-otp pt-4">
-            <button type="submit" class="btn btn-common-green text-white w-100 disabled">Get OTP</button>    
+            <button type="submit" class="btn btn-common-green text-white w-100 disabled">Get OTP<span class="d-none">Verify OTP</span></button>    
          </div>
       </form>
+    </div>
       <h3 class="copyright text-center position-absolute">&copy 2022 Q&I. All rights reserved.</h3>
    </div>
 </section>
