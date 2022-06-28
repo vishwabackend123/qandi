@@ -352,7 +352,7 @@ text-decoration: none;
 }
 .progress__item:last-child:before {
     border: none;
-} 
+}    
 .progress__item:after {
     position: absolute;
     top: 0;
@@ -367,8 +367,8 @@ text-decoration: none;
     border: 1px solid rgba(54, 60, 79, 0.5);
     box-shadow: 0 0 0 4px #d2f0d6;
     left: 0;
-   
 }
+
 .verificationBox {
 max-width: 339px;
 display: flex;
@@ -402,8 +402,7 @@ bottom: 30px;
     font-size: 14px; 
 }
 .subscriptionsPage{
-height:100%;
-
+min-height:100%;
 }
 .subscriptionsLeftpannel{
     background-color: #e0f6e3;
