@@ -337,7 +337,7 @@ bottom: 30px;
     font-size: 14px; 
 }
 .subscriptionsPage{
-height:100%;
+min-height:100%;
 
 }
 .subscriptionsLeftpannel{

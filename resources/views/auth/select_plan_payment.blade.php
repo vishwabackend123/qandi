@@ -21,7 +21,7 @@
     width: 50%;
 }
 .applyCoform{
-    max-width: 295px;
+    max-width: 310px;
     margin: 0 auto;
 }
 .applyCoform h3{
@@ -155,11 +155,6 @@
 .Paymentbtn{
     text-align:center;
 }
- 
-
- 
- 
-
 
 
         </style>
