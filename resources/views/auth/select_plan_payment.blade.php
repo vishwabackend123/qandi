@@ -18,11 +18,11 @@
     padding-left: 28px;
     position: relative;
     border-bottom: none;
-    padding-top:0px ; 
+    padding-top:0px; 
 }
 .applyCo{
     display: block;
-    padding-top: 40px;
+    padding-top: 130px;
     width: 50%;
 }
 .applyCoform{
@@ -49,13 +49,14 @@
     border-radius: 20px;
     box-shadow: 0 8px 30px 0 rgb(172 185 176 / 14%);
 }
- 
+
 .planPayment .testType h2{
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.3;
-  color:#1f1f1f;
-  padding-bottom: 32px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #1f1f1f;
+    padding-bottom: 32px;
+    padding-top: 72px;
 }
 .subscribe_form{
     padding-top: 43px;
@@ -74,7 +75,6 @@
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
-    
 }
 .subscribe_form .custom-input {
     border-bottom: 1px solid rgb(86 182 99 / 8%);
@@ -88,23 +88,20 @@
 }
 .PlanR{
     font-size: 14px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: normal;
-  text-align: left;
-  color: #363c4f;
+    font-weight: 800;
+    line-height: 1.29;
+    text-align: left;
+    color: #363c4f;
 }
 .planL{
     font-size: 14px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: normal;
-  text-align: left;
-  color: rgba(54, 60, 79, 0.8);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(54, 60, 79, 0.8);
 }
 .payDetail {
     padding-top: 17px;
@@ -157,8 +154,8 @@
 .Paymentbtn{
     text-align:center;
 }
-.backBtn{
-
+.backBtn {
+    padding-top: 40px;
 }
 .backBtn a{
     font-size: 14px;
@@ -168,18 +165,13 @@
     text-align: left;
     color: rgba(54, 60, 79, 0.8);
     display: flex;
-    align-items: center
+    align-items: center;
+    text-decoration: none;
 }
-.backBtn span{
-
-}
-
-
-        </style>
+ </style>
 
 <section class="getDiscount">
     <div class="planPayment">
-        
         <div class="testType">
             <div class="backBtn">
                 <a href="javascript:void(0)">
@@ -221,8 +213,6 @@
                     </svg>
                     Identify Your Strengths and Weaknesses
                 </li>
-            
-            
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1"></path>
