@@ -274,12 +274,10 @@
                   </form>
                   <div class="inst">
                     <p>By clicking "Make Payment" you authorise your payment method to be charged in accordance with your subscription plan. For more details</p> 
-                    <a href="javascript:void(0)">Terms of Service</a> 
+                    <a href="javascript:void(0)">Terms of Service</a>    
                  </div>
             </div>
         </div>
-
-  
     </div>
 </section>
 @endsection

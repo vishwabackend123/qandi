@@ -31,7 +31,7 @@
                
                     <div class="selectPlan subscriptionsRightpannel">
                         <div class="SelectPlane_text">
-                            <h3>Select Plane</h3>
+                            <h3>Select Plan</h3>
                             <p>Decide on the best plan for your preparation</p>
                         </div>
                         <div class="selectPlanedetail">
