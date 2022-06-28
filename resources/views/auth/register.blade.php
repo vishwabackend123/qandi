@@ -794,6 +794,26 @@ function searchCity() {
             <label>Mobile</label>
             <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
          </div>
+          <div class="custom-input changeno pb-4">
+            <label>Mobile</label>
+            <div class="d-flex position-relative">
+               <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
+               <span class="position-absolute sentotp">OTP sent</span>
+               <a class="d-block bg-white" href="">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  &nbsp;Edit
+               </a>
+            </div>
+         </div>
+         <div class="custom-input pb-4">
+            <label>Enter OTP</label>
+            <div class="d-flex enterotp bg-white">
+               <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
+            </div>
+            <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
+         </div>
           <div class="custom-input pb-4">
             <label>Email</label>
             <input type="email" class="form-control" placeholder="Email address">
@@ -810,8 +830,8 @@ function searchCity() {
              <div class="custom-input pb-4 row">
              <div class="col-lg-6"><label>Grade</label>
             <select class="form-control selectdata">
-            <option>Select</option> 
-            <option>1</option> 
+            <option class="we">Select</option> 
+            <option class="we2">1</option> 
             <option>2</option> 
             </select></div>     
             <div class="col-lg-6"><label>Exam</label>
@@ -820,25 +840,6 @@ function searchCity() {
             <option>Neet</option> 
             <option>Jee</option> 
             </select></div>
-         </div>
-         <div class="custom-input changeno pb-4 d-none">
-            <label>Mobile</label>
-            <div class="d-flex position-relative">
-               <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
-               <a class="d-block bg-white" href="">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  &nbsp;change
-               </a>
-            </div>
-         </div>
-         <div class="custom-input pb-5 d-none">
-            <label>Enter OTP</label>
-            <div class="d-flex enterotp bg-white">
-               <input class="form-control"><input class="form-control"><input class="form-control"><input class="form-control">  <input class="form-control">    
-            </div>
-            <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
          </div>
          <div class="Get-otp pt-4">
             <button type="submit" class="btn btn-common-green text-white w-100 disabled">Continue</button>    
