@@ -104,6 +104,7 @@
     top: 11px;
     margin-top: 70px;
 }
+.notification-block_new.show{display: block;}
     </style>
     <!-- <div class="container-fluid">
         <div class="row">
@@ -707,7 +708,7 @@
 
 <!--notification-right End-->
 <div class="notification-block_new  collapse" id="collapseNotification2">
-    <!-- <div class="planner-wrapper ">
+    <div class="planner-wrapper ">
         <div class=" notification-right ">
             <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
             <div id="recent_notify" class=" notification-scroll ">
@@ -728,7 +729,7 @@
                 @endif
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
 
 

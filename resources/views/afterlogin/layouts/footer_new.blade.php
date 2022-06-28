@@ -70,6 +70,7 @@
  -->
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-messaging.js"></script>
+<script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
