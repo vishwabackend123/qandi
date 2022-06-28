@@ -222,6 +222,13 @@
         });
     });
 </script>!---->
+<style>
+@media only screen and (max-width: 1366px) {
+  .left-sidepannel .carousel-inner .carousel-item img{
+   height: 350px;
+}
+}
+</style>
 <section class="d-flex h-100 login-signup">
    <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
       <figure class="pb-4"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/current_ui/images/logo.svg')}}" alt="logo"></a> </figure>

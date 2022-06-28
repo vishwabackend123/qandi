@@ -48,7 +48,7 @@ max-width: 637px;
 width: 100%;
 }
 .left-sidepannel .carousel-inner .carousel-item img{
-   height: 350px;
+   height: 550px;
 }
 .left-sidepannel .carousel-indicators {
     bottom: 0;
@@ -85,7 +85,7 @@ font-size: 14px;
 font-weight: normal;
 }
 .right-seidepannel{
-padding: 40px 160px 0 160px;
+padding: 0 160px 0 160px;
 width: 100%;
 max-width: 800px;
 }
