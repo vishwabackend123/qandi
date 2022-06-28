@@ -287,5 +287,7 @@ Route::any('/dashboard-MyQMatrix/{quadrant_name}', [App\Http\Controllers\HomeCon
 Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
-Route::any('/select_plan_payment', [App\Http\Controllers\LeadUserController::class, 'selectPlanPayment']);
+Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics']);
 Route::any('/performance_rating', [App\Http\Controllers\LeadUserController::class, 'performanceRating']);
+Route::any('/select_plan_payment', [App\Http\Controllers\LeadUserController::class, 'selectPlanPayment']);
+Route::any('/plan_purchased', [App\Http\Controllers\LeadUserController::class, 'planPurchased']);
