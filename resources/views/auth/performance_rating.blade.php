@@ -1,31 +1,4 @@
-<style>
-ul.proficiency-level-lists li {
-    border-radius: 8px;
-    border: solid 1px #cde3d0;
-    background-color: rgba(255, 255, 255, 0.3);
-    display: inline-flex;
-    max-width: 215px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    color: #363c4f;
-    margin-top: 20px;
-    width: 100%;
-    margin-right: 20px;
-}
-ul.proficiency-level-lists li span b {width: 7px;background-color: #cccccca1;height: 13px;display: inline-block;border-radius: 10px;}
-ul.proficiency-level-lists li span b.rate-level-active{background-color: #363c4f;}
-ul.proficiency-level-lists li.selected-level{background-color:#e0f6e3;color:#56b663;}
-ul.proficiency-level-lists li.selected-level span b.rate-level-active{background-color:#56b663;}
-.subject-level-proficiency h5 {
-    font-size: 16px;
-    font-weight: 800;
-}
-ul.proficiency-level-lists li:last-child {
-    margin-right: 0;
-}
-</style>
+
 @extends('layouts.app')
 @section('content')
 <div class="performance_rating_wrapper" style="padding:50px;background-color: #f5faf6;">
