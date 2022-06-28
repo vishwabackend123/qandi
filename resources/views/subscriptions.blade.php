@@ -144,7 +144,8 @@
     position: relative;
     padding: 0rem  0rem 0rem  1.5rem;
     margin: 0px;
-    list-style: none;
+    list-style: none;    position: absolute;
+    top: 25%;
 }
 
 .progress__item {
@@ -251,6 +252,8 @@
   border-radius: 20px;
   box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14), 0 8px 30px 0 rgba(172, 185, 176, 0.14);
   background-color:#ffffff;
+  position: absolute;
+    bottom: 30px;
     }
     .verificationBox a{
         width: 114px;
@@ -272,7 +275,7 @@
     font-size: 14px; 
     }
  
- 
+ .subscriptionsPage{height:100%;    justify-content: center;}
 .subscriptionsLeftpannel{
     background-color: #e0f6e3;
     padding: 40px; width:100%;max-width: 419px;
