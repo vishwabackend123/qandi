@@ -697,7 +697,7 @@ function searchCity() {
         }
     }
 </script>!--->
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <style>
 @media only screen and (max-width: 1366px) {
   .left-sidepannel .carousel-inner .carousel-item img{
@@ -800,24 +800,25 @@ function searchCity() {
          </div>
           <div class="custom-input pb-4">
             <label>City</label>
-            <select class="form-control selectdata">
-            <option>Select</option> 
-            <option>Chandigraph</option> 
-            <option>Delhi</option> 
-            </select>
+            <select id="single" class="js-states form-control">
+            <option>Mohali</option>
+            <option>Jind</option>
+            <option>Narwana</option>
+            <option>Kaithal</option>
+          </select>
          </div>
              <div class="custom-input pb-4 row">
              <div class="col-lg-6"><label>Grade</label>
             <select class="form-control selectdata">
             <option>Select</option> 
-            <option>Chandigraph</option> 
-            <option>Delhi</option> 
+            <option>1</option> 
+            <option>2</option> 
             </select></div>     
             <div class="col-lg-6"><label>Exam</label>
             <select class="form-control selectdata">
             <option>Select</option> 
-            <option>Chandigraph</option> 
-            <option>Delhi</option> 
+            <option>Neet</option> 
+            <option>Jee</option> 
             </select></div>
          </div>
          <div class="custom-input changeno pb-4 d-none">
@@ -844,9 +845,19 @@ function searchCity() {
          </div>
       </form>
     </div>
-      <h3 class="copyright text-center pt-3">By clicking continue, you agree to our<br> <a href="javascript:void(0);">Terms & Conditions </a>and <a href="javascript:void(0);">Privacy Policy</a>.</h3>
+      <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="javascript:void(0);">Terms & Conditions </a>and <a href="javascript:void(0);">Privacy Policy</a>.</h3>
    </div>
 </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+      $("#single").select2({
+          placeholder: "Select a City",
+          allowClear: true
+      });
+      $("#multiple").select2({
+          placeholder: "Select a City",
+          allowClear: true
+      });
+    </script>
 
 @endsection

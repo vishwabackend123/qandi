@@ -197,7 +197,7 @@ select.form-control:not([size]):not([multiple]) {
     height: 44px;
     background: url(../images/drodown-arrow.svg) no-repeat white;
     background-position: 95%;
-    cursor: pointer
+    cursor: pointer;
 }
 .signuprightpannel{
     padding: 140px;
@@ -205,6 +205,57 @@ select.form-control:not([size]):not([multiple]) {
 .copyright a{
 color: #56b663;
 text-decoration: none;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #363c4f !important;
+    line-height: 24px !important;
+    height: 44px;
+    padding: 10px 14px !important;
+    font-size: 14px;
+    font-weight: 400;
+}
+.select2-container--default .select2-selection--single {
+     background-color: #fff !important;
+    border: 1px solid #d0d5dd !important;
+    border-radius: 8px !important;
+    height: 44px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    font-size: 23px;
+    right: 10px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    background: url(../images/drodown-arrow.svg) no-repeat;
+    border: 0 !important;
+    width: 14px !important;
+    height: 12px !important;
+    right: 30px !important;
+    margin: 0px -14px !important;
+}
+.select2-container--open .select2-dropdown--below {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 0 !important;
+   padding: 5px 12px 7px;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px 2px rgb(219 227 238 / 60%);
+    -webkit-box-shadow:  0 4px 10px 2px rgb(219 227 238 / 60%); 
+    -moz-box-shadow:  0 4px 10px 2px rgb(219 227 238 / 60%); 
+    margin-top: 5px;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 1px solid #d4d4d4;
+    margin-bottom: 5px;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #56b663 !important;
+}
+.select2-search--dropdown {
+    padding: 0;
 }
 /*********** Navdeep End *************/
 
