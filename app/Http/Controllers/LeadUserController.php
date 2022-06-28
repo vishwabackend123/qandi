@@ -55,5 +55,8 @@ class LeadUserController extends Controller {
 	public function selectPlanPayment() {
 		return view('auth.select_plan_payment');
 	}
+	public function planPurchased() {
+		return view('auth.plan_purchased');
+	}
 }
 
