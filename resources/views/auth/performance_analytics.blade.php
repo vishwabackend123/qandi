@@ -4,9 +4,9 @@
 <div class="fullbody_scan_wrapper" style="padding:50px;background-color: #f5faf6;">
     <div class="fullbody_scan_box d-flex">
         <div class="fullbody_scan_card w-50">
-            <p class="border-bottom mt-0 pb-5 mb-5">Please attempt the Full Body Scan test, so that we can generate tasks for you, based on your proficiency levels.</p>
+            <p class="mt-0 mb-5">Please attempt the Full Body Scan test, so that we can generate tasks for you, based on your proficiency levels.</p>
             <span class="custom-border"></span>
-            <ul>
+            <ul class="mt-5">
                 <li class="mb-3">No of Questions: <span>75 questions</span></li>
                 <li class="mb-3">Duration <span>3 hours</span></li>
                 <li>Subjects <span>Mathematics, Physics & Chemistry</span></li>
