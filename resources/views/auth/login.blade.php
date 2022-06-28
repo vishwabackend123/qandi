@@ -223,8 +223,9 @@
     });
 </script>!---->
 <section class="d-flex h-100 login-signup">
-   <div class="left-sidepannel d-flex flex-column justify-content-between">
+   <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
       <figure class="pb-4"><a href="javascript:void(0);"><img src="{{URL::asset('public/after_login/current_ui/images/logo.svg')}}" alt="logo"></a> </figure>
+       <div class="">
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
          <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -263,6 +264,7 @@
             </div>
          </div>
       </div>
+   </div>
    </div>
 <div class="right-seidepannel d-flex flex-column justify-content-center position-relative">
 <h1 class="pb-2 mb-1">Login</h1>  
