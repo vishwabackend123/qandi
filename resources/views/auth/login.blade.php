@@ -264,7 +264,7 @@
          </div>
       </div>
    </div>
-<div class="right-seidepannel d-flex flex-column justify-content-center">
+<div class="right-seidepannel d-flex flex-column justify-content-center position-relative">
 <h1 class="pb-2 mb-1">Login</h1>  
 <p>Don’t have an account? <a href="javascript:void(0);">Sign Up</a></p>
 <form>
@@ -276,7 +276,7 @@
  <button type="submit" class="btn getotp text-white w-100 disabled">Get OTP</button>    
 </div>
 </form>
-<h3 class="copyright text-center pt-5 mt-3">&copy 2022 Q&I. All rights reserved.</h3>
+<h3 class="copyright text-center position-absolute">&copy 2022 Q&I. All rights reserved.</h3>
 </div>    
 </section>
 @endsection
