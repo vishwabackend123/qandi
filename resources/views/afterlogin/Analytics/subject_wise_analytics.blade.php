@@ -1,5 +1,5 @@
 <div class="row" id="topicclose">
-    
+
     <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 only_prog">
         <div class="row">
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
@@ -52,7 +52,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[0]->skill_name}} skill. {{$skillPer[0]->skill_name}} tells you your problem-solving skills.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[0]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[0]->skill_name}} MyQ Matrix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_1')}}">See {{$skillPer[0]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-right-btm arrowClose" data-bs-toggle="collapse" href="#arrow-right-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -74,7 +74,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[1]->skill_name}} skill. {{$skillPer[1]->skill_name}} tells you your skills of understanding a problem.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold">{{number_format((float)$skillPer[1]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[1]->skill_name}} MyQ Matrix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_2')}}">See {{$skillPer[1]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-left-btm arrowClose" data-bs-toggle="collapse" href="#arrow-left-btm"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -93,7 +93,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[2]->skill_name}} skill. {{$skillPer[2]->skill_name}} tells you your skill of applying concepts to problem solving .</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[2]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[2]->skill_name}} MyQ Matrix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_3')}}">See {{$skillPer[2]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-right-top arrowClose" data-bs-toggle="collapse" href="#arrow-right-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="arrow-box-content">of questions attempted are of {{$skillPer[3]->skill_name}} skill. {{$skillPer[3]->skill_name}} tells you whether you know the concepts.</p>
                                 <h4 class="text-danger text-uppercase fw-2 fw-bold pt-10">{{number_format((float)$skillPer[3]->accuracy_percentage, 2, '.', '')}}%</h4>
                                 <p class="arrow-box-content">is your accuracy in these questions</p>
-                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix')}}">See {{$skillPer[3]->skill_name}} MyQ Matrix</a>
+                                <a class="text-danger fw-2 pt-10 fs-12" href="{{route('dashboard-MyQMatrix','q_4')}}">See {{$skillPer[3]->skill_name}} MyQ Matrix</a>
                             </div>
                             <a class="inner-arrow-left-top arrowClose" data-bs-toggle="collapse" href="#arrow-left-top"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         </div>
@@ -154,17 +154,17 @@
                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 progress  ms-auto sub" style="overflow: visible;">
                         @if($val->correct_ans > 0)
                         <div class="progress-bar bg-light-success position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->correct_ans * 100)/$val->total_questions):0}}%;overflow: visible;" title="Correct({{round($val->correct_ans)}})">
-                            
+
                         </div>
                         @endif
                         @if($val->incorrect_ans > 0)
                         <div class="progress-bar bg-light-red position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->incorrect_ans * 100)/$val->total_questions):0}}%;overflow: visible;" title="Incorrect({{round($val->incorrect_ans)}})">
-                           
+
                         </div>
                         @endif
                         @if($val->unanswered > 0)
                         <div class="progress-bar bg-light-secondary position-relative" role="progressbar" style="width:{{($val->total_questions>0)?round(($val->unanswered * 100)/$val->total_questions):0}}%;overflow: visible;" title="Unanswered({{round($val->unanswered)}})">
-                            
+
                         </div>
                         @endif
                     </div>
@@ -1031,24 +1031,23 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             $('.tooltipclass').hide();
         }
     });
-        function backRedirect()
-     {
-        var url = "{{ route('dashboard') }}";
-        window.location.href=url;
-     }
 
-    $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").click(function(){
+    function backRedirect() {
+        var url = "{{ route('dashboard') }}";
+        window.location.href = url;
+    }
+
+    $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").click(function() {
         $(this).siblings(".arrow-right-btm-content").addClass("openTopicPara");
-        if( $(".arrow-right-btm-content").hasClass("openTopicPara") ){
-            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","none");
+        if ($(".arrow-right-btm-content").hasClass("openTopicPara")) {
+            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events", "none");
         }
     });
-    
-    $(".arrowClose").click(function(){
+
+    $(".arrowClose").click(function() {
         $(".arrow-right-btm-content").removeClass("openTopicPara");
-        if( !$(".arrow-right-btm-content").hasClass("openTopicPara") ){
-            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events","auto");
+        if (!$(".arrow-right-btm-content").hasClass("openTopicPara")) {
+            $(".bg-white.d-flex.justify-content-center.flex-column.h-100.noshadow").css("pointer-events", "auto");
         }
     });
-    
 </script>

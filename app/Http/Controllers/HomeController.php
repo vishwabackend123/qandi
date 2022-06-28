@@ -871,7 +871,7 @@ class HomeController extends Controller
             }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool','quadrant_name'));
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool', 'quadrant_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1094,7 +1094,7 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
+            //dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }

@@ -1,9 +1,9 @@
 @extends('afterlogin.layouts.app_new')
  
     <div class="wrapper">
-        <section class="subscriptionsPage">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-4 p-0 ">
+        <section class="subscriptionsPage d-flex ">
+         
+                
                     <div class="subscriptionsLeftpannel">
                         <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
 
@@ -29,9 +29,9 @@
                             <a href="">Resend</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-9 col-lg-9 col-md-8 p-0">
-                    <div class="selectPlane subscriptionsRightpannel">
+            
+               
+                    <div class="selectPlan subscriptionsRightpannel">
                         <div class="SelectPlane_text">
                             <h3>Select Plane</h3>
                             <p>Decide on the best plan for your preparation</p>
@@ -122,8 +122,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+               
+           
         </section>
     </div>
    
@@ -274,44 +274,24 @@
         text-align: center;
     font-size: 14px; 
     }
-.custom-container{
-    width:100%;
-    max-width: 1440px;
-    margin: auto;
-}
-@media(max-width:1600px){
-    .custom-container{
-        width:100%;
-        max-width: 1366px;
-        margin: auto;
-    }
-}
-@media(max-width:1440px){
-    .custom-container{
-        width:100%;
-        max-width: 1280px;
-        margin: auto;
-    }
-}
-@media(max-width:1366px){
-    .custom-container{
-        width:100%;
-        max-width: 1100px;
-        margin: auto;
-    }
-}
-@media(max-width:1200px){
-    .custom-container{
-        width:90%;
-            
-    }
-}
+ 
+ 
 .subscriptionsLeftpannel{
     background-color: #e0f6e3;
-    padding: 40px; height:100%;
+    padding: 40px; width:100%;max-width: 419px;
 }
-.selectPlane  {
-    background-color: #f5faf6; height:100%;
+.subscriptionsRightpannel{
+    width: 100%;
+    max-width: 1021px;
+}
+.selectPlan  {
+    background-color: #f5faf6;
+     height:100%;
+     padding: 0px 20px;
+     margin-bottom: 40px;
+}
+.SelectPlane_text{
+    padding: 60px 0px 40px 0px;
 }
 .SelectPlane_text h3{
     color:#1f1f1f;
@@ -332,12 +312,8 @@
     background: #ffffff;
 
 }
-.SelectPlane_text{
-    padding: 60px 0px;
-}
-.selectPlane{           
-    padding: 0px 20px;
-}
+
+ 
 
 .planeName{
     display: flex;

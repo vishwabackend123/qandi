@@ -539,9 +539,11 @@ class AnalyticsController extends Controller
 
             curl_close($curl);
             $subAnalytics = json_decode($response);
-            $dailyReport = $subAnalytics->daily_report;
-            $weeklyReport = $subAnalytics->weekly_report;
-            $monthlyReport = $subAnalytics->monthlyReport;
+
+            $dailyReport = (isset($subAnalytics->daily_report) && !empty($subAnalytics->daily_report)) ? $subAnalytics->daily_report : [];
+            $weeklyReport = (isset($subAnalytics->weekly_report) && !empty($subAnalytics->weekly_report)) ? $subAnalytics->weekly_report : [];
+            $monthlyReport = (isset($subAnalytics->monthlyReport) && !empty($subAnalytics->monthlyReport)) ? $subAnalytics->monthlyReport : [];
+
 
             $curl = curl_init();
             $curl_option = array(
@@ -672,6 +674,7 @@ class AnalyticsController extends Controller
 
             return view('afterlogin.Analytics.subject_wise_analytics', compact('subScore', 'day', 'classAcc', 'stuAcc', 'days', 'classAccuracy', 'stuAccuracy', 'skillPer', 'subProf', 'correctAns1', 'incorrectAns1', 'correctAns2', 'incorrectAns2', 'correctAns3', 'incorrectAns3', 'date1', 'correctTime1', 'incorrectTime1', 'date2', 'correctTime2', 'incorrectTime2', 'date3', 'correctTime3', 'incorrectTime3', 'sub_id'));
         } catch (\Exception $e) {
+
             Log::info($e->getMessage());
         }
     }
