@@ -49,7 +49,6 @@
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
     <!------   current js ------>
-    <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
 
     <script>
         $(window).on('load', function() {
