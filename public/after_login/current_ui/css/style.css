@@ -462,12 +462,12 @@ border-bottom: 1px solid #56b663;
 
 
 /********************* Amit Start ******************************/
-/********* Select Plan Payment ***************/
+/********* Performance Analytics ***************/
 .fullbody_scan_card{border-top-left-radius: 30px;border-bottom-left-radius:30px;padding: 20px 40px;box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);border: solid 3px #fff;background-color: #fff;color: #363c4f;}
 .fullbody_scan_card p{font-weight:500;font-size:16px;    color: #363c4f;}
 .fullbody_scan_card ul li{font-size:14px;display: flex;justify-content: space-between;}
 .fullbody_scan_card ul li span{font-weight:600;}
-.custom-border{ display: block;background-color: rgba(86, 182, 99, 0.2);}
+.custom-border{ display: block;background-color: rgba(86, 182, 99, 0.2);height:1px;}
 .fullbody_scan_test {padding:15px 0 40px 0px;background-color: #56b663;border-top-right-radius: 30px;border-bottom-right-radius: 30px;background-image: url(public/after_login/current_ui/images/fullscan-card-bg.png);
 background-repeat: no-repeat;background-size: cover;}
 .fullbody_scan_test span:first-child {position: absolute;right: 0px;top:10px;}
@@ -503,6 +503,34 @@ ul.proficiency-level-lists li.selected-level span b.rate-level-active{background
 ul.proficiency-level-lists li:last-child {
     margin-right: 0;
 }
+/*********** Sidebar ******************/
+aside{
+    background: #fff;
+    width:85px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 10px 20px 0 rgba(220, 226, 234, 0.2);
+    text-align: center;
+    padding-top:20px;
+    height: 100%;
+}
+ul.sidebar-menu-lists {
+    padding: 40px 15px 15px 15px;
+}
+ul.sidebar-menu-lists li a{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul.sidebar-menu-lists li.active a , ul.sidebar-menu-lists li a:hover {
+    background-color: #e0f6e3;
+    border-radius: 8px;
+}
+
 /********* Amit End ***********/
 
 
