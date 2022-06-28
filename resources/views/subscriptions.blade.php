@@ -384,8 +384,6 @@
     align-items: center;
     padding-top: 80px;
 }
-
- 
     .freeTrial a {
     color: #56b663;
     font-size: 14px;

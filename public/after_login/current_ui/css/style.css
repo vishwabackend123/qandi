@@ -47,7 +47,7 @@ max-width: 637px;
 width: 100%;
 }
 .left-sidepannel .carousel-inner .carousel-item img{
-   height: 300px;
+   height: 350px;
 }
 .left-sidepannel .carousel-indicators {
     bottom: 0;
@@ -85,7 +85,7 @@ font-size: 14px;
 font-weight: normal;
 }
 .right-seidepannel{
-padding: 80px 160px 0 160px;
+padding: 40px 160px 0 160px;
 width: 100%;
 max-width: 800px;
 }
@@ -144,6 +144,9 @@ font-weight: 800;
 font-size: 14px;
 color: #363c4f;
 font-weight: normal;
+bottom: 30px;
+left: 0;
+right: 0;
 }
 /********* Sachin **************/
 
