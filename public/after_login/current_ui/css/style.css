@@ -44,7 +44,7 @@ padding: 0;
 .left-sidepannel{
 background: #e0f6e3;
 padding: 40px 40px 80px 40px;
-max-width: 637px;
+max-width: 650px;
 width: 100%;
 }
 .left-sidepannel .carousel-inner .carousel-item img{
@@ -87,7 +87,9 @@ font-weight: normal;
 .right-seidepannel{
 padding: 0 160px 0 160px;
 width: 100%;
-max-width: 800px;
+}
+.loginform{
+width: 360px    
 }
 .right-seidepannel h1{
    font-size: 36px;
@@ -96,12 +98,13 @@ max-width: 800px;
 }
 .right-seidepannel p{
    font-size: 16px;
-   font-weight: bold;
+   font-weight: 500;
    color: #363c4f;
    padding-bottom: 30px;
 }
 .right-seidepannel p a{
- color:#56b663;  
+ color:#56b663; 
+text-decoration: none;
 }
 .custom-input label{
 color: #363c4f;
@@ -172,6 +175,9 @@ box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     border-radius: 0;
     background: transparent;
     text-align: center;  
+}
+.resend{
+font-size: 14px !important;    
 }
 /*********** Navdeep End *************/
 
