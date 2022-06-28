@@ -44,7 +44,7 @@ padding: 0;
 .left-sidepannel{
 background: #e0f6e3;
 padding: 40px 40px 80px 40px;
-max-width: 637px;
+max-width: 650px;
 width: 100%;
 }
 .left-sidepannel .carousel-inner .carousel-item img{
@@ -87,7 +87,9 @@ font-weight: normal;
 .right-seidepannel{
 padding: 0 160px 0 160px;
 width: 100%;
-max-width: 800px;
+}
+.loginform{
+width: 360px    
 }
 .right-seidepannel h1{
    font-size: 36px;
@@ -96,12 +98,13 @@ max-width: 800px;
 }
 .right-seidepannel p{
    font-size: 16px;
-   font-weight: bold;
+   font-weight: 500;
    color: #363c4f;
    padding-bottom: 30px;
 }
 .right-seidepannel p a{
- color:#56b663;  
+ color:#56b663; 
+text-decoration: none;
 }
 .custom-input label{
 color: #363c4f;
@@ -172,6 +175,36 @@ box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     border-radius: 0;
     background: transparent;
     text-align: center;  
+}
+.resend{
+font-size: 14px !important;    
+}
+/*******login-page-end*****/
+/******sign-up-strat*******/
+.allscrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.allscrollbar::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+ 
+.allscrollbar::-webkit-scrollbar-thumb {
+  background: #cccccc; 
+  border-radius: 2px;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: 44px;
+    background: url(../images/drodown-arrow.svg) no-repeat white;
+    background-position: 95%;
+    cursor: pointer
+}
+.signuprightpannel{
+    padding: 140px;
+}
+.copyright a{
+color: #56b663;
+text-decoration: none;
 }
 /*********** Navdeep End *************/
 
@@ -329,11 +362,14 @@ height:100%;
 .SelectPlane_text h3{
     color:#1f1f1f;
     font-size:24px;
+    font-weight: bold;
 }
 .SelectPlane_text p{
     color: #363c4f;
     font-size: 14px;
     line-height: 18.2px;
+    font-weight: 500;
+    margin-top: 10px;
 }
 .logo{
     width:50px;
@@ -456,12 +492,12 @@ border-bottom: 1px solid #56b663;
 
 
 /********************* Amit Start ******************************/
-/********* Select Plan Payment ***************/
+/********* Performance Analytics ***************/
 .fullbody_scan_card{border-top-left-radius: 30px;border-bottom-left-radius:30px;padding: 20px 40px;box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);border: solid 3px #fff;background-color: #fff;color: #363c4f;}
 .fullbody_scan_card p{font-weight:500;font-size:16px;    color: #363c4f;}
 .fullbody_scan_card ul li{font-size:14px;display: flex;justify-content: space-between;}
 .fullbody_scan_card ul li span{font-weight:600;}
-.custom-border{ display: block;background-color: rgba(86, 182, 99, 0.2);}
+.custom-border{ display: block;background-color: rgba(86, 182, 99, 0.2);height:1px;}
 .fullbody_scan_test {padding:15px 0 40px 0px;background-color: #56b663;border-top-right-radius: 30px;border-bottom-right-radius: 30px;background-image: url(public/after_login/current_ui/images/fullscan-card-bg.png);
 background-repeat: no-repeat;background-size: cover;}
 .fullbody_scan_test span:first-child {position: absolute;right: 0px;top:10px;}
@@ -497,6 +533,34 @@ ul.proficiency-level-lists li.selected-level span b.rate-level-active{background
 ul.proficiency-level-lists li:last-child {
     margin-right: 0;
 }
+/*********** Sidebar ******************/
+aside{
+    background: #fff;
+    width:85px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 10px 20px 0 rgba(220, 226, 234, 0.2);
+    text-align: center;
+    padding-top:20px;
+    height: 100%;
+}
+ul.sidebar-menu-lists {
+    padding: 40px 15px 15px 15px;
+}
+ul.sidebar-menu-lists li a{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul.sidebar-menu-lists li.active a , ul.sidebar-menu-lists li a:hover {
+    background-color: #e0f6e3;
+    border-radius: 8px;
+}
+
 /********* Amit End ***********/
 
 
