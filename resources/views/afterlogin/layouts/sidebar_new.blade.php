@@ -1,4 +1,4 @@
-<!-- <div class="dash-sidebar">
+<div class="dash-sidebar">
     <div class="sidbar-block">
         <a href="{{ env('LANDING_URL') }}" title="Home" target="_blank"><img src="{{URL::asset('public/after_login/new_ui/images/QI_Logo_al.gif')}}"></a>
     </div>
@@ -114,7 +114,8 @@
 
                         .dd {
                             stroke: #4cb9f9;
-                            stroke-linecap: round;
+                            < !-- stroke: #38d430;
+                            -->stroke-linecap: round;
                             stroke-linejoin: round;
                             stroke-width: 1.5px;
                         }
@@ -240,7 +241,7 @@
 
                         .bbbb {
                             stroke: #4cb9f9;
-                           
+                            < !-- stroke: #38d430 -->
                         }
                     </style>
                 </defs>
@@ -376,37 +377,9 @@
             <a href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
         </div>
     </div>
-</div> -->
-
-<!---------- new UI side bar ------------->
-<aside>
-    <span class="sidebar-logo d-inline-block">
-        <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
-        <span class="custom-border mt-3"></span>
-    </span>
-    <ul class="sidebar-menu-lists">
-        <li class="active mb-4">
-            <a href="javascript:void(0)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <path d="M25.667 9.94V4.643c0-1.645-.747-2.31-2.602-2.31h-4.713c-1.855 0-2.602.665-2.602 2.31v5.285c0 1.657.747 2.31 2.602 2.31h4.713c1.855.012 2.602-.653 2.602-2.298zM25.667 23.065v-4.713c0-1.855-.747-2.602-2.602-2.602h-4.713c-1.855 0-2.602.747-2.602 2.602v4.713c0 1.855.747 2.602 2.602 2.602h4.713c1.855 0 2.602-.747 2.602-2.602zM12.25 9.94V4.643c0-1.645-.746-2.31-2.601-2.31H4.934c-1.855 0-2.601.665-2.601 2.31v5.285c0 1.657.746 2.31 2.601 2.31H9.65c1.855.012 2.601-.653 2.601-2.298zM12.25 23.065v-4.713c0-1.855-.746-2.602-2.601-2.602H4.934c-1.855 0-2.601.747-2.601 2.602v4.713c0 1.855.746 2.602 2.601 2.602H9.65c1.855 0 2.601-.747 2.601-2.602z" stroke="#234628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </li>
-        <li class="mb-4">
-            <a href="javascript:void(0)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <path d="M15.471 4.2 5.893 14.34c-.362.385-.712 1.143-.782 1.668l-.431 3.78c-.152 1.365.828 2.298 2.181 2.065l3.757-.642c.525-.093 1.26-.478 1.621-.875l9.579-10.138c1.656-1.75 2.403-3.745-.175-6.183-2.567-2.415-4.515-1.564-6.172.186z" stroke="#234628" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M13.871 5.89A7.147 7.147 0 0 0 20.23 11.9M3.5 25.668h21" stroke="#234628" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </li>
-    </ul>
-</aside>
-
-<!------------------------------------->
-
+</div>
 <!-- Modal -->
-<div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="sharefrnd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 bg-light refereModel">
             <div class="modal-header pb-0 border-0">
@@ -436,7 +409,7 @@
                                 </a></div>
                             <div class="back_to_ref"><a onclick="copylinkfunction()">
                                     <img style="padding-right:8px;width:22px;" src="{{URL::asset('public/after_login/new_ui/images/copy-icon.png')}}">
-                                    <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                                   
                                     <span>Copy link</span>
                                 </a></div>
                         </div>
@@ -453,7 +426,7 @@
                         </div>
                         <div class="text-center refer_frd">
                             <button type="submit" class="remove-stuff btn  rounded-0 px-5">
-                                <!-- <img src="{{URL::asset('public/after_login/images/userplusWhite_ic.png')}}" />  -->
+                               
                                 <svg xmlns="http://www.w3.org/2000/svg" id="IconButton_ReferFriend_Default" data-name="IconButton / ReferFriend / Default" width="48" height="48" viewBox="0 0 48 48" style="&#10;    /* background: red; */&#10;">
                                     <defs>
                                         <style>
@@ -506,7 +479,7 @@
                         <div class="re_link">
                             <input type="text" id="linkInput" value="{{ session()->get('referal_link') }}" class="form-control border-0 rounded-0" placeholder="https://www.uniq.co.in/UqID-008291_invit…" readonly />
                             <a class="copylinkbtn" type="button" onclick="copylinkfunction()">
-                                <!-- <i class="fa fa-files-o" aria-hidden="true"></i> -->
+                             
                                 <img src="{{URL::asset('public/after_login/new_ui/images/copyicon.png')}}" style="width: 12px;margin-right: 8px;">
                                 Copy </a>
                         </div>
@@ -515,7 +488,93 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<style>
+    #sharefrnd .modal-header { padding: 0 !important;border: 0 !important;}
+    .user-profile-sec {text-align: center;padding:0px 0px 20px;}
+    .user-profile-sec > h2 {font-size: 24px; font-weight: 800; padding: 20px 0px; color: #1f1f1f; }
+    #sharefrnd .modal-content {border: 0; border-radius: 24px; }
+    #sharefrnd button.btn {
+    border: none !important;border-radius: 8px !important;
+    height: inherit;
+    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+    width: initial;
+    font-size: inherit;
+    font-weight: inherit;
+    font-stretch: normal;
+    font-style: normal;
+    color: #fff;
+    line-height: normal;
+    letter-spacing: normal;
+    background-image: inherit !important;text-transform: capitalize
+}
+#sharefrnd  .modal-body {padding: 2rem;}
+#sharefrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
+
+
+._btn-green {text-align: center;padding: 20px 0px 50px;border-bottom: 1px solid #e5eaee;}
+.bottom-sec { padding: 35px 0px 5px;}
+#sharefrnd input {background: #fff !important;height: 45px;color: #e5eaee !important;
+    font-weight: 500; border:1px solid #d0d5dd;}
+    #sharefrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
+    #sharefrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
+    
+    #sharefrnd form + p {font-size: 14px; font-weight: 500; color: #868a95; }
+
+</style>
+
+<!-- New Ui Modal -->
+<div class="modal fade modal-popup-customize" id="sharefrnd" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 6 6 18M6 6l12 12" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+      </div>
+      <div class="modal-body">
+        <div class="user-profile-sec">
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" fill="#E0F6E3"/>
+                <g opacity=".5" fill="#56B663">
+                    <path d="M29.346 43.02c-2.025.223-3.284.745-4.363 1.817-1.437 1.422-2.003 3.172-2.123 6.553-.089 2.33.231 4.02 1.073 5.696 1.832 3.679 5.413 5.347 8.809 4.11 2.442-.885 4.438-3.35 5.13-6.344.254-1.102.32-1.995.269-3.447-.12-3.396-.685-5.146-2.123-6.568-.916-.909-1.943-1.415-3.41-1.683-.64-.112-2.673-.194-3.262-.134zM25.176 62.56c-3.589.774-5.458 1.6-6.806 3.015-.923.968-1.489 2.152-1.839 3.835-.26 1.274-.387 2.614-.484 5.079-.09 2.554-.134 2.368.663 3.127 2.018 1.929 5.972 3.113 11.333 3.41 7.387.403 13.62-.9 16.248-3.41.79-.752.753-.566.663-3.09-.082-2.137-.164-3.247-.313-4.222-.73-4.699-2.859-6.53-9.025-7.79l-.893-.178-.29.268c-.961.864-2.28 1.303-3.932 1.303-1.006 0-1.631-.111-2.48-.424-.544-.209-1.244-.64-1.534-.953-.216-.231-.104-.231-1.31.03z"/>
+                </g>
+                <g opacity=".3" fill="#56B663">
+                    <path d="M68.706 50.015c-1.473.162-2.388.541-3.174 1.32-1.045 1.035-1.456 2.308-1.543 4.766-.065 1.695.168 2.925.78 4.143 1.332 2.675 3.937 3.888 6.406 2.99 1.776-.645 3.228-2.438 3.731-4.615.184-.801.233-1.45.195-2.507-.086-2.47-.498-3.742-1.543-4.776-.666-.66-1.414-1.029-2.48-1.224-.466-.081-1.944-.14-2.372-.097zM65.673 64.224c-2.61.563-3.97 1.164-4.95 2.193-.67.704-1.082 1.565-1.337 2.79-.19.925-.281 1.9-.352 3.692-.065 1.858-.097 1.722.482 2.275 1.468 1.402 4.343 2.263 8.242 2.48 5.372.292 9.905-.655 11.816-2.48.574-.547.547-.412.482-2.248-.06-1.554-.119-2.36-.227-3.07-.531-3.417-2.08-4.75-6.563-5.664l-.65-.13-.212.195c-.698.628-1.657.947-2.859.947-.73 0-1.186-.08-1.803-.308-.395-.152-.904-.466-1.116-.694-.157-.167-.075-.167-.953.022z"/>
+                </g>
+                <path d="M74.75 30.125a14.665 14.665 0 0 1-1.575 6.65A14.875 14.875 0 0 1 59.875 45c-2.17.006-4.314-.47-6.276-1.392a1.039 1.039 0 0 0-.77-.051l-7.682 2.56a1 1 0 0 1-1.264-1.264l2.56-7.683a1.039 1.039 0 0 0-.05-.77A14.664 14.664 0 0 1 45 30.126a14.875 14.875 0 0 1 8.225-13.3 14.665 14.665 0 0 1 6.65-1.575h.875a14.84 14.84 0 0 1 14 14v.875z" fill="#56B663"/>
+                <path d="M61.145 27.25v-3c0-.597-.24-1.169-.67-1.591A2.305 2.305 0 0 0 58.86 22l-3.049 6.75V37h8.597a1.54 1.54 0 0 0 1.004-.357c.28-.234.465-.56.52-.918l1.052-6.75a1.477 1.477 0 0 0-.357-1.21 1.522 1.522 0 0 0-1.167-.515h-4.314zM55.81 37h-1.286c-.404 0-.792-.158-1.078-.44A1.488 1.488 0 0 1 53 35.5v-5.25c0-.398.16-.78.446-1.06.286-.282.674-.44 1.078-.44h1.286" fill="#fff"/>
+            </svg>
+ 
+            <h2 class="refer-frnd">Refer a friend</h2>
+        </div>
+        <form>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name@example.com">
+            </div>
+           
+        </form>
+        <p><span class="Note">Note:</span>Use “,” between two emails to separate</p>
+        <div class="_btn-green"><button class="btn btn-common-green"> Send Invite</button></div>
+        <div class="bottom-sec">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
+            <input type="share" class="form-control" id="exampleFormControlInput1" placeholder="https://app.thomsondigital20...">
+        </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
+
+
 <script>
 let input = document.querySelector(".emaillink");
 let button = document.querySelector(".remove-stuff");
