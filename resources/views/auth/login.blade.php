@@ -323,7 +323,7 @@
          <div class="custom-input pb-5 d-none">
             <label>Enter OTP</label>
             <div class="d-flex enterotp bg-white">
-               <input class="form-control"><input class="form-control"><input class="form-control"><input class="form-control">  <input class="form-control">    
+               <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
             </div>
             <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
          </div>

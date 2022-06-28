@@ -176,6 +176,9 @@ box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     background: transparent;
     text-align: center;  
 }
+.enterotp .form-control:last-child{
+   border: 0 !important;
+}
 .resend{
 font-size: 14px !important;    
 }
@@ -205,6 +208,16 @@ select.form-control:not([size]):not([multiple]) {
 .copyright a{
 color: #56b663;
 text-decoration: none;
+}
+.sentotp{
+   font-size: 12px;
+    color: rgba(16, 24, 40, 0.5);
+    padding: 0 14px;
+    right: 73px;
+    height: 42px;
+    line-height: 43px;
+    border-right: 1px solid rgba(208, 213, 221, 0.5);
+    font-weight: 500;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #363c4f !important;
@@ -257,6 +270,7 @@ text-decoration: none;
 .select2-search--dropdown {
     padding: 0;
 }
+/******sign-up-end*******/
 /*********** Navdeep End *************/
 
 /***************** Sachin Start ****************************/
@@ -338,7 +352,7 @@ text-decoration: none;
 }
 .progress__item:last-child:before {
     border: none;
-} 
+}    
 .progress__item:after {
     position: absolute;
     top: 0;
@@ -353,8 +367,8 @@ text-decoration: none;
     border: 1px solid rgba(54, 60, 79, 0.5);
     box-shadow: 0 0 0 4px #d2f0d6;
     left: 0;
-   
 }
+
 .verificationBox {
 max-width: 339px;
 display: flex;
@@ -388,8 +402,7 @@ bottom: 30px;
     font-size: 14px; 
 }
 .subscriptionsPage{
-height:100%;
-
+min-height:100%;
 }
 .subscriptionsLeftpannel{
     background-color: #e0f6e3;
