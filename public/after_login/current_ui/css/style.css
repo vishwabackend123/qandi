@@ -539,7 +539,6 @@ ul.proficiency-level-lists li:last-child {
 /*********** Sidebar ******************/
 aside{
     background: #fff;
-    width:85px;
     position: fixed;
     top: 0;
     left: 0;
@@ -550,11 +549,11 @@ aside{
     height: 100%;
 }
 ul.sidebar-menu-lists {
-    padding: 40px 15px 15px 15px;
+    padding: 40px 14px 15px 14px;
 }
 ul.sidebar-menu-lists li a{
-    width: 55px;
-    height: 55px;
+    width: 54px;
+    height: 54px;
     display: flex;
     align-items: center;
     justify-content: center;
