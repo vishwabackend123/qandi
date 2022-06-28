@@ -93,6 +93,8 @@
     text-align: center;
     border-radius: 10px;}
     .headerRight span.headericon,    .headerRight span.usertext{margin:0px 12px}
+    header{padding:0px 0px 30px}
+    .main-wrapper{padding-left:78px}
     </style>
     <!-- <div class="container-fluid">
         <div class="row">
@@ -315,7 +317,7 @@
             </div>
         </div>
     </div> -->
-    <div class="container-fluid">
+   
          <div class="headerMain">
              <div class="headerLeft">
                   <h2>Dashboard</h2>
@@ -349,7 +351,6 @@
 
              </div>
          </div>
-    </div>
 </header>
 
 
