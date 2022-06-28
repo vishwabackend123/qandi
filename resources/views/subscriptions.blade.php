@@ -134,7 +134,6 @@
 
 
 .progress-box{
-    /* width:340px; */
     min-height: 334px;
     display: flex;
     align-items: center;
@@ -142,10 +141,13 @@
 
 .progressorder {
     position: relative;
-    padding: 0rem  0rem 0rem  1.5rem;
+    padding: 0rem 0rem 0rem 0rem;
     margin: 0px;
-    list-style: none;    position: absolute;
+    list-style: none;
+    position: absolute;
     top: 25%;
+    padding-top: 0px;
+   
 }
 
 .progress__item {
@@ -201,7 +203,6 @@
     width: 26px;
     height: 26px;
     border-radius: 50%;
- 
     color: #fff;
     font-weight: 400;
     font-size: 13px;
@@ -210,7 +211,6 @@
     border: 1px solid #fff;
 }
 .progress__item.progress__item--active:after {
-  
     font-size: 100px;
     color: #56b663 !important;
     content: ' \00B7';
@@ -220,7 +220,6 @@
     border: none;
 } 
 .progress__item:after {
-
     position: absolute;
     top: 0;
     left: 0px;
@@ -237,22 +236,17 @@
    
 }
 
-
-
    .verificationBox {
     max-width: 339px;
- 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- 
- 
-  padding: 20px 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14), 0 8px 30px 0 rgba(172, 185, 176, 0.14);
-  background-color:#ffffff;
-  position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14), 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+    background-color:#ffffff;
+    position: absolute;
     bottom: 30px;
     }
     .verificationBox a{
@@ -270,25 +264,31 @@
         background-color: #fff;
         color:#dc6803;
     }
+
     .verificationBox p{
         text-align: center;
-    font-size: 14px; 
+        font-size: 14px; 
     }
  
- .subscriptionsPage{height:100%;    justify-content: center;}
+ .subscriptionsPage{
+    height:100%;
+   
+}
 .subscriptionsLeftpannel{
     background-color: #e0f6e3;
-    padding: 40px; width:100%;max-width: 419px;
+    padding:40px; 
+    width:100%;
+    max-width: 419px;
 }
 .subscriptionsRightpannel{
     width: 100%;
-    max-width: 1021px;
+ 
 }
 .selectPlan  {
     background-color: #f5faf6;
      height:100%;
-     padding: 0px 20px;
-     margin-bottom: 40px;
+     padding: 0px 40px;
+    
 }
 .SelectPlane_text{
     padding: 60px 0px 40px 0px;
@@ -312,9 +312,6 @@
     background: #ffffff;
 
 }
-
- 
-
 .planeName{
     display: flex;
     justify-content: space-between;
@@ -372,13 +369,9 @@
     padding: 0px;
     margin: 0px;
 }
-
-.testType ul li{
-    ;
-}
 .testType ul li{
     font-size: 14px;
-    line-height: 3;
+    line-height: 2.5;
     text-align: left;
     color: #363c4f;
 }
@@ -392,18 +385,31 @@
     padding-top: 80px;
 }
 
-.freeTrial a {
-    color:#56b663;
+ 
+    .freeTrial a {
+    color: #56b663;
     font-size: 14px;
     font-weight: 800;
     line-height: 1.43;
+    border-bottom: 1px solid #56b663;
 }
+ 
 .getSubs a{
-    color:#ffffff;
-    background-color:#56b663;
-    padding: 10px 40px;
+    width: 295px;
+    height: 44px;
+    background: #56b663;
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
     border-radius: 8px;
-    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#ffffff;
+}
+.getSubs a:hover{
+    color:#ffffff;
+}
+.freeTrial a:hover{
+    color: #56b663;
 }
 </style>
  
