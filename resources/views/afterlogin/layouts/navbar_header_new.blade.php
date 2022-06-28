@@ -58,53 +58,6 @@
             font-weight: 900;
         }
 
-      .headerMain{display:flex;
-            align-items: center;
-            justify-content: space-between; padding: 20px 40px 20px 32px;
-  box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);  background: #fff;
-        }
-      .headerLeft{display:inline-flex;    align-items: center;}
-      .headerLeft h2  {  font-size: 20px;
-        font-weight: 800;
-        line-height: 1.3;
-        letter-spacing: normal;
-        color: #363c4f;}
-      
-  .usertext a{ font-size: 16px;
-        font-weight: 600;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.3;color:#1f1f1f;}
-      .headerLeft h2,.headerLeft h6{margin:0px}
-       .headerLeft h6 label,.headerLeft h6 span{display:inline-block}
-        .headerRight span{display:inline-block;}
-        .headerLeft h6{letter-spacing: normal;
-    font-size: 14px;
-    font-weight: 600;
-    margin-left: 14px;
-    line-height: 1.3;}
-    .headerLeft h6 label{ border-left: 1px solid #cccccc;
-    padding-left: 14px;}
-    .headericon a{    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 36px;
-    border: 1px solid #ccc;
-    text-align: center;
-    border-radius: 10px;}
-    .headerRight span.headericon,    .headerRight span.usertext{margin:0px 12px}
-    header{padding:0px 0px 30px}
-    .main-wrapper{padding-left:78px}
-    #collapseNotification2{    position: fixed;
-    right: 0px;
-    width: 95.5%;
-    z-index: 99;
-    background-color:#1f1f1f;
-    opacity:0.3;
-    top: 11px;
-    margin-top: 70px;
-}
-.notification-block_new.show{display: block;}
     </style>
     <!-- <div class="container-fluid">
         <div class="row">
