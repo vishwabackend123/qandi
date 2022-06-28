@@ -57,8 +57,44 @@
             font-size: 12px;
             font-weight: 900;
         }
+
+      .headerMain{display:flex;
+            align-items: center;
+            justify-content: space-between; padding: 20px 40px 20px 32px;
+  box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);  background: #fff;
+        }
+      .headerLeft{display:inline-flex;    align-items: center;}
+      .headerLeft h2  {  font-size: 20px;
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: normal;
+        color: #363c4f;}
+      
+  .usertext a{ font-size: 16px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.3;color:#1f1f1f;}
+      .headerLeft h2,.headerLeft h6{margin:0px}
+       .headerLeft h6 label,.headerLeft h6 span{display:inline-block}
+        .headerRight span{display:inline-block;}
+        .headerLeft h6{letter-spacing: normal;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 14px;
+    line-height: 1.3;}
+    .headerLeft h6 label{ border-left: 1px solid #cccccc;
+    padding-left: 14px;}
+    .headericon a{    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 10px;}
+    .headerRight span.headericon,    .headerRight span.usertext{margin:0px 12px}
     </style>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
@@ -278,6 +314,41 @@
                 </div>
             </div>
         </div>
+    </div> -->
+    <div class="container-fluid">
+         <div class="headerMain">
+             <div class="headerLeft">
+                  <h2>Dashboard</h2>
+                  <h6><label>Cource:</label> <span>JEE</span></h6>
+             </div>
+             <div class="headerRight">
+                  <span class="usertext"><a href="javascript:;">Hi Sakshi!</a></span>
+                  <span class="headericon ">
+                    <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                            <g clip-path="url(#5ju4071vya)">
+                                <path d="M15 6.768a5 5 0 0 0-10 0c0 5.833-2.5 7.5-2.5 7.5h15S15 12.6 15 6.768zM11.44 17.602a1.666 1.666 0 0 1-2.882 0" stroke="#363C4F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="14" cy="4.102" r="4" fill="#F7758F" stroke="#fff" stroke-width="2"/>
+                            </g>
+                            <defs>
+                                <clipPath id="5ju4071vya">
+                                    <path fill="#fff" transform="translate(0 .102)" d="M0 0h20v20H0z"/>
+                                </clipPath>
+                    </defs>
+                        </svg>
+               
+                  </a>
+                </span>
+                  <span class="headericon">
+                    <a href="javascript:;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </a>
+                </span>
+
+             </div>
+         </div>
     </div>
 </header>
 
