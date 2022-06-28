@@ -1,9 +1,7 @@
 @extends('afterlogin.layouts.app_new')
  
     <div class="wrapper">
-        <section class="subscriptionsPage d-flex ">
-         
-                
+        <section class="subscriptionsPage d-flex">
                     <div class="subscriptionsLeftpannel">
                         <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
 
@@ -123,8 +121,7 @@
                         </div>
                     </div>
                
-           
-        </section>
+        </section>  
     </div>
    
 
