@@ -115,7 +115,7 @@
                                     <a href="">Start 14 days free trial</a>
                                  </div>
                                  <div class="getSubs">
-                                    <a href="">Get Subscritption</a>
+                                    <a href="javascript:void(0)" class="btn btn-common-green">Get Subscritption</a>
                                  </div>
                             </div>
                         </div>
