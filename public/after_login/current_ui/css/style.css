@@ -402,7 +402,7 @@ font-weight: 800;
 line-height: 1.43;
 border-bottom: 1px solid #56b663;
 }
-.getSubs a{
+/* .getSubs a{
     width: 295px;
     height: 44px;
     background: #56b663;
@@ -415,6 +415,17 @@ border-bottom: 1px solid #56b663;
 }
 .getSubs a:hover{
     color:#ffffff;
+} */
+.btn.btn-common-green {
+    background: #56b663;
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    min-width: 280px;
+    padding: 10px 16px;
+    border: solid 1px #56b663;
 }
 .freeTrial a:hover{
     color: #56b663;
@@ -436,7 +447,7 @@ background-repeat: no-repeat;background-size: cover;}
 .fullbody_scan_test h3 {font-size: 24px;font-weight: 800;color: #fff;}
 .fullbody_scan_test p{font-size: 16px;font-weight: 600;color: #fff;max-width: 235px;margin: 0 auto;}
 .btn.btn-common-white {border-radius: 8px;background-color: #fff;font-size: 14px;font-weight: 800;color: #56b663;padding: 8px;min-width: 160px;}
-.btn.btn-common-transparent {padding: 8px 16px;border-radius: 8px;border: solid 1px #56b663;background-color: #f5faf6;color: #56b663;font-size: 14px;font-weight: 800;min-width: 250px;}
+.btn.btn-common-transparent {padding: 10px 16px;border-radius: 8px;border: solid 1px #56b663;background-color: #f5faf6;color: #56b663;font-size: 14px;font-weight: 800;min-width: 250px;}
 /********* Performance Rating ***************/
 ul.proficiency-level-lists li {
     border-radius: 8px;
