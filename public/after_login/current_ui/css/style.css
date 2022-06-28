@@ -460,20 +460,7 @@ font-weight: 800;
 line-height: 1.43;
 border-bottom: 1px solid #56b663;
 }
-/* .getSubs a{
-    width: 295px;
-    height: 44px;
-    background: #56b663;
-    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#ffffff;
-}
-.getSubs a:hover{
-    color:#ffffff;
-} */
+
 .btn.btn-common-green {
     background: #56b663;
     box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
@@ -536,7 +523,6 @@ ul.proficiency-level-lists li:last-child {
 /*********** Sidebar ******************/
 aside{
     background: #fff;
-    width:85px;
     position: fixed;
     top: 0;
     left: 0;
@@ -547,11 +533,11 @@ aside{
     height: 100%;
 }
 ul.sidebar-menu-lists {
-    padding: 40px 15px 15px 15px;
+    padding: 40px 14px 15px 14px;
 }
 ul.sidebar-menu-lists li a{
-    width: 55px;
-    height: 55px;
+    width: 54px;
+    height: 54px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -565,5 +551,55 @@ ul.sidebar-menu-lists li.active a , ul.sidebar-menu-lists li a:hover {
 
 
 /********* Shubham Start ***********/
+  /*************header***********/
+
+  .headerMain{display:flex;
+    align-items: center;
+    justify-content: space-between; padding: 20px 40px 20px 32px;
+box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);  background: #fff;
+}
+.headerLeft{display:inline-flex;    align-items: center;}
+.headerLeft h2  {  font-size: 20px;
+font-weight: 800;
+line-height: 1.3;
+letter-spacing: normal;
+color: #363c4f;}
+
+.usertext a{ font-size: 16px;
+font-weight: 600;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.3;color:#1f1f1f;}
+.headerLeft h2,.headerLeft h6{margin:0px}
+.headerLeft h6 label,.headerLeft h6 span{display:inline-block}
+.headerRight span{display:inline-block;}
+.headerLeft h6{letter-spacing: normal;
+font-size: 14px;
+font-weight: 600;
+margin-left: 14px;
+line-height: 1.3;}
+.headerLeft h6 label{ border-left: 1px solid #cccccc;
+padding-left: 14px;}
+.headericon a{    display: inline-block;
+width: 40px;
+height: 40px;
+line-height: 36px;
+border: 1px solid #ccc;
+text-align: center;
+border-radius: 10px;}
+.headerRight span.headericon,    .headerRight span.usertext{margin:0px 12px}
+header{padding:0px 0px 30px}
+.main-wrapper{padding-left:78px}
+#collapseNotification2{    position: fixed;
+right: 0px;
+width: 95.5%;
+z-index: 99;
+background-color:#1f1f1f;
+opacity:0.3;
+top: 11px;
+margin-top: 70px;
+}
+.notification-block_new.show{display: block;}
 
 /********* Shubham End ***********/
+  
