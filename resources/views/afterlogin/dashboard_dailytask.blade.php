@@ -124,7 +124,7 @@ $userData = Session::get('user_data');
                         <div class="row mt-3 dtrow-left" style="padding: 20px 15px 5px;">
                             <div class="col-md-6">
                                 <p><b>Task {{$key+1}} - {{$skill_task}}</b></p>
-                                <p>Sharpen your evaluation skills with this quick curated test</p>
+                                <p>Sharpen your {{(strtolower($skill_task))}} with this quick curated test</p>
                                 <p><span class="text-danger">{{(isset($data['total_questions']) && !empty($data['total_questions']))?$data['total_questions']:0}}</span> Questions | Duration :
                                     <span class="text-danger">{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</span>
                                 </p>
