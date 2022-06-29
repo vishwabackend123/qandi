@@ -720,8 +720,8 @@ border-bottom: 1px solid #56b663;
 .fullbody_scan_card ul li{font-size:14px;display: flex;justify-content: space-between;}
 .fullbody_scan_card ul li span{font-weight:600;max-width: 170px;text-align: right;}
 .custom-border{ display: block;background-color: rgba(86, 182, 99, 0.2);height:1px;}
-.fullbody_scan_test {padding:15px 0 60px 0px;background-color: #56b663;border-top-right-radius: 30px;border-bottom-right-radius: 30px;background-image: url(../images/fullscan-card-bg.png);
-background-repeat: no-repeat;background-size: cover;}
+.fullbody_scan_test {padding:15px 0 70px 0px;background-color: #56b663;border-top-right-radius: 30px;border-bottom-right-radius: 30px;background-image: url(../images/fullscan-card-bg.png);
+background-repeat: no-repeat;background-size: cover;background-position:center;}
 .fullbody_scan_test span:first-child {position: absolute;right: 0px;top:10px;}
 .fullbody_scan_test span:nth-child(2) {position: absolute;left: 0px;top: 50%;transform: translateY(-50%);}
 .fullbody_scan_test h3 {font-size: 24px;font-weight: 800;color: #fff;}
