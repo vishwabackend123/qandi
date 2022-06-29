@@ -764,7 +764,7 @@ function searchCity() {
                   </div>
                </div>
                <div class="carousel-item">
-                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly plan.svg')}}" alt="performance" class="d-block w-100">
+                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly-plan.svg')}}" alt="performance" class="d-block w-100">
                   <div class="carousel-caption d-none d-md-block">
                      <h5 class="pb-2">Weekly plan</h5>
                      <p>Plan your weekly tests for any chapters, check<br> proficiency of different subjects</p>
@@ -790,16 +790,21 @@ function searchCity() {
             <label>Name</label>
             <input type="text" class="form-control" placeholder="Full name">
          </div>
-         <div class="custom-input pb-4">
+           <div class="custom-input pb-4 position-relative">
             <label>Mobile</label>
             <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
          </div>
-          <div class="custom-input changeno pb-4">
+         <div class="custom-input pb-4 position-relative d-none">
+            <label>Mobile</label>
+            <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
+              <a class="editnumber verifyno">Verify</a>
+         </div>
+          <div class="custom-input changeno pb-4 d-none">
             <label>Mobile</label>
             <div class="d-flex position-relative">
                <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
                <span class="position-absolute sentotp">OTP sent</span>
-               <a class="d-block bg-white" href="">
+               <a class="editnumber" href="javascript:void(0);" class="d-block bg-white">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -807,7 +812,7 @@ function searchCity() {
                </a>
             </div>
          </div>
-         <div class="custom-input pb-4">
+         <div class="custom-input pb-4 d-none">
             <label>Enter OTP</label>
             <div class="d-flex enterotp bg-white">
                <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
