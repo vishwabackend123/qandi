@@ -6,11 +6,11 @@
         <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
         <div class="progress-box">
             <ul class="progressorder">
-                <li class="progress__item  progress__item--active">
+                <li class="progress__item progress__item--completed">
                     <p class="progress__title">Select Plan</p>
                     <p class="progress__info">Decide on the best plan for your preparation</p>
                 </li>
-                <li class="progress__item">
+                <li class="progress__item   progress__item--active">
                     <p class="progress__title">Self Analysis</p>
                     <p class="progress__info">Rate your level of proficiency</p>
                 </li>
@@ -195,6 +195,19 @@
                         <label class="mb-0">Expert</label>
                     </li>
                 </ul>
+            </div>
+            <div class="mt-5 d-flex justify-content-between align-items-center pt-4">
+                <div class="backBtn pt-0 mr-2">
+                    <a href="javascript:void(0)">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M10 4 6 8l4 4" stroke="#363C4F" stroke-opacity=".8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        Back
+                    </a>
+                </div>
+                <button class="btn btn-common-green">Continue</button>
             </div>
         </div>
     </div>

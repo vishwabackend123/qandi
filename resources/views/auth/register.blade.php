@@ -698,19 +698,6 @@ function searchCity() {
     }
 </script>!--->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<style>
-@media only screen and (max-width: 1366px) {
-  .left-sidepannel .carousel-inner .carousel-item img{
-   height: 350px;
-}
-.signuprightpannel {
-    padding: 140px 140px 0;
-    height: 560px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-}
-</style>
 <section class="d-flex h-100 login-signup">
    <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
       <figure class="pb-4">
@@ -764,7 +751,7 @@ function searchCity() {
                   </div>
                </div>
                <div class="carousel-item">
-                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly plan.svg')}}" alt="performance" class="d-block w-100">
+                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly-plan.svg')}}" alt="performance" class="d-block w-100">
                   <div class="carousel-caption d-none d-md-block">
                      <h5 class="pb-2">Weekly plan</h5>
                      <p>Plan your weekly tests for any chapters, check<br> proficiency of different subjects</p>
@@ -782,83 +769,91 @@ function searchCity() {
       </div>
    </div>
    <div class="right-seidepannel d-flex flex-column justify-content-start position-relative allscrollbar signuprightpannel">
-     <div class="loginform m-auto">   
-      <h1 class="pb-2 mb-1">Sign up</h1>
-      <p>Already have an account? <a href="javascript:void(0);">Login</a></p>
-      <form>
-           <div class="custom-input pb-4">
-            <label>Name</label>
-            <input type="text" class="form-control" placeholder="Full name">
-         </div>
-         <div class="custom-input pb-4">
-            <label>Mobile</label>
-            <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
-         </div>
-          <div class="custom-input changeno pb-4">
-            <label>Mobile</label>
-            <div class="d-flex position-relative">
-               <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
-               <span class="position-absolute sentotp">OTP sent</span>
-               <a class="d-block bg-white" href="">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  &nbsp;Edit
-               </a>
+      <div class="loginform m-auto">
+         <h1 class="pb-2 mb-1">Sign up</h1>
+         <p>Already have an account? <a href="javascript:void(0);">Login</a></p>
+         <form>
+            <div class="custom-input pb-4">
+               <label>Name</label>
+               <input type="text" class="form-control" placeholder="Full name">
             </div>
-         </div>
-         <div class="custom-input pb-4">
-            <label>Enter OTP</label>
-            <div class="d-flex enterotp bg-white">
-               <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
+            <div class="custom-input pb-4 position-relative">
+               <label>Mobile</label>
+               <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
             </div>
-            <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
-         </div>
-          <div class="custom-input pb-4">
-            <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email address">
-         </div>
-          <div class="custom-input pb-4">
-            <label>City</label>
-            <select id="single" class="js-states form-control">
-            <option>Mohali</option>
-            <option>Jind</option>
-            <option>Narwana</option>
-            <option>Kaithal</option>
-          </select>
-         </div>
-             <div class="custom-input pb-4 row">
-             <div class="col-lg-6"><label>Grade</label>
-            <select class="form-control selectdata">
-            <option class="we">Select</option> 
-            <option class="we2">1</option> 
-            <option>2</option> 
-            </select></div>     
-            <div class="col-lg-6"><label>Exam</label>
-            <select class="form-control selectdata">
-            <option>Select</option> 
-            <option>Neet</option> 
-            <option>Jee</option> 
-            </select></div>
-         </div>
-         <div class="Get-otp pt-4">
-            <button type="submit" class="btn btn-common-green text-white w-100 disabled">Continue</button>    
-         </div>
-      </form>
-    </div>
+            <div class="custom-input pb-4 position-relative d-none">
+               <label>Mobile</label>
+               <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
+               <a class="editnumber verifyno">Verify</a>
+            </div>
+            <div class="custom-input changeno pb-3 d-none">
+               <label>Mobile</label>
+               <div class="d-flex position-relative">
+                  <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
+                  <span class="position-absolute sentotp">OTP sent</span>
+                  <a class="editnumber" href="javascript:void(0);" class="d-block bg-white">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                     </svg>
+                     &nbsp;Edit
+                  </a>
+               </div>
+            </div>
+            <div class="custom-input pb-3">
+               <label>Enter OTP</label>
+               <div class="d-flex enterotp bg-white">
+                  <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
+               </div>
+               <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
+            </div>
+            <div class="custom-input pb-4">
+               <label>Email</label>
+               <input type="email" class="form-control" placeholder="Email address">
+            </div>
+            <div class="custom-input pb-4">
+               <label>City</label>
+               <select id="single" class="js-states form-control">
+                  <option>Mohali</option>
+                  <option>Jind</option>
+                  <option>Narwana</option>
+                  <option>Kaithal</option>
+               </select>
+            </div>
+            <div class="custom-input pb-4 row">
+               <div class="col-lg-6">
+                  <label>Grade</label>
+                  <select class="form-control selectdata">
+                     <option class="we">Select</option>
+                     <option class="we2">1</option>
+                     <option>2</option>
+                  </select>
+               </div>
+               <div class="col-lg-6">
+                  <label>Exam</label>
+                  <select class="form-control selectdata">
+                     <option>Select</option>
+                     <option>Neet</option>
+                     <option>Jee</option>
+                  </select>
+               </div>
+            </div>
+            <div class="Get-otp pt-4">
+               <button type="submit" class="btn btn-common-green text-white w-100 disabled">Continue</button>    
+            </div>
+         </form>
+      </div>
       <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="javascript:void(0);">Terms & Conditions </a>and <a href="javascript:void(0);">Privacy Policy</a>.</h3>
    </div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script>
-      $("#single").select2({
-          placeholder: "Select a City",
-          allowClear: true
-      });
-      $("#multiple").select2({
-          placeholder: "Select a City",
-          allowClear: true
-      });
-    </script>
-
+<script>
+   $("#single").select2({
+       placeholder: "Select a City",
+       allowClear: true
+   });
+   $("#multiple").select2({
+       placeholder: "Select a City",
+       allowClear: true
+   });
+</script>
 @endsection

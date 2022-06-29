@@ -568,17 +568,17 @@ $question_type = "Numerical";
 
     $(document).ready(function() {
         /* mouse rightclick */
-        /*  document.oncontextmenu = function() {
-             return false;
-         };
+        document.oncontextmenu = function() {
+            return false;
+        };
 
-         $(document).mousedown(function(e) {
-             if (e.button == 2) {
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
 
-                 return false;
-             }
-             return true;
-         }); */
+                return false;
+            }
+            return true;
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {

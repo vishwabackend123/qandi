@@ -510,7 +510,7 @@ $question_type = "Numerical";
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        /* document.oncontextmenu = function() {
+        document.oncontextmenu = function() {
             return false;
         };
 
@@ -520,7 +520,7 @@ $question_type = "Numerical";
                 return false;
             }
             return true;
-        }); */
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
