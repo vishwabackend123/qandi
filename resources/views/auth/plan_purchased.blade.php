@@ -28,6 +28,7 @@
 {
     width: 401px;
     border: solid 3px #ffffff;
+    border: solid 3px var(--white);
     background-color: #d1fadf;
     gap: 28px;
     box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
@@ -173,11 +174,19 @@
     background-color: rgba(86, 182, 99, 0.1);
     padding: 2px 8px;
     border-radius:8px;
+<<<<<<< HEAD
+=======
+  padding-top:5px;
+>>>>>>> 0f6eae339f325fb19e7a42fa1a80385b46228c9d
 }
 </style>
 <div class="plan_successfull_wrapper">
     <div class="plan_successfull_heder_icon">
     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="66" viewBox="0 0 64 66" fill="none"  class="plan_successfull_heder_icon_img">
+<<<<<<< HEAD
+=======
+    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="66" viewBox="0 0 64 66" fill="none">
+>>>>>>> 0f6eae339f325fb19e7a42fa1a80385b46228c9d
     <g filter="url(#67epj5et9a)">
         <path d="M32 6H8v24h24V6zM55.993 30.002H31.994V54h24V30z" fill="#38D430"/>
         <path d="M55.993 6H31.994v24h24V6z" fill="#00AB16"/>
@@ -204,6 +213,10 @@
         <div class="plan_box_status">
             <div class="plan_box_status_msg text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none" class="plan_successfull_heder_icon2">
+<<<<<<< HEAD
+=======
+                <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none">
+>>>>>>> 0f6eae339f325fb19e7a42fa1a80385b46228c9d
                     <path d="M2.5 30c0-15.464 12.536-28 28-28s28 12.536 28 28-12.536 28-28 28-28-12.536-28-28z" fill="#8DFDB3"/>
                     <path d="M42.167 28.927V30a11.667 11.667 0 1 1-6.919-10.663m6.919 1.33L30.5 32.345l-3.5-3.5" stroke="#039855" stroke-width="2.333" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M30.5 56c-14.36 0-26-11.64-26-26h-4c0 16.569 13.431 30 30 30v-4zm26-26c0 14.36-11.64 26-26 26v4c16.569 0 30-13.431 30-30h-4zm-26-26c14.36 0 26 11.64 26 26h4c0-16.569-13.431-30-30-30v4zm0-4C13.931 0 .5 13.431.5 30h4c0-14.36 11.64-26 26-26V0z" fill="#BDF3C5"/>
@@ -245,8 +258,20 @@
                 <div class="text-center ">
                     <button class="plan_successfull_go_to_dashboard btn btn-common-green">Go to Dashboard</button>
                 </div>
+<<<<<<< HEAD
             </div>
 
+=======
+                        <div class="plan_subscribption"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription">
+                        <div class="plan_order_summary"></div>
+                        <div class="plan_subscribption"></div>
+                    </div>
+                </div>
+                <div class="line-692"></div>
+            </div>
+>>>>>>> 0f6eae339f325fb19e7a42fa1a80385b46228c9d
         <div>
     </div>
     </div>
