@@ -869,7 +869,7 @@ $progress = ($currSocre >= $preSocre) ? ($currSocre - $preSocre) : 0;
             title: {
                 text: 'Score %'
             },
-            min: 100,
+            max: 100,
         }, {
             title: {
                 text: ''
