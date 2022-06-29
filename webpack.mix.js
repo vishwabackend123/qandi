@@ -26,3 +26,4 @@ minifier.minify('public/after_login/new_ui/css/tab-responsive.css');
 minifier.minify('public/after_login/new_ui/css/mobile-responsive.css');
 /********** current css **********/
 minifier.minify('public/after_login/current_ui/css/style.css');
+minifier.minify('public/after_login/current_ui/css/mobile.css');
