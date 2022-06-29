@@ -11,11 +11,11 @@
     padding: 86px 131px;
 }
 .planPayment .testType {
-    display: block;
     width: 50%;
     border-right: 1px solid #e4e2e2;
     display: block;
     padding-left: 28px;
+    padding-bottom: 28px;
     position: relative;
     border-bottom: none;
     padding-top:0px; 
@@ -26,8 +26,9 @@
     width: 50%;
 }
 .applyCoform{
-    max-width: 310px;
+    max-width: 295px;
     margin: 0 auto;
+    width: 100%;
 }
 .applyCoform h3{
     font-size: 32px;
@@ -41,6 +42,9 @@
     font-weight: normal;
     line-height: 1.3;
     color: #363c4f;
+}
+.subscribe_form .btn.btn-common-green{
+    width:100%;
 }
 
 .planPayment{
@@ -132,7 +136,7 @@
 }
 .secured{
     position: absolute;
-    bottom: 20px;
+    bottom: 28px;
 }
 .secured p{
     font-size: 12px;
