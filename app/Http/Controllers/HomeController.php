@@ -73,9 +73,11 @@ class HomeController extends Controller
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             $prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
-
-            if ($student_stage_at_sgnup == 0) {
+            $mx_Grade_id = isset($userData->mx_Grade_id) && !empty($userData->mx_Grade_id) ?$userData->mx_Grade_id:'';
+            if (empty($mx_Grade_id)) {
+             if ($student_stage_at_sgnup == 0) {
                 return redirect()->route('studentstandfor');
+             }
             }
 
             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
@@ -869,7 +871,7 @@ class HomeController extends Controller
             }
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
-            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool','quadrant_name'));
+            return view('afterlogin.dashboard_myqmatrix', compact('myq_matrix', 'myq_matrix_topic', 'myq_bool', 'quadrant_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1092,7 +1094,7 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
-            dd($e->getMessage());
+            //dd($e->getMessage());
             Log::info($e->getMessage());
         }
     }

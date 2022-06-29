@@ -1,23 +1,13 @@
 @extends('afterlogin.layouts.app_new')
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script type="text/javascript">
-    function preventBack() {
-        window.history.forward();
-    }
-    setTimeout("preventBack()", 0);
-    window.onunload = function() {
-        null
-    };
-</script>
 
 <!-- Have fun using Bootstrap JS -->
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
         $insCheck = $('#test_instruction').hasClass('show');
-        if ((document.visibilityState == 'hidden') && $insCheck == false) {
+        $endExamCheck = $('#endExam').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false && $endExamCheck == false) {
 
-            $('.modal').modal('hide');
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
             stop();
         }
     });
@@ -511,17 +501,17 @@ $question_type = "Numerical";
     /* page referesh disabled */
     $(document).ready(function() {
         /* mouse rightclick */
-        /*  document.oncontextmenu = function() {
-             return false;
-         };
+        document.oncontextmenu = function() {
+            return false;
+        };
 
-         $(document).mousedown(function(e) {
-             if (e.button == 2) {
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
 
-                 return false;
-             }
-             return true;
-         }); */
+                return false;
+            }
+            return true;
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {

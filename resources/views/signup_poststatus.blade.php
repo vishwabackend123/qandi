@@ -6,16 +6,18 @@
     <div id="main" class="subject_screen">
         <div class="row">
             <div class="col-md-12 mx-auto  ">
-                 @if(count($errors) > 0 )
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="float: right;">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul class="p-0 m-0" style="list-style: none;">
-                        @foreach($errors->all() as $error)
-                        <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
+                @if(count($errors) > 0 )
+                <div class="toastdata active">
+                    <div class="toast-content">
+                        <i class="fa fa-exclamation-triangle check" aria-hidden="true"></i>
+                         <div class="message">
+                            @foreach($errors->all() as $error)
+                            <span class="text text-2">{{$error}}</span>
+                            @endforeach
+                        </div>
+                    </div>
+                    <i class="fa fa-times close" aria-hidden="true"></i>
+                    <div class="progress active"></div>
                 </div>
                 @endif
                 <div class="bg-white white-box-big" id="chooseSub">
@@ -55,6 +57,103 @@
     </div>
     <!--subject_screen-->
 </section>
+<style type="text/css">
+    
+.toastdata.active {
+    display: block;
+}
+
+.toastdata {
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: absolute;
+    width: 33%;
+    z-index: 999;
+    top: 12px;
+    right: 25px;
+}
+
+
+
+.toastdata .toast-content {
+    display: flex;
+    align-items: center;
+}
+
+.toast-content .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    min-width: 35px;
+    background-color: #4070f4;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.toast-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.message .text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00000091;
+}
+
+.message .text.text-1 {
+    font-weight: 600;
+    color: #333;
+}
+
+.toastdata .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    color: #000;
+}
+
+.toastdata .close:hover {
+    opacity: 1;
+}
+
+.toastdata .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.toastdata .progress:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+}
+
+.progress.active:before {
+    animation: progress 5s linear forwards;
+}
+
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+}
+</style>
 
 <script>
 function user_stand(div_val, div_id) {
@@ -92,6 +191,18 @@ $(document).ready(function() {
             event.preventDefault();
             $("#goto-next-btn").trigger("click");
         }
+    });
+    setTimeout(() => {
+        $('.toastdata').removeClass('active');
+    }, 5000); //1s = 1000 milliseconds
+
+    setTimeout(() => {
+        $('.progress').removeClass('active');
+    }, 5300);
+    $('.close').click(function(){
+        $('.toastdata').removeClass('active');
+        $('.progress').removeClass('active');
+
     });
 });
 

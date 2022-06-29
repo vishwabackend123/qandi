@@ -588,16 +588,21 @@ class StudentSignInController extends Controller
             $data = $request->all();
             $lead_exam_id = '';
             $trail_sub = '';
+            $mx_Grade_id = '';
             if (isset($data['exam_id']) && !empty(isset($data['exam_id']))) {
                 $lead_exam_id = $data['exam_id'];
             }
             if (isset($data['trail']) && !empty(isset($data['trail']))) {
                 $trail_sub = $data['trail'];
             }
+             if (isset($data['mx_Grade_id']) && !empty(isset($data['mx_Grade_id']))) {
+                $mx_Grade_id = $data['mx_Grade_id'];
+            }
             $student_id = $request->input('student_id');
             $city = $request->input('city');
             $state = $request->input('state');
             $country = $request->input('country');
+            $state =isset($state) && !empty($state) ? $state : "";
 
             $request = ['id' => $student_id, "city" => $city, "state" => $state, "country" => $country,];
 
@@ -674,6 +679,7 @@ class StudentSignInController extends Controller
                 $sessionData->state = $state;
                 $sessionData->lead_exam_id = $lead_exam_id;
                 $sessionData->trail_sub = $trail_sub;
+                $sessionData->mx_Grade_id = $mx_Grade_id;
                 Session::put('user_data', $sessionData);
                 $aResponse->redirect_url = url('dashboard');
                 return json_encode($aResponse);

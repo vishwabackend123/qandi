@@ -44,7 +44,8 @@
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
         $(window).on('load', function() {
             if ($("#welcomeModal").length > 0) {
@@ -69,6 +70,16 @@
 
 
         gtag('config', 'G-5M3C3F04YY');
+
+
+        /* no back prevention code */
+        /*  $(document).ready(function() {
+             window.history.pushState(null, "", window.location.href);
+             window.onpopstate = function() {
+                 window.history.pushState(null, "", window.location.href);
+             };
+         }); */
+        /* no back prevention code */
     </script>
 
 </head>

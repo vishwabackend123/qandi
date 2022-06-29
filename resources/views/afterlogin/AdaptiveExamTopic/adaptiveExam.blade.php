@@ -27,8 +27,9 @@ $userData = Session::get('user_data');
 <script type="text/javascript">
     document.addEventListener('visibilitychange', function() {
         $insCheck = $('#test_instruction').hasClass('show');
-        if ((document.visibilityState == 'hidden') && $insCheck == false) {
-            $('.modal').modal('hide');
+        $endExamCheck = $('#endExam').hasClass('show');
+        if ((document.visibilityState == 'hidden') && $insCheck == false && $endExamCheck == false) {
+            $('#FullTest_Exam_Panel_Interface_A').modal('hide');
             stop();
         }
     });
@@ -565,17 +566,17 @@ $question_type = "Numerical";
     $(document).ready(function() {
 
         /* mouse rightclick */
-        /*  document.oncontextmenu = function() {
-             return false;
-         };
+        document.oncontextmenu = function() {
+            return false;
+        };
 
-         $(document).mousedown(function(e) {
-             if (e.button == 2) {
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
 
-                 return false;
-             }
-             return true;
-         }); */
+                return false;
+            }
+            return true;
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
