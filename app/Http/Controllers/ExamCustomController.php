@@ -1144,6 +1144,7 @@ class ExamCustomController extends Controller
             Redis::set('exam_name' . $user_id, $test_name);
             //Session::put('exam_name', $test_name);
 
+
             return view('afterlogin.AdaptiveExamChapter.adaptiveExam', compact('session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id', 'test_name'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
