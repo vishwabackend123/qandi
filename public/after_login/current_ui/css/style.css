@@ -416,13 +416,21 @@ width: 87px;
     margin: 0px;
     padding-bottom: 10px;
 }
-.progress__item.progress__item--completed:after {
+.progress__item img{display:none;}
+.progress__item.progress__item--completed img{display:block;}
+.progress__item.progress__item--completed img {
+    display: block;
+    position: absolute;
+    left: -4px;
+    top: -4px;
+}
+/* .progress__item.progress__item--completed:after {
     content: "\2713";
     font-weight: 400;
     background: #67d848;
     color: #fff;
     line-height: 22px;
-}
+} */
 .progress__item:after {
     content:  "";
     position: absolute;
@@ -872,6 +880,9 @@ ul.sidebar-menu-lists li.active a , ul.sidebar-menu-lists li a:hover {
     background-color: #e0f6e3;
     border-radius: 8px;
 }
+ul.sidebar-menu-lists li.active a svg.menu-icon-active, ul.sidebar-menu-lists li a:hover svg.menu-icon-active{display:inline-block;}
+ul.sidebar-menu-lists li.active a svg:first-child, ul.sidebar-menu-lists li a:hover svg:first-child{display:none;}
+.menu-icon-active{display:none;}
 
 /********* Amit End ***********/
 
@@ -956,6 +967,7 @@ margin-top: 70px;
 {
     width: 401px;
     border: solid 3px #ffffff;
+    border: solid 3px var(--white);
     background-color: #d1fadf;
     gap: 28px;
     box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
@@ -975,7 +987,7 @@ margin-top: 70px;
 }
 .plan_box_status_msg_pending
 {
-    width: 401px;
+    width: 400px;
     border: solid 3px #ffffff;
     background-color: #fef0c7;
     gap: 28px;
@@ -1012,7 +1024,6 @@ margin-top: 70px;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.3;
-  padding-bottom:6px;
 }
 .plan_success_congrats_msg_text
 {
@@ -1102,5 +1113,7 @@ margin-top: 70px;
     background-color: rgba(86, 182, 99, 0.1);
     padding: 2px 8px;
     border-radius:8px;
+  padding-top:5px;
 }
+
 /********* Vikas End ***********/
