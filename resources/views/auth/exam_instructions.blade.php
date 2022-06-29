@@ -80,6 +80,7 @@
             <div class="exam_section_right_side">
                 <div>JEE Main - Full Syllabus -2021</div>
                 <div class="line-692"></div>
+                <div></div>
             </div>
         </div>
     </div>
