@@ -82,7 +82,9 @@ $userData = Session::get('user_data');
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
-                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your
+                                 current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching 
+                                 the goal with your current pattern of preparation. Set your goal!
                             </p>
                         </small>
                         <div class="row h-100">
