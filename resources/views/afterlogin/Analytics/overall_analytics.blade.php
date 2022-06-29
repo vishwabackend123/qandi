@@ -391,7 +391,8 @@ Highcharts.chart('comparegraph', {
         min: 0,
         title: {
             text: 'Score %'
-        }
+        },
+        max:100,
     }, {
         title: {
             text: ''
