@@ -58,5 +58,8 @@ class LeadUserController extends Controller {
 	public function planPurchased() {
 		return view('auth.plan_purchased');
 	}
+	public function examInstructions() {
+		return view('auth.exam_instructions');
+	}
 }
 
