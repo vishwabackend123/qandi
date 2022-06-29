@@ -728,6 +728,7 @@ background-repeat: no-repeat;background-size: cover;}
 .fullbody_scan_test p{font-size: 16px;font-weight: 600;color: #fff;max-width: 235px;margin: 0 auto;}
 .btn.btn-common-white {border-radius: 8px;background-color: #fff;font-size: 14px;font-weight: 800;color: #56b663;padding: 8px;min-width: 160px;}
 .btn.btn-common-transparent {padding: 10px 16px;border-radius: 8px;border: solid 1px #56b663;background-color: #f5faf6;color: #56b663;font-size: 14px;font-weight: 800;min-width: 250px;}
+
 /********* Performance Rating ***************/
 ul.proficiency-level-lists li {
     border-radius: 8px;
@@ -836,6 +837,105 @@ margin-top: 70px;
 }
 .notification-block_new.show{display: block;}
 
+/* dashboard */
+
+.boxheading{font-size: 24px;font-weight: 800;  line-height: 1.3;color:#234628;margin-bottom:10px;}
+.myqTodayGraphSec .textblock{padding-left:20px;}
+.boxheading .tooltipmain{display:inline-block;margin-left:10px;}
+.content-wrapper {padding:0px 20px 0px 20px;}
+.commondashboardTop{position: relative;}
+.tooltipclass{
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 2px 5px 15px 0 rgba(0,0,0.0.1);
+    z-index: 55;
+    padding: 15px 30px 15px 20px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    min-width: 350px;
+    display: none;
+    text-align: left;
+    height: auto !important;
+    font-size: 13px;
+    left: auto !important;
+}
+.dashSubHeading{  font-size: 20px;font-weight: 800;  color: #363c4f;  line-height: 1.6;margin-bottom:4px;}
+.dashSubtext{opacity: 0.6;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #363c4f;margin-bottom:0px;margin-bottom:8px;}
+ .commmongreenLink{display:inline-block; font-size: 16px;  font-weight: 800; line-height: 1.6;color:#56b663;}
+ .commmongreenLink span{display:inline-block;}
+ .commmongreenLink span svg{width:16px;}
+ .commonWhiteBox{ padding: 32px 30px 32px 32px; border-radius: 10px;background-color:#ffffff;}
+.SubjectscorePannel{padding: 16px;border-radius: 10px;background-color:#e0f6e3;margin-bottom:20px;}
+.subjextscoreLeft h6{font-size: 16px;font-weight: 500; line-height: 1.6; color: #363c4f;}
+.subjextscoreLeft h4{  font-size: 24px; font-weight: bold; line-height: 1.3; color: #363c4f;margin-top:5px;}
+.flexblock{display:flex;align-items:center;justify-content:space-between;}
+.fullbodyBox{ padding: 16px 1px 0 16px;background-color:#56b663;border-radius: 10px;    display: flex;
+    align-items: end;margin-top:20px;}
+.fullbodyBox .leftBox h4{font-size: 20px;
+    font-weight: 800;
+    line-height: 1.6;color:#fff;}
+.fullbodyBox .leftBox p{font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;color:#fff;}
+    .fullbodyBox .leftBox {margin-bottom:16px;padding-right:15px;}
+    .fullbodyBox .leftBox  .btn-common-white{padding:8px 15px;min-width:120px;}
+.tabMainblock{margin-top:16px;}
+.commontab .nav-tabs .nav-link {    padding: 0px 0px 10px;
+    opacity: 0.6;border:0px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #363c4f;
+    margin-right: 28px;}
+    .commontab .nav-tabs .nav-link:hover, .commontab .nav-tabs .nav-link:focus{border:0px;}
+    .commontab  .nav-tabs .nav-item.show .nav-link, .commontab .nav-tabs .nav-link.active{border:0px;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.6;
+        color: #363c4f;border-bottom:4px solid #363c4f;opacity:1;}
+      .commontab  .nav-tabs {    border-bottom: 1px solid #e0e0e0;}
+      .taskstatusBlock{    display: flex;
+        align-items: center;
+        justify-content: space-between;}
+      .commontab  .tab-content{padding:15px 0px}
+      .taskstatusBlock h4{  font-size: 20px;
+        font-weight: 800;
+        line-height: 1.6;
+        color: #363c4f;}
+        .taskstatusBlock  .statusvalue span{opacity:0.6;display:inline-block;  font-size: 20px;
+            font-weight: 800;
+            line-height: 1.6;}
+        .taskstatusBlock  .statusvalue span.codevalue{opacity:1;}
+        .tasklisting .tasklistleft h6{opacity: 0.6;
+            font-size: 12px;
+            font-weight: bold;
+            line-height: 1.6;
+            letter-spacing: 0.96px;
+            color: #363c4f;}
+        .tasklisting .tasklistleft h4{font-size: 16px;
+            font-weight: 800;
+            line-height: 1.6;
+            color: #363c4f;}
+        .tasklisting .tasklistleft h5 {  opacity: 0.6;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.6;
+                color: #363c4f;}
+         .commonlisting li{display:flex; align-items: end;justify-content: space-between;position: relative;padding-left:12px;margin-bottom:15px;}  
+        .commonlisting li:after{width: 4px;
+            position: absolute;
+            height: 4px;border-radius:3px;
+            background-color: #363c4f;
+            content: '';
+            left: 0px;
+            top: 7px;}
+        .tasklistbtn .btn{min-width:120px;padding:8px 15px} 
+        .tasklistbtn .btn.nobg{background-color:#fff;}    
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
