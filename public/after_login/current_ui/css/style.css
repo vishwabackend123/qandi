@@ -889,7 +889,7 @@ ul.sidebar-menu-lists li.active a svg:first-child, ul.sidebar-menu-lists li a:ho
     color: rgba(54, 60, 79, 0.7);
     font-weight: bold;
 }
-ul.submenu-lists li a {
+ul.submenu-lists li>a {
     display: flex;
     padding: 14px 20px 14px 20px;
     min-width: 227px;
@@ -898,7 +898,7 @@ ul.submenu-lists li a {
     font-size: 16px;
     align-items: center;
 }
-ul.submenu-lists li a:hover{
+ul.submenu-lists li>a:hover{
     background-color: #e0f6e3;
 }
 .submenu-block {
@@ -909,9 +909,32 @@ ul.submenu-lists li a:hover{
     top: 80px;
     left: 82px;
     text-align: left;
+    display: none;
 }
-ul.submenu-lists li a svg{margin-right:20px;}
-
+ul.submenu-lists li>a svg{margin-right:20px;}
+ul.submenu-lists li>a span.practice-toggle-arrow{
+    font-size: 12px;
+    color: #234628;
+    margin-left: 20px;
+    margin-top: 3px;
+}
+ul.submenu-lists li.practice-menu-active>a{color:#56b663;}
+.practice-icon-active{display:none;}
+ul.submenu-lists li.practice-menu-active>a svg.practice-icon-active{display:block;}
+ul.submenu-lists li.practice-menu-active>a svg:first-child{display:none;}
+ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b663;transform: rotate(90deg);}
+.practice-submenu {
+    padding-left: 58px;
+    margin-bottom: 15px;
+    display:none;
+}
+.practice-submenu a {
+    color: #424242;
+    font-family: 'Inter', sans-serif;
+    display: block;
+    padding: 8px 20px 8px 20px;
+}
+.practice-submenu a:hover{background-color: #e0f6e3;}
 
 /********* Amit End ***********/
 
