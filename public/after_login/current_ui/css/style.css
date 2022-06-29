@@ -298,8 +298,6 @@ font-size: 14px;
 border-color: rgba(16, 24, 40, 0.05);
 margin-top: 0;
 }
-
-
 .custom-profileupload .dropzone-wrapper {
     position: relative;
     height: 126px;
@@ -309,16 +307,14 @@ margin-top: 0;
     border: solid 1px #d0d5dd;
     background: #fff;
 }
-
- .custom-profileupload .dropzone-desc {
+.custom-profileupload .dropzone-desc {
   position: absolute;
   margin: 0 auto;
   left: 0;
   right: 0;
 }
-
- .custom-profileupload .dropzone,
- .custom-profileupload .dropzone:focus {
+.custom-profileupload .dropzone,
+.custom-profileupload .dropzone:focus {
  position: absolute;
     outline: none !important;
     width: 100%;
@@ -368,9 +364,7 @@ font-weight: 600;
 color: #56b663;
 width: 87px;
 }
-
-
-
+/******Profile-page-end*****/
 /*********** Navdeep End *************/
 
 /***************** Sachin Start ****************************/
