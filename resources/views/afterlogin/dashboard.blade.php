@@ -82,7 +82,9 @@ $userData = Session::get('user_data');
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
-                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your
+                                 current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching 
+                                 the goal with your current pattern of preparation. Set your goal!
                             </p>
                         </small>
                         <div class="row h-100">
@@ -173,7 +175,7 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <div class="topics-box">
                                     <b>Q2</b>
-                                    <a href="{{route('dashboard-MyQMatrix','q_2')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[1]))
                                             <b>{{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
@@ -184,7 +186,7 @@ $userData = Session::get('user_data');
                                     </a>
                                 </div>
                                 <div class="topics-box">
-                                    <a href="{{route('dashboard-MyQMatrix','q_1')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[0]))
                                             <b>{{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
@@ -196,7 +198,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 <div class="topics-box">
                                     <b>Q3</b>
-                                    <a href="{{route('dashboard-MyQMatrix','q_3')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[2]))
                                             <b>{{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
@@ -206,7 +208,7 @@ $userData = Session::get('user_data');
                                         </span></a>
                                 </div>
                                 <div class="topics-box">
-                                    <a href="{{route('dashboard-MyQMatrix','q_4')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[3]))
                                             <b>{{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
