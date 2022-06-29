@@ -698,19 +698,6 @@ function searchCity() {
     }
 </script>!--->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<style>
-@media only screen and (max-width: 1366px) {
-  .left-sidepannel .carousel-inner .carousel-item img{
-   height: 350px;
-}
-.signuprightpannel {
-    padding: 140px 140px 0;
-    height: 560px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-}
-</style>
 <section class="d-flex h-100 login-signup">
    <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
       <figure class="pb-4">
@@ -799,7 +786,7 @@ function searchCity() {
                <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
                <a class="editnumber verifyno">Verify</a>
             </div>
-            <div class="custom-input changeno pb-4 d-none">
+            <div class="custom-input changeno pb-3 d-none">
                <label>Mobile</label>
                <div class="d-flex position-relative">
                   <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
@@ -812,7 +799,7 @@ function searchCity() {
                   </a>
                </div>
             </div>
-            <div class="custom-input pb-4 d-none">
+            <div class="custom-input pb-3">
                <label>Enter OTP</label>
                <div class="d-flex enterotp bg-white">
                   <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
