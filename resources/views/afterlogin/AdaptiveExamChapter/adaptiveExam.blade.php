@@ -164,7 +164,7 @@ $question_type = "Numerical";
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
-                        Continue
+                    REVIEW
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         <span class="btnSubic">
