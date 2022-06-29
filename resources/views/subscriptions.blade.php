@@ -129,11 +129,11 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             @if($sub->trial_subscription_duration>0)
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
-                                <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline btn disabled" disabled="disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trial ></a>
+                                <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline btn disabled" disabled="disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trail ></a>
                             </div>
                             @else
                             <div class="text-center mt-2">
-                                <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trial ></span>
+                                <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trail ></span>
                             </div>
                             @endif
                             @endif
@@ -168,12 +168,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                             @if(!in_array($sub->subscript_id,$purchasedid) )
                             <div class="text-center mt-2">
                                 @if(empty($trail_sub) || $trail_sub==1)
-                                <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trial></a>
+                                <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trail></a>
                                 @endif
                             </div>
                             @else
                             <div class="text-center mt-2">
-                                <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trial ></span>
+                                <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trail ></span>
                             </div>
                             @endif
                             @endif
