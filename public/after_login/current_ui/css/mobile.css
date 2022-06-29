@@ -1,6 +1,3 @@
-@media(max-width:767px){
-    .btn.btn-common-transparent{min-width:200px;}
-}
 @media only screen and (max-width: 1440px) {
   .left-sidepannel .carousel-inner .carousel-item img{
    height: 350px;
@@ -13,4 +10,7 @@
   .signuprightpannel {
     height: 550px;
 }  
+}
+@media(max-width:767px){
+    .btn.btn-common-transparent{min-width:200px;}
 }
