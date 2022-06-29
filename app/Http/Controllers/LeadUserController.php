@@ -62,7 +62,7 @@ class LeadUserController extends Controller {
 		return view('auth.exam_instructions');
 	}
 	public function weeklyPlan() {
-		return view('auth.weekly_plan');
+		return view('auth.weekly_plan'); 
 	}
 }
 
