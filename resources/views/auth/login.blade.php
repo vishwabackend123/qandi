@@ -222,6 +222,13 @@
         });
     });
 </script>!---->
+<style>
+@media only screen and (max-width: 1366px) {
+  .left-sidepannel .carousel-inner .carousel-item img{
+   height: 350px;
+}
+}
+</style>
 <section class="d-flex h-100 login-signup">
    <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
       <figure class="pb-4">
@@ -275,7 +282,7 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly-plan.svg')}}" alt="performance" class="d-block w-100">
+                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly plan.svg')}}" alt="performance" class="d-block w-100">
                   <div class="carousel-caption d-none d-md-block">
                      <h5 class="pb-2">Weekly plan</h5>
                      <p>Plan your weekly tests for any chapters, check<br> proficiency of different subjects</p>
@@ -305,7 +312,7 @@
             <label>Mobile</label>
             <div class="d-flex position-relative">
                <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
-               <a class="d-block bg-white editnumber"  href="javascript:void(0);">
+               <a class="d-block bg-white" href="">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
@@ -313,7 +320,7 @@
                </a>
             </div>
          </div>
-         <div class="custom-input pb-5">
+         <div class="custom-input pb-5 d-none">
             <label>Enter OTP</label>
             <div class="d-flex enterotp bg-white">
                <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
