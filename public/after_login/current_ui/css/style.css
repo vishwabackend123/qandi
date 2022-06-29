@@ -273,6 +273,12 @@ text-decoration: none;
 .select2-search--dropdown {
     padding: 0;
 }
+.signuprightpannel {
+    padding: 140px 140px 0;
+    height: 900px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 /******sign-up-end*******/
 /*********** Navdeep End *************/
 
