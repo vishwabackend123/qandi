@@ -878,7 +878,7 @@ ul.proficiency-level-lists li {
     color: #363c4f;
     margin-top: 20px;
     width: 100%;
-    margin-right: 20px;
+    margin-right: 18px;
 }
 ul.proficiency-level-lists li span b {width: 7px;background-color: #cccccca1;height: 13px;display: inline-block;border-radius: 10px;}
 ul.proficiency-level-lists li span b.rate-level-active{background-color: #363c4f;}
