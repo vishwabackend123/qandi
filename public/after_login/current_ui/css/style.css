@@ -702,7 +702,7 @@ border-bottom: 1px solid #56b663;
     padding-top: 72px;
 }
 .subscribe_form{
-    padding-top: 43px;
+    padding-top: 28px; 
 }
 .subscribe_form .custom-input .form-control {
     border: none !important;
