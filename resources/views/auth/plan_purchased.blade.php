@@ -241,10 +241,4 @@
     </div>
 </div>
 
-<!-- Plan purchesed Pending  start -->
-
-
-
-<!-- Plan purchesed Pending  start -->
-
 @endsection
