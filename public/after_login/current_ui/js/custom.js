@@ -13,8 +13,15 @@ $("ul.sidebar-menu-lists>li").click(function(){
     }
 });
 $(".sidebar-exam-menu").click(function(){
-    $(".submenu-block").slideToggle({ direction: "left" }, 1000);
+    $(".submenu-block").slideToggle();
+    $(".submenu-block").toggleClass("submenu-block-active");
 });
+// $(document).on('click', function(e) {
+//     var submenu_opened = $('.submenu-block').hasClass('submenu-block-active');
+//     if (!$(e.target).closest('.submenu-block').length && !$(e.target).is('.submenu-block') && submenu_opened === true) {
+//         $('.submenu-block').hide();
+//     }
+// });
 $(document).on('click', function (e) {
     if ($(e.target).closest("aside").length === 0) {
         $(".submenu-block").hide();

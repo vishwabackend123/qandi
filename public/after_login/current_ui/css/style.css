@@ -31,10 +31,10 @@ textarea, button, input[type="password"], input[type="tel"], select {
 a, input, button, a:focus, input:focus, button:focus {outline:none!important;}
 :focus {outline: -webkit-focus-ring-color auto 0px!important;}
 li{list-style-type:none;}
-h1,h2,h3,h4,h5,h6,figure,ul,li,p{
+/* h1,h2,h3,h4,h5,h6,figure,ul,li,p{
 margin: 0;
 padding: 0;
-}
+} */
 
 /*********** Navdeep Start *************/
 /*********** Login *************/
