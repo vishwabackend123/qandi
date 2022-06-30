@@ -799,7 +799,7 @@ function searchCity() {
                   </a>
                </div>
             </div>
-            <div class="custom-input pb-3">
+            <div class="custom-input pb-3 d-none">
                <label>Enter OTP</label>
                <div class="d-flex enterotp bg-white">
                   <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
