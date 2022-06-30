@@ -1022,7 +1022,67 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b
     border-left: 1px solid #e0e0e0;
 }
 .practice-submenu a:hover{background-color: #e0f6e3;}
-
+/*****************/
+.circle_percent {
+    font-size: 100px;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    background: #eee;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .circle_inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    clip: rect(0 1em 1em 0.5em);
+  }
+  .round_per {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1em;
+    height: 1em;
+    background: #f66c6c;
+    clip: rect(0 1em 1em 0.5em);
+    transform: rotate(180deg);
+    transition: 1.05s;
+  }
+  .percent_more .circle_inner {
+    clip: rect(0 0.5em 1em 0em);
+  }
+  .percent_more:after {
+    position: absolute;
+    left: 0.5em;
+    top: 0em;
+    right: 0;
+    bottom: 0;
+    background: #f66c6c;
+    content: "";
+  }
+  .circle_inbox {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    background: #fff;
+    z-index: 3;
+    border-radius: 50%;
+  }
+  .percent_text {
+    position: absolute;
+    font-size: 36px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  
 /********* Amit End ***********/
 
 

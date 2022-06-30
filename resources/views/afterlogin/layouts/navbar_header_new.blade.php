@@ -667,9 +667,12 @@
     .new_notification_main_sec {height: calc(100vh - 81px);overflow-y: scroll;background: #fff; width: 456px; max-width: 100%; float: right; padding: 20px; }
     .new_notification_main_sec > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
     .new_notification_main_sec > h2 a {float: right;font-size: 14px;font-weight: 800;color: #1f1f1f;}
-    .notification-list {padding: 30px 0px;}
-    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;}
+    .notification-list {padding: 20px 0px;}
+    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;}
+    .list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;}
+    .list-btn-sec .btn-outline-secondary:hover{background: #56b663;border-color: #56b663;text-transform: capitalize;color:#fff;}
     .list-btn-sec {padding: 15px 0px;}
+    .notification-list .form-floating {padding: 15px 0px 6px;}
 
 
 </style>
@@ -738,8 +741,7 @@
                     <div class="flex-grow-1 ms-3">
                          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                            <label for="floatingTextarea2">Comments</label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px"></textarea>
                             </div>
                         <div class="list-btn-sec">
                         <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
