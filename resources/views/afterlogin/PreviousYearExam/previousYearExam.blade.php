@@ -367,7 +367,7 @@ $questtype='radio';
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
-                    REVIEW
+                        REVIEW
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 textsubmit">
                         <span class="btnSubic">
@@ -385,7 +385,7 @@ $questtype='radio';
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <a type="button" class="btn-close" aria-label="Close" href="{{url('/dashboard')}}" title="Close">
+                <a type="button" class="btn-close" aria-label="Close" href="{{url('/previous_year_exam')}}" title="Close">
                     <img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}" />
                 </a>
             </div>

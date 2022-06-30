@@ -102,8 +102,6 @@ class AdpativeExamController extends Controller
 
             $redis_set = 'True';
 
-            // $exam_fulltime = (isset($exam_fulltime) && !empty($exam_fulltime)) ? $exam_fulltime : $questions_count  * 60;
-
             $collection = collect($aQuestions_list);
 
             $aQuestionslist = $collection->sortBy('subject_id');
@@ -567,6 +565,8 @@ class AdpativeExamController extends Controller
             $exam_type = 'PT';
             //Session::put('exam_name', $test_name);
             Redis::set('exam_name' . $user_id, $test_name);
+
+            /* dd($exam_fulltime); */
             return view('afterlogin.AdaptiveExamTopic.adaptiveExam', compact('test_name', 'session_id', 'test_type', 'exam_type', 'question_data', 'tagrets', 'option_data', 'keys', 'activeq_id', 'next_qKey', 'prev_qKey', 'questions_count', 'exam_fulltime', 'filtered_subject', 'activesub_id'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());

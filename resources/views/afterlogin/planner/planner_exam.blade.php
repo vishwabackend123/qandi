@@ -354,12 +354,12 @@ $question_type = "Numerical";
     </div>
 </div>
 <!-- Modal END Exam -->
-<div class="modal fade" id="endExam" tabindex="-1" role="dialog" aria-labelledby="endExam" aria-hidden="true">
+<div class="modal fade" id="endExam" tabindex="-1" aria-labelledby="endExamModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-0 ">
             <div class="modal-body p-5 text-center">
                 <div class="text-center py-4">
-                    <p class="mb-3">You have practiced enough questions in this topic. It's time to move to another topic.</p>
+                    <p class="mb-3" id="endMsg">You have practiced enough questions in this topic. It's time to move to another topic.</p>
 
                     <button id="bt-modal-confirm_over" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 goto-exam-btn">
                         Submit TEST
@@ -465,7 +465,7 @@ $question_type = "Numerical";
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" onclick="start()" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal">
-                    REVIEW
+                        REVIEW
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3 textsubmit">
                         <span class="btnSubic">
@@ -745,6 +745,8 @@ $question_type = "Numerical";
         /*  setDisabled(startBtn);
          removeDisabled(stopBtn); */
         clearInterval(timerInterval);
+        $('#endMsg').css('font-size', 24 + 'px');
+        $('#endMsg').text('Time Out!');
         $('#endExam').modal('show');
 
         /* let confirmReset = confirm("Time is UP! Wanna restart?");
@@ -892,6 +894,7 @@ $question_type = "Numerical";
                     $("#question_section").html(result.html);
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question_section"]);
                 } else {
+                    $('#endMsg').text("You have practiced enough questions in this topic. It's time to move to another topic.'");
                     $('#endExam').modal('show');
                 }
             }
@@ -1213,11 +1216,6 @@ $question_type = "Numerical";
 
     }
 
-
-    /* $('#submitExam').click(function() {
-
-        $('#endExam').modal('show');
-    }); */
 
 
     $(document).ready(function() {

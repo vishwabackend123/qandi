@@ -97,6 +97,7 @@ $userData = Session::get('user_data');
                                                 <p class="tooltipclass">
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                                     This card represents a combination of your skill, expertise, and knowledge in the subjects you have attempted. Build your proficiencies!
+                                                    
                                                 </p>
                                             </small>
                                             <div class="prgress-i-txt px-3">
@@ -180,7 +181,7 @@ $userData = Session::get('user_data');
                                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                                 <p class="tooltipclass">
                                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                                    Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lower this average and add miles to your success.
+                                                    Keep your average time spent on each question low by allocating appropriate time to questions based on their difficulty. Lowering this average will add miles to your success.
                                                 </p>
                                             </small>
                                             <p class="fw-bold text-start">Average Time Spent on each Question (Last Week)</p>
