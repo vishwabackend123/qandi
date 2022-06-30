@@ -613,7 +613,6 @@
 </div> -->
 
 <style>
-    #referfrnd .modal-header { padding: 0 !important;border: 0 !important;}
     .user-profile-sec {text-align: center;padding:0px 0px 20px;}
     .user-profile-sec > h2 {font-size: 24px; font-weight: 800; padding: 20px 0px; color: #1f1f1f; }
     #referfrnd .modal-content {border: 0; border-radius: 24px; }
@@ -631,13 +630,13 @@
     letter-spacing: normal;
     background-image: inherit !important;text-transform: capitalize
 }
-#referfrnd  .modal-body {padding: 2rem;}
+#referfrnd  .modal-body {padding: 0rem 2rem 2rem;}
 #referfrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
 
 
 ._btn-green {text-align: center;padding: 20px 0px 50px;border-bottom: 1px solid #e5eaee;}
 .bottom-sec { padding: 35px 0px 5px;position: relative;}
-#referfrnd input {background: #fff !important;height: 45px;color: #e5eaee !important;
+#referfrnd input {background: #fff !important;height: 45px;
     font-weight: 500; border:1px solid #d0d5dd;}
     #referfrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
     #referfrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
@@ -657,7 +656,12 @@
 .bottom_back-sec {float: left; width: 100%; }
 .bottom_back-sec label > i {color: #56b663; padding-right: 10px; }
 .bottom_back-sec label:hover{cursor: pointer;}
+.modal-backdrop{background:#1f1f1f;}
+.modal-backdrop.show {opacity: 0.3;}
+ .modal {backdrop-filter: inherit !important;-webkit-backdrop-filter: inherit !important;}
 
+ .modal-popup-customize .btn-close {background: inherit !important;}
+ #referfrnd .modal-header {border: 0; width:94%;}
 </style>
 
 <!-- New Ui Modal -->
