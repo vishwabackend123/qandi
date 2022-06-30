@@ -661,7 +661,9 @@
 
 <!--notification-right End-->
 <style>
-     #collapseNotification2 {position: fixed; right: 0px; width: 95.5%; z-index: 9; background-color: #1f1f1f63; <!--  / opacity: 0.3; / --> top: 11px; margin-top: 70px; }
+     #collapseNotification2 {position: fixed; right: 0px; width: 95.5%; z-index: 9; background-color: #1f1f1f63;
+     /* opacity: 0.3; */
+     top: 11px; margin-top: 70px; }
     .new_notification_main_sec {height: calc(100vh - 81px);overflow-y: scroll;background: #fff; width: 456px; max-width: 100%; float: right; padding: 20px; }
     .new_notification_main_sec > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
     .new_notification_main_sec > h2 span {float: right;font-size: 14px;font-weight: 800;}
