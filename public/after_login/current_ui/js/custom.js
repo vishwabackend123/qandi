@@ -6,11 +6,14 @@ $("ul.submenu-lists li.practice-menu>a").click(function(){
     $(this).parent().toggleClass("practice-menu-active");
     $(".practice-submenu").slideToggle();
 });
-$("ul.sidebar-menu-lists>li").click(function(){
-    if( !$(this).hasClass("active") ){
-        $(this).addClass("active");
-        $(this).siblings().removeClass("active");
-    }
+// $("ul.sidebar-menu-lists>li").click(function(){
+//     if( !$(this).hasClass("active") ){
+//         $(this).addClass("active");
+//         $(this).siblings().removeClass("active");
+//     }
+// });
+$("ul.sidebar-menu-lists>li.sidebar-exam-menu").click(function(){
+    $(this).toggleClass("active");
 });
 $(".sidebar-exam-menu").click(function(){
     $(".submenu-block").slideToggle();
@@ -22,13 +25,13 @@ $(".sidebar-exam-menu").click(function(){
 //         $('.submenu-block').hide();
 //     }
 // });
-$(document).on('click', function (e) {
-    if ($(e.target).closest("aside").length === 0) {
-        $(".submenu-block").hide();
-        $(".sidebar-exam-menu").removeClass("active");
+// $(document).on('click', function (e) {
+//     if ($(e.target).closest("aside").length === 0) {
+//         $(".submenu-block").hide();
+//         $(".sidebar-exam-menu").removeClass("active");
         
-    }
-});
+//     }
+// });
 /************ Sidebar End **************/
 
 
@@ -57,6 +60,70 @@ $(document).on('click', function(e) {
 
 // dashboard-circuler progress
 
-
-
+/*****show-hide-detalis-user-profile-page**********/
+  $(document).ready(function(){
+    $(".flip").click(function(){
+        $("#panel").slideToggle("slow");
+        $(this).text(function(i, v){
+          return v === 'Show details' ? 'Hide details' : 'Show details'
+      })
+    });
+});
+/***************************************************/
+/*****upload-user-picture-user-profile-page**********/
+  $(document).ready(function(){
+      function readFile(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+      
+          reader.onload = function(e) {
+            var htmlPreview =
+              '<img width="64px" height="64px" style="border-radius:32px;margin-right:20px;" src="' + e.target.result + '" />'; 
+      //        '<p>' + input.files[0].name + '</p>';
+            var wrapperZone = $(input).parent();
+            var previewZone = $(input).parent().parent().find('.preview-zone');
+            var boxZone = $(input).parent().parent().find('.preview-zone').find('.box').find('.box-body');
+      
+            wrapperZone.removeClass('dragover');
+            previewZone.removeClass('hidden');
+            boxZone.empty();
+            boxZone.append(htmlPreview);
+          };
+      
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      
+      function reset(e) {
+        e.wrap('<form>').closest('form').get(0).reset();
+        e.unwrap();
+      }
+      
+      $(".dropzone").change(function() {
+        readFile(this);
+      });
+      
+      $('.dropzone-wrapper').on('dragover', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).addClass('dragover');
+      });
+      
+      $('.dropzone-wrapper').on('dragleave', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).removeClass('dragover');
+      });
+      
+      $('.remove-preview').on('click', function() {
+        var boxZone = $(this).parents('.preview-zone').find('.box-body');
+        var previewZone = $(this).parents('.preview-zone');
+        var dropzone = $(this).parents('.form-group').find('.dropzone');
+        boxZone.empty();
+        previewZone.addClass('hidden');
+        reset(dropzone);
+      });
+});
+/***************************************************/
+       
 

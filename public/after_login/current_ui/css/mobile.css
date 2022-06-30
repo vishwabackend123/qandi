@@ -9,7 +9,16 @@
 @media only screen and (max-width: 1366px) {
   .signuprightpannel {
     height: 580px;
-}  
+} 
+.inst {
+    padding: 20px 0px;
+}
+.planPayment .testType h2 {
+    padding-top: 32px;
+}
+.applyCo {
+    padding-top: 90px;
+}
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {

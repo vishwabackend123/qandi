@@ -79,7 +79,7 @@
          </li>
       </ul>
    </aside>
-   <section class="all-content ml-5">
+   <section class="all-content ml-5 pb-5">
       <div class="container">
          <div class="row">
             <div class="col-lg-4">
@@ -160,66 +160,53 @@
                   </div>
                </div>
                <hr class="line">
-               <div class="d-flex justify-content-end mb-5">   
+               <div class="d-flex justify-content-end mb-5 pb-4">   
                   <button class="btn cancle mr-2 bg-transparent disabled">Cancle</button>
                   <button class="btn savebtn text-white border-0 ml-1 disabled">Save</button>
                </div>
             </div>
          </div>
+        <hr class="line mb-5 pb-4">
+          <div class="row">
+            <div class="col-lg-4">
+               <div class="info">
+                  <h1 class="main-title pb-2">Subscription</h1>
+                  <p>Beginner • JEE MAIN</p>
+               </div>
+            </div>
+            <div class="col-lg-8 pt-4">
+            <div class="bg-white subscription-details">
+             <h1 class="subs-heading d-inline-block">JEE MAIN Subscription</h1>
+            <hr class="line">
+            <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
+            <h2>Subscription type</h2>
+            <h3>JEE 1 year Subscription</h3>
+            </div>
+            <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
+            <h2>Price</h2>
+            <h3>₹15,000</h3>
+            </div>
+            <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
+            <h2>Active date</h2>
+            <h3>20th April 2022</h3>
+            </div>
+            <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
+            <h2>End date</h2>
+            <h3>20th April 2023</h3>
+            </div>
+            <div id="panel">
+            <hr class="line">
+            <p>JEE-Main, which replaced AIEEE, is for admissions to the National Institutes of Technology (NITs), Indian Institutes of Information Technology (IIITs) and some other colleges designated as "centrally funded technical institutes" (CFTIs).</p>
+            </div>
+            <div class="flip d-inline-block">Show details</div> <i class="fa fa-angle-right text-success" aria-hidden="true"></i>
+                </div>    
+              </div>
+          </div>
       </div>
-   </section>
+   </section>   
    <script>
-      function readFile(input) {
-        if (input.files && input.files[0]) {
-          var reader = new FileReader();
-      
-          reader.onload = function(e) {
-            var htmlPreview =
-              '<img width="64px" height="64px" style="border-radius:32px;margin-right:20px;" src="' + e.target.result + '" />'; 
-      //        '<p>' + input.files[0].name + '</p>';
-            var wrapperZone = $(input).parent();
-            var previewZone = $(input).parent().parent().find('.preview-zone');
-            var boxZone = $(input).parent().parent().find('.preview-zone').find('.box').find('.box-body');
-      
-            wrapperZone.removeClass('dragover');
-            previewZone.removeClass('hidden');
-            boxZone.empty();
-            boxZone.append(htmlPreview);
-          };
-      
-          reader.readAsDataURL(input.files[0]);
-        }
-      }
-      
-      function reset(e) {
-        e.wrap('<form>').closest('form').get(0).reset();
-        e.unwrap();
-      }
-      
-      $(".dropzone").change(function() {
-        readFile(this);
-      });
-      
-      $('.dropzone-wrapper').on('dragover', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).addClass('dragover');
-      });
-      
-      $('.dropzone-wrapper').on('dragleave', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).removeClass('dragover');
-      });
-      
-      $('.remove-preview').on('click', function() {
-        var boxZone = $(this).parents('.preview-zone').find('.box-body');
-        var previewZone = $(this).parents('.preview-zone');
-        var dropzone = $(this).parents('.form-group').find('.dropzone');
-        boxZone.empty();
-        previewZone.addClass('hidden');
-        reset(dropzone);
-      });
+
+       
           
    </script>
 </body>
