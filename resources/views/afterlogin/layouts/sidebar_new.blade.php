@@ -375,6 +375,16 @@
             <a href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
         </div>
     </div>
+<<<<<<< HEAD
+</div>
+</div>
+=======
+
+</div>
+</div>
+
+
+>>>>>>> 252769655b3c0aae6e1b855fd84e0c77f5c37e95
 </div> -->
 
 <!---------- new UI side bar ------------->
@@ -604,11 +614,11 @@
 </div> -->
 
 <style>
-    #sharefrnd .modal-header { padding: 0 !important;border: 0 !important;}
+    #referfrnd .modal-header { padding: 0 !important;border: 0 !important;}
     .user-profile-sec {text-align: center;padding:0px 0px 20px;}
     .user-profile-sec > h2 {font-size: 24px; font-weight: 800; padding: 20px 0px; color: #1f1f1f; }
-    #sharefrnd .modal-content {border: 0; border-radius: 24px; }
-    #sharefrnd button.btn {
+    #referfrnd .modal-content {border: 0; border-radius: 24px; }
+    #referfrnd button.btn {
     border: none !important;border-radius: 8px !important;
     height: inherit;
     box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
@@ -622,22 +632,22 @@
     letter-spacing: normal;
     background-image: inherit !important;text-transform: capitalize
 }
-#sharefrnd  .modal-body {padding: 2rem;}
-#sharefrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
+#referfrnd  .modal-body {padding: 2rem;}
+#referfrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
 
 
 ._btn-green {text-align: center;padding: 20px 0px 50px;border-bottom: 1px solid #e5eaee;}
 .bottom-sec { padding: 35px 0px 5px;position: relative;}
-#sharefrnd input {background: #fff !important;height: 45px;color: #e5eaee !important;
+#referfrnd input {background: #fff !important;height: 45px;color: #e5eaee !important;
     font-weight: 500; border:1px solid #d0d5dd;}
-    #sharefrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
-    #sharefrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
+    #referfrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
+    #referfrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
     
-    #sharefrnd form + p {font-size: 14px; font-weight: 500; color: #868a95; }
-    #sharefrnd .bottom-sec a {background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; }
+    #referfrnd form + p {font-size: 14px; font-weight: 500; color: #868a95; }
+    #referfrnd .bottom-sec a {background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; }
     .bottom-sec input#exampleFormControlInput1 {width: 80%;padding-right: 20px;}
-    #sharefrnd .bottom-sec a {border-radius:0px 8px 8px 0px; background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; position: absolute; right: 0px; top: 65px; }
-    #sharefrnd input::placeholder{color:rgba(54, 60, 79, 0.5)!important;}
+    #referfrnd .bottom-sec a {border-radius:0px 8px 8px 0px; background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; position: absolute; right: 0px; top: 65px; }
+    #referfrnd input::placeholder{color:rgba(54, 60, 79, 0.5)!important;}
     .invation-sec {text-align: center; padding: 100px 0px; }
     .invation-sec p {font-size: 16px; font-weight: 600; color: #56b663; }
     .invation-sec p span {padding-right: 10px; }
@@ -652,7 +662,7 @@
 </style>
 
 <!-- New Ui Modal -->
-<!-- <div class="modal fade modal-popup-customize" id="sharefrnd" tabindex="-1">
+<div class="modal fade modal-popup-customize" id="referfrnd" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -703,11 +713,11 @@
 
     </div>
   </div>
-</div> -->
+</div>
 
 <!-- New Ui Modal for invation -->
 
-<div class="modal fade modal-popup-customize" id="sharefrnd" tabindex="-1">
+<!-- <div class="modal fade modal-popup-customize" id="sharefrnd" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -756,7 +766,7 @@
 
     </div>
   </div>
-</div>
+</div> -->
 
 
 

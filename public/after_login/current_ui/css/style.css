@@ -727,9 +727,9 @@ border-bottom: 1px solid #56b663;
     background: #f5faf6;
     min-height: 100%; 
     padding: 20px 131px;
-    display: flex;779
+    display: flex;
     align-items: center;
-    height: 100%;  
+    height: 100%;   
 }
 .planPayment .testType {
     width: 50%;

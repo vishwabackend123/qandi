@@ -661,19 +661,23 @@
 
 <!--notification-right End-->
 <style>
-    .new_notification_main_sec {    height: 540px;overflow-y: scroll;background: #fff; width: 456px; max-width: 100%; float: right; padding: 20px; }
+     #collapseNotification2 {position: fixed; right: 0px; width: 95.5%; z-index: 9; background-color: #1f1f1f63;
+     opacity: 0.9;
+     top: 11px; margin-top: 70px; }
+    .new_notification_main_sec {height: calc(100vh - 81px);overflow-y: scroll;background: #fff; width: 456px; max-width: 100%; float: right; padding: 20px; }
     .new_notification_main_sec > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
-    .new_notification_main_sec > h2 span {float: right;font-size: 14px;font-weight: 800;}
+    .new_notification_main_sec > h2 a {float: right;font-size: 14px;font-weight: 800;color: #1f1f1f;}
     .notification-list {padding: 30px 0px;}
     .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;}
     .list-btn-sec {padding: 15px 0px;}
+
 
 </style>
 
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
         <div class="new_notification_main_sec">
-            <h2>Notifications <span>Clear all</span></h2>
+            <h2>Notifications <a href="#">Clear all</a></h2>
             <div class="notification-list">
                 <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
