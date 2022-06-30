@@ -84,7 +84,7 @@
          <div class="row">
             <div class="col-lg-4">
                <div class="info">
-                  <h1 class="main-title pb-2">Personal info</h1>
+                  <h1 class="main-title">Personal info</h1>
                   <p>Update your personal details here.</p>
                </div>
             </div>
@@ -166,48 +166,44 @@
                </div>
             </div>
          </div>
-        <hr class="line mb-5 pb-4">
-          <div class="row">
+         <hr class="line mb-5 pb-4">
+         <div class="row">
             <div class="col-lg-4">
                <div class="info">
-                  <h1 class="main-title pb-2">Subscription</h1>
+                  <h1 class="main-title">Subscription</h1>
                   <p>Beginner • JEE MAIN</p>
                </div>
             </div>
             <div class="col-lg-8 pt-4">
-            <div class="bg-white subscription-details">
-             <h1 class="subs-heading d-inline-block">JEE MAIN Subscription</h1>
-            <hr class="line">
-            <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-            <h2>Subscription type</h2>
-            <h3>JEE 1 year Subscription</h3>
+               <div class="bg-white subscription-details">
+                  <h1 class="subs-heading d-inline-block">JEE MAIN Subscription</h1>
+                  <hr class="line">
+                  <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
+                     <h2>Subscription type</h2>
+                     <h3>JEE 1 year Subscription</h3>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
+                     <h2>Price</h2>
+                     <h3>₹15,000</h3>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
+                     <h2>Active date</h2>
+                     <h3>20th April 2022</h3>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
+                     <h2>End date</h2>
+                     <h3>20th April 2023</h3>
+                  </div>
+                  <div id="panel">
+                     <hr class="line">
+                     <p>JEE-Main, which replaced AIEEE, is for admissions to the National Institutes of Technology (NITs), Indian Institutes of Information Technology (IIITs) and some other colleges designated as "centrally funded technical institutes" (CFTIs).</p>
+                  </div>
+                  <div class="flip d-inline-block">Show details</div>
+                  <i class="fa fa-angle-right text-success" aria-hidden="true"></i>
+               </div>
             </div>
-            <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-            <h2>Price</h2>
-            <h3>₹15,000</h3>
-            </div>
-            <div class="d-flex align-items-center justify-content-between subs-alld mb-3">
-            <h2>Active date</h2>
-            <h3>20th April 2022</h3>
-            </div>
-            <div class="d-flex align-items-center justify-content-between subs-alld mb-3 planend">
-            <h2>End date</h2>
-            <h3>20th April 2023</h3>
-            </div>
-            <div id="panel">
-            <hr class="line">
-            <p>JEE-Main, which replaced AIEEE, is for admissions to the National Institutes of Technology (NITs), Indian Institutes of Information Technology (IIITs) and some other colleges designated as "centrally funded technical institutes" (CFTIs).</p>
-            </div>
-            <div class="flip d-inline-block">Show details</div> <i class="fa fa-angle-right text-success" aria-hidden="true"></i>
-                </div>    
-              </div>
-          </div>
+         </div>
       </div>
-   </section>   
-   <script>
-
-       
-          
-   </script>
+   </section>
 </body>
 @endsection

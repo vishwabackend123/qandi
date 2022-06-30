@@ -375,16 +375,15 @@
             <a href="{{route('refund_form')}}" class="nav-link"><i class="far fa-edit"></i> Refund Form</a>
         </div>
     </div>
-<<<<<<< HEAD
-</div>
-</div>
-=======
-
 </div>
 </div>
 
 
->>>>>>> 252769655b3c0aae6e1b855fd84e0c77f5c37e95
+</div>
+</div>
+
+
+
 </div> -->
 
 <!---------- new UI side bar ------------->
