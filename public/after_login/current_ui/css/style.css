@@ -50,10 +50,10 @@ li{list-style-type:none;}
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-h1,h2,h3,h4,h5,h6,figure,ul,li,p{
+/* h1,h2,h3,h4,h5,h6,figure,ul,li,p{
 margin: 0;
 padding: 0;
-} 
+}  */
 
 /*********** Navdeep Start *************/
 /*********** Login *************/
