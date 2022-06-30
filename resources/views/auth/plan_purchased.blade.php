@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="content-wrapper">
+<div>
     <div class="plan_successfull_wrapper">
         <div class="plan_successfull_heder_icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="66" viewBox="0 0 64 66" fill="none"  class="plan_successfull_heder_icon_img">

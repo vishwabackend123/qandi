@@ -51,13 +51,14 @@
 }
 /* popup */
 .popup88 {
-  margin: 70px auto;
+  margin: 13% auto;
   padding: 20px;
   background: #fff;
   border-radius: 5px;
   width: 30%;
   position: relative;
-  transition: all 5s ease-in-out;
+  transition: all 1s ease-in-out;
+  width:44%!important;
 }
 .overlay88 {
   position: fixed;
@@ -65,7 +66,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
@@ -73,6 +74,31 @@
 .overlay88:target {
   visibility: visible;
   opacity: 1;
+}
+.intraction_text_q1
+{
+   font-size: 16px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #363c4f;
+}
+.intraction_text_strength
+{
+   margin-top:3px;
+   font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.instruction_text_content
+{
+   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #363c4f;
 }
 </style>
 <div class="main-wrapper">
@@ -206,15 +232,16 @@
          <div>
             <!--popup start  -->
          <div class="box">
-            <a class="button" href="#popup18">Let me Pop up</a>
+            <a class="button btn" href="#popup18">Let me Pop up</a>
          </div>
          <div id="popup18" class="overlay88">
             <div class="popup88">
             <a class="close" href="#">&times;</a>
-               <div>Q1</div>
-               <div class="content">
-                  Thank to pop me out of that button, but now i'm done so you can close this window.
-               </div>
+               <div class="intraction_text_q1">Q1</div>
+               <div class="intraction_text_strength">Strengths</div>
+               <hr>
+               <div class="instruction_text_content">
+                  Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
             </div>
          </div>
          <!-- popup end -->
