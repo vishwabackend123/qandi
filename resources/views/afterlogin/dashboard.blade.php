@@ -115,17 +115,13 @@ $userData = Session::get('user_data');
                                                 <h6>Physics</h6>
                                                 <div class="d-flex justify-content-between">
                                                     <h4>38%</h4>
-                                                    <div class="circle_percent mt-3" data-percent="75">
+                                                    <div class="circle_percent mt-3" data-percent="38">
                                                         <div class="circle_inner">
                                                             <div class="round_per"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                              </div>
-                                             <div class="subjectGarph">
-                                                
-                                              
-                                             </div> 
                                          </div>
                                      </div>
                                      <div class="col-sm-6">
@@ -134,15 +130,13 @@ $userData = Session::get('user_data');
                                                 <h6>Chemistry</h6>
                                                 <div class="d-flex justify-content-between">
                                                     <h4>64%</h4>
-                                                    <div class="circle_percent mt-3" data-percent="75">
+                                                    <div class="circle_percent mt-3 orangegraph" data-percent="64">
                                                         <div class="circle_inner">
                                                             <div class="round_per"></div>
                                                         </div>
                                                     </div>
                                                 </div> 
                                              </div>
-                                             <div class="subjectGarph">
-                                             </div> 
                                          </div>
                                      </div>
                                      <div class="col-sm-6">
@@ -151,15 +145,13 @@ $userData = Session::get('user_data');
                                                 <h6>Mathematics</h6>
                                                 <div class="d-flex justify-content-between">
                                                     <h4>82%</h4>
-                                                    <div class="circle_percent mt-3" data-percent="75">
+                                                    <div class="circle_percent mt-3 greengraph" data-percent="82">
                                                         <div class="circle_inner">
                                                             <div class="round_per"></div>
                                                         </div>
                                                     </div>
                                                 </div> 
                                              </div>
-                                             <div class="subjectGarph">
-                                             </div> 
                                          </div>
                                      </div>
                                  </div>
@@ -168,7 +160,7 @@ $userData = Session::get('user_data');
                          </div>
                     </div>
                     <div class="col-lg-4">
-                          <div class="commonWhiteBox mt-4">
+                          <div class="commonWhiteBox">
                              <div class="boxHeadingBlock flexblock">
                                     <h3 class="boxheading">My Task Center
                                         <span class="tooltipmain">
