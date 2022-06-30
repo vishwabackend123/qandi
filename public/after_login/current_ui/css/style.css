@@ -1143,7 +1143,10 @@ margin-top: 70px;
 .myqTodayGraphSec .textblock{padding-left:20px;}
 .boxheading .tooltipmain{display:inline-block;margin-left:10px;}
 .content-wrapper {padding:0px 20px 0px 20px;}
-.commondashboardTop{position: relative;}
+.commondashboardTop{position: relative;    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
 .tooltipclass{
     background-color: #fff;
     border-radius: 20px;
@@ -1169,20 +1172,24 @@ margin-top: 70px;
  .commmongreenLink{display:inline-block; font-size: 16px;  font-weight: 800; line-height: 1.6;color:#56b663;}
  .commmongreenLink span{display:inline-block;}
  .commmongreenLink span svg{width:16px;}
- .commonWhiteBox{ padding: 32px 30px 32px 32px; border-radius: 10px;background-color:#ffffff;}
+ .commonWhiteBox{ padding: 32px 30px 32px 32px; border-radius: 20px;background-color:#ffffff;}
+ .commonblockDash .commonWhiteBox{
+    height: 100%;
+}
 .SubjectscorePannel{padding: 16px;border-radius: 10px;background-color:#e0f6e3;margin-bottom:20px;}
 .subjextscoreLeft h6{font-size: 16px;font-weight: 500; line-height: 1.6; color: #363c4f;}
 .subjextscoreLeft h4{  font-size: 24px; font-weight: bold; line-height: 1.3; color: #363c4f;margin-top:5px;}
 .flexblock{display:flex;align-items:center;justify-content:space-between;}
 .fullbodyBox{ padding: 16px 1px 0 16px;background-color:#56b663;border-radius: 10px;    display: flex;
     align-items: end;margin-top:20px;}
+    .commonblockDash{margin-bottom:30px;}
 .fullbodyBox .leftBox h4{font-size: 20px;
     font-weight: 800;
     line-height: 1.6;color:#fff;}
 .fullbodyBox .leftBox p{font-size: 14px;
     font-weight: 600;
     line-height: 1.6;color:#fff;}
-    .fullbodyBox .leftBox {margin-bottom:16px;padding-right:15px;}
+    .fullbodyBox .leftBox {margin-bottom:16px;padding-right:20%;}
     .fullbodyBox .leftBox  .btn-common-white{padding:8px 15px;min-width:120px;}
 .tabMainblock{margin-top:16px;}
 .commontab .nav-tabs .nav-link {    padding: 0px 0px 10px;
@@ -1216,11 +1223,11 @@ margin-top: 70px;
             font-weight: bold;
             line-height: 1.6;
             letter-spacing: 0.96px;
-            color: #363c4f;}
+            color: #363c4f;margin-bottom:2px;}
         .tasklisting .tasklistleft h4{font-size: 16px;
             font-weight: 800;
             line-height: 1.6;
-            color: #363c4f;}
+            color: #363c4f;margin-bottom:0px;}
         .tasklisting .tasklistleft h5 {  opacity: 0.6;
                 font-size: 14px;
                 font-weight: 500;
@@ -1236,6 +1243,44 @@ margin-top: 70px;
             top: 7px;}
         .tasklistbtn .btn{min-width:120px;padding:8px 15px} 
         .tasklistbtn .btn.nobg{background-color:#fff;}    
+        .myqmatPannel{padding: 12px 12px 12px 12px; border-radius: 10px;margin-bottom:20px;}
+        .myqcolor1{ background-color: #d9f99d;}
+        .myqcolor2{ background-color: #86efac;}
+        .myqcolor3{ background-color: #7cead9;}
+        .myqcolor4{ background-color: #a5f3fc;}
+         .myqmatPannel .myqinner h6{font-size: 14px;
+            font-weight: bold;
+            line-height: 1.6;
+            letter-spacing: 1.12px;
+            color: #363c4f;}
+         .myqmatPannel .myqinner h5{ font-size: 16px;
+            font-weight: 800;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.6;color:#1f1f1f;}   
+         .myqmatPannel .myqinner p{ font-size: 14px;
+            font-weight: normal;
+            line-height: 1.6;
+            color: #363c4f;min-height: 95px;}  
+            .myqbottomSec{display:flex;align-items: center;
+                justify-content: space-between;} 
+   .myqbottomSec h3{font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;margin-bottom:0px;}
+    .myqbottomSec h3 .topictext{opacity: 0.6;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: normal;display: inline-block;
+        margin-left: 10px;
+        color: #363c4f;}
+.myqarrow{ width: 20px;
+    height: 20px;cursor:pointer;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
