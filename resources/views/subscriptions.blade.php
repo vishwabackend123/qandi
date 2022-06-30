@@ -43,7 +43,7 @@
                                     <div class="peryearPrice">
                                     ₹15,000<sub>per year</sub>
                                     </div>
-                                </div>
+                                </div> 
         
                             </div>
 

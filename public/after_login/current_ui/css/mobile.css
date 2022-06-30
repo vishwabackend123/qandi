@@ -13,4 +13,13 @@
 }
 @media(max-width:767px){
     .btn.btn-common-transparent{min-width:200px;}
+    .exam_instruction_scrolling
+    {
+        padding-right:unset;
+        height:unset;
+    }
+    .exam_instruction_col_four {
+        padding-left: 18px;
+        padding-top:30px;
+    }
 }

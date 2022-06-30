@@ -26,6 +26,7 @@ $(document).on('click', function (e) {
     if ($(e.target).closest("aside").length === 0) {
         $(".submenu-block").hide();
         $(".sidebar-exam-menu").removeClass("active");
+        
     }
 });
 /************ Sidebar End **************/
