@@ -57,8 +57,9 @@
             font-size: 12px;
             font-weight: 900;
         }
+
     </style>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
@@ -278,7 +279,41 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+   
+         <div class="headerMain">
+             <div class="headerLeft">
+                  <h2>Dashboard</h2>
+                  <h6><label>Cource:</label> <span>JEE</span></h6>
+             </div>
+             <div class="headerRight">
+                  <span class="usertext"><a href="javascript:;">Hi Sakshi!</a></span>
+                  <span class="headericon notificationnew">
+                    <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                            <g clip-path="url(#5ju4071vya)">
+                                <path d="M15 6.768a5 5 0 0 0-10 0c0 5.833-2.5 7.5-2.5 7.5h15S15 12.6 15 6.768zM11.44 17.602a1.666 1.666 0 0 1-2.882 0" stroke="#363C4F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="14" cy="4.102" r="4" fill="#F7758F" stroke="#fff" stroke-width="2"/>
+                            </g>
+                            <defs>
+                                <clipPath id="5ju4071vya">
+                                    <path fill="#fff" transform="translate(0 .102)" d="M0 0h20v20H0z"/>
+                                </clipPath>
+                    </defs>
+                        </svg>
+               
+                  </a>
+                </span>
+                  <span class="headericon">
+                    <a href="javascript:;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </a>
+                </span>
+
+             </div>
+         </div>
 </header>
 
 
@@ -625,7 +660,7 @@
 <!-- Planner section End -->
 
 <!--notification-right End-->
-<div class="notification-block width collapse" id="collapseNotification">
+<div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
         <div class=" notification-right ">
             <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
@@ -649,6 +684,32 @@
         </div>
     </div>
 </div>
+
+
+<!-- <div class="notification-block width collapse" id="collapseNotification">
+    <div class="planner-wrapper ">
+        <div class=" notification-right ">
+            <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
+            <div id="recent_notify" class=" notification-scroll ">
+
+                @if(isset($notifications) && !empty($notifications) && is_array($notifications))
+                @foreach($notifications as $val)
+                <div class="notification-txt">
+                    <div class="noti-box-scroll">
+                    <span class="bell-noti"><i class="fa fa-bell-o" aria-hidden="true"></i><div class="red-dot"></div></span>
+                    <span class="text-notific">{{ $val->message }}</span>
+                    </div>
+                    <div class="primary-secondry-btn">
+                        <button type="button" class="primary-btn1">primary</button>
+                        <button type="button" class="secondary-btn1">secondary</button>
+                    </div>
+                </div>
+                @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+</div> -->
 <!--notification-right End-->
 <!--
 <img src="{{ URL::asset('public/after_login/new_ui/images/subs.png')}}">

@@ -467,7 +467,7 @@ $question_type = "Numerical";
                 </p>
                 <div>
                     <button id="bt-modal-cancel" type="button" class="btn btn-light px-5 rounded-0 mt-3 reviewbtn" data-bs-dismiss="modal" onclick="start()">
-                        Continue
+                    REVIEW
                     </button>
                     <button id="bt-modal-confirm" type="button" class="btn btn-light-green px-5 rounded-0 mt-3">
                         <span class="btnSubic">
@@ -568,17 +568,17 @@ $question_type = "Numerical";
 
     $(document).ready(function() {
         /* mouse rightclick */
-        /*  document.oncontextmenu = function() {
-             return false;
-         };
+        document.oncontextmenu = function() {
+            return false;
+        };
 
-         $(document).mousedown(function(e) {
-             if (e.button == 2) {
+        $(document).mousedown(function(e) {
+            if (e.button == 2) {
 
-                 return false;
-             }
-             return true;
-         }); */
+                return false;
+            }
+            return true;
+        });
         /* mouse rightclick */
 
         document.onkeydown = function(e) {
