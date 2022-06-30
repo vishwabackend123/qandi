@@ -78,7 +78,7 @@
                         <div class="plan_subscribption"></div>
                     </div>
                 </div>
-                <div class="line-692"></div>
+                <div class="line-692"> </div>
             </div>
         <div>
     </div>
