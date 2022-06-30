@@ -75,7 +75,7 @@ $userData = Session::get('user_data');
         <div class="dashboardTopSection">
             <div  class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                          <div class="commondashboardTop">
                               <h3 class="boxheading">MyQ Today
                                   <span class="tooltipmain">
@@ -146,7 +146,7 @@ $userData = Session::get('user_data');
                           </div>
                          </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                           <div class="commonWhiteBox mt-4">
                              <div class="boxHeadingBlock flexblock">
                                     <h3 class="boxheading">My Task Center
