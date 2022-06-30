@@ -729,7 +729,7 @@ border-bottom: 1px solid #56b663;
     padding: 20px 131px;
     display: flex;
     align-items: center;
-    height: 100%;  
+    height: 100%;   
 }
 .planPayment .testType {
     width: 50%;
@@ -973,6 +973,7 @@ ul.sidebar-menu-lists li.active a svg:first-child, ul.sidebar-menu-lists li a:ho
     padding-left: 20px;
     color: rgba(54, 60, 79, 0.7);
     font-weight: bold;
+    margin-top: 130px;
 }
 ul.submenu-lists li>a {
     display: flex;
@@ -991,7 +992,7 @@ ul.submenu-lists li>a:hover{
     background-color: #fafafa;
     position: fixed;
     height: 100%;
-    top: 80px;
+    top: 0px;
     left: 82px;
     text-align: left;
     display: none;
@@ -1018,6 +1019,7 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b
     font-family: 'Inter', sans-serif;
     display: block;
     padding: 8px 20px 8px 20px;
+    border-left: 1px solid #e0e0e0;
 }
 .practice-submenu a:hover{background-color: #e0f6e3;}
 
@@ -1062,7 +1064,7 @@ border: 1px solid #ccc;
 text-align: center;
 border-radius: 10px;}
 .headerRight span.headericon,    .headerRight span.usertext{margin:0px 12px}
-header{padding:0px 0px 30px}
+header{padding:0px 0px 30px;    z-index: 999;}
 .main-wrapper{padding-left:78px}
 #collapseNotification2{    position: fixed;
 right: 0px;

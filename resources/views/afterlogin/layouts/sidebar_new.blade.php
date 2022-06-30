@@ -440,7 +440,7 @@
         </li>
     </ul>
     <div class="submenu-block">
-        <h6 class="mb-5 mt-5">Exam</h6>
+        <h6 class="mb-5">Exam</h6>
         <ul class="submenu-lists">
             <li class="practice-menu">
                 <a href="javascript:void(0)">
