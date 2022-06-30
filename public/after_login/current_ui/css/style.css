@@ -56,7 +56,11 @@ li{list-style-type:none;}
 margin: 0;
 padding: 0;
 }  */
-
+.error{
+font-size: 14px;
+font-weight: normal;
+color: #dc6803;
+}
 /*********** Navdeep Start *************/
 /*********** Login *************/
 .login-signup{
@@ -424,7 +428,6 @@ display: none;
 font-size: 14px;
 color: #363c4f;
 font-weight: 500;
-padding-bottom: 16px;
 }
 .flip{
   font-size: 14px;

@@ -300,6 +300,7 @@
          <div class="custom-input pb-4">
             <label>Mobile</label>
             <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
+            <sapn class="error d-none mt-2 d-block">Please enter valid mobile number</span>
          </div>
          <div class="custom-input changeno pb-4 d-none">
             <label>Mobile</label>
