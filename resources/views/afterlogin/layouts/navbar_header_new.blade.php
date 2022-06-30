@@ -660,29 +660,95 @@
 <!-- Planner section End -->
 
 <!--notification-right End-->
+<style>
+    .new_notification_main_sec {    height: 540px;overflow-y: scroll;background: #fff; width: 456px; max-width: 100%; float: right; padding: 20px; }
+    .new_notification_main_sec > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
+    .new_notification_main_sec > h2 span {float: right;font-size: 14px;font-weight: 800;}
+    .notification-list {padding: 30px 0px;}
+    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;}
+    .list-btn-sec {padding: 15px 0px;}
+
+</style>
+
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
-        <div class=" notification-right ">
-            <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
-            <div id="recent_notify" class=" notification-scroll ">
+        <div class="new_notification_main_sec">
+            <h2>Notifications <span>Clear all</span></h2>
+            <div class="notification-list">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
 
-                @if(isset($notifications) && !empty($notifications) && is_array($notifications))
-                @foreach($notifications as $val)
-                <div class="notification-txt">
-                    <div class="noti-box-scroll">
-                    <span class="bell-noti"><i class="fa fa-bell-o" aria-hidden="true"></i><div class="red-dot"></div></span>
-                    <span class="text-notific">{{ $val->message }}</span>
                     </div>
-                    <div class="primary-secondry-btn">
-                        <button type="button" class="primary-btn1">primary</button>
-                        <button type="button" class="secondary-btn1">secondary</button>
+                    <div class="flex-grow-1 ms-3">
+                    This is a longer placeholder notification.This is a longer placeholder notification.
                     </div>
                 </div>
-                @endforeach
-                @endif
+            </div>
+
+            <div class="notification-list">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-list">
+                <div class="d-flex align-items-top">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        <div class="list-btn-sec">
+                        <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="notification-list">
+                <div class="d-flex align-items-top">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Comments</label>
+                            </div>
+                        <div class="list-btn-sec">
+                        <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
+
+ 
+
 </div>
 
 
