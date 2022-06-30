@@ -27,8 +27,6 @@
                             <a href="">Resend</a>
                         </div>
                     </div>
-            
-               
                     <div class="selectPlan subscriptionsRightpannel">
                         <div class="SelectPlane_text">
                             <h3>Select Plan</h3>
@@ -39,12 +37,13 @@
                                 <p>NEET Annual Plan</p>
                                 <div class="price">
                                     <div class="offer">
-                                        30,000 <span>(50% off) </span>  
+                                        <span class="offer_price">30,000</span>
+                                        <span class="offer_disco">(50% off)</span>  
                                     </div>
                                     <div class="peryearPrice">
-                                        15,000<sub>per year</sub>
+                                    ₹15,000<sub>per year</sub>
                                     </div>
-                                </div>
+                                </div> 
         
                             </div>
 
