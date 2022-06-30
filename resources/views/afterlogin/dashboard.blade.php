@@ -75,7 +75,7 @@ $userData = Session::get('user_data');
         <div class="dashboardTopSection">
             <div  class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 commonblockDash">
                          <div class="commondashboardTop">
                               <h3 class="boxheading">MyQ Today
                                   <span class="tooltipmain">
@@ -159,7 +159,7 @@ $userData = Session::get('user_data');
                           </div>
                          </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 commonblockDash">
                           <div class="commonWhiteBox">
                              <div class="boxHeadingBlock flexblock">
                                     <h3 class="boxheading">My Task Center
@@ -270,7 +270,91 @@ $userData = Session::get('user_data');
                             </div>
                           </div>
                          </div>
-                    </div>
+                    
+                    <div class="col-lg-4 commonblockDash">
+                          <div class="commonWhiteBox">
+                                <div class="boxHeadingBlock">
+                                        <h3 class="boxheading">MyQ Matrix 
+                                            <span class="tooltipmain">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                            <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                            </p>
+                                        </span>
+                                    </h3>
+                                    <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                                </div>
+                                <div class="MyqMatrixMain mt-3">
+                                     <div class="row">
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor1">
+                                                 <div class="myqinner">
+                                                   <h6>Q1</h6>
+                                                    <h5>Strengths</h5>
+                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor2">
+                                                 <div class="myqinner">
+                                                   <h6>Q2</h6>
+                                                    <h5>Needs focus</h5>
+                                                    <p>Give a little attention to these topics and take another step towards perfection.  </p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>23 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor3">
+                                                 <div class="myqinner">
+                                                   <h6>Q3</h6>
+                                                    <h5>Hopeful </h5>
+                                                    <p>Topics that are hurdles in your journey. Do not save them for the last.  </p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor4">
+                                                 <div class="myqinner">
+                                                   <h6>Q4</h6>
+                                                    <h5>Weak </h5>
+                                                    <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                     </div>
+                                </div>
+                            </div>
+                         </div>
                 </div>
             </div>
         </div>
