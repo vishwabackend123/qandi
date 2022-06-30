@@ -777,7 +777,7 @@ function searchCity() {
                <label>Name</label>
                <input type="text" class="form-control" placeholder="Full name">
             </div>
-            <div class="custom-input pb-4 position-relative">
+            <div class="custom-input pb-4 position-relative d-none">
                <label>Mobile</label>
                <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
             </div>
@@ -786,7 +786,7 @@ function searchCity() {
                <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
                <a class="editnumber verifyno">Verify</a>
             </div>
-            <div class="custom-input changeno pb-3 d-none">
+            <div class="custom-input changeno pb-3">
                <label>Mobile</label>
                <div class="d-flex position-relative">
                   <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
@@ -799,7 +799,7 @@ function searchCity() {
                   </a>
                </div>
             </div>
-            <div class="custom-input pb-3 d-none">
+            <div class="custom-input pb-3">
                <label>Enter OTP</label>
                <div class="d-flex enterotp bg-white">
                   <input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1"><input class="form-control" maxlength="1">    
