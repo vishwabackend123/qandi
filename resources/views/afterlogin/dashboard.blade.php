@@ -113,14 +113,14 @@ $userData = Session::get('user_data');
                                          <div class="SubjectscorePannel">
                                              <div class="subjextscoreLeft">
                                                 <h6>Physics</h6>
-                                                <h4>38%</h4>
-                                                <!---------------->
-                                                <div class="circle_percent" data-percent="75">
-                                                    <div class="circle_inner">
-                                                        <div class="round_per"></div>
+                                                <div class="d-flex justify-content-between">
+                                                    <h4>38%</h4>
+                                                    <div class="circle_percent mt-3" data-percent="75">
+                                                        <div class="circle_inner">
+                                                            <div class="round_per"></div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!---------------->
                                              </div>
                                              <div class="subjectGarph">
                                                 

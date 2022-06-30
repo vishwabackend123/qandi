@@ -1024,11 +1024,11 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b
 .practice-submenu a:hover{background-color: #e0f6e3;}
 /*****************/
 .circle_percent {
-    font-size: 100px;
+    font-size: 75px;
     width: 1em;
     height: 1em;
     position: relative;
-    background: #eee;
+    background: #cbebcf;
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
@@ -1076,11 +1076,12 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b
   }
   .percent_text {
     position: absolute;
-    font-size: 36px;
+    font-size: 15px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
+    display: none;
   }
   
 /********* Amit End ***********/
