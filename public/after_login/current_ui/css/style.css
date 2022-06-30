@@ -727,7 +727,7 @@ border-bottom: 1px solid #56b663;
     background: #f5faf6;
     min-height: 100%; 
     padding: 20px 131px;
-    display: flex;
+    display: flex;779
     align-items: center;
     height: 100%;  
 }
@@ -781,7 +781,7 @@ border-bottom: 1px solid #56b663;
     font-weight: 600;
     line-height: 1.3;
     color: #1f1f1f;
-    padding-bottom: 32px;
+    padding-bottom: 20px;
     padding-top: 72px;
 }
 .subscribe_form{
