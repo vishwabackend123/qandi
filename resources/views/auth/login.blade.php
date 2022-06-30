@@ -282,7 +282,7 @@
                   </div>
                </div>
                <div class="carousel-item">
-                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly plan.svg')}}" alt="performance" class="d-block w-100">
+                  <img src="{{URL::asset('public/after_login/current_ui/images/weekly.svg')}}" alt="performance" class="d-block w-100">
                   <div class="carousel-caption d-none d-md-block">
                      <h5 class="pb-2">Weekly plan</h5>
                      <p>Plan your weekly tests for any chapters, check<br> proficiency of different subjects</p>
