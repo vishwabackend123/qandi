@@ -664,23 +664,27 @@
      #collapseNotification2 {position: fixed; right: 0px; width: 95.5%; z-index: 9; background-color: #1f1f1f63;
      opacity: 0.9;
      top: 11px; margin-top: 70px; }
-    .new_notification_main_sec {height: calc(100vh - 81px);overflow-y: scroll;background: #fff; width: 456px; max-width: 100%; float: right; padding: 20px; }
-    .new_notification_main_sec > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
-    .new_notification_main_sec > h2 a {float: right;font-size: 14px;font-weight: 800;color: #1f1f1f;}
-    .notification-list {padding: 20px 0px;}
-    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;}
-    .list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;}
+     .notification-main{background: #fff;width: 456px; max-width: 100%; float: right; padding: 20px;}
+    .new_notification_main_sec {height: calc(100vh - 160px);overflow-y: scroll;padding-right: 30px; }
+    .notification-main > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
+    .notification-main > h2 a {float: right;font-size: 14px;font-weight: 800;color: #868a95; padding-right:30px}
+    .notification-list {padding: 20px 0px 10px}
+    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;    border-radius: 8px; padding: 6px 40px;}
+    .list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;    border-radius: 8px;padding: 6px 27px;}
     .list-btn-sec .btn-outline-secondary:hover{background: #56b663;border-color: #56b663;text-transform: capitalize;color:#fff;}
     .list-btn-sec {padding: 15px 0px;}
-    .notification-list .form-floating {padding: 15px 0px 6px;}
+    .notification-list .form-floating {padding: 6px 0px 6px;}
+    .main-text {font-size: 16px;font-weight: 500;color: #1f1f1f;}
+    #floatingTextarea2 {background: #f2f4f7;border: 0;resize: none;}
 
 
 </style>
 
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
+        <div class="notification-main">
+        <h2>Notifications <a href="#">Clear all</a></h2>
         <div class="new_notification_main_sec">
-            <h2>Notifications <a href="#">Clear all</a></h2>
             <div class="notification-list">
                 <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -691,7 +695,7 @@
 
                     </div>
                     <div class="flex-grow-1 ms-3">
-                    This is a longer placeholder notification.This is a longer placeholder notification.
+                    <p class="main-text">This is a longer placeholder notification.This is a longer placeholder notification.</p>
                     </div>
                 </div>
             </div>
@@ -706,7 +710,7 @@
 
                     </div>
                     <div class="flex-grow-1 ms-3">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
             </div>
@@ -721,7 +725,7 @@
 
                     </div>
                     <div class="flex-grow-1 ms-3">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                         <div class="list-btn-sec">
                         <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
                         </div>
@@ -739,7 +743,7 @@
 
                     </div>
                     <div class="flex-grow-1 ms-3">
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
                             <div class="form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px"></textarea>
                             </div>
@@ -751,6 +755,8 @@
                 </div>
             </div>
         </div>
+        </div>
+
     </div>
 
  
