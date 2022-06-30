@@ -557,6 +557,10 @@ min-height:100%;
     padding-bottom: 40px;
 
 }
+
+.price{
+   text-align: right; 
+}
 .offer{
     padding: 2px 8px;
     border-radius: 8px;
@@ -565,16 +569,26 @@ min-height:100%;
     font-weight: bold;
     line-height: 1.29;
     letter-spacing: normal;
-    text-align: center;
+    /* text-align: center; */
     color: #363c4f;
+    display: initial;
 }
-.offer span{
+ 
+.offer_disco {
     color: #56b663;
     font-size: 14px;
     font-weight: bold;
     line-height: 1.29;
     letter-spacing: normal;
     text-align: center;
+}
+.offer_price{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363c4f
 }
 .planeName P {
     font-size: 18px;
