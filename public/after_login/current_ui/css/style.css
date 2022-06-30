@@ -54,7 +54,11 @@ li{list-style-type:none;}
 margin: 0;
 padding: 0;
 }  */
-
+.error{
+font-size: 14px;
+font-weight: normal;
+color: #dc6803;
+}
 /*********** Navdeep Start *************/
 /*********** Login *************/
 .login-signup{
