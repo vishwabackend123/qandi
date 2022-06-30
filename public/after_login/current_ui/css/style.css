@@ -31,6 +31,25 @@ textarea, button, input[type="password"], input[type="tel"], select {
 a, input, button, a:focus, input:focus, button:focus {outline:none!important;}
 :focus {outline: -webkit-focus-ring-color auto 0px!important;}
 li{list-style-type:none;}
+/* common-scroll */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(13, 193, 255, 0.1) !important;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(13, 193, 255, 0.4) !important;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 /* h1,h2,h3,h4,h5,h6,figure,ul,li,p{
 margin: 0;
 padding: 0;
