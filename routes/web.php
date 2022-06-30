@@ -294,3 +294,4 @@ Route::any('/plan_purchased', [App\Http\Controllers\LeadUserController::class, '
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
 Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
+Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
