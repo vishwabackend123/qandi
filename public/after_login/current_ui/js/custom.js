@@ -79,21 +79,19 @@ $(".mq_circle_percent").each(function() {
 		},1000);
 	} 
 });
-/************ Amit - End **************/
-
 
 $(document).ready(function() {
-    $(".tooltipmain>svg").click(function(event) {
-        alert('djjdj');
+    $("span.tooltipmain svg").click(function(event) {
         event.stopPropagation();
-        $(".tooltipmain").each(function() {
-            $(this).siblings("p").show();
+        $("span.tooltipmain p.tooltipclass span").each(function() {
+            $(this).parent("p").hide();
+            $(this).parent("p").removeClass('show');
         });
-        $(".tooltipmain").siblings("p").hide();
-        // $(this).siblings("p").addClass('show');
+        $(this).siblings("p").show();
+        $(this).siblings("p").addClass('show');
 
     });
-    $(".tooltipmain>span").click(function() {
+    $("span.tooltipmain p.tooltipclass span").click(function() {
         $(this).parent("p").hide();
     });
 });
@@ -103,7 +101,7 @@ $(document).on('click', function(e) {
         $('.tooltipclass').hide();
     }
 });
-
+/************ Amit - End **************/
 
 // dashboard-circuler progress
 
