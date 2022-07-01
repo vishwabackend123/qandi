@@ -67,11 +67,300 @@ $userData = Session::get('user_data');
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
-<div class="main-wrapper dashboard wrapper-dashboard">
+<div class="main-wrapper">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
-    <div class="content-wrapper">
+    <div class="content-wrapper dashbaordContainer">
+        <div class="dashboardTopSection">
+            <div  class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 commonblockDash">
+                         <div class="commondashboardTop">
+                              <h3 class="boxheading">MyQ Today
+                                  <span class="tooltipmain">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                  <p class="tooltipclass">
+                                   <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                     This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                  </p>
+                              </span>
+                          </h3>
+                          <div class="myqTodayGraphSec">
+                             <div class="graphBlock"></div>
+                              <div class="textblock">
+                                  <h6 class="dashSubHeading">You are doing great!</h6>
+                                  <p class="dashSubtext">Attempt more tests to improve your score.</p>
+                                  <a href="javascript:;" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+                              </div>
+                          </div>
+                          <div class="commonWhiteBox mt-4">
+                             <div class="boxHeadingBlock">
+                                    <h3 class="boxheading">Subject Performance
+                                        <span class="tooltipmain">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                        <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
+                                    </span>
+                                </h3>
+                                <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                             </div>
+                            <div class="subjectScoreBlock">
+                                 <div class="row">
+                                     <div class="col-sm-6">
+                                         <div class="SubjectscorePannel">
+                                             <div class="subjextscoreLeft">
+                                                <h6>Physics</h6>
+                                                <div class="d-flex justify-content-between">
+                                                    <h4>38%</h4>
+                                                    <div class="circle_percent mt-3" data-percent="38">
+                                                        <div class="circle_inner">
+                                                            <div class="round_per"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-6">
+                                         <div class="SubjectscorePannel">
+                                             <div class="subjextscoreLeft">
+                                                <h6>Chemistry</h6>
+                                                <div class="d-flex justify-content-between">
+                                                    <h4>64%</h4>
+                                                    <div class="circle_percent mt-3 orangegraph" data-percent="64">
+                                                        <div class="circle_inner">
+                                                            <div class="round_per"></div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="col-sm-6">
+                                         <div class="SubjectscorePannel">
+                                             <div class="subjextscoreLeft">
+                                                <h6>Mathematics</h6>
+                                                <div class="d-flex justify-content-between">
+                                                    <h4>82%</h4>
+                                                    <div class="circle_percent mt-3 greengraph" data-percent="82">
+                                                        <div class="circle_inner">
+                                                            <div class="round_per"></div>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                            </div>
+                          </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-4 commonblockDash">
+                          <div class="commonWhiteBox">
+                             <div class="boxHeadingBlock flexblock">
+                                    <h3 class="boxheading">My Task Center
+                                        <span class="tooltipmain">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                        <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
+                                    </span>
+                                </h3>
+                                <a href="javascript:;" class="commmongreenLink mb-2">Task Center <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                             </div>
+                            <div class="fullbodyBox">
+                                 <div class="leftBox">
+                                 <h4>Full Body Scan Test</h4>
+                                   <p>to assess your preparedness and begin to improve it</p>
+                                    <button class="btn btn-common-white">Attempt Now</button>
+                                 </div>
+                                 <div class="rightImgBox">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="107" height="105" viewBox="0 0 107 105" fill="none">
+                                            <rect y="17.496" width="79" height="101" rx="2" transform="rotate(-12.796 0 17.496)" fill="#D4ECD8"/>
+                                            <rect x="10.203" y="7.494" width="79" height="101" rx="2" fill="#EDFFEF"/>
+                                            <rect x="16.203" y="50.494" width="10" height="10" rx="3.125" fill="#56B663"/>
+                                            <path d="m19.328 55.494 1.25 1.25 2.5-2.5" stroke="#E0F6E3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <rect x="16.203" y="70.494" width="10" height="10" rx="3.125" fill="#56B663"/>
+                                            <path d="m19.328 75.494 1.25 1.25 2.5-2.5" stroke="#E0F6E3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path stroke="#B2D9B6" stroke-width="2" stroke-linecap="round" d="M31.203 51.494h15M31.203 71.494h15M18.203 27.494h42M18.203 35.494h29M66.203 27.494h17M31.203 58.494h26M31.203 78.494h26"/>
+                                            <path d="m73.418 88.26-10.084-6.504-2.05 11.02c-.331 1.776 1.674 3.045 3.137 1.988l8.997-6.503z" fill="#56B663"/>
+                                            <path d="M94.23 33.856a4 4 0 0 1 5.53-1.194l3.361 2.169a3.999 3.999 0 0 1 1.193 5.53L73.418 88.26l-10.085-6.505 30.897-47.9z" fill="#4A9453"/>
+                                            <path d="M94.23 33.856a4 4 0 0 1 5.53-1.194l3.361 2.169a3.999 3.999 0 0 1 1.193 5.53l-5.42 8.403-10.084-6.505 5.42-8.403z" fill="#E0F6E3"/>
+                                            <path fill="#56B663" d="m90.436 39.738 10.084 6.505-3.252 5.042-10.084-6.505z"/>
+                                        </svg>
+                                 </div>
+                                   
+                            </div>
+                            <div class="tabMainblock">
+                                 <div class="commontab">
+                                     <div class="tablist">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#daily">Daily tasks</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#weekly">Weekly tasks</a>
+                                            </li>
+                                        </ul>
+                                     </div>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div id="daily" class=" tab-pane active">
+                                        
+                                              <div class="taskstatusBlock">
+                                                  <h4>Task completed</h4>
+                                                   <div class="statusvalue">
+                                                       <span class="codevalue">0</span><span>/</span><span>0</span>
+                                                   </div>
+                                              </div>
+                                              <p class="dashSubtext mt-2">Please attempt the Full body scan test, 
+                                                so that we could generate tasks for you, based on your proficiency levels.</p>
+                                                <div class="tasklisting">
+                                                     <ul class="commonlisting">
+                                                        <li>
+                                                            <div class="tasklistleft">
+                                                             <h6>Task 1</h6>
+                                                             <h4>Evaluation Skills</h4>
+                                                             <h5>10 Questions | 15 mins</h5>
+                                                          </div>
+                                                          <div class="tasklistbtn">
+                                                              <button class="btn btn-common-transparent nobg" >Take test</button>
+                                                          </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="tasklistleft">
+                                                             <h6>Task 1</h6>
+                                                             <h4>Evaluation Skills</h4>
+                                                             <h5>10 Questions | 15 mins</h5>
+                                                          </div>
+                                                          <div class="tasklistbtn">
+                                                              <button class="btn btn-common-transparent nobg" >Take test</button>
+                                                          </div>
+                                                        </li><li>
+                                                            <div class="tasklistleft">
+                                                             <h6>Task 1</h6>
+                                                             <h4>Evaluation Skills</h4>
+                                                             <h5>10 Questions | 15 mins</h5>
+                                                          </div>
+                                                          <div class="tasklistbtn">
+                                                              <button class="btn btn-common-transparent nobg" >Take test</button>
+                                                          </div>
+                                                        </li><li>
+                                                            <div class="tasklistleft">
+                                                             <h6>Task 1</h6>
+                                                             <h4>Evaluation Skills</h4>
+                                                             <h5>10 Questions | 15 mins</h5>
+                                                          </div>
+                                                          <div class="tasklistbtn">
+                                                              <button class="btn btn-common-transparent nobg" >Take test</button>
+                                                          </div>
+                                                        </li>
+                                                     </ul>
+                                                </div>
+                                        </div>
+                                        <div id="weekly" class=" tab-pane">
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                          </div>
+                         </div>
+                    
+                    <div class="col-lg-4 commonblockDash">
+                          <div class="commonWhiteBox">
+                                <div class="boxHeadingBlock">
+                                        <h3 class="boxheading">MyQ Matrix 
+                                            <span class="tooltipmain">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                            <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                            </p>
+                                        </span>
+                                    </h3>
+                                    <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                                </div>
+                                <div class="MyqMatrixMain mt-3">
+                                     <div class="row">
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor1">
+                                                 <div class="myqinner">
+                                                   <h6>Q1</h6>
+                                                    <h5>Strengths</h5>
+                                                    <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor2">
+                                                 <div class="myqinner">
+                                                   <h6>Q2</h6>
+                                                    <h5>Needs focus</h5>
+                                                    <p>Give a little attention to these topics and take another step towards perfection.  </p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>23 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor3">
+                                                 <div class="myqinner">
+                                                   <h6>Q3</h6>
+                                                    <h5>Hopeful </h5>
+                                                    <p>Topics that are hurdles in your journey. Do not save them for the last.  </p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="myqmatPannel myqcolor4">
+                                                 <div class="myqinner">
+                                                   <h6>Q4</h6>
+                                                    <h5>Weak </h5>
+                                                    <p>Find your weak topics here. Work hard to move these topics to other quadrants.</p>
+                                                 </div>
+                                                 <div class="myqbottomSec">
+                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                      <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                 </div>
+                                              </div>
+                                          </div>
+                                     </div>
+                                </div>
+                            </div>
+                         </div>
+                </div>
+            </div>
+        </div>
+        
+ 
+
         <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
             <div class="row">
                 <div class="col-xl-4 col-lg-6 col-md-7  col-sm-12">
@@ -82,7 +371,9 @@ $userData = Session::get('user_data');
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
                                 <!-- <label>About MyQ Today</label> -->
-                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching the goal with your current pattern of preparation. Set your goal!
+                                A score derived from the detailed analysis of your test patterns that gives a clear understanding of your
+                                 current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching 
+                                 the goal with your current pattern of preparation. Set your goal!
                             </p>
                         </small>
                         <div class="row h-100">
@@ -173,7 +464,7 @@ $userData = Session::get('user_data');
                             <div class="col-md-6">
                                 <div class="topics-box">
                                     <b>Q2</b>
-                                    <a href="{{route('dashboard-MyQMatrix','q_2')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[1]))
                                             <b>{{ str_pad($myq_matrix[1], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
@@ -184,7 +475,7 @@ $userData = Session::get('user_data');
                                     </a>
                                 </div>
                                 <div class="topics-box">
-                                    <a href="{{route('dashboard-MyQMatrix','q_1')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[0]))
                                             <b>{{ str_pad($myq_matrix[0], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
@@ -196,7 +487,7 @@ $userData = Session::get('user_data');
                                 </div>
                                 <div class="topics-box">
                                     <b>Q3</b>
-                                    <a href="{{route('dashboard-MyQMatrix','q_3')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[2]))
                                             <b>{{ str_pad($myq_matrix[2], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else
@@ -206,7 +497,7 @@ $userData = Session::get('user_data');
                                         </span></a>
                                 </div>
                                 <div class="topics-box">
-                                    <a href="{{route('dashboard-MyQMatrix','q_4')}}"><span>
+                                    <a href="{{route('dashboard-MyQMatrix')}}"><span>
                                             @if(isset($myq_matrix[3]))
                                             <b>{{ str_pad($myq_matrix[3], 2, '0', STR_PAD_LEFT);}}</b>
                                             @else

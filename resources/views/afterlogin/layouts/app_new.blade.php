@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.min.css')}}">
+    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.min.css')}}">
     @else
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
@@ -36,6 +39,9 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.css')}}">
+    <!------   current css ------>
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
     @endif
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" />

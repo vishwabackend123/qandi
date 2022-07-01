@@ -57,8 +57,9 @@
             font-size: 12px;
             font-weight: 900;
         }
+
     </style>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
                 <div class="user-name-block d-flex align-items-center flex-row-reverse">
@@ -278,7 +279,41 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+   
+         <div class="headerMain">
+             <div class="headerLeft">
+                  <h2>Dashboard</h2>
+                  <h6><label>Cource:</label> <span>JEE</span></h6>
+             </div>
+             <div class="headerRight">
+                  <span class="usertext"><a href="javascript:;">Hi Sakshi!</a></span>
+                  <span class="headericon notificationnew">
+                    <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                            <g clip-path="url(#5ju4071vya)">
+                                <path d="M15 6.768a5 5 0 0 0-10 0c0 5.833-2.5 7.5-2.5 7.5h15S15 12.6 15 6.768zM11.44 17.602a1.666 1.666 0 0 1-2.882 0" stroke="#363C4F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="14" cy="4.102" r="4" fill="#F7758F" stroke="#fff" stroke-width="2"/>
+                            </g>
+                            <defs>
+                                <clipPath id="5ju4071vya">
+                                    <path fill="#fff" transform="translate(0 .102)" d="M0 0h20v20H0z"/>
+                                </clipPath>
+                    </defs>
+                        </svg>
+               
+                  </a>
+                </span>
+                  <span class="headericon">
+                    <a href="javascript:;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </a>
+                </span>
+
+             </div>
+         </div>
 </header>
 
 
@@ -625,7 +660,108 @@
 <!-- Planner section End -->
 
 <!--notification-right End-->
-<div class="notification-block width collapse" id="collapseNotification">
+<style>
+     .notification-main{background: #fff;width: 456px; max-width: 100%; float: right; padding: 20px;}
+    .new_notification_main_sec {height: calc(100vh - 160px);overflow-y: auto;padding-right: 30px; }
+    .notification-main > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
+    .notification-main > h2 a {float: right;font-size: 14px;font-weight: 800;color: #868a95; padding:10px 35px;}
+    .notification-list {padding: 20px 0px 10px}
+    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;    border-radius: 8px; padding: 6px 40px;}
+    .list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;    border-radius: 8px;padding: 6px 27px;}
+    .list-btn-sec .btn-outline-secondary:hover{background: #56b663;border-color: #56b663;text-transform: capitalize;color:#fff;}
+    .list-btn-sec {padding: 15px 0px;}
+    .notification-list .form-floating {padding: 6px 0px 6px;}
+    .main-text {font-size: 16px;font-weight: 500;color: #1f1f1f;}
+    #floatingTextarea2 {background: #f2f4f7;border: 0;resize: none;}
+
+
+</style>
+
+<div class="notification-block_new  collapse" id="collapseNotification2">
+    <div class="planner-wrapper ">
+        <div class="notification-main">
+        <h2>Notifications <a href="#">Clear all</a></h2>
+        <div class="new_notification_main_sec">
+            <div class="notification-list">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                    <p class="main-text">This is a longer placeholder notification.This is a longer placeholder notification.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-list">
+                <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                    <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-list">
+                <div class="d-flex align-items-top">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                    <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                        <div class="list-btn-sec">
+                        <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="notification-list">
+                <div class="d-flex align-items-top">
+                    <div class="flex-shrink-0">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#E0F6E3"/>
+                            <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                    <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                            <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px"></textarea>
+                            </div>
+                        <div class="list-btn-sec">
+                        <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+ 
+
+</div>
+
+
+<!-- <div class="notification-block width collapse" id="collapseNotification">
     <div class="planner-wrapper ">
         <div class=" notification-right ">
             <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
@@ -648,7 +784,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!--notification-right End-->
 <!--
 <img src="{{ URL::asset('public/after_login/new_ui/images/subs.png')}}">

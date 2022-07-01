@@ -46,4 +46,29 @@ class LeadUserController extends Controller {
 		}
 
 	}
+	public function performanceAnalytics() {
+		return view('auth.performance_analytics');
+	}
+	public function performanceRating() {
+		return view('auth.performance_rating');
+	}
+	public function selectPlanPayment() {
+		return view('auth.select_plan_payment');
+	}
+	public function planPurchased() {
+		return view('auth.plan_purchased');
+	}
+	public function examInstructions() {
+		return view('auth.exam_instructions');
+	}
+	public function profile() {
+		return view('auth.profile');
+    }
+	public function weeklyPlan() {
+		return view('auth.weekly_plan'); 
+	}
+	public function contactUs() {
+		return view('auth.contact_us'); 
+	}
 }
+
