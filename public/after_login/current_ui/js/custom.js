@@ -20,12 +20,6 @@ $(".sidebar-exam-menu").click(function(){
     $(".submenu-block").slideToggle();
     $(".submenu-block").toggleClass("submenu-block-active");
 });
-// $(document).on('click', function(e) {
-//     var submenu_opened = $('.submenu-block').hasClass('submenu-block-active');
-//     if (!$(e.target).closest('.submenu-block').length && !$(e.target).is('.submenu-block') && submenu_opened === true) {
-//         $('.submenu-block').hide();
-//     }
-// });
 $(document).on('click', function (e) {
     if ($(e.target).closest("aside").length === 0) {
         $(".submenu-block").hide();
@@ -33,7 +27,7 @@ $(document).on('click', function (e) {
     }
 });
 
-/************* Dashboard Circular Progress Bar ************/
+/************* Dashboard- Subject Performance Circular Progress Bar ************/
 $(".circle_percent").each(function() {
     var $this = $(this),
 		$dataV = $this.data("percent"),
@@ -53,6 +47,32 @@ $(".circle_percent").each(function() {
 		$round.css("transform", "rotate(" + 360 + "deg)");
 		setTimeout(function(){
 			$this.addClass("percent_more");
+		},1000);
+		setTimeout(function(){
+			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
+		},1000);
+	} 
+});
+/************* Dashboard- MyQ Today  Circular Progress Bar ************/
+$(".mq_circle_percent").each(function() {
+    var $this = $(this),
+		$dataV = $this.data("percent"),
+		$dataDeg = $dataV * 3.6,
+		$round = $this.find(".mq_round_per");
+	$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");	
+	$this.append('<div class="mq_circle_inbox"><span class="mq_percent_text"></span><span class="mq_percent_outoff">/100</span></div>');
+	$this.prop('Counter', 0).animate({Counter: $dataV},
+	{
+		duration: 2000, 
+		easing: 'swing', 
+		step: function (now) {
+            $this.find(".mq_percent_text").text(Math.ceil(now));
+        }
+    });
+	if($dataV >= 51){
+		$round.css("transform", "rotate(" + 360 + "deg)");
+		setTimeout(function(){
+			$this.addClass("mq_percent_more");
 		},1000);
 		setTimeout(function(){
 			$round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");

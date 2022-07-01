@@ -87,7 +87,11 @@ $userData = Session::get('user_data');
                               </span>
                           </h3>
                           <div class="myqTodayGraphSec">
-                             <div class="graphBlock"></div>
+                                <div class="mq_circle_percent" data-percent="75">
+                                    <div class="mq_circle_inner">
+                                        <div class="mq_round_per"></div>
+                                    </div>
+                                </div>
                               <div class="textblock">
                                   <h6 class="dashSubHeading">You are doing great!</h6>
                                   <p class="dashSubtext">Attempt more tests to improve your score.</p>
