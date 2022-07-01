@@ -1106,7 +1106,7 @@ left: 0;
 top: 0;
 width: 1em;
 height: 1em;
-background: #F76C6C;
+background: #56b663;
 clip: rect(0 1em 1em 0.5em);
 transform: rotate(180deg);
 transition: 1.05s;
@@ -1120,7 +1120,7 @@ left: 0.5em;
 top: 0em;
 right: 0;
 bottom: 0;
-background: #F76C6C;
+background: #56b663;
 content: "";
 }
 .mq_circle_inbox {position: absolute;top: 7px;left: 7px;right: 7px;bottom: 7px;background: #fff;z-index: 3;border-radius: 50%;}
