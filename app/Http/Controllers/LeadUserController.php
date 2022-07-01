@@ -70,5 +70,8 @@ class LeadUserController extends Controller {
 	public function contactUs() {
 		return view('auth.contact_us'); 
 	}
+	public function chapterProficiency() {
+		return view('auth.chapter_proficiency'); 
+	}
 }
 
