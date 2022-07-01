@@ -1027,7 +1027,7 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b
     border-left: 1px solid #e0e0e0;
 }
 .practice-submenu a:hover{background-color: #e0f6e3;}
-/*****************/
+/*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
     font-size: 75px;
     width: 1em;
@@ -1037,52 +1037,105 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow{color:#56b
     border-radius: 50%;
     overflow: hidden;
     display: inline-block;
-  }
-  .circle_inner {
-    position: absolute;
-    left: 0;
-    top: 0;
+}
+.circle_inner {
+position: absolute;
+left: 0;
+top: 0;
+width: 1em;
+height: 1em;
+clip: rect(0 1em 1em 0.5em);
+}
+.round_per {
+position: absolute;
+left: 0;
+top: 0;
+width: 1em;
+height: 1em;
+background: #F76C6C;
+clip: rect(0 1em 1em 0.5em);
+transform: rotate(180deg);
+transition: 1.05s;
+}
+.percent_more .circle_inner {
+clip: rect(0 0.5em 1em 0em);
+}
+.percent_more:after {
+position: absolute;
+left: 0.5em;
+top: 0em;
+right: 0;
+bottom: 0;
+background: #F76C6C;
+content: "";
+}
+.circle_inbox {
+position: absolute;
+top: 7px;
+left: 7px;
+right: 7px;
+bottom: 7px;
+background: #e0f6e3;
+z-index: 3;
+border-radius: 50%;
+}
+.orangegraph.percent_more:after,.orangegraph .round_per{ background: #F7C86D;}
+.greengraph.percent_more:after, .greengraph .round_per{ background: #04C894;}
+/*******Dashboard - MyQ Today circular progress bar **********/
+.mq_circle_percent {
+    font-size: 102px;
     width: 1em;
     height: 1em;
-    clip: rect(0 1em 1em 0.5em);
-  }
-  .round_per {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1em;
-    height: 1em;
-    background: #F76C6C;
-    clip: rect(0 1em 1em 0.5em);
-    transform: rotate(180deg);
-    transition: 1.05s;
-  }
-  .percent_more .circle_inner {
-    clip: rect(0 0.5em 1em 0em);
-  }
-  .percent_more:after {
-    position: absolute;
-    left: 0.5em;
-    top: 0em;
-    right: 0;
-    bottom: 0;
-    background: #F76C6C;
-    content: "";
-  }
-  .circle_inbox {
-    position: absolute;
-    top: 7px;
-    left: 7px;
-    right: 7px;
-    bottom: 7px;
-    background: #e0f6e3;
-    z-index: 3;
+    position: relative;
+    background: #cbebcf;
     border-radius: 50%;
-  }
-  .orangegraph.percent_more:after,.orangegraph .round_per{ background: #F7C86D;}
-  .greengraph.percent_more:after, .greengraph .round_per{ background: #04C894;}
- 
-  
+    overflow: hidden;
+    display: inline-block;
+}
+.mq_circle_inner {
+position: absolute;
+left: 0;
+top: 0;
+width: 1em;
+height: 1em;
+clip: rect(0 1em 1em 0.5em);
+}
+.mq_round_per {
+position: absolute;
+left: 0;
+top: 0;
+width: 1em;
+height: 1em;
+background: #F76C6C;
+clip: rect(0 1em 1em 0.5em);
+transform: rotate(180deg);
+transition: 1.05s;
+}
+.mq_percent_more .mq_circle_inner {
+clip: rect(0 0.5em 1em 0em);
+}
+.mq_percent_more:after {
+position: absolute;
+left: 0.5em;
+top: 0em;
+right: 0;
+bottom: 0;
+background: #F76C6C;
+content: "";
+}
+.mq_circle_inbox {position: absolute;top: 7px;left: 7px;right: 7px;bottom: 7px;background: #fff;z-index: 3;border-radius: 50%;}
+.mq_percent_text {position: absolute;font-size: 24px;left: 12px;top: 50%;transform: translateY(-50%);z-index: 3;color: #234628;font-weight: 800;}
+span.mq_percent_outoff {
+    color: rgba(35,70,40,0.2);
+    font-size: 18px;
+    position: absolute;
+    left: 41px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    font-weight: 800;
+}
+
 /********* Amit End ***********/
 
 

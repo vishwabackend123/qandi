@@ -450,7 +450,7 @@
     </ul>
     <div class="submenu-block">
         <h6 class="mb-5">Exam</h6>
-        <ul class="submenu-lists">
+        <ul class="submenu-lists ps-0">
             <li class="practice-menu">
                 <a href="javascript:void(0)">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
