@@ -6,6 +6,8 @@
 {
    Background:#f5faf6;
    min-height:100%;
+   padding-top:20px;
+   padding-left:20px;
 }   
 .contactus_customer_support_text
 {
