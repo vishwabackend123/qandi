@@ -78,16 +78,20 @@ $userData = Session::get('user_data');
                     <div class="col-lg-4 commonblockDash">
                          <div class="commondashboardTop">
                               <h3 class="boxheading">MyQ Today
-                                  <span class="tooltipmain">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                  <p class="tooltipclass">
-                                   <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                     This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                  </p>
-                              </span>
-                          </h3>
+                                    <span class="tooltipmain">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
+                                    </span>
+                                </h3>
                           <div class="myqTodayGraphSec">
-                             <div class="graphBlock"></div>
+                                <div class="mq_circle_percent" data-percent="75">
+                                    <div class="mq_circle_inner">
+                                        <div class="mq_round_per"></div>
+                                    </div>
+                                </div>
                               <div class="textblock">
                                   <h6 class="dashSubHeading">You are doing great!</h6>
                                   <p class="dashSubtext">Attempt more tests to improve your score.</p>
@@ -99,14 +103,12 @@ $userData = Session::get('user_data');
                                     <h3 class="boxheading">Subject Performance
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                        <p class="tooltipclass">
-                                        <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                        </p>
+                                        
                                     </span>
                                 </h3>
                                 <p class="dashSubtext">Supporting text for better interaction on this section</p>
                              </div>
+                            
                             <div class="subjectScoreBlock">
                                  <div class="row">
                                      <div class="col-sm-6">
@@ -156,6 +158,21 @@ $userData = Session::get('user_data');
                                      </div>
                                  </div>
                             </div>
+                            <div class="emptystate" style="display:none">
+                                  <div class="emptystateInner">
+                                      <div class="emptyicon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
+                                            <circle cx="40" cy="40.102" r="40" fill="#E0F6E3"/>
+                                            <path d="M16.979 25.102h10.525a1 1 0 0 1 1 1v2.22a1 1 0 0 1-1 1h-5.87c-.458 0-.864.312-.91.768-.303 3.018 1.262 8.859 8.382 15.604.885.84.051 2.165-.937 1.45-10.105-7.32-12.436-16.283-12.146-21.179.03-.499.456-.863.956-.863zM64.021 25.102H53.496a1 1 0 0 0-1 1v2.22a1 1 0 0 0 1 1h5.87c.458 0 .864.312.91.768.303 3.018-1.262 8.859-8.382 15.604-.885.84-.051 2.165.937 1.45 10.104-7.32 12.436-16.283 12.146-21.179-.03-.499-.456-.863-.956-.863z" fill="#BEE9C4"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.206 21.102H27.588c-.04.465-.089.965-.14 1.494-.59 6.134-1.554 16.144 4.322 21.616 1.044.972 1.868 1.64 2.516 2.164 1.99 1.614 2.326 1.886 2.326 5.539v2.641h7.776v-2.641c0-3.653.335-3.925 2.326-5.539a44.9 44.9 0 0 0 2.516-2.164c5.876-5.472 4.912-15.482 4.322-21.616-.051-.529-.1-1.029-.14-1.494H40.206z" fill="#fff"/>
+                                            <path d="M29 60.102a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2H29v-2z" fill="#BEE9C4"/>
+                                            <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663"/>
+                                         </svg>
+                                      </div>
+                                      <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
+                                      <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                  </div>
+                             </div>
                           </div>
                          </div>
                     </div>
@@ -163,10 +180,10 @@ $userData = Session::get('user_data');
                           <div class="commonWhiteBox">
                              <div class="boxHeadingBlock flexblock">
                                     <h3 class="boxheading">My Task Center
-                                        <span class="tooltipmain">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                    <span class="tooltipmain">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
                                         <p class="tooltipclass">
-                                        <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
                                             This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
                                         </p>
                                     </span>
@@ -261,6 +278,9 @@ $userData = Session::get('user_data');
                                                           </div>
                                                         </li>
                                                      </ul>
+                                                     <div class="moreTaskLink">
+                                                     <a href="javascript:;" class="commmongreenLink mb-2">3 more tasks <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                                                     </div>
                                                 </div>
                                         </div>
                                         <div id="weekly" class=" tab-pane">
@@ -285,7 +305,7 @@ $userData = Session::get('user_data');
                                     </h3>
                                     <p class="dashSubtext">Supporting text for better interaction on this section</p>
                                 </div>
-                                <div class="MyqMatrixMain mt-3">
+                                <div class="MyqMatrixMain mt-3" >
                                      <div class="row">
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor1">
@@ -353,6 +373,21 @@ $userData = Session::get('user_data');
                                           </div>
                                      </div>
                                 </div>
+                                <div class="emptystate mt-3" style="display:none">
+                                  <div class="emptystateInner">
+                                      <div class="emptyicon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
+                                            <circle cx="40" cy="40.102" r="40" fill="#E0F6E3"/>
+                                            <path d="M16.979 25.102h10.525a1 1 0 0 1 1 1v2.22a1 1 0 0 1-1 1h-5.87c-.458 0-.864.312-.91.768-.303 3.018 1.262 8.859 8.382 15.604.885.84.051 2.165-.937 1.45-10.105-7.32-12.436-16.283-12.146-21.179.03-.499.456-.863.956-.863zM64.021 25.102H53.496a1 1 0 0 0-1 1v2.22a1 1 0 0 0 1 1h5.87c.458 0 .864.312.91.768.303 3.018-1.262 8.859-8.382 15.604-.885.84-.051 2.165.937 1.45 10.104-7.32 12.436-16.283 12.146-21.179-.03-.499-.456-.863-.956-.863z" fill="#BEE9C4"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.206 21.102H27.588c-.04.465-.089.965-.14 1.494-.59 6.134-1.554 16.144 4.322 21.616 1.044.972 1.868 1.64 2.516 2.164 1.99 1.614 2.326 1.886 2.326 5.539v2.641h7.776v-2.641c0-3.653.335-3.925 2.326-5.539a44.9 44.9 0 0 0 2.516-2.164c5.876-5.472 4.912-15.482 4.322-21.616-.051-.529-.1-1.029-.14-1.494H40.206z" fill="#fff"/>
+                                            <path d="M29 60.102a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2H29v-2z" fill="#BEE9C4"/>
+                                            <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663"/>
+                                         </svg>
+                                      </div>
+                                      <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
+                                      <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                  </div>
+                             </div>
                             </div>
                          </div>
                 </div>

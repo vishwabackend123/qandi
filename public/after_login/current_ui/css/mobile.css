@@ -19,6 +19,8 @@
 .applyCo {
     padding-top: 90px;
 }
+
+.subjextscoreLeft h4 {font-size: 20px;}
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
