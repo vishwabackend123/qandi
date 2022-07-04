@@ -97,17 +97,15 @@ class RazorpayController extends Controller
 
             $aResponse = json_decode($response_json);
             $success_status = isset($aResponse->success) ? $aResponse->success : false;
-
-
+            $transaction_data = $aResponse->orderDetails;
             if ($success_status == true) {
                 $sessionData = Session::get('user_data');
                 $sessionData->grade_id = $exam_id;
 
                 Session::put('user_data', $sessionData);
-
-                return redirect()->route('dashboard');
+                return view('plan_purchased_success', compact('transaction_data'));
             } else {
-                return redirect()->route('subscriptions');
+                return view('plan_purchased_faild', compact('transaction_data','exam_id'));
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
