@@ -316,14 +316,14 @@ $userData = Session::get('user_data');
                                      <div class="row">
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor1">
-                                                <a>
+                                                <a href="#strengthmodal" data-bs-toggle="modal" data-bs-target="#strengthmodal"> 
                                                  <div class="myqinner">
                                                    <h6>Q1</h6>
                                                     <h5>Strengths</h5>
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                  </div>
                                                  <div class="myqbottomSec">
-                                                     <h3>12 <span class="topictext" data-bs-toggle="modal" data-bs-target="#strengthmodal">Topics</span></h3>
+                                                     <h3>12 <span class="topictext" >Topics</span></h3>
                                                       <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
@@ -982,21 +982,27 @@ $userData = Session::get('user_data');
     </div>
     <!-------------------->
     <!-- Strengths-popup start  -->
-    <div class="modal fade" id="strengthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content strengthmodal_content">
-                <div class="modal-body">
-                <a class="close" href="#">&times;</a>
-                    <div class="intraction_text_q1">Q1</div>
-                    <div class="intraction_text_strength">Strengths</div>
-                    <hr>
-                    <div class="instruction_text_content">
-                    Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <div class="modal fade" id="strengthmodal">
+         <div  class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content strengthmodal_content">
+                <div class="modal-header1">
+                        <a  href="javascript:;"  class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="intraction_text_q1">Q1</div>
+                        <div class="intraction_text_strength">Strengths</div>
+                        <hr>
+                        <div class="instruction_text_content">
+                        Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+     </div>
     </div>
+
+
          <!-- <div id="strengthmodal" class="overlay88">
             <div class="popup88">
                 <a class="close" href="#">&times;</a>
@@ -1012,6 +1018,9 @@ $userData = Session::get('user_data');
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
+
+
+   
     <!-- Footer Section -->
     @include('afterlogin.layouts.footer_new')
     <!-- footer Section end  -->
