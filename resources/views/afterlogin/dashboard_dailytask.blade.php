@@ -6,83 +6,7 @@ $userData = Session::get('user_data');
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
 <!-- sidebar menu end -->
-<style>
-    .dt_sec-1 span {
-        font-weight: 600 !important;
-    }
 
-    .dt_sec-1 span img {
-        max-width: 60px;
-        padding-right: 5px;
-    }
-
-    .dtrow-left {
-        background: #f2f2f2c4;
-        border-radius: 30px;
-        padding: 25px;
-        margin: 10px;
-    }
-
-    .dtrow-left .btntheme {
-        width: 100%;
-        position: relative;
-        top: 57%;
-    }
-
-    .dtrow-right {
-        background: #f2f2f2c4;
-        border-radius: 30px;
-        padding: 25px;
-        margin: 10px;
-    }
-
-    .dtrow-right .btntheme {
-        width: 60%;
-        position: relative;
-        top: 2%;
-    }
-
-    @media only screen and (max-width: 767px) {
-
-        /*kanchan css*/
-        .dt_sec-1 span {
-            font-weight: 600 !important;
-        }
-
-        .dt_sec-1 span img {
-            max-width: 60px;
-            padding-right: 5px;
-        }
-
-        .dtrow-left {
-            background: #f2f2f2c4;
-            border-radius: 30px;
-            padding: 25px;
-            margin: 10px;
-        }
-
-        .dtrow-left .btntheme {
-            width: 100%;
-            position: relative;
-            top: 0%;
-        }
-
-        .dtrow-right {
-            background: #f2f2f2c4;
-            border-radius: 30px;
-            padding: 25px;
-            margin: 10px;
-        }
-
-        .dtrow-right .btntheme {
-            width: 100%;
-            position: relative;
-            top: 2%;
-        }
-    }
-
-    /*kanchan css*/
-</style>
 @if($errors->any())
 <script>
     $(window).on('load', function() {
@@ -91,38 +15,7 @@ $userData = Session::get('user_data');
 </script>
 @endif
 
-<style>
-    .task-day-top {
-    display: flex;
-    justify-content: left;
-    position: relative;
-}
 
-.note-img {
-    position: absolute;
-    right: -30px;
-    top: -32px;
-    overflow: hidden;
-}
-.task-day-top h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
-.task-day {border-radius: 32px;padding-bottom: 150px;}
-.task1 > p {
-    font-size: 14px;
-    font-weight: 500;
-    font-family: Manrope;
-    color: #868a95;
-}
-.task1 p span {font-size: 12px; text-transform: uppercase; font-weight: 600; }
-.task1 > h3 {font-size: 16px; font-weight: 800; color: #1f1f1f; }
-.btn-sec {border-bottom: 1px solid #e5eaee; display: flex; padding-bottom: 8px; margin-bottom: 12px; }
-.task-btn.tasklistbtn {flex-grow: 1;text-align: right;}
-.qust-sec,.dura-sec {flex-grow: 1;}
-.task-btn.tasklistbtn .btn.btn-common-transparent.nobg {text-transform: capitalize; font-size: 14px; }
-.qust-sec span,.dura-sec span {color: #1f1f1f; font-size: 14px; font-weight: 500; }
-.qust-sec p label,.dura-sec p label {font-size: 16px; font-weight: 800; vertical-align: middle; }
-
-
-</style>
 <div class="main-wrapper dashboard">
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
@@ -384,23 +277,7 @@ $userData = Session::get('user_data');
 
 
     </div>
-    <!--------- Modal ------>
-    <!-- <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-0 bg-light">
-                <div class="modal-header pb-0 border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p>Give more tests for this <br /> section to be populated</p>
-                    <div class="text-center mb-4">
-                        <a href="{{url('/dashboard')}}" class="btn btn-danger px-5"> Back</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-------------------->
+
     <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-0 bg-light">
