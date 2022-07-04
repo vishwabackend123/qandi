@@ -8,12 +8,10 @@ html {
 	box-sizing: border-box;
 
 }
-
 html {
 	min-height: 100%;
 	width: 100%;
 }
-
 body {
 	min-height: 100%;
 	width: 100%;
@@ -23,14 +21,12 @@ body {
 	/* font-family: 'Inter', sans-serif; */
 	overflow-x: hidden;
 }
-
 a,
 input,
 button {
 	outline: none;
 	text-decoration: none;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -47,7 +43,6 @@ select {
 	appearance: none !important;
 	box-shadow: none !important;
 }
-
 a,
 input,
 button,
@@ -56,36 +51,29 @@ input:focus,
 button:focus {
 	outline: none !important;
 }
-
 :focus {
 	outline: -webkit-focus-ring-color auto 0px !important;
 }
-
 li {
 	list-style-type: none;
 }
 
 /* common-scroll */
-
-
 ::-webkit-scrollbar {
 	width: 5px;
 	height: 5px;
 }
-
 ::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px #e5eaee;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	background: #ccc;
 	-webkit-box-shadow: inset 0 0 6px #cccccc;
 }
-
 
 /* h1,h2,h3,h4,h5,h6,figure,ul,li,p{
 margin: 0;
