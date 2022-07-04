@@ -2153,6 +2153,7 @@ header {
 .plan_successfull_wrapper {
 	min-height: 100%;
 	background: #f5faf6;
+    padding-bottom: 30px;
 }
 
 .plan_faild_wrapper {
@@ -2244,6 +2245,7 @@ header {
 	font-stretch: normal;
 	font-style: normal;
 	letter-spacing: normal;
+    padding: 8px 0;
 }
 
 .plan_box_status_contant_order {
