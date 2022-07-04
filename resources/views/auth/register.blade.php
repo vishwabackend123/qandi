@@ -773,16 +773,17 @@
         <div class="loginform m-auto">
             <h1 class="pb-2 mb-1">Sign up</h1>
             <p>Already have an account? <a href="{{route('login')}}">Login</a></p>
-            <form id="studentsignup">
-                <div class="custom-input pb-4">
+            <form id="studentsignup" method="post">
+                @csrf
+                <div class="custom-input pb-3">
                     <label>Name</label>
                     <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Full name" onkeypress="return lettersOnly(event)" required>
                 </div>
-                <div class="custom-input pb-4 position-relative ">
+                <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
-                    <div class=" position-relative">
-                        <input type="text" maxlength="10" class="form-control" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)" required>
-                        <span class="position-absolute sentotp d-none" id="otpsentmsg">OTP sent</span>
+                    <div class="d-flex position-relative">
+                        <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
+                        <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
                         <a class="editnumber  d-none" id="verifynum" href="javascript:void(0);">Verify</a>
                         <a class="editnumber bg-white d-none" href="javascript:void(0);" id="editsignnumber">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -794,25 +795,8 @@
                     </div>
                     <sapn class="error  mt-2 " id="err_reg_mob"></span>
                 </div>
-                <!--  <div class="custom-input pb-4 position-relative">
-                    <label>Mobile</label>
-                    <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
-                    <a class="editnumber verifyno" javascript:void(0);>Verify</a>
-                </div> -->
-                <!-- <div class="custom-input changeno pb-3 d-none">
-                    <label>Mobile</label>
-                    <div class="d-flex position-relative">
-                        <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no">
-                        <span class="position-absolute sentotp d-none">OTP sent</span>
-                        <a class="editnumber d-block bg-white d-none" href="javascript:void(0);">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            &nbsp;Edit
-                        </a>
-                    </div>
-                </div> -->
-                <div class="custom-input pb-3 otp-input">
+
+                <div class="custom-input pb-3 otp-input" style="display:none">
                     <label>Enter OTP</label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
                         <input class="form-control otp" maxlength="1" name="register_otp[]" required>
@@ -822,42 +806,44 @@
                         <input class="form-control otp" maxlength="1" name="register_otp[]" required>
                     </div>
                     <sapn class="error mt-2" id="errlog_otp"></span>
-                        <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);">Resend</a></p>
+                        <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
                 </div>
-                <div class="custom-input pb-4">
+                <div class="custom-input pb-3">
                     <label>Email</label>
                     <input type="email" class="form-control" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
                 </div>
-                <div class="custom-input pb-4">
+                <div class="custom-input pb-3">
                     <label>City</label>
                     <select class="js-states form-control" name="location" id="location" required>
-                        <option value="">Select city</option>
+                        <option value="">Select a city</option>
                         <!-- <option>Mohali</option>
                         <option>Jind</option>
                         <option>Narwana</option>
                         <option>Kaithal</option> -->
                     </select>
                 </div>
-                <div class="custom-input pb-4 row">
+                <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
                         <label>Grade</label>
                         <select class="form-control selectdata" name="grade" id="grade" required>
                             <option class="we">Select grade</option>
-                            <!-- <option class="we2">1</option>
-                            <option>2</option> -->
+                            <option class="we2" value="1">Just starting out</option>
+                            <option class="we" value="2">Completed (10+1) Syllabus</option>
+                            <option class="we" value="3">Completed (10+2) Syllabus</option>
                         </select>
                     </div>
                     <div class="col-lg-6">
                         <label>Exam</label>
-                        <select class="form-control selectdata" name="exam" id="grade" required>
-                            <option>Select exam</option>
-                            <!--  <option>Neet</option>
-                            <option>Jee</option> -->
+                        <select class="form-control selectdata" name="exam" id="exam_id" required>
+                            <option value="">Select exam</option>
+                            <option value="1">JEE</option>
+                            <option value="2">NEET</option>
+
                         </select>
                     </div>
                 </div>
                 <div class="Get-otp pt-4">
-                    <button type="submit" class="btn btn-common-green text-white w-100 disabled">Continue</button>
+                    <button type="submit" id="signup_cnt" class="btn btn-common-green text-white w-100 ">Continue</button>
                 </div>
             </form>
         </div>
@@ -938,9 +924,20 @@
         });
     });
 
+    function resentOtp() {
+        $('#otp_box input[name="register_otp[]"').val('');
+        $('#verifynum').click();
+    }
+    $('#editsignnumber').click(function() {
+        $('#mobile_num').val('');
+        $('.otp-input').hide();
+        $('#otpsentmsg').removeClass("d-block");
+        $('#otpsentmsg').addClass("d-none");
+        $('#editsignnumber').removeClass("d-block");
+        $('#editsignnumber').addClass("d-none");
+    });
     $('#verifynum').click(function() {
         $check = 0;
-        alert("hi");
         var mobile_num = $("#mobile_num").val();
         if (mobile_num == '') {
             $("#err_reg_mob").html('Please enter your mobile number');
@@ -1065,7 +1062,7 @@
                     error.insertAfter($("#grade"));
                     break;
                 case 'exam':
-                    error.insertAfter($("#exam"));
+                    error.insertAfter($("#exam_id"));
                     break;
                 case 'location':
                     error.insertAfter($("#location"));
@@ -1076,49 +1073,149 @@
         },
 
         submitHandler: function(form) {
+            var user_name = $("#user_name").val();
+            var email_add = $("#email_add").val();
+            var mobile_num = $("#mobile_num").val();
 
+            var register_otp = $("input[name='register_otp[]']")
+                .map(function() {
+                    return $(this).val();
+                }).get();
+            var location = $("#location").val();
+            var exam = $("#exam_id").val();
+            var grade_stage = $("#grade").val();
+            $.ajax({
+                url: "{{ url('/verifyOtpRegister') }}",
+                type: 'POST',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    reg_otp: register_otp,
+                    email_add: email_add,
+                    user_name: user_name,
+                    mobile_num: mobile_num,
+                    location: location,
+                    exam_id: exam,
+                    stage_at_signup: grade_stage,
+                },
+                beforeSend: function() {},
+                success: function(response_data) { //debugger;
+                    var response = jQuery.parseJSON(response_data);
+                    console.log(response);
+                    if (response.status == 400) {
+                        if (response.error) {
+                            var errormsg = $("#errlog_auth").show();
+
+                            errormsg[0].textContent = response.error;
+                            setTimeout(function() {
+                                $('#errlog_auth').fadeOut('fast');
+                            }, 10000);
+                        }
+                        return false
+                    } else {
+                        $('#student_id').val(response.student_id);
+                        $('.usernamE').html(response.user_name);
+                        $('.student-mobile').html("+91-" + response.mobile);
+                        //$('#otp-verify-box').addClass('open-box');
+
+                        $('#login-box').addClass('close-box');
+                        $('#address-box').addClass('open-box');
+                        /* $('#otp-box').addClass('close-box');
+                        if (response.redirect_url) {
+                            window.location.href = response.redirect_url
+                        } */
+                    }
+
+                },
+                error: function(xhr, b, c) {
+                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
+                }
+            });
         }
 
     });
     $(document).ready(function() {
 
-        $(document).ready(function() {
-            $("#location").select2({
-                allowClear: true,
-                minimumInputLength: 3,
-                minimumResultsForSearch: 0,
-                tokenSeparators: [',', ' '],
-                ajax: {
-                    url: "{{ url('/newCityList') }}",
-                    type: "GET",
-                    cache: false,
-                    data: function(params) {
-                        var queryParameters = {
-                            search_text: params.term
-                        }
-                        return queryParameters;
-                    },
-                    success: function(response_data) {
-
-                        var data = jQuery.parseJSON(response_data);
-
-                        if (data.success === true) {
-                            var list = data.response;
-                        } else {
-                            var list = [];
-                        }
-
-                        $("#location").empty().select2({
-                            data: list
-                        });
-
-
+        $("#location").select2({
+            allowClear: true,
+            minimumInputLength: 3,
+            minimumResultsForSearch: -1,
+            tokenSeparators: [',', ' '],
+            placeholder: "Select a City",
+            closeOnSelect: false,
+            enable: false,
+            ajax: {
+                url: "{{ url('/newCityList') }}",
+                type: "GET",
+                cache: false,
+                data: function(params) {
+                    var queryParameters = {
+                        search_text: params.term
                     }
+                    return queryParameters;
+                },
+                success: function(response_data) {
+
+                    var data = jQuery.parseJSON(response_data);
+
+                    if (data.success === true) {
+                        var list = data.response;
+                    } else {
+                        var list = [];
+                    }
+
+                    $("#location").select2({
+                        data: list
+                    });
+
+
                 }
-            });
+            }
         });
+
+        $('.select2-search__field').keydown((ev) => {
+            if (ev.which == 9) {
+                var e = jQuery.Event("keydown");
+                e.which = 40; //code of downarrow  
+                $('.select2-search__field').trigger(e)
+                //$('.select2-search__field').val(String.fromCharCode(e.which));
+                return false;
+            }
+        });;
+
+
     });
 
+    function checkAllInput() {
+
+        var empty = false;
+
+        $('#studentsignup input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if ($('#location').val() == '') {
+            empty = true;
+        }
+        if ($('#grade').val() == '') {
+            empty = true;
+        }
+        if ($('#exam').val() == '') {
+            empty = true;
+        }
+
+
+        if (empty) {
+            $('#signup_cnt').attr('disabled', 'disabled');
+            $('#signup_cnt').addClass("disbaled");
+        } else {
+            $('#signup_cnt').removeAttr('disabled');
+            $('#signup_cnt').removeClass("disbaled");
+        }
+
+
+    }
     /* function for select sity */
 </script>
 @endsection

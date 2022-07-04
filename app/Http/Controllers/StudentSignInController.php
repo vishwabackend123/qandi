@@ -274,10 +274,16 @@ class StudentSignInController extends Controller
         try {
             $data = $request->all();
 
+
             $reg_otp = $request->input('reg_otp');
             $email_add = $request->input('email_add');
             $mobile_num = $request->input('mobile_num');
             $user_name = $request->input('user_name');
+            $location = $request->input('location');
+            $exam_id = $request->input('exam_id');
+            $stage_at_signup = $request->input('stage_at_signup');
+
+            $reg_otp_value = (int)implode('', $reg_otp);
 
             if (Session::has('OTP')) {
                 $session_otp = Session::get('OTP');
@@ -288,15 +294,24 @@ class StudentSignInController extends Controller
             $session_otp_time = Session::get('OTP_time');
 
             if (($timestamp - $session_otp_time) < 180) {
-                if ($session_otp == $reg_otp) {
+                if ($session_otp == $reg_otp_value) {
                     $request->session()
                         ->forget('OTP');
-                    $request = ['user_name' => $user_name, 'email' => $email_add, 'mobile' => (int)$mobile_num,];
+                    $request = [
+                        'user_name' => $user_name,
+                        'email' => $email_add,
+                        'mobile' => (int)$mobile_num,
+                        'grade_id' => (int)$exam_id,
+                        'city' => (int)$location,
+                        'email_verified' => "No",
+
+                    ];
 
                     $request_json = json_encode($request);
 
                     $api_URL = env('API_URL');
-                    $curl_url = $api_URL . 'api/student-signup';
+                    /*    $curl_url = $api_URL . 'api/student-signup'; */
+                    $curl_url = $api_URL . 'api/signup';
 
                     $curl = curl_init();
                     $curl_option = array(
@@ -317,7 +332,6 @@ class StudentSignInController extends Controller
                     curl_setopt_array($curl, $curl_option);
 
                     $response_json = curl_exec($curl);
-
                     $err = curl_error($curl);
                     $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                     curl_close($curl);
@@ -334,6 +348,7 @@ class StudentSignInController extends Controller
                     } else {
                         $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
                         $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
+                        $updateStudentStage = $this->updateStudentStage($stage_at_signup, $student_id);
 
                         if (Auth::loginUsingId($student_id)) {
                             $response['status'] = 200;
@@ -873,6 +888,51 @@ class StudentSignInController extends Controller
 
                 return json_encode($response);
             }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
+
+
+
+
+    /***
+     *  */
+    public function updateStudentStage($stage, $student_id)
+    {
+        try {
+            $request = ['student_id' => (int)$student_id, 'student_stage_at_sgnup' => (int)$stage];
+            $request_json = json_encode($request);
+
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/stage-at-signUp';
+            $curl = curl_init();
+            $curl_option = array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FAILONERROR => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "PUT",
+                CURLOPT_POSTFIELDS => $request_json,
+                CURLOPT_HTTPHEADER => array(
+                    "accept: application/json",
+                    "content-type: application/json"
+                ),
+            );
+            curl_setopt_array($curl, $curl_option);
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            $aResponse = json_decode($response_json);
+            $status = isset($aResponse->success) ? $aResponse->success : '';
+
+            return  $status;
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }

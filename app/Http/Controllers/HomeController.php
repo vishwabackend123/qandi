@@ -1094,7 +1094,7 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
-            //dd($e->getMessage());
+
             Log::info($e->getMessage());
         }
     }
