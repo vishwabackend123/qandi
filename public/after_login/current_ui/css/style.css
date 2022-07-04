@@ -2597,34 +2597,6 @@ ul {
 }
 
 /* popup */
-.popup88 {
-	margin: 13% auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 1s ease-in-out;
-	width: 44% !important;
-}
-
-.overlay88 {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.4);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay88:target {
-	visibility: visible;
-	opacity: 1;
-}
-
 .intraction_text_q1 {
 	font-size: 16px;
 	font-weight: 800;
@@ -2648,6 +2620,11 @@ ul {
 	line-height: 1.6;
 	letter-spacing: normal;
 	color: #363c4f;
+}
+.strengthmodal_content
+{
+	top: 162px;
+    border-radius: 10px;
 }
 
 /*********** chapter_proficiency *****************/

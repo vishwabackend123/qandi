@@ -977,8 +977,7 @@ $userData = Session::get('user_data');
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <a class="close" href="#" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</a>
+            <div class="modal-content strengthmodal_content">
                 <div class="modal-body">
                 <a class="close" href="#">&times;</a>
                     <div class="intraction_text_q1">Q1</div>
