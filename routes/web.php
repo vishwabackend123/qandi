@@ -245,6 +245,7 @@ Route::any('/planner_exam_result', [App\Http\Controllers\AdpativeExamController:
 Route::any('/getCountry', [App\Http\Controllers\StudentSignInController::class, 'countryList'])->name('getCountry');
 Route::any('/getState', [App\Http\Controllers\StudentSignInController::class, 'stateList'])->name('getState');
 Route::any('/getCity', [App\Http\Controllers\StudentSignInController::class, 'cityList'])->name('getCity');
+Route::any('/newCityList', [App\Http\Controllers\StudentSignInController::class, 'newCityList'])->name('newCityList');
 Route::any('/signupAddress', [App\Http\Controllers\StudentSignInController::class, 'signupAddress'])->name('signupAddress');
 Route::any('/searchCity', [App\Http\Controllers\StudentSignInController::class, 'searchCity'])->name('searchCity');
 
@@ -293,5 +294,10 @@ Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::c
 Route::any('/performance_rating', [App\Http\Controllers\LeadUserController::class, 'performanceRating']);
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
-Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
-Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
+Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
+Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
+
+
+
+/* New signup routes */
+Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
