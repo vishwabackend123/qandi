@@ -1486,7 +1486,7 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow {
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
 	font-size: 102px;
-	width: 1em;
+	min-width: 1em;
 	height: 1em;
 	position: relative;
 	background: #cbebcf;
@@ -1896,7 +1896,7 @@ header {
 
 .fullbodyBox .leftBox {
 	margin-bottom: 16px;
-	padding-right: 20%;
+	padding-right: 17%;
 }
 
 .fullbodyBox .leftBox .btn-common-white {
@@ -2031,11 +2031,10 @@ header {
 }
 
 .myqmatPannel {
-	padding: 12px 12px 12px 12px;
+	padding: 12px;
 	border-radius: 10px;
 	margin-bottom: 20px;
 }
-
 .myqcolor1 {
 	background-color: #d9f99d;
 }
@@ -2125,11 +2124,13 @@ header {
 	color: #039855
 }
 
-.commonlisting,
-ul {
+.commonlisting,ul {
 	padding-left: 0px;
 }
-
+.myqmatPannel .myqinner p{display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
