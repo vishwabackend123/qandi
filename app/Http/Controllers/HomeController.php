@@ -73,12 +73,12 @@ class HomeController extends Controller
 
             $prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
             $prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
-            $mx_Grade_id = isset($userData->mx_Grade_id) && !empty($userData->mx_Grade_id) ?$userData->mx_Grade_id:'';
+            /*$mx_Grade_id = isset($userData->mx_Grade_id) && !empty($userData->mx_Grade_id) ?$userData->mx_Grade_id:'';
             if (empty($mx_Grade_id)) {
              if ($student_stage_at_sgnup == 0) {
                 return redirect()->route('studentstandfor');
              }
-            }
+            } */
 
             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
             $trial_expired_yn = (isset($preferences->trial_expired_yn) && !empty($preferences->trial_expired_yn)) ? $preferences->trial_expired_yn : '';
