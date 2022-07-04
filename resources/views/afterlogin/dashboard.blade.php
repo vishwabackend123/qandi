@@ -309,7 +309,7 @@ $userData = Session::get('user_data');
                                      <div class="row">
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor1">
-                                                <a href="#strengthmodal">
+                                                <a href="#strengthmodal" data-bs-toggle="modal">
                                                  <div class="myqinner">
                                                    <h6>Q1</h6>
                                                     <h5>Strengths</h5>
