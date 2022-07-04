@@ -1358,21 +1358,23 @@ ul.sidebar-menu-lists li a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+    position: relative;
 }
 
-ul.sidebar-menu-lists li.active a,
-ul.sidebar-menu-lists li a:hover {
+ul.sidebar-menu-lists li.active a{
 	background-color: #e0f6e3;
 	border-radius: 8px;
 }
+ul.sidebar-menu-lists li a:hover{
+    background-color: #f7f7f7;
+	border-radius: 8px;
+}
 
-ul.sidebar-menu-lists li.active a svg.menu-icon-active,
-ul.sidebar-menu-lists li a:hover svg.menu-icon-active {
+ul.sidebar-menu-lists li.active a svg.menu-icon-active{
 	display: inline-block;
 }
 
-ul.sidebar-menu-lists li.active a svg:first-child,
-ul.sidebar-menu-lists li a:hover svg:first-child {
+ul.sidebar-menu-lists li.active a svg:first-child{
 	display: none;
 }
 
@@ -1461,7 +1463,34 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow {
 .practice-submenu a:hover {
 	background-color: #e0f6e3;
 }
-
+span.sidebar-menu-tooltip {
+    display: none;
+    background-color: #1f4736;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
+    z-index: 55;
+    padding: 15px 20px 15px 20px;
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    font-size: 16px;
+    color: #fff;
+    white-space: nowrap;
+}
+span.sidebar-menu-tooltip:before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: -14px;
+    top: 16px;
+    border: 10px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #1f4736;
+}
+ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
+    display: block;
+}
 /*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
 	font-size: 75px;
@@ -1533,7 +1562,7 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow {
 /*******Dashboard - MyQ Today circular progress bar **********/
 .mq_circle_percent {
 	font-size: 102px;
-	width: 1em;
+	min-width: 1em;
 	height: 1em;
 	position: relative;
 	background: #cbebcf;
@@ -1772,7 +1801,7 @@ header {
 .boxheading .tooltipmain {
 	display: inline-block;
 	margin-left: 10px;
-	cursor: pointer;
+	cursor: pointer;position: relative;
 }
 
 .content-wrapper {
@@ -1784,23 +1813,6 @@ header {
 	height: 100%;
 	overflow: hidden;
 	border-radius: 20px;
-}
-
-.tooltipclass {
-	background-color: #fff;
-	border-radius: 20px;
-	box-shadow: 2px 5px 15px 0 rgba(0, 0, 0.0.1);
-	z-index: 55;
-	padding: 15px 30px 15px 20px;
-	position: absolute;
-	right: -7px;
-	top: -7px;
-	min-width: 350px;
-	display: none;
-	text-align: left;
-	height: auto !important;
-	font-size: 13px;
-	left: auto !important;
 }
 
 .dashSubHeading {
@@ -1943,7 +1955,7 @@ header {
 
 .fullbodyBox .leftBox {
 	margin-bottom: 16px;
-	padding-right: 20%;
+	padding-right: 17%;
 }
 
 .fullbodyBox .leftBox .btn-common-white {
@@ -2078,11 +2090,10 @@ header {
 }
 
 .myqmatPannel {
-	padding: 12px 12px 12px 12px;
+	padding: 12px;
 	border-radius: 10px;
 	margin-bottom: 20px;
 }
-
 .myqcolor1 {
 	background-color: #d9f99d;
 }
@@ -2172,11 +2183,25 @@ header {
 	color: #039855
 }
 
-.commonlisting,
-ul {
+.commonlisting,ul {
 	padding-left: 0px;
 }
-
+.myqmatPannel .myqinner p{display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;}
+    .strengthmodal_content .btn-close{background: none;
+        font-size: 40px;
+        line-height: 23px;
+        color: #000;
+        padding-bottom: 0px;
+        padding-top: 30px;
+        height: auto;}
+        .modal-header1{display:flex;justify-content:end;}
+        .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
+        #strengthmodal .modal-dialog{max-width:600px;}
+        .strengthmodal_content hr{background-color:#868a95;}
+        .modalcenter{display:flex;align-items:center;height: 100%;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -2644,34 +2669,6 @@ ul {
 }
 
 /* popup */
-.popup88 {
-	margin: 13% auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 1s ease-in-out;
-	width: 44% !important;
-}
-
-.overlay88 {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.4);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay88:target {
-	visibility: visible;
-	opacity: 1;
-}
-
 .intraction_text_q1 {
 	font-size: 16px;
 	font-weight: 800;
@@ -2681,7 +2678,7 @@ ul {
 }
 
 .intraction_text_strength {
-	margin-top: 3px;
+	margin-top: 8px;
 	font-size: 24px;
 	font-weight: 800;
 	line-height: 1.3;
@@ -2695,6 +2692,11 @@ ul {
 	line-height: 1.6;
 	letter-spacing: normal;
 	color: #363c4f;
+}
+.strengthmodal_content
+{
+	margin-top:60px;
+    border-radius: 10px;border:0px;
 }
 
 /*********** chapter_proficiency *****************/
@@ -2795,13 +2797,14 @@ ul {
   letter-spacing: normal;
   color: #666;
 }
-.chapter_profici_open_topic
+.chapter_profici_open_topic a
 {
     font-size: 14px;
   font-weight: 800;
   line-height: 1.6;
   letter-spacing: normal;
   color: #56b663;
+  text-decoration: none;
 }
 .chapter_breadcrumb
 {
@@ -2821,7 +2824,7 @@ ul {
     padding: 10px!important;
 }
 
-/********* Vikas End ***********/
+/********* Vikash End ***********/
 
 /********** Shiv - Start *********/
 /******** notification ***************/
@@ -3170,3 +3173,79 @@ ul {
 }
 
 /********** Shiv - End *********/
+/********** Shiv - start for tooltips *********/
+.tooltipclass {
+	background-color: #1f4736;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
+	z-index: 55;
+	padding: 15px 30px 15px 20px;
+	position: absolute;
+	left: 33px;
+	top: -7px;
+	min-width: 350px;
+	display: none;
+	text-align: left;
+	height: auto !important;
+	font-size: 14px;
+	color: #fff;
+    line-height: 1.8;
+    font-weight: normal;
+}
+.tooltipclass > span {display: none;}
+.tooltipclass:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: -14px;
+    top: 15px;
+    border: 12px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #1f4736;
+}
+.tooltipmain.right-tolltip .tooltipclass {
+    left: -367px;
+    position: absolute;
+    top: -12px;
+    margin-right: 38px;
+}
+.tooltipmain.right-tolltip .tooltipclass:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    top: 15px;
+    border: 12px solid transparent;
+    border-left: 15px solid #1f4736;
+    right: -26px;
+}
+
+.tooltipmain.right-tolltip .tooltipclass:before {
+    content: "";
+    display: none;
+}
+/********** Shiv - start for tooltips end *********/
+
+/********** Shiv - start for dashboard link *********/
+
+.verifiaction-link {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.verifiaction-link p {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Manrope;
+    margin: 0;
+}
+.verifiaction-link p > a {
+    padding: 10px 35px;
+    border: 1px solid #dc6803;
+    color: #dc6803;
+    border-radius: 8px;
+    margin-left: 30px;
+}

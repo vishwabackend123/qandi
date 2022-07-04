@@ -1,3 +1,9 @@
+@media only screen and (max-width: 1500px){
+    .fullbodyBox .leftBox{padding-right:10px;}
+    .myqbottomSec h3 .topictext{margin-left: 5px;}
+    .myqmatPannel{padding:10px}
+    .commonWhiteBox{padding:30px 25px;}
+}
 @media only screen and (max-width: 1440px) {
   .left-sidepannel .carousel-inner .carousel-item img{
    height: 350px;
@@ -5,8 +11,13 @@
 .signuprightpannel {
     height: 690px;
 }
+.myqbottomSec h3{font-size:26px;}
 }
 @media only screen and (max-width: 1366px) {
+    .commonWhiteBox{padding:30px 20px}
+    .boxheading {
+        font-size: 20px;}
+        .boxheading .tooltipmain{margin-left:3px;}
   .signuprightpannel {
     height: 580px;
 } 
@@ -21,6 +32,8 @@
 }
 
 .subjextscoreLeft h4 {font-size: 20px;}
+.circle_percent,.round_per{    width: 0.8em;
+    height: 0.8em;}
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
