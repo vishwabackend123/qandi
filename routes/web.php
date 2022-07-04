@@ -278,7 +278,7 @@ Route::any('/chapter-analytics/{sub_id}', [App\Http\Controllers\AnalyticsControl
 Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultController::class, 'ajaxExamResultList'])->middleware('auth', 'menu');
 Route::any('/send_verfication_email', [App\Http\Controllers\SubscriptionController::class, 'sendVerficationEmail']);
 
-
+Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, 'performanceRating'])->name('performance-rating')->middleware('auth');
 
 
 

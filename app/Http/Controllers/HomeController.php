@@ -79,6 +79,9 @@ class HomeController extends Controller
                 return redirect()->route('studentstandfor');
              }
             } */
+            if ($student_rating == null || empty($student_rating)) {
+                return redirect()->route('performance-rating');
+            }
 
             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
             $trial_expired_yn = (isset($preferences->trial_expired_yn) && !empty($preferences->trial_expired_yn)) ? $preferences->trial_expired_yn : '';
@@ -1103,5 +1106,14 @@ class HomeController extends Controller
 
             Log::info($e->getMessage());
         }
+    }
+    public function performanceRating() {
+        $user_subjects = $this->redis_subjects();
+        $preferences = $this->redis_Preference();
+        $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
+        if ($student_rating != null || !empty($student_rating)) {
+            return redirect()->route('dashboard');
+        }
+        return view('afterlogin.performance_rating',compact('user_subjects'));
     }
 }

@@ -73,6 +73,7 @@ class LeadUserController extends Controller
 	{
 		return view('auth.performance_rating');
 	}
+
 	public function examInstructions()
 	{
 		return view('auth.exam_instructions');
