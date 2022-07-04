@@ -295,7 +295,7 @@ $userData = Session::get('user_data');
                           <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
                                         <h3 class="boxheading">MyQ Matrix 
-                                            <span class="tooltipmain">
+                                            <span class="tooltipmain right-tolltip">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
                                             <p class="tooltipclass">
                                             <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
@@ -309,20 +309,20 @@ $userData = Session::get('user_data');
                                      <div class="row">
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor1">
-                                                <a href="#strengthmodal" data-bs-toggle="modal">
+                                                <a>
                                                  <div class="myqinner">
                                                    <h6>Q1</h6>
                                                     <h5>Strengths</h5>
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                  </div>
                                                  <div class="myqbottomSec">
-                                                     <h3>12 <span class="topictext">Topics</span></h3>
+                                                     <h3>12 <span class="topictext" data-bs-toggle="modal" data-bs-target="#strengthmodal">Topics</span></h3>
                                                       <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
                                                     </span>
                                                  </div>
-                                                 </a>
+                                                </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
@@ -974,17 +974,33 @@ $userData = Session::get('user_data');
         </div>
     </div>
     <!-------------------->
-         <!-- Strengths-popup start  -->
-         <div id="strengthmodal" class="overlay88">
+    <!-- Strengths-popup start  -->
+    <div class="modal fade" id="strengthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content strengthmodal_content">
+                <div class="modal-body">
+                <a class="close" href="#">&times;</a>
+                    <div class="intraction_text_q1">Q1</div>
+                    <div class="intraction_text_strength">Strengths</div>
+                    <hr>
+                    <div class="instruction_text_content">
+                    Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+         <!-- <div id="strengthmodal" class="overlay88">
             <div class="popup88">
-            <a class="close" href="#">&times;</a>
+                <a class="close" href="#">&times;</a>
                <div class="intraction_text_q1">Q1</div>
                <div class="intraction_text_strength">Strengths</div>
                <hr>
                <div class="instruction_text_content">
-                  Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                  Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
             </div>
-         </div>
+         </div> -->
     <!-- Strengths-popup end -->
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
