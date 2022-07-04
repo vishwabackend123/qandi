@@ -396,7 +396,7 @@ width: 87px;
   border-radius: 8px;
   box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
   -webkit-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
--moz-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+  -moz-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
 }
 .subs-heading{
  padding: 4px 8px;
@@ -435,6 +435,83 @@ font-weight: 500;
   font-weight: bold;
 }
 /******Profile-page-end*****/
+
+/*****Planner-pge***********/
+.planner-box{
+padding: 32px;
+border-radius: 32px;
+}
+.planner-title h1{
+ font-size: 24px;
+ font-weight: 800;
+ color: #1f1f1f;
+}
+.planner-title button{
+min-width: 150px !Important;    
+}
+.week-select{
+font-size: 20px;
+color: #1f1f1f;
+font-weight: 800;
+}
+.planner-date .form-control {
+    height: 44px;
+    background: transparent;
+    border: solid 1px #d0d5dd !important;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    color: rgba(54, 60, 79, 0.5);
+    padding: 10px 14px;
+}
+.planner-date label {
+    font-size: 14px;
+    color: #363c4f;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.exam-select span{
+    bottom: 6px;
+    line-height: 27px;    
+}
+
+
+.value-button {
+    display: inline-block;
+    margin: 0px;
+    width: 50px;
+    text-align: center;
+    font-size: 29px;
+    padding: 0px 0;
+    color: #868a95;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+#number {
+  border: none;
+  margin: 0px;
+  width: 90px;
+  height: 43px;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+}
+.incre-decre-value{
+    border: solid 1px #d0d5dd;
+    border-radius: 8px;
+    width: 195px;
+}
+
+
+/*****Planner-pge-end***********/
 /*********** Navdeep End *************/
 
 /***************** Sachin Start ****************************/
