@@ -2114,6 +2114,18 @@ header {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;}
+    .strengthmodal_content .btn-close{background: none;
+        font-size: 40px;
+        line-height: 23px;
+        color: #000;
+        padding-bottom: 0px;
+        padding-top: 30px;
+        height: auto;}
+        .modal-header1{display:flex;justify-content:end;}
+        .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
+        #strengthmodal .modal-dialog{max-width:600px;}
+        .strengthmodal_content hr{background-color:#868a95;}
+        .modalcenter{display:flex;align-items:center;height: 100%;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -2590,7 +2602,7 @@ header {
 }
 
 .intraction_text_strength {
-	margin-top: 3px;
+	margin-top: 8px;
 	font-size: 24px;
 	font-weight: 800;
 	line-height: 1.3;
@@ -2607,8 +2619,8 @@ header {
 }
 .strengthmodal_content
 {
-	top: 162px;
-    border-radius: 10px;
+	margin-top:60px;
+    border-radius: 10px;border:0px;
 }
 
 /*********** chapter_proficiency *****************/
