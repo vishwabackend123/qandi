@@ -2722,11 +2722,56 @@ ul {
 
 .chapter_proficincy_point_anylytics {
 	flex-grow: 0;
-	margin: 10px 0px 22px 0px;
 	padding: 32px 32px 28px;
 	border-radius: 32px;
 	background-color: #ffffff;
 	height: 171px;
+}
+
+.chapter_profici_application_deves_text
+{
+    font-size: 20px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.chapter_profici_percentage_profincy {
+    display: flex;
+    justify-content: space-between;
+}
+.chapter_profici_percent
+{
+    font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: normal;
+  color: #666;
+}
+.chapter_profici_open_topic
+{
+    font-size: 14px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #56b663;
+}
+.chapter_breadcrumb
+{
+    padding-top:26px;
+    background:#f5faf6;
+}
+.chapter_prefincy_tab.active
+{
+    color: #363c4f!important;
+    border-bottom: 4px solid #56b663!important;
+    opacity: 1;
+}
+.chapter_main_tab_clor .nav-link.active {
+    background:#f5faf6;
+}
+.row.chapter_of_row_col_paddin_zero .col {
+    padding: 10px!important;
 }
 
 /********* Vikas End ***********/
