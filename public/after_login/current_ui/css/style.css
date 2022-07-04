@@ -8,12 +8,10 @@ html {
 	box-sizing: border-box;
 
 }
-
 html {
 	min-height: 100%;
 	width: 100%;
 }
-
 body {
 	min-height: 100%;
 	width: 100%;
@@ -23,14 +21,12 @@ body {
 	/* font-family: 'Inter', sans-serif; */
 	overflow-x: hidden;
 }
-
 a,
 input,
 button {
 	outline: none;
 	text-decoration: none;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -47,7 +43,6 @@ select {
 	appearance: none !important;
 	box-shadow: none !important;
 }
-
 a,
 input,
 button,
@@ -56,36 +51,29 @@ input:focus,
 button:focus {
 	outline: none !important;
 }
-
 :focus {
 	outline: -webkit-focus-ring-color auto 0px !important;
 }
-
 li {
 	list-style-type: none;
 }
 
 /* common-scroll */
-
-
 ::-webkit-scrollbar {
 	width: 5px;
 	height: 5px;
 }
-
 ::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px #e5eaee;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	background: #ccc;
 	-webkit-box-shadow: inset 0 0 6px #cccccc;
 }
-
 
 /* h1,h2,h3,h4,h5,h6,figure,ul,li,p{
 margin: 0;
@@ -487,13 +475,12 @@ select.form-control:not([size]):not([multiple]) {
 	color: #56b663;
 	width: 87px;
 }
-
-.subscription-details {
-	padding: 16px;
-	border-radius: 8px;
-	box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
-	-webkit-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
-	-moz-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+.subscription-details{
+ padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+  -webkit-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
+  -moz-box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
 }
 
 .subs-heading {
@@ -540,6 +527,83 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 /******Profile-page-end*****/
+
+/*****Planner-pge***********/
+.planner-box{
+padding: 32px;
+border-radius: 32px;
+}
+.planner-title h1{
+ font-size: 24px;
+ font-weight: 800;
+ color: #1f1f1f;
+}
+.planner-title button{
+min-width: 150px !Important;    
+}
+.week-select{
+font-size: 20px;
+color: #1f1f1f;
+font-weight: 800;
+}
+.planner-date .form-control {
+    height: 44px;
+    background: transparent;
+    border: solid 1px #d0d5dd !important;
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    -moz-box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    color: rgba(54, 60, 79, 0.5);
+    padding: 10px 14px;
+}
+.planner-date label {
+    font-size: 14px;
+    color: #363c4f;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.exam-select span{
+    bottom: 6px;
+    line-height: 27px;    
+}
+
+
+.value-button {
+    display: inline-block;
+    margin: 0px;
+    width: 50px;
+    text-align: center;
+    font-size: 29px;
+    padding: 0px 0;
+    color: #868a95;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+#number {
+  border: none;
+  margin: 0px;
+  width: 90px;
+  height: 43px;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+}
+.incre-decre-value{
+    border: solid 1px #d0d5dd;
+    border-radius: 8px;
+    width: 195px;
+}
+
+
+/*****Planner-pge-end***********/
 /*********** Navdeep End *************/
 
 /***************** Sachin Start ****************************/
@@ -2516,34 +2580,6 @@ ul {
 }
 
 /* popup */
-.popup88 {
-	margin: 13% auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 1s ease-in-out;
-	width: 44% !important;
-}
-
-.overlay88 {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.4);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay88:target {
-	visibility: visible;
-	opacity: 1;
-}
-
 .intraction_text_q1 {
 	font-size: 16px;
 	font-weight: 800;
@@ -2567,6 +2603,11 @@ ul {
 	line-height: 1.6;
 	letter-spacing: normal;
 	color: #363c4f;
+}
+.strengthmodal_content
+{
+	top: 162px;
+    border-radius: 10px;
 }
 
 /*********** chapter_proficiency *****************/
@@ -2641,11 +2682,56 @@ ul {
 
 .chapter_proficincy_point_anylytics {
 	flex-grow: 0;
-	margin: 10px 0px 22px 0px;
 	padding: 32px 32px 28px;
 	border-radius: 32px;
 	background-color: #ffffff;
 	height: 171px;
+}
+
+.chapter_profici_application_deves_text
+{
+    font-size: 20px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.chapter_profici_percentage_profincy {
+    display: flex;
+    justify-content: space-between;
+}
+.chapter_profici_percent
+{
+    font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: normal;
+  color: #666;
+}
+.chapter_profici_open_topic
+{
+    font-size: 14px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #56b663;
+}
+.chapter_breadcrumb
+{
+    padding-top:26px;
+    background:#f5faf6;
+}
+.chapter_prefincy_tab.active
+{
+    color: #363c4f!important;
+    border-bottom: 4px solid #56b663!important;
+    opacity: 1;
+}
+.chapter_main_tab_clor .nav-link.active {
+    background:#f5faf6;
+}
+.row.chapter_of_row_col_paddin_zero .col {
+    padding: 10px!important;
 }
 
 /********* Vikas End ***********/
