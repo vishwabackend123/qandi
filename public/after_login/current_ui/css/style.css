@@ -1764,7 +1764,7 @@ header {
 .commondashboardTop {
 	position: relative;
 	height: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 	border-radius: 20px;
 }
 
@@ -2592,7 +2592,7 @@ header {
 	line-height: 1.6;
 	letter-spacing: normal;
 	color: #1f1f1f;
-	margin-top: 20px;
+	margin-top: 25px;
 }
 
 .contactus_free_get_need {
