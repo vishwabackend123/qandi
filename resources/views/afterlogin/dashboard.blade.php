@@ -309,6 +309,7 @@ $userData = Session::get('user_data');
                                      <div class="row">
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor1">
+                                                <a href="#strengthmodal">
                                                  <div class="myqinner">
                                                    <h6>Q1</h6>
                                                     <h5>Strengths</h5>
@@ -321,10 +322,12 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                                 </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor2">
+                                              <a href="#needfocusmodal">
                                                  <div class="myqinner">
                                                    <h6>Q2</h6>
                                                     <h5>Needs focus</h5>
@@ -337,10 +340,12 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                               </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor3">
+                                              <a href="#hopefulmodal">
                                                  <div class="myqinner">
                                                    <h6>Q3</h6>
                                                     <h5>Hopeful </h5>
@@ -353,10 +358,12 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                              </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor4">
+                                              <a href="#weakhmodal">
                                                  <div class="myqinner">
                                                    <h6>Q4</h6>
                                                     <h5>Weak </h5>
@@ -369,6 +376,7 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                               </a>
                                               </div>
                                           </div>
                                      </div>
