@@ -87,24 +87,24 @@
                 <div class="tabMainblock">
                     <div class="commontab">
                         <div class="tablist">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs chapter_main_tab_clor" role="tablist">
                                 <li class="nav-item">
-                                <a class="nav-link " data-bs-toggle="tab" href="#overall_analytics">Overall Analytics</a>
+                                <a class="nav-link chapter_prefincy_tab" data-bs-toggle="tab" href="#overall_analytics">Overall Analytics</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#maths">Maths</a>
+                                <a class="nav-link chapter_prefincy_tab active" data-bs-toggle="tab" href="#maths">Maths</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#physics">Physics</a>
+                                <a class="nav-link chapter_prefincy_tab" data-bs-toggle="tab" href="#physics">Physics</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#chemistry">Chemistry</a>
+                                <a class="nav-link chapter_prefincy_tab" data-bs-toggle="tab" href="#chemistry">Chemistry</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="chapter_profici_nav__right_contant">
                             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
+                                <ol class="breadcrumb chapter_breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Maths</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Chapters</li>
                                 </ol>
@@ -133,39 +133,83 @@
                                 <div class="row chapter_of_row_col_paddin_zero">
                                     <div class="col">
                                         <div class="chapter_proficincy_point_anylytics">
-                                            <div>Application of Derivatives</div>
-                                            <div></div>
-                                            <div>
-                                                <div><sapn>28%</span> <span>Proficiency</span></div>
-                                                <div>Open topics <b>></b></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="chapter_proficincy_point_anylytics">
-                                          <div class="chapter_proficincy_point_anylytics">
-                                             <div>Application of Derivatives</div>
-                                             <div></div>
-                                             <div>
-                                                   <div><sapn>28%</span> <span>Proficiency</span></div>
-                                                   <div>Open topics <b>></b></div>
-                                             </div>
+                                        <div class="chapter_profici_application_deves_text">Application of Derivatives</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
                                           </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="chapter_proficincy_point_anylytics">
-                                          <div class="chapter_proficincy_point_anylytics">
-                                             <div>Application of Derivatives</div>
-                                             <div></div>
-                                             <div>
-                                                   <div><sapn>28%</span> <span>Proficiency</span></div>
-                                                   <div>Open topics <b>></b></div>
-                                             </div>
+                                        <div class="chapter_profici_application_deves_text">3D Geometry</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
                                           </div>
                                         </div>
                                     </div>
-                                </div>                           
+                                    <div class="col">
+                                        <div class="chapter_proficincy_point_anylytics">
+                                        <div class="chapter_profici_application_deves_text">Area under Curves</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                <div class="row chapter_of_row_col_paddin_zero">
+                                    <div class="col">
+                                        <div class="chapter_proficincy_point_anylytics">
+                                        <div class="chapter_profici_application_deves_text">Binomial Theorem</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="chapter_proficincy_point_anylytics">
+                                        <div class="chapter_profici_application_deves_text">Complex Numbers</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="chapter_proficincy_point_anylytics">
+                                        <div class="chapter_profici_application_deves_text">Continuity and Differentiability</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row chapter_of_row_col_paddin_zero">
+                                    <div class="col">
+                                        <div class="chapter_proficincy_point_anylytics">
+                                        <div class="chapter_profici_application_deves_text">Continuity and Differentiability</div>
+                                          <div></div>
+                                          <div class="chapter_profici_percentage_profincy">
+                                                <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
+                                                <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                    <div class="col">
+                                    </div>
+                                </div>                        
                             </div>
                             <div id="physics" class=" tab-pane">
                             </div>

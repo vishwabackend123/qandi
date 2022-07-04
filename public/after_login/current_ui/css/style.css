@@ -1725,7 +1725,7 @@ header {
 .boxheading .tooltipmain {
 	display: inline-block;
 	margin-left: 10px;
-	cursor: pointer;
+	cursor: pointer;position: relative;
 }
 
 .content-wrapper {
@@ -1735,25 +1735,8 @@ header {
 .commondashboardTop {
 	position: relative;
 	height: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 	border-radius: 20px;
-}
-
-.tooltipclass {
-	background-color: #fff;
-	border-radius: 20px;
-	box-shadow: 2px 5px 15px 0 rgba(0, 0, 0.0.1);
-	z-index: 55;
-	padding: 15px 30px 15px 20px;
-	position: absolute;
-	right: -7px;
-	top: -7px;
-	min-width: 350px;
-	display: none;
-	text-align: left;
-	height: auto !important;
-	font-size: 13px;
-	left: auto !important;
 }
 
 .dashSubHeading {
@@ -2598,34 +2581,6 @@ header {
 }
 
 /* popup */
-.popup88 {
-	margin: 13% auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 5px;
-	width: 30%;
-	position: relative;
-	transition: all 1s ease-in-out;
-	width: 44% !important;
-}
-
-.overlay88 {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.4);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay88:target {
-	visibility: visible;
-	opacity: 1;
-}
-
 .intraction_text_q1 {
 	font-size: 16px;
 	font-weight: 800;
@@ -2649,6 +2604,11 @@ header {
 	line-height: 1.6;
 	letter-spacing: normal;
 	color: #363c4f;
+}
+.strengthmodal_content
+{
+	top: 162px;
+    border-radius: 10px;
 }
 
 /*********** chapter_proficiency *****************/
@@ -2723,11 +2683,56 @@ header {
 
 .chapter_proficincy_point_anylytics {
 	flex-grow: 0;
-	margin: 10px 0px 22px 0px;
 	padding: 32px 32px 28px;
 	border-radius: 32px;
 	background-color: #ffffff;
 	height: 171px;
+}
+
+.chapter_profici_application_deves_text
+{
+    font-size: 20px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.chapter_profici_percentage_profincy {
+    display: flex;
+    justify-content: space-between;
+}
+.chapter_profici_percent
+{
+    font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: normal;
+  color: #666;
+}
+.chapter_profici_open_topic
+{
+    font-size: 14px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #56b663;
+}
+.chapter_breadcrumb
+{
+    padding-top:26px;
+    background:#f5faf6;
+}
+.chapter_prefincy_tab.active
+{
+    color: #363c4f!important;
+    border-bottom: 4px solid #56b663!important;
+    opacity: 1;
+}
+.chapter_main_tab_clor .nav-link.active {
+    background:#f5faf6;
+}
+.row.chapter_of_row_col_paddin_zero .col {
+    padding: 10px!important;
 }
 
 /********* Vikas End ***********/
@@ -3079,3 +3084,55 @@ header {
 }
 
 /********** Shiv - End *********/
+/********** Shiv - start for tooltips *********/
+.tooltipclass {
+	background-color: #1f4736;
+	border-radius: 20px;
+	box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
+	z-index: 55;
+	padding: 15px 30px 15px 20px;
+	position: absolute;
+	left: 33px;
+	top: -7px;
+	min-width: 350px;
+	display: none;
+	text-align: left;
+	height: auto !important;
+	font-size: 14px;
+	color: #bdbdbd;
+    line-height: 1.8;
+    font-weight: normal;
+}
+.tooltipclass > span {display: none;}
+.tooltipclass:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: -14px;
+    top: 15px;
+    border: 12px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #1f4736;
+}
+.tooltipmain.right-tolltip .tooltipclass {
+    left: -367px;
+    position: absolute;
+    top: -12px;
+    margin-right: 38px;
+}
+.tooltipmain.right-tolltip .tooltipclass:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    top: 15px;
+    border: 12px solid transparent;
+    border-left: 15px solid #1f4736;
+    right: -26px;
+}
+
+.tooltipmain.right-tolltip .tooltipclass:before {
+    content: "";
+    display: none;
+}
