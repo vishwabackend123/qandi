@@ -2709,13 +2709,14 @@ header {
   letter-spacing: normal;
   color: #666;
 }
-.chapter_profici_open_topic
+.chapter_profici_open_topic a
 {
     font-size: 14px;
   font-weight: 800;
   line-height: 1.6;
   letter-spacing: normal;
   color: #56b663;
+  text-decoration: none;
 }
 .chapter_breadcrumb
 {
@@ -2735,7 +2736,7 @@ header {
     padding: 10px!important;
 }
 
-/********* Vikas End ***********/
+/********* Vikash End ***********/
 
 /********** Shiv - Start *********/
 /******** notification ***************/
