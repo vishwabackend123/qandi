@@ -1,10 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Log;
 
-class LeadUserController extends Controller {
-	public function getLeadUser($lead_id, $trail) {
+use App\Http\Traits\CommonTrait;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
+
+class LeadUserController extends Controller
+{
+	//
+	use CommonTrait;
+
+	public function getLeadUser($lead_id, $trail)
+	{
 		try {
 			$curl = curl_init();
 			$api_URL = env('API_URL');
@@ -44,25 +53,40 @@ class LeadUserController extends Controller {
 		} catch (\Exception $e) {
 			Log::info($e->getMessage());
 		}
+	}
+	public function performanceAnalytics()
+	{
+		$preferences = $this->redis_Preference();
+		$prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
 
+		$user_subjects = $this->redis_subjects();
+
+		$subjects = [];
+		foreach ($user_subjects as $sub) {
+			$subjects[] = $sub->subject_name;
+		}
+		$subjects_name = implode(', ', $subjects);
+
+		return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
 	}
-	public function performanceAnalytics() {
-		return view('auth.performance_analytics');
-	}
-	public function performanceRating() {
+	public function performanceRating()
+	{
 		return view('auth.performance_rating');
 	}
-	public function examInstructions() {
+	public function examInstructions()
+	{
 		return view('auth.exam_instructions');
 	}
-	public function profile() {
+	public function profile()
+	{
 		return view('auth.profile');
-    }
-	public function weeklyPlan() {
-		return view('auth.weekly_plan'); 
 	}
-	public function contactUs() {
-		return view('auth.contact_us'); 
+	public function weeklyPlan()
+	{
+		return view('auth.weekly_plan');
+	}
+	public function contactUs()
+	{
+		return view('auth.contact_us');
 	}
 }
-

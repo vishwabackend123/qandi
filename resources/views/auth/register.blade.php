@@ -1205,7 +1205,6 @@
             empty = true;
         }
 
-
         if (empty) {
             $('#signup_cnt').attr('disabled', 'disabled');
             $('#signup_cnt').addClass("disbaled");
@@ -1213,7 +1212,6 @@
             $('#signup_cnt').removeAttr('disabled');
             $('#signup_cnt').removeClass("disbaled");
         }
-
 
     }
     /* function for select sity */

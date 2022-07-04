@@ -289,6 +289,12 @@ class HomeController extends Controller
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
 
+            $prof_asst_test = "N";
+            if (isset($prof_asst_test) && $prof_asst_test == 'N') {
+                return redirect()->route('performanceAnalytics');
+            }
+
+
             return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
