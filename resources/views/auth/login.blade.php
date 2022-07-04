@@ -132,25 +132,18 @@ $(document).ready(function() {
             $('#mobile-input-btn').addClass("disabled");
         }
     });
-    $('.otp_num').keyup(function() {
+    $('.otp_num').keyup(function(e) {
         var opt_one = $('#opt_one').val();
         var mobile_num = $('#mobile_num').val();
-        if (opt_one) {
-            $('#opt_two').focus();
-        }
         var opt_two = $('#opt_two').val();
-        if (opt_two) {
-            $('#opt_three').focus();
-        }
         var opt_three = $('#opt_three').val();
-        if (opt_three) {
-            $('#opt_four').focus();
-        }
         var opt_four = $('#opt_four').val();
-         if (opt_four) {
-            $('#opt_five').focus();
-        }
         var opt_five = $('#opt_five').val();
+        if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
+                $(e.target).next('.otp_num').focus();
+            } else if (e.which == 8) {
+                $(e.target).prev('.otp_num').focus();
+            }
         if (mobile_num !='' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
             $('#otp-verify-btn').removeAttr("disabled");
             $('#otp-verify-btn').removeClass("disabled");
