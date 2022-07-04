@@ -245,6 +245,7 @@ Route::any('/planner_exam_result', [App\Http\Controllers\AdpativeExamController:
 Route::any('/getCountry', [App\Http\Controllers\StudentSignInController::class, 'countryList'])->name('getCountry');
 Route::any('/getState', [App\Http\Controllers\StudentSignInController::class, 'stateList'])->name('getState');
 Route::any('/getCity', [App\Http\Controllers\StudentSignInController::class, 'cityList'])->name('getCity');
+Route::any('/newCityList', [App\Http\Controllers\StudentSignInController::class, 'newCityList'])->name('newCityList');
 Route::any('/signupAddress', [App\Http\Controllers\StudentSignInController::class, 'signupAddress'])->name('signupAddress');
 Route::any('/searchCity', [App\Http\Controllers\StudentSignInController::class, 'searchCity'])->name('searchCity');
 

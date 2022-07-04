@@ -830,28 +830,29 @@
                 </div>
                 <div class="custom-input pb-4">
                     <label>City</label>
-                    <select id="single" class="js-states form-control" name="location" id="location" required>
-                        <option>Mohali</option>
+                    <select class="js-states form-control" name="location" id="location" required>
+                        <option value="">Select city</option>
+                        <!-- <option>Mohali</option>
                         <option>Jind</option>
                         <option>Narwana</option>
-                        <option>Kaithal</option>
+                        <option>Kaithal</option> -->
                     </select>
                 </div>
                 <div class="custom-input pb-4 row">
                     <div class="col-lg-6">
                         <label>Grade</label>
                         <select class="form-control selectdata" name="grade" id="grade" required>
-                            <option class="we">Select</option>
-                            <option class="we2">1</option>
-                            <option>2</option>
+                            <option class="we">Select grade</option>
+                            <!-- <option class="we2">1</option>
+                            <option>2</option> -->
                         </select>
                     </div>
                     <div class="col-lg-6">
                         <label>Exam</label>
                         <select class="form-control selectdata" name="exam" id="grade" required>
-                            <option>Select</option>
-                            <option>Neet</option>
-                            <option>Jee</option>
+                            <option>Select exam</option>
+                            <!--  <option>Neet</option>
+                            <option>Jee</option> -->
                         </select>
                     </div>
                 </div>
@@ -865,14 +866,14 @@
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
-    $("#single").select2({
+    /*  $("#location").select2({
         placeholder: "Select a City",
         allowClear: true
     });
     $("#multiple").select2({
         placeholder: "Select a City",
         allowClear: true
-    });
+    }); */
 
 
 
@@ -1079,5 +1080,45 @@
         }
 
     });
+    $(document).ready(function() {
+
+        $(document).ready(function() {
+            $("#location").select2({
+                allowClear: true,
+                minimumInputLength: 3,
+                minimumResultsForSearch: 0,
+                tokenSeparators: [',', ' '],
+                ajax: {
+                    url: "{{ url('/newCityList') }}",
+                    type: "GET",
+                    cache: false,
+                    data: function(params) {
+                        var queryParameters = {
+                            search_text: params.term
+                        }
+                        return queryParameters;
+                    },
+                    success: function(response_data) {
+
+                        var data = jQuery.parseJSON(response_data);
+
+                        if (data.success === true) {
+                            var list = data.response;
+                        } else {
+                            var list = [];
+                        }
+
+                        $("#location").empty().select2({
+                            data: list
+                        });
+
+
+                    }
+                }
+            });
+        });
+    });
+
+    /* function for select sity */
 </script>
 @endsection

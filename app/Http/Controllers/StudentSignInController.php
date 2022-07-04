@@ -808,4 +808,73 @@ class StudentSignInController extends Controller
             Log::info($e->getMessage());
         }
     }
+
+
+
+
+
+    /**
+     * Updated City List
+     *
+     * @param Request $request recieve the body request data
+     *
+     * @return void
+     */
+    public function newCityList(Request $request)
+    {
+        try {
+            $data = $request->all();
+            $state = isset($data['state']) ? $data['state'] : '';
+            $search = isset($data['search_text']) ? $data['search_text'] : 'ab';
+
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/get-address?searchString=' . $search;
+
+            $curl_url = str_replace(" ", '%20', $curl_url);
+
+            $curl = curl_init();
+            $curl_option = array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            $aResponse = json_decode($response_json);
+
+            $success = isset($aResponse->success) ? $aResponse->success : false;
+            $city_list = isset($aResponse->response) ? $aResponse->response : false;
+
+            sort($city_list);
+            $sOption = [];
+            if ($success == false) {
+                $response = ["error" => $err, "success" => false,];
+                return json_encode($response);
+            } else {
+                Redis::set('city_list', json_encode($city_list));
+                foreach ($city_list as $kCity => $oCity) {
+                    $arr["id"] = $oCity;
+                    $arr["text"] = $oCity;
+                    array_push($sOption, $arr);
+                }
+                $response = ["success" => true, "response" => $sOption];
+
+                return json_encode($response);
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
 }
