@@ -73,5 +73,8 @@ class LeadUserController extends Controller {
 	public function chapterProficiency() {
 		return view('auth.chapter_proficiency'); 
 	}
+    public function planner() {
+		return view('auth.planner');
+    }
 }
 

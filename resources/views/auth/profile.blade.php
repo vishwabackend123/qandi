@@ -171,7 +171,6 @@
                </div>
             </div>
          </div>
-         <hr class="line mb-5 pb-4">
          <div class="row">
             <div class="col-lg-4">
                <div class="info">
