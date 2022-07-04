@@ -2738,13 +2738,14 @@ header {
   letter-spacing: normal;
   color: #666;
 }
-.chapter_profici_open_topic
+.chapter_profici_open_topic a
 {
     font-size: 14px;
   font-weight: 800;
   line-height: 1.6;
   letter-spacing: normal;
   color: #56b663;
+  text-decoration: none;
 }
 .chapter_breadcrumb
 {
@@ -2764,7 +2765,7 @@ header {
     padding: 10px!important;
 }
 
-/********* Vikas End ***********/
+/********* Vikash End ***********/
 
 /********** Shiv - Start *********/
 /******** notification ***************/
@@ -3164,4 +3165,28 @@ header {
 .tooltipmain.right-tolltip .tooltipclass:before {
     content: "";
     display: none;
+}
+/********** Shiv - start for tooltips end *********/
+
+/********** Shiv - start for dashboard link *********/
+
+.verifiaction-link {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.verifiaction-link p {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Manrope;
+    margin: 0;
+}
+.verifiaction-link p > a {
+    padding: 10px 35px;
+    border: 1px solid #dc6803;
+    color: #dc6803;
+    border-radius: 8px;
+    margin-left: 30px;
 }

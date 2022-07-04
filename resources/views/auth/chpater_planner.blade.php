@@ -134,7 +134,11 @@
                                     <div class="col">
                                         <div class="chapter_proficincy_point_anylytics">
                                         <div class="chapter_profici_application_deves_text">Application of Derivatives</div>
-                                          <div></div>
+                                             <div class="common_bars">
+                                                <div class="d-flex">
+                                                   <span class="green_bar position-relative" style="width:0% !important"></span>
+                                                </div>
+                                             </div>
                                           <div class="chapter_profici_percentage_profincy">
                                                 <div class="chapter_profici_percent"><sapn>28%</span> <span>Proficiency</span></div>
                                                 <div class="chapter_profici_open_topic"><a href="">Open topics <b>></b></a></div>
