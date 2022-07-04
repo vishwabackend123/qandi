@@ -309,6 +309,7 @@ $userData = Session::get('user_data');
                                      <div class="row">
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor1">
+                                                <a href="#strengthmodal" data-bs-toggle="modal">
                                                  <div class="myqinner">
                                                    <h6>Q1</h6>
                                                     <h5>Strengths</h5>
@@ -321,10 +322,12 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                                 </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor2">
+                                              <a href="#needfocusmodal">
                                                  <div class="myqinner">
                                                    <h6>Q2</h6>
                                                     <h5>Needs focus</h5>
@@ -337,10 +340,12 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                               </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor3">
+                                              <a href="#hopefulmodal">
                                                  <div class="myqinner">
                                                    <h6>Q3</h6>
                                                     <h5>Hopeful </h5>
@@ -353,10 +358,12 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                              </a>
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
                                               <div class="myqmatPannel myqcolor4">
+                                              <a href="#weakhmodal">
                                                  <div class="myqinner">
                                                    <h6>Q4</h6>
                                                     <h5>Weak </h5>
@@ -369,6 +376,7 @@ $userData = Session::get('user_data');
                                                         </svg>
                                                     </span>
                                                  </div>
+                                               </a>
                                               </div>
                                           </div>
                                      </div>
@@ -384,7 +392,7 @@ $userData = Session::get('user_data');
                                             <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663"/>
                                          </svg>
                                       </div>
-                                      <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
+                                      <p class="emptytext">Attempt <strong>'Full body scan.'</strong>  to learn about your strengths and weaknesses. </p>
                                       <button class="btn btn-common-transparent nobg">Attempt Now</button>
                                   </div>
                              </div>
@@ -966,9 +974,8 @@ $userData = Session::get('user_data');
         </div>
     </div>
     <!-------------------->
-    
-     <!-- Strengths-popup start  -->
-     <div id="strengths" class="overlay88">
+         <!-- Strengths-popup start  -->
+         <div id="strengthmodal" class="overlay88">
             <div class="popup88">
             <a class="close" href="#">&times;</a>
                <div class="intraction_text_q1">Q1</div>
@@ -979,7 +986,6 @@ $userData = Session::get('user_data');
             </div>
          </div>
     <!-- Strengths-popup end -->
-
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
     </div>
