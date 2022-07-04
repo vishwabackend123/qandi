@@ -103,8 +103,6 @@ $(document).on('click', function(e) {
 });
 /************ Amit - End **************/
 
-// dashboard-circuler progress
-
 /*****show-hide-detalis-user-profile-page**********/
   $(document).ready(function(){
     $(".flip").click(function(){
