@@ -52,10 +52,6 @@ class LeadUserController extends Controller {
 	public function performanceRating() {
 		return view('auth.performance_rating');
 	}
-	
-	public function planPurchased() {
-		return view('auth.plan_purchased');
-	}
 	public function examInstructions() {
 		return view('auth.exam_instructions');
 	}
