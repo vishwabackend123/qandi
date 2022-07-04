@@ -293,5 +293,10 @@ Route::any('/select_plan_payment', [App\Http\Controllers\LeadUserController::cla
 Route::any('/plan_purchased', [App\Http\Controllers\LeadUserController::class, 'planPurchased']);
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
-Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
-Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
+Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
+Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
+
+
+
+/* New signup routes */
+Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');

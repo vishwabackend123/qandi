@@ -595,14 +595,14 @@ class StudentSignInController extends Controller
             if (isset($data['trail']) && !empty(isset($data['trail']))) {
                 $trail_sub = $data['trail'];
             }
-             if (isset($data['mx_Grade_id']) && !empty(isset($data['mx_Grade_id']))) {
+            if (isset($data['mx_Grade_id']) && !empty(isset($data['mx_Grade_id']))) {
                 $mx_Grade_id = $data['mx_Grade_id'];
             }
             $student_id = $request->input('student_id');
             $city = $request->input('city');
             $state = $request->input('state');
             $country = $request->input('country');
-            $state =isset($state) && !empty($state) ? $state : "";
+            $state = isset($state) && !empty($state) ? $state : "";
 
             $request = ['id' => $student_id, "city" => $city, "state" => $state, "country" => $country,];
 
@@ -745,5 +745,67 @@ class StudentSignInController extends Controller
             }
         }
         return array_merge($match_array, $not_match);
+    }
+
+
+    /**
+     * sent OTP on given mobile
+     *
+     * @param mixed $arrayData array data for sort
+     * @param mixed $search    search value
+     *
+     * @return void
+     */
+    public function sentMobileOtp($mobile, Request $request)
+    {
+        try {
+
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/mobile-otp/' . $mobile;
+
+            $curl = curl_init();
+            $curl_option = array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $response_json = curl_exec($curl);
+
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            $aResponse = json_decode($response_json);
+            $success = isset($aResponse->success) ? $aResponse->success : false;
+
+            if ($success == true) {
+                $aResponse = json_decode($response_json);
+                $reg_otp = isset($aResponse->otp) ? $aResponse->otp : '';
+
+                Session::put('OTP', $reg_otp);
+                $timestamp = $_SERVER["REQUEST_TIME"];
+                Session::put('OTP_time', $timestamp);
+
+                if (env('STUDENT_ENV') == 'prod') {
+                    $response = ["message" => "Otp sent successfully on mobile number", "success" => true,];
+                    return json_encode($response);
+                } else {
+                    return $response_json;
+                }
+            } else {
+                $response = ["message" => "Mobile number already exist!!", "error" => $err, "success" => false, "status" => 400,];
+                return json_encode($response);
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
     }
 }
