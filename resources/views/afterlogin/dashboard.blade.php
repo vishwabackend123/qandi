@@ -323,7 +323,7 @@ $userData = Session::get('user_data');
                                                     <p>Going great. Find your strong topics here. Stay in the lead by revision</p>
                                                  </div>
                                                  <div class="myqbottomSec">
-                                                     <h3>12 <span class="topictext btn" data-bs-toggle="modal" data-bs-target="#strengthmodal">Topics</span></h3>
+                                                     <h3>12 <span class="topictext" data-bs-toggle="modal" data-bs-target="#strengthmodal">Topics</span></h3>
                                                       <span class="myqarrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <path d="m7.5 15 5-5-5-5" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
                                                         </svg>
