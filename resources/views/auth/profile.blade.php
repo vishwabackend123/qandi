@@ -84,7 +84,7 @@
          </li>
       </ul>
    </aside>
-   <section class="all-content ml-5 pb-5">
+   <section class="content-wrapper pl-5 pb-5">
       <div class="container">
          <div class="row">
             <div class="col-lg-4">
