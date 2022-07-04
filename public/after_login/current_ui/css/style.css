@@ -1746,4 +1746,310 @@ header{padding:0px 0px 30px;    z-index: 999;}
 {
     list-style: none!important;
 }
+
+/*********** MyQ-Matrix */
+.mqmatric_topic
+{
+    font-size: 20px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #1f1f1f;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.mymatrix_proficiency
+{
+    font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #868a95;
+}
+.mymatrix_table_point
+{
+    font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.mymatrix_table tr td
+{
+    padding-top:18px;
+    height:62px;
+}
+.qq1_2_3_4.active
+{
+    color: #363c4f!important;
+    border-bottom: 4px solid #56b663!important;
+    opacity: 1;
+}
+/******** Contact us *****/
+.contacrus_page_wrapper
+{
+   Background:#f5faf6;
+   min-height:100%;
+   padding-top:20px;
+   padding-left:20px;
+}   
+.contactus_customer_support_text
+{
+   font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color:#234628;
+}
+.contactus_customer_support_text_under_text
+{
+   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color:#1f1f1f;
+  margin-top:20px;
+}
+.contactus_free_get_need
+{
+   font-size: 16px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color:#1f1f1f ;
+  padding-top:68px;
+}
+.contactus_free_get_need_span
+{
+   font-size: 16px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #56b663;
+}
+.contectus_bottom_img_svg {
+    display: flex;
+    justify-content: flex-end;
+}
+.contectus_bottom_img_svg svg
+{
+   margin-top:-150px;
+}
+/* popup */
+.popup88 {
+  margin: 13% auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 1s ease-in-out;
+  width:44%!important;
+}
+.overlay88 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay88:target {
+  visibility: visible;
+  opacity: 1;
+}
+.intraction_text_q1
+{
+   font-size: 16px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #363c4f;
+}
+.intraction_text_strength
+{
+   margin-top:3px;
+   font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.instruction_text_content
+{
+   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #363c4f;
+}
+/*********** chapter_proficiency *****************/
+.chapter_preficiency_warpper
+{
+    background:#f5faf6;
+    min-height:100%;
+}
+.knowledge_left_clr_with_text {
+    display: flex;
+    align-items: center;
+    padding-right:30px;
+}
+.knowledge_left_clr_with_text_right_div {
+    display: flex;
+    justify-content: flex-end;
+}
+.chapter_profici_nav__right_contant {
+    display: flex;
+    justify-content: space-between;
+}
+.cotogaty_right_text
+{
+    font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #1f1f1f;
+}
+.knowledge_left_clr
+{
+    width: 8px;
+  height: 24px;
+  flex-grow: 0;
+  margin: 1px 6px 1px 0;
+  border-radius: 14px;
+  background-color: #3e8a44;
+  display:inline-block;
+}
+.aomprehension_left_clr
+{
+    width: 8px;
+  height: 24px;
+  flex-grow: 0;
+  margin: 1px 6px 1px 0;
+  border-radius: 14px;
+  background-color: #93d658;
+  display:inline-block;
+}
+.application_left_clr
+{
+    width: 8px;
+  height: 24px;
+  flex-grow: 0;
+  margin: 1px 6px 1px 0;
+  border-radius: 14px;
+  background-color: #00c2a8;
+  display:inline-block;
+}
+.evaluation_left_clr
+{
+    width: 8px;
+  height: 24px;
+  flex-grow: 0;
+  margin: 1px 6px 1px 0;
+  border-radius: 14px;
+  background-color: #008799;
+  display:inline-block;
+}
+.chapter_proficincy_point_anylytics
+{
+    flex-grow: 0;
+  margin: 10px 0px 22px 0px;
+  padding: 32px 32px 28px;
+  border-radius: 32px;
+  background-color:#ffffff;
+  height: 171px;
+}
 /********* Vikas End ***********/ 
+
+/********** Shiv - Start *********/
+/******** notification ***************/
+.notification-main{background: #fff;width: 456px; max-width: 100%; float: right; padding: 20px;}
+.new_notification_main_sec {height: calc(100vh - 160px);overflow-y: auto;padding-right: 30px; }
+.notification-main > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
+.notification-main > h2 a {float: right;font-size: 14px;font-weight: 800;color: #868a95; padding:10px 35px;}
+.notification-list {padding: 20px 0px 10px}
+.list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;    border-radius: 8px; padding: 6px 40px;}
+.list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;    border-radius: 8px;padding: 6px 27px;}
+.list-btn-sec .btn-outline-secondary:hover{background: #56b663;border-color: #56b663;text-transform: capitalize;color:#fff;}
+.list-btn-sec {padding: 15px 0px;}
+.notification-list .form-floating {padding: 6px 0px 6px;}
+.main-text {font-size: 16px;font-weight: 500;color: #1f1f1f;}
+#floatingTextarea2 {background: #f2f4f7;border: 0;resize: none;}
+/********** Refer friend - popup **********/
+.user-profile-sec {text-align: center;padding:0px 0px 20px;}
+.user-profile-sec > h2 {font-size: 24px; font-weight: 800; padding: 20px 0px; color: #1f1f1f; }
+#referfrnd .modal-content {border: 0; border-radius: 24px; }
+#referfrnd button.btn {
+border: none !important;border-radius: 8px !important;
+height: inherit;
+box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
+width: initial;
+font-size: inherit;
+font-weight: inherit;
+font-stretch: normal;
+font-style: normal;
+color: #fff;
+line-height: normal;
+letter-spacing: normal;
+background-image: inherit !important;text-transform: capitalize
+}
+#referfrnd  .modal-body {padding: 0rem 2rem 2rem;}
+#referfrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
+._btn-green {text-align: center;padding: 20px 0px 50px;border-bottom: 1px solid #e5eaee;}
+.bottom-sec { padding: 35px 0px 5px;position: relative;}
+#referfrnd input {background: #fff !important;height: 45px;
+font-weight: 500; border:1px solid #d0d5dd;}
+#referfrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
+#referfrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
+#referfrnd form + p {font-size: 14px; font-weight: 500; color: #868a95; }
+#referfrnd .bottom-sec a {background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; }
+.bottom-sec input#exampleFormControlInput1 {width: 80%;padding-right: 20px;}
+#referfrnd .bottom-sec a {border-radius:0px 8px 8px 0px; background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; position: absolute; right: 0px; top: 65px; }
+#referfrnd input::placeholder{color:rgba(54, 60, 79, 0.5)!important;}
+.invation-sec {text-align: center; padding: 100px 0px; }
+.invation-sec p {font-size: 16px; font-weight: 600; color: #56b663; }
+.invation-sec p span {padding-right: 10px; }
+.copy {background: #56b663; padding: 10px 50px; color: #fff; border-radius: 8px; font-size: 16px; font-weight: 800; float: right; }
+.copy > span {padding-right: 8px;}
+.copy:hover {color: #fff !important;}
+.bottom_back-sec label {padding-top: 10px;vertical-align: middle; padding-left: 100px; color: #56b663; font-size: 16px; font-weight: 800; }
+.bottom_back-sec {float: left; width: 100%; }
+.bottom_back-sec label > i {color: #56b663; padding-right: 10px; }
+.bottom_back-sec label:hover{cursor: pointer;}
+.modal-backdrop{background:#1f1f1f;}
+.modal-backdrop.show {opacity: 0.3;}
+.modal {backdrop-filter: inherit !important;-webkit-backdrop-filter: inherit !important;}
+.modal-popup-customize .btn-close {background: inherit !important;}
+#referfrnd .modal-header {border: 0; width:94%;}
+/*********** Dashboard - Daily Task *****************/
+.task-day-top {
+    display: flex;
+    justify-content: left;
+    position: relative;
+}
+.note-img {
+position: absolute;
+right: -30px;
+top: -32px;
+overflow: hidden;
+}
+.task-day-top h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
+.task-day {border-radius: 32px;padding-bottom: 150px;}
+.task1 > p {
+font-size: 14px;
+font-weight: 500;
+font-family: Manrope;
+color: #868a95;
+}
+.task1 p span {font-size: 12px; text-transform: uppercase; font-weight: 600; }
+.task1 > h3 {font-size: 16px; font-weight: 800; color: #1f1f1f; }
+.btn-sec {border-bottom: 1px solid #e5eaee; display: flex; padding-bottom: 8px; margin-bottom: 12px; }
+.task-btn.tasklistbtn {flex-grow: 1;text-align: right;}
+.qust-sec,.dura-sec {flex-grow: 1;}
+.task-btn.tasklistbtn .btn.btn-common-transparent.nobg {text-transform: capitalize; font-size: 14px; }
+.qust-sec span,.dura-sec span {color: #1f1f1f; font-size: 14px; font-weight: 500; }
+.qust-sec p label,.dura-sec p label {font-size: 16px; font-weight: 800; vertical-align: middle; }
+/********** Shiv - End *********/

@@ -664,22 +664,6 @@
 <!-- Planner section End -->
 
 <!--notification-right End-->
-<style>
-     .notification-main{background: #fff;width: 456px; max-width: 100%; float: right; padding: 20px;}
-    .new_notification_main_sec {height: calc(100vh - 160px);overflow-y: auto;padding-right: 30px; }
-    .notification-main > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
-    .notification-main > h2 a {float: right;font-size: 14px;font-weight: 800;color: #868a95; padding:10px 35px;}
-    .notification-list {padding: 20px 0px 10px}
-    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;    border-radius: 8px; padding: 6px 40px;}
-    .list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;    border-radius: 8px;padding: 6px 27px;}
-    .list-btn-sec .btn-outline-secondary:hover{background: #56b663;border-color: #56b663;text-transform: capitalize;color:#fff;}
-    .list-btn-sec {padding: 15px 0px;}
-    .notification-list .form-floating {padding: 6px 0px 6px;}
-    .main-text {font-size: 16px;font-weight: 500;color: #1f1f1f;}
-    #floatingTextarea2 {background: #f2f4f7;border: 0;resize: none;}
-
-
-</style>
 
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">

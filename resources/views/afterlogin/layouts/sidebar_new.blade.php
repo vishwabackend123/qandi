@@ -612,58 +612,6 @@
     </div>
 </div> -->
 
-<style>
-    .user-profile-sec {text-align: center;padding:0px 0px 20px;}
-    .user-profile-sec > h2 {font-size: 24px; font-weight: 800; padding: 20px 0px; color: #1f1f1f; }
-    #referfrnd .modal-content {border: 0; border-radius: 24px; }
-    #referfrnd button.btn {
-    border: none !important;border-radius: 8px !important;
-    height: inherit;
-    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    width: initial;
-    font-size: inherit;
-    font-weight: inherit;
-    font-stretch: normal;
-    font-style: normal;
-    color: #fff;
-    line-height: normal;
-    letter-spacing: normal;
-    background-image: inherit !important;text-transform: capitalize
-}
-#referfrnd  .modal-body {padding: 0rem 2rem 2rem;}
-#referfrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
-
-
-._btn-green {text-align: center;padding: 20px 0px 50px;border-bottom: 1px solid #e5eaee;}
-.bottom-sec { padding: 35px 0px 5px;position: relative;}
-#referfrnd input {background: #fff !important;height: 45px;
-    font-weight: 500; border:1px solid #d0d5dd;}
-    #referfrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
-    #referfrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
-    
-    #referfrnd form + p {font-size: 14px; font-weight: 500; color: #868a95; }
-    #referfrnd .bottom-sec a {background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; }
-    .bottom-sec input#exampleFormControlInput1 {width: 80%;padding-right: 20px;}
-    #referfrnd .bottom-sec a {border-radius:0px 8px 8px 0px; background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; position: absolute; right: 0px; top: 65px; }
-    #referfrnd input::placeholder{color:rgba(54, 60, 79, 0.5)!important;}
-    .invation-sec {text-align: center; padding: 100px 0px; }
-    .invation-sec p {font-size: 16px; font-weight: 600; color: #56b663; }
-    .invation-sec p span {padding-right: 10px; }
-    .copy {background: #56b663; padding: 10px 50px; color: #fff; border-radius: 8px; font-size: 16px; font-weight: 800; float: right; }
-    .copy > span {padding-right: 8px;}
-    .copy:hover {color: #fff !important;}
-    .bottom_back-sec label {padding-top: 10px;vertical-align: middle; padding-left: 100px; color: #56b663; font-size: 16px; font-weight: 800; }
-.bottom_back-sec {float: left; width: 100%; }
-.bottom_back-sec label > i {color: #56b663; padding-right: 10px; }
-.bottom_back-sec label:hover{cursor: pointer;}
-.modal-backdrop{background:#1f1f1f;}
-.modal-backdrop.show {opacity: 0.3;}
- .modal {backdrop-filter: inherit !important;-webkit-backdrop-filter: inherit !important;}
-
- .modal-popup-customize .btn-close {background: inherit !important;}
- #referfrnd .modal-header {border: 0; width:94%;}
-</style>
-
 <!-- New Ui Modal -->
 <div class="modal fade modal-popup-customize" id="referfrnd" tabindex="-1">
   <div class="modal-dialog">
