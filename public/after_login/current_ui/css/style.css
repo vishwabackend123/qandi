@@ -3174,8 +3174,8 @@ header {
 	vertical-align: middle;
 }
 
-/********** Shiv - End *********/
-/********** Shiv - start for tooltips *********/
+
+/********** tooltips *********/
 .tooltipclass {
 	background-color: #1f4736;
 	border-radius: 12px;
@@ -3227,9 +3227,8 @@ header {
     content: "";
     display: none;
 }
-/********** Shiv - start for tooltips end *********/
 
-/********** Shiv - start for dashboard link *********/
+/**********  dashboard link *********/
 
 .verifiaction-link {
     background: #fff;
@@ -3251,3 +3250,4 @@ header {
     border-radius: 8px;
     margin-left: 30px;
 }
+/**********  email-confirmation *********/
