@@ -1311,21 +1311,23 @@ ul.sidebar-menu-lists li a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+    position: relative;
 }
 
-ul.sidebar-menu-lists li.active a,
-ul.sidebar-menu-lists li a:hover {
+ul.sidebar-menu-lists li.active a{
 	background-color: #e0f6e3;
 	border-radius: 8px;
 }
+ul.sidebar-menu-lists li a:hover{
+    background-color: #f7f7f7;
+	border-radius: 8px;
+}
 
-ul.sidebar-menu-lists li.active a svg.menu-icon-active,
-ul.sidebar-menu-lists li a:hover svg.menu-icon-active {
+ul.sidebar-menu-lists li.active a svg.menu-icon-active{
 	display: inline-block;
 }
 
-ul.sidebar-menu-lists li.active a svg:first-child,
-ul.sidebar-menu-lists li a:hover svg:first-child {
+ul.sidebar-menu-lists li.active a svg:first-child{
 	display: none;
 }
 
@@ -1414,7 +1416,34 @@ ul.submenu-lists li.practice-menu-active>a span.practice-toggle-arrow {
 .practice-submenu a:hover {
 	background-color: #e0f6e3;
 }
-
+span.sidebar-menu-tooltip {
+    display: none;
+    background-color: #1f4736;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgb(25 33 60 / 37%);
+    z-index: 55;
+    padding: 15px 20px 15px 20px;
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    font-size: 16px;
+    color: #fff;
+    white-space: nowrap;
+}
+span.sidebar-menu-tooltip:before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: -14px;
+    top: 16px;
+    border: 10px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #1f4736;
+}
+ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
+    display: block;
+}
 /*******Dashboard - Subject Performance circular progress bar **********/
 .circle_percent {
 	font-size: 75px;
@@ -3087,7 +3116,7 @@ header {
 /********** Shiv - start for tooltips *********/
 .tooltipclass {
 	background-color: #1f4736;
-	border-radius: 20px;
+	border-radius: 12px;
 	box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
 	z-index: 55;
 	padding: 15px 30px 15px 20px;
@@ -3099,7 +3128,7 @@ header {
 	text-align: left;
 	height: auto !important;
 	font-size: 14px;
-	color: #bdbdbd;
+	color: #fff;
     line-height: 1.8;
     font-weight: normal;
 }
