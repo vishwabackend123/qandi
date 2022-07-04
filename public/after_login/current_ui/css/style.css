@@ -2790,6 +2790,7 @@ header {
 .chapter_profici_percentage_profincy {
     display: flex;
     justify-content: space-between;
+	margin-top: 25px;
 }
 .chapter_profici_percent
 {
@@ -2824,6 +2825,46 @@ header {
 }
 .row.chapter_of_row_col_paddin_zero .col {
     padding: 10px!important;
+}
+/* contect us page bars */
+.common_bars
+{
+	background: #e9e9e9;
+    height: 12px;
+    border-radius: 6px;
+    margin: 18px 0 12px;
+}
+.common_bar_sky_blue
+{
+	flex-grow: 0;
+  background-color: #00c2a8;
+}
+.common_bar_dark_green
+{
+background: #3e8a44;
+}
+.common_bar_green
+{
+	background: #93d658;
+}
+.common_bar_navi_blue
+{
+	background:#008799;
+}
+.common_bar_width
+{
+	width:25%;
+	height: 12px;
+}
+.common_bars_flex span:first-child
+{
+	border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+}
+.common_bars_flex span:last-child
+{
+	border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
 }
 
 /********* Vikash End ***********/
