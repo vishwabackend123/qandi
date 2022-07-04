@@ -1661,7 +1661,7 @@ header {
 .boxheading .tooltipmain {
 	display: inline-block;
 	margin-left: 10px;
-	cursor: pointer;
+	cursor: pointer;position: relative;
 }
 
 .content-wrapper {
@@ -1671,25 +1671,8 @@ header {
 .commondashboardTop {
 	position: relative;
 	height: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 	border-radius: 20px;
-}
-
-.tooltipclass {
-	background-color: #fff;
-	border-radius: 20px;
-	box-shadow: 2px 5px 15px 0 rgba(0, 0, 0.0.1);
-	z-index: 55;
-	padding: 15px 30px 15px 20px;
-	position: absolute;
-	right: -7px;
-	top: -7px;
-	min-width: 350px;
-	display: none;
-	text-align: left;
-	height: auto !important;
-	font-size: 13px;
-	left: auto !important;
 }
 
 .dashSubHeading {
@@ -3014,3 +2997,55 @@ ul {
 }
 
 /********** Shiv - End *********/
+/********** Shiv - start for tooltips *********/
+.tooltipclass {
+	background-color: #1f4736;
+	border-radius: 20px;
+	box-shadow: 0 8px 16px 0 rgba(25, 33, 60, 0.37);
+	z-index: 55;
+	padding: 15px 30px 15px 20px;
+	position: absolute;
+	left: 33px;
+	top: -7px;
+	min-width: 350px;
+	display: none;
+	text-align: left;
+	height: auto !important;
+	font-size: 14px;
+	color: #fff;
+    line-height: 1.8;
+    font-weight: normal;
+}
+.tooltipclass > span {display: none;}
+.tooltipclass:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: -14px;
+    top: 15px;
+    border: 12px solid transparent;
+    border-left: 0;
+    border-right: 15px solid #1f4736;
+}
+.tooltipmain.right-tolltip .tooltipclass {
+    left: -367px;
+    position: absolute;
+    top: -12px;
+    margin-right: 38px;
+}
+.tooltipmain.right-tolltip .tooltipclass:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    top: 15px;
+    border: 12px solid transparent;
+    border-left: 15px solid #1f4736;
+    right: -26px;
+}
+
+.tooltipmain.right-tolltip .tooltipclass:before {
+    content: "";
+    display: none;
+}
