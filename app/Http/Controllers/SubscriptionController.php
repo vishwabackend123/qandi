@@ -499,4 +499,51 @@ class SubscriptionController extends Controller
             Log::info($e->getMessage());
         }
     }
+
+
+
+
+        public function sendVerficationEmail(Request $request)
+        {
+         try {
+            $postData = $request->all();
+            $curl = curl_init();
+            $curl1 = curl_init();
+            $api_URL = env('API_URL');
+            $curl_url = $api_URL . 'api/get-email-verification-link?UserID=' . $postData['userId'];
+            $curl_option = array(
+
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            );
+            curl_setopt_array($curl, $curl_option);
+
+            $response_json = curl_exec($curl);
+            $err = curl_error($curl);
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+
+            $aResponse = json_decode($response_json);
+            $response_status = isset($aResponse->status) && !empty($aResponse->status) ? $aResponse->status : false;
+            if ($response_status) {
+                return response()->json([
+                    'status' => true,
+                    'message' => $aResponse->message,
+                ]);
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'message' => $aResponse->message,
+                ]);
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+        }
+    }
 }
