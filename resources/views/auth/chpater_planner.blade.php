@@ -143,12 +143,26 @@
                                     </div>
                                     <div class="col">
                                         <div class="chapter_proficincy_point_anylytics">
-
+                                          <div class="chapter_proficincy_point_anylytics">
+                                             <div>Application of Derivatives</div>
+                                             <div></div>
+                                             <div>
+                                                   <div><sapn>28%</span> <span>Proficiency</span></div>
+                                                   <div>Open topics <b>></b></div>
+                                             </div>
+                                          </div>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="chapter_proficincy_point_anylytics">
-
+                                          <div class="chapter_proficincy_point_anylytics">
+                                             <div>Application of Derivatives</div>
+                                             <div></div>
+                                             <div>
+                                                   <div><sapn>28%</span> <span>Proficiency</span></div>
+                                                   <div>Open topics <b>></b></div>
+                                             </div>
+                                          </div>
                                         </div>
                                     </div>
                                 </div>                           

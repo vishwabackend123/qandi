@@ -295,5 +295,5 @@ Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
 Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
 Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
-Route::any('/chapter_proficiency', [App\Http\Controllers\LeadUserController::class, 'chapterProficiency']); 
+Route::any('/chpater_planner', [App\Http\Controllers\LeadUserController::class, 'chpaterPlanner']); 
 Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
