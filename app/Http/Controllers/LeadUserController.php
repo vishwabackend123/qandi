@@ -70,11 +70,14 @@ class LeadUserController extends Controller {
 	public function contactUs() {
 		return view('auth.contact_us'); 
 	}
-	public function chpaterPlanner() {
-		return view('auth.chpater_planner'); 
+	public function chapterPlanner() {
+		return view('auth.chapter_planner'); 
 	}
     public function planner() {
 		return view('auth.planner');
+    }
+	public function emailConfirmation() {
+		return view('auth.email_confirmation');
     }
 }
 

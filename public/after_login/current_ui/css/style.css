@@ -571,7 +571,7 @@ font-weight: 800;
 .value-button {
     display: inline-block;
     margin: 0px;
-    width: 50px;
+    width: 52px;
     text-align: center;
     font-size: 29px;
     padding: 0px 0;
@@ -583,7 +583,15 @@ font-weight: 800;
   -ms-user-select: none;
   user-select: none;
 }
-
+.value-button:hover{
+ background: #d0d5dd;   
+}
+.radius-right:hover{
+border-radius: 0 8px 8px 0px;    
+}
+.radius-left:hover{
+   border-radius: 8px 0px 0px 8px;  
+}
 .value-button:hover {
   cursor: pointer;
 }
@@ -601,8 +609,47 @@ font-weight: 800;
     border-radius: 8px;
     width: 195px;
 }
-
-
+.add-chapter label{
+color: #56b663;
+font-size: 14px;
+font-weight: 800;
+cursor: pointer;
+}
+.add-chapter p{
+color: #1f1f1f;
+font-size: 16px;
+font-weight: 500;
+}
+.add-chapter label svg{
+top:4px;
+}
+.add-chapter {
+    border-bottom: 1px solid #e5eaee;
+    padding-bottom: 8px;
+    margin-bottom: 180px;
+}
+.chapter-error{
+font-size: 14px;
+color: #fb7686;
+font-weight: 500;
+}
+.add-subchapter{
+    position: absolute;
+    top: 50px;
+}
+.add-insubchapter svg{
+vertical-align: middle;
+}
+.add-insubchapter{
+     padding: 17px 12px 17px 17px;
+    border-radius: 8px;
+    border: 1px solid #56b663;
+}
+.add-insubchapter p {
+    color: #1f1f1f;
+    font-size: 16px !important;
+    font-weight: 500;
+}
 /*****Planner-pge-end***********/
 /*********** Navdeep End *************/
 
@@ -2165,6 +2212,7 @@ header {
 .plan_successfull_wrapper {
 	min-height: 100%;
 	background: #f5faf6;
+    padding-bottom: 30px;
 }
 
 .plan_faild_wrapper {
@@ -2256,6 +2304,7 @@ header {
 	font-stretch: normal;
 	font-style: normal;
 	letter-spacing: normal;
+    padding: 8px 0;
 }
 
 .plan_box_status_contant_order {
