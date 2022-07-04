@@ -49,9 +49,7 @@ class LeadUserController extends Controller {
 	public function performanceAnalytics() {
 		return view('auth.performance_analytics');
 	}
-	public function performanceRating() {
-		return view('auth.performance_rating');
-	}
+	
 	public function examInstructions() {
 		return view('auth.exam_instructions');
 	}

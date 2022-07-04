@@ -278,7 +278,7 @@ Route::any('/chapter-analytics/{sub_id}', [App\Http\Controllers\AnalyticsControl
 Route::any('/ajax_exam_result_list/{exam_type}', [App\Http\Controllers\ResultController::class, 'ajaxExamResultList'])->middleware('auth', 'menu');
 Route::any('/send_verfication_email',[App\Http\Controllers\SubscriptionController::class, 'sendVerficationEmail']);
 
-
+Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, 'performanceRating'])->name('performance-rating')->middleware('auth');
 
 
 
@@ -291,7 +291,7 @@ Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeCo
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics']);
-Route::any('/performance_rating', [App\Http\Controllers\LeadUserController::class, 'performanceRating']);
+
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
 Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
