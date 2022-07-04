@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<!--<section class="login-bg-img">
+<section class="login-bg-img">
     <span class="outer-logo"><a href="{{ env('LANDING_URL') }}" target="_blank"><img src="{{URL::asset('public/images_new/QI_Logo.gif')}}" alt="logo not find"></a></span>
     <div class="login_screen">
         <p class="mb-0">Welcome to Q&I </p>
@@ -221,8 +221,8 @@
 
         });
     });
-</script>!---->
-<section class="d-flex h-100 login-signup">
+</script>
+<!-- <section class="d-flex h-100 login-signup">
    <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
       <figure class="pb-4">
          <a href="javascript:void(0);">
@@ -328,5 +328,5 @@
     </div>
       <h3 class="copyright text-center position-absolute">&copy 2022 Q&I. All rights reserved.</h3>
    </div>
-</section>
+</section> -->
 @endsection

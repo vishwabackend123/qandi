@@ -74,6 +74,13 @@ $userData = Session::get('user_data');
     <div class="content-wrapper dashbaordContainer">
         <div class="dashboardTopSection">
             <div  class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="verifiaction-link">
+                                <p>A verification link has been sent to <b>Sakshi@gmail.com,</b> please click the link to get your account verified <a href="#">Resend</a></p>
+                            </div>
+                        </div>
+                    </div>
                 <div class="row">
                     <div class="col-lg-4 commonblockDash">
                          <div class="commondashboardTop">
