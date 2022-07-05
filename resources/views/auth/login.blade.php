@@ -180,6 +180,7 @@ function sentotplogin(otp_type) {
             var response = jQuery.parseJSON(response_data);
 
             if (response.success == true) {
+                $('#mobile_num').prop('readonly', true);
                 $("#mobile-input-btn").hide();
                 $('.verify_otp').show();
                 $('#otp-verify-btn').show();
