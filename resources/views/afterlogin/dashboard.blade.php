@@ -2602,11 +2602,18 @@ $userData = Session::get('user_data');
 
 $('.dashborarSlider').owlCarousel({
     stagePadding: 10,
-		loop: false,
-		margin: 0,
-		nav: true,
-        dots:false,
-        rewindNav:true,
+    loop: true,
+        center: true,
+        items: 3,
+        dots: false,
+        autoplay:false,
+        autoplayTimeout: 2000,
+        smartSpeed: 1200,
+        autoplayHoverPause: true,
+        onStop: function () {
+            console.log('stop');
+        },
+        rewind: false,
       
     responsive:{
         0:{
@@ -2625,6 +2632,7 @@ $('.dashborarSlider').owlCarousel({
     }
 })
 </script>
+
 
  
 <script>
