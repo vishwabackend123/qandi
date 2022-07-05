@@ -936,16 +936,15 @@ $userData = Session::get('user_data');
         
  
 
-        <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
+        <!-- <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
             <div class="row">
                 <div class="col-xl-4 col-lg-6 col-md-7  col-sm-12">
                     <div class="bg-white shadow-lg">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                <!-- <label>About MyQ Today</label> -->
+                                
                                 A score derived from the detailed analysis of your test patterns that gives a clear understanding of your
                                  current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching 
                                  the goal with your current pattern of preparation. Set your goal!
@@ -963,9 +962,6 @@ $userData = Session::get('user_data');
                                             <li class="dashbaordmargin">
                                                 <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
                                             </li>
-                                            <!-- <li>
-                                                <span class="pre-test"></span>Previous Test
-                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -981,7 +977,6 @@ $userData = Session::get('user_data');
                 <div class="col-xl-3 col-lg-6 col-md-5 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1 Subject_box12">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1015,20 +1010,10 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt" style="overflow:hidden;">
-                        <div class="prgress-i-txt px-3">
-                            <span class="progress_text">Weekly Marks Trends</span>
-                          
-                        </div>
-                        <div id="marks_trend_graph"></div>
-                    </div>
-                </div> -->
                 <div class="col-xl-5  col-md-12 col-sm-12">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1095,12 +1080,10 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <!--row-->
             <div class="row ">
                 <div class="col-xl-4 col-md-12">
                     <div class="bg-white shadow-lg py-5 progress-journey-card m-0">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1117,27 +1100,13 @@ $userData = Session::get('user_data');
                                 <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
                                     <i class="fa fa-arrows" style="margin-right:3px;font-size: 10px"></i>click to expand</button>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="chapter-ideal-schedule text-center">
-                                    <span>8</span>
-                                    <small>You are 8 chapter behind the ideal schedule</small>
-                                    <ul class="live-test mt-3 p-0 d-block" style="text-align: left;">
-                                        <li style="margin-right:10px;">
-                                            <span style="vertical-align:middle;background:#ff0909;"></span>Ideal Pace
-                                        </li>
-                                        <li>
-                                            <span class="last-live-test"></span>Your Pace
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-5 col-md-6">
                     <div class="bg-white shadow-lg py-5 m-0 newtabview">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
+                            
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1148,15 +1117,13 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">Weekly Marks Trends</span>
                         </div>
                         <div id="marks_trend_graph"></div>
-                        <!-- <figure>
-                            <img src="{{URL::asset('public/after_login/new_ui/images/weekly-trends-graph.png')}}" class="w-100">
-                        </figure> -->
+                        
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview Task_Center12">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
+                            
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1168,14 +1135,13 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
-                            <!--a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Daily TASK</a-->
+                            
+                            
                             <a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Daily TASK</a>
-                            <!-- <button class="btn btntheme" data-bs-toggle="modal" data-bs-target="#matrix">Daily TASK</button> -->
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-4">
                             <span><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"></span>
                             <a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Weekly TASK</a>
-                            <!--a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Weekly TASK</a-->
                         </div>
                     </div>
                 </div>
@@ -1209,7 +1175,7 @@ $userData = Session::get('user_data');
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block weekly-plan-test">
                             <small>
-                                <!-- <i class="fa  fa-info"></i> -->
+                                
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1229,7 +1195,7 @@ $userData = Session::get('user_data');
                         @elseif(isset($planner) && !empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block" style="padding: 18px 35px 35px;">
                             <small>
-                                <!-- <i class="fa  fa-info"></i> -->
+                                
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1244,12 +1210,10 @@ $userData = Session::get('user_data');
                                         @foreach($planner as $key=>$val)
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
-                                            <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
                                             <img style="width:42px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
                                         </a>
                                         @else
                                         <a href="#" class="text-secondary ms-2">
-                                            <!-- <i class="fas fa-check-circle" aria-hidden="true"></i> -->
                                             <img style="width:42px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
                                         </a>
                                         @endif
@@ -1263,9 +1227,8 @@ $userData = Session::get('user_data');
                         @endif
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white">
-                            <!----- Weekly tests ---->
                             <small>
-                                <!-- <i class="fa  fa-info"></i> -->
+                                
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1286,12 +1249,12 @@ $userData = Session::get('user_data');
                                     <button style="background-color: #fff;text-transform: none;" class="custom-btn-gray mt-4 goto-planner-btn" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><i style="margin-right: 5px;" class="fa fa-angle-left"></i> Click on GO TO Planner</button>
                                 </div>
                             </div>
-                            <!-------------------->
+                            
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <img src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <div>
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 CHEMISTRY
                             </div>
@@ -1299,7 +1262,7 @@ $userData = Session::get('user_data');
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             <div>
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 PHYSICS
                             </div>
@@ -1310,7 +1273,7 @@ $userData = Session::get('user_data');
                                 <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             <div style="margin-top: -8px;">
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 MORE
                             </div>
@@ -1361,10 +1324,8 @@ $userData = Session::get('user_data');
                         @elseif($val->test_completed_yn=="Y")
                         <div class="swiper-slide bg-white testcompltd completed-test-block ">
                             <div class="test-attend text-center">
-                                <!-- <p>Tests Attempted</p> -->
                                 <div class="ms-auto">
                                     <span class="text-secondary chapter_name mb-2 d-block">
-                                        <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
                                         <img style="width:55px;" src="{{URL::asset('public/after_login/new_ui/images/tickmark.png')}}">
                                     </span>
                                     <h3 class="mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
@@ -1402,7 +1363,7 @@ $userData = Session::get('user_data');
                             </span>
                             @endif
                             <div>
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 {{strtoupper($sVal->subject_name)}}
                             </div>
@@ -1415,25 +1376,8 @@ $userData = Session::get('user_data');
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-                <!--swiper mySwiper-->
-                <!-- <ul class="d-inline-flex">
-                    <li class="bg-white">
-                        <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                        <div class="mt-3">
-                            <i class="fas fa-check-circle text-success"></i>
-                            CHEMISTRY
-                        </div>
-                    </li>
-                    <li class="bg-white">
-                        <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                        <div class="mt-3">
-                            <i class="fas fa-check-circle text-success"></i>
-                            PHYSICS
-                        </div>
-                    </li>   
-                </ul> -->
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- Full exam popup -->
