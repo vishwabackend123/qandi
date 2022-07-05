@@ -50,6 +50,16 @@
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        
+            menuSettings: {
+    context: "Browser"
+  }
+            });
+</script>
+    <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
@@ -87,6 +97,7 @@
          }); */
         /* no back prevention code */
     </script>
+
 
 </head>
 
