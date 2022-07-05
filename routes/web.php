@@ -298,3 +298,4 @@ Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'cont
 Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']); 
 Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
 Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
+Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
