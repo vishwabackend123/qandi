@@ -1,7 +1,7 @@
 @extends('afterlogin.layouts.app_new')
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 
 <script type="text/javascript">
@@ -189,13 +189,7 @@ $questtype='radio';
                                                 @foreach($option_data as $key=>$opt_value)
                                                 @php
                                                 $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
-                                                /* $dom = new DOMDocument();
-                                                @$dom->loadHTML($opt_value);
-                                                $anchor = $dom->getElementsByTagName('img')->item(0);
-                                                $text = isset($anchor)? $anchor->getAttribute('alt') : '';
-                                                $latex = "https://math.now.sh?from=".$text;
-                                                $view_opt='<img src="'.$latex.'" />' ;
-                                                */
+
                                                 @endphp
                                                 <div class="col-md-6 mb-4 markerDiv">
                                                     <input class="form-check-input quest_option_{{$activeq_id}} checkboxans" type="{{$questtype}}" id="option_{{$activeq_id}}_{{$key}}" name="quest_option_{{$activeq_id}}" value="{{$key}}">
@@ -558,17 +552,17 @@ $questtype='radio';
     $(document).ready(function() {
 
         /* mouse rightclick */
-        document.oncontextmenu = function() {
-            return false;
-        };
+        /*  document.oncontextmenu = function() {
+             return false;
+         };
 
-        $(document).mousedown(function(e) {
-            if (e.button == 2) {
+         $(document).mousedown(function(e) {
+             if (e.button == 2) {
 
-                return false;
-            }
-            return true;
-        });
+                 return false;
+             }
+             return true;
+         }); */
         /* mouse rightclick */
 
         document.onkeydown = function(e) {

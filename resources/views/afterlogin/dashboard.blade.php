@@ -85,9 +85,9 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 <div class="row">
-                    <div class="col-lg-4 commonblockDash">
+                    <div class="col-lg-4 commonblockDash myqTodayPannel">
                          <div class="commondashboardTop">
-                              <h3 class="boxheading">MyQ Today
+                              <h3 class="boxheading headingbgchange">MyQ Today
                                     <span class="tooltipmain">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
                                         <p class="tooltipclass">
@@ -108,82 +108,83 @@ $userData = Session::get('user_data');
                                   <a href="javascript:;" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
                               </div>
                           </div>
-                          <div class="commonWhiteBox mt-4">
-                             <div class="boxHeadingBlock">
-                                    <h3 class="boxheading">Subject Performance
-                                        <span class="tooltipmain">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                        
-                                    </span>
-                                </h3>
-                                <p class="dashSubtext">Supporting text for better interaction on this section</p>
-                             </div>
-                            
-                            <div class="subjectScoreBlock">
-                                 <div class="row">
-                                     <div class="col-sm-6">
-                                         <div class="SubjectscorePannel">
-                                             <div class="subjextscoreLeft">
-                                                <h6>Physics</h6>
-                                                <div class="d-flex justify-content-between">
-                                                    <h4>38%</h4>
-                                                    <div class="circle_percent mt-3" data-percent="38">
-                                                        <div class="circle_inner">
-                                                            <div class="round_per"></div>
+                            <div class="commonWhiteBox">
+                                <div class="boxHeadingBlock">
+                                        <h3 class="boxheading">Subject Performance
+                                            <span class="tooltipmain">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                            
+                                        </span>
+                                    </h3>
+                                    <p class="dashSubtext">Supporting text for better interaction on this section</p>
+                                </div>
+                                
+                                <div class="subjectScoreBlock">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="SubjectscorePannel">
+                                                <div class="subjextscoreLeft">
+                                                    <h6>Physics</h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <h4>38%</h4>
+                                                        <div class="circle_percent mt-3" data-percent="38">
+                                                            <div class="circle_inner">
+                                                                <div class="round_per"></div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div class="col-sm-6">
-                                         <div class="SubjectscorePannel">
-                                             <div class="subjextscoreLeft">
-                                                <h6>Chemistry</h6>
-                                                <div class="d-flex justify-content-between">
-                                                    <h4>64%</h4>
-                                                    <div class="circle_percent mt-3 orangegraph" data-percent="64">
-                                                        <div class="circle_inner">
-                                                            <div class="round_per"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="SubjectscorePannel">
+                                                <div class="subjextscoreLeft">
+                                                    <h6>Chemistry</h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <h4>64%</h4>
+                                                        <div class="circle_percent mt-3 orangegraph" data-percent="64">
+                                                            <div class="circle_inner">
+                                                                <div class="round_per"></div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div> 
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div class="col-sm-6">
-                                         <div class="SubjectscorePannel">
-                                             <div class="subjextscoreLeft">
-                                                <h6>Mathematics</h6>
-                                                <div class="d-flex justify-content-between">
-                                                    <h4>82%</h4>
-                                                    <div class="circle_percent mt-3 greengraph" data-percent="82">
-                                                        <div class="circle_inner">
-                                                            <div class="round_per"></div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="SubjectscorePannel">
+                                                <div class="subjextscoreLeft">
+                                                    <h6>Mathematics</h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <h4>82%</h4>
+                                                        <div class="circle_percent mt-3 greengraph" data-percent="82">
+                                                            <div class="circle_inner">
+                                                                <div class="round_per"></div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div> 
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                            </div>
-                            <div class="emptystate" style="display:none">
-                                  <div class="emptystateInner">
-                                      <div class="emptyicon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
-                                            <circle cx="40" cy="40.102" r="40" fill="#E0F6E3"/>
-                                            <path d="M16.979 25.102h10.525a1 1 0 0 1 1 1v2.22a1 1 0 0 1-1 1h-5.87c-.458 0-.864.312-.91.768-.303 3.018 1.262 8.859 8.382 15.604.885.84.051 2.165-.937 1.45-10.105-7.32-12.436-16.283-12.146-21.179.03-.499.456-.863.956-.863zM64.021 25.102H53.496a1 1 0 0 0-1 1v2.22a1 1 0 0 0 1 1h5.87c.458 0 .864.312.91.768.303 3.018-1.262 8.859-8.382 15.604-.885.84-.051 2.165.937 1.45 10.104-7.32 12.436-16.283 12.146-21.179-.03-.499-.456-.863-.956-.863z" fill="#BEE9C4"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.206 21.102H27.588c-.04.465-.089.965-.14 1.494-.59 6.134-1.554 16.144 4.322 21.616 1.044.972 1.868 1.64 2.516 2.164 1.99 1.614 2.326 1.886 2.326 5.539v2.641h7.776v-2.641c0-3.653.335-3.925 2.326-5.539a44.9 44.9 0 0 0 2.516-2.164c5.876-5.472 4.912-15.482 4.322-21.616-.051-.529-.1-1.029-.14-1.494H40.206z" fill="#fff"/>
-                                            <path d="M29 60.102a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2H29v-2z" fill="#BEE9C4"/>
-                                            <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663"/>
-                                         </svg>
-                                      </div>
-                                      <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
-                                      <button class="btn btn-common-transparent nobg">Attempt Now</button>
-                                  </div>
-                             </div>
-                          </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="emptystate" style="display:none">
+                                    <div class="emptystateInner">
+                                        <div class="emptyicon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
+                                                <circle cx="40" cy="40.102" r="40" fill="#E0F6E3"/>
+                                                <path d="M16.979 25.102h10.525a1 1 0 0 1 1 1v2.22a1 1 0 0 1-1 1h-5.87c-.458 0-.864.312-.91.768-.303 3.018 1.262 8.859 8.382 15.604.885.84.051 2.165-.937 1.45-10.105-7.32-12.436-16.283-12.146-21.179.03-.499.456-.863.956-.863zM64.021 25.102H53.496a1 1 0 0 0-1 1v2.22a1 1 0 0 0 1 1h5.87c.458 0 .864.312.91.768.303 3.018-1.262 8.859-8.382 15.604-.885.84-.051 2.165.937 1.45 10.104-7.32 12.436-16.283 12.146-21.179-.03-.499-.456-.863-.956-.863z" fill="#BEE9C4"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M40.206 21.102H27.588c-.04.465-.089.965-.14 1.494-.59 6.134-1.554 16.144 4.322 21.616 1.044.972 1.868 1.64 2.516 2.164 1.99 1.614 2.326 1.886 2.326 5.539v2.641h7.776v-2.641c0-3.653.335-3.925 2.326-5.539a44.9 44.9 0 0 0 2.516-2.164c5.876-5.472 4.912-15.482 4.322-21.616-.051-.529-.1-1.029-.14-1.494H40.206z" fill="#fff"/>
+                                                <path d="M29 60.102a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2H29v-2z" fill="#BEE9C4"/>
+                                                <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663"/>
+                                            </svg>
+                                        </div>
+                                        <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
+                                        <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                    </div>
+                                </div>
+                           
+                         </div>
                          </div>
                     </div>
                     <div class="col-lg-4 commonblockDash">
@@ -481,7 +482,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                     <div class="allSubslider">
-                        <div class="owl-carousel owl-theme">
+                        <div class="dashborarSlider owl-carousel owl-theme">
                             <div class="item">
                                 <div class="testPlanCard subCard physicsCard">
                                 <p class="m-0">Physics</p>
@@ -798,24 +799,12 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="graphBoxcontainer">
                                 <div class="graphimg">
-                                <script src="https://code.highcharts.com/highcharts.js"></script>
-                                <script src="https://code.highcharts.com/modules/series-label.js"></script>
-                                <script src="https://code.highcharts.com/modules/data.js"></script>
-                                <div id="container"></div>
-                                <pre id="csv" style="display:none">
-                                            month,1980,1990,2000,2010,2012,2020
-                                            Jan,14.86,14.78,14.22,13.74,13.73,13.65
-                                            Feb,15.96,15.58,15.14,14.58,14.55,14.69
-                                            Mar,16.04,15.87,15.22,15.14,15.20,14.78
-                                            Apr,15.43,14.65,14.56,14.66,14.63,13.73
-                                            May,13.79,13.23,13.15,12.87,13.01,12.36
-                                            Jun,12.20,11.64,11.67,10.59,10.67,10.58
-                                            Jul,10.10,9.25,9.51,8.07,7.67,7.28
-                                            Aug,7.98,6.80,7.17,5.87,4.72,5.08
-                                            Sep,7.67,6.14,6.25,4.87,3.57,3.92
-                                            Oct,9.18,8.48,8.38,6.98,5.89,5.28
-                                            Nov,11.38,11.08,10.32,9.61,9.39,8.99
-                                            Dec,13.59,13.11,12.64,11.83,12.01,11.77</pre>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="271" height="191" viewBox="0 0 271 191" fill="none">
+                                        <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256"/>
+                                        <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577"/>
+                                        <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                
                                 </div>
                                 <div class="graphDetail">
                                 <div class="yourPacebox">
@@ -859,24 +848,11 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="journeyBoxcontainer">
                                 <div class="graphimg">
-                                <script src="https://code.highcharts.com/highcharts.js"></script>
-                                <script src="https://code.highcharts.com/modules/series-label.js"></script>
-                                <script src="https://code.highcharts.com/modules/data.js"></script>
-                                <div id="container2"></div>
-                                <pre id="csv2" style="display:none">
-                                            month,1980,1990,2000,2010,2012,2020
-                                            Jan,14.86,14.78,14.22,13.74,13.73,13.65
-                                            Feb,15.96,15.58,15.14,14.58,14.55,14.69
-                                            Mar,16.04,15.87,15.22,15.14,15.20,14.78
-                                            Apr,15.43,14.65,14.56,14.66,14.63,13.73
-                                            May,13.79,13.23,13.15,12.87,13.01,12.36
-                                            Jun,12.20,11.64,11.67,10.59,10.67,10.58
-                                            Jul,10.10,9.25,9.51,8.07,7.67,7.28
-                                            Aug,7.98,6.80,7.17,5.87,4.72,5.08
-                                            Sep,7.67,6.14,6.25,4.87,3.57,3.92
-                                            Oct,9.18,8.48,8.38,6.98,5.89,5.28
-                                            Nov,11.38,11.08,10.32,9.61,9.39,8.99
-                                            Dec,13.59,13.11,12.64,11.83,12.01,11.77</pre>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="271" height="191" viewBox="0 0 271 191" fill="none">
+                                        <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256"/>
+                                        <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577"/>
+                                        <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
                                 </div>
                                 <div class="graphDetail">
                                 <div class="dropbox">
@@ -935,16 +911,15 @@ $userData = Session::get('user_data');
         
  
 
-        <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
+        <!-- <div class="container-fluid pt-0  dashboard-cards-block common-cards-boxshadow">
             <div class="row">
                 <div class="col-xl-4 col-lg-6 col-md-7  col-sm-12">
                     <div class="bg-white shadow-lg">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
-                                <!-- <label>About MyQ Today</label> -->
+                                
                                 A score derived from the detailed analysis of your test patterns that gives a clear understanding of your
                                  current level of preparation in comparison to an ideal one. Measure your real-time probability of reaching 
                                  the goal with your current pattern of preparation. Set your goal!
@@ -962,9 +937,6 @@ $userData = Session::get('user_data');
                                             <li class="dashbaordmargin">
                                                 <span class="last-live-test" style="vertical-align:middle;"></span>MyQ Today Score
                                             </li>
-                                            <!-- <li>
-                                                <span class="pre-test"></span>Previous Test
-                                            </li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -980,7 +952,6 @@ $userData = Session::get('user_data');
                 <div class="col-xl-3 col-lg-6 col-md-5 col-sm-12">
                     <div class="bg-white shadow-lg py-5 ps-3 pe-1 Subject_box12">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1014,20 +985,10 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="bg-white shadow-lg py-5 peragraph prgress-i-txt" style="overflow:hidden;">
-                        <div class="prgress-i-txt px-3">
-                            <span class="progress_text">Weekly Marks Trends</span>
-                          
-                        </div>
-                        <div id="marks_trend_graph"></div>
-                    </div>
-                </div> -->
                 <div class="col-xl-5  col-md-12 col-sm-12">
                     <div class="bg-white shadow-lg py-5 myqMatrix-card">
                         <span class="progress_text" style="padding-left: 15px;">MyQ Matrix</span>
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1094,12 +1055,10 @@ $userData = Session::get('user_data');
                     </div>
                 </div>
             </div>
-            <!--row-->
             <div class="row ">
                 <div class="col-xl-4 col-md-12">
                     <div class="bg-white shadow-lg py-5 progress-journey-card m-0">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1116,27 +1075,13 @@ $userData = Session::get('user_data');
                                 <button class="btn btnzoom-in-out" data-bs-toggle="modal" data-bs-target="#graphExpand">
                                     <i class="fa fa-arrows" style="margin-right:3px;font-size: 10px"></i>click to expand</button>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="chapter-ideal-schedule text-center">
-                                    <span>8</span>
-                                    <small>You are 8 chapter behind the ideal schedule</small>
-                                    <ul class="live-test mt-3 p-0 d-block" style="text-align: left;">
-                                        <li style="margin-right:10px;">
-                                            <span style="vertical-align:middle;background:#ff0909;"></span>Ideal Pace
-                                        </li>
-                                        <li>
-                                            <span class="last-live-test"></span>Your Pace
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-5 col-md-6">
                     <div class="bg-white shadow-lg py-5 m-0 newtabview">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
+                            
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1147,15 +1092,13 @@ $userData = Session::get('user_data');
                             <span class="progress_text" style="padding-left: 15px;">Weekly Marks Trends</span>
                         </div>
                         <div id="marks_trend_graph"></div>
-                        <!-- <figure>
-                            <img src="{{URL::asset('public/after_login/new_ui/images/weekly-trends-graph.png')}}" class="w-100">
-                        </figure> -->
+                        
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="bg-white shadow-lg py-5 task-center-block m-0 newtabview Task_Center12">
                         <small>
-                            <!-- <i class="fa  fa-info"></i> -->
+                            
                             <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                             <p class="tooltipclass">
                                 <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1167,14 +1110,13 @@ $userData = Session::get('user_data');
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span><img src="{{URL::asset('public/after_login/new_ui/images/daily-task-icon.png')}}"></span>
-                            <!--a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Daily TASK</a-->
+                            
+                            
                             <a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Daily TASK</a>
-                            <!-- <button class="btn btntheme" data-bs-toggle="modal" data-bs-target="#matrix">Daily TASK</button> -->
                         </div>
                         <div class="d-flex justify-content-between align-items-center mt-4">
                             <span><img src="{{URL::asset('public/after_login/new_ui/images/weekly-task-icon.png')}}"></span>
                             <a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Weekly TASK</a>
-                            <!--a class="btn btntheme" href="{{route('dashboard-DailyTask')}}">Weekly TASK</a-->
                         </div>
                     </div>
                 </div>
@@ -1208,7 +1150,7 @@ $userData = Session::get('user_data');
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block weekly-plan-test">
                             <small>
-                                <!-- <i class="fa  fa-info"></i> -->
+                                
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1228,7 +1170,7 @@ $userData = Session::get('user_data');
                         @elseif(isset($planner) && !empty($planner))
                         <div class="swiper-slide bg-white go2Planner weekylplan-block" style="padding: 18px 35px 35px;">
                             <small>
-                                <!-- <i class="fa  fa-info"></i> -->
+                                
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1243,12 +1185,10 @@ $userData = Session::get('user_data');
                                         @foreach($planner as $key=>$val)
                                         @if($val->test_completed_yn=="Y")
                                         <a href="#" class="text-secondary ms-2">
-                                            <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
                                             <img style="width:42px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-green.png')}}">
                                         </a>
                                         @else
                                         <a href="#" class="text-secondary ms-2">
-                                            <!-- <i class="fas fa-check-circle" aria-hidden="true"></i> -->
                                             <img style="width:42px;" src="{{URL::asset('public/after_login/new_ui/images/test-check-grey.png')}}">
                                         </a>
                                         @endif
@@ -1262,9 +1202,8 @@ $userData = Session::get('user_data');
                         @endif
                         @if(isset($planner) && empty($planner))
                         <div class="swiper-slide bg-white">
-                            <!----- Weekly tests ---->
                             <small>
-                                <!-- <i class="fa  fa-info"></i> -->
+                                
                                 <img style="width:18px;" src="{{URL::asset('public/after_login/new_ui/images/tooltip-icon.png')}}">
                                 <p class="tooltipclass">
                                     <span><img style="width:34px;" src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></span>
@@ -1285,12 +1224,12 @@ $userData = Session::get('user_data');
                                     <button style="background-color: #fff;text-transform: none;" class="custom-btn-gray mt-4 goto-planner-btn" data-bs-toggle="collapse" href='#collapsePlanner' role="button" aria-expanded="false" aria-controls="collapseExample"><i style="margin-right: 5px;" class="fa fa-angle-left"></i> Click on GO TO Planner</button>
                                 </div>
                             </div>
-                            <!-------------------->
+                            
                         </div>
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <img src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
                             <div>
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 CHEMISTRY
                             </div>
@@ -1298,7 +1237,7 @@ $userData = Session::get('user_data');
                         <div class="swiper-slide bg-white text-center subject-placeholder-block">
                             <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             <div>
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 PHYSICS
                             </div>
@@ -1309,7 +1248,7 @@ $userData = Session::get('user_data');
                                 <img src="{{URL::asset('public/after_login/new_ui/images/physics-subject-icon.png')}}">
                             </span>
                             <div style="margin-top: -8px;">
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 MORE
                             </div>
@@ -1360,10 +1299,8 @@ $userData = Session::get('user_data');
                         @elseif($val->test_completed_yn=="Y")
                         <div class="swiper-slide bg-white testcompltd completed-test-block ">
                             <div class="test-attend text-center">
-                                <!-- <p>Tests Attempted</p> -->
                                 <div class="ms-auto">
                                     <span class="text-secondary chapter_name mb-2 d-block">
-                                        <!-- <i class="fas fa-check-circle text-success" aria-hidden="true"></i> -->
                                         <img style="width:55px;" src="{{URL::asset('public/after_login/new_ui/images/tickmark.png')}}">
                                     </span>
                                     <h3 class="mb-0" title="{{$val->chapter_name}}">{{$val->chapter_name}}</h3>
@@ -1401,7 +1338,7 @@ $userData = Session::get('user_data');
                             </span>
                             @endif
                             <div>
-                                <!-- <i class="fas fa-check-circle text-success" style="margin-right: 5px;"></i> -->
+                                
                                 <img src="{{URL::asset('public/after_login/new_ui/images/sm-tickmark.png')}}" style="width: 42px;margin:0px -6px 5px 0px;">
                                 {{strtoupper($sVal->subject_name)}}
                             </div>
@@ -1414,25 +1351,8 @@ $userData = Session::get('user_data');
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-                <!--swiper mySwiper-->
-                <!-- <ul class="d-inline-flex">
-                    <li class="bg-white">
-                        <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                        <div class="mt-3">
-                            <i class="fas fa-check-circle text-success"></i>
-                            CHEMISTRY
-                        </div>
-                    </li>
-                    <li class="bg-white">
-                        <img style="width:80px;" src="{{URL::asset('public/after_login/new_ui/images/chemistry-subject-icon.png')}}">
-                        <div class="mt-3">
-                            <i class="fas fa-check-circle text-success"></i>
-                            PHYSICS
-                        </div>
-                    </li>   
-                </ul> -->
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- Full exam popup -->
@@ -2128,51 +2048,6 @@ $userData = Session::get('user_data');
 
 
 <style>
-/***************************************************GRAPH-CSS-START************************************ */
-.highcharts-figure,
-.highcharts-data-table table {
-  min-width: 360px;
-  max-width: 800px;
-  margin: 1em auto;
-}
-
-.highcharts-data-table table {
-  font-family: Verdana, sans-serif;
-  border-collapse: collapse;
-  border: 1px solid #ebebeb;
-  margin: 10px auto;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-.highcharts-data-table caption {
-  padding: 1em 0;
-  font-size: 1.2em;
-  color: #555;
-}
-.highcharts-data-table th {
-  font-weight: 600;
-  padding: 0.5em;
-}
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-  padding: 0.5em;
-}
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-  background: #f8f8f8;
-}
-.highcharts-data-table tr:hover {
-  background: #f1f7ff;
-}
- .highcharts-title , .g.highcharts-legend.highcharts-no-tooltip {
-    display: none;
-}
- 
-
-/***************************************************GRAPH-CSS-END************************************ */
-
 .graphDetailempty{
    display:none
 }
@@ -2374,7 +2249,7 @@ $userData = Session::get('user_data');
     padding: 12px 20px;
     cursor: pointer;
 }
-.drocustomDropdownpdown .options div:hover {
+.customDropdown .options div:hover {
    background: #e0f6e3;
   
 }
@@ -2419,7 +2294,7 @@ $userData = Session::get('user_data');
     justify-content: space-between;
 }
 .plantitleBox {
-    padding-right: 130px;
+    padding-right: 250px;
 }
 .planDetailBox{
     display: flex;
@@ -2601,9 +2476,9 @@ $userData = Session::get('user_data');
 .allSubslider  .disabled {
     opacity: 0 !important;
 }
-.allSubslider  .owl-item{
+/* .allSubslider  .owl-item{
     max-width:350px !important;
-}
+} */
 .allSubslider .owl-stage{
    padding: 0px !important;
 }
@@ -2615,12 +2490,13 @@ $userData = Session::get('user_data');
     display: flex;
 }
 .testPlanCard{
-    width: 330px;
+    max-width: 397px;
     margin: 32px 0 0 0;
     padding: 20px 0px 20px 0px;
     border-radius: 10px;
     border: solid 1px #e1e3ed;
     background-color: #ffffff;
+    width: 100%
 }
 .testplannewuser{
     text-align: center;
@@ -2652,13 +2528,17 @@ $userData = Session::get('user_data');
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
+ 
 
-$('.owl-carousel').owlCarousel({
+
+$('.dashborarSlider').owlCarousel({
     stagePadding: 10,
-		loop: false,
+		loop: false, 
 		margin: 0,
 		nav: true,
         dots:false,
+        // rewindNav:true,
+      
     responsive:{
         0:{
             items: 1,
@@ -2671,11 +2551,12 @@ $('.owl-carousel').owlCarousel({
             items:3
         },
         1000:{
-            items:3
+            items:4
         }
     }
 })
 </script>
+
 
  
 <script>
@@ -2688,97 +2569,7 @@ $('.owl-carousel').owlCarousel({
       dropdown.classList.toggle("active")
   }
   
-   </script>
+</script>
 
 
-
-
-<!------------------------------------Graph-startCVS---------------------------->
- <script>
-   let period = 1000; //1sec
-
-Highcharts.chart("container", {
-  chart: {
-    type: "spline",
-    backgroundColor:"#ffffff"
-  },
-
- 
-
- 
-
-  xAxis: {
-    crosshair: {
-      width: 2
-    }
-  },
-
-  yAxis: {
-    title: {
-      text: " "
-    }
-  },
-
-  plotOptions: {
-    series: {
-      color: "#ABB2B9",
-      marker: {
-        enabled: false
-      },
-      label: {
-        connectorAllowed: false
-      },
-      animation:{
-        duration:1200
-      }
-    }
-  },
-
-  data: {
-    csv: document.getElementById("csv").innerHTML
-  },
-
-  tooltip: {
-    shared: true,
-    valueSuffix: " million ㎢"
-  },
-
-  series: [
-    {      
-      animation: {
-        defer: period*0
-      }
-    },
-    {      
-      animation: {
-        defer: period
-      }
-    },
-    {
-      animation: {
-        defer: period * 2
-      }
-    },
-    {
-      animation: {
-        defer: period * 3
-      }
-    },
-    {
-      color: "#E74C3C",
-      animation: {
-        defer: period * 4
-      }
-    },
-    {
-      color: "#3498DB",
-      animation: {
-        defer: period * 5
-      }
-    }
-  ]
-});
-   </script>
-
-   <!------------------------------------Graph-EndCVS---------------------------->  
     @endsection
