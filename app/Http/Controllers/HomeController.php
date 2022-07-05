@@ -78,9 +78,7 @@ class HomeController extends Controller
                 return redirect()->route('studentstandfor');
              }
             } */
-            if ($student_rating == null || empty($student_rating)) {
-                return redirect()->route('performance-rating');
-            }
+
 
             $subscription_yn = (isset($preferences->subscription_yn) && !empty($preferences->subscription_yn)) ? $preferences->subscription_yn : '';
             $trial_expired_yn = (isset($preferences->trial_expired_yn) && !empty($preferences->trial_expired_yn)) ? $preferences->trial_expired_yn : '';
@@ -101,7 +99,6 @@ class HomeController extends Controller
                 //expire today
                 $suscription_status = 1;
             }
-
             if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
                 return redirect()->route('subscriptions');
             }
@@ -289,9 +286,9 @@ class HomeController extends Controller
 
             // myq matrix
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
-
-
-
+            if ($student_rating == null || empty($student_rating)) {
+                return redirect()->route('performance-rating');
+            }
 
             return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
         } catch (\Exception $e) {

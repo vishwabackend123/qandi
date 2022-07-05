@@ -186,7 +186,7 @@ function store_rating() {
         success: function(response_data) { 
 
             if (response_data == 'success') {
-                window.location.href = '{{url("dashboard")}}';
+                window.location.href = '{{url("performance_analytics")}}';
             }
 
         },

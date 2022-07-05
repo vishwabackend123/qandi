@@ -352,39 +352,122 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
             </div>
             @else
-            <div class="col-xl-4 col-md-6 p-4 text-center ">
-                <div class="bg-white white-box-small subscriptionBox  ">
-                    <h5 class="cource-name">{{strtoupper($sub->subscription_name)}}</h5>
-                    <p class="price">Rs. {{$subsprice}}</p>
-                    <p class="box-content scroll-content me-3 mr-3">{{$sub->subscription_details}}</p>
-                    <div class="text-center mt-4">
-                        @if(empty($trail_sub) || $trail_sub==2)
-                        <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" @if((count($purchasedid)>0) && !empty($userData->id)) onsubmit="return confirm('Previous subscription will not be valid after new subscription.');" @endif method="post">
+            @php
+            $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
+             $discount_price=($subsprice*$discount)/100;
+            if(isset($user_exam_id) && !empty($user_exam_id) && $sub->subscript_id != $user_exam_id)
+            {
+            continue;
+            }
+            @endphp
+             <div class="selectPlanedetail">
+                <div class="planeName">
+                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <div class="price">
+                        @if($discount >0)
+                        <div class="offer">
+                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_disco">({{$discount}}% off)</span>
+                        </div>
+                        @endif
+                        <div class="peryearPrice">
+                            ₹{{$subsprice-$discount_price}}<sub>per year</sub>
+                        </div>
+                    </div>
+                </div>
+                <div class="testType">
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            Chapter and Topic-wise Unlimited Tests
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            Adaptive Learning Experience
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            AI-based Analytics and Valuable Insightss
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            Identify Your Strengths and Weaknesses
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            Personalised and Smart Recommendations
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            Plan Your Weekly and Monthly Preparation
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>
+                            Unlimited Mock tests</li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10S0 15.523 0 10z" fill="#56B663" fill-opacity=".1" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.247 6.158 8.28 11.917l-1.583-1.692c-.292-.275-.75-.292-1.083-.058a.764.764 0 0 0-.217 1.008l1.875 3.05c.183.283.5.458.858.458.342 0 .667-.175.85-.458.3-.392 6.025-7.217 6.025-7.217.75-.766-.158-1.441-.758-.858v.008z" fill="#56B663" />
+                            </svg>Live Exam - All India Test Series
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="planType">
+                    
+                    @if($sub->trial_subscription_duration>0)
+                    @if(!in_array($sub->subscript_id,$purchasedid) )
+                    <!--div class="text-center mt-2">
+                        @if(empty($trail_sub) || $trail_sub==1)
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trail</a>
+                        @endif
+                    </div-->
+                    <div class="freeTrial">
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Try {{$sub->trial_subscription_duration}} days trail</a>
+                    </div>
+                     @else
+                    <div class="freeTrial">
+                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trail ></a>
+                    </div>
+                    
+                    @endif
+                    <div class="getSubs">
+                        <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
                             @csrf
                             <input type="hidden" name="exam_id" value="{{$sub->class_exam_id}}">
                             <input type="hidden" name="subscript_id" value="{{$sub->subscript_id}}">
                             <input type="hidden" name="exam_period" value="12">
                             <input type="hidden" name="period_unit" value="month">
                             <input type="hidden" name="exam_price" value="{{$subsprice}}">
-                            <button type="submit" class="btn btn-common-green" id="get-otp-btn">Get Subscritption </button>
+                            <button type="submit" class="btn btn-common-green" id="get-sub-btn"> Get Subscritption</button>
                         </form>
-                        @endif
                     </div>
-                    @if($sub->trial_subscription_duration>0)
-                    @if(!in_array($sub->subscript_id,$purchasedid) )
-                    <div class="text-center mt-2">
-                        @if(empty($trail_sub) || $trail_sub==1)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trail></a>
-                        @endif
-                    </div>
-                    @else
-                    <div class="text-center mt-2">
-                        <span class="text-danger text-decoration-underline">Expired {{$sub->trial_subscription_duration}} days trail ></span>
-                    </div>
-                    @endif
-                    @endif
                 </div>
             </div>
+            @endif
             @endif
             @endforeach
             @else
