@@ -544,7 +544,7 @@
 <span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
             <div class="calender-block">
-                <div id="calendari">
+                <div id="calendari1">
                     <table class="actiu" data-actual="2021/11/02">
                         <tr>
                             <th colspan="7"><button class="boto-prev">&lt;</button><span>December<span class="any">2021</span></span><button class="boto-next">&gt;</button></th>

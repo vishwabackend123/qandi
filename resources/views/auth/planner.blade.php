@@ -194,10 +194,15 @@
 </div>
 </div>
 </div>
-<div class="col-xl-3">A</div>
+<div class="col-xl-3">
+  <div class="bg-white clander-box">
+
+    </div>        
+  </div>
 </div>
 </div>
 </section>
+
 <script>
    function increaseValue() {
      var value = parseInt(document.getElementById('number').value, 10);
