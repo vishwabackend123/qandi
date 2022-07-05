@@ -462,7 +462,7 @@
                      </div>
                   <div class="graphDetail">
                      <div class="dropbox">
-                        <div class="dropdown">
+                        <div class="customDropdown dropdown">
                            <input class="text-box" type="text" placeholder="Mocktest" readonly>
                            <div class="options">
                               <div onclick="show('My score')">My score</div>
@@ -557,7 +557,9 @@
 
 /***************************************************GRAPH-CSS-END************************************ */
 
-
+.graphDetailempty{
+   display:none
+}
 .graphDetailempty .testScrolltype {
     margin-right: 30px;
     padding-top:0px;
@@ -690,13 +692,13 @@
    padding-left: 50px;
 }
 .journeyBoxcontainer{display: flex;}
-.dropdown {
+.customDropdown {
     position: relative;
     width:100%;
     height: 60px;
     border-radius: 10px;
 }
-.dropdown::before {
+.customDropdown::before {
     content: "";
     background: url(http://localhost/Uniq_web/public/after_login/current_ui/images/arrow_drop_down.svg);
     position: absolute;
@@ -712,11 +714,11 @@
     width: 13.1px;
     height: 7.8px;
 }
-.dropdown.active::before {
+.customDropdown.active::before {
     top: 22px;
     transform: rotate(-180deg);
 }
-.dropdown input {
+.customDropdown input {
    position: absolute;
    top: 0;
    left: 0;
@@ -735,7 +737,7 @@
    letter-spacing: normal;
 }
 
-.dropdown .options {
+.customDropdown .options {
     position: absolute;
     top: 70px;
     width: 100%;
@@ -749,39 +751,39 @@
    line-height: 1.6;
    letter-spacing: normal;
 }
-.dropdown.active .options {
+.customDropdown.active .options {
     display: block;    z-index: 9;
 }
-.dropdown .options div {
+.customDropdown .options div {
     padding: 12px 20px;
     cursor: pointer;
 }
-.dropdown .options div:hover {
+.drocustomDropdownpdown .options div:hover {
    background: #e0f6e3;
   
 }
-.dropdown input::-webkit-input-placeholder{
+.drocustomDropdownpdown input::-webkit-input-placeholder{
    font-size: 16px;
    font-weight: 500;
    line-height: 1.6;
    text-align: left;
    color:#1f1f1f;
 }
-.dropdown input::-webkit-input-placeholder { /* Edge */
+.customDropdown input::-webkit-input-placeholder { /* Edge */
    font-size: 16px;
    font-weight: 500;
    line-height: 1.6;
    text-align: left;
    color:#1f1f1f;
 }
-.dropdown input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.customDropdown input:-ms-input-placeholder { /* Internet Explorer 10-11 */
    font-size: 16px;
    font-weight: 500;
    line-height: 1.6;
    text-align: left;
    color:#1f1f1f;
 }
-.dropdown input::placeholder {
+.customDropdown input::placeholder {
    font-size: 16px;
    font-weight: 500;
    line-height: 1.6;
@@ -1065,7 +1067,7 @@ $('.owl-carousel').owlCarousel({
     document.querySelector(".text-box").value = value;
   }
   
-  let dropdown = document.querySelector(".dropdown")
+  let dropdown = document.querySelector(".customDropdown")
   dropdown.onclick = function() {
       dropdown.classList.toggle("active")
   }
