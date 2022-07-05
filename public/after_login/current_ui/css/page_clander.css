@@ -1,28 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-}
-
-h1 {
-  text-align: center;
-  margin: 10vh 0;
-  padding: 0 10px;
-}
-
-h2 {
-  text-align: center;
-  margin: 5vh;
-}
-
-main {
-  display: flex;
-  max-width: 1000px;
-  margin: auto;
-}
-
 #content {
   margin: auto;
   max-width: 1000px;
