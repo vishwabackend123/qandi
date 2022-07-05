@@ -650,6 +650,11 @@ vertical-align: middle;
     font-size: 16px !important;
     font-weight: 500;
 }
+.clander-box{
+  padding: 32px 32px 32px 30px;
+  border-radius: 32px;    
+}
+
 /*****Planner-pge-end***********/
 /*********** Navdeep End *************/
 
