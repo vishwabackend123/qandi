@@ -482,7 +482,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                     <div class="allSubslider">
-                        <div class="owl-carousel owl-theme">
+                        <div class="dashborarSlider owl-carousel owl-theme">
                             <div class="item">
                                 <div class="testPlanCard subCard physicsCard">
                                 <p class="m-0">Physics</p>
@@ -2600,12 +2600,13 @@ $userData = Session::get('user_data');
  
 
 
-$('.owl-carousel').owlCarousel({
+$('.dashborarSlider').owlCarousel({
     stagePadding: 10,
 		loop: false,
 		margin: 0,
 		nav: true,
         dots:false,
+        rewindNav:true,
       
     responsive:{
         0:{
