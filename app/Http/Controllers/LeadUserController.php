@@ -79,5 +79,8 @@ class LeadUserController extends Controller {
 	public function emailConfirmation() {
 		return view('auth.email_confirmation');
     }
+	public function testAnalyticsMocktest() {
+		return view('auth.test_analytics_mocktest');
+    }
 }
 
