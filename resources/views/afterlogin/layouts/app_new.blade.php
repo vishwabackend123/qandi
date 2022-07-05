@@ -21,24 +21,24 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!--  <link rel="stylesheet" href="css/style.css"> -->
     @if(env('MINIFY_STATIC_ASSETS') == 'true')
-    <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.min.css')}}"> -->
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.min.css')}}">
     @else
-    <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
+    <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.css')}}"> -->
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
@@ -50,6 +50,16 @@
     <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        
+            menuSettings: {
+    context: "Browser"
+  }
+            });
+</script>
+    <!-- <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
+ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
@@ -87,6 +97,7 @@
          }); */
         /* no back prevention code */
     </script>
+
 
 </head>
 

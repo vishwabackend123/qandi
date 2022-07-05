@@ -13,7 +13,7 @@
     <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
     <link href="{{URL::asset('public/css/bootstrap.min.css')}}" rel="stylesheet">
     @if(env('MINIFY_STATIC_ASSETS') == 'true')
-    <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}"> -->
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
         <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.min.css')}}">

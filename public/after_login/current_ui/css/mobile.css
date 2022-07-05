@@ -8,9 +8,7 @@
   .left-sidepannel .carousel-inner .carousel-item img{
    height: 350px;
 }
-.signuprightpannel {
-    height: 690px;
-}
+
 .myqbottomSec h3{font-size:26px;}
 }
 @media only screen and (max-width: 1366px) {
@@ -18,9 +16,7 @@
     .boxheading {
         font-size: 20px;}
         .boxheading .tooltipmain{margin-left:3px;}
-  .signuprightpannel {
-    height: 580px;
-} 
+  
 .inst {
     padding: 20px 0px;
 }
@@ -39,15 +35,13 @@
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
 }
-.signuprightpannel {
-    height: 450px;
-}
+
 .signuprightpannel {
     padding: 50px 140px 0;
 }
 .loginrightpannel {
     padding-top: 160px;
-    height: 420px;
+    /* height: 420px; */
     overflow-y: scroll;
     overflow-x: hidden;
 }

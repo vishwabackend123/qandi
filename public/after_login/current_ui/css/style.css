@@ -370,8 +370,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .signuprightpannel {
-	padding: 140px 140px 0;
-	height: 900px;
+	padding: 140px 140px 20px;
+	height: 100vh;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -1660,6 +1660,22 @@ span.mq_percent_outoff {
 	z-index: 3;
 	font-weight: 800;
 }
+/******* test_analytics_mocktest *******/
+h3.commonheading{
+    font-size: 24px;
+    font-weight: 800;
+    color:#1f1f1f;
+}
+.commontext{
+    font-size: 16px;
+  font-weight: 500;
+  color:#1f1f1f;
+}
+.commonboldtext{
+    font-size: 20px;
+  font-weight: 800;
+  color:#1f1f1f;
+}
 
 /********* Amit End ***********/
 
@@ -2224,6 +2240,7 @@ header {
         #strengthmodal .modal-dialog{max-width:600px;}
         .strengthmodal_content hr{background-color:#868a95;}
         .modalcenter{display:flex;align-items:center;height: 100%;}
+        .subjectperformBlock{height:78%;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
