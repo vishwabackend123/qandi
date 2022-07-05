@@ -758,7 +758,7 @@
     padding: 12px 20px;
     cursor: pointer;
 }
-.drocustomDropdownpdown .options div:hover {
+.customDropdown .options div:hover {
    background: #e0f6e3;
   
 }
@@ -1043,6 +1043,7 @@ $('.owl-carousel').owlCarousel({
 		margin: 0,
 		nav: true,
         dots:false,
+
     responsive:{
         0:{
             items: 1,

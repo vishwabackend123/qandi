@@ -2374,7 +2374,7 @@ $userData = Session::get('user_data');
     padding: 12px 20px;
     cursor: pointer;
 }
-.drocustomDropdownpdown .options div:hover {
+.customDropdown .options div:hover {
    background: #e0f6e3;
   
 }
@@ -2652,6 +2652,8 @@ $userData = Session::get('user_data');
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
+ 
+
 
 $('.owl-carousel').owlCarousel({
     stagePadding: 10,
@@ -2659,6 +2661,7 @@ $('.owl-carousel').owlCarousel({
 		margin: 0,
 		nav: true,
         dots:false,
+      
     responsive:{
         0:{
             items: 1,
