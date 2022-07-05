@@ -56,7 +56,6 @@ class HomeController extends Controller
     {
         try {
             $userData = Session::get('user_data');
-
             $user_id = $userData->id;
             $exam_id = $userData->grade_id;
             $user_subjects = $this->redis_subjects();
@@ -292,10 +291,6 @@ class HomeController extends Controller
             $myq_matrix = $this->getMyqmatrix($user_id, $exam_id);
 
 
-            $prof_asst_test = "N";
-            if (isset($prof_asst_test) && $prof_asst_test == 'N') {
-                return redirect()->route('performanceAnalytics');
-            }
 
 
             return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
@@ -1107,13 +1102,14 @@ class HomeController extends Controller
             Log::info($e->getMessage());
         }
     }
-    public function performanceRating() {
+    public function performanceRating()
+    {
         $user_subjects = $this->redis_subjects();
         $preferences = $this->redis_Preference();
         $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
         if ($student_rating != null || !empty($student_rating)) {
             return redirect()->route('dashboard');
         }
-        return view('afterlogin.performance_rating',compact('user_subjects'));
+        return view('afterlogin.performance_rating', compact('user_subjects'));
     }
 }
