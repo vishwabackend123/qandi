@@ -29,15 +29,49 @@
             </defs>
         </svg>
     </div>
-    <div class="email-confirmation">
-            <div class="email-profile-pick">
-                <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50.5" cy="50" r="50" fill="#E0F6E3"/>
-                    <path d="M58.834 64.167H42.166c-5 0-8.334-2.5-8.334-8.334V44.168c0-5.834 3.334-8.334 8.334-8.334h16.666c5 0 8.334 2.5 8.334 8.334v11.666c0 5.834-3.334 8.334-8.334 8.334z" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="m58.833 45-5.216 4.167c-1.717 1.366-4.534 1.366-6.25 0L42.166 45" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+        <div class="email-confirmation">
+                <div class="email-profile-pick">
+                    <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50.5" cy="50" r="50" fill="#E0F6E3"/>
+                        <path d="M58.834 64.167H42.166c-5 0-8.334-2.5-8.334-8.334V44.168c0-5.834 3.334-8.334 8.334-8.334h16.666c5 0 8.334 2.5 8.334 8.334v11.666c0 5.834-3.334 8.334-8.334 8.334z" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="m58.833 45-5.216 4.167c-1.717 1.366-4.534 1.366-6.25 0L42.166 45" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p><span>Email successfully Verified</span></p>
+                <p><label><b>Sakshi@gmail.com</b> is now Verified </label></p>
+                <button class="btn btn-common-green"> Continue</button>
         </div>
+
+        <!-- <div class="customer-journey-main">
+            <div class="name-details-sec">
+                <div class="name-title-sec">
+                     <label><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x=".5" y=".5" width="39" height="39" rx="9.5" fill="#fff" stroke="#E9EEF4"/>
+                                    <path d="M26.667 27.5v-1.667a3.333 3.333 0 0 0-3.334-3.333h-6.666a3.333 3.333 0 0 0-3.334 3.333V27.5M20 19.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667z" stroke="#1F1F1F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                    </label><span>Sakshi Kumar</span>
+                 </div>
+                    <div class="contact-details">
+                        <div class="first-mob">Mobile <b>8127372924</b></div>
+                        <div class="first-mob">City<b>Bengaluru</b></div>
+                    </div>
+                    <div class="contact-details">
+                        <div class="first-mob">Grade <b>12th</b></div>
+                        <div class="first-mob">Exam<b>JEE Main</b></div>
+                    </div>
+            </div>
+            <div class="email-main-sec">
+                <span> Provide email to start free trial.</span>
+                <form>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email address">
+                </div>
+                <button class="plan_successfull_go_to_dashboard btn btn-common-green">Start Free Trial</button>
+                <p class="privacy-sec">By clicking continue, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy.</a></p>
+                </form>
+            </div>
+        </div> -->
 </div>
 
 @endsection

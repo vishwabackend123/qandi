@@ -2533,7 +2533,7 @@ $userData = Session::get('user_data');
 
 $('.dashborarSlider').owlCarousel({
     stagePadding: 10,
-		loop: false,
+		loop: false, 
 		margin: 0,
 		nav: true,
         dots:false,
