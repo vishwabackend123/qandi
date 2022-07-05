@@ -347,9 +347,8 @@ class StudentSignInController extends Controller
                         return json_encode($response);
                     } else {
                         $succ_msg = isset($aResponse->message) ? $aResponse->message : '';
-                        $student_id = isset($aResponse->studentID) ? $aResponse->studentID : [];
+                        $student_id = isset($aResponse->student_id) ? $aResponse->student_id : '';
                         $updateStudentStage = $this->updateStudentStage($stage_at_signup, $student_id);
-
                         if (Auth::loginUsingId($student_id)) {
                             $response['status'] = 200;
                             $response['student_id'] = $student_id;

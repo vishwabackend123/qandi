@@ -100,7 +100,6 @@ class HomeController extends Controller
                 //expire today
                 $suscription_status = 1;
             }
-
             if (($suscription_status == 0 && $subscription_yn == 'N') || empty($expiry_date)) {
                 return redirect()->route('subscriptions');
             }
@@ -292,10 +291,10 @@ class HomeController extends Controller
                 return redirect()->route('performance-rating');
             }
 
-            $prof_asst_test = "N";
+            /*$prof_asst_test = "N";
             if (isset($prof_asst_test) && $prof_asst_test == 'N') {
                 return redirect()->route('performanceAnalytics');
-            }
+            } */
 
 
             return view('afterlogin.dashboard', compact('corrent_score_per', 'score', 'inprogress', 'progress', 'others', 'subjectData', 'trendResponse', 'planner', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
