@@ -1884,7 +1884,7 @@ header {
 .myqTodayGraphSec {
 	display: flex;
 	align-items: center;
-	margin-top: 35px;
+	padding-top: 35px;padding-bottom:45px;
 }
 
 .emptystate {
@@ -2223,7 +2223,11 @@ header {
         #strengthmodal .modal-dialog{max-width:600px;}
         .strengthmodal_content hr{background-color:#868a95;}
         .modalcenter{display:flex;align-items:center;height: 100%;}
-        .subjectperformBlock{height:78%;}
+        .myqTodayPannel .commondashboardTop{background-color: #fff;}
+        .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
+        .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
+        .commonblockDash.myqTodayPannel .commonWhiteBox{    top: -14px;
+            height: auto;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
