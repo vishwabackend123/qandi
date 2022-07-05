@@ -651,10 +651,27 @@ vertical-align: middle;
     font-weight: 500;
 }
 .clander-box{
-  padding: 32px 32px 32px 30px;
+  padding: 32px 32px 15px 30px;
   border-radius: 32px;    
 }
-
+.custom_modal{
+ padding: 20px 20px 32px 32px;
+ border-radius: 32px;
+ width: 416px;
+}
+.addtestbtn .btn {
+    min-width: 166px !important;
+}
+.addtestbtn svg {
+    top: 4px;
+}
+.custom_modal .modal-header .modal-title {
+    font-size: 24px;
+    font-weight: 800;
+}
+.custom_modal .modal-header .btn-close {
+    cursor: pointer;
+}
 /*****Planner-pge-end***********/
 /*********** Navdeep End *************/
 
