@@ -482,7 +482,7 @@ $userData = Session::get('user_data');
                         </div>
                     </div>
                     <div class="allSubslider">
-                        <div class="owl-carousel owl-theme">
+                        <div class="dashborarSlider owl-carousel owl-theme">
                             <div class="item">
                                 <div class="testPlanCard subCard physicsCard">
                                 <p class="m-0">Physics</p>
@@ -2319,7 +2319,7 @@ $userData = Session::get('user_data');
     padding: 12px 20px;
     cursor: pointer;
 }
-.drocustomDropdownpdown .options div:hover {
+.customDropdown .options div:hover {
    background: #e0f6e3;
   
 }
@@ -2597,13 +2597,17 @@ $userData = Session::get('user_data');
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
+ 
 
-$('.owl-carousel').owlCarousel({
+
+$('.dashborarSlider').owlCarousel({
     stagePadding: 10,
 		loop: false,
 		margin: 0,
 		nav: true,
         dots:false,
+        rewindNav:true,
+      
     responsive:{
         0:{
             items: 1,
