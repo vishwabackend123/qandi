@@ -799,24 +799,12 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="graphBoxcontainer">
                                 <div class="graphimg">
-                                <script src="https://code.highcharts.com/highcharts.js"></script>
-                                <script src="https://code.highcharts.com/modules/series-label.js"></script>
-                                <script src="https://code.highcharts.com/modules/data.js"></script>
-                                <div id="container"></div>
-                                <pre id="csv" style="display:none">
-                                            month,1980,1990,2000,2010,2012,2020
-                                            Jan,14.86,14.78,14.22,13.74,13.73,13.65
-                                            Feb,15.96,15.58,15.14,14.58,14.55,14.69
-                                            Mar,16.04,15.87,15.22,15.14,15.20,14.78
-                                            Apr,15.43,14.65,14.56,14.66,14.63,13.73
-                                            May,13.79,13.23,13.15,12.87,13.01,12.36
-                                            Jun,12.20,11.64,11.67,10.59,10.67,10.58
-                                            Jul,10.10,9.25,9.51,8.07,7.67,7.28
-                                            Aug,7.98,6.80,7.17,5.87,4.72,5.08
-                                            Sep,7.67,6.14,6.25,4.87,3.57,3.92
-                                            Oct,9.18,8.48,8.38,6.98,5.89,5.28
-                                            Nov,11.38,11.08,10.32,9.61,9.39,8.99
-                                            Dec,13.59,13.11,12.64,11.83,12.01,11.77</pre>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="271" height="191" viewBox="0 0 271 191" fill="none">
+                                        <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256"/>
+                                        <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577"/>
+                                        <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                
                                 </div>
                                 <div class="graphDetail">
                                 <div class="yourPacebox">
@@ -860,24 +848,11 @@ $userData = Session::get('user_data');
                             </div>
                             <div class="journeyBoxcontainer">
                                 <div class="graphimg">
-                                <script src="https://code.highcharts.com/highcharts.js"></script>
-                                <script src="https://code.highcharts.com/modules/series-label.js"></script>
-                                <script src="https://code.highcharts.com/modules/data.js"></script>
-                                <div id="container2"></div>
-                                <pre id="csv2" style="display:none">
-                                            month,1980,1990,2000,2010,2012,2020
-                                            Jan,14.86,14.78,14.22,13.74,13.73,13.65
-                                            Feb,15.96,15.58,15.14,14.58,14.55,14.69
-                                            Mar,16.04,15.87,15.22,15.14,15.20,14.78
-                                            Apr,15.43,14.65,14.56,14.66,14.63,13.73
-                                            May,13.79,13.23,13.15,12.87,13.01,12.36
-                                            Jun,12.20,11.64,11.67,10.59,10.67,10.58
-                                            Jul,10.10,9.25,9.51,8.07,7.67,7.28
-                                            Aug,7.98,6.80,7.17,5.87,4.72,5.08
-                                            Sep,7.67,6.14,6.25,4.87,3.57,3.92
-                                            Oct,9.18,8.48,8.38,6.98,5.89,5.28
-                                            Nov,11.38,11.08,10.32,9.61,9.39,8.99
-                                            Dec,13.59,13.11,12.64,11.83,12.01,11.77</pre>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="271" height="191" viewBox="0 0 271 191" fill="none">
+                                        <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256"/>
+                                        <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577"/>
+                                        <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
                                 </div>
                                 <div class="graphDetail">
                                 <div class="dropbox">
@@ -2073,51 +2048,6 @@ $userData = Session::get('user_data');
 
 
 <style>
-/***************************************************GRAPH-CSS-START************************************ */
-.highcharts-figure,
-.highcharts-data-table table {
-  min-width: 360px;
-  max-width: 800px;
-  margin: 1em auto;
-}
-
-.highcharts-data-table table {
-  font-family: Verdana, sans-serif;
-  border-collapse: collapse;
-  border: 1px solid #ebebeb;
-  margin: 10px auto;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-.highcharts-data-table caption {
-  padding: 1em 0;
-  font-size: 1.2em;
-  color: #555;
-}
-.highcharts-data-table th {
-  font-weight: 600;
-  padding: 0.5em;
-}
-.highcharts-data-table td,
-.highcharts-data-table th,
-.highcharts-data-table caption {
-  padding: 0.5em;
-}
-.highcharts-data-table thead tr,
-.highcharts-data-table tr:nth-child(even) {
-  background: #f8f8f8;
-}
-.highcharts-data-table tr:hover {
-  background: #f1f7ff;
-}
- .highcharts-title , .g.highcharts-legend.highcharts-no-tooltip {
-    display: none;
-}
- 
-
-/***************************************************GRAPH-CSS-END************************************ */
-
 .graphDetailempty{
    display:none
 }
@@ -2364,7 +2294,7 @@ $userData = Session::get('user_data');
     justify-content: space-between;
 }
 .plantitleBox {
-    padding-right: 130px;
+    padding-right: 250px;
 }
 .planDetailBox{
     display: flex;
@@ -2546,9 +2476,9 @@ $userData = Session::get('user_data');
 .allSubslider  .disabled {
     opacity: 0 !important;
 }
-.allSubslider  .owl-item{
+/* .allSubslider  .owl-item{
     max-width:350px !important;
-}
+} */
 .allSubslider .owl-stage{
    padding: 0px !important;
 }
@@ -2560,12 +2490,13 @@ $userData = Session::get('user_data');
     display: flex;
 }
 .testPlanCard{
-    width: 330px;
+    max-width: 397px;
     margin: 32px 0 0 0;
     padding: 20px 0px 20px 0px;
     border-radius: 10px;
     border: solid 1px #e1e3ed;
     background-color: #ffffff;
+    width: 100%
 }
 .testplannewuser{
     text-align: center;
@@ -2602,18 +2533,11 @@ $userData = Session::get('user_data');
 
 $('.dashborarSlider').owlCarousel({
     stagePadding: 10,
-    loop: true,
-        center: true,
-        items: 3,
-        dots: false,
-        autoplay:false,
-        autoplayTimeout: 2000,
-        smartSpeed: 1200,
-        autoplayHoverPause: true,
-        onStop: function () {
-            console.log('stop');
-        },
-        rewind: false,
+		loop: false,
+		margin: 0,
+		nav: true,
+        dots:false,
+        // rewindNav:true,
       
     responsive:{
         0:{
@@ -2627,7 +2551,7 @@ $('.dashborarSlider').owlCarousel({
             items:3
         },
         1000:{
-            items:3
+            items:4
         }
     }
 })
@@ -2645,97 +2569,7 @@ $('.dashborarSlider').owlCarousel({
       dropdown.classList.toggle("active")
   }
   
-   </script>
+</script>
 
 
-
-
-<!------------------------------------Graph-startCVS---------------------------->
- <script>
-   let period = 1000; //1sec
-
-Highcharts.chart("container", {
-  chart: {
-    type: "spline",
-    backgroundColor:"#ffffff"
-  },
-
- 
-
- 
-
-  xAxis: {
-    crosshair: {
-      width: 2
-    }
-  },
-
-  yAxis: {
-    title: {
-      text: " "
-    }
-  },
-
-  plotOptions: {
-    series: {
-      color: "#ABB2B9",
-      marker: {
-        enabled: false
-      },
-      label: {
-        connectorAllowed: false
-      },
-      animation:{
-        duration:1200
-      }
-    }
-  },
-
-  data: {
-    csv: document.getElementById("csv").innerHTML
-  },
-
-  tooltip: {
-    shared: true,
-    valueSuffix: " million ㎢"
-  },
-
-  series: [
-    {      
-      animation: {
-        defer: period*0
-      }
-    },
-    {      
-      animation: {
-        defer: period
-      }
-    },
-    {
-      animation: {
-        defer: period * 2
-      }
-    },
-    {
-      animation: {
-        defer: period * 3
-      }
-    },
-    {
-      color: "#E74C3C",
-      animation: {
-        defer: period * 4
-      }
-    },
-    {
-      color: "#3498DB",
-      animation: {
-        defer: period * 5
-      }
-    }
-  ]
-});
-   </script>
-
-   <!------------------------------------Graph-EndCVS---------------------------->  
     @endsection
