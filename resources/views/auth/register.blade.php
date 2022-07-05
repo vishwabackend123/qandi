@@ -85,7 +85,7 @@
                 </div>
                 <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
-                    <div class="d-flex position-relative">
+                    <div class="d-flex position-relative" id="mobile_num_box">
                         <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
                         <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
                         <a class="editnumber  d-none" id="verifynum" href="javascript:void(0);">Verify</a>
@@ -95,9 +95,8 @@
                             </svg>
                             &nbsp;Edit
                         </a>
-
                     </div>
-                    <sapn class="error  mt-2 " id="err_reg_mob"></span>
+
                 </div>
 
                 <div class="custom-input pb-3 otp-input" style="display:none">
@@ -118,19 +117,21 @@
                 </div>
                 <div class="custom-input pb-3">
                     <label>City</label>
-                    <select class="js-states form-control" name="location" id="location" required>
-                        <option value="">Select a city</option>
-                        <!-- <option>Mohali</option>
+                    <div id="location-box">
+                        <select class="js-states form-control" name="location" id="location" required>
+                            <option value="">Select a city</option>
+                            <!-- <option>Mohali</option>
                         <option>Jind</option>
                         <option>Narwana</option>
                         <option>Kaithal</option> -->
-                    </select>
+                        </select>
+                    </div>
                 </div>
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
                         <label>Grade</label>
                         <select class="form-control selectdata" name="grade" id="grade" required>
-                            <option class="we">Select grade</option>
+                            <option class="we" value="">Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
                             <option class="we" value="2">Completed (10+1) Syllabus</option>
                             <option class="we" value="3">Completed (10+2) Syllabus</option>
@@ -225,8 +226,14 @@
             } else if (e.which == 8) {
                 $(e.target).prev('.otp').focus();
             }
+            $("#errlog_otp").html('');
         });
     });
+    /*  $('.otp').keyup(function(event) {
+         $(".otp-input input").filter(function() {
+             return $.trim($(this).val()).length == 0
+         }).length == 0;
+     }); */
 
     function resentOtp() {
         $('#otp_box input[name="register_otp[]"').val('');
@@ -239,6 +246,7 @@
         $('#otpsentmsg').addClass("d-none");
         $('#editsignnumber').removeClass("d-block");
         $('#editsignnumber').addClass("d-none");
+        $('#otp_box input[name="register_otp[]"').val('');
     });
     $('#verifynum').click(function() {
         $check = 0;
@@ -269,9 +277,9 @@
                     "_token": "{{ csrf_token() }}"
                 },
                 success: function(response_data) {
-                    console.log(response_data);
+
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response.message);
+
                     if (response.success == true) {
                         $('#verifynum').removeClass("d-block");
                         $('#verifynum').addClass("d-none");
@@ -333,7 +341,7 @@
                 required: "Please enter the OTP."
             },
             "email_add": {
-                required: "Please enter emil address."
+                required: "Please enter email address."
             },
             "location": {
                 required: "Please select city."
@@ -354,10 +362,12 @@
                     error.insertAfter($("#user_name"));
                     break;
                 case 'mobile_num':
-                    error.insertAfter($("#mobile_num"));
+                    error.insertAfter($("#mobile_num_box"));
                     break;
                 case 'register_otp[]':
-                    error.insertAfter($("#otp_box"));
+                    //error.add($("#errlog_otp"));
+                    $("#errlog_otp").html('Please enter the valid OTP.')
+                    /*error.insertAfter($("#otp_box") */
                     break;
                 case 'email_add':
                     error.insertAfter($("#email_add"));
@@ -369,7 +379,7 @@
                     error.insertAfter($("#exam_id"));
                     break;
                 case 'location':
-                    error.insertAfter($("#location"));
+                    error.insertAfter($("#location-box"));
                     break;
                 default:
                     error.insertAfter(element);
@@ -435,53 +445,49 @@
 
     });
     $(document).ready(function() {
-
         $("#location").select2({
             allowClear: true,
-            minimumInputLength: 3,
+            minimumInputLength: 2,
             minimumResultsForSearch: -1,
             tokenSeparators: [',', ' '],
             placeholder: "Select a City",
+            selectOnClose: true,
             closeOnSelect: false,
-            enable: false,
             ajax: {
                 url: "{{ url('/newCityList') }}",
                 type: "GET",
-                cache: false,
+                dataType: 'json',
+                delay: 250,
                 data: function(params) {
                     var queryParameters = {
                         search_text: params.term
                     }
                     return queryParameters;
                 },
-                success: function(response_data) {
+                processResults: function(response_data, params) {
 
-                    var data = jQuery.parseJSON(response_data);
+                    // var data = jQuery.parseJSON(response_data);
 
-                    if (data.success === true) {
-                        var list = data.response;
-                    } else {
-                        var list = [];
-                    }
-
-                    $("#location").select2({
-                        data: list
+                    var data = $.map(response_data.response, function(obj) {
+                        obj.id = obj.id;
+                        obj.text = obj.text;
+                        return obj;
                     });
 
+                    params.page = params.page || 1;
 
-                }
+                    return {
+                        results: data,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: true
             }
         });
 
-        $('.select2-search__field').keydown((ev) => {
-            if (ev.which == 9) {
-                var e = jQuery.Event("keydown");
-                e.which = 40; //code of downarrow  
-                $('.select2-search__field').trigger(e)
-                //$('.select2-search__field').val(String.fromCharCode(e.which));
-                return false;
-            }
-        });;
+        $('#location').val(null).trigger('change');
 
 
     });
