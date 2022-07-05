@@ -5,6 +5,7 @@
   display: -webkit-flex;
   display: flex;
   align-items: center;
+  margin-bottom: 31px;
 }
 
 .buttons-container .label-container {
@@ -32,9 +33,12 @@
 
 .prev-button,
 .next-button {
-  background: transparent;
-  border: none;
-  padding: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 0 10px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .week {
@@ -57,6 +61,7 @@
     text-transform: capitalize;
     color: #1f1f1f;
     font-weight: 800;
+    display: block;
 }
 .year-label {
     font-size: 14px;
@@ -65,12 +70,12 @@
 }
 
 .day span {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  vertical-align: middle;
+     display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 50%;
+    vertical-align: middle;
 }
 
 .day.today span {
@@ -100,28 +105,16 @@
 .week.start-on-monday .day:last-child {
   color: red;
 }
-
-.day.today span::after {
-  content: "";
-  position: absolute;
-  bottom: 7px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-bottom: 2px solid orange;
-  width: 10px;
-  height: 1px;
-}
-
 .day.sunday span {
   color: #ff8a80;
 }
 
 .week .day.highlight span {
-  color: #2196f3;
+  color: #1f1f1f;
 }
 
 .week .day.selected span {
-  background: #1565c0;
+  background: #56b663;
   color: white;
 }
 

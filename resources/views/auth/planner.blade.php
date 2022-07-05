@@ -196,7 +196,11 @@
 </div>
 <div class="col-xl-4">
   <div class="bg-white clander-box">
+ <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>      
  <div class="calendar-wrapper" id="calendar-wrapper"></div>
+ <div class="pt-5 mt-5">
+  <button class="btn btn-common-green disabled w-100">Save Test</button>    
+  </div>
     </div>        
   </div>
 </div>
