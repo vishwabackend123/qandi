@@ -29,6 +29,15 @@
             </defs>
         </svg>
     </div>
+    <div class="email-confirmation">
+            <div class="email-profile-pick">
+                <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50.5" cy="50" r="50" fill="#E0F6E3"/>
+                    <path d="M58.834 64.167H42.166c-5 0-8.334-2.5-8.334-8.334V44.168c0-5.834 3.334-8.334 8.334-8.334h16.666c5 0 8.334 2.5 8.334 8.334v11.666c0 5.834-3.334 8.334-8.334 8.334z" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="m58.833 45-5.216 4.167c-1.717 1.366-4.534 1.366-6.25 0L42.166 45" stroke="#039855" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
 </div>
 
 @endsection
