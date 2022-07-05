@@ -163,9 +163,9 @@
                         <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
                     </div>
                     <h3 class="commonheading">Mock Test</h3>
-                    <div class="row mt-4 align-items-end">
+                    <div class="row mt-4 mb-4 align-items-end">
                         <div class="col-sm-3">
-                            <div class="question-attempted-block">
+                            <div class="question-attempted-block border-right">
                                 <span class="d-block mb-2 commontext">Question Attempted</span>
                                 <label class="m-0 commonboldtext">80/100</label>
                             </div>
@@ -200,6 +200,16 @@
                                     Review Question
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="commonWhiteBox">
+                                <h3 class="boxheading">My Score</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            
                         </div>
                     </div>
                 </div>

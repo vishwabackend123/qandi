@@ -87,7 +87,7 @@
    <section class="content-wrapper pl-5 pb-5">
    <div class="container">
       <div class="row">
-         <div class="col-xl-9">
+         <div class="col-xl-8">
             <div class="bg-white planner-box">
                <div class="d-flex align-items-center justify-content-between planner-title pb-3 mb-1">
                   <h1>Planner</h1>
@@ -127,7 +127,7 @@
 <h2 class="week-select pb-3 pt-5">Select Chapters</h2>
 <div class="d-flex align-items-center justify-content-between add-chapter position-relative">
    <p class="m-0">Mathematics</p>
-   <label class="m-0">
+   <label class="m-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <svg class="position-relative" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M10 4.167v11.666M4.167 10h11.666" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -194,15 +194,45 @@
 </div>
 </div>
 </div>
-<div class="col-xl-3">
+<div class="col-xl-4">
   <div class="bg-white clander-box">
-
+ <h1 class="Calendar-title pb-4 mb-3">Calendar</h1>      
+ <div class="calendar-wrapper" id="calendar-wrapper"></div>
+ <div class="pt-5 mt-5">
+  <button class="btn btn-common-green disabled w-100">Save Test</button>    
+  </div>
     </div>        
   </div>
 </div>
 </div>
 </section>
-
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom_modal">
+      <div class="modal-header border-0 p-0">
+        <h5 class="modal-title pb-3 mb-1" id="exampleModalLabel">Mathematics</h5>
+        <button type="button" class="btn-close border-0 bg-transparent" data-bs-dismiss="modal" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 6 6 18M6 6l12 12" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="custom-input pb-5 mb-5">
+                     <label>Select Chapters</label>
+                     <select class="form-control selectdata">
+                        <option class="we">Type Chapters</option>
+                        <option class="we2">Math</option>
+                        <option>Apple</option>
+                     </select>
+                  </div>
+      </div>
+        <div class="text-right addtestbtn">
+        <button type="button" class="btn btn-common-green"><svg class="position-relative" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.5 4.167v11.666M4.667 10h11.666" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>&nbsp; Add to test</button>
+    </div>
+    </div>
+  </div>
+</div>
 <script>
    function increaseValue() {
      var value = parseInt(document.getElementById('number').value, 10);
@@ -220,5 +250,37 @@
    }    
        
 </script>    
+    <script type="text/javascript">
+      var config = `
+function selectDate(date) {
+  $('#calendar-wrapper').updateCalendarOptions({
+    date: date
+  });
+  console.log(calendar.getSelectedDate());
+}
+
+var defaultConfig = {
+  weekDayLength: 1,
+  date: '08/05/2021',
+  onClickDate: selectDate,
+  showYearDropdown: true,
+  startOnMonday: false,
+};
+
+var calendar = $('#calendar-wrapper').calendar(defaultConfig);
+console.log(calendar.getSelectedDate());
+`;
+      eval(config);
+      const flask = new CodeFlask('#editor', { 
+        language: 'js', 
+        lineNumbers: true 
+      });
+      flask.updateCode(config);
+      flask.onUpdate((code) => {
+        try {
+          eval(code);
+        } catch(e) {}
+      });
+    </script>
 </body>
 @endsection
