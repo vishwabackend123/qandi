@@ -76,7 +76,7 @@ $userData = Session::get('user_data');
             <div  class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="verifiaction-link" style="dispaly:none">
+                            <div class="verifiaction-link" style="display:none">
                                 <p>A verification link has been sent to <b>Sakshi@gmail.com,</b> please click the link to get your account verified <a href="#">Resend</a></p>
                             </div>
                         </div>
