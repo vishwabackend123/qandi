@@ -557,7 +557,9 @@
 
 /***************************************************GRAPH-CSS-END************************************ */
 
-
+.graphDetailempty{
+   display:none
+}
 .graphDetailempty .testScrolltype {
     margin-right: 30px;
     padding-top:0px;
