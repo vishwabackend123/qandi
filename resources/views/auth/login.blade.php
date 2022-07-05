@@ -75,21 +75,17 @@
             <h1 class="pb-2 mb-1">Login</h1>
             <p>Don’t have an account? <a href="{{ route('register') }}">Sign Up</a></p>
             <form id="studentlogin" method="post">
-                <div class="custom-input pb-4">
-                    <label>Mobile</label>
-                    <input type="text" maxlength="10" class="form-control" name="login_mobile" id="mobile_num" placeholder="Mobile number" onkeypress="return isNumber(event)">
-                    <span class="error d-none mt-2" id="errlog_mob">Please enter valid mobile number</span>
-                </div>
-                <div class="custom-input changeno pb-4 d-none">
+                <div class="custom-input changeno pb-4">
                     <label>Mobile</label>
                     <div class="d-flex position-relative">
-                        <input type="text" maxlength="10" class="form-control" placeholder="Mobile no">
-                        <a class="d-block bg-white editnumber" href="javascript:void(0);">
+                        <input type="text" maxlength="10" class="form-control" name="login_mobile" id="mobile_num" placeholder="Mobile number" onkeypress="return isNumber(event)">
+                        <a class="d-none bg-white editnumber" href="javascript:void(0);">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             &nbsp;change
                         </a>
+                        <span class="error d-none mt-2" id="errlog_mob">Please enter valid mobile number</span>
                     </div>
                 </div>
                 <div class="custom-input pb-5 verify_otp">
@@ -152,13 +148,20 @@ $(document).ready(function() {
             $('#otp-verify-btn').addClass("disabled");
         }
     });
+    $('.editnumber').click(function() {
+        $('#mobile_num').prop("readonly", false);
+        $(this).hide();
+        $("#mobile-input-btn").show();
+        $('.verify_otp').hide();
+        $('#otp-verify-btn').hide();
+    })
 
 });
 
 function sentotplogin(otp_type) {
     var mobile = $("#mobile_num").val();
     if (mobile == '') {
-        $("#errlog_mob").html('Please entered registered email/mobile number');
+        $("#errlog_mob").html('Please entered registered mobile number');
         $("#errlog_mob").fadeIn('fast');
         $("#errlog_mob").fadeOut(5000);
         return false;
@@ -181,6 +184,8 @@ function sentotplogin(otp_type) {
 
             if (response.success == true) {
                 $('#mobile_num').prop('readonly', true);
+                $('.editnumber').removeClass("d-none");
+                $('.editnumber').show();
                 $("#mobile-input-btn").hide();
                 $('.verify_otp').show();
                 $('#otp-verify-btn').show();
@@ -196,6 +201,7 @@ function sentotplogin(otp_type) {
                 }
 
             } else {
+                $("#errlog_mob").removeClass("d-none");
                 $("#errlog_mob").html(response.message);
                 $("#errlog_mob").fadeIn('slow');
                 $("#errlog_mob").fadeOut(10000);
