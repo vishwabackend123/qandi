@@ -77,7 +77,7 @@
             <form id="studentlogin" method="post">
                 <div class="custom-input pb-4">
                     <label>Mobile</label>
-                    <input type="text" maxlength="10" class="form-control" name="login_mobile" id="mobile_num" placeholder="Mobile number/email ID">
+                    <input type="text" maxlength="10" class="form-control" name="login_mobile" id="mobile_num" placeholder="Mobile number" onkeypress="return isNumber(event)">
                     <span class="error d-none mt-2" id="errlog_mob">Please enter valid mobile number</span>
                 </div>
                 <div class="custom-input changeno pb-4 d-none">
@@ -140,11 +140,11 @@ $(document).ready(function() {
         var opt_four = $('#opt_four').val();
         var opt_five = $('#opt_five').val();
         if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
-                $(e.target).next('.otp_num').focus();
-            } else if (e.which == 8) {
-                $(e.target).prev('.otp_num').focus();
-            }
-        if (mobile_num !='' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
+            $(e.target).next('.otp_num').focus();
+        } else if (e.which == 8) {
+            $(e.target).prev('.otp_num').focus();
+        }
+        if (mobile_num != '' && opt_one != '' && opt_two != '' && opt_three != '' && opt_four != '' && opt_five != '') {
             $('#otp-verify-btn').removeAttr("disabled");
             $('#otp-verify-btn').removeClass("disabled");
         } else {
@@ -187,11 +187,11 @@ function sentotplogin(otp_type) {
                     $('#resend_opt_msg').removeClass("d-none");
                     $("#resend_opt_msg").fadeIn('slow');
                     $("#resend_opt_msg").fadeOut(10000);
-                     $('#opt_one').val('');
-                     $('#opt_two').val('');
-                     $('#opt_three').val('');
-                     $('#opt_four').val('');
-                     $('#opt_five').val('');
+                    $('#opt_one').val('');
+                    $('#opt_two').val('');
+                    $('#opt_three').val('');
+                    $('#opt_four').val('');
+                    $('#opt_five').val('');
                 }
 
             } else {
