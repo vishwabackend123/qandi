@@ -1638,6 +1638,22 @@ span.mq_percent_outoff {
 	z-index: 3;
 	font-weight: 800;
 }
+/******* test_analytics_mocktest *******/
+h3.commonheading{
+    font-size: 24px;
+    font-weight: 800;
+    color:#1f1f1f;
+}
+.commontext{
+    font-size: 16px;
+  font-weight: 500;
+  color:#1f1f1f;
+}
+.commonboldtext{
+    font-size: 20px;
+  font-weight: 800;
+  color:#1f1f1f;
+}
 
 /********* Amit End ***********/
 
