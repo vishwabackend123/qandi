@@ -53,6 +53,7 @@ $(".circle_percent").each(function() {
 		},1000);
 	} 
 });
+
 /************* Dashboard- MyQ Today  Circular Progress Bar ************/
 $(".mq_circle_percent").each(function() {
     var $this = $(this),
@@ -79,7 +80,7 @@ $(".mq_circle_percent").each(function() {
 		},1000);
 	} 
 });
-
+/************ Tooltip *********/
 $(document).ready(function() {
     $("span.tooltipmain svg").click(function(event) {
         event.stopPropagation();
@@ -101,7 +102,10 @@ $(document).on('click', function(e) {
         $('.tooltipclass').hide();
     }
 });
-/************ Amit - End **************/
+
+/******Test Analytics-Marks Percentage ******/
+
+/************************* Amit - End ****************************/
 
 /*****show-hide-detalis-user-profile-page**********/
   $(document).ready(function(){

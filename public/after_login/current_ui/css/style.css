@@ -1659,7 +1659,56 @@ h3.commonheading{
   font-weight: 800;
   color:#1f1f1f;
 }
-
+.common_greenbadge_tabs ul.nav {
+    padding: 3px;
+    border-radius: 6px;
+    background-color: #e0f5e3;
+}
+.common_greenbadge_tabs ul.nav .btn.nav-link {
+    background-color: transparent;
+    color: #363c4f;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+.common_greenbadge_tabs ul.nav .btn.nav-link.active {
+    background-color: #56b663;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+.your_rank small {
+    border-radius: 8px;
+    background-color: #f5faf6;
+    padding: 15px;
+    width: 52px;
+    height: 52px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+.color_labels span{
+    font-size: 14px;
+    font-weight: 500;
+    color:#666;
+}
+.color_labels span small {
+    width: 4px;
+    height: 13px;
+    border-radius: 36px;
+    background-color: #08d5a1;
+    display: inline-block;
+    margin-right: 4px;
+    top: 2px;
+    position: relative;
+}
+.color_labels span:last-child small {
+    background-color: #e5eaee;
+}
+.color_labels span:nth-child(2) small {
+    background-color: #fb7686;
+}
 /********* Amit End ***********/
 
 
@@ -1709,6 +1758,7 @@ h3.commonheading{
 
 .headerRight span {
 	display: inline-block;
+    width:auto;
 }
 
 .headerLeft h6 {
@@ -1811,7 +1861,7 @@ header {
 	font-size: 24px;
 	font-weight: 800;
 	line-height: 1.3;
-	color: #234628;
+	color: #1f1f1f;
 	margin-bottom: 10px;
 }
 
