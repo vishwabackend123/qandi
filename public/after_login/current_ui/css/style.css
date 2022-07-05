@@ -370,8 +370,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .signuprightpannel {
-	padding: 140px 140px 0;
-	height: 900px;
+	padding: 140px 140px 20px;
+	height: 100vh;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
