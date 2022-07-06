@@ -544,7 +544,7 @@ border-radius: 32px;
 min-width: 150px !Important;    
 }
 .week-select{
-font-size: 18px;
+font-size: 20px;
 color: #1f1f1f;
 font-weight: 800;
 }
@@ -2435,23 +2435,29 @@ header {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;}
-    .strengthmodal_content .btn-close{background: none;
-        font-size: 40px;
-        line-height: 23px;
-        color: #000;
-        padding-bottom: 0px;
-        padding-top: 30px;
-        height: auto;}
-        .modal-header1{display:flex;justify-content:end;}
-        .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-        #strengthmodal .modal-dialog{max-width:600px;}
-        .strengthmodal_content hr{background-color:#868a95;}
-        .modalcenter{display:flex;align-items:center;height: 100%;}
-        .myqTodayPannel .commondashboardTop{background-color: #fff;}
-        .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
-        .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
-        .commonblockDash.myqTodayPannel .commonWhiteBox{    top: -14px;
-            height: auto;}
+.strengthmodal_content .btn-close{background: none;
+font-size: 40px;
+line-height: 23px;
+color: #000;
+padding-bottom: 0px;
+padding-top: 30px;
+height: auto;}
+.modal-header1{display:flex;justify-content:end;}
+.strengthmodal_content  .modal-body{padding:0px 30px 30px;}
+#strengthmodal .modal-dialog{max-width:600px;}
+.strengthmodal_content hr{background-color:#868a95;}
+.modalcenter{display:flex;align-items:center;height: 100%;}
+.myqTodayPannel .commondashboardTop{background-color: #fff;}
+.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
+.myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
+.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
+html.scrollnone,
+html.scrollnone .wrapper-dashboard,
+html.scrollnone .main-wrapper { overflow: hidden;}
+.scrollnone body { width: calc(100% + -5px);overflow: hidden;}
+.main-wrapper {
+    background: #f5faf6;
+}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
@@ -2671,6 +2677,7 @@ header {
 	background: #ffffff;
     border-radius: 20px;
     padding: 22px 10px 17px;
+	box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
 }
 
 .exam_instruction_scrolling {
@@ -3271,8 +3278,37 @@ padding: 11px 20px!important;
 	padding: 3px;
 	border-radius: 6px;
 }
-
-
+.aeck_tab_in_tab_chapter_topic ul.nav .btn.nav-link.active {
+    background-color: #56b663;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 16px 6px 16px;
+}
+.aeck_tab_in_tab_chapter_topic ul.nav .btn.nav-link {
+    background-color: transparent;
+    color: #363c4f;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 16px 6px 16px;
+    border-radius: 4px;
+}
+.aeck_tab_in_tab_chapter_topic ul.nav {
+    padding: 3px;
+    border-radius: 6px;
+    background-color: #e0f5e3;
+}
+.aeck_tab_in_tab_chapter_topic_section
+{
+	padding-right: 20px;
+}
+.aect_tabb_contantt
+{
+	padding: 0px!important;
+}
+.aeck_commontab .nav-tabs .nav-link {
+    margin-right: 46px!important;
+}
 /********* Vikash End ***********/
 
 /********** Shiv - Start *********/
@@ -3282,11 +3318,11 @@ padding: 11px 20px!important;
 	width: 456px;
 	max-width: 100%;
 	float: right;
-	padding: 20px;
+	padding: 30px;
 }
 
 .new_notification_main_sec {
-	height: calc(100vh - 157px);
+	height: calc(100vh - 180px);
 	overflow-y: auto;
 	padding-right: 30px;
 }
@@ -3295,18 +3331,19 @@ padding: 11px 20px!important;
 	font-size: 24px;
 	font-weight: 800;
 	color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;margin-bottom:20px;
 }
 
 .notification-main>h2 a {
-	float: right;
 	font-size: 14px;
 	font-weight: 800;
-	color: #868a95;
-	padding: 10px 35px;
+	color: #868a95;line-height: 1.6;
 }
 
 .notification-list {
-	padding: 20px 0px 10px
+	padding: 30px 0px 10px
 }
 
 .list-btn-sec .btn.btn-primary {
@@ -3334,9 +3371,10 @@ padding: 11px 20px!important;
 }
 
 .list-btn-sec {
-	padding: 15px 0px;
+	padding: 15px 0px 0px;
 }
-
+.list-btn-sec  .btn{  font-size: 14px;
+    font-weight: 800;padding-top:8px;padding-bottom:8px;}
 .notification-list .form-floating {
 	padding: 6px 0px 6px;
 }
@@ -3345,6 +3383,8 @@ padding: 11px 20px!important;
 	font-size: 16px;
 	font-weight: 500;
 	color: #1f1f1f;
+  line-height: 1.6;margin-bottom:0px;
+
 }
 
 #floatingTextarea2 {
@@ -3356,13 +3396,15 @@ padding: 11px 20px!important;
 /********** Refer friend - popup **********/
 .user-profile-sec {
 	text-align: center;
-	padding: 0px 0px 20px;
+	padding: 0px 0px 15px;
 }
+
+#referfrnd .modal-dialog {max-width: 416px;}
 
 .user-profile-sec>h2 {
 	font-size: 24px;
 	font-weight: 800;
-	padding: 20px 0px;
+	padding: 20px 0px 0px;
 	color: #1f1f1f;
 }
 
@@ -3376,7 +3418,10 @@ padding: 11px 20px!important;
 	border-radius: 8px !important;
 	height: inherit;
 	box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-	width: initial;
+	min-width: inherit;
+    padding: 8px 25px;
+    font-size: 14px;
+    font-weight: 800;
 	font-size: inherit;
 	font-weight: inherit;
 	font-stretch: normal;
@@ -3389,7 +3434,7 @@ padding: 11px 20px!important;
 }
 
 #referfrnd .modal-body {
-	padding: 0rem 2rem 2rem;
+	padding: 0px 28px 28px;
 }
 
 #referfrnd button.btn:hover {
@@ -3399,17 +3444,17 @@ padding: 11px 20px!important;
 
 ._btn-green {
 	text-align: center;
-	padding: 20px 0px 50px;
+	padding: 10px 0px 40px;
 	border-bottom: 1px solid #e5eaee;
 }
 
 .bottom-sec {
-	padding: 35px 0px 5px;
+	padding: 30px 0px 5px;
 	position: relative;
 }
 
 #referfrnd input {
-	background: #fff !important;
+	background: #fff !important;box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05) !important;
 	height: 45px;
 	font-weight: 500;
 	border: 1px solid #d0d5dd;
@@ -3443,7 +3488,7 @@ padding: 11px 20px!important;
 }
 
 .bottom-sec input#exampleFormControlInput1 {
-	width: 80%;
+	width: 73%;
 	padding-right: 20px;
 }
 
@@ -3456,7 +3501,7 @@ padding: 11px 20px!important;
 	font-weight: 800;
 	position: absolute;
 	right: 0px;
-	top: 65px;
+	top: 61px;
 }
 
 #referfrnd input::placeholder {
@@ -3533,26 +3578,27 @@ padding: 11px 20px!important;
 }
 
 .modal-popup-customize .btn-close {
-	background: inherit !important;
+	background: inherit !important;opacity: 1;
 }
 
 #referfrnd .modal-header {
 	border: 0;
-	width: 94%;
+	width: 98%;
 }
 
 /*********** Dashboard - Daily Task *****************/
 .task-day-top {
 	display: flex;
 	justify-content: left;
-	position: relative;
 }
 
+.task-day.commonWhiteBox{position: relative;}
+
 .note-img {
-	position: absolute;
-	right: -30px;
-	top: -32px;
-	overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
 }
 
 .task-day-top h2 {
