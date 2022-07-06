@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <body class="bg-content">
+<div class="main-wrapper">    
    <header>
       <div class="headerMain">
          <div class="headerLeft">
@@ -84,8 +85,8 @@
          </li>
       </ul>
    </aside>
-   <section class="content-wrapper pl-5 pb-5">
-   <div class="container">
+   <section class="content-wrapper">
+   <div class="container-fluid">
       <div class="row">
          <div class="col-xl-8">
             <div class="bg-white planner-box">
@@ -206,6 +207,7 @@
 </div>
 </div>
 </section>
+</div>    
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content custom_modal">
