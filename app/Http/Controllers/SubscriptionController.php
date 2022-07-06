@@ -102,7 +102,7 @@ class SubscriptionController extends Controller
             /*trial link*/
 
             $curl_url1 = $api_URL . 'api/subscriptions/' . $user_id;
-            $curl_option =array(
+            $curl_option = array(
 
                 CURLOPT_URL => $curl_url1,
                 CURLOPT_RETURNTRANSFER => true,
@@ -159,7 +159,7 @@ class SubscriptionController extends Controller
             if ($data_difference > 0) {
                 //not expired
                 $suscription_status = 2;
-                return redirect()->route('dashboard');
+                // return redirect()->route('dashboard');
             } elseif ($data_difference < 0) {
                 //expired
                 $suscription_status = 0;
@@ -504,9 +504,9 @@ class SubscriptionController extends Controller
 
 
 
-        public function sendVerficationEmail(Request $request)
-        {
-         try {
+    public function sendVerficationEmail(Request $request)
+    {
+        try {
             $postData = $request->all();
             $curl = curl_init();
             $curl1 = curl_init();
