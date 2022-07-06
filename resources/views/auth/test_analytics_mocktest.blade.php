@@ -630,11 +630,24 @@ const myChart = new Chart(ctx, {
                 '#56b663',
                 '#08d5a1'
             ],
-            borderWidth: 1
+            barPercentage: 20,
+            barThickness: 60,
+            maxBarThickness: 60
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         scales: {
+            x: {
+                    grid: {
+                    display: false
+                    }
+            },
+
             y: {
                 beginAtZero: true
             }
