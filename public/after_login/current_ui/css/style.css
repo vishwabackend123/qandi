@@ -3256,11 +3256,11 @@ padding: 11px 20px!important;
 	width: 456px;
 	max-width: 100%;
 	float: right;
-	padding: 20px;
+	padding: 30px;
 }
 
 .new_notification_main_sec {
-	height: calc(100vh - 157px);
+	height: calc(100vh - 180px);
 	overflow-y: auto;
 	padding-right: 30px;
 }
@@ -3269,18 +3269,19 @@ padding: 11px 20px!important;
 	font-size: 24px;
 	font-weight: 800;
 	color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;margin-bottom:20px;
 }
 
 .notification-main>h2 a {
-	float: right;
 	font-size: 14px;
 	font-weight: 800;
-	color: #868a95;
-	padding: 10px 35px;
+	color: #868a95;line-height: 1.6;
 }
 
 .notification-list {
-	padding: 20px 0px 10px
+	padding: 30px 0px 10px
 }
 
 .list-btn-sec .btn.btn-primary {
@@ -3308,9 +3309,10 @@ padding: 11px 20px!important;
 }
 
 .list-btn-sec {
-	padding: 15px 0px;
+	padding: 15px 0px 0px;
 }
-
+.list-btn-sec  .btn{  font-size: 14px;
+    font-weight: 800;padding-top:8px;padding-bottom:8px;}
 .notification-list .form-floating {
 	padding: 6px 0px 6px;
 }
@@ -3319,6 +3321,8 @@ padding: 11px 20px!important;
 	font-size: 16px;
 	font-weight: 500;
 	color: #1f1f1f;
+  line-height: 1.6;margin-bottom:0px;
+
 }
 
 #floatingTextarea2 {
