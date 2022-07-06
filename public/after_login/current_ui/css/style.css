@@ -2297,23 +2297,29 @@ header {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;}
-    .strengthmodal_content .btn-close{background: none;
-        font-size: 40px;
-        line-height: 23px;
-        color: #000;
-        padding-bottom: 0px;
-        padding-top: 30px;
-        height: auto;}
-        .modal-header1{display:flex;justify-content:end;}
-        .strengthmodal_content  .modal-body{padding:0px 30px 30px;}
-        #strengthmodal .modal-dialog{max-width:600px;}
-        .strengthmodal_content hr{background-color:#868a95;}
-        .modalcenter{display:flex;align-items:center;height: 100%;}
-        .myqTodayPannel .commondashboardTop{background-color: #fff;}
-        .myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
-        .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
-        .commonblockDash.myqTodayPannel .commonWhiteBox{    top: -14px;
-            height: auto;}
+.strengthmodal_content .btn-close{background: none;
+font-size: 40px;
+line-height: 23px;
+color: #000;
+padding-bottom: 0px;
+padding-top: 30px;
+height: auto;}
+.modal-header1{display:flex;justify-content:end;}
+.strengthmodal_content  .modal-body{padding:0px 30px 30px;}
+#strengthmodal .modal-dialog{max-width:600px;}
+.strengthmodal_content hr{background-color:#868a95;}
+.modalcenter{display:flex;align-items:center;height: 100%;}
+.myqTodayPannel .commondashboardTop{background-color: #fff;}
+.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
+.myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
+.commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
+html.scrollnone,
+html.scrollnone .wrapper-dashboard,
+html.scrollnone .main-wrapper { overflow: hidden;}
+.scrollnone body { width: calc(100% + -5px);overflow: hidden;}
+.main-wrapper {
+    background: #f5faf6;
+}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/
