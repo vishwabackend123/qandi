@@ -653,7 +653,7 @@
         <p><span class="Note">Note:</span>Use “,” between two emails to separate</p>
         <div class="_btn-green"><button class="btn btn-common-green"> Send Invite</button></div>
         <div class="bottom-sec">
-        <div class="mb-3">
+        
             <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
             <input type="share" class="form-control" id="exampleFormControlInput1" placeholder="https://app.thomsondigital20...">
             <a href="#">
@@ -662,7 +662,7 @@
                     <path d="M4.308 15h-.77c-.408 0-.799-.21-1.087-.586C2.162 14.04 2 13.53 2 13V4c0-.53.162-1.04.45-1.414C2.74 2.21 3.13 2 3.539 2h6.923c.409 0 .8.21 1.088.586C11.838 2.96 12 3.47 12 4v1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg> Copy
             </a>
-        </div>
+     
         </div>
 
       </div>
