@@ -102,14 +102,14 @@
                 <div class="custom-input pb-3 otp-input" style="display:none">
                     <label>Enter OTP</label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" required>
+                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                     </div>
-                    <sapn class="error mt-2" id="errlog_otp"></span>
-                        <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
+                    <span class="error mt-2" id="errlog_otp"></span>
+                    <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
                 </div>
                 <div class="custom-input pb-3">
                     <label>Email</label>
@@ -131,7 +131,7 @@
                     <div class="col-lg-6">
                         <label>Grade</label>
                         <select class="form-control selectdata" name="grade" id="grade" required>
-                            <option class="we" value="">Select grade</option>
+                            <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
                             <option class="we" value="2">Completed (10+1) Syllabus</option>
                             <option class="we" value="3">Completed (10+2) Syllabus</option>
@@ -140,13 +140,14 @@
                     <div class="col-lg-6">
                         <label>Exam</label>
                         <select class="form-control selectdata" name="exam" id="exam_id" required>
-                            <option value="">Select exam</option>
+                            <option value="" disabled selected hidden>Select exam</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
 
                         </select>
                     </div>
                 </div>
+                <span class="error mt-2" id="errlog_auth"></span>
                 <div class="Get-otp pt-4">
                     <button type="submit" id="signup_cnt" class="btn btn-common-green text-white w-100 ">Continue</button>
                 </div>
@@ -228,6 +229,30 @@
             }
             $("#errlog_otp").html('');
         });
+        const $inp = $(".otp");
+
+        $inp.on({
+            paste(ev) { // Handle Pasting
+
+                const clip = ev.originalEvent.clipboardData.getData('text').trim();
+                // Allow numbers only
+                if (!/\d{5}/.test(clip)) return ev.preventDefault(); // Invalid. Exit here
+                // Split string to Array or characters
+                const s = [...clip];
+                // Populate inputs. Focus last input.
+                $inp.val(i => s[i]).eq(5).focus();
+            },
+            input(ev) { // Handle typing
+
+                const i = $inp.index(this);
+                if (this.value) $inp.eq(i + 1).focus();
+            },
+            keydown(ev) { // Handle Deleting
+
+                const i = $inp.index(this);
+                if (!this.value && ev.key === "Backspace" && i) $inp.eq(i - 1).focus();
+            }
+        });
     });
     /*  $('.otp').keyup(function(event) {
          $(".otp-input input").filter(function() {
@@ -277,7 +302,7 @@
                     "_token": "{{ csrf_token() }}"
                 },
                 success: function(response_data) {
-
+                    console.log(response_data);
                     var response = jQuery.parseJSON(response_data);
 
                     if (response.success == true) {
@@ -414,11 +439,18 @@
                 beforeSend: function() {},
                 success: function(response_data) { //debugger;
                     var response = jQuery.parseJSON(response_data);
-                    console.log(response);
-                    if (response.status == 400) {
-                        if (response.error) {
-                            var errormsg = $("#errlog_auth").show();
 
+                    if (response.status == 400) {
+                        if (response.msg === 'Wrong OTP') {
+                            //$('errlog_otp').html("Invalid OTP");
+                            var errormsg = $("#errlog_otp").show();
+
+                            errormsg[0].textContent = "Invalid OTP";
+                            setTimeout(function() {
+                                $('#errlog_otp').fadeOut('fast');
+                            }, 10000);
+                        } else {
+                            var errormsg = $("#errlog_auth").show();
                             errormsg[0].textContent = response.error;
                             setTimeout(function() {
                                 $('#errlog_auth').fadeOut('fast');
@@ -447,12 +479,12 @@
     $(document).ready(function() {
         $("#location").select2({
             allowClear: true,
-            minimumInputLength: 2,
+            minimumInputLength: 3,
             minimumResultsForSearch: -1,
             tokenSeparators: [',', ' '],
             placeholder: "Select a City",
             selectOnClose: true,
-            closeOnSelect: false,
+            closeOnSelect: true,
             ajax: {
                 url: "{{ url('/newCityList') }}",
                 type: "GET",
@@ -488,6 +520,9 @@
         });
 
         $('#location').val(null).trigger('change');
+        $('#location').on('select2:open', () => {
+            document.querySelector('.select2-search__field').focus();
+        });
 
 
     });
