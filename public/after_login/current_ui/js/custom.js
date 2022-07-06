@@ -104,6 +104,15 @@ $(document).on('click', function(e) {
 });
 
 /******Test Analytics-Marks Percentage ******/
+$(document).ready(function(){
+  $(".scroll-top").click(function() {
+      $("html, body").animate({ 
+          scrollTop: 0 
+      }, "slow");
+      return false;
+  });
+});
+
 
 /************************* Amit - End ****************************/
 
