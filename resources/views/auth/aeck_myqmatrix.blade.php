@@ -80,7 +80,8 @@
         </ul>
     </aside>
     <div class="content-wrapper aeck_mqmatrix_wrapper">
-        <div class="aeck_text_back_to_analytics"><a href="#"><span><</span>Back to Analytics</a></div>
+        <div class="aeck_text_back_to_analytics"><a href="#">
+            <span><</span>Back to Analytics</a></div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4">
@@ -185,27 +186,27 @@
                 <div class="col-lg-8 fortab">
                     <div class="commonWhiteBox">
                         <div class="tabMainblock">
-                            <div class="commontab">
+                            <div class="commontab aeck_commontab">
                                 <div class="tablist">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#qq1">Evaluation</a>
+                                            <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#evaluation">Evaluation</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#qq2">Application</a>
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#application">Application</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#qq3">Complrehension</a>
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#complrehension">Complrehension</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#qq4">Knowledge</a>
+                                            <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#knowledge">Knowledge</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div id="qq1" class=" tab-pane active">
-                                            <div class="d-flex justify-content-between align-items-center aeck_top_of_table_right_left_btn">
+                                <div class="tab-content aect_tabb_contantt">
+                                    <div id="evaluation" class=" tab-pane active">
+                                        <!-- <div class="d-flex justify-content-between align-items-center aeck_top_of_table_right_left_btn">
                                                 <div class="aeck_chapter_topic_btn">
                                                     <div class="btn-group aeck_btn_group_left">
                                                         <a href="#" class="btn active" aria-current="page">Chapters</a>
@@ -222,85 +223,112 @@
                                                         <button class="btn aeck_polish_strength_btn">Polish Strenghts</button>
                                                     </div>
                                                 </div>    
+                                            </div> -->
+                                        <div class="aeck_tab_in_tab_chapter_topic">
+                                            <div class="mb-4 mt-4 align-items-center d-flex justify-content-between align-items-center aeck_tab_in_tab_chapter_topic_section">
+                                                <div class="">
+                                                    <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn active" id="pills-chapters-tab" data-bs-toggle="pill" data-bs-target="#pills-chapters" type="button" role="tab" aria-controls="pills-chapters" aria-selected="true">Chapters</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link btn" id="pills-opics-tab" data-bs-toggle="pill" data-bs-target="#pills-topics" type="button" role="tab" aria-controls="pills-topics" aria-selected="false">Topics</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="">
+                                                    <button class="btn aeck_filter_btn">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <path d="M5 10h10M2.5 5h15m-10 10h5" stroke="#56B663" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </button>
+                                                    <button class="btn aeck_polish_strength_btn">Polish Strenghts</button>
+                                                </div>
                                             </div>
-                                        <div class="exam_instruction_scrolling aeck_table_scrolling">
-                                            <table class="table mymatrix_table eack_table_mymq">
-                                                <tbody>
-                                                    <tr class="aeck_table_tr">
-                                                        <td class="mymatrix_table_point">
-                                                           <input type="radio"><span>Chemical Equilibrium</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Complex Numbers</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>30%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Electromagnetic Induction</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>55%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Chemistry in everyday Life</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>32%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Biomolecules</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Chemical Equilibrium</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>22%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Chemical Equilibrium</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="mymatrix_table_point">
-                                                        <input type="radio"><span>Chemical Equilibrium</span>
-                                                        </td>
-                                                        <td>
-                                                            <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class="tab-content" id="pills-tabContent">
+                                                <div class="tab-pane fade active show" id="pills-chapters" role="tabpanel" aria-labelledby="pills-mathssub-tab">
+                                                    <div class="exam_instruction_scrolling aeck_table_scrolling">
+                                                        <table class="table mymatrix_table eack_table_mymq">
+                                                            <tbody>
+                                                                <tr class="aeck_table_tr">
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Chemical Equilibrium</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Complex Numbers</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>30%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Electromagnetic Induction</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>55%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Chemistry in everyday Life</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>32%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Biomolecules</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Chemical Equilibrium</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>22%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Chemical Equilibrium</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="mymatrix_table_point">
+                                                                        <input type="radio"><span>Chemical Equilibrium</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="mymatrix_proficiency">Proficiency : </span><span><b>65%</b></span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="pills-topics" role="tabpanel" aria-labelledby="pills-topics-tab">...</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="qq2" class=" tab-pane">
+                                <div id="application" class=" tab-pane">
 
                                 </div>
-                                <div id="qq3" class=" tab-pane">
+                                <div id="complrehension" class=" tab-pane">
                                 </div>
-                                <div id="qq4" class=" tab-pane">
+                                <div id="knowledge" class=" tab-pane">
                                 </div>
                             </div>
                         </div>

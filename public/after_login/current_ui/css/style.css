@@ -2645,6 +2645,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
 	background: #ffffff;
     border-radius: 20px;
     padding: 22px 10px 17px;
+	box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
 }
 
 .exam_instruction_scrolling {
@@ -3245,8 +3246,37 @@ padding: 11px 20px!important;
 	padding: 3px;
 	border-radius: 6px;
 }
-
-
+.aeck_tab_in_tab_chapter_topic ul.nav .btn.nav-link.active {
+    background-color: #56b663;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 16px 6px 16px;
+}
+.aeck_tab_in_tab_chapter_topic ul.nav .btn.nav-link {
+    background-color: transparent;
+    color: #363c4f;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 16px 6px 16px;
+    border-radius: 4px;
+}
+.aeck_tab_in_tab_chapter_topic ul.nav {
+    padding: 3px;
+    border-radius: 6px;
+    background-color: #e0f5e3;
+}
+.aeck_tab_in_tab_chapter_topic_section
+{
+	padding-right: 20px;
+}
+.aect_tabb_contantt
+{
+	padding: 0px!important;
+}
+.aeck_commontab .nav-tabs .nav-link {
+    margin-right: 46px!important;
+}
 /********* Vikash End ***********/
 
 /********** Shiv - Start *********/
