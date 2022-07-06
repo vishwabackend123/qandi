@@ -2485,7 +2485,7 @@ $userData = Session::get('user_data');
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
  
-
+ 
 
 $('.dashborarSlider').owlCarousel({
     stagePadding: 10,
@@ -2507,8 +2507,9 @@ $('.dashborarSlider').owlCarousel({
             items:3
         },
         1000:{
-            items:3
+            items:4
         }
+       
     }
 })
 </script>
