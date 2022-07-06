@@ -1746,7 +1746,7 @@ h3.commonheading{
     top: 1px;
 }
 /*************************/
-.multi-graph {
+/* .multi-graph {
     width: 100%;
     height: 150px;
     position: relative;
@@ -1848,7 +1848,7 @@ left: 30px;
 50% {
     transform: rotate(180deg);
 }
-}
+} */
 /*********************/
 .topic_score_bar h4 {
     font-size: 16px;
@@ -3492,7 +3492,8 @@ padding: 11px 20px!important;
 	padding-right: 20px;
 }
 
-#referfrnd .bottom-sec a {
+.share-link-input {position: relative;}
+#referfrnd .share-link-input a {
 	border-radius: 0px 8px 8px 0px;
 	background: #56b663;
 	color: #fff;
@@ -3501,7 +3502,7 @@ padding: 11px 20px!important;
 	font-weight: 800;
 	position: absolute;
 	right: 0px;
-	top: 61px;
+	top: 0px;
 }
 
 #referfrnd input::placeholder {
@@ -3510,7 +3511,7 @@ padding: 11px 20px!important;
 
 .invation-sec {
 	text-align: center;
-	padding: 100px 0px;
+	padding: 85px 0px 100px;
 }
 
 .invation-sec p {
@@ -3544,7 +3545,7 @@ padding: 11px 20px!important;
 .bottom_back-sec label {
 	padding-top: 10px;
 	vertical-align: middle;
-	padding-left: 100px;
+	padding-left: 60px;
 	color: #56b663;
 	font-size: 16px;
 	font-weight: 800;
@@ -3592,7 +3593,7 @@ padding: 11px 20px!important;
 	justify-content: left;
 }
 
-.task-day.commonWhiteBox{position: relative;}
+.task-day.commonWhiteBox{position: relative;padding: 32px;}
 
 .note-img {
     position: absolute;
@@ -3609,16 +3610,19 @@ padding: 11px 20px!important;
 
 .task-day {
 	border-radius: 32px;
-	padding-bottom: 150px;
+	padding-bottom: 150px !important;
 }
 
 .task1>p {
 	font-size: 14px;
 	font-weight: 500;
 	font-family: Manrope;
-	color: #868a95;
+	color: #868a95;margin: 0;
+    margin: 0;
 }
-
+.task1>p span {letter-spacing: 0.96px;}
+.task1 {padding-top: 30px;}
+.task2 {padding-top: 10px;}
 .task1 p span {
 	font-size: 12px;
 	text-transform: uppercase;
@@ -3629,18 +3633,20 @@ padding: 11px 20px!important;
 	font-size: 16px;
 	font-weight: 800;
 	color: #1f1f1f;
+	padding: 5px 0px;
+	margin: 0;
 }
 
 .btn-sec {
 	border-bottom: 1px solid #e5eaee;
 	display: flex;
 	padding-bottom: 8px;
-	margin-bottom: 12px;
+	margin-bottom: 12px;padding-top: 12px;
 }
 
 .task-btn.tasklistbtn {
 	flex-grow: 1;
-	text-align: right;
+	text-align: right;padding-top: 10px;
 }
 
 .qust-sec,

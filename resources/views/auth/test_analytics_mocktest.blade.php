@@ -260,6 +260,7 @@
                                             <span class="d-block mb-1 commontext">Overall percentage</span>
                                             <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
                                             <canvas id="myChart" width="400"></canvas>
+                                            
 
                                             
                                         </div>
@@ -309,18 +310,19 @@
                                     </span>
                                 </h3>
                                 <p class="dashSubtext">Negative marking for incorrect answers is considered</p>
-                                <div class="multi-graph margin">
-                                        JavaScript
-                                        <div class="graph" data-name="Not Attempted" 
-                                            style="--percentage : 80; --fill: #f2f4f7 ;">
-                                        </div>
-                                        <div class="graph" data-name="Incorrect" 
-                                            style="--percentage : 60; --fill: #fb7686 ;">
-                                        </div>
-                                        <div class="graph" data-name="Correct" 
-                                            style="--percentage : 30; --fill: #08d5a1 ;">
-                                        </div>
+                                <!-- <div class="multi-graph margin">
+                                    JavaScript
+                                    <div class="graph" data-name="Not Attempted" 
+                                        style="--percentage : 80; --fill: #f2f4f7 ;">
                                     </div>
+                                    <div class="graph" data-name="Incorrect" 
+                                        style="--percentage : 60; --fill: #fb7686 ;">
+                                    </div>
+                                    <div class="graph" data-name="Correct" 
+                                        style="--percentage : 30; --fill: #08d5a1 ;">
+                                    </div>
+                                </div> -->
+                                <canvas id="subjectChart" width="400" height="400"></canvas>
                             </div>
                             <div class="commonWhiteBox commonblockDash">
                                 <h3 class="boxheading d-flex align-items-center">Topic Score 
@@ -654,6 +656,49 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+
+var ctxy = document.getElementById("subjectChart");
+var subjectChart = new Chart(ctxy, {
+    type: 'doughnut',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        rotation: 1 * Math.PI,
+        circumference: 1 * Math.PI
+    }
+});
+
+
+
+
 </script>   
+
+
+
+
+
 
 @endsection
