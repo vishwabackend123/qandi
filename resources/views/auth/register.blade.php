@@ -557,5 +557,14 @@
 
     }
     /* function for select sity */
+    document.addEventListener("paste", function(e) {
+  if (e.target.type === "text") {
+   var data = e.clipboardData.getData('Text');
+   data = data.split('');
+   [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
+      node.value = data[index];
+    });
+  }
+});
 </script>
 @endsection
