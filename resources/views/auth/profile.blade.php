@@ -165,12 +165,13 @@
                   </div>
                </div>
                <hr class="line">
-               <div class="d-flex justify-content-end mb-5 pb-4">   
+               <div class="d-flex justify-content-end mb-5 pb-5">   
                   <button class="btn cancle mr-2 bg-transparent disabled">Cancle</button>
                   <button class="btn savebtn text-white border-0 ml-1 disabled">Save</button>
                </div>
             </div>
          </div>
+          <hr class="line pb-5 mb-4">
          <div class="row">
             <div class="col-lg-4">
                <div class="info">
