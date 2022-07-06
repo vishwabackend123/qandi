@@ -354,13 +354,13 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @else
             @php
             $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
-             $discount_price=($subsprice*$discount)/100;
+            $discount_price=($subsprice*$discount)/100;
             if(isset($user_exam_id) && !empty($user_exam_id) && $sub->subscript_id != $user_exam_id)
             {
             continue;
             }
             @endphp
-             <div class="selectPlanedetail">
+            <div class="selectPlanedetail">
                 <div class="planeName">
                     <p>{{strtoupper($sub->subscription_name)}}</p>
                     <div class="price">
@@ -435,9 +435,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         </li>
                     </ul>
                 </div>
-
                 <div class="planType">
-                    
                     @if($sub->trial_subscription_duration>0)
                     @if(!in_array($sub->subscript_id,$purchasedid) )
                     <!--div class="text-center mt-2">
@@ -448,11 +446,10 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     <div class="freeTrial">
                         <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Try {{$sub->trial_subscription_duration}} days trail</a>
                     </div>
-                     @else
+                    @else
                     <div class="freeTrial">
                         <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trail ></a>
                     </div>
-                    
                     @endif
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -575,6 +572,14 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             </div>
             @elseif( $user_exam_id==$sub->class_exam_id && $subscription_type !="P")
             <div class="selectPlanedetail">
+                @php
+                $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
+                $discount_price=($subsprice*$discount)/100;
+                if(isset($user_exam_id) && !empty($user_exam_id) && $sub->subscript_id != $user_exam_id)
+                {
+                continue;
+                }
+                @endphp
                 <div class="planeName">
                     <p>{{strtoupper($sub->subscription_name)}}</p>
                     <div class="price">
@@ -790,8 +795,7 @@ $(document).ready(function() {
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
                     $("#email_success").fadeOut(10000);
-                }else
-                {
+                } else {
                     $('#email_success').css('color', 'red');
                     $('#email_success').text(response_data.message);
                     $('#email_success').show();
