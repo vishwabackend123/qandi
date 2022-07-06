@@ -3617,8 +3617,10 @@ padding: 11px 20px!important;
 	font-size: 14px;
 	font-weight: 500;
 	font-family: Manrope;
-	color: #868a95;
+	color: #868a95;margin: 0;
+    margin: 0;
 }
+.task1>p span {letter-spacing: 0.96px;}
 .task1 {padding-top: 30px;}
 .task2 {padding-top: 10px;}
 .task1 p span {
@@ -3631,13 +3633,15 @@ padding: 11px 20px!important;
 	font-size: 16px;
 	font-weight: 800;
 	color: #1f1f1f;
+	padding: 5px 0px;
+	margin: 0;
 }
 
 .btn-sec {
 	border-bottom: 1px solid #e5eaee;
 	display: flex;
 	padding-bottom: 8px;
-	margin-bottom: 12px;
+	margin-bottom: 12px;padding-top: 12px;
 }
 
 .task-btn.tasklistbtn {
