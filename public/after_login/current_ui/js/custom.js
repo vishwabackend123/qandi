@@ -184,17 +184,6 @@ $(document).ready(function(){
        
 
 /*********Notification-Scrolljs*************/
-// $('.notificationnew').click(function() {
-//   alert(1)
-//   $('html').addClass("scrollnone")
-//   setTimeout(function() {
-//       if ($('.notification-block_new ').hasClass('show')) {
-//           $('html').addClass("scrollnone")
-//       }else {
-//           $('html').removeClass("scrollnone")
-//       }
-//   }, 100);
-// });
 $('.notificationnew').click(function() {
   $('.notification-block_new').toggleClass('activeblock')
       if ($('.notification-block_new ').hasClass('activeblock')) {
