@@ -159,7 +159,6 @@ class SubscriptionController extends Controller
             if ($data_difference > 0) {
                 //not expired
                 $suscription_status = 2;
-                return redirect()->route('dashboard');
             } elseif ($data_difference < 0) {
                 //expired
                 $suscription_status = 0;
@@ -171,9 +170,6 @@ class SubscriptionController extends Controller
             $subscription_packages = $this->subscription_packages();
             $latest_pack = isset($subscription_packages->purchased_packages[0]) ? $subscription_packages->purchased_packages[0] : [];
             $subscription_type = (isset($latest_pack) && !empty($latest_pack)) ? $latest_pack->subscription_t : '';
-
-
-
 
             return view('subscriptions', compact('subscription_type', 'subscriptions', 'purchased_ids', 'aPurchased', 'aPurchasedpack', 'purchasedid', 'suscription_status'));
         } catch (\Exception $e) {

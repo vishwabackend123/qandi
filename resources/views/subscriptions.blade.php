@@ -59,7 +59,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             $todaydate = date("y-m-d");
             $dateTimeToday = strtotime($todaydate);
             $discount_price=($subsprice*$discount)/100;
-            if(isset($user_exam_id) && !empty($user_exam_id) && $sub->subscript_id != $user_exam_id)
+            if(isset($user_exam_id) && !empty($user_exam_id) && $sub->class_exam_id != $user_exam_id)
             {
             continue;
             }
@@ -141,6 +141,9 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     </ul>
                 </div>
                 <div class="planType">
+                    <div class="freeTrial">
+                        <a href="{{url('/dashboard')}}">Skip to Dashboard</a>
+                    </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
                             @csrf
@@ -355,7 +358,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @php
             $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
             $discount_price=($subsprice*$discount)/100;
-            if(isset($user_exam_id) && !empty($user_exam_id) && $sub->subscript_id != $user_exam_id)
+            if(isset($user_exam_id) && !empty($user_exam_id) && $sub->class_exam_id != $user_exam_id)
             {
             continue;
             }
@@ -575,7 +578,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 @php
                 $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
                 $discount_price=($subsprice*$discount)/100;
-                if(isset($user_exam_id) && !empty($user_exam_id) && $sub->subscript_id != $user_exam_id)
+                if(isset($user_exam_id) && !empty($user_exam_id) && $sub->class_exam_id != $user_exam_id)
                 {
                 continue;
                 }

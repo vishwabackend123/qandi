@@ -142,7 +142,7 @@
                         <select class="form-control selectdata" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Select exam</option>
                             <option value="1">JEE</option>
-                            <option value="4">NEET</option>
+                            <option value="2">NEET</option>
 
                         </select>
                     </div>
