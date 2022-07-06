@@ -33,7 +33,7 @@
     height: 30px !important;
 }
 }
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1366px) { 
     .commonWhiteBox{padding:30px 20px}
     .boxheading {
         font-size: 20px;}
