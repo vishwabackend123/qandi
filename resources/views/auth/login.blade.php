@@ -72,7 +72,7 @@
     </div>
     <div class="right-seidepannel d-flex flex-column justify-content-center position-relative allscrollbar loginrightpannel">
         <div class="loginform m-auto">
-            <h1 class="pb-2 mb-1">Login</h1>
+            <h1 class="pb-2 mb-1">Log in</h1>
             <p>Don’t have an account? <a href="{{ route('register') }}">Sign Up</a></p>
             <form id="studentlogin" method="post">
                 <div class="custom-input changeno pb-4">
