@@ -159,6 +159,7 @@ class SubscriptionController extends Controller
             if ($data_difference > 0) {
                 //not expired
                 $suscription_status = 2;
+                return redirect()->route('dashboard');
             } elseif ($data_difference < 0) {
                 //expired
                 $suscription_status = 0;

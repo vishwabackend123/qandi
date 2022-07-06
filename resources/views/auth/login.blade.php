@@ -102,8 +102,8 @@
                     <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
                 </div>
                 <div class="Get-otp pt-4">
-                    <button type="submit" onclick="sentotplogin('send')" id="mobile-input-btn" class="btn btn-common-green text-white w-100 disabled" disabled>Get OTP</button>
-                    <button type="submit" id="otp-verify-btn" class="btn btn-common-green text-white w-100 disabled" onclick="verifyTop()"><span>Verify OTP</span></button>
+                    <button type="button" onclick="sentotplogin('send')" id="mobile-input-btn" class="btn btn-common-green text-white w-100 disabled" disabled>Get OTP</button>
+                    <button type="button" id="otp-verify-btn" class="btn btn-common-green text-white w-100 disabled" onclick="verifyTop()"><span>Verify OTP</span></button>
                 </div>
             </form>
         </div>
