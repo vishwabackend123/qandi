@@ -259,7 +259,7 @@
                                         <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                             <span class="d-block mb-1 commontext">Overall percentage</span>
                                             <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
-                                            <canvas id="myChart" width="400" height="400"></canvas>
+                                            <canvas id="myChart" width="400"></canvas>
 
                                             
                                         </div>
@@ -357,7 +357,249 @@
                                     </div>
                                     <div class="tab-content" id="pills-tabContent">
                                         <div class="tab-pane fade show active" id="pills-mathssub" role="tabpanel" aria-labelledby="pills-mathssub-tab">
-                                                bfd                                        </div>
+                                            <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Permutations and Combinations</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="topic_score_bar">
+                                                        <h4>Circular Motion And Gravitation</h4>
+                                                        <div class="progress">
+                                                            <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>                                        
+                                        </div>
                                         <div class="tab-pane fade" id="pills-physicssub" role="tabpanel" aria-labelledby="pills-physicssub-tab">...</div>
                                         <div class="tab-pane fade" id="pills-chemistrysub" role="tabpanel" aria-labelledby="pills-chemistrysub-tab">...</div>                                    
                                     </div>
@@ -387,11 +629,24 @@ const myChart = new Chart(ctx, {
                 '#56b663',
                 '#08d5a1'
             ],
-            borderWidth: 1
+            barPercentage: 20,
+            barThickness: 60,
+            maxBarThickness: 60
         }]
     },
     options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         scales: {
+            x: {
+                    grid: {
+                    display: false
+                    }
+            },
+
             y: {
                 beginAtZero: true
             }
