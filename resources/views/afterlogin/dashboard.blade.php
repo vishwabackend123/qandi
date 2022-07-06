@@ -2000,55 +2000,8 @@ $userData = Session::get('user_data');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
-.graphDetailempty{
+.graphDetail{
    display:none
 }
 .graphDetailempty .testScrolltype {
@@ -2420,6 +2373,7 @@ $userData = Session::get('user_data');
 }
 .allSubslider{
     position: relative;
+    display:none;
 }
 .allSubslider .owl-nav {
     display: flex;
@@ -2517,12 +2471,14 @@ $userData = Session::get('user_data');
     min-width: 114px;
     padding: 7.5px 15px;
 }
-
 .addPlanbtn .btn span {
     display: flex;
 }
 .addPlanbtn .btn span:nth-child(2) {
     padding-left: 5px;  
+}
+.graphimg svg{
+    width:100% !important;
 }
 </style>
 
@@ -2551,7 +2507,7 @@ $('.dashborarSlider').owlCarousel({
             items:3
         },
         1000:{
-            items:4
+            items:3
         }
     }
 })
