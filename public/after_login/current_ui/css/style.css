@@ -57,7 +57,7 @@ button:focus {
 li {
 	list-style-type: none;
 }
-
+.btn.btn.btn-common-green.disabled, .btn.btn.btn-common-green:disabled{opacity:1;background-color: #a9e1b0;border: solid 1px #a9e1b0;}
 /* common-scroll */
 ::-webkit-scrollbar {
 	width: 5px;
@@ -1814,12 +1814,13 @@ ul.proficiency-level-lists li {
 	margin-top: 20px;
 	width: 100%;
 	margin-right: 18px;
+    font-size: 14px;
 }
 
 ul.proficiency-level-lists li span b {
-	width: 7px;
+	width:6px;
 	background-color: #cccccca1;
-	height: 13px;
+	height: 12px;
 	display: inline-block;
 	border-radius: 10px;
 }
@@ -1840,6 +1841,7 @@ ul.proficiency-level-lists li.selected-level span b.rate-level-active {
 .subject-level-proficiency h5 {
 	font-size: 16px;
 	font-weight: 800;
+    color: #363c4f;
 }
 
 ul.proficiency-level-lists li:last-child {
