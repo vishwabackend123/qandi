@@ -1734,122 +1734,28 @@ h3.commonheading{
 .color_labels span:nth-child(2) small {
     background-color: #fb7686;
 }
-.test_myscrore_block .color_labels span b{
+.test_myscrore_card .color_labels span b{
     display: block;
     font-size: 24px;
     font-weight: 800;
     color: #1f1f1f;
 }
-.test_myscrore_block .color_labels span small{
+.subject_score_card .color_labels span b{
+    font-size: 16px;
+    display: block;
+    font-weight: 800;
+    color: #1f1f1f;
+}
+.test_myscrore_card .color_labels span small{
     width: 6px;
     height: 20px;
     top: 1px;
 }
-/*************************/
-.multi-graph {
-    width: 100%;
-    height: 150px;
-    position: relative;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-    box-sizing: border-box;
+.subject_score_card .color_labels span small{
+    width: 4px;
+    height: 13px;
+    top: 1px;
 }
-.multi-graph:before {
-content: "";
-width: 300px;
-height: 150px;
-border: 30px solid rgba(0, 0, 0, 0.15);
-border-bottom: none;
-position: absolute;
-box-sizing: border-box;
-transform-origin: 50% 0%;
-border-radius: 300px 300px 0 0;
-left: 0;
-top: 0;
-}
-.multi-graph .graph {
-width: 300px;
-height: 150px;
-border: 30px solid var(--fill);
-border-top: none;
-position: absolute;
-transform-origin: 50% 0% 0;
-border-radius: 0 0 300px 300px;
-left: 0;
-top: 100%;
-z-index: 5;
--webkit-animation: 1s fillGraphAnimation ease-in;
-        animation: 1s fillGraphAnimation ease-in;
-transform: rotate(calc(1deg * (var(--percentage) * 1.8)));
-box-sizing: border-box;
-cursor: pointer;
-}
-.multi-graph .graph:after {
-content: attr(data-name) " " counter(varible) "%";
-counter-reset: varible var(--percentage);
-background: var(--fill);
-box-sizing: border-box;
-border-radius: 2px;
-color: #fff;
-font-weight: 200;
-font-size: 12px;
-height: 20px;
-padding: 3px 5px;
-top: 0px;
-position: absolute;
-left: 0;
-transform: rotate(calc(-1deg * var(--percentage) * 1.8)) translate(-30px, 0px);
-transition: 0.2s ease-in;
-transform-origin: 0 50% 0;
-opacity: 0;
-}
-.multi-graph .graph:hover {
-opacity: 0.8;
-}
-.multi-graph .graph:hover:after {
-opacity: 1;
-left: 30px;
-}
-
-@-webkit-keyframes fillAnimation {
-0% {
-    transform: rotate(-45deg);
-}
-50% {
-    transform: rotate(135deg);
-}
-}
-
-@keyframes fillAnimation {
-0% {
-    transform: rotate(-45deg);
-}
-50% {
-    transform: rotate(135deg);
-}
-}
-@-webkit-keyframes fillGraphAnimation {
-0% {
-    transform: rotate(0deg);
-}
-50% {
-    transform: rotate(180deg);
-}
-}
-@keyframes fillGraphAnimation {
-0% {
-    transform: rotate(0deg);
-}
-50% {
-    transform: rotate(180deg);
-}
-}
-/*********************/
 .topic_score_bar h4 {
     font-size: 16px;
     color: #1f1f1f;
@@ -1881,7 +1787,20 @@ ul.topic_score_lists {
     padding-right: 40px;
 }
 ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){margin-bottom:0;}
+.subject_score_card h5{
+    font-size: 20px;
+  font-weight: 800;
+  color: #111;
+}
 
+.overall_percentage_chart{width:100%;height:300px;}
+.overall_percentage_chart canvas{height:100%!important;width: 100%!important;;}
+.halfdoughnut {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+.halfdoughnut canvas{width: 100%!important;height:100%!important;}
 
 /********* Amit End ***********/
 
