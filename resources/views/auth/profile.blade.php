@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <body class="bg-content">
+   <div class="main-wrapper">
    <header>
       <div class="headerMain">
          <div class="headerLeft">
@@ -84,7 +85,7 @@
          </li>
       </ul>
    </aside>
-   <section class="content-wrapper pl-5 pb-5">
+   <section class="content-wrapper">
       <div class="container">
          <div class="row">
             <div class="col-lg-4">
@@ -210,5 +211,6 @@
          </div>
       </div>
    </section>
+   </div>
 </body>
 @endsection

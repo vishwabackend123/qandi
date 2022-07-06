@@ -174,7 +174,7 @@ padding: 0;
 .custom-input label {
 	color: #363c4f;
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 600;line-height:1.63;
 }
 
 .custom-input .form-control {
