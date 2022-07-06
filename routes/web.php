@@ -299,3 +299,4 @@ Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 
 Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
 Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
+Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);

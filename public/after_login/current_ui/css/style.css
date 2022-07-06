@@ -174,7 +174,7 @@ padding: 0;
 .custom-input label {
 	color: #363c4f;
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 600;line-height:1.63;
 }
 
 .custom-input .form-control {
@@ -189,6 +189,7 @@ padding: 0;
 	font-size: 14px;
 	font-weight: 500;
 	height: 44px;
+    
 }
 
 .custom-input input::-webkit-input-placeholder {
@@ -1643,6 +1644,7 @@ ul.sidebar-menu-lists li a:hover span.sidebar-menu-tooltip {
 	background: #fff;
 	z-index: 3;
 	border-radius: 50%;
+
 }
 
 .mq_percent_text {
@@ -3075,6 +3077,170 @@ background: #3e8a44;
     border-bottom-right-radius: 32px;
 }
 
+
+
+/* ********AECK mqmatrix **********  start*/
+.aeck_mqmatrix_wrapper
+{
+	background-color: #f5faf6;
+	min-height: 100%;
+}
+.aeck_mqmatrix_wrapper h6
+{
+	height: 64px;
+    display: flex;
+    align-items: center;
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 1.6;
+	letter-spacing: normal;
+	color: white;
+}
+
+.aeck_Evaluation_text
+{
+	height: 64px;
+	flex-grow: 0;
+    padding: 0px 0px 0px 16px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.aeck_myqcolorenvl
+{
+	background-color: #00c2a8;
+}
+.aeck_myqcolorenv2
+{
+	background-color: #3e8a44;
+}
+.aeck_myqcolorenv3
+{
+	background-color: #93d658;
+}
+.aeck_myqcolorenv4
+{
+	background-color: #008799;
+}
+.myqcolorenvSec1
+{
+	background-color: #ccf3ee;
+}
+.myqcolorenvSec2
+{
+	background-color: #d8e8da;
+}
+.myqcolorenvSec3
+{
+	background-color: #e9f7de;
+}
+.myqcolorenvSec4
+{
+	background-color: #cce7eb;
+}
+.myqmatPanneaeck
+{
+	border-radius: 10px;
+    margin-bottom: 20px;
+}
+.aeck_myqinner_p
+{
+	margin: 16px 17px 45px 12px;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.6;
+	letter-spacing: normal;
+	color: #363c4f;
+}
+.aeck_myqbottomSec
+{
+    padding: 0px 12px 12px 12px;
+}
+.mymatrix_table_point input[type=radio]
+{
+	margin-right: 12px;
+}
+.aeck_table_tr
+{
+	border-top: hidden;
+}
+.aeck_text_back_to_analytics
+{
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 1.6;
+	letter-spacing: normal;
+	padding: 40px 0px 40px 15px;
+}
+.aeck_text_back_to_analytics span
+{
+	padding-right: 8px;
+}
+.aeck_text_back_to_analytics a
+{
+	color: #56b663;
+	text-decoration: none;
+}
+.aeck_table_scrolling
+{
+	padding-right: 0px!important;
+}
+.eack_table_mymq td
+{
+	padding-left: 0px!important;
+}
+.aeck_top_of_table_right_left_btn
+{
+	padding: 17px 17px 17px 0px;
+
+}
+button.btn.aeck_filter_btn {
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1.5px #cde3d0;
+	background-color: #fff;
+	margin-right: 14px;
+}
+.aeck_polish_strength_btn
+{
+background: #56b663;
+box-shadow: 0 1px 2px 0 rgb(16 24 40 / 5%);
+border-radius: 8px;
+color: #ffffff;
+font-size: 14px;
+font-weight: 800;
+padding: 10px 16px;
+border: solid 1px #56b663;
+padding: 11px 20px!important;
+}
+.aeck_chapter_topic_btn a.btn.active
+{
+	background-color: #56b663;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.6;
+	letter-spacing: normal;
+	border-radius: 4px;
+	padding: 6px 20px 0px 20px;
+}
+.aeck_chapter_topic_btn a.btn
+{
+	background-color: #e0f5e3;
+	color: #363c4f;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.6;
+	letter-spacing: normal;
+	border-color: #e0f5e3;
+}
+.aeck_btn_group_left
+{
+	background-color: #e0f5e3;
+	padding: 3px;
+	border-radius: 6px;
+}
+
+
 /********* Vikash End ***********/
 
 /********** Shiv - Start *********/
@@ -3088,7 +3254,7 @@ background: #3e8a44;
 }
 
 .new_notification_main_sec {
-	height: calc(100vh - 160px);
+	height: calc(100vh - 157px);
 	overflow-y: auto;
 	padding-right: 30px;
 }

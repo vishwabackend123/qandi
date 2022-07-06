@@ -82,5 +82,8 @@ class LeadUserController extends Controller {
 	public function testAnalyticsMocktest() {
 		return view('auth.test_analytics_mocktest');
     }
+	public function aeckMyqmatrix() {
+		return view('auth.aeck_myqmatrix');
+    }
 }
 

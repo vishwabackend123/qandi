@@ -97,6 +97,7 @@ $userData = Session::get('user_data');
                                     </span>
                                 </h3>
                           <div class="myqTodayGraphSec">
+                        
                                 <div class="mq_circle_percent" data-percent="75">
                                     <div class="mq_circle_inner">
                                         <div class="mq_round_per"></div>
