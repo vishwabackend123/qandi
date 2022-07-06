@@ -205,7 +205,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-5">
-                            <div class="commonWhiteBox commonblockDash">
+                            <div class="commonWhiteBox commonblockDash test_myscrore_block">
                                 <h3 class="boxheading d-flex align-items-center">My Score 
                                         <span class="tooltipmain ml-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
@@ -215,6 +215,20 @@
                                         </p>
                                     </span>
                                 </h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="color_labels">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <span>Correct <b><small></small>60</b></span>
+                                                <span>Incorrect <b><small></small>20</b></span>
+                                            </div>
+                                            <span>Not Attempted <b><small></small>20</b></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="commonWhiteBox commonblockDash">
                                 <h3 class="boxheading d-flex align-items-center">Marks Percentage 

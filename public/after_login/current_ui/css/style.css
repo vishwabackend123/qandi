@@ -1732,6 +1732,17 @@ h3.commonheading{
 .color_labels span:nth-child(2) small {
     background-color: #fb7686;
 }
+.test_myscrore_block .color_labels span b{
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1f1f1f;
+}
+.test_myscrore_block .color_labels span small{
+    width: 6px;
+    height: 20px;
+    top: 1px;
+}
 /********* Amit End ***********/
 
 
