@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1680px){
     .testPlanCard {
-        max-width: 315px !important;
+        max-width: 330px !important;
     }
 }
 
@@ -22,10 +22,11 @@
 
 .myqbottomSec h3{font-size:26px;}
 .selectedWeek {padding-right: 50px !important;}
-.plantitleBox {padding-right: 175px !important;}
-.graphDetailempty .testScrolltype {margin-right: 15px !important;;}
+.plantitleBox {padding-right: 140px !important;}
+
+.graphDetailempty .testScrolltype { margin-right: 9px !important;;}
 .testPlanCard {
-    max-width: 2600px !important;
+    max-width: 280px !important;
 
 }
 .allSubslider svg{

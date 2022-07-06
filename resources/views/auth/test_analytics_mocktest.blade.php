@@ -245,6 +245,8 @@
                                         <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                             <span class="d-block mb-1 commontext">Overall percentage</span>
                                             <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
+                                            <canvas id="myChart" width="400" height="400"></canvas>
+
                                             
                                         </div>
                                         <div class="tab-pane fade" id="pills-physics" role="tabpanel" aria-labelledby="pills-physics-tab">...</div>
@@ -345,5 +347,31 @@
         </div>
    </div>
 </body>
+
+<script>
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['My Percentage', 'Class Average'],
+        datasets: [{
+            data: [66, 30, 100],
+            label: '',
+            backgroundColor: [
+                '#56b663',
+                '#08d5a1'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>   
 
 @endsection
