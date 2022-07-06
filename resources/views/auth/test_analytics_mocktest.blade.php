@@ -225,7 +225,7 @@
                                                 <span>Correct <b><small></small>60</b></span>
                                                 <span>Incorrect <b><small></small>20</b></span>
                                             </div>
-                                            <span>Not Attempted <b><small></small>20</b></span>
+                                            <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
                                         </div>
                                     </div>
                                 </div>
@@ -309,6 +309,18 @@
                                     </span>
                                 </h3>
                                 <p class="dashSubtext">Negative marking for incorrect answers is considered</p>
+                                <div class="multi-graph margin">
+                                        JavaScript
+                                        <div class="graph" data-name="Not Attempted" 
+                                            style="--percentage : 80; --fill: #f2f4f7 ;">
+                                        </div>
+                                        <div class="graph" data-name="Incorrect" 
+                                            style="--percentage : 60; --fill: #fb7686 ;">
+                                        </div>
+                                        <div class="graph" data-name="Correct" 
+                                            style="--percentage : 30; --fill: #08d5a1 ;">
+                                        </div>
+                                    </div>
                             </div>
                             <div class="commonWhiteBox commonblockDash">
                                 <h3 class="boxheading d-flex align-items-center">Topic Score 
