@@ -391,7 +391,9 @@ select.form-control:not([size]):not([multiple]) {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
+.resendweight{  
+font-weight: 800;       
+}
 /******sign-up-end*******/
 /******Profile-page-strat*****/
 .bg-content {
@@ -694,9 +696,31 @@ color: #1f1f1f;
 font-weight: 800;
 }
 /*****Planner-pge-end***********/
-    .resendweight{  
-font-weight: 800;       
+
+/*****practic_exam-start**********/
+.exam_tabdata{
+border-radius: 32px;
+margin-top: 28px;
+padding: 32px !important;
 }
+.exam_topicbtn ul.nav {
+    height: 35px;
+}
+.exam_topicbtn ul.nav .btn.nav-link {
+    height: 29px;
+    line-height: 14px;
+}
+.take-fulltest{
+    background: rgba(229, 234, 238, 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+.take-fulltest .btn {
+    height: 44px;
+    min-width: 141px !important;
+}
+/*****practic_exam-end**********/
+
 /*********** Navdeep End *************/
 
 /***************** Sachin Start ****************************/
@@ -2631,11 +2655,11 @@ header {
 }
 
 .commontab .nav-tabs .nav-link {
-    padding: 0px 0px 10px;
+    padding: 0px 0px 15px;
     opacity: 0.6;
     border: 0px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.6;
     color: #363c4f;
     margin-right: 28px;
