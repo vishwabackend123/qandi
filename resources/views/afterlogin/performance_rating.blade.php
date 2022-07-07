@@ -109,7 +109,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         Back
                     </a>
                 </div>
-                <button class="btn btn-common-green" onclick="store_rating();">Continue</button>
+                <button class="btn btn-common-green disabled" disabled id="store_rating" onclick="store_rating();">Continue</button>
             </div>
         </div>
     </div>
@@ -152,6 +152,8 @@ $(document).ready(function() {
 function selectProficiencyLevel(id, pr_level) {
     $(".subject_" + id ).removeClass('selected-level');
     $("#user_pro_level_" + id + "_" + pr_level).addClass('selected-level');
+    $('#store_rating').removeAttr("disabled");
+    $('#store_rating').removeClass("disabled");
 }
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
@@ -168,12 +170,7 @@ function store_rating() {
 
         subjects_rating[name] = value;
     });
-    if(isEmpty(subjects_rating))
-    {
-        alert("Please select at least one");
-        return false;
 
-    }
 
     $.ajax({
         url: "{{ url('/dailyWelcomeUpdates') }}",
