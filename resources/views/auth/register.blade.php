@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
+<!-- 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <section class="d-flex h-100 login-signup">
     <div class="left-sidepannel d-flex flex-column justify-content-between position-relative">
         <figure class="pb-4">
@@ -118,13 +120,10 @@
                 </div>
                 <div class="custom-input pb-3">
                     <label>City</label>
-                    <div id="location-box">
-                        <select class="js-states form-control reqrd" name="location" id="location" required>
+                    <div id="location-box" class="position-relative">
+                        <select class="js-states form-control reqrd" name="location" data-use-select2="true" id="location" required>
                             <option value="">Select a city</option>
-                            <!-- <option>Mohali</option>
-                        <option>Jind</option>
-                        <option>Narwana</option>
-                        <option>Kaithal</option> -->
+
                         </select>
                     </div>
                 </div>
@@ -157,7 +156,9 @@
         <h3 class="copyright text-center pt-4">By clicking continue, you agree to our<br> <a href="javascript:void(0);">Terms & Conditions </a> &nbsp;and &nbsp;<a href="javascript:void(0);">Privacy Policy</a>.</h3>
     </div>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     /*  $("#location").select2({
         placeholder: "Select a City",
@@ -481,14 +482,16 @@
 
     });
     $(document).ready(function() {
+
         $("#location").select2({
             allowClear: false,
             minimumInputLength: 3,
             minimumResultsForSearch: -1,
             tokenSeparators: [',', ' '],
             placeholder: "Select a City",
-            selectOnClose: true,
+            selectOnClose: false,
             closeOnSelect: true,
+
             ajax: {
                 url: "{{ url('/newCityList') }}",
                 type: "GET",
@@ -534,6 +537,10 @@
                 event.preventDefault();
             }
         });
+        $('#location').change(function() {
+            $("#location-error").hide();
+        })
+
 
     });
 
