@@ -22,7 +22,6 @@ $userData = Session::get('user_data');
                 @else
                 <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
                 @endif
-                <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
             </div>
         </div>
     </div>
@@ -31,7 +30,6 @@ $userData = Session::get('user_data');
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body p-4 pt-0 text-center">
                 <p class="rating-headline mt-5 mb-4"> How well do you generally perform in these subjects?</p>
@@ -1449,19 +1447,6 @@ $userData = Session::get('user_data');
             </div>
      </div>
     </div>
-
-
-         <!-- <div id="strengthmodal" class="overlay88">
-            <div class="popup88">
-                <a class="close" href="#">&times;</a>
-               <div class="intraction_text_q1">Q1</div>
-               <div class="intraction_text_strength">Strengths</div>
-               <hr>
-               <div class="instruction_text_content">
-                  Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
-            </div>
-         </div> -->
     <!-- Strengths-popup end -->
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
@@ -1675,40 +1660,7 @@ $userData = Session::get('user_data');
             $('.js-average').text((average / $('.rating').length).toFixed(3))
         }
     </script>
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 'auto',
-            spaceBetween: 30,
-            freeMode: true,
-            slideToClickedSlide: false,
-            focusableElements: false,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: false,
 
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                1920: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-
-                },
-                1028: { // this is all desktop view of my laptop
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-                },
-                300: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30
-                }
-            }
-        });
-    </script>
     <script>
         /* Score Pie Chart */
         Highcharts.chart('scorecontainer', {
