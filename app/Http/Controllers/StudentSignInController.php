@@ -332,7 +332,7 @@ class StudentSignInController extends Controller
             curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
-            //dd($response_json);
+
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
