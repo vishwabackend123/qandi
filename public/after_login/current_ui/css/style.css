@@ -170,7 +170,12 @@ padding: 0;
     color: #56b663;
     text-decoration: none;
 }
-
+.resend span {
+    color: #56b663;
+}
+.resendcolorchan{
+color: #d0d5dd !important;    
+}
 .custom-input label {
     color: #363c4f;
     font-size: 14px;
