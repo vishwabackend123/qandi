@@ -78,12 +78,12 @@
                 <div class="custom-input changeno pb-4">
                     <label>Mobile</label>
                     <div class="d-flex position-relative">
-                        <input type="text" maxlength="10" class="form-control" name="login_mobile" id="mobile_num" placeholder="Mobile number" onkeypress="return isNumber(event)">
+                        <input type="text" maxlength="10" class="form-control bg-white" name="login_mobile" id="mobile_num" placeholder="Mobile number" onkeypress="return isNumber(event)">
                         <a class="d-none bg-white editnumber" href="javascript:void(0);">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 13.333h6M11 2.333a1.414 1.414 0 1 1 2 2l-8.333 8.334L2 13.333l.667-2.666L11 2.333z" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            &nbsp;change
+                            &nbsp;Change
                         </a>
                         <span class="error d-none mt-2" id="errlog_mob">Please enter valid mobile number</span>
                     </div>
@@ -97,7 +97,7 @@
                         <input class="form-control otp_num" maxlength="1" id="opt_four" onkeypress="return isNumber(event)">
                         <input class="form-control otp_num" maxlength="1" id="opt_five" onkeypress="return isNumber(event)">
                     </div>
-                    <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);" onclick="sentotplogin('resend')">Resend</a></p>
+                    <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend</a></p>
                     <span class="mt-2 d-none" id="resend_opt_msg" style="color: green;">Resend OTP sent successfully</span>
                     <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
                 </div>
