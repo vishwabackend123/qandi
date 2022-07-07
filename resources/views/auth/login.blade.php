@@ -98,10 +98,14 @@
                         <input class="form-control otp_num" maxlength="1" id="opt_five" onkeypress="return isNumber(event)">
                     </div>
                     <div>
-                    <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
-                    <p class="p-0 mt-2 resend d-none">Resend OTP in <span>00:59</span> <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
-                    <span class="mt-2 d-none" id="resend_opt_msg" style="color: green;">Resend OTP sent successfully</span>
-                    <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
+                        <p class="p-0 mt-2 resend resend_again">Didn’t get the code? 
+                            <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a>
+                        </p>
+                        <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span> 
+                            <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" >Resend OTP</a>
+                        </p>
+                        <span class="mt-2 d-none" id="resend_opt_msg" style="color: green;">Resend OTP sent successfully</span>
+                        <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
                     </div>
                 </div>
                 <div class="Get-otp pt-4">
@@ -116,6 +120,7 @@
 <script type="text/javascript">
 $('.verify_otp').hide();
 $('#otp-verify-btn').hide();
+$('.resend_again').hide();
 $(document).ready(function() {
     $("#studentlogin").submit(function(e) {
         e.preventDefault();
@@ -193,15 +198,16 @@ function sentotplogin(otp_type) {
                 $('.verify_otp').show();
                 $('#otp-verify-btn').show();
                 if (otp_type == 'resend') {
-                    $('#resend_opt_msg').removeClass("d-none");
-                    $("#resend_opt_msg").fadeIn('slow');
-                    $("#resend_opt_msg").fadeOut(10000);
+                    //$('#resend_opt_msg').removeClass("d-none");
+                    //$("#resend_opt_msg").fadeIn('slow');
+                    //$("#resend_opt_msg").fadeOut(10000);
                     $('#opt_one').val('');
                     $('#opt_two').val('');
                     $('#opt_three').val('');
                     $('#opt_four').val('');
                     $('#opt_five').val('');
                 }
+                resentOtpTime();
 
             } else {
                 $("#errlog_mob").removeClass("d-none");
@@ -274,14 +280,36 @@ function verifyTop() {
     });
 }
 document.addEventListener("paste", function(e) {
-  if (e.target.type === "text") {
-   var data = e.clipboardData.getData('Text');
-   data = data.split('');
-   [].forEach.call(document.querySelectorAll(".otp_num"), (node, index) => {
-      node.value = data[index];
-    });
-  }
+    if (e.target.type === "text") {
+        var data = e.clipboardData.getData('Text');
+        data = data.split('');
+        [].forEach.call(document.querySelectorAll(".otp_num"), (node, index) => {
+            node.value = data[index];
+        });
+    }
 });
+
+function resentOtpTime() {
+    $('.resend_again').hide();
+    var timeLeft = 58;
+    var elem = document.getElementById('wait_otp_div');
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+
+        if (timeLeft == -1) {
+            clearTimeout(timerId);
+            $('.resend_again').show();
+            $('.resend_timer').hide();
+        } else {
+            $('.resend_timer').show();
+            elem.innerHTML = "00:"+timeLeft ;
+            timeLeft--;
+        }
+
+    }
+
+}
 
 </script>
 @endsection
