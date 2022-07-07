@@ -4175,7 +4175,7 @@ padding: 11px 20px!important;
     border-radius: 20px;
     max-width: 460px;
 }
-.email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 25px 0px 40px;}
+.email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 20px 0px 40px;}
 .email-confirmation p > span {
     font-size: 22px;
     font-weight: 800;
