@@ -254,6 +254,14 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             </div>
             @endif
             @elseif((count($purchasedid)>0) && !empty($userData->id))
+            @php
+            $discount=(!empty($subspriceDiscount))?head(array_values($subspriceDiscount)):0;
+            $discount_price=($subsprice*$discount)/100;
+            if(isset($user_exam_id) && !empty($user_exam_id) && $sub->class_exam_id != $user_exam_id)
+            {
+            continue;
+            }
+            @endphp
             <div class="selectPlanedetail" style="display:none">
                 <div class="planeName">
                     <p>{{strtoupper($sub->subscription_name)}}</p>
