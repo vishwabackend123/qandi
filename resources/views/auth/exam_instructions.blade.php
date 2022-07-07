@@ -169,7 +169,7 @@
                     <div class="exam_section_right_side">
                         <div class="exam_section_right_side_padding">
                             <div class="exam_section_right_side_jee_main">JEE Main - Full Syllabus -2021</div>
-                            <div class="line-692"></div>
+                            <!-- <div class="line-692"></div> -->
                             <div class="exam_inst_col_four_text_contant">    
                                 <div class="exam_inst_col_four_text_contant1">Duration</div>
                                 <div class="exam_inst_col_four_text_contant2">180 Mins</div>
@@ -183,27 +183,29 @@
                                 <div class="exam_inst_col_four_text_contant2">Physics, Chemistry<br>& Mathematics</div>
                             </div>
                         </div>
-                        <div class="exam_inst_right_contant_green text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none" class="exam_inst_svg_right_green">
-                            <mask id="stq5c63rya" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="104" height="104">
-                                <path d="M0 0h104v96.18a7.82 7.82 0 0 1-7.82 7.82H0V0z" fill="#D9D9D9"/>
-                            </mask>
-                            <g mask="url(#stq5c63rya)">
-                                <rect x="14.075" y="28.538" width="61.774" height="78.977" rx="1.564" transform="rotate(-12.796 14.075 28.538)" fill="#D4ECD8"/>
-                                <rect x="22.054" y="20.718" width="61.774" height="78.977" rx="1.564" fill="#EDFFEF"/>
-                                <rect x="26.746" y="54.343" width="7.82" height="7.82" rx="2.444" fill="#56B663"/>
-                                <path d="m29.19 58.253.978.977 1.955-1.955" stroke="#E0F6E3" stroke-width=".977" stroke-linecap="round" stroke-linejoin="round"/>
-                                <rect x="26.746" y="69.98" width="7.82" height="7.82" rx="2.444" fill="#56B663"/>
-                                <path d="m29.19 73.889.977.977 1.955-1.955" stroke="#E0F6E3" stroke-width=".977" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path stroke="#B2D9B6" stroke-width="1.564" stroke-linecap="round" d="M38.475 55.122h11.73M38.475 70.761h11.73M28.309 36.356h32.842M28.309 42.613h22.677M65.844 36.356h13.293M38.475 60.596h20.331M38.475 76.236h20.331"/>
-                                <path d="M71.485 83.871 63.6 78.785l-1.604 8.618c-.258 1.388 1.31 2.38 2.454 1.553l7.035-5.085z" fill="#56B663"/>
-                                <path d="M87.759 41.33a3.128 3.128 0 0 1 4.324-.933l2.628 1.695a3.128 3.128 0 0 1 .933 4.324L71.484 83.87 63.6 78.785l24.16-37.455z" fill="#4A9453"/>
-                                <path d="M87.759 41.33a3.128 3.128 0 0 1 4.324-.933l2.628 1.695a3.128 3.128 0 0 1 .933 4.324l-4.239 6.571-7.885-5.086 4.239-6.571z" fill="#E0F6E3"/>
-                                <path fill="#56B663" d="m84.79 45.93 7.886 5.086-2.543 3.943-7.885-5.086z"/>
-                            </g>
-                        </svg>
-                        <div class="exam_inst_all_the_best">All the Best Sakshi!</div>
-                        <button class="btn exam_inst_take_test_btn">Take Test</button>
+                        <div>
+                            <div class="exam_inst_right_contant_green text-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none" class="exam_inst_svg_right_green">
+                                    <mask id="stq5c63rya" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="104" height="104">
+                                        <path d="M0 0h104v96.18a7.82 7.82 0 0 1-7.82 7.82H0V0z" fill="#D9D9D9"/>
+                                    </mask>
+                                    <g mask="url(#stq5c63rya)">
+                                        <rect x="14.075" y="28.538" width="61.774" height="78.977" rx="1.564" transform="rotate(-12.796 14.075 28.538)" fill="#D4ECD8"/>
+                                        <rect x="22.054" y="20.718" width="61.774" height="78.977" rx="1.564" fill="#EDFFEF"/>
+                                        <rect x="26.746" y="54.343" width="7.82" height="7.82" rx="2.444" fill="#56B663"/>
+                                        <path d="m29.19 58.253.978.977 1.955-1.955" stroke="#E0F6E3" stroke-width=".977" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="26.746" y="69.98" width="7.82" height="7.82" rx="2.444" fill="#56B663"/>
+                                        <path d="m29.19 73.889.977.977 1.955-1.955" stroke="#E0F6E3" stroke-width=".977" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path stroke="#B2D9B6" stroke-width="1.564" stroke-linecap="round" d="M38.475 55.122h11.73M38.475 70.761h11.73M28.309 36.356h32.842M28.309 42.613h22.677M65.844 36.356h13.293M38.475 60.596h20.331M38.475 76.236h20.331"/>
+                                        <path d="M71.485 83.871 63.6 78.785l-1.604 8.618c-.258 1.388 1.31 2.38 2.454 1.553l7.035-5.085z" fill="#56B663"/>
+                                        <path d="M87.759 41.33a3.128 3.128 0 0 1 4.324-.933l2.628 1.695a3.128 3.128 0 0 1 .933 4.324L71.484 83.87 63.6 78.785l24.16-37.455z" fill="#4A9453"/>
+                                        <path d="M87.759 41.33a3.128 3.128 0 0 1 4.324-.933l2.628 1.695a3.128 3.128 0 0 1 .933 4.324l-4.239 6.571-7.885-5.086 4.239-6.571z" fill="#E0F6E3"/>
+                                        <path fill="#56B663" d="m84.79 45.93 7.886 5.086-2.543 3.943-7.885-5.086z"/>
+                                    </g>
+                                </svg>
+                                <div class="exam_inst_all_the_best">All the Best Sakshi!</div>
+                                <button class="btn exam_inst_take_test_btn">Take Test</button>
+                            </div>
                         </div>
                     </div>
                 </div>

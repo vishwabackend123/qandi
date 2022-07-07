@@ -1,106 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
-<style>
-.contacrus_page_wrapper
-{
-   Background:#f5faf6;
-   min-height:100%;
-}   
-.contactus_customer_support_text
-{
-   font-size: 24px;
-  font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: normal;
-  color:#234628;
-}
-.contactus_customer_support_text_under_text
-{
-   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: normal;
-  color:#1f1f1f;
-  margin-top:20px;
-}
-.contactus_free_get_need
-{
-   font-size: 16px;
-  font-weight: 800;
-  line-height: 1.6;
-  letter-spacing: normal;
-  color:#1f1f1f ;
-  padding-top:68px;
-}
-.contactus_free_get_need_span
-{
-   font-size: 16px;
-  font-weight: 800;
-  line-height: 1.6;
-  letter-spacing: normal;
-  color: #56b663;
-}
-.contectus_bottom_img_svg {
-    display: flex;
-    justify-content: flex-end;
-}
-.contectus_bottom_img_svg svg
-{
-   margin-top:-150px;
-}
-/* popup */
-.popup88 {
-  margin: 13% auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 1s ease-in-out;
-  width:44%!important;
-}
-.overlay88 {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.4);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-.overlay88:target {
-  visibility: visible;
-  opacity: 1;
-}
-.intraction_text_q1
-{
-   font-size: 16px;
-  font-weight: 800;
-  line-height: 1.6;
-  letter-spacing: normal;
-  color: #363c4f;
-}
-.intraction_text_strength
-{
-   margin-top:3px;
-   font-size: 24px;
-  font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: normal;
-  color: #1f1f1f;
-}
-.instruction_text_content
-{
-   font-size: 16px;
-  font-weight: 500;
-  line-height: 1.6;
-  letter-spacing: normal;
-  color: #363c4f;
-}
-</style>
+
 <div class="main-wrapper">
     <header>
       <div class="headerMain">
@@ -228,24 +129,6 @@
             <circle cx="78" cy="289" r="4" fill="#CDE3D0"/>
             <path d="M91.5 293.198c0 1.547 1.266 2.829 2.785 2.532A14.505 14.505 0 0 0 106 281.5a14.5 14.5 0 0 0-11.715-14.23c-1.519-.297-2.785.985-2.785 2.532 0 1.548 1.285 2.76 2.756 3.24a8.894 8.894 0 0 1 3.534 14.748c-1 1-2.214 1.738-3.534 2.168-1.471.48-2.756 1.692-2.756 3.24z" fill="#CDE3D0"/>
             </svg>
-         </div>
-         <div>
-            <!--popup start  -->
-         <div class="box">
-            <a class="button btn" href="#popup18">Let me Pop up</a>
-         </div>
-         <div id="popup18" class="overlay88">
-            <div class="popup88">
-            <a class="close" href="#">&times;</a>
-               <div class="intraction_text_q1">Q1</div>
-               <div class="intraction_text_strength">Strengths</div>
-               <hr>
-               <div class="instruction_text_content">
-                  Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            </div>
-         </div>
-         <!-- popup end -->
-
          </div>
       </div>
    </div>
