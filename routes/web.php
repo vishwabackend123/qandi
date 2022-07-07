@@ -291,7 +291,7 @@ Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeCo
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
-Route::any('/performance_rating', [App\Http\Controllers\LeadUserController::class, 'performanceRating']);
+Route::any('/performance_rating', [App\Http\Controllers\HomeController::class, 'performanceRating']);
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
 /* New signup routes */

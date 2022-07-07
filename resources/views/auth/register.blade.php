@@ -111,8 +111,11 @@
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                     </div>
-                    <span class="error mt-2" id="errlog_otp"></span>
-                    <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();" class="resendweight">Resend</a></p>
+                    <div>
+                     <span class="error mt-2" id="errlog_otp"></span>
+                     <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
+                    <p class="p-0 mt-2 resend">Resend OTP in <span>00:59</span> <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
+                  </div>
                 </div>
                 <div class="custom-input pb-3">
                     <label>Email</label>

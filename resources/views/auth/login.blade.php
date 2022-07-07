@@ -85,8 +85,8 @@
                             </svg>
                             &nbsp;Change
                         </a>
-                        <span class="error d-none mt-2" id="errlog_mob">Please enter valid mobile number</span>
                     </div>
+                    <div class="error d-none mt-2 w-100" id="errlog_mob">Please enter valid mobile number</div>
                 </div>
                 <div class="custom-input pb-5 verify_otp">
                     <label>Enter OTP</label>
@@ -97,9 +97,12 @@
                         <input class="form-control otp_num" maxlength="1" id="opt_four" onkeypress="return isNumber(event)">
                         <input class="form-control otp_num" maxlength="1" id="opt_five" onkeypress="return isNumber(event)">
                     </div>
-                    <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend</a></p>
+                    <div>
+                    <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
+                    <p class="p-0 mt-2 resend d-none">Resend OTP in <span>00:59</span> <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
                     <span class="mt-2 d-none" id="resend_opt_msg" style="color: green;">Resend OTP sent successfully</span>
                     <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
+                    </div>
                 </div>
                 <div class="Get-otp pt-4">
                     <button type="button" onclick="sentotplogin('send')" id="mobile-input-btn" class="btn btn-common-green text-white w-100 disabled" disabled>Get OTP</button>
