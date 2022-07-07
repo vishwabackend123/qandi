@@ -97,7 +97,7 @@
                         <input class="form-control otp_num" maxlength="1" id="opt_four" onkeypress="return isNumber(event)">
                         <input class="form-control otp_num" maxlength="1" id="opt_five" onkeypress="return isNumber(event)">
                     </div>
-                    <p class="p-0 mt-2 resend">Didn’t get the code? <a href="javascript:void(0);" onclick="sentotplogin('resend')">Resend</a></p>
+                    <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend</a></p>
                     <span class="mt-2 d-none" id="resend_opt_msg" style="color: green;">Resend OTP sent successfully</span>
                     <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
                 </div>

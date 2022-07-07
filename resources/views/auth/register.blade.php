@@ -110,7 +110,7 @@
                         <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                     </div>
                     <span class="error mt-2" id="errlog_otp"></span>
-                    <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
+                    <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();" class="resendweight">Resend</a></p>
                 </div>
                 <div class="custom-input pb-3">
                     <label>Email</label>
@@ -482,7 +482,7 @@
     });
     $(document).ready(function() {
         $("#location").select2({
-            allowClear: true,
+            allowClear: false,
             minimumInputLength: 3,
             minimumResultsForSearch: -1,
             tokenSeparators: [',', ' '],
