@@ -428,6 +428,15 @@
                                                             <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                                             <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
+                                                        <!--------------->
+                                                        <div class="noofquestions-block">
+                                                            <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                            <div class="color_labels">
+                                                                <span class="d-block"><small></small> Correct <b>6</b></span>
+                                                                <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>1</b></span>
+                                                                <span class="d-block"><small></small> Not Attempted <b>1</b></span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </li>
                                                 <li>
