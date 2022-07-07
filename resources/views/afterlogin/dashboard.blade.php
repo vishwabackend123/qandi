@@ -356,7 +356,7 @@ $userData = Session::get('user_data');
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
-                                              <div class="myqmatPannel myqcolor3">
+                                              <div class="myqmatPannel myqcolor3 mb-0">
                                               <a href="#hopefulmodal">
                                                  <div class="myqinner">
                                                    <h6>Q3</h6>
@@ -374,7 +374,7 @@ $userData = Session::get('user_data');
                                               </div>
                                           </div>
                                           <div class="col-sm-6">
-                                              <div class="myqmatPannel myqcolor4">
+                                              <div class="myqmatPannel myqcolor4  mb-0">
                                               <a href="#weakhmodal">
                                                  <div class="myqinner">
                                                    <h6>Q4</h6>
