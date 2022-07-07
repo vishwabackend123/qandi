@@ -58,7 +58,7 @@ class LeadUserController extends Controller
 	{
 		$preferences = $this->redis_Preference();
 		$prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
-
+		$prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
 		$user_subjects = $this->redis_subjects();
 
 		$subjects = [];
@@ -66,13 +66,13 @@ class LeadUserController extends Controller
 			$subjects[] = $sub->subject_name;
 		}
 		$subjects_name = implode(', ', $subjects);
-
-		return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
+		if (isset($prof_asst_test) && $prof_asst_test == 'Y') {
+			return redirect()->route('dashboard');
+		} else {
+			return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
+		}
 	}
-	public function performanceRating()
-	{
-		return view('auth.performance_rating');
-	}
+	
 
 	public function examInstructions()
 	{
@@ -90,19 +90,24 @@ class LeadUserController extends Controller
 	{
 		return view('auth.contact_us');
 	}
-	public function chapterPlanner() {
-		return view('auth.chapter_planner'); 
+	public function chapterPlanner()
+	{
+		return view('auth.chapter_planner');
 	}
-    public function planner() {
+	public function planner()
+	{
 		return view('auth.planner');
-    }
-	public function emailConfirmation() {
+	}
+	public function emailConfirmation()
+	{
 		return view('auth.email_confirmation');
-    }
-	public function testAnalyticsMocktest() {
+	}
+	public function testAnalyticsMocktest()
+	{
 		return view('auth.test_analytics_mocktest');
-    }
-	public function aeckMyqmatrix() {
+	}
+	public function aeckMyqmatrix()
+	{
 		return view('auth.aeck_myqmatrix');
-    }
+	}
 }
