@@ -1,64 +1,5 @@
 <header>
-    <style>
-        body.overlay {
-            position: fixed;
-            overflow-y: hidden;
-            padding-right: 15px;
-            /* Avoid width reflow */
-        }
-
-        .notification {
-            position: relative;
-
-        }
-
-        .notifications-count {
-            position: absolute;
-            top: 13px;
-            right: 6px;
-            width: auto;
-            height: auto;
-            color: #fff;
-            font-size: 11px;
-            font-family: Arial;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1;
-            padding: 1px 4px;
-            background-color: #da3225;
-            border-radius: 50%;
-            box-shadow: 0 0 0 2px #dfdfdf;
-            transform: scale(50);
-            opacity: 0;
-            transition: 0.3s cubic-bezier(0, 0.24, 0.86, 1.08) all;
-            z-index: 1;
-            display: none;
-        }
-
-        .notifications-count.active {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .notifications-count.zindex {
-            z-index: 3;
-        }
-
-        .badge_nty {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 0px 5px;
-            border-radius: 50%;
-            background: red;
-            color: rgb(255 255 255 / 80%);
-            min-height: 12px;
-            min-width: 12px;
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-    </style>
+   
     <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 ms-auto text-end">
@@ -304,126 +245,22 @@
                
                   </a>
                 </span>
-                  <span class="headericon">
-                    <a href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                        <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                  <span class="headericon dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                            <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </a>
+                 <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="#">Profile & Subscription</a></li>
+                     <li><a class="dropdown-item" href="#">Logout</a></li>
+                  </ul>
                 </span>
 
              </div>
          </div>
 </header>
 
-
-
-
-
-
-
-<style>
-    .tooltip.top {
-        margin-top: -36px;
-        display: none;
-    }
-
-    .slider-track {
-        position: absolute;
-        cursor: pointer;
-        background-image: -webkit-linear-gradient(top, #f5f5f5 0, #f9f9f9 100%);
-        background-image: -o-linear-gradient(top, #f5f5f5 0, #f9f9f9 100%);
-        background-image: linear-gradient(to bottom, #ffffff 0, #f9f9f9 100%);
-        background-repeat: repeat-x;
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);
-        -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
-        box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
-        border-radius: 4px;
-        border: 1px solid #e7e7e7;
-    }
-
-
-    .slider-selection {
-        border-radius: 6px !important;
-        box-shadow: 0 0 10px 0 #5bcbfa !important;
-        background: #21ccff !important;
-    }
-
-    .slider-horizontal {
-        width: 90%;
-        height: 20px;
-    }
-
-    .slider-handle {
-        background-color: #fff !important;
-        background-image: none !important;
-        -webkit-box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 40%) !important;
-        -moz-box-shadow: 1px 1px 24px -2px rgba(0, 0, 0, 0.40) !important;
-        box-shadow: 1px 1px 24px -2px rgb(0 0 0 / 40%) !important;
-        border: 3px solid #000;
-        width: 20px;
-        height: 20px;
-
-
-    }
-
-    .exam-week-bar {
-        margin-top: 42px;
-    }
-</style>
-
-
-<style>
-    .planmner-block  .card-common-topheading:before, 
-      .planmner-block .card-common-topheading:after,
-      .planner-scheduar-block .planner-content > .d-flex.align-items-center.justify-content-between:before,
-      .planner-scheduar-block .planner-content > .d-flex.align-items-center.justify-content-between:after {display:none}
-    .planmner-block    .card-common-topheading , .planner-scheduar-block .planner-content > .d-flex.align-items-center.justify-content-between { padding:0px !important;}
-    .plannerCurve{
-        background: white;
-    padding-left: 0px;
-    text-align: center;
-    width: 200px;
-    TEXT-ALIGN: CENTER;
-    line-height: 65px;
-    border-top-left-radius: 56px;
-    border-top-right-radius: 20px!important;
-    position: relative;
-    }
-
-   .circleplanner {
-    width: 20px;
-    height: 20px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    background: #f6f9fd;
-    z-index: 2 !important;
-    position: absolute !IMPORTANT;
-    right: -20PX;
-    bottom: 0PX
-    }
-   .squareplanner {
-    background: #ffffff;
-    width: 10px;
-    height: 10px;
-    z-index: 1;
-    position: absolute !IMPORTANT;
-    right: -10PX;
-    bottom: 0PX; 
-    }
-    .planner-content.p-3{
-        padding-top:0px !important;
-    }
-    div#calendari {
-        margin-top: 0px !important;
-    }
-
-    .planner-content.p-3 .plannerCurve {
-        border-top-left-radius: 45px;
-    }
- 
-    </style>
 <!-- Planner Section -->
 <div class="planmner-block width collapse planner-scheduar-block" id="collapsePlanner">
 
@@ -534,10 +371,7 @@
                 </span>
 -->
 
-                <!--
-<img src="{{URL::asset('public/after_login/new_ui/images/close.png')}}" width="35%">
 
-<span><a href="javascript:void(0);" class="text-secondary"><i class="fas fa-info-circle"></i></a></span> -->
             </div>
             <div class="calender-block">
                 <div id="calendari">
@@ -660,22 +494,6 @@
 <!-- Planner section End -->
 
 <!--notification-right End-->
-<style>
-     .notification-main{background: #fff;width: 456px; max-width: 100%; float: right; padding: 20px;}
-    .new_notification_main_sec {height: calc(100vh - 160px);overflow-y: auto;padding-right: 30px; }
-    .notification-main > h2 {font-size: 24px; font-weight: 800; color: #1f1f1f; }
-    .notification-main > h2 a {float: right;font-size: 14px;font-weight: 800;color: #868a95; padding:10px 35px;}
-    .notification-list {padding: 20px 0px 10px}
-    .list-btn-sec .btn.btn-primary {background: #56b663;margin-right: 20px;border-color: #56b663;text-transform: capitalize;    border-radius: 8px; padding: 6px 40px;}
-    .list-btn-sec .btn-outline-secondary {border-color: #56b663;text-transform: capitalize;color:#56b663;    border-radius: 8px;padding: 6px 27px;}
-    .list-btn-sec .btn-outline-secondary:hover{background: #56b663;border-color: #56b663;text-transform: capitalize;color:#fff;}
-    .list-btn-sec {padding: 15px 0px;}
-    .notification-list .form-floating {padding: 6px 0px 6px;}
-    .main-text {font-size: 16px;font-weight: 500;color: #1f1f1f;}
-    #floatingTextarea2 {background: #f2f4f7;border: 0;resize: none;}
-
-
-</style>
 
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
@@ -761,42 +579,12 @@
 </div>
 
 
-<!-- <div class="notification-block width collapse" id="collapseNotification">
-    <div class="planner-wrapper ">
-        <div class=" notification-right ">
-            <a draggable="false" href="javascript:void(0);" class="close-bnt" id="close-bar"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a>
-            <div id="recent_notify" class=" notification-scroll ">
 
-                @if(isset($notifications) && !empty($notifications) && is_array($notifications))
-                @foreach($notifications as $val)
-                <div class="notification-txt">
-                    <div class="noti-box-scroll">
-                    <span class="bell-noti"><i class="fa fa-bell-o" aria-hidden="true"></i><div class="red-dot"></div></span>
-                    <span class="text-notific">{{ $val->message }}</span>
-                    </div>
-                    <div class="primary-secondry-btn">
-                        <button type="button" class="primary-btn1">primary</button>
-                        <button type="button" class="secondary-btn1">secondary</button>
-                    </div>
-                </div>
-                @endforeach
-                @endif
-            </div>
-        </div>
-    </div>
-</div> -->
-<!--notification-right End-->
-<!--
-<img src="{{ URL::asset('public/after_login/new_ui/images/subs.png')}}">
-<img src="{{URL::asset('public/after_login/new_ui/images/profile.png')}}">
-<img src="{{URL::asset('public/after_login/new_ui/images/log-out.png')}}">
--->
 <!--profile-section-->
 <div class="main-profile-section width collapse" id="profileAcc">
 
     <div class="account-wrapper new">
-        <!-- <a draggable="false" href="javascript:void(0);" class="closeprofile"><img src="{{URL::asset('public/after_login/new_ui/images/cross.png')}}"></a> -->
-        <div class="profile-section">
+               <div class="profile-section">
             <ul>
                 <li><a draggable="false" href="javascript:void(0);" class="account-profile accountsidebar">
                         <svg id="Icon_Profile" data-name="Icon / Profile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -1155,37 +943,3 @@
     }
 </script>
 
-<style>
-    .planner-content,
-    #sub-planner {
-        height: calc(100% - 120px) !important;
-    }
-
-    .planner-scheduar-block.show .planner-content {
-        box-shadow: 0px 0px 6px -3px;
-        background: #fff;
-    }
-
-    .clear_div .dropdown ul.dropdown-menu.cust-dropdown.show {
-        transform: translate(-104px, 50px) !important;
-
-    }
-
-    .tickicon svg {
-        margin-right: 5px;
-    }
-
-
-    .col-xl-4.col-lg-4.col-md-6.mb-4.col_max.col_min {
-        max-width: 25%;
-        min-width: 25%;
-    }
-
-    .sub_box {
-        justify-content: space-around;
-    }
-
-    .sub_box .slimScrollDiv {
-        padding: 10px;
-    }
-</style>

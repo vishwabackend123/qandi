@@ -1688,20 +1688,20 @@ font-weight: 800;
      text-align: center;
  }
  .testplannewuser p {
-     padding: 0px 0px 11px 0px;
-     font-size: 14px;
-     font-weight: 500;
-     line-height: 1.6;
+padding: 11px 0px 11px 0px;
+font-size: 14px;
+font-weight: 500;
+line-height: 1.6;
  }
- .addPlanbtn .btn{
-     width: 114px !important;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin: auto;
-     color: #56b663;
-     min-width: 114px;
-     padding: 7.5px 15px;
+.addPlanbtn .btn{
+	 width: 114px !important;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 margin: auto;
+	 color: #56b663;
+	 min-width: 114px;
+	 padding: 7.5px 15px;min-width: auto!important;
  }
  .addPlanbtn .btn span {
      display: flex;
@@ -2459,9 +2459,9 @@ header {
 }
 
 .boxheading .tooltipmain {
-    display: inline-block;
-    margin-left: 10px;
-    cursor: pointer;position: relative;
+	display: inline-block;
+	margin-left: 8px;
+	cursor: pointer;position: relative;
 }
 
 .content-wrapper {
@@ -2566,10 +2566,10 @@ header {
 }
 
 .subjextscoreLeft h6 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: #363c4f;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.6;
+	color: #363c4f;margin-bottom:0px;
 }
 
 .subjextscoreLeft h4 {
@@ -2863,7 +2863,7 @@ height: auto;}
 .strengthmodal_content hr{background-color:#868a95;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
-.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
+.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #234628}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
 .commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
 html.scrollnone,
@@ -4251,4 +4251,4 @@ padding: 11px 20px!important;
     text-align: center;
     padding: 20px 75px;
 }
-.privacy-sec > a {color: #56b663;}
+.privacy-sec > a {color: #56b663;}  

@@ -90,4 +90,19 @@ class LeadUserController extends Controller
 	{
 		return view('auth.contact_us');
 	}
+	public function chapterPlanner() {
+		return view('auth.chapter_planner'); 
+	}
+    public function planner() {
+		return view('auth.planner');
+    }
+	public function emailConfirmation() {
+		return view('auth.email_confirmation');
+    }
+	public function testAnalyticsMocktest() {
+		return view('auth.test_analytics_mocktest');
+    }
+	public function aeckMyqmatrix() {
+		return view('auth.aeck_myqmatrix');
+    }
 }

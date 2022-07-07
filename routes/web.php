@@ -294,10 +294,13 @@ Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::c
 Route::any('/performance_rating', [App\Http\Controllers\LeadUserController::class, 'performanceRating']);
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
 Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
-Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']);
-Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']);
-
-
-
 /* New signup routes */
 Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
+Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 
+Route::any('/contact_us', [App\Http\Controllers\LeadUserController::class, 'contactUs']); 
+Route::any('/chapter_planner', [App\Http\Controllers\LeadUserController::class, 'chapterPlanner']); 
+Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner']);
+Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
+Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
+Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);
+

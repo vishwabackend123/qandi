@@ -401,6 +401,7 @@
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon-active">
                     <path d="M25.667 9.94V4.643c0-1.645-.747-2.31-2.602-2.31h-4.713c-1.855 0-2.602.665-2.602 2.31v5.285c0 1.657.747 2.31 2.602 2.31h4.713c1.855.012 2.602-.653 2.602-2.298zM25.667 23.065v-4.713c0-1.855-.747-2.602-2.602-2.602h-4.713c-1.855 0-2.602.747-2.602 2.602v4.713c0 1.855.747 2.602 2.602 2.602h4.713c1.855 0 2.602-.747 2.602-2.602zM12.25 9.94V4.643c0-1.645-.747-2.31-2.602-2.31H4.935c-1.855 0-2.602.665-2.602 2.31v5.285c0 1.657.747 2.31 2.602 2.31h4.713c1.855.012 2.602-.653 2.602-2.298zM12.25 23.065v-4.713c0-1.855-.747-2.602-2.602-2.602H4.935c-1.855 0-2.602.747-2.602 2.602v4.713c0 1.855.747 2.602 2.602 2.602h4.713c1.855 0 2.602-.747 2.602-2.602z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                <span class="sidebar-menu-tooltip">Dashboard</span>
             </a>
         </li>
         <li class="mb-4 sidebar-exam-menu">
@@ -413,6 +414,7 @@
                     <path d="M15.471 4.2 5.893 14.34c-.362.385-.712 1.143-.782 1.668l-.431 3.78c-.152 1.365.828 2.298 2.181 2.065l3.757-.642c.525-.093 1.26-.478 1.621-.875l9.579-10.138c1.656-1.75 2.403-3.745-.175-6.183-2.567-2.415-4.515-1.564-6.172.186z" stroke="#56B663" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M13.871 5.89A7.147 7.147 0 0 0 20.23 11.9M3.5 25.668h21" stroke="#56B663" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                <span class="sidebar-menu-tooltip">Practice Test</span>
             </a>
         </li>
         <li class="mb-4">
@@ -425,6 +427,7 @@
                     <path d="M21.21 15.89A10 10 0 1 1 8 2.83" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M22 12A10.001 10.001 0 0 0 12 2v10h10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                <span class="sidebar-menu-tooltip">Test Analytics</span>
             </a>
         </li>
         <li class="mb-4">
@@ -435,6 +438,7 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"  class="menu-icon-active">
                     <path d="M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM16 2v4M8 2v4M3 10h18" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                <span class="sidebar-menu-tooltip">Planner</span>
             </a>
         </li>
         <li class="mb-4">
@@ -445,12 +449,13 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-icon-active">
                     <path d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
+                <span class="sidebar-menu-tooltip">Refer a friend</span>
             </a>
         </li>
     </ul>
     <div class="submenu-block">
         <h6 class="mb-5">Exam</h6>
-        <ul class="submenu-lists">
+        <ul class="submenu-lists ps-0">
             <li class="practice-menu">
                 <a href="javascript:void(0)">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -612,60 +617,8 @@
     </div>
 </div> -->
 
-<style>
-    .user-profile-sec {text-align: center;padding:0px 0px 20px;}
-    .user-profile-sec > h2 {font-size: 24px; font-weight: 800; padding: 20px 0px; color: #1f1f1f; }
-    #referfrnd .modal-content {border: 0; border-radius: 24px; }
-    #referfrnd button.btn {
-    border: none !important;border-radius: 8px !important;
-    height: inherit;
-    box-shadow: inset 0 3px 10px 0 rgba(255, 255, 255, 0.8);
-    width: initial;
-    font-size: inherit;
-    font-weight: inherit;
-    font-stretch: normal;
-    font-style: normal;
-    color: #fff;
-    line-height: normal;
-    letter-spacing: normal;
-    background-image: inherit !important;text-transform: capitalize
-}
-#referfrnd  .modal-body {padding: 0rem 2rem 2rem;}
-#referfrnd button.btn:hover { background-image: none !important;background-color: #56b663 !important;}
-
-
-._btn-green {text-align: center;padding: 20px 0px 50px;border-bottom: 1px solid #e5eaee;}
-.bottom-sec { padding: 35px 0px 5px;position: relative;}
-#referfrnd input {background: #fff !important;height: 45px;
-    font-weight: 500; border:1px solid #d0d5dd;}
-    #referfrnd .form-label {font-size: 14px; font-weight: 800; color: #363c4f; }
-    #referfrnd .Note {padding-right: 10px; color: #363c4f; font-size: 14px; font-weight: 800; }
-    
-    #referfrnd form + p {font-size: 14px; font-weight: 500; color: #868a95; }
-    #referfrnd .bottom-sec a {background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; }
-    .bottom-sec input#exampleFormControlInput1 {width: 80%;padding-right: 20px;}
-    #referfrnd .bottom-sec a {border-radius:0px 8px 8px 0px; background: #56b663; color: #fff; padding: 10px 20px; font-size: 16px; font-weight: 800; position: absolute; right: 0px; top: 65px; }
-    #referfrnd input::placeholder{color:rgba(54, 60, 79, 0.5)!important;}
-    .invation-sec {text-align: center; padding: 100px 0px; }
-    .invation-sec p {font-size: 16px; font-weight: 600; color: #56b663; }
-    .invation-sec p span {padding-right: 10px; }
-    .copy {background: #56b663; padding: 10px 50px; color: #fff; border-radius: 8px; font-size: 16px; font-weight: 800; float: right; }
-    .copy > span {padding-right: 8px;}
-    .copy:hover {color: #fff !important;}
-    .bottom_back-sec label {padding-top: 10px;vertical-align: middle; padding-left: 100px; color: #56b663; font-size: 16px; font-weight: 800; }
-.bottom_back-sec {float: left; width: 100%; }
-.bottom_back-sec label > i {color: #56b663; padding-right: 10px; }
-.bottom_back-sec label:hover{cursor: pointer;}
-.modal-backdrop{background:#1f1f1f;}
-.modal-backdrop.show {opacity: 0.3;}
- .modal {backdrop-filter: inherit !important;-webkit-backdrop-filter: inherit !important;}
-
- .modal-popup-customize .btn-close {background: inherit !important;}
- #referfrnd .modal-header {border: 0; width:94%;}
-</style>
-
 <!-- New Ui Modal -->
-<div class="modal fade modal-popup-customize" id="referfrnd" tabindex="-1">
+<!-- <div class="modal fade modal-popup-customize" id="referfrnd" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -700,8 +653,9 @@
         <p><span class="Note">Note:</span>Use “,” between two emails to separate</p>
         <div class="_btn-green"><button class="btn btn-common-green"> Send Invite</button></div>
         <div class="bottom-sec">
-        <div class="mb-3">
+        
             <label for="exampleFormControlInput1" class="form-label">Or Share via link</label>
+            <div class="share-link-input">
             <input type="share" class="form-control" id="exampleFormControlInput1" placeholder="https://app.thomsondigital20...">
             <a href="#">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -709,18 +663,18 @@
                     <path d="M4.308 15h-.77c-.408 0-.799-.21-1.087-.586C2.162 14.04 2 13.53 2 13V4c0-.53.162-1.04.45-1.414C2.74 2.21 3.13 2 3.539 2h6.923c.409 0 .8.21 1.088.586C11.838 2.96 12 3.47 12 4v1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg> Copy
             </a>
-        </div>
+            </div>
         </div>
 
       </div>
 
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- New Ui Modal for invation -->
 
-<!-- <div class="modal fade modal-popup-customize" id="sharefrnd" tabindex="-1">
+<div class="modal fade modal-popup-customize" id="referfrnd" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -769,7 +723,7 @@
 
     </div>
   </div>
-</div> -->
+</div>
 
 
 
