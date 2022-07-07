@@ -1676,7 +1676,7 @@ font-weight: 800;
 	 text-align: center;
  }
  .testplannewuser p {
-	 padding: 0px 0px 11px 0px;
+	 padding: 11px 0px 11px 0px;
 	 font-size: 14px;
 	 font-weight: 500;
 	 line-height: 1.6;
@@ -1689,7 +1689,7 @@ font-weight: 800;
 	 margin: auto;
 	 color: #56b663;
 	 min-width: 114px;
-	 padding: 7.5px 15px;
+	 padding: 7.5px 15px;min-width: auto!important;
  }
  .addPlanbtn .btn span {
 	 display: flex;
@@ -2448,7 +2448,7 @@ header {
 
 .boxheading .tooltipmain {
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 8px;
 	cursor: pointer;position: relative;
 }
 
@@ -2557,7 +2557,7 @@ header {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1.6;
-	color: #363c4f;
+	color: #363c4f;margin-bottom:0px;
 }
 
 .subjextscoreLeft h4 {
@@ -2851,7 +2851,7 @@ height: auto;}
 .strengthmodal_content hr{background-color:#868a95;}
 .modalcenter{display:flex;align-items:center;height: 100%;}
 .myqTodayPannel .commondashboardTop{background-color: #fff;}
-.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;}
+.myqTodayPannel .myqTodayGraphSec,.myqTodayPannel  .headingbgchange{background: #f5faf6;    color: #234628}
 .myqTodayPannel  .headingbgchange{padding-bottom:10px;margin-bottom:0px;}
 .commonblockDash.myqTodayPannel .commonWhiteBox{top: -14px;height: auto;}
 html.scrollnone,
