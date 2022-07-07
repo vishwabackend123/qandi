@@ -70,6 +70,7 @@
  -->
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-messaging.js"></script>
+<!------------------ Current Js ----------------------------------->
 <script type="text/javascript" src="{{URL::asset('public/after_login/current_ui/js/custom.js')}}"></script>
 
 <script type="text/x-mathjax-config">
@@ -471,7 +472,7 @@
 
             $('#EndDate').val(lastDate);
 
-            var planned = <?php echo json_encode($current_week_plan); ?>;
+            var planned = <?php echo json_encode($current_week_plan); ?>;!--->
             var count_range_attempted = 0;
             planned.forEach(function(item) {
 
@@ -1882,8 +1883,13 @@
             }
         }, 0);
 
-        // $("html").toggleClass("scrollnone");
+       
     });
+
+
+
+
+    
 </script>
 <script>
     $(".dash-nav-link a:last-child").click(function() {

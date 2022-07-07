@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <body class="bg-content">
+   <div class="main-wrapper">
    <header>
       <div class="headerMain">
          <div class="headerLeft">
@@ -24,12 +25,17 @@
                   </svg>
                </a>
             </span>
-            <span class="headericon">
-               <a href="javascript:;">
+            <span class="headericon dropdown">
+               <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                      <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                </a>
+               <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="#">Action</a></li>
+                     <li><a class="dropdown-item" href="#">Another action</a></li>
+                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
             </span>
          </div>
       </div>
@@ -79,8 +85,8 @@
          </li>
       </ul>
    </aside>
-   <section class="all-content ml-5 pb-5">
-      <div class="container">
+   <section class="content-wrapper">
+      <div class="container-fluid">
          <div class="row">
             <div class="col-lg-4">
                <div class="info">
@@ -160,13 +166,13 @@
                   </div>
                </div>
                <hr class="line">
-               <div class="d-flex justify-content-end mb-5 pb-4">   
+               <div class="d-flex justify-content-end mb-5 pb-5">   
                   <button class="btn cancle mr-2 bg-transparent disabled">Cancle</button>
                   <button class="btn savebtn text-white border-0 ml-1 disabled">Save</button>
                </div>
             </div>
          </div>
-         <hr class="line mb-5 pb-4">
+          <hr class="line pb-5 mb-4">
          <div class="row">
             <div class="col-lg-4">
                <div class="info">
@@ -205,5 +211,6 @@
          </div>
       </div>
    </section>
+   </div>
 </body>
 @endsection
