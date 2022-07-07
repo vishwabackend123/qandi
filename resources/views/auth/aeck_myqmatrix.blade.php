@@ -323,10 +323,13 @@
                                         </div>
                                     </div>
                                     <div id="application" class=" tab-pane">
+                                    application
                                     </div>
                                     <div id="complrehension" class=" tab-pane">
+                                    complrehension
                                     </div>
                                     <div id="knowledge" class=" tab-pane">
+                                    knowledge
                                     </div>
                                 </div>
                             </div>
