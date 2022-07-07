@@ -69,10 +69,7 @@ class LeadUserController extends Controller
 
 		return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
 	}
-	public function performanceRating()
-	{
-		return view('auth.performance_rating');
-	}
+	
 
 	public function examInstructions()
 	{
