@@ -752,7 +752,7 @@ padding: 32px !important;
     position: absolute;
     left: 11px;
     top: 32px;
-    height: calc(100% - 40px);
+    height: calc(100% - 47px);
     width: 1px;
     border-left: 2px solid rgba(54, 60, 79, 0.5);
 }
@@ -773,16 +773,25 @@ padding: 32px !important;
 }
 
 .progress__title {
-    padding: 0rem 0 0.5rem;
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
     font-weight:bold;
+    color: #1f1f1f;
+    line-height: 1.3;
 }
 
 .progress__info {
-    font-size: 12px;
     margin: 0px;
     padding-bottom: 10px;
+    color: #363c4f;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #363c4f;
 }
 
 .progress__item img {
@@ -824,10 +833,14 @@ padding: 32px !important;
 }
 
 .progress__item.progress__item--active:after {
-    font-size: 100px;
+    font-size: 90px;
     color: #56b663 !important;
     content: ' \00B7';
     border-color: 2px solid #56b663 !important;
+}
+.verificationBox b{
+    font-weight: bold;
+    color: #363c4f;
 }
 
 .progress__item:last-child:before {
@@ -843,9 +856,9 @@ padding: 32px !important;
     border-radius: 71%;
     color: #fff;
     font-weight: 400;
-    line-height: 9px;
+    line-height: 8px;
     text-align: center;
-    border: 1px solid rgba(54, 60, 79, 0.5);
+    border: 2px solid rgba(54, 60, 79, 0.5);
     box-shadow: 0 0 0 4px #d2f0d6;
     left: 0;
 }
@@ -881,9 +894,15 @@ padding: 32px !important;
 }
 
 .verificationBox p {
-    text-align: center;
-    font-size: 14px;
     margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363c4f;
 }
 
 .subscriptionsPage {
@@ -1018,6 +1037,7 @@ padding: 32px !important;
 .testType ul {
     padding: 0px;
     margin: 0px;
+    padding-bottom: 80px;
 }
 
 .testType ul li {
@@ -2296,17 +2316,17 @@ h3.commonheading{
 .topic_score_bar .progress {
     border-radius: 4px;
     height: 10px;
-}
-ul.topic_score_lists li {
-    width: 45%;
+    position: relative;
+    overflow: visible;
 }
 ul.topic_score_lists li {
     width: calc(45% - 4px);
     margin-bottom: 45px;
+	position: relative;
 }
 ul.topic_score_lists {
     overflow-y: auto;
-    max-height: 500px;
+    max-height: 535px;
     padding-right: 40px;
 }
 ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){margin-bottom:0;}
@@ -2323,7 +2343,29 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     width: 100px;
     overflow: hidden;
 }
+.halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
+.halfdoughnut2{ height: 200px;
+    width: 200px;
+    overflow: hidden;}
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
+.noofquestions-block {
+    border-radius: 4px;
+    box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
+    background-color: #fff;
+    position: absolute;
+    padding: 20px 20px;
+    width: 200px;
+    z-index: 1;
+	right: -20px;
+	display: none;	
+}
+ul.topic_score_lists li:hover .noofquestions-block{display: block;}
+.noofquestions-block .color_labels span b {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1f1f1f;
+	float: right;
+}
 
 /********* Amit End ***********/
 
@@ -4204,7 +4246,7 @@ padding: 11px 20px!important;
     border-radius: 20px;
     max-width: 460px;
 }
-.email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 25px 0px 40px;}
+.email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 20px 0px 40px;}
 .email-confirmation p > span {
     font-size: 22px;
     font-weight: 800;
@@ -4278,4 +4320,4 @@ padding: 11px 20px!important;
     text-align: center;
     padding: 20px 75px;
 }
-.privacy-sec > a {color: #56b663;}  
+.privacy-sec > a {color: #56b663;}   
