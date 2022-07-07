@@ -66,7 +66,7 @@ class LeadUserController extends Controller
 			$subjects[] = $sub->subject_name;
 		}
 		$subjects_name = implode(', ', $subjects);
-		if (isset($prof_asst_test) && $prof_asst_test == 'N') {
+		if (isset($prof_asst_test) && $prof_asst_test == 'Y') {
 			return redirect()->route('dashboard');
 		} else {
 			return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
@@ -90,19 +90,24 @@ class LeadUserController extends Controller
 	{
 		return view('auth.contact_us');
 	}
-	public function chapterPlanner() {
-		return view('auth.chapter_planner'); 
+	public function chapterPlanner()
+	{
+		return view('auth.chapter_planner');
 	}
-    public function planner() {
+	public function planner()
+	{
 		return view('auth.planner');
-    }
-	public function emailConfirmation() {
+	}
+	public function emailConfirmation()
+	{
 		return view('auth.email_confirmation');
-    }
-	public function testAnalyticsMocktest() {
+	}
+	public function testAnalyticsMocktest()
+	{
 		return view('auth.test_analytics_mocktest');
-    }
-	public function aeckMyqmatrix() {
+	}
+	public function aeckMyqmatrix()
+	{
 		return view('auth.aeck_myqmatrix');
-    }
+	}
 }
