@@ -81,12 +81,12 @@
                 @csrf
                 <div class="custom-input pb-3">
                     <label>Name</label>
-                    <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Full name" onkeypress="return lettersOnly(event)" required>
+                    <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Full name" maxlength="25" onkeypress="return lettersOnly(event)" required>
                 </div>
                 <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
                     <div class="d-flex position-relative" id="mobile_num_box">
-                        <input type="text" maxlength="10" class="form-control bg-white" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
+                        <input type="text" maxlength="10" class="form-control bg-white reqrd" placeholder="Mobile no" name="mobile_num" id="mobile_num" onkeypress="return isNumber(event)">
                         <span class="position-absolute  sentotp d-none" id="otpsentmsg">OTP sent</span>
                         <a class="editnumber  d-none" id="verifynum" href="javascript:void(0);">Verify</a>
                         <a class="editnumber bg-white d-none" href="javascript:void(0);" id="editsignnumber">
@@ -96,29 +96,30 @@
                             &nbsp;Edit
                         </a>
                     </div>
+                    <span class="error mt-2" id="err_reg_mob"></span>
 
                 </div>
 
                 <div class="custom-input pb-3 otp-input" style="display:none">
                     <label>Enter OTP</label>
                     <div class="d-flex enterotp bg-white" id="otp_box">
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
-                        <input class="form-control otp" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
+                        <input class="form-control otp reqrd" maxlength="1" name="register_otp[]" onkeypress="return isNumber(event)" required>
                     </div>
                     <span class="error mt-2" id="errlog_otp"></span>
                     <p class="p-0 mt-2 resend" id="resend_OTP">Didn’t get the code? <a href="javascript:void(0);" onclick="resentOtp();">Resend</a></p>
                 </div>
                 <div class="custom-input pb-3">
                     <label>Email</label>
-                    <input type="email" class="form-control" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
+                    <input type="email" class="form-control reqrd" placeholder="Email address" name="email_add" minlength="8" maxlength="64" id="email_add" required>
                 </div>
                 <div class="custom-input pb-3">
                     <label>City</label>
                     <div id="location-box">
-                        <select class="js-states form-control" name="location" id="location" required>
+                        <select class="js-states form-control reqrd" name="location" id="location" required>
                             <option value="">Select a city</option>
                             <!-- <option>Mohali</option>
                         <option>Jind</option>
@@ -130,7 +131,7 @@
                 <div class="custom-input pb-3 row">
                     <div class="col-lg-6">
                         <label>Grade</label>
-                        <select class="form-control selectdata" name="grade" id="grade" required>
+                        <select class="form-control selectdata reqrd" name="grade" id="grade" required>
                             <option class="we" value="" disabled selected hidden>Select grade</option>
                             <option class="we2" value="1">Just starting out</option>
                             <option class="we" value="2">Completed (10+1) Syllabus</option>
@@ -139,7 +140,7 @@
                     </div>
                     <div class="col-lg-6">
                         <label>Exam</label>
-                        <select class="form-control selectdata" name="exam" id="exam_id" required>
+                        <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
                             <option value="" disabled selected hidden>Select exam</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
@@ -149,7 +150,7 @@
                 </div>
                 <span class="error mt-2" id="errlog_auth"></span>
                 <div class="Get-otp pt-4">
-                    <button type="submit" id="signup_cnt" class="btn btn-common-green text-white w-100 ">Continue</button>
+                    <button type="submit" id="signup_cnt" class="btn btn-common-green text-white w-100 " disabled>Continue</button>
                 </div>
             </form>
         </div>
@@ -185,6 +186,7 @@
         evt = (evt) ? evt : event;
         var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode :
             ((evt.which) ? evt.which : 0));
+
         if (charCode > 32 && (charCode < 65 || charCode > 90) &&
             (charCode < 97 || charCode > 122)) {
 
@@ -192,6 +194,15 @@
         }
         return true;
     }
+    $(document).on("keydown", "#user_name", function(evt) {
+        var firstChar = $("#user_name").val();
+        var val = $("#user_name").val();
+        if (evt.keyCode == 32 && firstChar == "") {
+            return false;
+        }
+        $("#user_name").val(val.replace(/  +/g, ' '));
+
+    });
     /* convert text in to capitalized text */
     $.fn.capitalize = function() {
         $.each(this, function() {
@@ -221,14 +232,7 @@
 
     /* name input validation */
     $(function() {
-        $(".otp").keyup(function(e) {
-            if ((e.which >= 48 && e.which <= 57) || (e.which >= 96 && e.which <= 105)) {
-                $(e.target).next('.otp').focus();
-            } else if (e.which == 8) {
-                $(e.target).prev('.otp').focus();
-            }
-            $("#errlog_otp").html('');
-        });
+
         const $inp = $(".otp");
 
         $inp.on({
@@ -279,7 +283,7 @@
         if (mobile_num == '') {
             $("#err_reg_mob").html('Please enter your mobile number');
             $("#err_reg_mob").fadeIn('fast');
-            $("#err_reg_mob").fadeOut(5000);
+            $("#err_reg_mob").fadeOut(1000);
             $check = 1;
         } else {
 
@@ -287,7 +291,7 @@
             if (testMobile.test(mobile_num)) {} else {
                 $("#err_reg_mob").html('Please enter valid mobile number');
                 $("#err_reg_mob").fadeIn('fast');
-                $("#err_reg_mob").fadeOut(5000);
+                $("#err_reg_mob").fadeOut(1000);
                 $check = 1;
             };
         }
@@ -317,8 +321,8 @@
                         $('.otp-input').show();
                     } else {
                         $("#err_reg_mob").html(response.message);
-                        $("#err_reg_mob").fadeIn('slow');
-                        $("#err_reg_mob").fadeOut(10000);
+                        $("#err_reg_mob").fadeIn('fast');
+                        $("#err_reg_mob").fadeOut(2000);
                         return false;
                     }
 
@@ -451,7 +455,7 @@
                             }, 10000);
                         } else {
                             var errormsg = $("#errlog_auth").show();
-                            errormsg[0].textContent = response.error;
+                            errormsg[0].textContent = response.msg;
                             setTimeout(function() {
                                 $('#errlog_auth').fadeOut('fast');
                             }, 10000);
@@ -523,48 +527,44 @@
         $('#location').on('select2:open', () => {
             document.querySelector('.select2-search__field').focus();
         });
+        $(document).on('keypress', '.select2-search__field', function() {
 
-
-    });
-
-    function checkAllInput() {
-
-        var empty = false;
-
-        $('#studentsignup input').each(function() {
-            if ($(this).val() == '') {
-                empty = true;
+            if (event.which > 32 && (event.which < 65 || event.which > 90) &&
+                (event.which < 97 || event.which > 122)) {
+                event.preventDefault();
             }
         });
 
-        if ($('#location').val() == '') {
-            empty = true;
-        }
-        if ($('#grade').val() == '') {
-            empty = true;
-        }
-        if ($('#exam').val() == '') {
-            empty = true;
-        }
+    });
 
-        if (empty) {
-            $('#signup_cnt').attr('disabled', 'disabled');
-            $('#signup_cnt').addClass("disbaled");
-        } else {
-            $('#signup_cnt').removeAttr('disabled');
-            $('#signup_cnt').removeClass("disbaled");
-        }
+    (function() {
+        $('.reqrd').change(function() {
 
-    }
+            var isEmpty = false;
+            $('.reqrd').each(function() {
+                if ($(this).val() == '') {
+                    isEmpty = true;
+                }
+            });
+
+            if (isEmpty) {
+                $('#signup_cnt').attr('disabled', 'disabled');
+                $('#signup_cnt').addClass("disbaled");
+            } else {
+                $('#signup_cnt').removeAttr('disabled');
+                $('#signup_cnt').removeClass("disbaled");
+            }
+        });
+    })()
     /* function for select sity */
     document.addEventListener("paste", function(e) {
-  if (e.target.type === "text") {
-   var data = e.clipboardData.getData('Text');
-   data = data.split('');
-   [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
-      node.value = data[index];
+        if (e.target.type === "text") {
+            var data = e.clipboardData.getData('Text');
+            data = data.split('');
+            [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
+                node.value = data[index];
+            });
+        }
     });
-  }
-});
 </script>
 @endsection
