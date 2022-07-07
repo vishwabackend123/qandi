@@ -47,7 +47,7 @@
                         <div class="plan_box_status_contant_qi">Q&I Subscribption </div>
                     </div>
                     <div class="line-692"></div>
-                    <div>
+                    <div class="plan_order_summary_detailss">
                         <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription pt-3">
                             <div class="plan_order_summary">Transaction ID:</div>
                             <div class="plan_subscribption">1234-JEE-A-0098</div>
@@ -134,8 +134,8 @@
                     <div class="plan_box_status_contant_order_qi d-flex justify-content-between align-items-center"">
                         <div class="plan_box_status_contant_order">Order summary</div>
                         <div class="plan_box_status_contant_qi">Q&I Subscribption </div>
-                    </div>
-                    <div class="line-692_field"></div>
+                        <div class="line-692_field"></div>
+                    <div class="plan_order_summary_detailss">
                     <div>
                         <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription pt-3">
                             <div class="plan_order_summary">Transaction ID:</div>
@@ -218,7 +218,7 @@
                         <div class="plan_box_status_contant_qi">Q&I Subscribption </div>
                     </div>
                     <div class="line-692_field"></div>
-                    <div>
+                    <div class="plan_order_summary_detailss">
                         <div class="d-flex justify-content-between align-items-center plan_order_sumry_subscription pt-3">
                             <div class="plan_order_summary">Transaction ID:</div>
                             <div class="plan_subscribption">1234-JEE-A-0098</div>

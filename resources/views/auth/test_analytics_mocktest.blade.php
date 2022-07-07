@@ -159,7 +159,7 @@
         </aside>
         <div class="content-wrapper">
             <div class="container-fluid">
-                <div class="test_analytics_wrapper mocktest-page pb-4">
+                <div class="test_analytics_wrapper mocktest-page pb-3">
                     <div class="mock_inst_text_mock_test mb-4">
                         <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
                     </div>
@@ -205,7 +205,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-5">
-                            <div class="commonWhiteBox commonblockDash test_myscrore_block">
+                            <div class="commonWhiteBox commonblockDash test_myscrore_card">
                                 <h3 class="boxheading d-flex align-items-center">My Score 
                                         <span class="tooltipmain ml-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
@@ -259,9 +259,9 @@
                                         <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                             <span class="d-block mb-1 commontext">Overall percentage</span>
                                             <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
-                                            <canvas id="myChart" width="400" height="400"></canvas>
-
-                                            
+                                            <div class="overall_percentage_chart">
+                                                <canvas id="myChart"></canvas>
+                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="pills-physics" role="tabpanel" aria-labelledby="pills-physics-tab">...</div>
                                         <div class="tab-pane fade" id="pills-chemistry" role="tabpanel" aria-labelledby="pills-chemistry-tab">...</div>
@@ -298,7 +298,7 @@
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <div class="commonWhiteBox commonblockDash">
+                            <div class="commonWhiteBox commonblockDash subject_score_card">
                                 <h3 class="boxheading d-flex align-items-center">Subject Score 
                                         <span class="tooltipmain ml-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
@@ -308,19 +308,48 @@
                                         </p>
                                     </span>
                                 </h3>
-                                <p class="dashSubtext">Negative marking for incorrect answers is considered</p>
-                                <div class="multi-graph margin">
-                                        JavaScript
-                                        <div class="graph" data-name="Not Attempted" 
-                                            style="--percentage : 80; --fill: #f2f4f7 ;">
-                                        </div>
-                                        <div class="graph" data-name="Incorrect" 
-                                            style="--percentage : 60; --fill: #fb7686 ;">
-                                        </div>
-                                        <div class="graph" data-name="Correct" 
-                                            style="--percentage : 30; --fill: #08d5a1 ;">
+                                <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <h5 class="mb-0">Maths</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="halfdoughnut">
+                                                <canvas id="subjectChart"></canvas>
+                                            </div>
+                                            <div class="color_labels ml-5">
+                                                <span class="d-block">Correct <b><small></small>60</b></span>
+                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>20</b></span>
+                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <h5 class="mb-0">Physics</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="halfdoughnut">
+                                                <canvas id="subjectChart"></canvas>
+                                            </div>
+                                            <div class="color_labels ml-5">
+                                                <span class="d-block">Correct <b><small></small>60</b></span>
+                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>20</b></span>
+                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <h5 class="mb-0">Chemistry</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div class="halfdoughnut">
+                                                <canvas id="subjectChart"></canvas>
+                                            </div>
+                                            <div class="color_labels ml-5">
+                                                <span class="d-block">Correct <b><small></small>60</b></span>
+                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>20</b></span>
+                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="commonWhiteBox commonblockDash">
                                 <h3 class="boxheading d-flex align-items-center">Topic Score 
@@ -618,19 +647,21 @@
 </body>
 
 <script>
+/*********** BarChart ***********/
+
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['My Percentage', 'Class Average'],
         datasets: [{
-            data: [66, 30, 100],
+            data: [12, 22, 50],
             label: '',
             backgroundColor: [
                 '#56b663',
                 '#08d5a1'
             ],
-            barPercentage: 20,
+            barPercentage: 5,
             barThickness: 60,
             maxBarThickness: 60
         }]
@@ -654,6 +685,57 @@ const myChart = new Chart(ctx, {
         }
     }
 });
+
+/*********** halfdoughnut ***********/
+
+const circuference = 260;
+const data = {
+  labels: ["Red", "Blue", "Yellow"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [300, 50, 100],
+      backgroundColor: [
+        "rgb(255, 99, 132)",
+        "rgb(54, 162, 235)",
+        "rgb(255, 205, 86)"
+      ]
+    }
+  ]
+};
+
+const config = {
+  type: "doughnut",
+  data: data,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference / 2) * -1,
+    circumference: circuference,
+    cutout: "60%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+const myCharted = new Chart("subjectChart", config)
+
 </script>   
 
 @endsection
