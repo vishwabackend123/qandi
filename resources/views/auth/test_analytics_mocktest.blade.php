@@ -327,7 +327,7 @@
                                         <h5 class="mb-0">Physics</h5>
                                         <div class="d-flex align-items-center">
                                             <div class="halfdoughnut">
-                                                <canvas id="subjectChart"></canvas>
+                                                <canvas id="subjectChart-1"></canvas>
                                             </div>
                                             <div class="color_labels ml-5">
                                                 <span class="d-block">Correct <b><small></small>60</b></span>
@@ -340,7 +340,7 @@
                                         <h5 class="mb-0">Chemistry</h5>
                                         <div class="d-flex align-items-center">
                                             <div class="halfdoughnut">
-                                                <canvas id="subjectChart"></canvas>
+                                                <canvas id="subjectChart-2"></canvas>
                                             </div>
                                             <div class="color_labels ml-5">
                                                 <span class="d-block">Correct <b><small></small>60</b></span>
@@ -368,7 +368,7 @@
                                                 <li class="nav-item" role="presentation">
                                                     <button class="nav-link btn active" id="pills-mathssub-tab" data-bs-toggle="pill" data-bs-target="#pills-mathssub" type="button" role="tab" aria-controls="pills-mathssub" aria-selected="true">Maths</button>
                                                 </li>
-                                                <li class="nav-item" role="presentation">
+                                                <li>
                                                     <button class="nav-link btn" id="pills-physicssub-tab" data-bs-toggle="pill" data-bs-target="#pills-physicssub" type="button" role="tab" aria-controls="pills-physicssub" aria-selected="false">Physics</button>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
@@ -648,7 +648,6 @@
 
 <script>
 /*********** BarChart ***********/
-
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
@@ -686,24 +685,22 @@ const myChart = new Chart(ctx, {
     }
 });
 
-/*********** halfdoughnut ***********/
-
+/***************** halfdoughnut - start *********************/
 const circuference = 260;
 const data = {
-  labels: ["Red", "Blue", "Yellow"],
+  labels: ["Correct", "Incorrect", "Not Attempted"],
   datasets: [
     {
       label: "My First Dataset",
-      data: [300, 50, 100],
+      data: [200, 100, 80],
       backgroundColor: [
-        "rgb(255, 99, 132)",
-        "rgb(54, 162, 235)",
-        "rgb(255, 205, 86)"
+        "#08d5a1",
+        "#fb7686",
+        "#f2f4f7"
       ]
     }
   ]
 };
-
 const config = {
   type: "doughnut",
   data: data,
@@ -735,7 +732,54 @@ const config = {
   }
 };
 const myCharted = new Chart("subjectChart", config)
-
+/*****************/
+const circuference_1 = 260;
+const data_1 = {
+  labels: ["Correct", "Incorrect", "Not Attempted"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [200, 100, 80],
+      backgroundColor: [
+        "#08d5a1",
+        "#fb7686",
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+const config_1 = {
+  type: "doughnut",
+  data: data,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference / 2) * -1,
+    circumference: circuference,
+    cutout: "60%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+const myCharted_1 = new Chart_1("subjectChart-1", config_1)
+/***************** halfdoughnut - end *********************/
 </script>   
 
 @endsection
