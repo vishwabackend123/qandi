@@ -113,8 +113,12 @@
                     </div>
                     <div>
                      <span class="error mt-2" id="errlog_otp"></span>
-                     <p class="p-0 mt-2 resend">Didn’t get the code? <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
-                    <p class="p-0 mt-2 resend">Resend OTP in <span>00:59</span> <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a></p>
+                     <p class="p-0 mt-2 resend resend_again">Didn’t get the code? 
+                        <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a>
+                    </p>
+                    <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span> 
+                        <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" >Resend OTP</a>
+                    </p>
                   </div>
                 </div>
                 <div class="custom-input pb-3">
@@ -310,10 +314,10 @@
                     "_token": "{{ csrf_token() }}"
                 },
                 success: function(response_data) {
-                    console.log(response_data);
                     var response = jQuery.parseJSON(response_data);
 
                     if (response.success == true) {
+                        resentOtpTime();
                         $('#verifynum').removeClass("d-block");
                         $('#verifynum').addClass("d-none");
 
@@ -485,6 +489,7 @@
 
     });
     $(document).ready(function() {
+        $('.resend_again').hide();
 
         $("#location").select2({
             allowClear: false,
@@ -568,7 +573,8 @@
     })()
     /* function for select sity */
     document.addEventListener("paste", function(e) {
-        if (e.target.type === "text") {
+        console.log(e.target.id);
+        if (e.target.type === "text" && e.target.id !='mobile_num') {
             var data = e.clipboardData.getData('Text');
             data = data.split('');
             [].forEach.call(document.querySelectorAll(".otp"), (node, index) => {
@@ -576,5 +582,26 @@
             });
         }
     });
+    function resentOtpTime() {
+    $('.resend_again').hide();
+    var timeLeft = 58;
+    var elem = document.getElementById('wait_otp_div');
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+
+        if (timeLeft == -1) {
+            clearTimeout(timerId);
+            $('.resend_again').show();
+            $('.resend_timer').hide();
+        } else {
+            $('.resend_timer').show();
+            elem.innerHTML = "00:"+timeLeft ;
+            timeLeft--;
+        }
+
+    }
+
+}
 </script>
 @endsection
