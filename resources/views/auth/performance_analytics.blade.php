@@ -23,8 +23,8 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item   progress__item--active">
-                    <p class="progress__title">You order is out for delivery</p>
-                    <p class="progress__info">Delivery Executive is out for delivery</p>
+                    <p class="progress__title">Full Body Scan</p>
+                    <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
             </ul>
