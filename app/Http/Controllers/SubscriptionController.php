@@ -256,42 +256,42 @@ class SubscriptionController extends Controller
     public function checkout(Request $request)
     {
         try {
-            $postdata = $request->all();
-
-            $price = isset($request->exam_price) ? $request->exam_price : 0;
-            $subscript_id = isset($request->subscript_id) ? $request->subscript_id : 0;
-            $exam_id = isset($request->exam_id) ? $request->exam_id : 0;
-            $exam_period = isset($request->exam_period) ? $request->exam_period : 0;
-            $period_unit = isset($request->period_unit) ? $request->period_unit : 0;
-            $discount_code = isset($request->discount_code) ? $request->discount_code : "";
-            $coupon_discount = 0;
-            $discounted_price = 0;
-            if (isset($postdata['discount_code'])) {
-                $discount_data = $this->ajaxValidateCouponCode($postdata['discount_code']);
-                if ($discount_data) {
-                    $coupon_discount = $discount_data->coupon_discount;
-                    $discounted_price = ($price * $coupon_discount) / 100;
-                    $price = $price - $discounted_price;
+            if ($request->isMethod('post')) {
+                $postdata = $request->all();
+                $price = isset($request->exam_price) ? $request->exam_price : 0;
+                $subscript_id = isset($request->subscript_id) ? $request->subscript_id : 0;
+                $exam_id = isset($request->exam_id) ? $request->exam_id : 0;
+                $exam_period = isset($request->exam_period) ? $request->exam_period : 0;
+                $period_unit = isset($request->period_unit) ? $request->period_unit : 0;
+                $discount_code = isset($request->discount_code) ? $request->discount_code : "";
+                $coupon_discount = 0;
+                $discounted_price = 0;
+                if (isset($postdata['discount_code'])) {
+                    $discount_data = $this->ajaxValidateCouponCode($postdata['discount_code']);
+                    if ($discount_data) {
+                        $coupon_discount = $discount_data->coupon_discount;
+                        $discounted_price = ($price * $coupon_discount) / 100;
+                        $price = $price - $discounted_price;
+                    }
                 }
-            }
-            $amount = $price * 100;
+                $amount = $price * 100;
 
-            $notes = [
+                $notes = [
                 "month" => $exam_period,
                 "exam_id" => $exam_id,
             ];
 
-            $request = [
+                $request = [
                 "amount" => $price,
                 "currency" => "INR",
                 "notes" => $notes
             ];
-            $order_request_json = json_encode($request);
+                $order_request_json = json_encode($request);
 
-            $curl = curl_init();
-            $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/payment/order-id';
-            $curl_option = array(
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_url = $api_URL . 'api/payment/order-id';
+                $curl_option = array(
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_FAILONERROR => true,
@@ -306,26 +306,26 @@ class SubscriptionController extends Controller
                     "content-type: application/json"
                 ),
             );
-            curl_setopt_array($curl, $curl_option);
-            $order_response_json = curl_exec($curl);
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_setopt_array($curl, $curl_option);
+                $order_response_json = curl_exec($curl);
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 
-            if ($httpcode != 200 || $httpcode != 201) {
-                $aResponse = json_decode($order_response_json);
-                $razorpayOrderId = isset($aResponse->order_details->id) ? $aResponse->order_details->id : '';
-            } else {
-                $razorpayOrderId = '';
-            }
+                if ($httpcode != 200 || $httpcode != 201) {
+                    $aResponse = json_decode($order_response_json);
+                    $razorpayOrderId = isset($aResponse->order_details->id) ? $aResponse->order_details->id : '';
+                } else {
+                    $razorpayOrderId = '';
+                }
 
 
-            $curl = curl_init();
-            $api_URL = env('API_URL');
-            $curl_url = $api_URL . 'api/subscription-package-detail/' . $subscript_id;
+                $curl = curl_init();
+                $api_URL = env('API_URL');
+                $curl_url = $api_URL . 'api/subscription-package-detail/' . $subscript_id;
 
-            $curl = curl_init();
-            $curl_option = array(
+                $curl = curl_init();
+                $curl_option = array(
 
                 CURLOPT_URL => $curl_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -336,22 +336,25 @@ class SubscriptionController extends Controller
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
             );
-            curl_setopt_array($curl, $curl_option);
+                curl_setopt_array($curl, $curl_option);
 
-            $package_response_json = curl_exec($curl);
-            $err = curl_error($curl);
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-            curl_close($curl);
+                $package_response_json = curl_exec($curl);
+                $err = curl_error($curl);
+                $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
 
-            if ($httpcode != 200 || $httpcode != 201) {
-                $pResponse = json_decode($package_response_json);
-                $package_data = isset($pResponse->package_details) ? $pResponse->package_details : '';
-                $subscriptions_data = !empty($package_data) ? $package_data[0] : [];
+                if ($httpcode != 200 || $httpcode != 201) {
+                    $pResponse = json_decode($package_response_json);
+                    $package_data = isset($pResponse->package_details) ? $pResponse->package_details : '';
+                    $subscriptions_data = !empty($package_data) ? $package_data[0] : [];
+                } else {
+                    $subscriptions_data = [];
+                }
+
+                return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
             } else {
-                $subscriptions_data = [];
+                return redirect()->route('subscriptions');
             }
-
-            return view('subscription_checkout', compact('subscriptions_data', 'razorpayOrderId', 'price', 'subscript_id', 'exam_id', 'subscript_id', 'coupon_discount', 'discount_code', 'discounted_price'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -496,9 +499,6 @@ class SubscriptionController extends Controller
             Log::info($e->getMessage());
         }
     }
-
-
-
 
     public function sendVerficationEmail(Request $request)
     {
