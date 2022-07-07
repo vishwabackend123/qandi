@@ -1283,9 +1283,7 @@ padding: 32px !important;
 
 /********************Start-Dashboard-By-Sachin-Date-06-07-22**************/
 
-.graphDetail{
-    display:none
- }
+ 
  .graphDetailempty .testScrolltype {
      margin-right: 30px;
      padding-top:0px;
@@ -1655,7 +1653,7 @@ padding: 32px !important;
  }
  .allSubslider{
      position: relative;
-     display:none;
+    
  }
  .allSubslider .owl-nav {
      display: flex;
