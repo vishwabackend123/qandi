@@ -1667,9 +1667,7 @@ font-weight: 800;
  .allSubslider  .disabled {
      opacity: 0 !important;
  }
- /* .allSubslider  .owl-item{
-     max-width:350px !important;
- } */
+
  .allSubslider .owl-stage{
     padding: 0px !important;
  }
