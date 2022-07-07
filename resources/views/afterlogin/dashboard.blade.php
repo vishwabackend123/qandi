@@ -169,7 +169,7 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                 </div>
-                                <div class="emptystate" style="display:none">
+                                <div class="emptystate">
                                     <div class="emptystateInner">
                                         <div class="emptyicon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
@@ -393,7 +393,7 @@ $userData = Session::get('user_data');
                                           </div>
                                      </div>
                                 </div>
-                                <div class="emptystate mt-3" style="display:none">
+                                <div class="emptystate mt-3">
                                   <div class="emptystateInner">
                                       <div class="emptyicon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
