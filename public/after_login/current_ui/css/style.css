@@ -2299,8 +2299,10 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     width: 100px;
     overflow: hidden;
 }
-.halfdoughnut canvas{width: 100%!important;height:100%!important;}
-
+.halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
+.halfdoughnut2{ height: 200px;
+    width: 200px;
+    overflow: hidden;}
 /********* Amit End ***********/
 
 

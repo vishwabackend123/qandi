@@ -217,6 +217,9 @@
                                 </h3>
                                 <div class="row">
                                     <div class="col-md-6">
+                                      <div class="halfdoughnut2">
+                                      <canvas id="myscoregraph"></canvas>
+                                      </div>
 
                                     </div>
                                     <div class="col-md-6">
@@ -317,9 +320,9 @@
                                                 <canvas id="subjectChart"></canvas>
                                             </div>
                                             <div class="color_labels ml-5">
-                                                <span class="d-block">Correct <b><small></small>60</b></span>
-                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>20</b></span>
-                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                                <span class="d-block">Correct <b><small></small>32</b></span>
+                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
                                             </div>
                                         </div>
                                     </div>
@@ -330,9 +333,9 @@
                                                 <canvas id="subjectChart-1"></canvas>
                                             </div>
                                             <div class="color_labels ml-5">
-                                                <span class="d-block">Correct <b><small></small>60</b></span>
-                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>20</b></span>
-                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                                <span class="d-block">Correct <b><small></small>32</b></span>
+                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
                                             </div>
                                         </div>
                                     </div>
@@ -343,9 +346,9 @@
                                                 <canvas id="subjectChart-2"></canvas>
                                             </div>
                                             <div class="color_labels ml-5">
-                                                <span class="d-block">Correct <b><small></small>60</b></span>
-                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>20</b></span>
-                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                                <span class="d-block">Correct <b><small></small>32</b></span>
+                                                <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                                <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
                                             </div>
                                         </div>
                                     </div>
@@ -732,7 +735,7 @@ const config = {
   }
 };
 const myCharted = new Chart("subjectChart", config)
-/*****************/
+/*******subject-1**********/
 const circuference_1 = 260;
 const data_1 = {
   labels: ["Correct", "Incorrect", "Not Attempted"],
@@ -778,7 +781,104 @@ const config_1 = {
     },
   }
 };
-const myCharted_1 = new Chart_1("subjectChart-1", config_1)
+const myCharted_1 = new Chart("subjectChart-1", config_1)
+
+/********Subject-2*********/
+const circuference_2 = 260;
+const data_2 = {
+  labels: ["Correct", "Incorrect", "Not Attempted"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [200, 100, 80],
+      backgroundColor: [
+        "#08d5a1",
+        "#fb7686",
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+const config_2 = {
+  type: "doughnut",
+  data: data,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference / 2) * -1,
+    circumference: circuference,
+    cutout: "60%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 0;
+        radius.outerStart = 0;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 0;
+        radius.outerEnd = 0;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+const myCharted_2 = new Chart("subjectChart-2", config_2)
+
+/***********my-score************************* */
+const myscorecir = 260;
+const myscoredata = {
+  labels: ["Correct", "Incorrect", "Not Attempted"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [200, 100, 80],
+      backgroundColor: [
+        "#08d5a1",
+        "#fb7686",
+        "#f2f4f7"
+      ]
+    }
+  ]
+};
+const myscoreconfig = {
+  type: "doughnut",
+  data: data,
+  options: {   
+    reponsive: true,
+    maintainAspectRatio: false,
+    rotation: (circuference / 2) * -1,
+    circumference: circuference,
+    cutout: "80%",
+    borderWidth: 0,
+    borderRadius: function (context, options) {
+      const index = context.dataIndex;
+      let radius = {};
+      if (index == 0) {
+        radius.innerStart = 20;
+        radius.outerStart = 20;
+      }
+      if (index === context.dataset.data.length - 1) {
+        radius.innerEnd = 20;
+        radius.outerEnd = 20;
+      }
+      return radius;
+    },
+    plugins: {
+      title: false,
+      subtitle: false,
+      legend: false
+    },
+  }
+};
+const myscore = new Chart("myscoregraph", myscoreconfig)
+
 /***************** halfdoughnut - end *********************/
 </script>   
 
