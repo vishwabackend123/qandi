@@ -54,7 +54,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <div class="fullbody_scan_test w-50 text-center position-relative">
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.png')}}"></span>
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.png')}}"></span>
-                    <img src="{{URL::asset('public/after_login/current_ui/images/note.png')}}" style="max-width: 85px;">
+                    <img src="{{URL::asset('public/after_login/current_ui/images/note.png')}}" style="width: 106.5px;height: 116px;">
                     <h3 class="mb-0 mt-2">Full Body Scan Test</h3>
                     <p class="my-3">to assess your preparedness and begin to improve it</p>
                     <a class="btn btn-common-white" href="{{route('exam','full_exam')}}">Attempt Now</a>
