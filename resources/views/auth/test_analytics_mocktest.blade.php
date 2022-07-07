@@ -215,12 +215,11 @@
                                         </p>
                                     </span>
                                 </h3>
-                                <div class="row">
+                                <div class="row align-items-center">
                                     <div class="col-md-6">
                                       <div class="halfdoughnut2">
-                                      <canvas id="myscoregraph"></canvas>
+                                        <canvas id="myscoregraph"></canvas>
                                       </div>
-
                                     </div>
                                     <div class="col-md-6">
                                         <div class="color_labels">
@@ -864,7 +863,7 @@ const myscoreconfig = {
     maintainAspectRatio: false,
     rotation: (circuference / 2) * -1,
     circumference: circuference,
-    cutout: "80%",
+    cutout: "85%",
     borderWidth: 0,
     borderRadius: function (context, options) {
       const index = context.dataIndex;
