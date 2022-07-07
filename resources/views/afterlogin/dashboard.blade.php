@@ -22,7 +22,6 @@ $userData = Session::get('user_data');
                 @else
                 <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5 fw-bold" onclick="welcome_back();">Let’s go ></a>
                 @endif
-                <!-- <a href="#" class="btn mb-4 btn-sm rounded-0 mt-4 btn-danger px-5" data-bs-toggle="modal" data-bs-target="#favSubResponse" data-bs-dismiss="modal">Let’s get you started ></a> -->
             </div>
         </div>
     </div>
@@ -31,7 +30,6 @@ $userData = Session::get('user_data');
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content rounded-0">
             <div class="modal-header pb-0 border-0">
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body p-4 pt-0 text-center">
                 <p class="rating-headline mt-5 mb-4"> How well do you generally perform in these subjects?</p>
@@ -74,7 +72,7 @@ $userData = Session::get('user_data');
     <!-- End start-navbar Section -->
     @include('afterlogin.layouts.navbar_header_new')
     <!-- End top-navbar Section -->
-    <div class="content-wrapper dashbaordContainer">
+    <div class="content-wrapper dashbaordContainer"> 
         <div class="dashboardTopSection">
             <div  class="container-fluid">
                     <div class="row">
@@ -111,10 +109,13 @@ $userData = Session::get('user_data');
                             <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
                                         <h3 class="boxheading">Subject Performance
-                                            <span class="tooltipmain">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                            
-                                        </span>
+                                        <span class="tooltipmain">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
+                                    </span>
                                     </h3>
                                     <p class="dashSubtext">Supporting text for better interaction on this section</p>
                                 </div>
@@ -421,11 +422,11 @@ $userData = Session::get('user_data');
                                 <h3 class="boxheading">
                                     Weekly plan
                                     <span class="tooltipmain">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                            <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path>
-                                            </g>
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
                                     </span>
                                 </h3>
                                 <p class="dashSubtext">Plan your weekly tests for any chapters</p>
@@ -469,7 +470,7 @@ $userData = Session::get('user_data');
                             </svg>
                             <p class=" m-0">Start planning your week</p>
                             <div class="addPlanbtn">
-                                <button class="btn btn-common-transparent">
+                                <button class="btn btn-common-transparent nobg">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -789,12 +790,12 @@ $userData = Session::get('user_data');
                                 <h3 class="boxheading">
                                 Progress journey
                                 <span class="tooltipmain">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                        <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path>
-                                        </g>
-                                    </svg>
-                                </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
+                                    </span>
                                 </h3>
                             </div>
                             <div class="graphBoxcontainer">
@@ -839,12 +840,12 @@ $userData = Session::get('user_data');
                                 <h3 class="boxheading">
                                 Marks Trend
                                 <span class="tooltipmain">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                        <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path>
-                                        </g>
-                                    </svg>
-                                </span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                        <p class="tooltipclass">
+                                            <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                        </p>
+                                    </span>
                                 </h3>
                             </div>
                             <div class="journeyBoxcontainer">
@@ -1449,19 +1450,6 @@ $userData = Session::get('user_data');
             </div>
      </div>
     </div>
-
-
-         <!-- <div id="strengthmodal" class="overlay88">
-            <div class="popup88">
-                <a class="close" href="#">&times;</a>
-               <div class="intraction_text_q1">Q1</div>
-               <div class="intraction_text_strength">Strengths</div>
-               <hr>
-               <div class="instruction_text_content">
-                  Supporting text for better interaction on this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </div>
-            </div>
-         </div> -->
     <!-- Strengths-popup end -->
     <div class="loader-block" style="display:none;">
         <img src="{{URL::asset('public/after_login/new_ui/images/loader.gif')}}">
@@ -1675,40 +1663,7 @@ $userData = Session::get('user_data');
             $('.js-average').text((average / $('.rating').length).toFixed(3))
         }
     </script>
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 'auto',
-            spaceBetween: 30,
-            freeMode: true,
-            slideToClickedSlide: false,
-            focusableElements: false,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: false,
 
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                1920: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-
-                },
-                1028: { // this is all desktop view of my laptop
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
-                },
-                300: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30
-                }
-            }
-        });
-    </script>
     <script>
         /* Score Pie Chart */
         Highcharts.chart('scorecontainer', {
