@@ -58,7 +58,7 @@ class LeadUserController extends Controller
 	{
 		$preferences = $this->redis_Preference();
 		$prof_test_qcount = (isset($preferences->profiling_test_count) && !empty($preferences->profiling_test_count)) ? $preferences->profiling_test_count : 75;
-
+		$prof_asst_test = (isset($preferences->prof_asst_test) && !empty($preferences->prof_asst_test)) ? $preferences->prof_asst_test : '';
 		$user_subjects = $this->redis_subjects();
 
 		$subjects = [];
@@ -66,13 +66,13 @@ class LeadUserController extends Controller
 			$subjects[] = $sub->subject_name;
 		}
 		$subjects_name = implode(', ', $subjects);
-
-		return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
+		if (isset($prof_asst_test) && $prof_asst_test == 'N') {
+			return redirect()->route('dashboard');
+		} else {
+			return view('auth.performance_analytics', compact(['prof_test_qcount', 'subjects_name']));
+		}
 	}
-	public function performanceRating()
-	{
-		return view('auth.performance_rating');
-	}
+	
 
 	public function examInstructions()
 	{
