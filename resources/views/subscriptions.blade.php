@@ -22,8 +22,8 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                         <p class="progress__info">Rate your level of proficiency</p>
                     </li>
                     <li class="progress__item ">
-                        <p class="progress__title">You order is out for delivery</p>
-                        <p class="progress__info">Delivery Executive is out for delivery</p>
+                        <p class="progress__title">Full Body Scan</p>
+                        <p class="progress__info">To assess your preparedness</p>
                     </li>
                 </ul>
             </div>
