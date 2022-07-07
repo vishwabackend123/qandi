@@ -302,4 +302,4 @@ Route::any('/planner', [App\Http\Controllers\LeadUserController::class, 'planner
 Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::class, 'emailConfirmation']);
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
 Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);
-
+Route::any('/practic_exam', [App\Http\Controllers\LeadUserController::class, 'practic_exam']);
