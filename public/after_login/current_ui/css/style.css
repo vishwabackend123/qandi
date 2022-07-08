@@ -1136,7 +1136,8 @@ border-bottom-color: #e5eaee;
 }
 
 .btn-common-attempted{background-color: rgba(255, 255, 255, 0.5);border-radius: 10px;color:#56b663; font-size: 14px;font-weight: 800; line-height: 1.6;}
-.btn-common-attempted svg{margin-right:7px;}
+.btn-common-attempted svg{margin-right:7px;    display: inline-block;
+    vertical-align: text-bottom;}
 .getDiscount {
     background: #f5faf6;
     min-height: 100%;
