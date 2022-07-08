@@ -114,7 +114,7 @@
                     <div>
                      <span class="error mt-2" id="errlog_otp"></span>
                      <p class="p-0 mt-2 resend resend_again">Didn’t get the code? 
-                        <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a>
+                        <a class="resendweight float-right" href="javascript:void(0);" onclick="resentOtp()">Resend OTP</a>
                     </p>
                     <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span> 
                         <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" >Resend OTP</a>
@@ -601,7 +601,7 @@
         }
 
     }
-
 }
+
 </script>
 @endsection
