@@ -93,7 +93,7 @@
                <div class="tablist">
                   <ul class="nav nav-tabs" role="tablist">
                      <li class="nav-item pr-5 mr-2">
-                        <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Custom</a>
+                        <a class="nav-link qq1_2_3_4 active bg-transparent m-0" data-bs-toggle="tab" href="#qq1">Mock Test</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link qq1_2_3_4 bg-transparent" data-bs-toggle="tab" href="#qq2">Attempted</a>
@@ -102,89 +102,30 @@
                </div>
                <!-- Tab panes -->
                <div class="tab-content bg-white exam_tabdata">
-                  <div id="qq1" class=" tab-pane active">
-                     <div class="common_greenbadge_tabs exam_topicbtn pb-4 mb-1">
-                        <ul class="nav nav-pills d-inline-flex" id="marks-tab" role="tablist">
-                           <li class="nav-item" role="presentation" type="button">
-                              <button class="nav-link btn pt-0 pb-0 active">Mathematics</button>
-                           </li>
-                           <li class="nav-item" role="presentation" type="button">
-                              <button class="nav-link pt-0 pb-0 btn">Physics</button>
-                           </li>
-                           <li class="nav-item" role="presentation">
-                              <button class="nav-link pt-0 pb-0 btn" type="button">Chemistry</button>
-                           </li>
-                        </ul>
+                  <div class="jee_main_text_take_test__btn">
+                     <div class="mock_exam_jee_main_text">
+                        <h3>JEE Main - Full Syllabus -2021</h3>
                      </div>
-                    <div class="take-fulltest d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                     <button type="button" class="btn btn-common-transparent bg-transparent me-3">Take test for selected topics</button>  
-                    <a href="javascript:void(0);" class="clearsec">Clear Selection</a>
-                    </div>    
-                    <div>   
-                    <a href="javascript:void(0)">
-                <svg class="me-4 align-bottom" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 9a8 8 0 0 1 8-8h28a8 8 0 0 1 8 8v28a8 8 0 0 1-8 8H9a8 8 0 0 1-8-8V9z" fill="#FCFDFD"/>
-    <path d="M18 23h10m-12.5-5h15m-10 10h5" stroke="#56B663" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M9 1.5h28v-1H9v1zM44.5 9v28h1V9h-1zM37 44.5H9v1h28v-1zM1.5 37V9h-1v28h1zM9 44.5A7.5 7.5 0 0 1 1.5 37h-1A8.5 8.5 0 0 0 9 45.5v-1zM44.5 37a7.5 7.5 0 0 1-7.5 7.5v1a8.5 8.5 0 0 0 8.5-8.5h-1zM37 1.5A7.5 7.5 0 0 1 44.5 9h1A8.5 8.5 0 0 0 37 .5v1zM9 .5A8.5 8.5 0 0 0 .5 9h1A7.5 7.5 0 0 1 9 1.5v-1z" fill="#56B663"/>
-</svg></a>
-  <button type="button" class="btn btn-common-green">Take full test</button> 
-                    </div> 
-                    </div>
-                    <div class="accordion mt-4 pt-1" id="accordionExample">
-<div class="allscrollbar">
-<div class="accordion-item">  
-<div class="test-table d-flex align-items-center justify-content-between">
-<h2>3D Geometry</h2>
-<h3>Proficiency : <span>65%</span></h3>    
-<div class="accordion-header d-flex align-items-center" id="headingOne"><h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="re">View topics</h4>
-<button type="button" class="btn btn-common-transparent bg-transparent ml-4">Take test</button>
-</div>  
-    </div>
- <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
- 
- </div>     
-    
-</div>    
-
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
+                     <button type="button" class="btn btn-common-green mock_test_take_test_btn">Take test</button> 
                   </div>
-                   
-                   
-
-                   
-                   
-                   
-                  <div id="qq2" class=" tab-pane">
-                     A
+                  <div class="line_696"></div>
+                  <div class="mock_test_ques_dure_marks_sub d-flex">
+                     <div class="mock_test_ques_content">
+                        <div class="mock_test_q_d_m_s_text1">No. Of Questions</div>
+                        <div class="mock_test_q_d_m_s_text2">90 MCQ</div>
+                     </div>
+                     <div class="mock_test_dure_content">
+                        <div class="mock_test_q_d_m_s_text1">Duration</div>
+                        <div class="mock_test_q_d_m_s_text2"><span>180</span><span>Mins</span></div>
+                     </div>
+                     <div class="mock_test_marks_content">
+                        <div class="mock_test_q_d_m_s_text1">Marks</div>
+                        <div class="mock_test_q_d_m_s_text2">300</div>
+                     </div>
+                     <div class="mock_test_sub_content">
+                        <div class="mock_test_q_d_m_s_text1">Subject</div>
+                        <div class="mock_test_q_d_m_s_text2">Physics, Chemistry & Mathematics</div>
+                     </div>
                   </div>
                </div>
             </div>

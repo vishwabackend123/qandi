@@ -118,4 +118,8 @@ class LeadUserController extends Controller
 	{
 		return view('auth.export_overall_analytics');
 	}
+     public function mock_test()
+	{
+		return view('auth.mock_test');
+	}
 }

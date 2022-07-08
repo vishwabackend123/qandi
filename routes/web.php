@@ -304,3 +304,4 @@ Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController:
 Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);
 Route::any('/practic_exam', [App\Http\Controllers\LeadUserController::class, 'practic_exam']);
 Route::any('/export_overall_analytics', [App\Http\Controllers\LeadUserController::class, 'exportOverallAnalytics']);
+Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);
