@@ -1670,6 +1670,14 @@ border-bottom-color: #e5eaee;
  .chemistryCard{
      background-color: #c2f3f2 !important;
  }
+ .botanyCard {
+    background-color: #ecfccb!important;
+}
+
+.zoologyCard {
+    background-color: #b1f8cd!important;
+}
+
  .subIcon{
      display: inline-flex;
      padding: 5px;
