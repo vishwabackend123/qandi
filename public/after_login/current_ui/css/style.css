@@ -931,7 +931,7 @@ border-bottom-color: #e5eaee;
 
 .verificationBox a {
     width: 114px;
-    height: 38px;
+    height: 38px;font-size:14px;
     flex-grow: 0;
     display: flex;
     flex-direction: row;
@@ -942,7 +942,7 @@ border-bottom-color: #e5eaee;
     border-radius: 8px;
     border: solid 1px #dc6803;
     background-color: #fff;
-    color: #dc6803;
+    color: #dc6803;font-weight:600;
 }
 
 .verificationBox p {
@@ -2444,6 +2444,10 @@ ul.topic_score_lists li:hover .noofquestions-block{display: block;}
 .custom_container {
     max-width: 852px;
     margin: 0 auto;
+}
+canvas#myChartProgress {
+
+    height: 180px!important;
 }
 /********************* Amit End ****************************/
 

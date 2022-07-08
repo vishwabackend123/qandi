@@ -780,40 +780,43 @@ $userData = Session::get('user_data');
                                             </span>
                                         </h3>
                                     </div>
-                                    <div class="graphBoxcontainer">
-                                        <div class="graphimg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
                                                 <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256" />
                                                 <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
                                                 <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
-                                            </svg>
-
-
-                                        </div>
-                                        <div class="graphDetail">
-                                            <div class="yourPacebox">
-                                                <p class="graphTitle">Ideal Pace</p>
-                                                <p>
-                                                    <span class="weekCountline colorHline"></span>
-                                                    <span class="weekCount">12</span>
-                                                    <span class="weekText">chapters per week</span>
-                                                </p>
-                                            </div>
-                                            <div class="yourPacebox">
-                                                <p class="graphTitle">Your Pace</p>
-                                                <p>
-                                                    <span class="weekCountline colorHline"></span>
-                                                    <span class="weekCount">8</span>
-                                                    <span class="weekText">chapters per week</span>
-                                                </p>
-                                            </div>
-                                            <div class="note">
-                                                <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
+                                            </svg> -->
+                                            <div class="progress_journey_chart">
+                                                <canvas id="myChartProgress"></canvas>
                                             </div>
                                         </div>
-                                        <div class="graphDetailempty">
-                                            <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                            <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                        <div class="col-md-5">
+                                            <div class="graphDetail w-100">
+                                                <div class="yourPacebox">
+                                                    <p class="graphTitle">Ideal Pace</p>
+                                                    <p>
+                                                        <span class="weekCountline colorHline"></span>
+                                                        <span class="weekCount">12</span>
+                                                        <span class="weekText">chapters per week</span>
+                                                    </p>
+                                                </div>
+                                                <div class="yourPacebox">
+                                                    <p class="graphTitle">Your Pace</p>
+                                                    <p>
+                                                        <span class="weekCountline colorHline"></span>
+                                                        <span class="weekCount">8</span>
+                                                        <span class="weekText">chapters per week</span>
+                                                    </p>
+                                                </div>
+                                                <div class="note">
+                                                    <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
+                                                </div>
+                                            </div>
+                                            <!-- <div class="graphDetailempty">
+                                                <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                                <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1299,6 +1302,63 @@ $userData = Session::get('user_data');
             dropdown.classList.toggle("active")
         }
     </script>
+
+
+
+<script>
+ const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [0, 10, 5, 2, 20],
+  },
+  {
+    label: 'My First dataset',
+    backgroundColor: 'green',
+    borderColor: 'green',
+    data: [0, 20, 10, 10, 30],
+  }]
+};
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            x: {
+                    grid: {
+                    display: false
+                    }
+            }
+
+        }
+    }
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChartProgress'),
+    config
+  );
+
+</script>
+ 
+
+
 
 
     @endsection
