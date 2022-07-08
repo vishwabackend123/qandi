@@ -2,7 +2,6 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
 
-
 <div class="main-wrapper">
     
     <header>
@@ -177,7 +176,7 @@
                         <div class="time-date-block">
                             <span class="d-block mb-2 commontext">13 June 2022</span>
                             <p class="m-0">
-                                <small class="commontext mr-5 pr-4">
+                                <small class="commontext me-5 pe-4">
                                     <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -320,7 +319,7 @@
                                         <div class="halfdoughnut">
                                             <canvas id="subjectChart"></canvas>
                                         </div>
-                                        <div class="color_labels ml-5">
+                                        <div class="color_labels ms-5">
                                             <span class="d-block">Correct <b><small></small>32</b></span>
                                             <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
                                             <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
@@ -333,7 +332,7 @@
                                         <div class="halfdoughnut">
                                             <canvas id="subjectChart-1"></canvas>
                                         </div>
-                                        <div class="color_labels ml-5">
+                                        <div class="color_labels ms-5">
                                             <span class="d-block">Correct <b><small></small>32</b></span>
                                             <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
                                             <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
@@ -346,7 +345,7 @@
                                         <div class="halfdoughnut">
                                             <canvas id="subjectChart-2"></canvas>
                                         </div>
-                                        <div class="color_labels ml-5">
+                                        <div class="color_labels ms-5">
                                             <span class="d-block">Correct <b><small></small>32</b></span>
                                             <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
                                             <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
@@ -650,7 +649,7 @@
                     </div>
                     
                 </div>
-                <div class="mt-3 text-right">
+                <div class="mt-3 text-end">
                     <button class="btn btn-common-transparent scroll-top"  style="min-width: auto;">Scroll to top</button>
                 </div>
             </div>
