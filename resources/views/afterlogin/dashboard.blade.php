@@ -1692,6 +1692,8 @@ $('.dashborarSlider').owlCarousel({
        
     }
 })
+
+
 </script>
 
 
