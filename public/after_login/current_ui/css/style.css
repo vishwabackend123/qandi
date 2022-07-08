@@ -3807,6 +3807,73 @@ padding: 11px 20px!important;
 .aeck_commontab .nav-tabs .nav-link {
     margin-right: 46px!important;
 }
+
+/* **********start mock test   ********** */
+.jee_main_text_take_test__btn
+{
+    display: flex;
+    justify-content: space-between;
+}
+.mock_exam_jee_main_text h3
+{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #363c4f;
+}
+.line_696
+{
+    height: 1px;
+    align-self: stretch;
+    flex-grow: 0;
+    background-color: #e5eaee;
+    margin: 22px 0px 0px 0px;
+}
+.mock_test_take_test_btn
+{
+    min-width: unset!important;
+}
+.mock_test_ques_dure_marks_sub
+{
+    margin-top: 25px;
+}
+.mock_test_ques_content
+{
+    border-right: 1px solid #e5eaee;
+    padding: 0px 70px 0px 0px;
+}
+.mock_test_dure_content, .mock_test_marks_content
+{
+    padding: 0px 70px 0px 70px;
+    border-right: 1px solid #e5eaee;
+}
+.mock_test_sub_content
+{
+    padding: 0px 0px 0px 70px;
+}
+.mock_test_q_d_m_stext
+{
+
+}
+.mock_test_q_d_m_s_text1
+{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #363c4f;
+}
+.mock_test_q_d_m_s_text2
+{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f
+}
+/* **********start mock test   ********** */
+
 /********* Vikash End ***********/
 
 /********** Shiv - Start *********/
