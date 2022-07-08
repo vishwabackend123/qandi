@@ -67,14 +67,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @if($subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>
@@ -161,14 +159,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @elseif($subscription_type!="P")
             <div class="selectPlanedetail">
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>
@@ -264,14 +260,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @endphp
             <div class="selectPlanedetail" style="display:none">
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>
@@ -342,8 +336,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     @if($sub->trial_subscription_duration>0)
                     @if(!in_array($sub->subscript_id,$purchasedid) )
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Already in {{$sub->trial_subscription_duration}} days trail Period</a>
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline btn disabled" disabled="disabled" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trail ></a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
                     </div>
                     @else
                     <div class="freeTrial">
@@ -376,14 +369,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @endphp
             <div class="selectPlanedetail">
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>
@@ -453,13 +444,9 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 <div class="planType">
                     @if($sub->trial_subscription_duration>0)
                     @if(!in_array($sub->subscript_id,$purchasedid) )
-                    <!--div class="text-center mt-2">
-                        @if(empty($trail_sub) || $trail_sub==1)
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}" class="Try14 text-danger text-decoration-underline" @if((count($purchasedid)>0) && !empty($userData->id)) onclick="return confirm('Previous subscription will not be valid after new subscription.');" @endif >Try {{$sub->trial_subscription_duration}} days trail</a>
-                        @endif
-                    </div-->
+                   
                     <div class="freeTrial">
-                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Try {{$sub->trial_subscription_duration}} days trail</a>
+                        <a href="{{route('trial_subscription',[$sub->subscript_id,$sub->exam_year,$sub->class_exam_id])}}">Start {{$sub->trial_subscription_duration}} days free trial</a>
                     </div>
                     @else
                     <div class="freeTrial">
@@ -495,14 +482,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @if( $user_exam_id==$sub->class_exam_id && $subscription_type=="P")
             <div class="selectPlanedetail">
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>
@@ -597,14 +582,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 }
                 @endphp
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>
@@ -673,7 +656,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">14 days trail Period expired.</a>
+                        <a href="javascript:void(0);">{{$sub->trial_subscription_duration}} days trial Period expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -692,14 +675,12 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
             @else
             <div class="selectPlanedetail">
                 <div class="planeName">
-                    <p>{{strtoupper($sub->subscription_name)}}</p>
+                    <p>{{strtoupper($sub->subscription_name)}} Annual Plan</p>
                     <div class="price">
-                        @if($discount >0)
                         <div class="offer">
-                            <span class="offer_price">{{$subsprice}}</span>
+                            <span class="offer_price">₹{{$subsprice}}</span>
                             <span class="offer_disco">({{$discount}}% off)</span>
                         </div>
-                        @endif
                         <div class="peryearPrice">
                             ₹{{$subsprice-$discount_price}}<sub>per year</sub>
                         </div>

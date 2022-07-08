@@ -130,7 +130,7 @@ class StudentSignInController extends Controller
             $timestamp = $_SERVER["REQUEST_TIME"];
             $session_otp_time = Session::get('OTP_time');
 
-            if (($timestamp - $session_otp_time) < 180) {
+            if (($timestamp - $session_otp_time) < 60) {
                 $request = ['email_or_mobile' => $enteredMobile, 'otp' => $enteredOtp];
 
                 $request_json = json_encode($request);
@@ -332,7 +332,7 @@ class StudentSignInController extends Controller
             curl_setopt_array($curl, $curl_option);
 
             $response_json = curl_exec($curl);
-            //dd($response_json);
+
             $err = curl_error($curl);
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             curl_close($curl);
