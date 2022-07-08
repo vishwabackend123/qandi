@@ -1122,6 +1122,8 @@ height: 38px;
     color: #56b663;
 }
 
+.btn-common-attempted{background-color: rgba(255, 255, 255, 0.5);border-radius: 10px;color:#56b663; font-size: 14px;font-weight: 800; line-height: 1.6;}
+.btn-common-attempted svg{margin-right:7px;}
 .getDiscount {
     background: #f5faf6;
     min-height: 100%;
