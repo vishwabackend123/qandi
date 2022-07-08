@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.min.css')}}"> -->
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.min.css')}}">
     @else
     <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
@@ -41,6 +44,9 @@
     <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.css')}}"> -->
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
     @endif
 
@@ -49,6 +55,8 @@
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
     <!-- <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+<script  src="{{URL::asset('public/after_login/current_ui/js/calendar.min.js')}}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
