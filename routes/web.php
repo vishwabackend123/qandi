@@ -303,3 +303,4 @@ Route::any('/email_confirmation', [App\Http\Controllers\LeadUserController::clas
 Route::any('/test_analytics_mocktest', [App\Http\Controllers\LeadUserController::class, 'testAnalyticsMocktest']);
 Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, 'aeckMyqmatrix']);
 Route::any('/practic_exam', [App\Http\Controllers\LeadUserController::class, 'practic_exam']);
+Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);

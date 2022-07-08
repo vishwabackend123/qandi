@@ -719,6 +719,15 @@ padding: 32px !important;
     height: 44px;
     min-width: 141px !important;
 }
+.take-fulltest .btn-common-transparent {
+    max-width: 227px !important;
+}
+.clearsec{
+  font-size: 14px;
+  font-weight: 800;
+  color: #d92d20 !important;
+  text-decoration: none !important;
+}
 /*****practic_exam-end**********/
 
 /*********** Navdeep End *************/
