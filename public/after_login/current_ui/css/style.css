@@ -2449,9 +2449,13 @@ ul.topic_score_lists li:hover .noofquestions-block{display: block;}
     margin: 0 auto;
 }
 canvas#myChartProgress {
-
     height: 180px!important;
 }
+.export_overall_analytics_wrapper .your_rank small {border-radius: 10px;background-color: #e0f6e3;padding: 12px;width: 48px;
+height: 48px;top: 7px;}
+.studentdetail h3.boxheading{margin-bottom: 10px;font-size: 20px;}
+
+
 /********************* Amit End ****************************/
 
 
