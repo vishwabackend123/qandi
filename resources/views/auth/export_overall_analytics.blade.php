@@ -162,7 +162,7 @@
             <div class="mock_inst_text_mock_test mb-4">
                 <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
             </div>
-            <div class="container">
+            <div class="custom_container">
                 <h3 class="commonheading">Detailed Report Analysis</h3>
                 <p style="color: #666;font-size: 14px;font-weight: 500;">Weekly Q&I Performance Report</p>
             </div>
