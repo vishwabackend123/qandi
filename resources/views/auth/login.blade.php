@@ -98,11 +98,11 @@
                         <input class="form-control otp_num" maxlength="1" id="opt_five" onkeypress="return isNumber(event)">
                     </div>
                     <div>
-                        <p class="p-0 mt-2 resend resend_again">Didn’t get the code? 
+                        <p class="p-0 mt-2 resend resend_again">Didn’t get the code?
                             <a class="resendweight float-right" href="javascript:void(0);" onclick="sentotplogin('resend')">Resend OTP</a>
                         </p>
-                        <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span> 
-                            <a class="resendweight float-right resendcolorchan" href="javascript:void(0);" >Resend OTP</a>
+                        <p class="p-0 mt-2 resend resend_timer">Resend OTP in <span id="wait_otp_div">00:59</span>
+                            <a class="resendweight float-right resendcolorchan" href="javascript:void(0);">Resend OTP</a>
                         </p>
                         <span class="mt-2 d-none" id="resend_opt_msg" style="color: green;">Resend OTP sent successfully</span>
                         <span class="error d-none mt-2" id="errlog_auth">You have entered a wrong OTP. Please try again</span>
@@ -121,7 +121,16 @@
 $('.verify_otp').hide();
 $('#otp-verify-btn').hide();
 $('.resend_again').hide();
+var timerId = '';
+
 $(document).ready(function() {
+    var input = document.getElementById("mobile_num");
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            sentotplogin('send');
+        }
+    });
     $("#studentlogin").submit(function(e) {
         e.preventDefault();
     });
@@ -162,11 +171,24 @@ $(document).ready(function() {
         $("#mobile-input-btn").show();
         $('.verify_otp').hide();
         $('#otp-verify-btn').hide();
+        $('#opt_one').val('');
+        $('#opt_two').val('');
+        $('#opt_three').val('');
+        $('#opt_four').val('');
+        $('#opt_five').val('');
+        clearTimeout(timerId);
+        $('#wait_otp_div').text('00:59');
     })
 
 });
 
 function sentotplogin(otp_type) {
+    $('#opt_one').val('');
+    $('#opt_two').val('');
+    $('#opt_three').val('');
+    $('#opt_four').val('');
+    $('#opt_five').val('');
+
     var mobile = $("#mobile_num").val();
     if (mobile == '') {
         $("#errlog_mob").html('Please entered registered mobile number');
@@ -293,7 +315,7 @@ function resentOtpTime() {
     $('.resend_again').hide();
     var timeLeft = 58;
     var elem = document.getElementById('wait_otp_div');
-    var timerId = setInterval(countdown, 1000);
+    timerId = setInterval(countdown, 1000);
 
     function countdown() {
 
@@ -303,7 +325,7 @@ function resentOtpTime() {
             $('.resend_timer').hide();
         } else {
             $('.resend_timer').show();
-            elem.innerHTML = "00:"+timeLeft ;
+            elem.innerHTML = "00:" + timeLeft;
             timeLeft--;
         }
 
