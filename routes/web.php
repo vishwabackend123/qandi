@@ -292,7 +292,7 @@ Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
 Route::any('/performance_analytics', [App\Http\Controllers\LeadUserController::class, 'performanceAnalytics'])->name('performanceAnalytics')->middleware('auth');
 Route::any('/exam_instructions', [App\Http\Controllers\LeadUserController::class, 'examInstructions']);
-Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile']);
+Route::any('/profile', [App\Http\Controllers\LeadUserController::class, 'profile'])->name('profile')->middleware('auth');
 /* New signup routes */
 Route::any('/sentMobileOtp/{mobile}', [App\Http\Controllers\StudentSignInController::class, 'sentMobileOtp'])->name('sentMobileOtp');
 Route::any('/weekly_plan', [App\Http\Controllers\LeadUserController::class, 'weeklyPlan']); 

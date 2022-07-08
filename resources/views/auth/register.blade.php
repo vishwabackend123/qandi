@@ -83,7 +83,7 @@
                 @csrf
                 <div class="custom-input pb-3">
                     <label>Name</label>
-                    <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Full name" maxlength="25" onkeypress="return lettersOnly(event)" required>
+                    <input type="text" name="user_name" id="user_name" class="form-control reqrd" placeholder="Name" maxlength="25" onkeypress="return lettersOnly(event)" required>
                 </div>
                 <div class=" custom-input changeno pb-3 ">
                     <label>Mobile</label>
