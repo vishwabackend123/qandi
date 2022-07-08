@@ -720,7 +720,10 @@ padding: 32px !important;
     min-width: 141px !important;
 }
 .take-fulltest .btn-common-transparent {
-    max-width: 227px !important;
+    max-width: 237px !important;
+}
+.clrsec{
+    flex: 2;
 }
 .clearsec{
   font-size: 14px;
@@ -752,11 +755,21 @@ padding: 32px !important;
     color: #56b663;
 }
 .test-table .accordion-header{
-flex: 1;    
+flex-basis: 245px;   
 }
 .test-table .accordion-header .btn{
 max-width: 141px !important;
 height: 38px;
+}
+.exam_tabdata .accordion-body {
+    border-top: 1px dashed #cde3d0;
+}
+.exam_tabdata .accordion-item{
+border-radius: 0 !important;
+border-right: 0;
+border-left: 0;
+border-top:0;
+border-bottom-color: #e5eaee;
 }
 /*****practic_exam-end**********/
 
