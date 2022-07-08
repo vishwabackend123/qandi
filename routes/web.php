@@ -286,7 +286,7 @@ Route::any('/performance-rating', [App\Http\Controllers\HomeController::class, '
 /* dashboard dailytask exam new routes */
 
 Route::get('/dashboard-DailyTask', [App\Http\Controllers\HomeController::class, 'dailytask'])->name('dashboard-DailyTask')->middleware('auth', 'menu');
-Route::any('/dashboard-MyQMatrix', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
+Route::any('/dashboard-MyQMatrix/{quadrant_name}', [App\Http\Controllers\HomeController::class, 'myQMatrix'])->name('dashboard-MyQMatrix')->middleware('auth', 'menu');
 Route::any('/DailyTask-exam/{category}/{tasktype}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExam')->middleware('auth', 'menu');
 Route::any('/DailyTask-Skill-Exam/{category}/{tasktype}/{skill_category}', [App\Http\Controllers\HomeController::class, 'dailyTaskExam'])->name('dailyTaskExamSkill')->middleware('auth', 'menu');
 Route::any('/lead_user/{lead_id}/{trail}', [App\Http\Controllers\LeadUserController::class, 'getLeadUser']);
@@ -305,3 +305,4 @@ Route::any('/aeck_myqmatrix', [App\Http\Controllers\LeadUserController::class, '
 Route::any('/practic_exam', [App\Http\Controllers\LeadUserController::class, 'practic_exam']);
 Route::any('/export_overall_analytics', [App\Http\Controllers\LeadUserController::class, 'exportOverallAnalytics']);
 Route::any('/mock_test', [App\Http\Controllers\LeadUserController::class, 'mock_test']);
+Route::any('/live_exam', [App\Http\Controllers\LeadUserController::class, 'live_exam']);
