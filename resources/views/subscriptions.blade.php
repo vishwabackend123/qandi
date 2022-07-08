@@ -233,7 +233,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Already in {{$sub->trial_subscription_duration}} days trail Period</a>
+                        <a href="javascript:void(0);">Already in {{$sub->trial_subscription_duration}} days trial Period</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
@@ -340,7 +340,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     </div>
                     @else
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trail</a>
+                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trial</a>
                     </div>
                     @endif
                     @endif
@@ -450,7 +450,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     </div>
                     @else
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trail ></a>
+                        <a href="javascript:void(0);">Expired {{$sub->trial_subscription_duration}} days trial ></a>
                     </div>
                     @endif
                     <div class="getSubs">
@@ -749,7 +749,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">14 days trail Period expired.</a>
+                        <a href="javascript:void(0);">14 days trial Period expired.</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
