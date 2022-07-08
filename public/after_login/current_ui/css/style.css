@@ -4369,8 +4369,93 @@ padding: 11px 20px!important;
 }
 .email-confirmation .btn.btn-common-green {min-width: inherit;padding: 10px 40px;margin: 15px 0px;}
 
+/**********  texst summary modal *********/
+.modal-header-exam {
+    display: flex;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(205, 227, 208, 0.5);
+}
+.exam-overview {flex: 1;}
+.exam-overview > label {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1f1f1f;
+}
 
+.modal-content.exammodal_content {
+    max-width: 554px;
+    width: 554px;border-radius: 20px;
+}
+.modal-content.exammodal_content .modal-body {padding: 24px;}
+.exam-overview-time > span {
+    font-size: 16px;
+    color: #2c3348;
+    padding-left: 18px;
+}
 
+.exam-ans-sec {display: flex;padding: 0px 0px 20px;position: relative;}
+.exam-ans-sec.top-first {display: flex;padding: 24px 0px 20px 0px;}
+.ans-in-num{font-size: 14px;font-weight: 600;color: #363c4f;}
+.ans1,.ans2,.ans3,.ans4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #363c4f;padding-left: 20px; position: relative;
+    flex: 1;
+}
+.exam_text_content {border-top: 1px solid rgba(205, 227, 208, 0.5);padding: 20px 0px;font-size: 16px;color: #363c4f;font-weight: 500;}
+
+.exam-footer-sec .task-btn.tasklistbtn {text-align: left;}
+.exam-footer-sec .tasklistbtn .btn {
+    width: 48%;
+    padding: 10px;
+    display: inline-block;
+}
+.exam-footer-sec .task-btn.tasklistbtn .btn-common-green {margin-left: 12px;}
+.exam-footer-sec .task-btn.tasklistbtn .btn-common-green > label {padding-left: 8px;vertical-align: middle;}
+.ans1:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #56b663;
+    position: absolute;
+    border-radius: 2px;
+    top: 5px;
+    left: 0px;
+}
+
+.ans2:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 1px solid #56b663;
+    position: absolute;
+    border-radius: 2px;
+    top: 5px;
+    left: 0px;
+}
+
+.ans3:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #fb7686;
+    position: absolute;
+    border-radius: 2px;
+    top: 5px;
+    left: 0px;
+}
+
+.ans4:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #7db9ff;
+    position: absolute;
+    border-radius: 2px;
+    top: 5px;
+    left: 0px;
+}
 
 
 /**********  customer-journey *********/

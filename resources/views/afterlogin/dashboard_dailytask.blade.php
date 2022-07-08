@@ -266,7 +266,7 @@ $userData = Session::get('user_data');
                                         </p>
                                     </div>
                                             <div class="task-btn tasklistbtn">
-                                            <button class="btn btn-common-transparent nobg">Take test</button>
+                                            <button data-bs-target="#summarymodal" class="btn btn-primary btn-common-transparent nobg" data-bs-toggle="modal">Take test</button>
                                             </div>
                                 </div>
                             </div>
@@ -293,6 +293,71 @@ $userData = Session::get('user_data');
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="summarymodal" aria-modal="true" role="dialog">
+        <div class="modalcenter">
+            <div class="modal-dialog">
+                <div class="modal-content exammodal_content">
+                    <div class="modal-body">
+                            <div class="modal-header-exam">
+                                <div class="exam-overview">
+                                    <label>Exam Overview</label>
+                                </div>
+                                <div class="exam-overview-time">
+                                    <label><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity=".1" d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20z" fill="#363C4F"/>
+                                                <path d="M31.896 32.835A17.503 17.503 0 1 1 20 2.5V20l11.896 12.835z" fill="#44CD7F"/>
+                                                <path d="M20 32.683c7.005 0 12.683-5.678 12.683-12.683 0-7.004-5.678-12.683-12.683-12.683S7.317 12.996 7.317 20c0 7.005 5.678 12.683 12.683 12.683z" fill="#EBEBED"/>
+                                                <path d="M20 26.41a6.19 6.19 0 1 0 0-12.38 6.19 6.19 0 0 0 0 12.38z" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M20 17.582v2.457h1.638M15.905 12.668l-2.252 1.638M24.095 12.668l2.252 1.638" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </label>
+                                    <span>112 mins Left</span>
+                                </div>
+                            </div>
+                                <div class="exam-ans-sec top-first">
+                                    <div class="ans1">Answered</div>
+                                    <div class="ans-in-num">24</div>
+                                </div>
+
+                                <div class="exam-ans-sec">
+                                    <div class="ans2">Unanswered</div>
+                                    <div class="ans-in-num">2</div>
+                                </div>
+
+                                <div class="exam-ans-sec">
+                                    <div class="ans3">Marked for review</div>
+                                    <div class="ans-in-num">3</div>
+                                </div>
+
+                                <div class="exam-ans-sec">
+                                    <div class="ans4">Answered & marked for review</div>
+                                    <div class="ans-in-num">1</div>
+                                </div>
+                        <div class="exam_text_content">
+                        No changes will be allowed after submission, Are you sure you want to sumit test for final marking?
+                        </div>
+                            <div class="exam-footer-sec">
+                                <div class="task-btn tasklistbtn">
+                                    <button class="btn btn-common-transparent nobg">Back To test</button>
+                                        <button class="btn btn-common-green"> Submit Test <label><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.95 7.767 5.284 1.934a2.5 2.5 0 0 0-3.4 3.25l2 4.475a.883.883 0 0 1 0 .683l-2 4.475a2.5 2.5 0 0 0 2.283 3.517c.39-.004.774-.095 1.125-.267l11.667-5.833a2.5 2.5 0 0 0 0-4.467h-.009zm-.741 2.975L4.542 16.575a.833.833 0 0 1-1.125-1.083l1.992-4.475c.025-.06.048-.12.066-.183h5.742a.833.833 0 0 0 0-1.667H5.475a1.668 1.668 0 0 0-.066-.183L3.417 4.509a.833.833 0 0 1 1.125-1.084L16.209 9.26a.834.834 0 0 1 0 1.483z" fill="#fff"/>
+                                        </svg>
+                                        </label>
+                                        </button>
+                                </div>
+                                
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script>
         $(window).on('load', function() {
             //$('#matrix').modal('show');
