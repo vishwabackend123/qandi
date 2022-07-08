@@ -165,6 +165,46 @@
             <div class="custom_container">
                 <h3 class="commonheading">Detailed Report Analysis</h3>
                 <p style="color: #666;font-size: 14px;font-weight: 500;">Weekly Q&I Performance Report</p>
+                <div class="row align-items-end">
+                    <div class="col-md-6">
+                        <div class="your_rank position-relative" style="padding-left: 66px;">
+                            <small>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </small>
+                            <label class="m-0 commonboldtext" style="font-size:24px;">37 <b style="font-size: 14px;font-weight: 500;color: #1f1f1f;">Students</b></label>
+                            <span class="d-block  commontext" style="color:#666;font-size: 14px;">appeared in the exam</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <span style="font-size: 14px;font-weight: 500;color: #1f1f1f;">June 23, 2022</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="text-right">
+                            <button class="btn btn-common-transparent" style="min-width: auto;">
+                                <svg class="me-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: top;">
+                                    <path d="M19 14v3.333c0 .442-.164.866-.456 1.179a1.505 1.505 0 0 1-1.1.488H6.556c-.413 0-.809-.176-1.1-.488A1.729 1.729 0 0 1 5 17.333V14M8 10l4 4 4-4M12 14V5" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Export Analytics
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="commonWhiteBox commonblockDash" style="margin-top:40px;">
+                    <h3 class="boxheading" style="margin-bottom:40px;">Progress</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="studentdetail">
+                                <h3 class="boxheading">Sanjay Kapoor</h3>
+                                <label>
+                                    Class - Beginner (10th), <br/>
+                                    Preparing for NEET
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

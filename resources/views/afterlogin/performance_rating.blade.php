@@ -48,8 +48,8 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="1" id="user_pro_level_{{$subject_proficiency->id}}_1" onclick="selectProficiencyLevel({{$subject_proficiency->id}},1)">
                         <span class="mr-3">
                             <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
-                            <b class="rate-level-active"></b>
+                            <b></b>
+                            <b></b>
                             <b></b>
                             <b></b>
                         </span>
@@ -77,21 +77,21 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                     </li>
                     <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="4" id="user_pro_level_{{$subject_proficiency->id}}_4" onclick="selectProficiencyLevel({{$subject_proficiency->id}},4)">
                         <span class="mr-3">
-                            <b></b>
-                            <b></b>
-                            <b></b>
                             <b class="rate-level-active"></b>
                             <b class="rate-level-active"></b>
+                            <b class="rate-level-active"></b>
+                            <b class="rate-level-active"></b>
+                            <b></b>
                         </span>
                         <label class="mb-0">Proficient</label>
                     </li>
                     <li class="user-proficiency-level subject_{{$subject_proficiency->id}}" data-id="{{$subject_proficiency->id}}" data-value="5" id="user_pro_level_{{$subject_proficiency->id}}_5" onclick="selectProficiencyLevel({{$subject_proficiency->id}},5)">
                         <span class="mr-3">
-                            <b></b>
-                            <b></b>
                             <b class="rate-level-active"></b>
-                            <b></b>
-                            <b></b>
+                            <b class="rate-level-active"></b>
+                            <b class="rate-level-active"></b>
+                            <b class="rate-level-active"></b>
+                            <b class="rate-level-active"></b>
                         </span>
                         <label class="mb-0">Expert</label>
                     </li>
