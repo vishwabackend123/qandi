@@ -147,7 +147,7 @@
                     <div class="col-lg-6">
                         <label>Exam</label>
                         <select class="form-control selectdata reqrd" name="exam" id="exam_id" required>
-                            <option value="" disabled selected hidden>Select exam</option>
+                            <option value="" disabled selected hidden>Exam Type</option>
                             <option value="1">JEE</option>
                             <option value="2">NEET</option>
 
