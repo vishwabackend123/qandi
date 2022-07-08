@@ -2,7 +2,6 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
 
-
 <div class="main-wrapper">
     
     <header>
@@ -159,500 +158,502 @@
         </div>
     </aside>
 
-    <div class="content-wrapper test_analytics_wrapper ">
+    <div class="content-wrapper test_analytics_wrapper">
         <div class="container-fluid">
-            <div class="mocktest-page pb-3">
-                <div class="mock_inst_text_mock_test mb-4">
-                    <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
+            <div class="mock_inst_text_mock_test mb-4">
+                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
+            </div>
+            <h3 class="commonheading">Mock Test</h3>
+            <div class="row mt-4 mb-4 align-items-end">
+                <div class="col-sm-3">
+                    <div class="question-attempted-block border-right">
+                        <span class="d-block mb-2 commontext">Question Attempted</span>
+                        <label class="m-0 commonboldtext">80/100</label>
+                    </div>
                 </div>
-                <h3 class="commonheading">Mock Test</h3>
-                <div class="row mt-4 mb-4 align-items-end">
-                    <div class="col-sm-3">
-                        <div class="question-attempted-block border-right">
-                            <span class="d-block mb-2 commontext">Question Attempted</span>
-                            <label class="m-0 commonboldtext">80/100</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="time-date-block">
-                            <span class="d-block mb-2 commontext">13 June 2022</span>
-                            <p class="m-0">
-                                <small class="commontext mr-5 pr-4">
-                                    <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    60 min
-                                </small>
-                                <small class="commontext">
-                                    <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    200 marks
-                                </small>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="text-right">
-                            <button class="btn btn-common-transparent" style="min-width: auto;">
-                                <svg style="vertical-align:middle;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <div class="col-sm-6">
+                    <div class="time-date-block">
+                        <span class="d-block mb-2 commontext">13 June 2022</span>
+                        <p class="m-0">
+                            <small class="commontext me-5 pe-4">
+                                <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                Review Question
-                            </button>
-                        </div>
+                                60 min
+                            </small>
+                            <small class="commontext">
+                                <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                200 marks
+                            </small>
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-5">
-                        <div class="commonWhiteBox commonblockDash test_myscrore_card">
-                            <h3 class="boxheading d-flex align-items-center">My Score 
-                                    <span class="tooltipmain ml-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                    <p class="tooltipclass">
-                                    <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                    </p>
-                                </span>
-                            </h3>
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <div class="halfdoughnut2">
+                <div class="col-sm-3">
+                    <div class="text-right">
+                        <button class="btn btn-common-transparent" style="min-width: auto;">
+                            <svg style="vertical-align:middle;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4.802h4.8a3.2 3.2 0 0 1 3.198 3.2v11.197a2.4 2.4 0 0 0-2.4-2.4H4V4.802zM19.998 4.802H15.2A3.2 3.2 0 0 0 12 8.002v11.197a2.4 2.4 0 0 1 2.4-2.4h5.598V4.802z" stroke="#56B663" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Review Question
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="commonWhiteBox commonblockDash test_myscrore_card">
+                        <h3 class="boxheading d-flex align-items-center">My Score 
+                                <span class="tooltipmain ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                <p class="tooltipclass">
+                                <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="halfdoughnut2 position-relative">
                                     <canvas id="myscoregraph"></canvas>
+                                    <div class="myScore">
+                                        <h6 class="m-0">80/200</h6>
+                                        <span>MARKS</span>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="color_labels">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Correct <b><small></small>60</b></span>
+                                        <span>Incorrect <b><small></small>20</b></span>
                                     </div>
+                                    <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonWhiteBox commonblockDash">
+                        <h3 class="boxheading d-flex align-items-center">Marks Percentage 
+                                <span class="tooltipmain ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                <p class="tooltipclass">
+                                <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="common_greenbadge_tabs">
+                            <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn active" id="pills-overall-tab" data-bs-toggle="pill" data-bs-target="#pills-overall" type="button" role="tab" aria-controls="pills-overall" aria-selected="true">Overall</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn" id="pills-physics-tab" data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false">Physics</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn" id="pills-chemistry-tab" data-bs-toggle="pill" data-bs-target="#pills-chemistry" type="button" role="tab" aria-controls="pills-chemistry" aria-selected="false">Chemistry</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link btn" id="pills-maths-tab" data-bs-toggle="pill" data-bs-target="#pills-maths" type="button" role="tab" aria-controls="pills-maths" aria-selected="false">Maths</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
+                                    <span class="d-block mb-1 commontext">Overall percentage</span>
+                                    <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
+                                    <div class="overall_percentage_chart">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-physics" role="tabpanel" aria-labelledby="pills-physics-tab">...</div>
+                                <div class="tab-pane fade" id="pills-chemistry" role="tabpanel" aria-labelledby="pills-chemistry-tab">...</div>
+                                <div class="tab-pane fade" id="pills-maths" role="tabpanel" aria-labelledby="pills-maths-tab">...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonWhiteBox commonblockDash">
+                        <h3 class="boxheading d-flex align-items-center">Rank Analysis 
+                                <span class="tooltipmain ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                <p class="tooltipclass">
+                                <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div class="your_rank position-relative" style="padding-left: 66px;">
+                                <small>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </small>
+                                <span class="d-block  commontext">Your rank</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">3<sub style="font-size: 16px;font-weight: 500;">rd</sub></label>
+                            </div>
+                            <div class="total_participants">
+                                <span class="d-block commontext">Total Participants</span>
+                                <label class="m-0 commonboldtext" style="font-size:32px;">15</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="commonWhiteBox commonblockDash subject_score_card">
+                        <h3 class="boxheading d-flex align-items-center">Subject Score 
+                                <span class="tooltipmain ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                <p class="tooltipclass">
+                                <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">Maths</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart"></canvas>
+                                    </div>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>32</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">Physics</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart-1"></canvas>
+                                    </div>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>32</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h5 class="mb-0">Chemistry</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="halfdoughnut">
+                                        <canvas id="subjectChart-2"></canvas>
+                                    </div>
+                                    <div class="color_labels ms-5">
+                                        <span class="d-block">Correct <b><small></small>32</b></span>
+                                        <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
+                                        <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonWhiteBox commonblockDash">
+                        <h3 class="boxheading d-flex align-items-center">Topic Score 
+                                <span class="tooltipmain ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
+                                <p class="tooltipclass">
+                                <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                </p>
+                            </span>
+                        </h3>
+                        <div class="common_greenbadge_tabs">
+                            <div class="row mb-4 mt-4 align-items-center">
+                                <div class="col-md-6">
+                                    <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link btn active" id="pills-mathssub-tab" data-bs-toggle="pill" data-bs-target="#pills-mathssub" type="button" role="tab" aria-controls="pills-mathssub" aria-selected="true">Maths</button>
+                                        </li>
+                                        <li>
+                                            <button class="nav-link btn" id="pills-physicssub-tab" data-bs-toggle="pill" data-bs-target="#pills-physicssub" type="button" role="tab" aria-controls="pills-physicssub" aria-selected="false">Physics</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link btn" id="pills-chemistrysub-tab" data-bs-toggle="pill" data-bs-target="#pills-chemistrysub" type="button" role="tab" aria-controls="pills-chemistrysub" aria-selected="false">Chemistry</button>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="color_labels">
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <span>Correct <b><small></small>60</b></span>
-                                            <span>Incorrect <b><small></small>20</b></span>
-                                        </div>
-                                        <span>Not Attempted <b><small style="background-color: #e5eaee;"></small>20</b></span>
+                                    <div class="d-flex justify-content-between color_labels">
+                                        <span><small></small> Correct</span>
+                                        <span><small></small> Incorrect</span>
+                                        <span><small></small> Not Attempted</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="commonWhiteBox commonblockDash">
-                            <h3 class="boxheading d-flex align-items-center">Marks Percentage 
-                                    <span class="tooltipmain ml-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                    <p class="tooltipclass">
-                                    <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                    </p>
-                                </span>
-                            </h3>
-                            <div class="common_greenbadge_tabs">
-                                <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link btn active" id="pills-overall-tab" data-bs-toggle="pill" data-bs-target="#pills-overall" type="button" role="tab" aria-controls="pills-overall" aria-selected="true">Overall</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link btn" id="pills-physics-tab" data-bs-toggle="pill" data-bs-target="#pills-physics" type="button" role="tab" aria-controls="pills-physics" aria-selected="false">Physics</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link btn" id="pills-chemistry-tab" data-bs-toggle="pill" data-bs-target="#pills-chemistry" type="button" role="tab" aria-controls="pills-chemistry" aria-selected="false">Chemistry</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link btn" id="pills-maths-tab" data-bs-toggle="pill" data-bs-target="#pills-maths" type="button" role="tab" aria-controls="pills-maths" aria-selected="false">Maths</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content" id="pills-tabContent">
-                                    <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
-                                        <span class="d-block mb-1 commontext">Overall percentage</span>
-                                        <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
-                                        <div class="overall_percentage_chart">
-                                            <canvas id="myChart"></canvas>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="pills-physics" role="tabpanel" aria-labelledby="pills-physics-tab">...</div>
-                                    <div class="tab-pane fade" id="pills-chemistry" role="tabpanel" aria-labelledby="pills-chemistry-tab">...</div>
-                                    <div class="tab-pane fade" id="pills-maths" role="tabpanel" aria-labelledby="pills-maths-tab">...</div>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-mathssub" role="tabpanel" aria-labelledby="pills-mathssub-tab">
+                                    <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                                <!--------------->
+                                                <div class="noofquestions-block">
+                                                    <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
+                                                    <div class="color_labels">
+                                                        <span class="d-block"><small></small> Correct <b>6</b></span>
+                                                        <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>1</b></span>
+                                                        <span class="d-block"><small></small> Not Attempted <b>1</b></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Permutations and Combinations</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="topic_score_bar">
+                                                <h4>Circular Motion And Gravitation</h4>
+                                                <div class="progress">
+                                                    <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>                                        
                                 </div>
-                            </div>
-                        </div>
-                        <div class="commonWhiteBox commonblockDash">
-                            <h3 class="boxheading d-flex align-items-center">Rank Analysis 
-                                    <span class="tooltipmain ml-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                    <p class="tooltipclass">
-                                    <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                    </p>
-                                </span>
-                            </h3>
-                            <div class="d-flex justify-content-between mt-4">
-                                <div class="your_rank position-relative" style="padding-left: 66px;">
-                                    <small>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </small>
-                                    <span class="d-block  commontext">Your rank</span>
-                                    <label class="m-0 commonboldtext" style="font-size:32px;">3<sub style="font-size: 16px;font-weight: 500;">rd</sub></label>
-                                </div>
-                                <div class="total_participants">
-                                    <span class="d-block commontext">Total Participants</span>
-                                    <label class="m-0 commonboldtext" style="font-size:32px;">15</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="commonWhiteBox commonblockDash subject_score_card">
-                            <h3 class="boxheading d-flex align-items-center">Subject Score 
-                                    <span class="tooltipmain ml-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                    <p class="tooltipclass">
-                                    <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                    </p>
-                                </span>
-                            </h3>
-                            <p class="dashSubtext mb-4">Negative marking for incorrect answers is considered</p>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <h5 class="mb-0">Maths</h5>
-                                    <div class="d-flex align-items-center">
-                                        <div class="halfdoughnut">
-                                            <canvas id="subjectChart"></canvas>
-                                        </div>
-                                        <div class="color_labels ml-5">
-                                            <span class="d-block">Correct <b><small></small>32</b></span>
-                                            <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
-                                            <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <h5 class="mb-0">Physics</h5>
-                                    <div class="d-flex align-items-center">
-                                        <div class="halfdoughnut">
-                                            <canvas id="subjectChart-1"></canvas>
-                                        </div>
-                                        <div class="color_labels ml-5">
-                                            <span class="d-block">Correct <b><small></small>32</b></span>
-                                            <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
-                                            <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <h5 class="mb-0">Chemistry</h5>
-                                    <div class="d-flex align-items-center">
-                                        <div class="halfdoughnut">
-                                            <canvas id="subjectChart-2"></canvas>
-                                        </div>
-                                        <div class="color_labels ml-5">
-                                            <span class="d-block">Correct <b><small></small>32</b></span>
-                                            <span class="d-block mt-3 mb-3">Incorrect <b><small></small>4</b></span>
-                                            <span class="d-block">Not Attempted <b><small style="background-color: #e5eaee;"></small>4</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="commonWhiteBox commonblockDash">
-                            <h3 class="boxheading d-flex align-items-center">Topic Score 
-                                    <span class="tooltipmain ml-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"/></g></svg>
-                                    <p class="tooltipclass">
-                                    <span ><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                        This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                    </p>
-                                </span>
-                            </h3>
-                            <div class="common_greenbadge_tabs">
-                                <div class="row mb-4 mt-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link btn active" id="pills-mathssub-tab" data-bs-toggle="pill" data-bs-target="#pills-mathssub" type="button" role="tab" aria-controls="pills-mathssub" aria-selected="true">Maths</button>
-                                            </li>
-                                            <li>
-                                                <button class="nav-link btn" id="pills-physicssub-tab" data-bs-toggle="pill" data-bs-target="#pills-physicssub" type="button" role="tab" aria-controls="pills-physicssub" aria-selected="false">Physics</button>
-                                            </li>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link btn" id="pills-chemistrysub-tab" data-bs-toggle="pill" data-bs-target="#pills-chemistrysub" type="button" role="tab" aria-controls="pills-chemistrysub" aria-selected="false">Chemistry</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex justify-content-between color_labels">
-                                            <span><small></small> Correct</span>
-                                            <span><small></small> Incorrect</span>
-                                            <span><small></small> Not Attempted</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-content" id="pills-tabContent">
-                                    <div class="tab-pane fade show active" id="pills-mathssub" role="tabpanel" aria-labelledby="pills-mathssub-tab">
-                                        <ul class="topic_score_lists d-flex justify-content-between flex-wrap">
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <!--------------->
-                                                    <div class="noofquestions-block">
-                                                        <h5 style="font-size: 14px;font-weight: 600;color: #000;margin-bottom: 20px;">Number of questions</h5>
-                                                        <div class="color_labels">
-                                                            <span class="d-block"><small></small> Correct <b>6</b></span>
-                                                            <span class="d-block mt-3 mb-3"><small></small> Incorrect <b>1</b></span>
-                                                            <span class="d-block"><small></small> Not Attempted <b>1</b></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Permutations and Combinations</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width:50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="topic_score_bar">
-                                                    <h4>Circular Motion And Gravitation</h4>
-                                                    <div class="progress">
-                                                        <div class="progress-bar correct-bg" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar incorrect-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar not-attempted-bg" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>                                        
-                                    </div>
-                                    <div class="tab-pane fade" id="pills-physicssub" role="tabpanel" aria-labelledby="pills-physicssub-tab">...</div>
-                                    <div class="tab-pane fade" id="pills-chemistrysub" role="tabpanel" aria-labelledby="pills-chemistrysub-tab">...</div>                                    
-                                </div>
+                                <div class="tab-pane fade" id="pills-physicssub" role="tabpanel" aria-labelledby="pills-physicssub-tab">...</div>
+                                <div class="tab-pane fade" id="pills-chemistrysub" role="tabpanel" aria-labelledby="pills-chemistrysub-tab">...</div>                                    
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-                <div class="mt-3 text-right">
-                    <button class="btn btn-common-transparent scroll-top"  style="min-width: auto;">Scroll to top</button>
-                </div>
+                
+            </div>
+            <div class="mt-3 text-end">
+                <button class="btn btn-common-transparent scroll-top"  style="min-width: auto;">Scroll to top</button>
             </div>
         </div>
     </div>
