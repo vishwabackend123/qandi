@@ -2,10 +2,12 @@
     <div class="headerMain">
         <div class="headerLeft">
             <h2>Dashboard</h2>
-            <h6><label>Cource:</label> <span>JEE</span></h6>
+            <h6><label>Cource:</label>
+                <span>{{isset($exam_data->class_exam_cd)?$exam_data->class_exam_cd:''}}</span>
+            </h6>
         </div>
         <div class="headerRight">
-            <span class="usertext"><a href="javascript:;">Hi Sakshi!</a></span>
+            <span class="usertext"><a href="javascript:;">Hi {{ucwords($userData->user_name)}}</a></span>
             <span class="headericon notificationnew">
                 <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -39,8 +41,10 @@
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
         <div class="notification-main">
-            <h2>Notifications <a href="#">Clear all</a></h2>
+            <h2>Notifications <a href="javascript:void(0);">Clear all</a></h2>
             <div class="new_notification_main_sec">
+                @if(isset($notifications) && !empty($notifications) && is_array($notifications))
+                @foreach($notifications as $val)
                 <div class="notification-list">
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
@@ -50,58 +54,12 @@
                             </svg>
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <p class="main-text">This is a longer placeholder notification.This is a longer placeholder notification.</p>
+                            <p class="main-text">{{ $val->message }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="notification-list">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="20" fill="#E0F6E3" />
-                                <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="notification-list">
-                    <div class="d-flex align-items-top">
-                        <div class="flex-shrink-0">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="20" fill="#E0F6E3" />
-                                <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                            <div class="list-btn-sec">
-                                <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="notification-list">
-                    <div class="d-flex align-items-top">
-                        <div class="flex-shrink-0">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="20" cy="20" r="20" fill="#E0F6E3" />
-                                <path d="M26 16a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9zM21.73 29a2 2 0 0 1-3.46 0" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px"></textarea>
-                            </div>
-                            <div class="list-btn-sec">
-                                <button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-outline-secondary">Secondary</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                @endif
             </div>
         </div>
     </div>

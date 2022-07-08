@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+
 
 <html>
 
@@ -19,26 +16,12 @@
     <script src="https://use.fontawesome.com/b2f98ca74c.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!--  <link rel="stylesheet" href="css/style.css"> -->
     @if(env('MINIFY_STATIC_ASSETS') == 'true')
-    <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.min.css')}}"> -->
+    
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.min.css')}}">
     @else
-    <!-- <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/style.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exam-analytics.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/exampage.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/responsive.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/tab-responsive.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('public/after_login/new_ui/css/mobile-responsive.css')}}"> -->
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/mobile.css')}}">
@@ -69,9 +52,6 @@
             }
         });
     </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
     <script async src=https://www.googletagmanager.com/gtag/js?id=G-5M3C3F04YY></script>
 
     <script>
