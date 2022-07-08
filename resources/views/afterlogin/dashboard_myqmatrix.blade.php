@@ -209,7 +209,6 @@ $userData = Session::get('user_data');
             </div>
         </div>
     </div>
-</div>
 <!--------- Modal ------>
 <div class="modal fade" id="matrix" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">

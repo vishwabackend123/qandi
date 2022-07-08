@@ -7,7 +7,9 @@ $userData = Session::get('user_data');
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <!-- Modal -->
+@if($subjects_rating == null || empty($subjects_rating))
 
+@endif
 <!-- Modal -->
 <!-- Side bar menu -->
 @include('afterlogin.layouts.sidebar_new')
@@ -107,8 +109,8 @@ $userData = Session::get('user_data');
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="SubjectscorePannel">
-                                                <div class="subjextscoreLeft">
+                                            <div class="SubjectscorePannel mb-0">
+                                                <div class="subjextscoreLeft ">
                                                     <h6>Mathematics</h6>
                                                     <div class="d-flex justify-content-between">
                                                         <h4>82%</h4>
@@ -123,7 +125,7 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                 </div>
-                                <div class="emptystate" style="display:none">
+                                <div class="emptystate">
                                     <div class="emptystateInner">
                                         <div class="emptyicon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
@@ -342,7 +344,7 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="myqmatPannel myqcolor4">
+                                        <div class="myqmatPannel myqcolor4  mb-0">
                                             <a href="#weakhmodal">
                                                 <div class="myqinner">
                                                     <h6>Q4</h6>
@@ -360,35 +362,406 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="emptystate mt-3" style="display:none">
-                                <div class="emptystateInner">
-                                    <div class="emptyicon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
-                                            <circle cx="40" cy="40.102" r="40" fill="#E0F6E3" />
-                                            <path d="M16.979 25.102h10.525a1 1 0 0 1 1 1v2.22a1 1 0 0 1-1 1h-5.87c-.458 0-.864.312-.91.768-.303 3.018 1.262 8.859 8.382 15.604.885.84.051 2.165-.937 1.45-10.105-7.32-12.436-16.283-12.146-21.179.03-.499.456-.863.956-.863zM64.021 25.102H53.496a1 1 0 0 0-1 1v2.22a1 1 0 0 0 1 1h5.87c.458 0 .864.312.91.768.303 3.018-1.262 8.859-8.382 15.604-.885.84-.051 2.165.937 1.45 10.104-7.32 12.436-16.283 12.146-21.179-.03-.499-.456-.863-.956-.863z" fill="#BEE9C4" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.206 21.102H27.588c-.04.465-.089.965-.14 1.494-.59 6.134-1.554 16.144 4.322 21.616 1.044.972 1.868 1.64 2.516 2.164 1.99 1.614 2.326 1.886 2.326 5.539v2.641h7.776v-2.641c0-3.653.335-3.925 2.326-5.539a44.9 44.9 0 0 0 2.516-2.164c5.876-5.472 4.912-15.482 4.322-21.616-.051-.529-.1-1.029-.14-1.494H40.206z" fill="#fff" />
-                                            <path d="M29 60.102a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2H29v-2z" fill="#BEE9C4" />
-                                            <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663" />
-                                        </svg>
+                                <div class="emptystate mt-3">
+                                    <div class="emptystateInner">
+                                        <div class="emptyicon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="81" viewBox="0 0 80 81" fill="none">
+                                                <circle cx="40" cy="40.102" r="40" fill="#E0F6E3" />
+                                                <path d="M16.979 25.102h10.525a1 1 0 0 1 1 1v2.22a1 1 0 0 1-1 1h-5.87c-.458 0-.864.312-.91.768-.303 3.018 1.262 8.859 8.382 15.604.885.84.051 2.165-.937 1.45-10.105-7.32-12.436-16.283-12.146-21.179.03-.499.456-.863.956-.863zM64.021 25.102H53.496a1 1 0 0 0-1 1v2.22a1 1 0 0 0 1 1h5.87c.458 0 .864.312.91.768.303 3.018-1.262 8.859-8.382 15.604-.885.84-.051 2.165.937 1.45 10.104-7.32 12.436-16.283 12.146-21.179-.03-.499-.456-.863-.956-.863z" fill="#BEE9C4" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M40.206 21.102H27.588c-.04.465-.089.965-.14 1.494-.59 6.134-1.554 16.144 4.322 21.616 1.044.972 1.868 1.64 2.516 2.164 1.99 1.614 2.326 1.886 2.326 5.539v2.641h7.776v-2.641c0-3.653.335-3.925 2.326-5.539a44.9 44.9 0 0 0 2.516-2.164c5.876-5.472 4.912-15.482 4.322-21.616-.051-.529-.1-1.029-.14-1.494H40.206z" fill="#fff" />
+                                                <path d="M29 60.102a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v2H29v-2z" fill="#BEE9C4" />
+                                                <path d="M40.05 29.022a.5.5 0 0 1 .9 0l.825 1.691a.5.5 0 0 0 .376.275l1.856.275a.5.5 0 0 1 .278.85l-1.35 1.33a.5.5 0 0 0-.141.44l.317 1.87a.5.5 0 0 1-.728.525l-1.648-.877a.5.5 0 0 0-.47 0l-1.648.877a.5.5 0 0 1-.728-.525l.317-1.87a.5.5 0 0 0-.142-.44l-1.349-1.33a.5.5 0 0 1 .278-.85l1.856-.275a.5.5 0 0 0 .376-.275l.826-1.691z" fill="#56B663" />
+                                            </svg>
+                                        </div>
+                                        <p class="emptytext">Attempt <strong>'Full body scan.'</strong> to learn about your strengths and weaknesses. </p>
+                                        <button class="btn btn-common-transparent nobg">Attempt Now</button>
                                     </div>
-                                    <p class="emptytext">Attempt <strong>'Full body scan.'</strong> to learn about your strengths and weaknesses. </p>
-                                    <button class="btn btn-common-transparent nobg">Attempt Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
 
 
-                <section class="weeklyPlanWrapper cardWhiteBg">
-                    <div class="planDetail">
-                        <div class="planewrapper">
-                            <div class="plantitleBox">
+                    <section class="weeklyPlanWrapper cardWhiteBg">
+                        <div class="planDetail">
+                            <div class="planewrapper">
+                                <div class="plantitleBox">
+                                    <div class="boxHeadingBlock">
+                                        <h3 class="boxheading">
+                                            Weekly plan
+                                            <span class="tooltipmain">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                    <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                    </g>
+                                                </svg>
+                                                <p class="tooltipclass">
+                                                    <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                    This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                </p>
+                                            </span>
+                                        </h3>
+                                        <p class="dashSubtext">Plan your weekly tests for any chapters</p>
+                                    </div>
+                                </div>
+                                <div class="planDetailBox">
+                                    <div class="vLine"></div>
+                                    <div class="selectedWeek">
+                                        <p class="m-0">This week </p>
+                                        <p class="m-0">23rd May - 27th May</p>
+                                    </div>
+                                    <div class="plannedtestbox">
+                                        <div class="plannedtest">
+                                            <p class="m-0 AttempType"> Planned Test</p>
+                                            <p class="m-0 testCount">0</p>
+                                        </div>
+                                        <div class="plannedtest">
+                                            <p class="m-0 AttempType">Attempted Test</p>
+                                            <p class="m-0 testCount">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gotoPlanner">
+                                <a href="">
+                                    <span>Go to Planner</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="testPlanCardholder">
+                            <div class="testPlanCard testplannewuser">
+                                <svg class="testplanNewimg" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="40" fill="#E0F6E3" />
+                                    <path d="M23.988 27.418a4 4 0 0 1 3.966-4.518H56.79a4 4 0 0 1 3.966 3.483l3.653 28a4 4 0 0 1-3.966 4.517H31.607a4 4 0 0 1-3.966-3.482l-3.653-28z" fill="#BEE9C4" />
+                                    <path d="M58.01 27.418a4 4 0 0 0-3.966-4.518H25.208a4 4 0 0 0-3.966 3.483l-3.653 28a4 4 0 0 0 3.966 4.517h28.836a4 4 0 0 0 3.966-3.482l3.653-28z" fill="#fff" />
+                                    <path d="M53 22.9a4.8 4.8 0 1 0-6.585 4.455l1.003-2.503a2.103 2.103 0 1 1 2.885-1.952H53zM35.399 22.9a4.8 4.8 0 1 0-6.585 4.455l1.003-2.503a2.103 2.103 0 1 1 2.885-1.952h2.697z" fill="#56B663" />
+                                    <path d="M24.07 31.544a.8.8 0 0 1 .784-.644h2.369a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.956l.48-2.4zM23.271 37.942a.8.8 0 0 1 .784-.643h2.369a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM22.472 44.342a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM30.47 31.544a.8.8 0 0 1 .785-.644h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.956l.48-2.4zM29.671 37.942a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM28.87 44.342a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.784-.957l.48-2.4zM36.87 31.544a.8.8 0 0 1 .785-.644h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.784-.956l.48-2.4zM36.07 37.942a.8.8 0 0 1 .784-.643h2.369a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.957l.48-2.4zM35.271 44.342a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.957l.48-2.4zM43.271 31.544a.8.8 0 0 1 .785-.644h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.956l.48-2.4zM42.47 37.942a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM49.67 31.544a.8.8 0 0 1 .784-.644h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.785-.956l.48-2.4zM48.87 37.942a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.784-.957l.48-2.4z" fill="#E0F6E3" />
+                                </svg>
+                                <p class=" m-0">Start planning your week</p>
+                                <div class="addPlanbtn">
+                                    <button class="btn btn-common-transparent nobg">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <span>Add
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="allSubslider">
+                            <div class="dashborarSlider owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="testPlanCard subCard physicsCard">
+                                        <p class="m-0">Physics</p>
+                                        <h3>Law of motion</h3>
+                                        <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
+                                        <div class="attemptBtn">
+                                            <a href="" class="btn btn-common-green">Attempt Now</a>
+                                        </div>
+                                        <div class="subIcon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none">
+                                                <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#xbs2u8kpya)" />
+                                                <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#pdstqsqm7b)" />
+                                                <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#i6rag4r7fc)" />
+                                                <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#s6bkns5edd)" />
+                                                <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#ls4ucv1fue)" />
+                                                <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#fpylq9jbjf)" />
+                                                <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#xwkqjxxcog)" />
+                                                <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#h5r5kftt9h)" />
+                                                <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#zy6p1fbq7i)" />
+                                                <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#sdlb5dxifj)" />
+                                                <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#tg87y2hlqk)" />
+                                                <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#4gvoyw248l)" />
+                                                <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#62ss06008m)" />
+                                                <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#bjzgc4z0ln)" />
+                                                <defs>
+                                                    <linearGradient id="xbs2u8kpya" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="pdstqsqm7b" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="i6rag4r7fc" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="s6bkns5edd" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="ls4ucv1fue" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="fpylq9jbjf" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="xwkqjxxcog" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="h5r5kftt9h" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="zy6p1fbq7i" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="sdlb5dxifj" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="tg87y2hlqk" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="4gvoyw248l" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="62ss06008m" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="bjzgc4z0ln" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testPlanCard subCard mathCard">
+                                        <p class="m-0">MATHEMATICS</p>
+                                        <h3>Binomial Theorem</h3>
+                                        <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
+                                        <div class="attemptBtn">
+                                            <a href="" class="btn btn-common-green">Attempt Now</a>
+                                        </div>
+                                        <div class="subIcon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
+                                                <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
+                                                <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
+                                                <path d="M15.12 58.838h20" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
+                                                <path stroke="#38B87B" d="M50.873 59.018h26" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
+                                                <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
+                                                <path stroke="#38B87B" d="M4.891 18.996V1.093" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
+                                                <defs>
+                                                    <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#3ABFB0" />
+                                                        <stop offset="1" stop-color="#37B66B" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testPlanCard subCard chemistryCard">
+                                        <p class="m-0">MATHEMATICS</p>
+                                        <h3>Binomial Theorem</h3>
+                                        <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
+                                        <div class="attemptBtn">
+                                            <a href="" class="btn btn-common-green">Attempt Now</a>
+                                        </div>
+                                        <div class="subIcon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
+                                                <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
+                                                <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
+                                                <path d="M15.12 58.838h20" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
+                                                <path stroke="#38B87B" d="M50.873 59.018h26" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
+                                                <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
+                                                <path stroke="#38B87B" d="M4.891 18.996V1.093" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
+                                                <defs>
+                                                    <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#3ABFB0" />
+                                                        <stop offset="1" stop-color="#37B66B" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testPlanCard subCard physicsCard">
+                                        <p class="m-0">Physics</p>
+                                        <h3>Law of motion</h3>
+                                        <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
+                                        <div class="attemptBtn">
+                                            <a href="" class="btn btn-common-green">Attempt Now</a>
+                                        </div>
+                                        <div class="subIcon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none">
+                                                <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#xbs2u8kpya)" />
+                                                <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#pdstqsqm7b)" />
+                                                <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#i6rag4r7fc)" />
+                                                <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#s6bkns5edd)" />
+                                                <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#ls4ucv1fue)" />
+                                                <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#fpylq9jbjf)" />
+                                                <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#xwkqjxxcog)" />
+                                                <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#h5r5kftt9h)" />
+                                                <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#zy6p1fbq7i)" />
+                                                <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#sdlb5dxifj)" />
+                                                <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#tg87y2hlqk)" />
+                                                <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#4gvoyw248l)" />
+                                                <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#62ss06008m)" />
+                                                <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#bjzgc4z0ln)" />
+                                                <defs>
+                                                    <linearGradient id="xbs2u8kpya" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="pdstqsqm7b" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="i6rag4r7fc" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="s6bkns5edd" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="ls4ucv1fue" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="fpylq9jbjf" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="xwkqjxxcog" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="h5r5kftt9h" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="zy6p1fbq7i" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="sdlb5dxifj" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="tg87y2hlqk" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="4gvoyw248l" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                    <linearGradient id="62ss06008m" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D9D9D9" />
+                                                        <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                                                    </linearGradient>
+                                                    <linearGradient id="bjzgc4z0ln" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#43E1CE" />
+                                                        <stop offset="1" stop-color="#2899CA" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testPlanCard subCard mathCard">
+                                        <p class="m-0">MATHEMATICS</p>
+                                        <h3>Binomial Theorem</h3>
+                                        <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
+                                        <div class="attemptBtn">
+                                            <a href="" class="btn btn-common-green">Attempt Now</a>
+                                        </div>
+                                        <div class="subIcon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
+                                                <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
+                                                <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
+                                                <path d="M15.12 58.838h20" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
+                                                <path stroke="#38B87B" d="M50.873 59.018h26" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
+                                                <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
+                                                <path stroke="#38B87B" d="M4.891 18.996V1.093" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
+                                                <defs>
+                                                    <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#3ABFB0" />
+                                                        <stop offset="1" stop-color="#37B66B" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="testPlanCard subCard chemistryCard">
+                                        <p class="m-0">MATHEMATICS</p>
+                                        <h3>Binomial Theorem</h3>
+                                        <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
+                                        <div class="attemptBtn">
+                                            <a href="" class="btn btn-common-green">Attempt Now</a>
+                                        </div>
+                                        <div class="subIcon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
+                                                <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
+                                                <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
+                                                <path d="M15.12 58.838h20" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
+                                                <path stroke="#38B87B" d="M50.873 59.018h26" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
+                                                <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
+                                                <path stroke="#38B87B" d="M4.891 18.996V1.093" />
+                                                <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
+                                                <defs>
+                                                    <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#3ABFB0" />
+                                                        <stop offset="1" stop-color="#37B66B" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="graphCard my-4">
+                        <div class="graphCardwrapper">
+                            <div class="journeyGraph cardWhiteBg">
                                 <div class="boxHeadingBlock">
                                     <h3 class="boxheading">
-                                        Weekly plan
+                                        Progress journey
                                         <span class="tooltipmain">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                                                 <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
@@ -401,562 +774,121 @@ $userData = Session::get('user_data');
                                             </p>
                                         </span>
                                     </h3>
-                                    <p class="dashSubtext">Plan your weekly tests for any chapters</p>
                                 </div>
-                            </div>
-                            <div class="planDetailBox">
-                                <div class="vLine"></div>
-                                <div class="selectedWeek">
-                                    <p class="m-0">This week </p>
-                                    <p class="m-0">23rd May - 27th May</p>
-                                </div>
-                                <div class="plannedtestbox">
-                                    <div class="plannedtest">
-                                        <p class="m-0 AttempType"> Planned Test</p>
-                                        <p class="m-0 testCount">0</p>
-                                    </div>
-                                    <div class="plannedtest">
-                                        <p class="m-0 AttempType">Attempted Test</p>
-                                        <p class="m-0 testCount">0</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gotoPlanner">
-                            <a href="">
-                                <span>Go to Planner</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="testPlanCardholder">
-                        <div class="testPlanCard testplannewuser">
-                            <svg class="testplanNewimg" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-                                <circle cx="40" cy="40" r="40" fill="#E0F6E3" />
-                                <path d="M23.988 27.418a4 4 0 0 1 3.966-4.518H56.79a4 4 0 0 1 3.966 3.483l3.653 28a4 4 0 0 1-3.966 4.517H31.607a4 4 0 0 1-3.966-3.482l-3.653-28z" fill="#BEE9C4" />
-                                <path d="M58.01 27.418a4 4 0 0 0-3.966-4.518H25.208a4 4 0 0 0-3.966 3.483l-3.653 28a4 4 0 0 0 3.966 4.517h28.836a4 4 0 0 0 3.966-3.482l3.653-28z" fill="#fff" />
-                                <path d="M53 22.9a4.8 4.8 0 1 0-6.585 4.455l1.003-2.503a2.103 2.103 0 1 1 2.885-1.952H53zM35.399 22.9a4.8 4.8 0 1 0-6.585 4.455l1.003-2.503a2.103 2.103 0 1 1 2.885-1.952h2.697z" fill="#56B663" />
-                                <path d="M24.07 31.544a.8.8 0 0 1 .784-.644h2.369a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.956l.48-2.4zM23.271 37.942a.8.8 0 0 1 .784-.643h2.369a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM22.472 44.342a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM30.47 31.544a.8.8 0 0 1 .785-.644h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.956l.48-2.4zM29.671 37.942a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM28.87 44.342a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.784-.957l.48-2.4zM36.87 31.544a.8.8 0 0 1 .785-.644h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.784-.956l.48-2.4zM36.07 37.942a.8.8 0 0 1 .784-.643h2.369a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.957l.48-2.4zM35.271 44.342a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.957l.48-2.4zM43.271 31.544a.8.8 0 0 1 .785-.644h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.369a.8.8 0 0 1-.784-.956l.48-2.4zM42.47 37.942a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .784.957l-.48 2.4a.8.8 0 0 1-.784.643h-2.368a.8.8 0 0 1-.785-.957l.48-2.4zM49.67 31.544a.8.8 0 0 1 .784-.644h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.785-.956l.48-2.4zM48.87 37.942a.8.8 0 0 1 .785-.643h2.368a.8.8 0 0 1 .785.957l-.48 2.4a.8.8 0 0 1-.785.643h-2.368a.8.8 0 0 1-.784-.957l.48-2.4z" fill="#E0F6E3" />
-                            </svg>
-                            <p class=" m-0">Start planning your week</p>
-                            <div class="addPlanbtn">
-                                <button class="btn btn-common-transparent nobg">
-                                    <span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </span>
-                                    <span>Add
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="allSubslider">
-                        <div class="dashborarSlider owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="testPlanCard subCard physicsCard">
-                                    <p class="m-0">Physics</p>
-                                    <h3>Law of motion</h3>
-                                    <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
-                                    <div class="attemptBtn">
-                                        <a href="" class="btn btn-common-green">Attempt Now</a>
-                                    </div>
-                                    <div class="subIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none">
-                                            <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#xbs2u8kpya)" />
-                                            <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#pdstqsqm7b)" />
-                                            <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#i6rag4r7fc)" />
-                                            <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#s6bkns5edd)" />
-                                            <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#ls4ucv1fue)" />
-                                            <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#fpylq9jbjf)" />
-                                            <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#xwkqjxxcog)" />
-                                            <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#h5r5kftt9h)" />
-                                            <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#zy6p1fbq7i)" />
-                                            <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#sdlb5dxifj)" />
-                                            <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#tg87y2hlqk)" />
-                                            <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#4gvoyw248l)" />
-                                            <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#62ss06008m)" />
-                                            <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#bjzgc4z0ln)" />
-                                            <defs>
-                                                <linearGradient id="xbs2u8kpya" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="pdstqsqm7b" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="i6rag4r7fc" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="s6bkns5edd" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="ls4ucv1fue" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="fpylq9jbjf" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="xwkqjxxcog" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="h5r5kftt9h" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="zy6p1fbq7i" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="sdlb5dxifj" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="tg87y2hlqk" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="4gvoyw248l" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="62ss06008m" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="bjzgc4z0ln" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testPlanCard subCard mathCard">
-                                    <p class="m-0">MATHEMATICS</p>
-                                    <h3>Binomial Theorem</h3>
-                                    <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
-                                    <div class="attemptBtn">
-                                        <a href="" class="btn btn-common-green">Attempt Now</a>
-                                    </div>
-                                    <div class="subIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
-                                            <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
-                                            <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
-                                            <path d="M15.12 58.838h20" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
-                                            <path stroke="#38B87B" d="M50.873 59.018h26" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
-                                            <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
-                                            <path stroke="#38B87B" d="M4.891 18.996V1.093" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
-                                            <defs>
-                                                <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#3ABFB0" />
-                                                    <stop offset="1" stop-color="#37B66B" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testPlanCard subCard chemistryCard">
-                                    <p class="m-0">MATHEMATICS</p>
-                                    <h3>Binomial Theorem</h3>
-                                    <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
-                                    <div class="attemptBtn">
-                                        <a href="" class="btn btn-common-green">Attempt Now</a>
-                                    </div>
-                                    <div class="subIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
-                                            <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
-                                            <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
-                                            <path d="M15.12 58.838h20" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
-                                            <path stroke="#38B87B" d="M50.873 59.018h26" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
-                                            <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
-                                            <path stroke="#38B87B" d="M4.891 18.996V1.093" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
-                                            <defs>
-                                                <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#3ABFB0" />
-                                                    <stop offset="1" stop-color="#37B66B" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testPlanCard subCard physicsCard">
-                                    <p class="m-0">Physics</p>
-                                    <h3>Law of motion</h3>
-                                    <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
-                                    <div class="attemptBtn">
-                                        <a href="" class="btn btn-common-green">Attempt Now</a>
-                                    </div>
-                                    <div class="subIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none">
-                                            <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#xbs2u8kpya)" />
-                                            <path d="M58.975.373 19.797.166 39.18 11.111 58.975.373z" fill="url(#pdstqsqm7b)" />
-                                            <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#i6rag4r7fc)" />
-                                            <path d="M78.562 33.415 58.56 44.773 39.178 11.112 58.973.373l19.589 33.042z" fill="url(#s6bkns5edd)" />
-                                            <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#ls4ucv1fue)" />
-                                            <path d="M0 33.62 19.795.167 39.59 11.111 19.795 44.566 0 33.621z" fill="url(#fpylq9jbjf)" />
-                                            <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#xwkqjxxcog)" />
-                                            <path d="M57.736 66.664V44.918L78.77 33.21 57.736 66.664z" fill="url(#h5r5kftt9h)" />
-                                            <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#zy6p1fbq7i)" />
-                                            <path d="M58.353 44.565H20v22.51l37.734-.414.62-22.096z" fill="url(#sdlb5dxifj)" />
-                                            <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#tg87y2hlqk)" />
-                                            <path d="M20.001 67.076 0 33.621l20.001 10.945v22.51z" fill="url(#4gvoyw248l)" />
-                                            <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#62ss06008m)" />
-                                            <path d="M19.795 44.564 39.384 11.11l19.589 33.455H19.795z" fill="url(#bjzgc4z0ln)" />
-                                            <defs>
-                                                <linearGradient id="xbs2u8kpya" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="pdstqsqm7b" x1="39.489" y1=".373" x2="39.489" y2="11.111" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="i6rag4r7fc" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="s6bkns5edd" x1="59.076" y1=".58" x2="59.076" y2="44.773" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="ls4ucv1fue" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="fpylq9jbjf" x1="19.795" y1=".166" x2="19.795" y2="44.566" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="xwkqjxxcog" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="h5r5kftt9h" x1="68.252" y1="33.209" x2="68.252" y2="66.664" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="zy6p1fbq7i" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="sdlb5dxifj" x1="39.176" y1="44.565" x2="39.176" y2="67.074" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="tg87y2hlqk" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="4gvoyw248l" x1="10.207" y1="34.034" x2="10.207" y2="67.489" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                                <linearGradient id="62ss06008m" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#D9D9D9" />
-                                                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
-                                                </linearGradient>
-                                                <linearGradient id="bjzgc4z0ln" x1="39.384" y1="11.109" x2="39.384" y2="44.564" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#43E1CE" />
-                                                    <stop offset="1" stop-color="#2899CA" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testPlanCard subCard mathCard">
-                                    <p class="m-0">MATHEMATICS</p>
-                                    <h3>Binomial Theorem</h3>
-                                    <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
-                                    <div class="attemptBtn">
-                                        <a href="" class="btn btn-common-green">Attempt Now</a>
-                                    </div>
-                                    <div class="subIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
-                                            <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
-                                            <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
-                                            <path d="M15.12 58.838h20" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
-                                            <path stroke="#38B87B" d="M50.873 59.018h26" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
-                                            <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
-                                            <path stroke="#38B87B" d="M4.891 18.996V1.093" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
-                                            <defs>
-                                                <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#3ABFB0" />
-                                                    <stop offset="1" stop-color="#37B66B" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testPlanCard subCard chemistryCard">
-                                    <p class="m-0">MATHEMATICS</p>
-                                    <h3>Binomial Theorem</h3>
-                                    <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
-                                    <div class="attemptBtn">
-                                        <a href="" class="btn btn-common-green">Attempt Now</a>
-                                    </div>
-                                    <div class="subIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="78" height="63" viewBox="0 0 78 63" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.454 1.706a1 1 0 0 0-1.581.813v42.557a1 1 0 0 0 1 1h59.58c.972 0 1.373-1.248.58-1.814L16.455 1.706zm7.277 13.336a1 1 0 0 0-1.579.816v23.757a1 1 0 0 0 1 1H56.63c.974 0 1.373-1.251.579-1.815L23.73 15.042z" fill="url(#f50oe3uzra)" />
-                                            <path d="M41.092 62.407c-.484 0-.905-.086-1.263-.258a1.678 1.678 0 0 1-.79-.776c-.166-.341-.207-.762-.125-1.262.073-.431.213-.788.418-1.07a2.41 2.41 0 0 1 .766-.675c.305-.173.636-.302.994-.388.361-.086.73-.15 1.104-.19.457-.045.827-.089 1.108-.128.285-.04.5-.1.642-.18a.52.52 0 0 0 .258-.377v-.03c.06-.375 0-.665-.179-.87-.179-.206-.477-.308-.895-.308-.437 0-.805.096-1.103.288-.299.192-.516.42-.652.681l-1.63-.238c.205-.465.487-.852.845-1.164.358-.315.77-.55 1.238-.706.47-.159.973-.238 1.506-.238.365 0 .721.043 1.07.129.35.086.66.229.929.427.272.196.47.463.596.8.13.339.151.761.065 1.269l-.85 5.11h-1.73l.179-1.049h-.06a2.749 2.749 0 0 1-.557.597c-.228.182-.5.33-.815.442-.315.11-.671.164-1.069.164zm.681-1.322c.361 0 .686-.071.975-.214.288-.146.525-.338.71-.576a1.71 1.71 0 0 0 .349-.781l.149-.9c-.067.047-.17.09-.309.13a4.49 4.49 0 0 1-.467.104c-.169.03-.336.056-.502.08l-.428.059a3.613 3.613 0 0 0-.755.179 1.527 1.527 0 0 0-.562.348.996.996 0 0 0-.273.567c-.053.328.024.578.233.75.209.17.502.254.88.254z" fill="#39BD9E" />
-                                            <path d="m.873 32.7 1.69-10.182h1.8l-.626 3.808h.08c.119-.186.28-.383.481-.592.206-.212.466-.393.781-.542.315-.152.696-.228 1.143-.228.59 0 1.098.15 1.522.452.424.298.727.74.91 1.327.182.584.203 1.3.064 2.148-.139.839-.394 1.551-.765 2.138-.372.587-.82 1.034-1.348 1.342a3.293 3.293 0 0 1-1.69.463c-.438 0-.789-.073-1.054-.22a1.716 1.716 0 0 1-.602-.526 2.574 2.574 0 0 1-.303-.592h-.114l-.2 1.203H.874zm2.401-3.819c-.08.494-.08.927-.005 1.298.08.371.236.661.468.87.235.205.545.308.93.308a1.77 1.77 0 0 0 1.043-.318c.305-.216.557-.509.756-.88.199-.375.338-.8.418-1.278.076-.474.076-.895 0-1.263-.073-.367-.227-.656-.463-.865-.232-.208-.547-.313-.944-.313-.388 0-.733.101-1.034.303a2.356 2.356 0 0 0-.751.85 4.002 4.002 0 0 0-.418 1.288z" fill="#39BDA1" />
-                                            <path d="M15.12 58.838h20" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m14.79 57.676 1.294 1.293-1.293 1.292-1.293-1.292z" />
-                                            <path stroke="#38B87B" d="M50.873 59.018h26" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m75.715 57.676 1.292 1.293-1.292 1.292-1.293-1.292z" />
-                                            <path d="M4.71 45.103v-9.38" stroke="#38B87B" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="m3.55 45.432 1.292-1.293 1.292 1.293-1.292 1.292z" />
-                                            <path stroke="#38B87B" d="M4.891 18.996V1.093" />
-                                            <path fill="#D4F4B9" stroke="#38B87B" d="M3.549 2.252 4.842.959l1.292 1.293-1.292 1.293z" />
-                                            <defs>
-                                                <linearGradient id="f50oe3uzra" x1="17" y1="4.945" x2="66.825" y2="45.933" gradientUnits="userSpaceOnUse">
-                                                    <stop stop-color="#3ABFB0" />
-                                                    <stop offset="1" stop-color="#37B66B" />
-                                                </linearGradient>
-                                            </defs>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="graphCard my-4">
-                    <div class="graphCardwrapper">
-                        <div class="journeyGraph cardWhiteBg">
-                            <div class="boxHeadingBlock">
-                                <h3 class="boxheading">
-                                    Progress journey
-                                    <span class="tooltipmain">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                            <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
-                                            </g>
-                                        </svg>
-                                        <p class="tooltipclass">
-                                            <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                        </p>
-                                    </span>
-                                </h3>
-                            </div>
-                            <div class="graphBoxcontainer">
-                                <div class="graphimg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
-                                        <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256" />
-                                        <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
-                                        <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
-                                    </svg>
-
-
-                                </div>
-                                <div class="graphDetail">
-                                    <div class="yourPacebox">
-                                        <p class="graphTitle">Ideal Pace</p>
-                                        <p>
-                                            <span class="weekCountline colorHline"></span>
-                                            <span class="weekCount">12</span>
-                                            <span class="weekText">chapters per week</span>
-                                        </p>
-                                    </div>
-                                    <div class="yourPacebox">
-                                        <p class="graphTitle">Your Pace</p>
-                                        <p>
-                                            <span class="weekCountline colorHline"></span>
-                                            <span class="weekCount">8</span>
-                                            <span class="weekText">chapters per week</span>
-                                        </p>
-                                    </div>
-                                    <div class="note">
-                                        <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
-                                    </div>
-                                </div>
-                                <div class="graphDetailempty">
-                                    <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                    <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="journeyGraph cardWhiteBg">
-                            <div class="boxHeadingBlock">
-                                <h3 class="boxheading">
-                                    Marks Trend
-                                    <span class="tooltipmain">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                            <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
-                                            </g>
-                                        </svg>
-                                        <p class="tooltipclass">
-                                            <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
-                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
-                                        </p>
-                                    </span>
-                                </h3>
-                            </div>
-                            <div class="journeyBoxcontainer">
-                                <div class="graphimg">
-                                    <div class="graphholder">
+                                <div class="graphBoxcontainer">
+                                    <div class="graphimg">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
                                             <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256" />
                                             <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
                                             <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
                                         </svg>
-                                    </div>
 
-                                </div>
-                                <div class="graphDetail">
-                                    <div class="dropbox">
-                                        <div class="customDropdown dropdown">
-                                            <input class="text-box" type="text" placeholder="Mocktest" readonly>
-                                            <div class="options">
-                                                <div onclick="show('My score')">My score</div>
-                                                <div onclick="show('Peer average')">Peer average</div>
-                                                <div onclick="show('Peer average')">Top score</div>
-                                            </div>
+
+                                    </div>
+                                    <div class="graphDetail">
+                                        <div class="yourPacebox">
+                                            <p class="graphTitle">Ideal Pace</p>
+                                            <p>
+                                                <span class="weekCountline colorHline"></span>
+                                                <span class="weekCount">12</span>
+                                                <span class="weekText">chapters per week</span>
+                                            </p>
+                                        </div>
+                                        <div class="yourPacebox">
+                                            <p class="graphTitle">Your Pace</p>
+                                            <p>
+                                                <span class="weekCountline colorHline"></span>
+                                                <span class="weekCount">8</span>
+                                                <span class="weekText">chapters per week</span>
+                                            </p>
+                                        </div>
+                                        <div class="note">
+                                            <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
                                         </div>
                                     </div>
-                                    <div class="yourPacebox scoretype">
-                                        <p class="testScrolltype">
-                                            <span class="weekCountlineH myscore"></span>
-                                            <span class="weekText">My score</span>
-                                        </p>
-                                        <p class="testScrolltype">
-                                            <span class="weekCountlineH  peerAvg"></span>
-                                            <span class="weekText">Peer average</span>
-                                        </p>
-                                        <p class="testScrolltype">
-                                            <span class="weekCountlineH  topScroe"></span>
-                                            <span class="weekText">Top score</span>
-                                        </p>
+                                    <div class="graphDetailempty">
+                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                        <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
                                     </div>
                                 </div>
-                                <div class="graphDetailempty">
-                                    <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                    <div class="h">
-                                        <p class="testScrolltype">
-                                            <span class="weekCountlineH myscore"></span>
-                                            <span class="weekText">My score</span>
-                                        </p>
-                                        <p class="testScrolltype">
-                                            <span class="weekCountlineH  peerAvg"></span>
-                                            <span class="weekText">Peer average</span>
-                                        </p>
+                            </div>
+                            <div class="journeyGraph cardWhiteBg">
+                                <div class="boxHeadingBlock">
+                                    <h3 class="boxheading">
+                                        Marks Trend
+                                        <span class="tooltipmain">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                </g>
+                                            </svg>
+                                            <p class="tooltipclass">
+                                                <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                            </p>
+                                        </span>
+                                    </h3>
+                                </div>
+                                <div class="journeyBoxcontainer">
+                                    <div class="graphimg">
+                                        <div class="graphholder">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
+                                                <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256" />
+                                                <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
+                                                <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+
                                     </div>
-                                    <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                    <div class="graphDetail">
+                                        <div class="dropbox">
+                                            <div class="customDropdown dropdown">
+                                                <input class="text-box" type="text" placeholder="Mocktest" readonly>
+                                                <div class="options">
+                                                    <div onclick="show('My score')">My score</div>
+                                                    <div onclick="show('Peer average')">Peer average</div>
+                                                    <div onclick="show('Peer average')">Top score</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="yourPacebox scoretype">
+                                            <p class="testScrolltype">
+                                                <span class="weekCountlineH myscore"></span>
+                                                <span class="weekText">My score</span>
+                                            </p>
+                                            <p class="testScrolltype">
+                                                <span class="weekCountlineH  peerAvg"></span>
+                                                <span class="weekText">Peer average</span>
+                                            </p>
+                                            <p class="testScrolltype">
+                                                <span class="weekCountlineH  topScroe"></span>
+                                                <span class="weekText">Top score</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="graphDetailempty">
+                                        <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
+                                        <div class="h">
+                                            <p class="testScrolltype">
+                                                <span class="weekCountlineH myscore"></span>
+                                                <span class="weekText">My score</span>
+                                            </p>
+                                            <p class="testScrolltype">
+                                                <span class="weekCountlineH  peerAvg"></span>
+                                                <span class="weekText">Peer average</span>
+                                            </p>
+                                        </div>
+                                        <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Full exam popup -->
-@if(isset($prof_asst_test) && $prof_asst_test=='N')
-<div class="modal fade" id="fullTest_Dashboard" tabindex="-1" aria-labelledby="exampleModalLabel" data-bs-backdrop="static" data-bs-keyboard="false" aria-modal="true" role="dialog" style="display: none; padding-left: 0px;">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-0">
-            <div class="modal-header pb-0 border-0">
-                <!--  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            </div>
-            <div class="modal-body pt-0 text-center">
-                <p id="h1--P" class="h1-p text-success">Get your Performance Analytics!</p>
-                <p>Take a test and get a complete analysis of your preparation</p>
-                <a id="full-txtBlock" href="{{route('exam','full_exam')}}" class="full-txtblock justify-content-center d-flex align-items-center mb-4 mt-5 mx-5 py-4">
-                    <!-- <i class="fa-li fa fa-check" aria-hidden="true"></i> -->
-                    <img style="width:65px;margin-right: 20px;" src="{{URL::asset('public/after_login/new_ui/images/full-scan-check.png')}}">
-                    <span class="text-white ms-4 ">Take full body scan of<br>{{$prof_test_qcount}} questions test</span>
-                </a>
-                <a href="#" class="btn mb-4 btn-sm rounded-0 mt-5 btn-light text-danger px-4 skip-dashboard" data-bs-toggle="modal" data-bs-dismiss="modal">SKIP</a>
-            </div>
-        </div>
-    </div>
-</div>
-@endif
-<!-- End full exam popup -->
-<!--------- Modal ------>
-<div class="modal fade" id="matrix">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content rounded-0 bg-light">
-            <!-- <div class="modal-header pb-0 border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
-            </div> -->
-            <div class="modal-body text-center">
-                <p>Give more tests for this <br /> section to be populated</p>
-                <div class="text-center mb-4">
-                    <button type="submit" class="btn btn-danger px-5" data-bs-dismiss="modal"> Back</button>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-------------------->
-<!--------- Modal trial-box------>
-@if(isset($date_difference) && ($date_difference > 0) && ($date_difference < 13) && $trial_expired_yn=='Y' ) <div class="modal fade custommodal" id="trialbox">
-    <div class="modal-dialog modal-dialog-centered trialbox">
-        <div class="modal-content rounded-0 bg-light p-5">
-            <div class="modal-body text-center p-0">
-                <p class="pb-5 mt-4 m-0">Your trial expires in <span>{{$date_difference+1}} days</span> <br>Subscribe now!</p>
-                <div class="text-center mb-4">
-                    <a href="{{route('subscriptions')}}" class="btn btn-danger text-white px-5 col-lg-7"> Get Subscription</a>
-                </div>
-                <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-dismiss="modal">Do it later</a>
-            </div>
-        </div>
-    </div>
-    </div>
-    @endif
-    <!-------------------->
-    <!--------- Graph Expand ------>
-    <div class="modal fade" id="graphExpand" data-bs-backdrop="static" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 100%; max-height: 100%;margin: 1.75rem 20px">
-            <div class="modal-content rounded-0 bg-light">
-                <div class="modal-header pb-0 border-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
-                </div>
-                <div class="modal-body text-center p-0">
-                    <div class="progressChartExpend"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-------------------->
+
     <!-- Strengths-popup start  -->
     <div class="modal fade" id="strengthmodal">
         <div class="modalcenter">
@@ -1017,179 +949,6 @@ $userData = Session::get('user_data');
     $your_place = isset($your_place) ? json_encode($your_place) : [];
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     @endphp
-    <script type="text/javascript">
-        $(".rating-input").click(function() {
-            $("#nxt-btn").removeClass("disabled");
-        });
-        /* $('.subject_scroll').slimscroll({
-            height: '25vh'
-        }); */
-
-        $(window).on('load', function() {
-
-            if (sessionStorage.getItem('firstVisit') != '1') {
-                $('#trialbox').modal('show');
-            }
-            sessionStorage.setItem('firstVisit', '1');
-
-        });
-
-
-
-        function welcome_back() {
-            $('#welcomeModal').modal('hide');
-            if ($("#favSubResponse").length > 0) {
-                $("#favSubResponse").modal("show");
-            } else if ($("#fullTest_Dashboard").length > 0) {
-                $("#fullTest_Dashboard").modal("show");
-            }
-        }
-
-        function store_rating() {
-            /* getting subject rating for new user */
-            let subjects_rating = {};
-            $('input[type=radio]:checked').each(function() {
-
-
-                var name = $(this).attr('name');
-                var value = $(this).val();
-
-                subjects_rating[name] = value;
-            });
-
-            $.ajax({
-                url: "{{ url('/dailyWelcomeUpdates') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    storeddata: subjects_rating,
-                },
-                beforeSend: function() {},
-                success: function(response_data) { //debugger;
-
-                    if (response_data == 'success') {
-                        if ($("#favSubResponse").length > 0) {
-                            $("#favSubResponse").modal("hide");
-                        }
-
-                        /*  $("#feelresponseModal").modal("hide"); */
-                        if ($("#fullTest_Dashboard").length > 0) {
-                            $("#fullTest_Dashboard").modal("show");
-                        }
-                    }
-
-                },
-                error: function(xhr, b, c) {
-                    console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-                }
-            });
-        }
-
-        $('.instructions').slimscroll({
-            height: '33vh'
-        });
-
-        $(".rating-input").click(function() {
-            $("#nxt-btn").removeClass("disabled");
-        });
-    </script>
-    <script type="text/javascript">
-        $('.scroll-div').slimscroll({
-            height: '40vh'
-        });
-
-        var starClicked = false;
-
-        $(function() {
-
-            $('.star').click(function() {
-
-                $(this).children('.selected').addClass('is-animated');
-                $(this).children('.selected').addClass('pulse');
-
-                var target = this;
-
-                setTimeout(function() {
-                    $(target).children('.selected').removeClass('is-animated');
-                    $(target).children('.selected').removeClass('pulse');
-                }, 1000);
-
-                starClicked = true;
-            })
-
-            $('.half').click(function() {
-                if (starClicked == true) {
-                    setHalfStarState(this)
-                }
-                $(this).closest('.rating').find('.js-score').text($(this).data('value'));
-
-                $(this).closest('.rating').data('vote', $(this).data('value'));
-                calculateAverage()
-                // console.log(parseInt($(this).data('value')));
-
-            })
-
-            $('.full').click(function() {
-                if (starClicked == true) {
-                    setFullStarState(this)
-                }
-                $(this).closest('.rating').find('.js-score').text($(this).data('value'));
-
-                $(this).find('js-average').text(parseInt($(this).data('value')));
-
-                $(this).closest('.rating').data('vote', $(this).data('value'));
-                calculateAverage()
-
-                // console.log(parseInt($(this).data('value')));
-            })
-
-            $('.half').hover(function() {
-                if (starClicked == false) {
-                    setHalfStarState(this)
-                }
-
-            })
-
-            $('.full').hover(function() {
-                if (starClicked == false) {
-                    setFullStarState(this)
-                }
-            })
-
-        })
-
-        function updateStarState(target) {
-            $(target).parent().prevAll().addClass('animate');
-            $(target).parent().prevAll().children().addClass('star-colour');
-
-            $(target).parent().nextAll().removeClass('animate');
-            $(target).parent().nextAll().children().removeClass('star-colour');
-        }
-
-        function setHalfStarState(target) {
-            $(target).addClass('star-colour');
-            $(target).siblings('.full').removeClass('star-colour');
-            updateStarState(target)
-        }
-
-        function setFullStarState(target) {
-            $(target).addClass('star-colour');
-            $(target).parent().addClass('animate');
-            $(target).siblings('.half').addClass('star-colour');
-
-            updateStarState(target)
-        }
-
-        function calculateAverage() {
-            var average = 0
-
-            $('.rating').each(function() {
-                average += $(this).data('vote')
-            })
-
-            $('.js-average').text((average / $('.rating').length).toFixed(3))
-        }
-    </script>
 
     <script>
         /* Score Pie Chart */

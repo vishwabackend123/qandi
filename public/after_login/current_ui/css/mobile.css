@@ -65,9 +65,18 @@
   
     
 }
+@media only screen and (max-width: 1300px){
+
+    .fullbodyBox .rightImgBox svg{width: 75px;}
+}
 @media only screen and (max-height: 800px) {
     .left-sidepannel .carousel-inner .carousel-item img {
      height: 400px;
+ }
+}
+@media only screen and (max-height: 700px) {
+    .left-sidepannel .carousel-inner .carousel-item img {
+     height: 350px;
  }
 }
 @media only screen and (max-height: 600px) and (max-width: 1280px){

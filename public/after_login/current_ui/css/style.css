@@ -170,7 +170,12 @@ padding: 0;
     color: #56b663;
     text-decoration: none;
 }
-
+.resend span {
+    color: #56b663;
+}
+.resendcolorchan{
+color: #d0d5dd !important;    
+}
 .custom-input label {
     color: #363c4f;
     font-size: 14px;
@@ -386,7 +391,9 @@ select.form-control:not([size]):not([multiple]) {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
+.resendweight{  
+font-weight: 800;       
+}
 /******sign-up-end*******/
 /******Profile-page-strat*****/
 .bg-content {
@@ -689,9 +696,31 @@ color: #1f1f1f;
 font-weight: 800;
 }
 /*****Planner-pge-end***********/
-    .resendweight{  
-font-weight: 800;       
+
+/*****practic_exam-start**********/
+.exam_tabdata{
+border-radius: 32px;
+margin-top: 28px;
+padding: 32px !important;
 }
+.exam_topicbtn ul.nav {
+    height: 35px;
+}
+.exam_topicbtn ul.nav .btn.nav-link {
+    height: 29px;
+    line-height: 14px;
+}
+.take-fulltest{
+    background: rgba(229, 234, 238, 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+.take-fulltest .btn {
+    height: 44px;
+    min-width: 141px !important;
+}
+/*****practic_exam-end**********/
+
 /*********** Navdeep End *************/
 
 /***************** Sachin Start ****************************/
@@ -723,7 +752,7 @@ font-weight: 800;
     position: absolute;
     left: 11px;
     top: 32px;
-    height: calc(100% - 40px);
+    height: calc(100% - 47px);
     width: 1px;
     border-left: 2px solid rgba(54, 60, 79, 0.5);
 }
@@ -744,16 +773,25 @@ font-weight: 800;
 }
 
 .progress__title {
-    padding: 0rem 0 0.5rem;
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
     font-weight:bold;
+    color: #1f1f1f;
+    line-height: 1.3;
 }
 
 .progress__info {
-    font-size: 12px;
     margin: 0px;
     padding-bottom: 10px;
+    color: #363c4f;
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    text-align: left;
+    color: #363c4f;
 }
 
 .progress__item img {
@@ -795,10 +833,14 @@ font-weight: 800;
 }
 
 .progress__item.progress__item--active:after {
-    font-size: 100px;
+    font-size: 90px;
     color: #56b663 !important;
     content: ' \00B7';
     border-color: 2px solid #56b663 !important;
+}
+.verificationBox b{
+    font-weight: bold;
+    color: #363c4f;
 }
 
 .progress__item:last-child:before {
@@ -814,9 +856,9 @@ font-weight: 800;
     border-radius: 71%;
     color: #fff;
     font-weight: 400;
-    line-height: 9px;
+    line-height: 8px;
     text-align: center;
-    border: 1px solid rgba(54, 60, 79, 0.5);
+    border: 2px solid rgba(54, 60, 79, 0.5);
     box-shadow: 0 0 0 4px #d2f0d6;
     left: 0;
 }
@@ -852,9 +894,15 @@ font-weight: 800;
 }
 
 .verificationBox p {
-    text-align: center;
-    font-size: 14px;
     margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    color: #363c4f;
 }
 
 .subscriptionsPage {
@@ -900,7 +948,8 @@ font-weight: 800;
 }
 
 .logo {
-    width: 50px;
+    width: 48px;
+	height: 48px;
 }
 
 .selectPlanedetail {
@@ -989,6 +1038,7 @@ font-weight: 800;
 .testType ul {
     padding: 0px;
     margin: 0px;
+    padding-bottom: 80px;
 }
 
 .testType ul li {
@@ -1233,9 +1283,7 @@ font-weight: 800;
 
 /********************Start-Dashboard-By-Sachin-Date-06-07-22**************/
 
-.graphDetail{
-    display:none
- }
+ 
  .graphDetailempty .testScrolltype {
      margin-right: 30px;
      padding-top:0px;
@@ -1605,7 +1653,7 @@ font-weight: 800;
  }
  .allSubslider{
      position: relative;
-     display:none;
+    
  }
  .allSubslider .owl-nav {
      display: flex;
@@ -1662,9 +1710,7 @@ font-weight: 800;
  .allSubslider  .disabled {
      opacity: 0 !important;
  }
- /* .allSubslider  .owl-item{
-     max-width:350px !important;
- } */
+
  .allSubslider .owl-stage{
     padding: 0px !important;
  }
@@ -1801,14 +1847,16 @@ line-height: 1.6;
 }
 
 .btn.btn-common-transparent {
-    padding: 10px 16px;
+    padding: 8px 16px;
     border-radius: 8px;
     border: solid 1px #56b663;
     background-color: #f5faf6;
     color: #56b663;
     font-size: 14px;
     font-weight: 800;
-    min-width: 250px;
+	max-width: 295px;
+    height: 44px;
+    width: 100%;
 }
 
 /********* Performance Rating ***************/
@@ -2262,6 +2310,8 @@ h3.commonheading{
 }
 .progress-bar.incorrect-bg {
     background-color: #fb7686;
+	border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 .progress-bar.not-attempted-bg {
     background-color: #e5eaee;
@@ -2269,17 +2319,16 @@ h3.commonheading{
 .topic_score_bar .progress {
     border-radius: 4px;
     height: 10px;
-}
-ul.topic_score_lists li {
-    width: 45%;
+    position: relative;
 }
 ul.topic_score_lists li {
     width: calc(45% - 4px);
     margin-bottom: 45px;
+	position: relative;
 }
 ul.topic_score_lists {
     overflow-y: auto;
-    max-height: 500px;
+    max-height: 535px;
     padding-right: 40px;
 }
 ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){margin-bottom:0;}
@@ -2296,7 +2345,29 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
     width: 100px;
     overflow: hidden;
 }
+.halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
+.halfdoughnut2{ height: 180px;
+    width: 180px;
+    overflow: hidden;}
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
+.noofquestions-block {
+    border-radius: 4px;
+    box-shadow: 0 4px 7px 0 rgba(0,0,0 ,0.12);
+    background-color: #fff;
+    position: absolute;
+    padding: 20px 20px;
+    width: 200px;
+    z-index: 1;
+	right: -20px;
+	display: none;	
+}
+ul.topic_score_lists li:hover .noofquestions-block{display: block;}
+.noofquestions-block .color_labels span b {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1f1f1f;
+	float: right;
+}
 
 /********* Amit End ***********/
 
@@ -2628,11 +2699,11 @@ header {
 }
 
 .commontab .nav-tabs .nav-link {
-    padding: 0px 0px 10px;
+    padding: 0px 0px 15px;
     opacity: 0.6;
     border: 0px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.6;
     color: #363c4f;
     margin-right: 28px;
@@ -4033,15 +4104,14 @@ padding: 11px 20px!important;
 
 .task1>p {
     font-size: 14px;
-    font-weight: 500;
-    font-family: Manrope;
+    font-weight: 500;margin: 0;
     color: #868a95;
 }
 .task1 {padding-top: 30px;}
 .task2 {padding-top: 10px;}
 .task1 p span {
     font-size: 12px;
-    text-transform: uppercase;
+    text-transform: uppercase;letter-spacing: 0.96px;
     font-weight: 600;
 }
 
@@ -4049,12 +4119,14 @@ padding: 11px 20px!important;
     font-size: 16px;
     font-weight: 800;
     color: #1f1f1f;
+    margin: 0;
+    padding: 8px 0px;
 }
 
 .btn-sec {
     border-bottom: 1px solid #e5eaee;
     display: flex;
-    padding-bottom: 8px;
+    padding-top: 12px;
     margin-bottom: 12px;
 }
 
@@ -4177,7 +4249,7 @@ padding: 11px 20px!important;
     border-radius: 20px;
     max-width: 460px;
 }
-.email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 25px 0px 40px;}
+.email-confirmation > p{border-bottom: 1px solid #e5eaee;    padding: 20px 0px 40px;}
 .email-confirmation p > span {
     font-size: 22px;
     font-weight: 800;
@@ -4251,4 +4323,4 @@ padding: 11px 20px!important;
     text-align: center;
     padding: 20px 75px;
 }
-.privacy-sec > a {color: #56b663;}  
+.privacy-sec > a {color: #56b663;}   

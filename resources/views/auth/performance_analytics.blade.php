@@ -25,8 +25,8 @@ $full_body_attempt = Session::get('full_body_attempt');
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
                 <li class="progress__item   progress__item--active">
-                    <p class="progress__title">You order is out for delivery</p>
-                    <p class="progress__info">Delivery Executive is out for delivery</p>
+                    <p class="progress__title">Full Body Scan</p>
+                    <p class="progress__info">To assess your preparedness</p>
                     <img src="{{URL::asset('public/after_login/current_ui/images/checkbox-icon.png')}}">
                 </li>
             </ul>
@@ -56,7 +56,7 @@ $full_body_attempt = Session::get('full_body_attempt');
                 <div class="fullbody_scan_test w-50 text-center position-relative">
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-big.png')}}"></span>
                     <span><img src="{{URL::asset('public/after_login/current_ui/images/molecule-small.png')}}"></span>
-                    <img src="{{URL::asset('public/after_login/current_ui/images/note.png')}}" style="max-width: 85px;">
+                    <img src="{{URL::asset('public/after_login/current_ui/images/note.png')}}" style="width: 106.5px;height: 116px;">
                     <h3 class="mb-0 mt-2">Full Body Scan Test</h3>
                     <p class="my-3">to assess your preparedness and begin to improve it</p>
                     @if($full_body_attempt=="Y")

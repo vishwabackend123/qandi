@@ -226,7 +226,7 @@
                                             </div> -->
                                         <div class="aeck_tab_in_tab_chapter_topic">
                                             <div class="mb-4 mt-4 align-items-center d-flex justify-content-between align-items-center aeck_tab_in_tab_chapter_topic_section">
-                                                <div class="">
+                                                <div>
                                                     <ul class="nav nav-pills  d-inline-flex" id="topic-tab" role="tablist">
                                                         <li class="nav-item" role="presentation">
                                                             <button class="nav-link btn active" id="pills-chapters-tab" data-bs-toggle="pill" data-bs-target="#pills-chapters" type="button" role="tab" aria-controls="pills-chapters" aria-selected="true">Chapters</button>
@@ -236,7 +236,7 @@
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="">
+                                                <div>
                                                     <button class="btn aeck_filter_btn">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                             <path d="M5 10h10M2.5 5h15m-10 10h5" stroke="#56B663" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
@@ -322,13 +322,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div id="application" class=" tab-pane">
-
-                                </div>
-                                <div id="complrehension" class=" tab-pane">
-                                </div>
-                                <div id="knowledge" class=" tab-pane">
+                                    <div id="application" class=" tab-pane">
+                                    application
+                                    </div>
+                                    <div id="complrehension" class=" tab-pane">
+                                    complrehension
+                                    </div>
+                                    <div id="knowledge" class=" tab-pane">
+                                    knowledge
+                                    </div>
                                 </div>
                             </div>
                         </div>

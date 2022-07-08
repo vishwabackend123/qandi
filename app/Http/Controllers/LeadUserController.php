@@ -110,4 +110,8 @@ class LeadUserController extends Controller
 	{
 		return view('auth.aeck_myqmatrix');
 	}
+    public function practic_exam()
+	{
+		return view('auth.practic_exam');
+	}
 }
