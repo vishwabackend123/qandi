@@ -1131,7 +1131,7 @@ border-bottom-color: #e5eaee;
     border: solid 1px #56b663;
 }
 
-.freeTrial a:hover {
+.freeTrial a:hover,.btn-common-attempted:hover {
     color: #56b663;
 }
 
