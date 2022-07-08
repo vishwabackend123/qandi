@@ -1028,6 +1028,10 @@ border-bottom-color: #e5eaee;
     padding-bottom: 40px;
 
 }
+.getDiscount .planPayment .testType{
+    padding-left: 28px;
+    padding-bottom: 31px;
+}
 
 .price {
     text-align: right;
