@@ -167,17 +167,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    /*  $("#location").select2({
-        placeholder: "Select a City",
-        allowClear: true
-    });
-    $("#multiple").select2({
-        placeholder: "Select a City",
-        allowClear: true
-    }); */
-
-
-
+  var timerId='';
     /* name input validation */
     /* only letter number */
     function isNumber(evt) {
@@ -284,6 +274,8 @@
         $('#editsignnumber').removeClass("d-block");
         $('#editsignnumber').addClass("d-none");
         $('#otp_box input[name="register_otp[]"').val('');
+        clearTimeout(timerId);
+        $('#wait_otp_div').text('00:59');
     });
     $('#verifynum').click(function() {
         $check = 0;
@@ -586,7 +578,7 @@
     $('.resend_again').hide();
     var timeLeft = 58;
     var elem = document.getElementById('wait_otp_div');
-    var timerId = setInterval(countdown, 1000);
+     timerId = setInterval(countdown, 1000);
 
     function countdown() {
 
