@@ -1,6 +1,8 @@
 @extends('afterlogin.layouts.app_new')
 @section('content')
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="main-wrapper">    
    <header>
       <div class="headerMain">
@@ -117,7 +119,7 @@
                         </ul>
                      </div>
                     <div class="take-fulltest d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center clrsec">
                      <button type="button" class="btn btn-common-transparent bg-transparent me-3">Take test for selected topics</button>  
                     <a href="javascript:void(0);" class="clearsec">Clear Selection</a>
                     </div>    
@@ -134,16 +136,23 @@
                     <div class="accordion mt-4 pt-1" id="accordionExample">
 <div class="allscrollbar">
 <div class="accordion-item">  
-<div class="test-table d-flex align-items-center justify-content-between">
-<h2>3D Geometry</h2>
-<h3>Proficiency : <span>65%</span></h3>    
-<div class="accordion-header d-flex align-items-center" id="headingOne"><h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="re">View topics</h4>
-<button type="button" class="btn btn-common-transparent bg-transparent ml-4">Take test</button>
+<div class="test-table d-flex align-items-center justify-content-between pb-3 mb-1">
+<h2 class="m-0">3D Geometry</h2>
+<h3 class="m-0">Proficiency : <span>65%</span></h3>    
+<div class="accordion-header d-flex align-items-center" id="headingOne"><h4 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="m-0">View topics</h4>
+<button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
 </div>  
     </div>
  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      <div class="accordion-body ps-0 pe-0">
+         <div class="testslider owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+</div>
       </div>
     </div>
  
@@ -151,38 +160,23 @@
     
 </div>    
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+<div class="accordion-item pt-4">  
+<div class="test-table d-flex align-items-center justify-content-between">
+<h2 class="m-0">Application of Derivaties</h2>
+<h3 class="m-0">Proficiency : <span>30%</span></h3>    
+<div class="accordion-header d-flex align-items-center" id="headingTwo"><h4 data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="m-0">View topics</h4>
+<button type="button" class="btn btn-common-transparent bg-transparent ms-4">Take test</button>
+</div>  
+    </div>
+ <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body ps-0 pe-0">
+       A
       </div>
     </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
+ 
+ </div> 
 </div>
                   </div>
-                   
-                   
-
-                   
-                   
-                   
                   <div id="qq2" class=" tab-pane">
                      A
                   </div>
@@ -193,6 +187,33 @@
    </div>
 </section>
 </div>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $('.testslider').owlCarousel({
+            stagePadding: 0,
+            loop: false,
+            margin: 0,
+            nav: false,
+            dots: false,
+            // rewindNav:true,
 
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false,
+                    stagePadding: 40,
+                    margin: 0,
+                    loop: true,
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+
+            }
+        })
+    </script>
 </body>
 @endsection
