@@ -2552,7 +2552,7 @@ header {
     border-top-right-radius: 0px;
     box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
 }
-
+.text-right{text-align:right;}
 
 #collapseNotification2 {
     position: fixed;
