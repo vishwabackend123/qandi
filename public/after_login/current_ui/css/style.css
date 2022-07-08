@@ -888,7 +888,10 @@ border-bottom-color: #e5eaee;
     font-size: 90px;
     color: #56b663 !important;
     content: ' \00B7';
-    border-color: 2px solid #56b663 !important;
+    border: 2px solid #56b663 !important;
+}
+.progress__item.progress__item--completed:after{
+	border: 2px solid #56b663 !important;
 }
 .verificationBox b{
     font-weight: bold;
