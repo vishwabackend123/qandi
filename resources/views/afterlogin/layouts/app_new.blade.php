@@ -47,7 +47,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
     <script type="text/javascript" src="{{URL::asset('public/js/jquery-3.6.0.min.js')}}"></script>
-    <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script>
+    <!-- <script type="text/javascript" src="{{URL::asset('public/js/bootstrap.min.js')}}"></script> -->
 
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script>
     <script type="text/x-mathjax-config">

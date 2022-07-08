@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('afterlogin.layouts.app_new')
 @section('content')
 <div class="main-wrapper">
     <header>
