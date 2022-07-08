@@ -193,7 +193,8 @@ $('.notificationnew').click(function() {
       };
 });
 $('.headericon.dropdown').click(function(){
-  $('.notification-block_new').removeClass('activeblock show')
+  $('.notification-block_new').removeClass('activeblock show');
+  $('html').removeClass("scrollnone");
   // $('.notification-block_new').removeClass('show ')
 });
 
