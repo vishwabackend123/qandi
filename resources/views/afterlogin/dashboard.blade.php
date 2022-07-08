@@ -463,7 +463,12 @@ $userData = Session::get('user_data');
                                                 <h3>Law of motion</h3>
                                                 <div class="proficiencyper"><small>Proficiency</small><br><b>60%</b></div>
                                                 <div class="attemptBtn">
-                                                    <a href="" class="btn btn-common-green">Attempt Now</a>
+                                                    <!-- <a href="" class="btn btn-common-green">Attempt Now</a> -->
+                                                    <a href="" class="btn btn-common-attempted"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                        <circle cx="10" cy="10" r="10" fill="#56B663"/>
+                                                        <path d="m5.5 10.5 3 3L14 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg> Attempted</a>
+
                                                 </div>
                                                 <div class="subIcon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none">
@@ -788,7 +793,7 @@ $userData = Session::get('user_data');
                                                 <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
                                             </svg> -->
                                             <div class="progress_journey_chart">
-                                                <canvas id="myChartProgress"></canvas>
+                                                <canvas id="myChartProgress1"></canvas>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -813,10 +818,10 @@ $userData = Session::get('user_data');
                                                     <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
                                                 </div>
                                             </div>
-                                            <!-- <div class="graphDetailempty">
+                                            <div class="graphDetailempty" style="display:none">
                                                 <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
                                                 <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
-                                            </div> -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -839,12 +844,8 @@ $userData = Session::get('user_data');
                                     </div>
                                     <div class="journeyBoxcontainer">
                                         <div class="graphimg">
-                                            <div class="graphholder">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 271 191" fill="none">
-                                                    <path stroke="#E0E0E0" d="M1.5 8v183M2 190.5h258M3 145.5h256M3 99.5h256M3 53.5h256M3 7.5h256" />
-                                                    <path transform="matrix(.81923 -.57346 .30416 .95262 1 191)" stroke="#05D6A1" stroke-width="2" stroke-linecap="round" d="M1-1h327.577" />
-                                                    <path d="m2 190 25.532-37.903a31 31 0 0 1 25.711-13.681h13.514a31 31 0 0 0 25.71-13.681l11.353-16.853a31.001 31.001 0 0 1 25.711-13.681h22.173a30.999 30.999 0 0 0 17.618-5.493L263 24" stroke="#F7758F" stroke-width="2" stroke-linecap="round" />
-                                                </svg>
+                                        <div class="progress_journey_chart">
+                                                <canvas id="myChartProgress2"></canvas>
                                             </div>
 
                                         </div>
@@ -874,7 +875,7 @@ $userData = Session::get('user_data');
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="graphDetailempty">
+                                        <div class="graphDetailempty" style="display:none"> 
                                             <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
                                             <div class="h">
                                                 <p class="testScrolltype">
@@ -968,192 +969,6 @@ $userData = Session::get('user_data');
     @endphp
 
     <script>
-        /* Score Pie Chart */
-        Highcharts.chart('scorecontainer', {
-            chart: {
-                height: 160,
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false,
-                spacingTop: 0,
-                spacingBottom: 0,
-                spacingRight: 0,
-            },
-            title: {
-                text: '<span style=" font: normal normal 200 60px/80px Manrope; letter-spacing: 0px; color: #21ccff;">{{$corrent_score_per}}</span> <br><span style=" font: normal normal normal 14px/22px Manrope;letter-spacing: 0px;color: #21ccff;"> / 100 </span>',
-                align: 'center',
-                verticalAlign: 'middle',
-                y: 60
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            tooltip: {
-                pointFormat: '<b>{point.percentage:.1f}%</b>'
-            },
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
-                }
-            },
-            plotOptions: {
-                pie: {
-                    dataLabels: {
-                        enabled: false,
-                        distance: 0,
-                        style: {
-                            fontWeight: 'bold',
-                            color: 'white'
-                        }
-                    },
-                    point: {
-                        events: {
-                            legendItemClick: function() {
-                                this.slice(null);
-                                return false;
-                            }
-                        }
-                    },
-                    startAngle: -140,
-                    endAngle: 140,
-                    center: ['50%', '50%'],
-                    size: '100%'
-                },
-                series: {
-                    enableMouseTracking: false
-                }
-            },
-            series: [{
-                type: 'pie',
-
-                innerSize: '85%',
-                data: [{
-                        name: 'Score',
-                        y: <?php echo $score; ?>,
-                        color: '#21ccff'
-                    },
-                    {
-                        name: 'Inprogress',
-                        y: <?php echo $inprogress; ?>,
-                        color: '#d0f3ff'
-                    },
-                    {
-                        name: 'Progress',
-                        y: <?php echo $progress; ?>,
-                        color: '#d0f3ff'
-                    },
-                    {
-                        name: '',
-                        y: <?php echo $others; ?>,
-                        color: '#d0f3ff'
-                    }
-
-
-                ]
-
-            }]
-        });
-
-        /* Mrks trend Graph */
-        Highcharts.chart('marks_trend_graph', {
-            chart: {
-                type: 'areaspline',
-                height: 165,
-                plotBackgroundColor: null,
-                zoomType: 'x',
-
-            },
-            title: {
-                text: ''
-            },
-
-            legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom',
-                bottom: '-20px',
-                floating: false,
-                borderWidth: 0,
-
-            },
-            xAxis: {
-                label: true,
-                accessibility: {
-                    rangeDescription: 'Range: start to current week'
-                },
-                categories: <?php echo $weekdates_json; ?>,
-
-            },
-            yAxis: {
-                title: {
-                    text: null
-                },
-                labels: {
-                    enabled: true
-                },
-
-                min: 0
-            },
-            tooltip: {
-                formatter: function(tooltip) {
-                    if (this.x == 'W5') {
-                        var header = `<span style="color: Black;">${this.x}(Current Week)</span><br/>`;
-                    } else {
-                        var header = `<span style="color: Black;">${this.x}</span><br/>`;
-                    }
-
-                    return header + (tooltip.bodyFormatter(this.points).join(''))
-                },
-                shared: true,
-                valueSuffix: ' marks'
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                enabled: false
-            },
-            plotOptions: {
-                areaspline: {
-                    fillOpacity: 0.4
-                },
-                series: {
-                    pointPadding: 0,
-                    groupPadding: 0,
-                    marker: {
-                        enabled: true
-                    },
-                    events: {
-                        legendItemClick: function() {
-                            return false;
-                        }
-                    }
-
-                }
-
-            },
-            series: [{
-                name: 'Student Score',
-                data: <?php echo $stu_scroe_json; ?>, //[0, 4, 4],
-                color: '#007aff' // Jane's color
-            }, {
-                name: 'Class Avg',
-                data: <?php echo $avg_scroe_json; ?>, //[16, 18, 17],
-                color: '#dfe835'
-            }, {
-                name: 'Top Marks',
-                data: <?php echo $max_scroe_json; ?>, // [16, 21, 23],
-                color: '#eb4034'
-            }],
-
-
-        });
-        /* Mrks trend Graph */
-    </script>
-    <script>
         $(document).ready(function() {
             $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
                 event.stopPropagation();
@@ -1176,7 +991,7 @@ $userData = Session::get('user_data');
             }
         });
     </script>
-    <script language="JavaScript">
+    <!-- <script language="JavaScript">
         $(document).ready(function() {
             var title = {
                 text: ''
@@ -1258,7 +1073,7 @@ $userData = Session::get('user_data');
             $('.progressChart').highcharts(json);
             $('.progressChartExpend').highcharts(json);
         });
-    </script>
+    </script> -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -1306,33 +1121,31 @@ $userData = Session::get('user_data');
 
 
 <script>
- const labels = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
+ const labels1 = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
 ];
-const data = {
-  labels: labels,
+const data1 = {
+  labels: labels1,
   datasets: [{
     label: 'My First dataset',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20],
+    backgroundColor: '#05d6a1',
+    borderColor: '#05d6a1',
+    data: [0, 10, 20, 30, 50],
   },
   {
     label: 'My First dataset',
-    backgroundColor: 'green',
-    borderColor: 'green',
+    backgroundColor: '#f87d96',
+    borderColor: '#f87d96',
     data: [0, 20, 10, 10, 30],
   }]
 };
 
-  const config = {
+  const config1 = {
     type: 'line',
-    data: data,
+    data: data1,
     options: {
         plugins: {
             legend: {
@@ -1350,9 +1163,63 @@ const data = {
     }
   };
 
-  const myChart = new Chart(
-    document.getElementById('myChartProgress'),
-    config
+  const myChart1 = new Chart(
+    document.getElementById('myChartProgress1'),
+    config1
+  );
+
+/** ********************/
+const labels2 = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+];
+const data2 = {
+  labels: labels2,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: '#05d6a1',
+    borderColor: '#05d6a1',
+    data: [0, 10, 20, 30, 50],
+  },
+  {
+    label: 'My second dataset',
+    backgroundColor: '#f87d96',
+    borderColor: '#f87d96',
+    data: [0, 20, 10, 10, 30],
+  },
+  {
+    label: 'My Third dataset',
+    backgroundColor: '#12c3ff',
+    borderColor: '#12c3ff',
+    data: [0, 5, 8, 10, 30],
+  }]
+};
+
+  const config2 = {
+    type: 'line',
+    data: data2,
+    options: {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            x: {
+                    grid: {
+                    display: false
+                    }
+            }
+
+        }
+    }
+  };
+
+  const myChart2 = new Chart(
+    document.getElementById('myChartProgress2'),
+    config2
   );
 
 </script>
