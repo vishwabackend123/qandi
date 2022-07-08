@@ -2427,7 +2427,12 @@ ul.topic_score_lists li:hover .noofquestions-block{display: block;}
     left: 50%;
     transform: translate(-50%,-58%);
 }
-/********* Amit End ***********/
+/******** export_overall_analytics **********/
+.custom_container {
+    max-width: 852px;
+    margin: 0 auto;
+}
+/********************* Amit End ****************************/
 
 
 /********* Shubham Start ***********/
