@@ -307,9 +307,10 @@ select.form-control:not([size]):not([multiple]) {
 .copyright a {
     color: #56b663;
     text-decoration: none;
-     border-bottom: 1px solid #cde9d1;  
+     /* border-bottom: 1px solid #cde9d1;   */
     line-height: 11px;  
     display: inline-block;
+    text-decoration:underline;
 }
 
 .sentotp {
@@ -720,7 +721,10 @@ padding: 32px !important;
     min-width: 141px !important;
 }
 .take-fulltest .btn-common-transparent {
-    max-width: 227px !important;
+    max-width: 237px !important;
+}
+.clrsec{
+    flex: 2;
 }
 .clearsec{
   font-size: 14px;
@@ -752,11 +756,21 @@ padding: 32px !important;
     color: #56b663;
 }
 .test-table .accordion-header{
-flex: 1;    
+flex-basis: 245px;   
 }
 .test-table .accordion-header .btn{
 max-width: 141px !important;
 height: 38px;
+}
+.exam_tabdata .accordion-body {
+    border-top: 1px dashed #cde3d0;
+}
+.exam_tabdata .accordion-item{
+border-radius: 0 !important;
+border-right: 0;
+border-left: 0;
+border-top:0;
+border-bottom-color: #e5eaee;
 }
 /*****practic_exam-end**********/
 
@@ -875,7 +889,10 @@ height: 38px;
     font-size: 90px;
     color: #56b663 !important;
     content: ' \00B7';
-    border-color: 2px solid #56b663 !important;
+    border: 2px solid #56b663 !important;
+}
+.progress__item.progress__item--completed:after{
+	border: 2px solid #56b663 !important;
 }
 .verificationBox b{
     font-weight: bold;
@@ -918,7 +935,7 @@ height: 38px;
 
 .verificationBox a {
     width: 114px;
-    height: 38px;
+    height: 38px;font-size:14px;
     flex-grow: 0;
     display: flex;
     flex-direction: row;
@@ -929,7 +946,7 @@ height: 38px;
     border-radius: 8px;
     border: solid 1px #dc6803;
     background-color: #fff;
-    color: #dc6803;
+    color: #dc6803;font-weight:600;
 }
 
 .verificationBox p {
@@ -1118,10 +1135,13 @@ height: 38px;
     border: solid 1px #56b663;
 }
 
-.freeTrial a:hover {
+.freeTrial a:hover,.btn-common-attempted:hover {
     color: #56b663;
 }
 
+.btn-common-attempted{background-color: rgba(255, 255, 255, 0.5);border-radius: 10px;color:#56b663; font-size: 14px;font-weight: 800; line-height: 1.6;}
+.btn-common-attempted svg{margin-right:7px;    display: inline-block;
+    vertical-align: text-bottom;}
 .getDiscount {
     background: #f5faf6;
     min-height: 100%;
@@ -2387,7 +2407,8 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
 .halfdoughnut2{ height: 180px;
     width: 180px;
-    overflow: hidden;}
+    /* overflow: hidden; */
+}
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
 .noofquestions-block {
     border-radius: 4px;
@@ -2407,8 +2428,39 @@ ul.topic_score_lists li:hover .noofquestions-block{display: block;}
     color: #1f1f1f;
 	float: right;
 }
+.myScore span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #868a95;
+    margin-top: 5px;
+    display: block;
+}
+.myScore h6 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1f1f1f;
+}
+.myScore {
+    position: absolute;
+    text-align: center;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-58%);
+}
+/******** export_overall_analytics **********/
+.custom_container {
+    max-width: 852px;
+    margin: 0 auto;
+}
+canvas#myChartProgress {
+    height: 180px!important;
+}
+.export_overall_analytics_wrapper .your_rank small {border-radius: 10px;background-color: #e0f6e3;padding: 12px;width: 48px;
+height: 48px;top: 7px;}
+.studentdetail h3.boxheading{margin-bottom: 10px;font-size: 20px;}
 
-/********* Amit End ***********/
+
+/********************* Amit End ****************************/
 
 
 /********* Shubham Start ***********/
@@ -2533,7 +2585,7 @@ header {
     border-top-right-radius: 0px;
     box-shadow: 0 4px 8px 0 rgba(164, 172, 178, 0.1);
 }
-
+.text-right{text-align:right;}
 
 #collapseNotification2 {
     position: fixed;
@@ -2549,7 +2601,7 @@ header {
     height: 100%;
 }
 
-.notification-block_new.show {
+.notification-block_new.activeblock {
     right: 0px !important;
     transition: 0.5s;
 }
