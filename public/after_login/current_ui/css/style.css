@@ -2432,6 +2432,10 @@ ul.topic_score_lists li:hover .noofquestions-block{display: block;}
     max-width: 852px;
     margin: 0 auto;
 }
+canvas#myChartProgress {
+
+    height: 180px!important;
+}
 /********************* Amit End ****************************/
 
 
