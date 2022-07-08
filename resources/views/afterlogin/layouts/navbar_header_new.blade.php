@@ -30,7 +30,7 @@
                     </svg>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profile & Subscription</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profile') }}">Profile & Subscription</a></li>
                     <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                 </ul>
             </span>
@@ -41,7 +41,7 @@
 <div class="notification-block_new  collapse" id="collapseNotification2">
     <div class="planner-wrapper ">
         <div class="notification-main">
-            <h2>Notifications <a href="javascript:void(0);">Clear all</a></h2>
+            <h2>Notifications <a href="{{route('clearAllNotifications')}}">Clear all</a></h2>
             <div class="new_notification_main_sec">
                 @if(isset($notifications) && !empty($notifications) && is_array($notifications))
                 @foreach($notifications as $val)
