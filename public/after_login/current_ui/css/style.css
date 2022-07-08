@@ -929,7 +929,7 @@ height: 38px;
     border-radius: 8px;
     border: solid 1px #dc6803;
     background-color: #fff;
-    color: #dc6803;
+    color: #dc6803;font-weight:600;
 }
 
 .verificationBox p {
