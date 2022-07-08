@@ -121,7 +121,7 @@
 $('.verify_otp').hide();
 $('#otp-verify-btn').hide();
 $('.resend_again').hide();
-var timerId='';
+var timerId = '';
 
 $(document).ready(function() {
     var input = document.getElementById("mobile_num");
@@ -183,6 +183,12 @@ $(document).ready(function() {
 });
 
 function sentotplogin(otp_type) {
+    $('#opt_one').val('');
+    $('#opt_two').val('');
+    $('#opt_three').val('');
+    $('#opt_four').val('');
+    $('#opt_five').val('');
+
     var mobile = $("#mobile_num").val();
     if (mobile == '') {
         $("#errlog_mob").html('Please entered registered mobile number');
