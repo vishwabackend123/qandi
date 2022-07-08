@@ -2387,7 +2387,8 @@ ul.topic_score_lists li:last-child , ul.topic_score_lists li:nth-last-child(2){m
 .halfdoughnut canvas,.halfdoughnut2 canvas{width: 100%!important;height:100%!important;}
 .halfdoughnut2{ height: 180px;
     width: 180px;
-    overflow: hidden;}
+    /* overflow: hidden; */
+}
 .halfdoughnut canvas{width: 100%!important;height:100%!important;}
 .noofquestions-block {
     border-radius: 4px;
@@ -2407,7 +2408,25 @@ ul.topic_score_lists li:hover .noofquestions-block{display: block;}
     color: #1f1f1f;
 	float: right;
 }
-
+.myScore span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #868a95;
+    margin-top: 5px;
+    display: block;
+}
+.myScore h6 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1f1f1f;
+}
+.myScore {
+    position: absolute;
+    text-align: center;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-58%);
+}
 /********* Amit End ***********/
 
 
@@ -2549,7 +2568,7 @@ header {
     height: 100%;
 }
 
-.notification-block_new.show {
+.notification-block_new.activeblock {
     right: 0px !important;
     transition: 0.5s;
 }
