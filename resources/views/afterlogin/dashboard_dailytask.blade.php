@@ -188,7 +188,7 @@ $userData = Session::get('user_data');
                                             <div class="task-btn tasklistbtn">
                                             <button data-bs-target="#summarymodal" class="btn btn-primary btn-common-transparent nobg" data-bs-toggle="modal">Take test</button>
                                             </div>
-=======
+
                                 <div class="dura-sec">
                                     <span>Duration</span>
                                     <p><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +197,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                         <label>{{(isset($data['time_allowed']) && !empty($data['time_allowed']))?$data['time_allowed']:0}} mins</label>
                                     </p>
->>>>>>> e50bda9f1b28d6b1df2a30a35bcb96d99968888e
+
                                 </div>
                                 @if($data['allowed'] == '1')
                                 <div class="task-btn tasklistbtn">
