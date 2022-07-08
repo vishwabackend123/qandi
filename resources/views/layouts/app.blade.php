@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="{{URL::asset('public/css/style.css')}}">
     <!------   current css ------>
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/style.css')}}">
-    <!-----planner-clander--------->
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/page_clander.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/custom_clander.css')}}">
     <link rel="stylesheet" href="{{URL::asset('public/after_login/current_ui/css/theme_clander.css')}}">
