@@ -1,7 +1,45 @@
-@extends('afterlogin.layouts.app_new')
+@extends('layouts.app')
 @section('content')
 <body class="bg-content">
 <div class="main-wrapper">    
+   <header>
+      <div class="headerMain">
+         <div class="headerLeft">
+            <h2>Dashboard</h2>
+            <h6><label>Cource:</label> <span>JEE</span></h6>
+         </div>
+         <div class="headerRight">
+            <span class="usertext"><a href="javascript:;">Hi Sakshi!</a></span>
+            <span class="headericon notificationnew">
+               <a draggable="false" id="nodificbell" data-bs-toggle="collapse" href='#collapseNotification2' role="button" aria-expanded="false" aria-controls="collapseNotification" title="Notification">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                     <g clip-path="url(#5ju4071vya)">
+                        <path d="M15 6.768a5 5 0 0 0-10 0c0 5.833-2.5 7.5-2.5 7.5h15S15 12.6 15 6.768zM11.44 17.602a1.666 1.666 0 0 1-2.882 0" stroke="#363C4F" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="14" cy="4.102" r="4" fill="#F7758F" stroke="#fff" stroke-width="2"/>
+                     </g>
+                     <defs>
+                        <clipPath id="5ju4071vya">
+                           <path fill="#fff" transform="translate(0 .102)" d="M0 0h20v20H0z"/>
+                        </clipPath>
+                     </defs>
+                  </svg>
+               </a>
+            </span>
+            <span class="headericon dropdown">
+               <a href="javascript:;" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                     <path d="M16.666 17.602v-1.667a3.333 3.333 0 0 0-3.333-3.333H6.666a3.333 3.333 0 0 0-3.333 3.333v1.667M10 9.268a3.333 3.333 0 1 0 0-6.666 3.333 3.333 0 0 0 0 6.666z" stroke="#000" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+               </a>
+               <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="#">Action</a></li>
+                     <li><a class="dropdown-item" href="#">Another action</a></li>
+                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+            </span>
+         </div>
+      </div>
+   </header>
    <aside>
       <span class="sidebar-logo d-inline-block">
       <img src="https://app.thomsondigital2021.com/public/images_new/QI_Logo.gif" class="logo">
