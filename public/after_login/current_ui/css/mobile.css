@@ -79,7 +79,6 @@
      height: 350px;
  }
 }
-
 @media only screen and (max-height: 600px) and (max-width: 1280px){
    .left-sidepannel .carousel-inner .carousel-item img {
     height: 230px;
