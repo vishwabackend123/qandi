@@ -728,6 +728,36 @@ padding: 32px !important;
   color: #d92d20 !important;
   text-decoration: none !important;
 }
+.test-table h2{
+     font-size: 16px;
+  font-weight: 500;
+    color: #1f1f1f;
+    flex: 1;
+}
+.test-table h3{
+     font-size: 14px;
+  font-weight: 500;
+    color: #868a95;
+    flex: 1;
+}
+.test-table h3 span{
+    font-size: 16px;
+  font-weight: 800;
+    color: #1f1f1f;
+    margin-left: 6px;
+}
+.test-table h4{
+     font-size: 14px;
+  font-weight: 800;
+    color: #56b663;
+}
+.test-table .accordion-header{
+flex: 1;    
+}
+.test-table .accordion-header .btn{
+max-width: 141px !important;
+height: 38px;
+}
 /*****practic_exam-end**********/
 
 /*********** Navdeep End *************/
