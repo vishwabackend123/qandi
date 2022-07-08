@@ -1,6 +1,4 @@
-$(".notificationnew").click(function() {
-    $(".notification-block_new").show()
-});
+
 /************ Amit - Start **************/
 /********** Sidebar *****/
 $("ul.submenu-lists li.practice-menu>a").click(function(){
