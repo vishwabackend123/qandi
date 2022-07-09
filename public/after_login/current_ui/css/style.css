@@ -3087,6 +3087,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
     background-color: #d1fadf;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    border-bottom: 0px!important;
 }
 
 .plan_box_status_msg_faild {
@@ -3097,6 +3098,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
     background-color: #fee4e2;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    border-bottom: 0px!important;
 }
 
 .plan_box_status_msg_pending {
@@ -3107,6 +3109,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
     box-shadow: 0 8px 30px 0 rgba(172, 185, 176, 0.14);
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    border-bottom: 0px!important;
 }
 
 .plan_success_congrats_msg {
@@ -3179,6 +3182,7 @@ html.scrollnone .main-wrapper { overflow: hidden;}
     flex-grow: 0;
     margin-top: 10px;
     background-color: rgba(3, 152, 85, 0.2);
+    margin-bottom: 13px;
 }
 
 .line-692_field {
@@ -3970,7 +3974,50 @@ padding: 11px 20px!important;
     letter-spacing: normal;
     color: #1f1f1f
 }
-/* **********start mock test   ********** */
+/* **********end mock test   ********** */
+/* **********start live   ********** */
+
+.live_exam_red_dot
+{
+  width: 8px;
+  height: 8px;
+  flex-grow: 0;
+  background-color: #d92d20;
+  border-radius: 25px;
+  margin-top: -9px;
+}
+.live_exam_upcoming_text
+{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: rgba(54, 60, 79, 0.7);
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.live_exam_jee_main_ttext
+{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
+.live_exam_jee_main_date_st_ed_ques
+{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: normal;
+    color: #1f1f1f;
+}
+.line_715
+{
+    background-color:#e5eaee;
+    height: 1px;
+}
+/* **********start live   ********** */
 
 /********* Vikash End ***********/
 
