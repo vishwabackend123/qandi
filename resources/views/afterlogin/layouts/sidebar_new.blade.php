@@ -234,6 +234,9 @@
         </div>
     </div>
 </div>
+
+<!-- Test Summary Modal -->
+
 <script>
 function stateHandle() {
     if (document.querySelector(".emaillink").value === "") {
