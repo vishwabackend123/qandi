@@ -219,6 +219,7 @@
     }).capitalize();
 
     $('#mobile_num').on('keyup', function() {
+        $('#err_reg_mob').html("");
         if ($(this).val().length == 10) {
             $('#verifynum').removeClass("d-none");
             $('#verifynum').addClass("d-block");
@@ -327,7 +328,8 @@
                     } else {
                         $("#err_reg_mob").html(response.message);
                         $("#err_reg_mob").fadeIn('fast');
-                        $("#err_reg_mob").fadeOut(2000);
+                        /* $("#err_reg_mob").fadeOut(10000); */
+                        $("#mobile_num").focus();
                         return false;
                     }
 
