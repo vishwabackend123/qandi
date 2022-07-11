@@ -159,39 +159,146 @@
     </aside>
 
     <div class="content-wrapper test_analytics_wrapper">
-        <div class="container-fluid">
-            <div class="mock_inst_text_mock_test mb-4">
-                <a href="javascript:void(0)" class="text-decoration-none"><i class="fa fa-angle-left mr-2"></i> Back to Dashboard</a>
+            <div class="tabMainblock">
+                <div class="commontab aeck_commontab">
+                    <div class="tablist">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link qq1_2_3_4 active" data-bs-toggle="tab" href="#overall">Overall Analytics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#math">Math</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#physics">Physics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link qq1_2_3_4" data-bs-toggle="tab" href="#chemistry">Chemistry</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content aect_tabb_contantt">
+                        <div id="overall" class=" tab-pane active">
+                            <div class="overallmain">
+                                <div class="overalltop">    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="commonWhiteBox">
+                                                    <h3 class="boxheading d-flex align-items-center mb-5">Progress
+                                                    <span class="tooltipmain">
+                                                `        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                                            <g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009" />
+                                                            </g>
+                                                        </svg>
+                                                        <p class="tooltipclass">
+                                                            <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                        </p>
+                                                    </span>`
+                                                    </h3>
+                                                <div class="overall_percentage_chart">
+                                                    <canvas id="myChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <div class="commonWhiteBox">
+                                            <div class="subjectperform">
+                                                    <h3 class="boxheading d-flex align-items-center">Subject Performance 
+                                                            <span class="tooltipmain ml-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><g opacity=".2" stroke="#234628" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 18.833a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 13.833V10.5M10 7.166h.009"></path></g></svg>
+                                                                <p class="tooltipclass">
+                                                                        <span><img style="width:34px;" src="http://localhost/Uniq_web/public/after_login/new_ui/images/cross.png"></span>
+                                                                            This card represents a combination of your skill, expertise, and knowledge in the topics you have attempted. Build your proficiencies!
+                                                                        </p>
+                                                            </span>
+                                                    </h3>
+                                                    <div class="subjectperformLegend flexleg">
+                                                        <div class="commonSubjectLeg">
+                                                            <span class="bar greenbar"></span>
+                                                            <label class="text">Correct answer</label>
+                                                        </div>  
+                                                        <div class="commonSubjectLeg">
+                                                            <span class="bar pinkbar"></span>
+                                                            <label class="text">Incorrect answer</label>
+                                                        </div>  
+                                                        <div class="commonSubjectLeg">
+                                                            <span class="bar graybar"></span>
+                                                            <label class="text">Unattempted questions</label>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="subjectblockOverall">
+                                                                <div class="textblock">
+                                                                    <h3>Maths</h3>
+                                                                    <h5>Proficiency</h5>
+                                                                    <h6>64%</h6>
+                                                                </div>
+                                                                <div class="halfdoughnutsmall">
+                                                                        <canvas id="subjectChart" ></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="subjectblockOverall">
+                                                                <div class="textblock">
+                                                                    <h3>Chemistry</h3>
+                                                                    <h5>Proficiency</h5>
+                                                                    <h6>42%</h6>
+                                                                </div>
+                                                                <div class="halfdoughnutsmall">
+                                                                        <canvas id="subjectChart-1" ></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="subjectblockOverall">
+                                                                <div class="textblock">
+                                                                    <h3>Physics</h3>
+                                                                    <h5>Proficiency</h5>
+                                                                    <h6>84%</h6>
+                                                                </div>
+                                                                <div class="halfdoughnutsmall">
+                                                                        <canvas id="subjectChart-2" ></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overallMidlle">
+                                <div class="commonWhiteBox">
+                                     <div class="row">
+                                         <div class="col-md-6">
+
+                                         </div>
+                                         <div class="col-md-6">
+                                            
+                                         </div>
+                                     </div>
+                                </div> 
+                                </div>
+                            </div>    
+                        </div>
+                        <div id="math" class=" tab-pane">...</div>
+                        <div id="physics" class=" tab-pane">... </div>
+                        <div id="chemistry" class=" tab-pane">..</div>
+                        
+                    </div>
+                </div>
             </div>
-            <h3 class="commonheading">Mock Test</h3>
+    
+
+        <div>
             <div class="row mt-4 mb-4 align-items-end">
-                <div class="col-sm-3">
-                    <div class="question-attempted-block border-right">
-                        <span class="d-block mb-2 commontext">Question Attempted</span>
-                        <label class="m-0 commonboldtext">80/100</label>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="time-date-block">
-                        <span class="d-block mb-2 commontext">13 June 2022</span>
-                        <p class="m-0">
-                            <small class="commontext me-5 pe-4">
-                                <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.999 22c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M11.999 6v6l4 2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                60 min
-                            </small>
-                            <small class="commontext">
-                                <svg  style="vertical-align: sub;" class="mr-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.999 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M14.999 2h-6a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z" stroke="#56B663" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                200 marks
-                            </small>
-                        </p>
-                    </div>
-                </div>
+                
                 <div class="col-sm-3">
                     <div class="text-right">
                         <button class="btn btn-common-transparent" style="min-width: auto;">
@@ -265,9 +372,7 @@
                                 <div class="tab-pane fade show active" id="pills-overall" role="tabpanel" aria-labelledby="pills-overall-tab">
                                     <span class="d-block mb-1 commontext">Overall percentage</span>
                                     <label class="mb-3 commonboldtext" style="font-size: 24px;">64%</label>
-                                    <div class="overall_percentage_chart">
-                                        <canvas id="myChart"></canvas>
-                                    </div>
+                                    
                                 </div>
                                 <div class="tab-pane fade" id="pills-physics" role="tabpanel" aria-labelledby="pills-physics-tab">...</div>
                                 <div class="tab-pane fade" id="pills-chemistry" role="tabpanel" aria-labelledby="pills-chemistry-tab">...</div>
@@ -319,7 +424,7 @@
                             <div class="col-md-6 mb-3">
                                 <h5 class="mb-0">Maths</h5>
                                 <div class="d-flex align-items-center">
-                                    <div class="halfdoughnut">
+                                    <div class="halfdoughnutsmall">
                                         <canvas id="subjectChart"></canvas>
                                     </div>
                                     <div class="color_labels ms-5">
@@ -665,17 +770,17 @@ const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['My Percentage', 'Class Average'],
+        labels: ['Previous Score', 'Latest score'],
         datasets: [{
             data: [12, 22, 50],
             label: '',
             backgroundColor: [
-                '#56b663',
-                '#08d5a1'
+                '#6ee7b7',
+                '#56b663'
             ],
             barPercentage: 5,
-            barThickness: 60,
-            maxBarThickness: 60
+            barThickness: 80,
+            maxBarThickness: 80
         }]
     },
     options: {
@@ -699,7 +804,7 @@ const myChart = new Chart(ctx, {
 });
 
 /***************** halfdoughnut - start *********************/
-const circuference = 260;
+const circuference = 180;
 const data = {
   labels: ["Correct", "Incorrect", "Not Attempted"],
   datasets: [

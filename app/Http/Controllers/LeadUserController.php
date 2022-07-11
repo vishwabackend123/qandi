@@ -130,9 +130,9 @@ class LeadUserController extends Controller
 	{
 		return view('auth.exam_test');
 	}
-    public function overallAnalytics()
+    public function overallAnalyticsNew()
 	{
-		return view('auth.overall_analytics');
+		return view('auth.overall_analytics_new');
 	}
 
 }
