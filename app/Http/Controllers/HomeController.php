@@ -57,7 +57,7 @@ class HomeController extends Controller
         try {
             $userData = Session::get('user_data');
             $user_id = $userData->id;
-            //$user_id = 685;
+            $user_id = 685;
             $exam_id = $userData->grade_id;
             $user_subjects = $this->redis_subjects();
 
@@ -66,6 +66,7 @@ class HomeController extends Controller
             $uSubjects = $subCollection->pluck('id')->toArray();
 
             $preferences = $this->redis_Preference();
+
 
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
@@ -240,7 +241,9 @@ class HomeController extends Controller
                 curl_setopt_array($curl, $curl_option);
 
                 $response_preg_json = curl_exec($curl);
+
                 $response_prog = json_decode($response_preg_json, true);
+
                 if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
                     $i = 1;
                     foreach ($response_prog['response']['student_progress'] as $progData) {
@@ -294,9 +297,23 @@ class HomeController extends Controller
             if ($student_rating == null || empty($student_rating)) {
                 return redirect()->route('performance-rating');
             }
-            //dd($ideal, $your_place, $progress_cat);
 
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount'));
+
+            if (isset($ideal) && !empty($ideal)) {
+                $ideal_avg = array_sum($ideal) / count($ideal);
+            } else {
+                $ideal_avg = 0;
+            }
+
+
+            if (isset($your_place) && !empty($your_place)) {
+                $your_place_avg = array_sum($your_place) / count($your_place);
+            } else {
+                $your_place_avg = 0;
+            }
+
+
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -1177,9 +1194,10 @@ class HomeController extends Controller
 
 
         $response['labels'] = $aWeeks;
-        $response['student_score'] = $trend_stu_score;
+        $response['student_score'] = ($trend_stu_score);
         $response['average_score'] = $trend_avg_score;
         $response['max_score'] = $trend_max_score;
+
 
 
         return json_encode($response);

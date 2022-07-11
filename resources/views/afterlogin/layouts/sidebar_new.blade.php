@@ -238,41 +238,38 @@
 <!-- Test Summary Modal -->
 
 <script>
-function stateHandle() {
-    if (document.querySelector(".emaillink").value === "") {
-        //button.disabled = true;
-        button.disabled = false;
-    } else {
-        button.disabled = false;
+    function stateHandle() {
+        if (document.querySelector(".emaillink").value === "") {
+            //button.disabled = true;
+            button.disabled = false;
+        } else {
+            button.disabled = false;
+        }
     }
-}
-
 </script>
 <script>
-function copylinkfunction() {
-    /* Get the text field */
-    var copyText = document.getElementById("linkInput");
+    function copylinkfunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("linkInput");
 
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-    /* Copy the text inside the text field */
-    navigator.clipboard.writeText(copyText.value);
-    $(".successRef_copy").text("Copied!");
-    $(".successRef_copy").show();
-    setTimeout(function() {
-        $(".successRef_copy").text("");
-        $(".successRef_copy").hide();
-    }, 4000);
-}
-
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+        $(".successRef_copy").text("Copied!");
+        $(".successRef_copy").show();
+        setTimeout(function() {
+            $(".successRef_copy").text("");
+            $(".successRef_copy").hide();
+        }, 4000);
+    }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-$(".backtobtn").click(function() {
-    $('#referfrnd').modal('show');
-    $('#referedfrnd').modal('hide');
-});
-
+    $(".backtobtn").click(function() {
+        $('#referfrnd').modal('show');
+        $('#referedfrnd').modal('hide');
+    });
 </script>
