@@ -4407,6 +4407,21 @@ button.btn.aeck_filter_btn {
     background-color: #e5eaee;
     height: 1px;
 }
+.mock_test_dure_content2, .mock_test_marks_content2 {
+    padding: 0px 50px 0px 50px;
+    border-right: 1px solid #e5eaee;
+}
+.mock_test_ques_content2 {
+    border-right: 1px solid #e5eaee;
+    padding: 0px 50px 0px 0px;
+}
+.mock_test_sub_content2 {
+    padding: 0px 0px 0px 50px;
+}
+.mock_btn_vie_detail
+{
+    flex-basis: 485px!important;
+}
 
 /* **********start live   ********** */
 
