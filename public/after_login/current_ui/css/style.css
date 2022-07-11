@@ -3107,6 +3107,10 @@ html.scrollnone .main-wrapper { overflow: hidden;}
         line-height: 1.3;color: #868a95 ;display:inline-block;margin-left:5px;}
         .overallMidlle .subjectperformLegend {display: flex;align-items:center;margin-bottom:25px;}
         .overallMidlle .subjectperformLegend .commonSubjectLeg.spaceright{margin-right:50px;}
+        .barwithTAb{    display: flex;
+            align-items: center;
+            justify-content: space-between;}
+            .timemanagement.common_greenbadge_tabs{padding-right:40px;}
 /********* Shubham End ***********/
 
 /********* Vikas Start ***********/

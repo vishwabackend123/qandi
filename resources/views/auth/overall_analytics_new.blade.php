@@ -290,19 +290,41 @@
                                     </h3>
                                      <div class="row">
                                          <div class="col-md-6">
-                                           <div class="timemanagement">
-                                               <h4 class="garphsubheading">Time for correct/incorrect answer</h4>
-                                               <div class="subjectperformLegend ">
-                                                    <div class="commonSubjectLeg">
-                                                        <span class="bar greenbar"></span>
-                                                        <label class="text">Class Average</label>
-                                                    </div>  
-                                                    <div class="commonSubjectLeg">
-                                                        <span class="bar pinkbar"></span>
-                                                        <label class="text">Student average</label>
-                                                    </div> 
-                                                </div>
-                                           </div>
+                                           <div class="timemanagement common_greenbadge_tabs">
+                                                <h4 class="garphsubheading mt-2">Time for correct/incorrect answer</h4>
+                                                <div class="barwithTAb">
+                                                       <div class="subjectperformLegend ">
+                                                            <div class="commonSubjectLeg">
+                                                                <span class="bar greenbar"></span>
+                                                                <label class="text">Class Average</label>
+                                                            </div>  
+                                                            <div class="commonSubjectLeg">
+                                                                <span class="bar pinkbar"></span>
+                                                                <label class="text">Student average</label>
+                                                            </div> 
+                                                        </div>
+                                                        <div class="righttabBlock">
+                                                            <ul class="nav nav-pills mb-4 d-inline-flex mt-4" id="marks-tab" role="tablist">
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link btn active" id="pills-Day-tab" data-bs-toggle="pill" data-bs-target="#pills-Day" type="button" role="tab" aria-controls="pills-Day" aria-selected="true">Day</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link btn" id="pills-Week-tab" data-bs-toggle="pill" data-bs-target="#pills-Week" type="button" role="tab" aria-controls="pills-Week" aria-selected="false">Week</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                    <button class="nav-link btn" id="pills-Month-tab" data-bs-toggle="pill" data-bs-target="#pills-Month" type="button" role="tab" aria-controls="pills-Month" aria-selected="false">Month</button>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                </div> 
+                                                <div class="tab-content" id="pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-Day" role="tabpanel" aria-labelledby="pills-Day-tab">
+                                                        Day
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-Week" role="tabpanel" aria-labelledby="pills-Week-tab">Week</div>
+                                                    <div class="tab-pane fade" id="pills-Month" role="tabpanel" aria-labelledby="pills-Month-tab">Month</div>
+                                                </div>       
+                                            </div>
                                          </div>
                                          <div class="col-md-6">
                                             <div class="timemanagement">
