@@ -2774,7 +2774,7 @@ header {
 }
 
 .commonblockDash {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .fullbodyBox .leftBox h4 {
@@ -4053,6 +4053,20 @@ padding: 11px 20px!important;
 .mock_btn_vie_detail
 {
     flex-basis: 485px!important;
+    justify-content: flex-end;
+}
+.view_detail_text_colleps
+{
+    flex-basis: 180px;
+}
+.see_analytics_mock_exam h3
+{
+    font-size: 14px;
+    font-weight: 800;
+    color:#56b663;
+    margin-bottom: 0px;
+    margin-left: 4px;
+
 }
 
 /* **********start live   ********** */
