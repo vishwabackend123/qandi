@@ -315,7 +315,7 @@ class HomeController extends Controller
                 $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
 
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask'));
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency', 'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -388,11 +388,13 @@ class HomeController extends Controller
                     return redirect()->route('dashboard');
                 } else {
                     return redirect()
-                        ->back()->withErrors(['api issue']);;
+                        ->back()->withErrors(['api issue']);
+                    ;
                 }
             } else {
                 return redirect()
-                    ->back()->withErrors(['empty value']);;
+                    ->back()->withErrors(['empty value']);
+                ;
             }
         } catch (\Exception $e) {
             Log::info($e->getMessage());
@@ -820,7 +822,6 @@ class HomeController extends Controller
     public function dailytask()
     {
         try {
-
             $response_task = $this->myqDailytask();
             $data_task = [];
             if (isset($response_task['success']) && !empty($response_task['success'])) {
@@ -1100,7 +1101,6 @@ class HomeController extends Controller
                 return Redirect::back()->withErrors(['Question not available With these filters! Please try Again.']);
             }
         } catch (\Exception $e) {
-
             Log::info($e->getMessage());
         }
     }
@@ -1118,8 +1118,8 @@ class HomeController extends Controller
 
 
 
-    /* 
-    
+    /*
+
     */
     public function trendGraphUpdate($type)
     {
@@ -1155,7 +1155,6 @@ class HomeController extends Controller
             $scoreResponse = json_decode($response_json, true);
             $trendResponse = isset($scoreResponse['marks_trend']) ? ($scoreResponse['marks_trend']) : '';
         } else {
-
             $trendResponse = [];
         }
         $aWeeks = $trend_stu_score = $trend_avg_score = $trend_max_score = [];
@@ -1209,5 +1208,36 @@ class HomeController extends Controller
         $response_task_json = curl_exec($curl);
         $response_task = json_decode($response_task_json, true);
         return $response_task;
+    }
+    public function profile()
+    {
+        $country="India";
+        $api_URL = env('API_URL');
+        $curl_url = $api_URL . 'api/get-state/' . $country;
+
+        $curl = curl_init();
+        $curl_option = array(
+                CURLOPT_URL => $curl_url,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+            );
+        curl_setopt_array($curl, $curl_option);
+
+        $response_json = curl_exec($curl);
+
+        $err = curl_error($curl);
+        $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+
+        $aResponse = json_decode($response_json);
+
+        $success = isset($aResponse->success) ? $aResponse->success : false;
+        $state_list = isset($aResponse->response) ? $aResponse->response : false;
+        return view('afterlogin.profile',compact('state_list'));
     }
 }

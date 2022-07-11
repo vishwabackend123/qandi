@@ -9,8 +9,4 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
-
-    $('#scrollDiv').slimscroll({
-        height: '70vh'
-    });
 </script>

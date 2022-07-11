@@ -233,7 +233,7 @@ $trail_sub = isset($userData->trail_sub) && !empty($userData->trail_sub) ?$userD
                 </div>
                 <div class="planType">
                     <div class="freeTrial">
-                        <a href="javascript:void(0);">Already in {{$sub->trial_subscription_duration}} days trial Period</a>
+                        <a href="{{url('/dashboard')}}">Already in {{$sub->trial_subscription_duration}} days trial Period</a>
                     </div>
                     <div class="getSubs">
                         <form action="{{route('checkout')}}" if="checkout_{{$sub->subscript_id}}" method="post">
