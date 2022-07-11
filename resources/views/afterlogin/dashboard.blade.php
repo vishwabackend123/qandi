@@ -22,7 +22,7 @@ $userData = Session::get('user_data');
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="verifiaction-link" style="display:none">
-                            <p>A verification link has been sent to <b>Sakshi@gmail.com,</b> please click the link to get your account verified <a href="#">Resend</a></p>
+                            <p>A verification link has been sent to <b>{{$userData->email}},</b> please click the link to get your account verified <a href="#">Resend</a></p>
                         </div>
                     </div>
                 </div>
@@ -48,13 +48,23 @@ $userData = Session::get('user_data');
                                         <div class="mq_round_per"></div>
                                     </div>
                                 </div>
+                                @if(!empty($subject_proficiency))
                                 <div class="textblock">
                                     <h6 class="dashSubHeading">You are doing great!</h6>
                                     <p class="dashSubtext">Attempt more tests to improve your score.</p>
-                                    <a href="javascript:;" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">See analytics <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg></span></a>
                                 </div>
+                                @else
+                                <div class="textblock">
+                                    <h6 class="dashSubHeading">Lets get started!</h6>
+                                    <p class="dashSubtext">To begin your journey, attempt "Full body scan".</p>
+                                    <a href="{{route('exam','full_exam')}}" class="commmongreenLink">Attempt Now <span class="greenarrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg></span></a>
+                                </div>
+                                @endif
                             </div>
                             <div class="commonWhiteBox">
                                 <div class="boxHeadingBlock">
@@ -119,7 +129,7 @@ $userData = Session::get('user_data');
                                             </svg>
                                         </div>
                                         <p class="emptytext">Curious about your subject wise performance? Attempt <strong>'Full body scan.'</strong></p>
-                                        <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                        <a href="{{route('exam','full_exam')}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                     </div>
                                 </div>
                                 @endif
@@ -149,9 +159,9 @@ $userData = Session::get('user_data');
                             @if(isset($prof_asst_test) && $prof_asst_test=='N')
                             <div class="fullbodyBox">
                                 <div class="leftBox">
-                                    <h4>Full Body Scan Test 2</h4>
+                                    <h4>Full Body Scan Test</h4>
                                     <p>to assess your preparedness and begin to improve it</p>
-                                    <button class="btn btn-common-white">Attempt Now</button>
+                                    <a href="{{route('exam','full_exam')}}" class="btn btn-common-white">Attempt Now</a>
                                 </div>
                                 <div class="rightImgBox">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="107" height="105" viewBox="0 0 107 105" fill="none">
@@ -451,7 +461,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                     </div>
                                     <p class="emptytext">Attempt <strong>'Full body scan.'</strong> to learn about your strengths and weaknesses. </p>
-                                    <button class="btn btn-common-transparent nobg">Attempt Now</button>
+                                    <a href="{{route('exam','full_exam')}}" class="btn btn-common-transparent nobg">Attempt Now</a>
                                 </div>
                             </div>
                             @endif
@@ -500,7 +510,7 @@ $userData = Session::get('user_data');
                                         </div>
                                     </div>
                                     <div class="gotoPlanner">
-                                        <a href="">
+                                        <a href="{{ url('/planner') }}">
                                             <span>Go to Planner</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="m6 12 4-4-4-4" stroke="#56B663" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round" />
@@ -520,7 +530,7 @@ $userData = Session::get('user_data');
                                         </svg>
                                         <p class=" m-0">Start planning your week</p>
                                         <div class="addPlanbtn">
-                                            <button class="btn btn-common-transparent nobg">
+                                            <a href="{{ url('/planner') }}" class="btn btn-common-transparent nobg">
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                         <path d="M10 18.333a8.333 8.333 0 1 0 0-16.667 8.333 8.333 0 0 0 0 16.667zM10 6.666v6.667M6.666 10h6.667" stroke="#56B663" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -528,7 +538,7 @@ $userData = Session::get('user_data');
                                                 </span>
                                                 <span>Add
                                                 </span>
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -687,12 +697,13 @@ $userData = Session::get('user_data');
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
+                                                @if (isset($ideal) && !empty($ideal))
                                                 <div class="graphDetail w-100">
                                                     <div class="yourPacebox">
                                                         <p class="graphTitle">Ideal Pace</p>
                                                         <p>
                                                             <span class="weekCountline myscore"></span>
-                                                            <span class="weekCount">12</span>
+                                                            <span class="weekCount">{{round($ideal_avg)}}</span>
                                                             <span class="weekText">chapters per week</span>
                                                         </p>
                                                     </div>
@@ -700,18 +711,22 @@ $userData = Session::get('user_data');
                                                         <p class="graphTitle">Your Pace</p>
                                                         <p>
                                                             <span class="weekCountline colorHline"></span>
-                                                            <span class="weekCount">8</span>
+                                                            <span class="weekCount">{{round($your_place_avg)}}</span>
                                                             <span class="weekText">chapters per week</span>
                                                         </p>
                                                     </div>
+                                                    @if(round($ideal_avg) > round($your_place_avg))
                                                     <div class="note">
-                                                        <b>Note:</b> To achieve the ideal pace you have to complete 2 chapters this week
+                                                        <b>Note:</b> To achieve the ideal pace you have to complete {{(round($ideal_avg)-round($your_place_avg))}} chapters this week
                                                     </div>
+                                                    @endif
                                                 </div>
-                                                <div class="graphDetailempty" style="display:none">
+                                                @else
+                                                <div class="graphDetailempty w-100">
                                                     <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
-                                                    <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                                    <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                                 </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -738,14 +753,18 @@ $userData = Session::get('user_data');
                                                     <canvas id="trend_graph"></canvas>
                                                 </div>
                                             </div>
+                                            @if (!empty($trendResponse))
                                             <div class="graphDetail">
                                                 <div class="dropbox">
                                                     <div class="customDropdown dropdown">
-                                                        <input class="text-box" type="text" id="markstrend_graph" placeholder="Mocktest" readonly>
+                                                        <input class="text-box" type="text" id="markstrend_graph" placeholder="All Test" readonly>
                                                         <div class="options">
-                                                            <div onclick="show('Mock Test', 'Mock')">Mock Test</div>
-                                                            <div onclick="show('Practice Test', 'Practice')">Practice Test</div>
-                                                            <div onclick="show('Test Series', 'TestSeries')">Test Series</div>
+                                                            <div class="active" onclick="show('All Test', 'all')">All Test</div>
+                                                            <div class="active" onclick="show('Mock Test', 'Mocktest')">Mock Test</div>
+                                                            <div onclick="show('Practice Test', 'Assessment')">Practice Test</div>
+                                                            <div onclick="show('Test Series', 'Test-Series')">Test Series</div>
+                                                            <div onclick="show('Live', 'Live')">Live </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -764,7 +783,8 @@ $userData = Session::get('user_data');
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="graphDetailempty" style="display:none">
+                                            @else
+                                            <div class="graphDetailempty">
                                                 <p>To achieve this pace, you must begin attempting chapter-wise questions and increase your accuracy</p>
                                                 <div class="h">
                                                     <p class="testScrolltype">
@@ -775,9 +795,14 @@ $userData = Session::get('user_data');
                                                         <span class="weekCountlineH  peerAvg"></span>
                                                         <span class="weekText">Peer average</span>
                                                     </p>
+                                                    <p class="testScrolltype">
+                                                        <span class="weekCountlineH  topScroe"></span>
+                                                        <span class="weekText">Top score</span>
+                                                    </p>
                                                 </div>
-                                                <button class="btn btn-common-transparent width150 nobg">Attempt Now</button>
+                                                <a href="{{ url('/exam_custom') }}" class="btn btn-common-transparent width150 nobg">Attempt Now</a>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -845,234 +870,232 @@ $userData = Session::get('user_data');
     $your_place = isset($your_place) ? json_encode($your_place) : [];
     $progress_cat = isset($progress_cat) ? json_encode($progress_cat) : [];
     $aWeeks= array_values($aWeeks);
-    //dd($aWeeks,$progress_cat );
+
     @endphp
     <script>
-    $(document).ready(function() {
-        $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
-            event.stopPropagation();
-            $(".dashboard-cards-block .bg-white>small p>span").each(function() {
-                $(this).parent("p").hide();
-                $(this).parent("p").removeClass('show');
+        $(document).ready(function() {
+            $(".dashboard-cards-block .bg-white>small>img").click(function(event) {
+                event.stopPropagation();
+                $(".dashboard-cards-block .bg-white>small p>span").each(function() {
+                    $(this).parent("p").hide();
+                    $(this).parent("p").removeClass('show');
+                });
+                $(this).siblings("p").show();
+                $(this).siblings("p").addClass('show');
+
             });
-            $(this).siblings("p").show();
-            $(this).siblings("p").addClass('show');
-
+            $(".dashboard-cards-block .bg-white>small p>span").click(function() {
+                $(this).parent("p").hide();
+            });
         });
-        $(".dashboard-cards-block .bg-white>small p>span").click(function() {
-            $(this).parent("p").hide();
+        $(document).on('click', function(e) {
+            var card_opened = $('.tooltipclass').hasClass('show');
+            if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
+                $('.tooltipclass').hide();
+            }
         });
-    });
-    $(document).on('click', function(e) {
-        var card_opened = $('.tooltipclass').hasClass('show');
-        if (!$(e.target).closest('.tooltipclass').length && !$(e.target).is('.tooltipclass') && card_opened === true) {
-            $('.tooltipclass').hide();
-        }
-    });
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-    $('.dashborarSlider').owlCarousel({
-        stagePadding: 10,
-        loop: false,
-        margin: 0,
-        nav: true,
-        dots: false,
-        // rewindNav:true,
+        $('.dashborarSlider').owlCarousel({
+            stagePadding: 10,
+            loop: false,
+            margin: 0,
+            nav: true,
+            dots: false,
+            // rewindNav:true,
 
-        responsive: {
-            0: {
-                items: 1,
-                nav: false,
-                stagePadding: 40,
-                margin: 0,
-                loop: true,
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false,
+                    stagePadding: 40,
+                    margin: 0,
+                    loop: true,
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+
             }
-
-        }
-    })
-
+        })
     </script>
     <script>
-    /* progress Journy graph */
-    const labels1 = <?php print_r($progress_cat); ?>;
-    const data1 = {
-        labels: labels1,
-        datasets: [{
-                label: 'Ideal Pace',
-                backgroundColor: '#05d6a1',
-                borderColor: '#05d6a1',
-                data: <?php print_r($ideal); ?>,
-                borderwidth: 0.6,
-                tension: 0.4
-            },
-            {
-                label: 'Your Pace',
-                backgroundColor: '#f87d96',
-                borderColor: '#f87d96',
-                data: <?php print_r($your_place); ?>,
-                borderwidth: 0.6,
-                tension: 0.4
-            }
-        ]
-    };
-
-    const config1 = {
-        type: 'line',
-        data: data1,
-        options: {
-            responsive: true,
-            elements: {
-                point: {
-                    radius: 0
+        /* progress Journy graph */
+        const labels1 = <?php print_r($progress_cat); ?>;
+        const data1 = {
+            labels: labels1,
+            datasets: [{
+                    label: 'Ideal Pace',
+                    backgroundColor: '#05d6a1',
+                    borderColor: '#05d6a1',
+                    data: <?php print_r($ideal); ?>,
+                    borderwidth: 0.6,
+                    tension: 0.4
+                },
+                {
+                    label: 'Your Pace',
+                    backgroundColor: '#f87d96',
+                    borderColor: '#f87d96',
+                    data: <?php print_r($your_place); ?>,
+                    borderwidth: 0.6,
+                    tension: 0.4
                 }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: false,
-                    text: 'Chart.js Line Chart - Cubic interpolation mode'
-                },
-            },
-            interaction: {
-                intersect: false,
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false
-                    }
-                }
+            ]
+        };
 
-            }
-        }
-    };
-
-    const myChart1 = new Chart(
-        document.getElementById('progressJourny_graph'),
-        config1
-    );
-    /* progress Journy graph end */
-
-    /** ********************/
-    const labels2 = <?php print_r($weeks_json); ?>;
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-                label: 'My score',
-                backgroundColor: '#05d6a1',
-                borderColor: '#05d6a1',
-                data: <?php print_r($stu_score_json); ?>,
-                borderwidth: 1,
-                tension: 0.4
-            },
-            {
-                label: 'Peer average',
-                backgroundColor: '#f87d96',
-                borderColor: '#f87d96',
-                data: <?php print_r($avg_score_json); ?>,
-                borderwidth: 1,
-                tension: 0.4
-            },
-            {
-                label: 'Top score',
-                backgroundColor: '#12c3ff',
-                borderColor: '#12c3ff',
-                data: <?php print_r($max_score_json); ?>,
-                borderwidth: 1,
-                tension: 0.4
-            }
-        ]
-    };
-
-    const config2 = {
-        type: 'line',
-        data: data2,
-        options: {
-            responsive: true,
-            elements: {
-                point: {
-                    radius: 0
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: false,
-                    text: 'Chart.js Line Chart - Cubic interpolation mode'
-                },
-            },
-            interaction: {
-                intersect: false,
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false
+        const config1 = {
+            type: 'line',
+            data: data1,
+            options: {
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
                     }
                 },
-                y: {
-                    grid: {
+                plugins: {
+                    legend: {
                         display: false
                     },
-                    type: 'linear',
-                    grace: '5%',
-
-                    min: 0,
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                    },
+                },
+                interaction: {
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
 
                 }
-
             }
-        }
-    };
+        };
 
-    const myChart2 = new Chart(
-        document.getElementById('trend_graph'),
-        config2
-    );
+        const myChart1 = new Chart(
+            document.getElementById('progressJourny_graph'),
+            config1
+        );
+        /* progress Journy graph end */
+
+        /** ********************/
+        const labels2 = <?php print_r($weeks_json); ?>;
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                    label: 'My score',
+                    backgroundColor: '#05d6a1',
+                    borderColor: '#05d6a1',
+                    data: <?php print_r($stu_score_json); ?>,
+                    borderwidth: 1,
+                    tension: 0.4
+                },
+                {
+                    label: 'Peer average',
+                    backgroundColor: '#f87d96',
+                    borderColor: '#f87d96',
+                    data: <?php print_r($avg_score_json); ?>,
+                    borderwidth: 1,
+                    tension: 0.4
+                },
+                {
+                    label: 'Top score',
+                    backgroundColor: '#12c3ff',
+                    borderColor: '#12c3ff',
+                    data: <?php print_r($max_score_json); ?>,
+                    borderwidth: 1,
+                    tension: 0.4
+                }
+            ]
+        };
+
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {
+                responsive: true,
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false,
+                        text: 'Chart.js Line Chart - Cubic interpolation mode'
+                    },
+                },
+                interaction: {
+                    intersect: false,
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        type: 'linear',
+                        grace: '5%',
+
+                        min: 0,
+
+                    }
+
+                }
+            }
+        };
+
+        const myChart2 = new Chart(
+            document.getElementById('trend_graph'),
+            config2
+        );
 
 
-    /* $('#markstrend_graph').change(function() {
-        var value = this.value;
-        alert(value);
-    }); */
-
+        /* $('#markstrend_graph').change(function() {
+            var value = this.value;
+            alert(value);
+        }); */
     </script>
     <script>
-    function show(value, type) {
-        document.querySelector(".text-box").value = value;
+        function show(value, type) {
+            document.querySelector(".text-box").value = value;
 
-        url = "{{ url('trendGraphUpdate/') }}/" + type;
-        $.ajax({
-            type: 'GET', //post method
-            url: url, //ajaxformexample url
-            dataType: "json",
-            success: function(response) {
-                console.log(response);
-                myChart2.data.labels = response.labels;
-                myChart2.data.datasets[0] = response.student_score; // or you can iterate for multiple datasets
-                myChart2.data.datasets[1] = response.average_score; // or you can iterate for multiple datasets
-                myChart2.data.datasets[2] = response.max_score; // or you can iterate for multiple datasets
-                myChart2.update(); // finally update our chart
-            }
-        });
-    }
+            url = "{{ url('trendGraphUpdate/') }}/" + type;
+            $.ajax({
+                type: 'GET', //post method
+                url: url, //ajaxformexample url
+                dataType: "json",
+                success: function(response) {
+                    console.log(response.student_score);
+                    myChart2.data.labels = response.labels;
+                    myChart2.data.datasets[0].data = response.student_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[1].data = response.average_score; // or you can iterate for multiple datasets
+                    myChart2.data.datasets[2].data = response.max_score; // or you can iterate for multiple datasets
+                    myChart2.update(); // finally update our chart
+                }
+            });
+        }
 
-    let dropdown = document.querySelector(".customDropdown")
-    dropdown.onclick = function() {
-        dropdown.classList.toggle("active")
-    }
 
+
+        let dropdown = document.querySelector(".customDropdown")
+        dropdown.onclick = function() {
+            dropdown.classList.toggle("active")
+        }
     </script>
     @endsection

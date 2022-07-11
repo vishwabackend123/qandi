@@ -67,6 +67,7 @@ class HomeController extends Controller
 
             $preferences = $this->redis_Preference();
 
+
             $student_stage_at_sgnup = (isset($preferences->student_stage_at_sgnup) && !empty($preferences->student_stage_at_sgnup)) ? $preferences->student_stage_at_sgnup : '';
 
             $student_rating = (isset($preferences->subjects_rating) && !empty($preferences->subjects_rating)) ? $preferences->subjects_rating : '';
@@ -230,7 +231,9 @@ class HomeController extends Controller
                 curl_setopt_array($curl, $curl_option);
 
                 $response_preg_json = curl_exec($curl);
+
                 $response_prog = json_decode($response_preg_json, true);
+
                 if (isset($response_prog['response']['student_progress']) && !empty($response_prog['response']['student_progress'])) {
                     $i = 1;
                     foreach ($response_prog['response']['student_progress'] as $progData) {
@@ -284,6 +287,23 @@ class HomeController extends Controller
             if ($student_rating == null || empty($student_rating)) {
                 return redirect()->route('performance-rating');
             }
+
+
+            if (isset($ideal) && !empty($ideal)) {
+                $ideal_avg = array_sum($ideal) / count($ideal);
+            } else {
+                $ideal_avg = 0;
+            }
+
+
+            if (isset($your_place) && !empty($your_place)) {
+                $your_place_avg = array_sum($your_place) / count($your_place);
+            } else {
+                $your_place_avg = 0;
+            }
+
+
+
             $response_task = $this->myqDailytask();
             $data_task = [];
             if (isset($response_task['success']) && !empty($response_task['success'])) {
@@ -291,11 +311,11 @@ class HomeController extends Controller
                 $collection = collect($data_task);
                 $dailyTask = $collection->where('task_type', 'daily')->sortBy('category')->values()->all();
                 $weekTask = $collection->where('task_type', 'weekly')->sortBy('category')->values()->all();
-                $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed','!=', '1')->sortBy('category')->values()->all());
-                $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed','!=', '1')->sortBy('category')->values()->all());
+                $completeddailyTask = count($collection->where('task_type', 'daily')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
+                $completedweekTask = count($collection->where('task_type', 'weekly')->where('allowed', '!=', '1')->sortBy('category')->values()->all());
             }
 
-            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount','weekTask','dailyTask','completeddailyTask','completedweekTask'));
+            return view('afterlogin.dashboard', compact('myqtodayScore', 'score', 'inprogress', 'progress', 'others', 'subject_proficiency',  'trendResponse', 'planner', 'planned_test_cnt', 'attempted_test_cnt', 'student_rating', 'prof_asst_test', 'ideal', 'your_place', 'progress_cat', 'trial_expired_yn', 'date_difference', 'subjectPlanner_miss', 'planner_subject', 'user_subjects', 'myq_matrix', 'prof_test_qcount', 'ideal_avg', 'your_place_avg', 'weekTask', 'dailyTask', 'completeddailyTask', 'completedweekTask'));
         } catch (\Exception $e) {
             Log::info($e->getMessage());
         }
@@ -800,7 +820,7 @@ class HomeController extends Controller
     public function dailytask()
     {
         try {
-            
+
             $response_task = $this->myqDailytask();
             $data_task = [];
             if (isset($response_task['success']) && !empty($response_task['success'])) {
@@ -1156,37 +1176,38 @@ class HomeController extends Controller
 
 
         $response['labels'] = $aWeeks;
-        $response['student_score'] = $trend_stu_score;
+        $response['student_score'] = ($trend_stu_score);
         $response['average_score'] = $trend_avg_score;
         $response['max_score'] = $trend_max_score;
+
 
 
         return json_encode($response);
     }
     public function myqDailytask()
     {
-            $userData = Session::get('user_data');
-            $user_id = $userData->id;
+        $userData = Session::get('user_data');
+        $user_id = $userData->id;
 
-            $exam_id = $userData->grade_id;
-            $curl = curl_init();
-            $api_URL = env('API_URL');
-            $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
-            $curl_option = array(
+        $exam_id = $userData->grade_id;
+        $curl = curl_init();
+        $api_URL = env('API_URL');
+        $curl_check_task_url = $api_URL . 'api/check-task-center-history/' . $user_id;
+        $curl_option = array(
 
-                CURLOPT_URL => $curl_check_task_url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-            );
-            curl_setopt_array($curl, $curl_option);
+            CURLOPT_URL => $curl_check_task_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        );
+        curl_setopt_array($curl, $curl_option);
 
-            $response_task_json = curl_exec($curl);
-            $response_task = json_decode($response_task_json, true);
-            return $response_task;
+        $response_task_json = curl_exec($curl);
+        $response_task = json_decode($response_task_json, true);
+        return $response_task;
     }
 }
